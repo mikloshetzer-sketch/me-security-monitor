@@ -65,3 +65,65 @@ function updateSelectedDate() {
 
 slider.addEventListener("input", updateSelectedDate);
 updateSelectedDate();
+
+// --- COUNTRY BORDERS OVERLAY (Leaflet GeoJSON) ---
+const bordersCheckbox = document.getElementById("bordersCheckbox");
+
+// Natural Earth (nvkelso) GeoJSON raw URL (50m admin 0 countries)
+const BORDERS_GEOJSON_URL =
+  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
+
+let bordersLayer = null;
+let bordersLoaded = false;
+
+function bordersStyle() {
+  return {
+    color: "#ffffff",
+    weight: 1,
+    opacity: 0.55,
+    fillOpacity: 0
+  };
+}
+
+async function ensureBordersLoaded() {
+  if (bordersLoaded) return;
+
+  try {
+    const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const geojson = await res.json();
+
+    bordersLayer = L.geoJSON(geojson, {
+      style: bordersStyle
+    });
+
+    bordersLoaded = true;
+  } catch (err) {
+    console.error("Failed to load borders GeoJSON:", err);
+    bordersLoaded = false;
+    bordersLayer = null;
+    alert("Nem sikerült betölteni az országhatárokat (GeoJSON).");
+  }
+}
+
+async function setBordersVisible(visible) {
+  if (visible) {
+    await ensureBordersLoaded();
+    if (bordersLayer && !map.hasLayer(bordersLayer)) {
+      bordersLayer.addTo(map);
+      // alul maradjon (tile fölött, marker alatt oké)
+      bordersLayer.bringToBack();
+    }
+  } else {
+    if (bordersLayer && map.hasLayer(bordersLayer)) {
+      map.removeLayer(bordersLayer);
+    }
+  }
+}
+
+// default ON (checkbox checked in HTML)
+setBordersVisible(!!bordersCheckbox.checked);
+
+bordersCheckbox.addEventListener("change", (e) => {
+  setBordersVisible(e.target.checked);
+});
