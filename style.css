@@ -24,6 +24,7 @@ html, body {
 
 .panel-top-left { top: 10px; left: 10px; }
 .panel-top-right { top: 10px; right: 10px; }
+.panel-bottom-left { bottom: 10px; left: 10px; }
 
 .panel-header {
   display: flex;
@@ -82,6 +83,27 @@ input[type="range"] {
   width: 100%;
 }
 
+/* Legend styling */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Simple category colors (later we can sync with marker icons) */
+.dot-political { background: #4ea1ff; }
+.dot-military  { background: #ff5a5a; }
+.dot-security  { background: #ffd84e; }
+.dot-other     { background: #b7b7b7; }
+
 /* Mobile: panels span width, stack so they don’t overlap too much */
 @media (max-width: 720px) {
   .panel {
@@ -92,4 +114,5 @@ input[type="range"] {
   }
   .panel-top-left { top: 10px; }
   .panel-top-right { top: 70px; }
+  .panel-bottom-left { bottom: 10px; }
 }
