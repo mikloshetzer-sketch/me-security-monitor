@@ -6,18 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Leaflet CSS -->
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Map -->
   <div id="map"></div>
+
+  <!-- Top-left Control Panel (default: CLOSED) -->
+  <div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
+    <div class="panel-header">
+      <button id="controlToggle" class="panel-toggle" aria-label="Controls panel ki/be">
+        ☰
+      </button>
+      <div class="panel-title">Controls</div>
+    </div>
+
+    <div class="panel-body">
+      <div class="row"><label><input type="checkbox" checked /> political</label></div>
+      <div class="row"><label><input type="checkbox" checked /> military</label></div>
+      <div class="row"><label><input type="checkbox" checked /> security</label></div>
+      <div class="row"><label><input type="checkbox" checked /> other</label></div>
+
+      <hr class="sep" />
+
+      <button class="btn" type="button">Apply (később)</button>
+    </div>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
