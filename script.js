@@ -16,44 +16,34 @@ function makeLast365Days() {
   }
   return days;
 }
-
 const days365 = makeLast365Days();
 
-// --- CONTROL PANEL TOGGLE (default: CLOSED) ---
-const controlPanel = document.getElementById("controlPanel");
-const controlToggle = document.getElementById("controlToggle");
+// --- GENERIC TOGGLER HELPER ---
+function attachPanelToggle(panelId, toggleId, defaultOpen = false) {
+  const panel = document.getElementById(panelId);
+  const toggle = document.getElementById(toggleId);
 
-function setControlOpen(isOpen) {
-  controlPanel.classList.toggle("closed", !isOpen);
-  controlPanel.classList.toggle("open", isOpen);
-  controlToggle.textContent = isOpen ? "✕" : "☰";
+  function setOpen(isOpen) {
+    panel.classList.toggle("closed", !isOpen);
+    panel.classList.toggle("open", isOpen);
+    toggle.textContent = isOpen ? "✕" : "☰";
+  }
+
+  let isOpen = defaultOpen;
+  setOpen(isOpen);
+
+  toggle.addEventListener("click", () => {
+    isOpen = !isOpen;
+    setOpen(isOpen);
+  });
+
+  return { get isOpen() { return isOpen; } };
 }
 
-let controlOpen = false;
-setControlOpen(controlOpen);
-
-controlToggle.addEventListener("click", () => {
-  controlOpen = !controlOpen;
-  setControlOpen(controlOpen);
-});
-
-// --- TIMELINE PANEL TOGGLE (default: CLOSED) ---
-const timelinePanel = document.getElementById("timelinePanel");
-const timelineToggle = document.getElementById("timelineToggle");
-
-function setTimelineOpen(isOpen) {
-  timelinePanel.classList.toggle("closed", !isOpen);
-  timelinePanel.classList.toggle("open", isOpen);
-  timelineToggle.textContent = isOpen ? "✕" : "☰";
-}
-
-let timelineOpen = false;
-setTimelineOpen(timelineOpen);
-
-timelineToggle.addEventListener("click", () => {
-  timelineOpen = !timelineOpen;
-  setTimelineOpen(timelineOpen);
-});
+// --- PANELS (all default CLOSED) ---
+attachPanelToggle("controlPanel", "controlToggle", false);
+attachPanelToggle("timelinePanel", "timelineToggle", false);
+attachPanelToggle("legendPanel", "legendToggle", false);
 
 // --- TIMELINE SLIDER (365 days) ---
 const slider = document.getElementById("timelineSlider");
