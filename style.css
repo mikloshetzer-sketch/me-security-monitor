@@ -98,13 +98,13 @@ input[type="range"] {
   display: inline-block;
 }
 
-/* Simple category colors (later we can sync with marker icons) */
+/* Simple category colors */
 .dot-political { background: #4ea1ff; }
 .dot-military  { background: #ff5a5a; }
 .dot-security  { background: #ffd84e; }
 .dot-other     { background: #b7b7b7; }
 
-/* Mobile: panels span width, stack so they don’t overlap too much */
+/* Mobile stacking */
 @media (max-width: 720px) {
   .panel {
     position: fixed;
