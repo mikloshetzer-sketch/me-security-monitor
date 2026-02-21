@@ -23,6 +23,7 @@ html, body {
 }
 
 .panel-top-left { top: 10px; left: 10px; }
+.panel-top-right { top: 10px; right: 10px; }
 
 .panel-header {
   display: flex;
@@ -49,7 +50,7 @@ html, body {
   font-size: 13px;
 }
 
-.row { margin: 6px 0; }
+.row { margin: 8px 0; }
 
 .sep {
   border: 0;
@@ -65,6 +66,9 @@ html, body {
   width: 100%;
 }
 
+.muted { opacity: 0.8; font-size: 12px; }
+.big { font-size: 16px; font-weight: 700; margin-top: 4px; }
+
 /* CLOSED state: only header visible, compact width */
 .panel.closed {
   width: auto;
@@ -73,7 +77,12 @@ html, body {
 .panel.closed .panel-title { display: none; }
 .panel.closed .panel-body { display: none; }
 
-/* Mobile: panel spans width, doesn’t hang off-screen */
+/* Range input should fill width when open */
+input[type="range"] {
+  width: 100%;
+}
+
+/* Mobile: panels span width, stack so they don’t overlap too much */
 @media (max-width: 720px) {
   .panel {
     position: fixed;
@@ -82,4 +91,5 @@ html, body {
     width: auto;
   }
   .panel-top-left { top: 10px; }
+  .panel-top-right { top: 70px; }
 }
