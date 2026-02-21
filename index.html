@@ -21,9 +21,7 @@
   <!-- Top-left Control Panel (default: CLOSED) -->
   <div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
     <div class="panel-header">
-      <button id="controlToggle" class="panel-toggle" aria-label="Controls panel ki/be">
-        ☰
-      </button>
+      <button id="controlToggle" class="panel-toggle" aria-label="Controls panel ki/be">☰</button>
       <div class="panel-title">Controls</div>
     </div>
 
@@ -36,6 +34,29 @@
       <hr class="sep" />
 
       <button class="btn" type="button">Apply (később)</button>
+    </div>
+  </div>
+
+  <!-- Top-right Timeline Panel (default: CLOSED) -->
+  <div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
+    <div class="panel-header">
+      <button id="timelineToggle" class="panel-toggle" aria-label="Timeline panel ki/be">☰</button>
+      <div class="panel-title">Timeline (365)</div>
+    </div>
+
+    <div class="panel-body">
+      <div class="row">
+        <div class="muted">Selected date</div>
+        <div id="selectedDateLabel" class="big">—</div>
+      </div>
+
+      <div class="row">
+        <input id="timelineSlider" type="range" min="0" max="364" value="364" />
+      </div>
+
+      <div class="row muted">
+        (Később: play/pause, 7/30 napos ablak, stb.)
+      </div>
     </div>
   </div>
 
