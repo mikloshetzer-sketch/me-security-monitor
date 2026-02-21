@@ -60,6 +60,27 @@
     </div>
   </div>
 
+  <!-- Bottom-left Legend Panel (default: CLOSED) -->
+  <div id="legendPanel" class="panel panel-bottom-left closed" aria-label="Legend panel">
+    <div class="panel-header">
+      <button id="legendToggle" class="panel-toggle" aria-label="Legend panel ki/be">☰</button>
+      <div class="panel-title">Legend</div>
+    </div>
+
+    <div class="panel-body">
+      <div class="legend-item"><span class="dot dot-political"></span> political</div>
+      <div class="legend-item"><span class="dot dot-military"></span> military</div>
+      <div class="legend-item"><span class="dot dot-security"></span> security</div>
+      <div class="legend-item"><span class="dot dot-other"></span> other</div>
+
+      <hr class="sep" />
+
+      <div class="muted">
+        (Később ide jönnek ikonok, források, confidence skála.)
+      </div>
+    </div>
+  </div>
+
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
