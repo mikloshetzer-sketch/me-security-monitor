@@ -1,129 +1,70 @@
-// --- MAP ---
 const map = L.map('map').setView([33.5, 44.0], 6);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
+  attribution:'&copy; OpenStreetMap'
 }).addTo(map);
 
-// --- UTIL: last 365 days array (YYYY-MM-DD) ---
+let markersLayer = L.layerGroup().addTo(map);
+
 function makeLast365Days() {
-  const days = [];
-  const today = new Date();
-  for (let i = 364; i >= 0; i--) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    days.push(d.toISOString().slice(0, 10));
+  const days=[];
+  const today=new Date();
+  for(let i=364;i>=0;i--){
+    const d=new Date(today);
+    d.setDate(d.getDate()-i);
+    days.push(d.toISOString().slice(0,10));
   }
   return days;
 }
-const days365 = makeLast365Days();
 
-// --- GENERIC TOGGLER HELPER ---
-function attachPanelToggle(panelId, toggleId, defaultOpen = false) {
-  const panel = document.getElementById(panelId);
-  const toggle = document.getElementById(toggleId);
+const days365=makeLast365Days();
 
-  function setOpen(isOpen) {
-    panel.classList.toggle("closed", !isOpen);
-    panel.classList.toggle("open", isOpen);
-    toggle.textContent = isOpen ? "✕" : "☰";
-  }
+const slider=document.getElementById("timelineSlider");
+const label=document.getElementById("selectedDateLabel");
 
-  let isOpen = defaultOpen;
-  setOpen(isOpen);
+slider.max=days365.length-1;
+slider.value=days365.length-1;
 
-  toggle.addEventListener("click", () => {
-    isOpen = !isOpen;
-    setOpen(isOpen);
+let eventsData=[];
+
+fetch("events.json")
+  .then(r=>r.json())
+  .then(data=>{
+    eventsData=data;
+    updateMap();
   });
 
-  return { get isOpen() { return isOpen; } };
+function getMarkerColor(category){
+  if(category==="military") return "red";
+  if(category==="political") return "blue";
+  if(category==="security") return "yellow";
+  return "gray";
 }
 
-// --- PANELS (all default CLOSED) ---
-attachPanelToggle("controlPanel", "controlToggle", false);
-attachPanelToggle("timelinePanel", "timelineToggle", false);
-attachPanelToggle("legendPanel", "legendToggle", false);
+function updateMap(){
+  markersLayer.clearLayers();
 
-// --- TIMELINE SLIDER (365 days) ---
-const slider = document.getElementById("timelineSlider");
-const label = document.getElementById("selectedDateLabel");
+  const selectedDate=days365[slider.value];
+  label.textContent=selectedDate;
 
-// default to today (last index)
-slider.min = "0";
-slider.max = String(days365.length - 1);
-slider.value = String(days365.length - 1);
+  eventsData.forEach(ev=>{
+    if(ev.date===selectedDate){
+      const marker=L.circleMarker([ev.lat,ev.lng],{
+        radius:8,
+        color:getMarkerColor(ev.category),
+        fillOpacity:0.8
+      });
 
-function updateSelectedDate() {
-  const idx = Number(slider.value);
-  const d = days365[idx] || "—";
-  label.textContent = d;
-
-  // HOOK (később ide jön az események szűrése)
-  // console.log("Selected date:", d);
-}
-
-slider.addEventListener("input", updateSelectedDate);
-updateSelectedDate();
-
-// --- COUNTRY BORDERS OVERLAY (Leaflet GeoJSON) ---
-const bordersCheckbox = document.getElementById("bordersCheckbox");
-
-// Natural Earth (nvkelso) GeoJSON raw URL (50m admin 0 countries)
-const BORDERS_GEOJSON_URL =
-  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
-
-let bordersLayer = null;
-let bordersLoaded = false;
-
-function bordersStyle() {
-  return {
-    color: "#ffffff",
-    weight: 1,
-    opacity: 0.55,
-    fillOpacity: 0
-  };
-}
-
-async function ensureBordersLoaded() {
-  if (bordersLoaded) return;
-
-  try {
-    const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const geojson = await res.json();
-
-    bordersLayer = L.geoJSON(geojson, {
-      style: bordersStyle
-    });
-
-    bordersLoaded = true;
-  } catch (err) {
-    console.error("Failed to load borders GeoJSON:", err);
-    bordersLoaded = false;
-    bordersLayer = null;
-    alert("Nem sikerült betölteni az országhatárokat (GeoJSON).");
-  }
-}
-
-async function setBordersVisible(visible) {
-  if (visible) {
-    await ensureBordersLoaded();
-    if (bordersLayer && !map.hasLayer(bordersLayer)) {
-      bordersLayer.addTo(map);
-      // alul maradjon (tile fölött, marker alatt oké)
-      bordersLayer.bringToBack();
+      marker.bindPopup(`<b>${ev.title}</b><br>${ev.category}`);
+      markersLayer.addLayer(marker);
     }
-  } else {
-    if (bordersLayer && map.hasLayer(bordersLayer)) {
-      map.removeLayer(bordersLayer);
-    }
-  }
+  });
 }
 
-// default ON (checkbox checked in HTML)
-setBordersVisible(!!bordersCheckbox.checked);
+slider.addEventListener("input",updateMap);
 
-bordersCheckbox.addEventListener("change", (e) => {
-  setBordersVisible(e.target.checked);
+document.querySelectorAll(".panel-header button").forEach(btn=>{
+  btn.onclick=()=>{
+    btn.parentElement.parentElement.classList.toggle("closed");
+  }
 });
