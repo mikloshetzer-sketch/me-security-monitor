@@ -1,34 +1,78 @@
 [
   {
-    "id": "ev1",
+    "id": "2026-02-20-001",
     "date": "2026-02-20",
     "title": "Airstrike reported near Gaza",
+    "summary": "Reported strike activity near Gaza; details vary by source.",
     "category": "military",
-    "lat": 31.5,
-    "lng": 34.47
+    "tags": ["Gaza", "airstrike"],
+    "confidence": 0.6,
+    "source": {
+      "name": "News",
+      "type": "news",
+      "url": "https://example.com/article-1"
+    },
+    "location": {
+      "name": "Gaza Strip",
+      "lat": 31.5,
+      "lng": 34.47
+    }
   },
   {
-    "id": "ev2",
+    "id": "2026-02-19-001",
     "date": "2026-02-19",
     "title": "Political negotiations in Baghdad",
+    "summary": "Talks reported between key political blocs; no formal agreement announced.",
     "category": "political",
-    "lat": 33.315,
-    "lng": 44.366
+    "tags": ["Iraq", "Baghdad", "negotiations"],
+    "confidence": 0.7,
+    "source": {
+      "name": "News",
+      "type": "news",
+      "url": "https://example.com/article-2"
+    },
+    "location": {
+      "name": "Baghdad",
+      "lat": 33.315,
+      "lng": 44.366
+    }
   },
   {
-    "id": "ev3",
+    "id": "2026-02-20-002",
     "date": "2026-02-20",
     "title": "Security incident in South Lebanon",
+    "summary": "Incident reported in the south; monitoring follow-on activity.",
     "category": "security",
-    "lat": 33.2,
-    "lng": 35.3
+    "tags": ["Lebanon", "South Lebanon"],
+    "confidence": 0.55,
+    "source": {
+      "name": "ISW",
+      "type": "isw",
+      "url": "https://example.com/isw-daily-brief"
+    },
+    "location": {
+      "name": "South Lebanon",
+      "lat": 33.2,
+      "lng": 35.3
+    }
   },
   {
-    "id": "ev4",
+    "id": "2026-02-18-001",
     "date": "2026-02-18",
     "title": "Drone activity reported in Yemen",
+    "summary": "Drone-related reporting; attribution unclear in early accounts.",
     "category": "military",
-    "lat": 15.369,
-    "lng": 44.191
+    "tags": ["Yemen", "drones"],
+    "confidence": 0.5,
+    "source": {
+      "name": "News",
+      "type": "news",
+      "url": "https://example.com/article-3"
+    },
+    "location": {
+      "name": "Sana'a",
+      "lat": 15.369,
+      "lng": 44.191
+    }
   }
 ]
