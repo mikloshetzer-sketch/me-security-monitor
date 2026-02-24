@@ -1,224 +1,141 @@
-// ---------------- MAP ----------------
+// MAP
 const map = L.map('map').setView([33.5, 44.0], 6);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution:'&copy; OpenStreetMap'
 }).addTo(map);
 
-// Cluster group for event markers
+// CLUSTER
 const clusterGroup = L.markerClusterGroup({
-  showCoverageOnHover: false,
-  spiderfyOnMaxZoom: true,
-  disableClusteringAtZoom: 10
+  showCoverageOnHover:false,
+  spiderfyOnMaxZoom:true,
+  disableClusteringAtZoom:10
 });
 map.addLayer(clusterGroup);
 
-// ---------------- DATE UTIL ----------------
-function makeLast365Days() {
-  const days = [];
-  const today = new Date();
-  for (let i = 364; i >= 0; i--) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    days.push(d.toISOString().slice(0, 10));
+// DATE
+function makeLast365Days(){
+  const days=[];
+  const today=new Date();
+  for(let i=364;i>=0;i--){
+    const d=new Date(today);
+    d.setDate(d.getDate()-i);
+    days.push(d.toISOString().slice(0,10));
   }
   return days;
 }
-const days365 = makeLast365Days();
-const dateToIndex = new Map(days365.map((d, i) => [d, i]));
+const days365=makeLast365Days();
+const dateToIndex=new Map(days365.map((d,i)=>[d,i]));
 
-// ---------------- PANELS ----------------
-function attachPanelToggle(panelId, toggleId, defaultOpen = false) {
-  const panel = document.getElementById(panelId);
-  const toggle = document.getElementById(toggleId);
+// UI
+const slider=document.getElementById("timelineSlider");
+const label=document.getElementById("selectedDateLabel");
+const listContainer=document.getElementById("eventsList");
 
-  function setOpen(isOpen) {
-    panel.classList.toggle("closed", !isOpen);
-    panel.classList.toggle("open", isOpen);
-    toggle.textContent = isOpen ? "✕" : "☰";
-  }
+slider.max=days365.length-1;
+slider.value=days365.length-1;
 
-  let isOpen = defaultOpen;
-  setOpen(isOpen);
+const catCheckboxes=document.querySelectorAll(".cat-filter");
+const windowRadios=document.querySelectorAll("input[name='window']");
 
-  toggle.addEventListener("click", () => {
-    isOpen = !isOpen;
-    setOpen(isOpen);
-  });
-}
+let eventsData=[];
 
-attachPanelToggle("controlPanel", "controlToggle", false);
-attachPanelToggle("timelinePanel", "timelineToggle", false);
-attachPanelToggle("legendPanel", "legendToggle", false);
-
-// ---------------- UI STATE ----------------
-const slider = document.getElementById("timelineSlider");
-const label = document.getElementById("selectedDateLabel");
-slider.max = String(days365.length - 1);
-slider.value = String(days365.length - 1);
-
-const catCheckboxes = Array.from(document.querySelectorAll(".cat-filter"));
-const windowRadios = Array.from(document.querySelectorAll("input[name='window']"));
-
-function getSelectedCategories() {
-  const set = new Set();
-  for (const cb of catCheckboxes) if (cb.checked) set.add(cb.value);
-  return set;
-}
-
-function getWindowDays() {
-  const checked = windowRadios.find(r => r.checked);
-  return checked ? Number(checked.value) : 1;
-}
-
-// ---------------- EVENTS ----------------
-let eventsData = [];
-
+// LOAD DATA
 fetch("events.json")
-  .then(r => r.json())
-  .then(data => {
-    eventsData = data;
+  .then(r=>r.json())
+  .then(data=>{
+    eventsData=data;
     updateMap();
-  })
-  .catch(err => {
-    console.error("events.json load failed:", err);
-    alert("Nem sikerült betölteni az events.json fájlt.");
   });
 
-function categoryColor(cat) {
-  if (cat === "military") return "#ff5a5a";
-  if (cat === "political") return "#4ea1ff";
-  if (cat === "security") return "#ffd84e";
+// CATEGORY COLOR
+function categoryColor(cat){
+  if(cat==="military") return "#ff5a5a";
+  if(cat==="political") return "#4ea1ff";
+  if(cat==="security") return "#ffd84e";
   return "#b7b7b7";
 }
 
-function escapeHtml(s) {
-  return String(s ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
-function buildPopup(ev) {
-  const cat = escapeHtml(ev.category || "other");
-  const date = escapeHtml(ev.date);
-  const title = escapeHtml(ev.title);
-  const summary = escapeHtml(ev.summary || "");
-  const locName = escapeHtml(ev.location?.name || "");
-  const conf = (typeof ev.confidence === "number") ? ev.confidence.toFixed(2) : "—";
-  const sourceName = escapeHtml(ev.source?.name || "source");
-  const sourceUrl = ev.source?.url || "";
-
-  const tags = Array.isArray(ev.tags) ? ev.tags : [];
-  const tagsHtml = tags.slice(0, 12).map(t => `<span>${escapeHtml(t)}</span>`).join("");
-
-  const linkHtml = sourceUrl
-    ? `<div style="margin-top:8px;"><a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">Open source: ${sourceName}</a></div>`
-    : `<div style="margin-top:8px; opacity:0.85;">Source: ${sourceName}</div>`;
-
-  return `
-    <div class="popup-title">${title}</div>
-    <div class="popup-meta">${cat} · ${date} · ${locName} · confidence: ${conf}</div>
-    <div>${summary}</div>
-    ${tagsHtml ? `<div class="popup-tags">${tagsHtml}</div>` : ""}
-    ${linkHtml}
-  `;
-}
-
-function makeEventMarker(ev) {
-  const cat = ev.category || "other";
-  const color = categoryColor(cat);
-
-  const icon = L.divIcon({
-    className: "",
-    html: `<div class="event-dot" style="background:${color}"></div>`,
-    iconSize: [12, 12],
-    iconAnchor: [6, 6]
+// MARKER
+function makeMarker(ev){
+  const icon=L.divIcon({
+    html:`<div class="event-dot" style="background:${categoryColor(ev.category)}"></div>`,
+    iconSize:[12,12]
   });
 
-  const lat = ev.location?.lat;
-  const lng = ev.location?.lng;
-  if (typeof lat !== "number" || typeof lng !== "number") return null;
-
-  const m = L.marker([lat, lng], { icon });
-  m.bindPopup(buildPopup(ev));
+  const m=L.marker([ev.location.lat,ev.location.lng],{icon});
+  m.bindPopup(`<b>${ev.title}</b><br>${ev.summary}`);
   return m;
 }
 
-function updateMap() {
+// FILTER
+function getSelectedCategories(){
+  const set=new Set();
+  catCheckboxes.forEach(cb=>{if(cb.checked)set.add(cb.value);});
+  return set;
+}
+
+function getWindowDays(){
+  const r=[...windowRadios].find(x=>x.checked);
+  return Number(r.value);
+}
+
+// MAIN UPDATE
+function updateMap(){
   clusterGroup.clearLayers();
+  listContainer.innerHTML="";
 
-  const selectedIndex = Number(slider.value);
-  const selectedDate = days365[selectedIndex] || "—";
-  label.textContent = selectedDate;
+  const selectedIndex=Number(slider.value);
+  const selectedDate=days365[selectedIndex];
+  label.textContent=selectedDate;
 
-  const windowDays = getWindowDays();
-  const selectedCats = getSelectedCategories();
+  const windowDays=getWindowDays();
+  const selectedCats=getSelectedCategories();
 
-  for (const ev of eventsData) {
-    const cat = ev.category || "other";
-    if (!selectedCats.has(cat)) continue;
+  const visibleEvents=[];
 
-    const evIdx = dateToIndex.get(ev.date);
-    if (evIdx === undefined) continue;
+  eventsData.forEach(ev=>{
+    const idx=dateToIndex.get(ev.date);
+    if(idx===undefined) return;
 
-    const within = evIdx <= selectedIndex && evIdx >= (selectedIndex - (windowDays - 1));
-    if (!within) continue;
+    const within=idx<=selectedIndex && idx>=selectedIndex-(windowDays-1);
+    if(!within) return;
+    if(!selectedCats.has(ev.category)) return;
 
-    const m = makeEventMarker(ev);
-    if (m) clusterGroup.addLayer(m);
-  }
+    visibleEvents.push(ev);
+
+    const m=makeMarker(ev);
+    clusterGroup.addLayer(m);
+  });
+
+  // LIST BUILD
+  visibleEvents
+    .sort((a,b)=>b.date.localeCompare(a.date))
+    .forEach(ev=>{
+      const row=document.createElement("div");
+      row.className="event-row";
+
+      row.innerHTML=`
+        <div class="event-row-title">${ev.title}</div>
+        <div class="event-row-meta">${ev.category} · ${ev.date}</div>
+      `;
+
+      row.onclick=()=>{
+        map.setView([ev.location.lat,ev.location.lng],9);
+      };
+
+      listContainer.appendChild(row);
+    });
 }
 
-slider.addEventListener("input", updateMap);
-for (const cb of catCheckboxes) cb.addEventListener("change", updateMap);
-for (const r of windowRadios) r.addEventListener("change", updateMap);
+// EVENTS
+slider.addEventListener("input",updateMap);
+catCheckboxes.forEach(cb=>cb.addEventListener("change",updateMap));
+windowRadios.forEach(r=>r.addEventListener("change",updateMap));
 
-// ---------------- COUNTRY BORDERS ----------------
-const bordersCheckbox = document.getElementById("bordersCheckbox");
-
-const BORDERS_GEOJSON_URL =
-  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
-
-let bordersLayer = null;
-let bordersLoaded = false;
-
-function bordersStyle() {
-  return { color: "#ffffff", weight: 2.2, opacity: 0.85, fillOpacity: 0 };
-}
-
-async function ensureBordersLoaded() {
-  if (bordersLoaded) return;
-
-  const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const geojson = await res.json();
-
-  bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
-  bordersLoaded = true;
-}
-
-async function setBordersVisible(visible) {
-  if (visible) {
-    try {
-      await ensureBordersLoaded();
-      if (bordersLayer && !map.hasLayer(bordersLayer)) {
-        bordersLayer.addTo(map);
-        bordersLayer.bringToBack();
-      }
-    } catch (err) {
-      console.error("Borders load failed:", err);
-      alert("Nem sikerült betölteni az országhatárokat.");
-    }
-  } else {
-    if (bordersLayer && map.hasLayer(bordersLayer)) map.removeLayer(bordersLayer);
-  }
-}
-
-setBordersVisible(!!bordersCheckbox.checked);
-bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
-
-// initial render
-updateMap();
+// PANEL TOGGLE
+document.querySelectorAll(".panel-header button").forEach(btn=>{
+  btn.onclick=()=>{
+    btn.parentElement.parentElement.classList.toggle("closed");
+  };
+});
