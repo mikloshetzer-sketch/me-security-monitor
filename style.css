@@ -65,13 +65,25 @@ input[type="range"] { width:100%; }
 .dot-security  { background:#ffd84e; }
 .dot-other     { background:#b7b7b7; }
 
-/* Category marker (DivIcon) */
+/* Category marker */
 .event-dot {
   width: 12px;
   height: 12px;
   border-radius: 999px;
   border: 2px solid rgba(0,0,0,0.6);
   box-sizing: border-box;
+}
+
+/* Popup */
+.popup-title { font-weight: 800; margin-bottom: 6px; }
+.popup-meta { opacity: 0.8; font-size: 12px; margin-bottom: 6px; }
+.popup-tags { margin-top: 8px; font-size: 12px; opacity: 0.9; }
+.popup-tags span {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  margin: 2px 4px 0 0;
 }
 
 /* Mobile */
