@@ -85,7 +85,6 @@ fetch("events.json")
     alert("Nem sikerült betölteni az events.json fájlt.");
   });
 
-// Category color mapping for markers
 function categoryColor(cat) {
   if (cat === "military") return "#ff5a5a";
   if (cat === "political") return "#4ea1ff";
@@ -93,7 +92,41 @@ function categoryColor(cat) {
   return "#b7b7b7";
 }
 
-// Create small colored DivIcon marker
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function buildPopup(ev) {
+  const cat = escapeHtml(ev.category || "other");
+  const date = escapeHtml(ev.date);
+  const title = escapeHtml(ev.title);
+  const summary = escapeHtml(ev.summary || "");
+  const locName = escapeHtml(ev.location?.name || "");
+  const conf = (typeof ev.confidence === "number") ? ev.confidence.toFixed(2) : "—";
+  const sourceName = escapeHtml(ev.source?.name || "source");
+  const sourceUrl = ev.source?.url || "";
+
+  const tags = Array.isArray(ev.tags) ? ev.tags : [];
+  const tagsHtml = tags.slice(0, 12).map(t => `<span>${escapeHtml(t)}</span>`).join("");
+
+  const linkHtml = sourceUrl
+    ? `<div style="margin-top:8px;"><a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">Open source: ${sourceName}</a></div>`
+    : `<div style="margin-top:8px; opacity:0.85;">Source: ${sourceName}</div>`;
+
+  return `
+    <div class="popup-title">${title}</div>
+    <div class="popup-meta">${cat} · ${date} · ${locName} · confidence: ${conf}</div>
+    <div>${summary}</div>
+    ${tagsHtml ? `<div class="popup-tags">${tagsHtml}</div>` : ""}
+    ${linkHtml}
+  `;
+}
+
 function makeEventMarker(ev) {
   const cat = ev.category || "other";
   const color = categoryColor(cat);
@@ -105,12 +138,12 @@ function makeEventMarker(ev) {
     iconAnchor: [6, 6]
   });
 
-  const m = L.marker([ev.lat, ev.lng], { icon });
+  const lat = ev.location?.lat;
+  const lng = ev.location?.lng;
+  if (typeof lat !== "number" || typeof lng !== "number") return null;
 
-  m.bindPopup(
-    `<b>${ev.title}</b><br>${cat} · ${ev.date}`
-  );
-
+  const m = L.marker([lat, lng], { icon });
+  m.bindPopup(buildPopup(ev));
   return m;
 }
 
@@ -131,11 +164,11 @@ function updateMap() {
     const evIdx = dateToIndex.get(ev.date);
     if (evIdx === undefined) continue;
 
-    // within [selectedIndex - (windowDays-1) ... selectedIndex]
     const within = evIdx <= selectedIndex && evIdx >= (selectedIndex - (windowDays - 1));
     if (!within) continue;
 
-    clusterGroup.addLayer(makeEventMarker(ev));
+    const m = makeEventMarker(ev);
+    if (m) clusterGroup.addLayer(m);
   }
 }
 
@@ -143,10 +176,9 @@ slider.addEventListener("input", updateMap);
 for (const cb of catCheckboxes) cb.addEventListener("change", updateMap);
 for (const r of windowRadios) r.addEventListener("change", updateMap);
 
-// ---------------- COUNTRY BORDERS (stronger lines) ----------------
+// ---------------- COUNTRY BORDERS ----------------
 const bordersCheckbox = document.getElementById("bordersCheckbox");
 
-// Natural Earth 50m admin 0 countries GeoJSON
 const BORDERS_GEOJSON_URL =
   "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
@@ -154,12 +186,7 @@ let bordersLayer = null;
 let bordersLoaded = false;
 
 function bordersStyle() {
-  return {
-    color: "#ffffff",
-    weight: 2.2,
-    opacity: 0.85,
-    fillOpacity: 0
-  };
+  return { color: "#ffffff", weight: 2.2, opacity: 0.85, fillOpacity: 0 };
 }
 
 async function ensureBordersLoaded() {
@@ -186,15 +213,12 @@ async function setBordersVisible(visible) {
       alert("Nem sikerült betölteni az országhatárokat.");
     }
   } else {
-    if (bordersLayer && map.hasLayer(bordersLayer)) {
-      map.removeLayer(bordersLayer);
-    }
+    if (bordersLayer && map.hasLayer(bordersLayer)) map.removeLayer(bordersLayer);
   }
 }
 
-// default ON
 setBordersVisible(!!bordersCheckbox.checked);
 bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
 
-// initial render (in case events load later)
+// initial render
 updateMap();
