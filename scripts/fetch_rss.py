@@ -1,9 +1,12 @@
 import json
 import re
 import hashlib
+import base64
 from datetime import datetime, timezone, timedelta
+from urllib.parse import urlparse
 
 import feedparser
+import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as dtparser
 
@@ -49,7 +52,7 @@ ME_KEYWORDS = [
     "middle east"
 ]
 
-# very lightweight location lookup
+# lightweight location lookup
 PLACE_COORDS = [
     ("gaza", ("Gaza Strip", 31.5, 34.47)),
     ("west bank", ("West Bank", 31.9, 35.2)),
@@ -113,7 +116,7 @@ def strip_html(text: str) -> str:
     soup = BeautifulSoup(text, "html.parser")
     return re.sub(r"\s+", " ", soup.get_text(" ", strip=True)).strip()
 
-def safe_date(entry) -> datetime | None:
+def safe_date(entry):
     for key in ("published", "updated", "created"):
         val = getattr(entry, key, None)
         if not val:
@@ -153,28 +156,25 @@ def pick_category(title: str, summary: str) -> str:
     return "other"
 
 def extract_tags(title: str, summary: str, loc_name: str) -> list[str]:
-    """Very light tags: location name + a few keywords found."""
     t = normalize_text(f"{title} {summary}")
     tags = []
 
     if loc_name and loc_name != "Middle East":
         tags.append(loc_name)
 
-    # simple keyword tags (extend later)
     for kw in ["ceasefire", "hostage", "airstrike", "drone", "missile", "election", "talks", "sanctions", "protest"]:
         if kw in t:
             tags.append(kw)
 
-    # de-dup, keep order
-    out = []
-    seen = set()
+    out, seen = [], set()
     for x in tags:
         x = x.strip()
         if not x:
             continue
-        if x.lower() in seen:
+        k = x.lower()
+        if k in seen:
             continue
-        seen.add(x.lower())
+        seen.add(k)
         out.append(x)
     return out[:10]
 
@@ -183,12 +183,104 @@ def make_id(url: str, title: str, date_ymd: str) -> str:
     h = hashlib.sha1(base.encode("utf-8")).hexdigest()[:12]
     return f"{date_ymd}-{h}"
 
-def clean_google_news_link(link: str) -> str:
+
+# -------- GOOGLE NEWS URL RESOLUTION --------
+def _extract_gnews_token(url: str) -> str | None:
     """
-    Google News RSS often points to news.google.com/articles/...
-    Keep as-is for now (still opens), but you can later resolve to the real publisher link.
+    Google News RSS links often look like:
+      https://news.google.com/rss/articles/CBMi...?... or /articles/CBMi...
+    Token is that CBMi... part.
     """
-    return (link or "").strip()
+    if not url:
+        return None
+    try:
+        path = urlparse(url).path
+    except Exception:
+        return None
+    m = re.search(r"/(rss/)?articles/([^/?#]+)", path)
+    if not m:
+        return None
+    return m.group(2)
+
+def _decode_token_to_urls(token: str) -> list[str]:
+    """
+    Heuristic decoder: base64 (urlsafe or normal). Extract http(s) URLs from decoded bytes.
+    This follows common community approaches. :contentReference[oaicite:2]{index=2}
+    """
+    if not token:
+        return []
+    t = token.replace("-", "+").replace("_", "/")
+    # pad to multiple of 4
+    t += "=" * ((4 - len(t) % 4) % 4)
+
+    candidates = []
+    for decoder in (base64.b64decode, base64.urlsafe_b64decode):
+        try:
+            raw = decoder(t)
+            s = raw.decode("utf-8", errors="ignore")
+            # extract all http(s) urls
+            urls = re.findall(r"https?://[^\s\"<>\]]+", s)
+            candidates.extend(urls)
+        except Exception:
+            continue
+
+    # de-dup keep order
+    out, seen = [], set()
+    for u in candidates:
+        if u in seen:
+            continue
+        seen.add(u)
+        out.append(u)
+    return out
+
+def _follow_redirects(url: str) -> str | None:
+    """
+    HTTP redirect follow fallback. :contentReference[oaicite:3]{index=3}
+    """
+    if not url:
+        return None
+    try:
+        # Using a browser-ish UA improves success rate
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; ME-Security-Monitor/1.0)"}
+        resp = requests.get(url, headers=headers, timeout=12, allow_redirects=True)
+        final = resp.url
+        if final and final != url:
+            return final
+        # Sometimes final is same but page contains canonical/meta refresh
+        # (keep light—no heavy parsing)
+        if resp.text:
+            m = re.search(r'rel=["\']canonical["\']\s+href=["\']([^"\']+)["\']', resp.text, re.I)
+            if m:
+                return m.group(1)
+        return final or None
+    except Exception:
+        return None
+
+def resolve_google_news_link(link: str) -> str:
+    """
+    Return best-effort publisher link.
+    - If not a google news link, return as-is.
+    - Try decode token -> pick best (non-google) URL.
+    - Else follow redirects.
+    """
+    if not link:
+        return link
+    host = (urlparse(link).netloc or "").lower()
+    if "news.google.com" not in host:
+        return link
+
+    token = _extract_gnews_token(link)
+    decoded_urls = _decode_token_to_urls(token) if token else []
+
+    # pick first non-google url if present
+    for u in decoded_urls:
+        h = (urlparse(u).netloc or "").lower()
+        if h and "google" not in h:
+            return u
+
+    # fallback: follow redirects
+    final = _follow_redirects(link)
+    return final or link
 
 
 def main():
@@ -206,7 +298,9 @@ def main():
 
             date_ymd = dt.strftime("%Y-%m-%d")
             title = (getattr(e, "title", "") or "").strip()
-            link = clean_google_news_link(getattr(e, "link", "") or "")
+
+            raw_link = (getattr(e, "link", "") or "").strip()
+            link = resolve_google_news_link(raw_link)
 
             summary_raw = getattr(e, "summary", "") or getattr(e, "description", "")
             summary = strip_html(summary_raw)
@@ -216,7 +310,6 @@ def main():
             if not title or not link:
                 continue
 
-            # Middle East relevance filter
             if not is_middle_east_related(title, summary):
                 continue
 
@@ -242,15 +335,12 @@ def main():
             collected.append(ev)
 
     # ---- De-dup ----
-    # 1) by source url (best)
-    # 2) fallback by title+date (common duplicates)
     by_url = {}
     for ev in sorted(collected, key=lambda x: x["date"], reverse=True):
         url = ev["source"]["url"]
         if url and url not in by_url:
             by_url[url] = ev
 
-    # also dedup by title/date
     by_title_date = {}
     for ev in by_url.values():
         key = (ev["date"], normalize_text(ev["title"]))
@@ -258,8 +348,6 @@ def main():
 
     final_events = list(by_title_date.values())
     final_events.sort(key=lambda x: (x["date"], x["source"]["name"]), reverse=True)
-
-    # cap size
     final_events = final_events[:700]
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
