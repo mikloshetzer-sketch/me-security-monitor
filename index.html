@@ -14,36 +14,74 @@
 
 <div id="map"></div>
 
-<div id="controlPanel" class="panel panel-top-left closed">
+<!-- Controls -->
+<div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
   <div class="panel-header">
-    <button id="controlToggle" class="panel-toggle">☰</button>
+    <button id="controlToggle" class="panel-toggle" aria-label="Controls ki/be">☰</button>
     <div class="panel-title">Controls</div>
   </div>
+
   <div class="panel-body">
-    <label><input id="bordersCheckbox" type="checkbox" checked /> Country borders</label>
+    <div class="row">
+      <label>
+        <input id="bordersCheckbox" type="checkbox" checked />
+        Country borders
+      </label>
+    </div>
+
+    <hr class="sep" />
+
+    <div class="row"><b>Categories</b></div>
+
+    <div class="row">
+      <label><input class="cat-filter" type="checkbox" value="political" checked /> political</label>
+    </div>
+    <div class="row">
+      <label><input class="cat-filter" type="checkbox" value="military" checked /> military</label>
+    </div>
+    <div class="row">
+      <label><input class="cat-filter" type="checkbox" value="security" checked /> security</label>
+    </div>
+    <div class="row">
+      <label><input class="cat-filter" type="checkbox" value="other" checked /> other</label>
+    </div>
+
+    <hr class="sep" />
+
+    <div class="muted">
+      Borders: Natural Earth GeoJSON.
+    </div>
   </div>
 </div>
 
-<div id="timelinePanel" class="panel panel-top-right closed">
+<!-- Timeline -->
+<div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
   <div class="panel-header">
-    <button id="timelineToggle" class="panel-toggle">☰</button>
+    <button id="timelineToggle" class="panel-toggle" aria-label="Timeline ki/be">☰</button>
     <div class="panel-title">Timeline</div>
   </div>
+
   <div class="panel-body">
-    <div id="selectedDateLabel" class="big"></div>
-    <input id="timelineSlider" type="range" min="0" max="364" value="364" />
+    <div class="muted">Selected date</div>
+    <div id="selectedDateLabel" class="big">—</div>
+    <div class="row">
+      <input id="timelineSlider" type="range" min="0" max="364" value="364" />
+    </div>
   </div>
 </div>
 
-<div id="legendPanel" class="panel panel-bottom-left closed">
+<!-- Legend -->
+<div id="legendPanel" class="panel panel-bottom-left closed" aria-label="Legend panel">
   <div class="panel-header">
-    <button id="legendToggle" class="panel-toggle">☰</button>
+    <button id="legendToggle" class="panel-toggle" aria-label="Legend ki/be">☰</button>
     <div class="panel-title">Legend</div>
   </div>
+
   <div class="panel-body">
-    <div>🔴 military</div>
-    <div>🔵 political</div>
-    <div>🟡 security</div>
+    <div class="legend-item"><span class="dot dot-military"></span> military</div>
+    <div class="legend-item"><span class="dot dot-political"></span> political</div>
+    <div class="legend-item"><span class="dot dot-security"></span> security</div>
+    <div class="legend-item"><span class="dot dot-other"></span> other</div>
   </div>
 </div>
 
