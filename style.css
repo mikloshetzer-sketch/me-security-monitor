@@ -1,14 +1,17 @@
 html, body { margin:0; padding:0; height:100%; }
 #map { height:100%; width:100%; }
 
+/* Panels */
 .panel {
   position:absolute;
   z-index:1000;
-  background:rgba(20,20,20,0.85);
+  width: min(340px, 92vw);
+  background: rgba(20,20,20,0.85);
   color:#fff;
   border-radius:12px;
-  padding:12px;
-  width: min(320px, 90vw);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  overflow:hidden;
+  backdrop-filter: blur(6px);
 }
 
 .panel-top-left { top:10px; left:10px; }
@@ -19,17 +22,62 @@ html, body { margin:0; padding:0; height:100%; }
   display:flex;
   align-items:center;
   gap:10px;
+  padding:10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
+.panel-title { font-weight:600; font-size:14px; }
+
+.panel-toggle {
+  border:0;
+  border-radius:10px;
+  padding:6px 10px;
+  cursor:pointer;
+}
+
+.panel-body { padding:12px; font-size:13px; }
+
+.sep {
+  border:0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin:10px 0;
+}
+
+.muted { opacity:0.8; font-size:12px; }
+.big { font-size:16px; font-weight:700; margin-top:4px; }
+
+.panel.closed { width:auto; }
+.panel.closed .panel-title { display:none; }
 .panel.closed .panel-body { display:none; }
 
-.big { font-size:16px; font-weight:bold; margin:8px 0; }
+input[type="range"] { width:100%; }
 
-.sep { border:0; border-top:1px solid rgba(255,255,255,0.2); margin:10px 0; }
+/* Legend */
+.legend-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:4px 0;
+}
+.dot { width:10px; height:10px; border-radius:999px; display:inline-block; }
+.dot-political { background:#4ea1ff; }
+.dot-military  { background:#ff5a5a; }
+.dot-security  { background:#ffd84e; }
+.dot-other     { background:#b7b7b7; }
 
-@media (max-width:720px){
-  .panel{position:fixed; left:10px; right:10px;}
-  .panel-top-left{top:10px;}
-  .panel-top-right{top:120px;}
-  .panel-bottom-left{bottom:10px;}
+/* Category marker (DivIcon) */
+.event-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid rgba(0,0,0,0.6);
+  box-sizing: border-box;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .panel { position:fixed; left:10px; right:10px; width:auto; }
+  .panel-top-left { top:10px; }
+  .panel-top-right { top:70px; }
+  .panel-bottom-left { bottom:10px; }
 }
