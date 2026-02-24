@@ -5,11 +5,9 @@
   <title>Middle East Security Monitor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Leaflet -->
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-  <!-- MarkerCluster -->
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet"
@@ -51,7 +49,7 @@
   </div>
 </div>
 
-<!-- Timeline -->
+<!-- Timeline + EVENTS LIST -->
 <div id="timelinePanel" class="panel panel-top-right closed">
   <div class="panel-header">
     <button id="timelineToggle" class="panel-toggle">☰</button>
@@ -61,7 +59,13 @@
   <div class="panel-body">
     <div class="muted">Selected date</div>
     <div id="selectedDateLabel" class="big">—</div>
+
     <input id="timelineSlider" type="range" min="0" max="364" value="364" />
+
+    <hr class="sep" />
+
+    <div class="events-title">Events</div>
+    <div id="eventsList" class="events-list"></div>
   </div>
 </div>
 
