@@ -5,8 +5,15 @@
   <title>Middle East Security Monitor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Leaflet -->
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- MarkerCluster -->
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,9 +22,9 @@
 <div id="map"></div>
 
 <!-- Controls -->
-<div id="controlPanel" class="panel panel-top-left closed">
+<div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
   <div class="panel-header">
-    <button id="controlToggle" class="panel-toggle">☰</button>
+    <button id="controlToggle" class="panel-toggle" aria-label="Controls ki/be">☰</button>
     <div class="panel-title">Controls</div>
   </div>
 
@@ -45,34 +52,40 @@
 </div>
 
 <!-- Timeline -->
-<div id="timelinePanel" class="panel panel-top-right closed">
+<div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
   <div class="panel-header">
-    <button id="timelineToggle" class="panel-toggle">☰</button>
+    <button id="timelineToggle" class="panel-toggle" aria-label="Timeline ki/be">☰</button>
     <div class="panel-title">Timeline</div>
   </div>
 
   <div class="panel-body">
-    <div id="selectedDateLabel" class="big"></div>
+    <div class="muted">Selected date</div>
+    <div id="selectedDateLabel" class="big">—</div>
     <input id="timelineSlider" type="range" min="0" max="364" value="364" />
   </div>
 </div>
 
 <!-- Legend -->
-<div id="legendPanel" class="panel panel-bottom-left closed">
+<div id="legendPanel" class="panel panel-bottom-left closed" aria-label="Legend panel">
   <div class="panel-header">
-    <button id="legendToggle" class="panel-toggle">☰</button>
+    <button id="legendToggle" class="panel-toggle" aria-label="Legend ki/be">☰</button>
     <div class="panel-title">Legend</div>
   </div>
 
   <div class="panel-body">
-    🔴 military<br>
-    🔵 political<br>
-    🟡 security<br>
-    ⚪ other
+    <div class="legend-item"><span class="dot dot-military"></span> military</div>
+    <div class="legend-item"><span class="dot dot-political"></span> political</div>
+    <div class="legend-item"><span class="dot dot-security"></span> security</div>
+    <div class="legend-item"><span class="dot dot-other"></span> other</div>
   </div>
 </div>
 
+<!-- JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- MarkerCluster -->
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
 <script src="script.js"></script>
 </body>
 </html>
