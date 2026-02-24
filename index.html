@@ -15,73 +15,60 @@
 <div id="map"></div>
 
 <!-- Controls -->
-<div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
+<div id="controlPanel" class="panel panel-top-left closed">
   <div class="panel-header">
-    <button id="controlToggle" class="panel-toggle" aria-label="Controls ki/be">☰</button>
+    <button id="controlToggle" class="panel-toggle">☰</button>
     <div class="panel-title">Controls</div>
   </div>
 
   <div class="panel-body">
-    <div class="row">
-      <label>
-        <input id="bordersCheckbox" type="checkbox" checked />
-        Country borders
-      </label>
-    </div>
+    <label>
+      <input id="bordersCheckbox" type="checkbox" checked />
+      Country borders
+    </label>
 
     <hr class="sep" />
 
-    <div class="row"><b>Categories</b></div>
-
-    <div class="row">
-      <label><input class="cat-filter" type="checkbox" value="political" checked /> political</label>
-    </div>
-    <div class="row">
-      <label><input class="cat-filter" type="checkbox" value="military" checked /> military</label>
-    </div>
-    <div class="row">
-      <label><input class="cat-filter" type="checkbox" value="security" checked /> security</label>
-    </div>
-    <div class="row">
-      <label><input class="cat-filter" type="checkbox" value="other" checked /> other</label>
-    </div>
+    <b>Categories</b><br>
+    <label><input class="cat-filter" type="checkbox" value="political" checked /> political</label><br>
+    <label><input class="cat-filter" type="checkbox" value="military" checked /> military</label><br>
+    <label><input class="cat-filter" type="checkbox" value="security" checked /> security</label><br>
+    <label><input class="cat-filter" type="checkbox" value="other" checked /> other</label>
 
     <hr class="sep" />
 
-    <div class="muted">
-      Borders: Natural Earth GeoJSON.
-    </div>
+    <b>Time Window</b><br>
+    <label><input type="radio" name="window" value="1" checked /> 1 day</label><br>
+    <label><input type="radio" name="window" value="7" /> 7 days</label><br>
+    <label><input type="radio" name="window" value="30" /> 30 days</label>
   </div>
 </div>
 
 <!-- Timeline -->
-<div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
+<div id="timelinePanel" class="panel panel-top-right closed">
   <div class="panel-header">
-    <button id="timelineToggle" class="panel-toggle" aria-label="Timeline ki/be">☰</button>
+    <button id="timelineToggle" class="panel-toggle">☰</button>
     <div class="panel-title">Timeline</div>
   </div>
 
   <div class="panel-body">
-    <div class="muted">Selected date</div>
-    <div id="selectedDateLabel" class="big">—</div>
-    <div class="row">
-      <input id="timelineSlider" type="range" min="0" max="364" value="364" />
-    </div>
+    <div id="selectedDateLabel" class="big"></div>
+    <input id="timelineSlider" type="range" min="0" max="364" value="364" />
   </div>
 </div>
 
 <!-- Legend -->
-<div id="legendPanel" class="panel panel-bottom-left closed" aria-label="Legend panel">
+<div id="legendPanel" class="panel panel-bottom-left closed">
   <div class="panel-header">
-    <button id="legendToggle" class="panel-toggle" aria-label="Legend ki/be">☰</button>
+    <button id="legendToggle" class="panel-toggle">☰</button>
     <div class="panel-title">Legend</div>
   </div>
 
   <div class="panel-body">
-    <div class="legend-item"><span class="dot dot-military"></span> military</div>
-    <div class="legend-item"><span class="dot dot-political"></span> political</div>
-    <div class="legend-item"><span class="dot dot-security"></span> security</div>
-    <div class="legend-item"><span class="dot dot-other"></span> other</div>
+    🔴 military<br>
+    🔵 political<br>
+    🟡 security<br>
+    ⚪ other
   </div>
 </div>
 
