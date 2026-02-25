@@ -13,7 +13,6 @@ const clusterGroup = L.markerClusterGroup({
 map.addLayer(clusterGroup);
 
 // ---------------- COUNTRY BORDERS ----------------
-// Natural Earth 50m admin-0 countries
 const BORDERS_GEOJSON_URL =
   "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
@@ -22,48 +21,38 @@ let bordersLayer = null;
 let bordersLoaded = false;
 
 function bordersStyle(){
-  return {
-    color: "#ffffff",
-    weight: 2.2,
-    opacity: 0.85,
-    fillOpacity: 0
-  };
+  return { color:"#ffffff", weight:2.2, opacity:0.85, fillOpacity:0 };
 }
 
 async function ensureBordersLoaded(){
   if (bordersLoaded) return;
-
-  const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
+  const res = await fetch(BORDERS_GEOJSON_URL, { cache:"force-cache" });
   if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
   const geojson = await res.json();
-
   bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
   bordersLoaded = true;
 }
 
 async function setBordersVisible(visible){
   if (visible) {
-    try {
+    try{
       await ensureBordersLoaded();
-      if (bordersLayer && !map.hasLayer(bordersLayer)) {
+      if (bordersLayer && !map.hasLayer(bordersLayer)){
         bordersLayer.addTo(map);
-        bordersLayer.bringToBack(); // keep under markers
+        bordersLayer.bringToBack();
       }
-    } catch (err) {
+    }catch(err){
       console.error("Borders load failed:", err);
       alert("Nem sikerült betölteni az országhatárokat.");
-      // revert checkbox to OFF if failed
       bordersCheckbox.checked = false;
     }
   } else {
-    if (bordersLayer && map.hasLayer(bordersLayer)) {
-      map.removeLayer(bordersLayer);
-    }
+    if (bordersLayer && map.hasLayer(bordersLayer)) map.removeLayer(bordersLayer);
   }
 }
 
 setBordersVisible(!!bordersCheckbox.checked);
-bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
+bordersCheckbox.addEventListener("change", (e)=>setBordersVisible(e.target.checked));
 
 // ---------------- DATE ----------------
 function makeLast365Days(){
@@ -84,6 +73,14 @@ const slider=document.getElementById("timelineSlider");
 const label=document.getElementById("selectedDateLabel");
 const listContainer=document.getElementById("eventsList");
 const searchInput=document.getElementById("eventSearch");
+
+const statsTotalEl = document.getElementById("statsTotal");
+const statsMilEl   = document.getElementById("statsMil");
+const statsSecEl   = document.getElementById("statsSec");
+const statsPolEl   = document.getElementById("statsPol");
+const statsOthEl   = document.getElementById("statsOth");
+const statsNewsEl  = document.getElementById("statsNews");
+const statsIswEl   = document.getElementById("statsIsw");
 
 slider.max=days365.length-1;
 slider.value=days365.length-1;
@@ -185,7 +182,7 @@ function matchesSearch(ev, q){
   return (t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q));
 }
 
-// Build visible events based on current filters + search
+// Visible events based on current filters + search
 function computeVisibleEvents(){
   const selectedIndex=Number(slider.value);
   const selectedDate=days365[selectedIndex];
@@ -238,6 +235,28 @@ function openEventOnMap(ev){
   }
 }
 
+function updateStats(visibleEvents){
+  let mil=0, sec=0, pol=0, oth=0, news=0, isw=0;
+  for(const ev of visibleEvents){
+    const c = (ev.category || "other").toLowerCase();
+    if(c==="military") mil++;
+    else if(c==="security") sec++;
+    else if(c==="political") pol++;
+    else oth++;
+
+    const st = sourceType(ev);
+    if(st==="isw") isw++; else news++;
+  }
+
+  statsTotalEl.textContent = String(visibleEvents.length);
+  statsMilEl.textContent   = String(mil);
+  statsSecEl.textContent   = String(sec);
+  statsPolEl.textContent   = String(pol);
+  statsOthEl.textContent   = String(oth);
+  statsNewsEl.textContent  = String(news);
+  statsIswEl.textContent   = String(isw);
+}
+
 // ---------------- MAIN UPDATE ----------------
 function updateMapAndList(){
   clusterGroup.clearLayers();
@@ -246,6 +265,8 @@ function updateMapAndList(){
 
   const { out: visibleEvents, selectedDate } = computeVisibleEvents();
   label.textContent = selectedDate || "—";
+
+  updateStats(visibleEvents);
 
   visibleEvents.forEach(ev=>{
     const m = makeMarker(ev);
@@ -287,7 +308,6 @@ slider.addEventListener("input", updateMapAndList);
 catCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 srcCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 windowRadios.forEach(r=>r.addEventListener("change", updateMapAndList));
-
 searchInput.addEventListener("input", updateMapAndList);
 
 // ---------------- PANEL TOGGLE ----------------
