@@ -30,6 +30,7 @@ const dateToIndex=new Map(days365.map((d,i)=>[d,i]));
 const slider=document.getElementById("timelineSlider");
 const label=document.getElementById("selectedDateLabel");
 const listContainer=document.getElementById("eventsList");
+const searchInput=document.getElementById("eventSearch");
 
 slider.max=days365.length-1;
 slider.value=days365.length-1;
@@ -40,8 +41,6 @@ const windowRadios=[...document.querySelectorAll("input[name='window']")];
 
 // ---------------- DATA ----------------
 let eventsData=[];
-
-// marker registry: eventId -> marker
 const markerByEventId = new Map();
 
 // Load events
@@ -121,13 +120,27 @@ function getWindowDays(){
   return Number(r?.value || 1);
 }
 
-// Build visible list based on current filters
+function normalize(s){
+  return String(s||"").toLowerCase();
+}
+
+function matchesSearch(ev, q){
+  if(!q) return true;
+  const t = normalize(ev.title);
+  const s = normalize(ev.summary);
+  const tags = Array.isArray(ev.tags) ? ev.tags.map(x=>normalize(x)).join(" ") : "";
+  const loc = normalize(ev?.location?.name);
+  return (t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q));
+}
+
+// Build visible events based on current filters + search
 function computeVisibleEvents(){
   const selectedIndex=Number(slider.value);
   const selectedDate=days365[selectedIndex];
   const windowDays=getWindowDays();
   const selectedCats=getSelectedCategories();
   const selectedSrc=getSelectedSources();
+  const q = normalize(searchInput.value).trim();
 
   const out=[];
   for(const ev of eventsData){
@@ -142,6 +155,8 @@ function computeVisibleEvents(){
 
     const st = sourceType(ev);
     if(!selectedSrc.has(st)) continue;
+
+    if(!matchesSearch(ev, q)) continue;
 
     out.push(ev);
   }
@@ -161,8 +176,6 @@ function openEventOnMap(ev){
   }
 
   if(marker){
-    // If marker is in a cluster at this zoom, spiderfy then open popup
-    // (MarkerClusterGroup provides getVisibleParent)
     const parent = clusterGroup.getVisibleParent(marker);
     if(parent && parent !== marker && parent.spiderfy){
       parent.spiderfy();
@@ -182,7 +195,7 @@ function updateMapAndList(){
   const { out: visibleEvents, selectedDate } = computeVisibleEvents();
   label.textContent = selectedDate || "—";
 
-  // Markers
+  // markers
   visibleEvents.forEach(ev=>{
     const m = makeMarker(ev);
     if(!m) return;
@@ -190,9 +203,9 @@ function updateMapAndList(){
     if(ev.id) markerByEventId.set(ev.id, m);
   });
 
-  // List
+  // list
   if(visibleEvents.length === 0){
-    listContainer.innerHTML = `<div class="muted">No events for current filters.</div>`;
+    listContainer.innerHTML = `<div class="muted">No events for current filters/search.</div>`;
     return;
   }
 
@@ -224,6 +237,11 @@ slider.addEventListener("input", updateMapAndList);
 catCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 srcCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 windowRadios.forEach(r=>r.addEventListener("change", updateMapAndList));
+
+searchInput.addEventListener("input", () => {
+  // no debounce needed yet; events.json size is small
+  updateMapAndList();
+});
 
 // ---------------- PANEL TOGGLE ----------------
 document.querySelectorAll(".panel-header button").forEach(btn=>{
