@@ -82,6 +82,9 @@ const statsOthEl   = document.getElementById("statsOth");
 const statsNewsEl  = document.getElementById("statsNews");
 const statsIswEl   = document.getElementById("statsIsw");
 
+const riskTotalEl = document.getElementById("riskTotal");
+const riskListEl  = document.getElementById("riskList");
+
 slider.max=days365.length-1;
 slider.value=days365.length-1;
 
@@ -199,7 +202,7 @@ function computeVisibleEvents(){
     const within = idx<=selectedIndex && idx>=selectedIndex-(windowDays-1);
     if(!within) continue;
 
-    const cat = ev.category || "other";
+    const cat = (ev.category || "other").toLowerCase();
     if(!selectedCats.has(cat)) continue;
 
     const st = sourceType(ev);
@@ -210,7 +213,7 @@ function computeVisibleEvents(){
     out.push(ev);
   }
 
-  return { out, selectedDate };
+  return { out, selectedDate, selectedIndex, windowDays };
 }
 
 function openEventOnMap(ev){
@@ -257,16 +260,81 @@ function updateStats(visibleEvents){
   statsIswEl.textContent   = String(isw);
 }
 
+// Risk scoring
+function categoryWeight(cat){
+  const c = (cat || "other").toLowerCase();
+  if(c==="military") return 3.0;
+  if(c==="security") return 2.0;
+  if(c==="political") return 1.0;
+  return 0.5;
+}
+
+function sourceMultiplier(ev){
+  return sourceType(ev) === "isw" ? 1.3 : 1.0;
+}
+
+// Recency weighting within window: closest to selected day = 1.0, oldest = 0.4
+function recencyWeight(eventIndex, selectedIndex, windowDays){
+  const ageDays = selectedIndex - eventIndex; // 0..windowDays-1
+  if(windowDays <= 1) return 1.0;
+  const t = ageDays / (windowDays - 1); // 0 newest, 1 oldest
+  return 1.0 - 0.6 * t; // 1.0 .. 0.4
+}
+
+function updateRisk(visibleEvents, selectedIndex, windowDays){
+  // total
+  let total = 0;
+
+  // by location.name
+  const byLoc = new Map();
+
+  for(const ev of visibleEvents){
+    const idx = dateToIndex.get(ev.date);
+    if(idx === undefined) continue;
+
+    const locName = (ev?.location?.name || "Unknown").trim() || "Unknown";
+
+    const wCat = categoryWeight(ev.category);
+    const wSrc = sourceMultiplier(ev);
+    const wRec = recencyWeight(idx, selectedIndex, windowDays);
+
+    const score = wCat * wSrc * wRec;
+    total += score;
+
+    byLoc.set(locName, (byLoc.get(locName) || 0) + score);
+  }
+
+  // render
+  riskTotalEl.textContent = total.toFixed(1);
+
+  const rows = [...byLoc.entries()]
+    .sort((a,b)=> b[1]-a[1])
+    .slice(0, 6);
+
+  if(rows.length === 0){
+    riskListEl.innerHTML = `<div class="muted">No risk data for current filters.</div>`;
+    return;
+  }
+
+  riskListEl.innerHTML = rows.map(([name,val]) => `
+    <div class="risk-row">
+      <div class="name">${name}</div>
+      <div class="val">${val.toFixed(1)}</div>
+    </div>
+  `).join("");
+}
+
 // ---------------- MAIN UPDATE ----------------
 function updateMapAndList(){
   clusterGroup.clearLayers();
   markerByEventId.clear();
   listContainer.innerHTML="";
 
-  const { out: visibleEvents, selectedDate } = computeVisibleEvents();
+  const { out: visibleEvents, selectedDate, selectedIndex, windowDays } = computeVisibleEvents();
   label.textContent = selectedDate || "—";
 
   updateStats(visibleEvents);
+  updateRisk(visibleEvents, selectedIndex, windowDays);
 
   visibleEvents.forEach(ev=>{
     const m = makeMarker(ev);
@@ -294,7 +362,7 @@ function updateMapAndList(){
         <div class="event-row-title">${ev.title || "Untitled"}</div>
         <div class="event-row-meta">
           ${badgeHtml(st)}
-          <span>${ev.category || "other"} · ${ev.date}${locName}</span>
+          <span>${(ev.category || "other")} · ${ev.date}${locName}</span>
         </div>
       `;
 
