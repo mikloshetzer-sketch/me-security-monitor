@@ -15,6 +15,7 @@ from dateutil import parser as dtparser
 OUT_PATH = "events.json"
 
 FEEDS = [
+    # NEWS
     {
         "name": "BBC",
         "type": "news",
@@ -30,9 +31,16 @@ FEEDS = [
         "type": "news",
         "url": "https://news.google.com/rss/search?q=site%3Aaljazeera.com%20(middle%20east%20OR%20Israel%20OR%20Gaza%20OR%20Lebanon%20OR%20Syria%20OR%20Iraq%20OR%20Iran%20OR%20Yemen)&hl=en-US&gl=US&ceid=US:en",
     },
+
+    # ISW (global RSS, we will filter to Middle East paths)
+    {
+        "name": "ISW",
+        "type": "isw",
+        "url": "https://www.understandingwar.org/rss.xml",
+    },
 ]
 
-# Middle East filter list (broad, practical)
+# Middle East relevance filter list (broad, practical)
 ME_KEYWORDS = [
     "israel", "gaza", "west bank", "palestine", "jerusalem",
     "lebanon", "beirut",
@@ -52,7 +60,13 @@ ME_KEYWORDS = [
     "middle east"
 ]
 
-# lightweight location lookup
+# ISW middle east URL hints (ISW uses /research/middle-east/… pages)
+ISW_ME_PATH_HINTS = [
+    "/research/middle-east/",
+    "/analysis/middle-east/",
+]
+
+# very lightweight location lookup
 PLACE_COORDS = [
     ("gaza", ("Gaza Strip", 31.5, 34.47)),
     ("west bank", ("West Bank", 31.9, 35.2)),
@@ -106,7 +120,7 @@ REGION_FALLBACK = ("Middle East", 33.5, 44.0)
 
 MILITARY_KW = ["strike", "airstrike", "attack", "drone", "missile", "rocket", "shell", "bomb", "raid", "killed", "clash", "incursion"]
 POLITICAL_KW = ["election", "parliament", "government", "minister", "president", "talks", "deal", "ceasefire", "negotiation", "vote", "cabinet"]
-SECURITY_KW  = ["police", "security", "arrest", "court", "terror", "militant", "border", "checkpoint", "raid", "hostage"]
+SECURITY_KW  = ["police", "security", "arrest", "court", "terror", "militant", "border", "checkpoint", "hostage"]
 
 
 # -------- HELPERS --------
@@ -184,13 +198,23 @@ def make_id(url: str, title: str, date_ymd: str) -> str:
     return f"{date_ymd}-{h}"
 
 
-# -------- GOOGLE NEWS URL RESOLUTION --------
+# -------- FEED FETCH (handles ISW UA blocking) --------
+def fetch_feed(url: str) -> feedparser.FeedParserDict:
+    """
+    - For most feeds: feedparser.parse(url)
+    - For understandingwar.org: fetch with requests + User-Agent, then parse bytes.
+    """
+    host = (urlparse(url).netloc or "").lower()
+    if "understandingwar.org" in host:
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; ME-Security-Monitor/1.0)"}
+        r = requests.get(url, headers=headers, timeout=20)
+        r.raise_for_status()
+        return feedparser.parse(r.content)
+    return feedparser.parse(url)
+
+
+# -------- GOOGLE NEWS URL RESOLUTION (from earlier) --------
 def _extract_gnews_token(url: str) -> str | None:
-    """
-    Google News RSS links often look like:
-      https://news.google.com/rss/articles/CBMi...?... or /articles/CBMi...
-    Token is that CBMi... part.
-    """
     if not url:
         return None
     try:
@@ -198,19 +222,12 @@ def _extract_gnews_token(url: str) -> str | None:
     except Exception:
         return None
     m = re.search(r"/(rss/)?articles/([^/?#]+)", path)
-    if not m:
-        return None
-    return m.group(2)
+    return m.group(2) if m else None
 
 def _decode_token_to_urls(token: str) -> list[str]:
-    """
-    Heuristic decoder: base64 (urlsafe or normal). Extract http(s) URLs from decoded bytes.
-    This follows common community approaches. :contentReference[oaicite:2]{index=2}
-    """
     if not token:
         return []
     t = token.replace("-", "+").replace("_", "/")
-    # pad to multiple of 4
     t += "=" * ((4 - len(t) % 4) % 4)
 
     candidates = []
@@ -218,13 +235,10 @@ def _decode_token_to_urls(token: str) -> list[str]:
         try:
             raw = decoder(t)
             s = raw.decode("utf-8", errors="ignore")
-            # extract all http(s) urls
-            urls = re.findall(r"https?://[^\s\"<>\]]+", s)
-            candidates.extend(urls)
+            candidates.extend(re.findall(r"https?://[^\s\"<>\]]+", s))
         except Exception:
             continue
 
-    # de-dup keep order
     out, seen = [], set()
     for u in candidates:
         if u in seen:
@@ -234,20 +248,12 @@ def _decode_token_to_urls(token: str) -> list[str]:
     return out
 
 def _follow_redirects(url: str) -> str | None:
-    """
-    HTTP redirect follow fallback. :contentReference[oaicite:3]{index=3}
-    """
     if not url:
         return None
     try:
-        # Using a browser-ish UA improves success rate
         headers = {"User-Agent": "Mozilla/5.0 (compatible; ME-Security-Monitor/1.0)"}
         resp = requests.get(url, headers=headers, timeout=12, allow_redirects=True)
         final = resp.url
-        if final and final != url:
-            return final
-        # Sometimes final is same but page contains canonical/meta refresh
-        # (keep light—no heavy parsing)
         if resp.text:
             m = re.search(r'rel=["\']canonical["\']\s+href=["\']([^"\']+)["\']', resp.text, re.I)
             if m:
@@ -257,12 +263,6 @@ def _follow_redirects(url: str) -> str | None:
         return None
 
 def resolve_google_news_link(link: str) -> str:
-    """
-    Return best-effort publisher link.
-    - If not a google news link, return as-is.
-    - Try decode token -> pick best (non-google) URL.
-    - Else follow redirects.
-    """
     if not link:
         return link
     host = (urlparse(link).netloc or "").lower()
@@ -271,16 +271,22 @@ def resolve_google_news_link(link: str) -> str:
 
     token = _extract_gnews_token(link)
     decoded_urls = _decode_token_to_urls(token) if token else []
-
-    # pick first non-google url if present
     for u in decoded_urls:
         h = (urlparse(u).netloc or "").lower()
         if h and "google" not in h:
             return u
 
-    # fallback: follow redirects
     final = _follow_redirects(link)
     return final or link
+
+
+# -------- ISW FILTER --------
+def is_isw_middle_east_item(url: str, title: str, summary: str) -> bool:
+    u = (url or "").lower()
+    if any(hint in u for hint in ISW_ME_PATH_HINTS):
+        return True
+    # fallback keyword check (in case URL structure changes)
+    return is_middle_east_related(title, summary)
 
 
 def main():
@@ -290,7 +296,8 @@ def main():
     collected = []
 
     for f in FEEDS:
-        feed = feedparser.parse(f["url"])
+        feed = fetch_feed(f["url"])
+
         for e in feed.entries:
             dt = safe_date(e)
             if not dt or dt < cutoff:
@@ -300,21 +307,34 @@ def main():
             title = (getattr(e, "title", "") or "").strip()
 
             raw_link = (getattr(e, "link", "") or "").strip()
-            link = resolve_google_news_link(raw_link)
+            link = raw_link
+
+            # resolve google news links for those feeds
+            if "Google News" in f["name"]:
+                link = resolve_google_news_link(raw_link)
 
             summary_raw = getattr(e, "summary", "") or getattr(e, "description", "")
             summary = strip_html(summary_raw)
-            if len(summary) > 320:
-                summary = summary[:317].rstrip() + "..."
+            if len(summary) > 340:
+                summary = summary[:337].rstrip() + "..."
 
             if not title or not link:
                 continue
 
-            if not is_middle_east_related(title, summary):
-                continue
+            # per-source filters
+            if f["type"] == "isw":
+                if not is_isw_middle_east_item(link, title, summary):
+                    continue
+            else:
+                if not is_middle_east_related(title, summary):
+                    continue
 
             loc = pick_location(title, summary)
             cat = pick_category(title, summary)
+
+            confidence = 0.55
+            if f["type"] == "isw":
+                confidence = 0.75  # ISW analyst-grade baseline
 
             ev = {
                 "id": make_id(link, title, date_ymd),
@@ -323,7 +343,7 @@ def main():
                 "summary": summary,
                 "category": cat,
                 "tags": extract_tags(title, summary, loc["name"]),
-                "confidence": 0.55,
+                "confidence": confidence,
                 "source": {
                     "name": f["name"],
                     "type": f["type"],
@@ -348,7 +368,9 @@ def main():
 
     final_events = list(by_title_date.values())
     final_events.sort(key=lambda x: (x["date"], x["source"]["name"]), reverse=True)
-    final_events = final_events[:700]
+
+    # keep repo light
+    final_events = final_events[:900]
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(final_events, f, ensure_ascii=False, indent=2)
