@@ -5,7 +5,7 @@ body { background:#0f0f0f; }
 .panel{
   position:absolute;
   z-index:1000;
-  width:min(420px, 92vw);
+  width:min(440px, 92vw);
   background:rgba(20,20,20,0.9);
   color:#fff;
   border-radius:12px;
@@ -34,7 +34,6 @@ body { background:#0f0f0f; }
   cursor:pointer;
 }
 .panel-toggle:hover{ background:rgba(255,255,255,0.16); }
-
 .panel-title{ font-weight:700; }
 
 .panel-body{ padding:12px; font-size:13px; }
@@ -103,19 +102,20 @@ body { background:#0f0f0f; }
 .search::placeholder{ color:rgba(255,255,255,0.6); }
 
 /* blocks */
-.stats, .risk, .actors, .pairs, .trend{
+.stats, .risk, .actors, .pairs, .trend, .card{
   padding:10px;
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.12);
   background:rgba(255,255,255,0.04);
 }
-.stats-top, .risk-top, .actors-top, .pairs-top, .trend-top{
+
+.stats-top, .risk-top, .actors-top, .pairs-top, .trend-top, .card-top{
   display:flex;
   align-items:baseline;
   justify-content:space-between;
   margin-bottom:8px;
 }
-.stats-title, .risk-title, .actors-title, .pairs-title, .trend-title{ font-weight:700; }
+.stats-title, .risk-title, .actors-title, .pairs-title, .trend-title, .card-title{ font-weight:700; }
 .stats-total, .risk-total, .trend-total{ font-size:18px; font-weight:800; }
 
 .stats-grid{
@@ -124,9 +124,7 @@ body { background:#0f0f0f; }
   gap:8px;
   margin-top:8px;
 }
-.stats-grid-2{
-  grid-template-columns:repeat(2, 1fr);
-}
+.stats-grid-2{ grid-template-columns:repeat(2, 1fr); }
 
 .stat-pill{
   display:flex;
@@ -229,13 +227,51 @@ body { background:#0f0f0f; }
   overflow:hidden;
   transition:max-height .22s ease, opacity .18s ease;
   opacity:1;
-  max-height:1200px;
+  max-height:1600px;
 }
 .acc-panel.closed{
   opacity:0;
   max-height:0;
   pointer-events:none;
 }
+
+/* Alerts + ranking lists */
+.badge-mini{
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.08);
+  font-weight:700;
+}
+.badge-ok{ background:rgba(78,161,255,0.16); border-color:rgba(78,161,255,0.28); }
+.badge-warn{ background:rgba(255,216,78,0.16); border-color:rgba(255,216,78,0.28); }
+.badge-alert{ background:rgba(255,90,90,0.18); border-color:rgba(255,90,90,0.30); }
+
+.mini-list{ margin-top:8px; display:flex; flex-direction:column; gap:6px; }
+.mini-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:6px 8px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.10);
+}
+.mini-item .val{ font-weight:800; }
+
+.rank-list{ display:flex; flex-direction:column; gap:6px; margin-top:8px; }
+.rank-row{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:10px;
+  padding:6px 8px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.10);
+}
+.rank-row .name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rank-row .val{ font-weight:900; }
 
 @media (max-width:720px){
   .panel{ position:fixed; left:10px; right:10px; width:auto; }
