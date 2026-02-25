@@ -41,6 +41,9 @@ const windowRadios=[...document.querySelectorAll("input[name='window']")];
 // ---------------- DATA ----------------
 let eventsData=[];
 
+// marker registry: eventId -> marker
+const markerByEventId = new Map();
+
 // Load events
 fetch("events.json")
   .then(r=>r.json())
@@ -61,6 +64,17 @@ function categoryColor(cat){
   return "#b7b7b7";
 }
 
+function sourceType(ev){
+  const t = (ev?.source?.type || "news").toLowerCase();
+  return (t === "isw") ? "isw" : "news";
+}
+
+function badgeHtml(t){
+  return t === "isw"
+    ? `<span class="badge badge-isw">ISW</span>`
+    : `<span class="badge badge-news">NEWS</span>`;
+}
+
 function makeMarker(ev){
   const icon=L.divIcon({
     className:"",
@@ -74,7 +88,19 @@ function makeMarker(ev){
   if(typeof lat !== "number" || typeof lng !== "number") return null;
 
   const m=L.marker([lat,lng],{icon});
-  m.bindPopup(`<b>${ev.title}</b><br>${ev.summary || ""}<br><small>${ev.source?.name || ""}</small>`);
+
+  const srcName = ev?.source?.name || "";
+  const srcUrl = ev?.source?.url || "";
+  const srcLine = srcUrl
+    ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>`
+    : `${srcName}`;
+
+  m.bindPopup(
+    `<b>${ev.title || "Untitled"}</b><br>` +
+    `${ev.summary || ""}<br>` +
+    `<small>${srcLine}</small>`
+  );
+
   return m;
 }
 
@@ -93,18 +119,6 @@ function getSelectedSources(){
 function getWindowDays(){
   const r=windowRadios.find(x=>x.checked);
   return Number(r?.value || 1);
-}
-
-function sourceType(ev){
-  // normalize: "news" | "isw"
-  const t = (ev?.source?.type || "news").toLowerCase();
-  return (t === "isw") ? "isw" : "news";
-}
-
-function badgeHtml(t){
-  return t === "isw"
-    ? `<span class="badge badge-isw">ISW</span>`
-    : `<span class="badge badge-news">NEWS</span>`;
 }
 
 // Build visible list based on current filters
@@ -135,9 +149,34 @@ function computeVisibleEvents(){
   return { out, selectedDate };
 }
 
+function openEventOnMap(ev){
+  const id = ev?.id;
+  const marker = id ? markerByEventId.get(id) : null;
+
+  const lat = ev?.location?.lat;
+  const lng = ev?.location?.lng;
+
+  if(typeof lat === "number" && typeof lng === "number"){
+    map.setView([lat, lng], Math.max(map.getZoom(), 9));
+  }
+
+  if(marker){
+    // If marker is in a cluster at this zoom, spiderfy then open popup
+    // (MarkerClusterGroup provides getVisibleParent)
+    const parent = clusterGroup.getVisibleParent(marker);
+    if(parent && parent !== marker && parent.spiderfy){
+      parent.spiderfy();
+      setTimeout(() => marker.openPopup(), 150);
+    } else {
+      marker.openPopup();
+    }
+  }
+}
+
 // ---------------- MAIN UPDATE ----------------
 function updateMapAndList(){
   clusterGroup.clearLayers();
+  markerByEventId.clear();
   listContainer.innerHTML="";
 
   const { out: visibleEvents, selectedDate } = computeVisibleEvents();
@@ -146,7 +185,9 @@ function updateMapAndList(){
   // Markers
   visibleEvents.forEach(ev=>{
     const m = makeMarker(ev);
-    if(m) clusterGroup.addLayer(m);
+    if(!m) return;
+    clusterGroup.addLayer(m);
+    if(ev.id) markerByEventId.set(ev.id, m);
   });
 
   // List
@@ -173,15 +214,7 @@ function updateMapAndList(){
         </div>
       `;
 
-      row.onclick=()=>{
-        const lat = ev?.location?.lat;
-        const lng = ev?.location?.lng;
-        if(typeof lat === "number" && typeof lng === "number"){
-          map.setView([lat,lng], 9);
-          // optional: open popup by finding nearby marker is expensive; keep simple for now
-        }
-      };
-
+      row.onclick=()=> openEventOnMap(ev);
       listContainer.appendChild(row);
     });
 }
