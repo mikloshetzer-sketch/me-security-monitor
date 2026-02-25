@@ -5,7 +5,7 @@ body { background:#0f0f0f; }
 .panel{
   position:absolute;
   z-index:1000;
-  width:min(380px, 92vw);
+  width:min(420px, 92vw);
   background:rgba(20,20,20,0.9);
   color:#fff;
   border-radius:12px;
@@ -25,6 +25,18 @@ body { background:#0f0f0f; }
   border-bottom:1px solid rgba(255,255,255,0.12);
 }
 
+.panel-toggle{
+  background:rgba(255,255,255,0.10);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:10px;
+  padding:6px 10px;
+  cursor:pointer;
+}
+.panel-toggle:hover{ background:rgba(255,255,255,0.16); }
+
+.panel-title{ font-weight:700; }
+
 .panel-body{ padding:12px; font-size:13px; }
 .panel.closed .panel-body{ display:none; }
 
@@ -39,6 +51,17 @@ body { background:#0f0f0f; }
 .dot-military{ background:#ff5a5a; }
 .dot-security{ background:#ffd84e; }
 .dot-other{ background:#b7b7b7; }
+
+.badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:999px;
+  display:inline-block;
+  line-height:1.4;
+  letter-spacing:0.2px;
+}
+.badge-news{ background:rgba(78,161,255,0.22); border:1px solid rgba(78,161,255,0.35); }
+.badge-isw{ background:rgba(255,216,78,0.22); border:1px solid rgba(255,216,78,0.35); }
 
 .events-title{ font-weight:700; margin-bottom:6px; }
 .events-list{ max-height:260px; overflow:auto; }
@@ -101,7 +124,9 @@ body { background:#0f0f0f; }
   gap:8px;
   margin-top:8px;
 }
-.stats-grid:last-child{ grid-template-columns:repeat(2, 1fr); }
+.stats-grid-2{
+  grid-template-columns:repeat(2, 1fr);
+}
 
 .stat-pill{
   display:flex;
@@ -174,21 +199,43 @@ body { background:#0f0f0f; }
 #trendCanvas{
   width:100%;
   height:120px;
+  display:block;
   background:rgba(0,0,0,0.16);
   border:1px solid rgba(255,255,255,0.10);
   border-radius:10px;
 }
 
-.badge{
-  font-size:11px;
-  padding:2px 8px;
-  border-radius:999px;
-  display:inline-block;
-  line-height:1.4;
-  letter-spacing:0.2px;
+/* ACCORDION */
+.acc-block{ margin-bottom:10px; }
+
+.acc-btn{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 10px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  color:#fff;
 }
-.badge-news{ background:rgba(78,161,255,0.22); border:1px solid rgba(78,161,255,0.35); }
-.badge-isw{ background:rgba(255,216,78,0.22); border:1px solid rgba(255,216,78,0.35); }
+.acc-btn:hover{ background:rgba(255,255,255,0.14); }
+.acc-arrow{ opacity:0.75; transition:transform .18s ease; }
+
+.acc-panel{
+  margin-top:8px;
+  overflow:hidden;
+  transition:max-height .22s ease, opacity .18s ease;
+  opacity:1;
+  max-height:1200px;
+}
+.acc-panel.closed{
+  opacity:0;
+  max-height:0;
+  pointer-events:none;
+}
 
 @media (max-width:720px){
   .panel{ position:fixed; left:10px; right:10px; width:auto; }
