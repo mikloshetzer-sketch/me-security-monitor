@@ -71,10 +71,30 @@
 
     <hr class="sep" />
 
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stats-top">
+        <div class="stats-title">Window stats</div>
+        <div id="statsTotal" class="stats-total">0</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-pill"><span>mil</span><b id="statsMil">0</b></div>
+        <div class="stat-pill"><span>sec</span><b id="statsSec">0</b></div>
+        <div class="stat-pill"><span>pol</span><b id="statsPol">0</b></div>
+        <div class="stat-pill"><span>oth</span><b id="statsOth">0</b></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-pill"><span>news</span><b id="statsNews">0</b></div>
+        <div class="stat-pill"><span>isw</span><b id="statsIsw">0</b></div>
+      </div>
+    </div>
+
+    <hr class="sep" />
+
     <div class="events-title">Events</div>
-
     <input id="eventSearch" class="search" type="text" placeholder="Search title/summary/tags..." />
-
     <div id="eventsList" class="events-list"></div>
   </div>
 </div>
