@@ -68,6 +68,18 @@
 
     <hr class="sep" />
 
+    <!-- TREND -->
+    <div class="trend">
+      <div class="trend-top">
+        <div class="trend-title">Trend (daily count)</div>
+        <div id="trendTotal" class="trend-total">0</div>
+      </div>
+      <canvas id="trendCanvas" width="340" height="120"></canvas>
+      <div id="trendRange" class="muted" style="margin-top:6px;">—</div>
+    </div>
+
+    <hr class="sep" />
+
     <!-- STATS -->
     <div class="stats">
       <div class="stats-top">
@@ -160,8 +172,6 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-
-<!-- hotspot heatmap plugin -->
 <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
 
 <script src="script.js"></script>
