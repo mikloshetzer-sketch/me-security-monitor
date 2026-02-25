@@ -33,23 +33,22 @@ FEEDS = [
     },
 ]
 
-# ISW (SCRAPE) – stable entry points
+# ISW scrape targets
 ISW_SOURCES = [
     {
         "name": "ISW",
         "type": "isw",
         "index_url": "https://understandingwar.org/analysis/middle-east/iran-update/",
+        # posts we want:
         "post_url_must_contain": "/research/middle-east/iran-update-",
-        "default_location_hint": "iran",
-        "default_category": "security",
         "confidence": 0.78,
-        "max_posts": 25,  # keep Actions runtime safe
+        "max_posts": 15,   # keep Actions runtime safe
     }
 ]
 
 UA_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; ME-Security-Monitor/1.0)"}
 
-# Middle East relevance filter list
+# Middle East relevance keywords
 ME_KEYWORDS = [
     "israel", "gaza", "west bank", "palestine", "jerusalem",
     "lebanon", "beirut",
@@ -260,21 +259,31 @@ def resolve_google_news_link(link: str) -> str:
     return final or link
 
 
-# -------- ISW SCRAPER --------
+# -------- ISW SCRAPER with JINA FALLBACK --------
 def fetch_html(url: str) -> str:
-    r = requests.get(url, headers=UA_HEADERS, timeout=20)
-    r.raise_for_status()
-    return r.text
+    """
+    Try direct fetch; if blocked (403/429/etc), retry via jina.ai.
+    """
+    try:
+        r = requests.get(url, headers=UA_HEADERS, timeout=25)
+        if r.status_code in (403, 429):
+            raise RuntimeError(f"blocked {r.status_code}")
+        r.raise_for_status()
+        return r.text
+    except Exception:
+        # fallback through jina (works often when origin blocks bots)
+        proxy_url = f"https://r.jina.ai/http://{url}" if url.startswith("http://") else f"https://r.jina.ai/https://{url.split('https://',1)[-1]}"
+        rp = requests.get(proxy_url, headers=UA_HEADERS, timeout=35)
+        rp.raise_for_status()
+        return rp.text
 
 def absolutize(base: str, href: str) -> str:
     if not href:
         return ""
     if href.startswith("http://") or href.startswith("https://"):
         return href
-    # understandingwar uses absolute paths
     if href.startswith("/"):
         return "https://understandingwar.org" + href
-    # fallback
     return base.rstrip("/") + "/" + href.lstrip("/")
 
 def scrape_isw_index(index_url: str, must_contain: str, max_posts: int) -> list[str]:
@@ -288,42 +297,45 @@ def scrape_isw_index(index_url: str, must_contain: str, max_posts: int) -> list[
         if must_contain in full:
             urls.append(full)
 
-    # de-dup keep order
     out, seen = [], set()
     for u in urls:
         if u in seen:
             continue
         seen.add(u)
         out.append(u)
-
     return out[:max_posts]
 
-def extract_isw_post_summary(post_url: str) -> str:
-    """Light summary: first 1-2 paragraphs from main content, max 340 chars."""
-    try:
-        html = fetch_html(post_url)
-        soup = BeautifulSoup(html, "html.parser")
+def extract_isw_post_title_and_summary(post_url: str) -> tuple[str, str]:
+    html = fetch_html(post_url)
+    soup = BeautifulSoup(html, "html.parser")
 
-        # Try common Drupal-ish content containers
-        candidates = soup.select("div.field--name-body p, article p, .node__content p")
-        parts = []
-        for p in candidates:
-            txt = strip_html(str(p))
-            if txt:
-                parts.append(txt)
-            if len(" ".join(parts)) > 450:
-                break
+    title = ""
+    h1 = soup.select_one("h1")
+    if h1:
+        title = strip_html(str(h1))
+    if not title and soup.title:
+        title = strip_html(str(soup.title))
+    title = title.replace(" | ISW", "").strip()
 
-        s = " ".join(parts).strip()
-        s = re.sub(r"\s+", " ", s)
-        if len(s) > 340:
-            s = s[:337].rstrip() + "..."
-        return s
-    except Exception:
-        return ""
+    # summary: first paragraphs from body-ish areas
+    candidates = soup.select("div.field--name-body p, article p, .node__content p")
+    parts = []
+    for p in candidates:
+        txt = strip_html(str(p))
+        if txt:
+            parts.append(txt)
+        if len(" ".join(parts)) > 520:
+            break
+
+    summary = " ".join(parts).strip()
+    summary = re.sub(r"\s+", " ", summary)
+    if not summary:
+        summary = "ISW Middle East update (auto-ingested)."
+    if len(summary) > 340:
+        summary = summary[:337].rstrip() + "..."
+    return title, summary
 
 def parse_date_from_title(title: str) -> str | None:
-    # Example: "Iran Update, February 6, 2026"
     try:
         dt = dtparser.parse(title, fuzzy=True)
         return dt.date().isoformat()
@@ -364,7 +376,7 @@ def main():
             loc = pick_location(title, summary)
             cat = pick_category(title, summary)
 
-            ev = {
+            collected.append({
                 "id": make_id(link, title, date_ymd),
                 "date": date_ymd,
                 "title": title,
@@ -374,10 +386,9 @@ def main():
                 "confidence": 0.55,
                 "source": {"name": f["name"], "type": f["type"], "url": link},
                 "location": loc,
-            }
-            collected.append(ev)
+            })
 
-    # ---- ISW via SCRAPE ----
+    # ---- ISW via SCRAPE (with jina fallback) ----
     for s in ISW_SOURCES:
         try:
             post_urls = scrape_isw_index(
@@ -386,27 +397,17 @@ def main():
                 max_posts=s["max_posts"],
             )
         except Exception as ex:
-            print(f"ISW scrape failed for {s['index_url']}: {ex}")
+            print(f"ISW index scrape failed: {ex}")
             post_urls = []
 
         for url in post_urls:
-            # Title: try from URL slug fallback, but better: fetch page <title>
-            title = ""
             try:
-                html = fetch_html(url)
-                soup = BeautifulSoup(html, "html.parser")
-                h1 = soup.select_one("h1")
-                if h1:
-                    title = strip_html(str(h1))
-                if not title and soup.title:
-                    title = strip_html(str(soup.title))
-                title = title.replace(" | ISW", "").strip()
-            except Exception:
-                title = url.split("/")[-2].replace("-", " ").strip().title()
+                title, summary = extract_isw_post_title_and_summary(url)
+            except Exception as ex:
+                print(f"ISW post fetch failed {url}: {ex}")
+                continue
 
             date_ymd = parse_date_from_title(title) or now.date().isoformat()
-
-            # cutoff
             try:
                 dt = dtparser.parse(date_ymd).replace(tzinfo=timezone.utc)
                 if dt < cutoff:
@@ -414,41 +415,32 @@ def main():
             except Exception:
                 pass
 
-            summary = extract_isw_post_summary(url)
-            if not summary:
-                summary = "ISW Middle East daily update (auto-ingested)."
+            # keep only ME-related items (should be true for Iran Update)
+            if not is_middle_east_related(title, summary) and "iran update" not in normalize_text(title):
+                continue
 
-            # enforce ME relevance (usually true here)
-            if not is_middle_east_related(title, summary):
-                # still keep Iran Update even if keyword miss
-                if s.get("default_location_hint", "") not in normalize_text(title + " " + summary):
-                    continue
-
-            # location/category
             loc = pick_location(title, summary)
             cat = pick_category(title, summary)
-            if s.get("default_category") and cat == "other":
-                cat = s["default_category"]
+            conf = float(s.get("confidence", 0.75))
 
-            ev = {
+            collected.append({
                 "id": make_id(url, title, date_ymd),
                 "date": date_ymd,
                 "title": title,
                 "summary": summary,
                 "category": cat,
                 "tags": extract_tags(title, summary, loc["name"]),
-                "confidence": float(s.get("confidence", 0.75)),
+                "confidence": conf,
                 "source": {"name": s["name"], "type": s["type"], "url": url},
                 "location": loc,
-            }
-            collected.append(ev)
+            })
 
     # ---- De-dup ----
     by_url = {}
     for ev in sorted(collected, key=lambda x: x["date"], reverse=True):
-        url = ev["source"]["url"]
-        if url and url not in by_url:
-            by_url[url] = ev
+        u = ev["source"]["url"]
+        if u and u not in by_url:
+            by_url[u] = ev
 
     by_title_date = {}
     for ev in by_url.values():
@@ -457,7 +449,7 @@ def main():
 
     final_events = list(by_title_date.values())
     final_events.sort(key=lambda x: (x["date"], x["source"]["type"], x["source"]["name"]), reverse=True)
-    final_events = final_events[:900]
+    final_events = final_events[:950]
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(final_events, f, ensure_ascii=False, indent=2)
