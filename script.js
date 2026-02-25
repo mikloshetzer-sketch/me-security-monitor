@@ -1,13 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
   try {
-    // ----- safe DOM getters -----
     const $ = (id) => {
       const el = document.getElementById(id);
       if (!el) throw new Error(`Missing element: #${id}`);
       return el;
     };
 
-    // ----- panel toggles (explicit, robust) -----
+    // Panels
     const wirePanelToggle = (btnId, panelId) => {
       const btn = $(btnId);
       const panel = $(panelId);
@@ -17,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     wirePanelToggle("timelineToggle", "timelinePanel");
     wirePanelToggle("legendToggle", "legendPanel");
 
-    // ----- map -----
+    // Map
     const map = L.map("map").setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
@@ -30,41 +29,11 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // ----- heatmap (hotspot) -----
+    // Heatmap
     const heatCheckbox = $("heatmapCheckbox");
     let heatLayer = null;
 
-    function categoryWeightForHeat(cat) {
-      const c = normalize(cat || "other");
-      if (c === "military") return 3.0;
-      if (c === "security") return 2.0;
-      if (c === "political") return 1.0;
-      return 0.5;
-    }
-    function sourceMultiplierForHeat(ev) {
-      return sourceType(ev) === "isw" ? 1.3 : 1.0;
-    }
-    // newest=1.0 .. oldest=0.4
-    function recencyWeightForHeat(eventIndex, selectedIndex, windowDays) {
-      const ageDays = selectedIndex - eventIndex; // 0..windowDays-1
-      if (windowDays <= 1) return 1.0;
-      const t = ageDays / (windowDays - 1);
-      return 1.0 - 0.6 * t;
-    }
-
-    function setHeatmapVisible(visible) {
-      if (!visible) {
-        if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
-        heatLayer = null;
-      } else {
-        // layer content is updated in updateMapAndList()
-        updateMapAndList();
-      }
-    }
-
-    heatCheckbox.addEventListener("change", (e) => setHeatmapVisible(e.target.checked));
-
-    // ----- borders -----
+    // Borders
     const BORDERS_GEOJSON_URL =
       "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
@@ -106,7 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setBordersVisible(!!bordersCheckbox.checked);
     bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
 
-    // ----- date -----
+    // Date helpers
     function makeLast365Days() {
       const days = [];
       const today = new Date();
@@ -120,7 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
 
-    // ----- actors -----
+    // Actors
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -134,10 +103,10 @@ window.addEventListener("DOMContentLoaded", () => {
       { name: "Turkey", patterns: ["turkey", "turkish"] },
     ];
 
-    let activeActor = null; // single actor filter
-    let activePair = null;  // {a,b} or null
+    let activeActor = null;
+    let activePair = null; // {a,b} or null
 
-    // ----- UI refs -----
+    // UI refs
     const slider = $("timelineSlider");
     const label = $("selectedDateLabel");
     const listContainer = $("eventsList");
@@ -162,6 +131,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const pairActiveEl = $("pairActive");
     const pairClearBtn = $("pairClear");
 
+    // Trend UI
+    const trendCanvas = $("trendCanvas");
+    const trendTotalEl = $("trendTotal");
+    const trendRangeEl = $("trendRange");
+
+    // Inputs
     slider.max = days365.length - 1;
     slider.value = days365.length - 1;
 
@@ -169,17 +144,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // ----- data -----
+    // Data
     let eventsData = [];
     const markerByEventId = new Map();
 
-    // ----- helpers -----
-    function normalize(s) {
-      return String(s || "").toLowerCase();
-    }
+    // Helpers
+    const normalize = (s) => String(s || "").toLowerCase();
 
     function sourceType(ev) {
-      const t = normalize((ev?.source?.type || "news"));
+      const t = normalize(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
     }
 
@@ -271,7 +244,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
-    // Base events for discovery blocks (actors/pairs): exclude actor/pair filters
+    // Base window events (no actor/pair filter) – for discovery blocks
     function computeBaseWindowEvents() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -298,11 +271,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
         out.push(ev);
       }
-
       return { out, selectedDate, selectedIndex, windowDays };
     }
 
-    // Visible events apply actor + pair filters
     function computeVisibleEvents() {
       const base = computeBaseWindowEvents();
       const out = base.out.filter((ev) => matchesActorFilter(ev) && matchesPairFilter(ev));
@@ -329,7 +300,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ----- stats -----
+    // Stats
     function updateStats(visibleEvents) {
       let mil = 0, sec = 0, pol = 0, oth = 0, news = 0, isw = 0;
       for (const ev of visibleEvents) {
@@ -342,6 +313,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const st = sourceType(ev);
         if (st === "isw") isw++; else news++;
       }
+
       statsTotalEl.textContent = String(visibleEvents.length);
       statsMilEl.textContent = String(mil);
       statsSecEl.textContent = String(sec);
@@ -351,7 +323,7 @@ window.addEventListener("DOMContentLoaded", () => {
       statsIswEl.textContent = String(isw);
     }
 
-    // ----- risk -----
+    // Risk
     function categoryWeight(cat) {
       const c = normalize(cat || "other");
       if (c === "military") return 3.0;
@@ -375,18 +347,15 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
 
         const locName = (ev?.location?.name || "Unknown").trim() || "Unknown";
-        const score =
-          categoryWeight(ev.category) *
-          sourceMultiplier(ev) *
-          recencyWeight(idx, selectedIndex, windowDays);
+        const score = categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(idx, selectedIndex, windowDays);
 
         total += score;
         byLoc.set(locName, (byLoc.get(locName) || 0) + score);
       }
 
       riskTotalEl.textContent = total.toFixed(1);
-
       const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
+
       riskListEl.innerHTML = rows.length
         ? rows.map(([name, val]) => `
             <div class="risk-row">
@@ -396,7 +365,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // ----- actors UI -----
+    // Actors UI
     function updateActors(baseEvents) {
       const counts = new Map();
       for (const ev of baseEvents) {
@@ -423,16 +392,14 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- pairs UI -----
+    // Pairs UI
     const pairKey = (a, b) => [a, b].sort().join(" + ");
 
     function updatePairs(baseEvents) {
       const counts = new Map();
-
       for (const ev of baseEvents) {
         const found = actorsInEvent(ev);
         if (found.length < 2) continue;
-
         for (let i = 0; i < found.length; i++) {
           for (let j = i + 1; j < found.length; j++) {
             const k = pairKey(found[i], found[j]);
@@ -459,8 +426,8 @@ window.addEventListener("DOMContentLoaded", () => {
           const k = el.getAttribute("data-pair") || "";
           const parts = k.split(" + ");
           if (parts.length !== 2) return;
-
           const a = parts[0], b = parts[1];
+
           if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
           else activePair = { a, b };
 
@@ -469,9 +436,25 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- heatmap render (from visible events) -----
+    // Heatmap
+    function categoryWeightForHeat(cat) {
+      const c = normalize(cat || "other");
+      if (c === "military") return 3.0;
+      if (c === "security") return 2.0;
+      if (c === "political") return 1.0;
+      return 0.5;
+    }
+    function sourceMultiplierForHeat(ev) {
+      return sourceType(ev) === "isw" ? 1.3 : 1.0;
+    }
+    function recencyWeightForHeat(eventIndex, selectedIndex, windowDays) {
+      const ageDays = selectedIndex - eventIndex;
+      if (windowDays <= 1) return 1.0;
+      const t = ageDays / (windowDays - 1);
+      return 1.0 - 0.6 * t;
+    }
+
     function updateHeatmap(visibleEvents, selectedIndex, windowDays) {
-      // remove if off
       if (!heatCheckbox.checked) {
         if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
         heatLayer = null;
@@ -495,40 +478,128 @@ window.addEventListener("DOMContentLoaded", () => {
         points.push([lat, lng, w]);
       }
 
-      // recreate layer to keep it simple + stable
       if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
       heatLayer = null;
-
-      // if no points, still keep clean (no layer)
       if (points.length === 0) return;
 
-      heatLayer = L.heatLayer(points, {
-        radius: 28,
-        blur: 22,
-        maxZoom: 9,
-      });
-
+      heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9 });
       heatLayer.addTo(map);
-      // keep heat under markers visually
       heatLayer.bringToBack();
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // ----- MAIN UPDATE -----
+    // TREND (daily counts over current windowDays)
+    function drawTrend(dates, counts) {
+      const ctx = trendCanvas.getContext("2d");
+      const dpr = window.devicePixelRatio || 1;
+
+      const cssW = trendCanvas.clientWidth || 340;
+      const cssH = 120;
+
+      trendCanvas.width = Math.floor(cssW * dpr);
+      trendCanvas.height = Math.floor(cssH * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // background cleared by CSS, but clean anyway
+      ctx.clearRect(0, 0, cssW, cssH);
+
+      const padL = 26, padR = 8, padT = 8, padB = 18;
+      const w = cssW - padL - padR;
+      const h = cssH - padT - padB;
+
+      const max = Math.max(1, ...counts);
+      const barW = w / Math.max(1, counts.length);
+
+      // axis
+      ctx.globalAlpha = 0.35;
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(padL, padT);
+      ctx.lineTo(padL, padT + h);
+      ctx.lineTo(padL + w, padT + h);
+      ctx.stroke();
+
+      // bars
+      ctx.globalAlpha = 0.85;
+      ctx.fillStyle = "#ffffff";
+      counts.forEach((c, i) => {
+        const bh = (c / max) * h;
+        const x = padL + i * barW + 1;
+        const y = padT + h - bh;
+        ctx.fillRect(x, y, Math.max(1, barW - 2), bh);
+      });
+
+      // y labels (0 and max)
+      ctx.globalAlpha = 0.7;
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "11px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+      ctx.fillText(String(max), 4, padT + 10);
+      ctx.fillText("0", 10, padT + h);
+
+      // x labels (start/end)
+      const start = dates[0] || "";
+      const end = dates[dates.length - 1] || "";
+      ctx.globalAlpha = 0.7;
+      ctx.fillText(start.slice(5), padL, padT + h + 14);
+      const endW = ctx.measureText(end.slice(5)).width;
+      ctx.fillText(end.slice(5), padL + w - endW, padT + h + 14);
+    }
+
+    function updateTrend(baseEvents, selectedIndex, windowDays) {
+      const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
+      const dates = days365.slice(startIndex, selectedIndex + 1);
+
+      const counts = new Array(dates.length).fill(0);
+      const q = normalize(searchInput.value).trim();
+
+      // Trend uses the SAME filters as the visible view (including actor/pair),
+      // but counts per day.
+      for (const ev of eventsData) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+        if (idx < startIndex || idx > selectedIndex) continue;
+
+        // apply same base filters (cat/source/search)
+        const catSet = getSelectedCategories();
+        const srcSet = getSelectedSources();
+
+        const cat = normalize(ev.category || "other");
+        if (!catSet.has(cat)) continue;
+
+        const st = sourceType(ev);
+        if (!srcSet.has(st)) continue;
+
+        if (!matchesSearch(ev, q)) continue;
+        if (!matchesActorFilter(ev)) continue;
+        if (!matchesPairFilter(ev)) continue;
+
+        counts[idx - startIndex] += 1;
+      }
+
+      const total = counts.reduce((a, b) => a + b, 0);
+      trendTotalEl.textContent = String(total);
+      trendRangeEl.textContent = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
+
+      drawTrend(dates, counts);
+    }
+
+    // MAIN update
     function updateMapAndList() {
       clusterGroup.clearLayers();
       markerByEventId.clear();
       listContainer.innerHTML = "";
 
       const base = computeBaseWindowEvents();
-      updateActors(base.out);
-      updatePairs(base.out);
-
       const view = computeVisibleEvents();
+
       label.textContent = view.selectedDate || "—";
 
+      updateTrend(base.out, view.selectedIndex, view.windowDays);
       updateStats(view.out);
       updateRisk(view.out, view.selectedIndex, view.windowDays);
+      updateActors(base.out);
+      updatePairs(base.out);
 
       // markers
       view.out.forEach((ev) => {
@@ -538,7 +609,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (ev.id) markerByEventId.set(ev.id, m);
       });
 
-      // hotspot heatmap
+      // heatmap
       updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
       if (view.out.length === 0) {
@@ -552,9 +623,9 @@ window.addEventListener("DOMContentLoaded", () => {
         .forEach((ev) => {
           const row = document.createElement("div");
           row.className = "event-row";
-
           const st = sourceType(ev).toUpperCase();
           const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
+
           row.innerHTML = `
             <div class="event-row-title">${ev.title || "Untitled"}</div>
             <div class="event-row-meta">
@@ -567,27 +638,26 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ----- events -----
+    // Events wiring
     slider.addEventListener("input", updateMapAndList);
     catCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
     srcCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
     windowRadios.forEach((r) => r.addEventListener("change", updateMapAndList));
     searchInput.addEventListener("input", updateMapAndList);
 
-    actorClearBtn.addEventListener("click", () => {
-      activeActor = null;
-      updateMapAndList();
-    });
+    actorClearBtn.addEventListener("click", () => { activeActor = null; updateMapAndList(); });
+    pairClearBtn.addEventListener("click", () => { activePair = null; updateMapAndList(); });
 
-    pairClearBtn.addEventListener("click", () => {
-      activePair = null;
-      updateMapAndList();
-    });
-
-    // if heat toggled, update immediately (already wired above) but safe:
     heatCheckbox.addEventListener("change", updateMapAndList);
 
-    // ----- load data -----
+    // Resize redraw trend
+    window.addEventListener("resize", () => {
+      // light debounce
+      clearTimeout(window.__trendResizeT);
+      window.__trendResizeT = setTimeout(updateMapAndList, 120);
+    });
+
+    // Load data
     fetch("events.json")
       .then((r) => r.json())
       .then((data) => {
