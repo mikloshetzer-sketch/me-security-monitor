@@ -68,6 +68,24 @@ function makeLast365Days(){
 const days365=makeLast365Days();
 const dateToIndex=new Map(days365.map((d,i)=>[d,i]));
 
+// ---------------- ACTORS DICTIONARY ----------------
+// You can extend anytime.
+const ACTORS = [
+  { name: "IDF", patterns: ["idf", "israel defense forces"] },
+  { name: "Hezbollah", patterns: ["hezbollah"] },
+  { name: "IRGC", patterns: ["irgc", "islamic revolutionary guard", "revolutionary guards"] },
+  { name: "Houthis", patterns: ["houthi", "houthis", "ansar allah"] },
+  { name: "Hamas", patterns: ["hamas"] },
+  { name: "ISIS", patterns: ["isis", "isil", "islamic state"] },
+  { name: "PMF", patterns: ["pmf", "popular mobilization forces", "popular mobilisation forces"] },
+  { name: "US forces", patterns: ["u.s. forces", "us forces", "u.s. military", "pentagon"] },
+  { name: "Russia", patterns: ["russia", "russian"] },
+  { name: "Turkey", patterns: ["turkey", "turkish"] }
+];
+
+// active actor filter (null = ALL)
+let activeActor = null;
+
 // ---------------- UI ----------------
 const slider=document.getElementById("timelineSlider");
 const label=document.getElementById("selectedDateLabel");
@@ -84,6 +102,10 @@ const statsIswEl   = document.getElementById("statsIsw");
 
 const riskTotalEl = document.getElementById("riskTotal");
 const riskListEl  = document.getElementById("riskList");
+
+const actorsListEl = document.getElementById("actorsList");
+const actorActiveEl = document.getElementById("actorActive");
+const actorClearBtn = document.getElementById("actorClear");
 
 slider.max=days365.length-1;
 slider.value=days365.length-1;
@@ -185,7 +207,33 @@ function matchesSearch(ev, q){
   return (t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q));
 }
 
-// Visible events based on current filters + search
+function eventText(ev){
+  const tags = Array.isArray(ev.tags) ? ev.tags.join(" ") : "";
+  const loc = ev?.location?.name || "";
+  return normalize(`${ev.title||""} ${ev.summary||""} ${tags} ${loc}`);
+}
+
+function actorsInEvent(ev){
+  const text = eventText(ev);
+  const found = [];
+  for(const a of ACTORS){
+    for(const p of a.patterns){
+      if(text.includes(p)){
+        found.push(a.name);
+        break;
+      }
+    }
+  }
+  return found;
+}
+
+function matchesActorFilter(ev){
+  if(!activeActor) return true;
+  const found = actorsInEvent(ev);
+  return found.includes(activeActor);
+}
+
+// Visible events based on current filters + search + actor
 function computeVisibleEvents(){
   const selectedIndex=Number(slider.value);
   const selectedDate=days365[selectedIndex];
@@ -209,6 +257,7 @@ function computeVisibleEvents(){
     if(!selectedSrc.has(st)) continue;
 
     if(!matchesSearch(ev, q)) continue;
+    if(!matchesActorFilter(ev)) continue;
 
     out.push(ev);
   }
@@ -268,24 +317,17 @@ function categoryWeight(cat){
   if(c==="political") return 1.0;
   return 0.5;
 }
-
 function sourceMultiplier(ev){
   return sourceType(ev) === "isw" ? 1.3 : 1.0;
 }
-
-// Recency weighting within window: closest to selected day = 1.0, oldest = 0.4
 function recencyWeight(eventIndex, selectedIndex, windowDays){
-  const ageDays = selectedIndex - eventIndex; // 0..windowDays-1
+  const ageDays = selectedIndex - eventIndex;
   if(windowDays <= 1) return 1.0;
-  const t = ageDays / (windowDays - 1); // 0 newest, 1 oldest
-  return 1.0 - 0.6 * t; // 1.0 .. 0.4
+  const t = ageDays / (windowDays - 1);
+  return 1.0 - 0.6 * t; // 1.0..0.4
 }
-
 function updateRisk(visibleEvents, selectedIndex, windowDays){
-  // total
   let total = 0;
-
-  // by location.name
   const byLoc = new Map();
 
   for(const ev of visibleEvents){
@@ -293,29 +335,19 @@ function updateRisk(visibleEvents, selectedIndex, windowDays){
     if(idx === undefined) continue;
 
     const locName = (ev?.location?.name || "Unknown").trim() || "Unknown";
+    const score = categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(idx, selectedIndex, windowDays);
 
-    const wCat = categoryWeight(ev.category);
-    const wSrc = sourceMultiplier(ev);
-    const wRec = recencyWeight(idx, selectedIndex, windowDays);
-
-    const score = wCat * wSrc * wRec;
     total += score;
-
     byLoc.set(locName, (byLoc.get(locName) || 0) + score);
   }
 
-  // render
   riskTotalEl.textContent = total.toFixed(1);
 
-  const rows = [...byLoc.entries()]
-    .sort((a,b)=> b[1]-a[1])
-    .slice(0, 6);
-
+  const rows = [...byLoc.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6);
   if(rows.length === 0){
     riskListEl.innerHTML = `<div class="muted">No risk data for current filters.</div>`;
     return;
   }
-
   riskListEl.innerHTML = rows.map(([name,val]) => `
     <div class="risk-row">
       <div class="name">${name}</div>
@@ -324,31 +356,105 @@ function updateRisk(visibleEvents, selectedIndex, windowDays){
   `).join("");
 }
 
+function updateActors(visibleEvents){
+  // count actors within current window (after ALL filters except actor itself)
+  const counts = new Map();
+
+  for(const ev of visibleEvents){
+    const found = actorsInEvent(ev);
+    for(const a of found){
+      counts.set(a, (counts.get(a) || 0) + 1);
+    }
+  }
+
+  const rows = [...counts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10);
+
+  actorActiveEl.textContent = activeActor ? activeActor : "ALL";
+  actorClearBtn.style.display = activeActor ? "inline-block" : "none";
+
+  if(rows.length === 0){
+    actorsListEl.innerHTML = `<div class="muted">No actor signals in this window.</div>`;
+    return;
+  }
+
+  actorsListEl.innerHTML = rows.map(([name, n]) => {
+    const activeClass = (activeActor === name) ? "active" : "";
+    return `<div class="actor-chip ${activeClass}" data-actor="${name}">
+              <span>${name}</span><b>${n}</b>
+            </div>`;
+  }).join("");
+
+  // attach click handlers
+  [...actorsListEl.querySelectorAll(".actor-chip")].forEach(el=>{
+    el.onclick = () => {
+      const a = el.getAttribute("data-actor");
+      activeActor = (activeActor === a) ? null : a;
+      updateMapAndList();
+    };
+  });
+}
+
+function computeVisibleEventsForActorsBase(){
+  // same as computeVisibleEvents but WITHOUT actor filter, to allow discovery
+  const selectedIndex=Number(slider.value);
+  const selectedDate=days365[selectedIndex];
+  const windowDays=getWindowDays();
+  const selectedCats=getSelectedCategories();
+  const selectedSrc=getSelectedSources();
+  const q = normalize(searchInput.value).trim();
+
+  const out=[];
+  for(const ev of eventsData){
+    const idx=dateToIndex.get(ev.date);
+    if(idx === undefined) continue;
+
+    const within = idx<=selectedIndex && idx>=selectedIndex-(windowDays-1);
+    if(!within) continue;
+
+    const cat = (ev.category || "other").toLowerCase();
+    if(!selectedCats.has(cat)) continue;
+
+    const st = sourceType(ev);
+    if(!selectedSrc.has(st)) continue;
+
+    if(!matchesSearch(ev, q)) continue;
+
+    out.push(ev);
+  }
+
+  return { out, selectedDate, selectedIndex, windowDays };
+}
+
 // ---------------- MAIN UPDATE ----------------
 function updateMapAndList(){
   clusterGroup.clearLayers();
   markerByEventId.clear();
   listContainer.innerHTML="";
 
-  const { out: visibleEvents, selectedDate, selectedIndex, windowDays } = computeVisibleEvents();
-  label.textContent = selectedDate || "—";
+  // actors list should be computed without actor filter so you can pick actors
+  const base = computeVisibleEventsForActorsBase();
+  updateActors(base.out);
 
-  updateStats(visibleEvents);
-  updateRisk(visibleEvents, selectedIndex, windowDays);
+  // now apply actor filter to the actual view
+  const view = computeVisibleEvents();
+  label.textContent = view.selectedDate || "—";
 
-  visibleEvents.forEach(ev=>{
+  updateStats(view.out);
+  updateRisk(view.out, view.selectedIndex, view.windowDays);
+
+  view.out.forEach(ev=>{
     const m = makeMarker(ev);
     if(!m) return;
     clusterGroup.addLayer(m);
     if(ev.id) markerByEventId.set(ev.id, m);
   });
 
-  if(visibleEvents.length === 0){
-    listContainer.innerHTML = `<div class="muted">No events for current filters/search.</div>`;
+  if(view.out.length === 0){
+    listContainer.innerHTML = `<div class="muted">No events for current filters/search/actor.</div>`;
     return;
   }
 
-  visibleEvents
+  view.out
     .slice()
     .sort((a,b)=> (b.date + (b.title||"")).localeCompare(a.date + (a.title||"")))
     .forEach(ev=>{
@@ -377,6 +483,11 @@ catCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 srcCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 windowRadios.forEach(r=>r.addEventListener("change", updateMapAndList));
 searchInput.addEventListener("input", updateMapAndList);
+
+actorClearBtn.addEventListener("click", ()=>{
+  activeActor = null;
+  updateMapAndList();
+});
 
 // ---------------- PANEL TOGGLE ----------------
 document.querySelectorAll(".panel-header button").forEach(btn=>{
