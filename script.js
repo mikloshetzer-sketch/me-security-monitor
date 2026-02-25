@@ -6,7 +6,55 @@ window.addEventListener("DOMContentLoaded", () => {
       return el;
     };
 
-    // Map
+    // ----- Panels (top-level) -----
+    const controlPanel = $("controlPanel");
+    const timelinePanel = $("timelinePanel");
+    const legendPanel = $("legendPanel");
+
+    const controlToggle = $("controlToggle");
+    const timelineToggle = $("timelineToggle");
+    const legendToggle = $("legendToggle");
+
+    function togglePanel(panelEl) {
+      const wasClosed = panelEl.classList.contains("closed");
+      panelEl.classList.toggle("closed");
+      if (wasClosed && panelEl === timelinePanel) {
+        setTimeout(() => updateMapAndList(), 80);
+      }
+    }
+    controlToggle.addEventListener("click", () => togglePanel(controlPanel));
+    timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
+    legendToggle.addEventListener("click", () => togglePanel(legendPanel));
+
+    // ----- Accordion (inside timeline) -----
+    function setArrow(btn, isOpen) {
+      const arrow = btn.querySelector(".acc-arrow");
+      if (!arrow) return;
+      arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    document.querySelectorAll(".acc-btn").forEach((btn) => {
+      const targetId = btn.getAttribute("data-acc");
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+
+      // ensure default closed -> arrow reset
+      setArrow(btn, !panel.classList.contains("closed"));
+
+      btn.addEventListener("click", () => {
+        const isClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        setArrow(btn, isClosed);
+
+        // redraw trend when opened
+        if (targetId === "accTrend" && isClosed) {
+          setTimeout(() => updateMapAndList(), 80);
+        }
+      });
+    });
+
+    // ----- Map -----
     const map = L.map("map").setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
@@ -19,21 +67,17 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // Heatmap
+    // ----- Heatmap (Hotspot) -----
     const heatCheckbox = $("heatmapCheckbox");
     let heatLayer = null;
 
-    // Borders
+    // ----- Borders -----
     const BORDERS_GEOJSON_URL =
       "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
     const bordersCheckbox = $("bordersCheckbox");
     let bordersLayer = null;
     let bordersLoaded = false;
-
-    function normalize(s) {
-      return String(s || "").toLowerCase();
-    }
 
     function bordersStyle() {
       return { color: "#ffffff", weight: 2.2, opacity: 0.85, fillOpacity: 0 };
@@ -69,7 +113,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setBordersVisible(!!bordersCheckbox.checked);
     bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
 
-    // Date helpers
+    // ----- Date -----
     function makeLast365Days() {
       const days = [];
       const today = new Date();
@@ -83,7 +127,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
 
-    // Actors dictionary
+    // ----- Actors dictionary -----
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -100,15 +144,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let activeActor = null;
     let activePair = null;
 
-    // UI refs
-    const controlPanel = $("controlPanel");
-    const timelinePanel = $("timelinePanel");
-    const legendPanel = $("legendPanel");
-
-    const controlToggle = $("controlToggle");
-    const timelineToggle = $("timelineToggle");
-    const legendToggle = $("legendToggle");
-
+    // ----- UI refs -----
     const slider = $("timelineSlider");
     const label = $("selectedDateLabel");
     const listContainer = $("eventsList");
@@ -136,7 +172,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const trendCanvas = $("trendCanvas");
     const trendTotalEl = $("trendTotal");
     const trendRangeEl = $("trendRange");
-    const trendBox = trendCanvas.closest(".trend") || timelinePanel; // FIX: stabil width source
+    const trendBox = trendCanvas.closest(".trend") || timelinePanel;
 
     slider.max = days365.length - 1;
     slider.value = days365.length - 1;
@@ -145,23 +181,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // Panel toggles + redraw when opening timeline (canvas needs width)
-    function togglePanel(panelEl) {
-      const wasClosed = panelEl.classList.contains("closed");
-      panelEl.classList.toggle("closed");
-      if (wasClosed && panelEl === timelinePanel) {
-        setTimeout(() => updateMapAndList(), 80);
-      }
-    }
-    controlToggle.addEventListener("click", () => togglePanel(controlPanel));
-    timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
-    legendToggle.addEventListener("click", () => togglePanel(legendPanel));
-
-    // Data
+    // ----- Data -----
     let eventsData = [];
     const markerByEventId = new Map();
 
-    // Helpers
+    // ----- helpers -----
+    const normalize = (s) => String(s || "").toLowerCase();
+
     function sourceType(ev) {
       const t = normalize(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
@@ -310,9 +336,10 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Stats
+    // ----- Stats -----
     function updateStats(visibleEvents) {
       let mil = 0, sec = 0, pol = 0, oth = 0, news = 0, isw = 0;
+
       for (const ev of visibleEvents) {
         const c = normalize(ev.category || "other");
         if (c === "military") mil++;
@@ -321,7 +348,8 @@ window.addEventListener("DOMContentLoaded", () => {
         else oth++;
 
         const st = sourceType(ev);
-        if (st === "isw") isw++; else news++;
+        if (st === "isw") isw++;
+        else news++;
       }
 
       statsTotalEl.textContent = String(visibleEvents.length);
@@ -333,7 +361,7 @@ window.addEventListener("DOMContentLoaded", () => {
       statsIswEl.textContent = String(isw);
     }
 
-    // Risk
+    // ----- Risk -----
     function categoryWeight(cat) {
       const c = normalize(cat || "other");
       if (c === "military") return 3.0;
@@ -348,6 +376,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const t = ageDays / (windowDays - 1);
       return 1.0 - 0.6 * t;
     }
+
     function updateRisk(visibleEvents, selectedIndex, windowDays) {
       let total = 0;
       const byLoc = new Map();
@@ -357,7 +386,10 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
 
         const locName = (ev?.location?.name || "Unknown").trim() || "Unknown";
-        const score = categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(idx, selectedIndex, windowDays);
+        const score =
+          categoryWeight(ev.category) *
+          sourceMultiplier(ev) *
+          recencyWeight(idx, selectedIndex, windowDays);
 
         total += score;
         byLoc.set(locName, (byLoc.get(locName) || 0) + score);
@@ -375,7 +407,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // Actors UI
+    // ----- Actors -----
     function updateActors(baseEvents) {
       const counts = new Map();
       for (const ev of baseEvents) {
@@ -402,11 +434,12 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Pairs UI
+    // ----- Pairs -----
     const pairKey = (a, b) => [a, b].sort().join(" + ");
 
     function updatePairs(baseEvents) {
       const counts = new Map();
+
       for (const ev of baseEvents) {
         const found = actorsInEvent(ev);
         if (found.length < 2) continue;
@@ -446,7 +479,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Heatmap
+    // ----- Heatmap -----
     function updateHeatmap(visibleEvents, selectedIndex, windowDays) {
       if (!heatCheckbox.checked) {
         if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
@@ -463,12 +496,17 @@ window.addEventListener("DOMContentLoaded", () => {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
 
-        const w = categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(idx, selectedIndex, windowDays);
+        const w =
+          categoryWeight(ev.category) *
+          sourceMultiplier(ev) *
+          recencyWeight(idx, selectedIndex, windowDays);
+
         points.push([lat, lng, w]);
       }
 
       if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
       heatLayer = null;
+
       if (points.length === 0) return;
 
       heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9 });
@@ -477,24 +515,22 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // TREND (ALWAYS DRAW SOMETHING)
+    // ----- Trend (always draw something) -----
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
 
-      // FIX: use the trend box width (stable), not canvas (which can be 0)
       const boxRect = trendBox.getBoundingClientRect();
-      const cssW = Math.max(340, Math.floor(boxRect.width || 0) - 24); // -padding approx
+      const cssW = Math.max(340, Math.floor((boxRect.width || 0)));
       const cssH = 120;
 
-      trendCanvas.style.width = cssW + "px";
+      trendCanvas.style.width = "100%";
       trendCanvas.style.height = cssH + "px";
 
       trendCanvas.width = Math.floor(cssW * dpr);
       trendCanvas.height = Math.floor(cssH * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // background fill to be sure it’s visible
       ctx.clearRect(0, 0, cssW, cssH);
       ctx.globalAlpha = 1.0;
       ctx.fillStyle = "rgba(0,0,0,0.16)";
@@ -504,7 +540,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const w = cssW - padL - padR;
       const h = cssH - padT - padB;
 
-      // frame/axis
       ctx.globalAlpha = 0.55;
       ctx.strokeStyle = "#ffffff";
       ctx.lineWidth = 1;
@@ -520,7 +555,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const max = Math.max(1, ...counts);
       const barW = w / Math.max(1, counts.length);
 
-      // bars (if counts are all 0, this draws 0-height bars, still ok)
       ctx.globalAlpha = 0.85;
       ctx.fillStyle = "#ffffff";
       counts.forEach((c, i) => {
@@ -530,7 +564,6 @@ window.addEventListener("DOMContentLoaded", () => {
         ctx.fillRect(x, y, Math.max(1, barW - 2), bh);
       });
 
-      // labels (always)
       ctx.globalAlpha = 0.85;
       ctx.fillStyle = "#ffffff";
       ctx.font = "11px system-ui, -apple-system, Segoe UI, Roboto, Arial";
@@ -581,7 +614,7 @@ window.addEventListener("DOMContentLoaded", () => {
       drawTrend(dates, counts, total);
     }
 
-    // MAIN update
+    // ----- MAIN UPDATE -----
     function updateMapAndList() {
       clusterGroup.clearLayers();
       markerByEventId.clear();
@@ -590,9 +623,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const view = computeVisibleEvents();
       label.textContent = view.selectedDate || "—";
 
-      // always redraw trend
       updateTrend(view.selectedIndex, view.windowDays);
-
       updateStats(view.out);
       updateRisk(view.out, view.selectedIndex, view.windowDays);
 
@@ -635,7 +666,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Wiring
+    // ----- Wiring -----
     slider.addEventListener("input", updateMapAndList);
     catCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
     srcCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
@@ -647,13 +678,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     heatCheckbox.addEventListener("change", updateMapAndList);
 
-    // redraw on resize
     window.addEventListener("resize", () => {
       clearTimeout(window.__trendResizeT);
       window.__trendResizeT = setTimeout(updateMapAndList, 160);
     });
 
-    // Load data
+    // ----- Load data -----
     fetch("events.json")
       .then((r) => r.json())
       .then((data) => {
