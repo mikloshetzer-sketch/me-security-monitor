@@ -1,203 +1,103 @@
-// ---------------- MAP ----------------
-const map = L.map('map').setView([33.5, 44.0], 6);
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Middle East Security Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:'&copy; OpenStreetMap'
-}).addTo(map);
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-const clusterGroup = L.markerClusterGroup({
-  showCoverageOnHover:false,
-  spiderfyOnMaxZoom:true,
-  disableClusteringAtZoom:10
-});
-map.addLayer(clusterGroup);
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
-// ---------------- DATE ----------------
-function makeLast365Days(){
-  const days=[];
-  const today=new Date();
-  for(let i=364;i>=0;i--){
-    const d=new Date(today);
-    d.setDate(d.getDate()-i);
-    days.push(d.toISOString().slice(0,10));
-  }
-  return days;
-}
-const days365=makeLast365Days();
-const dateToIndex=new Map(days365.map((d,i)=>[d,i]));
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-// ---------------- UI ----------------
-const slider=document.getElementById("timelineSlider");
-const label=document.getElementById("selectedDateLabel");
-const listContainer=document.getElementById("eventsList");
+<div id="map"></div>
 
-slider.max=days365.length-1;
-slider.value=days365.length-1;
+<!-- Controls -->
+<div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
+  <div class="panel-header">
+    <button id="controlToggle" class="panel-toggle" aria-label="Controls ki/be">☰</button>
+    <div class="panel-title">Controls</div>
+  </div>
 
-const catCheckboxes=[...document.querySelectorAll(".cat-filter")];
-const srcCheckboxes=[...document.querySelectorAll(".src-filter")];
-const windowRadios=[...document.querySelectorAll("input[name='window']")];
+  <div class="panel-body">
+    <div class="row">
+      <label>
+        <input id="bordersCheckbox" type="checkbox" checked />
+        Country borders
+      </label>
+    </div>
 
-// ---------------- DATA ----------------
-let eventsData=[];
+    <hr class="sep" />
 
-// Load events
-fetch("events.json")
-  .then(r=>r.json())
-  .then(data=>{
-    eventsData=data;
-    updateMapAndList();
-  })
-  .catch(err=>{
-    console.error(err);
-    listContainer.innerHTML = `<div class="muted">events.json load error</div>`;
-  });
+    <div class="row"><b>Sources</b></div>
+    <div class="row"><label><input class="src-filter" type="checkbox" value="news" checked /> News</label></div>
+    <div class="row"><label><input class="src-filter" type="checkbox" value="isw" checked /> ISW</label></div>
 
-// ---------------- HELPERS ----------------
-function categoryColor(cat){
-  if(cat==="military") return "#ff5a5a";
-  if(cat==="political") return "#4ea1ff";
-  if(cat==="security") return "#ffd84e";
-  return "#b7b7b7";
-}
+    <hr class="sep" />
 
-function makeMarker(ev){
-  const icon=L.divIcon({
-    className:"",
-    html:`<div class="event-dot" style="background:${categoryColor(ev.category)}"></div>`,
-    iconSize:[12,12],
-    iconAnchor:[6,6]
-  });
+    <div class="row"><b>Categories</b></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="political" checked /> political</label></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="military" checked /> military</label></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="security" checked /> security</label></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="other" checked /> other</label></div>
 
-  const lat = ev?.location?.lat;
-  const lng = ev?.location?.lng;
-  if(typeof lat !== "number" || typeof lng !== "number") return null;
+    <hr class="sep" />
 
-  const m=L.marker([lat,lng],{icon});
-  m.bindPopup(`<b>${ev.title}</b><br>${ev.summary || ""}<br><small>${ev.source?.name || ""}</small>`);
-  return m;
-}
+    <div class="row"><b>Time Window</b></div>
+    <div class="row"><label><input type="radio" name="window" value="1" checked /> 1 day</label></div>
+    <div class="row"><label><input type="radio" name="window" value="7" /> 7 days</label></div>
+    <div class="row"><label><input type="radio" name="window" value="30" /> 30 days</label></div>
+  </div>
+</div>
 
-function getSelectedCategories(){
-  const set=new Set();
-  catCheckboxes.forEach(cb=>{ if(cb.checked) set.add(cb.value); });
-  return set;
-}
+<!-- Timeline + list -->
+<div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
+  <div class="panel-header">
+    <button id="timelineToggle" class="panel-toggle" aria-label="Timeline ki/be">☰</button>
+    <div class="panel-title">Timeline</div>
+  </div>
 
-function getSelectedSources(){
-  const set=new Set();
-  srcCheckboxes.forEach(cb=>{ if(cb.checked) set.add(cb.value); });
-  return set;
-}
+  <div class="panel-body">
+    <div class="muted">Selected date</div>
+    <div id="selectedDateLabel" class="big">—</div>
+    <input id="timelineSlider" type="range" min="0" max="364" value="364" />
 
-function getWindowDays(){
-  const r=windowRadios.find(x=>x.checked);
-  return Number(r?.value || 1);
-}
+    <hr class="sep" />
 
-function sourceType(ev){
-  // normalize: "news" | "isw"
-  const t = (ev?.source?.type || "news").toLowerCase();
-  return (t === "isw") ? "isw" : "news";
-}
+    <div class="events-title">Events</div>
+    <div id="eventsList" class="events-list"></div>
+  </div>
+</div>
 
-function badgeHtml(t){
-  return t === "isw"
-    ? `<span class="badge badge-isw">ISW</span>`
-    : `<span class="badge badge-news">NEWS</span>`;
-}
+<!-- Legend -->
+<div id="legendPanel" class="panel panel-bottom-left closed" aria-label="Legend panel">
+  <div class="panel-header">
+    <button id="legendToggle" class="panel-toggle" aria-label="Legend ki/be">☰</button>
+    <div class="panel-title">Legend</div>
+  </div>
 
-// Build visible list based on current filters
-function computeVisibleEvents(){
-  const selectedIndex=Number(slider.value);
-  const selectedDate=days365[selectedIndex];
-  const windowDays=getWindowDays();
-  const selectedCats=getSelectedCategories();
-  const selectedSrc=getSelectedSources();
+  <div class="panel-body">
+    <div class="legend-item"><span class="dot dot-military"></span> military</div>
+    <div class="legend-item"><span class="dot dot-political"></span> political</div>
+    <div class="legend-item"><span class="dot dot-security"></span> security</div>
+    <div class="legend-item"><span class="dot dot-other"></span> other</div>
 
-  const out=[];
-  for(const ev of eventsData){
-    const idx=dateToIndex.get(ev.date);
-    if(idx === undefined) continue;
+    <hr class="sep" />
 
-    const within = idx<=selectedIndex && idx>=selectedIndex-(windowDays-1);
-    if(!within) continue;
+    <div class="legend-item"><span class="badge badge-news">NEWS</span> source</div>
+    <div class="legend-item"><span class="badge badge-isw">ISW</span> source</div>
+  </div>
+</div>
 
-    const cat = ev.category || "other";
-    if(!selectedCats.has(cat)) continue;
-
-    const st = sourceType(ev);
-    if(!selectedSrc.has(st)) continue;
-
-    out.push(ev);
-  }
-
-  return { out, selectedDate };
-}
-
-// ---------------- MAIN UPDATE ----------------
-function updateMapAndList(){
-  clusterGroup.clearLayers();
-  listContainer.innerHTML="";
-
-  const { out: visibleEvents, selectedDate } = computeVisibleEvents();
-  label.textContent = selectedDate || "—";
-
-  // Markers
-  visibleEvents.forEach(ev=>{
-    const m = makeMarker(ev);
-    if(m) clusterGroup.addLayer(m);
-  });
-
-  // List
-  if(visibleEvents.length === 0){
-    listContainer.innerHTML = `<div class="muted">No events for current filters.</div>`;
-    return;
-  }
-
-  visibleEvents
-    .slice()
-    .sort((a,b)=> (b.date + (b.title||"")).localeCompare(a.date + (a.title||"")))
-    .forEach(ev=>{
-      const row=document.createElement("div");
-      row.className="event-row";
-
-      const st = sourceType(ev);
-      const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
-
-      row.innerHTML=`
-        <div class="event-row-title">${ev.title || "Untitled"}</div>
-        <div class="event-row-meta">
-          ${badgeHtml(st)}
-          <span>${ev.category || "other"} · ${ev.date}${locName}</span>
-        </div>
-      `;
-
-      row.onclick=()=>{
-        const lat = ev?.location?.lat;
-        const lng = ev?.location?.lng;
-        if(typeof lat === "number" && typeof lng === "number"){
-          map.setView([lat,lng], 9);
-          // optional: open popup by finding nearby marker is expensive; keep simple for now
-        }
-      };
-
-      listContainer.appendChild(row);
-    });
-}
-
-// ---------------- EVENTS ----------------
-slider.addEventListener("input", updateMapAndList);
-catCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
-srcCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
-windowRadios.forEach(r=>r.addEventListener("change", updateMapAndList));
-
-// ---------------- PANEL TOGGLE ----------------
-document.querySelectorAll(".panel-header button").forEach(btn=>{
-  btn.onclick=()=>{
-    btn.parentElement.parentElement.classList.toggle("closed");
-  };
-});
-
-// initial
-updateMapAndList();
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
