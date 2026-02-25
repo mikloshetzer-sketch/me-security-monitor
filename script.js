@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return el;
     };
 
-    // ----- Panels (top-level) -----
+    // ----- Panels -----
     const controlPanel = $("controlPanel");
     const timelinePanel = $("timelinePanel");
     const legendPanel = $("legendPanel");
@@ -18,9 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function togglePanel(panelEl) {
       const wasClosed = panelEl.classList.contains("closed");
       panelEl.classList.toggle("closed");
-      if (wasClosed && panelEl === timelinePanel) {
-        setTimeout(() => updateMapAndList(), 80);
-      }
+      if (wasClosed && panelEl === timelinePanel) setTimeout(() => updateMapAndList(), 80);
     }
     controlToggle.addEventListener("click", () => togglePanel(controlPanel));
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
@@ -29,26 +27,19 @@ window.addEventListener("DOMContentLoaded", () => {
     // ----- Accordion (inside timeline) -----
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
-      if (!arrow) return;
-      arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+      if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
-
     document.querySelectorAll(".acc-btn").forEach((btn) => {
       const targetId = btn.getAttribute("data-acc");
       const panel = document.getElementById(targetId);
       if (!panel) return;
-
-      // ensure default closed -> arrow reset
       setArrow(btn, !panel.classList.contains("closed"));
-
       btn.addEventListener("click", () => {
         const isClosed = panel.classList.contains("closed");
         panel.classList.toggle("closed");
         setArrow(btn, isClosed);
-
-        // redraw trend when opened
-        if (targetId === "accTrend" && isClosed) {
+        if ((targetId === "accTrend" || targetId === "accAlerts" || targetId === "accCountryRisk" || targetId === "accEscalation") && isClosed) {
           setTimeout(() => updateMapAndList(), 80);
         }
       });
@@ -67,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // ----- Heatmap (Hotspot) -----
+    // ----- Hotspot heatmap -----
     const heatCheckbox = $("heatmapCheckbox");
     let heatLayer = null;
 
@@ -174,6 +165,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const trendRangeEl = $("trendRange");
     const trendBox = trendCanvas.closest(".trend") || timelinePanel;
 
+    // NEW: alerts / country risk / escalation
+    const spikeBadge = $("spikeBadge");
+    const spikeText = $("spikeText");
+    const spikeDetails = $("spikeDetails");
+
+    const countryRiskList = $("countryRiskList");
+    const countryRiskNote = $("countryRiskNote");
+
+    const escalationList = $("escalationList");
+    const escNote = $("escNote");
+
     slider.max = days365.length - 1;
     slider.value = days365.length - 1;
 
@@ -185,7 +187,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let eventsData = [];
     const markerByEventId = new Map();
 
-    // ----- helpers -----
+    // ----- Helpers -----
     const normalize = (s) => String(s || "").toLowerCase();
 
     function sourceType(ev) {
@@ -281,6 +283,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
+    // IMPORTANT: base filters (cat/source/search) are applied first, then actor/pair
     function computeBaseWindowEvents() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -336,32 +339,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ----- Stats -----
-    function updateStats(visibleEvents) {
-      let mil = 0, sec = 0, pol = 0, oth = 0, news = 0, isw = 0;
-
-      for (const ev of visibleEvents) {
-        const c = normalize(ev.category || "other");
-        if (c === "military") mil++;
-        else if (c === "security") sec++;
-        else if (c === "political") pol++;
-        else oth++;
-
-        const st = sourceType(ev);
-        if (st === "isw") isw++;
-        else news++;
-      }
-
-      statsTotalEl.textContent = String(visibleEvents.length);
-      statsMilEl.textContent = String(mil);
-      statsSecEl.textContent = String(sec);
-      statsPolEl.textContent = String(pol);
-      statsOthEl.textContent = String(oth);
-      statsNewsEl.textContent = String(news);
-      statsIswEl.textContent = String(isw);
-    }
-
-    // ----- Risk -----
+    // ----- Scoring -----
     function categoryWeight(cat) {
       const c = normalize(cat || "other");
       if (c === "military") return 3.0;
@@ -374,9 +352,32 @@ window.addEventListener("DOMContentLoaded", () => {
       const ageDays = selectedIndex - eventIndex;
       if (windowDays <= 1) return 1.0;
       const t = ageDays / (windowDays - 1);
-      return 1.0 - 0.6 * t;
+      return 1.0 - 0.6 * t; // newest higher
     }
 
+    // ----- Stats -----
+    function updateStats(visibleEvents) {
+      let mil = 0, sec = 0, pol = 0, oth = 0, news = 0, isw = 0;
+      for (const ev of visibleEvents) {
+        const c = normalize(ev.category || "other");
+        if (c === "military") mil++;
+        else if (c === "security") sec++;
+        else if (c === "political") pol++;
+        else oth++;
+
+        const st = sourceType(ev);
+        if (st === "isw") isw++; else news++;
+      }
+      statsTotalEl.textContent = String(visibleEvents.length);
+      statsMilEl.textContent = String(mil);
+      statsSecEl.textContent = String(sec);
+      statsPolEl.textContent = String(pol);
+      statsOthEl.textContent = String(oth);
+      statsNewsEl.textContent = String(news);
+      statsIswEl.textContent = String(isw);
+    }
+
+    // ----- Risk (overall) -----
     function updateRisk(visibleEvents, selectedIndex, windowDays) {
       let total = 0;
       const byLoc = new Map();
@@ -407,7 +408,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // ----- Actors -----
+    // ----- Actors UI -----
     function updateActors(baseEvents) {
       const counts = new Map();
       for (const ev of baseEvents) {
@@ -434,12 +435,11 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- Pairs -----
+    // ----- Pairs UI -----
     const pairKey = (a, b) => [a, b].sort().join(" + ");
 
     function updatePairs(baseEvents) {
       const counts = new Map();
-
       for (const ev of baseEvents) {
         const found = actorsInEvent(ev);
         if (found.length < 2) continue;
@@ -479,7 +479,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- Heatmap -----
+    // ----- Hotspot heatmap -----
     function updateHeatmap(visibleEvents, selectedIndex, windowDays) {
       if (!heatCheckbox.checked) {
         if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
@@ -506,7 +506,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
       heatLayer = null;
-
       if (points.length === 0) return;
 
       heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9 });
@@ -515,7 +514,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // ----- Trend (always draw something) -----
+    // ----- Trend (counts array is also used by Spike) -----
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -580,14 +579,11 @@ window.addEventListener("DOMContentLoaded", () => {
       ctx.fillText(end.slice(5), padL + w - endW, padT + h + 14);
     }
 
-    function updateTrend(selectedIndex, windowDays) {
+    // returns {dates, counts, total, startIndex}
+    function computeTrendCounts(selectedIndex, windowDays, catSet, srcSet, q) {
       const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
       const dates = days365.slice(startIndex, selectedIndex + 1);
       const counts = new Array(dates.length).fill(0);
-
-      const q = normalize(searchInput.value).trim();
-      const catSet = getSelectedCategories();
-      const srcSet = getSelectedSources();
 
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
@@ -608,10 +604,189 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       const total = counts.reduce((a, b) => a + b, 0);
-      trendTotalEl.textContent = String(total);
-      trendRangeEl.textContent = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
+      return { dates, counts, total, startIndex };
+    }
 
-      drawTrend(dates, counts, total);
+    function updateTrendAndReturn(selectedIndex, windowDays) {
+      const q = normalize(searchInput.value).trim();
+      const catSet = getSelectedCategories();
+      const srcSet = getSelectedSources();
+
+      const t = computeTrendCounts(selectedIndex, windowDays, catSet, srcSet, q);
+
+      trendTotalEl.textContent = String(t.total);
+      trendRangeEl.textContent = `${t.dates[0]} → ${t.dates[t.dates.length - 1]} (${t.dates.length} days)`;
+      drawTrend(t.dates, t.counts, t.total);
+
+      return t;
+    }
+
+    // ----- SPIKE ALERT -----
+    function mean(arr) { return arr.reduce((a,b)=>a+b,0) / Math.max(1, arr.length); }
+    function stdev(arr) {
+      const m = mean(arr);
+      const v = arr.reduce((a,x)=>a + (x-m)*(x-m), 0) / Math.max(1, arr.length);
+      return Math.sqrt(v);
+    }
+
+    function updateSpikeAlert(trendCounts, visibleEvents, selectedIndex, windowDays) {
+      const counts = trendCounts.counts;
+      const last = counts[counts.length - 1] || 0;
+      const base = counts.slice(0, -1);
+      const baseMean = base.length ? mean(base) : 0;
+      const baseStd = base.length ? stdev(base) : 0;
+
+      // heuristics (simple + stable)
+      const z = baseStd > 0 ? (last - baseMean) / baseStd : (last > baseMean ? 999 : 0);
+      const ratio = (last + 1) / (baseMean + 1);
+
+      // thresholds
+      let level = "ok";
+      if (last >= 10 && (z >= 2.0 || ratio >= 2.0)) level = "alert";
+      else if (last >= 5 && (z >= 1.3 || ratio >= 1.6)) level = "warn";
+
+      // badge
+      spikeBadge.className = "badge-mini " + (level === "alert" ? "badge-alert" : level === "warn" ? "badge-warn" : "badge-ok");
+      spikeBadge.textContent = level === "alert" ? "ALERT" : level === "warn" ? "WATCH" : "OK";
+
+      spikeText.textContent = `Today count: ${last} · baseline(avg): ${baseMean.toFixed(1)} · z: ${isFinite(z) ? z.toFixed(1) : "—"} · ratio: ${ratio.toFixed(2)} (window ${windowDays}d)`;
+
+      // details: top categories & top locations for today (selected date)
+      const selectedDate = days365[selectedIndex];
+      const todayEvents = visibleEvents.filter(ev => ev.date === selectedDate);
+
+      const byCat = new Map();
+      const byLoc = new Map();
+      for (const ev of todayEvents) {
+        const c = normalize(ev.category || "other");
+        byCat.set(c, (byCat.get(c) || 0) + 1);
+        const loc = (ev?.location?.name || "Unknown").trim() || "Unknown";
+        byLoc.set(loc, (byLoc.get(loc) || 0) + 1);
+      }
+
+      const topCats = [...byCat.entries()].sort((a,b)=>b[1]-a[1]).slice(0,3);
+      const topLocs = [...byLoc.entries()].sort((a,b)=>b[1]-a[1]).slice(0,3);
+
+      const items = [];
+      if (topCats.length) items.push(...topCats.map(([k,v]) => ({name:`cat: ${k}`, val:v})));
+      if (topLocs.length) items.push(...topLocs.map(([k,v]) => ({name:`loc: ${k}`, val:v})));
+
+      spikeDetails.innerHTML = items.length
+        ? items.map(x => `<div class="mini-item"><div class="name">${x.name}</div><div class="val">${x.val}</div></div>`).join("")
+        : `<div class="muted">No same-day breakdown (or no events today).</div>`;
+    }
+
+    // ----- COUNTRY RISK -----
+    function getCountry(ev) {
+      // preferred: explicit country field
+      const c1 = ev?.location?.country;
+      if (c1) return String(c1).trim();
+
+      // fallback: try split location name "City, Country"
+      const name = (ev?.location?.name || "").trim();
+      if (name.includes(",")) {
+        const parts = name.split(",").map(s => s.trim()).filter(Boolean);
+        const last = parts[parts.length - 1];
+        if (last && last.length >= 3) return last;
+      }
+
+      return "Unknown";
+    }
+
+    function updateCountryRisk(visibleEvents, selectedIndex, windowDays) {
+      const byCountry = new Map();
+
+      for (const ev of visibleEvents) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+
+        const country = getCountry(ev);
+        const score =
+          categoryWeight(ev.category) *
+          sourceMultiplier(ev) *
+          recencyWeight(idx, selectedIndex, windowDays);
+
+        byCountry.set(country, (byCountry.get(country) || 0) + score);
+      }
+
+      const rows = [...byCountry.entries()].sort((a,b)=>b[1]-a[1]).slice(0, 10);
+      countryRiskNote.textContent = `Top ${rows.length} (risk-weighted)`;
+
+      countryRiskList.innerHTML = rows.length
+        ? rows.map(([name, val]) => `
+            <div class="rank-row">
+              <div class="name">${name}</div>
+              <div class="val">${val.toFixed(1)}</div>
+            </div>`).join("")
+        : `<div class="muted">No country risk data for current filters.</div>`;
+    }
+
+    // ----- ACTOR ESCALATION -----
+    // compare recent K days vs previous K days inside available history (K=7, or smaller if window too small)
+    function updateActorEscalation(selectedIndex, windowDays) {
+      const q = normalize(searchInput.value).trim();
+      const catSet = getSelectedCategories();
+      const srcSet = getSelectedSources();
+
+      const K = Math.min(7, Math.max(2, Math.floor(windowDays / 2)));
+      const end = selectedIndex;
+      const recentStart = Math.max(0, end - (K - 1));
+      const prevEnd = recentStart - 1;
+      const prevStart = Math.max(0, prevEnd - (K - 1));
+
+      // build counts per actor
+      const recent = new Map();
+      const prev = new Map();
+
+      for (const ev of eventsData) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+
+        // base filters (cat/source/search) + pair filter stays (so escalation respects current "interaction focus")
+        const cat = normalize(ev.category || "other");
+        if (!catSet.has(cat)) continue;
+
+        const st = sourceType(ev);
+        if (!srcSet.has(st)) continue;
+
+        if (!matchesSearch(ev, q)) continue;
+        if (!matchesPairFilter(ev)) continue;
+
+        const actors = actorsInEvent(ev);
+        if (!actors.length) continue;
+
+        if (idx >= recentStart && idx <= end) {
+          for (const a of actors) recent.set(a, (recent.get(a) || 0) + 1);
+        } else if (idx >= prevStart && idx <= prevEnd) {
+          for (const a of actors) prev.set(a, (prev.get(a) || 0) + 1);
+        }
+      }
+
+      // score: (recent-prev) * ratio
+      const allActors = new Set([...recent.keys(), ...prev.keys()]);
+      const scored = [];
+      for (const a of allActors) {
+        const r = recent.get(a) || 0;
+        const p = prev.get(a) || 0;
+        const ratio = (r + 1) / (p + 1);
+        const delta = r - p;
+        const score = delta * ratio;
+        if (r === 0 && p === 0) continue;
+        scored.push({ a, r, p, delta, ratio, score });
+      }
+
+      scored.sort((x,y)=>y.score - x.score);
+      const top = scored.slice(0, 10);
+
+      escNote.textContent = `Recent ${K}d vs previous ${K}d (base filters + pair filter; actor filter ignored for detection)`;
+
+      escalationList.innerHTML = top.length
+        ? top.map(x => `
+            <div class="rank-row">
+              <div class="name">${x.a} <span class="muted">(${x.p}→${x.r}, Δ${x.delta}, ×${x.ratio.toFixed(2)})</span></div>
+              <div class="val">${x.score.toFixed(1)}</div>
+            </div>`).join("")
+        : `<div class="muted">No escalation signal in this range.</div>`;
     }
 
     // ----- MAIN UPDATE -----
@@ -623,22 +798,31 @@ window.addEventListener("DOMContentLoaded", () => {
       const view = computeVisibleEvents();
       label.textContent = view.selectedDate || "—";
 
-      updateTrend(view.selectedIndex, view.windowDays);
+      // Trend first (also used by spike)
+      const trendCounts = updateTrendAndReturn(view.selectedIndex, view.windowDays);
+
+      // Primary panels
       updateStats(view.out);
       updateRisk(view.out, view.selectedIndex, view.windowDays);
+      updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
+      // Discovery panels based on BASE window (no actor/pair filters)
       const base = computeBaseWindowEvents();
       updateActors(base.out);
       updatePairs(base.out);
 
+      // New analytics
+      updateSpikeAlert(trendCounts, view.out, view.selectedIndex, view.windowDays);
+      updateCountryRisk(view.out, view.selectedIndex, view.windowDays);
+      updateActorEscalation(view.selectedIndex, view.windowDays);
+
+      // Markers
       view.out.forEach((ev) => {
         const m = makeMarker(ev);
         if (!m) return;
         clusterGroup.addLayer(m);
         if (ev.id) markerByEventId.set(ev.id, m);
       });
-
-      updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
       if (view.out.length === 0) {
         listContainer.innerHTML = `<div class="muted">No events for current filters/search/actor/pair.</div>`;
