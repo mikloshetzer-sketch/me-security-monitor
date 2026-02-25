@@ -68,6 +68,23 @@
 
     <hr class="sep" />
 
+    <!-- ACCORDION: Alerts (Spike) -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accAlerts" aria-expanded="false">
+        <span>Alerts (Spike)</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accAlerts" class="acc-panel closed">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-title">Spike status</div>
+            <div id="spikeBadge" class="badge-mini">—</div>
+          </div>
+          <div id="spikeText" class="muted">—</div>
+          <div id="spikeDetails" class="mini-list"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- ACCORDION: Trend -->
     <div class="acc-block">
       <button class="acc-btn" type="button" data-acc="accTrend" aria-expanded="false">
@@ -127,6 +144,38 @@
             Weighted: mil=3, sec=2, pol=1, oth=0.5 · ISW×1.3 · recent events higher
           </div>
           <div id="riskList" class="risk-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION: Country Risk -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accCountryRisk" aria-expanded="false">
+        <span>Country Risk</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accCountryRisk" class="acc-panel closed">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-title">Top countries (risk-weighted)</div>
+            <div id="countryRiskNote" class="muted">—</div>
+          </div>
+          <div id="countryRiskList" class="rank-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION: Actor Escalation -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accEscalation" aria-expanded="false">
+        <span>Actor Escalation</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accEscalation" class="acc-panel closed">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-title">Top actors (recent vs previous)</div>
+            <div id="escNote" class="muted">—</div>
+          </div>
+          <div id="escalationList" class="rank-list"></div>
         </div>
       </div>
     </div>
