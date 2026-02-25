@@ -12,6 +12,59 @@ const clusterGroup = L.markerClusterGroup({
 });
 map.addLayer(clusterGroup);
 
+// ---------------- COUNTRY BORDERS ----------------
+// Natural Earth 50m admin-0 countries
+const BORDERS_GEOJSON_URL =
+  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
+
+const bordersCheckbox = document.getElementById("bordersCheckbox");
+let bordersLayer = null;
+let bordersLoaded = false;
+
+function bordersStyle(){
+  return {
+    color: "#ffffff",
+    weight: 2.2,
+    opacity: 0.85,
+    fillOpacity: 0
+  };
+}
+
+async function ensureBordersLoaded(){
+  if (bordersLoaded) return;
+
+  const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
+  if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
+  const geojson = await res.json();
+
+  bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
+  bordersLoaded = true;
+}
+
+async function setBordersVisible(visible){
+  if (visible) {
+    try {
+      await ensureBordersLoaded();
+      if (bordersLayer && !map.hasLayer(bordersLayer)) {
+        bordersLayer.addTo(map);
+        bordersLayer.bringToBack(); // keep under markers
+      }
+    } catch (err) {
+      console.error("Borders load failed:", err);
+      alert("Nem sikerült betölteni az országhatárokat.");
+      // revert checkbox to OFF if failed
+      bordersCheckbox.checked = false;
+    }
+  } else {
+    if (bordersLayer && map.hasLayer(bordersLayer)) {
+      map.removeLayer(bordersLayer);
+    }
+  }
+}
+
+setBordersVisible(!!bordersCheckbox.checked);
+bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
+
 // ---------------- DATE ----------------
 function makeLast365Days(){
   const days=[];
@@ -43,7 +96,6 @@ const windowRadios=[...document.querySelectorAll("input[name='window']")];
 let eventsData=[];
 const markerByEventId = new Map();
 
-// Load events
 fetch("events.json")
   .then(r=>r.json())
   .then(data=>{
@@ -195,7 +247,6 @@ function updateMapAndList(){
   const { out: visibleEvents, selectedDate } = computeVisibleEvents();
   label.textContent = selectedDate || "—";
 
-  // markers
   visibleEvents.forEach(ev=>{
     const m = makeMarker(ev);
     if(!m) return;
@@ -203,7 +254,6 @@ function updateMapAndList(){
     if(ev.id) markerByEventId.set(ev.id, m);
   });
 
-  // list
   if(visibleEvents.length === 0){
     listContainer.innerHTML = `<div class="muted">No events for current filters/search.</div>`;
     return;
@@ -238,10 +288,7 @@ catCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 srcCheckboxes.forEach(cb=>cb.addEventListener("change", updateMapAndList));
 windowRadios.forEach(r=>r.addEventListener("change", updateMapAndList));
 
-searchInput.addEventListener("input", () => {
-  // no debounce needed yet; events.json size is small
-  updateMapAndList();
-});
+searchInput.addEventListener("input", updateMapAndList);
 
 // ---------------- PANEL TOGGLE ----------------
 document.querySelectorAll(".panel-header button").forEach(btn=>{
