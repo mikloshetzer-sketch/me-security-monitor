@@ -124,6 +124,34 @@ html, body { margin:0; padding:0; height:100%; }
 .stat-pill span{ opacity:0.8; font-size:11px; }
 .stat-pill b{ font-size:13px; }
 
+/* Risk block */
+.risk{
+  padding:10px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+.risk-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+.risk-title{ font-weight:700; }
+.risk-total{ font-size:18px; font-weight:800; }
+
+.risk-list{ display:flex; flex-direction:column; gap:6px; margin-top:8px; }
+.risk-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:6px 8px;
+  border-radius:10px;
+  background: rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.10);
+}
+.risk-row .name{ opacity:0.9; }
+.risk-row .val{ font-weight:700; }
+
 /* Badges */
 .badge{
   font-size:11px;
