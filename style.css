@@ -87,20 +87,20 @@ html, body { margin:0; padding:0; height:100%; }
 .search::placeholder{ color: rgba(255,255,255,0.6); }
 
 /* Stats block */
-.stats{
+.stats, .risk, .actors{
   padding:10px;
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.04);
 }
-.stats-top{
+.stats-top, .risk-top, .actors-top{
   display:flex;
   align-items:baseline;
   justify-content:space-between;
   margin-bottom:8px;
 }
-.stats-title{ font-weight:700; }
-.stats-total{ font-size:18px; font-weight:800; }
+.stats-title, .risk-title, .actors-title{ font-weight:700; }
+.stats-total, .risk-total{ font-size:18px; font-weight:800; }
 
 .stats-grid{
   display:grid;
@@ -111,7 +111,6 @@ html, body { margin:0; padding:0; height:100%; }
 .stats-grid:last-child{
   grid-template-columns: repeat(2, 1fr);
 }
-
 .stat-pill{
   display:flex;
   justify-content:space-between;
@@ -124,21 +123,7 @@ html, body { margin:0; padding:0; height:100%; }
 .stat-pill span{ opacity:0.8; font-size:11px; }
 .stat-pill b{ font-size:13px; }
 
-/* Risk block */
-.risk{
-  padding:10px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-}
-.risk-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-}
-.risk-title{ font-weight:700; }
-.risk-total{ font-size:18px; font-weight:800; }
-
+/* Risk list */
 .risk-list{ display:flex; flex-direction:column; gap:6px; margin-top:8px; }
 .risk-row{
   display:flex;
@@ -151,6 +136,38 @@ html, body { margin:0; padding:0; height:100%; }
 }
 .risk-row .name{ opacity:0.9; }
 .risk-row .val{ font-weight:700; }
+
+/* Actors */
+.actors-right{ display:flex; align-items:center; gap:8px; }
+.btn-mini{
+  background: rgba(255,255,255,0.10);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:10px;
+  padding:4px 8px;
+  cursor:pointer;
+  font-size:12px;
+}
+.btn-mini:hover{ background: rgba(255,255,255,0.16); }
+
+.actors-list{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+.actor-chip{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.10);
+  cursor:pointer;
+  user-select:none;
+}
+.actor-chip:hover{ background: rgba(255,255,255,0.12); }
+.actor-chip.active{
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.14);
+}
+.actor-chip b{ font-weight:800; }
 
 /* Badges */
 .badge{
