@@ -4,7 +4,7 @@ html, body { margin:0; padding:0; height:100%; }
 .panel {
   position:absolute;
   z-index:1000;
-  width: min(360px, 92vw);
+  width: min(380px, 92vw);
   background: rgba(20,20,20,0.9);
   color:#fff;
   border-radius:12px;
@@ -72,6 +72,19 @@ html, body { margin:0; padding:0; height:100%; }
   align-items:center;
   flex-wrap:wrap;
 }
+
+/* Search */
+.search{
+  width:100%;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color:#fff;
+  outline:none;
+  margin: 6px 0 10px;
+}
+.search::placeholder{ color: rgba(255,255,255,0.6); }
 
 /* Badges */
 .badge{
