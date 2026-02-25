@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<!-- Timeline + list -->
+<!-- Timeline -->
 <div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
   <div class="panel-header">
     <button id="timelineToggle" class="panel-toggle" aria-label="Timeline ki/be">☰</button>
@@ -68,78 +68,105 @@
 
     <hr class="sep" />
 
-    <!-- TREND -->
-    <div class="trend">
-      <div class="trend-top">
-        <div class="trend-title">Trend (daily count)</div>
-        <div id="trendTotal" class="trend-total">0</div>
-      </div>
-      <canvas id="trendCanvas" width="340" height="120"></canvas>
-      <div id="trendRange" class="muted" style="margin-top:6px;">—</div>
-    </div>
-
-    <hr class="sep" />
-
-    <!-- STATS -->
-    <div class="stats">
-      <div class="stats-top">
-        <div class="stats-title">Window stats</div>
-        <div id="statsTotal" class="stats-total">0</div>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-pill"><span>mil</span><b id="statsMil">0</b></div>
-        <div class="stat-pill"><span>sec</span><b id="statsSec">0</b></div>
-        <div class="stat-pill"><span>pol</span><b id="statsPol">0</b></div>
-        <div class="stat-pill"><span>oth</span><b id="statsOth">0</b></div>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-pill"><span>news</span><b id="statsNews">0</b></div>
-        <div class="stat-pill"><span>isw</span><b id="statsIsw">0</b></div>
-      </div>
-    </div>
-
-    <hr class="sep" />
-
-    <!-- RISK -->
-    <div class="risk">
-      <div class="risk-top">
-        <div class="risk-title">Risk Index (window)</div>
-        <div id="riskTotal" class="risk-total">0.0</div>
-      </div>
-      <div class="muted" style="margin-bottom:8px;">
-        Weighted: mil=3, sec=2, pol=1, oth=0.5 · ISW×1.3 · recent events higher
-      </div>
-      <div id="riskList" class="risk-list"></div>
-    </div>
-
-    <hr class="sep" />
-
-    <!-- ACTORS -->
-    <div class="actors">
-      <div class="actors-top">
-        <div class="actors-title">Top Actors (window)</div>
-        <div class="actors-right">
-          <span id="actorActive" class="muted">ALL</span>
-          <button id="actorClear" class="btn-mini" type="button">Clear</button>
+    <!-- ACCORDION: Trend -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accTrend" aria-expanded="false">
+        <span>Trend</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accTrend" class="acc-panel closed">
+        <div class="trend">
+          <div class="trend-top">
+            <div class="trend-title">Daily activity</div>
+            <div id="trendTotal" class="trend-total">0</div>
+          </div>
+          <canvas id="trendCanvas"></canvas>
+          <div id="trendRange" class="muted" style="margin-top:6px;">—</div>
         </div>
       </div>
-      <div id="actorsList" class="actors-list"></div>
     </div>
 
-    <hr class="sep" />
+    <!-- ACCORDION: Stats -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accStats" aria-expanded="false">
+        <span>Stats</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accStats" class="acc-panel closed">
+        <div class="stats">
+          <div class="stats-top">
+            <div class="stats-title">Window stats</div>
+            <div id="statsTotal" class="stats-total">0</div>
+          </div>
 
-    <!-- PAIRS -->
-    <div class="pairs">
-      <div class="pairs-top">
-        <div class="pairs-title">Top Interaction Pairs (window)</div>
-        <div class="pairs-right">
-          <span id="pairActive" class="muted">ALL</span>
-          <button id="pairClear" class="btn-mini" type="button">Clear</button>
+          <div class="stats-grid">
+            <div class="stat-pill"><span>mil</span><b id="statsMil">0</b></div>
+            <div class="stat-pill"><span>sec</span><b id="statsSec">0</b></div>
+            <div class="stat-pill"><span>pol</span><b id="statsPol">0</b></div>
+            <div class="stat-pill"><span>oth</span><b id="statsOth">0</b></div>
+          </div>
+
+          <div class="stats-grid stats-grid-2">
+            <div class="stat-pill"><span>news</span><b id="statsNews">0</b></div>
+            <div class="stat-pill"><span>isw</span><b id="statsIsw">0</b></div>
+          </div>
         </div>
       </div>
-      <div id="pairsList" class="pairs-list"></div>
+    </div>
+
+    <!-- ACCORDION: Risk -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accRisk" aria-expanded="false">
+        <span>Risk</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accRisk" class="acc-panel closed">
+        <div class="risk">
+          <div class="risk-top">
+            <div class="risk-title">Risk Index (window)</div>
+            <div id="riskTotal" class="risk-total">0.0</div>
+          </div>
+          <div class="muted" style="margin-bottom:8px;">
+            Weighted: mil=3, sec=2, pol=1, oth=0.5 · ISW×1.3 · recent events higher
+          </div>
+          <div id="riskList" class="risk-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION: Actors -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accActors" aria-expanded="false">
+        <span>Top Actors</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accActors" class="acc-panel closed">
+        <div class="actors">
+          <div class="actors-top">
+            <div class="actors-title">Top Actors (window)</div>
+            <div class="actors-right">
+              <span id="actorActive" class="muted">ALL</span>
+              <button id="actorClear" class="btn-mini" type="button">Clear</button>
+            </div>
+          </div>
+          <div id="actorsList" class="actors-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCORDION: Pairs -->
+    <div class="acc-block">
+      <button class="acc-btn" type="button" data-acc="accPairs" aria-expanded="false">
+        <span>Top Interaction Pairs</span><span class="acc-arrow">▸</span>
+      </button>
+      <div id="accPairs" class="acc-panel closed">
+        <div class="pairs">
+          <div class="pairs-top">
+            <div class="pairs-title">Top Interaction Pairs (window)</div>
+            <div class="pairs-right">
+              <span id="pairActive" class="muted">ALL</span>
+              <button id="pairClear" class="btn-mini" type="button">Clear</button>
+            </div>
+          </div>
+          <div id="pairsList" class="pairs-list"></div>
+        </div>
+      </div>
     </div>
 
     <hr class="sep" />
@@ -162,9 +189,7 @@
     <div class="legend-item"><span class="dot dot-political"></span> political</div>
     <div class="legend-item"><span class="dot dot-security"></span> security</div>
     <div class="legend-item"><span class="dot dot-other"></span> other</div>
-
     <hr class="sep" />
-
     <div class="legend-item"><span class="badge badge-news">NEWS</span> source</div>
     <div class="legend-item"><span class="badge badge-isw">ISW</span> source</div>
   </div>
