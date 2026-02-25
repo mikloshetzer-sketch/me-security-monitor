@@ -25,16 +25,18 @@ html, body { margin:0; padding:0; height:100%; }
 }
 
 .panel-body { padding:12px; font-size:13px; }
-
 .panel.closed .panel-body { display:none; }
+
+.row { margin: 8px 0; }
 
 .sep { border:0; border-top:1px solid rgba(255,255,255,0.2); margin:10px 0; }
 
+.muted { opacity:0.8; font-size:12px; }
 .big { font-size:16px; font-weight:bold; margin-bottom:6px; }
 
-.legend-item { margin:4px 0; }
+.legend-item { margin:6px 0; display:flex; align-items:center; gap:8px; }
 
-.dot { width:10px; height:10px; border-radius:999px; display:inline-block; margin-right:6px; }
+.dot { width:10px; height:10px; border-radius:999px; display:inline-block; }
 .dot-political { background:#4ea1ff; }
 .dot-military { background:#ff5a5a; }
 .dot-security { background:#ffd84e; }
@@ -44,17 +46,11 @@ html, body { margin:0; padding:0; height:100%; }
   width:12px; height:12px;
   border-radius:999px;
   border:2px solid rgba(0,0,0,0.6);
+  box-sizing:border-box;
 }
 
-.events-title {
-  font-weight:700;
-  margin-bottom:6px;
-}
-
-.events-list {
-  max-height:260px;
-  overflow:auto;
-}
+.events-title { font-weight:700; margin-bottom:6px; }
+.events-list { max-height:260px; overflow:auto; }
 
 .event-row {
   padding:8px;
@@ -64,15 +60,34 @@ html, body { margin:0; padding:0; height:100%; }
   background:rgba(255,255,255,0.05);
 }
 
-.event-row:hover {
-  background:rgba(255,255,255,0.12);
-}
+.event-row:hover { background:rgba(255,255,255,0.12); }
 
-.event-row-title {
-  font-weight:600;
-}
+.event-row-title { font-weight:600; }
 
 .event-row-meta {
   font-size:12px;
-  opacity:0.8;
+  opacity:0.85;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* Badges */
+.badge{
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:999px;
+  display:inline-block;
+  line-height:1.4;
+  letter-spacing:0.2px;
+}
+.badge-news { background: rgba(78,161,255,0.22); border:1px solid rgba(78,161,255,0.35); }
+.badge-isw  { background: rgba(255,216,78,0.22); border:1px solid rgba(255,216,78,0.35); }
+
+@media (max-width:720px){
+  .panel{ position:fixed; left:10px; right:10px; width:auto; }
+  .panel-top-left{ top:10px; }
+  .panel-top-right{ top:80px; }
+  .panel-bottom-left{ bottom:10px; }
 }
