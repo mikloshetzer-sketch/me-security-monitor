@@ -6,16 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return el;
     };
 
-    // Panels
-    const wirePanelToggle = (btnId, panelId) => {
-      const btn = $(btnId);
-      const panel = $(panelId);
-      btn.addEventListener("click", () => panel.classList.toggle("closed"));
-    };
-    wirePanelToggle("controlToggle", "controlPanel");
-    wirePanelToggle("timelineToggle", "timelinePanel");
-    wirePanelToggle("legendToggle", "legendPanel");
-
     // Map
     const map = L.map("map").setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -40,6 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const bordersCheckbox = $("bordersCheckbox");
     let bordersLayer = null;
     let bordersLoaded = false;
+
+    function normalize(s) {
+      return String(s || "").toLowerCase();
+    }
 
     function bordersStyle() {
       return { color: "#ffffff", weight: 2.2, opacity: 0.85, fillOpacity: 0 };
@@ -89,7 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
 
-    // Actors
+    // Actors dictionary
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -104,9 +98,17 @@ window.addEventListener("DOMContentLoaded", () => {
     ];
 
     let activeActor = null;
-    let activePair = null; // {a,b} or null
+    let activePair = null;
 
     // UI refs
+    const controlPanel = $("controlPanel");
+    const timelinePanel = $("timelinePanel");
+    const legendPanel = $("legendPanel");
+
+    const controlToggle = $("controlToggle");
+    const timelineToggle = $("timelineToggle");
+    const legendToggle = $("legendToggle");
+
     const slider = $("timelineSlider");
     const label = $("selectedDateLabel");
     const listContainer = $("eventsList");
@@ -131,12 +133,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const pairActiveEl = $("pairActive");
     const pairClearBtn = $("pairClear");
 
-    // Trend UI
     const trendCanvas = $("trendCanvas");
     const trendTotalEl = $("trendTotal");
     const trendRangeEl = $("trendRange");
+    const trendBox = trendCanvas.closest(".trend") || timelinePanel; // FIX: stabil width source
 
-    // Inputs
     slider.max = days365.length - 1;
     slider.value = days365.length - 1;
 
@@ -144,13 +145,23 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
+    // Panel toggles + redraw when opening timeline (canvas needs width)
+    function togglePanel(panelEl) {
+      const wasClosed = panelEl.classList.contains("closed");
+      panelEl.classList.toggle("closed");
+      if (wasClosed && panelEl === timelinePanel) {
+        setTimeout(() => updateMapAndList(), 80);
+      }
+    }
+    controlToggle.addEventListener("click", () => togglePanel(controlPanel));
+    timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
+    legendToggle.addEventListener("click", () => togglePanel(legendPanel));
+
     // Data
     let eventsData = [];
     const markerByEventId = new Map();
 
     // Helpers
-    const normalize = (s) => String(s || "").toLowerCase();
-
     function sourceType(ev) {
       const t = normalize(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
@@ -244,7 +255,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
-    // Base window events (no actor/pair filter) – for discovery blocks
     function computeBaseWindowEvents() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -354,8 +364,8 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       riskTotalEl.textContent = total.toFixed(1);
-      const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
 
+      const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
       riskListEl.innerHTML = rows.length
         ? rows.map(([name, val]) => `
             <div class="risk-row">
@@ -437,23 +447,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // Heatmap
-    function categoryWeightForHeat(cat) {
-      const c = normalize(cat || "other");
-      if (c === "military") return 3.0;
-      if (c === "security") return 2.0;
-      if (c === "political") return 1.0;
-      return 0.5;
-    }
-    function sourceMultiplierForHeat(ev) {
-      return sourceType(ev) === "isw" ? 1.3 : 1.0;
-    }
-    function recencyWeightForHeat(eventIndex, selectedIndex, windowDays) {
-      const ageDays = selectedIndex - eventIndex;
-      if (windowDays <= 1) return 1.0;
-      const t = ageDays / (windowDays - 1);
-      return 1.0 - 0.6 * t;
-    }
-
     function updateHeatmap(visibleEvents, selectedIndex, windowDays) {
       if (!heatCheckbox.checked) {
         if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
@@ -470,11 +463,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
 
-        const w =
-          categoryWeightForHeat(ev.category) *
-          sourceMultiplierForHeat(ev) *
-          recencyWeightForHeat(idx, selectedIndex, windowDays);
-
+        const w = categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(idx, selectedIndex, windowDays);
         points.push([lat, lng, w]);
       }
 
@@ -488,39 +477,50 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // TREND (daily counts over current windowDays)
-    function drawTrend(dates, counts) {
+    // TREND (ALWAYS DRAW SOMETHING)
+    function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
 
-      const cssW = trendCanvas.clientWidth || 340;
+      // FIX: use the trend box width (stable), not canvas (which can be 0)
+      const boxRect = trendBox.getBoundingClientRect();
+      const cssW = Math.max(340, Math.floor(boxRect.width || 0) - 24); // -padding approx
       const cssH = 120;
+
+      trendCanvas.style.width = cssW + "px";
+      trendCanvas.style.height = cssH + "px";
 
       trendCanvas.width = Math.floor(cssW * dpr);
       trendCanvas.height = Math.floor(cssH * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // background cleared by CSS, but clean anyway
+      // background fill to be sure it’s visible
       ctx.clearRect(0, 0, cssW, cssH);
+      ctx.globalAlpha = 1.0;
+      ctx.fillStyle = "rgba(0,0,0,0.16)";
+      ctx.fillRect(0, 0, cssW, cssH);
 
-      const padL = 26, padR = 8, padT = 8, padB = 18;
+      const padL = 26, padR = 8, padT = 10, padB = 18;
       const w = cssW - padL - padR;
       const h = cssH - padT - padB;
 
-      const max = Math.max(1, ...counts);
-      const barW = w / Math.max(1, counts.length);
-
-      // axis
-      ctx.globalAlpha = 0.35;
+      // frame/axis
+      ctx.globalAlpha = 0.55;
       ctx.strokeStyle = "#ffffff";
       ctx.lineWidth = 1;
+      ctx.strokeRect(0.5, 0.5, cssW - 1, cssH - 1);
+
+      ctx.globalAlpha = 0.35;
       ctx.beginPath();
       ctx.moveTo(padL, padT);
       ctx.lineTo(padL, padT + h);
       ctx.lineTo(padL + w, padT + h);
       ctx.stroke();
 
-      // bars
+      const max = Math.max(1, ...counts);
+      const barW = w / Math.max(1, counts.length);
+
+      // bars (if counts are all 0, this draws 0-height bars, still ok)
       ctx.globalAlpha = 0.85;
       ctx.fillStyle = "#ffffff";
       counts.forEach((c, i) => {
@@ -530,39 +530,36 @@ window.addEventListener("DOMContentLoaded", () => {
         ctx.fillRect(x, y, Math.max(1, barW - 2), bh);
       });
 
-      // y labels (0 and max)
-      ctx.globalAlpha = 0.7;
+      // labels (always)
+      ctx.globalAlpha = 0.85;
       ctx.fillStyle = "#ffffff";
       ctx.font = "11px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+      ctx.fillText(`Total: ${total}`, padL, 16);
+
+      ctx.globalAlpha = 0.7;
       ctx.fillText(String(max), 4, padT + 10);
       ctx.fillText("0", 10, padT + h);
 
-      // x labels (start/end)
       const start = dates[0] || "";
       const end = dates[dates.length - 1] || "";
-      ctx.globalAlpha = 0.7;
       ctx.fillText(start.slice(5), padL, padT + h + 14);
       const endW = ctx.measureText(end.slice(5)).width;
       ctx.fillText(end.slice(5), padL + w - endW, padT + h + 14);
     }
 
-    function updateTrend(baseEvents, selectedIndex, windowDays) {
+    function updateTrend(selectedIndex, windowDays) {
       const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
       const dates = days365.slice(startIndex, selectedIndex + 1);
-
       const counts = new Array(dates.length).fill(0);
-      const q = normalize(searchInput.value).trim();
 
-      // Trend uses the SAME filters as the visible view (including actor/pair),
-      // but counts per day.
+      const q = normalize(searchInput.value).trim();
+      const catSet = getSelectedCategories();
+      const srcSet = getSelectedSources();
+
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
         if (idx < startIndex || idx > selectedIndex) continue;
-
-        // apply same base filters (cat/source/search)
-        const catSet = getSelectedCategories();
-        const srcSet = getSelectedSources();
 
         const cat = normalize(ev.category || "other");
         if (!catSet.has(cat)) continue;
@@ -581,7 +578,7 @@ window.addEventListener("DOMContentLoaded", () => {
       trendTotalEl.textContent = String(total);
       trendRangeEl.textContent = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
 
-      drawTrend(dates, counts);
+      drawTrend(dates, counts, total);
     }
 
     // MAIN update
@@ -590,18 +587,19 @@ window.addEventListener("DOMContentLoaded", () => {
       markerByEventId.clear();
       listContainer.innerHTML = "";
 
-      const base = computeBaseWindowEvents();
       const view = computeVisibleEvents();
-
       label.textContent = view.selectedDate || "—";
 
-      updateTrend(base.out, view.selectedIndex, view.windowDays);
+      // always redraw trend
+      updateTrend(view.selectedIndex, view.windowDays);
+
       updateStats(view.out);
       updateRisk(view.out, view.selectedIndex, view.windowDays);
+
+      const base = computeBaseWindowEvents();
       updateActors(base.out);
       updatePairs(base.out);
 
-      // markers
       view.out.forEach((ev) => {
         const m = makeMarker(ev);
         if (!m) return;
@@ -609,7 +607,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (ev.id) markerByEventId.set(ev.id, m);
       });
 
-      // heatmap
       updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
       if (view.out.length === 0) {
@@ -638,7 +635,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Events wiring
+    // Wiring
     slider.addEventListener("input", updateMapAndList);
     catCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
     srcCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
@@ -650,11 +647,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     heatCheckbox.addEventListener("change", updateMapAndList);
 
-    // Resize redraw trend
+    // redraw on resize
     window.addEventListener("resize", () => {
-      // light debounce
       clearTimeout(window.__trendResizeT);
-      window.__trendResizeT = setTimeout(updateMapAndList, 120);
+      window.__trendResizeT = setTimeout(updateMapAndList, 160);
     });
 
     // Load data
