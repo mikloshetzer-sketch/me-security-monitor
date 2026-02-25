@@ -68,8 +68,7 @@ function makeLast365Days(){
 const days365=makeLast365Days();
 const dateToIndex=new Map(days365.map((d,i)=>[d,i]));
 
-// ---------------- ACTORS DICTIONARY ----------------
-// You can extend anytime.
+// ---------------- ACTORS ----------------
 const ACTORS = [
   { name: "IDF", patterns: ["idf", "israel defense forces"] },
   { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -83,8 +82,8 @@ const ACTORS = [
   { name: "Turkey", patterns: ["turkey", "turkish"] }
 ];
 
-// active actor filter (null = ALL)
-let activeActor = null;
+let activeActor = null;          // single actor filter
+let activePair = null;           // {a,b} or null
 
 // ---------------- UI ----------------
 const slider=document.getElementById("timelineSlider");
@@ -106,6 +105,10 @@ const riskListEl  = document.getElementById("riskList");
 const actorsListEl = document.getElementById("actorsList");
 const actorActiveEl = document.getElementById("actorActive");
 const actorClearBtn = document.getElementById("actorClear");
+
+const pairsListEl = document.getElementById("pairsList");
+const pairActiveEl = document.getElementById("pairActive");
+const pairClearBtn = document.getElementById("pairClear");
 
 slider.max=days365.length-1;
 slider.value=days365.length-1;
@@ -224,16 +227,22 @@ function actorsInEvent(ev){
       }
     }
   }
-  return found;
+  // unique
+  return [...new Set(found)];
 }
 
 function matchesActorFilter(ev){
   if(!activeActor) return true;
-  const found = actorsInEvent(ev);
-  return found.includes(activeActor);
+  return actorsInEvent(ev).includes(activeActor);
 }
 
-// Visible events based on current filters + search + actor
+function matchesPairFilter(ev){
+  if(!activePair) return true;
+  const found = actorsInEvent(ev);
+  return found.includes(activePair.a) && found.includes(activePair.b);
+}
+
+// Visible events (all filters)
 function computeVisibleEvents(){
   const selectedIndex=Number(slider.value);
   const selectedDate=days365[selectedIndex];
@@ -258,6 +267,38 @@ function computeVisibleEvents(){
 
     if(!matchesSearch(ev, q)) continue;
     if(!matchesActorFilter(ev)) continue;
+    if(!matchesPairFilter(ev)) continue;
+
+    out.push(ev);
+  }
+
+  return { out, selectedDate, selectedIndex, windowDays };
+}
+
+// Base events for discovery blocks (actors/pairs): exclude actor/pair filters
+function computeBaseWindowEvents(){
+  const selectedIndex=Number(slider.value);
+  const selectedDate=days365[selectedIndex];
+  const windowDays=getWindowDays();
+  const selectedCats=getSelectedCategories();
+  const selectedSrc=getSelectedSources();
+  const q = normalize(searchInput.value).trim();
+
+  const out=[];
+  for(const ev of eventsData){
+    const idx=dateToIndex.get(ev.date);
+    if(idx === undefined) continue;
+
+    const within = idx<=selectedIndex && idx>=selectedIndex-(windowDays-1);
+    if(!within) continue;
+
+    const cat = (ev.category || "other").toLowerCase();
+    if(!selectedCats.has(cat)) continue;
+
+    const st = sourceType(ev);
+    if(!selectedSrc.has(st)) continue;
+
+    if(!matchesSearch(ev, q)) continue;
 
     out.push(ev);
   }
@@ -356,17 +397,14 @@ function updateRisk(visibleEvents, selectedIndex, windowDays){
   `).join("");
 }
 
-function updateActors(visibleEvents){
-  // count actors within current window (after ALL filters except actor itself)
+function updateActors(baseEvents){
   const counts = new Map();
-
-  for(const ev of visibleEvents){
+  for(const ev of baseEvents){
     const found = actorsInEvent(ev);
     for(const a of found){
       counts.set(a, (counts.get(a) || 0) + 1);
     }
   }
-
   const rows = [...counts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10);
 
   actorActiveEl.textContent = activeActor ? activeActor : "ALL";
@@ -384,7 +422,6 @@ function updateActors(visibleEvents){
             </div>`;
   }).join("");
 
-  // attach click handlers
   [...actorsListEl.querySelectorAll(".actor-chip")].forEach(el=>{
     el.onclick = () => {
       const a = el.getAttribute("data-actor");
@@ -394,35 +431,61 @@ function updateActors(visibleEvents){
   });
 }
 
-function computeVisibleEventsForActorsBase(){
-  // same as computeVisibleEvents but WITHOUT actor filter, to allow discovery
-  const selectedIndex=Number(slider.value);
-  const selectedDate=days365[selectedIndex];
-  const windowDays=getWindowDays();
-  const selectedCats=getSelectedCategories();
-  const selectedSrc=getSelectedSources();
-  const q = normalize(searchInput.value).trim();
+function pairKey(a,b){
+  return [a,b].sort().join(" + ");
+}
 
-  const out=[];
-  for(const ev of eventsData){
-    const idx=dateToIndex.get(ev.date);
-    if(idx === undefined) continue;
+function updatePairs(baseEvents){
+  const counts = new Map();
 
-    const within = idx<=selectedIndex && idx>=selectedIndex-(windowDays-1);
-    if(!within) continue;
+  for(const ev of baseEvents){
+    const found = actorsInEvent(ev);
+    if(found.length < 2) continue;
 
-    const cat = (ev.category || "other").toLowerCase();
-    if(!selectedCats.has(cat)) continue;
-
-    const st = sourceType(ev);
-    if(!selectedSrc.has(st)) continue;
-
-    if(!matchesSearch(ev, q)) continue;
-
-    out.push(ev);
+    // all unique pairs
+    for(let i=0;i<found.length;i++){
+      for(let j=i+1;j<found.length;j++){
+        const key = pairKey(found[i], found[j]);
+        counts.set(key, (counts.get(key) || 0) + 1);
+      }
+    }
   }
 
-  return { out, selectedDate, selectedIndex, windowDays };
+  const rows = [...counts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,8);
+
+  pairActiveEl.textContent = activePair ? `${activePair.a} + ${activePair.b}` : "ALL";
+  pairClearBtn.style.display = activePair ? "inline-block" : "none";
+
+  if(rows.length === 0){
+    pairsListEl.innerHTML = `<div class="muted">No interaction pairs in this window.</div>`;
+    return;
+  }
+
+  pairsListEl.innerHTML = rows.map(([k,n]) => {
+    const activeClass = activePair && (pairKey(activePair.a, activePair.b) === k) ? "active" : "";
+    return `<div class="pair-row ${activeClass}" data-pair="${k}">
+              <div class="name">${k}</div>
+              <div class="val">${n}</div>
+            </div>`;
+  }).join("");
+
+  [...pairsListEl.querySelectorAll(".pair-row")].forEach(el=>{
+    el.onclick = () => {
+      const k = el.getAttribute("data-pair");
+      const parts = k.split(" + ");
+      if(parts.length !== 2) return;
+      const a = parts[0], b = parts[1];
+
+      // toggle
+      if(activePair && pairKey(activePair.a, activePair.b) === pairKey(a,b)){
+        activePair = null;
+      } else {
+        activePair = { a, b };
+        // if single actor filter conflicts, we keep it; user can clear if needed
+      }
+      updateMapAndList();
+    };
+  });
 }
 
 // ---------------- MAIN UPDATE ----------------
@@ -431,11 +494,10 @@ function updateMapAndList(){
   markerByEventId.clear();
   listContainer.innerHTML="";
 
-  // actors list should be computed without actor filter so you can pick actors
-  const base = computeVisibleEventsForActorsBase();
+  const base = computeBaseWindowEvents();
   updateActors(base.out);
+  updatePairs(base.out);
 
-  // now apply actor filter to the actual view
   const view = computeVisibleEvents();
   label.textContent = view.selectedDate || "—";
 
@@ -450,7 +512,7 @@ function updateMapAndList(){
   });
 
   if(view.out.length === 0){
-    listContainer.innerHTML = `<div class="muted">No events for current filters/search/actor.</div>`;
+    listContainer.innerHTML = `<div class="muted">No events for current filters/search/actor/pair.</div>`;
     return;
   }
 
@@ -486,6 +548,11 @@ searchInput.addEventListener("input", updateMapAndList);
 
 actorClearBtn.addEventListener("click", ()=>{
   activeActor = null;
+  updateMapAndList();
+});
+
+pairClearBtn.addEventListener("click", ()=>{
+  activePair = null;
   updateMapAndList();
 });
 
