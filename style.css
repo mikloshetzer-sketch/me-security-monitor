@@ -86,6 +86,44 @@ html, body { margin:0; padding:0; height:100%; }
 }
 .search::placeholder{ color: rgba(255,255,255,0.6); }
 
+/* Stats block */
+.stats{
+  padding:10px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+.stats-top{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+.stats-title{ font-weight:700; }
+.stats-total{ font-size:18px; font-weight:800; }
+
+.stats-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:8px;
+  margin-top:8px;
+}
+.stats-grid:last-child{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stat-pill{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 8px;
+  border-radius:10px;
+  background: rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.10);
+}
+.stat-pill span{ opacity:0.8; font-size:11px; }
+.stat-pill b{ font-size:13px; }
+
 /* Badges */
 .badge{
   font-size:11px;
