@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return el;
     };
 
-    // ----- Panels -----
+    // ===== Panels =====
     const controlPanel = $("controlPanel");
     const timelinePanel = $("timelinePanel");
     const legendPanel = $("legendPanel");
@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ----- Accordion -----
+    // ===== Accordion =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // ----- Map -----
+    // ===== Map =====
     const map = L.map("map").setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
@@ -64,12 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // ----- Heatmap (normal) -----
+    // ===== Normal heatmap =====
     const heatCheckbox = $("heatmapCheckbox");
     heatCheckbox.checked = false;
     let heatLayer = null;
 
-    // ✅ Weekly anomaly checkbox (dynamic UI)
+    // ===== Weekly anomaly checkbox (dynamic UI) =====
     let weeklyHeatCheckbox = document.getElementById("weeklyHeatCheckbox");
     if (!weeklyHeatCheckbox) {
       const wrap = document.createElement("label");
@@ -99,7 +99,59 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ----- Borders + Country polygons -----
+    // ===== Weekly bin-size slider (dynamic UI) =====
+    let weeklyBinSize = 0.25; // default
+    let weeklyBinSlider = document.getElementById("weeklyBinSlider");
+    let weeklyBinLabel = document.getElementById("weeklyBinLabel");
+
+    if (!weeklyBinSlider) {
+      const row = document.createElement("div");
+      row.style.marginTop = "10px";
+      row.style.paddingTop = "10px";
+      row.style.borderTop = "1px solid rgba(255,255,255,0.10)";
+
+      const title = document.createElement("div");
+      title.style.display = "flex";
+      title.style.alignItems = "center";
+      title.style.justifyContent = "space-between";
+      title.style.gap = "10px";
+      title.innerHTML = `<div style="font-size:12px;font-weight:700;opacity:.95;">Weekly bin size</div>`;
+
+      weeklyBinLabel = document.createElement("div");
+      weeklyBinLabel.id = "weeklyBinLabel";
+      weeklyBinLabel.className = "muted";
+      weeklyBinLabel.style.fontSize = "12px";
+      weeklyBinLabel.textContent = `${weeklyBinSize.toFixed(2)}°`;
+
+      title.appendChild(weeklyBinLabel);
+
+      weeklyBinSlider = document.createElement("input");
+      weeklyBinSlider.type = "range";
+      weeklyBinSlider.min = "0.10";
+      weeklyBinSlider.max = "0.50";
+      weeklyBinSlider.step = "0.05";
+      weeklyBinSlider.value = String(weeklyBinSize);
+      weeklyBinSlider.id = "weeklyBinSlider";
+      weeklyBinSlider.style.width = "100%";
+      weeklyBinSlider.style.marginTop = "8px";
+
+      const hint = document.createElement("div");
+      hint.className = "muted";
+      hint.style.fontSize = "12px";
+      hint.style.marginTop = "6px";
+      hint.textContent = "Smaller = more granular; larger = broader hotspots.";
+
+      row.appendChild(title);
+      row.appendChild(weeklyBinSlider);
+      row.appendChild(hint);
+
+      // place below Weekly checkbox (controls)
+      const wkWrap = weeklyHeatCheckbox.closest("label");
+      if (wkWrap && wkWrap.parentElement) wkWrap.parentElement.insertBefore(row, wkWrap.nextSibling);
+      else controlPanel.appendChild(row);
+    }
+
+    // ===== Borders + Country polygons =====
     const BORDERS_GEOJSON_URL =
       "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
@@ -145,8 +197,7 @@ window.addEventListener("DOMContentLoaded", () => {
       countryFeatures = [];
       for (const f of geojson.features || []) {
         const props = f.properties || {};
-        const name =
-          props.ADMIN || props.NAME || props.name || props.SOVEREIGNT || "Unknown";
+        const name = props.ADMIN || props.NAME || props.name || props.SOVEREIGNT || "Unknown";
         const geom = f.geometry;
         if (!geom || !geom.type || !geom.coordinates) continue;
         const bbox = computeBBoxFromCoords(geom.coordinates);
@@ -175,7 +226,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setBordersVisible(!!bordersCheckbox.checked);
     bordersCheckbox.addEventListener("change", (e) => setBordersVisible(e.target.checked));
 
-    // ----- Date -----
+    // ===== Date =====
     function makeLast365Days() {
       const days = [];
       const today = new Date();
@@ -189,7 +240,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
 
-    // ----- Actors -----
+    // ===== Actors =====
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -207,7 +258,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let activePair = null;
     let activeCountry = null;
 
-    // ----- UI refs -----
+    // ===== UI refs =====
     const slider = $("timelineSlider");
     const label = $("selectedDateLabel");
     const listContainer = $("eventsList");
@@ -255,11 +306,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // ----- Data -----
+    // ===== Data =====
     let eventsData = [];
     const markerByEventId = new Map();
 
-    // ----- Helpers -----
+    // ===== Helpers =====
     const normalize = (s) => String(s || "").toLowerCase();
 
     function sourceType(ev) {
@@ -345,7 +396,10 @@ window.addEventListener("DOMContentLoaded", () => {
       const found = [];
       for (const a of ACTORS) {
         for (const p of a.patterns) {
-          if (text.includes(p)) { found.push(a.name); break; }
+          if (text.includes(p)) {
+            found.push(a.name);
+            break;
+          }
         }
       }
       return [...new Set(found)];
@@ -355,13 +409,14 @@ window.addEventListener("DOMContentLoaded", () => {
       return !activeActor || actorsInEvent(ev).includes(activeActor);
     }
 
+    const pairKey = (a, b) => [a, b].sort().join(" + ");
     function matchesPairFilter(ev) {
       if (!activePair) return true;
       const found = actorsInEvent(ev);
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
-    // ----- Country inference -----
+    // ===== Country inference =====
     function bboxContains(bbox, lng, lat) {
       return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
     }
@@ -381,7 +436,8 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!polygonCoords || !polygonCoords.length) return false;
       const outer = polygonCoords[0];
       if (!pointInRing(lng, lat, outer)) return false;
-      for (let i = 1; i < polygonCoords.length; i++) if (pointInRing(lng, lat, polygonCoords[i])) return false;
+      for (let i = 1; i < polygonCoords.length; i++)
+        if (pointInRing(lng, lat, polygonCoords[i])) return false;
       return true;
     }
     function inferCountryFromPoint(lat, lng) {
@@ -426,8 +482,14 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!bordersLoaded && !countryLoadRequested) {
           countryLoadRequested = true;
           ensureBordersLoaded()
-            .then(() => { countryLoadRequested = false; updateMapAndList(); })
-            .catch((e) => { console.error("Country polygons load failed:", e); countryLoadRequested = false; });
+            .then(() => {
+              countryLoadRequested = false;
+              updateMapAndList();
+            })
+            .catch((e) => {
+              console.error("Country polygons load failed:", e);
+              countryLoadRequested = false;
+            });
         }
       }
 
@@ -446,7 +508,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return getCountry(ev) === activeCountry;
     }
 
-    // ----- Risk scoring -----
+    // ===== Risk scoring =====
     function categoryWeight(cat) {
       const c = normalize(cat || "other");
       if (c === "military") return 3.0;
@@ -454,7 +516,9 @@ window.addEventListener("DOMContentLoaded", () => {
       if (c === "political") return 1.0;
       return 0.5;
     }
-    function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
+    function sourceMultiplier(ev) {
+      return sourceType(ev) === "isw" ? 1.3 : 1.0;
+    }
     function recencyWeight(eventIndex, selectedIndex, windowDays) {
       const ageDays = selectedIndex - eventIndex;
       if (windowDays <= 1) return 1.0;
@@ -465,7 +529,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
     }
 
-    // ----- Window filtering -----
+    // ===== Window filtering =====
     function computeBaseWindowEvents() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -498,7 +562,10 @@ window.addEventListener("DOMContentLoaded", () => {
     function computeVisibleEvents() {
       const base = computeBaseWindowEvents();
       const out = base.out.filter(
-        (ev) => matchesActorFilter(ev) && matchesPairFilter(ev) && matchesCountryFilter(ev)
+        (ev) =>
+          matchesActorFilter(ev) &&
+          matchesPairFilter(ev) &&
+          matchesCountryFilter(ev)
       );
       return { ...base, out };
     }
@@ -519,7 +586,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ----- Stats -----
+    // ===== Stats =====
     function updateStats(visibleEvents) {
       let mil = 0, sec = 0, pol = 0, oth = 0, news = 0, isw = 0;
       for (const ev of visibleEvents) {
@@ -530,7 +597,8 @@ window.addEventListener("DOMContentLoaded", () => {
         else oth++;
 
         const st = sourceType(ev);
-        if (st === "isw") isw++; else news++;
+        if (st === "isw") isw++;
+        else news++;
       }
       statsTotalEl.textContent = String(visibleEvents.length);
       statsMilEl.textContent = String(mil);
@@ -541,7 +609,7 @@ window.addEventListener("DOMContentLoaded", () => {
       statsIswEl.textContent = String(isw);
     }
 
-    // ----- Risk -----
+    // ===== Risk =====
     function updateRisk(visibleEvents, selectedIndex, windowDays) {
       let total = 0;
       const byLoc = new Map();
@@ -559,19 +627,97 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
       riskListEl.innerHTML = rows.length
-        ? rows.map(([name, val]) => `
+        ? rows
+            .map(
+              ([name, val]) => `
           <div class="risk-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>
-        `).join("")
+        `
+            )
+            .join("")
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // ----- Trend -----
+    // ===== Actors + Pairs lists =====
+    function updateActors(baseEvents) {
+      const counts = new Map();
+      for (const ev of baseEvents) {
+        for (const a of actorsInEvent(ev)) counts.set(a, (counts.get(a) || 0) + 1);
+      }
+      const rows = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+
+      actorActiveEl.textContent = activeActor ? activeActor : "ALL";
+      actorClearBtn.style.display = activeActor ? "inline-block" : "none";
+
+      actorsListEl.innerHTML = rows.length
+        ? rows
+            .map(
+              ([name, n]) => `
+          <div class="actor-chip ${activeActor === name ? "active" : ""}" data-actor="${name}">
+            <span>${name}</span><b>${n}</b>
+          </div>`
+            )
+            .join("")
+        : `<div class="muted">No actor signals in this window.</div>`;
+
+      [...actorsListEl.querySelectorAll(".actor-chip")].forEach((el) => {
+        el.onclick = () => {
+          const a = el.getAttribute("data-actor");
+          activeActor = activeActor === a ? null : a;
+          invalidateWeekly();
+          updateMapAndList();
+        };
+      });
+    }
+
+    function updatePairs(baseEvents) {
+      const counts = new Map();
+      for (const ev of baseEvents) {
+        const found = actorsInEvent(ev);
+        if (found.length < 2) continue;
+        for (let i = 0; i < found.length; i++) {
+          for (let j = i + 1; j < found.length; j++) {
+            const k = pairKey(found[i], found[j]);
+            counts.set(k, (counts.get(k) || 0) + 1);
+          }
+        }
+      }
+      const rows = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+      pairActiveEl.textContent = activePair ? `${activePair.a} + ${activePair.b}` : "ALL";
+      pairClearBtn.style.display = activePair ? "inline-block" : "none";
+
+      pairsListEl.innerHTML = rows.length
+        ? rows
+            .map(
+              ([k, n]) => `
+          <div class="pair-row ${activePair && pairKey(activePair.a, activePair.b) === k ? "active" : ""}" data-pair="${k}">
+            <div class="name">${k}</div><div class="val">${n}</div>
+          </div>`
+            )
+            .join("")
+        : `<div class="muted">No interaction pairs in this window.</div>`;
+
+      [...pairsListEl.querySelectorAll(".pair-row")].forEach((el) => {
+        el.onclick = () => {
+          const k = el.getAttribute("data-pair") || "";
+          const parts = k.split(" + ");
+          if (parts.length !== 2) return;
+          const a = parts[0], b = parts[1];
+          if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
+          else activePair = { a, b };
+          invalidateWeekly();
+          updateMapAndList();
+        };
+      });
+    }
+
+    // ===== Trend =====
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
 
       const boxRect = trendBox.getBoundingClientRect();
-      const cssW = Math.max(340, Math.floor((boxRect.width || 0)));
+      const cssW = Math.max(340, Math.floor(boxRect.width || 0));
       const cssH = 120;
 
       trendCanvas.style.width = "100%";
@@ -614,10 +760,12 @@ window.addEventListener("DOMContentLoaded", () => {
       ctx.globalAlpha = 1.0;
     }
 
-    function computeTrendCounts(selectedIndex, windowDays, catSet, srcSet, q) {
+    function computeTrendCounts(selectedIndex, windowDays, catSet, srcSet) {
       const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
       const dates = days365.slice(startIndex, selectedIndex + 1);
       const counts = new Array(dates.length).fill(0);
+
+      const q = normalize(searchInput.value).trim();
 
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
@@ -643,19 +791,19 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateTrendAndReturn(selectedIndex, windowDays) {
-      const q = normalize(searchInput.value).trim();
       const catSet = getSelectedCategories();
       const srcSet = getSelectedSources();
-
-      const t = computeTrendCounts(selectedIndex, windowDays, catSet, srcSet, q);
+      const t = computeTrendCounts(selectedIndex, windowDays, catSet, srcSet);
       trendTotalEl.textContent = String(t.total);
       trendRangeEl.textContent = `${t.dates[0]} → ${t.dates[t.dates.length - 1]} (${t.dates.length} days)`;
       drawTrend(t.dates, t.counts, t.total);
       return t;
     }
 
-    // ----- Alerts + Weekly anomaly -----
-    function mean(arr) { return arr.reduce((a, b) => a + b, 0) / Math.max(1, arr.length); }
+    // ===== Alerts + Weekly anomaly =====
+    function mean(arr) {
+      return arr.reduce((a, b) => a + b, 0) / Math.max(1, arr.length);
+    }
     function stdev(arr) {
       const m = mean(arr);
       const v = arr.reduce((a, x) => a + (x - m) * (x - m), 0) / Math.max(1, arr.length);
@@ -683,14 +831,13 @@ window.addEventListener("DOMContentLoaded", () => {
       const base = counts.slice(0, -1);
       const baseMean = base.length ? mean(base) : 0;
       const baseStd = base.length ? stdev(base) : 0;
-      const z = baseStd > 0 ? (last - baseMean) / baseStd : (last > baseMean ? 999 : 0);
       const ratio = (last + 1) / (baseMean + 1);
 
       let level = "ok";
-      if (last >= 8 && (z >= 2.0 || ratio >= 2.0)) level = "alert";
-      else if (last >= 4 && (z >= 1.3 || ratio >= 1.6)) level = "warn";
+      if (last >= 8 && (baseStd > 0 ? (last - baseMean) / baseStd >= 2.0 : ratio >= 2.0)) level = "alert";
+      else if (last >= 4 && (baseStd > 0 ? (last - baseMean) / baseStd >= 1.3 : ratio >= 1.6)) level = "warn";
 
-      return { level, last, baseMean, baseStd, z, ratio, baseN: base.length };
+      return { level, last, baseMean, baseStd, ratio, baseN: base.length };
     }
 
     function buildPredicate(extraPredicate) {
@@ -715,12 +862,12 @@ window.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    // Weekly anomaly cache + UI state
-    let lastWeekly = null; // {selectedIndex, points, topBins, stats}
-    let weeklyDetailsOpen = false; // compact by default
+    // Weekly cache + UI state
+    let lastWeekly = null; // {selectedIndex, points, topBins, stats, meta}
+    let weeklyDetailsOpen = false;
 
     function locBinKey(lat, lng) {
-      const bin = 0.25;
+      const bin = weeklyBinSize;
       const bl = Math.round(lat / bin) * bin;
       const bg = Math.round(lng / bin) * bin;
       return `${bl.toFixed(2)},${bg.toFixed(2)}`;
@@ -736,7 +883,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const pred = buildPredicate(null);
 
       const recent = new Map(); // key -> {lat,lng,count,riskSum}
-      const prev = new Map();   // key -> count
+      const prev = new Map(); // key -> count
 
       const addRecent = (key, lat, lng, risk) => {
         if (!recent.has(key)) recent.set(key, { lat, lng, count: 0, riskSum: 0 });
@@ -799,11 +946,47 @@ window.addEventListener("DOMContentLoaded", () => {
       const maxI = intensities.length ? Math.max(...intensities) : 0;
       const meanI = intensities.length ? mean(intensities) : 0;
 
-      return { selectedIndex, points, topBins, stats: { minI, maxI, meanI, bins: bins.length } };
+      // meta for export
+      const meta = {
+        created_at: new Date().toISOString(),
+        selected_date: days365[selectedIndex],
+        recent_range: [days365[rStart], days365[rEnd]],
+        prev_range: [days365[pStart], days365[pEnd]],
+        bin_size_deg: weeklyBinSize,
+        window_days: getWindowDays(),
+        query: (searchInput.value || "").trim(),
+        filters: {
+          categories: [...getSelectedCategories()],
+          sources: [...getSelectedSources()],
+          active_actor: activeActor,
+          active_pair: activePair,
+          active_country: activeCountry,
+        },
+      };
+
+      return { selectedIndex, points, topBins, stats: { minI, maxI, meanI, bins: bins.length }, meta };
     }
 
     function zoomToBin(lat, lng) {
       map.setView([lat, lng], Math.max(map.getZoom(), 8));
+    }
+
+    function downloadJSON(obj, filename) {
+      try {
+        const text = JSON.stringify(obj, null, 2);
+        const blob = new Blob([text], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 500);
+      } catch (e) {
+        console.error("Export failed:", e);
+        alert("Export hiba: nézd meg a konzolt (F12).");
+      }
     }
 
     function updateSpikeAlert(visibleEvents, selectedIndex) {
@@ -815,14 +998,19 @@ window.addEventListener("DOMContentLoaded", () => {
         rollingCounts(selectedIndex, baselineN, buildPredicate((ev) => normalize(ev.category) === "military"))
       );
       const hard = classifyRollingSpike(
-        rollingCounts(selectedIndex, baselineN, buildPredicate((ev) => {
-          const c = normalize(ev.category);
-          return c === "military" || c === "security";
-        }))
+        rollingCounts(
+          selectedIndex,
+          baselineN,
+          buildPredicate((ev) => {
+            const c = normalize(ev.category);
+            return c === "military" || c === "security";
+          })
+        )
       );
 
       spikeBadge.className =
-        "badge-mini " + (overall.level === "alert" ? "badge-alert" : overall.level === "warn" ? "badge-warn" : "badge-ok");
+        "badge-mini " +
+        (overall.level === "alert" ? "badge-alert" : overall.level === "warn" ? "badge-warn" : "badge-ok");
       spikeBadge.textContent = overall.level === "alert" ? "ALERT" : overall.level === "warn" ? "WATCH" : "OK";
 
       const cfTxt = activeCountry ? ` · country=${activeCountry}` : "";
@@ -833,15 +1021,15 @@ window.addEventListener("DOMContentLoaded", () => {
         ` | Military: ${mil.level.toUpperCase()} (today ${mil.last}, ×${mil.ratio.toFixed(2)})` +
         cfTxt;
 
-      // ---- Weekly compact + details ----
+      // --- Weekly compact + details + export ---
       let weeklyHtml = "";
       if (weeklyHeatCheckbox.checked) {
         if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
           lastWeekly = computeWeeklyAnomaly(selectedIndex);
         }
+
         const st = lastWeekly.stats;
         const rangeTitle = `${days365[Math.max(0, selectedIndex - 6)]} → ${days365[selectedIndex]}`;
-
         const top1 = lastWeekly.topBins[0];
         const topTxt = top1
           ? `Top: (${top1.lat.toFixed(2)}, ${top1.lng.toFixed(2)}) Δ${top1.delta} ×${top1.ratio.toFixed(2)}`
@@ -851,29 +1039,35 @@ window.addEventListener("DOMContentLoaded", () => {
         const detailsStyle = weeklyDetailsOpen ? "" : "display:none;";
 
         const topBinsHtml = lastWeekly.topBins.length
-          ? lastWeekly.topBins.map((b, i) => `
+          ? lastWeekly.topBins
+              .map(
+                (b, i) => `
               <div class="rank-row" data-bin="${b.lat},${b.lng}" style="cursor:pointer;">
                 <div class="name">#${i + 1} (${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}) <span class="muted">Δ${b.delta} · ×${b.ratio.toFixed(2)}</span></div>
                 <div class="val">${b.intensity.toFixed(1)}</div>
-              </div>`).join("")
+              </div>`
+              )
+              .join("")
           : `<div class="muted">No anomaly bins in this window.</div>`;
 
         weeklyHtml = `
           <div id="weeklyAnomalySection" style="margin-top:2px;padding:8px 10px;border:1px solid rgba(255,255,255,0.14);border-radius:10px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">
               <div>
                 <div style="font-size:12px;font-weight:700;opacity:.95;">Weekly anomaly</div>
-                <div class="muted" style="margin-top:2px;">${rangeTitle} vs prev 7d · bins ${st.bins} · max ${st.maxI.toFixed(1)}</div>
+                <div class="muted" style="margin-top:2px;">
+                  ${rangeTitle} vs prev 7d · bins ${st.bins} · max ${st.maxI.toFixed(1)} · bin ${weeklyBinSize.toFixed(2)}°
+                </div>
                 <div class="muted" style="margin-top:2px;">${topTxt}</div>
               </div>
-              <div>
+              <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
                 <span class="btn-mini" id="weeklyToggleDetails" style="cursor:pointer;display:inline-block;">${detailsBtnLabel}</span>
+                <span class="btn-mini" id="weeklyExportJson" style="cursor:pointer;display:inline-block;">Export JSON</span>
               </div>
             </div>
 
             <div id="weeklyDetails" style="margin-top:10px;${detailsStyle}">
               <div class="mini-item"><div class="name">intensity</div><div class="val">min ${st.minI.toFixed(1)} · mean ${st.meanI.toFixed(1)} · max ${st.maxI.toFixed(1)}</div></div>
-
               <div class="muted" style="margin:10px 0 6px;">Hot bins (click to zoom)</div>
               ${topBinsHtml}
             </div>
@@ -881,10 +1075,8 @@ window.addEventListener("DOMContentLoaded", () => {
         `;
       }
 
-      // ---- Pair spikes + Country spikes + Today top risk ----
+      // --- Pair spikes (rolling baseline) ---
       const predAll = buildPredicate(null);
-
-      // Pair spikes (monitor-friendly messages)
       const pairSpikesHtml = (() => {
         const baselineStart = Math.max(0, selectedIndex - baselineN);
         const len = selectedIndex - baselineStart + 1;
@@ -921,15 +1113,19 @@ window.addEventListener("DOMContentLoaded", () => {
         const topPairs = scored.slice(0, 3);
 
         return topPairs.length
-          ? topPairs.map((x) => `
-              <div class="mini-item">
-                <div class="name">pair spike: ${x.pk}</div>
-                <div class="val">today ${x.last} · base ${x.baseMean.toFixed(1)} · ×${x.ratio.toFixed(2)}</div>
-              </div>`).join("")
+          ? topPairs
+              .map(
+                (x) => `
+            <div class="mini-item">
+              <div class="name">pair spike: ${x.pk}</div>
+              <div class="val">today ${x.last} · base ${x.baseMean.toFixed(1)} · ×${x.ratio.toFixed(2)}</div>
+            </div>`
+              )
+              .join("")
           : `<div class="muted">No pair spikes detected in rolling baseline.</div>`;
       })();
 
-      // Country spikes
+      // --- Country spikes ---
       const countrySpikesHtml = (() => {
         const baselineStart = Math.max(0, selectedIndex - baselineN);
         const baselineEnd = Math.max(baselineStart, selectedIndex - 1);
@@ -949,29 +1145,30 @@ window.addEventListener("DOMContentLoaded", () => {
           else baseByCountry.set(c, (baseByCountry.get(c) || 0) + 1);
         }
 
-        const countryScored = [];
+        const scored = [];
         for (const [country, todayCount] of todayByCountry.entries()) {
           const baseTotal = baseByCountry.get(country) || 0;
           const baseAvg = baseTotal / baseDays;
           const ratio = (todayCount + 1) / (baseAvg + 1);
           const delta = todayCount - baseAvg;
           const score = delta * ratio;
-          countryScored.push({ country, todayCount, baseAvg, ratio, score });
+          scored.push({ country, todayCount, baseAvg, ratio, score });
         }
-        countryScored.sort((a, b) => b.score - a.score);
-        const topCountries = countryScored.slice(0, 4);
+        scored.sort((a, b) => b.score - a.score);
+        const top = scored.slice(0, 4);
+        if (!top.length) return `<div class="muted">No country spikes detected.</div>`;
 
-        if (!topCountries.length) return `<div class="muted">No country spikes detected.</div>`;
-
-        const chips = topCountries.map((x) => {
-          const active = activeCountry === x.country ? "style='outline:2px solid rgba(255,255,255,0.6)'" : "";
-          return `
-            <span class="badge-mini" data-country="${x.country}" ${active}
-              style="cursor:pointer;display:inline-flex;gap:6px;align-items:center;margin:4px 6px 0 0;">
-              <b>${x.country}</b>
-              <span style="opacity:.9">today ${x.todayCount} · base ${x.baseAvg.toFixed(1)} · ×${x.ratio.toFixed(2)}</span>
-            </span>`;
-        }).join("");
+        const chips = top
+          .map((x) => {
+            const active = activeCountry === x.country ? "style='outline:2px solid rgba(255,255,255,0.6)'" : "";
+            return `
+              <span class="badge-mini" data-country="${x.country}" ${active}
+                style="cursor:pointer;display:inline-flex;gap:6px;align-items:center;margin:4px 6px 0 0;">
+                <b>${x.country}</b>
+                <span style="opacity:.9">today ${x.todayCount} · base ${x.baseAvg.toFixed(1)} · ×${x.ratio.toFixed(2)}</span>
+              </span>`;
+          })
+          .join("");
 
         const clear = activeCountry
           ? `<div style="margin-top:6px;"><span class="btn-mini" id="countryClearInline" style="cursor:pointer;display:inline-block;">Clear country filter</span></div>`
@@ -980,7 +1177,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return `${chips}${clear}`;
       })();
 
-      // Top risk events today
+      // --- Top risk events today ---
       const windowDays = getWindowDays();
       const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
       const todayTopRisk = todayEvents
@@ -992,11 +1189,12 @@ window.addEventListener("DOMContentLoaded", () => {
         .slice(0, 5);
 
       const eventsHtml = todayTopRisk.length
-        ? todayTopRisk.map(({ ev, score }) => {
-            const loc = ev?.location?.name ? ` · ${ev.location.name}` : "";
-            const st = sourceType(ev).toUpperCase();
-            const id = ev.id || "";
-            return `
+        ? todayTopRisk
+            .map(({ ev, score }) => {
+              const loc = ev?.location?.name ? ` · ${ev.location.name}` : "";
+              const st = sourceType(ev).toUpperCase();
+              const id = ev.id || "";
+              return `
               <div class="event-row" data-ev="${id}" style="cursor:pointer;">
                 <div class="event-row-title">${ev.title || "Untitled"}</div>
                 <div class="event-row-meta">
@@ -1004,7 +1202,8 @@ window.addEventListener("DOMContentLoaded", () => {
                   <span>${(ev.category || "other")} · risk ${score.toFixed(1)}${loc}</span>
                 </div>
               </div>`;
-          }).join("")
+            })
+            .join("")
         : `<div class="muted">No events today in this window.</div>`;
 
       spikeDetails.innerHTML = `
@@ -1045,12 +1244,31 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Wire country chips
+      // Wire: weekly export
+      const wexp = document.getElementById("weeklyExportJson");
+      if (wexp) {
+        wexp.addEventListener("click", () => {
+          if (!weeklyHeatCheckbox.checked) return;
+          if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
+            lastWeekly = computeWeeklyAnomaly(selectedIndex);
+          }
+          const payload = {
+            meta: lastWeekly.meta,
+            stats: lastWeekly.stats,
+            top_bins: lastWeekly.topBins,
+            heat_points: lastWeekly.points,
+          };
+          const fn = `weekly_anomaly_${lastWeekly.meta.selected_date}_bin${weeklyBinSize.toFixed(2).replace(".", "")}.json`;
+          downloadJSON(payload, fn);
+        });
+      }
+
+      // Wire: country chips
       spikeDetails.querySelectorAll("[data-country]").forEach((el) => {
         el.addEventListener("click", () => {
           const c = el.getAttribute("data-country");
-          activeCountry = (activeCountry === c) ? null : c;
-          lastWeekly = null;
+          activeCountry = activeCountry === c ? null : c;
+          invalidateWeekly();
           updateMapAndList();
         });
       });
@@ -1059,12 +1277,12 @@ window.addEventListener("DOMContentLoaded", () => {
       if (cc) {
         cc.addEventListener("click", () => {
           activeCountry = null;
-          lastWeekly = null;
+          invalidateWeekly();
           updateMapAndList();
         });
       }
 
-      // Wire event clicks
+      // Wire: event click
       spikeDetails.querySelectorAll("[data-ev]").forEach((el) => {
         el.addEventListener("click", () => {
           const id = el.getAttribute("data-ev");
@@ -1073,7 +1291,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // Wire bin clicks
+      // Wire: bin click
       spikeDetails.querySelectorAll("[data-bin]").forEach((el) => {
         el.addEventListener("click", () => {
           const v = el.getAttribute("data-bin") || "";
@@ -1084,7 +1302,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- Heatmap update (weekly vs normal) -----
+    // ===== Heatmap update =====
     function clearHeatLayer() {
       if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
       heatLayer = null;
@@ -1133,7 +1351,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // ----- Country risk -----
+    // ===== Country risk =====
     function updateCountryRisk(visibleEvents, selectedIndex, windowDays) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
@@ -1150,13 +1368,17 @@ window.addEventListener("DOMContentLoaded", () => {
         : `Top ${rows.length} (loading country polygons...)`;
 
       countryRiskList.innerHTML = rows.length
-        ? rows.map(([name, val]) => `
+        ? rows
+            .map(
+              ([name, val]) => `
           <div class="rank-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>
-        `).join("")
+        `
+            )
+            .join("")
         : `<div class="muted">No country risk data for current filters.</div>`;
     }
 
-    // ----- Escalation -----
+    // ===== Escalation =====
     function updateActorEscalation(selectedIndex, windowDays) {
       const q = normalize(searchInput.value).trim();
       const catSet = getSelectedCategories();
@@ -1211,15 +1433,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
       escNote.textContent = `Recent ${K}d vs previous ${K}d (base filters + pair filter; actor filter ignored for detection)`;
       escalationList.innerHTML = top.length
-        ? top.map((x) => `
+        ? top
+            .map(
+              (x) => `
           <div class="rank-row">
             <div class="name">${x.a} <span class="muted">(${x.p}→${x.r}, Δ${x.delta}, ×${x.ratio.toFixed(2)})</span></div>
             <div class="val">${x.score.toFixed(1)}</div>
-          </div>`).join("")
+          </div>`
+            )
+            .join("")
         : `<div class="muted">No escalation signal in this range.</div>`;
     }
 
-    // ----- MAIN UPDATE -----
+    // ===== MAIN UPDATE =====
     function updateMapAndList() {
       clusterGroup.clearLayers();
       markerByEventId.clear();
@@ -1233,6 +1459,10 @@ window.addEventListener("DOMContentLoaded", () => {
       updateStats(view.out);
       updateRisk(view.out, view.selectedIndex, view.windowDays);
       updateHeatmap(view.out, view.selectedIndex, view.windowDays);
+
+      const base = computeBaseWindowEvents();
+      updateActors(base.out);
+      updatePairs(base.out);
 
       updateSpikeAlert(view.out, view.selectedIndex);
       updateCountryRisk(view.out, view.selectedIndex, view.windowDays);
@@ -1274,17 +1504,49 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ----- Wiring -----
-    function invalidateWeekly() { lastWeekly = null; }
+    // ===== Weekly invalidation =====
+    function invalidateWeekly() {
+      lastWeekly = null;
+    }
 
-    slider.addEventListener("input", () => { invalidateWeekly(); updateMapAndList(); });
-    catCheckboxes.forEach((cb) => cb.addEventListener("change", () => { invalidateWeekly(); updateMapAndList(); }));
-    srcCheckboxes.forEach((cb) => cb.addEventListener("change", () => { invalidateWeekly(); updateMapAndList(); }));
-    windowRadios.forEach((r) => r.addEventListener("change", () => { invalidateWeekly(); updateMapAndList(); }));
-    searchInput.addEventListener("input", () => { invalidateWeekly(); updateMapAndList(); });
+    // ===== Wiring =====
+    slider.addEventListener("input", () => {
+      invalidateWeekly();
+      updateMapAndList();
+    });
+    catCheckboxes.forEach((cb) =>
+      cb.addEventListener("change", () => {
+        invalidateWeekly();
+        updateMapAndList();
+      })
+    );
+    srcCheckboxes.forEach((cb) =>
+      cb.addEventListener("change", () => {
+        invalidateWeekly();
+        updateMapAndList();
+      })
+    );
+    windowRadios.forEach((r) =>
+      r.addEventListener("change", () => {
+        invalidateWeekly();
+        updateMapAndList();
+      })
+    );
+    searchInput.addEventListener("input", () => {
+      invalidateWeekly();
+      updateMapAndList();
+    });
 
-    actorClearBtn.addEventListener("click", () => { activeActor = null; invalidateWeekly(); updateMapAndList(); });
-    pairClearBtn.addEventListener("click", () => { activePair = null; invalidateWeekly(); updateMapAndList(); });
+    actorClearBtn.addEventListener("click", () => {
+      activeActor = null;
+      invalidateWeekly();
+      updateMapAndList();
+    });
+    pairClearBtn.addEventListener("click", () => {
+      activePair = null;
+      invalidateWeekly();
+      updateMapAndList();
+    });
 
     heatCheckbox.addEventListener("change", () => {
       if (heatCheckbox.checked) weeklyHeatCheckbox.checked = false;
@@ -1294,8 +1556,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     weeklyHeatCheckbox.addEventListener("change", () => {
       if (weeklyHeatCheckbox.checked) heatCheckbox.checked = false;
-      // default: keep compact
-      weeklyDetailsOpen = false;
+      weeklyDetailsOpen = false; // compact by default
       invalidateWeekly();
       updateMapAndList();
       setTimeout(() => {
@@ -1304,33 +1565,41 @@ window.addEventListener("DOMContentLoaded", () => {
       }, 140);
     });
 
-    window.addEventListener("resize", () => {
-      clearTimeout(window.__trendResizeT);
-      window.__trendResizeT = setTimeout(() => { invalidateWeekly(); updateMapAndList(); }, 160);
+    // Bin slider wiring
+    weeklyBinSlider.addEventListener("input", () => {
+      weeklyBinSize = Number(weeklyBinSlider.value);
+      if (weeklyBinLabel) weeklyBinLabel.textContent = `${weeklyBinSize.toFixed(2)}°`;
+      invalidateWeekly();
+      // only re-render fast; heatmap will recalc if weekly is on
+      updateMapAndList();
     });
 
-    // ----- Load data -----
+    window.addEventListener("resize", () => {
+      clearTimeout(window.__trendResizeT);
+      window.__trendResizeT = setTimeout(() => {
+        invalidateWeekly();
+        updateMapAndList();
+      }, 160);
+    });
+
+    // ===== Load data =====
     fetch("events.json")
       .then((r) => r.json())
       .then((data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
-
         eventsData = data.map((ev, i) => {
           const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
           if (hasId) return ev;
-
           const seed = `${ev?.date || ""}|${ev?.title || ""}|${ev?.location?.name || ""}|${i}`;
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
-
         updateMapAndList();
       })
       .catch((err) => {
         console.error(err);
         listContainer.innerHTML = `<div class="muted">events.json load error</div>`;
       });
-
   } catch (e) {
     console.error("Fatal init error:", e);
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
