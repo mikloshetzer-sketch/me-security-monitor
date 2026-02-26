@@ -181,7 +181,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let activeActor = null;
     let activePair = null;
-    let activeCountry = null; // from Alerts chips
+    let activeCountry = null;
 
     // ----- UI refs -----
     const slider = $("timelineSlider");
@@ -541,7 +541,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // ----- Actors / Pairs (panels use base window events) -----
+    // ----- Actors / Pairs -----
     function updateActors(baseEvents) {
       const counts = new Map();
       for (const ev of baseEvents) for (const a of actorsInEvent(ev)) counts.set(a, (counts.get(a) || 0) + 1);
@@ -635,7 +635,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // ----- Trend (still window-based for the Trend chart) -----
+    // ----- Trend (window-based chart) -----
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -724,7 +724,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t;
     }
 
-    // ----- Rolling baseline stats (7d) -----
+    // ----- Rolling baseline + Pair spike -----
     function mean(arr) { return arr.reduce((a, b) => a + b, 0) / Math.max(1, arr.length); }
     function stdev(arr) {
       const m = mean(arr);
@@ -732,7 +732,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return Math.sqrt(v);
     }
 
-    // Rolling day counts for a predicate within [selectedIndex-baselineN .. selectedIndex]
     function rollingCounts(selectedIndex, baselineN, predicate) {
       const start = Math.max(0, selectedIndex - baselineN);
       const len = selectedIndex - start + 1;
@@ -757,7 +756,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const z = baseStd > 0 ? (last - baseMean) / baseStd : (last > baseMean ? 999 : 0);
       const ratio = (last + 1) / (baseMean + 1);
 
-      // slightly lower thresholds for 7d baseline (more sensitive)
       let level = "ok";
       if (last >= 8 && (z >= 2.0 || ratio >= 2.0)) level = "alert";
       else if (last >= 4 && (z >= 1.3 || ratio >= 1.6)) level = "warn";
@@ -765,60 +763,44 @@ window.addEventListener("DOMContentLoaded", () => {
       return { level, last, baseMean, baseStd, z, ratio, baseN: base.length };
     }
 
-    // Build a predicate with current UI filters (cats/src/search + actor/pair/country filters)
     function buildPredicate(extraPredicate) {
       const q = normalize(searchInput.value).trim();
       const catSet = getSelectedCategories();
       const srcSet = getSelectedSources();
 
       return (ev, idx) => {
-        // category + source
         const cat = normalize(ev.category || "other");
         if (!catSet.has(cat)) return false;
 
         const st = sourceType(ev);
         if (!srcSet.has(st)) return false;
 
-        // search + actor/pair/country filters
         if (!matchesSearch(ev, q)) return false;
         if (!matchesActorFilter(ev)) return false;
         if (!matchesPairFilter(ev)) return false;
         if (!matchesCountryFilter(ev)) return false;
 
-        // extra
         if (extraPredicate && !extraPredicate(ev, idx)) return false;
-
         return true;
       };
     }
 
-    // ----- Alerts (Rolling 7d baseline) -----
     function updateSpikeAlert(visibleEvents, selectedIndex) {
-      const baselineN = 7; // rolling 7 previous days
+      const baselineN = 7;
       const selectedDate = days365[selectedIndex];
 
-      // Rolling overall / military / hardsec
-      const overallRolling = rollingCounts(selectedIndex, baselineN, buildPredicate(null));
-      const overall = classifyRollingSpike(overallRolling);
-
-      const milRolling = rollingCounts(
-        selectedIndex,
-        baselineN,
-        buildPredicate((ev) => normalize(ev.category) === "military")
+      // overall/mil/hardsec rolling
+      const overall = classifyRollingSpike(rollingCounts(selectedIndex, baselineN, buildPredicate(null)));
+      const mil = classifyRollingSpike(
+        rollingCounts(selectedIndex, baselineN, buildPredicate((ev) => normalize(ev.category) === "military"))
       );
-      const mil = classifyRollingSpike(milRolling);
-
-      const hardRolling = rollingCounts(
-        selectedIndex,
-        baselineN,
-        buildPredicate((ev) => {
+      const hard = classifyRollingSpike(
+        rollingCounts(selectedIndex, baselineN, buildPredicate((ev) => {
           const c = normalize(ev.category);
           return c === "military" || c === "security";
-        })
+        }))
       );
-      const hard = classifyRollingSpike(hardRolling);
 
-      // Badge = overall
       spikeBadge.className =
         "badge-mini " + (overall.level === "alert" ? "badge-alert" : overall.level === "warn" ? "badge-warn" : "badge-ok");
       spikeBadge.textContent = overall.level === "alert" ? "ALERT" : overall.level === "warn" ? "WATCH" : "OK";
@@ -831,31 +813,24 @@ window.addEventListener("DOMContentLoaded", () => {
         ` | Military: ${mil.level.toUpperCase()} (today ${mil.last}, ×${mil.ratio.toFixed(2)})` +
         cfTxt;
 
-      // ---- Country spikes (rolling 7d baseline by country) ----
+      // ---- Country spikes (rolling 7d) ----
       const baselineStart = Math.max(0, selectedIndex - baselineN);
       const baselineEnd = Math.max(baselineStart, selectedIndex - 1);
       const baseDays = Math.max(1, baselineEnd - baselineStart + 1);
 
+      const predAll = buildPredicate(null);
       const todayByCountry = new Map();
       const baseByCountry = new Map();
-
-      // Use visibleEvents for speed/consistency (already within current map/window filters),
-      // but for baseline we need previous days too: so scan eventsData with predicate and then aggregate by country.
-      const pred = buildPredicate(null);
 
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
         if (idx < baselineStart || idx > selectedIndex) continue;
-        if (!pred(ev, idx)) continue;
+        if (!predAll(ev, idx)) continue;
 
         const c = getCountry(ev);
-
-        if (idx === selectedIndex) {
-          todayByCountry.set(c, (todayByCountry.get(c) || 0) + 1);
-        } else if (idx >= baselineStart && idx <= baselineEnd) {
-          baseByCountry.set(c, (baseByCountry.get(c) || 0) + 1);
-        }
+        if (idx === selectedIndex) todayByCountry.set(c, (todayByCountry.get(c) || 0) + 1);
+        else baseByCountry.set(c, (baseByCountry.get(c) || 0) + 1);
       }
 
       const countryScored = [];
@@ -870,7 +845,50 @@ window.addEventListener("DOMContentLoaded", () => {
       countryScored.sort((a, b) => b.score - a.score);
       const topCountries = countryScored.slice(0, 4);
 
-      // ---- Top risk events today (from visibleEvents for relevance) ----
+      // ---- Pair spikes (rolling 7d): compute top 3 pairs by spike score ----
+      // Build per-day counts for each pair in [baselineStart..selectedIndex]
+      const pairDaily = new Map(); // pairKey -> Array(len) counts
+      const len = selectedIndex - baselineStart + 1;
+
+      for (const ev of eventsData) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+        if (idx < baselineStart || idx > selectedIndex) continue;
+        if (!predAll(ev, idx)) continue;
+
+        const actors = actorsInEvent(ev);
+        if (actors.length < 2) continue;
+
+        // unique pairs within event
+        for (let i = 0; i < actors.length; i++) {
+          for (let j = i + 1; j < actors.length; j++) {
+            const pk = pairKey(actors[i], actors[j]);
+            if (!pairDaily.has(pk)) pairDaily.set(pk, new Array(len).fill(0));
+            pairDaily.get(pk)[idx - baselineStart] += 1;
+          }
+        }
+      }
+
+      const pairScored = [];
+      for (const [pk, counts] of pairDaily.entries()) {
+        const last = counts[counts.length - 1] || 0;
+        const base = counts.slice(0, -1);
+        const baseMean = base.length ? mean(base) : 0;
+        const baseStd = base.length ? stdev(base) : 0;
+        const z = baseStd > 0 ? (last - baseMean) / baseStd : (last > baseMean ? 999 : 0);
+        const ratio = (last + 1) / (baseMean + 1);
+
+        // require at least 2 events today or strong ratio
+        if (last < 2 && ratio < 2.0) continue;
+
+        const score = (last - baseMean) * ratio; // simple spike score
+        pairScored.push({ pk, last, baseMean, ratio, z, score });
+      }
+
+      pairScored.sort((a, b) => b.score - a.score);
+      const topPairs = pairScored.slice(0, 3);
+
+      // ---- Top risk events today (from visibleEvents) ----
       const windowDays = getWindowDays();
       const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
       const todayTopRisk = todayEvents
@@ -881,7 +899,7 @@ window.addEventListener("DOMContentLoaded", () => {
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
 
-      // ---- Build HTML ----
+      // ---- Render Alerts ----
       const chipsHtml = topCountries.length
         ? topCountries.map((x) => {
             const active = activeCountry === x.country ? "style='outline:2px solid rgba(255,255,255,0.6)'" : "";
@@ -899,6 +917,16 @@ window.addEventListener("DOMContentLoaded", () => {
              <span class="btn-mini" id="countryClearInline" style="cursor:pointer;display:inline-block;">Clear country filter</span>
            </div>`
         : "";
+
+      const pairsHtml = topPairs.length
+        ? topPairs.map((x) => {
+            return `
+              <div class="mini-item">
+                <div class="name">pair spike: ${x.pk}</div>
+                <div class="val">today ${x.last} · base ${x.baseMean.toFixed(1)} · ×${x.ratio.toFixed(2)}</div>
+              </div>`;
+          }).join("")
+        : `<div class="muted">No pair spike signal.</div>`;
 
       const eventsHtml = todayTopRisk.length
         ? todayTopRisk.map(({ ev, score }) => {
@@ -920,6 +948,11 @@ window.addEventListener("DOMContentLoaded", () => {
         <div class="mini-item"><div class="name">Rolling baseline</div><div class="val">${overall.baseN} days (excluding today)</div></div>
         <div class="mini-item"><div class="name">Hard security spike</div><div class="val">${hard.level.toUpperCase()} (today ${hard.last}, base ${hard.baseMean.toFixed(1)}, ×${hard.ratio.toFixed(2)})</div></div>
         <div class="mini-item"><div class="name">Military spike</div><div class="val">${mil.level.toUpperCase()} (today ${mil.last}, base ${mil.baseMean.toFixed(1)}, ×${mil.ratio.toFixed(2)})</div></div>
+
+        <div style="margin-top:10px;">
+          <div class="muted" style="margin-bottom:6px;">Actor–pair spikes (rolling baseline)</div>
+          ${pairsHtml}
+        </div>
 
         <div style="margin-top:10px;">
           <div class="muted" style="margin-bottom:6px;">Country spikes (rolling baseline, click to filter)</div>
@@ -960,10 +993,9 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- Country Risk (risk-weighted by country) -----
+    // ----- Country Risk -----
     function updateCountryRisk(visibleEvents, selectedIndex, windowDays) {
       const byCountry = new Map();
-
       for (const ev of visibleEvents) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
@@ -1057,7 +1089,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const view = computeVisibleEvents();
       label.textContent = view.selectedDate || "—";
 
-      // Trend stays window-based (user-selected 1/7/30d)
       updateTrendAndReturn(view.selectedIndex, view.windowDays);
 
       updateStats(view.out);
@@ -1068,7 +1099,6 @@ window.addEventListener("DOMContentLoaded", () => {
       updateActors(base.out);
       updatePairs(base.out);
 
-      // Alerts now rolling 7d baseline (does NOT depend on windowDays)
       updateSpikeAlert(view.out, view.selectedIndex);
 
       updateCountryRisk(view.out, view.selectedIndex, view.windowDays);
