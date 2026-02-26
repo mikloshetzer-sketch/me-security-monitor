@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
     heatCheckbox.checked = false;
     let heatLayer = null;
 
-    // ✅ Weekly anomaly heatmap (dynamic UI, no HTML edit needed)
+    // ✅ Weekly anomaly heatmap (dynamic UI)
     let weeklyHeatCheckbox = document.getElementById("weeklyHeatCheckbox");
     if (!weeklyHeatCheckbox) {
       const wrap = document.createElement("label");
@@ -91,7 +91,6 @@ window.addEventListener("DOMContentLoaded", () => {
       wrap.appendChild(weeklyHeatCheckbox);
       wrap.appendChild(span);
 
-      // Insert right after the normal heatmap checkbox row if possible
       const normalHeatRow = heatCheckbox.closest("label") || heatCheckbox.parentElement;
       if (normalHeatRow && normalHeatRow.parentElement) {
         normalHeatRow.parentElement.insertBefore(wrap, normalHeatRow.nextSibling);
@@ -108,8 +107,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let bordersLayer = null;
     let bordersLoaded = false;
 
-    let countryFeatures = []; // { name, bbox, geom }
-    const countryCache = new Map(); // "lat,lng" -> name|null
+    let countryFeatures = [];
+    const countryCache = new Map();
     let countryLoadRequested = false;
 
     function bordersStyle() {
@@ -147,15 +146,9 @@ window.addEventListener("DOMContentLoaded", () => {
       for (const f of geojson.features || []) {
         const props = f.properties || {};
         const name =
-          props.ADMIN ||
-          props.NAME ||
-          props.name ||
-          props.SOVEREIGNT ||
-          "Unknown";
-
+          props.ADMIN || props.NAME || props.name || props.SOVEREIGNT || "Unknown";
         const geom = f.geometry;
         if (!geom || !geom.type || !geom.coordinates) continue;
-
         const bbox = computeBBoxFromCoords(geom.coordinates);
         countryFeatures.push({ name, bbox, geom });
       }
@@ -453,7 +446,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return getCountry(ev) === activeCountry;
     }
 
-    // ----- Risk scoring (per-event) -----
+    // ----- Risk scoring -----
     function categoryWeight(cat) {
       const c = normalize(cat || "other");
       if (c === "military") return 3.0;
@@ -472,7 +465,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
     }
 
-    // ----- Window filtering (for map/list) -----
+    // ----- Window filtering -----
     function computeBaseWindowEvents() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -548,7 +541,7 @@ window.addEventListener("DOMContentLoaded", () => {
       statsIswEl.textContent = String(isw);
     }
 
-    // ----- Risk (location aggregation) -----
+    // ----- Risk -----
     function updateRisk(visibleEvents, selectedIndex, windowDays) {
       let total = 0;
       const byLoc = new Map();
@@ -572,7 +565,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // ----- Actors / Pairs -----
+    // ----- Actors/Pairs panels -----
     function updateActors(baseEvents) {
       const counts = new Map();
       for (const ev of baseEvents) for (const a of actorsInEvent(ev)) counts.set(a, (counts.get(a) || 0) + 1);
@@ -636,7 +629,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- Trend (window-based chart) -----
+    // ----- Trend -----
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -701,7 +694,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const st = sourceType(ev);
         if (!srcSet.has(st)) continue;
 
-        if (!matchesSearch(ev, q)) continue;
+        const qn = normalize(searchInput.value).trim();
+        if (!matchesSearch(ev, qn)) continue;
         if (!matchesActorFilter(ev)) continue;
         if (!matchesPairFilter(ev)) continue;
         if (!matchesCountryFilter(ev)) continue;
@@ -725,7 +719,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t;
     }
 
-    // ----- Rolling baseline + Pair spike (kept from v4) -----
+    // ----- Alerts + Weekly anomaly support -----
     function mean(arr) { return arr.reduce((a, b) => a + b, 0) / Math.max(1, arr.length); }
     function stdev(arr) {
       const m = mean(arr);
@@ -786,6 +780,96 @@ window.addEventListener("DOMContentLoaded", () => {
       };
     }
 
+    // Weekly anomaly bins cache for current selectedIndex
+    let lastWeekly = null; // {selectedIndex, points, stats, topBins}
+
+    function locBinKey(lat, lng) {
+      const bin = 0.25;
+      const bl = Math.round(lat / bin) * bin;
+      const bg = Math.round(lng / bin) * bin;
+      return `${bl.toFixed(2)},${bg.toFixed(2)}`;
+    }
+
+    function computeWeeklyAnomaly(selectedIndex) {
+      const rStart = Math.max(0, selectedIndex - 6);
+      const rEnd = selectedIndex;
+
+      const pEnd = Math.max(0, rStart - 1);
+      const pStart = Math.max(0, pEnd - 6);
+
+      const pred = buildPredicate(null);
+
+      const recent = new Map(); // key -> {lat,lng,count,riskSum}
+      const prev = new Map();   // key -> count
+
+      const addRecent = (key, lat, lng, risk) => {
+        if (!recent.has(key)) recent.set(key, { lat, lng, count: 0, riskSum: 0 });
+        const o = recent.get(key);
+        o.count += 1;
+        o.riskSum += risk;
+      };
+
+      for (const ev of eventsData) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+        if (idx < pStart || idx > rEnd) continue;
+        if (!pred(ev, idx)) continue;
+
+        const ll = getLatLng(ev);
+        if (!ll) continue;
+
+        const key = locBinKey(ll.lat, ll.lng);
+
+        if (idx >= rStart && idx <= rEnd) {
+          const wDays = getWindowDays();
+          const r = eventRiskScore(ev, idx, selectedIndex, wDays);
+          addRecent(key, ll.lat, ll.lng, r);
+        } else if (idx >= pStart && idx <= pEnd) {
+          prev.set(key, (prev.get(key) || 0) + 1);
+        }
+      }
+
+      const bins = [];
+      const points = [];
+      for (const [key, r] of recent.entries()) {
+        const pCount = prev.get(key) || 0;
+        const delta = r.count - pCount;
+        if (delta <= 0) continue;
+
+        const ratio = (r.count + 1) / (pCount + 1);
+        const avgRisk = r.riskSum / Math.max(1, r.count);
+        const intensity = delta * ratio * Math.max(0.6, avgRisk);
+
+        bins.push({
+          key,
+          lat: r.lat,
+          lng: r.lng,
+          recent: r.count,
+          prev: pCount,
+          delta,
+          ratio,
+          avgRisk,
+          intensity,
+        });
+
+        points.push([r.lat, r.lng, intensity]);
+      }
+
+      bins.sort((a, b) => b.intensity - a.intensity);
+      const topBins = bins.slice(0, 10);
+
+      const intensities = bins.map((b) => b.intensity);
+      const minI = intensities.length ? Math.min(...intensities) : 0;
+      const maxI = intensities.length ? Math.max(...intensities) : 0;
+      const meanI = intensities.length ? mean(intensities) : 0;
+
+      return { selectedIndex, points, topBins, stats: { minI, maxI, meanI, bins: bins.length } };
+    }
+
+    function zoomToBin(lat, lng) {
+      map.setView([lat, lng], Math.max(map.getZoom(), 8));
+    }
+
     function updateSpikeAlert(visibleEvents, selectedIndex) {
       const baselineN = 7;
       const selectedDate = days365[selectedIndex];
@@ -813,7 +897,7 @@ window.addEventListener("DOMContentLoaded", () => {
         ` | Military: ${mil.level.toUpperCase()} (today ${mil.last}, ×${mil.ratio.toFixed(2)})` +
         cfTxt;
 
-      // Country spikes + Pair spikes (same as v4)
+      // country + pair spike
       const baselineStart = Math.max(0, selectedIndex - baselineN);
       const baselineEnd = Math.max(baselineStart, selectedIndex - 1);
       const baseDays = Math.max(1, baselineEnd - baselineStart + 1);
@@ -870,16 +954,15 @@ window.addEventListener("DOMContentLoaded", () => {
         const last = counts[counts.length - 1] || 0;
         const base = counts.slice(0, -1);
         const baseMean = base.length ? mean(base) : 0;
-        const baseStd = base.length ? stdev(base) : 0;
-        const z = baseStd > 0 ? (last - baseMean) / baseStd : (last > baseMean ? 999 : 0);
         const ratio = (last + 1) / (baseMean + 1);
         if (last < 2 && ratio < 2.0) continue;
         const score = (last - baseMean) * ratio;
-        pairScored.push({ pk, last, baseMean, ratio, z, score });
+        pairScored.push({ pk, last, baseMean, ratio, score });
       }
       pairScored.sort((a, b) => b.score - a.score);
       const topPairs = pairScored.slice(0, 3);
 
+      // Top risk events today
       const windowDays = getWindowDays();
       const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
       const todayTopRisk = todayEvents
@@ -889,6 +972,38 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
+
+      // Weekly anomaly legend + hot bins (only when weekly is ON)
+      let weeklyHtml = "";
+      if (weeklyHeatCheckbox.checked) {
+        if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
+          lastWeekly = computeWeeklyAnomaly(selectedIndex);
+        }
+        const st = lastWeekly.stats;
+        const title = `${days365[Math.max(0, selectedIndex - 6)]} → ${days365[selectedIndex]} vs prev 7d`;
+
+        const topBinsHtml = lastWeekly.topBins.length
+          ? lastWeekly.topBins.map((b, i) => {
+              return `
+                <div class="rank-row" data-bin="${b.lat},${b.lng}" style="cursor:pointer;">
+                  <div class="name">#${i + 1} (${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}) <span class="muted">Δ${b.delta} · ×${b.ratio.toFixed(2)}</span></div>
+                  <div class="val">${b.intensity.toFixed(1)}</div>
+                </div>`;
+            }).join("")
+          : `<div class="muted">No anomaly bins (no positive deltas).</div>`;
+
+        weeklyHtml = `
+          <div style="margin-top:12px;">
+            <div class="muted" style="margin-bottom:6px;">Weekly anomaly legend</div>
+            <div class="mini-item"><div class="name">range</div><div class="val">${title}</div></div>
+            <div class="mini-item"><div class="name">bins</div><div class="val">${st.bins}</div></div>
+            <div class="mini-item"><div class="name">intensity</div><div class="val">min ${st.minI.toFixed(1)} · mean ${st.meanI.toFixed(1)} · max ${st.maxI.toFixed(1)}</div></div>
+
+            <div class="muted" style="margin:10px 0 6px;">Hot bins (click to zoom)</div>
+            ${topBinsHtml}
+          </div>
+        `;
+      }
 
       const chipsHtml = topCountries.length
         ? topCountries.map((x) => {
@@ -952,8 +1067,11 @@ window.addEventListener("DOMContentLoaded", () => {
           <div class="muted" style="margin-bottom:6px;">Top risk events today (click to zoom)</div>
           ${eventsHtml}
         </div>
+
+        ${weeklyHtml}
       `;
 
+      // Wire country chips
       spikeDetails.querySelectorAll("[data-country]").forEach((el) => {
         el.addEventListener("click", () => {
           const c = el.getAttribute("data-country");
@@ -970,6 +1088,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      // Wire event clicks
       spikeDetails.querySelectorAll("[data-ev]").forEach((el) => {
         el.addEventListener("click", () => {
           const id = el.getAttribute("data-ev");
@@ -977,15 +1096,73 @@ window.addEventListener("DOMContentLoaded", () => {
           if (ev) openEventOnMap(ev);
         });
       });
+
+      // Wire bin clicks
+      spikeDetails.querySelectorAll("[data-bin]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const v = el.getAttribute("data-bin") || "";
+          const parts = v.split(",").map((x) => Number(x));
+          if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return;
+          zoomToBin(parts[0], parts[1]);
+        });
+      });
     }
 
-    // ----- Country Risk -----
+    // ----- Weekly anomaly heatmap -----
+    function clearHeatLayer() {
+      if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
+      heatLayer = null;
+    }
+
+    function updateHeatmap(visibleEvents, selectedIndex, windowDays) {
+      if (weeklyHeatCheckbox.checked) {
+        if (heatCheckbox.checked) heatCheckbox.checked = false;
+
+        if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
+          lastWeekly = computeWeeklyAnomaly(selectedIndex);
+        }
+        const points = lastWeekly.points;
+
+        clearHeatLayer();
+        if (!points.length) return;
+
+        heatLayer = L.heatLayer(points, { radius: 30, blur: 22, maxZoom: 9 });
+        heatLayer.addTo(map);
+        heatLayer.bringToBack();
+        if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
+        return;
+      }
+
+      if (!heatCheckbox.checked) {
+        clearHeatLayer();
+        return;
+      }
+
+      const points = [];
+      for (const ev of visibleEvents) {
+        const ll = getLatLng(ev);
+        if (!ll) continue;
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+        const w = eventRiskScore(ev, idx, selectedIndex, windowDays);
+        points.push([ll.lat, ll.lng, w]);
+      }
+
+      clearHeatLayer();
+      if (!points.length) return;
+
+      heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9 });
+      heatLayer.addTo(map);
+      heatLayer.bringToBack();
+      if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
+    }
+
+    // ----- Country risk -----
     function updateCountryRisk(visibleEvents, selectedIndex, windowDays) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
-
         const country = getCountry(ev);
         const score = eventRiskScore(ev, idx, selectedIndex, windowDays);
         byCountry.set(country, (byCountry.get(country) || 0) + score);
@@ -1003,7 +1180,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No country risk data for current filters.</div>`;
     }
 
-    // ----- Actor Escalation -----
+    // ----- Escalation -----
     function updateActorEscalation(selectedIndex, windowDays) {
       const q = normalize(searchInput.value).trim();
       const catSet = getSelectedCategories();
@@ -1066,127 +1243,6 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No escalation signal in this range.</div>`;
     }
 
-    // ----- Weekly anomaly heatmap (7d vs prev 7d) -----
-    // We aggregate by ~0.25° bins to avoid too many points.
-    function locBinKey(lat, lng) {
-      const bin = 0.25; // degrees
-      const bl = Math.round(lat / bin) * bin;
-      const bg = Math.round(lng / bin) * bin;
-      return `${bl.toFixed(2)},${bg.toFixed(2)}`;
-    }
-
-    function computeWeeklyAnomalyPoints(selectedIndex) {
-      // last 7 days including selected day
-      const rStart = Math.max(0, selectedIndex - 6);
-      const rEnd = selectedIndex;
-
-      // previous 7 days (immediately before)
-      const pEnd = Math.max(0, rStart - 1);
-      const pStart = Math.max(0, pEnd - 6);
-
-      const pred = buildPredicate(null);
-
-      const recent = new Map(); // key -> {lat,lng,count,riskSum}
-      const prev = new Map();   // key -> count
-
-      // helper add
-      const addRecent = (key, lat, lng, risk) => {
-        if (!recent.has(key)) recent.set(key, { lat, lng, count: 0, riskSum: 0 });
-        const o = recent.get(key);
-        o.count += 1;
-        o.riskSum += risk;
-      };
-
-      for (const ev of eventsData) {
-        const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-        if (idx < pStart || idx > rEnd) continue;
-        if (!pred(ev, idx)) continue;
-
-        const ll = getLatLng(ev);
-        if (!ll) continue;
-
-        const key = locBinKey(ll.lat, ll.lng);
-
-        if (idx >= rStart && idx <= rEnd) {
-          // riskSum uses current selected windowDays for consistency with your Risk logic
-          const wDays = getWindowDays();
-          const r = eventRiskScore(ev, idx, selectedIndex, wDays);
-          addRecent(key, ll.lat, ll.lng, r);
-        } else if (idx >= pStart && idx <= pEnd) {
-          prev.set(key, (prev.get(key) || 0) + 1);
-        }
-      }
-
-      const points = [];
-      for (const [key, r] of recent.entries()) {
-        const pCount = prev.get(key) || 0;
-
-        // anomaly signal: positive increase relative to prev (smoothed)
-        const delta = r.count - pCount;
-        if (delta <= 0) continue;
-
-        const ratio = (r.count + 1) / (pCount + 1);
-        // intensity: more events + higher ratio + higher risk composition
-        const avgRisk = r.riskSum / Math.max(1, r.count);
-        const intensity = delta * ratio * Math.max(0.6, avgRisk); // keep some base visibility
-
-        points.push([r.lat, r.lng, intensity]);
-      }
-
-      return points;
-    }
-
-    // ----- Heatmap update (normal vs weekly anomaly) -----
-    function clearHeatLayer() {
-      if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
-      heatLayer = null;
-    }
-
-    function updateHeatmap(visibleEvents, selectedIndex, windowDays) {
-      // Weekly anomaly mode has priority
-      if (weeklyHeatCheckbox.checked) {
-        // ensure normal heatmap is off to avoid double layers
-        if (heatCheckbox.checked) heatCheckbox.checked = false;
-
-        const points = computeWeeklyAnomalyPoints(selectedIndex);
-        clearHeatLayer();
-        if (!points.length) return;
-
-        heatLayer = L.heatLayer(points, { radius: 30, blur: 22, maxZoom: 9 });
-        heatLayer.addTo(map);
-        heatLayer.bringToBack();
-        if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
-        return;
-      }
-
-      // Normal heatmap
-      if (!heatCheckbox.checked) {
-        clearHeatLayer();
-        return;
-      }
-
-      const points = [];
-      for (const ev of visibleEvents) {
-        const ll = getLatLng(ev);
-        if (!ll) continue;
-
-        const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-
-        const w = eventRiskScore(ev, idx, selectedIndex, windowDays);
-        points.push([ll.lat, ll.lng, w]);
-      }
-
-      clearHeatLayer();
-      if (!points.length) return;
-
-      heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9 });
-      heatLayer.addTo(map);
-      heatLayer.bringToBack();
-      if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
-    }
-
     // ----- MAIN UPDATE -----
     function updateMapAndList() {
       clusterGroup.clearLayers();
@@ -1200,8 +1256,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       updateStats(view.out);
       updateRisk(view.out, view.selectedIndex, view.windowDays);
-
-      // ✅ heatmap mode handled here
       updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
       const base = computeBaseWindowEvents();
@@ -1249,30 +1303,30 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----- Wiring -----
-    slider.addEventListener("input", updateMapAndList);
-    catCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
-    srcCheckboxes.forEach((cb) => cb.addEventListener("change", updateMapAndList));
-    windowRadios.forEach((r) => r.addEventListener("change", updateMapAndList));
-    searchInput.addEventListener("input", updateMapAndList);
+    slider.addEventListener("input", () => { lastWeekly = null; updateMapAndList(); });
+    catCheckboxes.forEach((cb) => cb.addEventListener("change", () => { lastWeekly = null; updateMapAndList(); }));
+    srcCheckboxes.forEach((cb) => cb.addEventListener("change", () => { lastWeekly = null; updateMapAndList(); }));
+    windowRadios.forEach((r) => r.addEventListener("change", () => { lastWeekly = null; updateMapAndList(); }));
+    searchInput.addEventListener("input", () => { lastWeekly = null; updateMapAndList(); });
 
-    actorClearBtn.addEventListener("click", () => { activeActor = null; updateMapAndList(); });
-    pairClearBtn.addEventListener("click", () => { activePair = null; updateMapAndList(); });
+    actorClearBtn.addEventListener("click", () => { activeActor = null; lastWeekly = null; updateMapAndList(); });
+    pairClearBtn.addEventListener("click", () => { activePair = null; lastWeekly = null; updateMapAndList(); });
 
     heatCheckbox.addEventListener("change", () => {
-      // if normal heat turned on, turn weekly off
       if (heatCheckbox.checked) weeklyHeatCheckbox.checked = false;
+      lastWeekly = null;
       updateMapAndList();
     });
 
     weeklyHeatCheckbox.addEventListener("change", () => {
-      // if weekly turned on, turn normal off
       if (weeklyHeatCheckbox.checked) heatCheckbox.checked = false;
+      lastWeekly = null;
       updateMapAndList();
     });
 
     window.addEventListener("resize", () => {
       clearTimeout(window.__trendResizeT);
-      window.__trendResizeT = setTimeout(updateMapAndList, 160);
+      window.__trendResizeT = setTimeout(() => { lastWeekly = null; updateMapAndList(); }, 160);
     });
 
     // ----- Load data -----
@@ -1280,16 +1334,13 @@ window.addEventListener("DOMContentLoaded", () => {
       .then((r) => r.json())
       .then((data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
-
         eventsData = data.map((ev, i) => {
           const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
           if (hasId) return ev;
-
           const seed = `${ev?.date || ""}|${ev?.title || ""}|${ev?.location?.name || ""}|${i}`;
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
-
         updateMapAndList();
       })
       .catch((err) => {
