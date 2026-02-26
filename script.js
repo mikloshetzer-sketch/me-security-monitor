@@ -64,12 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // ----- Hotspot heatmap (normal) -----
+    // ----- Heatmap (normal) -----
     const heatCheckbox = $("heatmapCheckbox");
     heatCheckbox.checked = false;
     let heatLayer = null;
 
-    // ✅ Weekly anomaly heatmap (dynamic UI)
+    // ✅ Weekly anomaly checkbox (dynamic UI)
     let weeklyHeatCheckbox = document.getElementById("weeklyHeatCheckbox");
     if (!weeklyHeatCheckbox) {
       const wrap = document.createElement("label");
@@ -585,6 +585,7 @@ window.addEventListener("DOMContentLoaded", () => {
         el.onclick = () => {
           const a = el.getAttribute("data-actor");
           activeActor = (activeActor === a) ? null : a;
+          lastWeekly = null;
           updateMapAndList();
         };
       });
@@ -624,6 +625,7 @@ window.addEventListener("DOMContentLoaded", () => {
           const a = parts[0], b = parts[1];
           if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
           else activePair = { a, b };
+          lastWeekly = null;
           updateMapAndList();
         };
       });
@@ -694,8 +696,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const st = sourceType(ev);
         if (!srcSet.has(st)) continue;
 
-        const qn = normalize(searchInput.value).trim();
-        if (!matchesSearch(ev, qn)) continue;
+        if (!matchesSearch(ev, q)) continue;
         if (!matchesActorFilter(ev)) continue;
         if (!matchesPairFilter(ev)) continue;
         if (!matchesCountryFilter(ev)) continue;
@@ -719,7 +720,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t;
     }
 
-    // ----- Alerts + Weekly anomaly support -----
+    // ----- Alerts + Weekly anomaly -----
     function mean(arr) { return arr.reduce((a, b) => a + b, 0) / Math.max(1, arr.length); }
     function stdev(arr) {
       const m = mean(arr);
@@ -780,8 +781,8 @@ window.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    // Weekly anomaly bins cache for current selectedIndex
-    let lastWeekly = null; // {selectedIndex, points, stats, topBins}
+    // Weekly anomaly bins cache
+    let lastWeekly = null; // {selectedIndex, points, topBins, stats}
 
     function locBinKey(lat, lng) {
       const bin = 0.25;
@@ -897,7 +898,37 @@ window.addEventListener("DOMContentLoaded", () => {
         ` | Military: ${mil.level.toUpperCase()} (today ${mil.last}, ×${mil.ratio.toFixed(2)})` +
         cfTxt;
 
-      // country + pair spike
+      // ---- Weekly section FIRST (so you always see it) ----
+      let weeklyHtml = "";
+      if (weeklyHeatCheckbox.checked) {
+        if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
+          lastWeekly = computeWeeklyAnomaly(selectedIndex);
+        }
+        const st = lastWeekly.stats;
+        const title = `${days365[Math.max(0, selectedIndex - 6)]} → ${days365[selectedIndex]} vs prev 7d`;
+
+        const topBinsHtml = lastWeekly.topBins.length
+          ? lastWeekly.topBins.map((b, i) => `
+              <div class="rank-row" data-bin="${b.lat},${b.lng}" style="cursor:pointer;">
+                <div class="name">#${i + 1} (${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}) <span class="muted">Δ${b.delta} · ×${b.ratio.toFixed(2)}</span></div>
+                <div class="val">${b.intensity.toFixed(1)}</div>
+              </div>`).join("")
+          : `<div class="muted">No anomaly bins (no positive deltas).</div>`;
+
+        weeklyHtml = `
+          <div id="weeklyAnomalySection" style="margin-top:2px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.12);">
+            <div class="muted" style="margin-bottom:6px;">Weekly anomaly legend</div>
+            <div class="mini-item"><div class="name">range</div><div class="val">${title}</div></div>
+            <div class="mini-item"><div class="name">bins</div><div class="val">${st.bins}</div></div>
+            <div class="mini-item"><div class="name">intensity</div><div class="val">min ${st.minI.toFixed(1)} · mean ${st.meanI.toFixed(1)} · max ${st.maxI.toFixed(1)}</div></div>
+
+            <div class="muted" style="margin:10px 0 6px;">Hot bins (click to zoom)</div>
+            ${topBinsHtml}
+          </div>
+        `;
+      }
+
+      // ---- Country spikes + Pair spikes + Today top risk ----
       const baselineStart = Math.max(0, selectedIndex - baselineN);
       const baselineEnd = Math.max(baselineStart, selectedIndex - 1);
       const baseDays = Math.max(1, baselineEnd - baselineStart + 1);
@@ -962,7 +993,6 @@ window.addEventListener("DOMContentLoaded", () => {
       pairScored.sort((a, b) => b.score - a.score);
       const topPairs = pairScored.slice(0, 3);
 
-      // Top risk events today
       const windowDays = getWindowDays();
       const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
       const todayTopRisk = todayEvents
@@ -972,38 +1002,6 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
-
-      // Weekly anomaly legend + hot bins (only when weekly is ON)
-      let weeklyHtml = "";
-      if (weeklyHeatCheckbox.checked) {
-        if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
-          lastWeekly = computeWeeklyAnomaly(selectedIndex);
-        }
-        const st = lastWeekly.stats;
-        const title = `${days365[Math.max(0, selectedIndex - 6)]} → ${days365[selectedIndex]} vs prev 7d`;
-
-        const topBinsHtml = lastWeekly.topBins.length
-          ? lastWeekly.topBins.map((b, i) => {
-              return `
-                <div class="rank-row" data-bin="${b.lat},${b.lng}" style="cursor:pointer;">
-                  <div class="name">#${i + 1} (${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}) <span class="muted">Δ${b.delta} · ×${b.ratio.toFixed(2)}</span></div>
-                  <div class="val">${b.intensity.toFixed(1)}</div>
-                </div>`;
-            }).join("")
-          : `<div class="muted">No anomaly bins (no positive deltas).</div>`;
-
-        weeklyHtml = `
-          <div style="margin-top:12px;">
-            <div class="muted" style="margin-bottom:6px;">Weekly anomaly legend</div>
-            <div class="mini-item"><div class="name">range</div><div class="val">${title}</div></div>
-            <div class="mini-item"><div class="name">bins</div><div class="val">${st.bins}</div></div>
-            <div class="mini-item"><div class="name">intensity</div><div class="val">min ${st.minI.toFixed(1)} · mean ${st.meanI.toFixed(1)} · max ${st.maxI.toFixed(1)}</div></div>
-
-            <div class="muted" style="margin:10px 0 6px;">Hot bins (click to zoom)</div>
-            ${topBinsHtml}
-          </div>
-        `;
-      }
 
       const chipsHtml = topCountries.length
         ? topCountries.map((x) => {
@@ -1047,10 +1045,15 @@ window.addEventListener("DOMContentLoaded", () => {
           }).join("")
         : `<div class="muted">No events today in this window.</div>`;
 
+      // ✅ Weekly legend now goes to the TOP of Alerts content
       spikeDetails.innerHTML = `
-        <div class="mini-item"><div class="name">Rolling baseline</div><div class="val">${overall.baseN} days (excluding today)</div></div>
-        <div class="mini-item"><div class="name">Hard security spike</div><div class="val">${hard.level.toUpperCase()} (today ${hard.last}, base ${hard.baseMean.toFixed(1)}, ×${hard.ratio.toFixed(2)})</div></div>
-        <div class="mini-item"><div class="name">Military spike</div><div class="val">${mil.level.toUpperCase()} (today ${mil.last}, base ${mil.baseMean.toFixed(1)}, ×${mil.ratio.toFixed(2)})</div></div>
+        ${weeklyHtml}
+
+        <div style="margin-top:10px;">
+          <div class="mini-item"><div class="name">Rolling baseline</div><div class="val">${overall.baseN} days (excluding today)</div></div>
+          <div class="mini-item"><div class="name">Hard security spike</div><div class="val">${hard.level.toUpperCase()} (today ${hard.last}, base ${hard.baseMean.toFixed(1)}, ×${hard.ratio.toFixed(2)})</div></div>
+          <div class="mini-item"><div class="name">Military spike</div><div class="val">${mil.level.toUpperCase()} (today ${mil.last}, base ${mil.baseMean.toFixed(1)}, ×${mil.ratio.toFixed(2)})</div></div>
+        </div>
 
         <div style="margin-top:10px;">
           <div class="muted" style="margin-bottom:6px;">Actor–pair spikes (rolling baseline)</div>
@@ -1067,8 +1070,6 @@ window.addEventListener("DOMContentLoaded", () => {
           <div class="muted" style="margin-bottom:6px;">Top risk events today (click to zoom)</div>
           ${eventsHtml}
         </div>
-
-        ${weeklyHtml}
       `;
 
       // Wire country chips
@@ -1076,6 +1077,7 @@ window.addEventListener("DOMContentLoaded", () => {
         el.addEventListener("click", () => {
           const c = el.getAttribute("data-country");
           activeCountry = (activeCountry === c) ? null : c;
+          lastWeekly = null;
           updateMapAndList();
         });
       });
@@ -1084,6 +1086,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (cc) {
         cc.addEventListener("click", () => {
           activeCountry = null;
+          lastWeekly = null;
           updateMapAndList();
         });
       }
@@ -1108,7 +1111,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // ----- Weekly anomaly heatmap -----
+    // ----- Heatmap update (weekly vs normal) -----
     function clearHeatLayer() {
       if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
       heatLayer = null;
@@ -1322,6 +1325,12 @@ window.addEventListener("DOMContentLoaded", () => {
       if (weeklyHeatCheckbox.checked) heatCheckbox.checked = false;
       lastWeekly = null;
       updateMapAndList();
+
+      // ✅ auto-scroll to weekly legend (so it "látszik")
+      setTimeout(() => {
+        const el = document.getElementById("weeklyAnomalySection");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 120);
     });
 
     window.addEventListener("resize", () => {
@@ -1334,13 +1343,16 @@ window.addEventListener("DOMContentLoaded", () => {
       .then((r) => r.json())
       .then((data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
+
         eventsData = data.map((ev, i) => {
           const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
           if (hasId) return ev;
+
           const seed = `${ev?.date || ""}|${ev?.title || ""}|${ev?.location?.name || ""}|${i}`;
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
+
         updateMapAndList();
       })
       .catch((err) => {
