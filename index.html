@@ -1,253 +1,396 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <title>Middle East Security Monitor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ME Security Monitor</title>
 
+  <!-- Leaflet + MarkerCluster + Heat -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root{
+      --panel-bg: rgba(14,18,28,.92);
+      --panel-border: rgba(255,255,255,.14);
+      --muted: rgba(255,255,255,.70);
+      --text: rgba(255,255,255,.92);
+    }
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body { background: #0b1020; color: var(--text); }
+    #map { height: 100vh; width: 100vw; }
+
+    /* Floating toggles */
+    .toggle-btn{
+      position: fixed;
+      z-index: 9999;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor: pointer;
+      user-select: none;
+      backdrop-filter: blur(8px);
+      font-size: 12px;
+    }
+    #controlToggle { top: 12px; left: 12px; }
+    #timelineToggle { top: 12px; right: 12px; }
+    #legendToggle { bottom: 12px; left: 12px; }
+
+    /* Panels */
+    .panel{
+      position: fixed;
+      z-index: 9998;
+      width: 360px;
+      max-width: calc(100vw - 24px);
+      max-height: calc(100vh - 24px);
+      overflow: auto;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      padding: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .panel.closed { display: none; }
+    #controlPanel { top: 52px; left: 12px; }
+    #timelinePanel { top: 52px; right: 12px; }
+    #legendPanel { bottom: 52px; left: 12px; width: 320px; }
+
+    .panel h3{
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .muted { color: var(--muted); font-size: 12px; }
+    .row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin: 6px 0; }
+    .row label{ font-size: 12px; color: var(--text); display:flex; align-items:center; gap:8px; }
+    input[type="text"]{
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.25);
+      color: var(--text);
+      outline: none;
+    }
+    select{
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.25);
+      color: var(--text);
+      outline: none;
+    }
+    input[type="range"]{ width: 100%; }
+
+    .btn-mini{
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
+    }
+
+    /* Accordion */
+    .acc{ border-top: 1px solid rgba(255,255,255,.12); margin-top: 10px; padding-top: 8px; }
+    .acc-btn{
+      width: 100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      background: transparent;
+      color: var(--text);
+      border: none;
+      cursor:pointer;
+      padding: 8px 6px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .acc-arrow{ transition: transform .15s ease; opacity: .9; }
+    .acc-panel.closed{ display:none; }
+    .acc-panel{ padding: 8px 6px 2px 6px; }
+
+    /* Lists / chips */
+    .mini-item{ display:flex; justify-content:space-between; gap:10px; margin: 6px 0; font-size:12px; }
+    .mini-item .name{ color: var(--muted); }
+    .mini-item .val{ color: var(--text); }
+
+    .badge-mini{
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      display:inline-flex;
+      gap:6px;
+      align-items:center;
+    }
+    .badge-ok{ background: rgba(0,255,153,.10); }
+    .badge-warn{ background: rgba(255,214,0,.12); }
+    .badge-alert{ background: rgba(255,90,90,.14); }
+
+    .risk-row, .rank-row{
+      display:flex; justify-content:space-between; gap:10px;
+      padding: 6px 8px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      margin: 6px 0;
+      background: rgba(0,0,0,.18);
+      font-size: 12px;
+    }
+    .risk-row .name, .rank-row .name{ color: var(--text); }
+    .risk-row .val, .rank-row .val{ color: var(--text); font-weight: 700; }
+
+    .actor-chip{
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      margin: 6px 0;
+      cursor:pointer;
+      user-select:none;
+      font-size: 12px;
+    }
+    .actor-chip.active{ outline: 2px solid rgba(255,255,255,.45); }
+    .pair-row{
+      display:flex; justify-content:space-between; gap:10px;
+      padding: 6px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      margin: 6px 0;
+      cursor:pointer;
+      user-select:none;
+      font-size: 12px;
+    }
+    .pair-row.active{ outline: 2px solid rgba(255,255,255,.45); }
+
+    .event-row{
+      padding: 8px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      margin: 8px 0;
+    }
+    .event-row-title{ font-size: 13px; font-weight: 700; }
+    .event-row-meta{ margin-top: 4px; display:flex; gap:10px; flex-wrap:wrap; font-size: 11px; color: var(--muted); }
+    .event-dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.55);
+      box-shadow: 0 0 10px rgba(0,0,0,.35);
+    }
+
+    canvas{ border-radius: 12px; border: 1px solid rgba(255,255,255,.10); }
+
+    /* default closed (as requested) */
+    #controlPanel, #timelinePanel, #legendPanel { display:none; }
+    #controlPanel.closed, #timelinePanel.closed, #legendPanel.closed { display:none; }
+  </style>
 </head>
+
 <body>
+  <div id="map"></div>
 
-<div id="map"></div>
+  <!-- Toggle buttons -->
+  <div id="controlToggle" class="toggle-btn">Controls</div>
+  <div id="timelineToggle" class="toggle-btn">Timeline</div>
+  <div id="legendToggle" class="toggle-btn">Legend</div>
 
-<!-- Controls -->
-<div id="controlPanel" class="panel panel-top-left closed" aria-label="Controls panel">
-  <div class="panel-header">
-    <button id="controlToggle" class="panel-toggle" aria-label="Controls ki/be">☰</button>
-    <div class="panel-title">Controls</div>
-  </div>
-
-  <div class="panel-body">
-    <div class="row">
-      <label><input id="bordersCheckbox" type="checkbox" checked /> Country borders</label>
-    </div>
+  <!-- Control panel (TOP-LEFT) -->
+  <div id="controlPanel" class="panel closed">
+    <h3>Controls</h3>
 
     <div class="row">
-      <label><input id="heatmapCheckbox" type="checkbox" /> Hotspot heatmap</label>
+      <label><input id="heatmapCheckbox" type="checkbox" /> Heatmap</label>
+      <label><input id="bordersCheckbox" type="checkbox" /> Borders</label>
     </div>
 
-    <hr class="sep" />
+    <div class="muted" style="margin-top:10px;">Category filters</div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="military" checked /> Military</label></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="security" checked /> Security</label></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="political" checked /> Political</label></div>
+    <div class="row"><label><input class="cat-filter" type="checkbox" value="other" checked /> Other</label></div>
 
-    <div class="row"><b>Sources</b></div>
+    <div class="muted" style="margin-top:10px;">Source filters</div>
     <div class="row"><label><input class="src-filter" type="checkbox" value="news" checked /> News</label></div>
     <div class="row"><label><input class="src-filter" type="checkbox" value="isw" checked /> ISW</label></div>
 
-    <hr class="sep" />
+    <div class="muted" style="margin-top:10px;">Window</div>
+    <div class="row"><label><input type="radio" name="window" value="1" checked /> 1d</label></div>
+    <div class="row"><label><input type="radio" name="window" value="7" /> 7d</label></div>
+    <div class="row"><label><input type="radio" name="window" value="30" /> 30d</label></div>
+    <div class="row"><label><input type="radio" name="window" value="90" /> 90d</label></div>
 
-    <div class="row"><b>Categories</b></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="political" checked /> political</label></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="military" checked /> military</label></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="security" checked /> security</label></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="other" checked /> other</label></div>
+    <!-- Region controls -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+      <div class="muted" style="margin-bottom:6px;">Region</div>
+      <select id="regionSelect">
+        <option value="ALL">ALL</option>
+        <option value="LEVANT">LEVANT</option>
+        <option value="GULF">GULF</option>
+        <option value="NORTH">NORTH</option>
+      </select>
+      <div class="row" style="margin-top:8px;">
+        <span class="muted" id="regionNote">No region filter</span>
+        <span class="btn-mini" id="regionClear">Clear</span>
+      </div>
+    </div>
 
-    <hr class="sep" />
+    <!-- Borders style controls -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+      <div class="muted" style="margin-bottom:6px;">Borders style</div>
 
-    <div class="row"><b>Time Window</b></div>
-    <div class="row"><label><input type="radio" name="window" value="1" checked /> 1 day</label></div>
-    <div class="row"><label><input type="radio" name="window" value="7" /> 7 days</label></div>
-    <div class="row"><label><input type="radio" name="window" value="30" /> 30 days</label></div>
+      <div class="muted">Thickness: <span id="borderWeightLabel">2.2</span></div>
+      <input id="borderWeightSlider" type="range" min="1" max="6" step="0.2" value="2.2"/>
+
+      <div class="muted" style="margin-top:8px;">Opacity: <span id="borderOpacityLabel">0.85</span></div>
+      <input id="borderOpacitySlider" type="range" min="0.10" max="1.0" step="0.05" value="0.85"/>
+
+      <div class="row" style="margin-top:8px;">
+        <label><input id="borderFillCheckbox" type="checkbox" /> Fill</label>
+        <span class="muted">Fill opacity: <span id="borderFillOpacityLabel">0.12</span></span>
+      </div>
+      <input id="borderFillOpacitySlider" type="range" min="0.02" max="0.35" step="0.01" value="0.12"/>
+      <div class="muted" style="margin-top:6px;">Region highlight uses fill when Borders ON.</div>
+    </div>
   </div>
-</div>
 
-<!-- Timeline -->
-<div id="timelinePanel" class="panel panel-top-right closed" aria-label="Timeline panel">
-  <div class="panel-header">
-    <button id="timelineToggle" class="panel-toggle" aria-label="Timeline ki/be">☰</button>
-    <div class="panel-title">Timeline</div>
-  </div>
+  <!-- Timeline/Analytics panel (TOP-RIGHT) -->
+  <div id="timelinePanel" class="panel closed">
+    <h3>Timeline</h3>
 
-  <div class="panel-body">
-    <div class="muted">Selected date</div>
-    <div id="selectedDateLabel" class="big">—</div>
+    <div class="muted">Selected date: <span id="selectedDateLabel">—</span></div>
     <input id="timelineSlider" type="range" min="0" max="364" value="364" />
 
-    <hr class="sep" />
-
-    <!-- ACCORDION: Alerts (Spike) -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accAlerts" aria-expanded="false">
-        <span>Alerts (Spike)</span><span class="acc-arrow">▸</span>
-      </button>
-      <div id="accAlerts" class="acc-panel closed">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-title">Spike status</div>
-            <div id="spikeBadge" class="badge-mini">—</div>
-          </div>
-          <div id="spikeText" class="muted">—</div>
-          <div id="spikeDetails" class="mini-list"></div>
-        </div>
-      </div>
+    <div style="margin-top:10px;">
+      <input id="eventSearch" type="text" placeholder="Search (title/summary/tags/location)..." />
     </div>
 
-    <!-- ACCORDION: Trend -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accTrend" aria-expanded="false">
-        <span>Trend</span><span class="acc-arrow">▸</span>
+    <div class="acc">
+      <button class="acc-btn" data-acc="accTrend" aria-expanded="false">
+        <span>Trend</span><span class="acc-arrow">▶</span>
       </button>
       <div id="accTrend" class="acc-panel closed">
-        <div class="trend">
-          <div class="trend-top">
-            <div class="trend-title">Daily activity</div>
-            <div id="trendTotal" class="trend-total">0</div>
-          </div>
-          <canvas id="trendCanvas"></canvas>
-          <div id="trendRange" class="muted" style="margin-top:6px;">—</div>
-        </div>
+        <div class="mini-item"><div class="name">Total</div><div class="val" id="trendTotal">0</div></div>
+        <div class="mini-item"><div class="name">Range</div><div class="val" id="trendRange">—</div></div>
+        <canvas id="trendCanvas" height="120"></canvas>
       </div>
     </div>
 
-    <!-- ACCORDION: Stats -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accStats" aria-expanded="false">
-        <span>Stats</span><span class="acc-arrow">▸</span>
+    <div class="acc">
+      <button class="acc-btn" data-acc="accStats" aria-expanded="false">
+        <span>Stats</span><span class="acc-arrow">▶</span>
       </button>
       <div id="accStats" class="acc-panel closed">
-        <div class="stats">
-          <div class="stats-top">
-            <div class="stats-title">Window stats</div>
-            <div id="statsTotal" class="stats-total">0</div>
-          </div>
-
-          <div class="stats-grid">
-            <div class="stat-pill"><span>mil</span><b id="statsMil">0</b></div>
-            <div class="stat-pill"><span>sec</span><b id="statsSec">0</b></div>
-            <div class="stat-pill"><span>pol</span><b id="statsPol">0</b></div>
-            <div class="stat-pill"><span>oth</span><b id="statsOth">0</b></div>
-          </div>
-
-          <div class="stats-grid stats-grid-2">
-            <div class="stat-pill"><span>news</span><b id="statsNews">0</b></div>
-            <div class="stat-pill"><span>isw</span><b id="statsIsw">0</b></div>
-          </div>
-        </div>
+        <div class="mini-item"><div class="name">Total</div><div class="val" id="statsTotal">0</div></div>
+        <div class="mini-item"><div class="name">Military</div><div class="val" id="statsMil">0</div></div>
+        <div class="mini-item"><div class="name">Security</div><div class="val" id="statsSec">0</div></div>
+        <div class="mini-item"><div class="name">Political</div><div class="val" id="statsPol">0</div></div>
+        <div class="mini-item"><div class="name">Other</div><div class="val" id="statsOth">0</div></div>
+        <div class="mini-item"><div class="name">News</div><div class="val" id="statsNews">0</div></div>
+        <div class="mini-item"><div class="name">ISW</div><div class="val" id="statsIsw">0</div></div>
       </div>
     </div>
 
-    <!-- ACCORDION: Risk -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accRisk" aria-expanded="false">
-        <span>Risk</span><span class="acc-arrow">▸</span>
+    <div class="acc">
+      <button class="acc-btn" data-acc="accRisk" aria-expanded="false">
+        <span>Risk</span><span class="acc-arrow">▶</span>
       </button>
       <div id="accRisk" class="acc-panel closed">
-        <div class="risk">
-          <div class="risk-top">
-            <div class="risk-title">Risk Index (window)</div>
-            <div id="riskTotal" class="risk-total">0.0</div>
-          </div>
-          <div class="muted" style="margin-bottom:8px;">
-            Weighted: mil=3, sec=2, pol=1, oth=0.5 · ISW×1.3 · recent events higher
-          </div>
-          <div id="riskList" class="risk-list"></div>
-        </div>
+        <div class="mini-item"><div class="name">Risk total</div><div class="val" id="riskTotal">0.0</div></div>
+        <div id="riskList"></div>
       </div>
     </div>
 
-    <!-- ACCORDION: Country Risk -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accCountryRisk" aria-expanded="false">
-        <span>Country Risk</span><span class="acc-arrow">▸</span>
-      </button>
-      <div id="accCountryRisk" class="acc-panel closed">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-title">Top countries (risk-weighted)</div>
-            <div id="countryRiskNote" class="muted">—</div>
-          </div>
-          <div id="countryRiskList" class="rank-list"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ACCORDION: Actor Escalation -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accEscalation" aria-expanded="false">
-        <span>Actor Escalation</span><span class="acc-arrow">▸</span>
-      </button>
-      <div id="accEscalation" class="acc-panel closed">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-title">Top actors (recent vs previous)</div>
-            <div id="escNote" class="muted">—</div>
-          </div>
-          <div id="escalationList" class="rank-list"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ACCORDION: Actors -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accActors" aria-expanded="false">
-        <span>Top Actors</span><span class="acc-arrow">▸</span>
+    <div class="acc">
+      <button class="acc-btn" data-acc="accActors" aria-expanded="false">
+        <span>Top actors</span><span class="acc-arrow">▶</span>
       </button>
       <div id="accActors" class="acc-panel closed">
-        <div class="actors">
-          <div class="actors-top">
-            <div class="actors-title">Top Actors (window)</div>
-            <div class="actors-right">
-              <span id="actorActive" class="muted">ALL</span>
-              <button id="actorClear" class="btn-mini" type="button">Clear</button>
-            </div>
-          </div>
-          <div id="actorsList" class="actors-list"></div>
+        <div class="row">
+          <span class="muted">Active: <b id="actorActive">ALL</b></span>
+          <span class="btn-mini" id="actorClear" style="display:none;">Clear</span>
         </div>
+        <div id="actorsList"></div>
       </div>
     </div>
 
-    <!-- ACCORDION: Pairs -->
-    <div class="acc-block">
-      <button class="acc-btn" type="button" data-acc="accPairs" aria-expanded="false">
-        <span>Top Interaction Pairs</span><span class="acc-arrow">▸</span>
+    <div class="acc">
+      <button class="acc-btn" data-acc="accPairs" aria-expanded="false">
+        <span>Top interaction</span><span class="acc-arrow">▶</span>
       </button>
       <div id="accPairs" class="acc-panel closed">
-        <div class="pairs">
-          <div class="pairs-top">
-            <div class="pairs-title">Top Interaction Pairs (window)</div>
-            <div class="pairs-right">
-              <span id="pairActive" class="muted">ALL</span>
-              <button id="pairClear" class="btn-mini" type="button">Clear</button>
-            </div>
-          </div>
-          <div id="pairsList" class="pairs-list"></div>
+        <div class="row">
+          <span class="muted">Active: <b id="pairActive">ALL</b></span>
+          <span class="btn-mini" id="pairClear" style="display:none;">Clear</span>
         </div>
+        <div id="pairsList"></div>
       </div>
     </div>
 
-    <hr class="sep" />
+    <div class="acc">
+      <button class="acc-btn" data-acc="accAlerts" aria-expanded="false">
+        <span>Alerts</span>
+        <span style="display:flex;gap:8px;align-items:center;">
+          <span id="spikeBadge" class="badge-mini badge-ok">OK</span>
+          <span class="acc-arrow">▶</span>
+        </span>
+      </button>
+      <div id="accAlerts" class="acc-panel closed">
+        <div class="muted" id="spikeText"></div>
+        <div id="spikeDetails" style="margin-top:8px;"></div>
+      </div>
+    </div>
 
-    <div class="events-title">Events</div>
-    <input id="eventSearch" class="search" type="text" placeholder="Search title/summary/tags..." />
-    <div id="eventsList" class="events-list"></div>
+    <div class="acc">
+      <button class="acc-btn" data-acc="accCountryRisk" aria-expanded="false">
+        <span>Country risk</span><span class="acc-arrow">▶</span>
+      </button>
+      <div id="accCountryRisk" class="acc-panel closed">
+        <div class="muted" id="countryRiskNote"></div>
+        <div id="countryRiskList"></div>
+      </div>
+    </div>
+
+    <div class="acc">
+      <button class="acc-btn" data-acc="accEscalation" aria-expanded="false">
+        <span>Actor escalation</span><span class="acc-arrow">▶</span>
+      </button>
+      <div id="accEscalation" class="acc-panel closed">
+        <div class="muted" id="escNote"></div>
+        <div id="escalationList"></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+      <div class="muted">Events</div>
+      <div id="eventsList"></div>
+    </div>
   </div>
-</div>
 
-<!-- Legend -->
-<div id="legendPanel" class="panel panel-bottom-left closed" aria-label="Legend panel">
-  <div class="panel-header">
-    <button id="legendToggle" class="panel-toggle" aria-label="Legend ki/be">☰</button>
-    <div class="panel-title">Legend</div>
+  <!-- Legend panel (BOTTOM-LEFT) -->
+  <div id="legendPanel" class="panel closed">
+    <h3>Legend</h3>
+    <div class="risk-row"><div class="name">Military</div><div class="val"><span class="event-dot" style="background:#ff5a5a;"></span></div></div>
+    <div class="risk-row"><div class="name">Security</div><div class="val"><span class="event-dot" style="background:#ffd84e;"></span></div></div>
+    <div class="risk-row"><div class="name">Political</div><div class="val"><span class="event-dot" style="background:#4ea1ff;"></span></div></div>
+    <div class="risk-row"><div class="name">Other</div><div class="val"><span class="event-dot" style="background:#b7b7b7;"></span></div></div>
+    <div class="muted" style="margin-top:8px;">Tip: Panels can be toggled to avoid overlap on mobile.</div>
   </div>
 
-  <div class="panel-body">
-    <div class="legend-item"><span class="dot dot-military"></span> military</div>
-    <div class="legend-item"><span class="dot dot-political"></span> political</div>
-    <div class="legend-item"><span class="dot dot-security"></span> security</div>
-    <div class="legend-item"><span class="dot dot-other"></span> other</div>
-    <hr class="sep" />
-    <div class="legend-item"><span class="badge badge-news">NEWS</span> source</div>
-    <div class="legend-item"><span class="badge badge-isw">ISW</span> source</div>
-  </div>
-</div>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
