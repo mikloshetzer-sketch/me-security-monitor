@@ -565,72 +565,6 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
-    // ----- Actors/Pairs panels -----
-    function updateActors(baseEvents) {
-      const counts = new Map();
-      for (const ev of baseEvents) for (const a of actorsInEvent(ev)) counts.set(a, (counts.get(a) || 0) + 1);
-      const rows = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
-
-      actorActiveEl.textContent = activeActor ? activeActor : "ALL";
-      actorClearBtn.style.display = activeActor ? "inline-block" : "none";
-
-      actorsListEl.innerHTML = rows.length
-        ? rows.map(([name, n]) => `
-          <div class="actor-chip ${activeActor === name ? "active" : ""}" data-actor="${name}">
-            <span>${name}</span><b>${n}</b>
-          </div>`).join("")
-        : `<div class="muted">No actor signals in this window.</div>`;
-
-      [...actorsListEl.querySelectorAll(".actor-chip")].forEach((el) => {
-        el.onclick = () => {
-          const a = el.getAttribute("data-actor");
-          activeActor = (activeActor === a) ? null : a;
-          lastWeekly = null;
-          updateMapAndList();
-        };
-      });
-    }
-
-    const pairKey = (a, b) => [a, b].sort().join(" + ");
-    function updatePairs(baseEvents) {
-      const counts = new Map();
-      for (const ev of baseEvents) {
-        const found = actorsInEvent(ev);
-        if (found.length < 2) continue;
-        for (let i = 0; i < found.length; i++) {
-          for (let j = i + 1; j < found.length; j++) {
-            const k = pairKey(found[i], found[j]);
-            counts.set(k, (counts.get(k) || 0) + 1);
-          }
-        }
-      }
-
-      const rows = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
-
-      pairActiveEl.textContent = activePair ? `${activePair.a} + ${activePair.b}` : "ALL";
-      pairClearBtn.style.display = activePair ? "inline-block" : "none";
-
-      pairsListEl.innerHTML = rows.length
-        ? rows.map(([k, n]) => `
-          <div class="pair-row ${activePair && pairKey(activePair.a, activePair.b) === k ? "active" : ""}" data-pair="${k}">
-            <div class="name">${k}</div><div class="val">${n}</div>
-          </div>`).join("")
-        : `<div class="muted">No interaction pairs in this window.</div>`;
-
-      [...pairsListEl.querySelectorAll(".pair-row")].forEach((el) => {
-        el.onclick = () => {
-          const k = el.getAttribute("data-pair") || "";
-          const parts = k.split(" + ");
-          if (parts.length !== 2) return;
-          const a = parts[0], b = parts[1];
-          if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
-          else activePair = { a, b };
-          lastWeekly = null;
-          updateMapAndList();
-        };
-      });
-    }
-
     // ----- Trend -----
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
@@ -781,8 +715,9 @@ window.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    // Weekly anomaly bins cache
+    // Weekly anomaly cache + UI state
     let lastWeekly = null; // {selectedIndex, points, topBins, stats}
+    let weeklyDetailsOpen = false; // compact by default
 
     function locBinKey(lat, lng) {
       const bin = 0.25;
@@ -898,14 +833,22 @@ window.addEventListener("DOMContentLoaded", () => {
         ` | Military: ${mil.level.toUpperCase()} (today ${mil.last}, ×${mil.ratio.toFixed(2)})` +
         cfTxt;
 
-      // ---- Weekly section FIRST (so you always see it) ----
+      // ---- Weekly compact + details ----
       let weeklyHtml = "";
       if (weeklyHeatCheckbox.checked) {
         if (!lastWeekly || lastWeekly.selectedIndex !== selectedIndex) {
           lastWeekly = computeWeeklyAnomaly(selectedIndex);
         }
         const st = lastWeekly.stats;
-        const title = `${days365[Math.max(0, selectedIndex - 6)]} → ${days365[selectedIndex]} vs prev 7d`;
+        const rangeTitle = `${days365[Math.max(0, selectedIndex - 6)]} → ${days365[selectedIndex]}`;
+
+        const top1 = lastWeekly.topBins[0];
+        const topTxt = top1
+          ? `Top: (${top1.lat.toFixed(2)}, ${top1.lng.toFixed(2)}) Δ${top1.delta} ×${top1.ratio.toFixed(2)}`
+          : `Top: none`;
+
+        const detailsBtnLabel = weeklyDetailsOpen ? "Hide details" : "Show details";
+        const detailsStyle = weeklyDetailsOpen ? "" : "display:none;";
 
         const topBinsHtml = lastWeekly.topBins.length
           ? lastWeekly.topBins.map((b, i) => `
@@ -913,86 +856,131 @@ window.addEventListener("DOMContentLoaded", () => {
                 <div class="name">#${i + 1} (${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}) <span class="muted">Δ${b.delta} · ×${b.ratio.toFixed(2)}</span></div>
                 <div class="val">${b.intensity.toFixed(1)}</div>
               </div>`).join("")
-          : `<div class="muted">No anomaly bins (no positive deltas).</div>`;
+          : `<div class="muted">No anomaly bins in this window.</div>`;
 
         weeklyHtml = `
-          <div id="weeklyAnomalySection" style="margin-top:2px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.12);">
-            <div class="muted" style="margin-bottom:6px;">Weekly anomaly legend</div>
-            <div class="mini-item"><div class="name">range</div><div class="val">${title}</div></div>
-            <div class="mini-item"><div class="name">bins</div><div class="val">${st.bins}</div></div>
-            <div class="mini-item"><div class="name">intensity</div><div class="val">min ${st.minI.toFixed(1)} · mean ${st.meanI.toFixed(1)} · max ${st.maxI.toFixed(1)}</div></div>
+          <div id="weeklyAnomalySection" style="margin-top:2px;padding:8px 10px;border:1px solid rgba(255,255,255,0.14);border-radius:10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+              <div>
+                <div style="font-size:12px;font-weight:700;opacity:.95;">Weekly anomaly</div>
+                <div class="muted" style="margin-top:2px;">${rangeTitle} vs prev 7d · bins ${st.bins} · max ${st.maxI.toFixed(1)}</div>
+                <div class="muted" style="margin-top:2px;">${topTxt}</div>
+              </div>
+              <div>
+                <span class="btn-mini" id="weeklyToggleDetails" style="cursor:pointer;display:inline-block;">${detailsBtnLabel}</span>
+              </div>
+            </div>
 
-            <div class="muted" style="margin:10px 0 6px;">Hot bins (click to zoom)</div>
-            ${topBinsHtml}
+            <div id="weeklyDetails" style="margin-top:10px;${detailsStyle}">
+              <div class="mini-item"><div class="name">intensity</div><div class="val">min ${st.minI.toFixed(1)} · mean ${st.meanI.toFixed(1)} · max ${st.maxI.toFixed(1)}</div></div>
+
+              <div class="muted" style="margin:10px 0 6px;">Hot bins (click to zoom)</div>
+              ${topBinsHtml}
+            </div>
           </div>
         `;
       }
 
-      // ---- Country spikes + Pair spikes + Today top risk ----
-      const baselineStart = Math.max(0, selectedIndex - baselineN);
-      const baselineEnd = Math.max(baselineStart, selectedIndex - 1);
-      const baseDays = Math.max(1, baselineEnd - baselineStart + 1);
-
+      // ---- Pair spikes + Country spikes + Today top risk ----
       const predAll = buildPredicate(null);
-      const todayByCountry = new Map();
-      const baseByCountry = new Map();
 
-      for (const ev of eventsData) {
-        const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-        if (idx < baselineStart || idx > selectedIndex) continue;
-        if (!predAll(ev, idx)) continue;
+      // Pair spikes (monitor-friendly messages)
+      const pairSpikesHtml = (() => {
+        const baselineStart = Math.max(0, selectedIndex - baselineN);
+        const len = selectedIndex - baselineStart + 1;
+        const pairDaily = new Map();
 
-        const c = getCountry(ev);
-        if (idx === selectedIndex) todayByCountry.set(c, (todayByCountry.get(c) || 0) + 1);
-        else baseByCountry.set(c, (baseByCountry.get(c) || 0) + 1);
-      }
+        for (const ev of eventsData) {
+          const idx = dateToIndex.get(ev.date);
+          if (idx === undefined) continue;
+          if (idx < baselineStart || idx > selectedIndex) continue;
+          if (!predAll(ev, idx)) continue;
 
-      const countryScored = [];
-      for (const [country, todayCount] of todayByCountry.entries()) {
-        const baseTotal = baseByCountry.get(country) || 0;
-        const baseAvg = baseTotal / baseDays;
-        const ratio = (todayCount + 1) / (baseAvg + 1);
-        const delta = todayCount - baseAvg;
-        const score = delta * ratio;
-        countryScored.push({ country, todayCount, baseAvg, ratio, score });
-      }
-      countryScored.sort((a, b) => b.score - a.score);
-      const topCountries = countryScored.slice(0, 4);
-
-      const pairDaily = new Map();
-      const len = selectedIndex - baselineStart + 1;
-
-      for (const ev of eventsData) {
-        const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-        if (idx < baselineStart || idx > selectedIndex) continue;
-        if (!predAll(ev, idx)) continue;
-
-        const actors = actorsInEvent(ev);
-        if (actors.length < 2) continue;
-        for (let i = 0; i < actors.length; i++) {
-          for (let j = i + 1; j < actors.length; j++) {
-            const pk = pairKey(actors[i], actors[j]);
-            if (!pairDaily.has(pk)) pairDaily.set(pk, new Array(len).fill(0));
-            pairDaily.get(pk)[idx - baselineStart] += 1;
+          const actors = actorsInEvent(ev);
+          if (actors.length < 2) continue;
+          for (let i = 0; i < actors.length; i++) {
+            for (let j = i + 1; j < actors.length; j++) {
+              const pk = pairKey(actors[i], actors[j]);
+              if (!pairDaily.has(pk)) pairDaily.set(pk, new Array(len).fill(0));
+              pairDaily.get(pk)[idx - baselineStart] += 1;
+            }
           }
         }
-      }
 
-      const pairScored = [];
-      for (const [pk, counts] of pairDaily.entries()) {
-        const last = counts[counts.length - 1] || 0;
-        const base = counts.slice(0, -1);
-        const baseMean = base.length ? mean(base) : 0;
-        const ratio = (last + 1) / (baseMean + 1);
-        if (last < 2 && ratio < 2.0) continue;
-        const score = (last - baseMean) * ratio;
-        pairScored.push({ pk, last, baseMean, ratio, score });
-      }
-      pairScored.sort((a, b) => b.score - a.score);
-      const topPairs = pairScored.slice(0, 3);
+        const scored = [];
+        for (const [pk, counts] of pairDaily.entries()) {
+          const last = counts[counts.length - 1] || 0;
+          const base = counts.slice(0, -1);
+          const baseMean = base.length ? mean(base) : 0;
+          const ratio = (last + 1) / (baseMean + 1);
+          if (last < 2 && ratio < 2.0) continue;
+          const score = (last - baseMean) * ratio;
+          scored.push({ pk, last, baseMean, ratio, score });
+        }
+        scored.sort((a, b) => b.score - a.score);
+        const topPairs = scored.slice(0, 3);
 
+        return topPairs.length
+          ? topPairs.map((x) => `
+              <div class="mini-item">
+                <div class="name">pair spike: ${x.pk}</div>
+                <div class="val">today ${x.last} · base ${x.baseMean.toFixed(1)} · ×${x.ratio.toFixed(2)}</div>
+              </div>`).join("")
+          : `<div class="muted">No pair spikes detected in rolling baseline.</div>`;
+      })();
+
+      // Country spikes
+      const countrySpikesHtml = (() => {
+        const baselineStart = Math.max(0, selectedIndex - baselineN);
+        const baselineEnd = Math.max(baselineStart, selectedIndex - 1);
+        const baseDays = Math.max(1, baselineEnd - baselineStart + 1);
+
+        const todayByCountry = new Map();
+        const baseByCountry = new Map();
+
+        for (const ev of eventsData) {
+          const idx = dateToIndex.get(ev.date);
+          if (idx === undefined) continue;
+          if (idx < baselineStart || idx > selectedIndex) continue;
+          if (!predAll(ev, idx)) continue;
+
+          const c = getCountry(ev);
+          if (idx === selectedIndex) todayByCountry.set(c, (todayByCountry.get(c) || 0) + 1);
+          else baseByCountry.set(c, (baseByCountry.get(c) || 0) + 1);
+        }
+
+        const countryScored = [];
+        for (const [country, todayCount] of todayByCountry.entries()) {
+          const baseTotal = baseByCountry.get(country) || 0;
+          const baseAvg = baseTotal / baseDays;
+          const ratio = (todayCount + 1) / (baseAvg + 1);
+          const delta = todayCount - baseAvg;
+          const score = delta * ratio;
+          countryScored.push({ country, todayCount, baseAvg, ratio, score });
+        }
+        countryScored.sort((a, b) => b.score - a.score);
+        const topCountries = countryScored.slice(0, 4);
+
+        if (!topCountries.length) return `<div class="muted">No country spikes detected.</div>`;
+
+        const chips = topCountries.map((x) => {
+          const active = activeCountry === x.country ? "style='outline:2px solid rgba(255,255,255,0.6)'" : "";
+          return `
+            <span class="badge-mini" data-country="${x.country}" ${active}
+              style="cursor:pointer;display:inline-flex;gap:6px;align-items:center;margin:4px 6px 0 0;">
+              <b>${x.country}</b>
+              <span style="opacity:.9">today ${x.todayCount} · base ${x.baseAvg.toFixed(1)} · ×${x.ratio.toFixed(2)}</span>
+            </span>`;
+        }).join("");
+
+        const clear = activeCountry
+          ? `<div style="margin-top:6px;"><span class="btn-mini" id="countryClearInline" style="cursor:pointer;display:inline-block;">Clear country filter</span></div>`
+          : "";
+
+        return `${chips}${clear}`;
+      })();
+
+      // Top risk events today
       const windowDays = getWindowDays();
       const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
       const todayTopRisk = todayEvents
@@ -1002,32 +990,6 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
-
-      const chipsHtml = topCountries.length
-        ? topCountries.map((x) => {
-            const active = activeCountry === x.country ? "style='outline:2px solid rgba(255,255,255,0.6)'" : "";
-            return `
-              <span class="badge-mini" data-country="${x.country}" ${active}
-                style="cursor:pointer;display:inline-flex;gap:6px;align-items:center;margin:4px 6px 0 0;">
-                <b>${x.country}</b>
-                <span style="opacity:.9">today ${x.todayCount} · base ${x.baseAvg.toFixed(1)} · ×${x.ratio.toFixed(2)}</span>
-              </span>`;
-          }).join("")
-        : `<div class="muted">No country spike signal.</div>`;
-
-      const clearCountryHtml = activeCountry
-        ? `<div style="margin-top:6px;">
-             <span class="btn-mini" id="countryClearInline" style="cursor:pointer;display:inline-block;">Clear country filter</span>
-           </div>`
-        : "";
-
-      const pairsHtml = topPairs.length
-        ? topPairs.map((x) => `
-            <div class="mini-item">
-              <div class="name">pair spike: ${x.pk}</div>
-              <div class="val">today ${x.last} · base ${x.baseMean.toFixed(1)} · ×${x.ratio.toFixed(2)}</div>
-            </div>`).join("")
-        : `<div class="muted">No pair spike signal.</div>`;
 
       const eventsHtml = todayTopRisk.length
         ? todayTopRisk.map(({ ev, score }) => {
@@ -1045,7 +1007,6 @@ window.addEventListener("DOMContentLoaded", () => {
           }).join("")
         : `<div class="muted">No events today in this window.</div>`;
 
-      // ✅ Weekly legend now goes to the TOP of Alerts content
       spikeDetails.innerHTML = `
         ${weeklyHtml}
 
@@ -1057,13 +1018,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
         <div style="margin-top:10px;">
           <div class="muted" style="margin-bottom:6px;">Actor–pair spikes (rolling baseline)</div>
-          ${pairsHtml}
+          ${pairSpikesHtml}
         </div>
 
         <div style="margin-top:10px;">
           <div class="muted" style="margin-bottom:6px;">Country spikes (rolling baseline, click to filter)</div>
-          ${chipsHtml}
-          ${clearCountryHtml}
+          ${countrySpikesHtml}
         </div>
 
         <div style="margin-top:12px;">
@@ -1071,6 +1031,19 @@ window.addEventListener("DOMContentLoaded", () => {
           ${eventsHtml}
         </div>
       `;
+
+      // Wire: weekly details toggle
+      const wbtn = document.getElementById("weeklyToggleDetails");
+      if (wbtn) {
+        wbtn.addEventListener("click", () => {
+          weeklyDetailsOpen = !weeklyDetailsOpen;
+          updateMapAndList();
+          setTimeout(() => {
+            const el = document.getElementById("weeklyAnomalySection");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 80);
+        });
+      }
 
       // Wire country chips
       spikeDetails.querySelectorAll("[data-country]").forEach((el) => {
@@ -1261,10 +1234,6 @@ window.addEventListener("DOMContentLoaded", () => {
       updateRisk(view.out, view.selectedIndex, view.windowDays);
       updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
-      const base = computeBaseWindowEvents();
-      updateActors(base.out);
-      updatePairs(base.out);
-
       updateSpikeAlert(view.out, view.selectedIndex);
       updateCountryRisk(view.out, view.selectedIndex, view.windowDays);
       updateActorEscalation(view.selectedIndex, view.windowDays);
@@ -1306,36 +1275,38 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----- Wiring -----
-    slider.addEventListener("input", () => { lastWeekly = null; updateMapAndList(); });
-    catCheckboxes.forEach((cb) => cb.addEventListener("change", () => { lastWeekly = null; updateMapAndList(); }));
-    srcCheckboxes.forEach((cb) => cb.addEventListener("change", () => { lastWeekly = null; updateMapAndList(); }));
-    windowRadios.forEach((r) => r.addEventListener("change", () => { lastWeekly = null; updateMapAndList(); }));
-    searchInput.addEventListener("input", () => { lastWeekly = null; updateMapAndList(); });
+    function invalidateWeekly() { lastWeekly = null; }
 
-    actorClearBtn.addEventListener("click", () => { activeActor = null; lastWeekly = null; updateMapAndList(); });
-    pairClearBtn.addEventListener("click", () => { activePair = null; lastWeekly = null; updateMapAndList(); });
+    slider.addEventListener("input", () => { invalidateWeekly(); updateMapAndList(); });
+    catCheckboxes.forEach((cb) => cb.addEventListener("change", () => { invalidateWeekly(); updateMapAndList(); }));
+    srcCheckboxes.forEach((cb) => cb.addEventListener("change", () => { invalidateWeekly(); updateMapAndList(); }));
+    windowRadios.forEach((r) => r.addEventListener("change", () => { invalidateWeekly(); updateMapAndList(); }));
+    searchInput.addEventListener("input", () => { invalidateWeekly(); updateMapAndList(); });
+
+    actorClearBtn.addEventListener("click", () => { activeActor = null; invalidateWeekly(); updateMapAndList(); });
+    pairClearBtn.addEventListener("click", () => { activePair = null; invalidateWeekly(); updateMapAndList(); });
 
     heatCheckbox.addEventListener("change", () => {
       if (heatCheckbox.checked) weeklyHeatCheckbox.checked = false;
-      lastWeekly = null;
+      invalidateWeekly();
       updateMapAndList();
     });
 
     weeklyHeatCheckbox.addEventListener("change", () => {
       if (weeklyHeatCheckbox.checked) heatCheckbox.checked = false;
-      lastWeekly = null;
+      // default: keep compact
+      weeklyDetailsOpen = false;
+      invalidateWeekly();
       updateMapAndList();
-
-      // ✅ auto-scroll to weekly legend (so it "látszik")
       setTimeout(() => {
         const el = document.getElementById("weeklyAnomalySection");
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 120);
+      }, 140);
     });
 
     window.addEventListener("resize", () => {
       clearTimeout(window.__trendResizeT);
-      window.__trendResizeT = setTimeout(() => { lastWeekly = null; updateMapAndList(); }, 160);
+      window.__trendResizeT = setTimeout(() => { invalidateWeekly(); updateMapAndList(); }, 160);
     });
 
     // ----- Load data -----
