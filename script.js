@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ----- Accordion (inside timeline) -----
+    // ----- Accordion -----
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
@@ -66,7 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ----- Hotspot heatmap -----
     const heatCheckbox = $("heatmapCheckbox");
-    heatCheckbox.checked = false; // default OFF even if browser restores state
+    heatCheckbox.checked = false;
     let heatLayer = null;
 
     // ----- Borders + Country polygons -----
@@ -77,19 +77,16 @@ window.addEventListener("DOMContentLoaded", () => {
     let bordersLayer = null;
     let bordersLoaded = false;
 
-    // Country inference structures
-    let countryFeatures = []; // { name, bbox:[minX,minY,maxX,maxY], geom }
-    const countryCache = new Map(); // key "lat,lng" -> country name
-    let countryLoadRequested = false; // avoid repeated ensureBordersLoaded loops
+    let countryFeatures = []; // { name, bbox, geom }
+    const countryCache = new Map(); // "lat,lng" -> name|null
+    let countryLoadRequested = false;
 
     function bordersStyle() {
       return { color: "#ffffff", weight: 2.2, opacity: 0.85, fillOpacity: 0 };
     }
 
     function computeBBoxFromCoords(coords) {
-      // coords: nested arrays of [lng,lat]
       let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-
       const walk = (c) => {
         if (!Array.isArray(c)) return;
         if (typeof c[0] === "number" && typeof c[1] === "number") {
@@ -102,14 +99,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         for (const child of c) walk(child);
       };
-
       walk(coords);
       return [minX, minY, maxX, maxY];
     }
 
     async function ensureBordersLoaded() {
       if (bordersLoaded) return;
-
       const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
       if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
       const geojson = await res.json();
@@ -117,7 +112,6 @@ window.addEventListener("DOMContentLoaded", () => {
       bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
       bordersLoaded = true;
 
-      // Build countryFeatures for point-in-polygon lookup
       countryFeatures = [];
       for (const f of geojson.features || []) {
         const props = f.properties || {};
@@ -171,7 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
 
-    // ----- Actors dictionary -----
+    // ----- Actors -----
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -187,6 +181,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let activeActor = null;
     let activePair = null;
+
+    // ✅ NEW: country filter from Alerts
+    let activeCountry = null;
 
     // ----- UI refs -----
     const slider = $("timelineSlider");
@@ -342,6 +339,109 @@ window.addEventListener("DOMContentLoaded", () => {
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
+    // ----- Country inference -----
+    function bboxContains(bbox, lng, lat) {
+      return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
+    }
+    function pointInRing(lng, lat, ring) {
+      let inside = false;
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const xi = ring[i][0], yi = ring[i][1];
+        const xj = ring[j][0], yj = ring[j][1];
+        const intersect = (yi > lat) !== (yj > lat) && lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
+        if (intersect) inside = !inside;
+      }
+      return inside;
+    }
+    function pointInPolygon(lng, lat, polygonCoords) {
+      if (!polygonCoords || !polygonCoords.length) return false;
+      const outer = polygonCoords[0];
+      if (!pointInRing(lng, lat, outer)) return false;
+      for (let i = 1; i < polygonCoords.length; i++) if (pointInRing(lng, lat, polygonCoords[i])) return false;
+      return true;
+    }
+    function inferCountryFromPoint(lat, lng) {
+      const key = `${lat.toFixed(3)},${lng.toFixed(3)}`;
+      if (countryCache.has(key)) return countryCache.get(key);
+
+      if (!bordersLoaded || !countryFeatures.length) return null;
+
+      for (const cf of countryFeatures) {
+        if (!bboxContains(cf.bbox, lng, lat)) continue;
+        const geom = cf.geom;
+        if (!geom) continue;
+
+        if (geom.type === "Polygon") {
+          if (pointInPolygon(lng, lat, geom.coordinates)) {
+            countryCache.set(key, cf.name);
+            return cf.name;
+          }
+        } else if (geom.type === "MultiPolygon") {
+          for (const poly of geom.coordinates) {
+            if (pointInPolygon(lng, lat, poly)) {
+              countryCache.set(key, cf.name);
+              return cf.name;
+            }
+          }
+        }
+      }
+
+      countryCache.set(key, null);
+      return null;
+    }
+
+    function getCountry(ev) {
+      const c1 = ev?.location?.country;
+      if (c1) return String(c1).trim();
+
+      const ll = getLatLng(ev);
+      if (ll) {
+        const inferred = inferCountryFromPoint(ll.lat, ll.lng);
+        if (inferred) return inferred;
+
+        if (!bordersLoaded && !countryLoadRequested) {
+          countryLoadRequested = true;
+          ensureBordersLoaded()
+            .then(() => { countryLoadRequested = false; updateMapAndList(); })
+            .catch((e) => { console.error("Country polygons load failed:", e); countryLoadRequested = false; });
+        }
+      }
+
+      const name = (ev?.location?.name || "").trim();
+      if (name.includes(",")) {
+        const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
+        const last = parts[parts.length - 1];
+        if (last && last.length >= 3) return last;
+      }
+
+      return "Unknown";
+    }
+
+    function matchesCountryFilter(ev) {
+      if (!activeCountry) return true;
+      return getCountry(ev) === activeCountry;
+    }
+
+    // ----- Scoring -----
+    function categoryWeight(cat) {
+      const c = normalize(cat || "other");
+      if (c === "military") return 3.0;
+      if (c === "security") return 2.0;
+      if (c === "political") return 1.0;
+      return 0.5;
+    }
+    function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
+    function recencyWeight(eventIndex, selectedIndex, windowDays) {
+      const ageDays = selectedIndex - eventIndex;
+      if (windowDays <= 1) return 1.0;
+      const t = ageDays / (windowDays - 1);
+      return 1.0 - 0.6 * t;
+    }
+    function eventRiskScore(ev, eventIndex, selectedIndex, windowDays) {
+      return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
+    }
+
+    // ----- Window filtering -----
     function computeBaseWindowEvents() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -373,7 +473,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function computeVisibleEvents() {
       const base = computeBaseWindowEvents();
-      const out = base.out.filter((ev) => matchesActorFilter(ev) && matchesPairFilter(ev));
+      const out = base.out.filter(
+        (ev) =>
+          matchesActorFilter(ev) &&
+          matchesPairFilter(ev) &&
+          matchesCountryFilter(ev)
+      );
       return { ...base, out };
     }
 
@@ -391,121 +496,6 @@ window.addEventListener("DOMContentLoaded", () => {
           marker.openPopup();
         }
       }
-    }
-
-    // ----- Scoring -----
-    function categoryWeight(cat) {
-      const c = normalize(cat || "other");
-      if (c === "military") return 3.0;
-      if (c === "security") return 2.0;
-      if (c === "political") return 1.0;
-      return 0.5;
-    }
-    function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
-    function recencyWeight(eventIndex, selectedIndex, windowDays) {
-      const ageDays = selectedIndex - eventIndex;
-      if (windowDays <= 1) return 1.0;
-      const t = ageDays / (windowDays - 1);
-      return 1.0 - 0.6 * t;
-    }
-
-    // ----- Country inference: point-in-polygon -----
-    function bboxContains(bbox, lng, lat) {
-      return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
-    }
-
-    // Ray-casting point-in-ring (ring: [[lng,lat],...])
-    function pointInRing(lng, lat, ring) {
-      let inside = false;
-      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-        const xi = ring[i][0], yi = ring[i][1];
-        const xj = ring[j][0], yj = ring[j][1];
-        const intersect =
-          yi > lat !== yj > lat &&
-          lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
-        if (intersect) inside = !inside;
-      }
-      return inside;
-    }
-
-    function pointInPolygon(lng, lat, polygonCoords) {
-      // polygonCoords: [outerRing, hole1, hole2...]
-      if (!polygonCoords || !polygonCoords.length) return false;
-      const outer = polygonCoords[0];
-      if (!pointInRing(lng, lat, outer)) return false;
-      // holes
-      for (let i = 1; i < polygonCoords.length; i++) {
-        if (pointInRing(lng, lat, polygonCoords[i])) return false;
-      }
-      return true;
-    }
-
-    function inferCountryFromPoint(lat, lng) {
-      // cache key with rounding for stability
-      const key = `${lat.toFixed(3)},${lng.toFixed(3)}`;
-      if (countryCache.has(key)) return countryCache.get(key);
-
-      if (!bordersLoaded || !countryFeatures.length) return null;
-
-      for (const cf of countryFeatures) {
-        if (!bboxContains(cf.bbox, lng, lat)) continue;
-        const geom = cf.geom;
-        if (!geom) continue;
-
-        if (geom.type === "Polygon") {
-          if (pointInPolygon(lng, lat, geom.coordinates)) {
-            countryCache.set(key, cf.name);
-            return cf.name;
-          }
-        } else if (geom.type === "MultiPolygon") {
-          for (const poly of geom.coordinates) {
-            if (pointInPolygon(lng, lat, poly)) {
-              countryCache.set(key, cf.name);
-              return cf.name;
-            }
-          }
-        }
-      }
-      countryCache.set(key, null);
-      return null;
-    }
-
-    function getCountry(ev) {
-      // explicit first
-      const c1 = ev?.location?.country;
-      if (c1) return String(c1).trim();
-
-      // try polygon inference
-      const ll = getLatLng(ev);
-      if (ll) {
-        const inferred = inferCountryFromPoint(ll.lat, ll.lng);
-        if (inferred) return inferred;
-
-        // if borders not loaded yet, request once and re-run
-        if (!bordersLoaded && !countryLoadRequested) {
-          countryLoadRequested = true;
-          ensureBordersLoaded()
-            .then(() => {
-              // Do not force borders visibility; only data load
-              countryLoadRequested = false;
-              updateMapAndList();
-            })
-            .catch((e) => {
-              console.error("Country polygons load failed:", e);
-              countryLoadRequested = false;
-            });
-        }
-      }
-
-      // fallback: "City, Country"
-      const name = (ev?.location?.name || "").trim();
-      if (name.includes(",")) {
-        const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
-        const last = parts[parts.length - 1];
-        if (last && last.length >= 3) return last;
-      }
-
-      return "Unknown";
     }
 
     // ----- Stats -----
@@ -539,10 +529,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
 
         const locName = (ev?.location?.name || "Unknown").trim() || "Unknown";
-        const score =
-          categoryWeight(ev.category) *
-          sourceMultiplier(ev) *
-          recencyWeight(idx, selectedIndex, windowDays);
+        const score = eventRiskScore(ev, idx, selectedIndex, windowDays);
 
         total += score;
         byLoc.set(locName, (byLoc.get(locName) || 0) + score);
@@ -637,11 +624,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
 
-        const w =
-          categoryWeight(ev.category) *
-          sourceMultiplier(ev) *
-          recencyWeight(idx, selectedIndex, windowDays);
-
+        const w = eventRiskScore(ev, idx, selectedIndex, windowDays);
         points.push([ll.lat, ll.lng, w]);
       }
 
@@ -655,7 +638,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // ----- Trend + Spike -----
+    // ----- Trend -----
     function drawTrend(dates, counts, total) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -666,7 +649,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       trendCanvas.style.width = "100%";
       trendCanvas.style.height = cssH + "px";
-
       trendCanvas.width = Math.floor(cssW * dpr);
       trendCanvas.height = Math.floor(cssH * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -705,7 +687,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ctx.globalAlpha = 1.0;
     }
 
-    function computeTrendCounts(selectedIndex, windowDays, catSet, srcSet, q) {
+    function computeTrendCounts(selectedIndex, windowDays, catSet, srcSet, q, extraPredicate = null) {
       const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
       const dates = days365.slice(startIndex, selectedIndex + 1);
       const counts = new Array(dates.length).fill(0);
@@ -724,12 +706,15 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!matchesSearch(ev, q)) continue;
         if (!matchesActorFilter(ev)) continue;
         if (!matchesPairFilter(ev)) continue;
+        if (!matchesCountryFilter(ev)) continue;
+
+        if (extraPredicate && !extraPredicate(ev)) continue;
 
         counts[idx - startIndex] += 1;
       }
 
       const total = counts.reduce((a, b) => a + b, 0);
-      return { dates, counts, total };
+      return { dates, counts, total, startIndex };
     }
 
     function updateTrendAndReturn(selectedIndex, windowDays) {
@@ -744,6 +729,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t;
     }
 
+    // ----- Spike maths -----
     function mean(arr) { return arr.reduce((a, b) => a + b, 0) / Math.max(1, arr.length); }
     function stdev(arr) {
       const m = mean(arr);
@@ -751,13 +737,11 @@ window.addEventListener("DOMContentLoaded", () => {
       return Math.sqrt(v);
     }
 
-    function updateSpikeAlert(trendCounts, visibleEvents, selectedIndex, windowDays) {
-      const counts = trendCounts.counts;
+    function classifySpike(counts) {
       const last = counts[counts.length - 1] || 0;
       const base = counts.slice(0, -1);
       const baseMean = base.length ? mean(base) : 0;
       const baseStd = base.length ? stdev(base) : 0;
-
       const z = baseStd > 0 ? (last - baseMean) / baseStd : (last > baseMean ? 999 : 0);
       const ratio = (last + 1) / (baseMean + 1);
 
@@ -765,38 +749,182 @@ window.addEventListener("DOMContentLoaded", () => {
       if (last >= 10 && (z >= 2.0 || ratio >= 2.0)) level = "alert";
       else if (last >= 5 && (z >= 1.3 || ratio >= 1.6)) level = "warn";
 
-      spikeBadge.className =
-        "badge-mini " + (level === "alert" ? "badge-alert" : level === "warn" ? "badge-warn" : "badge-ok");
-      spikeBadge.textContent = level === "alert" ? "ALERT" : level === "warn" ? "WATCH" : "OK";
-
-      spikeText.textContent =
-        `Today count: ${last} · baseline(avg): ${baseMean.toFixed(1)} · z: ${isFinite(z) ? z.toFixed(1) : "—"} · ratio: ${ratio.toFixed(2)} (window ${windowDays}d)`;
-
-      const selectedDate = days365[selectedIndex];
-      const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
-
-      const byCat = new Map();
-      const byLoc = new Map();
-      for (const ev of todayEvents) {
-        const c = normalize(ev.category || "other");
-        byCat.set(c, (byCat.get(c) || 0) + 1);
-        const loc = (ev?.location?.name || "Unknown").trim() || "Unknown";
-        byLoc.set(loc, (byLoc.get(loc) || 0) + 1);
-      }
-
-      const topCats = [...byCat.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
-      const topLocs = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
-
-      const items = [];
-      if (topCats.length) items.push(...topCats.map(([k, v]) => ({ name: `cat: ${k}`, val: v })));
-      if (topLocs.length) items.push(...topLocs.map(([k, v]) => ({ name: `loc: ${k}`, val: v })));
-
-      spikeDetails.innerHTML = items.length
-        ? items.map((x) => `<div class="mini-item"><div class="name">${x.name}</div><div class="val">${x.val}</div></div>`).join("")
-        : `<div class="muted">No same-day breakdown (or no events today).</div>`;
+      return { level, last, baseMean, z, ratio };
     }
 
-    // ----- Country Risk (NOW uses getCountry() with polygon inference) -----
+    function updateSpikeAlert(trendCounts, visibleEvents, selectedIndex, windowDays) {
+      const selectedDate = days365[selectedIndex];
+
+      const overall = classifySpike(trendCounts.counts);
+
+      spikeBadge.className =
+        "badge-mini " + (overall.level === "alert" ? "badge-alert" : overall.level === "warn" ? "badge-warn" : "badge-ok");
+      spikeBadge.textContent = overall.level === "alert" ? "ALERT" : overall.level === "warn" ? "WATCH" : "OK";
+
+      const q = normalize(searchInput.value).trim();
+      const catSet = getSelectedCategories();
+      const srcSet = getSelectedSources();
+
+      // Military-only
+      const milTrend = computeTrendCounts(
+        selectedIndex,
+        windowDays,
+        catSet,
+        srcSet,
+        q,
+        (ev) => normalize(ev.category) === "military"
+      );
+      const mil = classifySpike(milTrend.counts);
+
+      // Hard security = military + security
+      const hardTrend = computeTrendCounts(
+        selectedIndex,
+        windowDays,
+        catSet,
+        srcSet,
+        q,
+        (ev) => {
+          const c = normalize(ev.category);
+          return c === "military" || c === "security";
+        }
+      );
+      const hard = classifySpike(hardTrend.counts);
+
+      // Country spikes within visible events (already filtered by actor/pair/country)
+      const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
+      const baselineStart = startIndex;
+      const baselineEnd = Math.max(startIndex, selectedIndex - 1);
+      const baselineDays = Math.max(1, baselineEnd - baselineStart + 1);
+
+      const todayByCountry = new Map();
+      const baselineByCountry = new Map();
+
+      for (const ev of visibleEvents) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+
+        const c = getCountry(ev);
+        if (ev.date === selectedDate) {
+          todayByCountry.set(c, (todayByCountry.get(c) || 0) + 1);
+        } else if (idx >= baselineStart && idx <= baselineEnd) {
+          baselineByCountry.set(c, (baselineByCountry.get(c) || 0) + 1);
+        }
+      }
+
+      const countryScored = [];
+      for (const [country, todayCount] of todayByCountry.entries()) {
+        const baseTotal = baselineByCountry.get(country) || 0;
+        const baseAvg = baseTotal / baselineDays;
+        const ratio = (todayCount + 1) / (baseAvg + 1);
+        const delta = todayCount - baseAvg;
+        const score = delta * ratio;
+        countryScored.push({ country, todayCount, baseAvg, ratio, score });
+      }
+      countryScored.sort((a, b) => b.score - a.score);
+      const topCountries = countryScored.slice(0, 4);
+
+      // Top risk events today (max 5)
+      const todayEvents = visibleEvents.filter((ev) => ev.date === selectedDate);
+      const todayTopRisk = todayEvents
+        .map((ev) => {
+          const idx = dateToIndex.get(ev.date) ?? selectedIndex;
+          return { ev, score: eventRiskScore(ev, idx, selectedIndex, windowDays) };
+        })
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 5);
+
+      // Header text
+      const cfTxt = activeCountry ? ` · country=${activeCountry}` : "";
+      spikeText.textContent =
+        `Overall: ${overall.level.toUpperCase()} (today ${overall.last}, ×${overall.ratio.toFixed(2)})` +
+        ` | HardSec: ${hard.level.toUpperCase()} (today ${hard.last}, ×${hard.ratio.toFixed(2)})` +
+        ` | Military: ${mil.level.toUpperCase()} (today ${mil.last}, ×${mil.ratio.toFixed(2)})` +
+        cfTxt;
+
+      // Build Alerts detail HTML with clickable country chips + clickable events
+      const chipsHtml = topCountries.length
+        ? topCountries
+            .map((x) => {
+              const active = activeCountry === x.country ? "style='outline:2px solid rgba(255,255,255,0.6)'" : "";
+              return `
+                <span class="badge-mini" data-country="${x.country}" ${active}
+                  style="cursor:pointer;display:inline-flex;gap:6px;align-items:center;margin:4px 6px 0 0;">
+                  <b>${x.country}</b>
+                  <span style="opacity:.9">today ${x.todayCount} · base ${x.baseAvg.toFixed(1)} · ×${x.ratio.toFixed(2)}</span>
+                </span>`;
+            })
+            .join("")
+        : `<div class="muted">No country spike signal.</div>`;
+
+      const clearCountryHtml = activeCountry
+        ? `<div style="margin-top:6px;">
+             <span class="btn-mini" id="countryClearInline" style="cursor:pointer;display:inline-block;">Clear country filter</span>
+           </div>`
+        : "";
+
+      const eventsHtml = todayTopRisk.length
+        ? todayTopRisk
+            .map(({ ev, score }) => {
+              const loc = ev?.location?.name ? ` · ${ev.location.name}` : "";
+              const st = sourceType(ev).toUpperCase();
+              const id = ev.id || "";
+              return `
+                <div class="event-row" data-ev="${id}" style="cursor:pointer;">
+                  <div class="event-row-title">${ev.title || "Untitled"}</div>
+                  <div class="event-row-meta">
+                    <span>${st}</span>
+                    <span>${(ev.category || "other")} · risk ${score.toFixed(1)}${loc}</span>
+                  </div>
+                </div>`;
+            })
+            .join("")
+        : `<div class="muted">No events today in this window.</div>`;
+
+      spikeDetails.innerHTML = `
+        <div class="mini-item"><div class="name">Hard security spike</div><div class="val">${hard.level.toUpperCase()} (×${hard.ratio.toFixed(2)})</div></div>
+        <div class="mini-item"><div class="name">Military spike</div><div class="val">${mil.level.toUpperCase()} (×${mil.ratio.toFixed(2)})</div></div>
+
+        <div style="margin-top:10px;">
+          <div class="muted" style="margin-bottom:6px;">Country spikes (click to filter)</div>
+          ${chipsHtml}
+          ${clearCountryHtml}
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="muted" style="margin-bottom:6px;">Top risk events today (click to zoom)</div>
+          ${eventsHtml}
+        </div>
+      `;
+
+      // Wire country chips
+      spikeDetails.querySelectorAll("[data-country]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const c = el.getAttribute("data-country");
+          activeCountry = (activeCountry === c) ? null : c;
+          updateMapAndList();
+        });
+      });
+
+      // Inline clear
+      const cc = spikeDetails.querySelector("#countryClearInline");
+      if (cc) {
+        cc.addEventListener("click", () => {
+          activeCountry = null;
+          updateMapAndList();
+        });
+      }
+
+      // Wire event clicks
+      spikeDetails.querySelectorAll("[data-ev]").forEach((el) => {
+        el.addEventListener("click", () => {
+          const id = el.getAttribute("data-ev");
+          const ev = eventsData.find((x) => String(x.id) === String(id));
+          if (ev) openEventOnMap(ev);
+        });
+      });
+    }
+
+    // ----- Country Risk -----
     function updateCountryRisk(visibleEvents, selectedIndex, windowDays) {
       const byCountry = new Map();
 
@@ -805,25 +933,19 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
 
         const country = getCountry(ev);
-        const score =
-          categoryWeight(ev.category) *
-          sourceMultiplier(ev) *
-          recencyWeight(idx, selectedIndex, windowDays);
-
+        const score = eventRiskScore(ev, idx, selectedIndex, windowDays);
         byCountry.set(country, (byCountry.get(country) || 0) + score);
       }
 
       const rows = [...byCountry.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
       countryRiskNote.textContent = bordersLoaded
-        ? `Top ${rows.length} (polygon country inference ON)`
+        ? `Top ${rows.length} (polygon inference ON)`
         : `Top ${rows.length} (loading country polygons...)`;
 
       countryRiskList.innerHTML = rows.length
         ? rows.map(([name, val]) => `
-          <div class="rank-row">
-            <div class="name">${name}</div>
-            <div class="val">${val.toFixed(1)}</div>
-          </div>`).join("")
+          <div class="rank-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>
+        `).join("")
         : `<div class="muted">No country risk data for current filters.</div>`;
     }
 
@@ -881,7 +1003,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const top = scored.slice(0, 10);
 
       escNote.textContent = `Recent ${K}d vs previous ${K}d (base filters + pair filter; actor filter ignored for detection)`;
-
       escalationList.innerHTML = top.length
         ? top.map((x) => `
           <div class="rank-row">
@@ -906,7 +1027,7 @@ window.addEventListener("DOMContentLoaded", () => {
       updateRisk(view.out, view.selectedIndex, view.windowDays);
       updateHeatmap(view.out, view.selectedIndex, view.windowDays);
 
-      const base = computeBaseWindowEvents();
+      const base = computeBaseWindowEvents(); // base ignores actor/pair/country (for their own panels)
       updateActors(base.out);
       updatePairs(base.out);
 
@@ -922,7 +1043,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       if (view.out.length === 0) {
-        listContainer.innerHTML = `<div class="muted">No events for current filters/search/actor/pair.</div>`;
+        listContainer.innerHTML = `<div class="muted">No events for current filters/search/actor/pair/country.</div>`;
         return;
       }
 
@@ -935,12 +1056,13 @@ window.addEventListener("DOMContentLoaded", () => {
           const st = sourceType(ev).toUpperCase();
           const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
           const hasLL = !!getLatLng(ev);
+          const ctry = getCountry(ev);
 
           row.innerHTML = `
             <div class="event-row-title">${ev.title || "Untitled"}</div>
             <div class="event-row-meta">
               <span>${st}</span>
-              <span>${(ev.category || "other")} · ${ev.date}${locName}</span>
+              <span>${(ev.category || "other")} · ${ev.date}${locName} · ${ctry}</span>
               ${hasLL ? "" : `<span class="muted">no-geo</span>`}
             </div>
           `;
