@@ -52,6 +52,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Map =====
     const map = L.map("map").setView([33.5, 44.0], 6);
+
+    // --- PANES: stable layer order (tile < borders < heat < markers)
+    map.createPane("paneBorders");
+    map.getPane("paneBorders").style.zIndex = 350;
+
+    map.createPane("paneHeat");
+    map.getPane("paneHeat").style.zIndex = 360;
+
+    map.createPane("paneMarkers");
+    map.getPane("paneMarkers").style.zIndex = 400;
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
     }).addTo(map);
@@ -218,8 +229,8 @@ window.addEventListener("DOMContentLoaded", () => {
     updateRegionNote();
 
     // ===== Borders + polygons =====
-    const BORDERS_GEOJSON_URL =
-      "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
+    // CHANGED: use local file to avoid GitHub raw instability
+    const BORDERS_GEOJSON_URL = "data/ne_110m_admin_0_countries.geojson";
 
     let bordersLayer = null;
     let bordersLoaded = false;
@@ -277,7 +288,8 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
       const geojson = await res.json();
 
-      bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
+      // CHANGED: pane for stable z-order
+      bordersLayer = L.geoJSON(geojson, { style: bordersStyle, pane: "paneBorders" });
       bordersLoaded = true;
 
       countryFeatures = [];
@@ -299,7 +311,6 @@ window.addEventListener("DOMContentLoaded", () => {
         await ensureBordersLoaded();
         if (bordersLayer && !map.hasLayer(bordersLayer)) {
           bordersLayer.addTo(map);
-          bordersLayer.bringToBack();
         }
         applyBordersStyleNow();
       } else {
@@ -378,14 +389,23 @@ window.addEventListener("DOMContentLoaded", () => {
       countryCache.set(key, null);
       return null;
     }
+    function getLatLng(ev) {
+      const lat = Number(ev?.location?.lat);
+      const lng = Number(ev?.location?.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+      return { lat, lng };
+    }
+
     function getCountry(ev) {
       const c1 = ev?.location?.country;
       if (c1) return String(c1).trim();
+
       const ll = getLatLng(ev);
       if (ll && bordersLoaded) {
         const inferred = inferCountryFromPoint(ll.lat, ll.lng);
         if (inferred) return inferred;
       }
+
       const name = (ev?.location?.name || "").trim();
       if (name.includes(",")) {
         const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
@@ -394,8 +414,16 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       return "Unknown";
     }
+
+    // CHANGED: if borders not loaded and no explicit country, do NOT exclude event from region filter
     function matchesRegion(ev) {
       if (activeRegion === "ALL") return true;
+
+      const c1 = ev?.location?.country;
+      if (c1) return regionContainsCountry(activeRegion, c1);
+
+      if (!bordersLoaded) return true;
+
       return regionContainsCountry(activeRegion, getCountry(ev));
     }
 
@@ -420,13 +448,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
 
-    function getLatLng(ev) {
-      const lat = Number(ev?.location?.lat);
-      const lng = Number(ev?.location?.lng);
-      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-      return { lat, lng };
-    }
-
     function matchesSearch(ev, q) {
       if (!q) return true;
       const t = norm(ev.title);
@@ -436,8 +457,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q);
     }
 
-    // ===== Hotspot filter (NEW) =====
-    // activeHotspot: {lat,lng,radiusKm,label}
+    // ===== Hotspot filter =====
     let activeHotspot = null;
     let hotspotCircle = null;
 
@@ -480,7 +500,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     clearHotspotBtn.addEventListener("click", () => {
       setHotspot(null);
-      renderHotspotList([]); // will be re-rendered by updateWeekly
+      renderHotspotList([]);
       updateAll();
     });
 
@@ -497,7 +517,9 @@ window.addEventListener("DOMContentLoaded", () => {
         iconAnchor: [6, 6],
       });
 
-      const m = L.marker([ll.lat, ll.lng], { icon });
+      // CHANGED: paneMarkers so markers always above borders/heat
+      const m = L.marker([ll.lat, ll.lng], { icon, pane: "paneMarkers" });
+
       const srcName = ev?.source?.name || "";
       const srcUrl = ev?.source?.url || "";
       const srcLine = srcUrl
@@ -525,7 +547,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ===== Trend (restored) =====
+    // ===== Trend =====
     function drawTrendBars(counts, total, rangeText) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -596,7 +618,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return { counts, total, rangeText };
     }
 
-    // ===== Risk scoring for list =====
+    // ===== Risk scoring =====
     function recencyWeight(eventIndex, selectedIndex, windowDays) {
       const ageDays = selectedIndex - eventIndex;
       if (windowDays <= 1) return 1.0;
@@ -620,10 +642,9 @@ window.addEventListener("DOMContentLoaded", () => {
       weeklyHeatLayer = null;
     }
 
-    // ===== Weekly anomaly + hotspots (NEW, region-aware) =====
-    // Grid bin size in degrees (works well for ME scale)
-    const BIN_DEG = 1.0; // ~111km lat; good compromise
-    const HOTSPOT_RADIUS_KM = 120; // filter radius when clicked
+    // ===== Weekly anomaly + hotspots =====
+    const BIN_DEG = 1.0;
+    const HOTSPOT_RADIUS_KM = 120;
     function binKey(lat, lng) {
       const bx = Math.floor(lng / BIN_DEG);
       const by = Math.floor(lat / BIN_DEG);
@@ -636,9 +657,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return { lat: clat, lng: clng };
     }
 
-    // Weekly windows relative to selected date:
-    // "today" = selectedIndex day; 7d window excludes today: [selected-7 .. selected-1]
-    // prev 7: [selected-14 .. selected-8]
     function weeklyWindows(selectedIndex) {
       const a1 = Math.max(0, selectedIndex - 7);
       const a2 = Math.max(0, selectedIndex - 1);
@@ -659,7 +677,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const ll = getLatLng(ev);
         if (!ll) continue;
 
-        // apply same filters (region aware included via filterFn)
         if (!filterFn(ev, idx, { weeklyMode: true })) continue;
 
         const key = binKey(ll.lat, ll.lng);
@@ -667,7 +684,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx >= b1 && idx <= b2) bCounts.set(key, (bCounts.get(key) || 0) + 1);
       }
 
-      // anomaly score: (a - b) / max(1, b)
       const allKeys = new Set([...aCounts.keys(), ...bCounts.keys()]);
       const bins = [];
       for (const k of allKeys) {
@@ -675,7 +691,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const b = bCounts.get(k) || 0;
         const delta = a - b;
         const ratio = delta / Math.max(1, b);
-        // show only positive deltas to avoid "blue"
         if (delta <= 0) continue;
         const center = binCenterFromKey(k);
         bins.push({
@@ -686,7 +701,7 @@ window.addEventListener("DOMContentLoaded", () => {
           b,
           delta,
           ratio,
-          score: delta + ratio, // simple combined score
+          score: delta + ratio,
         });
       }
 
@@ -723,7 +738,6 @@ window.addEventListener("DOMContentLoaded", () => {
           const b = bins.find(x => x.key === key);
           if (!b) return;
 
-          // toggle on/off
           const isSame = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
           if (isSame) {
             setHotspot(null);
@@ -745,14 +759,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const bins = computeWeeklyHotspots(selectedIndex, filterFn);
 
-      // build heat points: intensity based on delta+ratio
       const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
       clearWeeklyHeat();
       if (points.length) {
-        weeklyHeatLayer = L.heatLayer(points, { radius: 38, blur: 28, maxZoom: 8 });
+        weeklyHeatLayer = L.heatLayer(points, { radius: 38, blur: 28, maxZoom: 8, pane: "paneHeat" });
         weeklyHeatLayer.addTo(map);
-        weeklyHeatLayer.bringToBack();
-        if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
       }
 
       renderHotspotList(bins);
@@ -765,9 +776,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const q = norm(searchInput.value).trim();
 
       return (ev, evIndex, opts = {}) => {
-        // date window:
-        // - normal list uses [selected-window+1 .. selected]
-        // - weekly mode uses its own windows, so skip this part
         if (!opts.weeklyMode) {
           const within = evIndex <= selectedIndex && evIndex >= selectedIndex - (windowDays - 1);
           if (!within) return false;
@@ -783,10 +791,8 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!matchesActor(ev)) return false;
         if (!matchesPair(ev)) return false;
 
-        // region-aware (country inference)
         if (!matchesRegion(ev)) return false;
 
-        // hotspot filter (applies to list + trend + stats; weekly itself uses bins, not hotspot)
         if (!opts.weeklyMode && !matchesHotspot(ev)) return false;
 
         return true;
@@ -810,11 +816,8 @@ window.addEventListener("DOMContentLoaded", () => {
       clearHeat();
       if (!points.length) return;
 
-      heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9 });
+      heatLayer = L.heatLayer(points, { radius: 28, blur: 22, maxZoom: 9, pane: "paneHeat" });
       heatLayer.addTo(map);
-      heatLayer.bringToBack();
-      if (weeklyHeatLayer) weeklyHeatLayer.bringToBack();
-      if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
     // ===== Stats / Risk / Actors / Pairs =====
@@ -924,9 +927,8 @@ window.addEventListener("DOMContentLoaded", () => {
     actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
     pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
 
-    // ===== Alerts (restored simplified rolling 7d baseline; region-aware) =====
+    // ===== Alerts =====
     function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
-      // today = selectedIndex day (in list window), baseline = prev 7 days excluding today
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
       const baseEnd = Math.max(0, selectedIndex - 1);
@@ -939,8 +941,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
 
         if (category && norm(ev.category) !== category) continue;
-
-        // apply filter, but force weeklyMode=false (respect hotspot), AND date window checks outside
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
         if (idx === todayIdx) today++;
@@ -976,7 +976,7 @@ window.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
-    // ===== Country risk (restored) =====
+    // ===== Country risk =====
     function updateCountryRisk(visibleEvents) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
@@ -990,9 +990,8 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No country data.</div>`;
     }
 
-    // ===== Actor escalation (light) =====
+    // ===== Actor escalation =====
     function updateEscalation(visibleEvents, selectedIndex) {
-      // Compare last 7d (excluding today) vs prev 7d for actor counts
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
       const aMap = new Map();
       const bMap = new Map();
@@ -1037,7 +1036,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
         out.push(ev);
       }
-      // sort latest first
       out.sort((a, b) => (b.date + (b.title || "")).localeCompare(a.date + (a.title || "")));
       return out;
     }
@@ -1049,7 +1047,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const windowDays = getWindowDays();
       label.textContent = selectedDate || "—";
 
-      // Ensure borders style reflects region highlight
       applyBordersStyleNow();
 
       const filterFn = filterBuilder(selectedIndex, windowDays);
@@ -1124,7 +1121,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     heatCheckbox.addEventListener("change", refresh);
     weeklyHeatCheckbox.addEventListener("change", () => {
-      // turning off weekly heat also clears hotspot list; hotspot filter stays unless user clears
       if (!weeklyHeatCheckbox.checked) renderHotspotList([]);
       refresh();
     });
@@ -1132,6 +1128,10 @@ window.addEventListener("DOMContentLoaded", () => {
     regionSelect.addEventListener("change", async () => {
       activeRegion = regionSelect.value || "ALL";
       updateRegionNote();
+
+      // CHANGED: load borders silently for bbox zoom even if Borders is OFF
+      await ensureBordersLoaded();
+
       await zoomToRegion(activeRegion);
       applyBordersStyleNow();
       refresh();
@@ -1177,8 +1177,6 @@ window.addEventListener("DOMContentLoaded", () => {
           return { ...ev, id };
         });
 
-        // preload borders in background ONLY if user toggles Borders later, but for country inference region filter
-        // we don't force load; region filter will still work if location.country is present in events.json.
         updateAll();
       })
       .catch((err) => {
