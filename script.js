@@ -1,4 +1,5 @@
 import { createAircraftLayer } from "./js/aircraft-layer.js";
+
 window.addEventListener("DOMContentLoaded", () => {
   try {
     const $ = (id) => {
@@ -32,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ===== Accordion =====
+    // ===== Accordion (Timeline) =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
@@ -51,6 +52,37 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    // ===== Control panel accordion helper (NEW) =====
+    function makeAccSection(title, contentEl, openByDefault = false) {
+      const wrap = document.createElement("div");
+      wrap.className = "acc";
+
+      const btn = document.createElement("button");
+      btn.className = "acc-btn";
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", openByDefault ? "true" : "false");
+      btn.innerHTML = `<span>${title}</span><span class="acc-arrow">▶</span>`;
+
+      const panel = document.createElement("div");
+      panel.className = "acc-panel" + (openByDefault ? "" : " closed");
+      panel.appendChild(contentEl);
+
+      const arrow = btn.querySelector(".acc-arrow");
+      if (arrow) arrow.style.transform = openByDefault ? "rotate(90deg)" : "rotate(0deg)";
+
+      btn.addEventListener("click", () => {
+        const wasClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        const isOpen = !wasClosed;
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+      });
+
+      wrap.appendChild(btn);
+      wrap.appendChild(panel);
+      return wrap;
+    }
+
     // ===== Map =====
     const map = L.map("map").setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -63,9 +95,9 @@ window.addEventListener("DOMContentLoaded", () => {
       disableClusteringAtZoom: 10,
     });
     map.addLayer(clusterGroup);
-    
-// =========================
-    // ===== Aircraft layer =====
+
+    // =========================
+    // ===== Aircraft layer ===== (NEW)
     // =========================
     const aircraft = createAircraftLayer(map, {
       updateIntervalMs: 15000,
@@ -74,7 +106,7 @@ window.addEventListener("DOMContentLoaded", () => {
       showTracks: true
     });
 
-    let aircraftEnabled = true; // alapból ON
+    let aircraftEnabled = true;
     let aircraftRunning = false;
 
     function setAircraftEnabled(on) {
@@ -99,53 +131,21 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ---- UI (HTML módosítás nélkül): betesszük a Control panelbe ----
-    // A "bordersCheckbox" és társai később jönnek, ezért itt csak előkészítünk egy helyet.
-    // (A DOM már kész, Control panel létezik)
+    // Aircraft UI (Control panelbe kerül majd, accordion alá)
     const aircraftUiWrap = document.createElement("div");
-    aircraftUiWrap.style.marginTop = "12px";
-    aircraftUiWrap.style.paddingTop = "10px";
-    aircraftUiWrap.style.borderTop = "1px solid rgba(255,255,255,.10)";
     aircraftUiWrap.innerHTML = `
-      <div class="muted" style="margin-bottom:6px;">Aircraft (OpenSky)</div>
-
       <div class="row">
         <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
       </div>
-
       <div class="row">
         <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" checked /> Military only</label>
         <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
       </div>
-
       <div class="muted" style="margin-top:6px;">
-        Tip: a “Military only” heurisztika (callsign/squawk) — nem 100%.
+        Tip: “Military only” heurisztika (callsign/squawk) — nem 100%.
       </div>
     `;
 
-    // Control panel aljára tesszük
-    controlPanel.appendChild(aircraftUiWrap);
-
-    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
-    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
-    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
-
-    aircraftCheckbox.addEventListener("change", (e) => {
-      setAircraftEnabled(e.target.checked);
-    });
-
-    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => {
-      aircraft.setMilitaryOnly(e.target.checked);
-    });
-
-    aircraftTracksCheckbox.addEventListener("change", (e) => {
-      aircraft.setShowTracks(e.target.checked);
-      // ha tracks OFF, akkor a layer ott van, csak üres; ez oké
-    });
-
-    // Indítás (alapból ON)
-    setAircraftEnabled(true);
-    
     // ===== UI refs =====
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
@@ -207,6 +207,47 @@ window.addEventListener("DOMContentLoaded", () => {
     const catCheckboxes = [...document.querySelectorAll(".cat-filter")];
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
+
+    // ===== Rebuild Control panel as accordion (NEW) =====
+    // A meglévő Control panel elemeket két dobozba tesszük: Layers / Filters, és hozzáadjuk Flight trackinget.
+    const controlTitle = controlPanel.querySelector("h3");
+
+    const oldNodes = [];
+    [...controlPanel.children].forEach((ch) => {
+      if (ch === controlTitle) return;
+      oldNodes.push(ch);
+    });
+
+    const layersBox = document.createElement("div");
+    const filtersBox = document.createElement("div");
+
+    let reachedCategory = false;
+    for (const node of oldNodes) {
+      if (node.classList?.contains("muted") && (node.textContent || "").toLowerCase().includes("category")) {
+        reachedCategory = true;
+      }
+      if (!reachedCategory) layersBox.appendChild(node);
+      else filtersBox.appendChild(node);
+    }
+
+    controlPanel.innerHTML = "";
+    controlPanel.appendChild(controlTitle);
+
+    controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
+    controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
+    controlPanel.appendChild(makeAccSection("Flight tracking", aircraftUiWrap, false));
+
+    // Aircraft UI handlers (most már a DOM-ban van)
+    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
+    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
+    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
+
+    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
+    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
+    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
+
+    // Indítás (alapból ON)
+    setAircraftEnabled(true);
 
     // ===== Date utilities =====
     function makeLast365Days() {
@@ -702,8 +743,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (weeklyHeatLayer && map.hasLayer(weeklyHeatLayer)) map.removeLayer(weeklyHeatLayer);
       weeklyHeatLayer = null;
     }
-
-    // ===== Weekly anomaly + hotspots (NEW, region-aware) =====
+        // ===== Weekly anomaly + hotspots (NEW, region-aware) =====
     // Grid bin size in degrees (works well for ME scale)
     const BIN_DEG = 1.0; // ~111km lat; good compromise
     const HOTSPOT_RADIUS_KM = 120; // filter radius when clicked
@@ -758,7 +798,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const b = bCounts.get(k) || 0;
         const delta = a - b;
         const ratio = delta / Math.max(1, b);
-        // show only positive deltas to avoid "blue"
+        // show only positive deltas
         if (delta <= 0) continue;
         const center = binCenterFromKey(k);
         bins.push({
@@ -849,8 +889,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       return (ev, evIndex, opts = {}) => {
         // date window:
-        // - normal list uses [selected-window+1 .. selected]
-        // - weekly mode uses its own windows, so skip this part
         if (!opts.weeklyMode) {
           const within = evIndex <= selectedIndex && evIndex >= selectedIndex - (windowDays - 1);
           if (!within) return false;
@@ -866,10 +904,8 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!matchesActor(ev)) return false;
         if (!matchesPair(ev)) return false;
 
-        // region-aware (country inference)
         if (!matchesRegion(ev)) return false;
 
-        // hotspot filter (applies to list + trend + stats; weekly itself uses bins, not hotspot)
         if (!opts.weeklyMode && !matchesHotspot(ev)) return false;
 
         return true;
@@ -1009,7 +1045,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Alerts (restored simplified rolling 7d baseline; region-aware) =====
     function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
-      // today = selectedIndex day (in list window), baseline = prev 7 days excluding today
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
       const baseEnd = Math.max(0, selectedIndex - 1);
@@ -1023,7 +1058,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (category && norm(ev.category) !== category) continue;
 
-        // apply filter, but force weeklyMode=false (respect hotspot), AND date window checks outside
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
         if (idx === todayIdx) today++;
@@ -1075,7 +1109,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Actor escalation (light) =====
     function updateEscalation(visibleEvents, selectedIndex) {
-      // Compare last 7d (excluding today) vs prev 7d for actor counts
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
       const aMap = new Map();
       const bMap = new Map();
@@ -1120,7 +1153,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
         out.push(ev);
       }
-      // sort latest first
       out.sort((a, b) => (b.date + (b.title || "")).localeCompare(a.date + (a.title || "")));
       return out;
     }
@@ -1132,13 +1164,11 @@ window.addEventListener("DOMContentLoaded", () => {
       const windowDays = getWindowDays();
       label.textContent = selectedDate || "—";
 
-      // Ensure borders style reflects region highlight
       applyBordersStyleNow();
 
       const filterFn = filterBuilder(selectedIndex, windowDays);
       const visible = computeVisible(selectedIndex, windowDays, filterFn);
 
-      // Markers
       clusterGroup.clearLayers();
       markerByEventId.clear();
       for (const ev of visible) {
@@ -1148,26 +1178,21 @@ window.addEventListener("DOMContentLoaded", () => {
         if (ev.id) markerByEventId.set(ev.id, m);
       }
 
-      // Heatmaps
       updateNormalHeatmap(visible, selectedIndex, windowDays);
       updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn);
 
-      // Trend
       const trend = computeTrend(selectedIndex, windowDays, (ev, idx) => filterFn(ev, idx, { weeklyMode: false }));
       drawTrendBars(trend.counts, trend.total, trend.rangeText);
 
-      // Stats / Risk / Actors / Pairs
       updateStats(visible);
       updateRisk(visible, selectedIndex, windowDays);
       updateActors(visible);
       updatePairs(visible);
 
-      // Alerts / country / escalation
       updateAlerts(selectedIndex, filterFn);
       updateCountryRisk(visible);
       updateEscalation(visible, selectedIndex);
 
-      // Events list
       if (!visible.length) {
         eventsListEl.innerHTML = `<div class="muted">No events for current filters (region/hotspot/actor/pair/search).</div>`;
       } else {
@@ -1207,7 +1232,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     heatCheckbox.addEventListener("change", refresh);
     weeklyHeatCheckbox.addEventListener("change", () => {
-      // turning off weekly heat also clears hotspot list; hotspot filter stays unless user clears
       if (!weeklyHeatCheckbox.checked) renderHotspotList([]);
       refresh();
     });
@@ -1260,8 +1284,6 @@ window.addEventListener("DOMContentLoaded", () => {
           return { ...ev, id };
         });
 
-        // preload borders in background ONLY if user toggles Borders later, but for country inference region filter
-        // we don't force load; region filter will still work if location.country is present in events.json.
         updateAll();
       })
       .catch((err) => {
