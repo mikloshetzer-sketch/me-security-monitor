@@ -53,6 +53,7 @@
       padding: 12px;
       backdrop-filter: blur(10px);
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      display: block; /* <-- FONTOS: ne legyen fix none */
     }
     .panel.closed { display: none; }
     #controlPanel { top: 52px; left: 12px; }
@@ -189,10 +190,6 @@
     }
 
     canvas{ border-radius: 12px; border: 1px solid rgba(255,255,255,.10); }
-
-    /* default closed (as requested) */
-    #controlPanel, #timelinePanel, #legendPanel { display:none; }
-    #controlPanel.closed, #timelinePanel.closed, #legendPanel.closed { display:none; }
   </style>
 </head>
 
@@ -204,7 +201,7 @@
   <div id="timelineToggle" class="toggle-btn">Timeline</div>
   <div id="legendToggle" class="toggle-btn">Legend</div>
 
-  <!-- Control panel (TOP-LEFT) -->
+  <!-- Control panel -->
   <div id="controlPanel" class="panel closed">
     <h3>Controls</h3>
 
@@ -263,7 +260,7 @@
     </div>
   </div>
 
-  <!-- Timeline/Analytics panel (TOP-RIGHT) -->
+  <!-- Timeline panel -->
   <div id="timelinePanel" class="panel closed">
     <h3>Timeline</h3>
 
@@ -376,7 +373,7 @@
     </div>
   </div>
 
-  <!-- Legend panel (BOTTOM-LEFT) -->
+  <!-- Legend panel -->
   <div id="legendPanel" class="panel closed">
     <h3>Legend</h3>
     <div class="risk-row"><div class="name">Military</div><div class="val"><span class="event-dot" style="background:#ff5a5a;"></span></div></div>
