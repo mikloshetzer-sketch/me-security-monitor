@@ -194,13 +194,18 @@ window.addEventListener("DOMContentLoaded", () => {
       const found = [];
       for (const a of ACTORS) {
         for (const p of a.patterns) {
-          if (text.includes(p)) { found.push(a.name); break; }
+          if (text.includes(p)) {
+            found.push(a.name);
+            break;
+          }
         }
       }
       return [...new Set(found)];
     }
     const pairKey = (a, b) => [a, b].sort().join(" + ");
-    function matchesActor(ev) { return !activeActor || actorsInEvent(ev).includes(activeActor); }
+    function matchesActor(ev) {
+      return !activeActor || actorsInEvent(ev).includes(activeActor);
+    }
     function matchesPair(ev) {
       if (!activePair) return true;
       const found = actorsInEvent(ev);
@@ -210,9 +215,31 @@ window.addEventListener("DOMContentLoaded", () => {
     // ===== Region model =====
     let activeRegion = "ALL";
     const REGION_ALIASES = {
-      LEVANT: new Set(["israel","lebanon","syria","jordan","iraq","palestine","palestinian territories","palestinian territory","west bank","gaza","gaza strip"]),
-      GULF: new Set(["saudi arabia","united arab emirates","uae","qatar","bahrain","kuwait","oman","yemen","iran"]),
-      NORTH: new Set(["egypt","turkey"]),
+      LEVANT: new Set([
+        "israel",
+        "lebanon",
+        "syria",
+        "jordan",
+        "iraq",
+        "palestine",
+        "palestinian territories",
+        "palestinian territory",
+        "west bank",
+        "gaza",
+        "gaza strip",
+      ]),
+      GULF: new Set([
+        "saudi arabia",
+        "united arab emirates",
+        "uae",
+        "qatar",
+        "bahrain",
+        "kuwait",
+        "oman",
+        "yemen",
+        "iran",
+      ]),
+      NORTH: new Set(["egypt", "turkey"]),
     };
     function regionContainsCountry(region, countryName) {
       if (!region || region === "ALL") return true;
@@ -220,17 +247,18 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!set) return true;
       const c = norm(countryName);
       if (set.has(c)) return true;
-      if (region === "LEVANT" && (c.includes("palestin") || c.includes("gaza") || c.includes("west bank"))) return true;
+      if (region === "LEVANT" && (c.includes("palestin") || c.includes("gaza") || c.includes("west bank")))
+        return true;
       return false;
     }
     function updateRegionNote() {
-      regionNote.textContent = (activeRegion === "ALL") ? "No region filter" : `Region: ${activeRegion}`;
+      regionNote.textContent = activeRegion === "ALL" ? "No region filter" : `Region: ${activeRegion}`;
     }
     updateRegionNote();
 
-    // ===== Borders + polygons =====
-    // CHANGED: use local file to avoid GitHub raw instability
-    const BORDERS_GEOJSON_URL = "data/ne_110m_admin_0_countries.geojson";
+    // ===== Borders + polygons (DEBUGGED) =====
+    // GitHub Pages-safe relatív útvonal + cache-bust
+    const BORDERS_GEOJSON_URL = "./data/ne_110m_admin_0_countries.geojson";
 
     let bordersLayer = null;
     let bordersLoaded = false;
@@ -256,24 +284,30 @@ window.addEventListener("DOMContentLoaded", () => {
     function bordersStyle(feature) {
       const name = featureCountryName(feature);
       const inRegion = activeRegion !== "ALL" && regionContainsCountry(activeRegion, name);
-      const fillOpacity = (borderFillOn && inRegion) ? borderFillOpacity : 0;
+      const fillOpacity = borderFillOn && inRegion ? borderFillOpacity : 0;
       return {
         color: "#ffffff",
         weight: borderWeight,
         opacity: borderOpacity,
         fillColor: "#ffffff",
-        fillOpacity: fillOpacity,
+        fillOpacity,
       };
     }
 
     function computeBBoxFromCoords(coords) {
-      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      let minX = Infinity,
+        minY = Infinity,
+        maxX = -Infinity,
+        maxY = -Infinity;
       const walk = (c) => {
         if (!Array.isArray(c)) return;
         if (typeof c[0] === "number" && typeof c[1] === "number") {
-          const x = c[0], y = c[1];
-          minX = Math.min(minX, x); minY = Math.min(minY, y);
-          maxX = Math.max(maxX, x); maxY = Math.max(maxY, y);
+          const x = c[0],
+            y = c[1];
+          minX = Math.min(minX, x);
+          minY = Math.min(minY, y);
+          maxX = Math.max(maxX, x);
+          maxY = Math.max(maxY, y);
           return;
         }
         for (const child of c) walk(child);
@@ -284,11 +318,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     async function ensureBordersLoaded() {
       if (bordersLoaded) return;
-      const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
-      if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
+
+      const bust = `v=${Date.now()}`;
+      const url = BORDERS_GEOJSON_URL.includes("?")
+        ? `${BORDERS_GEOJSON_URL}&${bust}`
+        : `${BORDERS_GEOJSON_URL}?${bust}`;
+
+      console.log("Loading borders:", url);
+
+      const res = await fetch(url, { cache: "no-store" });
+      console.log("Borders HTTP:", res.status, res.statusText);
+
+      if (!res.ok) {
+        const head = await res.text().catch(() => "");
+        throw new Error(`Borders HTTP ${res.status} (${res.statusText}). URL=${url}. BodyHead=${head.slice(0, 120)}`);
+      }
+
       const geojson = await res.json();
 
-      // CHANGED: pane for stable z-order
       bordersLayer = L.geoJSON(geojson, { style: bordersStyle, pane: "paneBorders" });
       bordersLoaded = true;
 
@@ -300,6 +347,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const bbox = computeBBoxFromCoords(geom.coordinates);
         countryFeatures.push({ name, bbox, geom });
       }
+
+      console.log("Borders loaded OK. Features:", countryFeatures.length);
     }
 
     function applyBordersStyleNow() {
@@ -309,9 +358,7 @@ window.addEventListener("DOMContentLoaded", () => {
     async function setBordersVisible(visible) {
       if (visible) {
         await ensureBordersLoaded();
-        if (bordersLayer && !map.hasLayer(bordersLayer)) {
-          bordersLayer.addTo(map);
-        }
+        if (bordersLayer && !map.hasLayer(bordersLayer)) bordersLayer.addTo(map);
         applyBordersStyleNow();
       } else {
         if (bordersLayer && map.hasLayer(bordersLayer)) map.removeLayer(bordersLayer);
@@ -321,7 +368,12 @@ window.addEventListener("DOMContentLoaded", () => {
     bordersCheckbox.addEventListener("change", (e) => {
       setBordersVisible(e.target.checked).catch((err) => {
         console.error(err);
-        alert("Nem sikerült betölteni az országhatárokat.");
+        alert(
+          "Nem sikerült betölteni az országhatárokat.\n\n" +
+            "Ellenőrizd, hogy megnyílik-e ez a fájl külön fülön (200 kell legyen, ne 404):\n" +
+            `${location.origin}${location.pathname.replace(/\\/[^\\/]*$/, "/")}data/ne_110m_admin_0_countries.geojson\n\n` +
+            "Nézd meg az F12 Console-t: ott lesz a 'Borders HTTP: ...' sor."
+        );
         bordersCheckbox.checked = false;
       });
     });
@@ -352,11 +404,11 @@ window.addEventListener("DOMContentLoaded", () => {
     function pointInRing(lng, lat, ring) {
       let inside = false;
       for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-        const xi = ring[i][0], yi = ring[i][1];
-        const xj = ring[j][0], yj = ring[j][1];
-        const intersect =
-          (yi > lat) !== (yj > lat) &&
-          lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
+        const xi = ring[i][0],
+          yi = ring[i][1];
+        const xj = ring[j][0],
+          yj = ring[j][1];
+        const intersect = yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
         if (intersect) inside = !inside;
       }
       return inside;
@@ -379,16 +431,23 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!geom) continue;
 
         if (geom.type === "Polygon") {
-          if (pointInPolygon(lng, lat, geom.coordinates)) { countryCache.set(key, cf.name); return cf.name; }
+          if (pointInPolygon(lng, lat, geom.coordinates)) {
+            countryCache.set(key, cf.name);
+            return cf.name;
+          }
         } else if (geom.type === "MultiPolygon") {
           for (const poly of geom.coordinates) {
-            if (pointInPolygon(lng, lat, poly)) { countryCache.set(key, cf.name); return cf.name; }
+            if (pointInPolygon(lng, lat, poly)) {
+              countryCache.set(key, cf.name);
+              return cf.name;
+            }
           }
         }
       }
       countryCache.set(key, null);
       return null;
     }
+
     function getLatLng(ev) {
       const lat = Number(ev?.location?.lat);
       const lng = Number(ev?.location?.lng);
@@ -408,14 +467,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const name = (ev?.location?.name || "").trim();
       if (name.includes(",")) {
-        const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
+        const parts = name
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean);
         const last = parts[parts.length - 1];
         if (last && last.length >= 3) return last;
       }
       return "Unknown";
     }
 
-    // CHANGED: if borders not loaded and no explicit country, do NOT exclude event from region filter
+    // If borders not loaded and no explicit country, do NOT exclude event from region filter
     function matchesRegion(ev) {
       if (activeRegion === "ALL") return true;
 
@@ -446,7 +508,9 @@ window.addEventListener("DOMContentLoaded", () => {
       if (c === "political") return 1.0;
       return 0.5;
     }
-    function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
+    function sourceMultiplier(ev) {
+      return sourceType(ev) === "isw" ? 1.3 : 1.0;
+    }
 
     function matchesSearch(ev, q) {
       if (!q) return true;
@@ -463,10 +527,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function haversineKm(aLat, aLng, bLat, bLng) {
       const R = 6371;
-      const dLat = (bLat - aLat) * Math.PI / 180;
-      const dLng = (bLng - aLng) * Math.PI / 180;
-      const s1 = Math.sin(dLat/2), s2 = Math.sin(dLng/2);
-      const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
+      const dLat = ((bLat - aLat) * Math.PI) / 180;
+      const dLng = ((bLng - aLng) * Math.PI) / 180;
+      const s1 = Math.sin(dLat / 2),
+        s2 = Math.sin(dLng / 2);
+      const aa = s1 * s1 + Math.cos((aLat * Math.PI) / 180) * Math.cos((bLat * Math.PI) / 180) * s2 * s2;
       return 2 * R * Math.asin(Math.sqrt(aa));
     }
 
@@ -517,7 +582,6 @@ window.addEventListener("DOMContentLoaded", () => {
         iconAnchor: [6, 6],
       });
 
-      // CHANGED: paneMarkers so markers always above borders/heat
       const m = L.marker([ll.lat, ll.lng], { icon, pane: "paneMarkers" });
 
       const srcName = ev?.source?.name || "";
@@ -526,9 +590,7 @@ window.addEventListener("DOMContentLoaded", () => {
         ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>`
         : `${srcName}`;
 
-      m.bindPopup(
-        `<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`
-      );
+      m.bindPopup(`<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`);
       return m;
     }
 
@@ -565,7 +627,10 @@ window.addEventListener("DOMContentLoaded", () => {
       ctx.fillStyle = "rgba(0,0,0,.16)";
       ctx.fillRect(0, 0, cssW, cssH);
 
-      const padL = 24, padR = 8, padT = 12, padB = 20;
+      const padL = 24,
+        padR = 8,
+        padT = 12,
+        padB = 20;
       const w = cssW - padL - padR;
       const h = cssH - padT - padB;
 
@@ -705,7 +770,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      bins.sort((x, y) => (y.score - x.score));
+      bins.sort((x, y) => y.score - x.score);
       return bins.slice(0, 10);
     }
 
@@ -719,26 +784,34 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      hotspotListEl.innerHTML = bins.map((b, i) => {
-        const active = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
-        return `
+      hotspotListEl.innerHTML = bins
+        .map((b, i) => {
+          const active =
+            activeHotspot &&
+            Math.abs(activeHotspot.lat - b.lat) < 0.001 &&
+            Math.abs(activeHotspot.lng - b.lng) < 0.001;
+          return `
           <div class="hotspot-row ${active ? "active" : ""}" data-key="${b.key}">
             <div>
-              <div><b>#${i+1}</b> Δ ${b.delta} (7d:${b.a} vs prev:${b.b})</div>
+              <div><b>#${i + 1}</b> Δ ${b.delta} (7d:${b.a} vs prev:${b.b})</div>
               <div class="muted">ratio ${b.ratio.toFixed(2)} · ${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}</div>
             </div>
             <div class="muted">▶</div>
           </div>
         `;
-      }).join("");
+        })
+        .join("");
 
       [...hotspotListEl.querySelectorAll(".hotspot-row")].forEach((row) => {
         row.onclick = () => {
           const key = row.getAttribute("data-key");
-          const b = bins.find(x => x.key === key);
+          const b = bins.find((x) => x.key === key);
           if (!b) return;
 
-          const isSame = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
+          const isSame =
+            activeHotspot &&
+            Math.abs(activeHotspot.lat - b.lat) < 0.001 &&
+            Math.abs(activeHotspot.lng - b.lng) < 0.001;
           if (isSame) {
             setHotspot(null);
           } else {
@@ -758,8 +831,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       const bins = computeWeeklyHotspots(selectedIndex, filterFn);
-
-      const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
+      const points = bins.map((b) => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
       clearWeeklyHeat();
       if (points.length) {
         weeklyHeatLayer = L.heatLayer(points, { radius: 38, blur: 28, maxZoom: 8, pane: "paneHeat" });
@@ -801,7 +873,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Heatmap (normal) =====
     function updateNormalHeatmap(visibleEvents, selectedIndex, windowDays) {
-      if (!heatCheckbox.checked) { clearHeat(); return; }
+      if (!heatCheckbox.checked) {
+        clearHeat();
+        return;
+      }
 
       const points = [];
       for (const ev of visibleEvents) {
@@ -822,7 +897,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Stats / Risk / Actors / Pairs =====
     function updateStats(visibleEvents) {
-      let mil=0, sec=0, pol=0, oth=0, news=0, isw=0;
+      let mil = 0,
+        sec = 0,
+        pol = 0,
+        oth = 0,
+        news = 0,
+        isw = 0;
       for (const ev of visibleEvents) {
         const c = norm(ev.category || "other");
         if (c === "military") mil++;
@@ -831,7 +911,8 @@ window.addEventListener("DOMContentLoaded", () => {
         else oth++;
 
         const st = sourceType(ev);
-        if (st === "isw") isw++; else news++;
+        if (st === "isw") isw++;
+        else news++;
       }
       statsTotalEl.textContent = String(visibleEvents.length);
       statsMilEl.textContent = String(mil);
@@ -857,9 +938,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
       riskListEl.innerHTML = rows.length
-        ? rows.map(([name, val]) => `
+        ? rows
+            .map(
+              ([name, val]) => `
           <div class="risk-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>
-        `).join("")
+        `
+            )
+            .join("")
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
@@ -872,16 +957,20 @@ window.addEventListener("DOMContentLoaded", () => {
       actorClearBtn.style.display = activeActor ? "inline-block" : "none";
 
       actorsListEl.innerHTML = rows.length
-        ? rows.map(([name, n]) => `
+        ? rows
+            .map(
+              ([name, n]) => `
           <div class="actor-chip ${activeActor === name ? "active" : ""}" data-actor="${name}">
             <span>${name}</span><b>${n}</b>
-          </div>`).join("")
+          </div>`
+            )
+            .join("")
         : `<div class="muted">No actor signals in this window.</div>`;
 
       [...actorsListEl.querySelectorAll(".actor-chip")].forEach((el) => {
         el.onclick = () => {
           const a = el.getAttribute("data-actor");
-          activeActor = (activeActor === a) ? null : a;
+          activeActor = activeActor === a ? null : a;
           updateAll();
         };
       });
@@ -905,10 +994,16 @@ window.addEventListener("DOMContentLoaded", () => {
       pairClearBtn.style.display = activePair ? "inline-block" : "none";
 
       pairsListEl.innerHTML = rows.length
-        ? rows.map(([k, n]) => `
-          <div class="pair-row ${activePair && pairKey(activePair.a, activePair.b) === k ? "active" : ""}" data-pair="${k}">
+        ? rows
+            .map(
+              ([k, n]) => `
+          <div class="pair-row ${
+            activePair && pairKey(activePair.a, activePair.b) === k ? "active" : ""
+          }" data-pair="${k}">
             <div class="name">${k}</div><div class="val">${n}</div>
-          </div>`).join("")
+          </div>`
+            )
+            .join("")
         : `<div class="muted">No interaction pairs in this window.</div>`;
 
       [...pairsListEl.querySelectorAll(".pair-row")].forEach((el) => {
@@ -916,7 +1011,8 @@ window.addEventListener("DOMContentLoaded", () => {
           const k = el.getAttribute("data-pair") || "";
           const parts = k.split(" + ");
           if (parts.length !== 2) return;
-          const a = parts[0], b = parts[1];
+          const a = parts[0],
+            b = parts[1];
           if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
           else activePair = { a, b };
           updateAll();
@@ -924,8 +1020,14 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
-    pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
+    actorClearBtn.addEventListener("click", () => {
+      activeActor = null;
+      updateAll();
+    });
+    pairClearBtn.addEventListener("click", () => {
+      activePair = null;
+      updateAll();
+    });
 
     // ===== Alerts =====
     function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
@@ -960,18 +1062,28 @@ window.addEventListener("DOMContentLoaded", () => {
       const maxRatio = Math.max(overall.ratio, hardsec.ratio, military.ratio);
       let status = "OK";
       let cls = "badge-mini badge-ok";
-      if (maxRatio >= 3.0) { status = "ALERT"; cls = "badge-mini badge-alert"; }
-      else if (maxRatio >= 2.0) { status = "WARN"; cls = "badge-mini badge-warn"; }
+      if (maxRatio >= 3.0) {
+        status = "ALERT";
+        cls = "badge-mini badge-alert";
+      } else if (maxRatio >= 2.0) {
+        status = "WARN";
+        cls = "badge-mini badge-warn";
+      }
 
       spikeBadge.className = cls;
       spikeBadge.textContent = status;
 
-      spikeText.textContent =
-        `Rolling 7d baseline | Overall: ${status} (today ${overall.today}, base ${overall.baseAvg.toFixed(1)}, x${overall.ratio.toFixed(2)})`;
+      spikeText.textContent = `Rolling 7d baseline | Overall: ${status} (today ${overall.today}, base ${overall.baseAvg.toFixed(
+        1
+      )}, x${overall.ratio.toFixed(2)})`;
 
       spikeDetails.innerHTML = `
-        <div class="risk-row"><div class="name">Security spike</div><div class="val">${hardsec.today} vs ${hardsec.baseAvg.toFixed(1)} · x${hardsec.ratio.toFixed(2)}</div></div>
-        <div class="risk-row"><div class="name">Military spike</div><div class="val">${military.today} vs ${military.baseAvg.toFixed(1)} · x${military.ratio.toFixed(2)}</div></div>
+        <div class="risk-row"><div class="name">Security spike</div><div class="val">${hardsec.today} vs ${hardsec.baseAvg.toFixed(
+        1
+      )} · x${hardsec.ratio.toFixed(2)}</div></div>
+        <div class="risk-row"><div class="name">Military spike</div><div class="val">${military.today} vs ${military.baseAvg.toFixed(
+        1
+      )} · x${military.ratio.toFixed(2)}</div></div>
         <div class="muted">Filters include Region + Hotspot (if active) + Actor/Pair/Search.</div>
       `;
     }
@@ -986,7 +1098,9 @@ window.addEventListener("DOMContentLoaded", () => {
       const rows = [...byCountry.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
       countryRiskNote.textContent = bordersLoaded ? "Country counts (polygon inference ON)" : "Country counts";
       countryRiskList.innerHTML = rows.length
-        ? rows.map(([name, val]) => `<div class="rank-row"><div class="name">${name}</div><div class="val">${val}</div></div>`).join("")
+        ? rows
+            .map(([name, val]) => `<div class="rank-row"><div class="name">${name}</div><div class="val">${val}</div></div>`)
+            .join("")
         : `<div class="muted">No country data.</div>`;
     }
 
@@ -1020,14 +1134,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
       escNote.textContent = `7d vs prev 7d · (region/hotspot aware)`;
       escalationList.innerHTML = top.length
-        ? top.map(r => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`).join("")
+        ? top
+            .map((r) => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`)
+            .join("")
         : `<div class="muted">No positive actor deltas.</div>`;
     }
 
     // ===== Data =====
     let eventsData = [];
 
-    // ===== Compute visible list window =====
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
@@ -1085,11 +1200,12 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!visible.length) {
         eventsListEl.innerHTML = `<div class="muted">No events for current filters (region/hotspot/actor/pair/search).</div>`;
       } else {
-        eventsListEl.innerHTML = visible.map((ev) => {
-          const st = sourceType(ev).toUpperCase();
-          const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
-          const ctry = getCountry(ev);
-          return `
+        eventsListEl.innerHTML = visible
+          .map((ev) => {
+            const st = sourceType(ev).toUpperCase();
+            const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
+            const ctry = getCountry(ev);
+            return `
             <div class="event-row" data-id="${ev.id}">
               <div class="event-row-title">${ev.title || "Untitled"}</div>
               <div class="event-row-meta">
@@ -1098,12 +1214,13 @@ window.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
           `;
-        }).join("");
+          })
+          .join("");
 
         [...eventsListEl.querySelectorAll(".event-row")].forEach((row) => {
           row.onclick = () => {
             const id = row.getAttribute("data-id");
-            const ev = eventsData.find(e => String(e.id) === String(id));
+            const ev = eventsData.find((e) => String(e.id) === String(id));
             if (ev) openEventOnMap(ev);
           };
         });
@@ -1111,7 +1228,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== Wiring =====
-    function refresh() { updateAll(); }
+    function refresh() {
+      updateAll();
+    }
 
     slider.addEventListener("input", refresh);
     searchInput.addEventListener("input", refresh);
@@ -1129,7 +1248,7 @@ window.addEventListener("DOMContentLoaded", () => {
       activeRegion = regionSelect.value || "ALL";
       updateRegionNote();
 
-      // CHANGED: load borders silently for bbox zoom even if Borders is OFF
+      // load borders for bbox zoom even if Borders is OFF
       await ensureBordersLoaded();
 
       await zoomToRegion(activeRegion);
@@ -1183,7 +1302,6 @@ window.addEventListener("DOMContentLoaded", () => {
         console.error(err);
         eventsListEl.innerHTML = `<div class="muted">events.json load error</div>`;
       });
-
   } catch (e) {
     console.error("Fatal init error:", e);
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
