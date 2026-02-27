@@ -1,218 +1,226 @@
-// /js/aircraft-layer.js
+// js/aircraft-layer.js
+// Data source: Airplanes.live / ADSB One (ADSBExchange v2-compatible)
+// Docs: /v2/point/[lat]/[lon]/[radius] and /v2/mil :contentReference[oaicite:2]{index=2}
+
 export function createAircraftLayer(map, opts = {}) {
   const options = {
-    updateIntervalMs: 15000,
-    staleMs: 60000,
-    trackSeconds: 300,          // 5 perc
-    trackMaxPoints: 60,         // pontok limitje gépenként
-    showTracks: true,
-    militaryOnly: false,
-    ...opts
+    updateIntervalMs: opts.updateIntervalMs ?? 2000, // API rate limit ~1 req/sec -> 2s safe
+    trackSeconds: opts.trackSeconds ?? 300,
+    militaryOnly: opts.militaryOnly ?? false,
+    showTracks: opts.showTracks ?? true,
+    maxRadiusNm: 250, // endpoint max 250nm :contentReference[oaicite:3]{index=3}
   };
 
+  // Layers
   const aircraftLayer = L.layerGroup();
-  const tracksLayer = L.layerGroup(); // külön layer a vonalaknak
-  const aircraftMarkers = new Map();  // icao24 -> { marker, lastSeen, lastState }
-  const trackStore = new Map();       // icao24 -> { points:[{lat,lon,t}], polyline }
+  const tracksLayer = L.layerGroup();
 
-  function openskyUrlForCurrentView() {
+  // State
+  let timer = null;
+  let running = false;
+
+  // markers + tracks
+  const markerByHex = new Map(); // hex -> Leaflet marker
+  const trackByHex = new Map();  // hex -> { polyline, points:[{lat,lng,t}] }
+
+  function nowMs() { return Date.now(); }
+
+  function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+
+  function boundsCenterAndRadiusNm() {
     const b = map.getBounds();
-    const qs = new URLSearchParams({
-      lamin: b.getSouth().toFixed(4),
-      lamax: b.getNorth().toFixed(4),
-      lomin: b.getWest().toFixed(4),
-      lomax: b.getEast().toFixed(4),
-    });
-    return `https://opensky-network.org/api/states/all?${qs.toString()}`;
+    const c = b.getCenter();
+    const ne = b.getNorthEast();
+    const sw = b.getSouthWest();
+
+    const d1 = c.distanceTo(ne); // meters
+    const d2 = c.distanceTo(sw);
+    const maxMeters = Math.max(d1, d2);
+
+    const nm = maxMeters / 1852; // meters -> nautical miles
+    return {
+      lat: c.lat,
+      lon: c.lng,
+      radiusNm: clamp(Math.ceil(nm), 20, options.maxRadiusNm),
+    };
   }
 
-  // --- "Military-ish" heurisztika (nem tökéletes!) ---
-  // S[1] callsign, S[14] squawk
-  const CALLSIGN_RE = new RegExp(
-    // tipikus katonai / állami / tanker / transport / AWACS minták (általános, régiófüggetlen)
-    String.raw`^(RCH|MCV|QID|DUKE|HOBO|KNIFE|REACH|PAT|HKY|TIGER|EAGLE|RAVEN|NATO|NAF|LAGR|SHELL|TEXACO|MAFIA|JEDI|CAMELOT|KING|LION|NOBLE)\d*`,
-    "i"
-  );
+  function iconHtml(isMil) {
+    // kék pötty alapból; ha mil, lehet később pirosra cserélni, de most hagyjuk kéken (egységes)
+    return `<div style="
+      width:10px;height:10px;border-radius:999px;
+      background:#4ea1ff;
+      border:1px solid rgba(255,255,255,.55);
+      box-shadow:0 0 10px rgba(0,0,0,.35);
+    "></div>`;
+  }
 
-  function isMilitaryLike(state) {
-    const callsign = ((state[1] || "") + "").trim();
-    const squawk = ((state[14] || "") + "").trim();
+  function makeMarker(ac) {
+    const icon = L.divIcon({
+      className: "",
+      html: iconHtml(ac._mil === true),
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+    });
 
-    // 1) callsign alapú jel
-    if (callsign && CALLSIGN_RE.test(callsign)) return true;
+    const m = L.marker([ac.lat, ac.lon], { icon });
 
-    // 2) squawk heurisztika (nem garancia!)
-    // Pl. 7000 VFR Európában nem katonai, viszont bizonyos 0xxx/1xxx/4xxx minták előfordulnak állami gépeknél is.
-    // Itt óvatosan: csak nagyon gyenge jelként használjuk.
-    if (/^\d{4}$/.test(squawk)) {
-      // “gyanúsabb” tartományok (nem állítás, csak OSINT támpont)
-      const n = parseInt(squawk, 10);
-      if (n === 0) return true;             // néha “no squawk / special”
-      if (n >= 1000 && n <= 1777) return true;
-      if (n >= 4000 && n <= 4777) return true;
+    const callsign = (ac.flight || "").trim();
+    const hex = (ac.hex || "").trim();
+    const alt = Number.isFinite(ac.alt_baro) ? `${Math.round(ac.alt_baro)} ft` : "—";
+    const gs = Number.isFinite(ac.gs) ? `${Math.round(ac.gs)} kt` : "—";
+    const trk = Number.isFinite(ac.track) ? `${Math.round(ac.track)}°` : "—";
+    const sq = (ac.squawk || "").trim();
+
+    m.bindPopup(`
+      <b>${callsign || "Aircraft"}</b><br/>
+      <small>hex: ${hex || "—"}</small><br/>
+      <small>alt: ${alt} · gs: ${gs} · track: ${trk}${sq ? ` · squawk: ${sq}` : ""}</small>
+    `);
+
+    return m;
+  }
+
+  function upsertTrack(hex, lat, lon) {
+    if (!options.showTracks) return;
+
+    const t = nowMs();
+    const keepMs = options.trackSeconds * 1000;
+
+    let obj = trackByHex.get(hex);
+    if (!obj) {
+      const pl = L.polyline([[lat, lon]], { weight: 2, opacity: 0.9 });
+      obj = { polyline: pl, points: [{ lat, lng: lon, t }] };
+      trackByHex.set(hex, obj);
+      tracksLayer.addLayer(pl);
+    } else {
+      obj.points.push({ lat, lng: lon, t });
+      // purge old points
+      obj.points = obj.points.filter(p => (t - p.t) <= keepMs);
+      obj.polyline.setLatLngs(obj.points.map(p => [p.lat, p.lng]));
     }
+  }
+
+  function pruneStale() {
+    const t = nowMs();
+    const keepMs = options.trackSeconds * 1000;
+
+    // prune tracks
+    for (const [hex, obj] of trackByHex.entries()) {
+      obj.points = obj.points.filter(p => (t - p.t) <= keepMs);
+      if (obj.points.length < 2) {
+        tracksLayer.removeLayer(obj.polyline);
+        trackByHex.delete(hex);
+      } else {
+        obj.polyline.setLatLngs(obj.points.map(p => [p.lat, p.lng]));
+      }
+    }
+  }
+
+  async function fetchAircraft() {
+    const { lat, lon, radiusNm } = boundsCenterAndRadiusNm();
+
+    // militaryOnly -> /v2/mil (worldwide) túl nagy lehet, ezért inkább point + local mil filter
+    // point endpoint: /v2/point/[lat]/[lon]/[radius] up to 250nm :contentReference[oaicite:4]{index=4}
+    const url = `https://api.airplanes.live/v2/point/${lat.toFixed(4)}/${lon.toFixed(4)}/${radiusNm}`;
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`airplanes.live HTTP ${res.status}`);
+    const json = await res.json();
+
+    // ADSBExchange v2 compatible: { ac: [...] }
+    const list = Array.isArray(json?.ac) ? json.ac : [];
+    return list;
+  }
+
+  function isMilitary(ac) {
+    // Airplanes.live ad külön /mil endpointot is :contentReference[oaicite:5]{index=5}
+    // point válaszban nincs garantált "mil" flag; ezért heurisztika:
+    // - "category" / "type" / callsign minták / squawk (nem 100%)
+    const flight = (ac.flight || "").trim().toUpperCase();
+    const sq = (ac.squawk || "").trim();
+    const typ = (ac.t || ac.type || "").toString().toUpperCase();
+
+    if (sq === "7000" || sq === "2000") {
+      // ez nem military, csak példa; nem használjuk.
+    }
+
+    // nagyon basic minták (bővíthető):
+    const patterns = [
+      "RCH", "CFC", "HKY", "RRR", "NATO", "BLUE", "ASL", "DUKE",
+      "QID", "IAM", "LAGR", "FNY", "BAF", "DAF", "RAF", "LFT",
+    ];
+    if (patterns.some(p => flight.startsWith(p))) return true;
+    if (typ.includes("C130") || typ.includes("KC") || typ.includes("P8") || typ.includes("E3")) return true;
 
     return false;
   }
 
-  function formatTooltip(s) {
-    const icao24 = (s[0] || "").trim();
-    const callsign = (s[1] || "").trim();
-    const country = (s[2] || "").trim();
-    const altM = s[13] ?? s[7];
-    const altFt = (typeof altM === "number") ? Math.round(altM * 3.28084) : null;
-    const spdKt = (typeof s[9] === "number") ? Math.round(s[9] * 1.94384) : null;
-    const trk = (typeof s[10] === "number") ? Math.round(s[10]) : null;
-    const squawk = (s[14] || "").trim();
-
-    const mil = isMilitaryLike(s) ? "🟠 military-ish" : "⚪ unknown/civil";
-
-    return [
-      `<b>${callsign || icao24 || "UNKNOWN"}</b>`,
-      mil,
-      country ? `Country: ${country}` : null,
-      altFt != null ? `Alt: ${altFt} ft` : null,
-      spdKt != null ? `Speed: ${spdKt} kt` : null,
-      trk != null ? `Track: ${trk}°` : null,
-      squawk ? `Squawk: ${squawk}` : null,
-      icao24 ? `ICAO24: ${icao24}` : null,
-    ].filter(Boolean).join("<br/>");
-  }
-
-  function upsertTrack(icao24, lat, lon, t) {
-    if (!options.showTracks) return;
-
-    const cutoff = t - options.trackSeconds * 1000;
-    let obj = trackStore.get(icao24);
-
-    if (!obj) {
-      obj = { points: [], polyline: null };
-      trackStore.set(icao24, obj);
-    }
-
-    // adjuk hozzá pontot (ha nem “ugyanaz”, hogy ne rajzoljon zajt)
-    const last = obj.points[obj.points.length - 1];
-    if (!last || Math.abs(last.lat - lat) > 0.0005 || Math.abs(last.lon - lon) > 0.0005) {
-      obj.points.push({ lat, lon, t });
-    }
-
-    // vágás idő és max pont alapján
-    obj.points = obj.points.filter(p => p.t >= cutoff);
-    if (obj.points.length > options.trackMaxPoints) {
-      obj.points = obj.points.slice(obj.points.length - options.trackMaxPoints);
-    }
-
-    const latlngs = obj.points.map(p => [p.lat, p.lon]);
-
-    if (!obj.polyline) {
-      obj.polyline = L.polyline(latlngs, { weight: 2, opacity: 0.75 });
-      tracksLayer.addLayer(obj.polyline);
-    } else {
-      obj.polyline.setLatLngs(latlngs);
-    }
-  }
-
-  function removeTrack(icao24) {
-    const obj = trackStore.get(icao24);
-    if (!obj) return;
-    if (obj.polyline) tracksLayer.removeLayer(obj.polyline);
-    trackStore.delete(icao24);
-  }
-
-  async function fetchAndRender() {
+  async function tick() {
     try {
-      const res = await fetch(openskyUrlForCurrentView(), { mode: "cors" });
-      if (!res.ok) throw new Error(`OpenSky HTTP ${res.status}`);
-      const data = await res.json();
+      const list = await fetchAircraft();
 
-      const now = Date.now();
-      const seenNow = new Set();
+      let shown = 0;
+      for (const ac of list) {
+        if (!Number.isFinite(ac.lat) || !Number.isFinite(ac.lon)) continue;
 
-      for (const s of (data.states || [])) {
-        const icao24 = (s[0] || "").trim();
-        const lon = s[5], lat = s[6];
-        if (!icao24 || typeof lat !== "number" || typeof lon !== "number") continue;
+        const hex = (ac.hex || "").trim().toLowerCase();
+        if (!hex) continue;
 
-        // militaryOnly szűrés
-        if (options.militaryOnly && !isMilitaryLike(s)) continue;
+        const mil = isMilitary(ac);
+        ac._mil = mil;
 
-        seenNow.add(icao24);
+        if (options.militaryOnly && !mil) continue;
 
-        const tooltip = formatTooltip(s);
+        shown++;
 
-        const existing = aircraftMarkers.get(icao24);
-        if (existing) {
-          existing.marker.setLatLng([lat, lon]);
-          existing.marker.setTooltipContent(tooltip);
-          existing.lastSeen = now;
-          existing.lastState = s;
+        let m = markerByHex.get(hex);
+        if (!m) {
+          m = makeMarker(ac);
+          markerByHex.set(hex, m);
+          aircraftLayer.addLayer(m);
         } else {
-          const marker = L.circleMarker([lat, lon], {
-            radius: 5,
-            weight: 1,
-            fillOpacity: 0.85,
-          }).bindTooltip(tooltip, { direction: "top" });
-
-          aircraftLayer.addLayer(marker);
-          aircraftMarkers.set(icao24, { marker, lastSeen: now, lastState: s });
+          m.setLatLng([ac.lat, ac.lon]);
         }
 
-        // track update
-        upsertTrack(icao24, lat, lon, now);
+        upsertTrack(hex, ac.lat, ac.lon);
       }
 
-      // stale cleanup
-      for (const [icao24, obj] of aircraftMarkers.entries()) {
-        if (!seenNow.has(icao24) && (now - obj.lastSeen) > options.staleMs) {
-          aircraftLayer.removeLayer(obj.marker);
-          aircraftMarkers.delete(icao24);
-          removeTrack(icao24);
-        }
-      }
-    } catch (e) {
-      console.warn("Aircraft update failed:", e);
+      pruneStale();
+
+      // Debug (ha kell)
+      // console.debug("[aircraft]", "received:", list.length, "shown:", shown);
+
+    } catch (err) {
+      // Ez most hasznos: látni fogod, ha HTTP 429 / CORS / stb.
+      console.warn("[aircraft] fetch failed:", err?.message || err);
     }
   }
-
-  let timer = null;
 
   function start() {
-    if (timer) return timer;
-    fetchAndRender();
-    timer = setInterval(fetchAndRender, options.updateIntervalMs);
-    return timer;
+    if (running) return;
+    running = true;
+    tick();
+    timer = window.setInterval(tick, options.updateIntervalMs);
   }
 
   function stop() {
-    if (timer) clearInterval(timer);
+    running = false;
+    if (timer) window.clearInterval(timer);
     timer = null;
   }
 
-  function setMilitaryOnly(v) {
-    options.militaryOnly = !!v;
-    // hard refresh: töröljük a civil marker-eket, majd újrahúzzuk
-    aircraftLayer.clearLayers();
-    tracksLayer.clearLayers();
-    aircraftMarkers.clear();
-    trackStore.clear();
-    fetchAndRender();
+  function setMilitaryOnly(on) {
+    options.militaryOnly = !!on;
+    // azonnali frissítés
+    tick();
   }
 
-  function setShowTracks(v) {
-    options.showTracks = !!v;
+  function setShowTracks(on) {
+    options.showTracks = !!on;
     if (!options.showTracks) {
+      // töröljük a meglévő trackeket
       tracksLayer.clearLayers();
-      // a pontokat megtartjuk, ha később visszakapcsolod, de polylinet újra kell építeni
-      for (const obj of trackStore.values()) obj.polyline = null;
-    } else {
-      // rebuild polylines
-      for (const [icao24, obj] of trackStore.entries()) {
-        const latlngs = obj.points.map(p => [p.lat, p.lon]);
-        if (latlngs.length >= 2) {
-          obj.polyline = L.polyline(latlngs, { weight: 2, opacity: 0.75 });
-          tracksLayer.addLayer(obj.polyline);
-        }
-      }
+      trackByHex.clear();
     }
   }
 
