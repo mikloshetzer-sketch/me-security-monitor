@@ -60,6 +60,9 @@
     #timelinePanel { top: 52px; right: 12px; }
     #legendPanel { bottom: 52px; left: 12px; width: 320px; }
 
+    /* Extra: biztos görgethetőség a Controls panelben */
+    #controlPanel { max-height: calc(100vh - 90px); }
+
     .panel h3{ margin: 0 0 10px 0; font-size: 14px; letter-spacing: .2px; }
     .muted { color: var(--muted); font-size: 12px; }
 
@@ -413,7 +416,7 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
-  <!-- CHANGED: script.js is now a module so it can use `import` -->
+  <!-- IMPORTANT: module needed for ES import -->
   <script type="module" src="script.js"></script>
 </body>
 </html>
