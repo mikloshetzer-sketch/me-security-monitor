@@ -53,21 +53,19 @@
       padding: 12px;
       backdrop-filter: blur(10px);
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      display: block; /* <-- FONTOS: ne legyen fix none */
+      display: block;
     }
     .panel.closed { display: none; }
     #controlPanel { top: 52px; left: 12px; }
     #timelinePanel { top: 52px; right: 12px; }
     #legendPanel { bottom: 52px; left: 12px; width: 320px; }
 
-    .panel h3{
-      margin: 0 0 10px 0;
-      font-size: 14px;
-      letter-spacing: .2px;
-    }
+    .panel h3{ margin: 0 0 10px 0; font-size: 14px; letter-spacing: .2px; }
     .muted { color: var(--muted); font-size: 12px; }
+
     .row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin: 6px 0; }
     .row label{ font-size: 12px; color: var(--text); display:flex; align-items:center; gap:8px; }
+
     input[type="text"]{
       width: 100%;
       padding: 8px 10px;
@@ -161,6 +159,7 @@
       font-size: 12px;
     }
     .actor-chip.active{ outline: 2px solid rgba(255,255,255,.45); }
+
     .pair-row{
       display:flex; justify-content:space-between; gap:10px;
       padding: 6px 8px;
@@ -180,6 +179,8 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.18);
       margin: 8px 0;
+      cursor: pointer;
+      user-select: none;
     }
     .event-row-title{ font-size: 13px; font-weight: 700; }
     .event-row-meta{ margin-top: 4px; display:flex; gap:10px; flex-wrap:wrap; font-size: 11px; color: var(--muted); }
@@ -188,6 +189,19 @@
       border: 1px solid rgba(255,255,255,.55);
       box-shadow: 0 0 10px rgba(0,0,0,.35);
     }
+
+    .hotspot-row{
+      display:flex; justify-content:space-between; gap:10px;
+      padding: 6px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      margin: 6px 0;
+      cursor:pointer;
+      user-select:none;
+      font-size: 12px;
+    }
+    .hotspot-row.active{ outline: 2px solid rgba(255,255,255,.45); }
 
     canvas{ border-radius: 12px; border: 1px solid rgba(255,255,255,.10); }
   </style>
@@ -207,7 +221,12 @@
 
     <div class="row">
       <label><input id="heatmapCheckbox" type="checkbox" /> Heatmap</label>
+      <label><input id="weeklyHeatCheckbox" type="checkbox" /> Weekly anomaly heatmap</label>
+    </div>
+
+    <div class="row">
       <label><input id="bordersCheckbox" type="checkbox" /> Borders</label>
+      <span class="btn-mini" id="clearHotspotBtn" style="display:none;">Clear hotspot</span>
     </div>
 
     <div class="muted" style="margin-top:10px;">Category filters</div>
@@ -258,9 +277,15 @@
       <input id="borderFillOpacitySlider" type="range" min="0.02" max="0.35" step="0.01" value="0.12"/>
       <div class="muted" style="margin-top:6px;">Region highlight uses fill when Borders ON.</div>
     </div>
+
+    <!-- Hotspots list -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+      <div class="muted" style="margin-bottom:6px;">Weekly hotspots (click to filter)</div>
+      <div id="hotspotList"><div class="muted">Turn on “Weekly anomaly heatmap”.</div></div>
+    </div>
   </div>
 
-  <!-- Timeline panel -->
+  <!-- Timeline/Analytics panel -->
   <div id="timelinePanel" class="panel closed">
     <h3>Timeline</h3>
 
@@ -368,7 +393,7 @@
     </div>
 
     <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
-      <div class="muted">Events</div>
+      <div class="muted">Events (click to zoom)</div>
       <div id="eventsList"></div>
     </div>
   </div>
