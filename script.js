@@ -1,3 +1,4 @@
+import { createAircraftLayer } from "./js/aircraft-layer.js";
 window.addEventListener("DOMContentLoaded", () => {
   try {
     const $ = (id) => {
@@ -62,7 +63,89 @@ window.addEventListener("DOMContentLoaded", () => {
       disableClusteringAtZoom: 10,
     });
     map.addLayer(clusterGroup);
+    
+// =========================
+    // ===== Aircraft layer =====
+    // =========================
+    const aircraft = createAircraftLayer(map, {
+      updateIntervalMs: 15000,
+      trackSeconds: 300,   // 5 perc track
+      militaryOnly: true,  // induljon military-szűrve
+      showTracks: true
+    });
 
+    let aircraftEnabled = true; // alapból ON
+    let aircraftRunning = false;
+
+    function setAircraftEnabled(on) {
+      aircraftEnabled = !!on;
+
+      if (aircraftEnabled) {
+        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
+        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
+
+        if (!aircraftRunning) {
+          aircraft.start();
+          aircraftRunning = true;
+        }
+      } else {
+        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
+        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
+
+        if (aircraftRunning) {
+          aircraft.stop();
+          aircraftRunning = false;
+        }
+      }
+    }
+
+    // ---- UI (HTML módosítás nélkül): betesszük a Control panelbe ----
+    // A "bordersCheckbox" és társai később jönnek, ezért itt csak előkészítünk egy helyet.
+    // (A DOM már kész, Control panel létezik)
+    const aircraftUiWrap = document.createElement("div");
+    aircraftUiWrap.style.marginTop = "12px";
+    aircraftUiWrap.style.paddingTop = "10px";
+    aircraftUiWrap.style.borderTop = "1px solid rgba(255,255,255,.10)";
+    aircraftUiWrap.innerHTML = `
+      <div class="muted" style="margin-bottom:6px;">Aircraft (OpenSky)</div>
+
+      <div class="row">
+        <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
+      </div>
+
+      <div class="row">
+        <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" checked /> Military only</label>
+        <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
+      </div>
+
+      <div class="muted" style="margin-top:6px;">
+        Tip: a “Military only” heurisztika (callsign/squawk) — nem 100%.
+      </div>
+    `;
+
+    // Control panel aljára tesszük
+    controlPanel.appendChild(aircraftUiWrap);
+
+    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
+    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
+    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
+
+    aircraftCheckbox.addEventListener("change", (e) => {
+      setAircraftEnabled(e.target.checked);
+    });
+
+    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => {
+      aircraft.setMilitaryOnly(e.target.checked);
+    });
+
+    aircraftTracksCheckbox.addEventListener("change", (e) => {
+      aircraft.setShowTracks(e.target.checked);
+      // ha tracks OFF, akkor a layer ott van, csak üres; ez oké
+    });
+
+    // Indítás (alapból ON)
+    setAircraftEnabled(true);
+    
     // ===== UI refs =====
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
