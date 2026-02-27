@@ -230,7 +230,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Borders + polygons =====
     // CHANGED: use local file to avoid GitHub raw instability
-    const BORDERS_GEOJSON_URL = "data/ne_110m_admin_0_countries.geojson";
+    const BORDERS_GEOJSON_URL = "data/me_countries.geojson";
 
     let bordersLayer = null;
     let bordersLoaded = false;
