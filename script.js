@@ -100,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ===== Aircraft layer ===== (NEW)
     // =========================
     const aircraft = createAircraftLayer(map, {
-      updateIntervalMs: 15000,
+      updateIntervalMs: 20000,
       trackSeconds: 300,   // 5 perc track
       militaryOnly: false,  // induljon military-szűrve
       showTracks: true
