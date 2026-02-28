@@ -213,6 +213,15 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
+    /* ===== HARD FIX: Control panel always scrolls (top-bottom fixed) ===== */
+#controlPanel{
+  top: 52px !important;     /* ugyanaz, mint most */
+  bottom: 12px !important;  /* adunk neki alját is -> fix magasság */
+  max-height: none !important;
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
   </style>
 </head>
 
