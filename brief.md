@@ -1,31 +1,31 @@
 # Middle East Security Monitor — Weekly Brief
 
-**Period:** 2026-02-21 → 2026-02-27 (last 7 days)
+**Period:** 2026-02-22 → 2026-02-28 (last 7 days)
 
 ## Summary stats
-- **Total events:** 144
-- **By category:** military 20, security 9, political 31, other 84
-- **By source:** news 140, ISW 4
+- **Total events:** 150
+- **By category:** military 22, security 8, political 36, other 84
+- **By source:** news 145, ISW 5
 
 ## Risk Index
-- **Total window risk:** **115.6**
+- **Total window risk:** **119.5**
 - **Top locations (risk):**
-  - Iran — 61.2
-  - Israel — 20.0
-  - Syria — 6.0
-  - Gaza Strip — 4.3
+  - Iran — 64.3
+  - Israel — 23.1
+  - Gaza Strip — 11.4
   - Tehran — 4.2
+  - Syria — 3.5
 
 ## Top events (weighted)
-- **3.5** · 2026-02-26 · military · isw · Iran — [Iran Update, February 26, 2026](https://understandingwar.org/research/middle-east/iran-update-february-26-2026/)
-- **3.0** · 2026-02-27 · military · news · Iran — [Trump Iranian missile claim unsupported by U.S. intelligence, say sources - Reuters](https://news.google.com/rss/articles/CBMizgFBVV95cUxQdjdtcHZhVklzakFVUGZxbVNMaFdtZ1J4SElJUDJDUkNoS19yY1JRSnRkOG45N1BTVDFreHN0M2toWE5obHNDMW9OZ1RnTVgtVjlNYXpzcWtjWTJXSExqT1pCOWhkSnczeEhFcGdMbHJieEJkTnJWZVZQOEswaUJEVUJDVkpwZXl0RkpkeUs2cGFQV2N2VjFuTE85YnNjZDJOWWR2YWZiLUNKNjRpWWRSVkdPS1JDU0QtcmdkS1lDV2pBREdVTk5wSFpvWkhFUQ)
-- **2.7** · 2026-02-26 · military · news · Oman — [Romania scrambles fighter jets after drone breaches its airspace - Reuters](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdEVxVWlnRGREOTNGSmVLejZqX19Rd2hhWTdXY2hOVGpUODN2RTN3M1g3eVBCejBiNWdfM2xwMlJCTUNxZ1JJY19GalZFNExMZ3FtZzNwWlZwMFRxc3cxcktWQW9UNWozLXhSbTNtNEVRY3VRX1FKR050S2ZhTXF4MzlKVFhJcXQ1WEw4ZDh2RlFEbnlrTnRjcklnbHBCbVR0d1lUeUdGVk9Hdw)
-- **2.7** · 2026-02-26 · military · news · Israel — [Israel carries out military incursion into Syria’s Quneitra in the Golan - Al Jazeera](https://news.google.com/rss/articles/CBMisgFBVV95cUxPbVhSbUNTZlJwQzNMenJCckR3SE9MZlF2Z0N2RlVBeVJPZTJ1SDdFa0tLMUloeFFIeFMzNVFZSEgtVUxPa19yQnoxajJ6Y0MzZGk4VkVXR1U4a3pyeENyTDd4SzZvTlBzVFd6aFlsRmZYbFIwZmhhc09BVEdlR0RxaW1KSWFlamFJQm95ZU5JeU9Pb3JDN2ozYnhlUUxncGc2TUt6YnhNYXlEVVdCbXI2REZR0gG3AUFVX3lxTFBwYWJqeDllWDQtTGNFaEZSX1hxd0ZyQlJCTnpPOXdva0xTa1J2NDkxZlNCUzE3WGp2Yk8xX3JOcDYxSnQ0T1RuY0xLT2pTN21WTExnX1pUcmtfQjBFRjB4SUNiQWQ0WThLQ3lvWTRWd0ZGS2Q5SGg2LXZBaEVxZVhyNHpacWk1VjdXc2hFdFBTb3VfMDlDUWNTMGpKamZxZFBuUzh2NWMwVXhEdi1TRU9tYk01eWZEVQ)
-- **2.7** · 2026-02-26 · military · news · Israel — [Israeli attacks on Lebanon’s Bekaa Valley kill Syrian teenager - Al Jazeera](https://news.google.com/rss/articles/CBMipAFBVV95cUxQTDJQT3NLaHk5M3BlT1RodHVhVFlIMUJfUElzYzZ3UzM5RXlnNFpwRHdFSEpJSlgta09FdmRadVRvTWs4dEpXMEl0NUp1Nm5DR19WRmh0a21KZTRoQXFDT29kcHdOaldFSDVVZ1NOMU40X2FOVVVraE5OSFFWbEl4UmIxRXllU3cwamZxQ3JudjY3T0VVeDNQYVdDZ0ZWVndZaTZUONIBqgFBVV95cUxPUjBoRFFpVlVDMW9wOE56bTQtMlVTWlY0QXhqU1liNVFkS0NodU1neXV6U09qYXhTb3R3MHBRbHloVEtFeThLNTZoNGt2WW54VDAzRGhHV3M5UGpGblJ4R25HQmNCbmw3NHZKYmh3aEliUEpDeXdxVkEtWGw4U1VucmV1cjlUM2FIOTg5OU1aMGc5dUFneVl2XzV2TExOd2VzeEFSbFhOeG9WQQ)
-- **2.7** · 2026-02-26 · military · news · Iran — [Rubio warns of Iran’s missile threat ahead of US-Iran talks - Al Jazeera](https://news.google.com/rss/articles/CBMirgFBVV95cUxPUkFiSU1Ic19ZYlF3UldYaVpHU2NxQnpPcVZlTm5Tdi1keUdjbmJLdThfTTRuWGZsd1VCZTE2WVR3UHNvS0lUeWJtOXY3bkhzMFQtZ1FiUXM3S0QwSDR3R2dNdE1VWTQtM2U1ZU5kUVVLWEZTRHIwcHE0MEtmRTlTMWhrZ3dsMk9HU1ZkSlNxY1EzVnA1NEtxZUhBWkgxRGMwNjBKTDFBS2ViM2JwOFHSAbMBQVVfeXFMTkRhcWVPeXpxQTg3cU1mUWlXSFRvTlhfREg4dlBiMTdWMDVDajdYcVphc3pJV2VrZ3NHT1Naa3RMejBJUzRoMWdQZGZFc0V3ZDM2SnVHM3lMNlJMTDRuSklfdkF1MWppWjM3WFN4SGMxM0NUd21WNGVFcWJwX0tzeVoxbmVkVHJrVXFxUnRwNG5QUENWMXNhVVBzRWFBN0pxNXFueXhIdnFRb3lrV3VCdFgwMDQ)
-- **2.4** · 2026-02-25 · military · news · Iran — [Exclusive: Saudi Arabia boosts oil output, exports for US attack on Iran contingency, sources say - Reuters](https://news.google.com/rss/articles/CBMiyAFBVV95cUxPOUNsQ3FDckstNXp3OTZ0TDNfWi1tMHVqRTY2NmF2UHNpb1k2aXBuNkN0UTdQOVhTckZBUGk3Z3JHTDJ3SGc4RjJyekxHelU2b3ZxN3hZMTE0aTBjb2lUbE5QWEdSMWZrRkJoeWZHcUItN212TVNGSXBDdWlzYkRrUVFNUC0wSjNpS2E5Zm1yRVZnZEZGRTFWcVA3bWg3bWhFckViOXpaWl9US2wySEIwN1Q1UjhzLTVWTmVoQjBHeV9oYmVVUlM2MQ)
-- **2.4** · 2026-02-25 · military · news · Iran — [Trump briefly lays out case for possible attack on Iran in State of the Union - Reuters](https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZUMyeXVHREUxTzNjdjV4RVhOUHNjQWZPZHBxVGJVU2ttMl9OTFlhaFlvNzBycXRGUmVjamdBY25fa3pTa3hEd1NoUGhoM3UyWHhkeTQ1VWs0RDRld2tHQWpLSGNpT0lOdzFnRFJtclJOWFJfbEtWdEY5aDZySUxmVjJvYmEwV0pEZjh3VXBIVW1zb09lLVRBMFl3UEN2Wm1haEdJeHpMSGQxWUk)
-- **2.4** · 2026-02-25 · military · news · Iran — [Surviving strike, Shamkhani resumes central role in Iran's war room - Reuters](https://news.google.com/rss/articles/CBMitwFBVV95cUxPNTdOZ3JtQmRzS2hxNXQwZ2tqR0FWcnRTRnNESkY5cV9QZ0ozM19yRVN1ajU1V2JLdmRnMDB5akxKb2pLTTJSOW9XRnVFOWl6OUcyOVY0bFU0ZjdoYW44YmRzS25xRXpLd3J1ajdLOE9oSTJmQV9tYUNvQzdtVzRuVlQ0dTJEZXJtVHBpbVB0cHNKTFRYRkRzNXM5c2dNc1loemN1enNfa0lxSFJLU2ZONk83SHR5clU)
-- **2.4** · 2026-02-25 · military · news · Tehran — [Trump makes Iran missile, protest deaths claims; Tehran slams ‘big lies’ - Al Jazeera](https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMV9wNS1Cc1pldDhOV1BFX1hjTWUyZHZzWl9UaW9UZTdVOGZodVNZRzVsX2tBNXI3VHlsZFhfU2lPNzlUSE9HUVJGZWUwMGEyX29XVWVXalVVRE1ja3V1X1R5ckNwN0J1eDk0Sm1MTzB6Q1huVU93STRIZURMdkhlVmpPdXlHcThQNnVFZ3UzVnNWTG9YSERqeTQ5Rk1CZWliV0xrNjhBTUlIUdIBrwFBVV95cUxPLW9kdkNUYnZENl9zTkl3WnZ5LU1HWjNZdVBRdUk4TEY4ZnByVGdWQ2Ziai04TWZXdXo2akc5NVpwZjlwaU9TYV9TQUoyTHgwOXE5RENnMk03UzFSck5pR0FNUXdwVzU5NHR3bXJxT0k3dFFBM3RpM0Y4ZHVBazJzRkhuTk1uTFRESjRUcC1BV29HS0V4YnlfUjZXaWJ3TDRpTlh0X1hvZ3NJT3VKX3Aw)
+- **3.1** · 2026-02-26 · military · isw · Iran — [Iran Update, February 26, 2026](https://understandingwar.org/research/middle-east/iran-update-february-26-2026/)
+- **3.0** · 2026-02-28 · military · news · Israel — [Israel has launched preventative attack against Iran, defence minister says - Reuters](https://news.google.com/rss/articles/CBMixwFBVV95cUxPVlRlN2Z2TkhPQkFaRmNJTkN4ZnFfNXR4QmxoVFljTDlsSVR2YkN3ZTBTU01yQjZvV1QtaUwyVWxLVWJsRmx5b2xNR2gwN0M1WDBVN1pmcGRRNHNEVUdlSldkY3FtRWtQa0h0SHpnSUtlRlpGTWcxdUxuRThyUXJUbXppdlVReVFKai1VcEtnYlNiTDdObnMzXzR0QnlDTnJIX2hleEJCUDBmcmtyZi1IR2xubVFPZlZFRDV6SlZ2bDIwVndlRTRJ)
+- **3.0** · 2026-02-28 · military · news · Israel — [Israeli strikes hit villages in southern Lebanon’s Iqlam al-Tuffah region - Al Jazeera](https://news.google.com/rss/articles/CBMiswFBVV95cUxONFRob3AtbU03a01PcnJ6WWJLaTR4SHNfNDlMWkZyd2NxMFpNN2RnWlBrQkFsemVRWm9RVXZhREFaQURaWUowR1dlX1dmc3pHSG1CS091UDNnd09IWGhVUlc0Uk5IU2gtVEFuTVJ1ei1Nb1k0YmlfQ1VuSlBaaFJWRVZXZjE1NHVnSWxNekR1U3F4NnRwME11aTMtN1BkSUZOTWpDUDhBSFZJeHIzV2dBendnNNIBuAFBVV95cUxQOXlxN3pma05GYVl2N0s3eGQtMkRHRHg4d1JEanZoMERpb2lJRmFSWkxhNHh4aDVlUVJ5TjhIUHNJcF9pMHhTb2JGaDBvU0FxcThDeGtsSTlCQnVVeVNudWtCdWw3SC04ck1vZV82V3dJU0pMOWJWQTdvME1QaHljcGxhczJVLVEwRG03OGtKT18yY20wUDhPbV9mNF9MWHFzS0V1eGluQUk3TUw3am9MMUd6UTVBN1hK)
+- **2.7** · 2026-02-27 · military · news · Iran — [Trump Iranian missile claim unsupported by U.S. intelligence, say sources - Reuters](https://news.google.com/rss/articles/CBMizgFBVV95cUxQdjdtcHZhVklzakFVUGZxbVNMaFdtZ1J4SElJUDJDUkNoS19yY1JRSnRkOG45N1BTVDFreHN0M2toWE5obHNDMW9OZ1RnTVgtVjlNYXpzcWtjWTJXSExqT1pCOWhkSnczeEhFcGdMbHJieEJkTnJWZVZQOEswaUJEVUJDVkpwZXl0RkpkeUs2cGFQV2N2VjFuTE85YnNjZDJOWWR2YWZiLUNKNjRpWWRSVkdPS1JDU0QtcmdkS1lDV2pBREdVTk5wSFpvWkhFUQ)
+- **2.7** · 2026-02-27 · military · news · Iran — [Trump 'not thrilled' with Iran after latest talks on nuclear programme](https://www.bbc.com/news/articles/c309vz0z893o?at_medium=RSS&at_campaign=rss)
+- **2.7** · 2026-02-27 · military · news · Iran — [Anxious days inside Iran as speculation grows of US strikes](https://www.bbc.com/news/articles/cm2reey52n9o?at_medium=RSS&at_campaign=rss)
+- **2.4** · 2026-02-26 · military · news · Iran — [What are Iran's ballistic missile capabilities? - Reuters](https://news.google.com/rss/articles/CBMirAFBVV95cUxNaE14eTdyWEQ4RUZGSXFwdEw0Tm9oX2hTaTFNakxuVUhUdk5CeFh2YjdzQ1lkTW5GTG1La19pTmNpT2huXzNfdFhqRU15aFNiYzNlN1l0SjZTX0I2ODRHRElsaTdCeEp6aTl5M0tmTmd5OVJBWGFKck01RktVeGY5ZzBraGRYZDhCWWtqN0p1cDhuSEx1NEMxRi0xNlViSHNtSWVXbVJmWlhscGN3)
+- **2.4** · 2026-02-26 · military · news · Iran — [Exclusive: Iran nears deal to buy supersonic anti-ship missiles from China - Reuters](https://news.google.com/rss/articles/CBMipgFBVV95cUxOVDcxOUdtdjVvdzQyUEJ4Yl9obXZSSDIwUUxBSHJIbDY1WEJSQWVPbFZDRnZreG5WU2xIMzN2VHBtS0w1MnlpdG5xS1pfNllyTTNfcDl6NTNoZzNUX1dzQk5jdkpETzRfT0pMOFZmbHNaLTRZZEhsZ2RmMGZaWnNOekxUS0VWc0NBRkV5NlVZdFhsRktlZXBMbEdOTUNmYlUxamFoOVRR)
+- **2.4** · 2026-02-26 · military · news · Oman — [Romania scrambles fighter jets after drone breaches its airspace - Reuters](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdEVxVWlnRGREOTNGSmVLejZqX19Rd2hhWTdXY2hOVGpUODN2RTN3M1g3eVBCejBiNWdfM2xwMlJCTUNxZ1JJY19GalZFNExMZ3FtZzNwWlZwMFRxc3cxcktWQW9UNWozLXhSbTNtNEVRY3VRX1FKR050S2ZhTXF4MzlKVFhJcXQ1WEw4ZDh2RlFEbnlrTnRjcklnbHBCbVR0d1lUeUdGVk9Hdw)
+- **2.4** · 2026-02-26 · military · news · Israel — [Israel carries out military incursion into Syria’s Quneitra in the Golan - Al Jazeera](https://news.google.com/rss/articles/CBMisgFBVV95cUxPbVhSbUNTZlJwQzNMenJCckR3SE9MZlF2Z0N2RlVBeVJPZTJ1SDdFa0tLMUloeFFIeFMzNVFZSEgtVUxPa19yQnoxajJ6Y0MzZGk4VkVXR1U4a3pyeENyTDd4SzZvTlBzVFd6aFlsRmZYbFIwZmhhc09BVEdlR0RxaW1KSWFlamFJQm95ZU5JeU9Pb3JDN2ozYnhlUUxncGc2TUt6YnhNYXlEVVdCbXI2REZR0gG3AUFVX3lxTFBwYWJqeDllWDQtTGNFaEZSX1hxd0ZyQlJCTnpPOXdva0xTa1J2NDkxZlNCUzE3WGp2Yk8xX3JOcDYxSnQ0T1RuY0xLT2pTN21WTExnX1pUcmtfQjBFRjB4SUNiQWQ0WThLQ3lvWTRWd0ZGS2Q5SGg2LXZBaEVxZVhyNHpacWk1VjdXc2hFdFBTb3VfMDlDUWNTMGpKamZxZFBuUzh2NWMwVXhEdi1TRU9tYk01eWZEVQ)
 
 _Auto-generated from `events.json`._
