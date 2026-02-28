@@ -207,6 +207,12 @@
     .hotspot-row.active{ outline: 2px solid rgba(255,255,255,.45); }
 
     canvas{ border-radius: 12px; border: 1px solid rgba(255,255,255,.10); }
+    /* Minimal fix: Control panel always scrolls inside */
+#controlPanel{
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
   </style>
 </head>
 
