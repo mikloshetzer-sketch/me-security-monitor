@@ -1,4 +1,8 @@
+// script.js (MODULE)
+
+// ---- NEW: imports (aircraft + crowd reports layers)
 import { createAircraftLayer } from "./js/aircraft-layer.js";
+import { createReportsLayer } from "./js/reports-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
@@ -33,55 +37,34 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ===== Accordion (Timeline) =====
+    // ===== Accordion (global helper, Timeline already uses it) =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
-    document.querySelectorAll(".acc-btn").forEach((btn) => {
-      const targetId = btn.getAttribute("data-acc");
-      const panel = document.getElementById(targetId);
-      if (!panel) return;
-      setArrow(btn, !panel.classList.contains("closed"));
-      btn.addEventListener("click", () => {
-        const wasClosed = panel.classList.contains("closed");
-        panel.classList.toggle("closed");
-        setArrow(btn, wasClosed);
-        if (wasClosed) setTimeout(() => updateAll(), 80);
+
+    function bindAccordionButtons(root = document) {
+      root.querySelectorAll(".acc-btn").forEach((btn) => {
+        if (btn.__bound) return;
+        btn.__bound = true;
+
+        const targetId = btn.getAttribute("data-acc");
+        const panel = document.getElementById(targetId);
+        if (!panel) return;
+
+        setArrow(btn, !panel.classList.contains("closed"));
+        btn.addEventListener("click", () => {
+          const wasClosed = panel.classList.contains("closed");
+          panel.classList.toggle("closed");
+          setArrow(btn, wasClosed);
+          if (wasClosed) setTimeout(() => updateAll(), 80);
+        });
       });
-    });
-
-    // ===== Control panel accordion helper (NEW) =====
-    function makeAccSection(title, contentEl, openByDefault = false) {
-      const wrap = document.createElement("div");
-      wrap.className = "acc";
-
-      const btn = document.createElement("button");
-      btn.className = "acc-btn";
-      btn.type = "button";
-      btn.setAttribute("aria-expanded", openByDefault ? "true" : "false");
-      btn.innerHTML = `<span>${title}</span><span class="acc-arrow">▶</span>`;
-
-      const panel = document.createElement("div");
-      panel.className = "acc-panel" + (openByDefault ? "" : " closed");
-      panel.appendChild(contentEl);
-
-      const arrow = btn.querySelector(".acc-arrow");
-      if (arrow) arrow.style.transform = openByDefault ? "rotate(90deg)" : "rotate(0deg)";
-
-      btn.addEventListener("click", () => {
-        const wasClosed = panel.classList.contains("closed");
-        panel.classList.toggle("closed");
-        const isOpen = !wasClosed;
-        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
-      });
-
-      wrap.appendChild(btn);
-      wrap.appendChild(panel);
-      return wrap;
     }
+
+    // bind existing timeline accordions
+    bindAccordionButtons(document);
 
     // ===== Map =====
     const map = L.map("map").setView([33.5, 44.0], 6);
@@ -95,56 +78,6 @@ window.addEventListener("DOMContentLoaded", () => {
       disableClusteringAtZoom: 10,
     });
     map.addLayer(clusterGroup);
-
-    // =========================
-    // ===== Aircraft layer ===== (NEW)
-    // =========================
-    const aircraft = createAircraftLayer(map, {
-      updateIntervalMs: 20000,
-      trackSeconds: 300,   // 5 perc track
-      militaryOnly: false,  // induljon military-szűrve
-      showTracks: true
-    });
-
-    let aircraftEnabled = true;
-    let aircraftRunning = false;
-
-    function setAircraftEnabled(on) {
-      aircraftEnabled = !!on;
-
-      if (aircraftEnabled) {
-        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
-        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
-
-        if (!aircraftRunning) {
-          aircraft.start();
-          aircraftRunning = true;
-        }
-      } else {
-        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
-        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
-
-        if (aircraftRunning) {
-          aircraft.stop();
-          aircraftRunning = false;
-        }
-      }
-    }
-
-    // Aircraft UI (Control panelbe kerül majd, accordion alá)
-    const aircraftUiWrap = document.createElement("div");
-    aircraftUiWrap.innerHTML = `
-      <div class="row">
-        <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
-      </div>
-      <div class="row">
-        <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" checked /> Military only</label>
-        <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
-      </div>
-      <div class="muted" style="margin-top:6px;">
-        Tip: “Military only” heurisztika (callsign/squawk) — nem 100%.
-      </div>
-    `;
 
     // ===== UI refs =====
     const heatCheckbox = $("heatmapCheckbox");
@@ -208,46 +141,108 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // ===== Rebuild Control panel as accordion (NEW) =====
-    // A meglévő Control panel elemeket két dobozba tesszük: Layers / Filters, és hozzáadjuk Flight trackinget.
-    const controlTitle = controlPanel.querySelector("h3");
+    // =====================================================================
+    // NEW: Flight tracking UI (Controls panel) + layers (Aircraft + Reports)
+    // =====================================================================
 
-    const oldNodes = [];
-    [...controlPanel.children].forEach((ch) => {
-      if (ch === controlTitle) return;
-      oldNodes.push(ch);
+    // Create the accordion section inside controlPanel (at the bottom)
+    const flightAccWrap = document.createElement("div");
+    flightAccWrap.className = "acc";
+    flightAccWrap.style.marginTop = "12px";
+    flightAccWrap.innerHTML = `
+      <button class="acc-btn" data-acc="accFlight" aria-expanded="false">
+        <span>Flight tracking</span><span class="acc-arrow">▶</span>
+      </button>
+      <div id="accFlight" class="acc-panel closed">
+        <div class="muted" style="margin-bottom:6px;">Aircraft (live ADS-B)</div>
+        <div class="row">
+          <label><input id="aircraftCheckbox" type="checkbox" /> Aircraft</label>
+        </div>
+        <div class="row">
+          <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
+        </div>
+        <div class="row">
+          <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
+        </div>
+        <div class="muted" style="margin-top:8px;border-top:1px solid rgba(255,255,255,.10);padding-top:8px;">
+          Crowd reports (Mastodon + Reddit)
+        </div>
+        <div class="row">
+          <label><input id="reportsCheckbox" type="checkbox" /> Crowd reports</label>
+        </div>
+        <div class="muted">Tip: “Military only” is heuristic and often empty.</div>
+      </div>
+    `;
+    controlPanel.appendChild(flightAccWrap);
+
+    // Bind accordion behavior for the newly added control section
+    bindAccordionButtons(flightAccWrap);
+
+    // Create layers (NOT tied to your events cluster)
+    const aircraft = createAircraftLayer(map, {
+      updateIntervalMs: 2000,
+      trackSeconds: 300,
+      militaryOnly: false,
+      showTracks: true,
     });
 
-    const layersBox = document.createElement("div");
-    const filtersBox = document.createElement("div");
+    const reports = createReportsLayer(map, { maxAgeHours: 48 });
 
-    let reachedCategory = false;
-    for (const node of oldNodes) {
-      if (node.classList?.contains("muted") && (node.textContent || "").toLowerCase().includes("category")) {
-        reachedCategory = true;
-      }
-      if (!reachedCategory) layersBox.appendChild(node);
-      else filtersBox.appendChild(node);
-    }
-
-    controlPanel.innerHTML = "";
-    controlPanel.appendChild(controlTitle);
-
-    controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
-    controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
-    controlPanel.appendChild(makeAccSection("Flight tracking", aircraftUiWrap, false));
-
-    // Aircraft UI handlers (most már a DOM-ban van)
+    // Wire UI
     const aircraftCheckbox = document.getElementById("aircraftCheckbox");
     const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
     const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
+    const reportsCheckbox = document.getElementById("reportsCheckbox");
 
-    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
-    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
-    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
+    function setAircraftVisible(on) {
+      if (on) {
+        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
+        if (aircraftTracksCheckbox.checked && !map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
+        aircraft.start?.();
+        // make sure tracks are visible above tiles
+        aircraft.tracksLayer.bringToFront?.();
+      } else {
+        aircraft.stop?.();
+        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
+        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
+      }
+    }
 
-    // Indítás (alapból ON)
-    setAircraftEnabled(true);
+    aircraftCheckbox.addEventListener("change", (e) => {
+      setAircraftVisible(e.target.checked);
+    });
+
+    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => {
+      aircraft.setMilitaryOnly?.(e.target.checked);
+    });
+
+    aircraftTracksCheckbox.addEventListener("change", (e) => {
+      aircraft.setShowTracks?.(e.target.checked);
+      if (!aircraftCheckbox.checked) return;
+
+      if (e.target.checked) {
+        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
+        aircraft.tracksLayer.bringToFront?.();
+      } else {
+        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
+      }
+    });
+
+    reportsCheckbox.addEventListener("change", async (e) => {
+      if (e.target.checked) {
+        try {
+          await reports.refresh();
+          if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
+          reports.layer.bringToFront?.();
+        } catch (err) {
+          console.error(err);
+          alert("reports.json betöltése nem sikerült. Nézd meg, létrejött-e a fájl a repóban.");
+          e.target.checked = false;
+        }
+      } else {
+        if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
+      }
+    });
 
     // ===== Date utilities =====
     function makeLast365Days() {
@@ -457,8 +452,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const b = regionBoundsFromBBoxes(region);
       if (b) map.fitBounds(b.pad(0.08));
     }
-
-    // ===== Country inference =====
+        // ===== Country inference =====
     function bboxContains(bbox, lng, lat) {
       return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
     }
@@ -502,6 +496,12 @@ window.addEventListener("DOMContentLoaded", () => {
       countryCache.set(key, null);
       return null;
     }
+    function getLatLng(ev) {
+      const lat = Number(ev?.location?.lat);
+      const lng = Number(ev?.location?.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+      return { lat, lng };
+    }
     function getCountry(ev) {
       const c1 = ev?.location?.country;
       if (c1) return String(c1).trim();
@@ -544,13 +544,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
 
-    function getLatLng(ev) {
-      const lat = Number(ev?.location?.lat);
-      const lng = Number(ev?.location?.lng);
-      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-      return { lat, lng };
-    }
-
     function matchesSearch(ev, q) {
       if (!q) return true;
       const t = norm(ev.title);
@@ -560,8 +553,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q);
     }
 
-    // ===== Hotspot filter (NEW) =====
-    // activeHotspot: {lat,lng,radiusKm,label}
+    // ===== Hotspot filter =====
     let activeHotspot = null;
     let hotspotCircle = null;
 
@@ -573,7 +565,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
       return 2 * R * Math.asin(Math.sqrt(aa));
     }
-
     function matchesHotspot(ev) {
       if (!activeHotspot) return true;
       const ll = getLatLng(ev);
@@ -581,7 +572,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const d = haversineKm(activeHotspot.lat, activeHotspot.lng, ll.lat, ll.lng);
       return d <= activeHotspot.radiusKm;
     }
-
     function setHotspot(h) {
       activeHotspot = h;
       clearHotspotBtn.style.display = activeHotspot ? "inline-block" : "none";
@@ -601,10 +591,9 @@ window.addEventListener("DOMContentLoaded", () => {
         map.fitBounds(hotspotCircle.getBounds().pad(0.2));
       }
     }
-
     clearHotspotBtn.addEventListener("click", () => {
       setHotspot(null);
-      renderHotspotList([]); // will be re-rendered by updateWeekly
+      renderHotspotList([]);
       updateAll();
     });
 
@@ -649,7 +638,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ===== Trend (restored) =====
+    // ===== Trend =====
     function drawTrendBars(counts, total, rangeText) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -720,7 +709,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return { counts, total, rangeText };
     }
 
-    // ===== Risk scoring for list =====
+    // ===== Risk scoring =====
     function recencyWeight(eventIndex, selectedIndex, windowDays) {
       const ageDays = selectedIndex - eventIndex;
       if (windowDays <= 1) return 1.0;
@@ -743,10 +732,11 @@ window.addEventListener("DOMContentLoaded", () => {
       if (weeklyHeatLayer && map.hasLayer(weeklyHeatLayer)) map.removeLayer(weeklyHeatLayer);
       weeklyHeatLayer = null;
     }
-        // ===== Weekly anomaly + hotspots (NEW, region-aware) =====
-    // Grid bin size in degrees (works well for ME scale)
-    const BIN_DEG = 1.0; // ~111km lat; good compromise
-    const HOTSPOT_RADIUS_KM = 120; // filter radius when clicked
+
+    // ===== Weekly anomaly + hotspots =====
+    const BIN_DEG = 1.0;
+    const HOTSPOT_RADIUS_KM = 120;
+
     function binKey(lat, lng) {
       const bx = Math.floor(lng / BIN_DEG);
       const by = Math.floor(lat / BIN_DEG);
@@ -759,9 +749,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return { lat: clat, lng: clng };
     }
 
-    // Weekly windows relative to selected date:
-    // "today" = selectedIndex day; 7d window excludes today: [selected-7 .. selected-1]
-    // prev 7: [selected-14 .. selected-8]
     function weeklyWindows(selectedIndex) {
       const a1 = Math.max(0, selectedIndex - 7);
       const a2 = Math.max(0, selectedIndex - 1);
@@ -782,7 +769,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const ll = getLatLng(ev);
         if (!ll) continue;
 
-        // apply same filters (region aware included via filterFn)
         if (!filterFn(ev, idx, { weeklyMode: true })) continue;
 
         const key = binKey(ll.lat, ll.lng);
@@ -790,7 +776,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx >= b1 && idx <= b2) bCounts.set(key, (bCounts.get(key) || 0) + 1);
       }
 
-      // anomaly score: (a - b) / max(1, b)
       const allKeys = new Set([...aCounts.keys(), ...bCounts.keys()]);
       const bins = [];
       for (const k of allKeys) {
@@ -798,7 +783,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const b = bCounts.get(k) || 0;
         const delta = a - b;
         const ratio = delta / Math.max(1, b);
-        // show only positive deltas
         if (delta <= 0) continue;
         const center = binCenterFromKey(k);
         bins.push({
@@ -809,7 +793,7 @@ window.addEventListener("DOMContentLoaded", () => {
           b,
           delta,
           ratio,
-          score: delta + ratio, // simple combined score
+          score: delta + ratio,
         });
       }
 
@@ -846,7 +830,6 @@ window.addEventListener("DOMContentLoaded", () => {
           const b = bins.find(x => x.key === key);
           if (!b) return;
 
-          // toggle on/off
           const isSame = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
           if (isSame) {
             setHotspot(null);
@@ -867,9 +850,8 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       const bins = computeWeeklyHotspots(selectedIndex, filterFn);
-
-      // build heat points: intensity based on delta+ratio
       const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
+
       clearWeeklyHeat();
       if (points.length) {
         weeklyHeatLayer = L.heatLayer(points, { radius: 38, blur: 28, maxZoom: 8 });
@@ -888,7 +870,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const q = norm(searchInput.value).trim();
 
       return (ev, evIndex, opts = {}) => {
-        // date window:
         if (!opts.weeklyMode) {
           const within = evIndex <= selectedIndex && evIndex >= selectedIndex - (windowDays - 1);
           if (!within) return false;
@@ -1043,7 +1024,7 @@ window.addEventListener("DOMContentLoaded", () => {
     actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
     pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
 
-    // ===== Alerts (restored simplified rolling 7d baseline; region-aware) =====
+    // ===== Alerts =====
     function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
@@ -1057,7 +1038,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
 
         if (category && norm(ev.category) !== category) continue;
-
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
         if (idx === todayIdx) today++;
@@ -1093,7 +1073,7 @@ window.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
-    // ===== Country risk (restored) =====
+    // ===== Country risk =====
     function updateCountryRisk(visibleEvents) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
@@ -1107,7 +1087,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No country data.</div>`;
     }
 
-    // ===== Actor escalation (light) =====
+    // ===== Actor escalation =====
     function updateEscalation(visibleEvents, selectedIndex) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
       const aMap = new Map();
@@ -1144,7 +1124,6 @@ window.addEventListener("DOMContentLoaded", () => {
     // ===== Data =====
     let eventsData = [];
 
-    // ===== Compute visible list window =====
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
