@@ -1,8 +1,4 @@
-// script.js (MODULE)
-
-// ---- NEW: imports (aircraft + crowd reports layers)
 import { createAircraftLayer } from "./js/aircraft-layer.js";
-import { createReportsLayer } from "./js/reports-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
@@ -37,34 +33,53 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ===== Accordion (global helper, Timeline already uses it) =====
+    // ===== Accordion helper =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
 
-    function bindAccordionButtons(root = document) {
-      root.querySelectorAll(".acc-btn").forEach((btn) => {
-        if (btn.__bound) return;
-        btn.__bound = true;
-
-        const targetId = btn.getAttribute("data-acc");
-        const panel = document.getElementById(targetId);
-        if (!panel) return;
-
-        setArrow(btn, !panel.classList.contains("closed"));
-        btn.addEventListener("click", () => {
-          const wasClosed = panel.classList.contains("closed");
-          panel.classList.toggle("closed");
-          setArrow(btn, wasClosed);
-          if (wasClosed) setTimeout(() => updateAll(), 80);
-        });
+    // Timeline accordions (HTML-ben vannak)
+    document.querySelectorAll(".acc-btn").forEach((btn) => {
+      const targetId = btn.getAttribute("data-acc");
+      const panel = targetId ? document.getElementById(targetId) : null;
+      if (!panel) return;
+      setArrow(btn, !panel.classList.contains("closed"));
+      btn.addEventListener("click", () => {
+        const wasClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        setArrow(btn, wasClosed);
+        if (wasClosed) setTimeout(() => updateAll(), 80);
       });
-    }
+    });
 
-    // bind existing timeline accordions
-    bindAccordionButtons(document);
+    // Control panel: dinamikus accordion szekció
+    function makeAccSection(title, contentEl, openByDefault = false) {
+      const wrap = document.createElement("div");
+      wrap.className = "acc";
+
+      const btn = document.createElement("button");
+      btn.className = "acc-btn";
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", openByDefault ? "true" : "false");
+      btn.innerHTML = `<span>${title}</span><span class="acc-arrow">▶</span>`;
+      setArrow(btn, openByDefault);
+
+      const panel = document.createElement("div");
+      panel.className = "acc-panel" + (openByDefault ? "" : " closed");
+      panel.appendChild(contentEl);
+
+      btn.addEventListener("click", () => {
+        const wasClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        setArrow(btn, wasClosed);
+      });
+
+      wrap.appendChild(btn);
+      wrap.appendChild(panel);
+      return wrap;
+    }
 
     // ===== Map =====
     const map = L.map("map").setView([33.5, 44.0], 6);
@@ -79,36 +94,102 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-        // ===== Control panel accordion helper =====
-    function makeAccSection(title, contentEl, openByDefault = false) {
-      const wrap = document.createElement("div");
-      wrap.className = "acc";
+    // Panel click/scroll ne menjen át a térképnek
+    L.DomEvent.disableScrollPropagation(controlPanel);
+    L.DomEvent.disableClickPropagation(controlPanel);
+    L.DomEvent.disableScrollPropagation(timelinePanel);
+    L.DomEvent.disableClickPropagation(timelinePanel);
+    L.DomEvent.disableScrollPropagation(legendPanel);
+    L.DomEvent.disableClickPropagation(legendPanel);
 
-      const btn = document.createElement("button");
-      btn.className = "acc-btn";
-      btn.type = "button";
-      btn.setAttribute("aria-expanded", openByDefault ? "true" : "false");
-      btn.innerHTML = `<span>${title}</span><span class="acc-arrow">▶</span>`;
+    // ===== Aircraft layer =====
+    const aircraft = createAircraftLayer(map, {
+      updateIntervalMs: 20000,
+      trackSeconds: 300,
+      militaryOnly: true,
+      showTracks: true,
+    });
 
-      const panel = document.createElement("div");
-      panel.className = "acc-panel" + (openByDefault ? "" : " closed");
-      panel.appendChild(contentEl);
+    let aircraftRunning = false;
+    function setAircraftEnabled(on) {
+      if (on) {
+        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
+        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
+        if (!aircraftRunning) {
+          aircraft.start();
+          aircraftRunning = true;
+        }
+      } else {
+        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
+        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
+        if (aircraftRunning) {
+          aircraft.stop();
+          aircraftRunning = false;
+        }
+      }
+    }
 
-      // arrow state
-      const arrow = btn.querySelector(".acc-arrow");
-      if (arrow) arrow.style.transform = openByDefault ? "rotate(90deg)" : "rotate(0deg)";
+    // ===== Crowd reports layer (JSON) =====
+    const crowdLayer = L.layerGroup();
+    let crowdTimer = null;
+    let crowdData = [];
 
-      btn.addEventListener("click", () => {
-        const wasClosed = panel.classList.contains("closed");
-        panel.classList.toggle("closed");
-        const isOpen = !wasClosed;
-        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
-      });
+    async function loadCrowdReports() {
+      try {
+        const res = await fetch("crowd_reports.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`crowd_reports.json HTTP ${res.status}`);
+        const data = await res.json();
+        crowdData = Array.isArray(data) ? data : [];
+      } catch (e) {
+        crowdData = [];
+        // nem dobunk hibát: lehet hogy még nincs ilyen fájl
+        console.warn("Crowd reports load failed:", e?.message || e);
+      }
+    }
 
-      wrap.appendChild(btn);
-      wrap.appendChild(panel);
-      return wrap;
+    function renderCrowdReports() {
+      crowdLayer.clearLayers();
+      for (const r of crowdData) {
+        const lat = Number(r.lat);
+        const lng = Number(r.lng);
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+
+        const m = L.circleMarker([lat, lng], {
+          radius: 6,
+          weight: 1.5,
+          opacity: 0.9,
+          fillOpacity: 0.25,
+        });
+
+        const src = r.source ? `<b>${r.source}</b>` : "<b>Report</b>";
+        const link = r.url ? ` · <a href="${r.url}" target="_blank" rel="noreferrer">open</a>` : "";
+        const when = r.date ? `<div class="muted">${r.date}</div>` : "";
+        const text = r.text ? `<div style="margin-top:6px;">${String(r.text).slice(0, 500)}</div>` : "";
+        const tags = Array.isArray(r.tags) && r.tags.length
+          ? `<div class="muted" style="margin-top:6px;">#${r.tags.join(" #")}</div>`
+          : "";
+
+        m.bindPopup(`${src}${link}${when}${text}${tags}`);
+        crowdLayer.addLayer(m);
+      }
+    }
+
+    async function startCrowdReports() {
+      if (!map.hasLayer(crowdLayer)) crowdLayer.addTo(map);
+      await loadCrowdReports();
+      renderCrowdReports();
+      if (crowdTimer) clearInterval(crowdTimer);
+      crowdTimer = setInterval(async () => {
+        await loadCrowdReports();
+        renderCrowdReports();
+      }, 60000);
+    }
+
+    function stopCrowdReports() {
+      if (crowdTimer) clearInterval(crowdTimer);
+      crowdTimer = null;
+      if (map.hasLayer(crowdLayer)) map.removeLayer(crowdLayer);
+      crowdLayer.clearLayers();
     }
 
     // ===== UI refs =====
@@ -173,145 +254,76 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // ===== Rebuild Control panel as accordion (Layers / Filters / Flight) =====
-// (csak egyszer fusson le)
-if (!controlPanel.dataset.accBuilt) {
-  controlPanel.dataset.accBuilt = "1";
+    // ===== Flight & Reports UI (Control panelbe) =====
+    const flightUiWrap = document.createElement("div");
+    flightUiWrap.innerHTML = `
+      <div class="row">
+        <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
+      </div>
+      <div class="row">
+        <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" checked /> Military only</label>
+        <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
+      </div>
+      <div class="muted" style="margin-top:6px;">
+        Tip: “Military only” heurisztika (callsign/squawk) — nem 100%.
+      </div>
 
-  const controlTitle = controlPanel.querySelector("h3");
-
-  // gyűjtsük össze a controlPanel gyerekeit a title kivételével
-  const oldNodes = [];
-  [...controlPanel.children].forEach((ch) => {
-    if (ch === controlTitle) return;
-    oldNodes.push(ch);
-  });
-
-  const layersBox = document.createElement("div");
-  const filtersBox = document.createElement("div");
-
-  // a "Category filters" feliratnál vágjuk ketté
-  let reachedCategory = false;
-  for (const node of oldNodes) {
-    const txt = (node.textContent || "").toLowerCase();
-    if (node.classList?.contains("muted") && txt.includes("category")) {
-      reachedCategory = true;
-    }
-    if (!reachedCategory) layersBox.appendChild(node);
-    else filtersBox.appendChild(node);
-  }
-
-  // panel újraépítés
-  controlPanel.innerHTML = "";
-  if (controlTitle) controlPanel.appendChild(controlTitle);
-
-  controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
-  controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
-  controlPanel.appendChild(makeAccSection("Flight tracking", aircraftUiWrap, false));
-}
-
-    // =====================================================================
-    // NEW: Flight tracking UI (Controls panel) + layers (Aircraft + Reports)
-    // =====================================================================
-
-    // Create the accordion section inside controlPanel (at the bottom)
-    const flightAccWrap = document.createElement("div");
-    flightAccWrap.className = "acc";
-    flightAccWrap.style.marginTop = "12px";
-    flightAccWrap.innerHTML = `
-      <button class="acc-btn" data-acc="accFlight" aria-expanded="false">
-        <span>Flight tracking</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accFlight" class="acc-panel closed">
-        <div class="muted" style="margin-bottom:6px;">Aircraft (live ADS-B)</div>
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;">Crowd reports</div>
         <div class="row">
-          <label><input id="aircraftCheckbox" type="checkbox" /> Aircraft</label>
+          <label><input id="crowdCheckbox" type="checkbox" /> Enable</label>
         </div>
-        <div class="row">
-          <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
-        </div>
-        <div class="row">
-          <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
-        </div>
-        <div class="muted" style="margin-top:8px;border-top:1px solid rgba(255,255,255,.10);padding-top:8px;">
-          Crowd reports (Mastodon + Reddit)
-        </div>
-        <div class="row">
-          <label><input id="reportsCheckbox" type="checkbox" /> Crowd reports</label>
-        </div>
-        <div class="muted">Tip: “Military only” is heuristic and often empty.</div>
+        <div class="muted">Input: crowd_reports.json</div>
       </div>
     `;
-    controlPanel.appendChild(flightAccWrap);
 
-    // Bind accordion behavior for the newly added control section
-    bindAccordionButtons(flightAccWrap);
+    // ===== Control panel szeletelés: Layers / Filters / Flight & Reports =====
+    if (!controlPanel.dataset.accBuilt) {
+      controlPanel.dataset.accBuilt = "1";
 
-    // Create layers (NOT tied to your events cluster)
-    const aircraft = createAircraftLayer(map, {
-      updateIntervalMs: 2000,
-      trackSeconds: 300,
-      militaryOnly: false,
-      showTracks: true,
-    });
+      let titleEl = controlPanel.querySelector("h3");
+      if (!titleEl) {
+        titleEl = document.createElement("h3");
+        titleEl.textContent = "Controls";
+      }
 
-    const reports = createReportsLayer(map, { maxAgeHours: 48 });
+      const children = [...controlPanel.children];
+      const contentNodes = children.filter((n) => n !== titleEl);
 
-    // Wire UI
+      const layersBox = document.createElement("div");
+      const filtersBox = document.createElement("div");
+
+      let reachedCategory = false;
+      for (const node of contentNodes) {
+        const txt = (node.textContent || "").toLowerCase();
+        if (node.classList?.contains("muted") && txt.includes("category filters")) {
+          reachedCategory = true;
+        }
+        if (!reachedCategory) layersBox.appendChild(node);
+        else filtersBox.appendChild(node);
+      }
+
+      controlPanel.innerHTML = "";
+      controlPanel.appendChild(titleEl);
+      controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
+      controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
+      controlPanel.appendChild(makeAccSection("Flight & Reports", flightUiWrap, false));
+    }
+
     const aircraftCheckbox = document.getElementById("aircraftCheckbox");
     const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
     const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
-    const reportsCheckbox = document.getElementById("reportsCheckbox");
+    const crowdCheckbox = document.getElementById("crowdCheckbox");
 
-    function setAircraftVisible(on) {
-      if (on) {
-        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
-        if (aircraftTracksCheckbox.checked && !map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
-        aircraft.start?.();
-        // make sure tracks are visible above tiles
-        aircraft.tracksLayer.bringToFront?.();
-      } else {
-        aircraft.stop?.();
-        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
-        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
-      }
-    }
-
-    aircraftCheckbox.addEventListener("change", (e) => {
-      setAircraftVisible(e.target.checked);
+    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
+    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
+    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
+    crowdCheckbox.addEventListener("change", async (e) => {
+      if (e.target.checked) await startCrowdReports();
+      else stopCrowdReports();
     });
 
-    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => {
-      aircraft.setMilitaryOnly?.(e.target.checked);
-    });
-
-    aircraftTracksCheckbox.addEventListener("change", (e) => {
-      aircraft.setShowTracks?.(e.target.checked);
-      if (!aircraftCheckbox.checked) return;
-
-      if (e.target.checked) {
-        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
-        aircraft.tracksLayer.bringToFront?.();
-      } else {
-        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
-      }
-    });
-
-    reportsCheckbox.addEventListener("change", async (e) => {
-      if (e.target.checked) {
-        try {
-          await reports.refresh();
-          if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
-          reports.layer.bringToFront?.();
-        } catch (err) {
-          console.error(err);
-          alert("reports.json betöltése nem sikerült. Nézd meg, létrejött-e a fájl a repóban.");
-          e.target.checked = false;
-        }
-      } else {
-        if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
-      }
-    });
+    setAircraftEnabled(true);
 
     // ===== Date utilities =====
     function makeLast365Days() {
@@ -464,7 +476,6 @@ if (!controlPanel.dataset.accBuilt) {
       const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
       if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
       const geojson = await res.json();
-
       bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
       bordersLoaded = true;
 
@@ -521,7 +532,7 @@ if (!controlPanel.dataset.accBuilt) {
       const b = regionBoundsFromBBoxes(region);
       if (b) map.fitBounds(b.pad(0.08));
     }
-        // ===== Country inference =====
+
     function bboxContains(bbox, lng, lat) {
       return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
     }
@@ -565,12 +576,14 @@ if (!controlPanel.dataset.accBuilt) {
       countryCache.set(key, null);
       return null;
     }
+
     function getLatLng(ev) {
       const lat = Number(ev?.location?.lat);
       const lng = Number(ev?.location?.lng);
       if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
       return { lat, lng };
     }
+
     function getCountry(ev) {
       const c1 = ev?.location?.country;
       if (c1) return String(c1).trim();
@@ -587,12 +600,12 @@ if (!controlPanel.dataset.accBuilt) {
       }
       return "Unknown";
     }
+
     function matchesRegion(ev) {
       if (activeRegion === "ALL") return true;
       return regionContainsCountry(activeRegion, getCountry(ev));
     }
 
-    // ===== Source/category =====
     function sourceType(ev) {
       const t = norm(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
@@ -634,6 +647,7 @@ if (!controlPanel.dataset.accBuilt) {
       const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
       return 2 * R * Math.asin(Math.sqrt(aa));
     }
+
     function matchesHotspot(ev) {
       if (!activeHotspot) return true;
       const ll = getLatLng(ev);
@@ -641,6 +655,7 @@ if (!controlPanel.dataset.accBuilt) {
       const d = haversineKm(activeHotspot.lat, activeHotspot.lng, ll.lat, ll.lng);
       return d <= activeHotspot.radiusKm;
     }
+
     function setHotspot(h) {
       activeHotspot = h;
       clearHotspotBtn.style.display = activeHotspot ? "inline-block" : "none";
@@ -660,6 +675,7 @@ if (!controlPanel.dataset.accBuilt) {
         map.fitBounds(hotspotCircle.getBounds().pad(0.2));
       }
     }
+
     clearHotspotBtn.addEventListener("click", () => {
       setHotspot(null);
       renderHotspotList([]);
@@ -686,9 +702,7 @@ if (!controlPanel.dataset.accBuilt) {
         ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>`
         : `${srcName}`;
 
-      m.bindPopup(
-        `<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`
-      );
+      m.bindPopup(`<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`);
       return m;
     }
 
@@ -750,44 +764,14 @@ if (!controlPanel.dataset.accBuilt) {
         ctx.fillRect(x, y, Math.max(1, barW - 2), bh);
       }
 
-      ctx.globalAlpha = 0.9;
-      ctx.font = "11px system-ui, -apple-system, Segoe UI, Roboto, Arial";
-      ctx.fillStyle = "#fff";
-      ctx.fillText(`Total: ${total}`, padL, 16);
-
       trendTotalEl.textContent = String(total);
       trendRangeEl.textContent = rangeText;
 
       ctx.globalAlpha = 1.0;
     }
 
-    function computeTrend(selectedIndex, windowDays, filters) {
-      const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
-      const dates = days365.slice(startIndex, selectedIndex + 1);
-      const counts = new Array(dates.length).fill(0);
-
-      for (const ev of eventsData) {
-        const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-        if (idx < startIndex || idx > selectedIndex) continue;
-        if (!filters(ev, idx)) continue;
-        counts[idx - startIndex] += 1;
-      }
-      const total = counts.reduce((a, b) => a + b, 0);
-      const rangeText = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
-      return { counts, total, rangeText };
-    }
-
-    // ===== Risk scoring =====
-    function recencyWeight(eventIndex, selectedIndex, windowDays) {
-      const ageDays = selectedIndex - eventIndex;
-      if (windowDays <= 1) return 1.0;
-      const t = ageDays / (windowDays - 1);
-      return 1.0 - 0.6 * t;
-    }
-    function eventRiskScore(ev, eventIndex, selectedIndex, windowDays) {
-      return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
-    }
+    // ===== Data =====
+    let eventsData = [];
 
     // ===== Heat layers =====
     let heatLayer = null;
@@ -813,11 +797,8 @@ if (!controlPanel.dataset.accBuilt) {
     }
     function binCenterFromKey(k) {
       const [by, bx] = k.split(":").map(Number);
-      const clat = (by + 0.5) * BIN_DEG;
-      const clng = (bx + 0.5) * BIN_DEG;
-      return { lat: clat, lng: clng };
+      return { lat: (by + 0.5) * BIN_DEG, lng: (bx + 0.5) * BIN_DEG };
     }
-
     function weeklyWindows(selectedIndex) {
       const a1 = Math.max(0, selectedIndex - 7);
       const a2 = Math.max(0, selectedIndex - 1);
@@ -825,10 +806,8 @@ if (!controlPanel.dataset.accBuilt) {
       const b2 = Math.max(0, selectedIndex - 8);
       return { a1, a2, b1, b2 };
     }
-
-    function computeWeeklyHotspots(selectedIndex, filterFn) {
+        function computeWeeklyHotspots(selectedIndex, filterFn) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
-
       const aCounts = new Map();
       const bCounts = new Map();
 
@@ -837,7 +816,6 @@ if (!controlPanel.dataset.accBuilt) {
         if (idx === undefined) continue;
         const ll = getLatLng(ev);
         if (!ll) continue;
-
         if (!filterFn(ev, idx, { weeklyMode: true })) continue;
 
         const key = binKey(ll.lat, ll.lng);
@@ -854,19 +832,10 @@ if (!controlPanel.dataset.accBuilt) {
         const ratio = delta / Math.max(1, b);
         if (delta <= 0) continue;
         const center = binCenterFromKey(k);
-        bins.push({
-          key: k,
-          lat: center.lat,
-          lng: center.lng,
-          a,
-          b,
-          delta,
-          ratio,
-          score: delta + ratio,
-        });
+        bins.push({ key: k, lat: center.lat, lng: center.lng, a, b, delta, ratio, score: delta + ratio });
       }
 
-      bins.sort((x, y) => (y.score - x.score));
+      bins.sort((x, y) => y.score - x.score);
       return bins.slice(0, 10);
     }
 
@@ -900,11 +869,9 @@ if (!controlPanel.dataset.accBuilt) {
           if (!b) return;
 
           const isSame = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
-          if (isSame) {
-            setHotspot(null);
-          } else {
-            setHotspot({ lat: b.lat, lng: b.lng, radiusKm: HOTSPOT_RADIUS_KM, label: `Weekly hotspot Δ${b.delta}` });
-          }
+          if (isSame) setHotspot(null);
+          else setHotspot({ lat: b.lat, lng: b.lng, radiusKm: HOTSPOT_RADIUS_KM, label: `Weekly hotspot Δ${b.delta}` });
+
           renderHotspotList(bins);
           updateAll();
         };
@@ -930,6 +897,35 @@ if (!controlPanel.dataset.accBuilt) {
       }
 
       renderHotspotList(bins);
+    }
+
+    // ===== Risk scoring =====
+    function recencyWeight(eventIndex, selectedIndex, windowDays) {
+      const ageDays = selectedIndex - eventIndex;
+      if (windowDays <= 1) return 1.0;
+      const t = ageDays / (windowDays - 1);
+      return 1.0 - 0.6 * t;
+    }
+    function eventRiskScore(ev, eventIndex, selectedIndex, windowDays) {
+      return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
+    }
+
+    // ===== Trend computation =====
+    function computeTrend(selectedIndex, windowDays, filterFn) {
+      const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
+      const dates = days365.slice(startIndex, selectedIndex + 1);
+      const counts = new Array(dates.length).fill(0);
+
+      for (const ev of eventsData) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+        if (idx < startIndex || idx > selectedIndex) continue;
+        if (!filterFn(ev, idx, { weeklyMode: false })) continue;
+        counts[idx - startIndex] += 1;
+      }
+      const total = counts.reduce((a, b) => a + b, 0);
+      const rangeText = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
+      return { counts, total, rangeText };
     }
 
     // ===== Main filters =====
@@ -962,7 +958,7 @@ if (!controlPanel.dataset.accBuilt) {
       };
     }
 
-    // ===== Heatmap (normal) =====
+    // ===== Normal heatmap =====
     function updateNormalHeatmap(visibleEvents, selectedIndex, windowDays) {
       if (!heatCheckbox.checked) { clearHeat(); return; }
 
@@ -1093,7 +1089,7 @@ if (!controlPanel.dataset.accBuilt) {
     actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
     pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
 
-    // ===== Alerts =====
+    // ===== Alerts (rolling 7d baseline) =====
     function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
@@ -1105,7 +1101,6 @@ if (!controlPanel.dataset.accBuilt) {
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
-
         if (category && norm(ev.category) !== category) continue;
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
@@ -1190,9 +1185,7 @@ if (!controlPanel.dataset.accBuilt) {
         : `<div class="muted">No positive actor deltas.</div>`;
     }
 
-    // ===== Data =====
-    let eventsData = [];
-
+    // ===== Compute visible list window =====
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
@@ -1217,6 +1210,7 @@ if (!controlPanel.dataset.accBuilt) {
       const filterFn = filterBuilder(selectedIndex, windowDays);
       const visible = computeVisible(selectedIndex, windowDays, filterFn);
 
+      // markers
       clusterGroup.clearLayers();
       markerByEventId.clear();
       for (const ev of visible) {
@@ -1229,7 +1223,7 @@ if (!controlPanel.dataset.accBuilt) {
       updateNormalHeatmap(visible, selectedIndex, windowDays);
       updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn);
 
-      const trend = computeTrend(selectedIndex, windowDays, (ev, idx) => filterFn(ev, idx, { weeklyMode: false }));
+      const trend = computeTrend(selectedIndex, windowDays, filterFn);
       drawTrendBars(trend.counts, trend.total, trend.rangeText);
 
       updateStats(visible);
@@ -1270,7 +1264,7 @@ if (!controlPanel.dataset.accBuilt) {
     }
 
     // ===== Wiring =====
-    function refresh() { updateAll(); }
+    const refresh = () => updateAll();
 
     slider.addEventListener("input", refresh);
     searchInput.addEventListener("input", refresh);
@@ -1322,7 +1316,7 @@ if (!controlPanel.dataset.accBuilt) {
     // ===== Load events =====
     fetch("events.json")
       .then((r) => r.json())
-      .then(async (data) => {
+      .then((data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
         eventsData = data.map((ev, i) => {
           const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
@@ -1331,7 +1325,6 @@ if (!controlPanel.dataset.accBuilt) {
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
-
         updateAll();
       })
       .catch((err) => {
@@ -1341,6 +1334,6 @@ if (!controlPanel.dataset.accBuilt) {
 
   } catch (e) {
     console.error("Fatal init error:", e);
-    alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
+    alert("Init error: " + (e?.message || e));
   }
 });
