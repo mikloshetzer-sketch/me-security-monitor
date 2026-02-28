@@ -173,6 +173,43 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
+    // ===== Rebuild Control panel as accordion (Layers / Filters / Flight) =====
+// (csak egyszer fusson le)
+if (!controlPanel.dataset.accBuilt) {
+  controlPanel.dataset.accBuilt = "1";
+
+  const controlTitle = controlPanel.querySelector("h3");
+
+  // gyűjtsük össze a controlPanel gyerekeit a title kivételével
+  const oldNodes = [];
+  [...controlPanel.children].forEach((ch) => {
+    if (ch === controlTitle) return;
+    oldNodes.push(ch);
+  });
+
+  const layersBox = document.createElement("div");
+  const filtersBox = document.createElement("div");
+
+  // a "Category filters" feliratnál vágjuk ketté
+  let reachedCategory = false;
+  for (const node of oldNodes) {
+    const txt = (node.textContent || "").toLowerCase();
+    if (node.classList?.contains("muted") && txt.includes("category")) {
+      reachedCategory = true;
+    }
+    if (!reachedCategory) layersBox.appendChild(node);
+    else filtersBox.appendChild(node);
+  }
+
+  // panel újraépítés
+  controlPanel.innerHTML = "";
+  if (controlTitle) controlPanel.appendChild(controlTitle);
+
+  controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
+  controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
+  controlPanel.appendChild(makeAccSection("Flight tracking", aircraftUiWrap, false));
+}
+
     // =====================================================================
     // NEW: Flight tracking UI (Controls panel) + layers (Aircraft + Reports)
     // =====================================================================
