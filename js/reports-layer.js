@@ -41,12 +41,16 @@ export function createReportsLayer(map, opts = {}) {
 
     const hint = r.aircraft_hint ? `<b>${r.aircraft_hint}</b> · ` : "";
     const place = r.location?.name ? ` · ${r.location.name}` : "";
-    const when = r.published_at ? new Date(r.published_at).toISOString().slice(0, 16).replace("T", " ") : "—";
+    const when = r.published_at
+      ? new Date(r.published_at).toISOString().slice(0, 16).replace("T", " ")
+      : "—";
+
+    const safeText = (r.text || "").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
     m.bindPopup(`
       ${hint}${r.title || "Crowd report"}<br/>
       <small>${when}${place} · ${r.confidence || "LOW"} · ${src.type || ""}</small><br/>
-      <small>${(r.text || "").replace(/</g, "&lt;").slice(0, 300)}...</small><br/>
+      <small>${safeText.slice(0, 320)}${safeText.length > 320 ? "..." : ""}</small><br/>
       <small>${link}</small>
     `);
 
