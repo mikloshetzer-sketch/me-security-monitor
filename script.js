@@ -79,6 +79,38 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
+        // ===== Control panel accordion helper =====
+    function makeAccSection(title, contentEl, openByDefault = false) {
+      const wrap = document.createElement("div");
+      wrap.className = "acc";
+
+      const btn = document.createElement("button");
+      btn.className = "acc-btn";
+      btn.type = "button";
+      btn.setAttribute("aria-expanded", openByDefault ? "true" : "false");
+      btn.innerHTML = `<span>${title}</span><span class="acc-arrow">▶</span>`;
+
+      const panel = document.createElement("div");
+      panel.className = "acc-panel" + (openByDefault ? "" : " closed");
+      panel.appendChild(contentEl);
+
+      // arrow state
+      const arrow = btn.querySelector(".acc-arrow");
+      if (arrow) arrow.style.transform = openByDefault ? "rotate(90deg)" : "rotate(0deg)";
+
+      btn.addEventListener("click", () => {
+        const wasClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        const isOpen = !wasClosed;
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+      });
+
+      wrap.appendChild(btn);
+      wrap.appendChild(panel);
+      return wrap;
+    }
+
     // ===== UI refs =====
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
