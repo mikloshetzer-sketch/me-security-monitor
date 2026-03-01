@@ -1,196 +1,155 @@
 import json
 import re
-import time
 from datetime import datetime, timezone
-from pathlib import Path
-
 import feedparser
 
-OUT_PATH = Path("reports.json")
+OUTPUT_PATH = "reports.json"
 
-# --------- CONFIG ---------
-MASTODON_INSTANCES = [
-    "https://mastodon.social",
-    "https://fosstodon.org",
-]
-MASTODON_TAGS = [
-    "planespotting",
-    "osint",
-    "aviation",
-    "militaryaviation",
-    "militaryaircraft",
-    "airpolicing",
+# --- Middle East helyszótár (bővíthető) ---
+# Kulcs: regex (lowercase szövegre), érték: (lat, lng, címke)
+PLACE_RULES = [
+    # Iraq
+    (r"\bbaghdad\b", (33.3152, 44.3661, "Baghdad, Iraq")),
+    (r"\bbasra\b", (30.5085, 47.7804, "Basra, Iraq")),
+    (r"\berbil\b", (36.1911, 44.0092, "Erbil, Iraq")),
+    (r"\bmosul\b", (36.3456, 43.1575, "Mosul, Iraq")),
+    (r"\bkirkuk\b", (35.4681, 44.3922, "Kirkuk, Iraq")),
+
+    # Iran
+    (r"\btehran\b", (35.6892, 51.3890, "Tehran, Iran")),
+    (r"\bisfahan\b", (32.6539, 51.6660, "Isfahan, Iran")),
+    (r"\bshiraz\b", (29.5918, 52.5837, "Shiraz, Iran")),
+    (r"\bt\u00e4briz\b|\btabriz\b", (38.0962, 46.2738, "Tabriz, Iran")),
+    (r"\bbandar abbas\b", (27.1865, 56.2808, "Bandar Abbas, Iran")),
+
+    # Syria
+    (r"\bdamascus\b|\bdamaskus\b", (33.5138, 36.2765, "Damascus, Syria")),
+    (r"\baleppo\b", (36.2021, 37.1343, "Aleppo, Syria")),
+    (r"\bhoms\b", (34.7324, 36.7137, "Homs, Syria")),
+    (r"\bdeir ez[-\s]?zor\b", (35.3359, 40.1408, "Deir ez-Zor, Syria")),
+
+    # Lebanon
+    (r"\bbeirut\b", (33.8938, 35.5018, "Beirut, Lebanon")),
+    (r"\btyre\b|\bsur\b", (33.2700, 35.2033, "Tyre, Lebanon")),
+    (r"\bsidon\b|\bsaida\b", (33.5606, 35.3758, "Sidon, Lebanon")),
+
+    # Israel/Palestine
+    (r"\btel aviv\b", (32.0853, 34.7818, "Tel Aviv, Israel")),
+    (r"\bhaifa\b", (32.7940, 34.9896, "Haifa, Israel")),
+    (r"\bgaza\b|\bgaza strip\b", (31.3547, 34.3088, "Gaza")),
+    (r"\bjerusalem\b", (31.7683, 35.2137, "Jerusalem")),
+    (r"\bwest bank\b", (31.9, 35.2, "West Bank")),
+
+    # Jordan
+    (r"\bamman\b", (31.9454, 35.9284, "Amman, Jordan")),
+    (r"\baqaba\b", (29.5320, 35.0063, "Aqaba, Jordan")),
+
+    # Gulf / Arabian Peninsula
+    (r"\briyadh\b", (24.7136, 46.6753, "Riyadh, Saudi Arabia")),
+    (r"\bjeddah\b", (21.4858, 39.1925, "Jeddah, Saudi Arabia")),
+    (r"\bdhahran\b", (26.2361, 50.0393, "Dhahran, Saudi Arabia")),
+    (r"\bdoha\b", (25.2854, 51.5310, "Doha, Qatar")),
+    (r"\bmanama\b", (26.2235, 50.5876, "Manama, Bahrain")),
+    (r"\bkuwait city\b|\bkuwait\b", (29.3759, 47.9774, "Kuwait City, Kuwait")),
+    (r"\bdubai\b", (25.2048, 55.2708, "Dubai, UAE")),
+    (r"\babu dhabi\b", (24.4539, 54.3773, "Abu Dhabi, UAE")),
+    (r"\bmuscat\b", (23.5880, 58.3829, "Muscat, Oman")),
+
+    # Yemen
+    (r"\bsanaa\b|\bsana'a\b", (15.3694, 44.1910, "Sanaa, Yemen")),
+    (r"\baden\b", (12.7855, 45.0187, "Aden, Yemen")),
+    (r"\bhodeidah\b|\bal hudaydah\b", (14.7978, 42.9545, "Al Hudaydah, Yemen")),
 ]
 
-REDDIT_FEEDS = [
-    "https://www.reddit.com/r/planespotting/.rss",
-    "https://www.reddit.com/r/aviation/.rss",
-    "https://www.reddit.com/r/osint/.rss",
+# Middle East “jelenlét” kulcsszavak – ha semmi hely nincs, ezek alapján sem akarjuk megtartani
+ME_SIGNAL = [
+    "iraq", "iran", "syria", "lebanon", "israel", "gaza", "west bank", "jordan",
+    "yemen", "saudi", "qatar", "bahrain", "kuwait", "oman", "uae", "dubai", "abu dhabi",
+    "middle east", "centcom"
 ]
-
-AC_HINT_PATTERNS = [
-    r"\bC-?17\b", r"\bC-?130\b", r"\bA400M\b", r"\bKC-?135\b", r"\bKC-?46\b", r"\bA330\b.*\bMRTT\b",
-    r"\bE-?3\b", r"\bE-?7\b", r"\bP-?8\b", r"\bRC-?135\b",
-    r"\bF-?15\b", r"\bF-?16\b", r"\bF-?18\b", r"\bF-?35\b", r"\bTyphoon\b", r"\bRafale\b",
-    r"\bAWACS\b", r"\btanker\b", r"\brefuel\b", r"\brefuelling\b",
-    r"\bdrone\b", r"\bUAV\b", r"\bMQ-?9\b", r"\bReaper\b", r"\bBayraktar\b", r"\bHeron\b",
-]
-
-GAZETTEER = {
-    "baghdad": (33.3152, 44.3661),
-    "basra": (30.5085, 47.7804),
-    "erbil": (36.1900, 44.0089),
-    "mosul": (36.3650, 43.1320),
-    "damascus": (33.5138, 36.2765),
-    "aleppo": (36.2021, 37.1343),
-    "latakia": (35.5236, 35.7916),
-    "beirut": (33.8938, 35.5018),
-    "tripoli lebanon": (34.4367, 35.8497),
-    "jerusalem": (31.7683, 35.2137),
-    "tel aviv": (32.0853, 34.7818),
-    "gaza": (31.5017, 34.4668),
-    "amman": (31.9454, 35.9284),
-    "riyadh": (24.7136, 46.6753),
-    "jeddah": (21.4858, 39.1925),
-    "doha": (25.2854, 51.5310),
-    "manama": (26.2235, 50.5876),
-    "kuwait city": (29.3759, 47.9774),
-    "muscat": (23.5880, 58.3829),
-    "abu dhabi": (24.4539, 54.3773),
-    "dubai": (25.2048, 55.2708),
-    "sana'a": (15.3694, 44.1910),
-    "aden": (12.7855, 45.0187),
-    "tehran": (35.6892, 51.3890),
-    "isfahan": (32.6546, 51.6680),
-    "ankara": (39.9334, 32.8597),
-    "istanbul": (41.0082, 28.9784),
-    "izmir": (38.4237, 27.1428),
-    "cairo": (30.0444, 31.2357),
-    "alexandria": (31.2001, 29.9187),
-}
 
 def norm(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").strip().lower())
 
-def pick_aircraft_hint(text: str) -> str | None:
-    for pat in AC_HINT_PATTERNS:
-        m = re.search(pat, text or "", flags=re.IGNORECASE)
-        if m:
-            return m.group(0)
+def find_location(text_lc: str):
+    for pat, (lat, lng, label) in PLACE_RULES:
+        if re.search(pat, text_lc):
+            return {"name": label, "lat": lat, "lng": lng}
     return None
 
-def extract_location(text: str):
-    t = norm(text)
-    for key, (lat, lng) in GAZETTEER.items():
-        if key in t:
-            return {"name": key.title(), "lat": lat, "lng": lng}
-    return None
+def looks_middle_east(text_lc: str) -> bool:
+    return any(k in text_lc for k in ME_SIGNAL)
 
-def parse_mastodon_tag_rss(instance: str, tag: str):
-    url = f"{instance}/tags/{tag}.rss"
-    feed = feedparser.parse(url)
-    out = []
-    for e in feed.entries:
-        title = getattr(e, "title", "") or ""
-        link = getattr(e, "link", "") or ""
-        summary = getattr(e, "summary", "") or ""
-        published = getattr(e, "published", "") or ""
-        out.append({
-            "source": "mastodon",
-            "source_name": instance.replace("https://", ""),
-            "tag": tag,
-            "title": title,
-            "text": re.sub(r"<[^>]+>", " ", summary),
-            "url": link,
-            "published_raw": published,
-        })
-    return out
+def safe_id(seed: str) -> str:
+    # stabil, egyszerű id
+    return "r_" + str(abs(hash(seed)))
 
-def parse_reddit_rss(url: str):
-    feed = feedparser.parse(url)
-    out = []
-    for e in feed.entries:
-        title = getattr(e, "title", "") or ""
-        link = getattr(e, "link", "") or ""
-        summary = getattr(e, "summary", "") or ""
-        published = getattr(e, "published", "") or ""
-        out.append({
-            "source": "reddit",
-            "source_name": "reddit.com",
-            "tag": None,
-            "title": title,
-            "text": re.sub(r"<[^>]+>", " ", summary),
-            "url": link,
-            "published_raw": published,
-        })
-    return out
-
-def to_iso_utc(_: str) -> str:
-    return datetime.now(timezone.utc).isoformat()
-
-def make_id(item: dict) -> str:
-    base = f"{item.get('source')}|{item.get('url')}|{item.get('title')}"
-    return "r_" + str(abs(hash(base)))
+def fetch_feeds():
+    # TODO: ide tedd be a saját RSS URL-jeidet (Mastodon hashtag RSS, Reddit RSS stb.)
+    # Példa (csak minta!):
+    FEEDS = [
+        # ("mastodon.social", "https://mastodon.social/tags/middleeast.rss", "middleeast"),
+        # ("reddit", "https://www.reddit.com/r/CombatFootage/.rss", "CombatFootage"),
+    ]
+    return FEEDS
 
 def main():
-    items = []
-
-    for inst in MASTODON_INSTANCES:
-        for tag in MASTODON_TAGS:
-            try:
-                items.extend(parse_mastodon_tag_rss(inst, tag))
-                time.sleep(0.25)
-            except Exception as ex:
-                print("mastodon error", inst, tag, ex)
-
-    for feed_url in REDDIT_FEEDS:
-        try:
-            items.extend(parse_reddit_rss(feed_url))
-            time.sleep(0.25)
-        except Exception as ex:
-            print("reddit error", feed_url, ex)
+    feeds = fetch_feeds()
 
     reports = []
-    seen = set()
+    now = datetime.now(timezone.utc).isoformat()
 
-    for it in items:
-        rid = make_id(it)
-        if rid in seen:
-            continue
-        seen.add(rid)
+    for source_name, url, tag in feeds:
+        d = feedparser.parse(url)
+        for e in d.entries:
+            title = getattr(e, "title", "") or ""
+            link = getattr(e, "link", "") or ""
+            summary = getattr(e, "summary", "") or getattr(e, "description", "") or ""
+            published = getattr(e, "published", "") or getattr(e, "updated", "") or now
 
-        text = (it.get("title", "") + " " + it.get("text", "")).strip()
-        hint = pick_aircraft_hint(text)
-        loc = extract_location(text)
+            text = f"{title}\n{summary}".strip()
+            text_lc = norm(re.sub(r"<[^>]+>", " ", text))  # strip HTML tags
 
-        if not hint and not re.search(r"\b(aircraft|plane|jet|helicopter|military|tanker|awacs|refuel|planespot)\b", text, re.IGNORECASE):
-            continue
+            # ME szűrés: ha sem hely, sem jel nincs → dobjuk
+            loc = find_location(text_lc)
+            if not loc and not looks_middle_east(text_lc):
+                continue
 
-        reports.append({
-            "id": rid,
-            "type": "crowd_report",
-            "source": {
-                "type": it["source"],
-                "name": it["source_name"],
-                "url": it.get("url", ""),
-                "tag": it.get("tag"),
-            },
-            "title": (it.get("title", "") or "")[:160],
-            "text": text[:600],
-            "aircraft_hint": hint,
-            "confidence": "LOW",
-            "published_at": to_iso_utc(it.get("published_raw", "")),
-            "location": loc,
-        })
+            # ha nincs konkrét hely, akkor inkább dobjuk (map-hez kell lat/lng)
+            if not loc:
+                continue
 
-    payload = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+            rid = safe_id(link or (source_name + "|" + title + "|" + published))
+
+            reports.append({
+                "id": rid,
+                "type": "crowd_report",
+                "source": {
+                    "type": "mastodon" if "mastodon" in source_name else ("reddit" if "reddit" in source_name else "rss"),
+                    "name": source_name,
+                    "url": link,
+                    "tag": tag
+                },
+                "title": title,
+                "text": re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", summary)).strip(),
+                "published_at": published,
+                "location": loc,
+                # duplikáljuk is, hogy a frontend egyszerűen kezelje:
+                "lat": loc["lat"],
+                "lng": loc["lng"],
+                "confidence": "MED"
+            })
+
+    out = {
+        "generated_at": now,
         "count": len(reports),
-        "reports": reports,
+        "reports": reports
     }
 
-    OUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Wrote {OUT_PATH} ({len(reports)} reports)")
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+
+    print(f"Wrote {len(reports)} reports to {OUTPUT_PATH}")
 
 if __name__ == "__main__":
     main()
