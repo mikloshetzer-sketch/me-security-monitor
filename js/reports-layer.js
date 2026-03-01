@@ -1,13 +1,21 @@
 export function createReportsLayer(map, opts = {}) {
   const options = {
     maxAgeHours: opts.maxAgeHours ?? 48,
+    middleEastOnly: opts.middleEastOnly ?? true,
   };
 
   const layer = L.layerGroup();
 
+  // Durva Middle East bounding box (nem tökéletes, de jó zajszűrő)
+  // Lat: 10..42, Lng: 25..65
+  function inMiddleEast(lat, lng) {
+    return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
+  }
+
   function ageOk(iso) {
     try {
       const t = new Date(iso).getTime();
+      if (!Number.isFinite(t)) return true;
       const h = (Date.now() - t) / 3600000;
       return h <= options.maxAgeHours;
     } catch {
@@ -24,7 +32,27 @@ export function createReportsLayer(map, opts = {}) {
     "></div>`;
   }
 
+  function getLatLng(r) {
+    // 1) prefer location.lat/lng
+    const lat1 = Number(r?.location?.lat);
+    const lng1 = Number(r?.location?.lng);
+    if (Number.isFinite(lat1) && Number.isFinite(lng1)) return { lat: lat1, lng: lng1 };
+
+    // 2) fallback to flat lat/lng
+    const lat2 = Number(r?.lat);
+    const lng2 = Number(r?.lng);
+    if (Number.isFinite(lat2) && Number.isFinite(lng2)) return { lat: lat2, lng: lng2 };
+
+    return null;
+  }
+
+  function safeText(s) {
+    return String(s || "").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
   function makeMarker(r) {
+    const ll = getLatLng(r);
+
     const icon = L.divIcon({
       className: "",
       html: markerHtml(),
@@ -32,25 +60,26 @@ export function createReportsLayer(map, opts = {}) {
       iconAnchor: [6, 6],
     });
 
-    const m = L.marker([r.location.lat, r.location.lng], { icon });
+    const m = L.marker([ll.lat, ll.lng], { icon });
 
     const src = r?.source || {};
     const link = src.url
       ? `<a href="${src.url}" target="_blank" rel="noreferrer">open source</a>`
       : "";
 
-    const hint = r.aircraft_hint ? `<b>${r.aircraft_hint}</b> · ` : "";
-    const place = r.location?.name ? ` · ${r.location.name}` : "";
+    const hint = r.aircraft_hint ? `<b>${safeText(r.aircraft_hint)}</b> · ` : "";
+    const place = r?.location?.name ? ` · ${safeText(r.location.name)}` : "";
     const when = r.published_at
       ? new Date(r.published_at).toISOString().slice(0, 16).replace("T", " ")
       : "—";
 
-    const safeText = (r.text || "").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const title = safeText(r.title || "Crowd report");
+    const text = safeText(r.text || "");
 
     m.bindPopup(`
-      ${hint}${r.title || "Crowd report"}<br/>
-      <small>${when}${place} · ${r.confidence || "LOW"} · ${src.type || ""}</small><br/>
-      <small>${safeText.slice(0, 320)}${safeText.length > 320 ? "..." : ""}</small><br/>
+      ${hint}${title}<br/>
+      <small>${when}${place} · ${safeText(r.confidence || "LOW")} · ${safeText(src.type || "")}</small><br/>
+      <small>${text.slice(0, 320)}${text.length > 320 ? "..." : ""}</small><br/>
       <small>${link}</small>
     `);
 
@@ -63,11 +92,27 @@ export function createReportsLayer(map, opts = {}) {
     const payload = await res.json();
 
     layer.clearLayers();
-    const reports = Array.isArray(payload?.reports) ? payload.reports : [];
+
+    // accept either {reports:[...]} or a root array [...]
+    const reports = Array.isArray(payload) ? payload : (Array.isArray(payload?.reports) ? payload.reports : []);
+
+    let added = 0;
     for (const r of reports) {
       if (!ageOk(r.published_at)) continue;
-      if (!r.location || !Number.isFinite(r.location.lat) || !Number.isFinite(r.location.lng)) continue;
+
+      const ll = getLatLng(r);
+      if (!ll) continue;
+
+      if (options.middleEastOnly && !inMiddleEast(ll.lat, ll.lng)) continue;
+
       layer.addLayer(makeMarker(r));
+      added++;
+    }
+
+    // Debug: ha semmi nem jött, legalább tudd a konzolból
+    // (nem dobunk hibát, csak jelzünk)
+    if (added === 0) {
+      console.warn("[reports-layer] 0 markers added. Check reports.json location/lat/lng + filters.");
     }
   }
 
