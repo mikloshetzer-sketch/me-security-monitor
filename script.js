@@ -1,9 +1,14 @@
+// script.js (FULL REPLACE)
+// Works with your current index.html IDs + ./js/aircraft-layer.js + ./js/reports-layer.js
+
 import { createAircraftLayer } from "./js/aircraft-layer.js";
 import { createReportsLayer } from "./js/reports-layer.js";
-import { createStaticPoiLayer } from "./js/static-poi-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
+    // =========================
+    // Helpers
+    // =========================
     const $ = (id) => {
       const el = document.getElementById(id);
       if (!el) throw new Error(`Missing element: #${id}`);
@@ -11,7 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
     };
     const norm = (s) => String(s || "").trim().toLowerCase();
 
-    // ===== Panels + toggles (start closed) =====
+    // =========================
+    // Panels + toggles (start closed)
+    // =========================
     const controlPanel = $("controlPanel");
     const timelinePanel = $("timelinePanel");
     const legendPanel = $("legendPanel");
@@ -21,28 +28,38 @@ window.addEventListener("DOMContentLoaded", () => {
     const legendToggle = $("legendToggle");
 
     function togglePanel(panelEl) {
-      const isClosed = panelEl.classList.contains("closed");
       panelEl.classList.toggle("closed");
-      panelEl.style.display = isClosed ? "block" : "none";
     }
-
-    [controlPanel, timelinePanel, legendPanel].forEach((p) => {
-      p.classList.add("closed");
-      p.style.display = "none";
-    });
-
+    [controlPanel, timelinePanel, legendPanel].forEach((p) => p.classList.add("closed"));
     controlToggle.addEventListener("click", () => togglePanel(controlPanel));
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ===== Accordion (Timeline only: buttons with data-acc) =====
+    // =========================
+    // Accordion (Timeline panel) - uses existing .acc-btn + data-acc
+    // =========================
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
+    document.querySelectorAll(".acc-btn[data-acc]").forEach((btn) => {
+      const targetId = btn.getAttribute("data-acc");
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const open = !panel.classList.contains("closed");
+      setArrow(btn, open);
+      btn.addEventListener("click", () => {
+        const wasClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        setArrow(btn, wasClosed);
+        if (wasClosed) setTimeout(() => updateAll(), 60);
+      });
+    });
 
-    // ===== Control panel accordion helper =====
+    // =========================
+    // Control panel accordion helper
+    // =========================
     function makeAccSection(title, contentEl, openByDefault = false) {
       const wrap = document.createElement("div");
       wrap.className = "acc";
@@ -73,10 +90,13 @@ window.addEventListener("DOMContentLoaded", () => {
       return wrap;
     }
 
-    // ===== Map =====
-    const map = L.map("map").setView([33.5, 44.0], 6);
+    // =========================
+    // Map
+    // =========================
+    const map = L.map("map", { preferCanvas: true }).setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
+      maxZoom: 18,
     }).addTo(map);
 
     const clusterGroup = L.markerClusterGroup({
@@ -86,26 +106,29 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // ===== Layers: Aircraft + Reports =====
+    // =========================
+    // Layers: Aircraft + Reports
+    // =========================
+
+    // Aircraft layer (civil + mil)
     const aircraft = createAircraftLayer(map, {
-      updateIntervalMs: 20000,
+      // If you want slower refresh: set 15000 or 20000
+      updateIntervalMs: 15000,
       trackSeconds: 300,
-      militaryOnly: false, // <- civil látszódjon
+      militaryOnly: false, // IMPORTANT: show civil by default
       showTracks: true,
     });
 
-    const reports = createReportsLayer(map, {
-      maxAgeHours: 48,
-      middleEastOnly: true,
-    });
-
-    let aircraftRunning = false;
     let aircraftEnabled = true;
+    let aircraftRunning = false;
+
     function setAircraftEnabled(on) {
       aircraftEnabled = !!on;
+
       if (aircraftEnabled) {
         if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
         if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
+
         if (!aircraftRunning) {
           aircraft.start();
           aircraftRunning = true;
@@ -113,6 +136,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else {
         if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
         if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
+
         if (aircraftRunning) {
           aircraft.stop();
           aircraftRunning = false;
@@ -120,23 +144,43 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    let reportsEnabled = false;
-    async function setReportsEnabled(on) {
+    // Crowd reports layer (reports.json)
+    const reports = createReportsLayer(map, { maxAgeHours: 48, middleEastOnly: true });
+
+    let reportsEnabled = true;
+    let reportsTimer = null;
+
+    async function refreshReportsSafe() {
+      try {
+        await reports.refresh();
+      } catch (e) {
+        console.warn("[reports] refresh failed:", e?.message || e);
+      }
+    }
+
+    function setReportsEnabled(on) {
       reportsEnabled = !!on;
       if (reportsEnabled) {
         if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
-        await reports.refresh();
+        refreshReportsSafe();
+        if (!reportsTimer) {
+          // refresh every 10 minutes
+          reportsTimer = window.setInterval(refreshReportsSafe, 10 * 60 * 1000);
+        }
       } else {
         if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
+        if (reportsTimer) window.clearInterval(reportsTimer);
+        reportsTimer = null;
       }
     }
-    const pois = createStaticPoiLayer(map, {
-  url: "./data/strategic_sites.geojson",
-  middleEastOnly: true,
-});
-pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
 
-    // ===== UI refs (existing) =====
+    // Start layers
+    setAircraftEnabled(true);
+    setReportsEnabled(true);
+
+    // =========================
+    // UI refs (existing HTML IDs)
+    // =========================
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
     const bordersCheckbox = $("bordersCheckbox");
@@ -198,41 +242,62 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // ===== Rebuild Control panel as accordion (fix: small footprint) =====
-    function rebuildControlPanelAccordion() {
-      const title = controlPanel.querySelector("h3");
-      if (!title) return;
+    // =========================
+    // Rebuild CONTROL panel into collapsible sections (no HTML edit needed)
+    // =========================
+    (function rebuildControlPanelAccordion() {
+      const titleEl = controlPanel.querySelector("h3");
+      if (!titleEl) return;
 
-      // Locate existing blocks by their contained IDs (robust)
-      const heatRow = document.getElementById("heatmapCheckbox")?.closest(".row");
-      const bordersRow = document.getElementById("bordersCheckbox")?.closest(".row");
+      // Find the original blocks by anchoring around known IDs
+      const heatRow = heatCheckbox.closest(".row");
+      const bordersRow = bordersCheckbox.closest(".row");
 
-      // Category section: the muted div containing "Category filters" + 4 rows after it
-      const catHeader = [...controlPanel.querySelectorAll(".muted")].find((d) =>
-        norm(d.textContent).includes("category filters")
-      );
-      const srcHeader = [...controlPanel.querySelectorAll(".muted")].find((d) =>
-        norm(d.textContent).includes("source filters")
-      );
-      const winHeader = [...controlPanel.querySelectorAll(".muted")].find((d) =>
-        norm(d.textContent).includes("window")
-      );
+      // Headings (muted) for filters
+      const mutedEls = [...controlPanel.querySelectorAll(".muted")];
+      const catHeading = mutedEls.find((x) => norm(x.textContent).includes("category filters"));
+      const srcHeading = mutedEls.find((x) => norm(x.textContent).includes("source filters"));
+      const winHeading = mutedEls.find((x) => norm(x.textContent).startsWith("window"));
 
-      // region block (div containing regionSelect)
-      const regionBlock = document.getElementById("regionSelect")?.closest("div[style]");
-      // borders style block (div containing borderWeightSlider)
-      const bordersStyleBlock = document.getElementById("borderWeightSlider")?.closest("div[style]");
-      // hotspots block (div containing hotspotList)
-      const hotspotsBlock = document.getElementById("hotspotList")?.closest("div[style]");
+      const regionBlock = regionSelect?.parentElement; // wrapper div
+      const borderStyleBlock = borderWeightSlider?.closest("div[style*='border-top']");
+      const hotspotBlock = hotspotListEl?.closest("div[style*='border-top']");
 
-      // --- Create new UI chunks for Layers (reports + aircraft)
-      const layersExtras = document.createElement("div");
-      layersExtras.innerHTML = `
-        <div class="row" style="margin-top:6px;">
-          <label><input id="reportsCheckbox" type="checkbox" /> Crowd reports</label>
-          <span class="muted" style="font-size:11px;">reports.json</span>
-        </div>
-        <div class="muted" style="margin-top:6px;">Flight tracking</div>
+      // If something is missing, don't break the app
+      if (!heatRow || !bordersRow || !regionBlock || !borderStyleBlock || !hotspotBlock) {
+        console.warn("[control] Could not fully rebuild accordion (missing blocks). Keeping original.");
+        return;
+      }
+
+      // Collect filter rows
+      const filterBox = document.createElement("div");
+      // Move category heading + its rows
+      if (catHeading) filterBox.appendChild(catHeading);
+      catCheckboxes.forEach((cb) => filterBox.appendChild(cb.closest(".row")));
+      // Move source heading + its rows
+      if (srcHeading) filterBox.appendChild(srcHeading);
+      srcCheckboxes.forEach((cb) => filterBox.appendChild(cb.closest(".row")));
+      // Move window heading + its rows
+      if (winHeading) filterBox.appendChild(winHeading);
+      windowRadios.forEach((r) => filterBox.appendChild(r.closest(".row")));
+
+      // Layers box
+      const layersBox = document.createElement("div");
+      layersBox.appendChild(heatRow);
+      layersBox.appendChild(bordersRow);
+
+      // Region & borders
+      const regionBordersBox = document.createElement("div");
+      regionBordersBox.appendChild(regionBlock);
+      regionBordersBox.appendChild(borderStyleBlock);
+
+      // Hotspots
+      const hotspotsBox = document.createElement("div");
+      hotspotsBox.appendChild(hotspotBlock);
+
+      // Flight tracking UI (create in JS)
+      const flightBox = document.createElement("div");
+      flightBox.innerHTML = `
         <div class="row">
           <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
         </div>
@@ -241,100 +306,55 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
           <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
         </div>
         <div class="muted" style="margin-top:6px;">
-          Tip: “Military only” heurisztika — nem 100%.
+          Civil + military visible by default. “Military only” is heuristic, not 100%.
         </div>
       `;
 
-      // --- Build accordion containers
-      const layersBox = document.createElement("div");
-      const filtersBox = document.createElement("div");
-      const regionBox = document.createElement("div");
-      const styleBox = document.createElement("div");
-      const hotspotsBox = document.createElement("div");
+      // Crowd reports UI
+      const reportsBox = document.createElement("div");
+      reportsBox.innerHTML = `
+        <div class="row">
+          <label><input id="reportsCheckbox" type="checkbox" checked /> Crowd reports (Mastodon/Reddit RSS)</label>
+        </div>
+        <div class="row">
+          <span class="muted">Source: reports.json</span>
+          <span class="btn-mini" id="reportsRefreshBtn">Refresh</span>
+        </div>
+        <div class="muted" style="margin-top:6px;">
+          Auto refresh: every 10 minutes. Only Middle East bbox.
+        </div>
+      `;
 
-      // Layers: heat + weekly + borders + extras
-      if (heatRow) layersBox.appendChild(heatRow);
-      if (bordersRow) layersBox.appendChild(bordersRow);
-      layersBox.appendChild(layersExtras);
-
-      // Filters: category + source + window (move everything between headers)
-      function moveSection(headerEl, untilHeaderEl) {
-        const box = document.createElement("div");
-        if (!headerEl) return box;
-        box.appendChild(headerEl);
-        let n = headerEl.nextElementSibling;
-        while (n && n !== untilHeaderEl) {
-          const next = n.nextElementSibling;
-          box.appendChild(n);
-          n = next;
-        }
-        return box;
-      }
-      const catsBox = moveSection(catHeader, srcHeader);
-      const srcBox = moveSection(srcHeader, winHeader);
-
-      // Window radios are after winHeader until regionBlock (or end)
-      const winBox = document.createElement("div");
-      if (winHeader) {
-        winBox.appendChild(winHeader);
-        let n = winHeader.nextElementSibling;
-        while (n && n !== regionBlock) {
-          const next = n.nextElementSibling;
-          // stop if we hit the region block (it is a styled div)
-          if (n === regionBlock) break;
-          // also stop if we somehow hit borders style
-          if (n === bordersStyleBlock) break;
-          // and stop if we hit hotspots
-          if (n === hotspotsBlock) break;
-          winBox.appendChild(n);
-          n = next;
-        }
-      }
-
-      // FiltersBox = cats + sources + window
-      filtersBox.appendChild(catsBox);
-      filtersBox.appendChild(srcBox);
-      filtersBox.appendChild(winBox);
-
-      // Region + Borders style + Hotspots
-      if (regionBlock) regionBox.appendChild(regionBlock);
-      if (bordersStyleBlock) styleBox.appendChild(bordersStyleBlock);
-      if (hotspotsBlock) hotspotsBox.appendChild(hotspotsBlock);
-
-      // Now rebuild panel cleanly
+      // Now rebuild panel content
       controlPanel.innerHTML = "";
-      controlPanel.appendChild(title);
+      controlPanel.appendChild(titleEl);
+
       controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
-      controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
-      controlPanel.appendChild(makeAccSection("Region", regionBox, false));
-      controlPanel.appendChild(makeAccSection("Borders style", styleBox, false));
+      controlPanel.appendChild(makeAccSection("Filters", filterBox, false));
+      controlPanel.appendChild(makeAccSection("Region & Borders", regionBordersBox, false));
       controlPanel.appendChild(makeAccSection("Hotspots", hotspotsBox, false));
-    }
+      controlPanel.appendChild(makeAccSection("Flight tracking", flightBox, false));
+      controlPanel.appendChild(makeAccSection("Crowd reports", reportsBox, false));
 
-    rebuildControlPanelAccordion();
+      // Wire new controls
+      const aircraftCheckbox = document.getElementById("aircraftCheckbox");
+      const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
+      const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
 
-    // Now that we injected new checkboxes, wire them
-    const reportsCheckbox = document.getElementById("reportsCheckbox");
-    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
-    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
-    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
-
-    if (aircraftCheckbox) aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
-    if (aircraftMilitaryOnlyCheckbox)
+      aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
       aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
-    if (aircraftTracksCheckbox)
       aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
 
-    if (reportsCheckbox)
-      reportsCheckbox.addEventListener("change", (e) => {
-        setReportsEnabled(e.target.checked).catch((err) => console.warn("[reports] enable failed:", err));
-      });
+      const reportsCheckbox = document.getElementById("reportsCheckbox");
+      const reportsRefreshBtn = document.getElementById("reportsRefreshBtn");
 
-    // Default: aircraft ON, reports OFF (te kapcsolod)
-    setAircraftEnabled(true);
-    aircraft.setMilitaryOnly(false);
+      reportsCheckbox.addEventListener("change", (e) => setReportsEnabled(e.target.checked));
+      reportsRefreshBtn.addEventListener("click", () => refreshReportsSafe());
+    })();
 
-    // ===== Date utilities =====
+    // =========================
+    // Date utilities
+    // =========================
     function makeLast365Days() {
       const days = [];
       const today = new Date();
@@ -345,7 +365,6 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       }
       return days;
     }
-
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
     slider.max = days365.length - 1;
@@ -366,7 +385,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return set;
     }
 
-    // ===== Actors =====
+    // =========================
+    // Actors
+    // =========================
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -393,44 +414,28 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       const found = [];
       for (const a of ACTORS) {
         for (const p of a.patterns) {
-          if (text.includes(p)) {
-            found.push(a.name);
-            break;
-          }
+          if (text.includes(p)) { found.push(a.name); break; }
         }
       }
       return [...new Set(found)];
     }
     const pairKey = (a, b) => [a, b].sort().join(" + ");
-    function matchesActor(ev) {
-      return !activeActor || actorsInEvent(ev).includes(activeActor);
-    }
+    function matchesActor(ev) { return !activeActor || actorsInEvent(ev).includes(activeActor); }
     function matchesPair(ev) {
       if (!activePair) return true;
       const found = actorsInEvent(ev);
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
-    // ===== Region model =====
+    // =========================
+    // Region model
+    // =========================
     let activeRegion = "ALL";
     const REGION_ALIASES = {
-      LEVANT: new Set([
-        "israel",
-        "lebanon",
-        "syria",
-        "jordan",
-        "iraq",
-        "palestine",
-        "palestinian territories",
-        "palestinian territory",
-        "west bank",
-        "gaza",
-        "gaza strip",
-      ]),
-      GULF: new Set(["saudi arabia", "united arab emirates", "uae", "qatar", "bahrain", "kuwait", "oman", "yemen", "iran"]),
-      NORTH: new Set(["egypt", "turkey"]),
+      LEVANT: new Set(["israel","lebanon","syria","jordan","iraq","palestine","palestinian territories","palestinian territory","west bank","gaza","gaza strip"]),
+      GULF: new Set(["saudi arabia","united arab emirates","uae","qatar","bahrain","kuwait","oman","yemen","iran"]),
+      NORTH: new Set(["egypt","turkey"]),
     };
-
     function regionContainsCountry(region, countryName) {
       if (!region || region === "ALL") return true;
       const set = REGION_ALIASES[region];
@@ -440,13 +445,14 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       if (region === "LEVANT" && (c.includes("palestin") || c.includes("gaza") || c.includes("west bank"))) return true;
       return false;
     }
-
     function updateRegionNote() {
-      regionNote.textContent = activeRegion === "ALL" ? "No region filter" : `Region: ${activeRegion}`;
+      regionNote.textContent = (activeRegion === "ALL") ? "No region filter" : `Region: ${activeRegion}`;
     }
     updateRegionNote();
 
-    // ===== Borders + polygons =====
+    // =========================
+    // Borders + polygons
+    // =========================
     const BORDERS_GEOJSON_URL =
       "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
@@ -471,34 +477,27 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       const props = feature?.properties || {};
       return props.ADMIN || props.NAME || props.name || props.SOVEREIGNT || "Unknown";
     }
-
     function bordersStyle(feature) {
       const name = featureCountryName(feature);
       const inRegion = activeRegion !== "ALL" && regionContainsCountry(activeRegion, name);
-      const fillOpacity = borderFillOn && inRegion ? borderFillOpacity : 0;
+      const fillOpacity = (borderFillOn && inRegion) ? borderFillOpacity : 0;
       return {
         color: "#ffffff",
         weight: borderWeight,
         opacity: borderOpacity,
         fillColor: "#ffffff",
-        fillOpacity,
+        fillOpacity: fillOpacity,
       };
     }
 
     function computeBBoxFromCoords(coords) {
-      let minX = Infinity,
-        minY = Infinity,
-        maxX = -Infinity,
-        maxY = -Infinity;
+      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
       const walk = (c) => {
         if (!Array.isArray(c)) return;
         if (typeof c[0] === "number" && typeof c[1] === "number") {
-          const x = c[0],
-            y = c[1];
-          minX = Math.min(minX, x);
-          minY = Math.min(minY, y);
-          maxX = Math.max(maxX, x);
-          maxY = Math.max(maxY, y);
+          const x = c[0], y = c[1];
+          minX = Math.min(minX, x); minY = Math.min(minY, y);
+          maxX = Math.max(maxX, x); maxY = Math.max(maxY, y);
           return;
         }
         for (const child of c) walk(child);
@@ -570,18 +569,20 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       if (b) map.fitBounds(b.pad(0.08));
     }
 
-    // ===== Country inference =====
+    // =========================
+    // Country inference
+    // =========================
     function bboxContains(bbox, lng, lat) {
       return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
     }
     function pointInRing(lng, lat, ring) {
       let inside = false;
       for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-        const xi = ring[i][0],
-          yi = ring[i][1];
-        const xj = ring[j][0],
-          yj = ring[j][1];
-        const intersect = yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
+        const xi = ring[i][0], yi = ring[i][1];
+        const xj = ring[j][0], yj = ring[j][1];
+        const intersect =
+          (yi > lat) !== (yj > lat) &&
+          lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
         if (intersect) inside = !inside;
       }
       return inside;
@@ -604,40 +605,24 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         if (!geom) continue;
 
         if (geom.type === "Polygon") {
-          if (pointInPolygon(lng, lat, geom.coordinates)) {
-            countryCache.set(key, cf.name);
-            return cf.name;
-          }
+          if (pointInPolygon(lng, lat, geom.coordinates)) { countryCache.set(key, cf.name); return cf.name; }
         } else if (geom.type === "MultiPolygon") {
           for (const poly of geom.coordinates) {
-            if (pointInPolygon(lng, lat, poly)) {
-              countryCache.set(key, cf.name);
-              return cf.name;
-            }
+            if (pointInPolygon(lng, lat, poly)) { countryCache.set(key, cf.name); return cf.name; }
           }
         }
       }
       countryCache.set(key, null);
       return null;
     }
-
-    function getLatLng(ev) {
-      const lat = Number(ev?.location?.lat);
-      const lng = Number(ev?.location?.lng);
-      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-      return { lat, lng };
-    }
-
     function getCountry(ev) {
       const c1 = ev?.location?.country;
       if (c1) return String(c1).trim();
-
       const ll = getLatLng(ev);
       if (ll && bordersLoaded) {
         const inferred = inferCountryFromPoint(ll.lat, ll.lng);
         if (inferred) return inferred;
       }
-
       const name = (ev?.location?.name || "").trim();
       if (name.includes(",")) {
         const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
@@ -646,13 +631,14 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       }
       return "Unknown";
     }
-
     function matchesRegion(ev) {
       if (activeRegion === "ALL") return true;
       return regionContainsCountry(activeRegion, getCountry(ev));
     }
 
-    // ===== Source/category =====
+    // =========================
+    // Source/category
+    // =========================
     function sourceType(ev) {
       const t = norm(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
@@ -671,8 +657,13 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       if (c === "political") return 1.0;
       return 0.5;
     }
-    function sourceMultiplier(ev) {
-      return sourceType(ev) === "isw" ? 1.3 : 1.0;
+    function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
+
+    function getLatLng(ev) {
+      const lat = Number(ev?.location?.lat);
+      const lng = Number(ev?.location?.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+      return { lat, lng };
     }
 
     function matchesSearch(ev, q) {
@@ -684,20 +675,20 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q);
     }
 
-    // ===== Hotspot filter =====
+    // =========================
+    // Hotspot filter
+    // =========================
     let activeHotspot = null;
     let hotspotCircle = null;
 
     function haversineKm(aLat, aLng, bLat, bLng) {
       const R = 6371;
-      const dLat = ((bLat - aLat) * Math.PI) / 180;
-      const dLng = ((bLng - aLng) * Math.PI) / 180;
-      const s1 = Math.sin(dLat / 2),
-        s2 = Math.sin(dLng / 2);
-      const aa = s1 * s1 + Math.cos((aLat * Math.PI) / 180) * Math.cos((bLat * Math.PI) / 180) * s2 * s2;
+      const dLat = (bLat - aLat) * Math.PI / 180;
+      const dLng = (bLng - aLng) * Math.PI / 180;
+      const s1 = Math.sin(dLat/2), s2 = Math.sin(dLng/2);
+      const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
       return 2 * R * Math.asin(Math.sqrt(aa));
     }
-
     function matchesHotspot(ev) {
       if (!activeHotspot) return true;
       const ll = getLatLng(ev);
@@ -705,7 +696,6 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       const d = haversineKm(activeHotspot.lat, activeHotspot.lng, ll.lat, ll.lng);
       return d <= activeHotspot.radiusKm;
     }
-
     function setHotspot(h) {
       activeHotspot = h;
       clearHotspotBtn.style.display = activeHotspot ? "inline-block" : "none";
@@ -725,14 +715,15 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         map.fitBounds(hotspotCircle.getBounds().pad(0.2));
       }
     }
-
     clearHotspotBtn.addEventListener("click", () => {
       setHotspot(null);
       renderHotspotList([]);
       updateAll();
     });
 
-    // ===== Markers =====
+    // =========================
+    // Markers
+    // =========================
     const markerByEventId = new Map();
     function makeMarker(ev) {
       const ll = getLatLng(ev);
@@ -748,9 +739,13 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       const m = L.marker([ll.lat, ll.lng], { icon });
       const srcName = ev?.source?.name || "";
       const srcUrl = ev?.source?.url || "";
-      const srcLine = srcUrl ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>` : `${srcName}`;
+      const srcLine = srcUrl
+        ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>`
+        : `${srcName}`;
 
-      m.bindPopup(`<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`);
+      m.bindPopup(
+        `<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`
+      );
       return m;
     }
 
@@ -769,7 +764,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       }
     }
 
-    // ===== Trend =====
+    // =========================
+    // Trend
+    // =========================
     function drawTrendBars(counts, total, rangeText) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -787,10 +784,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       ctx.fillStyle = "rgba(0,0,0,.16)";
       ctx.fillRect(0, 0, cssW, cssH);
 
-      const padL = 24,
-        padR = 8,
-        padT = 12,
-        padB = 20;
+      const padL = 24, padR = 8, padT = 12, padB = 20;
       const w = cssW - padL - padR;
       const h = cssH - padT - padB;
 
@@ -826,7 +820,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       ctx.globalAlpha = 1.0;
     }
 
-    function computeTrend(selectedIndex, windowDays, filters, eventsData) {
+    function computeTrend(selectedIndex, windowDays, filters) {
       const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
       const dates = days365.slice(startIndex, selectedIndex + 1);
       const counts = new Array(dates.length).fill(0);
@@ -843,7 +837,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return { counts, total, rangeText };
     }
 
-    // ===== Risk scoring =====
+    // =========================
+    // Risk scoring
+    // =========================
     function recencyWeight(eventIndex, selectedIndex, windowDays) {
       const ageDays = selectedIndex - eventIndex;
       if (windowDays <= 1) return 1.0;
@@ -854,7 +850,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
     }
 
-    // ===== Heat layers =====
+    // =========================
+    // Heat layers
+    // =========================
     let heatLayer = null;
     let weeklyHeatLayer = null;
 
@@ -867,7 +865,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       weeklyHeatLayer = null;
     }
 
-    // ===== Weekly anomaly + hotspots =====
+    // Weekly anomaly + hotspots
     const BIN_DEG = 1.0;
     const HOTSPOT_RADIUS_KM = 120;
 
@@ -890,7 +888,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return { a1, a2, b1, b2 };
     }
 
-    function computeWeeklyHotspots(selectedIndex, filterFn, eventsData) {
+    function computeWeeklyHotspots(selectedIndex, filterFn) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
 
       const aCounts = new Map();
@@ -921,7 +919,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         bins.push({ key: k, lat: center.lat, lng: center.lng, a, b, delta, ratio, score: delta + ratio });
       }
 
-      bins.sort((x, y) => y.score - x.score);
+      bins.sort((x, y) => (y.score - x.score));
       return bins.slice(0, 10);
     }
 
@@ -935,24 +933,23 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         return;
       }
 
-      hotspotListEl.innerHTML = bins
-        .map((b, i) => {
-          const active = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
-          return `
+      hotspotListEl.innerHTML = bins.map((b, i) => {
+        const active = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
+        return `
           <div class="hotspot-row ${active ? "active" : ""}" data-key="${b.key}">
             <div>
-              <div><b>#${i + 1}</b> Δ ${b.delta} (7d:${b.a} vs prev:${b.b})</div>
+              <div><b>#${i+1}</b> Δ ${b.delta} (7d:${b.a} vs prev:${b.b})</div>
               <div class="muted">ratio ${b.ratio.toFixed(2)} · ${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}</div>
             </div>
             <div class="muted">▶</div>
-          </div>`;
-        })
-        .join("");
+          </div>
+        `;
+      }).join("");
 
       [...hotspotListEl.querySelectorAll(".hotspot-row")].forEach((row) => {
         row.onclick = () => {
           const key = row.getAttribute("data-key");
-          const b = bins.find((x) => x.key === key);
+          const b = bins.find(x => x.key === key);
           if (!b) return;
 
           const isSame = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
@@ -965,15 +962,15 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       });
     }
 
-    function updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn, eventsData) {
+    function updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn) {
       if (!weeklyHeatCheckbox.checked) {
         clearWeeklyHeat();
         renderHotspotList([]);
         return;
       }
 
-      const bins = computeWeeklyHotspots(selectedIndex, filterFn, eventsData);
-      const points = bins.map((b) => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
+      const bins = computeWeeklyHotspots(selectedIndex, filterFn);
+      const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
 
       clearWeeklyHeat();
       if (points.length) {
@@ -986,8 +983,10 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       renderHotspotList(bins);
     }
 
-    // ===== Main filters =====
-    function filterBuilder(selectedIndex, windowDays, eventsData) {
+    // =========================
+    // Main filters
+    // =========================
+    function filterBuilder(selectedIndex, windowDays) {
       const catSet = getSelectedCategories();
       const srcSet = getSelectedSources();
       const q = norm(searchInput.value).trim();
@@ -1007,20 +1006,19 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         if (!matchesSearch(ev, q)) return false;
         if (!matchesActor(ev)) return false;
         if (!matchesPair(ev)) return false;
-
         if (!matchesRegion(ev)) return false;
+
         if (!opts.weeklyMode && !matchesHotspot(ev)) return false;
 
         return true;
       };
     }
 
-    // ===== Heatmap (normal) =====
+    // =========================
+    // Heatmap (normal)
+    // =========================
     function updateNormalHeatmap(visibleEvents, selectedIndex, windowDays) {
-      if (!heatCheckbox.checked) {
-        clearHeat();
-        return;
-      }
+      if (!heatCheckbox.checked) { clearHeat(); return; }
 
       const points = [];
       for (const ev of visibleEvents) {
@@ -1042,14 +1040,11 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // ===== Stats / Risk / Actors / Pairs =====
+    // =========================
+    // Stats / Risk / Actors / Pairs
+    // =========================
     function updateStats(visibleEvents) {
-      let mil = 0,
-        sec = 0,
-        pol = 0,
-        oth = 0,
-        news = 0,
-        isw = 0;
+      let mil=0, sec=0, pol=0, oth=0, news=0, isw=0;
       for (const ev of visibleEvents) {
         const c = norm(ev.category || "other");
         if (c === "military") mil++;
@@ -1058,8 +1053,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         else oth++;
 
         const st = sourceType(ev);
-        if (st === "isw") isw++;
-        else news++;
+        if (st === "isw") isw++; else news++;
       }
       statsTotalEl.textContent = String(visibleEvents.length);
       statsMilEl.textContent = String(mil);
@@ -1085,7 +1079,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
 
       const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
       riskListEl.innerHTML = rows.length
-        ? rows.map(([name, val]) => `<div class="risk-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>`).join("")
+        ? rows.map(([name, val]) => `
+          <div class="risk-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>
+        `).join("")
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
@@ -1098,20 +1094,16 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       actorClearBtn.style.display = activeActor ? "inline-block" : "none";
 
       actorsListEl.innerHTML = rows.length
-        ? rows
-            .map(
-              ([name, n]) => `
+        ? rows.map(([name, n]) => `
           <div class="actor-chip ${activeActor === name ? "active" : ""}" data-actor="${name}">
             <span>${name}</span><b>${n}</b>
-          </div>`
-            )
-            .join("")
+          </div>`).join("")
         : `<div class="muted">No actor signals in this window.</div>`;
 
       [...actorsListEl.querySelectorAll(".actor-chip")].forEach((el) => {
         el.onclick = () => {
           const a = el.getAttribute("data-actor");
-          activeActor = activeActor === a ? null : a;
+          activeActor = (activeActor === a) ? null : a;
           updateAll();
         };
       });
@@ -1135,14 +1127,10 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       pairClearBtn.style.display = activePair ? "inline-block" : "none";
 
       pairsListEl.innerHTML = rows.length
-        ? rows
-            .map(
-              ([k, n]) => `
+        ? rows.map(([k, n]) => `
           <div class="pair-row ${activePair && pairKey(activePair.a, activePair.b) === k ? "active" : ""}" data-pair="${k}">
             <div class="name">${k}</div><div class="val">${n}</div>
-          </div>`
-            )
-            .join("")
+          </div>`).join("")
         : `<div class="muted">No interaction pairs in this window.</div>`;
 
       [...pairsListEl.querySelectorAll(".pair-row")].forEach((el) => {
@@ -1150,8 +1138,7 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
           const k = el.getAttribute("data-pair") || "";
           const parts = k.split(" + ");
           if (parts.length !== 2) return;
-          const a = parts[0],
-            b = parts[1];
+          const a = parts[0], b = parts[1];
           if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
           else activePair = { a, b };
           updateAll();
@@ -1159,17 +1146,13 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       });
     }
 
-    actorClearBtn.addEventListener("click", () => {
-      activeActor = null;
-      updateAll();
-    });
-    pairClearBtn.addEventListener("click", () => {
-      activePair = null;
-      updateAll();
-    });
+    actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
+    pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
 
-    // ===== Alerts / Country risk / Escalation =====
-    function computeRolling7dSpike(selectedIndex, filterFn, eventsData, category = null) {
+    // =========================
+    // Alerts (rolling baseline)
+    // =========================
+    function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
       const baseEnd = Math.max(0, selectedIndex - 1);
@@ -1180,7 +1163,6 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
-
         if (category && norm(ev.category) !== category) continue;
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
@@ -1193,26 +1175,22 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return { today, baseAvg, ratio };
     }
 
-    function updateAlerts(selectedIndex, filterFn, eventsData) {
-      const overall = computeRolling7dSpike(selectedIndex, filterFn, eventsData, null);
-      const hardsec = computeRolling7dSpike(selectedIndex, filterFn, eventsData, "security");
-      const military = computeRolling7dSpike(selectedIndex, filterFn, eventsData, "military");
+    function updateAlerts(selectedIndex, filterFn) {
+      const overall = computeRolling7dSpike(selectedIndex, filterFn, null);
+      const hardsec = computeRolling7dSpike(selectedIndex, filterFn, "security");
+      const military = computeRolling7dSpike(selectedIndex, filterFn, "military");
 
       const maxRatio = Math.max(overall.ratio, hardsec.ratio, military.ratio);
       let status = "OK";
       let cls = "badge-mini badge-ok";
-      if (maxRatio >= 3.0) {
-        status = "ALERT";
-        cls = "badge-mini badge-alert";
-      } else if (maxRatio >= 2.0) {
-        status = "WARN";
-        cls = "badge-mini badge-warn";
-      }
+      if (maxRatio >= 3.0) { status = "ALERT"; cls = "badge-mini badge-alert"; }
+      else if (maxRatio >= 2.0) { status = "WARN"; cls = "badge-mini badge-warn"; }
 
       spikeBadge.className = cls;
       spikeBadge.textContent = status;
 
-      spikeText.textContent = `Rolling 7d baseline | Overall: ${status} (today ${overall.today}, base ${overall.baseAvg.toFixed(1)}, x${overall.ratio.toFixed(2)})`;
+      spikeText.textContent =
+        `Rolling 7d baseline | Overall: ${status} (today ${overall.today}, base ${overall.baseAvg.toFixed(1)}, x${overall.ratio.toFixed(2)})`;
 
       spikeDetails.innerHTML = `
         <div class="risk-row"><div class="name">Security spike</div><div class="val">${hardsec.today} vs ${hardsec.baseAvg.toFixed(1)} · x${hardsec.ratio.toFixed(2)}</div></div>
@@ -1221,6 +1199,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       `;
     }
 
+    // =========================
+    // Country risk
+    // =========================
     function updateCountryRisk(visibleEvents) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
@@ -1234,6 +1215,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         : `<div class="muted">No country data.</div>`;
     }
 
+    // =========================
+    // Actor escalation
+    // =========================
     function updateEscalation(visibleEvents, selectedIndex) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
       const aMap = new Map();
@@ -1263,13 +1247,18 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
 
       escNote.textContent = `7d vs prev 7d · (region/hotspot aware)`;
       escalationList.innerHTML = top.length
-        ? top.map((r) => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`).join("")
+        ? top.map(r => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`).join("")
         : `<div class="muted">No positive actor deltas.</div>`;
     }
 
-    // ===== Data =====
+    // =========================
+    // Data
+    // =========================
     let eventsData = [];
 
+    // =========================
+    // Compute visible list window
+    // =========================
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
@@ -1282,7 +1271,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
       return out;
     }
 
-    // ===== Main updater =====
+    // =========================
+    // Main updater
+    // =========================
     function updateAll() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -1291,10 +1282,9 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
 
       applyBordersStyleNow();
 
-      const filterFn = filterBuilder(selectedIndex, windowDays, eventsData);
+      const filterFn = filterBuilder(selectedIndex, windowDays);
       const visible = computeVisible(selectedIndex, windowDays, filterFn);
 
-      // Markers
       clusterGroup.clearLayers();
       markerByEventId.clear();
       for (const ev of visible) {
@@ -1304,35 +1294,29 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
         if (ev.id) markerByEventId.set(ev.id, m);
       }
 
-      // Heatmaps
       updateNormalHeatmap(visible, selectedIndex, windowDays);
-      updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn, eventsData);
+      updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn);
 
-      // Trend
-      const trend = computeTrend(selectedIndex, windowDays, (ev, idx) => filterFn(ev, idx, { weeklyMode: false }), eventsData);
+      const trend = computeTrend(selectedIndex, windowDays, (ev, idx) => filterFn(ev, idx, { weeklyMode: false }));
       drawTrendBars(trend.counts, trend.total, trend.rangeText);
 
-      // Stats / Risk / Actors / Pairs
       updateStats(visible);
       updateRisk(visible, selectedIndex, windowDays);
       updateActors(visible);
       updatePairs(visible);
 
-      // Alerts / country / escalation
-      updateAlerts(selectedIndex, filterFn, eventsData);
+      updateAlerts(selectedIndex, filterFn);
       updateCountryRisk(visible);
       updateEscalation(visible, selectedIndex);
 
-      // Events list
       if (!visible.length) {
         eventsListEl.innerHTML = `<div class="muted">No events for current filters (region/hotspot/actor/pair/search).</div>`;
       } else {
-        eventsListEl.innerHTML = visible
-          .map((ev) => {
-            const st = sourceType(ev).toUpperCase();
-            const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
-            const ctry = getCountry(ev);
-            return `
+        eventsListEl.innerHTML = visible.map((ev) => {
+          const st = sourceType(ev).toUpperCase();
+          const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
+          const ctry = getCountry(ev);
+          return `
             <div class="event-row" data-id="${ev.id}">
               <div class="event-row-title">${ev.title || "Untitled"}</div>
               <div class="event-row-meta">
@@ -1341,39 +1325,22 @@ pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
               </div>
             </div>
           `;
-          })
-          .join("");
+        }).join("");
 
         [...eventsListEl.querySelectorAll(".event-row")].forEach((row) => {
           row.onclick = () => {
             const id = row.getAttribute("data-id");
-            const ev = eventsData.find((e) => String(e.id) === String(id));
+            const ev = eventsData.find(e => String(e.id) === String(id));
             if (ev) openEventOnMap(ev);
           };
         });
       }
     }
-    <div class="row">
-  <label><input id="poisCheckbox" type="checkbox" checked /> Strategic sites</label>
-</div>
 
-    const poisCheckbox = document.getElementById("poisCheckbox");
-
-function setPoisEnabled(on) {
-  if (on) {
-    if (!map.hasLayer(pois.layer)) pois.layer.addTo(map);
-  } else {
-    if (map.hasLayer(pois.layer)) map.removeLayer(pois.layer);
-  }
-}
-
-poisCheckbox.addEventListener("change", (e) => setPoisEnabled(e.target.checked));
-setPoisEnabled(true);
-
-    // ===== Wiring =====
-    function refresh() {
-      updateAll();
-    }
+    // =========================
+    // Wiring
+    // =========================
+    function refresh() { updateAll(); }
 
     slider.addEventListener("input", refresh);
     searchInput.addEventListener("input", refresh);
@@ -1394,7 +1361,6 @@ setPoisEnabled(true);
       applyBordersStyleNow();
       refresh();
     });
-
     regionClear.addEventListener("click", async () => {
       activeRegion = "ALL";
       regionSelect.value = "ALL";
@@ -1423,24 +1389,12 @@ setPoisEnabled(true);
       applyBordersStyleNow();
     });
 
-    // Timeline accordion init (only those with data-acc)
-    document.querySelectorAll(".acc-btn[data-acc]").forEach((btn) => {
-      const targetId = btn.getAttribute("data-acc");
-      const panel = document.getElementById(targetId);
-      if (!panel) return;
-      setArrow(btn, !panel.classList.contains("closed"));
-      btn.addEventListener("click", () => {
-        const wasClosed = panel.classList.contains("closed");
-        panel.classList.toggle("closed");
-        setArrow(btn, wasClosed);
-        if (wasClosed) setTimeout(() => updateAll(), 80);
-      });
-    });
-
-    // ===== Load events =====
-    fetch("events.json")
+    // =========================
+    // Load events.json
+    // =========================
+    fetch("events.json", { cache: "no-store" })
       .then((r) => r.json())
-      .then((data) => {
+      .then(async (data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
         eventsData = data.map((ev, i) => {
           const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
@@ -1449,7 +1403,6 @@ setPoisEnabled(true);
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
-
         updateAll();
       })
       .catch((err) => {
@@ -1457,10 +1410,9 @@ setPoisEnabled(true);
         eventsListEl.innerHTML = `<div class="muted">events.json load error</div>`;
       });
 
-    // Optional: refresh reports periodically if enabled
-    window.setInterval(() => {
-      if (reportsEnabled) reports.refresh().catch(() => {});
-    }, 5 * 60 * 1000);
+    // Kick initial reports refresh (safe)
+    refreshReportsSafe();
+
   } catch (e) {
     console.error("Fatal init error:", e);
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
