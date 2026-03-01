@@ -136,7 +136,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     async function loadCrowdReports() {
       try {
-        const res = await fetch("crowd_reports.json", { cache: "no-store" });
+        const res = await fetch("reports.json", { cache: "no-store" });
         if (!res.ok) throw new Error(`crowd_reports.json HTTP ${res.status}`);
         const data = await res.json();
         crowdData = Array.isArray(data) ? data : [];
