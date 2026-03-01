@@ -1,5 +1,6 @@
 import { createAircraftLayer } from "./js/aircraft-layer.js";
 import { createReportsLayer } from "./js/reports-layer.js";
+import { createStaticPoiLayer } from "./js/static-poi-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
@@ -129,6 +130,11 @@ window.addEventListener("DOMContentLoaded", () => {
         if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
       }
     }
+    const pois = createStaticPoiLayer(map, {
+  url: "./data/strategic_sites.geojson",
+  middleEastOnly: true,
+});
+pois.refresh().catch(err => console.warn("[pois] refresh failed:", err));
 
     // ===== UI refs (existing) =====
     const heatCheckbox = $("heatmapCheckbox");
@@ -1347,6 +1353,22 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
+    <div class="row">
+  <label><input id="poisCheckbox" type="checkbox" checked /> Strategic sites</label>
+</div>
+
+    const poisCheckbox = document.getElementById("poisCheckbox");
+
+function setPoisEnabled(on) {
+  if (on) {
+    if (!map.hasLayer(pois.layer)) pois.layer.addTo(map);
+  } else {
+    if (map.hasLayer(pois.layer)) map.removeLayer(pois.layer);
+  }
+}
+
+poisCheckbox.addEventListener("change", (e) => setPoisEnabled(e.target.checked));
+setPoisEnabled(true);
 
     // ===== Wiring =====
     function refresh() {
