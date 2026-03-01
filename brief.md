@@ -4,21 +4,21 @@
 
 ## Summary stats
 - **Total events:** 187
-- **By category:** military 81, security 6, political 26, other 74
+- **By category:** military 81, security 6, political 24, other 76
 - **By source:** news 180, ISW 7
 
 ## Risk Index
-- **Total window risk:** **272.8**
+- **Total window risk:** **275.1**
 - **Top locations (risk):**
-  - Israel — 141.7
-  - Iran — 103.3
+  - Israel — 142.3
+  - Iran — 105.8
   - Gaza Strip — 6.2
   - Tehran — 4.9
   - Syria — 3.8
 
 ## Top events (weighted)
-- **3.5** · 2026-02-28 · military · isw · Israel — [Iran Update Special Report: US and Israeli Strikes, February 28, 2026](https://understandingwar.org/research/middle-east/iran-update-special-report-us-and-israeli-strikes-february-28-2026/)
 - **3.5** · 2026-02-28 · military · isw · Israel — [Iran Update Evening Special Report, February 28, 2026](https://understandingwar.org/research/middle-east/iran-update-evening-special-report-february-28-2026/)
+- **3.5** · 2026-02-28 · military · isw · Israel — [Iran Update Special Report: US and Israeli Strikes, February 28, 2026](https://understandingwar.org/research/middle-east/iran-update-special-report-us-and-israeli-strikes-february-28-2026/)
 - **3.0** · 2026-03-01 · military · news · Israel — [More strikes aimed at Iran after US, Israeli assault kills supreme leader - Reuters](https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUGFpUWMtNVc0VU9QcVNsczVSOVlaSzc0OHF2M00tOTFsMHlZVzFjSjdXQy11ZHVPVDl1WVo3QnU0UmNFblEtcXB6TE43V3ltTk44MklFZ2hHU3lMTkdOYVFKbjVkdmVoNklEemJmVG15Y2NnU2JKeGRiak0wT0V3MlMzS2poRDlNOEE5VENiLTVXLVdRbWY1ekpoclA4VmVXNGIxTHRrYWNNamlta3YxWTQ0Tnl3TEQxcTlMTnhuZ0Y)
 - **3.0** · 2026-03-01 · military · news · Israel — [Daughter and grandchild of Iran's Khamenei killed in US-Israeli strikes, state media says - Reuters](https://news.google.com/rss/articles/CBMiywFBVV95cUxNX0FsRk1hY3dSRk9YdlZyYXdsMVg4SWtvcFBfT1VHRGRGdlhWMXhNR2xldXFsaTlvVWhXcUlRTElwbW5YaWRwZHRVcTlRT3Q4OFNxRUFrV1J0Q0hQbnM3QVhJbnYwYVBqODRVNk5RTC1iRHp3ZnY1U1otd0VTMVdidjBxODlGYmxzTjBZUnNSZHB2TEhFenI1M0JyZ1l4WG9hcElTZTBTV2xHMzV2VTRrWG5nbFJ2cE8zWHFiSUl3LURfMzBGM2QxeHgxcw)
 - **3.0** · 2026-03-01 · military · news · Iran — [Iran's supreme leader Khamenei killed, Iranian state media confirm - Reuters](https://news.google.com/rss/articles/CBMiugFBVV95cUxNVklFekRQdjZIYXR2cm42N1BIZXJ1Rm8zSkJxWGNqMHM3bzc4MUlQdnhQalZSZzYwQ1d0eHpyMUdTQjFCdFlDZXdQUHV3elQ0YzIyOGZDS0ZDbTVoM3BnVnlJbEVleFFoZUgyV3V5d2UtZm5BNUlfbUJwQ01xellJOEh3QV9PVTRwcTM2bzhGTnpBLVA4d3d1bUFPSE4wVWpGRTQyRUhoN3dFWUFvLVRjY2FBdnkzMm8yTmc)
