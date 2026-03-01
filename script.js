@@ -34,28 +34,14 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ===== Accordion helper =====
+    // ===== Accordion (Timeline only: buttons with data-acc) =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
 
-    // Timeline accordions (HTML-ben vannak)
-    document.querySelectorAll(".acc-btn").forEach((btn) => {
-      const targetId = btn.getAttribute("data-acc");
-      const panel = targetId ? document.getElementById(targetId) : null;
-      if (!panel) return;
-      setArrow(btn, !panel.classList.contains("closed"));
-      btn.addEventListener("click", () => {
-        const wasClosed = panel.classList.contains("closed");
-        panel.classList.toggle("closed");
-        setArrow(btn, wasClosed);
-        if (wasClosed) setTimeout(() => updateAll(), 80);
-      });
-    });
-
-    // Control panel: dinamikus accordion szekció
+    // ===== Control panel accordion helper =====
     function makeAccSection(title, contentEl, openByDefault = false) {
       const wrap = document.createElement("div");
       wrap.className = "acc";
@@ -65,16 +51,20 @@ window.addEventListener("DOMContentLoaded", () => {
       btn.type = "button";
       btn.setAttribute("aria-expanded", openByDefault ? "true" : "false");
       btn.innerHTML = `<span>${title}</span><span class="acc-arrow">▶</span>`;
-      setArrow(btn, openByDefault);
 
       const panel = document.createElement("div");
       panel.className = "acc-panel" + (openByDefault ? "" : " closed");
       panel.appendChild(contentEl);
 
+      const arrow = btn.querySelector(".acc-arrow");
+      if (arrow) arrow.style.transform = openByDefault ? "rotate(90deg)" : "rotate(0deg)";
+
       btn.addEventListener("click", () => {
         const wasClosed = panel.classList.contains("closed");
         panel.classList.toggle("closed");
-        setArrow(btn, wasClosed);
+        const isOpen = !wasClosed;
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       });
 
       wrap.appendChild(btn);
@@ -95,61 +85,24 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // Panel click/scroll ne menjen át a térképnek
-    L.DomEvent.disableScrollPropagation(controlPanel);
-    L.DomEvent.disableClickPropagation(controlPanel);
-    L.DomEvent.disableScrollPropagation(timelinePanel);
-    L.DomEvent.disableClickPropagation(timelinePanel);
-    L.DomEvent.disableScrollPropagation(legendPanel);
-    L.DomEvent.disableClickPropagation(legendPanel);
-
-    // =========================
-// ===== Crowd reports layer =====
-// =========================
-const reports = createReportsLayer(map, {
-  maxAgeHours: 48,
-  middleEastOnly: true
-});
-
-let reportsEnabled = false;
-let reportsTimer = null;
-
-async function setReportsEnabled(on) {
-  reportsEnabled = !!on;
-
-  if (reportsEnabled) {
-    if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
-
-    // azonnali frissítés
-    try { await reports.refresh(); } catch (e) { console.error("reports.refresh failed", e); }
-
-    // periodikus frissítés (10 perc)
-    if (!reportsTimer) {
-      reportsTimer = setInterval(() => {
-        reports.refresh().catch(err => console.error("reports.refresh interval failed", err));
-      }, 10 * 60 * 1000);
-    }
-  } else {
-    if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
-
-    if (reportsTimer) {
-      clearInterval(reportsTimer);
-      reportsTimer = null;
-    }
-  }
-}
-
-    // ===== Aircraft layer =====
+    // ===== Layers: Aircraft + Reports =====
     const aircraft = createAircraftLayer(map, {
       updateIntervalMs: 20000,
       trackSeconds: 300,
-      militaryOnly: true,
+      militaryOnly: false, // <- civil látszódjon
       showTracks: true,
     });
 
+    const reports = createReportsLayer(map, {
+      maxAgeHours: 48,
+      middleEastOnly: true,
+    });
+
     let aircraftRunning = false;
+    let aircraftEnabled = true;
     function setAircraftEnabled(on) {
-      if (on) {
+      aircraftEnabled = !!on;
+      if (aircraftEnabled) {
         if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
         if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
         if (!aircraftRunning) {
@@ -166,70 +119,18 @@ async function setReportsEnabled(on) {
       }
     }
 
-    // ===== Crowd reports layer (JSON) =====
-    const crowdLayer = L.layerGroup();
-    let crowdTimer = null;
-    let crowdData = [];
-
-    async function loadCrowdReports() {
-      try {
-        const res = await fetch("reports.json", { cache: "no-store" });
-        if (!res.ok) throw new Error(`crowd_reports.json HTTP ${res.status}`);
-        const data = await res.json();
-        crowdData = Array.isArray(data) ? data : [];
-      } catch (e) {
-        crowdData = [];
-        // nem dobunk hibát: lehet hogy még nincs ilyen fájl
-        console.warn("Crowd reports load failed:", e?.message || e);
+    let reportsEnabled = false;
+    async function setReportsEnabled(on) {
+      reportsEnabled = !!on;
+      if (reportsEnabled) {
+        if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
+        await reports.refresh();
+      } else {
+        if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
       }
     }
 
-    function renderCrowdReports() {
-      crowdLayer.clearLayers();
-      for (const r of crowdData) {
-        const lat = Number(r.lat);
-        const lng = Number(r.lng);
-        if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
-
-        const m = L.circleMarker([lat, lng], {
-          radius: 6,
-          weight: 1.5,
-          opacity: 0.9,
-          fillOpacity: 0.25,
-        });
-
-        const src = r.source ? `<b>${r.source}</b>` : "<b>Report</b>";
-        const link = r.url ? ` · <a href="${r.url}" target="_blank" rel="noreferrer">open</a>` : "";
-        const when = r.date ? `<div class="muted">${r.date}</div>` : "";
-        const text = r.text ? `<div style="margin-top:6px;">${String(r.text).slice(0, 500)}</div>` : "";
-        const tags = Array.isArray(r.tags) && r.tags.length
-          ? `<div class="muted" style="margin-top:6px;">#${r.tags.join(" #")}</div>`
-          : "";
-
-        m.bindPopup(`${src}${link}${when}${text}${tags}`);
-        crowdLayer.addLayer(m);
-      }
-    }
-
-    async function startCrowdReports() {
-      if (!map.hasLayer(crowdLayer)) crowdLayer.addTo(map);
-      await loadCrowdReports();
-      renderCrowdReports();
-      if (crowdTimer) clearInterval(crowdTimer);
-      crowdTimer = setInterval(async () => {
-        await loadCrowdReports();
-        renderCrowdReports();
-      }, 60000);
-    }
-
-    function stopCrowdReports() {
-      if (crowdTimer) clearInterval(crowdTimer);
-      crowdTimer = null;
-      if (map.hasLayer(crowdLayer)) map.removeLayer(crowdLayer);
-      crowdLayer.clearLayers();
-    }
-
-    // ===== UI refs =====
+    // ===== UI refs (existing) =====
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
     const bordersCheckbox = $("bordersCheckbox");
@@ -291,76 +192,141 @@ async function setReportsEnabled(on) {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // ===== Flight & Reports UI (Control panelbe) =====
-    const flightUiWrap = document.createElement("div");
-    flightUiWrap.innerHTML = `
-      <div class="row">
-        <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
-      </div>
-      <div class="row">
-        <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" checked /> Military only</label>
-        <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
-      </div>
-      <div class="muted" style="margin-top:6px;">
-        Tip: “Military only” heurisztika (callsign/squawk) — nem 100%.
-      </div>
+    // ===== Rebuild Control panel as accordion (fix: small footprint) =====
+    function rebuildControlPanelAccordion() {
+      const title = controlPanel.querySelector("h3");
+      if (!title) return;
 
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
-        <div class="muted" style="margin-bottom:6px;">Crowd reports</div>
-        <div class="row">
-          <label><input id="crowdCheckbox" type="checkbox" /> Enable</label>
+      // Locate existing blocks by their contained IDs (robust)
+      const heatRow = document.getElementById("heatmapCheckbox")?.closest(".row");
+      const bordersRow = document.getElementById("bordersCheckbox")?.closest(".row");
+
+      // Category section: the muted div containing "Category filters" + 4 rows after it
+      const catHeader = [...controlPanel.querySelectorAll(".muted")].find((d) =>
+        norm(d.textContent).includes("category filters")
+      );
+      const srcHeader = [...controlPanel.querySelectorAll(".muted")].find((d) =>
+        norm(d.textContent).includes("source filters")
+      );
+      const winHeader = [...controlPanel.querySelectorAll(".muted")].find((d) =>
+        norm(d.textContent).includes("window")
+      );
+
+      // region block (div containing regionSelect)
+      const regionBlock = document.getElementById("regionSelect")?.closest("div[style]");
+      // borders style block (div containing borderWeightSlider)
+      const bordersStyleBlock = document.getElementById("borderWeightSlider")?.closest("div[style]");
+      // hotspots block (div containing hotspotList)
+      const hotspotsBlock = document.getElementById("hotspotList")?.closest("div[style]");
+
+      // --- Create new UI chunks for Layers (reports + aircraft)
+      const layersExtras = document.createElement("div");
+      layersExtras.innerHTML = `
+        <div class="row" style="margin-top:6px;">
+          <label><input id="reportsCheckbox" type="checkbox" /> Crowd reports</label>
+          <span class="muted" style="font-size:11px;">reports.json</span>
         </div>
-        <div class="muted">Input: crowd_reports.json</div>
-      </div>
-    `;
+        <div class="muted" style="margin-top:6px;">Flight tracking</div>
+        <div class="row">
+          <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
+        </div>
+        <div class="row">
+          <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
+          <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
+        </div>
+        <div class="muted" style="margin-top:6px;">
+          Tip: “Military only” heurisztika — nem 100%.
+        </div>
+      `;
 
-    // ===== Control panel szeletelés: Layers / Filters / Flight & Reports =====
-    if (!controlPanel.dataset.accBuilt) {
-      controlPanel.dataset.accBuilt = "1";
-
-      let titleEl = controlPanel.querySelector("h3");
-      if (!titleEl) {
-        titleEl = document.createElement("h3");
-        titleEl.textContent = "Controls";
-      }
-
-      const children = [...controlPanel.children];
-      const contentNodes = children.filter((n) => n !== titleEl);
-
+      // --- Build accordion containers
       const layersBox = document.createElement("div");
       const filtersBox = document.createElement("div");
+      const regionBox = document.createElement("div");
+      const styleBox = document.createElement("div");
+      const hotspotsBox = document.createElement("div");
 
-      let reachedCategory = false;
-      for (const node of contentNodes) {
-        const txt = (node.textContent || "").toLowerCase();
-        if (node.classList?.contains("muted") && txt.includes("category filters")) {
-          reachedCategory = true;
+      // Layers: heat + weekly + borders + extras
+      if (heatRow) layersBox.appendChild(heatRow);
+      if (bordersRow) layersBox.appendChild(bordersRow);
+      layersBox.appendChild(layersExtras);
+
+      // Filters: category + source + window (move everything between headers)
+      function moveSection(headerEl, untilHeaderEl) {
+        const box = document.createElement("div");
+        if (!headerEl) return box;
+        box.appendChild(headerEl);
+        let n = headerEl.nextElementSibling;
+        while (n && n !== untilHeaderEl) {
+          const next = n.nextElementSibling;
+          box.appendChild(n);
+          n = next;
         }
-        if (!reachedCategory) layersBox.appendChild(node);
-        else filtersBox.appendChild(node);
+        return box;
+      }
+      const catsBox = moveSection(catHeader, srcHeader);
+      const srcBox = moveSection(srcHeader, winHeader);
+
+      // Window radios are after winHeader until regionBlock (or end)
+      const winBox = document.createElement("div");
+      if (winHeader) {
+        winBox.appendChild(winHeader);
+        let n = winHeader.nextElementSibling;
+        while (n && n !== regionBlock) {
+          const next = n.nextElementSibling;
+          // stop if we hit the region block (it is a styled div)
+          if (n === regionBlock) break;
+          // also stop if we somehow hit borders style
+          if (n === bordersStyleBlock) break;
+          // and stop if we hit hotspots
+          if (n === hotspotsBlock) break;
+          winBox.appendChild(n);
+          n = next;
+        }
       }
 
+      // FiltersBox = cats + sources + window
+      filtersBox.appendChild(catsBox);
+      filtersBox.appendChild(srcBox);
+      filtersBox.appendChild(winBox);
+
+      // Region + Borders style + Hotspots
+      if (regionBlock) regionBox.appendChild(regionBlock);
+      if (bordersStyleBlock) styleBox.appendChild(bordersStyleBlock);
+      if (hotspotsBlock) hotspotsBox.appendChild(hotspotsBlock);
+
+      // Now rebuild panel cleanly
       controlPanel.innerHTML = "";
-      controlPanel.appendChild(titleEl);
+      controlPanel.appendChild(title);
       controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
       controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
-      controlPanel.appendChild(makeAccSection("Flight & Reports", flightUiWrap, false));
+      controlPanel.appendChild(makeAccSection("Region", regionBox, false));
+      controlPanel.appendChild(makeAccSection("Borders style", styleBox, false));
+      controlPanel.appendChild(makeAccSection("Hotspots", hotspotsBox, false));
     }
 
+    rebuildControlPanelAccordion();
+
+    // Now that we injected new checkboxes, wire them
+    const reportsCheckbox = document.getElementById("reportsCheckbox");
     const aircraftCheckbox = document.getElementById("aircraftCheckbox");
     const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
     const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
-    const crowdCheckbox = document.getElementById("crowdCheckbox");
 
-    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
-    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
-    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
-    crowdCheckbox.addEventListener("change", async (e) => {
-      if (e.target.checked) await startCrowdReports();
-      else stopCrowdReports();
-    });
+    if (aircraftCheckbox) aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
+    if (aircraftMilitaryOnlyCheckbox)
+      aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
+    if (aircraftTracksCheckbox)
+      aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
 
+    if (reportsCheckbox)
+      reportsCheckbox.addEventListener("change", (e) => {
+        setReportsEnabled(e.target.checked).catch((err) => console.warn("[reports] enable failed:", err));
+      });
+
+    // Default: aircraft ON, reports OFF (te kapcsolod)
     setAircraftEnabled(true);
+    aircraft.setMilitaryOnly(false);
 
     // ===== Date utilities =====
     function makeLast365Days() {
@@ -373,6 +339,7 @@ async function setReportsEnabled(on) {
       }
       return days;
     }
+
     const days365 = makeLast365Days();
     const dateToIndex = new Map(days365.map((d, i) => [d, i]));
     slider.max = days365.length - 1;
@@ -420,13 +387,18 @@ async function setReportsEnabled(on) {
       const found = [];
       for (const a of ACTORS) {
         for (const p of a.patterns) {
-          if (text.includes(p)) { found.push(a.name); break; }
+          if (text.includes(p)) {
+            found.push(a.name);
+            break;
+          }
         }
       }
       return [...new Set(found)];
     }
     const pairKey = (a, b) => [a, b].sort().join(" + ");
-    function matchesActor(ev) { return !activeActor || actorsInEvent(ev).includes(activeActor); }
+    function matchesActor(ev) {
+      return !activeActor || actorsInEvent(ev).includes(activeActor);
+    }
     function matchesPair(ev) {
       if (!activePair) return true;
       const found = actorsInEvent(ev);
@@ -436,10 +408,23 @@ async function setReportsEnabled(on) {
     // ===== Region model =====
     let activeRegion = "ALL";
     const REGION_ALIASES = {
-      LEVANT: new Set(["israel","lebanon","syria","jordan","iraq","palestine","palestinian territories","palestinian territory","west bank","gaza","gaza strip"]),
-      GULF: new Set(["saudi arabia","united arab emirates","uae","qatar","bahrain","kuwait","oman","yemen","iran"]),
-      NORTH: new Set(["egypt","turkey"]),
+      LEVANT: new Set([
+        "israel",
+        "lebanon",
+        "syria",
+        "jordan",
+        "iraq",
+        "palestine",
+        "palestinian territories",
+        "palestinian territory",
+        "west bank",
+        "gaza",
+        "gaza strip",
+      ]),
+      GULF: new Set(["saudi arabia", "united arab emirates", "uae", "qatar", "bahrain", "kuwait", "oman", "yemen", "iran"]),
+      NORTH: new Set(["egypt", "turkey"]),
     };
+
     function regionContainsCountry(region, countryName) {
       if (!region || region === "ALL") return true;
       const set = REGION_ALIASES[region];
@@ -449,8 +434,9 @@ async function setReportsEnabled(on) {
       if (region === "LEVANT" && (c.includes("palestin") || c.includes("gaza") || c.includes("west bank"))) return true;
       return false;
     }
+
     function updateRegionNote() {
-      regionNote.textContent = (activeRegion === "ALL") ? "No region filter" : `Region: ${activeRegion}`;
+      regionNote.textContent = activeRegion === "ALL" ? "No region filter" : `Region: ${activeRegion}`;
     }
     updateRegionNote();
 
@@ -479,27 +465,34 @@ async function setReportsEnabled(on) {
       const props = feature?.properties || {};
       return props.ADMIN || props.NAME || props.name || props.SOVEREIGNT || "Unknown";
     }
+
     function bordersStyle(feature) {
       const name = featureCountryName(feature);
       const inRegion = activeRegion !== "ALL" && regionContainsCountry(activeRegion, name);
-      const fillOpacity = (borderFillOn && inRegion) ? borderFillOpacity : 0;
+      const fillOpacity = borderFillOn && inRegion ? borderFillOpacity : 0;
       return {
         color: "#ffffff",
         weight: borderWeight,
         opacity: borderOpacity,
         fillColor: "#ffffff",
-        fillOpacity: fillOpacity,
+        fillOpacity,
       };
     }
 
     function computeBBoxFromCoords(coords) {
-      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      let minX = Infinity,
+        minY = Infinity,
+        maxX = -Infinity,
+        maxY = -Infinity;
       const walk = (c) => {
         if (!Array.isArray(c)) return;
         if (typeof c[0] === "number" && typeof c[1] === "number") {
-          const x = c[0], y = c[1];
-          minX = Math.min(minX, x); minY = Math.min(minY, y);
-          maxX = Math.max(maxX, x); maxY = Math.max(maxY, y);
+          const x = c[0],
+            y = c[1];
+          minX = Math.min(minX, x);
+          minY = Math.min(minY, y);
+          maxX = Math.max(maxX, x);
+          maxY = Math.max(maxY, y);
           return;
         }
         for (const child of c) walk(child);
@@ -513,6 +506,7 @@ async function setReportsEnabled(on) {
       const res = await fetch(BORDERS_GEOJSON_URL, { cache: "force-cache" });
       if (!res.ok) throw new Error(`Borders HTTP ${res.status}`);
       const geojson = await res.json();
+
       bordersLayer = L.geoJSON(geojson, { style: bordersStyle });
       bordersLoaded = true;
 
@@ -570,17 +564,18 @@ async function setReportsEnabled(on) {
       if (b) map.fitBounds(b.pad(0.08));
     }
 
+    // ===== Country inference =====
     function bboxContains(bbox, lng, lat) {
       return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
     }
     function pointInRing(lng, lat, ring) {
       let inside = false;
       for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-        const xi = ring[i][0], yi = ring[i][1];
-        const xj = ring[j][0], yj = ring[j][1];
-        const intersect =
-          (yi > lat) !== (yj > lat) &&
-          lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
+        const xi = ring[i][0],
+          yi = ring[i][1];
+        const xj = ring[j][0],
+          yj = ring[j][1];
+        const intersect = yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi + 0.0) + xi;
         if (intersect) inside = !inside;
       }
       return inside;
@@ -603,10 +598,16 @@ async function setReportsEnabled(on) {
         if (!geom) continue;
 
         if (geom.type === "Polygon") {
-          if (pointInPolygon(lng, lat, geom.coordinates)) { countryCache.set(key, cf.name); return cf.name; }
+          if (pointInPolygon(lng, lat, geom.coordinates)) {
+            countryCache.set(key, cf.name);
+            return cf.name;
+          }
         } else if (geom.type === "MultiPolygon") {
           for (const poly of geom.coordinates) {
-            if (pointInPolygon(lng, lat, poly)) { countryCache.set(key, cf.name); return cf.name; }
+            if (pointInPolygon(lng, lat, poly)) {
+              countryCache.set(key, cf.name);
+              return cf.name;
+            }
           }
         }
       }
@@ -624,11 +625,13 @@ async function setReportsEnabled(on) {
     function getCountry(ev) {
       const c1 = ev?.location?.country;
       if (c1) return String(c1).trim();
+
       const ll = getLatLng(ev);
       if (ll && bordersLoaded) {
         const inferred = inferCountryFromPoint(ll.lat, ll.lng);
         if (inferred) return inferred;
       }
+
       const name = (ev?.location?.name || "").trim();
       if (name.includes(",")) {
         const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
@@ -643,6 +646,7 @@ async function setReportsEnabled(on) {
       return regionContainsCountry(activeRegion, getCountry(ev));
     }
 
+    // ===== Source/category =====
     function sourceType(ev) {
       const t = norm(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
@@ -661,7 +665,9 @@ async function setReportsEnabled(on) {
       if (c === "political") return 1.0;
       return 0.5;
     }
-    function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
+    function sourceMultiplier(ev) {
+      return sourceType(ev) === "isw" ? 1.3 : 1.0;
+    }
 
     function matchesSearch(ev, q) {
       if (!q) return true;
@@ -678,10 +684,11 @@ async function setReportsEnabled(on) {
 
     function haversineKm(aLat, aLng, bLat, bLng) {
       const R = 6371;
-      const dLat = (bLat - aLat) * Math.PI / 180;
-      const dLng = (bLng - aLng) * Math.PI / 180;
-      const s1 = Math.sin(dLat/2), s2 = Math.sin(dLng/2);
-      const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
+      const dLat = ((bLat - aLat) * Math.PI) / 180;
+      const dLng = ((bLng - aLng) * Math.PI) / 180;
+      const s1 = Math.sin(dLat / 2),
+        s2 = Math.sin(dLng / 2);
+      const aa = s1 * s1 + Math.cos((aLat * Math.PI) / 180) * Math.cos((bLat * Math.PI) / 180) * s2 * s2;
       return 2 * R * Math.asin(Math.sqrt(aa));
     }
 
@@ -735,9 +742,7 @@ async function setReportsEnabled(on) {
       const m = L.marker([ll.lat, ll.lng], { icon });
       const srcName = ev?.source?.name || "";
       const srcUrl = ev?.source?.url || "";
-      const srcLine = srcUrl
-        ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>`
-        : `${srcName}`;
+      const srcLine = srcUrl ? `<a href="${srcUrl}" target="_blank" rel="noreferrer">${srcName || "source"}</a>` : `${srcName}`;
 
       m.bindPopup(`<b>${ev.title || "Untitled"}</b><br>${ev.summary || ""}<br><small>${srcLine}</small>`);
       return m;
@@ -776,7 +781,10 @@ async function setReportsEnabled(on) {
       ctx.fillStyle = "rgba(0,0,0,.16)";
       ctx.fillRect(0, 0, cssW, cssH);
 
-      const padL = 24, padR = 8, padT = 12, padB = 20;
+      const padL = 24,
+        padR = 8,
+        padT = 12,
+        padB = 20;
       const w = cssW - padL - padR;
       const h = cssH - padT - padB;
 
@@ -801,14 +809,44 @@ async function setReportsEnabled(on) {
         ctx.fillRect(x, y, Math.max(1, barW - 2), bh);
       }
 
+      ctx.globalAlpha = 0.9;
+      ctx.font = "11px system-ui, -apple-system, Segoe UI, Roboto, Arial";
+      ctx.fillStyle = "#fff";
+      ctx.fillText(`Total: ${total}`, padL, 16);
+
       trendTotalEl.textContent = String(total);
       trendRangeEl.textContent = rangeText;
 
       ctx.globalAlpha = 1.0;
     }
 
-    // ===== Data =====
-    let eventsData = [];
+    function computeTrend(selectedIndex, windowDays, filters, eventsData) {
+      const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
+      const dates = days365.slice(startIndex, selectedIndex + 1);
+      const counts = new Array(dates.length).fill(0);
+
+      for (const ev of eventsData) {
+        const idx = dateToIndex.get(ev.date);
+        if (idx === undefined) continue;
+        if (idx < startIndex || idx > selectedIndex) continue;
+        if (!filters(ev, idx)) continue;
+        counts[idx - startIndex] += 1;
+      }
+      const total = counts.reduce((a, b) => a + b, 0);
+      const rangeText = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
+      return { counts, total, rangeText };
+    }
+
+    // ===== Risk scoring =====
+    function recencyWeight(eventIndex, selectedIndex, windowDays) {
+      const ageDays = selectedIndex - eventIndex;
+      if (windowDays <= 1) return 1.0;
+      const t = ageDays / (windowDays - 1);
+      return 1.0 - 0.6 * t;
+    }
+    function eventRiskScore(ev, eventIndex, selectedIndex, windowDays) {
+      return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
+    }
 
     // ===== Heat layers =====
     let heatLayer = null;
@@ -834,7 +872,9 @@ async function setReportsEnabled(on) {
     }
     function binCenterFromKey(k) {
       const [by, bx] = k.split(":").map(Number);
-      return { lat: (by + 0.5) * BIN_DEG, lng: (bx + 0.5) * BIN_DEG };
+      const clat = (by + 0.5) * BIN_DEG;
+      const clng = (bx + 0.5) * BIN_DEG;
+      return { lat: clat, lng: clng };
     }
     function weeklyWindows(selectedIndex) {
       const a1 = Math.max(0, selectedIndex - 7);
@@ -843,8 +883,10 @@ async function setReportsEnabled(on) {
       const b2 = Math.max(0, selectedIndex - 8);
       return { a1, a2, b1, b2 };
     }
-        function computeWeeklyHotspots(selectedIndex, filterFn) {
+
+    function computeWeeklyHotspots(selectedIndex, filterFn, eventsData) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
+
       const aCounts = new Map();
       const bCounts = new Map();
 
@@ -853,6 +895,7 @@ async function setReportsEnabled(on) {
         if (idx === undefined) continue;
         const ll = getLatLng(ev);
         if (!ll) continue;
+
         if (!filterFn(ev, idx, { weeklyMode: true })) continue;
 
         const key = binKey(ll.lat, ll.lng);
@@ -886,23 +929,24 @@ async function setReportsEnabled(on) {
         return;
       }
 
-      hotspotListEl.innerHTML = bins.map((b, i) => {
-        const active = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
-        return `
+      hotspotListEl.innerHTML = bins
+        .map((b, i) => {
+          const active = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
+          return `
           <div class="hotspot-row ${active ? "active" : ""}" data-key="${b.key}">
             <div>
-              <div><b>#${i+1}</b> Δ ${b.delta} (7d:${b.a} vs prev:${b.b})</div>
+              <div><b>#${i + 1}</b> Δ ${b.delta} (7d:${b.a} vs prev:${b.b})</div>
               <div class="muted">ratio ${b.ratio.toFixed(2)} · ${b.lat.toFixed(2)}, ${b.lng.toFixed(2)}</div>
             </div>
             <div class="muted">▶</div>
-          </div>
-        `;
-      }).join("");
+          </div>`;
+        })
+        .join("");
 
       [...hotspotListEl.querySelectorAll(".hotspot-row")].forEach((row) => {
         row.onclick = () => {
           const key = row.getAttribute("data-key");
-          const b = bins.find(x => x.key === key);
+          const b = bins.find((x) => x.key === key);
           if (!b) return;
 
           const isSame = activeHotspot && Math.abs(activeHotspot.lat - b.lat) < 0.001 && Math.abs(activeHotspot.lng - b.lng) < 0.001;
@@ -915,15 +959,15 @@ async function setReportsEnabled(on) {
       });
     }
 
-    function updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn) {
+    function updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn, eventsData) {
       if (!weeklyHeatCheckbox.checked) {
         clearWeeklyHeat();
         renderHotspotList([]);
         return;
       }
 
-      const bins = computeWeeklyHotspots(selectedIndex, filterFn);
-      const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
+      const bins = computeWeeklyHotspots(selectedIndex, filterFn, eventsData);
+      const points = bins.map((b) => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
 
       clearWeeklyHeat();
       if (points.length) {
@@ -936,37 +980,8 @@ async function setReportsEnabled(on) {
       renderHotspotList(bins);
     }
 
-    // ===== Risk scoring =====
-    function recencyWeight(eventIndex, selectedIndex, windowDays) {
-      const ageDays = selectedIndex - eventIndex;
-      if (windowDays <= 1) return 1.0;
-      const t = ageDays / (windowDays - 1);
-      return 1.0 - 0.6 * t;
-    }
-    function eventRiskScore(ev, eventIndex, selectedIndex, windowDays) {
-      return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
-    }
-
-    // ===== Trend computation =====
-    function computeTrend(selectedIndex, windowDays, filterFn) {
-      const startIndex = Math.max(0, selectedIndex - (windowDays - 1));
-      const dates = days365.slice(startIndex, selectedIndex + 1);
-      const counts = new Array(dates.length).fill(0);
-
-      for (const ev of eventsData) {
-        const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-        if (idx < startIndex || idx > selectedIndex) continue;
-        if (!filterFn(ev, idx, { weeklyMode: false })) continue;
-        counts[idx - startIndex] += 1;
-      }
-      const total = counts.reduce((a, b) => a + b, 0);
-      const rangeText = `${dates[0]} → ${dates[dates.length - 1]} (${dates.length} days)`;
-      return { counts, total, rangeText };
-    }
-
     // ===== Main filters =====
-    function filterBuilder(selectedIndex, windowDays) {
+    function filterBuilder(selectedIndex, windowDays, eventsData) {
       const catSet = getSelectedCategories();
       const srcSet = getSelectedSources();
       const q = norm(searchInput.value).trim();
@@ -988,16 +1003,18 @@ async function setReportsEnabled(on) {
         if (!matchesPair(ev)) return false;
 
         if (!matchesRegion(ev)) return false;
-
         if (!opts.weeklyMode && !matchesHotspot(ev)) return false;
 
         return true;
       };
     }
 
-    // ===== Normal heatmap =====
+    // ===== Heatmap (normal) =====
     function updateNormalHeatmap(visibleEvents, selectedIndex, windowDays) {
-      if (!heatCheckbox.checked) { clearHeat(); return; }
+      if (!heatCheckbox.checked) {
+        clearHeat();
+        return;
+      }
 
       const points = [];
       for (const ev of visibleEvents) {
@@ -1021,7 +1038,12 @@ async function setReportsEnabled(on) {
 
     // ===== Stats / Risk / Actors / Pairs =====
     function updateStats(visibleEvents) {
-      let mil=0, sec=0, pol=0, oth=0, news=0, isw=0;
+      let mil = 0,
+        sec = 0,
+        pol = 0,
+        oth = 0,
+        news = 0,
+        isw = 0;
       for (const ev of visibleEvents) {
         const c = norm(ev.category || "other");
         if (c === "military") mil++;
@@ -1030,7 +1052,8 @@ async function setReportsEnabled(on) {
         else oth++;
 
         const st = sourceType(ev);
-        if (st === "isw") isw++; else news++;
+        if (st === "isw") isw++;
+        else news++;
       }
       statsTotalEl.textContent = String(visibleEvents.length);
       statsMilEl.textContent = String(mil);
@@ -1056,9 +1079,7 @@ async function setReportsEnabled(on) {
 
       const rows = [...byLoc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
       riskListEl.innerHTML = rows.length
-        ? rows.map(([name, val]) => `
-          <div class="risk-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>
-        `).join("")
+        ? rows.map(([name, val]) => `<div class="risk-row"><div class="name">${name}</div><div class="val">${val.toFixed(1)}</div></div>`).join("")
         : `<div class="muted">No risk data for current filters.</div>`;
     }
 
@@ -1071,16 +1092,20 @@ async function setReportsEnabled(on) {
       actorClearBtn.style.display = activeActor ? "inline-block" : "none";
 
       actorsListEl.innerHTML = rows.length
-        ? rows.map(([name, n]) => `
+        ? rows
+            .map(
+              ([name, n]) => `
           <div class="actor-chip ${activeActor === name ? "active" : ""}" data-actor="${name}">
             <span>${name}</span><b>${n}</b>
-          </div>`).join("")
+          </div>`
+            )
+            .join("")
         : `<div class="muted">No actor signals in this window.</div>`;
 
       [...actorsListEl.querySelectorAll(".actor-chip")].forEach((el) => {
         el.onclick = () => {
           const a = el.getAttribute("data-actor");
-          activeActor = (activeActor === a) ? null : a;
+          activeActor = activeActor === a ? null : a;
           updateAll();
         };
       });
@@ -1104,10 +1129,14 @@ async function setReportsEnabled(on) {
       pairClearBtn.style.display = activePair ? "inline-block" : "none";
 
       pairsListEl.innerHTML = rows.length
-        ? rows.map(([k, n]) => `
+        ? rows
+            .map(
+              ([k, n]) => `
           <div class="pair-row ${activePair && pairKey(activePair.a, activePair.b) === k ? "active" : ""}" data-pair="${k}">
             <div class="name">${k}</div><div class="val">${n}</div>
-          </div>`).join("")
+          </div>`
+            )
+            .join("")
         : `<div class="muted">No interaction pairs in this window.</div>`;
 
       [...pairsListEl.querySelectorAll(".pair-row")].forEach((el) => {
@@ -1115,7 +1144,8 @@ async function setReportsEnabled(on) {
           const k = el.getAttribute("data-pair") || "";
           const parts = k.split(" + ");
           if (parts.length !== 2) return;
-          const a = parts[0], b = parts[1];
+          const a = parts[0],
+            b = parts[1];
           if (activePair && pairKey(activePair.a, activePair.b) === pairKey(a, b)) activePair = null;
           else activePair = { a, b };
           updateAll();
@@ -1123,11 +1153,17 @@ async function setReportsEnabled(on) {
       });
     }
 
-    actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
-    pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
+    actorClearBtn.addEventListener("click", () => {
+      activeActor = null;
+      updateAll();
+    });
+    pairClearBtn.addEventListener("click", () => {
+      activePair = null;
+      updateAll();
+    });
 
-    // ===== Alerts (rolling 7d baseline) =====
-    function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
+    // ===== Alerts / Country risk / Escalation =====
+    function computeRolling7dSpike(selectedIndex, filterFn, eventsData, category = null) {
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
       const baseEnd = Math.max(0, selectedIndex - 1);
@@ -1138,6 +1174,7 @@ async function setReportsEnabled(on) {
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
+
         if (category && norm(ev.category) !== category) continue;
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
@@ -1150,22 +1187,26 @@ async function setReportsEnabled(on) {
       return { today, baseAvg, ratio };
     }
 
-    function updateAlerts(selectedIndex, filterFn) {
-      const overall = computeRolling7dSpike(selectedIndex, filterFn, null);
-      const hardsec = computeRolling7dSpike(selectedIndex, filterFn, "security");
-      const military = computeRolling7dSpike(selectedIndex, filterFn, "military");
+    function updateAlerts(selectedIndex, filterFn, eventsData) {
+      const overall = computeRolling7dSpike(selectedIndex, filterFn, eventsData, null);
+      const hardsec = computeRolling7dSpike(selectedIndex, filterFn, eventsData, "security");
+      const military = computeRolling7dSpike(selectedIndex, filterFn, eventsData, "military");
 
       const maxRatio = Math.max(overall.ratio, hardsec.ratio, military.ratio);
       let status = "OK";
       let cls = "badge-mini badge-ok";
-      if (maxRatio >= 3.0) { status = "ALERT"; cls = "badge-mini badge-alert"; }
-      else if (maxRatio >= 2.0) { status = "WARN"; cls = "badge-mini badge-warn"; }
+      if (maxRatio >= 3.0) {
+        status = "ALERT";
+        cls = "badge-mini badge-alert";
+      } else if (maxRatio >= 2.0) {
+        status = "WARN";
+        cls = "badge-mini badge-warn";
+      }
 
       spikeBadge.className = cls;
       spikeBadge.textContent = status;
 
-      spikeText.textContent =
-        `Rolling 7d baseline | Overall: ${status} (today ${overall.today}, base ${overall.baseAvg.toFixed(1)}, x${overall.ratio.toFixed(2)})`;
+      spikeText.textContent = `Rolling 7d baseline | Overall: ${status} (today ${overall.today}, base ${overall.baseAvg.toFixed(1)}, x${overall.ratio.toFixed(2)})`;
 
       spikeDetails.innerHTML = `
         <div class="risk-row"><div class="name">Security spike</div><div class="val">${hardsec.today} vs ${hardsec.baseAvg.toFixed(1)} · x${hardsec.ratio.toFixed(2)}</div></div>
@@ -1174,7 +1215,6 @@ async function setReportsEnabled(on) {
       `;
     }
 
-    // ===== Country risk =====
     function updateCountryRisk(visibleEvents) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
@@ -1188,7 +1228,6 @@ async function setReportsEnabled(on) {
         : `<div class="muted">No country data.</div>`;
     }
 
-    // ===== Actor escalation =====
     function updateEscalation(visibleEvents, selectedIndex) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
       const aMap = new Map();
@@ -1218,11 +1257,13 @@ async function setReportsEnabled(on) {
 
       escNote.textContent = `7d vs prev 7d · (region/hotspot aware)`;
       escalationList.innerHTML = top.length
-        ? top.map(r => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`).join("")
+        ? top.map((r) => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`).join("")
         : `<div class="muted">No positive actor deltas.</div>`;
     }
 
-    // ===== Compute visible list window =====
+    // ===== Data =====
+    let eventsData = [];
+
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
@@ -1244,10 +1285,10 @@ async function setReportsEnabled(on) {
 
       applyBordersStyleNow();
 
-      const filterFn = filterBuilder(selectedIndex, windowDays);
+      const filterFn = filterBuilder(selectedIndex, windowDays, eventsData);
       const visible = computeVisible(selectedIndex, windowDays, filterFn);
 
-      // markers
+      // Markers
       clusterGroup.clearLayers();
       markerByEventId.clear();
       for (const ev of visible) {
@@ -1257,29 +1298,35 @@ async function setReportsEnabled(on) {
         if (ev.id) markerByEventId.set(ev.id, m);
       }
 
+      // Heatmaps
       updateNormalHeatmap(visible, selectedIndex, windowDays);
-      updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn);
+      updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn, eventsData);
 
-      const trend = computeTrend(selectedIndex, windowDays, filterFn);
+      // Trend
+      const trend = computeTrend(selectedIndex, windowDays, (ev, idx) => filterFn(ev, idx, { weeklyMode: false }), eventsData);
       drawTrendBars(trend.counts, trend.total, trend.rangeText);
 
+      // Stats / Risk / Actors / Pairs
       updateStats(visible);
       updateRisk(visible, selectedIndex, windowDays);
       updateActors(visible);
       updatePairs(visible);
 
-      updateAlerts(selectedIndex, filterFn);
+      // Alerts / country / escalation
+      updateAlerts(selectedIndex, filterFn, eventsData);
       updateCountryRisk(visible);
       updateEscalation(visible, selectedIndex);
 
+      // Events list
       if (!visible.length) {
         eventsListEl.innerHTML = `<div class="muted">No events for current filters (region/hotspot/actor/pair/search).</div>`;
       } else {
-        eventsListEl.innerHTML = visible.map((ev) => {
-          const st = sourceType(ev).toUpperCase();
-          const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
-          const ctry = getCountry(ev);
-          return `
+        eventsListEl.innerHTML = visible
+          .map((ev) => {
+            const st = sourceType(ev).toUpperCase();
+            const locName = ev?.location?.name ? ` · ${ev.location.name}` : "";
+            const ctry = getCountry(ev);
+            return `
             <div class="event-row" data-id="${ev.id}">
               <div class="event-row-title">${ev.title || "Untitled"}</div>
               <div class="event-row-meta">
@@ -1288,12 +1335,13 @@ async function setReportsEnabled(on) {
               </div>
             </div>
           `;
-        }).join("");
+          })
+          .join("");
 
         [...eventsListEl.querySelectorAll(".event-row")].forEach((row) => {
           row.onclick = () => {
             const id = row.getAttribute("data-id");
-            const ev = eventsData.find(e => String(e.id) === String(id));
+            const ev = eventsData.find((e) => String(e.id) === String(id));
             if (ev) openEventOnMap(ev);
           };
         });
@@ -1301,7 +1349,9 @@ async function setReportsEnabled(on) {
     }
 
     // ===== Wiring =====
-    const refresh = () => updateAll();
+    function refresh() {
+      updateAll();
+    }
 
     slider.addEventListener("input", refresh);
     searchInput.addEventListener("input", refresh);
@@ -1322,6 +1372,7 @@ async function setReportsEnabled(on) {
       applyBordersStyleNow();
       refresh();
     });
+
     regionClear.addEventListener("click", async () => {
       activeRegion = "ALL";
       regionSelect.value = "ALL";
@@ -1350,6 +1401,20 @@ async function setReportsEnabled(on) {
       applyBordersStyleNow();
     });
 
+    // Timeline accordion init (only those with data-acc)
+    document.querySelectorAll(".acc-btn[data-acc]").forEach((btn) => {
+      const targetId = btn.getAttribute("data-acc");
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      setArrow(btn, !panel.classList.contains("closed"));
+      btn.addEventListener("click", () => {
+        const wasClosed = panel.classList.contains("closed");
+        panel.classList.toggle("closed");
+        setArrow(btn, wasClosed);
+        if (wasClosed) setTimeout(() => updateAll(), 80);
+      });
+    });
+
     // ===== Load events =====
     fetch("events.json")
       .then((r) => r.json())
@@ -1362,6 +1427,7 @@ async function setReportsEnabled(on) {
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
+
         updateAll();
       })
       .catch((err) => {
@@ -1369,8 +1435,12 @@ async function setReportsEnabled(on) {
         eventsListEl.innerHTML = `<div class="muted">events.json load error</div>`;
       });
 
+    // Optional: refresh reports periodically if enabled
+    window.setInterval(() => {
+      if (reportsEnabled) reports.refresh().catch(() => {});
+    }, 5 * 60 * 1000);
   } catch (e) {
     console.error("Fatal init error:", e);
-    alert("Init error: " + (e?.message || e));
+    alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
   }
 });
