@@ -1,4 +1,5 @@
 import { createAircraftLayer } from "./js/aircraft-layer.js";
+import { createReportsLayer } from "./js/reports-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
@@ -101,6 +102,42 @@ window.addEventListener("DOMContentLoaded", () => {
     L.DomEvent.disableClickPropagation(timelinePanel);
     L.DomEvent.disableScrollPropagation(legendPanel);
     L.DomEvent.disableClickPropagation(legendPanel);
+
+    // =========================
+// ===== Crowd reports layer =====
+// =========================
+const reports = createReportsLayer(map, {
+  maxAgeHours: 48,
+  middleEastOnly: true
+});
+
+let reportsEnabled = false;
+let reportsTimer = null;
+
+async function setReportsEnabled(on) {
+  reportsEnabled = !!on;
+
+  if (reportsEnabled) {
+    if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
+
+    // azonnali frissítés
+    try { await reports.refresh(); } catch (e) { console.error("reports.refresh failed", e); }
+
+    // periodikus frissítés (10 perc)
+    if (!reportsTimer) {
+      reportsTimer = setInterval(() => {
+        reports.refresh().catch(err => console.error("reports.refresh interval failed", err));
+      }, 10 * 60 * 1000);
+    }
+  } else {
+    if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
+
+    if (reportsTimer) {
+      clearInterval(reportsTimer);
+      reportsTimer = null;
+    }
+  }
+}
 
     // ===== Aircraft layer =====
     const aircraft = createAircraftLayer(map, {
