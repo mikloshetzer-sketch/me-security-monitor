@@ -1182,7 +1182,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ===== FIRMS fires layer (fires.json generated server-side) =====
+     // ===== FIRMS fires layer (fires.json generated server-side) =====
     // IMPORTANT: ne a kulcsot tedd a böngészőbe, inkább Actions generáljon fires.json-t.
     const firesLayer = L.layerGroup();
     let firesHeat = null;
