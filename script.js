@@ -1123,6 +1123,9 @@ window.addEventListener("DOMContentLoaded", () => {
       if (t === "chokepoint" || t === "choke_point") return "⛔";
       if (t === "nuclear") return "☢️";
       if (t === "pipeline") return "⛽";
+      // NEW
+  if (t === "powerplant" || t === "power_plant") return "⚡";
+  if (t === "dam") return "💧";
       // default
       return "📍";
     }
