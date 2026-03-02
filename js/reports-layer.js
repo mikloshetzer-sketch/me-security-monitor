@@ -6,7 +6,7 @@ export function createReportsLayer(map, opts = {}) {
 
   const layer = L.layerGroup();
 
-  // Durva Middle East bounding box (nem tökéletes, de jó zajszűrő)
+  // Durva Middle East bounding box (zajszűrés)
   // Lat: 10..42, Lng: 25..65
   function inMiddleEast(lat, lng) {
     return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
@@ -23,13 +23,21 @@ export function createReportsLayer(map, opts = {}) {
     }
   }
 
+  // PIROS célkereszt ikon (⦿)
   function markerHtml() {
-    return `<div style="
-      width:10px;height:10px;border-radius:999px;
-      background:#ffd84e;
-      border:1px solid rgba(255,255,255,.55);
-      box-shadow:0 0 10px rgba(0,0,0,.35);
-    "></div>`;
+    return `
+      <div style="
+        width:18px;height:18px;border-radius:999px;
+        display:flex;align-items:center;justify-content:center;
+        background:rgba(0,0,0,.28);
+        border:1px solid rgba(255,255,255,.55);
+        box-shadow:0 0 10px rgba(0,0,0,.35);
+        color:#ff5a5a;
+        font-size:14px;
+        line-height:1;
+        font-weight:800;
+      ">⦿</div>
+    `;
   }
 
   function getLatLng(r) {
@@ -52,12 +60,13 @@ export function createReportsLayer(map, opts = {}) {
 
   function makeMarker(r) {
     const ll = getLatLng(r);
+    if (!ll) return null;
 
     const icon = L.divIcon({
       className: "",
       html: markerHtml(),
-      iconSize: [12, 12],
-      iconAnchor: [6, 6],
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
     });
 
     const m = L.marker([ll.lat, ll.lng], { icon });
@@ -69,6 +78,7 @@ export function createReportsLayer(map, opts = {}) {
 
     const hint = r.aircraft_hint ? `<b>${safeText(r.aircraft_hint)}</b> · ` : "";
     const place = r?.location?.name ? ` · ${safeText(r.location.name)}` : "";
+
     const when = r.published_at
       ? new Date(r.published_at).toISOString().slice(0, 16).replace("T", " ")
       : "—";
@@ -105,14 +115,14 @@ export function createReportsLayer(map, opts = {}) {
 
       if (options.middleEastOnly && !inMiddleEast(ll.lat, ll.lng)) continue;
 
-      layer.addLayer(makeMarker(r));
+      const marker = makeMarker(r);
+      if (!marker) continue;
+      layer.addLayer(marker);
       added++;
     }
 
-    // Debug: ha semmi nem jött, legalább tudd a konzolból
-    // (nem dobunk hibát, csak jelzünk)
     if (added === 0) {
-      console.warn("[reports-layer] 0 markers added. Check reports.json location/lat/lng + filters.");
+      console.warn("[reports-layer] 0 markers added. Check reports.json lat/lng + filters.");
     }
   }
 
