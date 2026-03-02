@@ -1182,113 +1182,302 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-     // ===== FIRMS fires layer (fires.json generated server-side) =====
-    // IMPORTANT: ne a kulcsot tedd a böngészőbe, inkább Actions generáljon fires.json-t.
-    const firesLayer = L.layerGroup();
-    let firesHeat = null;
-    let firesEnabled = false;
-    let firesHeatEnabled = false;
+    // ===== FIRMS fires layer (fires.json generated server-side) =====
+// Heurisztika: POI közelség + közeli crowd report kulcsszavak
+const firesLayer = L.layerGroup();
+let firesHeat = null;
+let firesEnabled = false;
+let firesHeatEnabled = false;
 
-    function fireIconHtml() {
-      // piros célkereszt
-      return `<div style="
-        width:16px;height:16px;border-radius:999px;
-        border:2px solid rgba(255,80,80,.95);
-        position:relative;
-        box-shadow:0 0 12px rgba(255,80,80,.25);
-      ">
-        <div style="position:absolute;left:50%;top:2px;bottom:2px;width:2px;background:rgba(255,80,80,.9);transform:translateX(-50%);"></div>
-        <div style="position:absolute;top:50%;left:2px;right:2px;height:2px;background:rgba(255,80,80,.9);transform:translateY(-50%);"></div>
-      </div>`;
+// caches
+let poisCache = null;
+let reportsCache = null;
+let poisLoadedAt = 0;
+let reportsLoadedAt = 0;
+
+// Refresh cache intervals
+const POIS_REFRESH_MS = 60 * 60 * 1000;     // 1 óra
+const REPORTS_REFRESH_MS = 10 * 60 * 1000;  // 10 perc
+
+// Middle East bbox (same as you used)
+function inMiddleEastBBox(lat, lng) {
+  return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
+}
+
+function fireIconHtml(level = "UNK") {
+  // piros célkereszt + MIL szint szerint kicsi jelzés (szegély erősebb)
+  const border =
+    level === "HIGH" ? "rgba(255,80,80,.98)" :
+    level === "LIKELY" ? "rgba(255,120,80,.95)" :
+    level === "POSSIBLE" ? "rgba(255,180,80,.92)" :
+    "rgba(255,80,80,.85)";
+
+  return `<div style="
+    width:16px;height:16px;border-radius:999px;
+    border:2px solid ${border};
+    position:relative;
+    box-shadow:0 0 12px rgba(255,80,80,.25);
+  ">
+    <div style="position:absolute;left:50%;top:2px;bottom:2px;width:2px;background:${border};transform:translateX(-50%);"></div>
+    <div style="position:absolute;top:50%;left:2px;right:2px;height:2px;background:${border};transform:translateY(-50%);"></div>
+  </div>`;
+}
+
+function safeText(s) {
+  return String(s ?? "").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function haversineKm(aLat, aLng, bLat, bLng) {
+  const R = 6371;
+  const dLat = (bLat - aLat) * Math.PI / 180;
+  const dLng = (bLng - aLng) * Math.PI / 180;
+  const s1 = Math.sin(dLat / 2), s2 = Math.sin(dLng / 2);
+  const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
+  return 2 * R * Math.asin(Math.sqrt(aa));
+}
+
+async function loadPoisIfNeeded() {
+  const stale = !poisCache || (Date.now() - poisLoadedAt) > POIS_REFRESH_MS;
+  if (!stale) return poisCache;
+
+  try {
+    const res = await fetch("pois.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`pois.json HTTP ${res.status}`);
+    const data = await res.json();
+    poisCache = Array.isArray(data) ? data : (Array.isArray(data?.pois) ? data.pois : []);
+    poisLoadedAt = Date.now();
+  } catch (e) {
+    console.warn("[fires] pois load failed:", e?.message || e);
+    poisCache = [];
+  }
+  return poisCache;
+}
+
+async function loadReportsIfNeeded() {
+  const stale = !reportsCache || (Date.now() - reportsLoadedAt) > REPORTS_REFRESH_MS;
+  if (!stale) return reportsCache;
+
+  try {
+    const res = await fetch("reports.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`reports.json HTTP ${res.status}`);
+    const payload = await res.json();
+    const list = Array.isArray(payload) ? payload : (Array.isArray(payload?.reports) ? payload.reports : []);
+    reportsCache = list;
+    reportsLoadedAt = Date.now();
+  } catch (e) {
+    console.warn("[fires] reports load failed:", e?.message || e);
+    reportsCache = [];
+  }
+  return reportsCache;
+}
+
+// milyen POI-k számítsanak “military relevance”-nek?
+const MIL_POI_TYPES = new Set([
+  "airbase", "base", "nuclear", "chokepoint", "pipeline", "port", "airport"
+]);
+
+// crowd report kulcsszavak
+const MIL_REPORT_PATTERNS = [
+  "strike", "airstrike", "explosion", "blast", "missile", "rocket", "drone", "uav",
+  "bomb", "shell", "artillery", "attack", "raid",
+  "idf", "hezbollah", "irgc", "houthis", "hamas", "isis", "pmf",
+  "intercept", "sirens"
+].map(s => s.toLowerCase());
+
+function reportLooksMilitary(r) {
+  const t = `${r?.title || ""} ${r?.text || ""}`.toLowerCase();
+  return MIL_REPORT_PATTERNS.some(k => t.includes(k));
+}
+
+function getReportLatLng(r) {
+  const lat1 = Number(r?.location?.lat);
+  const lng1 = Number(r?.location?.lng);
+  if (Number.isFinite(lat1) && Number.isFinite(lng1)) return { lat: lat1, lng: lng1 };
+
+  const lat2 = Number(r?.lat);
+  const lng2 = Number(r?.lng);
+  if (Number.isFinite(lat2) && Number.isFinite(lng2)) return { lat: lat2, lng: lng2 };
+
+  return null;
+}
+
+function getPoiLatLng(p) {
+  const lat = Number(p?.lat);
+  const lng = Number(p?.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  return { lat, lng };
+}
+
+function classifyMilitaryLikelihood(lat, lng, pois, reports) {
+  // Score komponensek
+  let score = 0;
+  let nearestPoi = null;
+  let nearestPoiKm = Infinity;
+
+  // 1) POI közelség
+  for (const p of (pois || [])) {
+    const typ = String(p?.type || "").toLowerCase();
+    if (!MIL_POI_TYPES.has(typ)) continue;
+
+    const ll = getPoiLatLng(p);
+    if (!ll) continue;
+    if (!inMiddleEastBBox(ll.lat, ll.lng)) continue;
+
+    const d = haversineKm(lat, lng, ll.lat, ll.lng);
+    if (d < nearestPoiKm) {
+      nearestPoiKm = d;
+      nearestPoi = p;
+    }
+  }
+
+  // POI scoring távolság alapján
+  // (ezeket nyugodtan állítsd)
+  if (nearestPoi && Number.isFinite(nearestPoiKm)) {
+    if (nearestPoiKm <= 5) score += 2;
+    else if (nearestPoiKm <= 15) score += 1;
+  }
+
+  // 2) Közeli military-szövegű crowd report
+  let nearestMilReportKm = Infinity;
+  let nearestMilReport = null;
+
+  for (const r of (reports || [])) {
+    if (!reportLooksMilitary(r)) continue;
+    const ll = getReportLatLng(r);
+    if (!ll) continue;
+    if (!inMiddleEastBBox(ll.lat, ll.lng)) continue;
+
+    const d = haversineKm(lat, lng, ll.lat, ll.lng);
+    if (d < nearestMilReportKm) {
+      nearestMilReportKm = d;
+      nearestMilReport = r;
+    }
+  }
+
+  if (nearestMilReport && Number.isFinite(nearestMilReportKm)) {
+    if (nearestMilReportKm <= 10) score += 1;
+    else if (nearestMilReportKm <= 25) score += 0.5;
+  }
+
+  // Szint
+  const level =
+    score >= 2.5 ? "HIGH" :
+    score >= 1.5 ? "LIKELY" :
+    score >= 0.5 ? "POSSIBLE" :
+    "UNK";
+
+  return {
+    score,
+    level,
+    nearestPoi,
+    nearestPoiKm: Number.isFinite(nearestPoiKm) ? nearestPoiKm : null,
+    nearestMilReport,
+    nearestMilReportKm: Number.isFinite(nearestMilReportKm) ? nearestMilReportKm : null,
+  };
+}
+
+async function refreshFiresSafe() {
+  try {
+    const [pois, reports] = await Promise.all([loadPoisIfNeeded(), loadReportsIfNeeded()]);
+
+    const res = await fetch("fires.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`fires.json HTTP ${res.status}`);
+    const payload = await res.json();
+
+    // accept either {fires:[...]} or root array
+    const list = Array.isArray(payload) ? payload : (Array.isArray(payload?.fires) ? payload.fires : []);
+
+    firesLayer.clearLayers();
+    const heatPts = [];
+    let added = 0;
+
+    for (const f of list) {
+      const lat = Number(f?.lat ?? f?.latitude);
+      const lng = Number(f?.lng ?? f?.longitude);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+      if (!inMiddleEastBBox(lat, lng)) continue;
+
+      // MIL likelihood
+      const mil = classifyMilitaryLikelihood(lat, lng, pois, reports);
+
+      const icon = L.divIcon({
+        className: "",
+        html: fireIconHtml(mil.level),
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+      });
+
+      const m = L.marker([lat, lng], { icon });
+
+      const br = f?.brightness ?? f?.bright_ti4 ?? f?.bright_ti5 ?? "";
+      const frp = f?.frp ?? "";
+      const dt = (f?.acq_date || f?.date || "") + (f?.acq_time ? ` ${f.acq_time}` : "");
+
+      const poiLine = mil.nearestPoi
+        ? `${safeText(mil.nearestPoi.name || "POI")} (${safeText(mil.nearestPoi.type || "")}) · ${mil.nearestPoiKm?.toFixed(1)} km`
+        : "—";
+
+      const repLine = mil.nearestMilReport
+        ? `${safeText(mil.nearestMilReport.source?.type || "report")} · ${mil.nearestMilReportKm?.toFixed(1)} km`
+        : "—";
+
+      m.bindPopup(`
+        <b>FIRMS hotspot</b><br/>
+        <small>${safeText(dt || "—")}</small><br/>
+        <small>br: ${safeText(br)} · frp: ${safeText(frp)}</small><br/>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,.12);margin:8px 0;">
+        <small><b>Military likelihood:</b> ${safeText(mil.level)} (score ${mil.score.toFixed(1)})</small><br/>
+        <small><b>Nearest POI:</b> ${poiLine}</small><br/>
+        <small><b>Nearest mil-report:</b> ${repLine}</small>
+      `);
+
+      firesLayer.addLayer(m);
+      added++;
+
+      // heat intensity
+      const intensity = Number.isFinite(Number(frp))
+        ? Math.max(0.2, Math.min(3.0, Number(frp) / 20))
+        : 0.8;
+      heatPts.push([lat, lng, intensity]);
     }
 
-    function inMiddleEastBBox(lat, lng) {
-      // same idea: lat 10..42, lng 25..65
-      return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
+    if (firesHeat) {
+      if (map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
+      firesHeat = null;
+    }
+    if (firesHeatEnabled && heatPts.length) {
+      firesHeat = L.heatLayer(heatPts, { radius: 26, blur: 18, maxZoom: 8 });
+      firesHeat.addTo(map);
+      firesHeat.bringToBack();
+      if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    async function refreshFiresSafe() {
-      try {
-        const res = await fetch("fires.json", { cache: "no-store" });
-        if (!res.ok) throw new Error(`fires.json HTTP ${res.status}`);
-        const payload = await res.json();
+    if (added === 0) console.warn("[fires] 0 markers from fires.json (empty or outside bbox).");
+  } catch (e) {
+    console.warn("[fires] refresh failed:", e?.message || e);
+  }
+}
 
-        // accept either {fires:[...]} or root array
-        const list = Array.isArray(payload) ? payload : (Array.isArray(payload?.fires) ? payload.fires : []);
-        firesLayer.clearLayers();
+function setFiresEnabled(on) {
+  firesEnabled = !!on;
+  if (firesEnabled) {
+    if (!map.hasLayer(firesLayer)) firesLayer.addTo(map);
+    refreshFiresSafe();
+  } else {
+    if (map.hasLayer(firesLayer)) map.removeLayer(firesLayer);
+    if (firesHeat && map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
+  }
+}
 
-        const heatPts = [];
-        let added = 0;
+function setFiresHeatEnabled(on) {
+  firesHeatEnabled = !!on;
+  if (firesEnabled) refreshFiresSafe();
+}
 
-        for (const f of list) {
-          const lat = Number(f?.lat ?? f?.latitude);
-          const lng = Number(f?.lng ?? f?.longitude);
-          if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
-          if (!inMiddleEastBBox(lat, lng)) continue;
-
-          const icon = L.divIcon({
-            className: "",
-            html: fireIconHtml(),
-            iconSize: [16, 16],
-            iconAnchor: [8, 8],
-          });
-
-          const m = L.marker([lat, lng], { icon });
-
-          const br = f?.brightness ?? f?.bright_ti4 ?? f?.bright_ti5 ?? "";
-          const frp = f?.frp ?? "";
-          const dt = (f?.acq_date || f?.date || "") + (f?.acq_time ? ` ${f.acq_time}` : "");
-          m.bindPopup(
-            `<b>FIRMS hotspot</b><br/>
-             <small>${String(dt || "").replace(/</g,"&lt;")}<br/>
-             br: ${String(br).replace(/</g,"&lt;")} · frp: ${String(frp).replace(/</g,"&lt;")}</small>`
-          );
-
-          firesLayer.addLayer(m);
-          added++;
-
-          // heat intensity (very rough)
-          const intensity = Number.isFinite(Number(frp)) ? Math.max(0.2, Math.min(3.0, Number(frp) / 20)) : 0.8;
-          heatPts.push([lat, lng, intensity]);
-        }
-
-        if (firesHeat) {
-          if (map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
-          firesHeat = null;
-        }
-        if (firesHeatEnabled && heatPts.length) {
-          firesHeat = L.heatLayer(heatPts, { radius: 26, blur: 18, maxZoom: 8 });
-          firesHeat.addTo(map);
-          firesHeat.bringToBack();
-          if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
-        }
-
-        if (added === 0) console.warn("[fires] 0 markers from fires.json (empty or outside bbox).");
-      } catch (e) {
-        console.warn("[fires] refresh failed:", e?.message || e);
-      }
-    }
-
-    function setFiresEnabled(on) {
-      firesEnabled = !!on;
-      if (firesEnabled) {
-        if (!map.hasLayer(firesLayer)) firesLayer.addTo(map);
-        refreshFiresSafe();
-      } else {
-        if (map.hasLayer(firesLayer)) map.removeLayer(firesLayer);
-        if (firesHeat && map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
-      }
-    }
-    function setFiresHeatEnabled(on) {
-      firesHeatEnabled = !!on;
-      if (firesEnabled) refreshFiresSafe();
-    }
-
-    // refresh every 10 minutes
-    window.setInterval(() => {
-      if (firesEnabled) refreshFiresSafe();
-    }, 10 * 60 * 1000);
-
+// refresh every 10 minutes
+window.setInterval(() => {
+  if (firesEnabled) refreshFiresSafe();
+}, 10 * 60 * 1000);
     // ===== Control panel slicing into accordions (HARD, stable) =====
     // We move:
     // - first two .row (heat/weekly + borders/clear) into Layers
