@@ -1,3 +1,7 @@
+// =========================
+// script.js (PART 1 / 2)
+// =========================
+
 import { createAircraftLayer } from "./js/aircraft-layer.js";
 import { createReportsLayer } from "./js/reports-layer.js";
 
@@ -34,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // ===== Accordion (Timeline: your HTML already has these) =====
+    // ===== Accordion (Timeline panel existing) =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
@@ -42,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     document.querySelectorAll(".acc-btn").forEach((btn) => {
       const targetId = btn.getAttribute("data-acc");
-      const panel = document.getElementById(targetId);
+      const panel = targetId ? document.getElementById(targetId) : null;
       if (!panel) return;
       setArrow(btn, !panel.classList.contains("closed"));
       btn.addEventListener("click", () => {
@@ -53,7 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // ===== Control panel accordion helper =====
+    // ===== Control panel accordion helper (for slicing) =====
     function makeAccSection(title, contentEl, openByDefault = false) {
       const wrap = document.createElement("div");
       wrap.className = "acc";
@@ -97,159 +101,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // =====================================================
-    // Aircraft layer
-    // =====================================================
-    const aircraft = createAircraftLayer(map, {
-      updateIntervalMs: 20000, // 20s (civil is visible; safe for rate limits)
-      trackSeconds: 300,
-      militaryOnly: false,
-      showTracks: true,
-    });
-
-    let aircraftEnabled = true;
-    let aircraftRunning = false;
-
-    function setAircraftEnabled(on) {
-      aircraftEnabled = !!on;
-
-      if (aircraftEnabled) {
-        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
-        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
-
-        if (!aircraftRunning) {
-          aircraft.start();
-          aircraftRunning = true;
-        }
-      } else {
-        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
-        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
-
-        if (aircraftRunning) {
-          aircraft.stop();
-          aircraftRunning = false;
-        }
-      }
-    }
-
-    // =====================================================
-    // Reports layer (Mastodon/Reddit from reports.json)
-    // =====================================================
-    const reports = createReportsLayer(map, { maxAgeHours: 48, middleEastOnly: true });
-    let reportsEnabled = true;
-
-    async function setReportsEnabled(on) {
-      reportsEnabled = !!on;
-      if (reportsEnabled) {
-        if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
-        try { await reports.refresh(); } catch (e) { console.warn("[reports] refresh error", e); }
-      } else {
-        if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
-      }
-    }
-
-    // =====================================================
-    // POI layer (bases / airports / ports / chokepoints / nuclear)
-    // =====================================================
-    const poiLayer = L.layerGroup();
-    let poiEnabled = true;
-
-    function poiIconHtml(type) {
-      const t = String(type || "").toLowerCase();
-      let glyph = "●";
-      if (t === "airport" || t === "airbase") glyph = "✈";
-      else if (t === "port") glyph = "⚓";
-      else if (t === "chokepoint") glyph = "⟟";
-      else if (t === "nuclear") glyph = "☢";
-      else if (t === "pipeline") glyph = "⛽";
-
-      return `<div style="
-        width:18px;height:18px;border-radius:999px;
-        display:flex;align-items:center;justify-content:center;
-        background:rgba(0,0,0,.35);
-        border:1px solid rgba(255,255,255,.55);
-        color:#fff;font-size:12px;line-height:1;
-        box-shadow:0 0 10px rgba(0,0,0,.35);
-      ">${glyph}</div>`;
-    }
-
-    function makePoiMarker(p) {
-      const icon = L.divIcon({
-        className: "",
-        html: poiIconHtml(p.type),
-        iconSize: [18, 18],
-        iconAnchor: [9, 9],
-      });
-      const m = L.marker([p.lat, p.lng], { icon });
-      m.bindPopup(`<b>${p.name || "POI"}</b><br/><small>${p.type || ""}</small>`);
-      return m;
-    }
-
-    async function loadPois() {
-      try {
-        const res = await fetch("pois.json", { cache: "no-store" });
-        if (!res.ok) throw new Error(`pois.json HTTP ${res.status}`);
-        const data = await res.json();
-        const arr = Array.isArray(data) ? data : [];
-        poiLayer.clearLayers();
-        for (const p of arr) {
-          const lat = Number(p?.lat), lng = Number(p?.lng);
-          if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
-          poiLayer.addLayer(makePoiMarker({ ...p, lat, lng }));
-        }
-      } catch (e) {
-        console.warn("[pois] load failed:", e?.message || e);
-      }
-    }
-
-    function setPoiEnabled(on) {
-      poiEnabled = !!on;
-      if (poiEnabled) {
-        if (!map.hasLayer(poiLayer)) poiLayer.addTo(map);
-      } else {
-        if (map.hasLayer(poiLayer)) map.removeLayer(poiLayer);
-      }
-    }
-
-    // ===== Aircraft UI (goes into Control panel accordion) =====
-    const aircraftUiWrap = document.createElement("div");
-    aircraftUiWrap.innerHTML = `
-      <div class="row">
-        <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
-      </div>
-      <div class="row">
-        <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
-        <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
-      </div>
-      <div class="muted" style="margin-top:6px;">
-        Tip: “Military only” heurisztika — nem 100%.
-      </div>
-    `;
-
-    // ===== Reports UI =====
-    const reportsUiWrap = document.createElement("div");
-    reportsUiWrap.innerHTML = `
-      <div class="row">
-        <label><input id="reportsCheckbox" type="checkbox" checked /> Crowd reports (Mastodon/Reddit)</label>
-      </div>
-      <div class="muted" style="margin-top:6px;">
-        Source: reports.json (GitHub Actions frissíti).
-      </div>
-    `;
-
-    // ===== POI UI =====
-    const poiUiWrap = document.createElement("div");
-    poiUiWrap.innerHTML = `
-      <div class="row">
-        <label><input id="poiCheckbox" type="checkbox" checked /> Strategic sites (POI)</label>
-        <span class="btn-mini" id="poiReloadBtn">Reload</span>
-      </div>
-      <div class="muted" style="margin-top:6px;">
-        Source: pois.json (statikus lista).
-      </div>
-    `;
-
-    // ===== UI refs from HTML =====
+    // ===== UI refs =====
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
     const bordersCheckbox = $("bordersCheckbox");
@@ -310,62 +162,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const catCheckboxes = [...document.querySelectorAll(".cat-filter")];
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
-
-    // ===== Rebuild Control panel as accordion (Layers / Filters / Flight / Reports / POI) =====
-    (function rebuildControlPanel() {
-      const controlTitle = controlPanel.querySelector("h3");
-
-      const oldNodes = [];
-      [...controlPanel.children].forEach((ch) => {
-        if (ch === controlTitle) return;
-        oldNodes.push(ch);
-      });
-
-      const layersBox = document.createElement("div");
-      const filtersBox = document.createElement("div");
-
-      // Split heuristic: everything until "Category filters" muted label -> Layers
-      let reachedCategory = false;
-      for (const node of oldNodes) {
-        const txt = (node.textContent || "").toLowerCase();
-        if (txt.includes("category filters")) reachedCategory = true;
-        if (!reachedCategory) layersBox.appendChild(node);
-        else filtersBox.appendChild(node);
-      }
-
-      controlPanel.innerHTML = "";
-      controlPanel.appendChild(controlTitle);
-
-      // add sections
-      controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
-      controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
-      controlPanel.appendChild(makeAccSection("Flight tracking", aircraftUiWrap, false));
-      controlPanel.appendChild(makeAccSection("Crowd reports", reportsUiWrap, false));
-      controlPanel.appendChild(makeAccSection("Strategic sites (POI)", poiUiWrap, false));
-    })();
-
-    // ===== Bind new checkboxes =====
-    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
-    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
-    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
-
-    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
-    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
-    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
-
-    const reportsCheckbox = document.getElementById("reportsCheckbox");
-    reportsCheckbox.addEventListener("change", (e) => setReportsEnabled(e.target.checked));
-
-    const poiCheckbox = document.getElementById("poiCheckbox");
-    const poiReloadBtn = document.getElementById("poiReloadBtn");
-    poiCheckbox.addEventListener("change", (e) => setPoiEnabled(e.target.checked));
-    poiReloadBtn.addEventListener("click", () => loadPois());
-
-    // Start layers
-    setAircraftEnabled(true);
-    setReportsEnabled(true);
-    setPoiEnabled(true);
-    loadPois();
 
     // ===== Date utilities =====
     function makeLast365Days() {
@@ -620,6 +416,14 @@ window.addEventListener("DOMContentLoaded", () => {
       countryCache.set(key, null);
       return null;
     }
+
+    function getLatLng(ev) {
+      const lat = Number(ev?.location?.lat);
+      const lng = Number(ev?.location?.lng);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+      return { lat, lng };
+    }
+
     function getCountry(ev) {
       const c1 = ev?.location?.country;
       if (c1) return String(c1).trim();
@@ -661,13 +465,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return 0.5;
     }
     function sourceMultiplier(ev) { return sourceType(ev) === "isw" ? 1.3 : 1.0; }
-
-    function getLatLng(ev) {
-      const lat = Number(ev?.location?.lat);
-      const lng = Number(ev?.location?.lng);
-      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-      return { lat, lng };
-    }
 
     function matchesSearch(ev, q) {
       if (!q) return true;
@@ -864,6 +661,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ===== Weekly anomaly + hotspots =====
     const BIN_DEG = 1.0;
     const HOTSPOT_RADIUS_KM = 120;
+
     function binKey(lat, lng) {
       const bx = Math.floor(lng / BIN_DEG);
       const by = Math.floor(lat / BIN_DEG);
@@ -871,9 +669,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     function binCenterFromKey(k) {
       const [by, bx] = k.split(":").map(Number);
-      const clat = (by + 0.5) * BIN_DEG;
-      const clng = (bx + 0.5) * BIN_DEG;
-      return { lat: clat, lng: clng };
+      return { lat: (by + 0.5) * BIN_DEG, lng: (bx + 0.5) * BIN_DEG };
     }
     function weeklyWindows(selectedIndex) {
       const a1 = Math.max(0, selectedIndex - 7);
@@ -885,7 +681,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function computeWeeklyHotspots(selectedIndex, filterFn) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
-
       const aCounts = new Map();
       const bCounts = new Map();
 
@@ -894,7 +689,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (idx === undefined) continue;
         const ll = getLatLng(ev);
         if (!ll) continue;
-
         if (!filterFn(ev, idx, { weeklyMode: true })) continue;
 
         const key = binKey(ll.lat, ll.lng);
@@ -913,7 +707,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const center = binCenterFromKey(k);
         bins.push({ key: k, lat: center.lat, lng: center.lng, a, b, delta, ratio, score: delta + ratio });
       }
-
       bins.sort((x, y) => (y.score - x.score));
       return bins.slice(0, 10);
     }
@@ -963,9 +756,9 @@ window.addEventListener("DOMContentLoaded", () => {
         renderHotspotList([]);
         return;
       }
-
       const bins = computeWeeklyHotspots(selectedIndex, filterFn);
       const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
+
       clearWeeklyHeat();
       if (points.length) {
         weeklyHeatLayer = L.heatLayer(points, { radius: 38, blur: 28, maxZoom: 8 });
@@ -997,9 +790,10 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!matchesSearch(ev, q)) return false;
         if (!matchesActor(ev)) return false;
         if (!matchesPair(ev)) return false;
-        if (!matchesRegion(ev)) return false;
 
+        if (!matchesRegion(ev)) return false;
         if (!opts.weeklyMode && !matchesHotspot(ev)) return false;
+
         return true;
       };
     }
@@ -1147,7 +941,6 @@ window.addEventListener("DOMContentLoaded", () => {
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
-
         if (category && norm(ev.category) !== category) continue;
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
@@ -1235,6 +1028,10 @@ window.addEventListener("DOMContentLoaded", () => {
     // ===== Data =====
     let eventsData = [];
 
+    // ===== Layer toggles (NEW) =====
+    let eventsEnabled = true;
+
+    // ===== Compute visible list window =====
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
@@ -1247,41 +1044,463 @@ window.addEventListener("DOMContentLoaded", () => {
       return out;
     }
 
+    // ===== END PART 1 =====
+    // (Part 2 continues below)
+  // =========================
+// script.js (PART 2 / 2)
+// =========================
+
+    // ===== Aircraft layer (civil + military) =====
+    const aircraft = createAircraftLayer(map, {
+      updateIntervalMs: 20000,  // 20s
+      trackSeconds: 300,
+      militaryOnly: false,      // IMPORTANT: civil visible by default
+      showTracks: true
+    });
+
+    let aircraftEnabled = true;
+    let aircraftRunning = false;
+
+    function setAircraftEnabled(on) {
+      aircraftEnabled = !!on;
+
+      if (aircraftEnabled) {
+        if (!map.hasLayer(aircraft.tracksLayer)) aircraft.tracksLayer.addTo(map);
+        if (!map.hasLayer(aircraft.aircraftLayer)) aircraft.aircraftLayer.addTo(map);
+
+        if (!aircraftRunning) {
+          aircraft.start();
+          aircraftRunning = true;
+        }
+      } else {
+        if (map.hasLayer(aircraft.tracksLayer)) map.removeLayer(aircraft.tracksLayer);
+        if (map.hasLayer(aircraft.aircraftLayer)) map.removeLayer(aircraft.aircraftLayer);
+
+        if (aircraftRunning) {
+          aircraft.stop();
+          aircraftRunning = false;
+        }
+      }
+    }
+
+    // ===== Reports layer (reports.json) =====
+    const reports = createReportsLayer(map, { maxAgeHours: 48, middleEastOnly: true });
+    let reportsEnabled = true;
+
+    async function refreshReportsSafe() {
+      try {
+        await reports.refresh();
+      } catch (e) {
+        console.warn("[reports] refresh failed:", e?.message || e);
+      }
+    }
+
+    function setReportsEnabled(on) {
+      reportsEnabled = !!on;
+      if (reportsEnabled) {
+        if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
+        refreshReportsSafe();
+      } else {
+        if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
+      }
+    }
+
+    // refresh every 5 minutes
+    window.setInterval(() => {
+      if (reportsEnabled) refreshReportsSafe();
+    }, 5 * 60 * 1000);
+
+    // ===== POI layer (pois.json) =====
+    const poiLayer = L.layerGroup();
+    let poisEnabled = true;
+    let poisLoaded = false;
+
+    function poiEmoji(type) {
+      const t = norm(type);
+      if (t === "airport") return "✈️";
+      if (t === "port") return "⚓";
+      if (t === "airbase" || t === "base") return "🛡️";
+      if (t === "chokepoint" || t === "choke_point") return "⛔";
+      if (t === "nuclear") return "☢️";
+      if (t === "pipeline") return "⛽";
+      // default
+      return "📍";
+    }
+
+    function poiIconHtml(emoji) {
+      return `<div style="
+        width:22px;height:22px;border-radius:999px;
+        display:flex;align-items:center;justify-content:center;
+        background: rgba(0,0,0,.35);
+        border:1px solid rgba(255,255,255,.35);
+        box-shadow:0 0 10px rgba(0,0,0,.35);
+        font-size:14px;
+      ">${emoji}</div>`;
+    }
+
+    async function loadPoisOnce() {
+      if (poisLoaded) return;
+      poisLoaded = true;
+      try {
+        const res = await fetch("pois.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`pois.json HTTP ${res.status}`);
+        const list = await res.json();
+        if (!Array.isArray(list)) throw new Error("pois.json must be an array");
+
+        poiLayer.clearLayers();
+        for (const p of list) {
+          const lat = Number(p?.lat);
+          const lng = Number(p?.lng);
+          if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+
+          const emoji = poiEmoji(p?.type);
+          const icon = L.divIcon({
+            className: "",
+            html: poiIconHtml(emoji),
+            iconSize: [22, 22],
+            iconAnchor: [11, 11],
+          });
+
+          const m = L.marker([lat, lng], { icon });
+          const name = String(p?.name || "POI").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+          const type = String(p?.type || "").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+          m.bindPopup(`<b>${name}</b><br/><small>${type} · ${lat.toFixed(3)}, ${lng.toFixed(3)}</small>`);
+          poiLayer.addLayer(m);
+        }
+      } catch (e) {
+        console.warn("[pois] load failed:", e?.message || e);
+      }
+    }
+
+    function setPoisEnabled(on) {
+      poisEnabled = !!on;
+      if (poisEnabled) {
+        loadPoisOnce();
+        if (!map.hasLayer(poiLayer)) poiLayer.addTo(map);
+      } else {
+        if (map.hasLayer(poiLayer)) map.removeLayer(poiLayer);
+      }
+    }
+
+    // ===== FIRMS fires layer (fires.json generated server-side) =====
+    // IMPORTANT: ne a kulcsot tedd a böngészőbe, inkább Actions generáljon fires.json-t.
+    const firesLayer = L.layerGroup();
+    let firesHeat = null;
+    let firesEnabled = false;
+    let firesHeatEnabled = false;
+
+    function fireIconHtml() {
+      // piros célkereszt
+      return `<div style="
+        width:16px;height:16px;border-radius:999px;
+        border:2px solid rgba(255,80,80,.95);
+        position:relative;
+        box-shadow:0 0 12px rgba(255,80,80,.25);
+      ">
+        <div style="position:absolute;left:50%;top:2px;bottom:2px;width:2px;background:rgba(255,80,80,.9);transform:translateX(-50%);"></div>
+        <div style="position:absolute;top:50%;left:2px;right:2px;height:2px;background:rgba(255,80,80,.9);transform:translateY(-50%);"></div>
+      </div>`;
+    }
+
+    function inMiddleEastBBox(lat, lng) {
+      // same idea: lat 10..42, lng 25..65
+      return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
+    }
+
+    async function refreshFiresSafe() {
+      try {
+        const res = await fetch("fires.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`fires.json HTTP ${res.status}`);
+        const payload = await res.json();
+
+        // accept either {fires:[...]} or root array
+        const list = Array.isArray(payload) ? payload : (Array.isArray(payload?.fires) ? payload.fires : []);
+        firesLayer.clearLayers();
+
+        const heatPts = [];
+        let added = 0;
+
+        for (const f of list) {
+          const lat = Number(f?.lat ?? f?.latitude);
+          const lng = Number(f?.lng ?? f?.longitude);
+          if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+          if (!inMiddleEastBBox(lat, lng)) continue;
+
+          const icon = L.divIcon({
+            className: "",
+            html: fireIconHtml(),
+            iconSize: [16, 16],
+            iconAnchor: [8, 8],
+          });
+
+          const m = L.marker([lat, lng], { icon });
+
+          const br = f?.brightness ?? f?.bright_ti4 ?? f?.bright_ti5 ?? "";
+          const frp = f?.frp ?? "";
+          const dt = (f?.acq_date || f?.date || "") + (f?.acq_time ? ` ${f.acq_time}` : "");
+          m.bindPopup(
+            `<b>FIRMS hotspot</b><br/>
+             <small>${String(dt || "").replace(/</g,"&lt;")}<br/>
+             br: ${String(br).replace(/</g,"&lt;")} · frp: ${String(frp).replace(/</g,"&lt;")}</small>`
+          );
+
+          firesLayer.addLayer(m);
+          added++;
+
+          // heat intensity (very rough)
+          const intensity = Number.isFinite(Number(frp)) ? Math.max(0.2, Math.min(3.0, Number(frp) / 20)) : 0.8;
+          heatPts.push([lat, lng, intensity]);
+        }
+
+        if (firesHeat) {
+          if (map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
+          firesHeat = null;
+        }
+        if (firesHeatEnabled && heatPts.length) {
+          firesHeat = L.heatLayer(heatPts, { radius: 26, blur: 18, maxZoom: 8 });
+          firesHeat.addTo(map);
+          firesHeat.bringToBack();
+          if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
+        }
+
+        if (added === 0) console.warn("[fires] 0 markers from fires.json (empty or outside bbox).");
+      } catch (e) {
+        console.warn("[fires] refresh failed:", e?.message || e);
+      }
+    }
+
+    function setFiresEnabled(on) {
+      firesEnabled = !!on;
+      if (firesEnabled) {
+        if (!map.hasLayer(firesLayer)) firesLayer.addTo(map);
+        refreshFiresSafe();
+      } else {
+        if (map.hasLayer(firesLayer)) map.removeLayer(firesLayer);
+        if (firesHeat && map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
+      }
+    }
+    function setFiresHeatEnabled(on) {
+      firesHeatEnabled = !!on;
+      if (firesEnabled) refreshFiresSafe();
+    }
+
+    // refresh every 10 minutes
+    window.setInterval(() => {
+      if (firesEnabled) refreshFiresSafe();
+    }, 10 * 60 * 1000);
+
+    // ===== Control panel slicing into accordions (HARD, stable) =====
+    // We move:
+    // - first two .row (heat/weekly + borders/clear) into Layers
+    // - everything else into Filters
+    const controlTitle = controlPanel.querySelector("h3");
+    const directRows = [...controlPanel.querySelectorAll(":scope > .row")];
+    const firstRow = directRows[0] || null;
+    const secondRow = directRows[1] || null;
+
+    const layersBox = document.createElement("div");
+    const filtersBox = document.createElement("div");
+
+    // Move first two rows to Layers
+    if (firstRow) layersBox.appendChild(firstRow);
+    if (secondRow) layersBox.appendChild(secondRow);
+
+    // Add NEW layer toggles (events / aircraft / reports / pois / fires)
+    const layersExtra = document.createElement("div");
+    layersExtra.innerHTML = `
+      <div class="row" style="margin-top:6px;">
+        <label><input id="eventsLayerCheckbox" type="checkbox" checked /> Events (news/ISW)</label>
+      </div>
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;">Aircraft</div>
+        <div class="row">
+          <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft layer</label>
+        </div>
+        <div class="row">
+          <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
+          <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
+        </div>
+        <div class="muted" style="margin-top:6px;">Civil is ON by default. “Military only” is heuristic.</div>
+      </div>
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;">Crowd reports</div>
+        <div class="row">
+          <label><input id="reportsCheckbox" type="checkbox" checked /> Reports (reports.json)</label>
+          <span class="btn-mini" id="reportsRefreshBtn">Refresh</span>
+        </div>
+        <div class="muted">Source: Mastodon/Reddit RSS pipeline.</div>
+      </div>
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;">Strategic POIs</div>
+        <div class="row">
+          <label><input id="poisCheckbox" type="checkbox" checked /> POIs (pois.json)</label>
+          <span class="btn-mini" id="poisReloadBtn">Reload</span>
+        </div>
+      </div>
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;">FIRMS hotspots</div>
+        <div class="row">
+          <label><input id="firesCheckbox" type="checkbox" /> Fires (fires.json)</label>
+          <label><input id="firesHeatCheckbox" type="checkbox" /> Heat</label>
+        </div>
+        <div class="muted">Requires fires.json (generated in Actions). No key stored in browser.</div>
+      </div>
+    `;
+    layersBox.appendChild(layersExtra);
+
+    // Move all remaining nodes into Filters (everything still inside controlPanel except the title we keep)
+    const remaining = [...controlPanel.children].filter((ch) => ch !== controlTitle);
+    for (const node of remaining) {
+      // after moving firstRow/secondRow, they’re already relocated; skip if not in DOM
+      if (node === firstRow || node === secondRow) continue;
+      // any other leftover nodes -> filters
+      filtersBox.appendChild(node);
+    }
+
+    // Rebuild controlPanel
+    controlPanel.innerHTML = "";
+    controlPanel.appendChild(controlTitle);
+    controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
+    controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
+
+    // ===== Bind NEW layer UI handlers =====
+    const eventsLayerCheckbox = document.getElementById("eventsLayerCheckbox");
+    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
+    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
+    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
+
+    const reportsCheckbox = document.getElementById("reportsCheckbox");
+    const reportsRefreshBtn = document.getElementById("reportsRefreshBtn");
+
+    const poisCheckbox = document.getElementById("poisCheckbox");
+    const poisReloadBtn = document.getElementById("poisReloadBtn");
+
+    const firesCheckbox = document.getElementById("firesCheckbox");
+    const firesHeatCheckbox = document.getElementById("firesHeatCheckbox");
+
+    eventsLayerCheckbox.addEventListener("change", (e) => { eventsEnabled = e.target.checked; updateAll(); });
+
+    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
+    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
+    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
+
+    reportsCheckbox.addEventListener("change", (e) => setReportsEnabled(e.target.checked));
+    reportsRefreshBtn.addEventListener("click", () => refreshReportsSafe());
+
+    poisCheckbox.addEventListener("change", (e) => setPoisEnabled(e.target.checked));
+    poisReloadBtn.addEventListener("click", async () => { poisLoaded = false; await loadPoisOnce(); });
+
+    firesCheckbox.addEventListener("change", (e) => setFiresEnabled(e.target.checked));
+    firesHeatCheckbox.addEventListener("change", (e) => setFiresHeatEnabled(e.target.checked));
+
+    // Start layers
+    setAircraftEnabled(true);
+    setReportsEnabled(true);
+    setPoisEnabled(true);
+
+    // ===== Borders UI =====
+    function applyBordersStyleNowSafe() {
+      try { applyBordersStyleNow(); } catch {}
+    }
+
+    // ===== Wiring (existing) =====
+    function refresh() { updateAll(); }
+
+    slider.addEventListener("input", refresh);
+    searchInput.addEventListener("input", refresh);
+    catCheckboxes.forEach((cb) => cb.addEventListener("change", refresh));
+    srcCheckboxes.forEach((cb) => cb.addEventListener("change", refresh));
+    windowRadios.forEach((r) => r.addEventListener("change", refresh));
+
+    heatCheckbox.addEventListener("change", refresh);
+    weeklyHeatCheckbox.addEventListener("change", () => {
+      if (!weeklyHeatCheckbox.checked) renderHotspotList([]);
+      refresh();
+    });
+
+    regionSelect.addEventListener("change", async () => {
+      activeRegion = regionSelect.value || "ALL";
+      updateRegionNote();
+      await zoomToRegion(activeRegion);
+      applyBordersStyleNowSafe();
+      refresh();
+    });
+    regionClear.addEventListener("click", async () => {
+      activeRegion = "ALL";
+      regionSelect.value = "ALL";
+      updateRegionNote();
+      applyBordersStyleNowSafe();
+      refresh();
+    });
+
+    borderWeightSlider.addEventListener("input", () => {
+      borderWeight = Number(borderWeightSlider.value);
+      syncBorderLabels();
+      applyBordersStyleNowSafe();
+    });
+    borderOpacitySlider.addEventListener("input", () => {
+      borderOpacity = Number(borderOpacitySlider.value);
+      syncBorderLabels();
+      applyBordersStyleNowSafe();
+    });
+    borderFillCheckbox.addEventListener("change", () => {
+      borderFillOn = borderFillCheckbox.checked;
+      applyBordersStyleNowSafe();
+    });
+    borderFillOpacitySlider.addEventListener("input", () => {
+      borderFillOpacity = Number(borderFillOpacitySlider.value);
+      syncBorderLabels();
+      applyBordersStyleNowSafe();
+    });
+
+    // ===== Main updater =====
     function updateAll() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
       const windowDays = getWindowDays();
       label.textContent = selectedDate || "—";
 
-      applyBordersStyleNow();
+      applyBordersStyleNowSafe();
 
       const filterFn = filterBuilder(selectedIndex, windowDays);
       const visible = computeVisible(selectedIndex, windowDays, filterFn);
 
+      // Events markers
       clusterGroup.clearLayers();
       markerByEventId.clear();
-      for (const ev of visible) {
-        const m = makeMarker(ev);
-        if (!m) continue;
-        clusterGroup.addLayer(m);
-        if (ev.id) markerByEventId.set(ev.id, m);
+      if (eventsEnabled) {
+        for (const ev of visible) {
+          const m = makeMarker(ev);
+          if (!m) continue;
+          clusterGroup.addLayer(m);
+          if (ev.id) markerByEventId.set(ev.id, m);
+        }
       }
 
+      // Heatmaps
       updateNormalHeatmap(visible, selectedIndex, windowDays);
       updateWeeklyHeatmapAndHotspots(selectedIndex, filterFn);
 
+      // Trend
       const trend = computeTrend(selectedIndex, windowDays, (ev, idx) => filterFn(ev, idx, { weeklyMode: false }));
       drawTrendBars(trend.counts, trend.total, trend.rangeText);
 
+      // Stats / Risk / Actors / Pairs
       updateStats(visible);
       updateRisk(visible, selectedIndex, windowDays);
       updateActors(visible);
       updatePairs(visible);
 
+      // Alerts / country / escalation
       updateAlerts(selectedIndex, filterFn);
       updateCountryRisk(visible);
       updateEscalation(visible, selectedIndex);
 
+      // Events list
       if (!visible.length) {
         eventsListEl.innerHTML = `<div class="muted">No events for current filters (region/hotspot/actor/pair/search).</div>`;
       } else {
@@ -1310,60 +1529,10 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // ===== Wiring =====
-    function refresh() { updateAll(); }
-
-    slider.addEventListener("input", refresh);
-    searchInput.addEventListener("input", refresh);
-    catCheckboxes.forEach((cb) => cb.addEventListener("change", refresh));
-    srcCheckboxes.forEach((cb) => cb.addEventListener("change", refresh));
-    windowRadios.forEach((r) => r.addEventListener("change", refresh));
-
-    heatCheckbox.addEventListener("change", refresh);
-    weeklyHeatCheckbox.addEventListener("change", () => {
-      if (!weeklyHeatCheckbox.checked) renderHotspotList([]);
-      refresh();
-    });
-
-    regionSelect.addEventListener("change", async () => {
-      activeRegion = regionSelect.value || "ALL";
-      updateRegionNote();
-      await zoomToRegion(activeRegion);
-      applyBordersStyleNow();
-      refresh();
-    });
-    regionClear.addEventListener("click", async () => {
-      activeRegion = "ALL";
-      regionSelect.value = "ALL";
-      updateRegionNote();
-      applyBordersStyleNow();
-      refresh();
-    });
-
-    borderWeightSlider.addEventListener("input", () => {
-      borderWeight = Number(borderWeightSlider.value);
-      syncBorderLabels();
-      applyBordersStyleNow();
-    });
-    borderOpacitySlider.addEventListener("input", () => {
-      borderOpacity = Number(borderOpacitySlider.value);
-      syncBorderLabels();
-      applyBordersStyleNow();
-    });
-    borderFillCheckbox.addEventListener("change", () => {
-      borderFillOn = borderFillCheckbox.checked;
-      applyBordersStyleNow();
-    });
-    borderFillOpacitySlider.addEventListener("input", () => {
-      borderFillOpacity = Number(borderFillOpacitySlider.value);
-      syncBorderLabels();
-      applyBordersStyleNow();
-    });
-
     // ===== Load events =====
     fetch("events.json")
       .then((r) => r.json())
-      .then(async (data) => {
+      .then((data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
         eventsData = data.map((ev, i) => {
           const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
@@ -1372,18 +1541,12 @@ window.addEventListener("DOMContentLoaded", () => {
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
-
         updateAll();
       })
       .catch((err) => {
         console.error(err);
         eventsListEl.innerHTML = `<div class="muted">events.json load error</div>`;
       });
-
-    // Optional: refresh reports periodically if enabled (every 5 minutes)
-    setInterval(() => {
-      if (reportsEnabled) reports.refresh().catch(() => {});
-    }, 5 * 60 * 1000);
 
   } catch (e) {
     console.error("Fatal init error:", e);
