@@ -1182,101 +1182,109 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-// ===== FIRMS fires layer (advanced with age filter) =====
+// ===== FIRMS fires layer (fires.json generated server-side) =====
+// UI expects radios: input[name="firesAge"] values: today | 5d | 15d | all
+
 const firesLayer = L.layerGroup();
 let firesHeat = null;
+
 let firesEnabled = false;
-let firesHeatEnabled = false;
-let firesAgeMode = "ALL"; // ALL | D1 | D5 | D15 | OLD
+let firesHeatEnabled = true; // ha alapból szeretnéd a heatet
+let firesAgeMode = "all";    // today | 5d | 15d | all  (javaslom: all, hogy rögtön láss valamit)
 
-// ===== UI BLOCK =====
-function injectFiresAgeUI() {
-  const container = document.createElement("div");
-  container.style.marginTop = "8px";
-  container.innerHTML = `
-    <div class="muted" style="margin:6px 0 4px 0;">FIRMS age filter</div>
-    <div class="row">
-      <label><input type="radio" name="firesAge" value="ALL" checked> All</label>
-      <label><input type="radio" name="firesAge" value="D1"> 0–1d</label>
-      <label><input type="radio" name="firesAge" value="D5"> 2–5d</label>
-      <label><input type="radio" name="firesAge" value="D15"> 6–15d</label>
-      <label><input type="radio" name="firesAge" value="OLD"> 15+d</label>
-    </div>
-  `;
+// --- Age filter wiring (safe) ---
+function bindFiresAgeUi() {
+  const radios = [...document.querySelectorAll('input[name="firesAge"]')];
+  if (!radios.length) {
+    console.warn("[fires] No firesAge radios found (HTML missing?) -> defaulting to", firesAgeMode);
+    return;
+  }
 
-  const firesSection = document.querySelector("#firesCheckbox")?.closest("div");
-  if (firesSection) firesSection.parentElement.appendChild(container);
+  // ha valamelyik checked, vegyük át induláskor
+  const checked = radios.find(r => r.checked);
+  if (checked) firesAgeMode = checked.value || firesAgeMode;
 
-  document.querySelectorAll("input[name='firesAge']").forEach(r => {
-    r.addEventListener("change", (e) => {
-      firesAgeMode = e.target.value;
+  radios.forEach(r => {
+    r.addEventListener("change", () => {
+      firesAgeMode = r.value || "all";
       if (firesEnabled) refreshFiresSafe();
     });
   });
 }
+bindFiresAgeUi();
 
-// call once
-setTimeout(injectFiresAgeUI, 500);
+// --- Helpers ---
+function inMiddleEastBBox(lat, lng) {
+  // lat 10..42, lng 25..65 (durva szűrő)
+  return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
+}
 
-// ===== DATE HELPERS =====
-function parseFirmsDate(f) {
+function isoDateUTC(ms) {
+  return new Date(ms).toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
+}
+function isoDateLocal(ms) {
+  // Local YYYY-MM-DD
+  const d = new Date(ms);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function parseAcqDateMs(f) {
+  // FIRMS tipikusan: acq_date: "YYYY-MM-DD"
   const d = String(f?.acq_date || f?.date || "").trim();
-  if (!d) return null;
+  if (!d) return NaN;
+  // Nap eleje UTC-ben (stabil buckethez)
+  const ms = Date.parse(`${d}T00:00:00Z`);
+  return Number.isFinite(ms) ? ms : NaN;
+}
 
-  const t = String(f?.acq_time || "").trim();
-  let hh = "00", mm = "00";
-  if (/^\d{3,4}$/.test(t)) {
-    const tt = t.padStart(4, "0");
-    hh = tt.slice(0, 2);
-    mm = tt.slice(2, 4);
+function passFiresAgeFilter(f) {
+  if (firesAgeMode === "all") return true;
+
+  const ms = parseAcqDateMs(f);
+  if (!Number.isFinite(ms)) return true; // ha nincs dátum, ne dobjuk ki
+
+  const now = Date.now();
+  const ageDays = (now - ms) / 86400000;
+
+  if (firesAgeMode === "today") {
+    // “today” = egyezzen a mai nappal (UTC VAGY local), hogy ne tűnjön el timezone miatt
+    const acq = isoDateUTC(ms);
+    const todayUtc = isoDateUTC(now);
+    const todayLocal = isoDateLocal(now);
+    return acq === todayUtc || acq === todayLocal;
   }
 
-  const iso = `${d}T${hh}:${mm}:00Z`;
-  const ms = Date.parse(iso);
-  return Number.isFinite(ms) ? ms : null;
-}
-
-function daysOld(ms) {
-  if (!Number.isFinite(ms)) return null;
-  return (Date.now() - ms) / 86400000;
-}
-
-function matchesAgeMode(days) {
-  if (firesAgeMode === "ALL") return true;
-  if (days === null) return false;
-
-  if (firesAgeMode === "D1") return days <= 1;
-  if (firesAgeMode === "D5") return days > 1 && days <= 5;
-  if (firesAgeMode === "D15") return days > 5 && days <= 15;
-  if (firesAgeMode === "OLD") return days > 15;
+  if (firesAgeMode === "5d") return ageDays <= 5;
+  if (firesAgeMode === "15d") return ageDays <= 15;
 
   return true;
 }
 
-function ageColor(days) {
-  if (days === null) return "#ffffff";
-  if (days <= 1) return "#ff2d2d";
-  if (days <= 5) return "#ff9f0a";
-  if (days <= 15) return "#34c759";
-  return "#8e8e93";
-}
-
-function fireIconHtml(days) {
-  const c = ageColor(days);
+function fireIconHtml() {
+  // PIROS célkereszt (hardcoded, hogy ne tudjon “kifehéredni”)
   return `
     <div style="
       width:16px;height:16px;border-radius:999px;
-      border:2px solid ${c};
+      border:2px solid rgba(255,80,80,0.98);
+      background: rgba(0,0,0,0.02);
       position:relative;
-      box-shadow:0 0 12px ${c}55;
+      box-shadow:0 0 10px rgba(255,80,80,0.30);
     ">
-      <div style="position:absolute;left:50%;top:2px;bottom:2px;width:2px;background:${c};transform:translateX(-50%);"></div>
-      <div style="position:absolute;top:50%;left:2px;right:2px;height:2px;background:${c};transform:translateY(-50%);"></div>
-    </div>`;
-}
-
-function inMiddleEastBBox(lat, lng) {
-  return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
+      <div style="
+        position:absolute;left:50%;top:2px;bottom:2px;
+        width:2px;background:rgba(255,80,80,0.95);
+        transform:translateX(-50%);
+      "></div>
+      <div style="
+        position:absolute;top:50%;left:2px;right:2px;
+        height:2px;background:rgba(255,80,80,0.95);
+        transform:translateY(-50%);
+      "></div>
+    </div>
+  `;
 }
 
 async function refreshFiresSafe() {
@@ -1284,10 +1292,16 @@ async function refreshFiresSafe() {
     const res = await fetch("fires.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`fires.json HTTP ${res.status}`);
     const payload = await res.json();
-    const list = Array.isArray(payload?.fires) ? payload.fires : [];
+
+    const list = Array.isArray(payload)
+      ? payload
+      : (Array.isArray(payload?.fires) ? payload.fires : []);
 
     firesLayer.clearLayers();
+
+    // heat újraépítés
     const heatPts = [];
+    let added = 0;
 
     for (const f of list) {
       const lat = Number(f?.lat ?? f?.latitude);
@@ -1295,43 +1309,55 @@ async function refreshFiresSafe() {
       if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
       if (!inMiddleEastBBox(lat, lng)) continue;
 
-      const ms = parseFirmsDate(f);
-      const days = daysOld(ms);
-      if (!matchesAgeMode(days)) continue;
+      // ✅ age filter
+      if (!passFiresAgeFilter(f)) continue;
 
       const icon = L.divIcon({
-        className: "",
-        html: fireIconHtml(days),
+        className: "", // fontos: ne kapjon leaflet-default stílust
+        html: fireIconHtml(),
         iconSize: [16, 16],
         iconAnchor: [8, 8],
       });
 
       const m = L.marker([lat, lng], { icon });
 
-      const ageText = days === null
-        ? "unknown"
-        : days < 1
-          ? "today"
-          : `${Math.floor(days)} days ago`;
+      const acqDate = String(f?.acq_date || f?.date || "—");
+      const acqTime = String(f?.acq_time || "");
+      const dt = acqTime ? `${acqDate} ${acqTime}` : acqDate;
 
-      m.bindPopup(`<b>FIRMS hotspot</b><br/><small>${ageText}</small>`);
+      const br = f?.brightness ?? f?.bright_ti4 ?? f?.bright_ti5 ?? "";
+      const frp = f?.frp ?? "";
+
+      m.bindPopup(
+        `<b>FIRMS hotspot</b><br/>
+         <small>${dt.replace(/</g,"&lt;")}<br/>
+         br: ${String(br).replace(/</g,"&lt;")} · frp: ${String(frp).replace(/</g,"&lt;")}</small>`
+      );
 
       firesLayer.addLayer(m);
+      added++;
 
-      const frp = Number(f?.frp);
-      const intensity = Number.isFinite(frp) ? Math.max(0.2, frp / 20) : 0.8;
+      // heat intensity
+      const frpNum = Number(frp);
+      const intensity = Number.isFinite(frpNum) ? Math.max(0.2, Math.min(3.0, frpNum / 20)) : 0.8;
       heatPts.push([lat, lng, intensity]);
     }
 
-    if (firesHeat) {
-      if (map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
-      firesHeat = null;
-    }
+    // heat layer reset
+    if (firesHeat && map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
+    firesHeat = null;
 
     if (firesHeatEnabled && heatPts.length) {
       firesHeat = L.heatLayer(heatPts, { radius: 26, blur: 18, maxZoom: 8 });
       firesHeat.addTo(map);
       firesHeat.bringToBack();
+      if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
+    }
+
+    if (added === 0) {
+      console.warn("[fires] 0 markers after filters. firesAgeMode=", firesAgeMode);
+    } else {
+      // console.debug("[fires] markers:", added, "ageMode:", firesAgeMode);
     }
 
   } catch (e) {
@@ -1355,9 +1381,11 @@ function setFiresHeatEnabled(on) {
   if (firesEnabled) refreshFiresSafe();
 }
 
+// refresh every 10 minutes
 window.setInterval(() => {
   if (firesEnabled) refreshFiresSafe();
 }, 10 * 60 * 1000);
+    
     // ===== Control panel slicing into accordions (HARD, stable) =====
     // We move:
     // - first two .row (heat/weekly + borders/clear) into Layers
