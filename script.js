@@ -1,14 +1,8 @@
-// script.js (FULL REPLACE)
-// Works with your current index.html IDs + ./js/aircraft-layer.js + ./js/reports-layer.js
-
 import { createAircraftLayer } from "./js/aircraft-layer.js";
 import { createReportsLayer } from "./js/reports-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
-    // =========================
-    // Helpers
-    // =========================
     const $ = (id) => {
       const el = document.getElementById(id);
       if (!el) throw new Error(`Missing element: #${id}`);
@@ -16,9 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     };
     const norm = (s) => String(s || "").trim().toLowerCase();
 
-    // =========================
-    // Panels + toggles (start closed)
-    // =========================
+    // ===== Panels + toggles (start closed) =====
     const controlPanel = $("controlPanel");
     const timelinePanel = $("timelinePanel");
     const legendPanel = $("legendPanel");
@@ -28,38 +20,40 @@ window.addEventListener("DOMContentLoaded", () => {
     const legendToggle = $("legendToggle");
 
     function togglePanel(panelEl) {
+      const isClosed = panelEl.classList.contains("closed");
       panelEl.classList.toggle("closed");
+      panelEl.style.display = isClosed ? "block" : "none";
     }
-    [controlPanel, timelinePanel, legendPanel].forEach((p) => p.classList.add("closed"));
+
+    [controlPanel, timelinePanel, legendPanel].forEach((p) => {
+      p.classList.add("closed");
+      p.style.display = "none";
+    });
+
     controlToggle.addEventListener("click", () => togglePanel(controlPanel));
     timelineToggle.addEventListener("click", () => togglePanel(timelinePanel));
     legendToggle.addEventListener("click", () => togglePanel(legendPanel));
 
-    // =========================
-    // Accordion (Timeline panel) - uses existing .acc-btn + data-acc
-    // =========================
+    // ===== Accordion (Timeline: your HTML already has these) =====
     function setArrow(btn, isOpen) {
       const arrow = btn.querySelector(".acc-arrow");
       if (arrow) arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     }
-    document.querySelectorAll(".acc-btn[data-acc]").forEach((btn) => {
+    document.querySelectorAll(".acc-btn").forEach((btn) => {
       const targetId = btn.getAttribute("data-acc");
       const panel = document.getElementById(targetId);
       if (!panel) return;
-      const open = !panel.classList.contains("closed");
-      setArrow(btn, open);
+      setArrow(btn, !panel.classList.contains("closed"));
       btn.addEventListener("click", () => {
         const wasClosed = panel.classList.contains("closed");
         panel.classList.toggle("closed");
         setArrow(btn, wasClosed);
-        if (wasClosed) setTimeout(() => updateAll(), 60);
+        if (wasClosed) setTimeout(() => updateAll(), 80);
       });
     });
 
-    // =========================
-    // Control panel accordion helper
-    // =========================
+    // ===== Control panel accordion helper =====
     function makeAccSection(title, contentEl, openByDefault = false) {
       const wrap = document.createElement("div");
       wrap.className = "acc";
@@ -90,13 +84,10 @@ window.addEventListener("DOMContentLoaded", () => {
       return wrap;
     }
 
-    // =========================
-    // Map
-    // =========================
-    const map = L.map("map", { preferCanvas: true }).setView([33.5, 44.0], 6);
+    // ===== Map =====
+    const map = L.map("map").setView([33.5, 44.0], 6);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
-      maxZoom: 18,
     }).addTo(map);
 
     const clusterGroup = L.markerClusterGroup({
@@ -106,16 +97,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     map.addLayer(clusterGroup);
 
-    // =========================
-    // Layers: Aircraft + Reports
-    // =========================
-
-    // Aircraft layer (civil + mil)
+    // =====================================================
+    // Aircraft layer
+    // =====================================================
     const aircraft = createAircraftLayer(map, {
-      // If you want slower refresh: set 15000 or 20000
-      updateIntervalMs: 15000,
+      updateIntervalMs: 20000, // 20s (civil is visible; safe for rate limits)
       trackSeconds: 300,
-      militaryOnly: false, // IMPORTANT: show civil by default
+      militaryOnly: false,
       showTracks: true,
     });
 
@@ -144,43 +132,124 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Crowd reports layer (reports.json)
+    // =====================================================
+    // Reports layer (Mastodon/Reddit from reports.json)
+    // =====================================================
     const reports = createReportsLayer(map, { maxAgeHours: 48, middleEastOnly: true });
-
     let reportsEnabled = true;
-    let reportsTimer = null;
 
-    async function refreshReportsSafe() {
-      try {
-        await reports.refresh();
-      } catch (e) {
-        console.warn("[reports] refresh failed:", e?.message || e);
-      }
-    }
-
-    function setReportsEnabled(on) {
+    async function setReportsEnabled(on) {
       reportsEnabled = !!on;
       if (reportsEnabled) {
         if (!map.hasLayer(reports.layer)) reports.layer.addTo(map);
-        refreshReportsSafe();
-        if (!reportsTimer) {
-          // refresh every 10 minutes
-          reportsTimer = window.setInterval(refreshReportsSafe, 10 * 60 * 1000);
-        }
+        try { await reports.refresh(); } catch (e) { console.warn("[reports] refresh error", e); }
       } else {
         if (map.hasLayer(reports.layer)) map.removeLayer(reports.layer);
-        if (reportsTimer) window.clearInterval(reportsTimer);
-        reportsTimer = null;
       }
     }
 
-    // Start layers
-    setAircraftEnabled(true);
-    setReportsEnabled(true);
+    // =====================================================
+    // POI layer (bases / airports / ports / chokepoints / nuclear)
+    // =====================================================
+    const poiLayer = L.layerGroup();
+    let poiEnabled = true;
 
-    // =========================
-    // UI refs (existing HTML IDs)
-    // =========================
+    function poiIconHtml(type) {
+      const t = String(type || "").toLowerCase();
+      let glyph = "●";
+      if (t === "airport" || t === "airbase") glyph = "✈";
+      else if (t === "port") glyph = "⚓";
+      else if (t === "chokepoint") glyph = "⟟";
+      else if (t === "nuclear") glyph = "☢";
+      else if (t === "pipeline") glyph = "⛽";
+
+      return `<div style="
+        width:18px;height:18px;border-radius:999px;
+        display:flex;align-items:center;justify-content:center;
+        background:rgba(0,0,0,.35);
+        border:1px solid rgba(255,255,255,.55);
+        color:#fff;font-size:12px;line-height:1;
+        box-shadow:0 0 10px rgba(0,0,0,.35);
+      ">${glyph}</div>`;
+    }
+
+    function makePoiMarker(p) {
+      const icon = L.divIcon({
+        className: "",
+        html: poiIconHtml(p.type),
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+      });
+      const m = L.marker([p.lat, p.lng], { icon });
+      m.bindPopup(`<b>${p.name || "POI"}</b><br/><small>${p.type || ""}</small>`);
+      return m;
+    }
+
+    async function loadPois() {
+      try {
+        const res = await fetch("pois.json", { cache: "no-store" });
+        if (!res.ok) throw new Error(`pois.json HTTP ${res.status}`);
+        const data = await res.json();
+        const arr = Array.isArray(data) ? data : [];
+        poiLayer.clearLayers();
+        for (const p of arr) {
+          const lat = Number(p?.lat), lng = Number(p?.lng);
+          if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+          poiLayer.addLayer(makePoiMarker({ ...p, lat, lng }));
+        }
+      } catch (e) {
+        console.warn("[pois] load failed:", e?.message || e);
+      }
+    }
+
+    function setPoiEnabled(on) {
+      poiEnabled = !!on;
+      if (poiEnabled) {
+        if (!map.hasLayer(poiLayer)) poiLayer.addTo(map);
+      } else {
+        if (map.hasLayer(poiLayer)) map.removeLayer(poiLayer);
+      }
+    }
+
+    // ===== Aircraft UI (goes into Control panel accordion) =====
+    const aircraftUiWrap = document.createElement("div");
+    aircraftUiWrap.innerHTML = `
+      <div class="row">
+        <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
+      </div>
+      <div class="row">
+        <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
+        <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
+      </div>
+      <div class="muted" style="margin-top:6px;">
+        Tip: “Military only” heurisztika — nem 100%.
+      </div>
+    `;
+
+    // ===== Reports UI =====
+    const reportsUiWrap = document.createElement("div");
+    reportsUiWrap.innerHTML = `
+      <div class="row">
+        <label><input id="reportsCheckbox" type="checkbox" checked /> Crowd reports (Mastodon/Reddit)</label>
+      </div>
+      <div class="muted" style="margin-top:6px;">
+        Source: reports.json (GitHub Actions frissíti).
+      </div>
+    `;
+
+    // ===== POI UI =====
+    const poiUiWrap = document.createElement("div");
+    poiUiWrap.innerHTML = `
+      <div class="row">
+        <label><input id="poiCheckbox" type="checkbox" checked /> Strategic sites (POI)</label>
+        <span class="btn-mini" id="poiReloadBtn">Reload</span>
+      </div>
+      <div class="muted" style="margin-top:6px;">
+        Source: pois.json (statikus lista).
+      </div>
+    `;
+
+    // ===== UI refs from HTML =====
     const heatCheckbox = $("heatmapCheckbox");
     const weeklyHeatCheckbox = $("weeklyHeatCheckbox");
     const bordersCheckbox = $("bordersCheckbox");
@@ -242,119 +311,63 @@ window.addEventListener("DOMContentLoaded", () => {
     const srcCheckboxes = [...document.querySelectorAll(".src-filter")];
     const windowRadios = [...document.querySelectorAll("input[name='window']")];
 
-    // =========================
-    // Rebuild CONTROL panel into collapsible sections (no HTML edit needed)
-    // =========================
-    (function rebuildControlPanelAccordion() {
-      const titleEl = controlPanel.querySelector("h3");
-      if (!titleEl) return;
+    // ===== Rebuild Control panel as accordion (Layers / Filters / Flight / Reports / POI) =====
+    (function rebuildControlPanel() {
+      const controlTitle = controlPanel.querySelector("h3");
 
-      // Find the original blocks by anchoring around known IDs
-      const heatRow = heatCheckbox.closest(".row");
-      const bordersRow = bordersCheckbox.closest(".row");
+      const oldNodes = [];
+      [...controlPanel.children].forEach((ch) => {
+        if (ch === controlTitle) return;
+        oldNodes.push(ch);
+      });
 
-      // Headings (muted) for filters
-      const mutedEls = [...controlPanel.querySelectorAll(".muted")];
-      const catHeading = mutedEls.find((x) => norm(x.textContent).includes("category filters"));
-      const srcHeading = mutedEls.find((x) => norm(x.textContent).includes("source filters"));
-      const winHeading = mutedEls.find((x) => norm(x.textContent).startsWith("window"));
+      const layersBox = document.createElement("div");
+      const filtersBox = document.createElement("div");
 
-      const regionBlock = regionSelect?.parentElement; // wrapper div
-      const borderStyleBlock = borderWeightSlider?.closest("div[style*='border-top']");
-      const hotspotBlock = hotspotListEl?.closest("div[style*='border-top']");
-
-      // If something is missing, don't break the app
-      if (!heatRow || !bordersRow || !regionBlock || !borderStyleBlock || !hotspotBlock) {
-        console.warn("[control] Could not fully rebuild accordion (missing blocks). Keeping original.");
-        return;
+      // Split heuristic: everything until "Category filters" muted label -> Layers
+      let reachedCategory = false;
+      for (const node of oldNodes) {
+        const txt = (node.textContent || "").toLowerCase();
+        if (txt.includes("category filters")) reachedCategory = true;
+        if (!reachedCategory) layersBox.appendChild(node);
+        else filtersBox.appendChild(node);
       }
 
-      // Collect filter rows
-      const filterBox = document.createElement("div");
-      // Move category heading + its rows
-      if (catHeading) filterBox.appendChild(catHeading);
-      catCheckboxes.forEach((cb) => filterBox.appendChild(cb.closest(".row")));
-      // Move source heading + its rows
-      if (srcHeading) filterBox.appendChild(srcHeading);
-      srcCheckboxes.forEach((cb) => filterBox.appendChild(cb.closest(".row")));
-      // Move window heading + its rows
-      if (winHeading) filterBox.appendChild(winHeading);
-      windowRadios.forEach((r) => filterBox.appendChild(r.closest(".row")));
-
-      // Layers box
-      const layersBox = document.createElement("div");
-      layersBox.appendChild(heatRow);
-      layersBox.appendChild(bordersRow);
-
-      // Region & borders
-      const regionBordersBox = document.createElement("div");
-      regionBordersBox.appendChild(regionBlock);
-      regionBordersBox.appendChild(borderStyleBlock);
-
-      // Hotspots
-      const hotspotsBox = document.createElement("div");
-      hotspotsBox.appendChild(hotspotBlock);
-
-      // Flight tracking UI (create in JS)
-      const flightBox = document.createElement("div");
-      flightBox.innerHTML = `
-        <div class="row">
-          <label><input id="aircraftCheckbox" type="checkbox" checked /> Aircraft</label>
-        </div>
-        <div class="row">
-          <label><input id="aircraftMilitaryOnlyCheckbox" type="checkbox" /> Military only</label>
-          <label><input id="aircraftTracksCheckbox" type="checkbox" checked /> Tracks</label>
-        </div>
-        <div class="muted" style="margin-top:6px;">
-          Civil + military visible by default. “Military only” is heuristic, not 100%.
-        </div>
-      `;
-
-      // Crowd reports UI
-      const reportsBox = document.createElement("div");
-      reportsBox.innerHTML = `
-        <div class="row">
-          <label><input id="reportsCheckbox" type="checkbox" checked /> Crowd reports (Mastodon/Reddit RSS)</label>
-        </div>
-        <div class="row">
-          <span class="muted">Source: reports.json</span>
-          <span class="btn-mini" id="reportsRefreshBtn">Refresh</span>
-        </div>
-        <div class="muted" style="margin-top:6px;">
-          Auto refresh: every 10 minutes. Only Middle East bbox.
-        </div>
-      `;
-
-      // Now rebuild panel content
       controlPanel.innerHTML = "";
-      controlPanel.appendChild(titleEl);
+      controlPanel.appendChild(controlTitle);
 
+      // add sections
       controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
-      controlPanel.appendChild(makeAccSection("Filters", filterBox, false));
-      controlPanel.appendChild(makeAccSection("Region & Borders", regionBordersBox, false));
-      controlPanel.appendChild(makeAccSection("Hotspots", hotspotsBox, false));
-      controlPanel.appendChild(makeAccSection("Flight tracking", flightBox, false));
-      controlPanel.appendChild(makeAccSection("Crowd reports", reportsBox, false));
-
-      // Wire new controls
-      const aircraftCheckbox = document.getElementById("aircraftCheckbox");
-      const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
-      const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
-
-      aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
-      aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
-      aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
-
-      const reportsCheckbox = document.getElementById("reportsCheckbox");
-      const reportsRefreshBtn = document.getElementById("reportsRefreshBtn");
-
-      reportsCheckbox.addEventListener("change", (e) => setReportsEnabled(e.target.checked));
-      reportsRefreshBtn.addEventListener("click", () => refreshReportsSafe());
+      controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
+      controlPanel.appendChild(makeAccSection("Flight tracking", aircraftUiWrap, false));
+      controlPanel.appendChild(makeAccSection("Crowd reports", reportsUiWrap, false));
+      controlPanel.appendChild(makeAccSection("Strategic sites (POI)", poiUiWrap, false));
     })();
 
-    // =========================
-    // Date utilities
-    // =========================
+    // ===== Bind new checkboxes =====
+    const aircraftCheckbox = document.getElementById("aircraftCheckbox");
+    const aircraftMilitaryOnlyCheckbox = document.getElementById("aircraftMilitaryOnlyCheckbox");
+    const aircraftTracksCheckbox = document.getElementById("aircraftTracksCheckbox");
+
+    aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
+    aircraftMilitaryOnlyCheckbox.addEventListener("change", (e) => aircraft.setMilitaryOnly(e.target.checked));
+    aircraftTracksCheckbox.addEventListener("change", (e) => aircraft.setShowTracks(e.target.checked));
+
+    const reportsCheckbox = document.getElementById("reportsCheckbox");
+    reportsCheckbox.addEventListener("change", (e) => setReportsEnabled(e.target.checked));
+
+    const poiCheckbox = document.getElementById("poiCheckbox");
+    const poiReloadBtn = document.getElementById("poiReloadBtn");
+    poiCheckbox.addEventListener("change", (e) => setPoiEnabled(e.target.checked));
+    poiReloadBtn.addEventListener("click", () => loadPois());
+
+    // Start layers
+    setAircraftEnabled(true);
+    setReportsEnabled(true);
+    setPoiEnabled(true);
+    loadPois();
+
+    // ===== Date utilities =====
     function makeLast365Days() {
       const days = [];
       const today = new Date();
@@ -385,9 +398,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return set;
     }
 
-    // =========================
-    // Actors
-    // =========================
+    // ===== Actors =====
     const ACTORS = [
       { name: "IDF", patterns: ["idf", "israel defense forces"] },
       { name: "Hezbollah", patterns: ["hezbollah"] },
@@ -427,9 +438,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return found.includes(activePair.a) && found.includes(activePair.b);
     }
 
-    // =========================
-    // Region model
-    // =========================
+    // ===== Region model =====
     let activeRegion = "ALL";
     const REGION_ALIASES = {
       LEVANT: new Set(["israel","lebanon","syria","jordan","iraq","palestine","palestinian territories","palestinian territory","west bank","gaza","gaza strip"]),
@@ -450,9 +459,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     updateRegionNote();
 
-    // =========================
-    // Borders + polygons
-    // =========================
+    // ===== Borders + polygons =====
     const BORDERS_GEOJSON_URL =
       "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/refs/heads/master/geojson/ne_50m_admin_0_countries.geojson";
 
@@ -569,9 +576,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (b) map.fitBounds(b.pad(0.08));
     }
 
-    // =========================
-    // Country inference
-    // =========================
+    // ===== Country inference =====
     function bboxContains(bbox, lng, lat) {
       return lng >= bbox[0] && lng <= bbox[2] && lat >= bbox[1] && lat <= bbox[3];
     }
@@ -636,9 +641,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return regionContainsCountry(activeRegion, getCountry(ev));
     }
 
-    // =========================
-    // Source/category
-    // =========================
+    // ===== Source/category =====
     function sourceType(ev) {
       const t = norm(ev?.source?.type || "news");
       return t === "isw" ? "isw" : "news";
@@ -675,9 +678,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return t.includes(q) || s.includes(q) || tags.includes(q) || loc.includes(q);
     }
 
-    // =========================
-    // Hotspot filter
-    // =========================
+    // ===== Hotspot filter =====
     let activeHotspot = null;
     let hotspotCircle = null;
 
@@ -689,6 +690,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const aa = s1*s1 + Math.cos(aLat*Math.PI/180)*Math.cos(bLat*Math.PI/180)*s2*s2;
       return 2 * R * Math.asin(Math.sqrt(aa));
     }
+
     function matchesHotspot(ev) {
       if (!activeHotspot) return true;
       const ll = getLatLng(ev);
@@ -696,6 +698,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const d = haversineKm(activeHotspot.lat, activeHotspot.lng, ll.lat, ll.lng);
       return d <= activeHotspot.radiusKm;
     }
+
     function setHotspot(h) {
       activeHotspot = h;
       clearHotspotBtn.style.display = activeHotspot ? "inline-block" : "none";
@@ -715,15 +718,14 @@ window.addEventListener("DOMContentLoaded", () => {
         map.fitBounds(hotspotCircle.getBounds().pad(0.2));
       }
     }
+
     clearHotspotBtn.addEventListener("click", () => {
       setHotspot(null);
       renderHotspotList([]);
       updateAll();
     });
 
-    // =========================
-    // Markers
-    // =========================
+    // ===== Markers (events) =====
     const markerByEventId = new Map();
     function makeMarker(ev) {
       const ll = getLatLng(ev);
@@ -764,9 +766,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // =========================
-    // Trend
-    // =========================
+    // ===== Trend =====
     function drawTrendBars(counts, total, rangeText) {
       const ctx = trendCanvas.getContext("2d");
       const dpr = window.devicePixelRatio || 1;
@@ -837,9 +837,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return { counts, total, rangeText };
     }
 
-    // =========================
-    // Risk scoring
-    // =========================
+    // ===== Risk scoring =====
     function recencyWeight(eventIndex, selectedIndex, windowDays) {
       const ageDays = selectedIndex - eventIndex;
       if (windowDays <= 1) return 1.0;
@@ -850,9 +848,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return categoryWeight(ev.category) * sourceMultiplier(ev) * recencyWeight(eventIndex, selectedIndex, windowDays);
     }
 
-    // =========================
-    // Heat layers
-    // =========================
+    // ===== Heat layers =====
     let heatLayer = null;
     let weeklyHeatLayer = null;
 
@@ -865,10 +861,9 @@ window.addEventListener("DOMContentLoaded", () => {
       weeklyHeatLayer = null;
     }
 
-    // Weekly anomaly + hotspots
+    // ===== Weekly anomaly + hotspots =====
     const BIN_DEG = 1.0;
     const HOTSPOT_RADIUS_KM = 120;
-
     function binKey(lat, lng) {
       const bx = Math.floor(lng / BIN_DEG);
       const by = Math.floor(lat / BIN_DEG);
@@ -971,7 +966,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const bins = computeWeeklyHotspots(selectedIndex, filterFn);
       const points = bins.map(b => [b.lat, b.lng, Math.max(0.1, b.delta + b.ratio)]);
-
       clearWeeklyHeat();
       if (points.length) {
         weeklyHeatLayer = L.heatLayer(points, { radius: 38, blur: 28, maxZoom: 8 });
@@ -979,13 +973,10 @@ window.addEventListener("DOMContentLoaded", () => {
         weeklyHeatLayer.bringToBack();
         if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
       }
-
       renderHotspotList(bins);
     }
 
-    // =========================
-    // Main filters
-    // =========================
+    // ===== Main filters =====
     function filterBuilder(selectedIndex, windowDays) {
       const catSet = getSelectedCategories();
       const srcSet = getSelectedSources();
@@ -1009,14 +1000,11 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!matchesRegion(ev)) return false;
 
         if (!opts.weeklyMode && !matchesHotspot(ev)) return false;
-
         return true;
       };
     }
 
-    // =========================
-    // Heatmap (normal)
-    // =========================
+    // ===== Heatmap (normal) =====
     function updateNormalHeatmap(visibleEvents, selectedIndex, windowDays) {
       if (!heatCheckbox.checked) { clearHeat(); return; }
 
@@ -1040,9 +1028,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
-    // =========================
-    // Stats / Risk / Actors / Pairs
-    // =========================
+    // ===== Stats / Risk / Actors / Pairs =====
     function updateStats(visibleEvents) {
       let mil=0, sec=0, pol=0, oth=0, news=0, isw=0;
       for (const ev of visibleEvents) {
@@ -1149,9 +1135,7 @@ window.addEventListener("DOMContentLoaded", () => {
     actorClearBtn.addEventListener("click", () => { activeActor = null; updateAll(); });
     pairClearBtn.addEventListener("click", () => { activePair = null; updateAll(); });
 
-    // =========================
-    // Alerts (rolling baseline)
-    // =========================
+    // ===== Alerts =====
     function computeRolling7dSpike(selectedIndex, filterFn, category = null) {
       const todayIdx = selectedIndex;
       const baseStart = Math.max(0, selectedIndex - 7);
@@ -1163,6 +1147,7 @@ window.addEventListener("DOMContentLoaded", () => {
       for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
         if (idx === undefined) continue;
+
         if (category && norm(ev.category) !== category) continue;
         if (!filterFn(ev, idx, { weeklyMode: false })) continue;
 
@@ -1199,9 +1184,7 @@ window.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
-    // =========================
-    // Country risk
-    // =========================
+    // ===== Country risk =====
     function updateCountryRisk(visibleEvents) {
       const byCountry = new Map();
       for (const ev of visibleEvents) {
@@ -1215,9 +1198,7 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No country data.</div>`;
     }
 
-    // =========================
-    // Actor escalation
-    // =========================
+    // ===== Actor escalation =====
     function updateEscalation(visibleEvents, selectedIndex) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
       const aMap = new Map();
@@ -1251,14 +1232,9 @@ window.addEventListener("DOMContentLoaded", () => {
         : `<div class="muted">No positive actor deltas.</div>`;
     }
 
-    // =========================
-    // Data
-    // =========================
+    // ===== Data =====
     let eventsData = [];
 
-    // =========================
-    // Compute visible list window
-    // =========================
     function computeVisible(selectedIndex, windowDays, filterFn) {
       const out = [];
       for (const ev of eventsData) {
@@ -1271,9 +1247,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return out;
     }
 
-    // =========================
-    // Main updater
-    // =========================
     function updateAll() {
       const selectedIndex = Number(slider.value);
       const selectedDate = days365[selectedIndex];
@@ -1337,9 +1310,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // =========================
-    // Wiring
-    // =========================
+    // ===== Wiring =====
     function refresh() { updateAll(); }
 
     slider.addEventListener("input", refresh);
@@ -1389,10 +1360,8 @@ window.addEventListener("DOMContentLoaded", () => {
       applyBordersStyleNow();
     });
 
-    // =========================
-    // Load events.json
-    // =========================
-    fetch("events.json", { cache: "no-store" })
+    // ===== Load events =====
+    fetch("events.json")
       .then((r) => r.json())
       .then(async (data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
@@ -1403,6 +1372,7 @@ window.addEventListener("DOMContentLoaded", () => {
           const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
           return { ...ev, id };
         });
+
         updateAll();
       })
       .catch((err) => {
@@ -1410,8 +1380,10 @@ window.addEventListener("DOMContentLoaded", () => {
         eventsListEl.innerHTML = `<div class="muted">events.json load error</div>`;
       });
 
-    // Kick initial reports refresh (safe)
-    refreshReportsSafe();
+    // Optional: refresh reports periodically if enabled (every 5 minutes)
+    setInterval(() => {
+      if (reportsEnabled) reports.refresh().catch(() => {});
+    }, 5 * 60 * 1000);
 
   } catch (e) {
     console.error("Fatal init error:", e);
