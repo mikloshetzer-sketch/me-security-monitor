@@ -1,31 +1,31 @@
 # Middle East Security Monitor — Weekly Brief
 
-**Period:** 2026-02-24 → 2026-03-02 (last 7 days)
+**Period:** 2026-02-25 → 2026-03-03 (last 7 days)
 
 ## Summary stats
-- **Total events:** 217
-- **By category:** military 110, security 4, political 9, other 94
-- **By source:** news 211, ISW 6
+- **Total events:** 215
+- **By category:** military 103, security 4, political 9, other 99
+- **By source:** news 209, ISW 6
 
 ## Risk Index
-- **Total window risk:** **354.5**
+- **Total window risk:** **314.8**
 - **Top locations (risk):**
-  - Israel — 175.6
-  - Iran — 139.0
-  - Tehran — 8.0
-  - Middle East — 5.3
-  - Jerusalem — 3.4
+  - Israel — 157.7
+  - Iran — 124.6
+  - Middle East — 9.0
+  - United Arab Emirates — 8.0
+  - Tehran — 3.4
 
 ## Top events (weighted)
-- **3.5** · 2026-03-01 · military · isw · Israel — [Iran Update Evening Special Report, March 1, 2026](https://understandingwar.org/research/middle-east/iran-update-evening-special-report-march-1-2026/)
-- **3.5** · 2026-03-01 · military · isw · Israel — [Iran Update Morning Special Report: March 1, 2026](https://understandingwar.org/research/middle-east/iran-update-morning-special-report-march-1-2026/)
-- **3.1** · 2026-02-28 · military · isw · Israel — [Iran Update Evening Special Report, February 28, 2026](https://understandingwar.org/research/middle-east/iran-update-evening-special-report-february-28-2026/)
-- **3.1** · 2026-02-28 · military · isw · Israel — [Iran Update Special Report: US and Israeli Strikes, February 28, 2026](https://understandingwar.org/research/middle-east/iran-update-special-report-us-and-israeli-strikes-february-28-2026/)
-- **3.0** · 2026-03-02 · military · news · Israel — [Qatar LNG, Saudi refinery, Israeli oil, gas fields down due to Mideast strikes - Reuters](https://news.google.com/rss/articles/CBMivgFBVV95cUxONGxzbmdibmd3TDJxZEJmR0UxVExMdHNJWjdRVlAwVlhRbVBXTFpnT2ZTQkFDbjcwVlloWFBlSlhQd3EzajF5SUo3TjAzNjItM095LTB4QjZjQ1pCWUR2RXBEcW9tLU5MNnJVdW5Sblczdi1aWUxuQVFZM3NWREhDS2Z2LURiMnlleklsY0hIU00zOTBYa0hHZG9sWWhSbnMtcjRyTnk4NkJ1eDJmNERCd0pIemlhS2JzUzJuSl9n)
-- **3.0** · 2026-03-02 · military · news · Iran — [US aircraft leave Spain after government says bases cannot be used for Iran attacks - Reuters](https://news.google.com/rss/articles/CBMizgFBVV95cUxQMFVVci1LNlI5MDEwbUN5Qy1TRF9DbENpQk85elF3WnlobDdaaVB1OXpwMmpxQVg3NzVYWlB4X3l3ZXU3S0dYdnZGOWhiVGxRQVJrWll3SUxTQVl0UVp3RkU0Zi1VWTRrYVNoX3poSFh6Nzd3cjh0S0k1TDZCczhKWG52WDRIcEhYSFJQbDFBbjZBd3E1cVNjVzdFUnpEc1IyajRSYWZRT1VmVEcxOElNbHBmR3hUV3RxWFU2MkRFdUJYNHR6Y3JXNGhaZDZodw)
-- **3.0** · 2026-03-02 · military · news · Israel — [Israeli military strikes Hezbollah across Lebanon - Reuters](https://news.google.com/rss/articles/CBMipgFBVV95cUxPODMyT3BYMUpsQTFGT2tVdnRuNjEyZGN2TmdKcWgxcFVRb0VZb3hsenQ4bDk5UU5COHd3TEdTUTVXSUVUYXE2TGNRdEdfd21JZGo2WmdrSE0xYklnOEltclFpU3YyNFRfR01uTmpqdS1QUjhHWllFa1BFenpXYWtsRi1XOFYzMkZjUkFzMTlUSzFoOENnLXNqaFBfc3FHYkdjSFFESFNn)
-- **3.0** · 2026-03-02 · military · news · Israel — [Iran missiles brings war to Gulf doorstep; hardens support for US–Israel campaign - Reuters](https://news.google.com/rss/articles/CBMixAFBVV95cUxQMnM0X3NwTlh5NXhSZXNqZXVJaWQ4NnFnMUxrSUFNNk9hXzA0aUl1TEhGRTZPWThDcWxpZU4yMG5rMFpVTlJhZnh5eVpxR1MxUnJTMEttaGhVXzE5bkFNcVF6T3gzNXFNYVI0c0w5azVrd195cU91VGxfWnFQSGFDRzk3ejhJUTVhYzc4Z0kyUFJZTG9vdWtuWjNtTlpjLXV0SFNmbFUxdEFzRU5jTmoyTkQwNzk3ajZLMVdXa3loQkRVeHhm)
-- **3.0** · 2026-03-02 · military · news · Iran — [Iranian attacks targeted civilian infrastructure in Qatar including airport, spokesperson says - Reuters](https://news.google.com/rss/articles/CBMixAFBVV95cUxQOW00c1UtRVJFUk5YZFNCbHlhMDJlY1BjamtGTkE3VXlPNEp2cWM0d25McTh4MFZzQ2NUaHl0TW1NSk9jLV9IUzhrZnowc2lYVVBhSkhVbGM0WXJVekVQZHhFOWRNNU9SbUIzU3hsUks3UlhXVTlNSzFLVXFnTVVmSE10LXo5UGUwa1MzRFZwakJpcmpCM2VfLWU4cmhxNktCMVVGeUZ6UXdOcmt2WTRNOFdaeE5CZTZFd3AxYlFuUGZhY0tq)
-- **3.0** · 2026-03-02 · military · news · Israel — [Israeli military says it killed head of Hezbollah's intelligence headquarters - Reuters](https://news.google.com/rss/articles/CBMixgFBVV95cUxQVlMyMllIcVZPU09ESDZiZS1CNDgxaW9vOXIzZWRnUFNPMmFYUFA1WXJ0Zm80T2Q0Skpwa3E5XzhHOGZVckRmSUJTZ1h0MEE4d1plRmFEOGtzUDFKb0F2WE42WVl0eG9PeWJvXzhfUF8yblZ6Vm4ycGN1bkhNSkJmUTJyRmNmN0tWdHdDR3VwZ2xqT1ludFJlLTBidGotdWZaTndNT0JEZnVKQ0hiX0RwaExLY0hPSmVBcFlmOS04NzdnMldUTXc)
+- **3.5** · 2026-03-02 · military · isw · Israel — [Iran Update Evening Special Report, March 2, 2026](https://understandingwar.org/research/middle-east/iran-update-evening-special-report-march-2-2026/)
+- **3.5** · 2026-03-02 · military · isw · Israel — [Iran Update Morning Special Report, March 2, 2026](https://understandingwar.org/research/middle-east/iran-update-morning-special-report-march-2-2026/)
+- **3.1** · 2026-03-01 · military · isw · Israel — [Iran Update Evening Special Report, March 1, 2026](https://understandingwar.org/research/middle-east/iran-update-evening-special-report-march-1-2026/)
+- **3.1** · 2026-03-01 · military · isw · Israel — [Iran Update Morning Special Report: March 1, 2026](https://understandingwar.org/research/middle-east/iran-update-morning-special-report-march-1-2026/)
+- **3.0** · 2026-03-03 · military · news · United Arab Emirates — [Amazon's cloud unit says drone strikes damaged UAE and Bahrain facilities - Reuters](https://news.google.com/rss/articles/CBMivwFBVV95cUxQMnVxbTU2elByNjJJRTd5eUdmMjREc0NuMkFROUN3OW84eV9Xa1A5SWdZTUZQSjlqTFdJTUxnRFlFcG9WaWdzSElxTnhCSXpoSHM4M0hwdGF2enA3V2tPd250WlRxN2lYZmxCTGNJUTdReENfN0NoSktWR2dfZEtNOElQV1V2bFFQdjdCU3lySVpEWWFBUXBUeWVPeGFwbFktU0x1WnE1UDRra1RCY1hZeXFESksxNEIxeV92YTdzcw)
+- **3.0** · 2026-03-03 · military · news · Iran — [Trump hosts Germany's Merz against backdrop of Iran strikes, tariff threats - Reuters](https://news.google.com/rss/articles/CBMiugFBVV95cUxNZUtvVEhNbDZQeDlNMHNHMERMOE5sZkpqNzllT0hURDM2cTFMckd4SUFCRFlwSmdMSGpySV9Sb2JwVTFBNUpFTFk2LTNiVEJpNk1pSkdYZzJ2VjhtQ1MyZTUtbU9OVGFNUF9ubVZUMjhKT3phTmtVU3psZ0lMMGNKeng1aDVEYV84OU1KWWQ4NnRyNzl4dEh5d2RyeDBFQ1ZzcTVJQ3RuOVFaZG9KVFdVbExrcXB5UGpRenc)
+- **3.0** · 2026-03-03 · military · news · Israel — [What we know on day four of US-Israeli attacks on Iran - Al Jazeera](https://news.google.com/rss/articles/CBMimgFBVV95cUxNRWowVk5EZERiVDE5RGFNWmVISGFWT2RhM09WNUhhX2dsR3hGTVI3SGI2bElNX2dUbnRzejJ0M2E5OFJTbXMwUmtzUnN3UTNfV1FRd3I0Wk15OFZkVnRXUFhvX1czUXVFWlNIZTV1cGNPU0VuSHU5NTQ5ZjdvRkVpNjdjOVY3TlhlMmp3M2Z4SmNtZGZtU01qQnJ30gGfAUFVX3lxTE9Oa0JYNFYtQ29ubi1qSlZ4ei1sUl9ocS1uUGRBNmh4TTN4eEl5UVBtS09yOVhBd1Rvbjk4Wjc4TW15Zkh6WnpQZ0hTMnBKS0hDeHdTSHUySS1OWjY5TzRPUzZ1YTh0bHVNSER3N1NVQzNyZHF5U3V3ZzFvQklqRnRHMW5qQWdKekx2X2p4UWh4LVFDNFdYT3JZUGM1SFhrTQ)
+- **3.0** · 2026-03-03 · military · news · Israel — [Iran to do ‘utmost’ to protect China’s citizens amid US-Israel attacks: FM - Al Jazeera](https://news.google.com/rss/articles/CBMirwFBVV95cUxPU0h5cGlfVHloTU05SmFreWIweHpucVJOTTdCLW80NmtNbE5vUlR2dVNLOWtEd3dfQnlCekNkTFRiazVYYVBabksyMmlHRXZic0NIQTl3enJYQ20yWkYtdWZuVXhtOGc3dkFEQ1M4TGZ3MnZGT0ZUaFoxYVRUbTctcTBOd2FKb2xESC1FWFktSFR3c3RmMkVVdHJfVXhBczRFWnBIOTBZMFJVV2ctVkJR0gG0AUFVX3lxTFBJQXA3TXVYUFBBckRUbUpVSXNhZHpaSmlOazNmR2hHeF9zcVl6RUNQX2R6elg5WTN2YXpNc0FzZzBSenpubmtXUnNWWGNQT3JxVkRCZWFSYldQTWtjVGxQcXlfcGowdEhPRmRYN1FSQWYyS2ZsT2JaaEZSRk9kZlpaVFF0VGJ3YjdfZXpTSGtsUUFrNkpHZ25IcWpJbWtjVncwUV9DQndBU1FHRUl5bG4wR1FsZw)
+- **3.0** · 2026-03-03 · military · news · Iran — [US Embassy in Riyadh hit by drones, Iran claims strike on US’s Bahrain base - Al Jazeera](https://news.google.com/rss/articles/CBMisAFBVV95cUxOTmlOalhwcW9TRVpJcThUVnNkd3ZZMFlFdVpmYXhVZXdkYlBBa1poQjVwdjk5RFo3RVhSMW1MMjgxcm1fQmQ1UlVfN0dUMEV6eHVLTGc2TlpxQkYwZlIxT0xDcThIZlNpVHZGczlRdWRnSURJaDgzNHZ5dTFpYzdCZW12em1GTlpKN3NqRmZnMFY4M2dpdm9FZ1ZWTDZJcFdjLWhWOGJjX0t1SE1aUEpOQ9IBtgFBVV95cUxQRDRSdTNYWEs2WVRyRUR1LWpEeWNWdEZCMzdZdHpCdVhKbUtkd1VFbTIzbTF2VGptb3dMak42enJINGp3YUljUDlUcVM3MnRfSVI3YVMtUGE3bVVPd3U3N0wwalpjYTFSZDN1VnJtd1lZbXhjdEcteXVRMjBkc1BYYXVHbDFuRzdHZUtZLVM5YTM3WnphNEdnTk5TLWo1X1JGNHhqWUFETDRxaV9MUVdMa0o4ZnZqUQ)
+- **3.0** · 2026-03-03 · military · news · Israel — [As bombing continues, Israel’s war aim in Iran becomes clear: Regime change - Al Jazeera](https://news.google.com/rss/articles/CBMisgFBVV95cUxPNE5QN1BKRHhIeUFod19POG9QSk9HaXRnaENxTlZTcjY2Ml80cGJidlZ5ZUtFYjd2YlA2M2NadkZlc1hiVE9KcmJwZEZ6M2liMWVpeUJOV1E2d1R3ZWZwRlZ4U0M5dEZCbVVMM1hrZmVxT01ZaWpuSy04cWxKR3FabGxTTnplQzdla2ZrNFBRTzlIOWRJOFJ2eG4xVUdac1Nxd1d5dENJNlpCcXNsSWZCSzZB0gG3AUFVX3lxTE4wOUlrZTRuMG82RTkwSGtvVXNVSnphaGxHM2NKYXUydklVWUlRbjdJNmRtT21IWldJNDFZZEc4WmhaM1Jza3JyZzI1cnQxTjhJdk1EUW9tZHdieHV0S3RTOHZFRFFlRG9HbFpKclA4Z25qaHd4OFhzRVJWU05FMV90b1hpMTJuUDY4NGRHRjlfWlEtRm1OWU1kQnVaNDhTRmtfc2xnNVpESkhYQ21MdjhQOVdFY2ZRbw)
 
 _Auto-generated from `events.json`._
