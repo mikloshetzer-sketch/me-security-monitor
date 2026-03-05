@@ -1,0 +1,91 @@
+name: WP OAuth exchange (stable)
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: "Paste ONLY the code value (from ?code=... up to before &state)"
+        required: true
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      # NOTE:
+      # Store redirect URI as an Actions Variable (not secret) so it can be printed and verified:
+      # Settings -> Secrets and variables -> Actions -> Variables
+      # Name:  WPCOM_REDIRECT_URI
+      # Value: https://example.com/callback
+      - name: Debug (safe) - show config (no tokens)
+        env:
+          CLIENT_ID: ${{ secrets.WPCOM_CLIENT_ID }}
+          REDIRECT_URI: ${{ vars.WPCOM_REDIRECT_URI }}
+        run: |
+          echo "CLIENT_ID=${CLIENT_ID}"
+          echo "REDIRECT_URI=[${REDIRECT_URI}]"
+
+      - name: Validate workflow input code (safe)
+        env:
+          WP_CODE: ${{ github.event.inputs.code }}
+        run: |
+          python - <<'PY'
+          import os, sys, re
+          c = os.getenv("WP_CODE") or ""
+          raw_len = len(c)
+          s = c.strip()
+
+          print("code_raw_len:", raw_len)
+          print("code_stripped_len:", len(s))
+
+          bad = []
+          if not s:
+            bad.append("empty")
+          if "code=" in s:
+            bad.append("contains 'code=' (paste ONLY the value after code=)")
+          if "&" in s:
+            bad.append("contains '&' (state appended?) paste ONLY up to before &")
+          if "?" in s:
+            bad.append("contains '?' (looks like full URL pasted)")
+          if any(ch.isspace() for ch in c):
+            bad.append("contains whitespace/newline")
+          if "=" in s:
+            bad.append("contains '=' (looks like key=value pasted)")
+          if re.search(r"[^A-Za-z0-9_\-]", s):
+            bad.append("contains non-URL-safe chars")
+
+          if bad:
+            print("ERROR: code looks malformed:", ", ".join(bad))
+            sys.exit(1)
+
+          print("OK: code format looks plausible")
+          PY
+
+      - name: Exchange authorization code for tokens (WordPress.com via Python)
+        env:
+          WP_CLIENT_ID: ${{ secrets.WPCOM_CLIENT_ID }}
+          WP_CLIENT_SECRET: ${{ secrets.WPCOM_CLIENT_SECRET }}
+          WP_REDIRECT_URI: ${{ vars.WPCOM_REDIRECT_URI }}
+          WP_CODE: ${{ github.event.inputs.code }}
+        run: |
+          set -euo pipefail
+          python scripts/wp_oauth_exchange.py
+
+      - name: Upload artifact (token bundle)
+        uses: actions/upload-artifact@v4
+        with:
+          name: wp-token-bundle
+          path: wp_token_bundle.json
