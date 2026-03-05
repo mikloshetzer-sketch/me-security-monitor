@@ -5,16 +5,38 @@ from collections import defaultdict
 EVENTS_PATH = "events.json"
 OUT_PATH = "daily_signal.md"
 
+
 def norm_cat(c):
     c = (c or "other").strip().lower()
     if c not in ["military", "security", "political"]:
         return "other"
     return c
 
+
+def parse_event_date(d):
+    """
+    Accepts:
+    YYYY-MM-DD
+    YYYY-MM-DDTHH:MM:SSZ
+    """
+
+    if not d:
+        return None
+
+    try:
+        if "T" in d:
+            return datetime.fromisoformat(d.replace("Z", "+00:00"))
+        else:
+            dt = datetime.strptime(d, "%Y-%m-%d")
+            return dt.replace(tzinfo=timezone.utc)
+    except:
+        return None
+
+
 def main():
 
-    now = datetime.now(timezone.utc).date()
-    yesterday = now - timedelta(days=1)
+    now = datetime.now(timezone.utc)
+    window_start = now - timedelta(hours=24)
 
     with open(EVENTS_PATH, "r", encoding="utf-8") as f:
         events = json.load(f)
@@ -22,16 +44,14 @@ def main():
     last24 = []
 
     for ev in events:
+
         d = ev.get("date")
-        if not d:
+        ed = parse_event_date(d)
+
+        if not ed:
             continue
 
-        try:
-            ed = datetime.strptime(d, "%Y-%m-%d").date()
-        except:
-            continue
-
-        if ed == yesterday:
+        if ed >= window_start:
             last24.append(ev)
 
     cat_counts = defaultdict(int)
@@ -54,18 +74,18 @@ def main():
 
     lines.append("# Daily OSINT Signal")
     lines.append("")
-    lines.append(f"**Date:** {now.isoformat()}")
+    lines.append(f"**Generated:** {now.isoformat()}")
     lines.append("")
-    lines.append("## Summary")
-    lines.append(f"Events recorded (24h): **{total_events}**")
-    lines.append(f"Dominant category: **{dominant_cat}**")
-    lines.append(f"Highest activity location: **{top_loc}**")
+    lines.append("## Summary (last 24h)")
+    lines.append(f"- Events recorded: **{total_events}**")
+    lines.append(f"- Dominant category: **{dominant_cat}**")
+    lines.append(f"- Highest activity location: **{top_loc}**")
     lines.append("")
     lines.append("## X POST VERSION")
     lines.append("")
-    lines.append(f"Middle East Security Monitor – Daily Signal")
+    lines.append("Middle East Security Monitor – Daily Signal")
     lines.append("")
-    lines.append(f"Events (24h): {total_events}")
+    lines.append(f"Events (last 24h): {total_events}")
     lines.append(f"Dominant category: {dominant_cat}")
     lines.append(f"Highest activity location: {top_loc}")
     lines.append("")
@@ -77,7 +97,8 @@ def main():
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
-    print("Daily signal generated.")
+    print(f"Daily signal generated with {total_events} events.")
+
 
 if __name__ == "__main__":
     main()
