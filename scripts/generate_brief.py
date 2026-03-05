@@ -157,7 +157,7 @@ def make_x_thread(start, now, total_events, total_risk, cat_counts, top_locs, ke
     period = f"{start.strftime('%d %b')}–{now.strftime('%d %b %Y')}"
     top1 = top_locs[0] if len(top_locs) > 0 else ("Unknown", 0.0)
     top2 = top_locs[1] if len(top_locs) > 1 else ("Unknown", 0.0)
-    dominant_cat = "military" if cat_counts["military"] >= max(cat_counts["security"], cat_counts["political"], cat_counts["other"]) else "mixed"
+    dominant_cat = max(cat_counts.items(), key=lambda kv: kv[1])[0]
 
     # Keep each post readable; user will paste manually.
     posts = []
