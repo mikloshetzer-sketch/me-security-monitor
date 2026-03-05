@@ -3,7 +3,7 @@ name: Daily RSS Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 */2 * * *"  # every 2 hours at HH:15 UTC
+    - cron: "15 */2 * * *"   # every 2 hours (UTC)
 
 permissions:
   contents: write
@@ -11,8 +11,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -25,18 +26,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Fetch RSS -> events.json
+      - name: Fetch RSS feeds → events.json
         run: |
           python scripts/fetch_rss.py
 
-      - name: Generate daily signal
+      - name: Generate Daily Signal
         run: |
           python scripts/generate_daily_signal.py
+
+      - name: Generate Hotspot Alert
+        run: |
+          python scripts/generate_hotspot_alert.py
 
       - name: Commit updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add events.json daily_signal.md
-          git commit -m "Update events + daily signal" || echo "No changes"
+
+          git add events.json daily_signal.md hotspot_alert.md
+
+          git commit -m "Update events + daily signal + hotspot alert" || echo "No changes"
           git push
