@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-03-14T10:48:44.426569+00:00
+**Generated:** 2026-03-14T20:46:46.526473+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Baghdad (4.9), prev 24h: 0.0, share: 28%.
+Top current hotspot (by risk): Iran (10.8), prev 24h: 20.6, share: 31%.
 
 ## X POST VERSION
 
