@@ -1,12 +1,24 @@
 # Hotspot Alert
 
-**Generated:** 2026-03-22T17:18:14.441509+00:00
+**Generated:** 2026-03-22T20:46:10.856214+00:00
 
-No hotspot alert: no location met the spike thresholds in the last 24 hours.
+## Alert: Risk spike detected — **Israel**
+- Current 24h risk (approx.): **30.7**
+- Previous 24h risk (approx.): **8.8**
+- Current share of window risk: **68%**
+- Dominant category (top location): **military**
 
-Top current hotspot (by risk): Israel (24.6), prev 24h: 9.9, share: 68%.
+### Top supporting items (from last 24h)
+- Israel strikes main bridge in south Lebanon, orders destruction of homes near border - Reuters (https://news.google.com/rss/articles/CBMixwFBVV95cUxNN1c4dURGQ0pqYjkyZk1US1QzTk5hNERBVWQ4UGFxQ2hlN0UxeXdOdEV5MUxCLTJSdGRqUnRZRGEwY3lkVEJkbVJybWJnQnJxUGg2WUw2WlBJeFNySVFYSExJMGsyU0RjNTlsbjFyWDhlbzlmaHdhYTVJLXBKSFg0SVhDeU5lUVdxZWU5dFZiRGpjTkFleFRPQ1FCS0Jvd2NCaVVDaFZuNnMteldjQ0FZTXBmUEl6TGtjMWJMdGt1MTVrWHl2OHNF)
+- Scores hurt after Iranian missiles hit Israeli desert towns - Reuters (https://news.google.com/rss/articles/CBMiswFBVV95cUxPOW1uN1pCbWJEbzFuX3I4bjhmQXVOM3hYYXdfVzNrNkR4SlM1T0hvOHJXVjlQZXRZbXdmT0YyamtfQ0FhdHltSl9PVHJCdE9IalhyQk9qb3ZxRmhHTFRQMHFWQVlqb01qMDdmY2JTNDVjcVYyTXFFOExMWVZodE02MUc5QnJOYW5BQUw5M2syOGtxbUJ5OFVYMEgxTjNHT1FBUWhFbFRKeXhadWJLaXVtc3RMbw)
+- Israel to expand ground and air attacks against Hezbollah in Lebanon (https://www.bbc.com/news/articles/c30rl05evd8o?at_medium=RSS&at_campaign=rss)
 
 ## X POST VERSION
 
-No hotspot alert in the last 24 hours (no spike thresholds met).
+🚨 Hotspot Alert (last 24h)
+
+Risk spike detected in **Israel**.
+Current risk: 30.7 vs previous 24h: 8.8 (share: 68%).
+Dominant category: military.
+
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor
