@@ -1,11 +1,11 @@
 # Hotspot Alert
 
-**Generated:** 2026-03-22T20:46:10.856214+00:00
+**Generated:** 2026-03-22T22:46:41.118148+00:00
 
 ## Alert: Risk spike detected — **Israel**
-- Current 24h risk (approx.): **30.7**
-- Previous 24h risk (approx.): **8.8**
-- Current share of window risk: **68%**
+- Current 24h risk (approx.): **29.2**
+- Previous 24h risk (approx.): **8.3**
+- Current share of window risk: **67%**
 - Dominant category (top location): **military**
 
 ### Top supporting items (from last 24h)
@@ -18,7 +18,7 @@
 🚨 Hotspot Alert (last 24h)
 
 Risk spike detected in **Israel**.
-Current risk: 30.7 vs previous 24h: 8.8 (share: 68%).
+Current risk: 29.2 vs previous 24h: 8.3 (share: 67%).
 Dominant category: military.
 
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor
