@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-03-27T05:53:05.889547+00:00
+**Generated:** 2026-03-27T07:36:26.764976+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Beirut (2.7), prev 24h: 0.0, share: 60%.
+Top current hotspot (by risk): Middle East (1.7), prev 24h: 3.1, share: 57%.
 
 ## X POST VERSION
 
