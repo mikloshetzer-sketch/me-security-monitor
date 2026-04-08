@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-04-07 23:00 UTC",
+    "updated": "2026-04-08 05:59 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-01",
-    "period_end": "2026-04-07",
-    "total_events": 190,
-    "total_risk": 202.25,
-    "normalized_risk_score": 80.9,
+    "period_start": "2026-04-02",
+    "period_end": "2026-04-08",
+    "total_events": 183,
+    "total_risk": 181.55,
+    "normalized_risk_score": 72.6,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 52,
-    "security": 4,
-    "political": 25,
-    "other": 109
+    "military": 49,
+    "security": 3,
+    "political": 27,
+    "other": 104
   },
   "source_counts": {
-    "news": 185,
+    "news": 178,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 81.0
+      "risk": 75.9
     },
     {
       "name": "Israel",
-      "risk": 77.95
+      "risk": 66.7
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.5
+      "risk": 10.7
     },
     {
       "name": "Iraq",
-      "risk": 10.2
+      "risk": 9.6
     },
     {
       "name": "Middle East",
-      "risk": 6.7
+      "risk": 6.85
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-04-07",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 7, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-7-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-04-06",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,25 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-6-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-04-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel backs Trump's two-week pause on Iran strikes, says Lebanon excluded - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORkVCVG9QTEZxTFM5R252SjFLZFFhMi1JdFdNY1ozakZVWFVEQlBYOWo0bHkzOEVXdkE5RVZHSkd4QzRFTkpoNzRJbmQzQkV4Y2VwNi1MV0xGend0Y2R6YUhlcGRyTV9NdjJXbkJZbGJSb1FLWlFCYlFTaXU1eUZ3ZzJ0YzFfM182ZUtrVmFFenBqQVRIb0NIQ2R6LWd2Z1hTRkFLMXluWUc0WjFBMGd4SWdKeml3Ukk5OHB0YlBvdVVfLWFMLVZJag"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "US journalist Shelly Kittleson released after kidnap in Iraq, officials say",
+      "location": "Iraq",
+      "url": "https://www.bbc.com/news/articles/crm1xjp08k3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.73,
       "date": "2026-04-05",
       "category": "military",
       "source_type": "isw",
@@ -66,76 +93,49 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-5-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-07",
       "category": "military",
       "source_type": "news",
-      "title": "US strikes military targets on Iran's Kharg Island, US official says - reuters.com",
+      "title": "US strikes military targets on Iran's Kharg Island, US official says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOGRwY2dBZmxXZklNdEYtNlIwU1NnSFc0a05RbkxIQWppT0pPaVFQQWgwRjdKRmhpMTNTMEdkZWFfbWVzUXg2b0tZdnppVHRBekVOeGtIajRud2JrQ3Jwdi1HV0xuNDNVUzZ2N21rSGVXeENGY256ZjdkYjNRVlIxbTJzbnVOTlZIYkZVV0VPOFFUUHZhVzJkT3VKQnNnbF8tQlVfSjcwZkhMc21XRUxGMk5mTVJGUnV5"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-07",
       "category": "military",
       "source_type": "news",
-      "title": "Iran has attacked Saudi Arabia's Jubail petrochemical complex, IRGC says - reuters.com",
+      "title": "Iran has attacked Saudi Arabia's Jubail petrochemical complex, IRGC says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSEM5cWZjVWlTaUJjcDVPV3JtVnlWcEt5OWJqYTdmbHczbktFYkRSUjRZb055dGRZeXMwcExBLVAzSVNVUmxpWlc0YTdwTVdJMk1TLVcydUJ3c1RXUGZwM2ktV1R3UTA4dHBqZ0VWN2M4clYtdkxaUlNQQ2dFaFRHaW41b0xVRjdlS2ZDZmswYUR4Ym9sMTFiZkx1bU81SUt4V2tCN2VFaWhpV0FrZ19iZURvQlJSa0RDdTNfMHNFMGxIb2hTMzhr"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-07",
       "category": "military",
       "source_type": "news",
-      "title": "Protesters break into Kuwaiti consulate in Iraq’s Basra after rocket attack kills three - reuters.com",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQaFVEdlFuTTdkaW9teFp5ZF9CdE1hVUxXcGpKSWZ6Q18xRWNETVhVcWFuZTNLZ3IwMV8taHFGYjloVmhSVjFacmRMM2lnOG5WQ2VwbjUxeGgwRklnQjVYNnlLN3lPZ3NsVmxfMXVFdmtxVzlUNFdBMHdTcTlIZ3RCNUZJaTZJTEVCQUVNX2VUVzV5Z0oxYXdhOTVFTllTSUhScTdFQkR6VGNjSWVnV3RrX19EZ0NjeG1ZOHVodnNHMGlRUGJWNHQ2cQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-04-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Exclusive: Russia supplies Iran with cyber support, spy imagery to hone attacks, Ukraine says - reuters.com",
+      "title": "Exclusive: Russia supplies Iran with cyber support, spy imagery to hone attacks, Ukraine says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbEx5cXlzMl84VU5QSkJha0FpQ0sweVh3WDVXR0R3aDVBVkZYNW9TdlhnUmQ1TFZtVTBuM29fdkcyT3NJSmxjUjgwT2F3TlNZd1pGVGhZcnp3bHlrUU1qMUxqOUdXS2gzaWwwd3lMcmJic2p5RF9VMkVOVWRxcFY5TmNQd3BOSnFjemRJMFRSOXJFdWI3c3V1TGpoNm9XYnI2OXRpSXFacWpYaTJWc3hqRjc1eGtWS1hEMFQ5V1R1VnFNdkd2"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-07",
       "category": "military",
       "source_type": "news",
-      "title": "Gunfight outside Israeli consulate in Istanbul leaves one attacker dead - reuters.com",
+      "title": "Protesters break into Kuwaiti consulate in Iraq’s Basra after rocket attack kills three - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQaFVEdlFuTTdkaW9teFp5ZF9CdE1hVUxXcGpKSWZ6Q18xRWNETVhVcWFuZTNLZ3IwMV8taHFGYjloVmhSVjFacmRMM2lnOG5WQ2VwbjUxeGgwRklnQjVYNnlLN3lPZ3NsVmxfMXVFdmtxVzlUNFdBMHdTcTlIZ3RCNUZJaTZJTEVCQUVNX2VUVzV5Z0oxYXdhOTVFTllTSUhScTdFQkR6VGNjSWVnV3RrX19EZ0NjeG1ZOHVodnNHMGlRUGJWNHQ2cQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-04-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gunfight outside Israeli consulate in Istanbul leaves one attacker dead - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMUZaalNySHVnREw2SGVxVndwT19Ha3FKNUZuM2FpdldDUnJCdEJQOXgxQzFNTHptakhjZ1BHaG11Ukh3ZFpvbXpoRnJqOVlYREtzLUxjQmp3X2dxSDRNRVdtYngtdHZJY0J4Y09JSUpTRG1xZU5JY0YwZzFKcHJLaGI1cFc1VlQtZEdma2hOMF9FXzA3bmxpeExMYno3R2NsYmswcG5Nd3Mya3Jrd0xWRS0wM0VZUldNNmo2Nw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-04-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "US journalist Shelly Kittleson to be released after kidnap in Iraq, militia says",
-      "location": "Iraq",
-      "url": "https://www.bbc.com/news/articles/crm1xjp08k3o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-04-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "One gunman killed and two injured in shooting at Israeli consulate in Istanbul",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c3exp8j7yz4o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-04-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "WHO suspends Gaza medical evacuations after contractor killed by Israeli troops",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.com/news/articles/c4g8pzpw2g2o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
