@@ -1,9 +1,9 @@
 # Daily OSINT Signal
 
-**Generated:** 2026-04-08T15:47:47.190445+00:00
+**Generated:** 2026-04-08T17:33:49.290607+00:00
 
 ## Summary (last 24h)
-- Events recorded: **39**
+- Events recorded: **45**
 - Dominant category: **political**
 - Highest activity location: **Iran**
 
@@ -11,7 +11,7 @@
 
 Middle East Security Monitor – Daily Signal
 
-Events (last 24h): 39
+Events (last 24h): 45
 Dominant category: political
 Highest activity location: Iran
 
