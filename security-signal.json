@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-09 21:05 UTC",
+    "updated": "2026-04-09 23:02 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-04-03",
     "period_end": "2026-04-09",
-    "total_events": 199,
-    "total_risk": 214.35,
-    "normalized_risk_score": 85.7,
+    "total_events": 202,
+    "total_risk": 223.3,
+    "normalized_risk_score": 89.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 51,
+    "military": 53,
     "security": 2,
-    "political": 57,
-    "other": 89
+    "political": 59,
+    "other": 88
   },
   "source_counts": {
-    "news": 194,
+    "news": 197,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 91.65
+      "risk": 96.0
     },
     {
       "name": "Iran",
-      "risk": 86.3
+      "risk": 89.8
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.65
+      "risk": 11.15
+    },
+    {
+      "name": "Middle East",
+      "risk": 9.65
     },
     {
       "name": "Iraq",
       "risk": 9.35
-    },
-    {
-      "name": "Middle East",
-      "risk": 9.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.9,
+      "date": "2026-04-09",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 9, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-9-2026/"
+    },
     {
       "score": 3.51,
       "date": "2026-04-08",
@@ -64,6 +73,15 @@
       "title": "Iran Update Special Report, April 7, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-7-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Halt to Iran attacks means Netanyahu's corruption trial will resume on Sunday - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZmlyTklsY3luLXQ4VllIVEJGazBLWU1WUEtsUjNGdDh1MmhOaXd0cTVjaTBYSXg1dy1uUzVpX2pMOHd0WW9zNEhUaGp1d1pUVnV5a1JnQUsxcXE4SGduaXRPNDFwYlVGbUN5eUtRcUNwaU9adERqNi1HUlEzaG5xdWxKRk41VmlsVnZ5bHhMZnkzNEZZSWVId2xaSzNrb2JyQVQ4MTJ1T24zZHNWVnVGOWlxY2xSY0NuTmd2RjRCbHJyZw"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "Why Israel’s attacks on Lebanon could cripple US-Iran ceasefire - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNYVhOZE9RWllDOHh3cjJuTnVwVkpnREJvdnMwNFBWazhfdG1yYXN5dFFmTDBFXzJUOVdaN05CNHZfVGxqaDIzR0hzOEUzQlpDWVZ5TWRrQUQ3UVd6RkpLY3N0d0N6N3lYb2szVEFqRFk4dFA3cU53WFJTMzNGUkRpUGswRV90NTh0eXBiWi02dXl6UVpTUkt6dnJCRU83T09ZekduadIBqgFBVV95cUxQelloTE5SYW14RXdPNWl1ZnZsS1lGYmgyWXktSmZKa2dCdWwxYmFhWjEydnhIVXJVbDFtY3IzS2tZc3pndEh3Y1Q1djduWlRzekJrN2hNOGxYS0MzLUlQWFFaVXBHQU1PcXZOWTlyb0hBaEtYV0FJeHBENVltY2p0ZEFIU3lYMXRLYW5STHBKb1pONlE0OXA3d3kwRDlGalBsZkl4SEliWTFfZw"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-04-06",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 6, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-6-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says peace talks would be 'unreasonable' following Israeli strikes - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPLVZ2aXNYWERoaVZBdWlxUWpCX3BMQlVCWjd3ZEpQZ2dKN21aR3lwMGdDWkVSM0Z3T2JvVzA4ZjZMcXFRSWtrUjJ3cno0MHFwQ0phWkdGdkIzY0Z5RFhkNlBpQTRsSjNUTk10emVzaEZ3NlhxQjU5Tkxsa3NTRU5VQUVMamkwUU9GeVR2WTA3MUt4dTM0QjFVQ1hESXliT0s2ZEtPVHNkVnBKb1lrWXdqdlZBRTBEVGJLVGlRVzhvNXdscFUwanloQTVwb1VOUQ"
     }
   ]
 }
