@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-12 09:06 UTC",
+    "updated": "2026-04-12 11:00 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-04-06",
     "period_end": "2026-04-12",
-    "total_events": 190,
-    "total_risk": 166.66,
-    "normalized_risk_score": 66.7,
+    "total_events": 194,
+    "total_risk": 172.31,
+    "normalized_risk_score": 68.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 40,
+    "military": 42,
     "security": 2,
-    "political": 77,
-    "other": 71
+    "political": 76,
+    "other": 74
   },
   "source_counts": {
-    "news": 184,
+    "news": 188,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Iran",
-      "risk": 72.15
+      "name": "Israel",
+      "risk": 73.16
     },
     {
-      "name": "Israel",
-      "risk": 66.56
+      "name": "Iran",
+      "risk": 70.6
     },
     {
       "name": "Middle East",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 5.95
+      "risk": 8.35
     },
     {
       "name": "Lebanon",
-      "risk": 4.45
+      "risk": 3.85
     }
   ],
   "top_events": [
@@ -82,6 +82,15 @@
       "title": "Israeli drone attack kills Palestinians near Gaza mosque - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWmx5MEtDSTJ3bmdZUDFJMDNGMi1nTlVlQ3Z2ODZOb1U1SEswdm54S29zS2xhVjQwRno0bVM0Sjh2Ql8tMlRZalgxcnZONEFDb3NWTHdDRHpJdkl2N09oY0JsM09TS21CemJ6VkR5Q21qb0U4T2JVMjdXek1nbl9SMmNHWVdoc205ZXFFcEdVMWprMEU1NThwS1k5QjdNOUtnaDhEVTdtT3dxR1HSAbABQVVfeXFMT0xhTVYzekVoaFBiNmVoS0poUkpiQnl6RVptajdxTDBLYXdGZzk0bU0zcnk3QkRTN2NJVEJnNEtvN2lsVU5NS2ZjenJqWlJDMndHS3R2WDIyYzh0ZjNxeUMzRXBZWldCb2RoRXI1bTFjOFUtbDlzdl9mNzVYdDFwYUtYSlhQOW1TSzJucUdteE5ha3N1XzV3eGRHVTVuM2IzSFJISzdEUTdXeXgxOGFEbVo"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-04-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanon mourns security forces killed in Israeli strike - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUGhya3hIU1p2SlROUjU0d1ljWU9WemRLb08tSnZENDk0M053ME1JZ1BoMmp5U1VtYTlnbG8tWjZyS2l1ZWJ4UUFNTTdoQUh5UGh2c05QekpidjRZczJWLXBfRnFvZDRFbGJrRmRHOVJKT1g4VEFGamkzc0lELV95M1RJOHh2VFBneFNhQ1BYaUt2ZjBXV1RhYTVHU2pjTklDS2M0R3M5SEF5Z9IBrwFBVV95cUxOanN1a0FjSkJrYmJnR0JZNWdLX2cxY3NwWE1IaDAtSlk0WEZSZHUxa21NMU51Y2E5MTg4QjBFS0szeHBfcGdVa0ZxQzllMW85dEpIcnRkSTJUZ3EtZWVKOHVmY1RXU0dLSnRrMk4zOHh2a082N1lQNEJfbG5GUTRkaGYwVDZJOUVnOTUtdVdWUXJuclRqWlZ5QkNvVmtBSmU2WUJjV2Q3VDI0YzdYanFN"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Zelenskyy says Ukrainian interceptors downed Iran drones in the Middle East - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcWZHVUR5UUs0MW1MM0Y1WFQzQnpzUFVycmNVdk5KLTFFRUl1aHZNb1oxUGZJMi0yX3p3UjB0aFdFNy1veXZnM21aME13NXBTSVZfa1JBcTF6VEVyWk9XbGFjbmNPSXlnRkFBVnpyU1pWYlkwQlJvNkM3eHJOcmlqMGFGbzZhMjFOc1dUQXlsVWh5TkhBU1hsLUJjTnlTaU9GSWc0R2NmV1BLS2txOW9UQ09XQVIwb2PSAbwBQVVfeXFMTWpVZEdxM2Flck5mVmpNVVE0eVdWVHZPQ1lRRUp1bHg4VHA5SDNpSDBZZ3EtakZqOXdTb21pSkFsUVJXd2ZId0EwdUNMX2NzRzJpLVdyMGVVNGJ2ak03dWhUQVJKVzNialQxMHJKYW8tZ1VXVUxEWTA2RkdWSGVFaV9MbldSTXpSb2dTU1VvOUlMUi1CcFl4dXM2RXRUYWdpcl9hT3dPc2RDTmRyX3JhQ3ZYSEVpaGd1eHB0Zjg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran war: What is happening on day 42 of US-Israeli attacks? - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQUU5QVY2eVVWWk5XRXd4X1VxSWI0ekZuemhVVVlTMkE3dnh4WFgwc0QxelA2LVRUb1NuTkUtYmdKaWNmYTVSM3JwX2ZfMjBlLXo5dHFnT044RGVOYk9VQUxTb25GY2U5eUZwRWhQajNVZjJzUTdLQVpMTkd5S3J4VVg0TGJYVEVXeHBVTVlGOHFUOUpvdUJ5XzM3OWp6dERv0gGmAUFVX3lxTE13ZnVzY3Y4VVAxWUxwd1VYSWtDRU9fZjctQlFxSmdhODBzR2otM1R1SWlSQmw2eklaZGpVYjY0X2gzdmMtc19KeDA1SEtOTlFESzc5cWVEdUdjckh3QkpBakVCMmNoR0tXSDRCSXZDelEwd2JHd201X3Y2Wi1xb2twSVJSX183LVcyVVVYQ1pudV82ZjhXU1BNUHpQa3d5dFJwdU5BUmc"
     }
   ]
 }
