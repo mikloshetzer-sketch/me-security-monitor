@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-13 21:09 UTC",
+    "updated": "2026-04-13 23:05 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-04-07",
     "period_end": "2026-04-13",
     "total_events": 168,
-    "total_risk": 145.01,
-    "normalized_risk_score": 58.0,
+    "total_risk": 152.41,
+    "normalized_risk_score": 61.0,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 31,
-    "security": 2,
+    "military": 32,
+    "security": 3,
     "political": 61,
-    "other": 74
+    "other": 72
   },
   "source_counts": {
     "news": 162,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 61.1
+      "risk": 62.85
     },
     {
       "name": "Israel",
-      "risk": 56.76
+      "risk": 57.06
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.7
+      "risk": 9.5
     },
     {
       "name": "Middle East",
-      "risk": 5.7
+      "risk": 5.95
     },
     {
-      "name": "Iraq",
-      "risk": 2.7
+      "name": "Lebanon",
+      "risk": 5.3
     }
   ],
   "top_events": [
@@ -79,9 +79,36 @@
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
+      "title": "Red Cross calls consecutive strikes in Lebanon 'gravely concerning' - Reuters",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTERQU29FTThhQlZrSENvREJoUng2QklBNUJLR2VlQjNCYkpYMWR1a3RxaW9mR0NFQnloWW9kcTgtMDI4aHpFS3NLNGR3Z1ZmczJXdTVhWWowb2g3QWZYUXVTMlpEZlhuQ003SUFZQk9RdHBLOTF2dnJhbHI5QWp5d2QtaGlpeGtxb2JjczlYZW1pT1F4ZktrUW1rQzBaQ2NxOVZHTi1yQTRVbG5mUlpKVmRtcFBFMG8"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli airstrikes kill four in Gaza following new ceasefire talks - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS1BQWWZmbktjam9RSy1KdVFLQlJBcjBsSEtnNkk1OFJIOTFpTDRPd0Z2SFdoQnJMYzNta2dRTnZ0SVJKT0h6N1poVERlbnZqT2dnM2tOTWVhZERYX2lhblpzUTZqd09yRG1nVTBDcC1PdWMwbUFLZ3JPR05BRUR6dVEtdzNDUkR3RXQ3WnBJak8tQ2lZSU8xSEl6NWRlUjU1N1laRVBmcE85ZkZ2VmJlRmRHdw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-13",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel steps up strikes on Lebanon and Hezbollah attacks continue as talks loom",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/czd78q6r8jno?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "BBC joins paramedics on duty in Lebanon after Israeli strikes",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/videos/cwyk8rz1pzyo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -109,33 +136,6 @@
       "title": "Israeli strike kills infant girl in south Lebanon during father's funeral - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbHBqS1VsaVZTNXpSUUxGRm83eVdKSllKTG9PaXhxN0hBZ1ZyMHVXQmFMN1pvelRTSUhZTUJEWmVEajBEV01ERWRpQU1iZEVZS0ZRZ2xVSm1OclAtbklOaWF5cDY0RjhCa082dW0yVE5hN2M1TUd4Z0poX2hPMjdJbEFSSENWUjJ6ekVjNVRUVFppcWMzdHladFcwRk5RNkt5c3FtSWNEdTc3N21oV2VacmU5MGRoSElpQjduazFnSjY"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia summons Iraq envoy over drone threats from Iraqi territory - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQanBiUkRHZW1Dakc2ekpIT2ZwNXZfMUZTeWVBYVgwMTBBbkQ2MlBsYlFxSDJiUTRFZk10bnZqTG5CcEJnRFUxaGMzTWY1LTRLQ0wzVkc4NHdMY0ktelJoRUxWUVBsejhIQ1VkRzYyNTR6dnc4LVdkaXZNWUJjR1FvVGtvQzdsYS03VWtCakkyd21BR1Q0TjU4WjVDZHZUazc4UTNYenN5aEJfX1IyQm9EUWZDaFl6WE94VlFaTA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli drone attack kills Palestinians near Gaza mosque - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWmx5MEtDSTJ3bmdZUDFJMDNGMi1nTlVlQ3Z2ODZOb1U1SEswdm54S29zS2xhVjQwRno0bVM0Sjh2Ql8tMlRZalgxcnZONEFDb3NWTHdDRHpJdkl2N09oY0JsM09TS21CemJ6VkR5Q21qb0U4T2JVMjdXek1nbl9SMmNHWVdoc205ZXFFcEdVMWprMEU1NThwS1k5QjdNOUtnaDhEVTdtT3dxR1HSAbABQVVfeXFMT0xhTVYzekVoaFBiNmVoS0poUkpiQnl6RVptajdxTDBLYXdGZzk0bU0zcnk3QkRTN2NJVEJnNEtvN2lsVU5NS2ZjenJqWlJDMndHS3R2WDIyYzh0ZjNxeUMzRXBZWldCb2RoRXI1bTFjOFUtbDlzdl9mNzVYdDFwYUtYSlhQOW1TSzJucUdteE5ha3N1XzV3eGRHVTVuM2IzSFJISzdEUTdXeXgxOGFEbVo"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill at least 18 people across southern Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNd3FFSWlOUnBYVjUtX1h6b1N0aTJha1RHNDhUaTJsMWo3UEd2VEp4RGFKSHhwMDU3a0xmYmNnV2pnN0NEbWtoNEZXUzg5N2RwMjJXUEZHcUF2MmlLUEROQW04eVd2MXFQZ3d5NHlmWjJyaTFhdGhYWnZKM3Z2NnRQcF9sTnp4amFtbUpkNFo0ZXhoaEVYM3RfUkdFQXlEMmU5U092ZzNNONIBrAFBVV95cUxQQWlYa2dhdXZIdWJGNE5pZVFLaFRod3ZwdTFZRHFzYzJIVDVaTzYwQVc4cm1GekVySVRYbURUTmxrdlo5SC13RFNaOXBybnA0bEtjU09MRGVmMWVCM21kYUVpU1BpRVFoN3VLaUEtYUczN2hrUkJwM1JMNkZqcTcyZU1jS1Jlbml3a1dXMUJiS3h5MWVqZjhKVGlSQXp4NFRUU3pXNFdKdnBaNDdw"
     }
   ]
 }
