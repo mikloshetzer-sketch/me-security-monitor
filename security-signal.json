@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-04-13 23:05 UTC",
+    "updated": "2026-04-14 03:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-07",
-    "period_end": "2026-04-13",
-    "total_events": 168,
-    "total_risk": 152.41,
-    "normalized_risk_score": 61.0,
+    "period_start": "2026-04-08",
+    "period_end": "2026-04-14",
+    "total_events": 162,
+    "total_risk": 126.46,
+    "normalized_risk_score": 50.6,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 32,
+    "military": 24,
     "security": 3,
-    "political": 61,
-    "other": 72
+    "political": 65,
+    "other": 70
   },
   "source_counts": {
-    "news": 162,
+    "news": 156,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 62.85
+      "risk": 54.35
     },
     {
       "name": "Israel",
-      "risk": 57.06
+      "risk": 44.01
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.5
+      "risk": 6.5
     },
     {
       "name": "Middle East",
-      "risk": 5.95
+      "risk": 5.45
     },
     {
-      "name": "Lebanon",
-      "risk": 5.3
+      "name": "Iraq",
+      "risk": 5.1
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-04-13",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 13, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-13-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-04-12",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-12-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-04-11",
       "category": "military",
       "source_type": "isw",
@@ -66,16 +75,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-11-2026/"
     },
     {
-      "score": 3.0,
-      "date": "2026-04-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says Iranian 'fast-attack' ships that come close to US 'blockade' will be eliminated - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcUFhRWpjbmlzLTR5cU45RW05aEp2T1dTcXAxb3hrMm5PbzZoaUlKZUNqeGNFbENpQmdwNTB4dGQteWY2cVdRYkFsVHNldkZyOUVwbEhZa3EwV2IzSEt1M0p5T2NXOWFzd1JDdzdxUUR2SzZnNXlpVWpFNVR5TjdVZUZwRlF5WHo0NWZoUXlPNnloTHZCanZsb3FSbTZ3a3JtUjRlNlBMWXZfRWJRaGlZZVVPdDA2WkQ4dUdpVXFVMmd6c25R"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
@@ -84,16 +84,25 @@
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTERQU29FTThhQlZrSENvREJoUng2QklBNUJLR2VlQjNCYkpYMWR1a3RxaW9mR0NFQnloWW9kcTgtMDI4aHpFS3NLNGR3Z1ZmczJXdTVhWWowb2g3QWZYUXVTMlpEZlhuQ003SUFZQk9RdHBLOTF2dnJhbHI5QWp5d2QtaGlpeGtxb2JjczlYZW1pT1F4ZktrUW1rQzBaQ2NxOVZHTi1yQTRVbG5mUlpKVmRtcFBFMG8"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli airstrikes kill four in Gaza following new ceasefire talks - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS1BQWWZmbktjam9RSy1KdVFLQlJBcjBsSEtnNkk1OFJIOTFpTDRPd0Z2SFdoQnJMYzNta2dRTnZ0SVJKT0h6N1poVERlbnZqT2dnM2tOTWVhZERYX2lhblpzUTZqd09yRG1nVTBDcC1PdWMwbUFLZ3JPR05BRUR6dVEtdzNDUkR3RXQ3WnBJak8tQ2lZSU8xSEl6NWRlUjU1N1laRVBmcE85ZkZ2VmJlRmRHdw"
+      "title": "Trump says Iranian 'fast-attack' ships that come close to US 'blockade' will be eliminated - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcUFhRWpjbmlzLTR5cU45RW05aEp2T1dTcXAxb3hrMm5PbzZoaUlKZUNqeGNFbENpQmdwNTB4dGQteWY2cVdRYkFsVHNldkZyOUVwbEhZa3EwV2IzSEt1M0p5T2NXOWFzd1JDdzdxUUR2SzZnNXlpVWpFNVR5TjdVZUZwRlF5WHo0NWZoUXlPNnloTHZCanZsb3FSbTZ3a3JtUjRlNlBMWXZfRWJRaGlZZVVPdDA2WkQ4dUdpVXFVMmd6c25R"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-04-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain summons Iraqi charge d'affaires over drone attacks launched from Iraq - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWDhjcW1zVXJFd2xFQW92aWQ0Z2hMOVNQZHdVR3ZvQ3lGeW9TdG83X0JaeUZLc0Rjb2hIQUVaajdfT1VCTXpIZ2JaSHBJSklSREpTc0pycmVic29HRkdvRi1hMmhxTjJLM1BtZGVBaFlKTmlPMnBYMVh4N3NFeXgtZHVRZERYSXl3VUhWakdhc2N5TG9HUm1oZi1DWmNYMGxxMDc3Z0ppZmVUdFg4MXU0RG0wcERLZGhpdmtoTVRVZjFsLVk"
+    },
+    {
+      "score": 2.7,
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://www.bbc.com/news/articles/czd78q6r8jno?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
@@ -111,25 +120,16 @@
       "url": "https://www.bbc.com/news/videos/cwyk8rz1pzyo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
-      "title": "At least six killed in Israeli strikes in southern Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVThvbXdTejY0YVpRM0RjYU9pSjFLTkotbWdXMDk3UDFhMG0wNkZyYjRqalVtX2N3WVNKa3lKVzJfV1FfeHN1UVg2RlYxa2xJZXFoZkJwcmJTMlljOXd3a0dBeE15Y1lVcFUyeDU2WGNzTDF3dERWWjNtWmJuVEIxdm8xM3NfRWpLZC1LMXU0MHFPME1UZzZvcndyQVZYOHF00gGmAUFVX3lxTFBmal9pTTN6NHZVM3BWYzBqUmhTOVQzU0pOUUw2Ym1xWWItb2NTUTJZblU4MV9tck96Y0dmeklmSl9TZU43NWxPM2RIdE5oYWFDYmFKM0pWdHIyd0pPaDh0VnhBQ0RQQlhqUk1zdENVeGlvRGY2eml0ZDNNNkNPekRlQTk2ZVMyXzBQbUFPVzZQOUtJTXQ4MUVweG5zTktNREZEOGZmaUE"
+      "title": "UN experts slam attacks on Gaza shelters, forced displacement in West Bank - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZU9kb1JudVhlTW81S1pMZ1Q5TmV5ZGZ5M1o3WHRqanZPOHhKNlZ4NXlZR25Hc1lpQ3FxYklmQ043LWlrdksyend1ai10UFdMLWN5U0tweTE0M0VVV3g5QlU5NFJGNk5MQkpxdlZOZzBqSG1ZX243clR3U2ZESGFCNWFoLTduQlgxZUpyMXlZYUljdzBueDVIM2g5V2l2TjBPeFVwXy1LdUpXVzNKSzJUY2ctemrSAboBQVVfeXFMT1BzaFhqZExPUXptRDJNeEhqRFF1OXA3dXl1N00ya1lDWHlteFl0aFBNYThBT0V0Qm5NNnVEQnlaNV9jd3RnV09uTFZXdEItYTU4dHl6NGpGZ3haRzVyM0Yyd0drX3FiOVROVlVNc2JSeXVEZ3VUUkMxTTFPVnRXUG5Va29WY3k4d3U4ZVJPSHh4WXNRQmkyb1hSNUdraVFsc2dVVENLTjF6ajFTRlVfWjhQdHlJQ2Q5R3JB"
     },
     {
-      "score": 2.73,
-      "date": "2026-04-10",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 10, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-10-2026/"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-04-12",
       "category": "military",
       "source_type": "news",
