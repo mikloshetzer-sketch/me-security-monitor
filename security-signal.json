@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-15 17:20 UTC",
+    "updated": "2026-04-15 19:44 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-04-09",
     "period_end": "2026-04-15",
-    "total_events": 178,
-    "total_risk": 142.91,
-    "normalized_risk_score": 57.2,
+    "total_events": 181,
+    "total_risk": 143.61,
+    "normalized_risk_score": 57.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 24,
-    "security": 5,
-    "political": 55,
-    "other": 94
+    "military": 23,
+    "security": 4,
+    "political": 54,
+    "other": 100
   },
   "source_counts": {
-    "news": 172,
+    "news": 175,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 67.65
+      "risk": 69.1
     },
     {
       "name": "Israel",
-      "risk": 49.86
+      "risk": 49.51
     },
     {
       "name": "Middle East",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.35
+      "risk": 4.95
     },
     {
       "name": "Saudi Arabia",
-      "risk": 2.8
+      "risk": 3.3
     }
   ],
   "top_events": [
@@ -64,6 +64,24 @@
       "title": "Iran Update Special Report, April 13, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-13-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Exclusive: Iran offers proposal allowing ships to exit Oman side of Hormuz free of attack, source says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOelhWMXh6eHhoaTFxUEMxS3RGR2lOeTl0MkZWMXJjWWxWaDUyUWlUZVE0WE9pMUozQngyekJNLWlMRTJSVVhPcWNpWmpxeG5SRVRLT3UzUkpfTVFRYmx1d29jQWowUjVrQ05odWpxSmVTY2RKVjNyRjRmZndiZ2NzYjNzNXZsNExWYU14MlNyRHZURXZEWFV1M2ljaG5hTW1uSTk1QndhS0JOekxMSHI0aDZWYVM2YUpaRE9jU1FqZnpza21PcjZSR0RR"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three paramedics killed in successive Israeli strikes in Lebanon, officials say",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cgqkkxd09e2o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -100,24 +118,6 @@
       "title": "No discussions between Qatar and Iran over payment of funds to stop Iranian attacks, Qatari official says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNQUhIZlFpdjlxTUZyZV9nQ1N6ZzlRZW1MUkloc2hQVFpWMVVoRUJUbVBaeVdfeUZLck1DWWhyVHFfcTNGWm1ETzJscTE2RmRGWW0ya1JKbFJwZ3BvcnIweUxkMlVZSEk0ejZGS1RoTTlZMGMxZ05FYW5wQ2NjdldfMnI2SlUyUHpMV3VIUTdGWFl5YmpsOFhzeXdHTHdWRFZfTGU1OEZoaGp4X2lJYXJGUXFUN2VhVWNGZkVmdHE0cUhCeHhaOXlpWEpPQ0IyLVU"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills infant girl in south Lebanon during father's funeral - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbHBqS1VsaVZTNXpSUUxGRm83eVdKSllKTG9PaXhxN0hBZ1ZyMHVXQmFMN1pvelRTSUhZTUJEWmVEajBEV01ERWRpQU1iZEVZS0ZRZ2xVSm1OclAtbklOaWF5cDY0RjhCa082dW0yVE5hN2M1TUd4Z0poX2hPMjdJbEFSSENWUjJ6ekVjNVRUVFppcWMzdHladFcwRk5RNkt5c3FtSWNEdTc3N21oV2VacmU5MGRoSElpQjduazFnSjY"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli airstrikes kill four in Gaza following new ceasefire talks - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS1BQWWZmbktjam9RSy1KdVFLQlJBcjBsSEtnNkk1OFJIOTFpTDRPd0Z2SFdoQnJMYzNta2dRTnZ0SVJKT0h6N1poVERlbnZqT2dnM2tOTWVhZERYX2lhblpzUTZqd09yRG1nVTBDcC1PdWMwbUFLZ3JPR05BRUR6dVEtdzNDUkR3RXQ3WnBJak8tQ2lZSU8xSEl6NWRlUjU1N1laRVBmcE85ZkZ2VmJlRmRHdw"
     },
     {
       "score": 2.4,
