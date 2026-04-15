@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-15 11:17 UTC",
+    "updated": "2026-04-15 15:39 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-09",
     "period_end": "2026-04-15",
-    "total_events": 172,
-    "total_risk": 140.26,
-    "normalized_risk_score": 56.1,
+    "total_events": 178,
+    "total_risk": 142.71,
+    "normalized_risk_score": 57.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 26,
-    "security": 4,
-    "political": 54,
-    "other": 88
+    "military": 24,
+    "security": 5,
+    "political": 57,
+    "other": 92
   },
   "source_counts": {
-    "news": 166,
+    "news": 172,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 61.35
+      "risk": 66.25
     },
     {
       "name": "Israel",
-      "risk": 45.96
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 9.6
+      "risk": 51.61
     },
     {
       "name": "Middle East",
       "risk": 8.75
     },
     {
-      "name": "Iraq",
-      "risk": 4.5
+      "name": "Gaza Strip",
+      "risk": 7.8
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 2.3
     }
   ],
   "top_events": [
@@ -70,9 +70,18 @@
       "date": "2026-04-15",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli attacks kill 11, including two children, in day of strikes on Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYmRhcF9NMXpQTHM4YUNVSlVpdFlQQUh4Q0w5dWhHMmJHY2ROOUZJQ2c5N3FsU1o1Qm05VldpQWlnZkxYVGtQaEpxeW13M2gxT29TODJTdnBZUUJ2MDdmcmpHMkVUODhndDBaazFTV2xVQ3VHY0dBeTFvV24zaEdjRTZCYVRmSjhnekQtOEJmQ1lSTlVDYmZxRHRyZGNEMk83aFo1WDNTMUQyWFItNXIxb2dCa9IBuAFBVV95cUxNd1J1TG10UzBjMzFEZ3k2TWxyaDM0bXBURUk3dTZ6U0RkTlpQOTQ2OTU5bjc0c2F4ZGhIRTIybHdUYXQwWjh1MHFLWU5aWmZpU096bGxfTnExczRFNXRtcERZQndjU3VYQm5abEdVd2VfRXJ2cWE2TnJDWmJlN2RObWc4RGpoWWR2UXl5dGxvRk1Hamg5RmxCWHY5NUROcklsRnFUakg0bkxDaW5QWmo2RS1HOS1TNmVD"
+      "title": "Israel and Hezbollah continue attacks after Israel-Lebanon talks in US",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c87ww2z0z3zo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Sri Lanka repatriates 238 Iranian sailors stranded after US torpedo attack",
+      "location": "Iran",
+      "url": "https://www.bbc.com/news/articles/c9qdd318qd9o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.73,
@@ -106,6 +115,15 @@
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
+      "title": "Israeli airstrikes kill four in Gaza following new ceasefire talks - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS1BQWWZmbktjam9RSy1KdVFLQlJBcjBsSEtnNkk1OFJIOTFpTDRPd0Z2SFdoQnJMYzNta2dRTnZ0SVJKT0h6N1poVERlbnZqT2dnM2tOTWVhZERYX2lhblpzUTZqd09yRG1nVTBDcC1PdWMwbUFLZ3JPR05BRUR6dVEtdzNDUkR3RXQ3WnBJak8tQ2lZSU8xSEl6NWRlUjU1N1laRVBmcE85ZkZ2VmJlRmRHdw"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-04-13",
+      "category": "military",
+      "source_type": "news",
       "title": "Trump says Iranian 'fast-attack' ships that come close to US 'blockade' will be eliminated - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcUFhRWpjbmlzLTR5cU45RW05aEp2T1dTcXAxb3hrMm5PbzZoaUlKZUNqeGNFbENpQmdwNTB4dGQteWY2cVdRYkFsVHNldkZyOUVwbEhZa3EwV2IzSEt1M0p5T2NXOWFzd1JDdzdxUUR2SzZnNXlpVWpFNVR5TjdVZUZwRlF5WHo0NWZoUXlPNnloTHZCanZsb3FSbTZ3a3JtUjRlNlBMWXZfRWJRaGlZZVVPdDA2WkQ4dUdpVXFVMmd6c25R"
@@ -115,27 +133,9 @@
       "date": "2026-04-13",
       "category": "military",
       "source_type": "news",
-      "title": "Red Cross calls consecutive strikes in Lebanon 'gravely concerning' - Reuters",
-      "location": "Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTERQU29FTThhQlZrSENvREJoUng2QklBNUJLR2VlQjNCYkpYMWR1a3RxaW9mR0NFQnloWW9kcTgtMDI4aHpFS3NLNGR3Z1ZmczJXdTVhWWowb2g3QWZYUXVTMlpEZlhuQ003SUFZQk9RdHBLOTF2dnJhbHI5QWp5d2QtaGlpeGtxb2JjczlYZW1pT1F4ZktrUW1rQzBaQ2NxOVZHTi1yQTRVbG5mUlpKVmRtcFBFMG8"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bahrain summons Iraqi charge d'affaires over drone attacks launched from Iraq - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWDhjcW1zVXJFd2xFQW92aWQ0Z2hMOVNQZHdVR3ZvQ3lGeW9TdG83X0JaeUZLc0Rjb2hIQUVaajdfT1VCTXpIZ2JaSHBJSklSREpTc0pycmVic29HRkdvRi1hMmhxTjJLM1BtZGVBaFlKTmlPMnBYMVh4N3NFeXgtZHVRZERYSXl3VUhWakdhc2N5TG9HUm1oZi1DWmNYMGxxMDc3Z0ppZmVUdFg4MXU0RG0wcERLZGhpdmtoTVRVZjFsLVk"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israelis war-weary but most oppose Iran ceasefire, poll suggests",
+      "title": "Israel steps up strikes on Lebanon and Hezbollah attacks continue as talks loom",
       "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/clyxgxyeqpgo?at_medium=RSS&at_campaign=rss"
+      "url": "https://www.bbc.com/news/articles/czd78q6r8jno?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
