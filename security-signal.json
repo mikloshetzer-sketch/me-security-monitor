@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-16 11:21 UTC",
+    "updated": "2026-04-16 14:15 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-10",
     "period_end": "2026-04-16",
-    "total_events": 181,
-    "total_risk": 139.96,
-    "normalized_risk_score": 56.0,
+    "total_events": 183,
+    "total_risk": 148.61,
+    "normalized_risk_score": 59.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 27,
+    "military": 28,
     "security": 3,
-    "political": 45,
-    "other": 106
+    "political": 47,
+    "other": 105
   },
   "source_counts": {
-    "news": 175,
+    "news": 177,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 61.05
+      "risk": 63.0
     },
     {
       "name": "Israel",
-      "risk": 53.81
+      "risk": 60.76
     },
     {
       "name": "Middle East",
       "risk": 11.7
     },
     {
-      "name": "Gaza Strip",
-      "risk": 4.6
-    },
-    {
       "name": "Saudi Arabia",
       "risk": 2.25
+    },
+    {
+      "name": "Tehran",
+      "risk": 2.05
     }
   ],
   "top_events": [
@@ -70,9 +70,36 @@
       "date": "2026-04-16",
       "category": "military",
       "source_type": "news",
+      "title": "Israeli strike severs last bridge linking southern Lebanon to rest of country, Lebanese security official says - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZURUQkVCTElTVTQyUFQtMXI1OWFLclNXRWpyTmNKTk9kNnpzT2NORlk2ckJJOW94bnpuNDg2cm5La0FBcGFhY1BGY24ydmZVMnV2dk5hQjViY3MwbTh6Q0NqQm84OUhmRnUwV2RlN1o1TnE1QUxmeGJKVWJXZ3Rsc3J3eVFIRkcweVNUZG54MHdNNnlDODhvUXpvR1pDU2hKM3ZMR285OUpGUlNETndwM2pPUEY1SEJWcHhhR2tDX0s3MGtlNkZJTm1jMmxMb2c"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "US military: 'locked and loaded' to strike Iran's power plants, energy industry if ordered - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOaEItbU9FVnJLN1l1RktWRkdtZGZiNGk1US1JTm0zRWN3MTNTNmpPVmJQYmV1bUxkRTV5WXBqVnVJWnhlM2tQbU54cXRMbF9IR0NyLW5STnV5WWl4MnM0bkJTdjhMejJwZHhuWXYwUVJaN0RZektTNHRTemtNbUdfSWpVV3dKZnFPMmdOeVVvR200c2swZFNVeHdEUnhGX0tHUGNtVDRxVHRBYTM2eG43bnJpMGlCQTAzLUVuaWwtbTc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-16",
+      "category": "military",
+      "source_type": "news",
       "title": "Democrats clash with US Energy Secretary over Iran war and gas prices - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNT196TTM3OVN2am5pYU1Ua0EyMmZrQzZEUVhSUTQ1NU1aRkNpc2hOUjRZQkMxY3k2UF82S3N2S0loVDlRX2RLN0taNEtHcl9PTG9PWlZ0RHZVQWRtamw1azh6ZS1KS052UXZfOXJ6SXhGODlyS3BsZzAwZEZIcUZ3U3ZjRER0U2U1dkRUcUUxcnRLd0R5by1ZX24wUGpWXzdQSGk2bFNUVjBrQkdZN2kwSUlUdXRrbzdMajFTZtIBwgFBVV95cUxPTnZXZzlLN2VIZFdYcTFOTFlSSUxwUU0xeGIxNEpTc2hDREFnSlQ4UVZ0dkVCM1U4RHhxNEhrOXNvSjRBXy10S05CUlcwUlZudFRQU1c0SFMzUERnRGxSREJMR19GMHlaNHlSUGRZQmR4LVdRZE1qd2F4ZXd0ak11WG01OGdCV0NzWHp2eU1QY2M1TUFqQlYyVlI4am84ZTlxX2tseHJRekNXZ0M2WVBBaXIxT1ozUDdhZXlBMXNwZk5aQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli air attack destroys buildings around south Lebanon hospital - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNX1hQYmE1S01DTnczYTFkVkNFLVBqYTd5cm9DVUI5UjBuLTZibk1ORXdGam9LMjlmVEgtcUVkSUNmZUowaDBqNERuTjJCQVlMS3dka1hHVmZ4Tm1MaEpESmdBbXFUazZLaFJ2Y0NnWFQzTDg2Q3RXYTVSeE5qVGZtdW45N0txU0VnRlpHU3NmX2ZVSzZfMDhZdWx2cWtSSldtUXRuSEdSUzZQTGh4WWhUR3dYaDl6LVR3aHfSAb8BQVVfeXFMTXRQempFeDhnUkZrdlBJcjNNLW9uNU1ydFVLVXlCRFplQ1p4ai16UndtRHFHRlFmMnpvTnhkMFBjMUg0MGNQd2FRbEdhMUwwR1h5eTk1LXAzdlhzUmk0b1duYWFCcGdtY3ZjUGJxSkJVLXBEZGpXN0tMUFJ6ckp1YU40NlNJZVlUd0hhS2xXbUY4OEZ6Mnd1R1d3Zkpfcm9haU12Yl94ZzVSZjNjR2tVT3k3dnhuMUFhS3hEUTl5ZWc"
     },
     {
       "score": 3.0,
@@ -97,15 +124,6 @@
       "date": "2026-04-15",
       "category": "military",
       "source_type": "news",
-      "title": "Exclusive: Iran offers proposal allowing ships to exit Oman side of Hormuz free of attack, source says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOelhWMXh6eHhoaTFxUEMxS3RGR2lOeTl0MkZWMXJjWWxWaDUyUWlUZVE0WE9pMUozQngyekJNLWlMRTJSVVhPcWNpWmpxeG5SRVRLT3UzUkpfTVFRYmx1d29jQWowUjVrQ05odWpxSmVTY2RKVjNyRjRmZndiZ2NzYjNzNXZsNExWYU14MlNyRHZURXZEWFV1M2ljaG5hTW1uSTk1QndhS0JOekxMSHI0aDZWYVM2YUpaRE9jU1FqZnpza21PcjZSR0RR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-15",
-      "category": "military",
-      "source_type": "news",
       "title": "Israeli attacks prevent Lebanese from burying their dead in ancestral lands - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVjBOWFh3RTQzbGdrUzR5WXMyaEp2UXNtTGlwYXp0RlRJRHFtV0ZhczhIODVId2haX2plQmVCU0lSZEhwZ2lWU181SkptTU5LRlgybFAxYTZUV2k3R1NwZ2R5bjlFREtQa1Bfc3BIMnZjLUtKbDFLNlh5cGg0c3Y0S2hDOTFvUTVKT3Q1YTZ2MnRYRXhEQlZKdDdFVnM3NG04dGhwUW5ZRjFZOS03c3BDWEJKd0lLWndSbnQ5ekNB"
@@ -118,24 +136,6 @@
       "title": "Israeli military continues to strike Hezbollah amid Lebanon peace talks, Netanyahu says - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZDZ0V09KSnhvVmtjY29ibzQ5WDlhRURiUUhjZDRFZGs5aGZoVzlUbVNnTS1acGxsZV9oNkJIbWluYmNCNmIxNEs0WGM2RWJwYllqOThXM1N5TnN0UUVUNHJWTlRwNktCaTVkbnpHRmR3cjd1MTl2QkZrVThyNW9kMXZhb0pZZmlMYkI5RkExYU41Y2RTVGdNNl82dTNxeVFMZm9tMHpDSldrb0dCTUdmUVpmdUJBQUpINFkzVGZzQW5sZzdUUHB6dk9QS1g"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli triple-tap strike kills three paramedics in Lebanon, officials say",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cgqkkxd09e2o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel and Hezbollah continue attacks after Israel-Lebanon talks in US",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c87ww2z0z3zo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
