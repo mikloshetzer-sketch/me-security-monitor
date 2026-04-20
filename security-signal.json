@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-20 19:35 UTC",
+    "updated": "2026-04-20 23:04 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-04-14",
     "period_end": "2026-04-20",
-    "total_events": 171,
-    "total_risk": 118.7,
-    "normalized_risk_score": 47.5,
-    "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "total_events": 177,
+    "total_risk": 134.76,
+    "normalized_risk_score": 53.9,
+    "risk_level": "MEDIUM",
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 16,
-    "security": 2,
-    "political": 55,
-    "other": 98
+    "military": 22,
+    "security": 3,
+    "political": 50,
+    "other": 102
   },
   "source_counts": {
     "news": 171,
-    "isw": 0
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 63.8
+      "risk": 60.75
     },
     {
       "name": "Israel",
-      "risk": 32.05
+      "risk": 45.31
     },
     {
       "name": "Lebanon",
@@ -39,7 +39,7 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 5.05
+      "risk": 6.35
     },
     {
       "name": "Middle East",
@@ -48,13 +48,40 @@
   ],
   "top_events": [
     {
+      "score": 3.51,
+      "date": "2026-04-19",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 19, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-19-2026/"
+    },
+    {
+      "score": 3.12,
+      "date": "2026-04-18",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 18, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-18-2026/"
+    },
+    {
       "score": 3.0,
       "date": "2026-04-20",
       "category": "military",
       "source_type": "news",
-      "title": "Israel says it thwarted Iranian plan to attack Baku-Ceyhan oil pipeline - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMDVzTFpyeUxrV2pId0lVS2p0aXZGQ0dISVctbXRrc3VBSllvVmVENzlReFlHZG1YMUtXaVB1YUY3N0ZhNjhBOElQdVduVlphZWdVVGNzNENQMzgyNkZVcEJweWdubmtobXpIRGNHTXJjQld3endFUEFMamVCTXB3QTByM2VLcU5tSHR4S3JQUDZIWEQ4QjdVNFFPZDB5LXBwXzVzVmlSMlMwVFh6ZHpJUXlsdXNfV1Bt"
+      "title": "Israeli fire kills two in Gaza, Hamas clashes with Israeli-backed militia - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPV1ZWTm5xWkxldEd4dnRyWFNrWUlNU2w4VklLWWhmRFVsUWJ0aDYzczVsYU92bHZnb2tMSUFoM0wyZ3pxUFp0TTYyc0J0X0x3a29ITnl2NnctWnJFSFpIUFJsQ0VjVTJJM3lNbXhBT1NKOFNUNG9hZzRqM0VQMzlBX3lpVFQ5cFZnd1A3VllqN2djZkc1SWhLODl1OElHLUNuaUcwRWxvYUZjMURsR19XcnVZX2UzUS04c3IyZEtscEs"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Erdogan promises tighter gun controls after deadly Turkey school attacks - Reuters",
+      "location": "Turkey",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSTRSV0FlOEpXRldOSzA0aWFBS05KczJmQ0JFenpDR2tBMFhNZTJkWUJDU1FGRTMzTFUwbl9GM3dFNC1Rbk1DWXNnMkJYbENEc2RGYUFuS2NNanlwand3em9KUmJQWkR6RnRlR3RzR0lLTi04OFVCVUtLNi11RDZvMFNSTGFvM0YtSVBSTmgtaWh1MmV6WWo3VnZOelllZmZ6T2VDNUVYQVc5N3JBRzZzUldBOFZmd1VyUktJTE9YMUZVWWVx"
     },
     {
       "score": 3.0,
@@ -64,6 +91,15 @@
       "title": "Iran war: What is happening on day 52 of US-Israeli attacks? - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ2FONkQzSnU4MmczNHkyNWxuZFFGMUVNc3hLa3hydjJvajg4MnR6bVVyMlJJOFp3Ui1MSnY1UjVzRnVIakc2WWEyUFpJcXotX3dKY0JUX3prczQ4VVY1T3Z0MnFiXzJLMGppQVA0WVRaNXZRaDJhNHpiekFRcGtTbnljeG5iTEdwUHQ4emFMTG1UQTh1U004ekFWNy04ZXpDYzVHSkloc9IBrAFBVV95cUxNV1liSVotUTZRMXdMX2t2UzB6NFVrZF9ReWN3ME45c2s3TlZYdHFXckdNSHQwMy1oeUJqTVZLc3d3V3lwSXI2T0xXRkgwYmNhZG5tMGJUV3JvSkRBOGxSWkJJbG1JMHNfWHdXRFRWdmR1bEpzMG5yZWxTRzBSTGpnZ2RvRnBaLUhqdHZxUXRhTXd2MnVIU2wyRnJlS1VuUG9pQUpuRjg3cF9Wa1hq"
+    },
+    {
+      "score": 2.73,
+      "date": "2026-04-17",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 17, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-17-2026/"
     },
     {
       "score": 2.7,
@@ -100,42 +136,6 @@
       "title": "French soldier killed in attack on UN mission in southern Lebanon, officials say - Reuters",
       "location": "Lebanon",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNaFVuczNiTnFoMGdjSlVMVi0wdFVPRGFrRzZsXzhlZDBkT3Z2aGlfbWNKWUgwSkc1cDdMOW1KWWQwdDkzVzRUbkE1MzFKZ1YtQnBKWnp4RE9UZDZWMGxiT2YteWFIeC1vSFp3ZW5vVXFKMFpsTE1seG9wMUY1ZVB0Q2NpRVEtMVRYaE1WTXkwVlU1R2tycnVENGFhanhxUmhWejlsdWYxdmo1aVRoM0k4"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "In final moments before truce, Israeli strike kills Lebanese man's family - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVldkZWR3R01pTmFSa0N2VVJQOUZQNkdVMlY1UklsLU1US1JZeXJtZ0pFZmhxRWVyYnIxd1BCM0JYY0JYSlFxclJMNV95bXZHU0MtSnQtSzN3dF9uWGNGUE81U0xLWG5JNHJGeGU5eW5KZ3pOVnhtMENRano4QnJxTmJZYW9CdFByOFl0QnJXQWVUel9sNWhGWEdOLUx2Sm4wRnFwTV9MZDJ4Vm4xUGtTOTJrU3VyVHNkUnc3S3AyUQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "North Korea fires ballistic missiles again, flexing muscle amid Iran war - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbU9QWjVnSXhWRmtEVmpPMjJPUGltSDNlTmF0WUU4akl1RWNwSjdLaFI5YUtlejBjWHU1TjJ4aWV6QVVjWE13VFdKSlhCZGVaY0xBbWlkeHVfMWZaTm1NNHlkbzdsTm03dzBCaVdRREQ2STNMbl9Jd1FSLW0xb3I5TUtWTXBnRlRoOUwxb0RNZHpYVlpmQi1xS3FCb3FPWHI1dC10d3VsOWdTRUU"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "French soldier serving with UNIFIL killed in Lebanon attack - Al Jazeera",
-      "location": "Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa1Y4TnNYQWhRdlZOcWJ5bkJpd3pfVzVNYmFvdmNWd2NHR2I1Q09idXR6U0twNjZOSHFkQllUU0JCLXVsaWNZVVpuWWpfRTM2a0hZbnBubkg1dDFvcWh4cFVBbXR1Yi1zclEyQndmN1IxNTIzLUtrZ1ItM1pfQ29BUDBYRmJWZWczdzBGTENGT1Zmb19EQUtGOGYxQ2w4R3VBaVHSAacBQVVfeXFMT3AyWURmQnVuYWZTR1RnMjZqYVZObEtaaWk3Sl9qTDZtSmFZMlpfT1hyUldnR1JMcUV2M0ZSbHZlLVg4OUlULWFQT1ZmU0NOdFkyMnprMF9xcnFBMHFETl9TeWEzMVdST2gzWExwb25MRVRMaC1tMmI2T3ctYUxWRjNGMVhuOW9xT1NpNFRxbExxaXZ4OFo0TGpjS29BamZLZzNPTURDekU"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-04-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says Israel barred from bombing Lebanon: 'Enough is enough' - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONWl2OGF1VktUSjRoRzBmY2haUW5YMDhtWWFrb1V4cUNHUktlek9XVi0tOHhuTEpOTFBDc1Mzc01TVmgxeWVjVVlqcjUyR09lQ0thZ0k4UGZGdDVybDlZOUpQamhDUmJnY3d0UWwyT3dTai0tQ3dKaVlFSnhQb25IUEZ2eS1Za3FnamVSbTM1RlBMeVp1MUgzUWN3"
     }
   ]
 }
