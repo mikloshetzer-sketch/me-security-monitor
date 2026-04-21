@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-21 21:06 UTC",
+    "updated": "2026-04-21 22:59 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-04-15",
     "period_end": "2026-04-21",
-    "total_events": 172,
-    "total_risk": 115.05,
-    "normalized_risk_score": 46.0,
-    "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "total_events": 179,
+    "total_risk": 131.41,
+    "normalized_risk_score": 52.6,
+    "risk_level": "MEDIUM",
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 9,
+    "military": 16,
     "security": 5,
-    "political": 58,
-    "other": 100
+    "political": 55,
+    "other": 103
   },
   "source_counts": {
-    "news": 172,
-    "isw": 0
+    "news": 173,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 59.6
+      "risk": 61.05
     },
     {
       "name": "Israel",
-      "risk": 24.35
+      "risk": 39.06
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.35
+      "risk": 7.8
     },
     {
       "name": "Lebanon",
@@ -43,10 +43,28 @@
     },
     {
       "name": "Middle East",
-      "risk": 4.0
+      "risk": 3.65
     }
   ],
   "top_events": [
+    {
+      "score": 3.51,
+      "date": "2026-04-20",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 20, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-20-2026/"
+    },
+    {
+      "score": 3.12,
+      "date": "2026-04-19",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 19, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-19-2026/"
+    },
     {
       "score": 3.0,
       "date": "2026-04-21",
@@ -55,6 +73,15 @@
       "title": "Two Palestinians killed during settler attack on West Bank village, officials say",
       "location": "West Bank",
       "url": "https://www.bbc.com/news/articles/cp864d661rro?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.73,
+      "date": "2026-04-18",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 18, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-18-2026/"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "US forces attack and seize Iranian ship Touska near Strait of Hormuz - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNT0J4VU9BNWEwaHdpbG1nal95aFN5SzRNOHVyamxmeVYzWURvbmxmeWVWVHdmd1ZEZzUtRmg1cUpjOGRtNVB5d19ueHVjTXhEbGhfbjQwNW5MSGZJOG12R2ZpbHF5eERXQXhCS1MwR1dibE5ZRXp3RDRZVkp2UElDVHRiOHAwc3FFWHgwaEh3aGhscTJvX20yMTBqT3BfNDVRRlJ5OEhvdGEtZVFSSkxGZF9lalJ2M0lUVEJZ0gHAAUFVX3lxTE9MOHNySXp2QWlNN2M5aXBrelZROWpmRTdiTGFCRFRMb3Z5b1BGQ054WW1uMEJjRmxrUzZCSkp2bGVtVl82RXpfOVdBUTJwWk5EZjJBTmptM3NKMWtmSWVBNDZtcFhxRFl5SEIxbWxra1B2ZDZJdF9ab0tEeXFKeE1CQmhqTlZHTVRlMDhYb1d0MVdfaTREUTFJUDhmR1dfUHVvTVA3RU4tSWJ2ZW1POTVBRVFxQVJGT1JGdEdVQUF3RA"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-04-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "North Korea fires ballistic missiles again, flexing muscle amid Iran war - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbU9QWjVnSXhWRmtEVmpPMjJPUGltSDNlTmF0WUU4akl1RWNwSjdLaFI5YUtlejBjWHU1TjJ4aWV6QVVjWE13VFdKSlhCZGVaY0xBbWlkeHVfMWZaTm1NNHlkbzdsTm03dzBCaVdRREQ2STNMbl9Jd1FSLW0xb3I5TUtWTXBnRlRoOUwxb0RNZHpYVlpmQi1xS3FCb3FPWHI1dC10d3VsOWdTRUU"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-04-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "French soldier serving with UNIFIL killed in Lebanon attack - Al Jazeera",
-      "location": "Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNa1Y4TnNYQWhRdlZOcWJ5bkJpd3pfVzVNYmFvdmNWd2NHR2I1Q09idXR6U0twNjZOSHFkQllUU0JCLXVsaWNZVVpuWWpfRTM2a0hZbnBubkg1dDFvcWh4cFVBbXR1Yi1zclEyQndmN1IxNTIzLUtrZ1ItM1pfQ29BUDBYRmJWZWczdzBGTENGT1Zmb19EQUtGOGYxQ2w4R3VBaVHSAacBQVVfeXFMT3AyWURmQnVuYWZTR1RnMjZqYVZObEtaaWk3Sl9qTDZtSmFZMlpfT1hyUldnR1JMcUV2M0ZSbHZlLVg4OUlULWFQT1ZmU0NOdFkyMnprMF9xcnFBMHFETl9TeWEzMVdST2gzWExwb25MRVRMaC1tMmI2T3ctYUxWRjNGMVhuOW9xT1NpNFRxbExxaXZ4OFo0TGpjS29BamZLZzNPTURDekU"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-04-20",
-      "category": "security",
-      "source_type": "news",
-      "title": "Iraq reopens Rabia border crossing to boost fuel oil exports via Syria - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOby02VXgyRmJBU3FZN25LR1pnQU5hMjM3X1pOS2w1c2ZBSFVyRWxCUzZuQUVZWnk5dzhHcjd2UWF6Vm5XRVFZXzVtaE4yZVM0YnFxcnBKQlcxWHM5U2FUbFgtcEVramk5c19rMzdheFNONUpwUU15WkFmVWJSQm9pR0VjUkdkc1dMQjFRaDJoZDE2X1BEOXRrYUJiVEV4bDFGVi1HVUZBLUw2b0EzWnE1X3pOdjlWd1dsYWhQLUdn"
     }
   ]
 }
