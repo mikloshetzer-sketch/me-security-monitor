@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-04-21 22:59 UTC",
+    "updated": "2026-04-22 03:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-15",
-    "period_end": "2026-04-21",
-    "total_events": 179,
-    "total_risk": 131.41,
-    "normalized_risk_score": 52.6,
-    "risk_level": "MEDIUM",
+    "period_start": "2026-04-16",
+    "period_end": "2026-04-22",
+    "total_events": 168,
+    "total_risk": 119.36,
+    "normalized_risk_score": 47.7,
+    "risk_level": "LOW",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 16,
+    "military": 17,
     "security": 5,
     "political": 55,
-    "other": 103
+    "other": 91
   },
   "source_counts": {
-    "news": 173,
+    "news": 162,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 61.05
+      "risk": 56.25
     },
     {
       "name": "Israel",
-      "risk": 39.06
+      "risk": 35.96
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.8
+      "risk": 6.85
     },
     {
       "name": "Lebanon",
-      "risk": 5.9
+      "risk": 4.9
     },
     {
-      "name": "Middle East",
-      "risk": 3.65
+      "name": "West Bank",
+      "risk": 2.7
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-04-21",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 21, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-21-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-04-20",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-20-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-04-19",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +75,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-19-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-04-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump's ceasefire extension a 'ploy to buy time' for surprise strike, advisor to Iran's top negotiator says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQd0ZldTlaQ1BiMTNWUnpfMVNLQUIyZkJvMkpKcjMyV2lVSTdEVGN5WG1pRkNBZHo0QzdsOUM5a09YNWNGOS1yTUxKS1FiOHlfN1JwVUoxWERlNEUwRW11ZjZaQ19CQzU1THRfdFlnWktBcUxJUGtDX3J6aTNReFNVam5rS0pCalJIMFJIVFFNVll1Z3ZXejAwZFdTVVBjYTJRUC1TQlQ5QkxZWnpsc3prc0xVN2VJWWc"
+    },
+    {
+      "score": 2.7,
       "date": "2026-04-21",
       "category": "military",
       "source_type": "news",
@@ -75,25 +93,7 @@
       "url": "https://www.bbc.com/news/articles/cp864d661rro?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.73,
-      "date": "2026-04-18",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 18, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-18-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel says it thwarted Iranian plan to attack Baku-Ceyhan oil pipeline - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMDVzTFpyeUxrV2pId0lVS2p0aXZGQ0dISVctbXRrc3VBSllvVmVENzlReFlHZG1YMUtXaVB1YUY3N0ZhNjhBOElQdVduVlphZWdVVGNzNENQMzgyNkZVcEJweWdubmtobXpIRGNHTXJjQld3endFUEFMamVCTXB3QTByM2VLcU5tSHR4S3JQUDZIWEQ4QjdVNFFPZDB5LXBwXzVzVmlSMlMwVFh6ZHpJUXlsdXNfV1Bt"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-04-20",
       "category": "military",
       "source_type": "news",
@@ -102,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSTRSV0FlOEpXRldOSzA0aWFBS05KczJmQ0JFenpDR2tBMFhNZTJkWUJDU1FGRTMzTFUwbl9GM3dFNC1Rbk1DWXNnMkJYbENEc2RGYUFuS2NNanlwand3em9KUmJQWkR6RnRlR3RzR0lLTi04OFVCVUtLNi11RDZvMFNSTGFvM0YtSVBSTmgtaWh1MmV6WWo3VnZOelllZmZ6T2VDNUVYQVc5N3JBRzZzUldBOFZmd1VyUktJTE9YMUZVWWVx"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-04-20",
       "category": "military",
       "source_type": "news",
@@ -111,7 +111,16 @@
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPV1ZWTm5xWkxldEd4dnRyWFNrWUlNU2w4VklLWWhmRFVsUWJ0aDYzczVsYU92bHZnb2tMSUFoM0wyZ3pxUFp0TTYyc0J0X0x3a29ITnl2NnctWnJFSFpIUFJsQ0VjVTJJM3lNbXhBT1NKOFNUNG9hZzRqM0VQMzlBX3lpVFQ5cFZnd1A3VllqN2djZkc1SWhLODl1OElHLUNuaUcwRWxvYUZjMURsR19XcnVZX2UzUS04c3IyZEtscEs"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
+      "date": "2026-04-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel says it thwarted Iranian plan to attack Baku-Ceyhan oil pipeline - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMDVzTFpyeUxrV2pId0lVS2p0aXZGQ0dISVctbXRrc3VBSllvVmVENzlReFlHZG1YMUtXaVB1YUY3N0ZhNjhBOElQdVduVlphZWdVVGNzNENQMzgyNkZVcEJweWdubmtobXpIRGNHTXJjQld3endFUEFMamVCTXB3QTByM2VLcU5tSHR4S3JQUDZIWEQ4QjdVNFFPZDB5LXBwXzVzVmlSMlMwVFh6ZHpJUXlsdXNfV1Bt"
+    },
+    {
+      "score": 2.4,
       "date": "2026-04-20",
       "category": "military",
       "source_type": "news",
@@ -120,22 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ2FONkQzSnU4MmczNHkyNWxuZFFGMUVNc3hLa3hydjJvajg4MnR6bVVyMlJJOFp3Ui1MSnY1UjVzRnVIakc2WWEyUFpJcXotX3dKY0JUX3prczQ4VVY1T3Z0MnFiXzJLMGppQVA0WVRaNXZRaDJhNHpiekFRcGtTbnljeG5iTEdwUHQ4emFMTG1UQTh1U004ekFWNy04ZXpDYzVHSkloc9IBrAFBVV95cUxNV1liSVotUTZRMXdMX2t2UzB6NFVrZF9ReWN3ME45c2s3TlZYdHFXckdNSHQwMy1oeUJqTVZLc3d3V3lwSXI2T0xXRkgwYmNhZG5tMGJUV3JvSkRBOGxSWkJJbG1JMHNfWHdXRFRWdmR1bEpzMG5yZWxTRzBSTGpnZ2RvRnBaLUhqdHZxUXRhTXd2MnVIU2wyRnJlS1VuUG9pQUpuRjg3cF9Wa1hq"
     },
     {
-      "score": 2.4,
-      "date": "2026-04-19",
+      "score": 2.34,
+      "date": "2026-04-18",
       "category": "military",
-      "source_type": "news",
-      "title": "French peacekeeper killed in southern Lebanon",
-      "location": "Lebanon",
-      "url": "https://www.bbc.com/news/articles/cvg4mrm2vm0o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "US forces attack and seize Iranian ship Touska near Strait of Hormuz - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNT0J4VU9BNWEwaHdpbG1nal95aFN5SzRNOHVyamxmeVYzWURvbmxmeWVWVHdmd1ZEZzUtRmg1cUpjOGRtNVB5d19ueHVjTXhEbGhfbjQwNW5MSGZJOG12R2ZpbHF5eERXQXhCS1MwR1dibE5ZRXp3RDRZVkp2UElDVHRiOHAwc3FFWHgwaEh3aGhscTJvX20yMTBqT3BfNDVRRlJ5OEhvdGEtZVFSSkxGZF9lalJ2M0lUVEJZ0gHAAUFVX3lxTE9MOHNySXp2QWlNN2M5aXBrelZROWpmRTdiTGFCRFRMb3Z5b1BGQ054WW1uMEJjRmxrUzZCSkp2bGVtVl82RXpfOVdBUTJwWk5EZjJBTmptM3NKMWtmSWVBNDZtcFhxRFl5SEIxbWxra1B2ZDZJdF9ab0tEeXFKeE1CQmhqTlZHTVRlMDhYb1d0MVdfaTREUTFJUDhmR1dfUHVvTVA3RU4tSWJ2ZW1POTVBRVFxQVJGT1JGdEdVQUF3RA"
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 18, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-18-2026/"
     }
   ]
 }
