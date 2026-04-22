@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-22 17:16 UTC",
+    "updated": "2026-04-22 19:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-04-16",
     "period_end": "2026-04-22",
     "total_events": 169,
-    "total_risk": 129.41,
-    "normalized_risk_score": 51.8,
+    "total_risk": 131.81,
+    "normalized_risk_score": 52.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 19,
+    "military": 20,
     "security": 4,
-    "political": 52,
-    "other": 94
+    "political": 50,
+    "other": 95
   },
   "source_counts": {
     "news": 163,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 62.8
+      "risk": 61.7
     },
     {
       "name": "Israel",
-      "risk": 36.76
+      "risk": 35.96
     },
     {
       "name": "Gaza Strip",
-      "risk": 5.55
+      "risk": 6.35
     },
     {
       "name": "West Bank",
-      "risk": 5.4
+      "risk": 5.9
     },
     {
-      "name": "Lebanon",
-      "risk": 4.4
+      "name": "Tehran",
+      "risk": 4.35
     }
   ],
   "top_events": [
@@ -79,6 +79,15 @@
       "date": "2026-04-22",
       "category": "military",
       "source_type": "news",
+      "title": "US halts Iraq dollar cash shipment after militia strikes, sources say - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeXg3OFdRbVdEVTZjdExRckJFcHJfLU5nZkNqam9lMm5HeDNOOGlLNWstUzJLb0d0TFlhdnAtem1FSGxSTTdCUmxwbnpMcTduQ1g0WXhBQTZUUFFXbXBtUVQ2eE9SWGhFeC1jN205RXNidElPOWhpUlRNZ0FVVS13U1gxZEtnenlOSjNJZ2RqdENtUVRNVjF0ZzBzUk8ySWNIX0FRYXlqbVJ4VS1JZlhfWVBySzVvZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-22",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran says it has seized two ships in Strait of Hormuz after vessels attacked",
       "location": "Iran",
       "url": "https://www.bbc.com/news/articles/cdxd074kr8go?at_medium=RSS&at_campaign=rss"
@@ -106,15 +115,6 @@
       "date": "2026-04-21",
       "category": "military",
       "source_type": "news",
-      "title": "Trump's ceasefire extension a 'ploy to buy time' for surprise strike, advisor to Iran's top negotiator says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQd0ZldTlaQ1BiMTNWUnpfMVNLQUIyZkJvMkpKcjMyV2lVSTdEVGN5WG1pRkNBZHo0QzdsOUM5a09YNWNGOS1yTUxKS1FiOHlfN1JwVUoxWERlNEUwRW11ZjZaQ19CQzU1THRfdFlnWktBcUxJUGtDX3J6aTNReFNVam5rS0pCalJIMFJIVFFNVll1Z3ZXejAwZFdTVVBjYTJRUC1TQlQ5QkxZWnpsc3prc0xVN2VJWWc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-21",
-      "category": "military",
-      "source_type": "news",
       "title": "Two Palestinians killed in West Bank village attacked by Israeli settlers, witnesses say - Reuters",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQcGxRYmFYNFBmeEJnSG9jRUdnMHNQNVRBWERlOTlBc29iMnlUS1ZPU1hhZjlaQktRSjM5MnE2Tkl2NlQ4dXdTdmR3eC1nNkI2UUtZcE1VQkdmYXZHOUJIcmZnZzJqdFRMQXdsTzZDTEZ0Q1lpZGp6eDROZV9NVGJUUXlyWGlUcUxTelNpVGZobkJJc09hdl9RdFg2cUFrNWt6ZFZhTnFOaTNEOXZDSTMxMG12MjJpOEQyWFlTRWk1YllDUGhjdmJoMw"
@@ -124,18 +124,18 @@
       "date": "2026-04-21",
       "category": "military",
       "source_type": "news",
+      "title": "Trump's ceasefire extension a 'ploy to buy time' for surprise strike, advisor to Iran's top negotiator says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQd0ZldTlaQ1BiMTNWUnpfMVNLQUIyZkJvMkpKcjMyV2lVSTdEVGN5WG1pRkNBZHo0QzdsOUM5a09YNWNGOS1yTUxKS1FiOHlfN1JwVUoxWERlNEUwRW11ZjZaQ19CQzU1THRfdFlnWktBcUxJUGtDX3J6aTNReFNVam5rS0pCalJIMFJIVFFNVll1Z3ZXejAwZFdTVVBjYTJRUC1TQlQ5QkxZWnpsc3prc0xVN2VJWWc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-04-21",
+      "category": "military",
+      "source_type": "news",
       "title": "Two Palestinians killed during settler attack on West Bank village, officials say",
       "location": "West Bank",
       "url": "https://www.bbc.com/news/articles/cp864d661rro?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Erdogan promises tighter gun controls after deadly Turkey school attacks - Reuters",
-      "location": "Turkey",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOSTRSV0FlOEpXRldOSzA0aWFBS05KczJmQ0JFenpDR2tBMFhNZTJkWUJDU1FGRTMzTFUwbl9GM3dFNC1Rbk1DWXNnMkJYbENEc2RGYUFuS2NNanlwand3em9KUmJQWkR6RnRlR3RzR0lLTi04OFVCVUtLNi11RDZvMFNSTGFvM0YtSVBSTmgtaWh1MmV6WWo3VnZOelllZmZ6T2VDNUVYQVc5N3JBRzZzUldBOFZmd1VyUktJTE9YMUZVWWVx"
     }
   ]
 }
