@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-23 03:48 UTC",
+    "updated": "2026-04-23 09:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-17",
     "period_end": "2026-04-23",
-    "total_events": 165,
-    "total_risk": 120.96,
-    "normalized_risk_score": 48.4,
+    "total_events": 170,
+    "total_risk": 133.46,
+    "normalized_risk_score": 53.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 21,
+    "military": 23,
     "security": 3,
-    "political": 46,
-    "other": 95
+    "political": 51,
+    "other": 93
   },
   "source_counts": {
-    "news": 159,
+    "news": 164,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 54.05
+      "risk": 63.7
     },
     {
       "name": "Israel",
-      "risk": 36.61
+      "risk": 41.21
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 5.4
     },
     {
       "name": "West Bank",
       "risk": 5.25
     },
     {
-      "name": "Gaza Strip",
-      "risk": 4.9
-    },
-    {
-      "name": "Lebanon",
-      "risk": 4.05
+      "name": "Iraq",
+      "risk": 3.5
     }
   ],
   "top_events": [
@@ -64,6 +64,15 @@
       "title": "Iran Update Special Report, April 21, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-21-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanon accuses Israel of targeting journalist killed in air strike",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c5yvn036evlo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.73,
@@ -88,18 +97,27 @@
       "date": "2026-04-22",
       "category": "military",
       "source_type": "news",
-      "title": "US halts Iraq dollar cash shipment after militia strikes, sources say - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeXg3OFdRbVdEVTZjdExRckJFcHJfLU5nZkNqam9lMm5HeDNOOGlLNWstUzJLb0d0TFlhdnAtem1FSGxSTTdCUmxwbnpMcTduQ1g0WXhBQTZUUFFXbXBtUVQ2eE9SWGhFeC1jN205RXNidElPOWhpUlRNZ0FVVS13U1gxZEtnenlOSjNJZ2RqdENtUVRNVjF0ZzBzUk8ySWNIX0FRYXlqbVJ4VS1JZlhfWVBySzVvZw"
+      "title": "Iran seizes ships in Strait of Hormuz after US calls off renewed attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ"
     },
     {
       "score": 2.7,
       "date": "2026-04-22",
       "category": "military",
       "source_type": "news",
-      "title": "Iran seizes ships in Strait of Hormuz after US calls off renewed attacks - Reuters",
+      "title": "Exclusive: US turns to Ukrainian counter-drone tech after Iran attacks, sources say - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ0Z4RkhlOW1LZGV5cEVVVnpWQkEwTHhZMnhiQ29kU195ZjRYVmZxU3AtUGpaUHlWaTNySmVsQVU5dHlSZ0RFUzdLMFVveWtTcDRBMHNaZm12Z1pLamV1eWVncXprOE5sdkN1bmJyU0ZHTC1ic1E1V3VockhFNWZLMW1rS25yd2NoaU5wbzlxQ3VobTZoY1o5M0E1ekdWRDdPR1QzUzhqRFgzTk54dEJOaHlXSFpvRWgyX2Vva0lVSzRvY0Zha1BjazljTQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-04-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "US halts Iraq dollar cash shipment after militia strikes, sources say - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeXg3OFdRbVdEVTZjdExRckJFcHJfLU5nZkNqam9lMm5HeDNOOGlLNWstUzJLb0d0TFlhdnAtem1FSGxSTTdCUmxwbnpMcTduQ1g0WXhBQTZUUFFXbXBtUVQ2eE9SWGhFeC1jN205RXNidElPOWhpUlRNZ0FVVS13U1gxZEtnenlOSjNJZ2RqdENtUVRNVjF0ZzBzUk8ySWNIX0FRYXlqbVJ4VS1JZlhfWVBySzVvZw"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Israel attacks mosque in Lebanon in another ceasefire violation - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVGVoOW9uRlZoYzdxeEpZbWJFNVZYeVZCbDg0Y1BWZUNPQmRKV09hWi1wR2ZIS0FBZ3d0M1hGUTc3SGlvdm5BTEZ2aWZuTUxrQU9TWFFQTmEyUGxkMWgwME5Cb0FTbHZqeHQxS1ZSTGVrWHNSc2F6YVFsMW5wczdpeUg4bXZ0STZDRmhZTkJtY01Nd1RCVUpuNGUzMXRFNzJRMXlWb2dTOEJqUHBLNFBWZmJrajLSAboBQVVfeXFMUENtcjJJcE1DWFo4VTdZRTlxZ0R4LTU3SHlFYjVDaHU3N1VKbDRhXzNkcFViV1NYQW1qTFJTOG02QjROWmdjMlJqZEFCRnY5RGNWUW4wWWtNR3E0SG5XX1hvQjhqeUo0T1RNNHowNkxoNkVOWFRocjVHS2NVXzBiT2pmUTJuWktqbjFBS2R2R0hIQzFzV3V3WEVVbkNlQmFuQnNtdVFwTW5pd3k2TnJBYy1pYl9ZQ19wYzBn"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks on Lebanon kill at least five people, including journalist - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMTRhVl9OYkNEWEczMDZ6YjkzMG1XWHQ0eTl3ejM1emZiWklmUnBBYzhpMUVzN2hFOVpOWlNQbFliR3dNZ1h6b1VsVXhPRnI0ZFVSaHUzb0JYdEtlZUZMTnlnN0ZLMGc0WHE2cjQ1N2VTNC1EdkRmME9ORUhsSmN3SlpIQTJqQldKOWIyb3puUHJsbnF0X01JeXJLU1JFdTltMWN0dGpuUG9Va3lKVTJ5ZdIBtgFBVV95cUxNMU96a2dzRzZtdGNqeHY1ZFhWcmdZeXRveDdSYUFsNXJyWi15UkhhNXZYTGN5MmgwaUVCYlFsQmlLSEgtNXV0eUxtVER4T3BMODlHQ1dXd2pJNEx1UlY5dS1SQmRCWjFLR1NpbHcwWlJQT3g2T0Nrdkgzc3oxSkFMeHZjbHBvOHlVbC1mRXlkZlk3S3NYMzNCTWdvY2N1dDJCUjAzczJlb1RWbFQ5Ml9xOEZCR1JJdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Two Palestinians killed in West Bank village attacked by Israeli settlers, witnesses say - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQcGxRYmFYNFBmeEJnSG9jRUdnMHNQNVRBWERlOTlBc29iMnlUS1ZPU1hhZjlaQktRSjM5MnE2Tkl2NlQ4dXdTdmR3eC1nNkI2UUtZcE1VQkdmYXZHOUJIcmZnZzJqdFRMQXdsTzZDTEZ0Q1lpZGp6eDROZV9NVGJUUXlyWGlUcUxTelNpVGZobkJJc09hdl9RdFg2cUFrNWt6ZFZhTnFOaTNEOXZDSTMxMG12MjJpOEQyWFlTRWk1YllDUGhjdmJoMw"
     }
   ]
 }
