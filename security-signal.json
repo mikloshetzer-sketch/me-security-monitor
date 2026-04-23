@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-23 11:33 UTC",
+    "updated": "2026-04-23 14:13 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,30 @@
   "summary": {
     "period_start": "2026-04-17",
     "period_end": "2026-04-23",
-    "total_events": 160,
-    "total_risk": 123.76,
-    "normalized_risk_score": 49.5,
+    "total_events": 169,
+    "total_risk": 133.21,
+    "normalized_risk_score": 53.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 20,
+    "military": 21,
     "security": 3,
-    "political": 48,
-    "other": 89
+    "political": 50,
+    "other": 95
   },
   "source_counts": {
-    "news": 154,
+    "news": 163,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 58.2
+      "risk": 63.2
     },
     {
       "name": "Israel",
-      "risk": 40.41
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 5.9
+      "risk": 43.11
     },
     {
       "name": "West Bank",
@@ -43,7 +39,11 @@
     },
     {
       "name": "Middle East",
-      "risk": 4.35
+      "risk": 5.2
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 5.1
     }
   ],
   "top_events": [
@@ -70,7 +70,7 @@
       "date": "2026-04-23",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strike kills five Palestinians in northern Gaza, medics say",
+      "title": "Israeli strikes kill eight Palestinians in Gaza, first responders say",
       "location": "Gaza Strip",
       "url": "https://www.bbc.com/news/articles/cly60dwxjd1o?at_medium=RSS&at_campaign=rss"
     },
@@ -82,6 +82,15 @@
       "title": "Lebanon accuses Israel of targeting journalist killed in air strike",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c5yvn036evlo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel kills journalist and wounds another in south Lebanon targeted attack - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMWllQm1wSjRsc0lqZnhJOU5lc0JRbmVqZ2ZpYU5ZR1ZpZlFDd2pYQk5RLUhBZDZ4enJ0anlVZ29JSGdUeTRBR19QZHE1LXExR0FnWTlSTXcwX1daWWEzREQwdzlIazFzMW5wVEtWX1FjdmxrV0haOWVOVnhRV19vT2M4UC1ZWnpocEFtcGZTNVppcHREbDNFYnJoTWItd09wcTB5eUUwemhZZE9PQy14ZUlTbUNSd3FvZEw5d3dPUjJJOVNF0gHKAUFVX3lxTE5FanVQQ3RPcXNOaGw3VEFMdjhfYXVycEh4Qnd6Y0wtd2RVeTdaN0RaX2wtSzVJcUQzMU5QQ2RoVHM1RnNCRVhWVkMyR2ZQdGVsUk9jdG5BQ0ZMYXlkLThZQ1ppLS1Gc1lhQkcyWXlZQWg2OUNXelNhN0Q4cV9yYkdPU1dxUV9RdGFqOEVhSGpzZV9sdlRhQU9KVzVFTERFNEl0WTJwa2dyQlhEelEyUXJkVGVIdFR6aGY5S2lpdlNxM0xpTEJER2JNS3c"
     },
     {
       "score": 2.73,
@@ -124,18 +133,9 @@
       "date": "2026-04-22",
       "category": "military",
       "source_type": "news",
-      "title": "Iran says it has seized two ships in Strait of Hormuz after vessels attacked",
+      "title": "Exclusive: US turns to Ukrainian counter-drone tech after Iran attacks, sources say - Reuters",
       "location": "Iran",
-      "url": "https://www.bbc.com/news/articles/cdxd074kr8go?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks on Lebanon kill at least five people, including journalist - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMTRhVl9OYkNEWEczMDZ6YjkzMG1XWHQ0eTl3ejM1emZiWklmUnBBYzhpMUVzN2hFOVpOWlNQbFliR3dNZ1h6b1VsVXhPRnI0ZFVSaHUzb0JYdEtlZUZMTnlnN0ZLMGc0WHE2cjQ1N2VTNC1EdkRmME9ORUhsSmN3SlpIQTJqQldKOWIyb3puUHJsbnF0X01JeXJLU1JFdTltMWN0dGpuUG9Va3lKVTJ5ZdIBtgFBVV95cUxNMU96a2dzRzZtdGNqeHY1ZFhWcmdZeXRveDdSYUFsNXJyWi15UkhhNXZYTGN5MmgwaUVCYlFsQmlLSEgtNXV0eUxtVER4T3BMODlHQ1dXd2pJNEx1UlY5dS1SQmRCWjFLR1NpbHcwWlJQT3g2T0Nrdkgzc3oxSkFMeHZjbHBvOHlVbC1mRXlkZlk3S3NYMzNCTWdvY2N1dDJCUjAzczJlb1RWbFQ5Ml9xOEZCR1JJdw"
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ0Z4RkhlOW1LZGV5cEVVVnpWQkEwTHhZMnhiQ29kU195ZjRYVmZxU3AtUGpaUHlWaTNySmVsQVU5dHlSZ0RFUzdLMFVveWtTcDRBMHNaZm12Z1pLamV1eWVncXprOE5sdkN1bmJyU0ZHTC1ic1E1V3VockhFNWZLMW1rS25yd2NoaU5wbzlxQ3VobTZoY1o5M0E1ekdWRDdPR1QzUzhqRFgzTk54dEJOaHlXSFpvRWgyX2Vva0lVSzRvY0Zha1BjazljTQ"
     }
   ]
 }
