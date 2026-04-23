@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-23 14:13 UTC",
+    "updated": "2026-04-23 16:11 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,34 @@
   "summary": {
     "period_start": "2026-04-17",
     "period_end": "2026-04-23",
-    "total_events": 169,
-    "total_risk": 133.21,
-    "normalized_risk_score": 53.3,
+    "total_events": 172,
+    "total_risk": 135.86,
+    "normalized_risk_score": 54.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 21,
-    "security": 3,
-    "political": 50,
-    "other": 95
+    "military": 22,
+    "security": 2,
+    "political": 47,
+    "other": 101
   },
   "source_counts": {
-    "news": 163,
+    "news": 166,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 63.2
+      "risk": 61.6
     },
     {
       "name": "Israel",
-      "risk": 43.11
+      "risk": 43.21
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 11.1
     },
     {
       "name": "West Bank",
@@ -39,11 +43,7 @@
     },
     {
       "name": "Middle East",
-      "risk": 5.2
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 5.1
+      "risk": 4.75
     }
   ],
   "top_events": [
@@ -88,6 +88,24 @@
       "date": "2026-04-23",
       "category": "military",
       "source_type": "news",
+      "title": "Israeli strike near mosque kills five in Gaza, including three children - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObEtYWXQ4TUdQcm9NZHhXQzlleGx5bmVIX3VMRVlSeTk3Z0NrTV9wc3NOSm0tWHctTTZ4TUxqTjVXU09SVlFFUjlrZGtEN0Y5MlRuS0R5LUpHOWxrSjVXbGtKekdaZ0k0NUREY0h3MzhLQW8zdUdlOFBIZ3gwYUc4bDRoU25wcTJOSlF2bWpOdVA4MERTbjFKOUJsY2pkSDYzakw3dUVQSTljcG9pZXVxNTJKQUM3OElELUVLSGZB0gHDAUFVX3lxTE5WbUh5eVRLUXlTOVpSM3JmS1pfRnhFbnFnSUdaR0V6Z3Nva1hxMGMybUF4Rk9SdWpwaGswMVJLd1RCVXdaa0R2ak1BNWtkbG8yeTd5TFhvV2hXLW53SE83bFV2TklQQjNIcGU1eEJiTzM3ZGVudG9BTE5jeVltNnpRQm8yN2RDQWNRZnVfR0x4dU44VHBTRjM1RmJCZklBMTFraFVoWWhMQ2QwUGZVRVNoVjhYZDlCY1U4LVlRNGdnQWVZVQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills five in Gaza, including three children - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWVpuNlNOWG5BSlBTTmNpYk1IeC1FaVE3dC1rR19yTXJsYm0wTElhUE42QzlmS2FsV1FHa3ZUdHA5OTFYdXh6OEpjNU92ZUZsaHBycUlPZHdELVhjSXNiZ2FfdWZXT3ltZ0hYLXIzNU05eXVJMXNScE43NHN1MjFiUFdDdjN2X3cxanhiaXUtbnpZbkh5aUJSbFZmUEZWTl850gGmAUFVX3lxTE52Q3BqdmFDNi1PdlY5djlWNTJwZm9zMC03OVVqR0R1VndCLVJveTRNX1hGZ0JvYjZpRnpBenRmYS1XVjFHV254UzYtRFEzcmRhSGNub2ZHREhLZ1hrZTZMRjQ2NjZ2RGdwR3pMVFM1bjBzZHNGRThfVlBhYTZBc29tam1HOWY2ZksyZ1RiSWNOQTVPcE9sMERveUYwWjA1bmpXQ2RIR1E"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-23",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel kills journalist and wounds another in south Lebanon targeted attack - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMWllQm1wSjRsc0lqZnhJOU5lc0JRbmVqZ2ZpYU5ZR1ZpZlFDd2pYQk5RLUhBZDZ4enJ0anlVZ29JSGdUeTRBR19QZHE1LXExR0FnWTlSTXcwX1daWWEzREQwdzlIazFzMW5wVEtWX1FjdmxrV0haOWVOVnhRV19vT2M4UC1ZWnpocEFtcGZTNVppcHREbDNFYnJoTWItd09wcTB5eUUwemhZZE9PQy14ZUlTbUNSd3FvZEw5d3dPUjJJOVNF0gHKAUFVX3lxTE5FanVQQ3RPcXNOaGw3VEFMdjhfYXVycEh4Qnd6Y0wtd2RVeTdaN0RaX2wtSzVJcUQzMU5QQ2RoVHM1RnNCRVhWVkMyR2ZQdGVsUk9jdG5BQ0ZMYXlkLThZQ1ppLS1Gc1lhQkcyWXlZQWg2OUNXelNhN0Q4cV9yYkdPU1dxUV9RdGFqOEVhSGpzZV9sdlRhQU9KVzVFTERFNEl0WTJwa2dyQlhEelEyUXJkVGVIdFR6aGY5S2lpdlNxM0xpTEJER2JNS3c"
@@ -115,27 +133,9 @@
       "date": "2026-04-22",
       "category": "military",
       "source_type": "news",
-      "title": "Iran seizes ships in Strait of Hormuz after US calls off renewed attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-22",
-      "category": "military",
-      "source_type": "news",
       "title": "US halts Iraq dollar cash shipment after militia strikes, sources say - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeXg3OFdRbVdEVTZjdExRckJFcHJfLU5nZkNqam9lMm5HeDNOOGlLNWstUzJLb0d0TFlhdnAtem1FSGxSTTdCUmxwbnpMcTduQ1g0WXhBQTZUUFFXbXBtUVQ2eE9SWGhFeC1jN205RXNidElPOWhpUlRNZ0FVVS13U1gxZEtnenlOSjNJZ2RqdENtUVRNVjF0ZzBzUk8ySWNIX0FRYXlqbVJ4VS1JZlhfWVBySzVvZw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Exclusive: US turns to Ukrainian counter-drone tech after Iran attacks, sources say - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ0Z4RkhlOW1LZGV5cEVVVnpWQkEwTHhZMnhiQ29kU195ZjRYVmZxU3AtUGpaUHlWaTNySmVsQVU5dHlSZ0RFUzdLMFVveWtTcDRBMHNaZm12Z1pLamV1eWVncXprOE5sdkN1bmJyU0ZHTC1ic1E1V3VockhFNWZLMW1rS25yd2NoaU5wbzlxQ3VobTZoY1o5M0E1ekdWRDdPR1QzUzhqRFgzTk54dEJOaHlXSFpvRWgyX2Vva0lVSzRvY0Zha1BjazljTQ"
     }
   ]
 }
