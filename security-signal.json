@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-04-25 15:02 UTC",
+    "updated": "2026-04-26 03:56 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-19",
-    "period_end": "2026-04-25",
-    "total_events": 179,
-    "total_risk": 136.01,
-    "normalized_risk_score": 54.4,
-    "risk_level": "MEDIUM",
+    "period_start": "2026-04-20",
+    "period_end": "2026-04-26",
+    "total_events": 169,
+    "total_risk": 111.11,
+    "normalized_risk_score": 44.4,
+    "risk_level": "LOW",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 21,
+    "military": 18,
     "security": 6,
-    "political": 47,
-    "other": 105
+    "political": 43,
+    "other": 102
   },
   "source_counts": {
-    "news": 173,
+    "news": 163,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 52.41
+      "risk": 45.06
     },
     {
       "name": "Iran",
-      "risk": 48.7
+      "risk": 41.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.1
+      "risk": 9.25
     },
     {
       "name": "Middle East",
-      "risk": 5.35
+      "risk": 3.7
     },
     {
-      "name": "Syria",
-      "risk": 3.6
+      "name": "Tehran",
+      "risk": 2.35
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-04-25",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 25 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-25-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-04-24",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-24-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-04-23",
       "category": "military",
       "source_type": "isw",
@@ -66,25 +75,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-23-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-25",
       "category": "military",
       "source_type": "news",
-      "title": "Israel escalates attacks in Gaza, killing 12 people - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOTBOT0tiRGFKa0RSb3h0UUJsMlNVSkktMV9vaTVLQkx6RzFIYmJHaVFVa3pEZ2FHaTRtb0wwX2h1dWo1VjFzSVpYbUNJQ1EwMkdhSVFEdDRhWEZZaVlRQWM4TUJZVGpwNXpORVVBWHVIeGFBekQ0dkhadll3YnYyRzFoUGJIbE5iX0xhbktITXhPX0xUbFloYmVaLUVsYzNSc3hr0gGoAUFVX3lxTE92b3hFcnoxWl9WX2FNWlNRcktiUklXNUVvSHJHR05BeldaNTNYTmlRdk1nY3daejB6MjJITlpSWkpiUk53S0U5dlI1YlFNUUtxMHVDQ25ncnhJMWNwNGhiTHRoV3dkUl9odkFhOXB0QWx0ZE12NEI5UlNWMEl2WXJCMFVDQzlMQkhSTVJJcW5TMEdSTU1lM09xaG5jTjNjTGtXM2NldE1aaA"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-04-22",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 22, 2026",
+      "title": "Israel says it will attack Hezbollah 'forcefully' as four killed in strikes on southern Lebanon - Reuters",
       "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-22-2026/"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUHFYOUgyaGRzV0Z3eWVYQkNoR3Zfd1NxdjJyR000bDhDYk12dUs4RnNRSThKbHF0d2I4STM2NXNyNU5SRTZncGNlcmxDblZrOVV5WUt1VmIxZG5TdTV2YUR2N3RvZ2pYeWxIUW5rUndJd1EzTXJvRE54bHMxNTVkanUwZWFZdHRqanhhalVpZ1NWRi03UDhCLVRseHlQRF9rTVExa2lfN2U4d3MwVEEtMi1HMm4"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-04-24",
       "category": "military",
       "source_type": "news",
@@ -93,16 +93,16 @@
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZi11Mk1GdjJfdmdCVmI0TmRDd2p0NXRNZmFVUlVaaldacC1SelNpQjdMZ0ZsSVI1a2xWTjhFN3ZROUpvelVYRjBiNXFPd0loQVBfSkxGbUZNSjNtYkFrS0UtSnFzZk9neXdWOGZxbi1PTTg4cEtDZWZuRjNuSUhVTmlESzlBX1ZTclFicGdYV2s3SGFkcWQ1WUhIQV9xUHltOW1BNU5FYmc0WlNEVThVeVFPRkc5N2t1ZVc1dUhMUFdCMHlt"
     },
     {
-      "score": 2.7,
-      "date": "2026-04-24",
+      "score": 2.34,
+      "date": "2026-04-22",
       "category": "military",
-      "source_type": "news",
-      "title": "Iranians bring music to sites devastated by US-Israeli attacks - Al Jazeera",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 22, 2026",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMWU4c2w5WE1LTUxjbXZ6a0d1VWFHMTB4Tl83c0N6cVJFclpubkNSY3lSVUJSQXYyNENTem5JUVM5N21ETE42M0lOV0Y1WThSclV3S3VXUFV4N25tMy1DVVdSWU1NWlZ3ZktlZGRrM0w1M2dFVTg3ZHNjUklxT1lneHFpYlRWNDNsWkNoaUJNWXRCb3BTOGhLOUY3MXF3Y3F1LTFxU1d5WmFMRlB5eEN4VWQxb9IBuAFBVV95cUxQLUo4aTZaMVBjY3htbkZWV2FlbV9UWlpmMkJzM0xETXhTZjZBNXZVSklibHZEYlJqTEt6XzJlUWlJb09FX2F1ZjdsbTRyU3FhYjlKd0V5RGNTRkgxblU4QzROc1VGeGVfMjNGeENvQWxqX2UwMUhJUzl2VkNZUklQMGx1N3lRdXd4cWk1THF1NGt1WDVRT3VxbDk0OFRMbG9QRGZTbGwxSDNxMFRpbmN0a3FNR2RTNldN"
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-22-2026/"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-04-23",
       "category": "military",
       "source_type": "news",
@@ -111,7 +111,7 @@
       "url": "https://www.bbc.com/news/articles/cly60dwxjd1o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-04-23",
       "category": "military",
       "source_type": "news",
@@ -120,7 +120,7 @@
       "url": "https://www.bbc.com/news/articles/c5yvn036evlo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-04-23",
       "category": "military",
       "source_type": "news",
@@ -129,13 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObEtYWXQ4TUdQcm9NZHhXQzlleGx5bmVIX3VMRVlSeTk3Z0NrTV9wc3NOSm0tWHctTTZ4TUxqTjVXU09SVlFFUjlrZGtEN0Y5MlRuS0R5LUpHOWxrSjVXbGtKekdaZ0k0NUREY0h3MzhLQW8zdUdlOFBIZ3gwYUc4bDRoU25wcTJOSlF2bWpOdVA4MERTbjFKOUJsY2pkSDYzakw3dUVQSTljcG9pZXVxNTJKQUM3OElELUVLSGZB0gHDAUFVX3lxTE5WbUh5eVRLUXlTOVpSM3JmS1pfRnhFbnFnSUdaR0V6Z3Nva1hxMGMybUF4Rk9SdWpwaGswMVJLd1RCVXdaa0R2ak1BNWtkbG8yeTd5TFhvV2hXLW53SE83bFV2TklQQjNIcGU1eEJiTzM3ZGVudG9BTE5jeVltNnpRQm8yN2RDQWNRZnVfR0x4dU44VHBTRjM1RmJCZklBMTFraFVoWWhMQ2QwUGZVRVNoVjhYZDlCY1U4LVlRNGdnQWVZVQ"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-04-23",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strike kills five in Gaza, including three children - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWVpuNlNOWG5BSlBTTmNpYk1IeC1FaVE3dC1rR19yTXJsYm0wTElhUE42QzlmS2FsV1FHa3ZUdHA5OTFYdXh6OEpjNU92ZUZsaHBycUlPZHdELVhjSXNiZ2FfdWZXT3ltZ0hYLXIzNU05eXVJMXNScE43NHN1MjFiUFdDdjN2X3cxanhiaXUtbnpZbkh5aUJSbFZmUEZWTl850gGmAUFVX3lxTE52Q3BqdmFDNi1PdlY5djlWNTJwZm9zMC03OVVqR0R1VndCLVJveTRNX1hGZ0JvYjZpRnpBenRmYS1XVjFHV254UzYtRFEzcmRhSGNub2ZHREhLZ1hrZTZMRjQ2NjZ2RGdwR3pMVFM1bjBzZHNGRThfVlBhYTZBc29tam1HOWY2ZksyZ1RiSWNOQTVPcE9sMERveUYwWjA1bmpXQ2RIR1E"
+      "title": "Journalist recalls Israeli strike killing Amal Khalil in southern Lebanon - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNLTcwaTRmNE9sRV9IeE1aaXNMY2M0clh3QU5nclpvMDRwM2dSTDRycnVRWWdYRG5EY0hrRTFRSXNSbzZzMGZLYnRwa1N1am1DV3FUZjd0SEJRYnZ3UnhTTGF0T2RqRHVWaDUycnN4WmU2UW9YRzJhYzFwRGZXdXJmX1dvMmtBRHp3YXByUkVmVmZSRFluME9rX2VfWlFwSEx1YjZHOWFDTU5YM0JfdXFxRHNxSzFZcjhCOTJpV0FyUjdWZ9IBxwFBVV95cUxQT1hTdjF1eUNkQmdQdmRTc3U2ZkdOalRBdjcyUlViWUVyVm45dEdWUnl2aW1iOWNHalpyVDFxUzhmRmZETEtsSUFmS3Rxamg4SHd1X2VOdmdCbmV1c0d3X1k0M2ZXdmc5SHl6Mkg4OHg2b3JlRDVEdENqb3dhdGNJVVRGY2xlUkRnOVFUaV9FVFl6TV9FdTlycVBBa2lwN0ZQcGZBNmcxc09OcmhqNmJBbFpPR0dXV3JJdm14Tm5UdlVLWGtMNWdN"
     }
   ]
 }
