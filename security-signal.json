@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-27 14:28 UTC",
+    "updated": "2026-04-27 17:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-21",
     "period_end": "2026-04-27",
-    "total_events": 178,
-    "total_risk": 126.96,
-    "normalized_risk_score": 50.8,
+    "total_events": 177,
+    "total_risk": 140.51,
+    "normalized_risk_score": 56.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 22,
-    "security": 6,
+    "military": 26,
+    "security": 7,
     "political": 47,
-    "other": 103
+    "other": 97
   },
   "source_counts": {
-    "news": 172,
+    "news": 171,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 49.76
+      "risk": 54.91
     },
     {
       "name": "Iran",
-      "risk": 45.75
+      "risk": 49.8
     },
     {
       "name": "Gaza Strip",
-      "risk": 18.3
+      "risk": 21.0
+    },
+    {
+      "name": "Lebanon",
+      "risk": 3.3
     },
     {
       "name": "Tehran",
       "risk": 2.8
-    },
-    {
-      "name": "Middle East",
-      "risk": 2.7
     }
   ],
   "top_events": [
@@ -64,6 +64,33 @@
       "title": "Iran Update Special Report, April 25 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-25-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes hit east Lebanon, expanding scope despite ceasefire - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPLVF4Q3JfRFZhSkJiVGFQbWM2OVdldmVxMmpqTl93NzNTRGVFcW10SjlrUEV0eFJfNXU3dFVTVmtVTVJHclpNQnlKaS1fRTF0Sk5DSTh5VHNqREZ0ZTlld0VqdDB4Z2tPeVdESzdVNHQyaUtQZXVSaFpRcHkydFRpaDJFNFdMMUNaMFBYR3NFZG5ycTRpRW1ZS1JuZHlORjYydWs2UEpPeEg0STFJVEFKcUp2TTR2YVNTYVVwLQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain revokes citizenship of 69 people for 'glorifying or sympathising with' Iranian attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUzRWeDcxME9vY2hTS3pYSE5lb3BMNjREOGtCdHYxTVI2R1c4QXJYQVNKSHFETFllUEJzYWVjOEs0TzFoOGVVbjhhNEZ2TVZnSTZPdmtMUmlKNjA5cWVYM2N1eG5CWDRkb2hZTGFEb2tnWl9ZZUNHTGZvQ3V3aWFhZEswT0dkdms2LWNuLUl5SVdhaG9xalgyV3VlcU42Z19rdFJkMDI2TVdEQlVQWFpENF92NUFLcWxMb1NJWg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-04-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanon cannot be bombed into sovereignty - Al Jazeera",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMGExR21UTGpNWHBieHhXODAxTEtkYnQtUHdEMlZCY1hEd1hHRkJQZGUtM0FDNlJpZUZWeTBoalZ2Xzc5QldRX3otb0V1Y2I0SDRyLWVoempTVUl4c09qeVFycXdZNldVOUxKeEZhYTA2eU9GTUNXTXdoODJXZHNWN3BHSXhmR3kyaHdvRDBMRdIBlAFBVV95cUxPa01MSTZRcmhSRUEwNXo1OWtiRlNXTEliSGZsZ0tWdVBoYldGZExsXzNrM2xoSVRibVpWa0RBc3dpN05ZVmh0dmhVa1NqWjkwb253Z1QyWjk2bnFubldhVkQtaW9INVdJdThUZ19JUEFjMnBNNnRrY0RfQzNtTmFTeVU3R25xTXRUUzdabnI2dEJFZWdI"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "Netanyahu orders army to 'vigorously attack' Hezbollah in Lebanon",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c5yv1nvd4gjo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’ - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTQxVEE0VGZuVVh3cXZhZTk3OVFobUpjOG5qYkhZV3FTUE85VzZNMTVOTDNwNkU5STduU0ZqbDRKOUxwTV9pdnlfWm9oM2dqcU9fVkRvdU5qR1pWSDNfTUl1a1FJSHAySlFfMHlCNzVwMGRZZkJPdE41NnFIX1V0bFZ4WjQ2U0oxZjhwRFdjWTRzSG1iWUFOSC1BdG_SAaIBQVVfeXFMUHpFeExJX0dLakVDWXUzQ0FVODBVWTVIYzRQUTVCdU44NUUxYWhXQkk1TlM0MFVTTGp1X3hhX3Z5QjBhU3huVWZjcUdGTHdMN29yRmliTkZ6cXdFcV9JTTlsQ1M3bEE2Wm0ycFdVakdDTWdjclZyT1RqdDFJQmltUmNSMzB6Rnl0T19VZEVHcllmR2kyRXpMaHNVLVN2d1M3VTZ3"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel says it will attack Hezbollah 'forcefully' as four killed in strikes on southern Lebanon - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUHFYOUgyaGRzV0Z3eWVYQkNoR3Zfd1NxdjJyR000bDhDYk12dUs4RnNRSThKbHF0d2I4STM2NXNyNU5SRTZncGNlcmxDblZrOVV5WUt1VmIxZG5TdTV2YUR2N3RvZ2pYeWxIUW5rUndJd1EzTXJvRE54bHMxNTVkanUwZWFZdHRqanhhalVpZ1NWRi03UDhCLVRseHlQRF9rTVExa2lfN2U4d3MwVEEtMi1HMm4"
-    },
-    {
-      "score": 2.34,
-      "date": "2026-04-23",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 23, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-23-2026/"
     }
   ]
 }
