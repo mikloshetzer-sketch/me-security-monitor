@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-27 06:42 UTC",
+    "updated": "2026-04-27 10:27 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-21",
     "period_end": "2026-04-27",
-    "total_events": 168,
-    "total_risk": 119.66,
-    "normalized_risk_score": 47.9,
-    "risk_level": "LOW",
+    "total_events": 169,
+    "total_risk": 122.56,
+    "normalized_risk_score": 49.0,
+    "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 21,
+    "military": 22,
     "security": 7,
-    "political": 48,
-    "other": 92
+    "political": 44,
+    "other": 96
   },
   "source_counts": {
-    "news": 162,
+    "news": 163,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 45.91
+      "risk": 49.81
     },
     {
       "name": "Iran",
-      "risk": 41.85
+      "risk": 41.3
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.0
-    },
-    {
-      "name": "Middle East",
-      "risk": 3.2
+      "risk": 17.1
     },
     {
       "name": "Tehran",
-      "risk": 2.8
+      "risk": 3.1
+    },
+    {
+      "name": "Middle East",
+      "risk": 2.35
     }
   ],
   "top_events": [
@@ -106,6 +106,15 @@
       "date": "2026-04-26",
       "category": "military",
       "source_type": "news",
+      "title": "Netanyahu orders army to 'vigorously attack' Hezbollah in Lebanon",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c5yv1nvd4gjo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-04-26",
+      "category": "military",
+      "source_type": "news",
       "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’ - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTQxVEE0VGZuVVh3cXZhZTk3OVFobUpjOG5qYkhZV3FTUE85VzZNMTVOTDNwNkU5STduU0ZqbDRKOUxwTV9pdnlfWm9oM2dqcU9fVkRvdU5qR1pWSDNfTUl1a1FJSHAySlFfMHlCNzVwMGRZZkJPdE41NnFIX1V0bFZ4WjQ2U0oxZjhwRFdjWTRzSG1iWUFOSC1BdG_SAaIBQVVfeXFMUHpFeExJX0dLakVDWXUzQ0FVODBVWTVIYzRQUTVCdU44NUUxYWhXQkk1TlM0MFVTTGp1X3hhX3Z5QjBhU3huVWZjcUdGTHdMN29yRmliTkZ6cXdFcV9JTTlsQ1M3bEE2Wm0ycFdVakdDTWdjclZyT1RqdDFJQmltUmNSMzB6Rnl0T19VZEVHcllmR2kyRXpMaHNVLVN2d1M3VTZ3"
@@ -127,15 +136,6 @@
       "title": "Iran Update Special Report, April 23, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-23-2026/"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-04-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "UN says Israeli strikes in Lebanon, Hezbollah rockets into Israel may breach international law - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZi11Mk1GdjJfdmdCVmI0TmRDd2p0NXRNZmFVUlVaaldacC1SelNpQjdMZ0ZsSVI1a2xWTjhFN3ZROUpvelVYRjBiNXFPd0loQVBfSkxGbUZNSjNtYkFrS0UtSnFzZk9neXdWOGZxbi1PTTg4cEtDZWZuRjNuSUhVTmlESzlBX1ZTclFicGdYV2s3SGFkcWQ1WUhIQV9xUHltOW1BNU5FYmc0WlNEVThVeVFPRkc5N2t1ZVc1dUhMUFdCMHlt"
     }
   ]
 }
