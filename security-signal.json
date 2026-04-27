@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-27 21:17 UTC",
+    "updated": "2026-04-27 23:12 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-04-21",
     "period_end": "2026-04-27",
-    "total_events": 176,
-    "total_risk": 138.41,
-    "normalized_risk_score": 55.4,
+    "total_events": 178,
+    "total_risk": 143.76,
+    "normalized_risk_score": 57.5,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 24,
-    "security": 8,
-    "political": 46,
-    "other": 98
+    "military": 25,
+    "security": 7,
+    "political": 49,
+    "other": 97
   },
   "source_counts": {
-    "news": 170,
-    "isw": 6
+    "news": 171,
+    "isw": 7
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 53.11
+      "risk": 59.31
     },
     {
       "name": "Iran",
-      "risk": 51.7
+      "risk": 54.6
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.45
+      "risk": 19.15
+    },
+    {
+      "name": "Middle East",
+      "risk": 2.45
     },
     {
       "name": "West Bank",
       "risk": 2.3
-    },
-    {
-      "name": "Tehran",
-      "risk": 2.3
     }
   ],
   "top_events": [
+    {
+      "score": 3.9,
+      "date": "2026-04-27",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 27, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-27-2026/"
+    },
     {
       "score": 3.51,
       "date": "2026-04-26",
@@ -84,6 +93,15 @@
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUzRWeDcxME9vY2hTS3pYSE5lb3BMNjREOGtCdHYxTVI2R1c4QXJYQVNKSHFETFllUEJzYWVjOEs0TzFoOGVVbjhhNEZ2TVZnSTZPdmtMUmlKNjA5cWVYM2N1eG5CWDRkb2hZTGFEb2tnWl9ZZUNHTGZvQ3V3aWFhZEswT0dkdms2LWNuLUl5SVdhaG9xalgyV3VlcU42Z19rdFJkMDI2TVdEQlVQWFpENF92NUFLcWxMb1NJWg"
     },
     {
+      "score": 3.0,
+      "date": "2026-04-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Hezbollah and Israel swap threats and strikes across Lebanon’s border - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWHpxS1hXM2hNR0dUUHdra0h3TlRacHRLVExWRHZSeXR3eXBaYzlkX2djbEhlREgyQjZRNWRlazF1bERBYTFQaVM5N1l1RkpGa2tNOTFKQU1ZVVUyYUZiMTcwWENLTzQ1LXpWSEd6VlJSQzFseC1oRGVPLVhDd0hCT2swZFA4dGt5b2tqR3o4dXJuczZqRkUya2Nsd3U0WnlLZzgyTUtTQ1FrV2NwZFHSAbMBQVVfeXFMTkEzcnpuVkVmN09xUzg5TnJ3Vksyd1hwNlBZRDB5TDVxR1BRbTlKdWtrZkNyV3N2TGtIellCc1B5WkI5V3c3dUFBdVl6blU1MTBqZklEc2lWblNRZEZtbXhOYTlMcEhBOG0yUF9WNzBfQmpYLTJTQ1ZzT08tTHFoTVNYOVpfal9LQUZUMUFsU045enFnNU9qaHFjN0JnSTlPTXk0QTNiWUo1ZXN5Y1lOQmRQbUU"
+    },
+    {
       "score": 2.73,
       "date": "2026-04-24",
       "category": "military",
@@ -118,24 +136,6 @@
       "title": "Israeli strikes kill 14 in Lebanon amid ongoing ceasefire",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c4gxgv8j7zlo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Netanyahu orders army to 'vigorously attack' Hezbollah in Lebanon",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c5yv1nvd4gjo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "At least four people killed in Israeli attacks in Gaza despite ‘ceasefire’ - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTQxVEE0VGZuVVh3cXZhZTk3OVFobUpjOG5qYkhZV3FTUE85VzZNMTVOTDNwNkU5STduU0ZqbDRKOUxwTV9pdnlfWm9oM2dqcU9fVkRvdU5qR1pWSDNfTUl1a1FJSHAySlFfMHlCNzVwMGRZZkJPdE41NnFIX1V0bFZ4WjQ2U0oxZjhwRFdjWTRzSG1iWUFOSC1BdG_SAaIBQVVfeXFMUHpFeExJX0dLakVDWXUzQ0FVODBVWTVIYzRQUTVCdU44NUUxYWhXQkk1TlM0MFVTTGp1X3hhX3Z5QjBhU3huVWZjcUdGTHdMN29yRmliTkZ6cXdFcV9JTTlsQ1M3bEE2Wm0ycFdVakdDTWdjclZyT1RqdDFJQmltUmNSMzB6Rnl0T19VZEVHcllmR2kyRXpMaHNVLVN2d1M3VTZ3"
     }
   ]
 }
