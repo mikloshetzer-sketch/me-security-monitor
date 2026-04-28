@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-04-28 04:07 UTC",
+    "updated": "2026-04-28 06:45 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,20 +8,20 @@
   "summary": {
     "period_start": "2026-04-22",
     "period_end": "2026-04-28",
-    "total_events": 166,
-    "total_risk": 129.66,
-    "normalized_risk_score": 51.9,
+    "total_events": 163,
+    "total_risk": 129.41,
+    "normalized_risk_score": 51.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 26,
     "security": 7,
-    "political": 46,
-    "other": 87
+    "political": 42,
+    "other": 88
   },
   "source_counts": {
-    "news": 160,
+    "news": 157,
     "isw": 6
   },
   "top_locations": [
@@ -31,19 +31,19 @@
     },
     {
       "name": "Iran",
-      "risk": 48.8
+      "risk": 45.65
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.05
+      "risk": 16.75
     },
     {
       "name": "Tehran",
       "risk": 5.7
     },
     {
-      "name": "West Bank",
-      "risk": 1.9
+      "name": "Lebanon",
+      "risk": 2.95
     }
   ],
   "top_events": [
@@ -106,6 +106,15 @@
       "date": "2026-04-27",
       "category": "military",
       "source_type": "news",
+      "title": "Lebanon cannot be bombed into sovereignty - Al Jazeera",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMGExR21UTGpNWHBieHhXODAxTEtkYnQtUHdEMlZCY1hEd1hHRkJQZGUtM0FDNlJpZUZWeTBoalZ2Xzc5QldRX3otb0V1Y2I0SDRyLWVoempTVUl4c09qeVFycXdZNldVOUxKeEZhYTA2eU9GTUNXTXdoODJXZHNWN3BHSXhmR3kyaHdvRDBMRdIBlAFBVV95cUxPa01MSTZRcmhSRUEwNXo1OWtiRlNXTEliSGZsZ0tWdVBoYldGZExsXzNrM2xoSVRibVpWa0RBc3dpN05ZVmh0dmhVa1NqWjkwb253Z1QyWjk2bnFubldhVkQtaW9INVdJdThUZ19JUEFjMnBNNnRrY0RfQzNtTmFTeVU3R25xTXRUUzdabnI2dEJFZWdI"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-04-27",
+      "category": "military",
+      "source_type": "news",
       "title": "Hezbollah and Israel swap threats and strikes across Lebanon’s border - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWHpxS1hXM2hNR0dUUHdra0h3TlRacHRLVExWRHZSeXR3eXBaYzlkX2djbEhlREgyQjZRNWRlazF1bERBYTFQaVM5N1l1RkpGa2tNOTFKQU1ZVVUyYUZiMTcwWENLTzQ1LXpWSEd6VlJSQzFseC1oRGVPLVhDd0hCT2swZFA4dGt5b2tqR3o4dXJuczZqRkUya2Nsd3U0WnlLZzgyTUtTQ1FrV2NwZFHSAbMBQVVfeXFMTkEzcnpuVkVmN09xUzg5TnJ3Vksyd1hwNlBZRDB5TDVxR1BRbTlKdWtrZkNyV3N2TGtIellCc1B5WkI5V3c3dUFBdVl6blU1MTBqZklEc2lWblNRZEZtbXhOYTlMcEhBOG0yUF9WNzBfQmpYLTJTQ1ZzT08tTHFoTVNYOVpfal9LQUZUMUFsU045enFnNU9qaHFjN0JnSTlPTXk0QTNiWUo1ZXN5Y1lOQmRQbUU"
@@ -127,15 +136,6 @@
       "title": "Israeli strikes kill 14 in Lebanon as Israel warns residents to leave towns beyond 'buffer zone' - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMFBOV2ZDWHhGdnVHZm5ZeG9aSC1ndUw5alhFa0h2OVFxNmpjM2swVDlKSGRDb2VEZTFkQlU0NEFJV0lwdHktVWZhWWFMVTFmOVY5QlEteHktcTlucEF5UFhaWGJ3RTY1WDFEQjZ3WTBNUUVJYndBSzZXVWExSTFLY3VLN2ttQXg0WWZOVWhoczZZWW1mOXJQeGttWDlNbjVnSzY1Y3JpM0lsMFY1Wjd1Z3NrVUFwbW5hY091ellnN0h4TWZZM3EzdXVR"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill at least four Palestinians in Gaza, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdHctRFNMLVNobWUyeXVGZGI0TVhCVlpDd3Z3XzREbXowQi1VbnA2S2R6Mkx0bThRSGFnMGhTMEQtMkhoSHotRWJKSXRSSDBwbk02MHFyZDctcmpYTGVCR2xySEpRX0dESTNmLXFEcXVEMU5fd3NveERQRnRySkplbC10MFEzdC1vYnhUUy1ZUWtNT0VraVhWaW82aG9sQUZROE5YYnhCQy1BaUtweE1PSHBVZWc"
     }
   ]
 }
