@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-04-28 21:20 UTC",
+    "updated": "2026-04-29 04:04 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-22",
-    "period_end": "2026-04-28",
-    "total_events": 164,
-    "total_risk": 127.26,
-    "normalized_risk_score": 50.9,
+    "period_start": "2026-04-23",
+    "period_end": "2026-04-29",
+    "total_events": 166,
+    "total_risk": 123.41,
+    "normalized_risk_score": 49.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 20,
+    "military": 22,
     "security": 8,
-    "political": 33,
-    "other": 103
+    "political": 31,
+    "other": 105
   },
   "source_counts": {
-    "news": 158,
+    "news": 160,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Iran",
-      "risk": 49.7
+      "name": "Israel",
+      "risk": 48.96
     },
     {
-      "name": "Israel",
-      "risk": 47.01
+      "name": "Iran",
+      "risk": 42.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.5
-    },
-    {
-      "name": "Tehran",
-      "risk": 4.6
+      "risk": 11.9
     },
     {
       "name": "Middle East",
-      "risk": 3.9
+      "risk": 4.85
+    },
+    {
+      "name": "Tehran",
+      "risk": 4.05
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-04-28",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 28, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-28-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-04-27",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-27-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-04-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanon’s PM slams Israel’s ‘war crimes’ as attack kills 3 rescue workers - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbTE5U0R2ZjFUUzZEajVidGhxaHVXWm9KRS1IX2MxRzh3VXFEcEJTVzdJVDJUMERTZWRjUy0wWW5aU0NMZDF2Sm9JT09wNVZvVElITE1CUlVUU1kzdGNMandwNnZkTTBGeW91TkhOcmgtVnB4T09sdkNYQ21VSUVQalVSejd3UHotRXVja3YwOEdub3NoNEFwazJZdHNHcFZfOF9XUlRnNzBTcVI1WkZB0gG0AUFVX3lxTE5zZG9DZjVhMWhnbG9hRGtvMmM1Sk9VWlFDQkJIVnlwSEhYUFYtMnhfbjRiN0FSbm1MTlctVzRmZXI0c2RaQ2VXeUV5dEFROVoxZzVfa28zbGFqQzZpY1BWTjNNMHVtdWlNOEJPNm01S2I0a2FKbkEzb2d2YllHa1FYaDBJbVRDX0ZnYWZyWXhVaWYtdzAwNlJuQ29zRFhnbU9hTHpBUHltdHc1ZDNISkZUUWxFeA"
+    },
+    {
+      "score": 2.73,
       "date": "2026-04-26",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +84,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-26-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-04-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill five in south Lebanon, including three rescuers - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQLUZHQ3hsMXd3QTFYdFdMUFFBMHA5dy1iZmNKQ0ZWT2w2WkQ5bldjdnluWFAzeHMxNjREdUItRUZFZmZIeDVDejNXOFlYOXhPZXR6TkdfS2t5Sk9QeDBrTUZIRkNKLXJPQmhucHNzb2tBdEp2cThpbXU0WW1CcThWSUJpS05NQ2hCS3kyT3cxc0xCWmpkMEh4WjlQd3d5d3hYTlZFRTBvaEZHa0ZhZUdIOFNRdV82dmhpVnFiRHhpNXZmZHg1"
+    },
+    {
+      "score": 2.7,
       "date": "2026-04-28",
       "category": "military",
       "source_type": "news",
@@ -75,16 +102,25 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOenJjLWZNSk5NYU15THlCazY0NUU1Q0NYZXhnUTFWUDhzME1pVzNwa1ZaZWpqb0NRVGppeHdhX3ZYMnVhOGlKRDdHZzVjOFQ0TG5Bem9GcXRvdFlBRC1JUTZWWWlHVjV4SjA0VGFIYl8wNUM5WnhKSS04TmN2VzhBQ2xVQmtKMDVkaVg2NzV6eHRwMURTVEI0SjRObWwwUEUwNVlxZUdud044TE5IT09WejdjMkJaSXly"
     },
     {
-      "score": 2.73,
-      "date": "2026-04-25",
+      "score": 2.7,
+      "date": "2026-04-28",
       "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 25, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-25-2026/"
+      "source_type": "news",
+      "title": "Israeli strikes on Gaza kill five, including 9-year-old boy, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYld0bnQ2SlJXTlNBVy1kOUpWek9jNnU4U0t4TnJZcEdEZ2FDSXJWU2JlWldpSEFONi03bXA4WF9jRWpmYXB6U1lOM1JwbEF6NE8yRy1pNWhoTG9PWXdYNW03T2wyeUctX3NIMVROOFJhWS1lYzdRQVFJZ2tfYUZNMjk0UXNXU0NFd0JtN1YzNkpQekFKb0ZTN3hWYWpUekZTckdTRnZhNEVHTFk0aXF6WnJPTEpka1lacmtCX3l3"
     },
     {
       "score": 2.7,
+      "date": "2026-04-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iraqi security forces open fire at drone flying over Baghdad’s Green Zone - Reuters",
+      "location": "Baghdad",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdFdtNGRIMkoxeFk3N25PYXlXVmZDaTVodnhaZmtNY29lSmEtUktETmJhZnM2NzJIUHFxM0ZqRlNvNTdnTDlnYU5LZ0tzV2RvM2FCRUdxc1N3S0VXTWRCVHdxY1VLdzd5OURCbjVHMjJjY1NGX21iakNuZ2V3QU1qc205bEVnZXQwMjMyUXZZbzJlWUVOeWtkMlRwRGY5aU5FY1VkcnRxLVNETHZZTDlEMG93Y3hlclhKOXZYaUd6YUo"
+    },
+    {
+      "score": 2.4,
       "date": "2026-04-27",
       "category": "military",
       "source_type": "news",
@@ -93,49 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPLVF4Q3JfRFZhSkJiVGFQbWM2OVdldmVxMmpqTl93NzNTRGVFcW10SjlrUEV0eFJfNXU3dFVTVmtVTVJHclpNQnlKaS1fRTF0Sk5DSTh5VHNqREZ0ZTlld0VqdDB4Z2tPeVdESzdVNHQyaUtQZXVSaFpRcHkydFRpaDJFNFdMMUNaMFBYR3NFZG5ycTRpRW1ZS1JuZHlORjYydWs2UEpPeEg0STFJVEFKcUp2TTR2YVNTYVVwLQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-04-27",
       "category": "military",
       "source_type": "news",
       "title": "US, Iran clash at UN after Tehran gets nuclear non-proliferation role - Reuters",
       "location": "Tehran",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbGJYSHBXMVhzaG00Ym1GQS1iTGF3SXVVQ2hWNDlmRlRvSE9EYjB4MXI5NlhzSDYzaUlmQUJHX0JoRnJhMDJVeFpCakVWNVFnNkQzbjJfMk5Jc2xoLWFaazJpem5mbFhMdlRVQ1RQeWRXeXVLZWFpR0VsNklObHhzTVluWnRvX2pZbDlQX1I5cVJSX19vRnZaTDNOdEdKNURJNUtrVzBwSm11RF8zWG9lMjM0ZlZTbVBRQjJF"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bahrain revokes citizenship of 69 people for 'glorifying or sympathising with' Iranian attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUzRWeDcxME9vY2hTS3pYSE5lb3BMNjREOGtCdHYxTVI2R1c4QXJYQVNKSHFETFllUEJzYWVjOEs0TzFoOGVVbjhhNEZ2TVZnSTZPdmtMUmlKNjA5cWVYM2N1eG5CWDRkb2hZTGFEb2tnWl9ZZUNHTGZvQ3V3aWFhZEswT0dkdms2LWNuLUl5SVdhaG9xalgyV3VlcU42Z19rdFJkMDI2TVdEQlVQWFpENF92NUFLcWxMb1NJWg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Hezbollah and Israel swap threats and strikes across Lebanon’s border - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWHpxS1hXM2hNR0dUUHdra0h3TlRacHRLVExWRHZSeXR3eXBaYzlkX2djbEhlREgyQjZRNWRlazF1bERBYTFQaVM5N1l1RkpGa2tNOTFKQU1ZVVUyYUZiMTcwWENLTzQ1LXpWSEd6VlJSQzFseC1oRGVPLVhDd0hCT2swZFA4dGt5b2tqR3o4dXJuczZqRkUya2Nsd3U0WnlLZzgyTUtTQ1FrV2NwZFHSAbMBQVVfeXFMTkEzcnpuVkVmN09xUzg5TnJ3Vksyd1hwNlBZRDB5TDVxR1BRbTlKdWtrZkNyV3N2TGtIellCc1B5WkI5V3c3dUFBdVl6blU1MTBqZklEc2lWblNRZEZtbXhOYTlMcEhBOG0yUF9WNzBfQmpYLTJTQ1ZzT08tTHFoTVNYOVpfal9LQUZUMUFsU045enFnNU9qaHFjN0JnSTlPTXk0QTNiWUo1ZXN5Y1lOQmRQbUU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Lebanon cannot be bombed into sovereignty - Al Jazeera",
-      "location": "Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMGExR21UTGpNWHBieHhXODAxTEtkYnQtUHdEMlZCY1hEd1hHRkJQZGUtM0FDNlJpZUZWeTBoalZ2Xzc5QldRX3otb0V1Y2I0SDRyLWVoempTVUl4c09qeVFycXdZNldVOUxKeEZhYTA2eU9GTUNXTXdoODJXZHNWN3BHSXhmR3kyaHdvRDBMRdIBlAFBVV95cUxPa01MSTZRcmhSRUEwNXo1OWtiRlNXTEliSGZsZ0tWdVBoYldGZExsXzNrM2xoSVRibVpWa0RBc3dpN05ZVmh0dmhVa1NqWjkwb253Z1QyWjk2bnFubldhVkQtaW9INVdJdThUZ19JUEFjMnBNNnRrY0RfQzNtTmFTeVU3R25xTXRUUzdabnI2dEJFZWdI"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-04-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill 14 in Lebanon as Israel warns residents to leave towns beyond 'buffer zone' - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMFBOV2ZDWHhGdnVHZm5ZeG9aSC1ndUw5alhFa0h2OVFxNmpjM2swVDlKSGRDb2VEZTFkQlU0NEFJV0lwdHktVWZhWWFMVTFmOVY5QlEteHktcTlucEF5UFhaWGJ3RTY1WDFEQjZ3WTBNUUVJYndBSzZXVWExSTFLY3VLN2ttQXg0WWZOVWhoczZZWW1mOXJQeGttWDlNbjVnSzY1Y3JpM0lsMFY1Wjd1Z3NrVUFwbW5hY091ellnN0h4TWZZM3EzdXVR"
     }
   ]
 }
