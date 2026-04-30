@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-04-29 21:19 UTC",
+    "updated": "2026-04-30 04:05 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-23",
-    "period_end": "2026-04-29",
-    "total_events": 173,
-    "total_risk": 132.96,
-    "normalized_risk_score": 53.2,
+    "period_start": "2026-04-24",
+    "period_end": "2026-04-30",
+    "total_events": 168,
+    "total_risk": 123.16,
+    "normalized_risk_score": 49.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 22,
-    "security": 7,
-    "political": 27,
-    "other": 117
+    "military": 23,
+    "security": 8,
+    "political": 23,
+    "other": 114
   },
   "source_counts": {
-    "news": 167,
+    "news": 162,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 48.96
+      "risk": 49.56
     },
     {
       "name": "Iran",
-      "risk": 47.35
+      "risk": 38.0
     },
     {
       "name": "Middle East",
-      "risk": 7.3
+      "risk": 7.05
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.25
+      "risk": 6.75
     },
     {
-      "name": "Tehran",
-      "risk": 5.55
+      "name": "Baghdad",
+      "risk": 5.1
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-04-29",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, April 29, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-29-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-04-28",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-28-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-04-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli forces raid Global Sumud Flotilla boats in international waters - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQi1VMDdwYjR2eE1QYzhLZjJRQ0VjUHl5TW9ZMmExY3RNXzM1UWo0MFc1SEdaRHI5UnlEb2w5aHBIQmtiQ0ZxX2MtRERhM1RaY2txV3dDZnpXVDNNOGg5eldnY0ROcEpLajBTWUhwcVB2b0hsbXhXdmVYMlFkay02VHRvU1JRcVFYaFRfM0NaRUtycVFNaVc5a3lR0gGfAUFVX3lxTE13OFBqUERYNDE4WVZCby1sb00yUzRCUV9DbXZUTExLNmcycjRRelFmWklVaGQ3dV9TdlJZanJuVDV5S181RXl0UVpyb3g1WFFvY2VFOXNCMzQxNmUtcFNmeUh1aURLaGdNMVhVcDMzZ0JRSUY5R1dxSVNMSTdVMVE0V201V3Zhb2tSNTgyZ1lJY1d5RnFmb1dEMmEtVmZsVQ"
+    },
+    {
+      "score": 2.73,
       "date": "2026-04-27",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +84,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-27-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-04-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Surveillance drone downed near US embassy in Baghdad, Iraqi security sources say - Reuters",
+      "location": "Baghdad",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPT0NKWFRTUzRFS29rbmU5MGt2Q3YwSldIbGFUeWVaWGhPdjhybkhxYW8zazNtODNqWlBsLVZUQUxyTkxVNU1ReVo1elZPMzFfend2ZlNlQzdJTHh6VVV0OS04cUp3RFowZXhfYjVFQnpiX25pV2VnaVFNcWd3VUN2YmdCVVJZV2ZaRFJFZXdUNWV2X29TRk9TV19mZmhISEpUOV9DUGFMaVRjWHRuVjNQWm5tMkxFa3N1RmZ6bmVmTEJFa0ZKUFhfdXhB"
+    },
+    {
+      "score": 2.7,
       "date": "2026-04-29",
       "category": "military",
       "source_type": "news",
@@ -75,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUVNOZmo0U3dWTEp1Uy1zWkpyV1BYMUpUOXBXNU1rS0tJZ1pFYzJlaVl4cURuOE4wUlhDQUN1ZmtoQ0NpaWt0WGVyQzhTYkthNUlBLUNxRWVYU0RDM1pvRkl3S0t2THBCSl9XOWdwWS1xRVZ5N0RBRWJ3akFVMldnUVpPenVOSks1YXpWaHQ0TTRIVmNHeGgtQ0tiOFlMNTNSdXp6NG9nNkE3LUd6MVJPTEZtTWhwODFBR2c"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-29",
       "category": "military",
       "source_type": "news",
@@ -84,7 +111,7 @@
       "url": "https://www.bbc.com/news/articles/cvgz5rgv4n3o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-29",
       "category": "military",
       "source_type": "news",
@@ -93,7 +120,7 @@
       "url": "https://www.bbc.com/news/articles/cwy2482pn0lo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-04-29",
       "category": "military",
       "source_type": "news",
@@ -102,40 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbTE5U0R2ZjFUUzZEajVidGhxaHVXWm9KRS1IX2MxRzh3VXFEcEJTVzdJVDJUMERTZWRjUy0wWW5aU0NMZDF2Sm9JT09wNVZvVElITE1CUlVUU1kzdGNMandwNnZkTTBGeW91TkhOcmgtVnB4T09sdkNYQ21VSUVQalVSejd3UHotRXVja3YwOEdub3NoNEFwazJZdHNHcFZfOF9XUlRnNzBTcVI1WkZB0gG0AUFVX3lxTE5zZG9DZjVhMWhnbG9hRGtvMmM1Sk9VWlFDQkJIVnlwSEhYUFYtMnhfbjRiN0FSbm1MTlctVzRmZXI0c2RaQ2VXeUV5dEFROVoxZzVfa28zbGFqQzZpY1BWTjNNMHVtdWlNOEJPNm01S2I0a2FKbkEzb2d2YllHa1FYaDBJbVRDX0ZnYWZyWXhVaWYtdzAwNlJuQ29zRFhnbU9hTHpBUHltdHc1ZDNISkZUUWxFeA"
     },
     {
-      "score": 2.73,
-      "date": "2026-04-26",
+      "score": 2.7,
+      "date": "2026-04-29",
       "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, April 26, 2026",
+      "source_type": "news",
+      "title": "Israeli strike kills five family members in Lebanon - Al Jazeera",
       "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-april-26-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill five in south Lebanon, including three rescuers - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQLUZHQ3hsMXd3QTFYdFdMUFFBMHA5dy1iZmNKQ0ZWT2w2WkQ5bldjdnluWFAzeHMxNjREdUItRUZFZmZIeDVDejNXOFlYOXhPZXR6TkdfS2t5Sk9QeDBrTUZIRkNKLXJPQmhucHNzb2tBdEp2cThpbXU0WW1CcThWSUJpS05NQ2hCS3kyT3cxc0xCWmpkMEh4WjlQd3d5d3hYTlZFRTBvaEZHa0ZhZUdIOFNRdV82dmhpVnFiRHhpNXZmZHg1"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iraqi security forces open fire at drone flying over Baghdad’s Green Zone - Reuters",
-      "location": "Baghdad",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdFdtNGRIMkoxeFk3N25PYXlXVmZDaTVodnhaZmtNY29lSmEtUktETmJhZnM2NzJIUHFxM0ZqRlNvNTdnTDlnYU5LZ0tzV2RvM2FCRUdxc1N3S0VXTWRCVHdxY1VLdzd5OURCbjVHMjJjY1NGX21iakNuZ2V3QU1qc205bEVnZXQwMjMyUXZZbzJlWUVOeWtkMlRwRGY5aU5FY1VkcnRxLVNETHZZTDlEMG93Y3hlclhKOXZYaUd6YUo"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-04-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Gulf leaders meet in Saudi Arabia to discuss response to Iranian strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOenJjLWZNSk5NYU15THlCazY0NUU1Q0NYZXhnUTFWUDhzME1pVzNwa1ZaZWpqb0NRVGppeHdhX3ZYMnVhOGlKRDdHZzVjOFQ0TG5Bem9GcXRvdFlBRC1JUTZWWWlHVjV4SjA0VGFIYl8wNUM5WnhKSS04TmN2VzhBQ2xVQmtKMDVkaVg2NzV6eHRwMURTVEI0SjRObWwwUEUwNVlxZUdud044TE5IT09WejdjMkJaSXly"
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObk5rSWVLZ2phVlBLX3BramxTUHB0b1BVT1VlOGxLRWdXLXVWRzFHRTVXUkVyMEJXaDFjdU9NY25OOGpoZ3k0RTE2ZU90V3pjYzdTUXNGeFB2TFRTOWh0Q21kbTN3MXRPUTdDaWxmbG5SSlRhNUJ2WXNFdnJyYVRQZy1DcHVDamxNQ3RjZll0NFp1OGE1M2lrOGlyX1RnRGZBVVJQVdIBqgFBVV95cUxPMlEya1VkbUdnM2tKbXdVVUxuNzN0ZDM0YXNOT25JQklFXzI4V2doR2I3YWpJaEEwX3YxdjY0UEUtVi1CblVTVFpCR1VnX1NGRHdFU2RlaUpMbnB0eENqMTBvVDZweVZuWkptQU9iRFZlQ0ZDSldpV184c0RCeFEzX0tRQnpUOWlCWnhIVnludl9zN2NDNXE5d1hsN2NQVjFVZFpDVGFfUUlGZw"
     }
   ]
 }
