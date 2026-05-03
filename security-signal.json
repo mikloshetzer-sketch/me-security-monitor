@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-03 04:13 UTC",
+    "updated": "2026-05-03 06:42 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-27",
     "period_end": "2026-05-03",
-    "total_events": 165,
-    "total_risk": 108.41,
-    "normalized_risk_score": 43.4,
+    "total_events": 149,
+    "total_risk": 102.01,
+    "normalized_risk_score": 40.8,
     "risk_level": "LOW",
-    "confidence": "HIGH"
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 23,
-    "security": 6,
-    "political": 12,
-    "other": 124
+    "military": 21,
+    "security": 7,
+    "political": 7,
+    "other": 114
   },
   "source_counts": {
-    "news": 159,
+    "news": 143,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Israel",
-      "risk": 41.51
+      "name": "Iran",
+      "risk": 37.25
     },
     {
-      "name": "Iran",
-      "risk": 35.5
+      "name": "Israel",
+      "risk": 35.41
     },
     {
       "name": "Middle East",
-      "risk": 7.1
+      "risk": 7.6
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.45
+      "risk": 7.25
     },
     {
-      "name": "Jerusalem",
-      "risk": 4.8
+      "name": "Lebanon",
+      "risk": 4.1
     }
   ],
   "top_events": [
@@ -88,9 +88,18 @@
       "date": "2026-05-02",
       "category": "military",
       "source_type": "news",
+      "title": "Iran war: What’s happening on day 63 as Trump signals possible attacks - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbk1HbzNDNEVVTXlEaHg1ZUtfbHI5aWp3cXRPMDRpaS1UVG9HYnI5OUtZb1Z5c0MyRXpOd0FUb19IMmNNejExeWtBWkVaOHNhMkZPZEZHemF3T2JuU0ZmNkdOVUpzZW05bUxKcGptR1FPV1kwM211WHIxbzg3Y214bjN0cEFKSmFjRVgzVWtfR2U5RDVjYnZudUdaMmE1RzRqbHdLU2VPbk9abEVn0gGyAUFVX3lxTFBKeTI1dG9SdFdhV2VKWmtkTko2aUtwSnlyRFFKSUFhNnVqRGt3eTNoVkpjTG1vMnRwNW9CNDZrT3BpTFVyVlVFZlpyUmRwR0l5eWZuT2JWLURiOHJaXzk3WlN0R1JwcExLWE5UVUtwZ2lFSUdZTUotU2t0eER1ZXh3VklBcUpYbGI5eXMtaWtXMDl2VV9RUHR1QTNmWU10bUpPQmVNOW4zbHN4NkNKdmk2dkE"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-05-02",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli air strikes on Lebanon kill 41 people in 24-hours - Al Jazeera",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSGJjck82amFhWlA2S0IwcDhxMExFRS04WGVfRUJUNHpUMDBkcGF1YzlZc0hzcm5DRl95WmpNamkzTVF2TGFBY01mQWRzTDFoY1JtOFlYMV9EaFZNVWJiRUFGdXhoSHEtZzNGd2VYWTc3Sk9WOExFdUZsa1hOTHZJdXpfZkN0TmU5cm16R0RPZGFqR1JsaEFGcjVR"
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSGJjck82amFhWlA2S0IwcDhxMExFRS04WGVfRUJUNHpUMDBkcGF1YzlZc0hzcm5DRl95WmpNamkzTVF2TGFBY01mQWRzTDFoY1JtOFlYMV9EaFZNVWJiRUFGdXhoSHEtZzNGd2VYWTc3Sk9WOExFdUZsa1hOTHZJdXpfZkN0TmU5cm16R0RPZGFqR1JsaEFGcjVR0gGfAUFVX3lxTE43empuR1NlMGN4UG4xQmMtNHdfSTdWdlMtbzdvV0VqbG9GTHlBakpWRFMzWVV1ak5rOW90WDNKT3p3MlNMMjR4Xzh2TUZFWDZ2blJfUFRBdDlQVmRONDI0Rk5qTzMtQ3FJenk2TDVXbmctN0hFUGE1YzExQ2l1TzQ1MVhTNnM2Mkg5end0SXhNVE5NOUNXbUZaVVJtV1E4VQ"
     },
     {
       "score": 2.4,
@@ -124,18 +133,9 @@
       "date": "2026-05-01",
       "category": "military",
       "source_type": "news",
-      "title": "At least 12 killed in latest Israeli attacks on Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZmc3V1hheEFmNHF4YURoNG00N3RyNnFUMEVwa0ZaQmVaVy1hbFRWV3RwRFBvRlJmdXNTWU44dlI0V3RNaE00cWRrdzVpZ212MDY3RGV6Wk5QaHpQaVE5eVpuN3M3MG01RjhjbU40czBGdlpKZ3dfaEdkY3hRV3g1S3VPZ2dsTnh1TnNOd2FXM0dSVEI1c2J6ZW0xONIBoAFBVV95cUxOUWVIMzQtblNETGhFc1NfQmZBdDVpYTJoZ2pLUEd3eVdrM3N2QkxnbGlkamkteVZkT0dMQkR1RWhCWDFDT0UxUEM1OVhhODhwZzZwakk3SjNfMDdSR3RYcDFoSUlIdTN5Wjh5THZ3Q1d3OEVPeUFFWXFiNVV3R2w4em84WDdRODIxWWZXb00zQVNfRHE3MGZQMzM1dzJveE92"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Greek Orthodox Church sounds alarm over attacks on Christians in Jerusalem - Al Jazeera",
-      "location": "Jerusalem",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOFBmeGVTSlV6MUNWQlVibXFpVmVWa3NrLWhKaENBT1l4QmZOdVZxZXIxazgtNF9OYjlDb1ByRk02LURZZGM3cXNtRWZxcmpydDdlRlRWRjM4eHhXOUpRYUhKVllOdGxvdXpOS3VHVzVQNkJOR2RZMUZyT1VSd28xNkQxSkdGVUxHY0VJWUxJV1duUDJjY09xd2VmbDlEQ2tUYlpGZXM1RmVHUm5MSnFFdTdfRFXSAboBQVVfeXFMUEg3Q3Vrbl9laXN1WWg0WGZONkhmUGlzVloxa2k4ZGlxVFVDenJDNG9Qc3A1SWl3VmZVMnNyaDdjbEczT2xwTktuNGZ2Vm9LMWhGS0xGLUl5eWgxZm4zNURyTzJjOWhlNHY1YlFnZ0hDdDdxV2VCck5PbWVrRDYxckZvdkViSGg5MFM3V1ZTT2NLdFhlZVF3aFFNSXRERHAzZmtULVRmS0RYMXU4dW9HNE9nN0FQVGFCZ3Zn"
+      "title": "Iran vows ‘long, painful’ response if US renews attacks - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUkhFQUFYcXRXbmNQTVBoX0JSTWVFZUhuUEtQLWEzMXd0V3cwVHIyck9SdWV2c2drTk01bnMyQTZmMGdKa3lWWHBfcG5DTUZINEJZaEwyNV9Sa3BNZWZKNy1tSnNyRmtKUmFvcFZBVWxfZVBIdFBXX0JQTG1qSWRKR2djaGVGSS11WHp0SFo1OXZla2diSl9R0gGcAUFVX3lxTFA1R3pSank2OWROSzVkaTR5MkdSNTBZVW9TY2IteDZuNTBkZk1RTEQyMTRLQTVtS0J0c01sdnRTWV9sX20zWlYwcGtVUVk3R0pvdGtSWXFOTFl0bVRpVk5RTTlDYWRsZ1RJRTBNMWdFTG50NFZjREtIZklTZkhkdjN1VnBzNEtzV1pzWk82VEFhenZ4VHZPaU53YlZScQ"
     }
   ]
 }
