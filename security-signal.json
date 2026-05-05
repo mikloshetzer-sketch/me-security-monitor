@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-05 10:13 UTC",
+    "updated": "2026-05-05 11:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-04-29",
     "period_end": "2026-05-05",
     "total_events": 131,
-    "total_risk": 112.16,
-    "normalized_risk_score": 44.9,
+    "total_risk": 114.56,
+    "normalized_risk_score": 45.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 30,
     "security": 3,
-    "political": 7,
-    "other": 91
+    "political": 8,
+    "other": 90
   },
   "source_counts": {
     "news": 125,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 60.65
+      "risk": 61.15
     },
     {
       "name": "Israel",
       "risk": 27.86
     },
     {
-      "name": "United Arab Emirates",
-      "risk": 7.35
-    },
-    {
       "name": "Middle East",
-      "risk": 6.3
+      "risk": 7.2
     },
     {
       "name": "Gaza Strip",
-      "risk": 4.3
+      "risk": 7.2
+    },
+    {
+      "name": "United Arab Emirates",
+      "risk": 4.45
     }
   ],
   "top_events": [
@@ -102,6 +102,15 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPV3FudHBoUElTRzAtS2dDWl9rbHFIbm12dTN0VkE3R1lzRllNTmxHZ0swV2w2a180SVlGNUFEWXhEaHRnVy1KemdpRi1HcjdOV2FMd2htUTdnRS1Pbnh4cUVnbDdnU0Q4Mk9zdlBfcHJndjE3MHllVkp1OFJuZXZRSEpGSlJfelFPNnl6MC15ZHZJeVgyaEJsZnU4RUljV1JVMjViWWxkSVFfejB6WHlWY1hiSdIBuAFBVV95cUxPM0d3bWhoeWNia09ORlI1TmZoa3ZIV2h0VFYzLXd5Q2U0UTQ3YVJ5cXlkN0pPNUN1dFhMN2NhZkRGWTZ1RG42bFJMVFg3Nks0a2dxSWJPVWxZRWtzN2dIWUM5Vl9TYUY3Ny1hZVpLSTZvVVUzbGNoLVBjUjZvWUx2R0pyVXhHcVl1SjBGSmJmb0hMU3NOY1NSSHZ5LUFrVTdQbFJGS2p0WjRqWmdCdlVUTDhodGRkaVR5"
     },
     {
+      "score": 3.0,
+      "date": "2026-05-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike sparks fire in northern Gaza City - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNEdGMGYtNENhTUFEaDZyS2tzRUxQMERqRGVQcVhQQU9wbnc0V1BiVWlDMm1ESkZQVmNfYXNTX1l2WmJtWHk0b3ZOeTF3d1dFSnludXkydFIzLXVSX0VNQ0IyaGNQR29kbE50eWNYN2pSc3FsTFVvU1ZaOENyb1poWnN6QUFnRHQ3SkNWcEE4aUhnQ1hHMEhKZ0xMZFdSSWfSAaQBQVVfeXFMTkg2dnJMd1ZObnF6R2tNRXBOMHl2SEhyNlBEamZfSG8tMTQtN2dXVm54Xy1xRGhURkxULVJTLXZrZ3FWSTA1UTdjMEVUS3JiMi1BeXF1Zmx3b3BIdUdqdldscTNKcW5UaU5ucW5ITXlEQ25zUW5FQVZyVDVsNVBaNVYzYXJRcGNpR2xtdnVuTlpRa3RIVlFVbUFoSTlseUJUa05Na1Y"
+    },
+    {
       "score": 2.73,
       "date": "2026-05-02",
       "category": "military",
@@ -109,15 +118,6 @@
       "title": "Iran Update Special Report, May 2, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-2-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE declares situation safe after missile threat alert - Reuters",
-      "location": "United Arab Emirates",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdF9vUWNNSHN4WHJFTDAweEtVaDV0QnlRMzd0LUQ4SlF2N0dmdVEybjVoQVRBVkdzREE5WHljSDhUSGtQQWttWjRROGJyR0ZlNHVwOVczWGVhdjVOdzY3aXRHYlhwMXFUbG9yS2FvbWhTYXJSVHFINU1ZeEFwVnJGdHZYLWVUazdSTlpuWk15azRYckRZcjV6U2RvOExpYzg2RG52TWoydC13NzJM"
     },
     {
       "score": 2.7,
@@ -133,9 +133,9 @@
       "date": "2026-05-04",
       "category": "military",
       "source_type": "news",
-      "title": "UAE accuses Iran of attacking empty ADNOC oil tanker in Strait of Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWHBfSmVZblhUdVB0b0J5dHUxVlV2Tm9jZWZXTVk1b0hUejJlQzlHSlJidldJR2xvZGRmZVFVT2l3UXJ2SVEzNXd2amFFUUVHU2dSaG5MXzBPSlotcVFjcFp1aklxbDZXOHFyVjFqRFlWVnFmVGF2RmFpTUdPWHc1OXZOamhzMlJNcXJGd2lsVzRxQlFPM0oyQ25ySVBRSFB2UmlqOHp3QUVZcm5RMm9NQ1pOWDNRQ1U"
+      "title": "UAE declares situation safe after missile threat alert - Reuters",
+      "location": "United Arab Emirates",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdF9vUWNNSHN4WHJFTDAweEtVaDV0QnlRMzd0LUQ4SlF2N0dmdVEybjVoQVRBVkdzREE5WHljSDhUSGtQQWttWjRROGJyR0ZlNHVwOVczWGVhdjVOdzY3aXRHYlhwMXFUbG9yS2FvbWhTYXJSVHFINU1ZeEFwVnJGdHZYLWVUazdSTlpuWk15azRYckRZcjV6U2RvOExpYzg2RG52TWoydC13NzJM"
     }
   ]
 }
