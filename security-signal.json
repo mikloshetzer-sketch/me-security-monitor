@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-05 03:51 UTC",
+    "updated": "2026-05-05 06:29 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-04-29",
     "period_end": "2026-05-05",
-    "total_events": 126,
-    "total_risk": 97.66,
-    "normalized_risk_score": 39.1,
+    "total_events": 130,
+    "total_risk": 110.76,
+    "normalized_risk_score": 44.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
+    "military": 31,
     "security": 3,
     "political": 7,
-    "other": 90
+    "other": 89
   },
   "source_counts": {
-    "news": 120,
+    "news": 124,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 50.85
+      "risk": 59.95
     },
     {
       "name": "Israel",
-      "risk": 27.76
-    },
-    {
-      "name": "United Arab Emirates",
-      "risk": 5.0
-    },
-    {
-      "name": "Middle East",
-      "risk": 4.9
+      "risk": 28.96
     },
     {
       "name": "Gaza Strip",
-      "risk": 3.8
+      "risk": 6.8
+    },
+    {
+      "name": "Middle East",
+      "risk": 5.35
+    },
+    {
+      "name": "United Arab Emirates",
+      "risk": 4.65
     }
   ],
   "top_events": [
@@ -70,9 +70,45 @@
       "date": "2026-05-05",
       "category": "military",
       "source_type": "news",
+      "title": "US strikes Iranian fast boats as Iran attacks UAE oil facility",
+      "location": "Iran",
+      "url": "https://www.bbc.com/news/articles/cjwp432d0v5o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "‘Dangerous escalation’: World condemns Iran after attacks on UAE - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYUppWHhIZWhkeTdVOWhJU2dvSC01cS1sQnB5dGNBY0RqMjUxdnVaRDJnRkltejhtUVRqSXd5ZFd1UnRselZfbU1xWlhPV1ZIUVpmQmtpS2VBekhNSWw5ekJNZExqMFRnbXh2NThmb3F5Zl9UOWd4THdCREpVUFJNVlVyQzBoMzZlalIyNTVkSnVTTkZVcEVSUHRKeTJVY1N6RGFv0gGoAUFVX3lxTFA3MTJNbXNUVjk5MzNBODl5UHJmM0poVzVNZjI2N1ZIRlc1YTRLQ2NRdzBqLWhQeFh4a3U1dElKd0lRU2d4b1RXWWc2TVVOaVpSNk9WZ0xrTmllNzMyQ19iR2pqX01lRmcxb3Z5ZEQ4Z1BNb25sWGlyNUFUYjJUb0h1ZlZjLTNCRWlmOVFSVl82OTB1bHV5UjhEV1NZOW5YcUZSS2pQNnFLSg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-05",
+      "category": "military",
+      "source_type": "news",
       "title": "UAE accuses Iran of attacks as ‘large fire’ breaks out at oil refinery - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNOF9BY1FLenNuX1FCU2VTTmk0SmxDN0FqVHRFa3Nua0t6R0VBOVJBYy1xdXhsUmtzNHhqZjVMdGhPYjJobndNOWR3bFhib3VrWnJlM1BnbUxtNnJqZjFFOHlXMDRJM3p0YUl4TENJcUgzWFZRcUNZQTlBQnJrUlBrMXhJVi1pOEQ1WGNTTGpKT005WmMzUW9FbTVBYUPSAaIBQVVfeXFMT0szZUswSjRJZ0h2dUNGbm1USmdPSEZIUGszMVpsbktkaHJaZ1RoTXI5ZnlqdXhWNEpRMXY5MkxtcHRkSDNHWG8yVDJXSFNROXV0YkFscWRPdUVxcHI1cmtWN1lYSnlJX1dNQlU2QVhrbHZienBtVnFPVmtocXE5M2VkcnNRTHZvZ2NBdVI0WnVROG9TZ3Zxcmk3dlRwVFhMWWd3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike sparks fire in northern Gaza City - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNEdGMGYtNENhTUFEaDZyS2tzRUxQMERqRGVQcVhQQU9wbnc0V1BiVWlDMm1ESkZQVmNfYXNTX1l2WmJtWHk0b3ZOeTF3d1dFSnludXkydFIzLXVSX0VNQ0IyaGNQR29kbE50eWNYN2pSc3FsTFVvU1ZaOENyb1poWnN6QUFnRHQ3SkNWcEE4aUhnQ1hHMEhKZ0xMZFdSSWfSAaQBQVVfeXFMTkg2dnJMd1ZObnF6R2tNRXBOMHl2SEhyNlBEamZfSG8tMTQtN2dXVm54Xy1xRGhURkxULVJTLXZrZ3FWSTA1UTdjMEVUS3JiMi1BeXF1Zmx3b3BIdUdqdldscTNKcW5UaU5ucW5ITXlEQ25zUW5FQVZyVDVsNVBaNVYzYXJRcGNpR2xtdnVuTlpRa3RIVlFVbUFoSTlseUJUa05Na1Y"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran says US military killed five civilians in attacks on passenger boats - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPV3FudHBoUElTRzAtS2dDWl9rbHFIbm12dTN0VkE3R1lzRllNTmxHZ0swV2w2a180SVlGNUFEWXhEaHRnVy1KemdpRi1HcjdOV2FMd2htUTdnRS1Pbnh4cUVnbDdnU0Q4Mk9zdlBfcHJndjE3MHllVkp1OFJuZXZRSEpGSlJfelFPNnl6MC15ZHZJeVgyaEJsZnU4RUljV1JVMjViWWxkSVFfejB6WHlWY1hiSdIBuAFBVV95cUxPM0d3bWhoeWNia09ORlI1TmZoa3ZIV2h0VFYzLXd5Q2U0UTQ3YVJ5cXlkN0pPNUN1dFhMN2NhZkRGWTZ1RG42bFJMVFg3Nks0a2dxSWJPVWxZRWtzN2dIWUM5Vl9TYUY3Ny1hZVpLSTZvVVUzbGNoLVBjUjZvWUx2R0pyVXhHcVl1SjBGSmJmb0hMU3NOY1NSSHZ5LUFrVTdQbFJGS2p0WjRqWmdCdlVUTDhodGRkaVR5"
     },
     {
       "score": 2.73,
@@ -100,42 +136,6 @@
       "title": "UAE's Fujairah says fire breaks out at petroleum complex after Iranian drone attack - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQd0RoVkhpMUVndndNeWc2cVcyLUMwUm1SYy1rN0kycGlGc0VPZEpEdnQya18xYXI3UkJHOE51RnJqZVprVUtuMEF2cU1NRG1kc3VkMTZGUFFOUjJ4bXpOVDhRbWU3OThWSXJrVTR4YVVsU3hFRWhRdUtwdGl4Vkt0SXd4ZTdSd1dzRHQwZ0loRjlEMjRFWGdtZzRNWkljTFJjQjBvdXlNbGNleGliR29MbkxvVVdFTW5zRkRGbElKNjZ1MjJhMm15b0FicGtLdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE accuses Iran of attacking empty ADNOC oil tanker in Strait of Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWHBfSmVZblhUdVB0b0J5dHUxVlV2Tm9jZWZXTVk1b0hUejJlQzlHSlJidldJR2xvZGRmZVFVT2l3UXJ2SVEzNXd2amFFUUVHU2dSaG5MXzBPSlotcVFjcFp1aklxbDZXOHFyVjFqRFlWVnFmVGF2RmFpTUdPWHc1OXZOamhzMlJNcXJGd2lsVzRxQlFPM0oyQ25ySVBRSFB2UmlqOHp3QUVZcm5RMm9NQ1pOWDNRQ1U"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Britain condemns Iranian strikes on the United Arab Emirates - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWmFCelp6UGI5VWtSa1J4Y044OVRsYXIya2JsUENFcDQ0M0FoWGhjRzRkTE9pcXpPazVWaXNST0hia3NGcXRZVDRzR01aSkxPYzZiVTJEejdxNzlLa0FBdVl1Nl8tWWhHR3JUOF9NVlJhTFAyd3I0QU1zX1dXYWc5QTRVelFXUnBfLWJsOGJBQ2UyeV82WmpYNmZIUjRJNGdlREpjLV9aVU5mbW8"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran launch new attacks as they wrestle for control of Gulf waters - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMVRJTjB4dzJvQ2luQWJRdHZHOURiZDdYZ3pLTnFHVXEzc3ZpTFd5bHV6VzhkaGpOUTNEOVNKZ1VveWNZWk9YY0l5OXpQb195YXZqUFl4RnoxUnFCTS1hYzg1akFjWERzZDNwWmhLMHpPZFk2V0V1OTFXRDdoX3VTWE1jU1prSGZQcDY3SlJjeGdzUHp3cjBEUXM0Y0VWZWFPamduNFcxVTlmSDdaSzlWLTlsMnR6SnZaWGtPTEdCSmR3OUJZSXlv"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "US says it sinks Iranian small boats, shoots down missiles, drones as it opens Strait - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQY1VnS0tzQWtVVnd4SDdsZ1hjRTNQZ05OcUJWZWJPMldpZGlOLUZGY3hqeHdlU1EwcDBPQ25wMVBPT241R0NPNHRaWE8xZUhPSm0xb3hGYkxDMmRJcm5YdWIzOXhsaGdtOXVSLTZxMFp2SWJ0UndneXZWa2ZlT1llYUhWZTZ2clBuSXFkeUR2azB4aV85NUgzSmY3X1ZITEp0SkFHaFUwRHBDSDh5UGpPZUwzX2twcndHV015bDlyRVQyZmtnTzNPcXU5OHBwQQ"
     }
   ]
 }
