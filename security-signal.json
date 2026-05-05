@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-05-04 21:21 UTC",
+    "updated": "2026-05-05 03:51 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-04-28",
-    "period_end": "2026-05-04",
-    "total_events": 140,
-    "total_risk": 110.56,
-    "normalized_risk_score": 44.2,
+    "period_start": "2026-04-29",
+    "period_end": "2026-05-05",
+    "total_events": 126,
+    "total_risk": 97.66,
+    "normalized_risk_score": 39.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 26,
     "security": 3,
-    "political": 8,
-    "other": 103
+    "political": 7,
+    "other": 90
   },
   "source_counts": {
-    "news": 134,
+    "news": 120,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 55.5
+      "risk": 50.85
     },
     {
       "name": "Israel",
-      "risk": 30.96
-    },
-    {
-      "name": "Middle East",
-      "risk": 7.1
+      "risk": 27.76
     },
     {
       "name": "United Arab Emirates",
-      "risk": 5.25
+      "risk": 5.0
+    },
+    {
+      "name": "Middle East",
+      "risk": 4.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 4.7
+      "risk": 3.8
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-05-04",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report May 4, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-4-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-05-03",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-3-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-05-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE accuses Iran of attacks as ‘large fire’ breaks out at oil refinery - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNOF9BY1FLenNuX1FCU2VTTmk0SmxDN0FqVHRFa3Nua0t6R0VBOVJBYy1xdXhsUmtzNHhqZjVMdGhPYjJobndNOWR3bFhib3VrWnJlM1BnbUxtNnJqZjFFOHlXMDRJM3p0YUl4TENJcUgzWFZRcUNZQTlBQnJrUlBrMXhJVi1pOEQ1WGNTTGpKT005WmMzUW9FbTVBYUPSAaIBQVVfeXFMT0szZUswSjRJZ0h2dUNGbm1USmdPSEZIUGszMVpsbktkaHJaZ1RoTXI5ZnlqdXhWNEpRMXY5MkxtcHRkSDNHWG8yVDJXSFNROXV0YkFscWRPdUVxcHI1cmtWN1lYSnlJX1dNQlU2QVhrbHZienBtVnFPVmtocXE5M2VkcnNRTHZvZ2NBdVI0WnVROG9TZ3Zxcmk3dlRwVFhMWWd3"
+    },
+    {
+      "score": 2.73,
       "date": "2026-05-02",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +84,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-2-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-04",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdF9vUWNNSHN4WHJFTDAweEtVaDV0QnlRMzd0LUQ4SlF2N0dmdVEybjVoQVRBVkdzREE5WHljSDhUSGtQQWttWjRROGJyR0ZlNHVwOVczWGVhdjVOdzY3aXRHYlhwMXFUbG9yS2FvbWhTYXJSVHFINU1ZeEFwVnJGdHZYLWVUazdSTlpuWk15azRYckRZcjV6U2RvOExpYzg2RG52TWoydC13NzJM"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-04",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQd0RoVkhpMUVndndNeWc2cVcyLUMwUm1SYy1rN0kycGlGc0VPZEpEdnQya18xYXI3UkJHOE51RnJqZVprVUtuMEF2cU1NRG1kc3VkMTZGUFFOUjJ4bXpOVDhRbWU3OThWSXJrVTR4YVVsU3hFRWhRdUtwdGl4Vkt0SXd4ZTdSd1dzRHQwZ0loRjlEMjRFWGdtZzRNWkljTFJjQjBvdXlNbGNleGliR29MbkxvVVdFTW5zRkRGbElKNjZ1MjJhMm15b0FicGtLdw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-04",
       "category": "military",
       "source_type": "news",
@@ -93,49 +111,31 @@
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWHBfSmVZblhUdVB0b0J5dHUxVlV2Tm9jZWZXTVk1b0hUejJlQzlHSlJidldJR2xvZGRmZVFVT2l3UXJ2SVEzNXd2amFFUUVHU2dSaG5MXzBPSlotcVFjcFp1aklxbDZXOHFyVjFqRFlWVnFmVGF2RmFpTUdPWHc1OXZOamhzMlJNcXJGd2lsVzRxQlFPM0oyQ25ySVBRSFB2UmlqOHp3QUVZcm5RMm9NQ1pOWDNRQ1U"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-04",
       "category": "military",
       "source_type": "news",
-      "title": "US sinks Iranian small boats, shoots down missiles, drones as it opens Strait - Reuters",
+      "title": "Britain condemns Iranian strikes on the United Arab Emirates - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQY1VnS0tzQWtVVnd4SDdsZ1hjRTNQZ05OcUJWZWJPMldpZGlOLUZGY3hqeHdlU1EwcDBPQ25wMVBPT241R0NPNHRaWE8xZUhPSm0xb3hGYkxDMmRJcm5YdWIzOXhsaGdtOXVSLTZxMFp2SWJ0UndneXZWa2ZlT1llYUhWZTZ2clBuSXFkeUR2azB4aV85NUgzSmY3X1ZITEp0SkFHaFUwRHBDSDh5UGpPZUwzX2twcndHV015bDlyRVQyZmtnTzNPcXU5OHBwQQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill dozens within days in Lebanon despite ceasefire",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cy523z7x0g5o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-05-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says it fired missiles at US warship to prevent it entering Hormuz - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZHM1eXhMTkdia0w1Smpia21neWNxcFJqOTM4UVV0aUhaQkc3N0JFTzJHTTRjSW9SOHo0VEx5dWlXU0Ezd0MteGRUa1E4S2ppQ3pOakNmMlpyQldmRWNCN2xNZGFabmVHd0xpSUxNNEl4RzN5dzYxbnlqN1NRTk96eHA3a085Rk9qY0VzcFRJUDBPWDdoMU8ySWhINEN5VC04RUJqMC1tMy1jYW1XN0tMNGVXeW1Ca1ltYUZnX0hn0gHDAUFVX3lxTE5XWUJ2d0VaY0JhVUpRU2VPdW1oUWJNcDRHYWNQdWw4dnlubHRMcC1PbkxYNzdOUkk4TUZzUDdWWG5oSmlYTE5JM2t3WWtSWGFkNDVibGhDUEVzZlpBcUI3d19JTk9ISGlvQ1BseHNNUFc5WVFNUjU4ZDFoLUxWNXdUY25OcUVZR3RtZFV5Yy1fS2hZWFdFTkpyUGFWX0ZfaC1RazJvLXM3dENuMFZZQm45ei16QlpESUlSUzFQejVVZ0JhUQ"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-05-01",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 1, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-1-2026/"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWmFCelp6UGI5VWtSa1J4Y044OVRsYXIya2JsUENFcDQ0M0FoWGhjRzRkTE9pcXpPazVWaXNST0hia3NGcXRZVDRzR01aSkxPYzZiVTJEejdxNzlLa0FBdVl1Nl8tWWhHR3JUOF9NVlJhTFAyd3I0QU1zX1dXYWc5QTRVelFXUnBfLWJsOGJBQ2UyeV82WmpYNmZIUjRJNGdlREpjLV9aVU5mbW8"
     },
     {
       "score": 2.7,
-      "date": "2026-05-03",
+      "date": "2026-05-04",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices jump 6% as Iran sets UAE oil port ablaze, strikes vessels in Strait of Hormuz - Reuters",
+      "title": "US and Iran launch new attacks as they wrestle for control of Gulf waters - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYm1UTGNtdHU5aVdlSkxNS25FbzFkcEZBUXNYVzc2SmQ5Zm5xN3NLWjVGTkVwT08wY3FXMTZ2Qk9ld1RfUEhFWi1YaElRVlpVSHl5RFVyNFozWFl1ajFta3UzcDlRY19QM21VdUJNZ2dGZmpNZnljNERTV2V0ZG90U01sYWNkbWwtc1JSSXNvWjZFR1I0TjJLTm9QOWx4RVFheXRaRVpiajVVRko5LXhqeVVDdnFzUm9qNENoVFdxNFFJYUpM"
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMVRJTjB4dzJvQ2luQWJRdHZHOURiZDdYZ3pLTnFHVXEzc3ZpTFd5bHV6VzhkaGpOUTNEOVNKZ1VveWNZWk9YY0l5OXpQb195YXZqUFl4RnoxUnFCTS1hYzg1akFjWERzZDNwWmhLMHpPZFk2V0V1OTFXRDdoX3VTWE1jU1prSGZQcDY3SlJjeGdzUHp3cjBEUXM0Y0VWZWFPamduNFcxVTlmSDdaSzlWLTlsMnR6SnZaWGtPTEdCSmR3OUJZSXlv"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-05-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "US says it sinks Iranian small boats, shoots down missiles, drones as it opens Strait - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQY1VnS0tzQWtVVnd4SDdsZ1hjRTNQZ05OcUJWZWJPMldpZGlOLUZGY3hqeHdlU1EwcDBPQ25wMVBPT241R0NPNHRaWE8xZUhPSm0xb3hGYkxDMmRJcm5YdWIzOXhsaGdtOXVSLTZxMFp2SWJ0UndneXZWa2ZlT1llYUhWZTZ2clBuSXFkeUR2azB4aV85NUgzSmY3X1ZITEp0SkFHaFUwRHBDSDh5UGpPZUwzX2twcndHV015bDlyRVQyZmtnTzNPcXU5OHBwQQ"
     }
   ]
 }
