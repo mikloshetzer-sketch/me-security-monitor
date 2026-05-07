@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-07 07:19 UTC",
+    "updated": "2026-05-07 10:38 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-01",
     "period_end": "2026-05-07",
-    "total_events": 153,
-    "total_risk": 142.56,
-    "normalized_risk_score": 57.0,
+    "total_events": 147,
+    "total_risk": 140.01,
+    "normalized_risk_score": 56.0,
     "risk_level": "MEDIUM",
-    "confidence": "HIGH"
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 36,
-    "security": 5,
-    "political": 26,
-    "other": 86
+    "military": 35,
+    "security": 4,
+    "political": 27,
+    "other": 81
   },
   "source_counts": {
-    "news": 147,
+    "news": 141,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 68.0
+      "risk": 65.45
     },
     {
       "name": "Israel",
-      "risk": 39.91
+      "risk": 36.81
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.15
+      "risk": 18.9
     },
     {
       "name": "Middle East",
-      "risk": 7.95
+      "risk": 7.2
     },
     {
-      "name": "Syria",
-      "risk": 3.6
+      "name": "Tehran",
+      "risk": 3.05
     }
   ],
   "top_events": [
@@ -64,6 +64,15 @@
       "title": "Iran Update Special Report, May 5, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-5-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "The Gaza journalist killed on the day his daughter was born - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSDd1OEJDeEZmRUlSWE5GVzBOODd6N2FKWWtpa0xoRFR5YWtlZUVOckp3WndsUnJCUWREZndNYWhzSmpDT1VtbzZkUXU3ekdtZjAzcDNVeEpUUkFKWHhYZnc3eXlTTHh6WkxoZEdwX0JPYkFpa0JxS2l6RmNHVDFQbFFTZFVWNFVDZnFIZVZrWmU5TlZzamJZeFdadkFZaFFrT0tmckJ30gGrAUFVX3lxTE1kbXBLMUlWZUZQZVdkZGFUQzFmM1JFb0xaM3MzNU9sNzd4N0JvTkVKcnVROVdiTnhTOWh5VzB3NkkwMzBLbG10bE1xOHBhZUF5ZVdSbnFGUzNDMjhNOF9OMjNLWUxLUWRmVlRCYk5zVFh5eDdKUGJrWEp4eHFwQkdSQ0VDYVBqRXhJZGF2YVVDZER5Wl9heVZOb05SOFBIcFRDd2FXUFh6Q1dkZw"
     },
     {
       "score": 2.73,
@@ -97,15 +106,6 @@
       "date": "2026-05-06",
       "category": "military",
       "source_type": "news",
-      "title": "Israel strikes Beirut for the first time since the ceasefire - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdE44Z1Zqd204VUV3UEdjTlFBRFRjbU1ZSmJvVEl0QUNUZm1Yc28yWmlKY29Vc3lxaDRLUUMzc0VRb0VHcEFRaG5IQzVmdmRsS3dRZy1zX3Brc1k2bW5uODJRbW5zSElLcktJSjJ5SWNHeWQyeEx4RUFlR1dQMlFIRVBnVXY4UzR0cVZkYjJkU3d5ckVyUHQxbnBxUWl4N3V1MGRxcGNfQ09BQ1ZFSGVLcEdFcm01Tks2N2Mteg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-06",
-      "category": "military",
-      "source_type": "news",
       "title": "Israel strikes Beirut for first time since Hezbollah ceasefire",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/crmpjjl02l2o?at_medium=RSS&at_campaign=rss"
@@ -129,13 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQeUFPR3FzOFNtQVRKUm9WbVFNR000VmJlVllXcnRlZjYxT3JFQVBoTmRGZkxhZEgxU0o5MnBKOUJTMGtheHdvakd5N0FHVy1Zek1DZGUzMHUwYUt5Z1B1ZGhpQ1ZRNzZQR2hEZC16QXZLbzlxa3NZbGFJNWItY3ljX3p4WXd4X1JTaGY2SzJyYnpicTg0YjJvQXI4RUU4UWdWelVnN1BkUE5lbnZPMzJkMVVLRdIBuAFBVV95cUxONkdxT0hTdlMwdC12VmVvc2ZON0VKLUg2S1ZkQlF2eHo2RXhjdWlkRUF2WWdiRzYxbDZReWJYSGVTVV83cGNvdDJZa2l1cHhwX1B1dzhPNUE3MXRPbFNDV1dGbzY1NFg4U0lXRHZ2VUpka3VhbVgzbnA3MXZpVFMxTFdpaFVEdk5kSjUwckZ4UW1UY0FvY013X3MtVDVsZDdoTUdfY1BCaUJjcERFQ0kzTGNEZlBmQ0tO"
     },
     {
-      "score": 2.4,
-      "date": "2026-05-05",
+      "score": 2.7,
+      "date": "2026-05-06",
       "category": "military",
       "source_type": "news",
-      "title": "UAE restricts airspace after Iranian missile, drone attack - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSVF6cS1nSDVPVVZXeUs5Njhfb0dTYlBvcjJCczVsSmh1dXN3WmdVblNaZ2R2TzVlbmkyTFV4MktIaDJnSVZENS1HNzhBdWlrX203T0pmRVVsVW1lUTZ3ME9sV0MxX21EMm9XSEdIU25IUjBmWmpDVVBMUzN1bDY3VzB0Y1VFNFlIMEJZdV9COWF5bm1HZ2U0LUpOZkZlSTNSbjRJNWRmQUhNejlSWXBkNg"
+      "title": "Israeli strike kills colonel in Gaza police force, say Palestinian medics - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZThFcXlSVG45S29zUnduNmlDdnh0VjdjYnlOdkNLRmxfR2JhUzZ1dGw2dVZqUjhRSEVtRzV2T05LOXk0X3ptWUdoMGc5bzJRc1VxcWZQdU1pWUhxU3NpTVJienZGdzhwX2dnelc1ejZJNmxUempFSTNyaGhKZHVQYUdtc3NJb25IZGUwaDFyYms4M1VyVjBtODN1bFlWUkU2MGdJbXBWR2hVZjd2YWJhZ3Rn0gG3AUFVX3lxTE81aTAxcFdXTlduaGplY3RYUERXQmhiR3YtZ2Q4S3I0YUtSdG1qaU5CUmpXNHFBNXg5NWp6d244VnMtVUNuVldwRmZZOGotUndPbmt6bGpkZEJuQ2VkWlY3WXJIMlB6NmNzZnlGMVEyd2hmdVZnMnR0Z2dXQk5jWHIwNXplZHdwNkNwYk4zT3JiOFdpcU9ob19kM2N0MWd5VFhrNXFweU5ZejA3QzE0bWx4WFM1dWlZVQ"
     }
   ]
 }
