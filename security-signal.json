@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-05-07 23:12 UTC",
+    "updated": "2026-05-08 03:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-05-01",
-    "period_end": "2026-05-07",
-    "total_events": 156,
-    "total_risk": 151.56,
-    "normalized_risk_score": 60.6,
+    "period_start": "2026-05-02",
+    "period_end": "2026-05-08",
+    "total_events": 158,
+    "total_risk": 136.21,
+    "normalized_risk_score": 54.5,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 34,
-    "security": 2,
+    "military": 33,
+    "security": 1,
     "political": 31,
-    "other": 89
+    "other": 93
   },
   "source_counts": {
-    "news": 150,
+    "news": 152,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 71.75
+      "risk": 60.85
     },
     {
       "name": "Israel",
-      "risk": 42.66
+      "risk": 43.01
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.5
+      "risk": 11.45
     },
     {
       "name": "Middle East",
-      "risk": 7.7
+      "risk": 7.5
     },
     {
-      "name": "Beirut",
-      "risk": 3.0
+      "name": "Tehran",
+      "risk": 3.1
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-05-07",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, May 7, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-7-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-05-06",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-6-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-05-05",
       "category": "military",
       "source_type": "isw",
@@ -66,16 +75,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-5-2026/"
     },
     {
-      "score": 3.0,
-      "date": "2026-05-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military strikes Iran’s Qeshm port and Bandar Abbas, Fox News reporter says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMTZwUEpxOWVFbWliMVZyLS1LNkx2bEV6cFRVUzRfN3pxY1Y5S0dhd3kwR0VtOTl2MVdhUEduLVc4Wm9HR0ZBbDNGYklrNEU0dlJyalBaZmpLU3FHc1RsTEdmclJUZXpRNC1vcU1WY1M3Q012Y1o3N096VlNwWTlaaC1qdGdLMFpnbDA2SmI4a2VIcjlYaW56cHVwYnRCcG5EUGxLMFpOZ0drZkVSczR1RUlPVThBY3RzRGEzbWNFMVF4RXhV"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-07",
       "category": "military",
       "source_type": "news",
@@ -84,7 +84,16 @@
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRFFjYzMybXlET01QRW9uRjY5Z0tyQndJNXdvVHFoUWRmMHNJelJXdUZVV3pKRzlZd0RnRmhGdlFPb1dZZmtvQTkxYWpNMHRfTi1hcXdsSDB3b2Q3dTkxQmVrNVd1TUVYTjVkajdnNTk5QlN5WFdESkdMUEJXNjNwY21aWEw1eG51aW5nenhsUFk2UGRSdVZwYTF2QWVVcnE1RGxlcks1c0dJQQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-05-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "US military strikes Iran’s Qeshm port and Bandar Abbas, Fox News reporter says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMTZwUEpxOWVFbWliMVZyLS1LNkx2bEV6cFRVUzRfN3pxY1Y5S0dhd3kwR0VtOTl2MVdhUEduLVc4Wm9HR0ZBbDNGYklrNEU0dlJyalBaZmpLU3FHc1RsTEdmclJUZXpRNC1vcU1WY1M3Q012Y1o3N096VlNwWTlaaC1qdGdLMFpnbDA2SmI4a2VIcjlYaW56cHVwYnRCcG5EUGxLMFpOZ0drZkVSczR1RUlPVThBY3RzRGEzbWNFMVF4RXhV"
+    },
+    {
+      "score": 2.7,
       "date": "2026-05-07",
       "category": "military",
       "source_type": "news",
@@ -93,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMUNGeHpTdEUtalgzMExpbTA5SUV4OTVkeE9KeWVmMGxKLTQ2TkI5Z2RkUHZXNk8wd01GRjM4V3B2X2VlREg1Nk5IdkhUeXd3b1VIUHlXWDR0Vk4xNW9VYkdwUUhFRnJNU3Bpa0FZQjhwUUZGQmlNOXVoN19acS1pMHJ6OGU5ZVIwUFVVMTkxMmpvMXJZMlo4RkhYVU9NMUZncmF3UXMzdzU1RFh6NWxWSWxnSGxuTnlRamw4"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-07",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOE1uOURBaC03bzROOEdzRzdQOGFvc1hOanMxM2w2NS0wOFc2ei1Ga1JDMHBTd0QtVzh4ZGdXSE16TFhkM1lXTWRZXzZ3bDM1SFo3Y1JfXzRoV09fQmJZSUZmOHNpWVptcjBKanJxM21GUS1Ncjc2Qm1rOTFkTk9yck9XWWRfZVk2QWNrdHZNWGIxUEkwX29aMDZ5em5ZaHZfcWlTQ2tncGh5WXFRT2Q0NnhyOXJZU3dYOWc"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-07",
       "category": "military",
       "source_type": "news",
@@ -111,16 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT0hQc1RYTnh3TWJJbjd5RG9SclJJZmNXc3Z0bWRjLUE5ME9NNENnZUdaajRoMDFMNXlqbEEtbkRhcVhzaWN6NU1BME1US3BTbFZ4b28ydGtaRkIxQXRhVmNGZ0dNbWRhZ1ZyWVh2d3RQR25NR09CSkxnc01rdldEd1l4U0hkS3c2TzZrRHVua084dER0RjYxOVRjYkgxUzNSWHVwQ2JlZ1NoREd6VWhNS9IBtgFBVV95cUxPa3pqSzdSUklCRFIzNFdJbzlnem9KMDl2VHN5bkhvUk1oTUF5NFBJVzdHNmxtRDQwTlVMYVlscnVBWjBqSnBDc3dyeXdIYVZBX01FWEtFVkJoclQ4RTk2TkptMEpNeUZxeVdqMXpudk5HSlhBMnpYbjZiWmRUUjdoMmlZZVhUYkRQUmpOSzBPVFlRSUN3WlZkUGFwR0VScGZiamNYRExreVlXdEtKX1g0bFd3X2RtQQ"
     },
     {
-      "score": 3.0,
-      "date": "2026-05-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel bombs southern Lebanon after targeting Hezbollah commander in Beirut - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQeUFPR3FzOFNtQVRKUm9WbVFNR000VmJlVllXcnRlZjYxT3JFQVBoTmRGZkxhZEgxU0o5MnBKOUJTMGtheHdvakd5N0FHVy1Zek1DZGUzMHUwYUt5Z1B1ZGhpQ1ZRNzZQR2hEZC16QXZLbzlxa3NZbGFJNWItY3ljX3p4WXd4X1JTaGY2SzJyYnpicTg0YjJvQXI4RUU4UWdWelVnN1BkUE5lbnZPMzJkMVVLRdIBuAFBVV95cUxONkdxT0hTdlMwdC12VmVvc2ZON0VKLUg2S1ZkQlF2eHo2RXhjdWlkRUF2WWdiRzYxbDZReWJYSGVTVV83cGNvdDJZa2l1cHhwX1B1dzhPNUE3MXRPbFNDV1dGbzY1NFg4U0lXRHZ2VUpka3VhbVgzbnA3MXZpVFMxTFdpaFVEdk5kSjUwckZ4UW1UY0FvY013X3MtVDVsZDdoTUdfY1BCaUJjcERFQ0kzTGNEZlBmQ0tO"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-07",
       "category": "military",
       "source_type": "news",
@@ -129,13 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcXdpUDF4N0J1aHYwaXZiYmpVUjUyb0dWX0NwYUVyTG0xb3lHblpZQUFpRHQ4MVMxdjhRbXBZb1NvWTJZazdwbHFWdEZLSzlLVllCUVFUeEZWZGFncmQ1ZGNTRGJUcm81YVpmVDlUYXZpOFNuQXc2ZXpwbUlqRGU4bjByVmF0cVVtemtLWmlPYVBPNUZ0SnJvbml5d1k3Vjg4UEVaakJySmRqdnhN0gGyAUFVX3lxTFBIelA3U09Wc0VFT3BKNkxVNW1xTUFTWnlZQmtrUlZ2V3ljeEJELVV5dkJSZEpQLU1CU2p5UWdfejBjbzRac2c1T2thbDJlS2lHcWFYMGpDNGowZFVVX0lqbDRXTTVRUXJzZE5HeE9LLWV3YW5Fa1JxWVZHLUVTQUROcDRoNG9SN2hrVzcxWERJamdiQUgwcVlnRWpXWlhGVXk4eGpRZ19abDRWRnhiczFOSkE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-07",
       "category": "military",
       "source_type": "news",
-      "title": "The Gaza journalist killed on the day his daughter was born - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSDd1OEJDeEZmRUlSWE5GVzBOODd6N2FKWWtpa0xoRFR5YWtlZUVOckp3WndsUnJCUWREZndNYWhzSmpDT1VtbzZkUXU3ekdtZjAzcDNVeEpUUkFKWHhYZnc3eXlTTHh6WkxoZEdwX0JPYkFpa0JxS2l6RmNHVDFQbFFTZFVWNFVDZnFIZVZrWmU5TlZzamJZeFdadkFZaFFrT0tmckJ30gGrAUFVX3lxTE1kbXBLMUlWZUZQZVdkZGFUQzFmM1JFb0xaM3MzNU9sNzd4N0JvTkVKcnVROVdiTnhTOWh5VzB3NkkwMzBLbG10bE1xOHBhZUF5ZVdSbnFGUzNDMjhNOF9OMjNLWUxLUWRmVlRCYk5zVFh5eDdKUGJrWEp4eHFwQkdSQ0VDYVBqRXhJZGF2YVVDZER5Wl9heVZOb05SOFBIcFRDd2FXUFh6Q1dkZw"
+      "title": "Iran war day 69: Tehran ‘reviewing’ US proposals; Israel bombs Beirut - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPd1N4Nm94R2hUeWswalZRVDREV2NWYmt3QkR6Z2lNREx5M2lWXzdaLXlTdVdxX2RZeERSM2Z3R01oU0FEVU9PRDNXRi1RRVJOS0dnbFZDeG50VTg0SE9jMkhqbGZ3MFRESUo5QW1FXzJ5dFFfYmtnRWN4ZjB0ZWV2ZTFrTlZVZlVVTnp1X1R6RGdGT2pwQkJvdVJJN2hqQ0RtWHdBcndTd2HSAa4BQVVfeXFMT1ZRSVEyZ0dDVzVMTlZubFdNeTN4X2hIRy1RY3hCQ3NqSGdzRlZpOXMwWElvdGtGVUw0SGJsYW9LRks5alljV01FM01hc0J3cXROYVhFQ3V6Mm9LemMxY2lEb1hiMmszblJRSTBaR3dWMGFKbnI5R1ZuOWZtdl9mdFVOOVpEMVVxdy1RZHpOTDVlWldZd1NmcFJ3U2tPUGY4bUZJSVJ4R0tjSUN5c3p3"
     }
   ]
 }
