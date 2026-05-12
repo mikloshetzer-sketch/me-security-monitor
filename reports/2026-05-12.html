@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <title>Közel-Kelet napi biztonsági jelentés – 2026-05-12</title>
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -142,10 +144,15 @@ body {
   gap: 12px;
 }
 
+.rank-list span {
+  overflow-wrap: anywhere;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
 }
 
 th {
@@ -161,11 +168,37 @@ td {
   padding: 12px;
   border-bottom: 1px solid #e2e8f0;
   vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 42px; }
+th:nth-child(2), td:nth-child(2) { width: 34%; }
+th:nth-child(3), td:nth-child(3) { width: 16%; }
+th:nth-child(4), td:nth-child(4) { width: 13%; }
+th:nth-child(5), td:nth-child(5) { width: 17%; }
+th:nth-child(6), td:nth-child(6) { width: 70px; }
+th:nth-child(7), td:nth-child(7) { width: 13%; }
+
+.event-main {
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.event-sub {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.35;
 }
 
 .score {
   color: #dc2626;
   font-weight: 900;
+}
+
+.source-cell {
+  font-size: 12px;
 }
 
 a {
@@ -195,19 +228,42 @@ a {
 }
 
 @media print {
-  .actions { display: none; }
-  body { background: white; }
-  .card, .section { box-shadow: none; }
+  .actions {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card, .section {
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 900px) {
-  .hero { flex-direction: column; align-items: flex-start; }
-  .cards, .grid4 { grid-template-columns: 1fr 1fr; }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cards, .grid4 {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-  .cards, .grid4 { grid-template-columns: 1fr; }
-  .content { padding: 20px; }
+  .cards, .grid4 {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 12px;
+  }
 }
 </style>
 </head>
@@ -244,7 +300,7 @@ a {
   </div>
   <div class="card">
     <div class="label">Fő térség</div>
-    <div class="big" style="font-size:22px;">{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</div>
+    <div class="big" style="font-size:22px;">Iran</div>
   </div>
   <div class="card">
     <div class="label">Domináns jelleg</div>
@@ -257,7 +313,7 @@ a {
   <p>
     A rendszer aktuális kockázati szintje <strong>KÖZEPES</strong>,
     az összesített normalizált kockázati index <strong>53.8</strong>.
-    A napi események alapján a fő fókuszpont: <strong>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</strong>.
+    A napi események alapján a fő fókuszpont: <strong>Iran</strong>.
     A domináns eseményjelleg: <strong>Katonai / háborús cselekmény</strong>.
   </p>
   <p>
@@ -271,7 +327,7 @@ a {
   <div class="grid4">
     <div>
       <h3>Helyszínek</h3>
-      <ol class="rank-list"><li><span>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</span><strong>8</strong></li><li><span>{&#x27;name&#x27;: &#x27;Israel&#x27;, &#x27;lat&#x27;: 31.0461, &#x27;lng&#x27;: 34.8516}</span><strong>5</strong></li><li><span>{&#x27;name&#x27;: &#x27;Middle East&#x27;, &#x27;lat&#x27;: 33.5, &#x27;lng&#x27;: 44.0}</span><strong>2</strong></li><li><span>{&#x27;name&#x27;: &#x27;Lebanon&#x27;, &#x27;lat&#x27;: 33.8547, &#x27;lng&#x27;: 35.8623}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Iraq&#x27;, &#x27;lat&#x27;: 33.2232, &#x27;lng&#x27;: 43.6793}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Tehran&#x27;, &#x27;lat&#x27;: 35.6892, &#x27;lng&#x27;: 51.389}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;West Bank&#x27;, &#x27;lat&#x27;: 31.9, &#x27;lng&#x27;: 35.2}</span><strong>1</strong></li></ol>
+      <ol class="rank-list"><li><span>Iran</span><strong>8</strong></li><li><span>Israel</span><strong>5</strong></li><li><span>Middle East</span><strong>2</strong></li><li><span>Lebanon</span><strong>1</strong></li><li><span>Iraq</span><strong>1</strong></li><li><span>Tehran</span><strong>1</strong></li><li><span>West Bank</span><strong>1</strong></li></ol>
     </div>
     <div>
       <h3>Kategóriák</h3>
@@ -279,11 +335,11 @@ a {
     </div>
     <div>
       <h3>Eseményjelleg</h3>
-      <ol class="rank-list"><li><span>Katonai / háborús cselekmény</span><strong>8</strong></li><li><span>Egyéb biztonsági esemény</span><strong>6</strong></li><li><span>Politikai / diplomáciai fejlemény</span><strong>3</strong></li><li><span>Terrorjellegű / milíciaaktivitás</span><strong>1</strong></li><li><span>Drón / UAV aktivitás</span><strong>1</strong></li></ol>
+      <ol class="rank-list"><li><span>Katonai / háborús cselekmény</span><strong>8</strong></li><li><span>Egyéb biztonsági esemény</span><strong>7</strong></li><li><span>Politikai / diplomáciai fejlemény</span><strong>2</strong></li><li><span>Terrorjellegű / milíciaaktivitás</span><strong>1</strong></li><li><span>Drón / UAV aktivitás</span><strong>1</strong></li></ol>
     </div>
     <div>
       <h3>Források</h3>
-      <ol class="rank-list"><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMidEFVX3lxTFBMT0dPUVlJM1Jjb0xQMFo5UmpMc1cxWEhJaWZBSzB6d0xhWTBxTmpYMmZSenFLWWxzTTZEcV81WFVzWTZJNXd2ektINU1zV2YtYTBxbjVscFJvN255SGk4RkdHS2tnNlJUZGVRcTNKRWltSHND&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiogFBVV95cUxPQnhPNWJVbm1JU1pqZExkQ05UcWxobXdCbVlUOFZNWGJxU1VkNU5tS3hXTVVfT0dzei00c0FPNUp4cDZuY0JOYmNpMjM4RkZlSENrRmZEWVhPeG1sMVRUXzMtT1l1YkRNSkxjNXVBZkRiWnJCXzFxUTZsTWxFUVI1LVk0WW9jSG5sVnpnai1VY09lNDkyeGlDOWZTV0NVMUpOd0E&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMinwFBVV95cUxNci1NdlNTcFRfZElQRVNsalBlSFdGbllwWmZfRjFUbFNnV1lGVmYxdm50bE42YnpRRHR1VnRHVGNTVGY0d0NKM1loR3pZcDg4clc5aWo3UWlwU1A3bHNYVlJjNG5WOE5Td2VvZkFkVEdqM0hPT1d0NF9rWXVPU2hPNEgzcXgwN2hrTW5objRzbGlQU3VnSmxmU005Y1BiOVU&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiugFBVV95cUxPb2ljTk42NDJ2VXA4YzZXc0pCZG1RMVhpMDExWGN5WGpjWElnOE0xNndpUWhkM3c5WTl6SEZ6a1o0QnRaMGJvOGZ3MnNrOU5rOGxNcjNuWVNDU2M2Y3g4WDBHU0pORFp6V3NxaDVnS0p2NERZUS1IeTBxbzdBaE1HRUxfZWtRVm1PcENHV0lFY0tmQVlLTkdPalVkQnJVeURWUUNfcXlnRmxtaE5LcnBqaEtSS0pHVE5KYmc&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMimAFBVV95cUxOQV9ndXFlNGExSXRaay1vRURsRU16SWZNcXpjNTk3dVJwRE9uR3BlSU11LTRjaWVSTTdvN2pxRlBjY2N3dmRTQm1abElWY1phTkhrdHhJbzJucV9BTDRiRDJVTW5sa0tzSFZEYU9uWEMxV0t4MHduNEYzUGt3Y3pFRkk3amIyOVo0Y25kam9nQXR3b0FUVlBpNw&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVhiVXEwaEFKdlMwaFdMdVNXSUhQNzVUMHJDY2JVdl9Ta2twSDdON29NYUV0ZjBkRkxweTZJSDY1LU5ra2VxSkF6RXloU2oxWUZuYUQzcFNBMEY1MEVwSXpMSUhFN2pycDNJejRkV1ZYZW5kSThpUWF5U1NRMzBDUzc0ODlwNk4wYjBYZWVvUUxYLWd4R2toNTVwRE5QOXlLLWl6WHJuN0liaVJJUUdzTUh2WHA&#x27;}</span><strong>1</strong></li><li><span>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmxJRXB6OXRtN1NRdmlFQVZ0OUg1WXRPM2FIc1VBN1J5RjQwVmNJNEg5aWw0ZVh0cWRSankxY2JBUFZ0RmNKaFQzejh0SmxQSGI4WVhVQkVyQ2tnXy1pNmZPa1g0emJaMGhQemxTSHhnaV9tUVZlbzluZmY4UnNiaU9QclB6UFhuUGpHcDhkakdER1NNQ2ZxUlJOZFVrZ0RiTS00MV9oUHBvN0c5NWVLQmJYcV9JQ05OOVlobzZtUFY3cXBlOXE1NU1B&#x27;}</span><strong>1</strong></li></ol>
+      <ol class="rank-list"><li><span>Reuters (via Google News)</span><strong>13</strong></li><li><span>BBC</span><strong>3</strong></li><li><span>Al Jazeera (via Google News)</span><strong>3</strong></li></ol>
     </div>
   </div>
 </section>
@@ -294,7 +350,7 @@ a {
     <thead>
       <tr>
         <th>#</th>
-        <th>Cím</th>
+        <th>Esemény</th>
         <th>Helyszín</th>
         <th>Kategória</th>
         <th>Eseményjelleg</th>
@@ -306,102 +362,132 @@ a {
       
         <tr>
             <td>1</td>
-            <td>Evolving drone war in southern Lebanon clouds Iran peace prospects - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Lebanon&#x27;, &#x27;lat&#x27;: 33.8547, &#x27;lng&#x27;: 35.8623}</td>
+            <td>
+              <div class="event-main">Drón- vagy UAV-aktivitás azonosítva: Lebanon</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW" target="_blank" rel="noopener">Evolving drone war in southern Lebanon clouds Iran peace prospects - Reuters</a></div>
+            </td>
+            <td>Lebanon</td>
             <td>Katonai / háborús</td>
             <td>Drón / UAV aktivitás</td>
-            <td class="score">4.5</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW&#x27;}</td>
+            <td class="score">6.0</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>2</td>
-            <td>Iran war creates new must-have for summer holidays: the plan B - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNci1NdlNTcFRfZElQRVNsalBlSFdGbllwWmZfRjFUbFNnV1lGVmYxdm50bE42YnpRRHR1VnRHVGNTVGY0d0NKM1loR3pZcDg4clc5aWo3UWlwU1A3bHNYVlJjNG5WOE5Td2VvZkFkVEdqM0hPT1d0NF9rWXVPU2hPNEgzcXgwN2hrTW5objRzbGlQU3VnSmxmU005Y1BiOVU" target="_blank" rel="noopener">Iran war creates new must-have for summer holidays: the plan B - Reuters</a></div>
+            </td>
+            <td>Iran</td>
             <td>Egyéb</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMinwFBVV95cUxNci1NdlNTcFRfZElQRVNsalBlSFdGbllwWmZfRjFUbFNnV1lGVmYxdm50bE42YnpRRHR1VnRHVGNTVGY0d0NKM1loR3pZcDg4clc5aWo3UWlwU1A3bHNYVlJjNG5WOE5Td2VvZkFkVEdqM0hPT1d0NF9rWXVPU2hPNEgzcXgwN2hrTW5objRzbGlQU3VnSmxmU005Y1BiOVU&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNci1NdlNTcFRfZElQRVNsalBlSFdGbllwWmZfRjFUbFNnV1lGVmYxdm50bE42YnpRRHR1VnRHVGNTVGY0d0NKM1loR3pZcDg4clc5aWo3UWlwU1A3bHNYVlJjNG5WOE5Td2VvZkFkVEdqM0hPT1d0NF9rWXVPU2hPNEgzcXgwN2hrTW5objRzbGlQU3VnSmxmU005Y1BiOVU" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>3</td>
-            <td>Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg" target="_blank" rel="noopener">Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters</a></div>
+            </td>
+            <td>Iran</td>
             <td>Katonai / háborús</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>4</td>
-            <td>World markets feel the strain as US–Iran war grinds on - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOQV9ndXFlNGExSXRaay1vRURsRU16SWZNcXpjNTk3dVJwRE9uR3BlSU11LTRjaWVSTTdvN2pxRlBjY2N3dmRTQm1abElWY1phTkhrdHhJbzJucV9BTDRiRDJVTW5sa0tzSFZEYU9uWEMxV0t4MHduNEYzUGt3Y3pFRkk3amIyOVo0Y25kam9nQXR3b0FUVlBpNw" target="_blank" rel="noopener">World markets feel the strain as US–Iran war grinds on - Reuters</a></div>
+            </td>
+            <td>Iran</td>
             <td>Egyéb</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMimAFBVV95cUxOQV9ndXFlNGExSXRaay1vRURsRU16SWZNcXpjNTk3dVJwRE9uR3BlSU11LTRjaWVSTTdvN2pxRlBjY2N3dmRTQm1abElWY1phTkhrdHhJbzJucV9BTDRiRDJVTW5sa0tzSFZEYU9uWEMxV0t4MHduNEYzUGt3Y3pFRkk3amIyOVo0Y25kam9nQXR3b0FUVlBpNw&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOQV9ndXFlNGExSXRaay1vRURsRU16SWZNcXpjNTk3dVJwRE9uR3BlSU11LTRjaWVSTTdvN2pxRlBjY2N3dmRTQm1abElWY1phTkhrdHhJbzJucV9BTDRiRDJVTW5sa0tzSFZEYU9uWEMxV0t4MHduNEYzUGt3Y3pFRkk3amIyOVo0Y25kam9nQXR3b0FUVlBpNw" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>5</td>
-            <td>Europe&#x27;s chemical makers catch a break as Iran war hits Asian rivals - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVhiVXEwaEFKdlMwaFdMdVNXSUhQNzVUMHJDY2JVdl9Ta2twSDdON29NYUV0ZjBkRkxweTZJSDY1LU5ra2VxSkF6RXloU2oxWUZuYUQzcFNBMEY1MEVwSXpMSUhFN2pycDNJejRkV1ZYZW5kSThpUWF5U1NRMzBDUzc0ODlwNk4wYjBYZWVvUUxYLWd4R2toNTVwRE5QOXlLLWl6WHJuN0liaVJJUUdzTUh2WHA" target="_blank" rel="noopener">Europe&#x27;s chemical makers catch a break as Iran war hits Asian rivals - Reuters</a></div>
+            </td>
+            <td>Iran</td>
             <td>Egyéb</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVhiVXEwaEFKdlMwaFdMdVNXSUhQNzVUMHJDY2JVdl9Ta2twSDdON29NYUV0ZjBkRkxweTZJSDY1LU5ra2VxSkF6RXloU2oxWUZuYUQzcFNBMEY1MEVwSXpMSUhFN2pycDNJejRkV1ZYZW5kSThpUWF5U1NRMzBDUzc0ODlwNk4wYjBYZWVvUUxYLWd4R2toNTVwRE5QOXlLLWl6WHJuN0liaVJJUUdzTUh2WHA&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVhiVXEwaEFKdlMwaFdMdVNXSUhQNzVUMHJDY2JVdl9Ta2twSDdON29NYUV0ZjBkRkxweTZJSDY1LU5ra2VxSkF6RXloU2oxWUZuYUQzcFNBMEY1MEVwSXpMSUhFN2pycDNJejRkV1ZYZW5kSThpUWF5U1NRMzBDUzc0ODlwNk4wYjBYZWVvUUxYLWd4R2toNTVwRE5QOXlLLWl6WHJuN0liaVJJUUdzTUh2WHA" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>6</td>
-            <td>Iran war takes colour out of Japanese snack maker Calbee&#x27;s chips packaging - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmxJRXB6OXRtN1NRdmlFQVZ0OUg1WXRPM2FIc1VBN1J5RjQwVmNJNEg5aWw0ZVh0cWRSankxY2JBUFZ0RmNKaFQzejh0SmxQSGI4WVhVQkVyQ2tnXy1pNmZPa1g0emJaMGhQemxTSHhnaV9tUVZlbzluZmY4UnNiaU9QclB6UFhuUGpHcDhkakdER1NNQ2ZxUlJOZFVrZ0RiTS00MV9oUHBvN0c5NWVLQmJYcV9JQ05OOVlobzZtUFY3cXBlOXE1NU1B" target="_blank" rel="noopener">Iran war takes colour out of Japanese snack maker Calbee&#x27;s chips packaging - Reuters</a></div>
+            </td>
+            <td>Iran</td>
             <td>Egyéb</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmxJRXB6OXRtN1NRdmlFQVZ0OUg1WXRPM2FIc1VBN1J5RjQwVmNJNEg5aWw0ZVh0cWRSankxY2JBUFZ0RmNKaFQzejh0SmxQSGI4WVhVQkVyQ2tnXy1pNmZPa1g0emJaMGhQemxTSHhnaV9tUVZlbzluZmY4UnNiaU9QclB6UFhuUGpHcDhkakdER1NNQ2ZxUlJOZFVrZ0RiTS00MV9oUHBvN0c5NWVLQmJYcV9JQ05OOVlobzZtUFY3cXBlOXE1NU1B&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmxJRXB6OXRtN1NRdmlFQVZ0OUg1WXRPM2FIc1VBN1J5RjQwVmNJNEg5aWw0ZVh0cWRSankxY2JBUFZ0RmNKaFQzejh0SmxQSGI4WVhVQkVyQ2tnXy1pNmZPa1g0emJaMGhQemxTSHhnaV9tUVZlbzluZmY4UnNiaU9QclB6UFhuUGpHcDhkakdER1NNQ2ZxUlJOZFVrZ0RiTS00MV9oUHBvN0c5NWVLQmJYcV9JQ05OOVlobzZtUFY3cXBlOXE1NU1B" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>7</td>
-            <td>Stung by Iran war, Trump heads to China in need of wins - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Iran&#x27;, &#x27;lat&#x27;: 32.4279, &#x27;lng&#x27;: 53.688}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNWXJoaFY0MUR6eVlvalkxTlBhMC0zeUdTR1JyZk41TnRLeFZFMFZyclZUS3ZlZEw3N1VFOThIWnRhRm9SSExid25MYU91X3N4Q2hqMG0wMnV2NVFTQWxVLUdmX09laWN6anE4SGFBRFpPRTd4WXVzTC1fQWxQQi1TVzI0Y1EtQnhROEhYRzNicFRGUFVKV0JDYTdyNWpsSmdXZWxsS1RmMk1obGRj" target="_blank" rel="noopener">Stung by Iran war, Trump heads to China in need of wins - Reuters</a></div>
+            </td>
+            <td>Iran</td>
             <td>Egyéb</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMirAFBVV95cUxNWXJoaFY0MUR6eVlvalkxTlBhMC0zeUdTR1JyZk41TnRLeFZFMFZyclZUS3ZlZEw3N1VFOThIWnRhRm9SSExid25MYU91X3N4Q2hqMG0wMnV2NVFTQWxVLUdmX09laWN6anE4SGFBRFpPRTd4WXVzTC1fQWxQQi1TVzI0Y1EtQnhROEhYRzNicFRGUFVKV0JDYTdyNWpsSmdXZWxsS1RmMk1obGRj&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNWXJoaFY0MUR6eVlvalkxTlBhMC0zeUdTR1JyZk41TnRLeFZFMFZyclZUS3ZlZEw3N1VFOThIWnRhRm9SSExid25MYU91X3N4Q2hqMG0wMnV2NVFTQWxVLUdmX09laWN6anE4SGFBRFpPRTd4WXVzTC1fQWxQQi1TVzI0Y1EtQnhROEhYRzNicFRGUFVKV0JDYTdyNWpsSmdXZWxsS1RmMk1obGRj" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>8</td>
-            <td>Iran war: What’s happening on day 74 as Tehran says ready for ‘aggression’ - Al Jazeera</td>
-            <td>{&#x27;name&#x27;: &#x27;Tehran&#x27;, &#x27;lat&#x27;: 35.6892, &#x27;lng&#x27;: 51.389}</td>
-            <td>Egyéb</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Israel</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTFdKb1ZmNkhkeFBPOXQ1QW5IYzF5SkYzMjlFQnN0S2lXUWJldWcyeUlOeWdBSUItREkyS3YxeEU5c0t6c01lZmVnMm0zbFk4ZXJDa0tjWDE3djJSYUU0M1NjN1p3YWNtZmd3blZRMVJ3U2VjSVBnWFRhcmZMeXdKa3YxQnhUY2I5NFk3RDRBck1LTy10SGxzcEZZb056NVN3OFhiZjBheFJQMTdobVVpQzVYWHNfSm0yUHc4ZWE4WThWUdIBxwFBVV95cUxPSFQyTXFUbG54ZV8zSUJtTlVVOVRhMjBfX2l4TG5KY2VlalQwdTFmblVVNE5NNlozMGRSeWV6UnhkcUx2TjBfY2MyZllCLTJOUHA1VEhXOEN5SEo1YUJpX1FNSUMxazg3em5LOFM4aHFobUlreXA0bmZSRlRhRm9rLWF0OGctQXNpeHBzQzQ3U0ZGaXczeWp4UEFhSndIc05EQlVNWDhKMDhTLUJHcmtudVBEeTFHdlFieG9hT3hwcU01UmJKTDFj" target="_blank" rel="noopener">Lebanese in south refuse to flee again despite escalating Israeli strikes - Al Jazeera</a></div>
+            </td>
+            <td>Israel</td>
+            <td>Katonai / háborús</td>
             <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Al Jazeera (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMisAFBVV95cUxPbDlGVmdaU2drWnFyMS1xYTd5QWh1Y3hvbTNGZ3JIb2RjbGNsUEtEZ2x4ZEd0TGR0cFp0cDRzY1EtV2hheEpFU3RieEl2Wk1OS3VvckNsLW1RX2NSSkFPU0ItYmZHR09TRUx0YzE2eXBSZ0VBSDJZQXNZanZpWnlXbkUydjNUeHZLYnlwM243WW1HbHRwN1B1S2duaEllWWQ2S3g1c0VoMU5pM1E4eVlYONIBtgFBVV95cUxOTjF5cXlhZldlU01nRGJlUlZIMldxWFdVWGtGMTlxTHI5SkhiaFpIbUV1bHVQaEw0VDFaMnQ0ZS1YNlRONDBoVXNjQzBDV3ZVN3gzS01TY2NHQXFFZkZwN0szX1ViV2RmQ3lBcndpMDl4dFhiTVc1aG9xejBvbEV4MHU3RVpibXNyZWgyRW9ON3pnZ1JfTjJXVVo1MWRKcVBVSEdPdWI0dmtMUThwSDNlNFVKaEpkZw&#x27;}</td>
+            <td class="score">5.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTFdKb1ZmNkhkeFBPOXQ1QW5IYzF5SkYzMjlFQnN0S2lXUWJldWcyeUlOeWdBSUItREkyS3YxeEU5c0t6c01lZmVnMm0zbFk4ZXJDa0tjWDE3djJSYUU0M1NjN1p3YWNtZmd3blZRMVJ3U2VjSVBnWFRhcmZMeXdKa3YxQnhUY2I5NFk3RDRBck1LTy10SGxzcEZZb056NVN3OFhiZjBheFJQMTdobVVpQzVYWHNfSm0yUHc4ZWE4WThWUdIBxwFBVV95cUxPSFQyTXFUbG54ZV8zSUJtTlVVOVRhMjBfX2l4TG5KY2VlalQwdTFmblVVNE5NNlozMGRSeWV6UnhkcUx2TjBfY2MyZllCLTJOUHA1VEhXOEN5SEo1YUJpX1FNSUMxazg3em5LOFM4aHFobUlreXA0bmZSRlRhRm9rLWF0OGctQXNpeHBzQzQ3U0ZGaXczeWp4UEFhSndIc05EQlVNWDhKMDhTLUJHcmtudVBEeTFHdlFieG9hT3hwcU01UmJKTDFj" target="_blank" rel="noopener">Al Jazeera (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>9</td>
-            <td>Lebanese in south refuse to flee again despite escalating Israeli strikes - Al Jazeera</td>
-            <td>{&#x27;name&#x27;: &#x27;Israel&#x27;, &#x27;lat&#x27;: 31.0461, &#x27;lng&#x27;: 34.8516}</td>
-            <td>Katonai / háborús</td>
-            <td>Katonai / háborús cselekmény</td>
-            <td class="score">4.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Al Jazeera (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTFdKb1ZmNkhkeFBPOXQ1QW5IYzF5SkYzMjlFQnN0S2lXUWJldWcyeUlOeWdBSUItREkyS3YxeEU5c0t6c01lZmVnMm0zbFk4ZXJDa0tjWDE3djJSYUU0M1NjN1p3YWNtZmd3blZRMVJ3U2VjSVBnWFRhcmZMeXdKa3YxQnhUY2I5NFk3RDRBck1LTy10SGxzcEZZb056NVN3OFhiZjBheFJQMTdobVVpQzVYWHNfSm0yUHc4ZWE4WThWUdIBxwFBVV95cUxPSFQyTXFUbG54ZV8zSUJtTlVVOVRhMjBfX2l4TG5KY2VlalQwdTFmblVVNE5NNlozMGRSeWV6UnhkcUx2TjBfY2MyZllCLTJOUHA1VEhXOEN5SEo1YUJpX1FNSUMxazg3em5LOFM4aHFobUlreXA0bmZSRlRhRm9rLWF0OGctQXNpeHBzQzQ3U0ZGaXczeWp4UEFhSndIc05EQlVNWDhKMDhTLUJHcmtudVBEeTFHdlFieG9hT3hwcU01UmJKTDFj&#x27;}</td>
+            <td>
+              <div class="event-main">Terrorjellegű vagy milíciaaktivitásra utaló esemény: Israel</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPb2ljTk42NDJ2VXA4YzZXc0pCZG1RMVhpMDExWGN5WGpjWElnOE0xNndpUWhkM3c5WTl6SEZ6a1o0QnRaMGJvOGZ3MnNrOU5rOGxNcjNuWVNDU2M2Y3g4WDBHU0pORFp6V3NxaDVnS0p2NERZUS1IeTBxbzdBaE1HRUxfZWtRVm1PcENHV0lFY0tmQVlLTkdPalVkQnJVeURWUUNfcXlnRmxtaE5LcnBqaEtSS0pHVE5KYmc" target="_blank" rel="noopener">New Israeli law sets military tribunal for Hamas October 7 militants - Reuters</a></div>
+            </td>
+            <td>Israel</td>
+            <td>Biztonsági</td>
+            <td>Terrorjellegű / milíciaaktivitás</td>
+            <td class="score">4.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPb2ljTk42NDJ2VXA4YzZXc0pCZG1RMVhpMDExWGN5WGpjWElnOE0xNndpUWhkM3c5WTl6SEZ6a1o0QnRaMGJvOGZ3MnNrOU5rOGxNcjNuWVNDU2M2Y3g4WDBHU0pORFp6V3NxaDVnS0p2NERZUS1IeTBxbzdBaE1HRUxfZWtRVm1PcENHV0lFY0tmQVlLTkdPalVkQnJVeURWUUNfcXlnRmxtaE5LcnBqaEtSS0pHVE5KYmc" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
         </tr>
         
         <tr>
             <td>10</td>
-            <td>New Israeli law sets military tribunal for Hamas October 7 militants - Reuters</td>
-            <td>{&#x27;name&#x27;: &#x27;Israel&#x27;, &#x27;lat&#x27;: 31.0461, &#x27;lng&#x27;: 34.8516}</td>
-            <td>Biztonsági</td>
-            <td>Terrorjellegű / milíciaaktivitás</td>
-            <td class="score">3.0</td>
-            <td>{&#x27;name&#x27;: &#x27;Reuters (via Google News)&#x27;, &#x27;type&#x27;: &#x27;news&#x27;, &#x27;url&#x27;: &#x27;https://news.google.com/rss/articles/CBMiugFBVV95cUxPb2ljTk42NDJ2VXA4YzZXc0pCZG1RMVhpMDExWGN5WGpjWElnOE0xNndpUWhkM3c5WTl6SEZ6a1o0QnRaMGJvOGZ3MnNrOU5rOGxNcjNuWVNDU2M2Y3g4WDBHU0pORFp6V3NxaDVnS0p2NERZUS1IeTBxbzdBaE1HRUxfZWtRVm1PcENHV0lFY0tmQVlLTkdPalVkQnJVeURWUUNfcXlnRmxtaE5LcnBqaEtSS0pHVE5KYmc&#x27;}</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús cselekmény: Tehran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPbDlGVmdaU2drWnFyMS1xYTd5QWh1Y3hvbTNGZ3JIb2RjbGNsUEtEZ2x4ZEd0TGR0cFp0cDRzY1EtV2hheEpFU3RieEl2Wk1OS3VvckNsLW1RX2NSSkFPU0ItYmZHR09TRUx0YzE2eXBSZ0VBSDJZQXNZanZpWnlXbkUydjNUeHZLYnlwM243WW1HbHRwN1B1S2duaEllWWQ2S3g1c0VoMU5pM1E4eVlYONIBtgFBVV95cUxOTjF5cXlhZldlU01nRGJlUlZIMldxWFdVWGtGMTlxTHI5SkhiaFpIbUV1bHVQaEw0VDFaMnQ0ZS1YNlRONDBoVXNjQzBDV3ZVN3gzS01TY2NHQXFFZkZwN0szX1ViV2RmQ3lBcndpMDl4dFhiTVc1aG9xejBvbEV4MHU3RVpibXNyZWgyRW9ON3pnZ1JfTjJXVVo1MWRKcVBVSEdPdWI0dmtMUThwSDNlNFVKaEpkZw" target="_blank" rel="noopener">Iran war: What’s happening on day 74 as Tehran says ready for ‘aggression’ - Al Jazeera</a></div>
+            </td>
+            <td>Tehran</td>
+            <td>Egyéb</td>
+            <td>Katonai / háborús cselekmény</td>
+            <td class="score">4.0</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPbDlGVmdaU2drWnFyMS1xYTd5QWh1Y3hvbTNGZ3JIb2RjbGNsUEtEZ2x4ZEd0TGR0cFp0cDRzY1EtV2hheEpFU3RieEl2Wk1OS3VvckNsLW1RX2NSSkFPU0ItYmZHR09TRUx0YzE2eXBSZ0VBSDJZQXNZanZpWnlXbkUydjNUeHZLYnlwM243WW1HbHRwN1B1S2duaEllWWQ2S3g1c0VoMU5pM1E4eVlYONIBtgFBVV95cUxOTjF5cXlhZldlU01nRGJlUlZIMldxWFdVWGtGMTlxTHI5SkhiaFpIbUV1bHVQaEw0VDFaMnQ0ZS1YNlRONDBoVXNjQzBDV3ZVN3gzS01TY2NHQXFFZkZwN0szX1ViV2RmQ3lBcndpMDl4dFhiTVc1aG9xejBvbEV4MHU3RVpibXNyZWgyRW9ON3pnZ1JfTjJXVVo1MWRKcVBVSEdPdWI0dmtMUThwSDNlNFVKaEpkZw" target="_blank" rel="noopener">Al Jazeera (via Google News)</a></td>
         </tr>
         
     </tbody>
