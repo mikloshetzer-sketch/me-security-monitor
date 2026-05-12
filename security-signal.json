@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-12 06:50 UTC",
+    "updated": "2026-05-12 10:42 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-06",
     "period_end": "2026-05-12",
-    "total_events": 143,
-    "total_risk": 119.21,
-    "normalized_risk_score": 47.7,
-    "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "total_events": 150,
+    "total_risk": 134.46,
+    "normalized_risk_score": 53.8,
+    "risk_level": "MEDIUM",
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 35,
-    "security": 2,
-    "political": 22,
-    "other": 84
+    "military": 38,
+    "security": 3,
+    "political": 19,
+    "other": 90
   },
   "source_counts": {
-    "news": 137,
+    "news": 144,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 55.25
+      "risk": 55.85
     },
     {
       "name": "Israel",
-      "risk": 39.61
+      "risk": 48.61
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.0
+      "risk": 7.4
     },
     {
       "name": "Tehran",
-      "risk": 4.6
+      "risk": 5.5
     },
     {
-      "name": "Middle East",
-      "risk": 3.2
+      "name": "Lebanon",
+      "risk": 3.0
     }
   ],
   "top_events": [
@@ -70,9 +70,36 @@
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
+      "title": "Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Evolving drone war in southern Lebanon clouds Iran peace prospects - Reuters",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel passes law to allow death penalty and public trials for those linked to 7 October",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c202ngg45x8o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanese in south refuse to flee again despite escalating Israeli strikes - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTFdKb1ZmNkhkeFBPOXQ1QW5IYzF5SkYzMjlFQnN0S2lXUWJldWcyeUlOeWdBSUItREkyS3YxeEU5c0t6c01lZmVnMm0zbFk4ZXJDa0tjWDE3djJSYUU0M1NjN1p3YWNtZmd3blZRMVJ3U2VjSVBnWFRhcmZMeXdKa3YxQnhUY2I5NFk3RDRBck1LTy10SGxzcEZZb056NVN3OFhiZjBheFJQMTdobVVpQzVYWHNfSm0yUHc4ZWE4WThWUdIBxwFBVV95cUxPSFQyTXFUbG54ZV8zSUJtTlVVOVRhMjBfX2l4TG5KY2VlalQwdTFmblVVNE5NNlozMGRSeWV6UnhkcUx2TjBfY2MyZllCLTJOUHA1VEhXOEN5SEo1YUJpX1FNSUMxazg3em5LOFM4aHFobUlreXA0bmZSRlRhRm9rLWF0OGctQXNpeHBzQzQ3U0ZGaXczeWp4UEFhSndIc05EQlVNWDhKMDhTLUJHcmtudVBEeTFHdlFieG9hT3hwcU01UmJKTDFj"
     },
     {
       "score": 2.73,
@@ -106,36 +133,9 @@
       "date": "2026-05-11",
       "category": "military",
       "source_type": "news",
-      "title": "Iran war day 73: Trump and Tehran clash over latest peace proposals - Al Jazeera",
-      "location": "Tehran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWFhkaGhXSzBmZWVzRTdXNjA0cDhJbWFiNkpxcHRIMU85R1RCczNWM0czMm9FWk15UllNTk43SVhZdWdwdXFDLXlOdXBZdzI5dDlsZEtjNDN6dElHWVdTTWtwRlZqQWhzU0xjbDNvNzhXd2JhSmhNMTRhTnpoXzZaSHMtVEhRT3M3b3NKWmQtQW5paDBjSTMtSUVkVVVPbXY1azRHbHFoWDBWN2FPS3A00gG0AUFVX3lxTE5kTktnU25EX183WUdXM0llTGRZdlR3eHBlcFZEZHliakh2V1RxTEctM0lJY1gzMTlKU0lDVWhrY1BmcDJoYm9CbDFfc08yRmstbXIxbS1GSEk2bE5ELUdXdkpyVFFOVUNYek5ocWQ2WHJRRVlaQjU5UWFmcVFQSTN4a2R1Y0JqeUhPQUlDWTFJdDBmRGVwWkJVRHVTUTcwNnkxT3dWOU8xNTNwRzdoZFdjSHpDNQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill at least four in southern Lebanon - Al Jazeera",
+      "title": "How impunity in Shireen Abu Akleh’s case fuels Israeli attacks on the press - Al Jazeera",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUHdLd3F0MEtSZUxkZ0p0RTBScXA1QnFSeUtHbEk5WWFNTlNVVVJTem5TM19DUjNWcE02RWpHMy1kNG1ZQko2WG81MElZcFFzZEF1NXlDNjFDUlVzUmpVRU5hWWIzZEZjX3dGZzR2TXlkX3NBTTRFU2dWS1lSNTVjaUN4NU5tMEZaSUg2ZkJpNW9qWTVuM2ZSckJBNNIBoAFBVV95cUxOWEtLazd5bXVKMFduakJXZTY2RDJvb1BNZURQRXMySFFjbWFfWC1sTnNtTEZ0enlDbnM1Y1JmV1pXVmg0a0tqd0NmNFY5OVBmQmdCY25DTG91cjROUFA3T1hZYjdhWDRaYXp3dmt3SUVsQmJmbEpFeTdvUXd2djVsSnpZeEFULWRvb0IxZ2VzMFk5a0hXb0c0QzFLbUNlVGM4"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Qatar says cargo vessel coming from Abu Dhabi attacked in its waters - Reuters",
-      "location": "Abu Dhabi",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSE96bUZWYWdjX3dMWjhTdkY5eWEwOXI1eElSalVKUnFCNmRYVUdBUkY4d2NPd3huN3VndUoyMWFzZDdBMXU5S0l3SjhoYVNBYkMyWUw2Tkd3WEtyWk44czQ3c2YweHBfRnI2UFc3dkFhS0U2bnVXeFJaNFcxcC1kZFB3WGphYWdBSkpxSldNaEhZUVdaU2lZN2RrUjhkSUtYWFFpUDF6UmJUSEhicnJjSXdUT2g"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Kuwait's army says it has intercepted hostile drones over airspace - Reuters",
-      "location": "Kuwait",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUHk3NjJ3T0IxUHJ6bm1lVzFocEowZUxiX3UwTGZpbDJVZWJRV2owMXFLeDUzdHg2aXQxczZMOG1WVlU5QjZ2QlFoazZOU18xdHBKNW1WZkRoUG1qeXdGTFktLVRMcERscjVsZW8zdllzWXRPSGRaVzYtSjJYQ0lrd0JzX1NUV0lpcGk0SEJRUG5KTC1LdzBBaGVJZkZVWGN4N2MxU0pzdw"
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZzJTZ0ZzbmZQdGpncWRTNF90TzkxUlhubGlIbThmX1U5WDQ0bGQ4Wm9BbEdoRl8xSU5SUTAwZTZvVGl2RTZYMVlxRHJYal9QeWpNTUVIMlFiYkpQWkc5ZjducEV1a1VXRkliM2VfNWFxVUc5SG01NmJJZWNCVDJwcFNkaXEwN1BNbXN2UFRVWkRRc3dERHczWHprSjM5RlotNTlLMVNZRDRyVkRFOEdidDVjT1dGQdIBuwFBVV95cUxQTzlkRVB4clpRanhNdFk0OFJfektrandEZ2REWDdiWnpMU05KYWRZQkQxcGZHZFJ6YVZJalNxeHFKdDc1aUR3RTlQOUwyMGxLVnhoNnNaRnRCRlNiSncxMTN2ZEoxcFNfR0RUazFKR0NnZ3NTNDgyYVlkOXRGX1lVVExiS3B2azBBTzJTX3ZFRU5uTDhYOTVhUlVsNXlhcnZUZXMwbFRqQVlkckR1ZWJZdTBQekpBZnZSSThJ"
     }
   ]
 }
