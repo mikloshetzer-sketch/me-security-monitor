@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-12 14:51 UTC",
+    "updated": "2026-05-12 21:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-06",
     "period_end": "2026-05-12",
-    "total_events": 149,
-    "total_risk": 135.06,
-    "normalized_risk_score": 54.0,
+    "total_events": 151,
+    "total_risk": 143.41,
+    "normalized_risk_score": 57.4,
     "risk_level": "MEDIUM",
-    "confidence": "MEDIUM"
+    "confidence": "HIGH"
   },
   "category_counts": {
     "military": 37,
     "security": 3,
-    "political": 21,
-    "other": 88
+    "political": 19,
+    "other": 92
   },
   "source_counts": {
-    "news": 143,
+    "news": 145,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 58.35
+      "risk": 60.95
     },
     {
       "name": "Israel",
-      "risk": 49.11
+      "risk": 50.16
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.55
+      "risk": 6.65
     },
     {
-      "name": "Lebanon",
-      "risk": 3.7
+      "name": "Tehran",
+      "risk": 5.5
     },
     {
-      "name": "Iraq",
-      "risk": 3.0
+      "name": "West Bank",
+      "risk": 4.3
     }
   ],
   "top_events": [
@@ -79,9 +79,36 @@
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
+      "title": "Exclusive: Saudi Arabia launched covert attacks on Iran as regional war widened, sources say - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZDVqZjdxVDZDeDdnNjd1RndvV0NwNTF4U1Y2cFpVRFMyMzI2WG9mQVFUTnM4YlI3NmVRcGozODRLUUhGbU5wVURWU2dBa0hvNFBxQUc5T0hOUmJENHNBWDg0ZTR2ZWZham5IYVJOY3djZmJia0J6cFg5OWV3ZzluenhIRkVXeW1HRWhYREh0Q181NG1Ncl9aV3FPZU8yQVVTT1VTblpjVjE4bW94bWhVWXpWblpMTDdGeEJVZkxzaW1ZRFU"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "UNICEF says 70 children killed in West Bank and East Jerusalem since 2025 - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUkd5QUtRWVRtbmdjVkgweUV5T1I4WDBQUTM1NHdxczh2WkhEU1RiTHlXQjdTbDFENkhabEdJTWNJZVFEUy1ycF9iMjdlYmlRelFhWEUxUzREdmljZllFUlpFVzVrdG1xRnRsdTBVNGhMVF9zMHpJcHBZdWtuZnFlclE3Wnl0YTBWNEpQWkgyWnMzLTd4UzIxNnd2djVjQWIya1JuYUdKaEdRc284UnhKczF4c3B2eUozalJ2cA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Hamas 'weaponised' sexual violence in 7 October attacks, Israeli investigation says",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cvgz9k7pzggo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -97,45 +124,18 @@
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
+      "title": "Israel sent Iron Dome anti-missile batteries and personnel to UAE: US envoy - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQbWR3bHYzaE9OT1BPcTZYNkhhVkFkZ2haZ2Q1U1dvN20xd2ZVNTZLN2ktaTBmRTFoWElRREhOd1M1RE5vWUNoUWdVVVFiU0IxYTVOT2tzT2dQZy1YLVJ1dEsxOTgwS3NrcFJLNG9yVzItcFNzMWhvUzFuLXFWWFlpWnpyblNGRFgyZkVucGp6N1FIZHV5Q3hLUUNvaFU0NnBneGtCVmpsNUFhb200WUZQdWpRRHFKd9IBuwFBVV95cUxQdDBSVE5rdVNLQ2dpczlpbXZtMXAtQ1EzNE4xMDlRYzRGM0lCcWg5aUF1ME9kdmpIT3JzNHZuYjYyb2E3THpyVXNlclRUYnVfX213ekF3OWpLclF5bWljaW1FSzJUR3RRUm1seUN5RXlVRHJsMkNfUEVIZE9fcGlCZEFJWVhFY2hzTUlxWkxIaHNpSDM2UDRXNExwWDdCaHFJM25qR25KQjJmeXhIcWk0U053OExfMjdlM1J3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
       "title": "Lebanese in south refuse to flee again despite escalating Israeli strikes - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTFdKb1ZmNkhkeFBPOXQ1QW5IYzF5SkYzMjlFQnN0S2lXUWJldWcyeUlOeWdBSUItREkyS3YxeEU5c0t6c01lZmVnMm0zbFk4ZXJDa0tjWDE3djJSYUU0M1NjN1p3YWNtZmd3blZRMVJ3U2VjSVBnWFRhcmZMeXdKa3YxQnhUY2I5NFk3RDRBck1LTy10SGxzcEZZb056NVN3OFhiZjBheFJQMTdobVVpQzVYWHNfSm0yUHc4ZWE4WThWUdIBxwFBVV95cUxPSFQyTXFUbG54ZV8zSUJtTlVVOVRhMjBfX2l4TG5KY2VlalQwdTFmblVVNE5NNlozMGRSeWV6UnhkcUx2TjBfY2MyZllCLTJOUHA1VEhXOEN5SEo1YUJpX1FNSUMxazg3em5LOFM4aHFobUlreXA0bmZSRlRhRm9rLWF0OGctQXNpeHBzQzQ3U0ZGaXczeWp4UEFhSndIc05EQlVNWDhKMDhTLUJHcmtudVBEeTFHdlFieG9hT3hwcU01UmJKTDFj"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-05-09",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 9, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-9-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE has been secretly carrying out attacks on Iran, WSJ reports - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRVR5MnozSldhdWdnVTRZakJJMG8za2l6V0xUSjhFOUwtVTY0aWdJa2U5M1dWM29Qa012QS14ZUxpdWJoUkRuRzBpNXhOR2tyNjZuYUtKYVV1RjM4bExEMWxOZ09MbHhrLXFSdUNYY2tPaUVJTVlqOFhRek5jRnhPTWI2WjdOT1VjTk0tUTV3d29qZm9SVEF4SUdEcTZVRkxFQWpxdU5lOUd3S3hOYmpyN1ZZMA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "UK sanctions Iran-linked network, cites attack plots and finance operations - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcUZCUm96ZUNHWE9XRlRwUVR3UG1ORFY5WmtjZjV3N1AtQ3VMY0xvQ3NLZnNTQ3B6azBwYlluOXBVbExLVWJmTExhcW9ZSVA0MDBwY3pPSWNfa2ZvNkpGVmw1Ulp5eGxxM3hnWmpyTlNEV094bTV3ejk3Qk9DT01OV3poNFBXVXZXUUpheXJOYnFieENlNS1obnltbk1uN0RYcDAyS2pFS3dZVnEwSTd0V0hMdk5qRDVLLWJNWS1JbEtlQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "How impunity in Shireen Abu Akleh’s case fuels Israeli attacks on the press - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZzJTZ0ZzbmZQdGpncWRTNF90TzkxUlhubGlIbThmX1U5WDQ0bGQ4Wm9BbEdoRl8xSU5SUTAwZTZvVGl2RTZYMVlxRHJYal9QeWpNTUVIMlFiYkpQWkc5ZjducEV1a1VXRkliM2VfNWFxVUc5SG01NmJJZWNCVDJwcFNkaXEwN1BNbXN2UFRVWkRRc3dERHczWHprSjM5RlotNTlLMVNZRDRyVkRFOEdidDVjT1dGQdIBuwFBVV95cUxQTzlkRVB4clpRanhNdFk0OFJfektrandEZ2REWDdiWnpMU05KYWRZQkQxcGZHZFJ6YVZJalNxeHFKdDc1aUR3RTlQOUwyMGxLVnhoNnNaRnRCRlNiSncxMTN2ZEoxcFNfR0RUazFKR0NnZ3NTNDgyYVlkOXRGX1lVVExiS3B2azBBTzJTX3ZFRU5uTDhYOTVhUlVsNXlhcnZUZXMwbFRqQVlkckR1ZWJZdTBQekpBZnZSSThJ"
     }
   ]
 }
