@@ -1,7 +1,7 @@
 import json
 import re
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from collections import Counter
 from html import escape
 from urllib.parse import urlparse
@@ -18,6 +18,7 @@ OPTIONAL_FIRMS_FILES = [
     BASE_DIR / "firms_hotspots.json",
     BASE_DIR / "data" / "firms.json",
     BASE_DIR / "data" / "firms-hotspots.json",
+    BASE_DIR / "data" / "firms_hotspots.json",
 ]
 
 OPTIONAL_SOCIAL_FILES = [
@@ -26,6 +27,7 @@ OPTIONAL_SOCIAL_FILES = [
     BASE_DIR / "social.json",
     BASE_DIR / "data" / "social-events.json",
     BASE_DIR / "data" / "social_media_events.json",
+    BASE_DIR / "data" / "social.json",
 ]
 
 REPORTS_DIR = BASE_DIR / "reports"
@@ -43,10 +45,86 @@ FOCUS_AREAS = [
     "Yemen",
 ]
 
-DRONE_TERMS = ["drone", "uav", "uas", "shahed", "geran", "loitering munition", "fpv drone"]
-WAR_TERMS = ["airstrike", "missile", "rocket", "shelling", "artillery", "mortar", "strike", "military", "combat", "battle", "offensive"]
-TERROR_TERMS = ["terror", "terrorist", "isis", "hamas", "hezbollah", "suicide", "ied", "hostage"]
-DIPLOMACY_TERMS = ["ceasefire", "negotiation", "deal", "diplomatic", "minister", "president"]
+DRONE_TERMS = [
+    "drone", "drones", "uav", "uas", "shahed", "geran",
+    "loitering munition", "fpv drone", "unmanned aerial"
+]
+
+WAR_TERMS = [
+    "airstrike", "air strike", "missile", "rocket", "shelling",
+    "artillery", "mortar", "strike", "military", "combat",
+    "battle", "offensive", "warplane", "fighter jet", "troops"
+]
+
+TERROR_TERMS = [
+    "terror", "terrorist", "isis", "islamic state", "hamas",
+    "hezbollah", "suicide", "ied", "hostage", "militant"
+]
+
+DIPLOMACY_TERMS = [
+    "ceasefire", "negotiation", "deal", "diplomatic",
+    "minister", "president", "talks", "sanction"
+]
+
+ACTOR_KEYWORDS = {
+    "Hamas": [
+        "hamas", "al-qassam", "qassam brigades", "qassam"
+    ],
+    "Hezbollah": [
+        "hezbollah", "hizbullah", "hizballah"
+    ],
+    "Houthis": [
+        "houthi", "houthis", "ansar allah", "ansarallah"
+    ],
+    "Iran": [
+        "iran", "iranian", "tehran"
+    ],
+    "IRGC": [
+        "irgc", "revolutionary guards", "islamic revolutionary guard"
+    ],
+    "Israel": [
+        "israel", "israeli", "jerusalem"
+    ],
+    "IDF": [
+        "idf", "israel defense forces", "israeli military", "israeli army"
+    ],
+    "United States": [
+        "united states", "u.s.", "us ", "usa", "american", "washington"
+    ],
+    "Syria": [
+        "syria", "syrian", "damascus"
+    ],
+    "Iraq": [
+        "iraq", "iraqi", "baghdad"
+    ],
+    "Yemen": [
+        "yemen", "yemeni", "sanaa", "sana'a"
+    ],
+    "Lebanon": [
+        "lebanon", "lebanese", "beirut"
+    ],
+    "Gaza": [
+        "gaza", "gaza strip"
+    ],
+    "Palestinian groups": [
+        "palestinian", "palestinians", "palestine"
+    ],
+    "Russia": [
+        "russia", "russian", "moscow"
+    ],
+    "Turkey": [
+        "turkey", "türkiye", "turkish", "ankara"
+    ],
+    "Saudi Arabia": [
+        "saudi", "riyadh"
+    ],
+    "Qatar": [
+        "qatar", "doha"
+    ],
+    "Egypt": [
+        "egypt", "egyptian", "cairo"
+    ],
+}
 
 
 def load_json(path, default):
@@ -103,7 +181,7 @@ def safe_list(raw):
         return raw
 
     if isinstance(raw, dict):
-        for key in ["events", "items", "features", "data", "hotspots", "posts"]:
+        for key in ["events", "items", "features", "data", "hotspots", "posts", "results"]:
             if isinstance(raw.get(key), list):
                 return raw[key]
 
@@ -131,6 +209,7 @@ def get_event_date(event):
         or event.get("created_at")
         or event.get("seendate")
         or event.get("acq_date")
+        or event.get("time")
     )
 
 
@@ -144,6 +223,7 @@ def get_location(event):
         or event.get("area")
         or event.get("city")
         or event.get("admin")
+        or event.get("region")
     )
 
     location_text = clean_text(location)
@@ -179,6 +259,7 @@ def get_title(event):
         or event.get("summary")
         or event.get("name")
         or event.get("text")
+        or event.get("description")
     )
 
     title_text = clean_text(title)
@@ -215,6 +296,13 @@ def get_url(event):
         if value and str(value).startswith("http"):
             return str(value)
 
+    source = event.get("source")
+    if isinstance(source, dict):
+        for key in ["url", "link"]:
+            value = source.get(key)
+            if value and str(value).startswith("http"):
+                return str(value)
+
     return ""
 
 
@@ -249,7 +337,18 @@ def contains_any(text, terms):
 
 
 def event_text(event):
-    return f"{get_title(event)} {get_location(event)} {get_category(event)}".lower()
+    props = get_event_properties(event)
+
+    extra_parts = []
+    for key in ["title", "headline", "summary", "name", "text", "description", "tags"]:
+        extra_parts.append(clean_text(props.get(key)))
+
+    return (
+        f"{get_title(event)} "
+        f"{get_location(event)} "
+        f"{get_category(event)} "
+        f"{' '.join(extra_parts)}"
+    ).lower()
 
 
 def classify_event_nature(event):
@@ -284,17 +383,17 @@ def build_event_sentence(event):
     if "missile" in text or "rocket" in text:
         return f"Rakétatámadáshoz kapcsolódó esemény: {location}"
 
-    if "airstrike" in text:
+    if "airstrike" in text or "air strike" in text:
         return f"Légicsapás: {location}"
 
-    if "shelling" in text or "artillery" in text:
-        return f"Tüzérségi támadás: {location}"
+    if "shelling" in text or "artillery" in text or "mortar" in text:
+        return f"Tüzérségi vagy aknavetős támadás: {location}"
 
     if nature == "Terrorjellegű / milíciaaktivitás":
         return f"Terrorjellegű vagy milíciaaktivitás: {location}"
 
     if nature == "Katonai / háborús cselekmény":
-        return f"Katonai esemény: {location}"
+        return f"Katonai vagy háborús esemény: {location}"
 
     if nature == "Politikai / diplomáciai fejlemény":
         return f"Diplomáciai vagy politikai fejlemény: {location}"
@@ -313,6 +412,18 @@ def collect_daily_items(items, target_day):
     return daily
 
 
+def collect_items_in_window(items, end_day, days):
+    start_day = end_day - timedelta(days=days - 1)
+    selected = []
+
+    for item in items:
+        item_day = get_event_date(item)
+        if item_day and start_day <= item_day <= end_day:
+            selected.append(get_event_properties(item))
+
+    return selected
+
+
 def get_actors(event):
     event = get_event_properties(event)
     actors = []
@@ -327,34 +438,22 @@ def get_actors(event):
         elif isinstance(value, dict):
             actors.append(clean_text(value))
 
+    text = event_text(event)
+
+    for actor, keywords in ACTOR_KEYWORDS.items():
+        for keyword in keywords:
+            pattern = r"\b" + re.escape(keyword.lower()) + r"\b"
+            if re.search(pattern, text):
+                actors.append(actor)
+                break
+
     cleaned = []
     for actor in actors:
+        actor = clean_text(actor)
         if actor and actor not in cleaned:
             cleaned.append(actor)
 
     return cleaned
-
-
-def summarize_events(events):
-    location_counter = Counter()
-    country_risk_counter = Counter()
-    category_counter = Counter()
-    nature_counter = Counter()
-    source_counter = Counter()
-    actor_counter = Counter()
-
-    for event in events:
-        location_counter[get_location(event)] += 1
-        country = get_country(event)
-        country_risk_counter[country] += max(score_event(event), 1)
-        category_counter[get_category(event)] += 1
-        nature_counter[classify_event_nature(event)] += 1
-        source_counter[get_source_label(event)] += 1
-
-        for actor in get_actors(event):
-            actor_counter[actor] += 1
-
-    return location_counter, country_risk_counter, category_counter, nature_counter, source_counter, actor_counter
 
 
 def score_event(event):
@@ -380,7 +479,32 @@ def score_event(event):
     if any(word in title for word in ["attack", "strike", "war", "missile", "drone", "killed"]):
         score += 1.5
 
+    if get_actors(event):
+        score += 1
+
     return round(score, 2)
+
+
+def summarize_events(events):
+    location_counter = Counter()
+    country_risk_counter = Counter()
+    category_counter = Counter()
+    nature_counter = Counter()
+    source_counter = Counter()
+    actor_counter = Counter()
+
+    for event in events:
+        location_counter[get_location(event)] += 1
+        country = get_country(event)
+        country_risk_counter[country] += max(score_event(event), 1)
+        category_counter[get_category(event)] += 1
+        nature_counter[classify_event_nature(event)] += 1
+        source_counter[get_source_label(event)] += 1
+
+        for actor in get_actors(event):
+            actor_counter[actor] += 1
+
+    return location_counter, country_risk_counter, category_counter, nature_counter, source_counter, actor_counter
 
 
 def top_events(events, limit=8):
@@ -444,6 +568,8 @@ def build_top_events_rows(events):
         category = get_category(event)
         nature = classify_event_nature(event)
         source = get_source_label(event)
+        actors = get_actors(event)
+        actors_text = ", ".join(actors[:4]) if actors else "Nincs külön szereplő"
 
         if url:
             title_html = f'<a href="{escape(url)}" target="_blank" rel="noopener">{escape(title)}</a>'
@@ -458,6 +584,7 @@ def build_top_events_rows(events):
             <td>
               <div class="event-main">{escape(human)}</div>
               <div class="event-sub">{title_html}</div>
+              <div class="event-actors">Szereplők: {escape(actors_text)}</div>
             </td>
             <td>{escape(location)}</td>
             <td>{escape(category)}</td>
@@ -519,13 +646,12 @@ def bar_svg(label, value, max_value, x, y, width, color):
     """
 
 
-def generate_sharecard(report_day, signal, daily_events, daily_firms, daily_social):
+def generate_sharecard(report_day, signal, daily_events, firms_window, social_window):
     SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
 
     summary = signal.get("summary", {})
     risk_level = summary.get("risk_level", "UNKNOWN")
     risk_score = summary.get("normalized_risk_score", 0)
-    total_events = summary.get("total_events", len(daily_events))
 
     (
         location_counter,
@@ -557,8 +683,8 @@ def generate_sharecard(report_day, signal, daily_events, daily_firms, daily_soci
 <rect width="1600" height="2100" fill="url(#bg)"/>
 
 <text x="70" y="95" font-size="52" font-weight="900" fill="#ffffff">KÖZEL-KELET BIZTONSÁGI JELENTÉS</text>
-<text x="70" y="145" font-size="25" fill="#cbd5e1">Automatikus OSINT napi összefoglaló – {report_day.isoformat()}</text>
-<text x="70" y="190" font-size="21" fill="#93c5fd">Események • országkockázat • szereplők • FIRMS • social media</text>
+<text x="70" y="145" font-size="25" fill="#cbd5e1">Automatikus OSINT összefoglaló – {report_day.isoformat()}</text>
+<text x="70" y="190" font-size="21" fill="#93c5fd">Napi események • FIRMS 3 nap • social media 7 nap • országkockázat • szereplők</text>
 
 <rect x="1120" y="62" width="400" height="160" rx="24" fill="#111827" stroke="#334155"/>
 <text x="1160" y="105" font-size="20" fill="#94a3b8">Kockázati szint</text>
@@ -570,15 +696,15 @@ def generate_sharecard(report_day, signal, daily_events, daily_firms, daily_soci
 <text x="105" y="420" font-size="76" font-weight="900" fill="#2563eb">{len(daily_events)}</text>
 
 <rect x="450" y="270" width="350" height="220" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="485" y="330" font-size="22" font-weight="900" fill="#0f172a">FIRMS hőpont</text>
-<text x="485" y="420" font-size="76" font-weight="900" fill="#f97316">{len(daily_firms)}</text>
+<text x="485" y="330" font-size="22" font-weight="900" fill="#0f172a">FIRMS / 3 nap</text>
+<text x="485" y="420" font-size="76" font-weight="900" fill="#f97316">{len(firms_window)}</text>
 
 <rect x="830" y="270" width="350" height="220" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="865" y="330" font-size="22" font-weight="900" fill="#0f172a">Social media</text>
-<text x="865" y="420" font-size="76" font-weight="900" fill="#16a34a">{len(daily_social)}</text>
+<text x="865" y="330" font-size="22" font-weight="900" fill="#0f172a">Social / 7 nap</text>
+<text x="865" y="420" font-size="76" font-weight="900" fill="#16a34a">{len(social_window)}</text>
 
 <rect x="1210" y="270" width="310" height="220" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="1245" y="330" font-size="22" font-weight="900" fill="#0f172a">Fő ország</text>
+<text x="1245" y="330" font-size="22" font-weight="900" fill="#0f172a">Fő rizikó</text>
 <text x="1245" y="395" font-size="32" font-weight="900" fill="#dc2626">{escape(top_country[:18])}</text>
 
 <rect x="70" y="560" width="700" height="520" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
@@ -625,12 +751,12 @@ def generate_sharecard(report_day, signal, daily_events, daily_firms, daily_soci
     for score, event in top_events(daily_events, limit=4):
         human = build_event_sentence(event)[:86]
         loc = get_location(event)[:28]
-        nature = classify_event_nature(event)[:30]
+        actors = ", ".join(get_actors(event)[:2]) or "nincs szereplő"
 
         svg += f"""
 <circle cx="870" cy="{y - 8}" r="8" fill="{color}"/>
 <text x="895" y="{y}" font-size="20" font-weight="900" fill="#0f172a">{escape(loc)}</text>
-<text x="1160" y="{y}" font-size="18" fill="#334155">{escape(nature)}</text>
+<text x="1160" y="{y}" font-size="18" fill="#334155">{escape(actors[:30])}</text>
 <text x="895" y="{y + 32}" font-size="17" fill="#475569">{escape(human)}</text>
 """
         y += 82
@@ -639,10 +765,10 @@ def generate_sharecard(report_day, signal, daily_events, daily_firms, daily_soci
 <rect x="70" y="1650" width="1450" height="210" rx="28" fill="#111827" stroke="#334155"/>
 <text x="110" y="1710" font-size="22" font-weight="900" fill="#e5e7eb">Kulcsmegállapítás</text>
 <text x="110" y="1760" font-size="24" fill="#cbd5e1">Domináns eseményjelleg: {escape(top_nature)}. Fő kockázati ország/térség: {escape(top_country)}.</text>
-<text x="110" y="1810" font-size="22" fill="#cbd5e1">FIRMS hőpontok: {len(daily_firms)} • Social media jelzések: {len(daily_social)} • Napi OSINT események: {len(daily_events)}</text>
+<text x="110" y="1810" font-size="22" fill="#cbd5e1">FIRMS hőpontok / 3 nap: {len(firms_window)} • Social media / 7 nap: {len(social_window)} • Napi OSINT események: {len(daily_events)}</text>
 
 <rect x="70" y="1930" width="1450" height="110" rx="24" fill="#0f172a"/>
-<text x="110" y="1985" font-size="18" fill="#cbd5e1">Automatikus OSINT-alapú napi összefoglaló • Nem hivatalos konfliktus- vagy veszteségstatisztika</text>
+<text x="110" y="1985" font-size="18" fill="#cbd5e1">Automatikus OSINT-alapú összefoglaló • Nem hivatalos konfliktus- vagy veszteségstatisztika</text>
 <text x="1180" y="1985" font-size="20" font-weight="900" fill="#93c5fd">ME Security Monitor</text>
 </svg>
 """
@@ -659,12 +785,12 @@ def build_optional_table(title, items, kind):
         return f"""
         <section class="section">
           <h2>{escape(title)}</h2>
-          <p>Nincs elérhető napi adat.</p>
+          <p>Nincs elérhető adat a vizsgált időablakban.</p>
         </section>
         """
 
     rows = ""
-    for i, item in enumerate(items[:10], start=1):
+    for i, item in enumerate(items[:12], start=1):
         props = get_event_properties(item)
         loc = get_location(props)
         date = get_event_date(props)
@@ -677,6 +803,7 @@ def build_optional_table(title, items, kind):
                 or props.get("bright_ti4")
                 or props.get("confidence")
                 or props.get("frp")
+                or props.get("satellite")
                 or "hőpont"
             )
         else:
@@ -716,7 +843,7 @@ def build_optional_table(title, items, kind):
     """
 
 
-def build_html(report_day, signal, daily_events, daily_firms, daily_social, sharecard_path):
+def build_html(report_day, signal, daily_events, firms_window, social_window, sharecard_path):
     summary = signal.get("summary", {})
     meta = signal.get("meta", {})
 
@@ -750,8 +877,8 @@ def build_html(report_day, signal, daily_events, daily_firms, daily_social, shar
     source_list = build_counter_list(source_counter)
     actor_list = build_counter_list(actor_counter)
 
-    firms_block = build_optional_table("FIRMS hőpontok", daily_firms, "firms")
-    social_block = build_optional_table("Social media események", daily_social, "social")
+    firms_block = build_optional_table("FIRMS hőpontok – elmúlt 3 nap", firms_window, "firms")
+    social_block = build_optional_table("Social media események – elmúlt 7 nap", social_window, "social")
 
     return f"""<!doctype html>
 <html lang="hu">
@@ -930,6 +1057,13 @@ td {{
   line-height: 1.35;
 }}
 
+.event-actors {{
+  margin-top: 6px;
+  font-size: 12px;
+  color: #334155;
+  font-weight: 700;
+}}
+
 .score {{
   color: #dc2626;
   font-weight: 900;
@@ -1011,13 +1145,13 @@ a {{
   </div>
 
   <div class="card">
-    <div class="label">FIRMS hőpont</div>
-    <div class="big">{len(daily_firms)}</div>
+    <div class="label">FIRMS / 3 nap</div>
+    <div class="big">{len(firms_window)}</div>
   </div>
 
   <div class="card">
-    <div class="label">Social media</div>
-    <div class="big">{len(daily_social)}</div>
+    <div class="label">Social / 7 nap</div>
+    <div class="big">{len(social_window)}</div>
   </div>
 
   <div class="card">
@@ -1110,6 +1244,9 @@ a {{
     Frissítés: {escape(str(updated))}. Bizalom: {escape(str(confidence))}.
     A drón-, terrorjellegű és háborús események azonosítása kulcsszavas automatikus osztályozással történik.
   </p>
+  <p>
+    FIRMS hőpontok: elmúlt 3 napos ablak. Social media események: elmúlt 7 napos ablak.
+  </p>
 </section>
 
 </main>
@@ -1199,8 +1336,8 @@ def generate_report():
     report_day = datetime.utcnow().date()
 
     daily_events = collect_daily_items(events, report_day)
-    daily_firms = collect_daily_items(firms, report_day)
-    daily_social = collect_daily_items(social, report_day)
+    firms_window = collect_items_in_window(firms, report_day, 3)
+    social_window = collect_items_in_window(social, report_day, 7)
 
     if not daily_events:
         summary = signal.get("summary", {})
@@ -1209,8 +1346,8 @@ def generate_report():
         if period_end:
             report_day = period_end
             daily_events = collect_daily_items(events, report_day)
-            daily_firms = collect_daily_items(firms, report_day)
-            daily_social = collect_daily_items(social, report_day)
+            firms_window = collect_items_in_window(firms, report_day, 3)
+            social_window = collect_items_in_window(social, report_day, 7)
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -1218,16 +1355,16 @@ def generate_report():
         report_day=report_day,
         signal=signal,
         daily_events=daily_events,
-        daily_firms=daily_firms,
-        daily_social=daily_social,
+        firms_window=firms_window,
+        social_window=social_window,
     )
 
     html = build_html(
         report_day=report_day,
         signal=signal,
         daily_events=daily_events,
-        daily_firms=daily_firms,
-        daily_social=daily_social,
+        firms_window=firms_window,
+        social_window=social_window,
         sharecard_path=sharecard_path,
     )
 
