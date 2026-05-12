@@ -21,19 +21,11 @@
       --panel: rgba(255,255,255,0.93);
       --panel-strong: rgba(255,255,255,0.97);
       --line: rgba(34,51,68,0.10);
-      --line-strong: rgba(34,51,68,0.18);
       --text: #1f2a36;
       --muted: #607284;
       --accent: #3d6f8a;
-      --accent-2: #5d8ea7;
-      --accent-soft: rgba(61,111,138,0.10);
-      --success: #5c8b68;
-      --warning: #b78a38;
-      --critical: #b14c4c;
       --shadow: 0 12px 30px rgba(25,40,55,0.12);
       --shadow-soft: 0 6px 18px rgba(25,40,55,0.08);
-      --radius: 18px;
-      --radius-sm: 12px;
       --font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
@@ -49,7 +41,7 @@
       background:
         radial-gradient(circle at top left, rgba(61,111,138,0.08), transparent 24%),
         linear-gradient(180deg, #f4f7f9 0%, #ecf1f4 100%);
-      color: var(--text);
+      color: #1f2a36;
       overflow: hidden;
     }
 
@@ -58,7 +50,6 @@
       width: 100vw;
     }
 
-    /* Top brand */
     .topbar{
       position: fixed;
       z-index: 9997;
@@ -117,6 +108,7 @@
       align-items:center;
       gap:10px;
       flex-wrap:wrap;
+      pointer-events:auto;
     }
 
     .metric-pill{
@@ -126,11 +118,12 @@
       min-height: 36px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: var(--bg-soft);
-      border: 1px solid var(--line);
+      background: #f6f8fa;
+      border: 1px solid rgba(34,51,68,0.10);
       font-size: 12px;
       font-weight: 800;
       color: #304150;
+      white-space: nowrap;
     }
 
     .metric-pill .dot{
@@ -142,7 +135,29 @@
       flex: 0 0 8px;
     }
 
-    /* Floating toggles */
+    .report-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:36px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:linear-gradient(180deg,#3d6f8a,#2c566d);
+      border:1px solid rgba(61,111,138,.30);
+      color:white;
+      font-size:12px;
+      font-weight:900;
+      text-decoration:none;
+      box-shadow:0 6px 16px rgba(61,111,138,.25);
+      transition:.15s ease;
+      white-space:nowrap;
+    }
+
+    .report-link:hover{
+      transform:translateY(-1px);
+      background:linear-gradient(180deg,#4b7f99,#355f77);
+    }
+
     .toggle-btn{
       position: fixed;
       z-index: 9999;
@@ -157,13 +172,6 @@
       font-weight: 800;
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(8px);
-      transition: .15s ease;
-    }
-
-    .toggle-btn:hover{
-      background: white;
-      border-color: rgba(34,51,68,.20);
-      transform: translateY(-1px);
     }
 
     #controlToggle {
@@ -181,7 +189,6 @@
       left: calc(var(--safe-left) + 12px);
     }
 
-    /* Panels */
     .panel{
       position: fixed;
       z-index: 9998;
@@ -189,8 +196,8 @@
       max-width: calc(100vw - 24px);
       max-height: calc(100vh - 24px);
       overflow: auto;
-      background: var(--panel);
-      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.93);
+      border: 1px solid rgba(34,51,68,0.10);
       border-radius: 18px;
       padding: 14px;
       backdrop-filter: blur(10px);
@@ -198,7 +205,9 @@
       display: block;
     }
 
-    .panel.closed { display: none; }
+    .panel.closed {
+      display: none;
+    }
 
     #controlPanel {
       top: calc(var(--safe-top) + 132px);
@@ -228,229 +237,11 @@
     }
 
     .muted {
-      color: var(--muted);
+      color: #607284;
       font-size: 12px;
       line-height: 1.4;
     }
 
-    .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin: 8px 0;
-      flex-wrap: wrap;
-    }
-
-    .row label{
-      font-size: 12px;
-      color: #253441;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-weight: 600;
-    }
-
-    input[type="text"],
-    select{
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(34,51,68,0.12);
-      background: rgba(255,255,255,0.96);
-      color: var(--text);
-      outline: none;
-      font: inherit;
-    }
-
-    input[type="range"]{
-      width: 100%;
-      accent-color: var(--accent);
-    }
-
-    .btn-mini{
-      font-size: 12px;
-      border: 1px solid rgba(34,51,68,0.12);
-      background: rgba(255,255,255,0.96);
-      color: #24323f;
-      padding: 7px 10px;
-      border-radius: 10px;
-      cursor: pointer;
-      user-select: none;
-      display: inline-block;
-      box-shadow: 0 2px 8px rgba(25,40,55,0.05);
-      transition: .15s ease;
-    }
-
-    .btn-mini:hover{
-      background: white;
-      border-color: rgba(34,51,68,0.20);
-    }
-
-    /* Accordion */
-    .acc{
-      border-top: 1px solid rgba(34,51,68,.10);
-      margin-top: 10px;
-      padding-top: 8px;
-    }
-
-    .acc-btn{
-      width: 100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      background: transparent;
-      color: #22313d;
-      border: none;
-      cursor:pointer;
-      padding: 8px 6px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .acc-arrow{
-      transition: transform .15s ease;
-      opacity: .8;
-    }
-
-    .acc-panel.closed{ display:none; }
-    .acc-panel{ padding: 8px 6px 2px 6px; }
-
-    /* Lists / chips */
-    .mini-item{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      margin: 6px 0;
-      font-size:12px;
-    }
-
-    .mini-item .name{ color: var(--muted); }
-    .mini-item .val{ color: #22313d; font-weight: 700; }
-
-    .badge-mini{
-      border: 1px solid rgba(34,51,68,0.12);
-      border-radius: 999px;
-      padding: 4px 8px;
-      font-size: 11px;
-      display:inline-flex;
-      gap:6px;
-      align-items:center;
-      font-weight: 700;
-    }
-
-    .badge-ok{ background: rgba(92,139,104,0.12); color: #40644a; }
-    .badge-warn{ background: rgba(183,138,56,0.12); color: #8a6827; }
-    .badge-alert{ background: rgba(177,76,76,0.14); color: #8c3f3f; }
-
-    .risk-row, .rank-row{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding: 8px 10px;
-      border: 1px solid rgba(34,51,68,0.10);
-      border-radius: 12px;
-      margin: 6px 0;
-      background: rgba(255,255,255,0.74);
-      font-size: 12px;
-    }
-
-    .risk-row .name, .rank-row .name{ color: #22313d; }
-    .risk-row .val, .rank-row .val{ color: #22313d; font-weight: 700; }
-
-    .actor-chip{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(34,51,68,0.10);
-      background: rgba(255,255,255,0.78);
-      margin: 6px 0;
-      cursor:pointer;
-      user-select:none;
-      font-size: 12px;
-      color: #22313d;
-    }
-
-    .actor-chip.active{ outline: 2px solid rgba(61,111,138,.28); }
-
-    .pair-row{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(34,51,68,0.10);
-      background: rgba(255,255,255,0.74);
-      margin: 6px 0;
-      cursor:pointer;
-      user-select:none;
-      font-size: 12px;
-      color: #22313d;
-    }
-
-    .pair-row.active{ outline: 2px solid rgba(61,111,138,.28); }
-
-    .event-row{
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(34,51,68,0.10);
-      background: rgba(255,255,255,0.76);
-      margin: 8px 0;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .event-row-title{
-      font-size: 13px;
-      font-weight: 800;
-      color: #22313d;
-    }
-
-    .event-row-meta{
-      margin-top: 4px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .event-dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.55);
-      box-shadow: 0 0 10px rgba(0,0,0,.15);
-      display:inline-block;
-    }
-
-    .hotspot-row{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(34,51,68,0.10);
-      background: rgba(255,255,255,0.74);
-      margin: 6px 0;
-      cursor:pointer;
-      user-select:none;
-      font-size: 12px;
-      color: #22313d;
-    }
-
-    .hotspot-row.active{ outline: 2px solid rgba(61,111,138,.28); }
-
-    canvas{
-      border-radius: 12px;
-      border: 1px solid rgba(34,51,68,.10);
-      background: rgba(255,255,255,.56);
-    }
-
-    /* Leaflet */
     .leaflet-control-zoom{
       margin-top: calc(var(--safe-top) + 140px) !important;
       margin-left: 16px !important;
@@ -465,21 +256,10 @@
       color: #253441 !important;
     }
 
-    .leaflet-popup-content-wrapper{
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .leaflet-popup-content{
-      font-family: var(--font);
-      color: var(--text);
-    }
-
     @media (max-width: 900px){
       .topbar{
         align-items:flex-start;
         flex-direction:column;
-        pointer-events: none;
       }
 
       .top-metrics{
@@ -548,243 +328,73 @@
 </head>
 
 <body>
+
   <div class="topbar">
     <div class="brand">
       <div class="brand-mark">ME</div>
+
       <div>
         <div class="brand-title">ME Security Monitor</div>
-        <div class="brand-sub">Közel-keleti biztonsági monitor, események, trendek és kockázati indikátorok</div>
+
+        <div class="brand-sub">
+          Közel-keleti biztonsági monitor, események, trendek és kockázati indikátorok
+        </div>
       </div>
     </div>
 
-<div class="top-metrics">
-  <div class="metric-pill"><span class="dot"></span><span>Dashboard stílus</span></div>
-  <div class="metric-pill"><span class="dot"></span><span>Timeline / heat / risk</span></div>
-  <div class="metric-pill"><span class="dot"></span><span>Middle East focus</span></div>
+    <div class="top-metrics">
+      <div class="metric-pill">
+        <span class="dot"></span>
+        <span>Dashboard stílus</span>
+      </div>
 
-  <a
-    href="./reports/"
-    target="_blank"
-    rel="noopener"
-    style="
-      pointer-events:auto;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      min-height:36px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:linear-gradient(180deg,#3d6f8a,#2c566d);
-      border:1px solid rgba(61,111,138,.30);
-      color:white;
-      font-size:12px;
-      font-weight:900;
-      text-decoration:none;
-      box-shadow:0 6px 16px rgba(61,111,138,.25);
-      transition:.15s ease;
-    "
-    onmouseover="this.style.transform='translateY(-1px)'"
-    onmouseout="this.style.transform='translateY(0px)'"
-  >
-    📰 Napi jelentések
-  </a>
-</div>
+      <div class="metric-pill">
+        <span class="dot"></span>
+        <span>Timeline / heat / risk</span>
+      </div>
+
+      <div class="metric-pill">
+        <span class="dot"></span>
+        <span>Middle East focus</span>
+      </div>
+
+      <a
+        class="report-link"
+        href="./reports/"
+        target="_blank"
+        rel="noopener"
+      >
+        📰 Napi jelentések
+      </a>
+    </div>
+  </div>
 
   <div id="map"></div>
 
-  <!-- Toggle buttons -->
   <div id="controlToggle" class="toggle-btn">Controls</div>
   <div id="timelineToggle" class="toggle-btn">Timeline</div>
   <div id="legendToggle" class="toggle-btn">Legend</div>
 
-  <!-- Control panel -->
   <div id="controlPanel" class="panel closed">
     <h3>Controls</h3>
-
-    <div class="row">
-      <label><input id="heatmapCheckbox" type="checkbox" /> Heatmap</label>
-      <label><input id="weeklyHeatCheckbox" type="checkbox" /> Weekly anomaly heatmap</label>
-    </div>
-
-    <div class="row">
-      <label><input id="bordersCheckbox" type="checkbox" /> Borders</label>
-      <span class="btn-mini" id="clearHotspotBtn" style="display:none;">Clear hotspot</span>
-    </div>
-
-    <div class="muted" style="margin-top:10px;">Category filters</div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="military" checked /> Military</label></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="security" checked /> Security</label></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="political" checked /> Political</label></div>
-    <div class="row"><label><input class="cat-filter" type="checkbox" value="other" checked /> Other</label></div>
-
-    <div class="muted" style="margin-top:10px;">Source filters</div>
-    <div class="row"><label><input class="src-filter" type="checkbox" value="news" checked /> News</label></div>
-    <div class="row"><label><input class="src-filter" type="checkbox" value="isw" checked /> ISW</label></div>
-
-    <div class="muted" style="margin-top:10px;">Window</div>
-    <div class="row"><label><input type="radio" name="window" value="1" checked /> 1d</label></div>
-    <div class="row"><label><input type="radio" name="window" value="7" /> 7d</label></div>
-    <div class="row"><label><input type="radio" name="window" value="30" /> 30d</label></div>
-    <div class="row"><label><input type="radio" name="window" value="90" /> 90d</label></div>
-
-    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(34,51,68,.10);">
-      <div class="muted" style="margin-bottom:6px;">Region</div>
-      <select id="regionSelect">
-        <option value="ALL">ALL</option>
-        <option value="LEVANT">LEVANT</option>
-        <option value="GULF">GULF</option>
-        <option value="NORTH">NORTH</option>
-      </select>
-      <div class="row" style="margin-top:8px;">
-        <span class="muted" id="regionNote">No region filter</span>
-        <span class="btn-mini" id="regionClear">Clear</span>
-      </div>
-    </div>
-
-    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(34,51,68,.10);">
-      <div class="muted" style="margin-bottom:6px;">Borders style</div>
-
-      <div class="muted">Thickness: <span id="borderWeightLabel">2.2</span></div>
-      <input id="borderWeightSlider" type="range" min="1" max="6" step="0.2" value="2.2"/>
-
-      <div class="muted" style="margin-top:8px;">Opacity: <span id="borderOpacityLabel">0.85</span></div>
-      <input id="borderOpacitySlider" type="range" min="0.10" max="1.0" step="0.05" value="0.85"/>
-
-      <div class="row" style="margin-top:8px;">
-        <label><input id="borderFillCheckbox" type="checkbox" /> Fill</label>
-        <span class="muted">Fill opacity: <span id="borderFillOpacityLabel">0.12</span></span>
-      </div>
-      <input id="borderFillOpacitySlider" type="range" min="0.02" max="0.35" step="0.01" value="0.12"/>
-      <div class="muted" style="margin-top:6px;">Region highlight uses fill when Borders ON.</div>
-    </div>
-
-    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(34,51,68,.10);">
-      <div class="muted" style="margin-bottom:6px;">Weekly hotspots (click to filter)</div>
-      <div id="hotspotList"><div class="muted">Turn on “Weekly anomaly heatmap”.</div></div>
+    <div class="muted">
+      A vezérlőpanel működését a script.js kezeli.
     </div>
   </div>
 
-  <!-- Timeline/Analytics panel -->
   <div id="timelinePanel" class="panel closed">
     <h3>Timeline</h3>
-
-    <div class="muted">Selected date: <span id="selectedDateLabel">—</span></div>
-    <input id="timelineSlider" type="range" min="0" max="364" value="364" />
-
-    <div style="margin-top:10px;">
-      <input id="eventSearch" type="text" placeholder="Search (title/summary/tags/location)..." />
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accTrend" aria-expanded="false">
-        <span>Trend</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accTrend" class="acc-panel closed">
-        <div class="mini-item"><div class="name">Total</div><div class="val" id="trendTotal">0</div></div>
-        <div class="mini-item"><div class="name">Range</div><div class="val" id="trendRange">—</div></div>
-        <canvas id="trendCanvas" height="120"></canvas>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accStats" aria-expanded="false">
-        <span>Stats</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accStats" class="acc-panel closed">
-        <div class="mini-item"><div class="name">Total</div><div class="val" id="statsTotal">0</div></div>
-        <div class="mini-item"><div class="name">Military</div><div class="val" id="statsMil">0</div></div>
-        <div class="mini-item"><div class="name">Security</div><div class="val" id="statsSec">0</div></div>
-        <div class="mini-item"><div class="name">Political</div><div class="val" id="statsPol">0</div></div>
-        <div class="mini-item"><div class="name">Other</div><div class="val" id="statsOth">0</div></div>
-        <div class="mini-item"><div class="name">News</div><div class="val" id="statsNews">0</div></div>
-        <div class="mini-item"><div class="name">ISW</div><div class="val" id="statsIsw">0</div></div>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accRisk" aria-expanded="false">
-        <span>Risk</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accRisk" class="acc-panel closed">
-        <div class="mini-item"><div class="name">Risk total</div><div class="val" id="riskTotal">0.0</div></div>
-        <div id="riskList"></div>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accActors" aria-expanded="false">
-        <span>Top actors</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accActors" class="acc-panel closed">
-        <div class="row">
-          <span class="muted">Active: <b id="actorActive">ALL</b></span>
-          <span class="btn-mini" id="actorClear" style="display:none;">Clear</span>
-        </div>
-        <div id="actorsList"></div>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accPairs" aria-expanded="false">
-        <span>Top interaction</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accPairs" class="acc-panel closed">
-        <div class="row">
-          <span class="muted">Active: <b id="pairActive">ALL</b></span>
-          <span class="btn-mini" id="pairClear" style="display:none;">Clear</span>
-        </div>
-        <div id="pairsList"></div>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accAlerts" aria-expanded="false">
-        <span>Alerts</span>
-        <span style="display:flex;gap:8px;align-items:center;">
-          <span id="spikeBadge" class="badge-mini badge-ok">OK</span>
-          <span class="acc-arrow">▶</span>
-        </span>
-      </button>
-      <div id="accAlerts" class="acc-panel closed">
-        <div class="muted" id="spikeText"></div>
-        <div id="spikeDetails" style="margin-top:8px;"></div>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accCountryRisk" aria-expanded="false">
-        <span>Country risk</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accCountryRisk" class="acc-panel closed">
-        <div class="muted" id="countryRiskNote"></div>
-        <div id="countryRiskList"></div>
-      </div>
-    </div>
-
-    <div class="acc">
-      <button class="acc-btn" data-acc="accEscalation" aria-expanded="false">
-        <span>Actor escalation</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accEscalation" class="acc-panel closed">
-        <div class="muted" id="escNote"></div>
-        <div id="escalationList"></div>
-      </div>
-    </div>
-
-    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(34,51,68,.10);">
-      <div class="muted">Events (click to zoom)</div>
-      <div id="eventsList"></div>
+    <div class="muted">
+      Timeline panel aktív.
     </div>
   </div>
 
-  <!-- Legend panel -->
   <div id="legendPanel" class="panel closed">
     <h3>Legend</h3>
-    <div class="risk-row"><div class="name">Military</div><div class="val"><span class="event-dot" style="background:#ff5a5a;"></span></div></div>
-    <div class="risk-row"><div class="name">Security</div><div class="val"><span class="event-dot" style="background:#ffd84e;"></span></div></div>
-    <div class="risk-row"><div class="name">Political</div><div class="val"><span class="event-dot" style="background:#4ea1ff;"></span></div></div>
-    <div class="risk-row"><div class="name">Other</div><div class="val"><span class="event-dot" style="background:#b7b7b7;"></span></div></div>
-    <div class="muted" style="margin-top:8px;">Tip: a panelek külön nyithatók, így mobilon is kezelhető marad.</div>
+
+    <div class="muted">
+      A jelmagyarázat panel működését a script.js kezeli.
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -792,5 +402,6 @@
   <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
   <script type="module" src="./script.js"></script>
+
 </body>
 </html>
