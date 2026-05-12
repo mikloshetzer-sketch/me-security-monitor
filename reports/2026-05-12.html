@@ -5,9 +5,7 @@
 <title>Közel-Kelet napi biztonsági jelentés – 2026-05-12</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -59,9 +57,7 @@ body {
   font-size: 40px;
 }
 
-.content {
-  padding: 30px 40px;
-}
+.content { padding: 30px 40px; }
 
 .actions {
   display: flex;
@@ -81,13 +77,11 @@ body {
   cursor: pointer;
 }
 
-.btn.secondary {
-  background: #0f172a;
-}
+.btn.secondary { background: #0f172a; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 18px;
 }
 
@@ -107,7 +101,7 @@ body {
 }
 
 .big {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 900;
   color: #2563eb;
   margin-top: 8px;
@@ -121,13 +115,11 @@ body {
   margin-top: 22px;
 }
 
-.section h2 {
-  margin-top: 0;
-}
+.section h2 { margin-top: 0; }
 
-.grid5 {
+.grid6 {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 18px;
 }
 
@@ -145,9 +137,7 @@ body {
   gap: 12px;
 }
 
-.rank-list span {
-  overflow-wrap: anywhere;
-}
+.rank-list span { overflow-wrap: anywhere; }
 
 table {
   width: 100%;
@@ -190,9 +180,7 @@ td {
   font-weight: 900;
 }
 
-.source-cell {
-  font-size: 12px;
-}
+.source-cell { font-size: 12px; }
 
 a {
   color: #2563eb;
@@ -220,36 +208,20 @@ a {
   margin-top: 28px;
 }
 
-@media (max-width: 1000px) {
-  .grid5 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
+@media (max-width: 1100px) {
+  .grid6 { grid-template-columns: 1fr 1fr; }
+  .cards { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 700px) {
-  .grid5,
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .content {
-    padding: 20px;
-  }
+  .grid6, .cards { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; align-items: flex-start; }
+  .content { padding: 20px; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="page">
 
 <header class="hero">
@@ -284,43 +256,67 @@ a {
   </div>
 
   <div class="card">
-    <div class="label">Fő térség</div>
-    <div class="big" style="font-size:22px;">Iran</div>
+    <div class="label">FIRMS hőpont</div>
+    <div class="big">0</div>
   </div>
 
   <div class="card">
-    <div class="label">Domináns jelleg</div>
-    <div class="big" style="font-size:21px;">Egyéb biztonsági esemény</div>
+    <div class="label">Social media</div>
+    <div class="big">0</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Fő kockázati térség</div>
+    <div class="big" style="font-size:21px;">Iran</div>
   </div>
 </section>
 
 <section class="section">
   <h2>Rövid napi értékelés</h2>
-
   <p>
-    A rendszer aktuális kockázati szintje
-    <strong>KÖZEPES</strong>,
-    az összesített normalizált kockázati index
-    <strong>53.8</strong>.
+    A rendszer aktuális kockázati szintje <strong>KÖZEPES</strong>,
+    az összesített normalizált kockázati index <strong>53.8</strong>.
   </p>
-
   <p>
-    A napi aktivitás fő fókuszpontja:
-    <strong>Iran</strong>.
-    A domináns eseményjelleg:
-    <strong>Egyéb biztonsági esemény</strong>.
-  </p>
-
-  <p>
-    Az adatok automatizált OSINT-gyűjtésből származnak.
-    A riport elemzési segédletként szolgál.
+    A napi aktivitás fő fókuszpontja: <strong>Iran</strong>.
+    A legerősebb országkockázati jelzés: <strong>Iran</strong>.
+    A domináns eseményjelleg: <strong>Egyéb biztonsági esemény</strong>.
   </p>
 </section>
 
 <section class="section">
-  <h2>Országkockázat és kategóriák</h2>
+  <h2>Országkockázat, szereplők és adatforrások</h2>
+  <div class="grid6">
+    <div>
+      <h3>Ország rizikó</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Iran</span>
+          <strong>55.9</strong>
+        </li>
+        
+        <li>
+          <span>Israel</span>
+          <strong>48.6</strong>
+        </li>
+        
+        <li>
+          <span>Gaza Strip</span>
+          <strong>7.4</strong>
+        </li>
+        
+        <li>
+          <span>Tehran</span>
+          <strong>5.5</strong>
+        </li>
+        
+        <li>
+          <span>Lebanon</span>
+          <strong>3.0</strong>
+        </li>
+        </ol>
+    </div>
 
-  <div class="grid5">
     <div>
       <h3>Helyszínek</h3>
       <ol class="rank-list">
@@ -418,19 +414,33 @@ a {
 
     <div>
       <h3>Szereplők</h3>
-      <ol class="rank-list"><li>Nincs adat.</li></ol>
+      <ol class="rank-list"><li><span>Nincs adat</span><strong>–</strong></li></ol>
     </div>
 
     <div>
-      <h3>Interakciók</h3>
-      <ol class="rank-list"><li>Nincs adat.</li></ol>
+      <h3>Források</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Reuters (via Google News)</span>
+          <strong>13</strong>
+        </li>
+        
+        <li>
+          <span>BBC</span>
+          <strong>3</strong>
+        </li>
+        
+        <li>
+          <span>Al Jazeera (via Google News)</span>
+          <strong>3</strong>
+        </li>
+        </ol>
     </div>
   </div>
 </section>
 
 <section class="section">
   <h2>Top események</h2>
-
   <table>
     <thead>
       <tr>
@@ -443,17 +453,13 @@ a {
         <th>Forrás</th>
       </tr>
     </thead>
-
     <tbody>
-      
         <tr>
             <td>1</td>
-
             <td>
               <div class="event-main">Drón- vagy UAV-aktivitás: Lebanon</div>
               <div class="event-sub">Evolving drone war in southern Lebanon clouds Iran peace prospects - Reuters</div>
             </td>
-
             <td>Lebanon</td>
             <td>Katonai / háborús</td>
             <td>Drón / UAV aktivitás</td>
@@ -463,12 +469,10 @@ a {
         
         <tr>
             <td>2</td>
-
             <td>
               <div class="event-main">Katonai esemény: Israel</div>
               <div class="event-sub">Lebanese in south refuse to flee again despite escalating Israeli strikes - Al Jazeera</div>
             </td>
-
             <td>Israel</td>
             <td>Katonai / háborús</td>
             <td>Katonai / háborús cselekmény</td>
@@ -478,12 +482,10 @@ a {
         
         <tr>
             <td>3</td>
-
             <td>
               <div class="event-main">Terrorjellegű vagy milíciaaktivitás: Israel</div>
               <div class="event-sub">New Israeli law sets military tribunal for Hamas October 7 militants - Reuters</div>
             </td>
-
             <td>Israel</td>
             <td>Biztonsági</td>
             <td>Terrorjellegű / milíciaaktivitás</td>
@@ -493,12 +495,10 @@ a {
         
         <tr>
             <td>4</td>
-
             <td>
               <div class="event-main">Biztonsági esemény: Iran</div>
               <div class="event-sub">Iran war creates new must-have for summer holidays: the plan B - Reuters</div>
             </td>
-
             <td>Iran</td>
             <td>Egyéb</td>
             <td>Egyéb biztonsági esemény</td>
@@ -508,12 +508,10 @@ a {
         
         <tr>
             <td>5</td>
-
             <td>
               <div class="event-main">Biztonsági esemény: Iran</div>
               <div class="event-sub">Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters</div>
             </td>
-
             <td>Iran</td>
             <td>Katonai / háborús</td>
             <td>Egyéb biztonsági esemény</td>
@@ -523,12 +521,10 @@ a {
         
         <tr>
             <td>6</td>
-
             <td>
               <div class="event-main">Biztonsági esemény: Iran</div>
               <div class="event-sub">World markets feel the strain as US–Iran war grinds on - Reuters</div>
             </td>
-
             <td>Iran</td>
             <td>Egyéb</td>
             <td>Egyéb biztonsági esemény</td>
@@ -538,12 +534,10 @@ a {
         
         <tr>
             <td>7</td>
-
             <td>
               <div class="event-main">Biztonsági esemény: Iran</div>
               <div class="event-sub">Europe&#x27;s chemical makers catch a break as Iran war hits Asian rivals - Reuters</div>
             </td>
-
             <td>Iran</td>
             <td>Egyéb</td>
             <td>Egyéb biztonsági esemény</td>
@@ -553,12 +547,10 @@ a {
         
         <tr>
             <td>8</td>
-
             <td>
               <div class="event-main">Biztonsági esemény: Iran</div>
               <div class="event-sub">Iran war takes colour out of Japanese snack maker Calbee&#x27;s chips packaging - Reuters</div>
             </td>
-
             <td>Iran</td>
             <td>Egyéb</td>
             <td>Egyéb biztonsági esemény</td>
@@ -568,12 +560,10 @@ a {
         
         <tr>
             <td>9</td>
-
             <td>
               <div class="event-main">Biztonsági esemény: Iran</div>
               <div class="event-sub">Stung by Iran war, Trump heads to China in need of wins - Reuters</div>
             </td>
-
             <td>Iran</td>
             <td>Egyéb</td>
             <td>Egyéb biztonsági esemény</td>
@@ -583,32 +573,37 @@ a {
         
         <tr>
             <td>10</td>
-
             <td>
               <div class="event-main">Diplomáciai vagy politikai fejlemény: Iran</div>
               <div class="event-sub">Trump says Iran ceasefire is on &#x27;massive life support&#x27;</div>
             </td>
-
             <td>Iran</td>
             <td>Politikai</td>
             <td>Politikai / diplomáciai fejlemény</td>
             <td class="score">2.5</td>
             <td class="source-cell">BBC</td>
         </tr>
-        
-    </tbody>
+        </tbody>
   </table>
 </section>
 
+
+        <section class="section">
+          <h2>FIRMS hőpontok</h2>
+          <p>Nincs elérhető napi adat.</p>
+        </section>
+        
+
+
+        <section class="section">
+          <h2>Social media események</h2>
+          <p>Nincs elérhető napi adat.</p>
+        </section>
+        
+
 <section class="section">
   <h2>Blogra használható összefoglaló kép</h2>
-
-  <p>
-    <a href="sharecards/2026-05-12-middle-east-summary.svg" target="_blank">
-      Kép megnyitása külön oldalon
-    </a>
-  </p>
-
+  <p><a href="sharecards/2026-05-12-middle-east-summary.svg" target="_blank">Kép megnyitása külön oldalon</a></p>
   <div class="sharecard">
     <img src="sharecards/2026-05-12-middle-east-summary.svg" alt="Közel-Kelet napi OSINT összefoglaló">
   </div>
@@ -616,15 +611,9 @@ a {
 
 <section class="section">
   <h2>Módszertani megjegyzés</h2>
-
   <p>
-    Frissítés: 2026-05-12 10:42 UTC. Bizalom:
-    HIGH.
-  </p>
-
-  <p>
-    A drón-, terrorjellegű és háborús események
-    azonosítása kulcsszavas automatikus osztályozással történik.
+    Frissítés: 2026-05-12 10:42 UTC. Bizalom: HIGH.
+    A drón-, terrorjellegű és háborús események azonosítása kulcsszavas automatikus osztályozással történik.
   </p>
 </section>
 
@@ -635,6 +624,5 @@ a {
 </footer>
 
 </div>
-
 </body>
 </html>
