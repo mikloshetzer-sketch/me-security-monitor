@@ -1,3 +1,5 @@
+# scripts/generate_daily_report.py
+
 import json
 import re
 from pathlib import Path
@@ -28,6 +30,28 @@ FOCUS_AREAS = [
 ]
 
 
+DRONE_TERMS = [
+    "drone", "uav", "uas", "shahed", "geran",
+    "loitering munition", "fpv drone",
+]
+
+WAR_TERMS = [
+    "airstrike", "missile", "rocket", "shelling",
+    "artillery", "mortar", "strike", "military",
+    "combat", "battle", "offensive",
+]
+
+TERROR_TERMS = [
+    "terror", "terrorist", "isis", "hamas",
+    "hezbollah", "suicide", "ied", "hostage",
+]
+
+DIPLOMACY_TERMS = [
+    "ceasefire", "negotiation", "deal",
+    "diplomatic", "minister", "president",
+]
+
+
 def load_json(path, default):
     if not path.exists():
         return default
@@ -47,13 +71,9 @@ def clean_text(value):
         return ""
 
     if isinstance(value, list):
-        parts = [clean_text(item) for item in value]
-        parts = [part for part in parts if part]
-        return ", ".join(parts)
+        return ", ".join([clean_text(v) for v in value if clean_text(v)])
 
-    text = str(value)
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    return re.sub(r"\s+", " ", str(value)).strip()
 
 
 def parse_date(value):
@@ -75,21 +95,14 @@ def parse_date(value):
     return None
 
 
-def today_utc_date():
-    return datetime.utcnow().date()
-
-
 def safe_events(events_raw):
     if isinstance(events_raw, list):
         return events_raw
 
     if isinstance(events_raw, dict):
-        if isinstance(events_raw.get("events"), list):
-            return events_raw["events"]
-        if isinstance(events_raw.get("items"), list):
-            return events_raw["items"]
-        if isinstance(events_raw.get("features"), list):
-            return events_raw["features"]
+        for key in ["events", "items", "features"]:
+            if isinstance(events_raw.get(key), list):
+                return events_raw[key]
 
     return []
 
@@ -130,25 +143,7 @@ def get_location(event):
 
     location_text = clean_text(location)
 
-    if location_text:
-        return location_text
-
-    return "Nincs pontos helyszín"
-
-
-def get_country_or_area(event):
-    event = get_event_properties(event)
-
-    for key in ["country", "country_name", "area", "region"]:
-        value = clean_text(event.get(key))
-        if value:
-            return value
-
-    location = get_location(event)
-    if "," in location:
-        return location.split(",")[-1].strip()
-
-    return location
+    return location_text or "Nincs pontos helyszín"
 
 
 def get_title(event):
@@ -163,10 +158,7 @@ def get_title(event):
 
     title_text = clean_text(title)
 
-    if title_text:
-        return title_text
-
-    return build_event_sentence(event)
+    return title_text or build_event_sentence(event)
 
 
 def get_category(event):
@@ -197,12 +189,6 @@ def get_url(event):
         if value and str(value).startswith("http"):
             return str(value)
 
-    source = event.get("source")
-    if isinstance(source, dict):
-        url = source.get("url") or source.get("link")
-        if url and str(url).startswith("http"):
-            return str(url)
-
     return ""
 
 
@@ -223,44 +209,28 @@ def get_source_label(event):
             return label
 
     url = get_url(event)
+
     if url:
         domain = urlparse(url).netloc.replace("www.", "")
+
         if "news.google.com" in domain:
-            return "Google News / hírforrás"
+            return "Google News"
+
         return domain
 
     return "Ismeretlen forrás"
-
-
-def event_text(event):
-    return f"{get_title(event)} {get_location(event)} {get_category(event)}".lower()
 
 
 def contains_any(text, terms):
     return any(term in text for term in terms)
 
 
-DRONE_TERMS = [
-    "drone", "drones", "uav", "uas", "shahed", "geran",
-    "loitering munition", "fpv drone", "unmanned aerial",
-]
-
-WAR_TERMS = [
-    "airstrike", "air strike", "missile", "rocket", "shelling",
-    "artillery", "mortar", "strike", "military", "troops",
-    "combat", "battle", "frontline", "war", "offensive",
-]
-
-TERROR_TERMS = [
-    "terror", "terrorist", "isis", "islamic state", "al-qaeda",
-    "hamas", "hezbollah", "suicide", "car bomb", "ied",
-    "hostage", "mass shooting",
-]
-
-DIPLOMACY_TERMS = [
-    "talks", "ceasefire", "negotiation", "deal", "sanction",
-    "diplomatic", "minister", "president", "parliament",
-]
+def event_text(event):
+    return (
+        f"{get_title(event)} "
+        f"{get_location(event)} "
+        f"{get_category(event)}"
+    ).lower()
 
 
 def classify_event_nature(event):
@@ -278,8 +248,8 @@ def classify_event_nature(event):
     if contains_any(text, DIPLOMACY_TERMS):
         return "Politikai / diplomáciai fejlemény"
 
-    if contains_any(text, ["protest", "riot", "unrest", "demonstration", "rally"]):
-        return "Tüntetés / belső instabilitás"
+    if contains_any(text, ["protest", "riot", "unrest"]):
+        return "Tüntetés / instabilitás"
 
     return "Egyéb biztonsági esemény"
 
@@ -291,25 +261,25 @@ def build_event_sentence(event):
     text = event_text(event)
 
     if nature == "Drón / UAV aktivitás":
-        return f"Drón- vagy UAV-aktivitás azonosítva: {location}"
+        return f"Drón- vagy UAV-aktivitás: {location}"
 
     if "missile" in text or "rocket" in text:
-        return f"Rakéta- vagy rakétatámadáshoz kapcsolódó esemény: {location}"
+        return f"Rakétatámadáshoz kapcsolódó esemény: {location}"
 
-    if "airstrike" in text or "air strike" in text:
-        return f"Légicsapáshoz kapcsolódó esemény: {location}"
+    if "airstrike" in text:
+        return f"Légicsapás: {location}"
 
-    if "shelling" in text or "artillery" in text or "mortar" in text:
-        return f"Tüzérségi vagy aknavetős támadáshoz kapcsolódó esemény: {location}"
+    if "shelling" in text or "artillery" in text:
+        return f"Tüzérségi támadás: {location}"
 
     if nature == "Terrorjellegű / milíciaaktivitás":
-        return f"Terrorjellegű vagy milíciaaktivitásra utaló esemény: {location}"
+        return f"Terrorjellegű vagy milíciaaktivitás: {location}"
 
     if nature == "Katonai / háborús cselekmény":
-        return f"Katonai vagy háborús cselekmény: {location}"
+        return f"Katonai esemény: {location}"
 
     if nature == "Politikai / diplomáciai fejlemény":
-        return f"Politikai vagy diplomáciai fejlemény: {location}"
+        return f"Diplomáciai vagy politikai fejlemény: {location}"
 
     return f"Biztonsági esemény: {location}"
 
@@ -319,6 +289,7 @@ def collect_daily_events(events, target_day):
 
     for event in events:
         event_day = get_event_date(event)
+
         if event_day == target_day:
             daily.append(get_event_properties(event))
 
@@ -330,14 +301,49 @@ def summarize_events(events):
     category_counter = Counter()
     nature_counter = Counter()
     source_counter = Counter()
+    actor_counter = Counter()
+    pair_counter = Counter()
 
     for event in events:
-        location_counter[get_country_or_area(event)] += 1
+        location_counter[get_location(event)] += 1
         category_counter[get_category(event)] += 1
         nature_counter[classify_event_nature(event)] += 1
         source_counter[get_source_label(event)] += 1
 
-    return location_counter, category_counter, nature_counter, source_counter
+        actors = []
+
+        for key in [
+            "actors",
+            "actor",
+            "actor1",
+            "actor2",
+            "participants",
+        ]:
+            value = event.get(key)
+
+            if isinstance(value, list):
+                actors.extend([clean_text(v) for v in value if clean_text(v)])
+
+            elif isinstance(value, str):
+                actors.append(clean_text(value))
+
+        actors = list(dict.fromkeys([a for a in actors if a]))
+
+        for actor in actors:
+            actor_counter[actor] += 1
+
+        if len(actors) >= 2:
+            pair = " ↔ ".join(sorted(actors[:2]))
+            pair_counter[pair] += 1
+
+    return (
+        location_counter,
+        category_counter,
+        nature_counter,
+        source_counter,
+        actor_counter,
+        pair_counter,
+    )
 
 
 def score_event(event):
@@ -349,17 +355,27 @@ def score_event(event):
 
     if nature == "Drón / UAV aktivitás":
         score += 3
+
     elif nature == "Katonai / háborús cselekmény":
         score += 2.5
+
     elif nature == "Terrorjellegű / milíciaaktivitás":
         score += 3
+
     elif nature == "Politikai / diplomáciai fejlemény":
         score += 1
 
     if any(area.lower() in location.lower() for area in FOCUS_AREAS):
         score += 1.5
 
-    if any(word in title for word in ["attack", "strike", "war", "missile", "drone", "killed"]):
+    if any(word in title for word in [
+        "attack",
+        "strike",
+        "war",
+        "missile",
+        "drone",
+        "killed",
+    ]):
         score += 1.5
 
     return round(score, 2)
@@ -376,8 +392,10 @@ def risk_color(level):
 
     if level == "HIGH":
         return "#ef4444"
+
     if level == "MEDIUM":
         return "#f97316"
+
     if level == "LOW":
         return "#22c55e"
 
@@ -389,8 +407,10 @@ def hu_risk(level):
 
     if level == "HIGH":
         return "MAGAS"
+
     if level == "MEDIUM":
         return "KÖZEPES"
+
     if level == "LOW":
         return "ALACSONY"
 
@@ -404,7 +424,12 @@ def build_counter_list(counter):
     html = ""
 
     for key, value in counter.most_common(8):
-        html += f"<li><span>{escape(str(key))}</span><strong>{value}</strong></li>"
+        html += f"""
+        <li>
+          <span>{escape(str(key))}</span>
+          <strong>{value}</strong>
+        </li>
+        """
 
     return html
 
@@ -431,10 +456,12 @@ def build_top_events_rows(events):
         rows += f"""
         <tr>
             <td>{index}</td>
+
             <td>
               <div class="event-main">{escape(human)}</div>
               <div class="event-sub">{title_html}</div>
             </td>
+
             <td>{escape(location)}</td>
             <td>{escape(category)}</td>
             <td>{escape(nature)}</td>
@@ -449,20 +476,6 @@ def build_top_events_rows(events):
     return rows
 
 
-def bar_svg(label, value, max_value, x, y, width, color):
-    if max_value <= 0:
-        max_value = 1
-
-    bar_width = int((value / max_value) * width)
-
-    return f"""
-    <text x="{x}" y="{y}" font-size="18" font-weight="700" fill="#334155">{escape(str(label)[:34])}</text>
-    <rect x="{x}" y="{y + 12}" width="{width}" height="18" rx="9" fill="#e2e8f0"/>
-    <rect x="{x}" y="{y + 12}" width="{bar_width}" height="18" rx="9" fill="{color}"/>
-    <text x="{x + width + 18}" y="{y + 28}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
-    """
-
-
 def generate_sharecard(report_day, signal, daily_events):
     SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -471,43 +484,28 @@ def generate_sharecard(report_day, signal, daily_events):
     risk_score = summary.get("normalized_risk_score", 0)
     total_events = summary.get("total_events", len(daily_events))
 
-    location_counter, category_counter, nature_counter, source_counter = summarize_events(daily_events)
-
-    focus_counts = Counter()
-    for event in daily_events:
-        loc = get_location(event)
-        area = get_country_or_area(event)
-
-        matched = False
-        for focus in FOCUS_AREAS:
-            if focus.lower() in loc.lower() or focus.lower() in area.lower():
-                focus_counts[focus] += 1
-                matched = True
-                break
-
-        if not matched and area != "Nincs pontos helyszín":
-            focus_counts[area] += 1
-
-    if not focus_counts:
-        for item in signal.get("top_locations", []):
-            name = clean_text(item.get("name"))
-            if name:
-                focus_counts[name] = int(round(float(item.get("risk", 0))))
-
-    max_focus = max(focus_counts.values(), default=1)
-    max_nature = max(nature_counter.values(), default=1)
-
-    color = risk_color(risk_level)
+    (
+        location_counter,
+        category_counter,
+        nature_counter,
+        source_counter,
+        actor_counter,
+        pair_counter,
+    ) = summarize_events(daily_events)
 
     top_nature = nature_counter.most_common(1)[0][0] if nature_counter else "Nincs adat"
 
+    color = risk_color(risk_level)
+
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2100" viewBox="0 0 1600 2100">
+
 <defs>
   <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
     <stop offset="0%" stop-color="#0f172a"/>
     <stop offset="60%" stop-color="#07111f"/>
     <stop offset="100%" stop-color="#020617"/>
   </linearGradient>
+
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
     <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000000" flood-opacity="0.38"/>
   </filter>
@@ -515,37 +513,57 @@ def generate_sharecard(report_day, signal, daily_events):
 
 <rect width="1600" height="2100" fill="url(#bg)"/>
 
-<text x="70" y="95" font-size="50" font-weight="900" fill="#ffffff">KÖZEL-KELET BIZTONSÁGI JELENTÉS</text>
-<text x="70" y="145" font-size="25" fill="#cbd5e1">Automatikus OSINT napi összefoglaló – {report_day.isoformat()}</text>
-<text x="70" y="190" font-size="21" fill="#93c5fd">Irán • Izrael • Libanon • Gáza • Szíria • Irak • Jemen</text>
+<text x="70" y="95" font-size="52" font-weight="900" fill="#ffffff">
+KÖZEL-KELET BIZTONSÁGI JELENTÉS
+</text>
 
-<rect x="1110" y="62" width="410" height="150" rx="24" fill="#111827" stroke="#334155"/>
-<text x="1150" y="105" font-size="20" fill="#94a3b8">Aktuális kockázati szint</text>
-<text x="1150" y="165" font-size="46" font-weight="900" fill="{color}">{escape(hu_risk(risk_level))}</text>
-<text x="1150" y="198" font-size="20" fill="#e5e7eb">Index: {risk_score}</text>
+<text x="70" y="145" font-size="25" fill="#cbd5e1">
+Automatikus OSINT napi összefoglaló – {report_day.isoformat()}
+</text>
 
-<rect x="70" y="270" width="460" height="250" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
+<rect x="1120" y="62" width="400" height="160" rx="24" fill="#111827" stroke="#334155"/>
+
+<text x="1160" y="105" font-size="20" fill="#94a3b8">
+Kockázati szint
+</text>
+
+<text x="1160" y="168" font-size="48" font-weight="900" fill="{color}">
+{escape(hu_risk(risk_level))}
+</text>
+
+<text x="1160" y="205" font-size="20" fill="#e5e7eb">
+Index: {risk_score}
+</text>
+
+<rect x="70" y="270" width="460" height="240" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
 <text x="110" y="330" font-size="24" font-weight="900" fill="#0f172a">Összes esemény</text>
 <text x="110" y="420" font-size="88" font-weight="900" fill="#2563eb">{total_events}</text>
-<text x="110" y="470" font-size="22" fill="#475569">7 napos ablak alapján</text>
 
-<rect x="570" y="270" width="460" height="250" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="610" y="330" font-size="24" font-weight="900" fill="#0f172a">Napi találatok</text>
+<rect x="570" y="270" width="460" height="240" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="610" y="330" font-size="24" font-weight="900" fill="#0f172a">Napi események</text>
 <text x="610" y="420" font-size="88" font-weight="900" fill="#16a34a">{len(daily_events)}</text>
-<text x="610" y="470" font-size="22" fill="#475569">jelentéshez használt esemény</text>
 
-<rect x="1070" y="270" width="450" height="250" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
+<rect x="1070" y="270" width="450" height="240" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
 <text x="1110" y="330" font-size="24" font-weight="900" fill="#0f172a">Domináns jelleg</text>
-<text x="1110" y="395" font-size="28" font-weight="900" fill="#f97316">{escape(top_nature[:28])}</text>
+<text x="1110" y="400" font-size="28" font-weight="900" fill="#f97316">{escape(top_nature)}</text>
 
 <rect x="70" y="590" width="700" height="520" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="110" y="650" font-size="30" font-weight="900" fill="#0f172a">Fő térségek</text>
+<text x="110" y="650" font-size="30" font-weight="900" fill="#0f172a">Leginkább érintett térségek</text>
 """
 
     y = 720
-    for label, value in focus_counts.most_common(7):
-        svg += bar_svg(label, value, max_focus, 110, y, 470, "#2563eb")
-        y += 62
+    max_loc = max(location_counter.values(), default=1)
+
+    for name, value in location_counter.most_common(7):
+        width = int((value / max_loc) * 420)
+
+        svg += f"""
+<text x="110" y="{y}" font-size="18" font-weight="700" fill="#334155">{escape(name[:32])}</text>
+<rect x="110" y="{y + 12}" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="110" y="{y + 12}" width="{width}" height="18" rx="9" fill="#2563eb"/>
+<text x="550" y="{y + 28}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
+"""
+        y += 58
 
     svg += f"""
 <rect x="820" y="590" width="700" height="520" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
@@ -553,39 +571,84 @@ def generate_sharecard(report_day, signal, daily_events):
 """
 
     y = 720
-    for label, value in nature_counter.most_common(7):
-        svg += bar_svg(label, value, max_nature, 860, y, 470, "#f97316")
-        y += 62
+    max_nat = max(nature_counter.values(), default=1)
 
-    svg += f"""
-<rect x="70" y="1180" width="1450" height="600" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="110" y="1245" font-size="32" font-weight="900" fill="#0f172a">Top események</text>
-"""
-
-    y = 1305
-    for score, event in top_events(daily_events, limit=6):
-        human = build_event_sentence(event)[:96]
-        loc = get_location(event)[:36]
-        nature = classify_event_nature(event)[:34]
-        source = get_source_label(event)[:26]
+    for name, value in nature_counter.most_common(7):
+        width = int((value / max_nat) * 420)
 
         svg += f"""
-<circle cx="118" cy="{y - 8}" r="8" fill="{color}"/>
-<text x="145" y="{y}" font-size="21" font-weight="900" fill="#0f172a">{escape(loc)}</text>
-<text x="520" y="{y}" font-size="19" fill="#334155">{escape(nature)}</text>
-<text x="145" y="{y + 34}" font-size="18" fill="#475569">{escape(human)} – {escape(source)}</text>
+<text x="860" y="{y}" font-size="18" font-weight="700" fill="#334155">{escape(name[:34])}</text>
+<rect x="860" y="{y + 12}" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="860" y="{y + 12}" width="{width}" height="18" rx="9" fill="#f97316"/>
+<text x="1300" y="{y + 28}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
 """
-        y += 78
+        y += 58
 
     svg += f"""
-<rect x="70" y="1880" width="1450" height="120" rx="24" fill="#111827" stroke="#334155"/>
-<text x="110" y="1930" font-size="20" font-weight="800" fill="#e5e7eb">Módszertani megjegyzés</text>
-<text x="110" y="1970" font-size="18" fill="#cbd5e1">Automatikus OSINT-alapú napi összefoglaló. Nem hivatalos konfliktus- vagy veszteségstatisztika.</text>
-<text x="1130" y="1970" font-size="20" font-weight="900" fill="#93c5fd">ME Security Monitor</text>
+<rect x="70" y="1180" width="700" height="500" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="110" y="1245" font-size="30" font-weight="900" fill="#0f172a">Top szereplők</text>
+"""
+
+    y = 1315
+    max_actor = max(actor_counter.values(), default=1)
+
+    for name, value in actor_counter.most_common(7):
+        width = int((value / max_actor) * 420)
+
+        svg += f"""
+<text x="110" y="{y}" font-size="18" font-weight="700" fill="#334155">{escape(name[:34])}</text>
+<rect x="110" y="{y + 12}" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="110" y="{y + 12}" width="{width}" height="18" rx="9" fill="#16a34a"/>
+<text x="550" y="{y + 28}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
+"""
+        y += 58
+
+    svg += f"""
+<rect x="820" y="1180" width="700" height="500" rx="28" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="860" y="1245" font-size="30" font-weight="900" fill="#0f172a">Top interakciók</text>
+"""
+
+    y = 1315
+    max_pair = max(pair_counter.values(), default=1)
+
+    for name, value in pair_counter.most_common(7):
+        width = int((value / max_pair) * 420)
+
+        svg += f"""
+<text x="860" y="{y}" font-size="18" font-weight="700" fill="#334155">{escape(name[:38])}</text>
+<rect x="860" y="{y + 12}" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="860" y="{y + 12}" width="{width}" height="18" rx="9" fill="#dc2626"/>
+<text x="1300" y="{y + 28}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
+"""
+        y += 58
+
+    svg += f"""
+<rect x="70" y="1750" width="1450" height="170" rx="24" fill="#111827" stroke="#334155"/>
+
+<text x="110" y="1810" font-size="20" font-weight="800" fill="#e5e7eb">
+Kulcsmegállapítás
+</text>
+
+<text x="110" y="1860" font-size="24" fill="#cbd5e1">
+A domináns eseményjelleg: {escape(top_nature)}.
+A napi aktivitás főként a legmagasabb kockázatú közel-keleti térségekhez kapcsolódik.
+</text>
+
+<rect x="70" y="1960" width="1450" height="100" rx="24" fill="#0f172a"/>
+
+<text x="110" y="2010" font-size="18" fill="#cbd5e1">
+Automatikus OSINT-alapú napi összefoglaló • Nem hivatalos konfliktus- vagy veszteségstatisztika
+</text>
+
+<text x="1180" y="2010" font-size="20" font-weight="900" fill="#93c5fd">
+ME Security Monitor
+</text>
+
 </svg>
 """
 
     filename = f"{report_day.isoformat()}-middle-east-summary.svg"
+
     path = SHARECARDS_DIR / filename
     path.write_text(svg, encoding="utf-8")
 
@@ -602,7 +665,14 @@ def build_html(report_day, signal, daily_events, sharecard_path):
     confidence = summary.get("confidence", "N/A")
     updated = meta.get("updated", "Nincs adat")
 
-    location_counter, category_counter, nature_counter, source_counter = summarize_events(daily_events)
+    (
+        location_counter,
+        category_counter,
+        nature_counter,
+        source_counter,
+        actor_counter,
+        pair_counter,
+    ) = summarize_events(daily_events)
 
     top_location = location_counter.most_common(1)[0][0] if location_counter else "Nincs adat"
     top_nature = nature_counter.most_common(1)[0][0] if nature_counter else "Nincs adat"
@@ -613,12 +683,15 @@ def build_html(report_day, signal, daily_events, sharecard_path):
     category_list = build_counter_list(category_counter)
     nature_list = build_counter_list(nature_counter)
     source_list = build_counter_list(source_counter)
+    actor_list = build_counter_list(actor_counter)
+    pair_list = build_counter_list(pair_counter)
 
     return f"""<!doctype html>
 <html lang="hu">
 <head>
 <meta charset="utf-8">
 <title>Közel-Kelet napi biztonsági jelentés – {report_day.isoformat()}</title>
+
 <style>
 * {{
   box-sizing: border-box;
@@ -632,7 +705,7 @@ body {{
 }}
 
 .page {{
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
   background: #f8fafc;
   min-height: 100vh;
@@ -740,9 +813,9 @@ body {{
   margin-top: 0;
 }}
 
-.grid4 {{
+.grid5 {{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 18px;
 }}
 
@@ -786,14 +859,6 @@ td {{
   vertical-align: top;
   overflow-wrap: anywhere;
 }}
-
-th:nth-child(1), td:nth-child(1) {{ width: 42px; }}
-th:nth-child(2), td:nth-child(2) {{ width: 34%; }}
-th:nth-child(3), td:nth-child(3) {{ width: 16%; }}
-th:nth-child(4), td:nth-child(4) {{ width: 13%; }}
-th:nth-child(5), td:nth-child(5) {{ width: 17%; }}
-th:nth-child(6), td:nth-child(6) {{ width: 70px; }}
-th:nth-child(7), td:nth-child(7) {{ width: 13%; }}
 
 .event-main {{
   font-weight: 800;
@@ -843,47 +908,36 @@ a {{
   margin-top: 28px;
 }}
 
-@media print {{
-  .actions {{
-    display: none;
+@media (max-width: 1000px) {{
+  .grid5 {{
+    grid-template-columns: 1fr 1fr;
   }}
 
-  body {{
-    background: white;
-  }}
-
-  .card, .section {{
-    box-shadow: none;
+  .cards {{
+    grid-template-columns: 1fr 1fr;
   }}
 }}
 
-@media (max-width: 900px) {{
+@media (max-width: 700px) {{
+  .grid5,
+  .cards {{
+    grid-template-columns: 1fr;
+  }}
+
   .hero {{
     flex-direction: column;
     align-items: flex-start;
   }}
 
-  .cards, .grid4 {{
-    grid-template-columns: 1fr 1fr;
-  }}
-}}
-
-@media (max-width: 600px) {{
-  .cards, .grid4 {{
-    grid-template-columns: 1fr;
-  }}
-
   .content {{
     padding: 20px;
-  }}
-
-  table {{
-    font-size: 12px;
   }}
 }}
 </style>
 </head>
+
 <body>
+
 <div class="page">
 
 <header class="hero">
@@ -891,6 +945,7 @@ a {{
     <h1>Közel-Kelet napi<br>biztonsági jelentés</h1>
     <p>OSINT-alapú regionális biztonsági monitor</p>
   </div>
+
   <div class="risk">
     <div>Kockázati szint</div>
     <strong>{escape(hu_risk(risk_level))}</strong>
@@ -910,14 +965,17 @@ a {{
     <div class="label">7 napos eseményszám</div>
     <div class="big">{escape(str(total_events))}</div>
   </div>
+
   <div class="card">
     <div class="label">Napi események</div>
     <div class="big">{len(daily_events)}</div>
   </div>
+
   <div class="card">
     <div class="label">Fő térség</div>
     <div class="big" style="font-size:22px;">{escape(top_location)}</div>
   </div>
+
   <div class="card">
     <div class="label">Domináns jelleg</div>
     <div class="big" style="font-size:21px;">{escape(top_nature)}</div>
@@ -926,42 +984,61 @@ a {{
 
 <section class="section">
   <h2>Rövid napi értékelés</h2>
+
   <p>
-    A rendszer aktuális kockázati szintje <strong>{escape(hu_risk(risk_level))}</strong>,
-    az összesített normalizált kockázati index <strong>{escape(str(risk_score))}</strong>.
-    A napi események alapján a fő fókuszpont: <strong>{escape(top_location)}</strong>.
-    A domináns eseményjelleg: <strong>{escape(top_nature)}</strong>.
+    A rendszer aktuális kockázati szintje
+    <strong>{escape(hu_risk(risk_level))}</strong>,
+    az összesített normalizált kockázati index
+    <strong>{escape(str(risk_score))}</strong>.
   </p>
+
   <p>
-    Az adatok automatizált OSINT-gyűjtésből származnak. A jelentés nem hivatalos
-    konfliktus- vagy veszteségstatisztika, hanem korai figyelmeztető jellegű elemzési segédlet.
+    A napi aktivitás fő fókuszpontja:
+    <strong>{escape(top_location)}</strong>.
+    A domináns eseményjelleg:
+    <strong>{escape(top_nature)}</strong>.
+  </p>
+
+  <p>
+    Az adatok automatizált OSINT-gyűjtésből származnak.
+    A riport elemzési segédletként szolgál.
   </p>
 </section>
 
 <section class="section">
-  <h2>Napi bontások</h2>
-  <div class="grid4">
+  <h2>Országkockázat és kategóriák</h2>
+
+  <div class="grid5">
     <div>
       <h3>Helyszínek</h3>
       <ol class="rank-list">{location_list}</ol>
     </div>
+
     <div>
       <h3>Kategóriák</h3>
       <ol class="rank-list">{category_list}</ol>
     </div>
+
     <div>
       <h3>Eseményjelleg</h3>
       <ol class="rank-list">{nature_list}</ol>
     </div>
+
     <div>
-      <h3>Források</h3>
-      <ol class="rank-list">{source_list}</ol>
+      <h3>Szereplők</h3>
+      <ol class="rank-list">{actor_list}</ol>
+    </div>
+
+    <div>
+      <h3>Interakciók</h3>
+      <ol class="rank-list">{pair_list}</ol>
     </div>
   </div>
 </section>
 
 <section class="section">
   <h2>Top események</h2>
+
   <table>
     <thead>
       <tr>
@@ -974,6 +1051,7 @@ a {{
         <th>Forrás</th>
       </tr>
     </thead>
+
     <tbody>
       {rows}
     </tbody>
@@ -982,7 +1060,13 @@ a {{
 
 <section class="section">
   <h2>Blogra használható összefoglaló kép</h2>
-  <p><a href="{escape(sharecard_path)}" target="_blank">Kép megnyitása külön oldalon</a></p>
+
+  <p>
+    <a href="{escape(sharecard_path)}" target="_blank">
+      Kép megnyitása külön oldalon
+    </a>
+  </p>
+
   <div class="sharecard">
     <img src="{escape(sharecard_path)}" alt="Közel-Kelet napi OSINT összefoglaló">
   </div>
@@ -990,10 +1074,15 @@ a {{
 
 <section class="section">
   <h2>Módszertani megjegyzés</h2>
+
   <p>
-    Frissítés: {escape(str(updated))}. Bizalom: {escape(str(confidence))}.
-    A drón-, háborús, terrorjellegű és politikai események besorolása kulcsszavas
-    automatikus osztályozással történik.
+    Frissítés: {escape(str(updated))}. Bizalom:
+    {escape(str(confidence))}.
+  </p>
+
+  <p>
+    A drón-, terrorjellegű és háborús események
+    azonosítása kulcsszavas automatikus osztályozással történik.
   </p>
 </section>
 
@@ -1004,6 +1093,7 @@ a {{
 </footer>
 
 </div>
+
 </body>
 </html>
 """
@@ -1019,13 +1109,21 @@ def update_index():
     for report in reports:
         if report.name == "index.html":
             continue
-        items += f'<li><a href="{escape(report.name)}">{escape(report.stem)}</a></li>'
+
+        items += f"""
+        <li>
+          <a href="{escape(report.name)}">
+            {escape(report.stem)}
+          </a>
+        </li>
+        """
 
     html = f"""<!doctype html>
 <html lang="hu">
 <head>
 <meta charset="utf-8">
 <title>ME Security Monitor – napi jelentések</title>
+
 <style>
 body {{
   font-family: Arial, Helvetica, sans-serif;
@@ -1053,14 +1151,21 @@ li {{
 }}
 </style>
 </head>
+
 <body>
+
 <div class="container">
-<h1>ME Security Monitor – napi jelentések</h1>
-<p>Automatikusan generált Közel-Kelet biztonsági OSINT-jelentések.</p>
-<ul>
-{items or "<li>Még nincs jelentés.</li>"}
-</ul>
+  <h1>ME Security Monitor – napi jelentések</h1>
+
+  <p>
+    Automatikusan generált Közel-Kelet biztonsági OSINT-jelentések.
+  </p>
+
+  <ul>
+    {items or "<li>Még nincs jelentés.</li>"}
+  </ul>
 </div>
+
 </body>
 </html>
 """
@@ -1073,26 +1178,31 @@ def generate_report():
     events_raw = load_json(EVENTS_FILE, [])
     events = safe_events(events_raw)
 
-    report_day = today_utc_date()
+    report_day = datetime.utcnow().date()
 
     daily_events = collect_daily_events(events, report_day)
 
     if not daily_events:
         summary = signal.get("summary", {})
         period_end = parse_date(summary.get("period_end"))
+
         if period_end:
             report_day = period_end
             daily_events = collect_daily_events(events, report_day)
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    sharecard_path = generate_sharecard(report_day, signal, daily_events)
+    sharecard_path = generate_sharecard(
+        report_day,
+        signal,
+        daily_events,
+    )
 
     html = build_html(
-        report_day=report_day,
-        signal=signal,
-        daily_events=daily_events,
-        sharecard_path=sharecard_path,
+        report_day,
+        signal,
+        daily_events,
+        sharecard_path,
     )
 
     report_path = REPORTS_DIR / f"{report_day.isoformat()}.html"
