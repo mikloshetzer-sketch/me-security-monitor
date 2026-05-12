@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-05-11 23:13 UTC",
+    "updated": "2026-05-12 06:50 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-05-05",
-    "period_end": "2026-05-11",
-    "total_events": 148,
-    "total_risk": 130.06,
-    "normalized_risk_score": 52.0,
-    "risk_level": "MEDIUM",
+    "period_start": "2026-05-06",
+    "period_end": "2026-05-12",
+    "total_events": 143,
+    "total_risk": 119.21,
+    "normalized_risk_score": 47.7,
+    "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 38,
-    "security": 1,
-    "political": 24,
-    "other": 85
+    "military": 35,
+    "security": 2,
+    "political": 22,
+    "other": 84
   },
   "source_counts": {
-    "news": 142,
+    "news": 137,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 68.35
+      "risk": 55.25
     },
     {
       "name": "Israel",
-      "risk": 37.71
+      "risk": 39.61
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.4
+      "risk": 7.0
     },
     {
-      "name": "Abu Dhabi",
-      "risk": 2.7
+      "name": "Tehran",
+      "risk": 4.6
     },
     {
-      "name": "Kuwait",
-      "risk": 2.7
+      "name": "Middle East",
+      "risk": 3.2
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-05-11",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, May 11, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-11-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-05-10",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-10-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel passes law to allow death penalty and public trials for those linked to 7 October",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c202ngg45x8o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.73,
       "date": "2026-05-09",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +84,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-9-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-11",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRVR5MnozSldhdWdnVTRZakJJMG8za2l6V0xUSjhFOUwtVTY0aWdJa2U5M1dWM29Qa012QS14ZUxpdWJoUkRuRzBpNXhOR2tyNjZuYUtKYVV1RjM4bExEMWxOZ09MbHhrLXFSdUNYY2tPaUVJTVlqOFhRek5jRnhPTWI2WjdOT1VjTk0tUTV3d29qZm9SVEF4SUdEcTZVRkxFQWpxdU5lOUd3S3hOYmpyN1ZZMA"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-11",
       "category": "military",
       "source_type": "news",
@@ -84,16 +102,25 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcUZCUm96ZUNHWE9XRlRwUVR3UG1ORFY5WmtjZjV3N1AtQ3VMY0xvQ3NLZnNTQ3B6azBwYlluOXBVbExLVWJmTExhcW9ZSVA0MDBwY3pPSWNfa2ZvNkpGVmw1Ulp5eGxxM3hnWmpyTlNEV094bTV3ejk3Qk9DT01OV3poNFBXVXZXUUpheXJOYnFieENlNS1obnltbk1uN0RYcDAyS2pFS3dZVnEwSTd0V0hMdk5qRDVLLWJNWS1JbEtlQQ"
     },
     {
-      "score": 2.73,
-      "date": "2026-05-08",
+      "score": 2.7,
+      "date": "2026-05-11",
       "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 8, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-8-2026/"
+      "source_type": "news",
+      "title": "Iran war day 73: Trump and Tehran clash over latest peace proposals - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWFhkaGhXSzBmZWVzRTdXNjA0cDhJbWFiNkpxcHRIMU85R1RCczNWM0czMm9FWk15UllNTk43SVhZdWdwdXFDLXlOdXBZdzI5dDlsZEtjNDN6dElHWVdTTWtwRlZqQWhzU0xjbDNvNzhXd2JhSmhNMTRhTnpoXzZaSHMtVEhRT3M3b3NKWmQtQW5paDBjSTMtSUVkVVVPbXY1azRHbHFoWDBWN2FPS3A00gG0AUFVX3lxTE5kTktnU25EX183WUdXM0llTGRZdlR3eHBlcFZEZHliakh2V1RxTEctM0lJY1gzMTlKU0lDVWhrY1BmcDJoYm9CbDFfc08yRmstbXIxbS1GSEk2bE5ELUdXdkpyVFFOVUNYek5ocWQ2WHJRRVlaQjU5UWFmcVFQSTN4a2R1Y0JqeUhPQUlDWTFJdDBmRGVwWkJVRHVTUTcwNnkxT3dWOU8xNTNwRzdoZFdjSHpDNQ"
     },
     {
       "score": 2.7,
+      "date": "2026-05-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks kill at least four in southern Lebanon - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUHdLd3F0MEtSZUxkZ0p0RTBScXA1QnFSeUtHbEk5WWFNTlNVVVJTem5TM19DUjNWcE02RWpHMy1kNG1ZQko2WG81MElZcFFzZEF1NXlDNjFDUlVzUmpVRU5hWWIzZEZjX3dGZzR2TXlkX3NBTTRFU2dWS1lSNTVjaUN4NU5tMEZaSUg2ZkJpNW9qWTVuM2ZSckJBNNIBoAFBVV95cUxOWEtLazd5bXVKMFduakJXZTY2RDJvb1BNZURQRXMySFFjbWFfWC1sTnNtTEZ0enlDbnM1Y1JmV1pXVmg0a0tqd0NmNFY5OVBmQmdCY25DTG91cjROUFA3T1hZYjdhWDRaYXp3dmt3SUVsQmJmbEpFeTdvUXd2djVsSnpZeEFULWRvb0IxZ2VzMFk5a0hXb0c0QzFLbUNlVGM4"
+    },
+    {
+      "score": 2.4,
       "date": "2026-05-10",
       "category": "military",
       "source_type": "news",
@@ -102,40 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSE96bUZWYWdjX3dMWjhTdkY5eWEwOXI1eElSalVKUnFCNmRYVUdBUkY4d2NPd3huN3VndUoyMWFzZDdBMXU5S0l3SjhoYVNBYkMyWUw2Tkd3WEtyWk44czQ3c2YweHBfRnI2UFc3dkFhS0U2bnVXeFJaNFcxcC1kZFB3WGphYWdBSkpxSldNaEhZUVdaU2lZN2RrUjhkSUtYWFFpUDF6UmJUSEhicnJjSXdUT2g"
     },
     {
-      "score": 2.7,
-      "date": "2026-05-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE says air defences dealt with two drones coming from Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOM3h3em5fQjl1ZHFCMTFqdUNZT1FaeWV4X25HcGZXVWczWVpGSzVaWUxlM0hVUXJ2LTNJVTJZUWVpLXVNVlY4ZjRLTl9reXdBZk9HRWtQRE84NnI2b0lXQmZ0YWFmbndzRlNVQmNDVlI3OWtjX19hbjQtWnBITlM3SlJqelhsUHNUVnprVE5Bd3YybkhvMjhkWlEzdmpKa2dCNzFvRHdRSG52QV9ZRlE"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-05-10",
       "category": "military",
       "source_type": "news",
       "title": "Kuwait's army says it has intercepted hostile drones over airspace - Reuters",
       "location": "Kuwait",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUHk3NjJ3T0IxUHJ6bm1lVzFocEowZUxiX3UwTGZpbDJVZWJRV2owMXFLeDUzdHg2aXQxczZMOG1WVlU5QjZ2QlFoazZOU18xdHBKNW1WZkRoUG1qeXdGTFktLVRMcERscjVsZW8zdllzWXRPSGRaVzYtSjJYQ0lrd0JzX1NUV0lpcGk0SEJRUG5KTC1LdzBBaGVJZkZVWGN4N2MxU0pzdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill three people in Gaza, medics say, testing fragile ceasefire - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNzQ5WXVjTmF5TzRDY29NLVFYbHNxNVNDdXZncFlmOWRZMzB5aXpYWmgxeGs1V3lUVzJzZWhxNm9fQnlNZ0NTdFBEYUxhQzlVTGxVY1Baa1lKTmtqS3ZZZG1IVnNPNFRUNnpBOFBjVWhRM2FtYzB3WlJXcVVVanZ5dkxTOEtsY0w5RENIb3JXT1hCdkpIV1lNdnRrVHZmOXpkSGlScmNZTjZ6dnBpczBpZmFBeUVEdm9LX1Q3NnkzUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "US-Iran ceasefire under strain as Gulf states report drone attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY2JFeUJHNENHOVlUbnZiNGlTa0RTWDRsYTJwTkpvMnNoeF9PcTN6ejdzWWFEOXNRaXZwSDVvQXJ2OW80bWNMbFVMRXRNY2Faam1XVTVSRjh5czNUZDhyVXJHREotNzhTbnZheGpra2NzUWNMdFB6Q0hudXV4SUJMUlJzWmQxV2l6UVBpZjV2b0dWRVNIbWFFMFNvVDQyRlJLaXFUME1uVnp5c0nSAbABQVVfeXFMTU5fREt5R0d5cW94aFQ3LUtIU1lKQ1J3c0VVcHVPbVpLWFhpSW5ZYU1jbk1DT1ZMcFFiS0R6Z2FxcElpVnNSeUJrYXpFTGFocE5jM29JaEp4aElFSmd4WVZXclpIa0oyVDR6THJJYi00T3pBZzlSakF3WXZSb2dzSXZVRVc4Y21qUVpWcGFJby1JY0Vud3poQ1JwVU5RS0R0cVhtbUJ4TExzbUc5Z1JVTGc"
     }
   ]
 }
