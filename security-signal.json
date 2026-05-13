@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-05-12 23:19 UTC",
+    "updated": "2026-05-13 04:13 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-05-06",
-    "period_end": "2026-05-12",
-    "total_events": 156,
-    "total_risk": 145.56,
-    "normalized_risk_score": 58.2,
+    "period_start": "2026-05-07",
+    "period_end": "2026-05-13",
+    "total_events": 151,
+    "total_risk": 127.51,
+    "normalized_risk_score": 51.0,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 36,
+    "military": 34,
     "security": 4,
     "political": 19,
-    "other": 97
+    "other": 94
   },
   "source_counts": {
-    "news": 150,
+    "news": 145,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 60.85
+      "risk": 54.4
     },
     {
       "name": "Israel",
-      "risk": 50.66
+      "risk": 42.66
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.65
+      "risk": 6.0
     },
     {
       "name": "Tehran",
-      "risk": 5.95
+      "risk": 4.9
     },
     {
       "name": "West Bank",
-      "risk": 4.3
+      "risk": 3.85
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, May 12, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-12-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-05-11",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-11-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-05-10",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +75,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-10-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
@@ -75,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
@@ -84,16 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZDVqZjdxVDZDeDdnNjd1RndvV0NwNTF4U1Y2cFpVRFMyMzI2WG9mQVFUTnM4YlI3NmVRcGozODRLUUhGbU5wVURWU2dBa0hvNFBxQUc5T0hOUmJENHNBWDg0ZTR2ZWZham5IYVJOY3djZmJia0J6cFg5OWV3ZzluenhIRkVXeW1HRWhYREh0Q181NG1Ncl9aV3FPZU8yQVVTT1VTblpjVjE4bW94bWhVWXpWblpMTDdGeEJVZkxzaW1ZRFU"
     },
     {
-      "score": 3.0,
-      "date": "2026-05-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "UNICEF says 70 children killed in West Bank and East Jerusalem since 2025 - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUkd5QUtRWVRtbmdjVkgweUV5T1I4WDBQUTM1NHdxczh2WkhEU1RiTHlXQjdTbDFENkhabEdJTWNJZVFEUy1ycF9iMjdlYmlRelFhWEUxUzREdmljZllFUlpFVzVrdG1xRnRsdTBVNGhMVF9zMHpJcHBZdWtuZnFlclE3Wnl0YTBWNEpQWkgyWnMzLTd4UzIxNnd2djVjQWIya1JuYUdKaEdRc284UnhKczF4c3B2eUozalJ2cA"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
@@ -102,7 +102,16 @@
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-05-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "UNICEF says 70 children killed in West Bank and East Jerusalem since 2025 - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUkd5QUtRWVRtbmdjVkgweUV5T1I4WDBQUTM1NHdxczh2WkhEU1RiTHlXQjdTbDFENkhabEdJTWNJZVFEUy1ycF9iMjdlYmlRelFhWEUxUzREdmljZllFUlpFVzVrdG1xRnRsdTBVNGhMVF9zMHpJcHBZdWtuZnFlclE3Wnl0YTBWNEpQWkgyWnMzLTd4UzIxNnd2djVjQWIya1JuYUdKaEdRc284UnhKczF4c3B2eUozalJ2cA"
+    },
+    {
+      "score": 2.7,
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
@@ -111,7 +120,7 @@
       "url": "https://www.bbc.com/news/articles/cvgz9k7pzggo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
@@ -120,22 +129,13 @@
       "url": "https://www.bbc.com/news/articles/c202ngg45x8o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-12",
       "category": "military",
       "source_type": "news",
       "title": "Israel sent Iron Dome anti-missile batteries and personnel to UAE: US envoy - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQbWR3bHYzaE9OT1BPcTZYNkhhVkFkZ2haZ2Q1U1dvN20xd2ZVNTZLN2ktaTBmRTFoWElRREhOd1M1RE5vWUNoUWdVVVFiU0IxYTVOT2tzT2dQZy1YLVJ1dEsxOTgwS3NrcFJLNG9yVzItcFNzMWhvUzFuLXFWWFlpWnpyblNGRFgyZkVucGp6N1FIZHV5Q3hLUUNvaFU0NnBneGtCVmpsNUFhb200WUZQdWpRRHFKd9IBuwFBVV95cUxQdDBSVE5rdVNLQ2dpczlpbXZtMXAtQ1EzNE4xMDlRYzRGM0lCcWg5aUF1ME9kdmpIT3JzNHZuYjYyb2E3THpyVXNlclRUYnVfX213ekF3OWpLclF5bWljaW1FSzJUR3RRUm1seUN5RXlVRHJsMkNfUEVIZE9fcGlCZEFJWVhFY2hzTUlxWkxIaHNpSDM2UDRXNExwWDdCaHFJM25qR25KQjJmeXhIcWk0U053OExfMjdlM1J3"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-05-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Lebanese in south refuse to flee again despite escalating Israeli strikes - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTFdKb1ZmNkhkeFBPOXQ1QW5IYzF5SkYzMjlFQnN0S2lXUWJldWcyeUlOeWdBSUItREkyS3YxeEU5c0t6c01lZmVnMm0zbFk4ZXJDa0tjWDE3djJSYUU0M1NjN1p3YWNtZmd3blZRMVJ3U2VjSVBnWFRhcmZMeXdKa3YxQnhUY2I5NFk3RDRBck1LTy10SGxzcEZZb056NVN3OFhiZjBheFJQMTdobVVpQzVYWHNfSm0yUHc4ZWE4WThWUdIBxwFBVV95cUxPSFQyTXFUbG54ZV8zSUJtTlVVOVRhMjBfX2l4TG5KY2VlalQwdTFmblVVNE5NNlozMGRSeWV6UnhkcUx2TjBfY2MyZllCLTJOUHA1VEhXOEN5SEo1YUJpX1FNSUMxazg3em5LOFM4aHFobUlreXA0bmZSRlRhRm9rLWF0OGctQXNpeHBzQzQ3U0ZGaXczeWp4UEFhSndIc05EQlVNWDhKMDhTLUJHcmtudVBEeTFHdlFieG9hT3hwcU01UmJKTDFj"
     }
   ]
 }
