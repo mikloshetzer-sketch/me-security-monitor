@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-13 18:17 UTC",
+    "updated": "2026-05-13 21:45 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-07",
     "period_end": "2026-05-13",
-    "total_events": 152,
-    "total_risk": 131.81,
-    "normalized_risk_score": 52.7,
+    "total_events": 163,
+    "total_risk": 149.61,
+    "normalized_risk_score": 59.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 32,
+    "military": 37,
     "security": 3,
     "political": 19,
-    "other": 98
+    "other": 104
   },
   "source_counts": {
-    "news": 146,
+    "news": 157,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 60.55
+      "risk": 68.2
     },
     {
       "name": "Israel",
-      "risk": 45.36
+      "risk": 50.26
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.2
+      "risk": 8.95
+    },
+    {
+      "name": "Iraq",
+      "risk": 5.7
     },
     {
       "name": "Tehran",
-      "risk": 5.0
-    },
-    {
-      "name": "West Bank",
-      "risk": 3.45
+      "risk": 5.25
     }
   ],
   "top_events": [
@@ -79,6 +79,15 @@
       "date": "2026-05-13",
       "category": "military",
       "source_type": "news",
+      "title": "Drone strike hits Iranian opposition camp north of Iraq’s Erbil, security sources say - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVGlCbWppdkNkZEhsTDNvVUN6YzBXczAwekg2N08yb200dVVRbTBOd0cxWVVpVWZ4VE55aUNiMjhlMllWcjVqLXNhNXhHeWZXNEo3WnNjUkp2b1p3NDFPR0RxczdIaURKY1BUY0l4UU9FQUdGVFhRU0lSbE9NNEZiamM2N09fbk94NDA0VTlIZWdlLUs2SENxRnhWcW9ZeUllZkNvRWpIRC13UVhPTjFRbnBPRGl3OGZFUlNJT2p3T2pZMnZSZXkwejY2NWdGdTA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-13",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli strikes kill 12 in Lebanon ahead of US-mediated talks - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbmlLOVpDTl9CQldfeVlGOV9JajJnZ1c0T2dXOTNTZHpEMFUzcGFTZDZOQWFyaVpwemdWNHJJcVREU0UxMXJjSW15US02clQyX0RkU0hNbEl3T0FUbnNxUVJIbk5MaFlxM3N1X2ZPc19oQVNvZG9qWHhYak42SWFmUE9tZUQzWnFXQ1pIeFFXWUtGcXVFTVQ1SUVpdHN6Uk1ndXg5Vi03RjA4ZUR6MXoyU3oxY0NKTnpWckMwd0Z3d2YybFJCeEE"
@@ -88,9 +97,27 @@
       "date": "2026-05-13",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strikes on cars in southern Lebanon kill 12, health ministry says",
+      "title": "UAE-owned tanker leaks some fuel off Oman following Iranian strike - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQaHVXdXd2azZYMkF4azRGNG5aamJCc2xkSWtEWW9YUmc2UVdacXVRektZdGZxX2psbW5sU0FtckdBMURqOFhKTjNUc3dBTU9FR1EwVG8yckkxd3FXMldtaURCZEJDRTMxNUNVVHZBZFJkOVh5RHIwcGlBQlVLbE9NNEIzbzltNTdKRnVkTUplb0RmX08xX0U3OXVQZ0g2dE5fZkFjdWtQaXo5U0dyTjBBcUo2bTIzUXZXWlVBcg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes in southern Lebanon kill 22 people, health ministry says",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c1k2zekj8y9o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "At least 15 people killed in Israeli attacks on Lebanon - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNFpreFN4RV9Qa0ZuNVZYTFZsc0pBbXpkYXRlWXBjTDdIMElKZ3J2NHJLVW1OV2hoSXhFWmp4SEFqQnJoMk5IUlMzdFl3d19lQS0zMVRPTEVsZ2diVG5oY21jQTFHWmlvdm1LMjR3eW5kY05SUkswbGx3RWFBRjhxdGpFVlVBZ2I0R1hQTlBXUU5CTDMyWmFiZUtnZ2RycFJRd3dvRHV3RGhOUVQxOTUtTkNoZl_SAboBQVVfeXFMTnFQYlBkRkMwenkza1dUbVgzR1huZkI5ZnJnYTNJb244UUNQWEEzNWlOT0FRdUdEal9PVmk4MnNzbjh3Si1EN3B5OUlCU0drQmVSV1F3Rk5hUTNSUXhSODc3aFZXR2lWQ1F0dnpYNmc2OXYxVEJmTUVEUWxVNjl4b0VjZGJJRy1rd0ZUSHNBRVNjUmRQYTZaNlBmM0stWE5ab2JSSVAwRjUzaEZhQ3p1cS1mWWlqRS0tUElR"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "Exclusive: Saudi Arabia launched covert attacks on Iran as regional war widened, sources say - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZDVqZjdxVDZDeDdnNjd1RndvV0NwNTF4U1Y2cFpVRFMyMzI2WG9mQVFUTnM4YlI3NmVRcGozODRLUUhGbU5wVURWU2dBa0hvNFBxQUc5T0hOUmJENHNBWDg0ZTR2ZWZham5IYVJOY3djZmJia0J6cFg5OWV3ZzluenhIRkVXeW1HRWhYREh0Q181NG1Ncl9aV3FPZU8yQVVTT1VTblpjVjE4bW94bWhVWXpWblpMTDdGeEJVZkxzaW1ZRFU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Evolving drone war in southern Lebanon clouds Iran peace prospects - Reuters",
-      "location": "Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVVyaElQQXltV0NzUDhueUxxTU9Zd2JNNDlJOEtRSlAzY3dGaU1jTTRMUlBNaEJNemFacnZkbEJPUWpNUmhpd2ppN2xncVVQeXE5TUNBS2hMU0xhNjBaZzVjZzJTOHJEYndpRTVJaWpHQmMwdHF5SUNjckttdWxwb0dvZ0hIMm1FRUdpaEFTSEFXMzVnZ1BRMnJJZjFJeDFCMWFqUUlieFBNMVVySzgzWnlWRF9KdlRW"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran could enrich uranium to weapons grade if attacked, lawmaker warns - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHgxWndxenFOTWNkNGptZ2ZMUThMREN5YXpDV1kyNEt3cTRkb2hHQjRldjFUZXNJLXFUZXdmOEdTWThDNEk1cUhfTVhBZkhiZzhoUS12dzBoZTE3QlhnbmtmbkRHME03bnpwTFJSUWJVemQzS1ZnMVJrRl93dV9zZ2h6dm85Y0hsNnhEZDNpazlvZVRBT2lLallzSzZvWlI5MnRzUEttWEVKb2tEUXpZTzlEVkNHOUdiWi1uZg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "UNICEF says 70 children killed in West Bank and East Jerusalem since 2025 - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUkd5QUtRWVRtbmdjVkgweUV5T1I4WDBQUTM1NHdxczh2WkhEU1RiTHlXQjdTbDFENkhabEdJTWNJZVFEUy1ycF9iMjdlYmlRelFhWEUxUzREdmljZllFUlpFVzVrdG1xRnRsdTBVNGhMVF9zMHpJcHBZdWtuZnFlclE3Wnl0YTBWNEpQWkgyWnMzLTd4UzIxNnd2djVjQWIya1JuYUdKaEdRc284UnhKczF4c3B2eUozalJ2cA"
     }
   ]
 }
