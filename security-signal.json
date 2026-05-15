@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-15 12:13 UTC",
+    "updated": "2026-05-15 14:38 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,34 @@
   "summary": {
     "period_start": "2026-05-09",
     "period_end": "2026-05-15",
-    "total_events": 155,
-    "total_risk": 117.66,
-    "normalized_risk_score": 47.1,
+    "total_events": 153,
+    "total_risk": 115.86,
+    "normalized_risk_score": 46.3,
     "risk_level": "LOW",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 28,
+    "military": 27,
     "security": 2,
-    "political": 21,
+    "political": 20,
     "other": 104
   },
   "source_counts": {
-    "news": 149,
+    "news": 147,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 52.96
+      "risk": 50.61
     },
     {
       "name": "Iran",
-      "risk": 42.7
+      "risk": 43.1
+    },
+    {
+      "name": "Iraq",
+      "risk": 5.25
     },
     {
       "name": "Gaza Strip",
@@ -40,10 +44,6 @@
     {
       "name": "Tehran",
       "risk": 3.65
-    },
-    {
-      "name": "Iraq",
-      "risk": 3.15
     }
   ],
   "top_events": [
@@ -88,6 +88,15 @@
       "date": "2026-05-14",
       "category": "military",
       "source_type": "news",
+      "title": "South Korea official says unlikely anyone but Iran behind Hormuz ship attack, Yonhap reports - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUkFPSDF1NEpEeEtHTDVrb1ZxNWFCZWszelJBdFdKMFNMRjJhSlJja0dMTEVtaWFWRkg0X1RGeWR0cUtibWJYSEJYNVlyX3pTMGJpdTRJVHBXU24yOVhhQ25SU1Zsckd4eTE4OTlPQVptcXMxRjVvNVhYT1pyQ0lGLWlzc2kzRGRJZDVXQ1U0UWkzS1ZQQTRrNnJmcmF6SEE2Z0tLaHVNbVNfRmY3bzk2dmtGY3FaMVJlQnVfZ2hnbDJ4V1NoZksxaWtOMTROc0U"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-05-14",
+      "category": "military",
+      "source_type": "news",
       "title": "Two killed as Israel ramps up southern Lebanon attacks ahead of US talks - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUXR5YUxPWTVLRXV2c0lDMDN0MFpCbWVGdG94TGhIdjZ4VnA0R3I3YUJFTDZDcVduT05oXzFack5ZYktPTFZ3OUtEb0JGbFN3bHJhMFkyWlh0bHRVa0dJSEltMlpNWFdIWGQzWVpGZ0FwTUNOUkl5LUFZUUhUMFhLRGNlRk9Hd3NRVFB0cUJZbmhmZVQ5cVhQWUhqNDBGZUZ5Y2V4TXF0VjQ1Mm5Tdnl3dFpwMNIBuAFBVV95cUxOYUxMempsWEhZaHgxWHJ0RnRHcHJmVnlkdlVXWi1qQlFINlNBRktJUEszeEQ4dFB2a3MxbnB2Nzk4RV9UNDNGX1RZNzdvUnBHYzdBV3J1S19rVFhRZGJ4eVZVdERnNjFwcWg5S1AzX0tfUjBJU3NPSWx6Wm03aGJMS3I0TEV4SW9CVEkyVWpjVzZMSW02djQ0Z1BjMENzODZ6aS0zQnFOajJCMEh1YmZMcXVnVTNVQzMw"
@@ -100,15 +109,6 @@
       "title": "UAE-owned tanker leaks some fuel off Oman following Iranian strike - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQaHVXdXd2azZYMkF4azRGNG5aamJCc2xkSWtEWW9YUmc2UVdacXVRektZdGZxX2psbW5sU0FtckdBMURqOFhKTjNUc3dBTU9FR1EwVG8yckkxd3FXMldtaURCZEJDRTMxNUNVVHZBZFJkOVh5RHIwcGlBQlVLbE9NNEIzbzltNTdKRnVkTUplb0RmX08xX0U3OXVQZ0g2dE5fZkFjdWtQaXo5U0dyTjBBcUo2bTIzUXZXWlVBcg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill 12 in Lebanon ahead of US-mediated talks - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbmlLOVpDTl9CQldfeVlGOV9JajJnZ1c0T2dXOTNTZHpEMFUzcGFTZDZOQWFyaVpwemdWNHJJcVREU0UxMXJjSW15US02clQyX0RkU0hNbEl3T0FUbnNxUVJIbk5MaFlxM3N1X2ZPc19oQVNvZG9qWHhYak42SWFmUE9tZUQzWnFXQ1pIeFFXWUtGcXVFTVQ1SUVpdHN6Uk1ndXg5Vi03RjA4ZUR6MXoyU3oxY0NKTnpWckMwd0Z3d2YybFJCeEE"
     },
     {
       "score": 2.4,
