@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-15 09:25 UTC",
+    "updated": "2026-05-15 12:13 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-09",
     "period_end": "2026-05-15",
-    "total_events": 159,
-    "total_risk": 120.21,
-    "normalized_risk_score": 48.1,
-    "risk_level": "MEDIUM",
+    "total_events": 155,
+    "total_risk": 117.66,
+    "normalized_risk_score": 47.1,
+    "risk_level": "LOW",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 29,
+    "military": 28,
     "security": 2,
     "political": 21,
-    "other": 107
+    "other": 104
   },
   "source_counts": {
-    "news": 153,
+    "news": 149,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 53.31
+      "risk": 52.96
     },
     {
       "name": "Iran",
-      "risk": 42.25
-    },
-    {
-      "name": "Iraq",
-      "risk": 6.35
+      "risk": 42.7
     },
     {
       "name": "Gaza Strip",
-      "risk": 4.8
+      "risk": 4.15
     },
     {
       "name": "Tehran",
-      "risk": 3.6
+      "risk": 3.65
+    },
+    {
+      "name": "Iraq",
+      "risk": 3.15
     }
   ],
   "top_events": [
@@ -106,15 +106,6 @@
       "date": "2026-05-13",
       "category": "military",
       "source_type": "news",
-      "title": "Israel steps up attacks on Gaza since Iran truce, as military says Hamas rearming - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNX3dnX0wtWFJNMHk3STdHX0hFaXJOYkFHVEhWamxaWnNwbUd6UVROd21xX3ZkZjB0VVlESDc4NlVuZUtiRXVFdnVXUlhwdE5HcTZGNG5VdnUzOF90UjlIR1MzeGhvU2d2c2pTOVpzZDc3WnpsX1luYTJjRGdRNVhHT1FjS2U4SDV0UjJoVWI2UkZnOE9LVFY0VFM0VEdkN3FyNTJSbHJVZ3FtQTJoblVPRmRWSDJsYk5kMlZ2Y0Z3MGV2LUx5eC1n"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-13",
-      "category": "military",
-      "source_type": "news",
       "title": "Israeli strikes kill 12 in Lebanon ahead of US-mediated talks - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbmlLOVpDTl9CQldfeVlGOV9JajJnZ1c0T2dXOTNTZHpEMFUzcGFTZDZOQWFyaVpwemdWNHJJcVREU0UxMXJjSW15US02clQyX0RkU0hNbEl3T0FUbnNxUVJIbk5MaFlxM3N1X2ZPc19oQVNvZG9qWHhYak42SWFmUE9tZUQzWnFXQ1pIeFFXWUtGcXVFTVQ1SUVpdHN6Uk1ndXg5Vi03RjA4ZUR6MXoyU3oxY0NKTnpWckMwd0Z3d2YybFJCeEE"
@@ -124,9 +115,9 @@
       "date": "2026-05-13",
       "category": "military",
       "source_type": "news",
-      "title": "Drone strike hits Iranian opposition camp north of Iraq’s Erbil, security sources say - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVGlCbWppdkNkZEhsTDNvVUN6YzBXczAwekg2N08yb200dVVRbTBOd0cxWVVpVWZ4VE55aUNiMjhlMllWcjVqLXNhNXhHeWZXNEo3WnNjUkp2b1p3NDFPR0RxczdIaURKY1BUY0l4UU9FQUdGVFhRU0lSbE9NNEZiamM2N09fbk94NDA0VTlIZWdlLUs2SENxRnhWcW9ZeUllZkNvRWpIRC13UVhPTjFRbnBPRGl3OGZFUlNJT2p3T2pZMnZSZXkwejY2NWdGdTA"
+      "title": "Israel steps up attacks on Gaza since Iran truce, as military says Hamas rearming - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNX3dnX0wtWFJNMHk3STdHX0hFaXJOYkFHVEhWamxaWnNwbUd6UVROd21xX3ZkZjB0VVlESDc4NlVuZUtiRXVFdnVXUlhwdE5HcTZGNG5VdnUzOF90UjlIR1MzeGhvU2d2c2pTOVpzZDc3WnpsX1luYTJjRGdRNVhHT1FjS2U4SDV0UjJoVWI2UkZnOE9LVFY0VFM0VEdkN3FyNTJSbHJVZ3FtQTJoblVPRmRWSDJsYk5kMlZ2Y0Z3MGV2LUx5eC1n"
     },
     {
       "score": 2.4,
@@ -136,6 +127,15 @@
       "title": "Hezbollah support endures in south Lebanon as ceasefire fails to stop war with Israel",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c9d3g6deljyo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-05-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes in southern Lebanon kill 22 people, health ministry says",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c1k2zekj8y9o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
