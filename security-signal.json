@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-16 14:00 UTC",
+    "updated": "2026-05-16 15:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-10",
     "period_end": "2026-05-16",
-    "total_events": 162,
-    "total_risk": 132.81,
-    "normalized_risk_score": 53.1,
+    "total_events": 161,
+    "total_risk": 134.16,
+    "normalized_risk_score": 53.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 36,
     "security": 2,
-    "political": 24,
-    "other": 100
+    "political": 25,
+    "other": 98
   },
   "source_counts": {
-    "news": 156,
+    "news": 155,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 56.16
+      "risk": 58.91
     },
     {
       "name": "Iran",
-      "risk": 40.9
+      "risk": 39.95
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.45
+      "risk": 17.0
+    },
+    {
+      "name": "Tehran",
+      "risk": 4.85
     },
     {
       "name": "Iraq",
       "risk": 4.75
-    },
-    {
-      "name": "Tehran",
-      "risk": 4.45
     }
   ],
   "top_events": [
@@ -82,6 +82,15 @@
       "title": "Hamas confirms top commander killed in Israeli air strike",
       "location": "Gaza Strip",
       "url": "https://www.bbc.com/news/articles/cx21jjwz1k1o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "US charges Iraqi with plots to target Jews in cities from London to LA",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c7v918j6nj0o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -127,15 +136,6 @@
       "title": "Lebanon says six killed in Israeli strike as US announces ceasefire extension",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/cqlpzzl0d67o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Seven killed in Gaza on Nakba Day as Israel says it targets Hamas member - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMGJLU1ZReml1R2c0Q1BhQWZHVHpJa0hNdTN2Z1pNSU9PZnZEWXAwbU5jcWhEQ3Fnd0FoRXR6eWhBeDRHaWNtelVGRGp6V01mSGc4dUMwT2l0Nk5SdDdGSVNSVVJlNE9QX0h2RVdFaEgtOEpVN0RSSjhVU0xBS0dudmFmcG9hRFpmT0tNWElpeHZRVDhzTzFKTDJ3bHpaeklyOFpPeXdTN2pSWTl4eVpyb19WRdIBuAFBVV95cUxPQm10Q3hsSmpJa19HRlBUTGs0MlRQeF9uWHZpQkYySzhmX3B5VGZZOEFwaHpLbjhrdjBfNEtKR2I5bHZGTi1yTWNqamxlTnR1YklWLThxNFVFUzF4R1dGU0RPQUdXYkVTbDNxUmFQNXpqaXV4WkxmWnpRbTFKSGphUHZzYjIwckJWVURRVXFJN2ZWZzdoYlAtVkczOEtxMFJQQnBxM3dZMW5WRFFzM1p4U2RWZ3liTWMz"
     }
   ]
 }
