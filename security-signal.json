@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-16 11:18 UTC",
+    "updated": "2026-05-16 14:00 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-05-10",
     "period_end": "2026-05-16",
-    "total_events": 164,
-    "total_risk": 128.46,
-    "normalized_risk_score": 51.4,
+    "total_events": 162,
+    "total_risk": 132.81,
+    "normalized_risk_score": 53.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 34,
-    "security": 3,
+    "military": 36,
+    "security": 2,
     "political": 24,
-    "other": 103
+    "other": 100
   },
   "source_counts": {
-    "news": 158,
+    "news": 156,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 53.71
+      "risk": 56.16
     },
     {
       "name": "Iran",
-      "risk": 41.45
+      "risk": 40.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.1
+      "risk": 17.45
     },
     {
       "name": "Iraq",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Tehran",
-      "risk": 4.4
+      "risk": 4.45
     }
   ],
   "top_events": [
@@ -70,9 +70,27 @@
       "date": "2026-05-16",
       "category": "military",
       "source_type": "news",
+      "title": "Israel's military says Gaza strike kills Hamas armed wing leader Haddad - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOOXRieDYzVldHX1ZQNDRVQ21ZWmdZelQ0QWdJc1FaOEJnUzNNMWZqbC16QUpBYUZ0OER2RFhCTm5YZXk5S3FhQ0psZ2FlR1FsdnpiczZiM3M4ODNfVGtuTWlYRWhIRFRBalFPdUxQc0k0TlpLNU1FNTBGbU9YUVRWZ0ttRVFGQk5rb1JoZVo0cS1CbzZCR1RVSmswZmJmeUZTNHJBWDZrcTdFOFBIa1phY2dVX1F3YUFTcmdEYzVGaUg2ejYyUHZ6RmtwSVdNUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-16",
+      "category": "military",
+      "source_type": "news",
       "title": "Hamas confirms top commander killed in Israeli air strike",
       "location": "Gaza Strip",
       "url": "https://www.bbc.com/news/articles/cx21jjwz1k1o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes on southern Lebanon continue despite ‘ceasefire’ extension - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNXowaWYzTmNmSTQ1Q0dwTmRib2cweEhhU1gyN0M3UUNQR0tvT1ZSVFJwNnZZN0Y2QkFXeVA0M3Ztd1pXRWxzVXZ1YzhzaUs3bFVFYWpldk1RMy1XZnZZS2s5SlkwRFdXSVJoLXUyektzYkhVZmJ0NmdIVHJHbTBfOW5DY1JYOTd0aG1DMlY1RWpVNS1yV3puakhPSVhMLWhWVFE4S05XcnV6ZlctYUE2aTdXd9IBuAFBVV95cUxNMERIZUFXY3RYMVVOQ1Z3VWhjeTVVNU96ZkZOOUtWUlFuWjJIR29KWjVmSnZmSmJrTmRURkVCbEZGY3d2UWtnam0zdjhHNVBMWHgtS2xDZnNxeW9rcTM5LUhJcmZkay1hSGVEWGl5dEVHanRNVjVUMlNfOXhybnRVX3hxU1dMRmcyckhsbUV1azVrVldrbEZPcTBPY3lNTnBuNTBRZnBwbjdoWkFheENvU1I3Y2xNdVk3"
     },
     {
       "score": 2.73,
@@ -118,24 +136,6 @@
       "title": "Seven killed in Gaza on Nakba Day as Israel says it targets Hamas member - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMGJLU1ZReml1R2c0Q1BhQWZHVHpJa0hNdTN2Z1pNSU9PZnZEWXAwbU5jcWhEQ3Fnd0FoRXR6eWhBeDRHaWNtelVGRGp6V01mSGc4dUMwT2l0Nk5SdDdGSVNSVVJlNE9QX0h2RVdFaEgtOEpVN0RSSjhVU0xBS0dudmFmcG9hRFpmT0tNWElpeHZRVDhzTzFKTDJ3bHpaeklyOFpPeXdTN2pSWTl4eVpyb19WRdIBuAFBVV95cUxPQm10Q3hsSmpJa19HRlBUTGs0MlRQeF9uWHZpQkYySzhmX3B5VGZZOEFwaHpLbjhrdjBfNEtKR2I5bHZGTi1yTWNqamxlTnR1YklWLThxNFVFUzF4R1dGU0RPQUdXYkVTbDNxUmFQNXpqaXV4WkxmWnpRbTFKSGphUHZzYjIwckJWVURRVXFJN2ZWZzdoYlAtVkczOEtxMFJQQnBxM3dZMW5WRFFzM1p4U2RWZ3liTWMz"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran retains at most 'very moderate' strike capability, US admiral says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYVJqWTRMSlFJOVVydnJUTzRsTG1nRjU3NnN2VW84eXc5bzVHa2JsVVFMRWpVTkoxSHhiNjlJV3RHZENMeE9rTUdoem1KT3M4REVRWWNvM0hCdXRPa2E2UDNCcWRDSC16NGJ4d1lmSTZseFdheF8weVhwTG1yODdOYWJ1YmhoQUpvMENZSF83SjUtWC1pUTlSRUUySFNyRGN2ajVqVG5HNXl0dkMwRm9pejZXYl9BTTRacXpZY201QTZrdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Two killed as Israel ramps up southern Lebanon attacks ahead of US talks - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUXR5YUxPWTVLRXV2c0lDMDN0MFpCbWVGdG94TGhIdjZ4VnA0R3I3YUJFTDZDcVduT05oXzFack5ZYktPTFZ3OUtEb0JGbFN3bHJhMFkyWlh0bHRVa0dJSEltMlpNWFdIWGQzWVpGZ0FwTUNOUkl5LUFZUUhUMFhLRGNlRk9Hd3NRVFB0cUJZbmhmZVQ5cVhQWUhqNDBGZUZ5Y2V4TXF0VjQ1Mm5Tdnl3dFpwMNIBuAFBVV95cUxOYUxMempsWEhZaHgxWHJ0RnRHcHJmVnlkdlVXWi1qQlFINlNBRktJUEszeEQ4dFB2a3MxbnB2Nzk4RV9UNDNGX1RZNzdvUnBHYzdBV3J1S19rVFhRZGJ4eVZVdERnNjFwcWg5S1AzX0tfUjBJU3NPSWx6Wm03aGJMS3I0TEV4SW9CVEkyVWpjVzZMSW02djQ0Z1BjMENzODZ6aS0zQnFOajJCMEh1YmZMcXVnVTNVQzMw"
     }
   ]
 }
