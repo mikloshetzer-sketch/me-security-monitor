@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-18 18:11 UTC",
+    "updated": "2026-05-18 20:03 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-05-12",
     "period_end": "2026-05-18",
     "total_events": 131,
-    "total_risk": 116.16,
-    "normalized_risk_score": 46.5,
-    "risk_level": "LOW",
+    "total_risk": 120.86,
+    "normalized_risk_score": 48.3,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 29,
-    "security": 2,
-    "political": 15,
-    "other": 85
+    "military": 31,
+    "security": 1,
+    "political": 18,
+    "other": 81
   },
   "source_counts": {
     "news": 125,
@@ -27,11 +27,11 @@
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 47.76
+      "risk": 47.36
     },
     {
       "name": "Iran",
-      "risk": 27.45
+      "risk": 30.35
     },
     {
       "name": "Gaza Strip",
@@ -42,8 +42,8 @@
       "risk": 6.05
     },
     {
-      "name": "Iraq",
-      "risk": 3.95
+      "name": "Tehran",
+      "risk": 4.5
     }
   ],
   "top_events": [
@@ -70,6 +70,15 @@
       "date": "2026-05-18",
       "category": "military",
       "source_type": "news",
+      "title": "Trump says holding off on Iran attack planned for Tuesday - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPTlJPVXZwaUVRaEJoNm40S0hBTWlFbGJoX2JnSEVOallUcm94NWdLUUQ0WW1vRjktMHNDNGlqUEFoMVlwOG14UGNnNUs4bURmZWRWaEdkMHJYOENORmRISnRMd0FmcmpLZUpoU1hhV0QtOWN5MmFrR2ZZM1hDREhmaXhsSTRnYWpvYTd1aTJVNjNNLW9pcFVv"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-18",
+      "category": "military",
+      "source_type": "news",
       "title": "Death toll from Israeli strikes on Lebanon passes 3,000, officials say",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/cqjpglyjwjeo?at_medium=RSS&at_campaign=rss"
@@ -82,6 +91,15 @@
       "title": "What is the UAE’s Barakah nuclear plant, nearly hit by a drone? - Al Jazeera",
       "location": "United Arab Emirates",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRDBkYkVaT09QcldfcVkwWXVKZXFmTnBqcUhUZ2NpeENHRmdjRG1NX2prT1hXUllIVWtTV1htZGVqeXFQQlp3Z1R3NWJ3TUI2QjNaaUhGcmF6U2VSMkJqc214MzBfdzVKemRCOE9ubVAyZ0xzWHNWVVRiVTY4SER5VW51TWFLUHVXQkJ3ZmFzUFF3LVZfX2puLWc2RmZEQnhHRFQw0gGoAUFVX3lxTE5oLVdhT01COXdlQXU3bEdPUkEtWjhVaXRhUTB3V2tVMUJnMHpGUlp3aEh3RXZUcXYtX2NCMGZvNnV5WklUZDkySnMzdUctTnNfS1NCcU00Z1NMYWxXaXdROTQyTWlENnJQYlRfWmdCVHlxSXY2N0xQaHVKdmFXS0djUU5yNDJydVlDajBMcnhoN0F3Rld3V1J0STBXc0tXaTVmZkg2QUx1Sg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran war day 80: Trump issues warning; Tehran ‘ready’ to confront attacks - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOT1lIXzc3YlJtWFo0emVYaVEwVHdrNnlPbWh4N2t0UlJoLURxb2NiVWtXM1MwSUZXUVJXRlZib08xRUJqTVNKYzdyOWstNUJPQTZpZjY5NFppOUxsMlF3aEw5cjAwTmMtaVM3MFlnUFJwSE9MQW5NVWtFWjJVcGNCa196VXNad1ZrcVZxX1Z4MFVKLWRsVW92WS0tUzkxcFpmUHZMdkJJTFhQTUl1VXpSRmJTSdIBuAFBVV95cUxNY2d2SFpCY292UmJIRTYtSG9DYzd2RS1ZeFJDTTFRNGJLZXI5M2NaQlp6UXJ1dGNHX3dnblpYanZTREV1blR2MVpFaXRLbzIxTWNkOXJ1U0hwdmpOY216M3NIX3B5SkR2cDl2NHJZLUp1aW1lT3dmVFUycXM1bldtSURfYXlYaUVLd1BYN3M4Mmc3cVFaeXRJeDdtRVdMblJpWkpNelNtc1FTWjVSX193ZUdXNGRzaEN1"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "Saudi says it intercepted three drones that entered from Iraqi airspace - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPV0cyZjdqSFF6Rng5VUtrZ3NOcTNUdV9md1N0NGNLZUtnbVpaV05ucENWMTJhQmxuWkZtWEFCRmdvVUNQbmNuVGExTmxUbGJxazhMWVJ2dDdNLW9CRVUxV1pXQ0MyS1ZoenFoNm90UWg0VUN5UkwwUnFYWHRJUGtSbjVEX0FuTUNvR3ZqdnlETDhCem83WVNxZGhDZmYwM3VZOUFWR3lVekVTMnJhTDBkWUg3OTZXOVdWNTZuTA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill eight people in Gaza, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTUM4Qm5KV0tRUTZFRlBLY0M5Nzg4Y3VlU3dfYUlTTFdpOFdJRTE5b0NLWnRwNEpBYU41WHVwWHRTZUFoTVNzXzV0ekZZNnYzRmloOGVEdW1XSFdWUDFQbFFYWWFyM0ZhOUJURWU3ek1OREFmTW9wSVUzcXZMQ1gzT05OM3NyWnNpNDB5ODNkbFBYNk02YVdLeUtLaUljS3VPaVhGbA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "'This may be the last time you hear my voice': Political executions surge in Iran since start of war",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cn8p392nl7yo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
