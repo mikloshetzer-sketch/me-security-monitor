@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-18 10:41 UTC",
+    "updated": "2026-05-18 15:57 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-12",
     "period_end": "2026-05-18",
-    "total_events": 128,
-    "total_risk": 114.71,
-    "normalized_risk_score": 45.9,
+    "total_events": 130,
+    "total_risk": 114.11,
+    "normalized_risk_score": 45.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 32,
+    "military": 29,
     "security": 1,
-    "political": 21,
-    "other": 74
+    "political": 15,
+    "other": 85
   },
   "source_counts": {
-    "news": 122,
+    "news": 124,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 47.31
+      "risk": 46.36
     },
     {
       "name": "Iran",
-      "risk": 23.7
+      "risk": 24.8
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.85
+      "risk": 17.75
     },
     {
       "name": "United Arab Emirates",
-      "risk": 6.1
+      "risk": 6.05
     },
     {
-      "name": "Iraq",
-      "risk": 4.2
+      "name": "Tehran",
+      "risk": 4.5
     }
   ],
   "top_events": [
@@ -64,6 +64,24 @@
       "title": "Iran Update Special Report, May 16, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-16-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "What is the UAE’s Barakah nuclear plant, nearly hit by a drone? - Al Jazeera",
+      "location": "United Arab Emirates",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRDBkYkVaT09QcldfcVkwWXVKZXFmTnBqcUhUZ2NpeENHRmdjRG1NX2prT1hXUllIVWtTV1htZGVqeXFQQlp3Z1R3NWJ3TUI2QjNaaUhGcmF6U2VSMkJqc214MzBfdzVKemRCOE9ubVAyZ0xzWHNWVVRiVTY4SER5VW51TWFLUHVXQkJ3ZmFzUFF3LVZfX2puLWc2RmZEQnhHRFQw0gGoAUFVX3lxTE5oLVdhT01COXdlQXU3bEdPUkEtWjhVaXRhUTB3V2tVMUJnMHpGUlp3aEh3RXZUcXYtX2NCMGZvNnV5WklUZDkySnMzdUctTnNfS1NCcU00Z1NMYWxXaXdROTQyTWlENnJQYlRfWmdCVHlxSXY2N0xQaHVKdmFXS0djUU5yNDJydVlDajBMcnhoN0F3Rld3V1J0STBXc0tXaTVmZkg2QUx1Sg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran war day 80: Trump issues warning; Tehran ‘ready’ to confront attacks - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOT1lIXzc3YlJtWFo0emVYaVEwVHdrNnlPbWh4N2t0UlJoLURxb2NiVWtXM1MwSUZXUVJXRlZib08xRUJqTVNKYzdyOWstNUJPQTZpZjY5NFppOUxsMlF3aEw5cjAwTmMtaVM3MFlnUFJwSE9MQW5NVWtFWjJVcGNCa196VXNad1ZrcVZxX1Z4MFVKLWRsVW92WS0tUzkxcFpmUHZMdkJJTFhQTUl1VXpSRmJTSdIBuAFBVV95cUxNY2d2SFpCY292UmJIRTYtSG9DYzd2RS1ZeFJDTTFRNGJLZXI5M2NaQlp6UXJ1dGNHX3dnblpYanZTREV1blR2MVpFaXRLbzIxTWNkOXJ1U0hwdmpOY216M3NIX3B5SkR2cDl2NHJZLUp1aW1lT3dmVFUycXM1bldtSURfYXlYaUVLd1BYN3M4Mmc3cVFaeXRJeDdtRVdMblJpWkpNelNtc1FTWjVSX193ZUdXNGRzaEN1"
     },
     {
       "score": 3.0,
@@ -115,27 +133,9 @@
       "date": "2026-05-17",
       "category": "military",
       "source_type": "news",
-      "title": "Oil touches two-week high after drone attack on UAE nuclear power plant - Reuters",
-      "location": "United Arab Emirates",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTlA3eGttQ0l5dDVlN1RaVmNDTmtlWHFjc25RdEppWm1XbUFjY3cxZ1ZYZXlxWnhoTTNRQ1pHM1Vlb08zTGEtRU8xN1ZycGZPLTZaS3AwaXZMektUMERFZHpxSk1iWWZBeUs2X1A3bzRmV3dPQW1QeVVHOGhTbXJ6LTNiR2t3akthaDE1NWhXMEZDQ2dpOU1iWjZpTFpmQzEya3B2WWtrVWg0Ny1kM2p2WEsyQkt0MVU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-17",
-      "category": "military",
-      "source_type": "news",
       "title": "'This may be the last time you hear my voice': Political executions surge in Iran since start of war",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/cn8p392nl7yo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE reports strike near Abu Dhabi nuclear power plant",
-      "location": "Abu Dhabi",
-      "url": "https://www.bbc.com/news/articles/cwy27pkj1l1o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
