@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-19 04:34 UTC",
+    "updated": "2026-05-19 10:09 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-13",
     "period_end": "2026-05-19",
-    "total_events": 135,
-    "total_risk": 119.71,
-    "normalized_risk_score": 47.9,
-    "risk_level": "LOW",
+    "total_events": 128,
+    "total_risk": 123.31,
+    "normalized_risk_score": 49.3,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
+    "military": 33,
     "security": 1,
     "political": 20,
-    "other": 83
+    "other": 74
   },
   "source_counts": {
-    "news": 129,
+    "news": 122,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Iran",
-      "risk": 41.45
+      "name": "Israel",
+      "risk": 41.76
     },
     {
-      "name": "Israel",
-      "risk": 39.36
+      "name": "Iran",
+      "risk": 41.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.55
+      "risk": 15.5
+    },
+    {
+      "name": "Tehran",
+      "risk": 7.0
     },
     {
       "name": "United Arab Emirates",
       "risk": 5.7
-    },
-    {
-      "name": "Tehran",
-      "risk": 4.25
     }
   ],
   "top_events": [
@@ -70,9 +70,18 @@
       "date": "2026-05-19",
       "category": "military",
       "source_type": "news",
-      "title": "Gold steady on weaker dollar after Trump pauses planned Iran attack - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbDB1M2haVXJUSkRPU09nS2V6b2plTFpfUi1LSHpTalkwbWlJdkdzOGhVTG1TWXpOeHMwNlBhczRZRUpxX0hvMlB0NlRnc3dXZ183SjFUYmFWc1dCOXdNQ01Cb2xLenpTcmJNTkhlbUNZWkdkOG9pbmVkbEF5UGFxUzJOSkxyRUlSQXhmNlNfQXdOaHF1UmVfcVVESE5tQkM2QVBSb2dZY3NBanFpZXhYeXZB"
+      "title": "Iran war day 81: Trump delays attack; Tehran says won’t ‘surrender’ - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQVV1ckZQWkMyYWFjSEROX0FvdFI0QlRQbGxjWlBvQ1RXWGxwaFlrLWlZa1B5QzFwdWtzdjdzc1RudUctYm11NDdpMkNhWnlMNmlpdngxVTJuRFBDY0hDMUpuXzkxZGI5bktYS0x2a0dQM3F5SEhpcFJWcl9SZ2g3ang0d3J2UjZSRi12OHJzQ0xvQ1BacHFYdnJrdXdKd1lYdVZzTnh30gGrAUFVX3lxTE1HRkg4Y3YtaUNDR0FoLXlLY2o0ekE2ZzRseXVLOFdjVmlZcU45V2FHVVFNci01OTk4Ny1RUS1KWGlzcG52Z3J2WTFaWk5OM00xSDhiZ0ljYW5JNmtNUjFVeEpYZW1VVF9wRHpQY2pfRWl5YUR3OUF4ZTdlYmRObHVIWDdyMUZTMS1BbGJLdUxvQjNBSGpUb2Y4bTJzM014a1paRjRFMmRleUtCMA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanon and Syria reshape ties amid Israeli attacks and regional shifts - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNU3ktQTJ6aWQ3YUx5emlSUTJTV3ZDams1VnNOTTFieGx1M3hoYlJ3TXYwcHBTQ2ZTYm5YVjBKSVpacWtaa041ZlZhSktuS2lNZWhhanRRS3ZpVUhMMHdXVERnSF9iN2xqc09MU3lZQnlPVm1aSnMyZF94Tmc1MC1EVDMxM2MxY3BPRzNxQzFTblc2aFExenhqNUwzTG1Kb0tqTHJDUzJkSHpJUDdCUkpuREc0T25yZW_SAbwBQVVfeXFMUFIwWGtuNzlwOTB3Y1J2Rnc3ZGdfelRwcTllc1JscmtmLUxPMlhqbm9WdmpqUXZhaGp5Mm1JbEV5M281czZTUDY3ZXJ1ZHJEd1p4aVR5RXBuM3VYcW5tRVZiMVpfdC1mZUxuVU1uc0U5dUlwNXlNcHFudlV2cTRTVmdmdVdrVnNPMWtlMVlCMzZxajdiSERIMmUzZjdseE5qbllUZGNQalF4ZDVhYWpIdGM3LVY4UmVIYno4WG4"
     },
     {
       "score": 2.73,
@@ -88,7 +97,16 @@
       "date": "2026-05-18",
       "category": "military",
       "source_type": "news",
-      "title": "Oil falls 2% as Trump holds off scheduled attack on Iran - Reuters",
+      "title": "Donald Trump says 'good chance' of Iran nuclear deal after delaying strike - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbEcweThxYmdBYkkwQzlJY1psMThtcDlwNTN3ZjBYQXctYUozbzV5LVpMSGpqdlhINm5ZZDltbk05dS1RMFRjYU1WNHcwS2EyR1NiTXZmaUstY3FCZ0lhOFVlVXBhWW5tNDAtalFWUHBrTVdSOWZMLU5yYkRNNDB0R1MxZmE3eXdNR2VNdHB6aVZUMkdIQjQwNHVzZjFwWmRSWHE3Vk1NU0NkN083MmdRVw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-05-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil falls as Trump holds off on scheduled attack on Iran - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOZzcyV3VuT1poMlpHeW12N2VjZk5sQm9hd2RWYnpmVUt3eGN1Y01PQWdYQnNYemN4UTBFbEdzNUJPQUtPNVBuOXRwVVhHN2RoVmUyLWZTRHBoc0RTSzQtUzZjTTJBX29feW1pR2FxUnBrak9hc1JjZmtfN2E5aDJ3NDg2OFUzdDlkam5vdGlyNUEwT05LU2tjUkM5S2RiVGprQ01tNUlhZTA4aWxtM1Y2eVNKN3FqR2lQclRqbjBqSE5mcDZO"
     },
@@ -106,15 +124,6 @@
       "date": "2026-05-18",
       "category": "military",
       "source_type": "news",
-      "title": "Donald Trump says 'good chance' of Iran nuclear deal after delaying strike - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbEcweThxYmdBYkkwQzlJY1psMThtcDlwNTN3ZjBYQXctYUozbzV5LVpMSGpqdlhINm5ZZDltbk05dS1RMFRjYU1WNHcwS2EyR1NiTXZmaUstY3FCZ0lhOFVlVXBhWW5tNDAtalFWUHBrTVdSOWZMLU5yYkRNNDB0R1MxZmE3eXdNR2VNdHB6aVZUMkdIQjQwNHVzZjFwWmRSWHE3Vk1NU0NkN083MmdRVw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-18",
-      "category": "military",
-      "source_type": "news",
       "title": "Trump says he paused attack on Iran, signals a nuclear deal may be possible - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcDZKdU5Cb2tFNmNsTnFKeWlKRFJnZ3lHdGVMRnVBOUR5NnlLaW01eldjcG1YcHZjbndUamVLbV9QWlRhczB6TEt2cDY2bkJqdXB4QlhkQV9nd3dvamF2NnpDU0ptdUZxQXdOQlF5ODB2M0VKbmc4U0xFMVFuWW5Cb0VOeGVYaVA2amRzZ3JGejBGenBGUzh5dlcwM252T2R0cFY0U0U3MEc3Q2t3"
@@ -124,18 +133,9 @@
       "date": "2026-05-18",
       "category": "military",
       "source_type": "news",
-      "title": "Death toll from Israeli strikes on Lebanon passes 3,000, officials say",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cqjpglyjwjeo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump delays ‘scheduled attack’ on Iran, crediting ‘serious negotiations’ - Al Jazeera",
+      "title": "Trump says he called off new Iran attack at request of Gulf states",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdkJOV2ZHNG1TVVRHMENxb2FPOVFiSUwtaVd1ZUlqN3JIZ0hHcndnTWlWUWVmY0FHVmhfX25YazBiNEM2S0xVODVnc3UyRnZiSnAxdzJlZjRJZDlKSEpFa3I4T1I3bFJxcUYzcVpadTE0UXhPWU13NVhLUXN4d1pRSkstOExiVThOdE1iMVZDN3p3OHNOcXRWV29JcXBpZjZaM1BlNDJISjhzU0sxUkHSAbMBQVVfeXFMTTVUYi1hOGhPcm9STHdFUHozOTJVWkd4RUtaWHBPakpQaUptTnV1R3JKUnB4R1lJNk1jMFB6cXNHQTRvam1BM21FUHBCOHUtR1RIYnpmMFZLeGVJSUNYdEtReC1IMjJRZDIxT2RPTEk0S1NHd1FodWFtdlBOV1B1OVhFcDBkT01ISzgtSjlGUFBTUllhRkpvaXdOZFlQM1RJaHVtajd6ZnBScVBMM2tCNTNHT00"
+      "url": "https://www.bbc.com/news/articles/c7079e55zjro?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
