@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-20 09:54 UTC",
+    "updated": "2026-05-20 12:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-05-14",
     "period_end": "2026-05-20",
-    "total_events": 130,
-    "total_risk": 132.56,
-    "normalized_risk_score": 53.0,
+    "total_events": 136,
+    "total_risk": 142.46,
+    "normalized_risk_score": 57.0,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 36,
-    "security": 2,
+    "military": 38,
+    "security": 3,
     "political": 16,
-    "other": 76
+    "other": 79
   },
   "source_counts": {
-    "news": 124,
+    "news": 130,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 49.55
+      "risk": 49.75
     },
     {
       "name": "Israel",
-      "risk": 43.26
+      "risk": 46.21
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.5
+      "risk": 14.8
     },
     {
       "name": "Tehran",
@@ -88,6 +88,15 @@
       "date": "2026-05-20",
       "category": "military",
       "source_type": "news",
+      "title": "Lebanon says 21 killed, including children, in Israeli air strikes",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/ce9p1l7yp2lo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-20",
+      "category": "military",
+      "source_type": "news",
       "title": "British couple on new hunger strike in Iranian jail, family say",
       "location": "Iran",
       "url": "https://www.bbc.com/news/articles/c8e890y14r5o?at_medium=RSS&at_campaign=rss"
@@ -100,6 +109,15 @@
       "title": "Trump says Iran attack on ‘hold’: What we know about latest negotiations - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVFlIMVRxbUFCSUhIVGxVZUl0aHZVQjVMc1g5ZWtJcl8ycWJtUUJYVTF4dWlYYXd3bTItYlozcHI5Tk9SRVlZekl6VWNEVFlJX0w0Ymk3SEZvQWFfTHZTTkU5RGNUbklDOXJBbThTcWY1U3czZHZyeEZHQmVUZmRVWWVSVEpyejQ5andvSGc4S1d1V2d2bDloVTE0cFZSb1J2a2lMRzQyOGxjeTZSNk1j0gG0AUFVX3lxTE9ibzd2U3ZCNi0wWTd5ZkFSWTBqT3R2VHF6NnllRU9Sc1lTYUp0RE9HVUcyMDluSjdjNWEwelhjSWIxa2RpSzQ0dU9acmtBSE9oMXIwdFNnODl5azY5NXIxa3pxZkx3Y1FpOXJrUXE5THhFdFdiNnhIUnVWejA1UFFucDhGUndmS2x2LWh1NzJXOGliZGRPUW56RHI0X3E3bUJEbGZ1eGliRTM5V3plamhZTGo2UQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "At least 87 Gaza aid flotilla activists abducted by Israel on hunger strike - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcVB3LXRUUUhUWGtPTzNHeEg1U2ZSSXQ0ZFZudVVwdHVfWHlWOTFPaFMxR0dXWWRHMHJ0ZG1iTDZnNURQdEVzak1nelM3a2Z2aE9wc00ybUdVRWNUTTFWam45dTRNRjVGX2VucFdDRDZmaW9rS2Y5OUx1UEZqZnJfRkxZMDItdFVMbjlTdDQ5OS1EczFmdG5DTUFJekh6Vmg1S1padWhYUHFTTURsZnAxMU1sYUNpbnfSAbwBQVVfeXFMTnUwdmVBeEVDMmZDX3BWVXpldmFKcHRNYk5wOUlBb1BsQXM3LWxQTnNTVkNINlhuazAxc1RBZ0kyMWhlVWRxX1hNOGdCYm9vYVY4QkNyVDZuSnA0bmhxWC10cGgxY2hxZldKMy1EV2FHZk9hTTZxWHk3VG9FOEtYZm9vSjcwWmNDVjJCRG5kUUg0a1A3clkzRjA1Zks4TnFaM2dUblpxVEhBcnF0bVA2b1RRTFBTUVJhZEVpUkw"
     },
     {
       "score": 2.73,
@@ -115,27 +133,9 @@
       "date": "2026-05-19",
       "category": "military",
       "source_type": "news",
-      "title": "UAE says drone that hit near its nuclear plant was launched from Iraq - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOT2dHVzQ2eEVnWGZVRFRLc2haczVQRnh5cG9uQS1BUURicC0yZ2QtVWRRR0xZeXlFREozQVBtT09ZMUFCNUhGdnhRVE5IdWFuLWNaNWV2QVVETWxtN3NtTDJtdlg3SFNtc090aktqeEo2TG45ZWhrN2EtQmJRb0ZqazNXWjcxY2xNcXRmZXFoQTBvUWZXWnVtWGRDQjBSblE4ZWVLbkFSQlkxMUxhV2tOM2I5d21rcjRfOWc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-19",
-      "category": "military",
-      "source_type": "news",
       "title": "US probe into strike on Iran girls' school near conclusion, US admiral says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOX1FSZjhvbnBWdXB5aHZIaElTY3g2VWZxUERHQV9LNzk1OVRaZWtZN0VlbG9qamdoRVB1V1g3dGhBRTlDWGZyRHRtWmk4UkNjOEtfalFtR1JBY1VDYjVndGtHM1RTTGlIdjRvSDExRzBBQ2JJRGtQSVdEaTBESXl1QmlYdXNVeEp5cmZCX25ORUd1YVh3cHZWdTMxY05hTkQtVjdGcmtOY3NKbjc5Vk9oV3ExUFZVUVZaazlVYXpHc2hZdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Syrian soldier killed, 18 people wounded by car bomb in Damascus - Reuters",
-      "location": "Damascus",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbVB4QWhIU0xKOFdvV05LdnhESXZSVldwMGdaLXR0bllGbUxsdzk2Z2Zud21GVTBqOUNoZzBrRXdLUkE3Zjh1Y0xkeU9FV19oUXFYWU1YX1Jaa01XdzRsVkpxWG1BNWxJSi1MTXJ3cTU5Sm9XeU1wSnJmZEk2elk3RWJFY2NzQ3Z6cFZma0N3Y0w5RUJkSnotMVZGdENNN0JiUlRaY3hLWUdrTWx0RFJxSDlOWWttRFBrNHRHdmI1N0lsT0k"
     }
   ]
 }
