@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-23 06:46 UTC",
+    "updated": "2026-05-23 10:05 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-05-17",
     "period_end": "2026-05-23",
     "total_events": 155,
-    "total_risk": 116.31,
-    "normalized_risk_score": 46.5,
+    "total_risk": 118.96,
+    "normalized_risk_score": 47.6,
     "risk_level": "LOW",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 27,
     "security": 6,
-    "political": 28,
-    "other": 94
+    "political": 30,
+    "other": 92
   },
   "source_counts": {
     "news": 149,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 38.41
+      "risk": 41.11
     },
     {
       "name": "Iran",
-      "risk": 37.85
+      "risk": 38.0
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.9
+      "risk": 12.7
+    },
+    {
+      "name": "Tehran",
+      "risk": 5.95
     },
     {
       "name": "Turkey",
       "risk": 5.45
-    },
-    {
-      "name": "Tehran",
-      "risk": 4.95
     }
   ],
   "top_events": [
@@ -82,6 +82,15 @@
       "title": "Israeli strikes kill six Lebanese medics in 24 hours, health ministry says - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNS0hWbm5ObENseWNUYmJ2SE9BU3dfdWhxTk5VZjYwV1FWcldmT0ZNTXhuVTI3dElKZ2pmZ1FIN21QYkdpZ0dVdDVZbzJRMk9OS1RUQWM1SkNwbVQ4OUtjT3R3SXZPVUZoNkdFR3VjVWwybnp2eUNXajVmbGZ2X2g3Qjl6aUV5SWZocy0tNnJvbV91cXZNWmhzb09LQVE5Q0VwTXh5aElFbDQ1dnZVc3NJcHpsWUZiM0lwT3pnb2N2T0xZQQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-05-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks kill several in Lebanon, with health workers targeted - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOV29EeERaS2QwX1VoX3RMa1hvV2dLeFRPUmFWNFNhMUtOdGZDVDZCcHZRRlRXSFFMQjhoRGZCTEJOcGVTZ0Q2WHVtQVBjSHZFX096aXRidjVMTFlpM1ZrNExHNDA3bVZWb3p2bnU0UVdPZmlxSWc4RlpJVG1HaDlUbGMtSGdHd210MUtqOUtMVGdYYnM0UGpLUWRwT19yME9KNDlQQ2ZKQW12Xzg5ZlHSAbMBQVVfeXFMT3d0dXpRbUZ3cEx4Yl9HcVRnNEEyVHZsaXdDMjlTLUlYQS1uY3JwSFB3VjlfYkVITFZ5Z3B4VzlIdnE3RFJWM1NlYnVNY1ZEQm9hLTdNX2NZaEtZQmRjdEluX1BsVmRkbzR2SnoxX0gxVlEtQ1pmSHZxM2tqSmZlcVNwYlJ0ajdZYlRYdnhVVFhBSWM4ZzNrQXdoNklUaGRfTDFuLVVlUDNvNnNSTzZzYVF3T3c"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "British couple on new hunger strike in Iranian jail, family say",
       "location": "Iran",
       "url": "https://www.bbc.com/news/articles/c8e890y14r5o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-05-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Hezbollah drone strike videos show evolving tactics against Israel",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c1j2zwe9g5no?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
