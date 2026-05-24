@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-24 15:34 UTC",
+    "updated": "2026-05-24 17:17 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-05-18",
     "period_end": "2026-05-24",
     "total_events": 144,
-    "total_risk": 115.86,
-    "normalized_risk_score": 46.3,
-    "risk_level": "LOW",
+    "total_risk": 120.56,
+    "normalized_risk_score": 48.2,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 25,
-    "security": 8,
+    "military": 26,
+    "security": 9,
     "political": 31,
-    "other": 80
+    "other": 78
   },
   "source_counts": {
     "news": 138,
@@ -26,20 +26,20 @@
   },
   "top_locations": [
     {
-      "name": "Israel",
-      "risk": 39.56
+      "name": "Iran",
+      "risk": 39.9
     },
     {
-      "name": "Iran",
-      "risk": 39.25
+      "name": "Israel",
+      "risk": 38.66
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.45
+      "risk": 19.7
     },
     {
       "name": "Tehran",
-      "risk": 6.85
+      "risk": 7.3
     },
     {
       "name": "Turkey",
@@ -120,6 +120,15 @@
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOa05MZkIxcVZZcnhiSjZHSFNjdXVlZm5IcEU1YTlkYUQxcTFPZkp3cGZsSDZESGp4Y2NkLVZBQWdTdHVUSk82LVFLb1YwT1NQc2tEUjFnVWNpUmFreGEtTlNGMy1TTGduTjVxOUh2cnQ3Qm00SEFidmQwZDVBazdPU2kyZXBZSEZTaXUxRThka09TVTY1Y1dNNzMtcVpVTTJHcGtlMDFkWEluYVlOQkdv"
     },
     {
+      "score": 2.7,
+      "date": "2026-05-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Overnight Israeli strikes on Gaza leave behind heavy destruction - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVEF2Vi1KdElfMjJLTDJaX3hwWUFWUmZ3TFpxUnpMOC00cG5XLTU0N1RYS1FFTjZ5WjFPSGhqR2NGSGVxMlozUk4xaV9naXFQb180eHZ5RUNzQnlIVm5LOTRjOERwOTNoeHMzbk83MDc5RTE4S0t2QTFHd3UwQm02X2RzcFlLZ1pBTW9xYVllclY2V2V4bl9UNnJyUTR0UXU2eGhMNDgyZlo1TjRuVEE2aV9NcDRBZ9IBuwFBVV95cUxNVUpqVW8yX2t2aTRRdi1CRWJTd05CSFZKWGNnU0J0ZEc0ajJfOWllWGM0dk5rNVhtT19pdkNRM1VrN3VDUmRrb0U5TzYzeE5uLW9lclNXczYzbkFqRGdNc1hUN0dGU3YxUElMZVVPV01MTkRRNWM4VzlOZkQ3R1F4MjNKd2pmMzVvY21aY1UtTVJ3LWFjeFdZOTVkMnFDWEhKSU0xOFd6SUZnVnF1Q0hJWGdGV3lKX0poaU1V"
+    },
+    {
       "score": 2.4,
       "date": "2026-05-22",
       "category": "military",
@@ -127,15 +136,6 @@
       "title": "Israeli strikes kill six Lebanese medics in 24 hours, health ministry says - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNS0hWbm5ObENseWNUYmJ2SE9BU3dfdWhxTk5VZjYwV1FWcldmT0ZNTXhuVTI3dElKZ2pmZ1FIN21QYkdpZ0dVdDVZbzJRMk9OS1RUQWM1SkNwbVQ4OUtjT3R3SXZPVUZoNkdFR3VjVWwybnp2eUNXajVmbGZ2X2g3Qjl6aUV5SWZocy0tNnJvbV91cXZNWmhzb09LQVE5Q0VwTXh5aElFbDQ1dnZVc3NJcHpsWUZiM0lwT3pnb2N2T0xZQQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill several in Lebanon, with health workers targeted - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOV29EeERaS2QwX1VoX3RMa1hvV2dLeFRPUmFWNFNhMUtOdGZDVDZCcHZRRlRXSFFMQjhoRGZCTEJOcGVTZ0Q2WHVtQVBjSHZFX096aXRidjVMTFlpM1ZrNExHNDA3bVZWb3p2bnU0UVdPZmlxSWc4RlpJVG1HaDlUbGMtSGdHd210MUtqOUtMVGdYYnM0UGpLUWRwT19yME9KNDlQQ2ZKQW12Xzg5ZlHSAbMBQVVfeXFMT3d0dXpRbUZ3cEx4Yl9HcVRnNEEyVHZsaXdDMjlTLUlYQS1uY3JwSFB3VjlfYkVITFZ5Z3B4VzlIdnE3RFJWM1NlYnVNY1ZEQm9hLTdNX2NZaEtZQmRjdEluX1BsVmRkbzR2SnoxX0gxVlEtQ1pmSHZxM2tqSmZlcVNwYlJ0ajdZYlRYdnhVVFhBSWM4ZzNrQXdoNklUaGRfTDFuLVVlUDNvNnNSTzZzYVF3T3c"
     }
   ]
 }
