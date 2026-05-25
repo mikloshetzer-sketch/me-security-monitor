@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-05-24 23:15 UTC",
+    "updated": "2026-05-25 04:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-05-18",
-    "period_end": "2026-05-24",
-    "total_events": 145,
-    "total_risk": 124.31,
-    "normalized_risk_score": 49.7,
-    "risk_level": "MEDIUM",
+    "period_start": "2026-05-19",
+    "period_end": "2026-05-25",
+    "total_events": 138,
+    "total_risk": 107.46,
+    "normalized_risk_score": 43.0,
+    "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 28,
+    "military": 24,
     "security": 7,
-    "political": 29,
-    "other": 81
+    "political": 27,
+    "other": 80
   },
   "source_counts": {
-    "news": 139,
+    "news": 132,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 44.41
+      "risk": 35.41
     },
     {
       "name": "Iran",
-      "risk": 36.45
+      "risk": 33.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.8
+      "risk": 19.0
     },
     {
       "name": "Tehran",
-      "risk": 7.8
+      "risk": 6.6
     },
     {
       "name": "Turkey",
-      "risk": 5.2
+      "risk": 4.15
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-05-24",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, May 24, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-24-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-05-23",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-23-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-05-22",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +75,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-22-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-05-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran negotiations, Oreshnik missile strike and Enhanced Games - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQRlh4bEpZZ01aemtMbkpOWE9fRnI4QjBKaWMwUEF4REFLSVBwZ1oxYURFYUduSVFsRnVjUTQtTHRYMFJtMElCZ2lpOVdBcmxXai1UQVVHSEw1YjBOUlNGdGtTOHp5a1JhM09DSmtfTDIwZmtKREVDSmlRQ19aQnBkcUJKcTV2bm9welJRVWliM3l1Z2lwYWtJcFFDV2pKQzBQSGZv"
+    },
+    {
+      "score": 2.7,
       "date": "2026-05-24",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbUI4VVljN25HMFZvdHJjYk54UU43enZ3LU4tMU1wY0ZXVV9iRXJXNFNoRkNIdHg4bzBrbUk1bm14MVlfNmtOQTBXcmxXX1VoQUF1Q3ppNVVLUW9XTm9RWldESUkwcnhYWGh4dVg3MjNtTVlPb0tUN0p6TW9oNWl1VTRuLXNBR3VJSXdxZWVYTnJydzQ5TlE0UzZpeUtRS21xUUM5dW41OXFqbHfSAbABQVVfeXFMTzhaZHkydGlXY2lnMmw5dEVrZDFRU0MtdXdKMVE2d0xCU2kzSm4wSmZldWZQVllSMFc5eEdNOHl3S2xXSF9GcFAwY2pBU0s0VWpFa1VoY29Xek92Xy01TWw3ejMtVWdicV9uT3FpbkF2V0I0T0JnR0tPdGVvdXNLdVVZWkJIcjh0aEpQOWFnZFN5Y3liMXN3S21uajlnczR2VUthM0FzbTJ3NkxkdHU0Y1E"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-24",
       "category": "military",
       "source_type": "news",
@@ -84,16 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPX3NyRURDSEZEQ0M3NjBHWFRhZFl6YUVLSTU0S3o5Qm9DT3dyUDBuSGZLd0pCRU9neDk0WF8tMDMxcjBuOGwtMzlnSmM1a2QwbzFUWHluRTVQWUdnMThqQVV0SjZVb2NyTFRKMXd1OWlpOXM3OTQtRlNNbFN6VTJMbnhvSnJ2SGNqenVaTENwRXU0UmRIVHRNVHhXa25IX3pxRE5Bc3NFSXNoU0ZEOHp5bWlaRVbSAboBQVVfeXFMT2VrYTU2QUlnTmpqQlpjRTNUcUVNUlAyOUFJYmVfU1B6bmRJNVhNbnZPWWZVZnJlVW4wTXJPZ19YTnJpOVpoVzdsTy1OTG1hNDRmbFVXeDhyVVAtM3QwNHdvUG1idHpNTVV3YmZzVnp1RFJFZlZ1WDhBd0RnUUxLSGo3UkxHUndjLUdBV3B2bDRHbHQ5ZjNOb1gzUGNGUWM0R0NGZEVhY1NOMjM5VzhIbWdpR2ZnaHJCeVVR"
     },
     {
-      "score": 2.73,
-      "date": "2026-05-21",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 21, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-21-2026/"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-05-23",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQ1ZRNU5xTlNYWllkd19BOFlkOENEU0xQLXJjYkpHQllnUWlpYUZhSFlfd0tDV2phS2Q1V3ZmdGsySGxwX0JwaWVfc1l0bE5YM2pSUEozSVhxa2g5SXhTdk9EcFhfWVhxV0tXRHkydVdRdmF6R2dadHJQZzZJWU1BZGtZLUNwSE5vbWFrS0lmWkU3dTBfUGlLbjNpZnpOVlczX2VLZHBzZnBhdE5aRWFYaXZtMmtvTWE2Rm9ZbTl6NnAweDNrTllBWm9EcUZQQQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-05-23",
       "category": "military",
       "source_type": "news",
@@ -111,7 +120,7 @@
       "url": "https://www.bbc.com/news/articles/ce8pn63q771o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-05-23",
       "category": "military",
       "source_type": "news",
@@ -120,22 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNGZLcmNHclg1akhXaE96aWxhaDR5Z3d5aDRxSXdJdFhDYkEtYWQzTE5DNk9hRzA2Tjk4TnZtLV9qUHIyWUgzMUZRWjh2OU9QQ0MzbWVtNWUtQ3hyREplMDJhbXlEWllYNjdoV1U4OXF4ODhLVGpLWGthdThMcVlSWU9Zc2Rpd0VCQ2dxbnVicjFIWmQ1Y3lSWlZSUTZ0T2Q2RXh0ME80MjJLaHNTenotVXNKMNIBuAFBVV95cUxOT2J6UC1DOVZhaTBfVm5FbEJiMnd5NzRvMmpjbjRXaUlWeUQtNGJuazRyY01HeTBVX0E3QktQR1YyWXVYNGk1YXNmVjBzdGVfNXAzVFV5dy1QdEVNTjBTeUFGdWdualcwRm9zY05xelcyajJpTG1JVzNKS014RTlhbzdaaEM1eXhjNWR6d0pOV0JSS082RjJJbVl4MDloX2oxRDJJUS1TOGZIVmNQSF84YWxjendDQWo5"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-05-23",
       "category": "military",
       "source_type": "news",
       "title": "Overnight Israeli strikes on Gaza leave behind heavy destruction - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVEF2Vi1KdElfMjJLTDJaX3hwWUFWUmZ3TFpxUnpMOC00cG5XLTU0N1RYS1FFTjZ5WjFPSGhqR2NGSGVxMlozUk4xaV9naXFQb180eHZ5RUNzQnlIVm5LOTRjOERwOTNoeHMzbk83MDc5RTE4S0t2QTFHd3UwQm02X2RzcFlLZ1pBTW9xYVllclY2V2V4bl9UNnJyUTR0UXU2eGhMNDgyZlo1TjRuVEE2aV9NcDRBZ9IBuwFBVV95cUxNVUpqVW8yX2t2aTRRdi1CRWJTd05CSFZKWGNnU0J0ZEc0ajJfOWllWGM0dk5rNVhtT19pdkNRM1VrN3VDUmRrb0U5TzYzeE5uLW9lclNXczYzbkFqRGdNc1hUN0dGU3YxUElMZVVPV01MTkRRNWM4VzlOZkQ3R1F4MjNKd2pmMzVvY21aY1UtTVJ3LWFjeFdZOTVkMnFDWEhKSU0xOFd6SUZnVnF1Q0hJWGdGV3lKX0poaU1V"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli forces attack central Gaza despite ceasefire agreement - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdHlMcHpmZUN4ODU4VUNseVdFVXBsX3RBbmlJbF9YUTlReWtXMVdkREoyTWJtOTdIcFM4ZVJOdHo0MVUwNU9ETmVyR05zVFVXTHNKQXVfUFZrcDZoV1UyRmR3V2tRVEZUV2NsVEdUd2dxQ0ZJTm1kbElBQWdIZlk1NVlwMmhNN1dadFlfSTlHX2JoM1psWDhteHhHNzJ3eG9qUUlZOXhvTkozaTBrN1hNTXFFSdIBuAFBVV95cUxQdTVCbUtnSnhsZjdna1N2OU9HelpqUGhHZlhjR0tqTDN6VjFCUkhlQnFXYmhOLWEwbi1hTjRSOXBraTFmUGRxTkMtRHQ1VGFzVHR0RHRqV1Y5VEFIYTFkOUM2clpwNlhmNlY3MHRfX0JKQ3ZaTXJUUlpTUkxYYlE5TVo5UGI4QXg3dV9SdmFoLWE5d0NWYVNJLV9ydUpBaGRDQnZSeGZTdFZWM3JkVmxxR29hOHMtaC1Y"
     }
   ]
 }
