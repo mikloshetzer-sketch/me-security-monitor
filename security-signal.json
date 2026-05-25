@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-25 17:59 UTC",
+    "updated": "2026-05-25 19:59 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-19",
     "period_end": "2026-05-25",
-    "total_events": 142,
-    "total_risk": 115.11,
-    "normalized_risk_score": 46.0,
-    "risk_level": "LOW",
+    "total_events": 144,
+    "total_risk": 125.91,
+    "normalized_risk_score": 50.4,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 19,
+    "military": 22,
     "security": 7,
-    "political": 41,
-    "other": 75
+    "political": 43,
+    "other": 72
   },
   "source_counts": {
-    "news": 136,
+    "news": 138,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 46.05
+      "risk": 48.45
     },
     {
       "name": "Israel",
-      "risk": 40.81
+      "risk": 43.46
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.9
-    },
-    {
-      "name": "Turkey",
-      "risk": 5.0
+      "risk": 18.85
     },
     {
       "name": "Tehran",
       "risk": 4.75
+    },
+    {
+      "name": "Turkey",
+      "risk": 3.45
     }
   ],
   "top_events": [
@@ -79,9 +79,27 @@
       "date": "2026-05-25",
       "category": "military",
       "source_type": "news",
+      "title": "Netanyahu says Israel will intensify strikes against Hezbollah",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cewppdk1187o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-25",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel kills three in attacks on Lebanon, issues more displacement orders - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPS3NfMUpZSFVuN1VqQ2ZjZEotLWlndEp1NW1aT2Z5SmRpcmlaeGladl9kZkMydDg0aGt5VmRLSXVUUU1Vc2JyeHVaaC04MTQyWGJQWnRibTJmLW5PdkRVSEFGaDlwQkoyam1zTi1qVXVKNF91bDZIMzRVUG81eGt6STdyZl9OYjN0TlRGdW53SGlfMUhuaFVXVFJuQmVMam1tRnRFTDBaQ2ZxOGVzX3BrYVJ5c9IBuAFBVV95cUxPR1U3c0dMTDd1MGJHS21Nc1c2TUVqeXpKd1dHanJKekF3bUdGeXYtczBUUDM0MkNzYTE4TzlPMHRuTE9zN1lYU2JyRE85RWJad2c2dFBaSVFDaEFEWkU5YUkxZWtSdkhVY193UkxLYm84TG1EdmpYSmNyWEVVWm1QY2lxYjBPVWQ1Mnd0WDN1MngzeDR4NVZjMWpKMkVQbkQ4b185czh0RUtGeDNZUzBRLVgtaWgwZGNx"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel escalates Gaza attacks as Netanyahu stalls ceasefire for polls - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzEzRHM1eGhCcUJwVlNYN3ZKQUxoY0tLd082RlczdXpENmdManB5UVBzaVFpUTYwbXdYMlNhUEpVczRiVGVPWXd4RXM0S1RyZWgwMkF3Q1dBX0pWel9ZUXRldFFVWUhVQkh1NmsxQXJIVUxZelNqQ2xjUXpGbVc5MjB5SFROSXRVbzFETWQzWWJjN2FYeTV1SmRyaVZwZ1RpUEUzS0NINy1ueGJMRVRv0gG0AUFVX3lxTE1hNWhzQWE4Z3R0dEJoQ2lZeFRaYUxHT3ROMlpCdXJuMXRMakdfdFBQVXQtNXZ5VC1ZRzZfU0pid3AxbDcxVGlBNm9nT3BaeEd3QmlMbXRPblpBUUZUTlVuVEdUYWJocnItaXhIRVVuTFZ3bm1WR2M4QmQ3Z1JQbjd0T2JHVlFEaU5leENlaE1VRnFJb2g3dzQ4Z0cydDV2ellNc1RNcVlES2hBNGd1Wm83d3lhMQ"
     },
     {
       "score": 2.73,
@@ -118,24 +136,6 @@
       "title": "I survived a missile strike in the Strait of Hormuz, but my friend has not been found",
       "location": "Iran",
       "url": "https://www.bbc.com/news/articles/ce8pn63q771o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks in Lebanon kill at least 20 despite supposed ceasefire - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNGZLcmNHclg1akhXaE96aWxhaDR5Z3d5aDRxSXdJdFhDYkEtYWQzTE5DNk9hRzA2Tjk4TnZtLV9qUHIyWUgzMUZRWjh2OU9QQ0MzbWVtNWUtQ3hyREplMDJhbXlEWllYNjdoV1U4OXF4ODhLVGpLWGthdThMcVlSWU9Zc2Rpd0VCQ2dxbnVicjFIWmQ1Y3lSWlZSUTZ0T2Q2RXh0ME80MjJLaHNTenotVXNKMNIBuAFBVV95cUxOT2J6UC1DOVZhaTBfVm5FbEJiMnd5NzRvMmpjbjRXaUlWeUQtNGJuazRyY01HeTBVX0E3QktQR1YyWXVYNGk1YXNmVjBzdGVfNXAzVFV5dy1QdEVNTjBTeUFGdWdualcwRm9zY05xelcyajJpTG1JVzNKS014RTlhbzdaaEM1eXhjNWR6d0pOV0JSS082RjJJbVl4MDloX2oxRDJJUS1TOGZIVmNQSF84YWxjendDQWo5"
-    },
-    {
-      "score": 2.34,
-      "date": "2026-05-21",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 21, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-21-2026/"
     }
   ]
 }
