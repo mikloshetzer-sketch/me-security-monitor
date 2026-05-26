@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-26 10:19 UTC",
+    "updated": "2026-05-26 16:10 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-05-20",
     "period_end": "2026-05-26",
-    "total_events": 142,
-    "total_risk": 145.61,
-    "normalized_risk_score": 58.2,
+    "total_events": 130,
+    "total_risk": 128.31,
+    "normalized_risk_score": 51.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
-    "security": 5,
-    "political": 40,
-    "other": 63
+    "military": 29,
+    "security": 1,
+    "political": 39,
+    "other": 61
   },
   "source_counts": {
-    "news": 136,
+    "news": 124,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 74.8
+      "risk": 62.9
     },
     {
       "name": "Israel",
-      "risk": 40.11
+      "risk": 40.46
     },
     {
       "name": "Gaza Strip",
-      "risk": 16.8
+      "risk": 11.55
     },
     {
       "name": "Tehran",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Syria",
-      "risk": 2.7
+      "risk": 2.25
     }
   ],
   "top_events": [
@@ -70,7 +70,7 @@
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "Rubio says Iran deal could take days as US launches fresh strikes - Reuters",
+      "title": "Iran says new US strikes violate ceasefire - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOY2M1OFpXcm8tVlBZczVzcFhhdF9PQmw4UkdFRVRxS3BydkZPVXNiNXhyVU5fTFZXOE1TY040LXAtTFhzNEhHOU12UTNoSjllTHpzM2JxMmJUazZyVkRqUmFlbUtzd1FhdkNma1lGeHVFdjZfOHNLYW80dlJrbjJ5VmRnMURtejlVRjdOdlAwdGwxbURIdU9RMUZ1YjZVd2Rhdm84QU5xY0lJVDdVTXUzUzZPZjY5V3c"
     },
@@ -79,7 +79,7 @@
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strike kills five people in Gaza, medics say - Reuters",
+      "title": "Israeli strikes kill seven people in Gaza, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNT2xNVmhxQy1mbVhWS3U5Vi1EbHhZcUN5MzBxNE9CWjNJYTJKLTFvVFNBcHJNbEJuLWs2LVVkbXBvTXI5dVdpZnJWOUxxZ202S2xsTHJvRDJmS0RXa2o1eGJ4NXZkV1c2N08xcFdPTHUzUGszdWdiM3BDcFlKOUhGVjZtZW9lRlhxdWtoWHBQcmFBdVI3VmhUU21yVS1LaFNVTzEtaw"
     },
@@ -88,9 +88,18 @@
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "European stocks falter, oil rises, as US strikes Iran - Reuters",
+      "title": "Iran condemns US strikes as 'gross violation' of ceasefire",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLUdJaVVrejdzRGFrQTZTY0JUUzY5SEVJUzR5WWJpYjJBdEJHenRtTzJ5dEd0Rkd2SGhrTk1qQ3o5MGhOb3dVSlZSd2gwNVFZV2hCS2VCWkFoUlA2WV8xTEhKbEpyVVhxWnNCMl85dllubTQzU2kwM0Q0WDlKek5YZUE4UQ"
+      "url": "https://www.bbc.com/news/articles/c4g44yl7q70o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Eleven killed in Lebanon village as Israel intensifies strikes",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cx211rgngp0o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -115,27 +124,18 @@
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "Iran war day 88: US attacks near Strait of Hormuz; talks under way in Qatar - Al Jazeera",
+      "title": "US strikes Iran again: What we know, and is the ceasefire over? - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNWlM4R3hZSlFGQ0o4bzVkVnJ0QTdmTXFGd1g5TDBXWHRPTEJJeGZxNEpmbVRUVVlFenJOMlMzZzlZZndVRkFWLS1iX2xGdlVlZWV1eGF4aVJsOVFxWHFjdnI2THk2d2V2RUs0czI4NlpfX2dDLU51RV8yNFhXS3VSRFFaaU9tTjZXbjJlUkVsZ1ZqSlo0eUl6dFV4OEVZRkxHZGM4ck56T3ZmeHVhb05jRkVLakjSAboBQVVfeXFMUHV2ZDZ0M0xCTExnaXdfcDRtaEhWUDB6YjByRTlJUnhXaGVFRGFxU0dwZ2xqV3BXdzhPaG5FSkJtbktDYkMza1o5UEVQTk9VWUNGNVFTTHdxMEVxbXV4dW5qN3R2Z2QtTDdlbGFhTVh6VlF5aVNhOHJGNXV4ODVwYWpPYWtLOThEdmxSSnJKUEtVekt5Q2x4WXVkNGNYX0dpUlR1SjE2OEMzTmJab1JtYWYxUlBwUlB5amFR"
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOb0U1ci1uNU1kaXE1Q3ZoUHg1aW5nNmRIeldpdjctWVJOZnBHLTI5T0JXZ0phMWFOdmVGb3BsalE5YnV0bHpiZWViZGJ2aXZ1ZjdxQUVWbm1OZjNyVDBYN2FlSmFKREVJWlBVcnVVWC1PNWFRdTh4TGVUM0V3S0FEOGJpOUNSZUl0dHEtOVlvMG1tQ0Zibm1vSVBkNDBxTHpodlpB0gGoAUFVX3lxTE84cDR4SzgzTTdmUzNYdDAzOXpDOFQ5aGJPUkZ4RG5mOVVkeTY2R3FmQTNsLWh4QTFZOGZIRXZSWFF5RzdEcktReGVVZURzQTdPVHJLRmpwNTkxVlV0Slo4akpiVlNLREZjR0dnQUJhSXM2RGJ4azA4RHNYU29qMEZxcUp4anViT2s4Q1NfNFlqYVNpT0J3aGZMTXFVTVZab2dTdl9VNjlqWA"
     },
     {
       "score": 3.0,
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "US strikes southern Iran in ‘self defence’ targeting Iranian mine boats - Al Jazeera",
+      "title": "Rubio says Iran deal could take days after US forces launch new attacks - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZ1F6NzVRUkMwWG5veUxOYXI0VVFNRWMza3NKMjNNRjRzbkEtWkRVSHNDYjV2Z0Z5cnlVM1ZSUEFGV0Ztczd0MW4wMmFsc0doNzZEWnYzenJzYUJUUXNnYTMyVzVPRFRMbzRmWmNZV2k5eml4Q1BQVFhyZWZCY3RPZW9UOEp2VGxib1F3MWlHQlFlTzJzbXBrQW5QY0dpelR1RWdPd2c5bUVnVlFOMXdsb2gxcW9DdkUyQ3fSAb8BQVVfeXFMT09tTDFBS1FaX0JQNnVZamZnajFXUzJSQ0Z3TlZKeW1vN3ViQXB6NC1qUTFYR29rSWd4ZDkxNFJKbU1mMUdwSExOWE1fZWxpbTQtTkRiRTJDUkpUaGU3YTF1WVZIWEVZTl9fTlREam15RWlDVElJaVVJNTJfZXJCT0VZbVRaWDI3bHg0SDg2akVLd0NjMVppMmZfeVlJZlVGdmlMLXNBcFo4aUhtQzRHYnpabU90Y1dkMVM5WGc2ZjQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military launches strikes on southern Iran amid talks in Qatar - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbG10dm9OTkpyY055aXoybWZrNnFZdVBpR3ZpZTlOTnNDUWEzRjJIVWlybWt1TkVDMW5IMVd0Zzl6eTZ0eHBUQUZ1THhxTTc5WjlqOWdpRXJ0YUhfOVhoMkVpVGFaRWNxeHVuaExrMWQtckdXNVdyMnozaEk5VmpHcm9VTks5bEhRTDc0b1hRTWxVZFQ4a3ZQa1o5UzRVUXRrUnFxZnVQYkpxZ9IBrwFBVV95cUxNWTlGMDBmQlJiVWd6MGkzVmk3YlZGbmo5VlpLdEM3aUw0VzlJWDlfYk5VT0hTNFR4cy1Sb3NsdTNKVXJPWTdDNHF0OXNNTi1FU0MwZk1SS2IteHZHd3FBZ1ZXdl8xektrdV8xZjhqZzFXMGZmMUhYSWFpOFcxeWpQdEctLUNuNHVRdXpHeTJETi1zZ2ZVczltSERjWk9LelVPREVjYlBYcTVIT3RybXdr"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWTRiam15d3lKZG1QR3hOeDRqcjBZLU9KMUQ2OUwzUUg4R3VTZk9YUTd5UlpiZC1fOVhOczJoUVJQajFJbnk4NmM5UUJGcFhGQzNUeFBadFllVFMtTS1QVlExbzA1OXFiSjZybTdrMmpuQTZLNWxfYWp0SUxrWUhhTm1hMHVINkRncmJkWGQ3d1RQVkdybW54a01ycnIyTW1TT05nQTFCY0VDUy1yb2FXa0hB0gG3AUFVX3lxTE1Fb1J4NVJ6ZTZXVGw0a09SZTVwZDB2LUpxYTh0eV9lU296OGhodDdlT2htZjNBemI1S3NWYmdKTFd4TGpEdUlkZjRDN3ZfRllvXzF2R0NrcWNqVlRzcDhrWDBtQUJQZ2syUzV3ZXFWejRsMzgxZ0ZUX1RBS2dkQk15dE5lYmNKdG5ac053ZGkwdUs3U0NFWGpOX1VOVE41dHNEOTgtemM5amE5WHZTbDBzY3V2LXBBVQ"
     }
   ]
 }
