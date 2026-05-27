@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-27 10:30 UTC",
+    "updated": "2026-05-27 16:13 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-21",
     "period_end": "2026-05-27",
-    "total_events": 137,
-    "total_risk": 150.26,
-    "normalized_risk_score": 60.1,
+    "total_events": 146,
+    "total_risk": 166.06,
+    "normalized_risk_score": 66.4,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 39,
-    "security": 1,
-    "political": 35,
-    "other": 62
+    "military": 43,
+    "security": 0,
+    "political": 38,
+    "other": 65
   },
   "source_counts": {
-    "news": 131,
+    "news": 140,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 72.7
+      "risk": 80.15
     },
     {
       "name": "Israel",
-      "risk": 42.11
+      "risk": 49.31
     },
     {
       "name": "Gaza Strip",
-      "risk": 22.25
+      "risk": 18.95
+    },
+    {
+      "name": "Syria",
+      "risk": 3.8
     },
     {
       "name": "Lebanon",
       "risk": 3.65
-    },
-    {
-      "name": "Tehran",
-      "risk": 2.25
     }
   ],
   "top_events": [
@@ -70,9 +70,18 @@
       "date": "2026-05-27",
       "category": "military",
       "source_type": "news",
-      "title": "Israel says it killed Hamas' new armed wing chief in Gaza - Reuters",
+      "title": "Palestinians mourn slain Hamas militant chief as Israel escalates Gaza attacks - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNemtsS3VoVVBUdExGWHcxbXFEN3B5YkJuM3NBX2pPenhtaU9rQU93YXc4YnZrY19LdmlqdnI4bUE2dzEwb25xVlIyVkRkNGFuLXZqV0RHVWprMThnRlhpdVg2dHNoMGZtMFdyWlMxT1NISlV2Y1drNm1La2JTUjgyUE5rMllzY19tZTY4NWpTaVZrTlVDNTFPdzU1cmFIWW92TGx1bXU2RmhuRFE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "German police arrest Syrian suspected of helping attack at Holocaust memorial - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObEl6X0JPVElVRmlOQnk4MUVCQ00zSmtaanJnd1VjTHNEdmZZZXk5UW51Xy0zV19tWFpaZUtCM1A0M3JBUndYUmhjUkJHeGM1UzY5TjZrdm1Xa21hZDVDWVk3d0g5OGdxcEZBZ1hCVENqY1kzVjVZeDZlcy1TaU5zT04xZ09Jb3pSZ3V5ekdvUTVnU1BZVEh0S2U1TWhvRElhdk94Y28zRElzLWM2TWZRb2RoYw"
     },
     {
       "score": 3.0,
@@ -106,36 +115,27 @@
       "date": "2026-05-27",
       "category": "military",
       "source_type": "news",
+      "title": "US, Iran have launched multiple attacks during ceasefire: A timeline - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaGIyeG44MU9TeDdIT3RFdVZoSklaZDFwOXpqQUlNU0FvRDBEVk1iMkR0LVhrV0R0SmwwdEJPV1ZteTZsajNEYkNBb09BN2piaGxYeU00Zm5JLTE5b1BlX0VrRUJjRnNtTmZvS3NXczhfMDNESzlXS015Qkk0aDJjVlFWd3QxeXVFTDlIRkVKeHBMNUw0aWN1OTRySDdSYjhzcGNvdHBZU08zMDjSAbABQVVfeXFMTlpnWkFOaV9aRGJieW5mV0YwNlNUVVlKVGhuQUVwQWsyRVBKamdra2N3cUlScGtnTjJldGZvaFlhZ0JSQzV0cDBJYjFSdE14bG4zNVUzMzJHVFR3bUhOLWJ2Zk02djI1UjdtaHZ5cmZmU0Q0RFFzRFlVcVdxN2tHT1Zvc3gtb20xMnluV2trcmQzcWVxLVM1bk9zb00xejJCWS1DM1hHeDloMEVjZnJIOGM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli air attack kills at least two in southern Lebanon - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQZk5oWjYxRVBMX0lPd3FKQlRkNXRxSUdCemMwanRxcHBHeVJTd0tib2psNGgxZEZiRWh0S1ZUUVV6RFVHOXFENzBLaEsyTjVlOWtsQ0hSbjZoeEM5Nl9fVGJlQ3ZISUZ3SGs1a214dG1uR1Z3RS1wSzA4UElHZFR1dHM3eDZTVU9UOVF5eHVndGM5SXFMNzNVRTczVWVDdEnSAaQBQVVfeXFMTVVIeVJNY29mSVk0eXFnSHA3VmxqeFA5VEVSMFZtTktrbmxSSUFvVVNSUWpDOTdDaHViLW9PbFZXOGNfclRXa0c5cU9kNUZQYy1WanAweU45UjE1b1c3dXJWX2NmdW9Fcmpac1JjcjNRYkZDb0hydmhlVkFsZEpPZW9QTkwyU2ZpWkgzMU9lZ0ZzNkNPOTlOYzFrQnRhUzYtMl9XR2c"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel claims head of Hamas military wing killed in Gaza strike - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRkF4TDZsS1NienRYTXdNT3dGUzJxODBES3lCVkFCN29VZjRQdmFqNDlOLXdaV0dzMFJFTVphaFlPVlVJNUJ6Vmx3UzU1OVhnenpfTHhNSktPMEd5c01qVmdfbUdjMk5uLXgycHNZWkQ2RC1WXzBVTFlSM1daMXBLSzlGWk9ZeE01ckExdVJQeUhBOGhrdFJrSmpybWd6NC1ZaWNxcUVhRdIBrAFBVV95cUxOSnVTRWtzZDJJUTRTa1hFQm8xMnZCdlA1ZkVnZGp4RHZ5YVkwZ1ZiTEU3M0ptVzdnaTZnU3QtRlNhWmFWYllSeUNvdERiZ1lmYjMtcFUyeENGTGFOcVVEbjRoYmVRZU5rYlZ4VEExLURBVzAzN0tQdzJHMTlWNDNsTndTdTdmRzBYc0VfUEtVTXFaMU9YMTMtQVJaZV9TeWZPLWF0bDBVeERLOVRI"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-05-24",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 24, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-24-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel pounds Lebanon with strikes, expands ground operations past security zone - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbmYzaGNfS3diVERUUElLNzRjVGpQMm9BUjE2c1FsVUp1WVpORklZWXptY3o5ck1jMmhJanZ1VDBHZDdmR09EMTJ6aWliR3B2akRHak1jaU5LbXhqWVdLdTYyZjBLVXhZYjR3VGoyamlsb01zQVFlNGJNREFpRTg0T1NpX0dHbEE1VGxTeE5YbEhOSzNQVTJIVWg0cXlnNGxBMmRrUkRrUFdJTm1Kc2lyaEd2ZkhPdF82b2hlaDhWa2dXVTBi"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says new US strikes violate ceasefire - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOY2M1OFpXcm8tVlBZczVzcFhhdF9PQmw4UkdFRVRxS3BydkZPVXNiNXhyVU5fTFZXOE1TY040LXAtTFhzNEhHOU12UTNoSjllTHpzM2JxMmJUazZyVkRqUmFlbUtzd1FhdkNma1lGeHVFdjZfOHNLYW80dlJrbjJ5VmRnMURtejlVRjdOdlAwdGwxbURIdU9RMUZ1YjZVd2Rhdm84QU5xY0lJVDdVTXUzUzZPZjY5V3c"
     }
   ]
 }

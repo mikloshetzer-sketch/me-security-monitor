@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-05-27T10:30:30.481884+00:00
+**Generated:** 2026-05-27T16:13:01.523276+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Gaza Strip (7.4), prev 24h: 2.5, share: 51%.
+Top current hotspot (by risk): Iran (7.3), prev 24h: 28.5, share: 30%.
 
 ## X POST VERSION
 
