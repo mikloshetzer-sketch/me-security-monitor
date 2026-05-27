@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-27 04:50 UTC",
+    "updated": "2026-05-27 10:30 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-21",
     "period_end": "2026-05-27",
-    "total_events": 131,
-    "total_risk": 131.91,
-    "normalized_risk_score": 52.8,
+    "total_events": 137,
+    "total_risk": 150.26,
+    "normalized_risk_score": 60.1,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
+    "military": 39,
     "security": 1,
-    "political": 33,
-    "other": 63
+    "political": 35,
+    "other": 62
   },
   "source_counts": {
-    "news": 125,
+    "news": 131,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 65.8
+      "risk": 72.7
     },
     {
       "name": "Israel",
-      "risk": 44.56
+      "risk": 42.11
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.25
+      "risk": 22.25
+    },
+    {
+      "name": "Lebanon",
+      "risk": 3.65
     },
     {
       "name": "Tehran",
-      "risk": 3.05
-    },
-    {
-      "name": "Syria",
-      "risk": 2.0
+      "risk": 2.25
     }
   ],
   "top_events": [
@@ -70,9 +70,45 @@
       "date": "2026-05-27",
       "category": "military",
       "source_type": "news",
+      "title": "Israel says it killed Hamas' new armed wing chief in Gaza - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNemtsS3VoVVBUdExGWHcxbXFEN3B5YkJuM3NBX2pPenhtaU9rQU93YXc4YnZrY19LdmlqdnI4bUE2dzEwb25xVlIyVkRkNGFuLXZqV0RHVWprMThnRlhpdVg2dHNoMGZtMFdyWlMxT1NISlV2Y1drNm1La2JTUjgyUE5rMllzY19tZTY4NWpTaVZrTlVDNTFPdzU1cmFIWW92TGx1bXU2RmhuRFE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike in Gaza City kills new head of Hamas's military wing",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.com/news/articles/cjwppj1yn7go?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
       "title": "Dozens killed in Lebanon as Israel intensifies strikes",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/cx211rgngp0o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran war day 89: Lebanon strikes kill 31 as ceasefire tensions rise - Al Jazeera",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZGQyVkpsZlRYbVJRY2dXbmlWWXkteHJkM1pHVThpbjJNRWp3ZnhVbzhJUmJ3YnQySnRJQnN5ZFIxb0h2WlFIcXBjRy1SUGNYbVFDY3BtZTFOWHJHWGNxN2w2SENEZEpjdkg1cWh0OGZBZVdTeUI5YXh3WEFPRXNxa0F6S1hYX0xPLTNwb0phZExCdU13TmpwY2hlbDUzODZXcnRiSk1XYmpJMEXSAbABQVVfeXFMTk1PYkNxRE1KaFY3d1BiS01JWHRvUjB5SGNnejNTakJlWmFUMk5YaG9QeXExYTFxWTB4ZnFmNXgyeFExUHBQWjc0YmlndVo0NnhwOWVYcUZhQ1kyUGdyTXpDVnBfb0FSdi1WQnBuZ0E4LV9uaERXOGFzVU9fajg3ajlBWXJOc1dfa2xwWDF3VG5mSU9sQ2RfYS10TWlxV2g4bFF6R3NzSGRKZndUSWh3LVE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel claims head of Hamas military wing killed in Gaza strike - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRkF4TDZsS1NienRYTXdNT3dGUzJxODBES3lCVkFCN29VZjRQdmFqNDlOLXdaV0dzMFJFTVphaFlPVlVJNUJ6Vmx3UzU1OVhnenpfTHhNSktPMEd5c01qVmdfbUdjMk5uLXgycHNZWkQ2RC1WXzBVTFlSM1daMXBLSzlGWk9ZeE01ckExdVJQeUhBOGhrdFJrSmpybWd6NC1ZaWNxcUVhRdIBrAFBVV95cUxOSnVTRWtzZDJJUTRTa1hFQm8xMnZCdlA1ZkVnZGp4RHZ5YVkwZ1ZiTEU3M0ptVzdnaTZnU3QtRlNhWmFWYllSeUNvdERiZ1lmYjMtcFUyeENGTGFOcVVEbjRoYmVRZU5rYlZ4VEExLURBVzAzN0tQdzJHMTlWNDNsTndTdTdmRzBYc0VfUEtVTXFaMU9YMTMtQVJaZV9TeWZPLWF0bDBVeERLOVRI"
     },
     {
       "score": 2.73,
@@ -88,15 +124,6 @@
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "Iran says new US strikes violate ceasefire - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOY2M1OFpXcm8tVlBZczVzcFhhdF9PQmw4UkdFRVRxS3BydkZPVXNiNXhyVU5fTFZXOE1TY040LXAtTFhzNEhHOU12UTNoSjllTHpzM2JxMmJUazZyVkRqUmFlbUtzd1FhdkNma1lGeHVFdjZfOHNLYW80dlJrbjJ5VmRnMURtejlVRjdOdlAwdGwxbURIdU9RMUZ1YjZVd2Rhdm84QU5xY0lJVDdVTXUzUzZPZjY5V3c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
       "title": "Israel pounds Lebanon with strikes, expands ground operations past security zone - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbmYzaGNfS3diVERUUElLNzRjVGpQMm9BUjE2c1FsVUp1WVpORklZWXptY3o5ck1jMmhJanZ1VDBHZDdmR09EMTJ6aWliR3B2akRHak1jaU5LbXhqWVdLdTYyZjBLVXhZYjR3VGoyamlsb01zQVFlNGJNREFpRTg0T1NpX0dHbEE1VGxTeE5YbEhOSzNQVTJIVWg0cXlnNGxBMmRrUkRrUFdJTm1Kc2lyaEd2ZkhPdF82b2hlaDhWa2dXVTBi"
@@ -106,36 +133,9 @@
       "date": "2026-05-26",
       "category": "military",
       "source_type": "news",
-      "title": "US launches fresh strikes on Iran as talks to end war proceed - Reuters",
+      "title": "Iran says new US strikes violate ceasefire - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVngxZVRLZ1JuQXprdzRzMDIwazZnY2tvWExLS2ZlNkhEMWYxeVF4YTVldGFYSEt4dVU1NEo5bng1Sm9EUFFZNzN3bTJZR1Z1akRjd1o2emJhU0J3TGMtZVZfcWI4ejdyNWhvd1hXRmRPVkFXYmFKUWl0YVM4Q2pyeHJmQW1jSWxsaDdfVXBORmFWQjcwamxWSXFHYlE4ZDFtcGo1SlRzT3RwSHJ3"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Dollar climbs as US strikes on Iran dent ceasefire optimism - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOYVNmY3RpeE9HLUZfcGk4VjVScGpDLThyU1ZFNnJ1V1BBc2RoaGJGWDNEZzQ2TzhGV3c0aVVlVU9VV3owMmFkZVV5WmlDWUZOSC1Ld3dZdEZYdjhCWWlCUzd5VHBLMEE1RTc1ajFuVmRra20wVEpsTXZYX0hrWmI1QVdoVHlLaVRDSDRaVVVXdEdMVnQ3Yk9oLTN3N01XQjRpLTJ5bV9wVjJfcXRoZGhQOHRB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel attacks Hamas' new armed wing chief, Netanyahu says - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWVg3NlZCMW1Tek0zbmlVTDNzWDB3ajNCNGRjR1Eycm5DVktCeUx4VHlsemlhZTBCMFhObmdNRGMwSGRnWVVfbzVuVXVvRkUtaXozcWFWLTRWT0xVSEswZ0JOVnEyS1dqX09vdnRDazhnVTdINVJlWmNmRkpNcHNTN0QtaXJjUEdaOVQzYlNPTHp4SFVpVUx6M0ZVZm1ia3hnOFFTZ2tFcG1rUldHYWN4XzJlVWs2c3I5NzZHc0ZxYUg0ZTY1R2NGMg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel's Elbit developing hardware to combat Hezbollah drones, CEO says - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPd3lPZGpBM19XTUZpeXFJYlRuYU1nbHVkVFlkeExlN0llNnpiR0xmY3psaGUzTWgzc2FZYk42aXRqOE1zYmdTYnc0UHB6djlxTDR6ejNxTlRDRzU1dDRzbDBmMWVxalVqUTB2QkZyNlNUc204eWVPWW02ampQS3daaDJ4TDNRclducl9YRTFxcHFPaGVxYzFVUm9iRjNtZmo2Z0J5dk95UUJrNHVKemVSWVpJZXBwYjQxX2lpeQ"
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOY2M1OFpXcm8tVlBZczVzcFhhdF9PQmw4UkdFRVRxS3BydkZPVXNiNXhyVU5fTFZXOE1TY040LXAtTFhzNEhHOU12UTNoSjllTHpzM2JxMmJUazZyVkRqUmFlbUtzd1FhdkNma1lGeHVFdjZfOHNLYW80dlJrbjJ5VmRnMURtejlVRjdOdlAwdGwxbURIdU9RMUZ1YjZVd2Rhdm84QU5xY0lJVDdVTXUzUzZPZjY5V3c"
     }
   ]
 }
