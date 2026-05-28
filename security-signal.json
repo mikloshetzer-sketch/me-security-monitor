@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-28 10:35 UTC",
+    "updated": "2026-05-28 16:34 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-22",
     "period_end": "2026-05-28",
-    "total_events": 150,
-    "total_risk": 182.01,
-    "normalized_risk_score": 72.8,
+    "total_events": 167,
+    "total_risk": 200.96,
+    "normalized_risk_score": 80.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 53,
+    "military": 57,
     "security": 1,
-    "political": 32,
-    "other": 64
+    "political": 35,
+    "other": 74
   },
   "source_counts": {
-    "news": 144,
+    "news": 161,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 92.3
+      "risk": 102.1
     },
     {
       "name": "Israel",
-      "risk": 49.66
+      "risk": 60.01
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.2
+      "risk": 20.05
+    },
+    {
+      "name": "Lebanon",
+      "risk": 4.1
     },
     {
       "name": "Syria",
-      "risk": 5.8
-    },
-    {
-      "name": "Tehran",
-      "risk": 4.0
+      "risk": 3.1
     }
   ],
   "top_events": [
@@ -79,7 +79,7 @@
       "date": "2026-05-28",
       "category": "military",
       "source_type": "news",
-      "title": "Iran and US trade air strikes after Trump dismisses report of Hormuz deal - Reuters",
+      "title": "Report says Iran and U.S. reach outline ceasefire deal after latest attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDAxUGdSUGJhV19NajdXRE5yZGtxMFRVYnpEb1I3ZEMwZlZsUnBvdlJyb3RlbG4tX0dLMXFEN25ZeER4N3pOblRJYjJGS3NyR1JEZFNlR3VsN1gxd3MxMnhTVHU5VVVadWxCV1VBcFNiRHAtczFfX3FIMW9GZEJRTHFWMzIya1ZQa0ZSMUVQQXhLWVJVSUMzTVNFOGVBNUxKMEhvQW92eWZwaW8zMFpPbDRTYjlxa3NTTVNTaQ"
     },
@@ -97,7 +97,16 @@
       "date": "2026-05-28",
       "category": "military",
       "source_type": "news",
-      "title": "Heavy Israeli strikes hit southern Lebanon after large-scale evacuation orders",
+      "title": "Israel carries out strike on Beirut suburbs, first near capital in weeks - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMlh6R0NWTG45YWNoRzJhWjFHc0FfanR1VjlINHJ6VjhzeXcxcVRSNUZnVThCeU5sdzhyZzJKUURKUFdfdmJYay1jMUpRZW5TSXJ1T1hpWE43dnE4bXh4VjZ1UkZEVVZua3VBX2Z3Ync4dFNJQVprdVVqbUM0RFg0T0RvS3Q5V1RYLS1KRjZHcmlKNmRKcGNtNzVCcmM0dF9lcXE4OG9rUWI3M0VOc202Um1VRHF0cUo0Y0hj"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel strikes Beirut and southern Lebanon after large-scale evacuation orders",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/cj3pgrpmlklo?at_medium=RSS&at_campaign=rss"
     },
@@ -115,27 +124,18 @@
       "date": "2026-05-28",
       "category": "military",
       "source_type": "news",
-      "title": "What’s happening on Iran war day 90 as US launches new strikes - Al Jazeera",
+      "title": "Why has Trump threatened to bomb Oman, amid Iran war escalation? - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOS1hjci1zVUd5ZE5XM2lEdk1DbFotUEFuWXhWcUNveVd1Vk00LXY4YkQ2YTl0djlGbHNRRFBrMUp2bFhQTUYwakFFQjJheDhxVWZ5blNoOUp3QWh1Y2dGZFJLYmpsaTRkZnJCWU1hN2NqSnA1XzZ2YjRhRmFlSkhpTWVXNzZEQnVsTmpzUWJ6SDlGMW1hNzk2VFNIX3R6UHpIWENiTdIBqgFBVV95cUxPVU1nSnItUFVKSDJBUzdZc29QQUdiQ2wtQ2tsMk56c3NEal9tMm4xOThycGFDVlJ0ZGtmQU1JSnJpRHhEYkFCZmt0OUk0dzUzd1FLTU05UWJPUTVBU0RLUWNZcDNSNmVmUFE2ZjhRM0tsV2ZEMi1lT25NYWl4cW9wekl3MkpzcUZiNFFIR1NDbFhSUXJ6NlBNZUR4b0ZYVGVSSXJwdUlYc0FZQQ"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYUZYUUpYYVdYa0JyS1NtdlVBd2ltQkRhNDZhUUZtZE5LVTdkSUVkNkR1QWtOLUt4Zko0SW5YT0NWRkEwN3VOWU54ZE1DSmFqczBmR2hrQ3VxaEprN1BiRUZZV0U4aTFiVC1WQ2NoUlNobFN0WTRNZGItdFR3VEk2dE5sbGE4REJZUWd5YXF3N3VoUzRWRVFZOTUtakhHZEhVY0pKM2xR0gGrAUFVX3lxTFBJM0lway1PTGxzZjZ0cUtMcTRhNjNXLXdiQklsOUFPNF9yYng5UkxBcEF3NTVHNUtzOHBJcFNQTGdXWF9yclZORkx2MF90ZC1CQW9fQWd1cnNwWk9TUW5tdDd1WGx2cnpnR3Z3eFBpLXM2RVRnYUdwMTF2Wk9CNHR1OUhhNHpYSXVLSUFuNUtyWEVoWW45RmxfZ282V0xDc0lraWxXSVJLS3NaRQ"
     },
     {
       "score": 3.0,
       "date": "2026-05-28",
       "category": "military",
       "source_type": "news",
-      "title": "Iran and US trade attacks after Trump rejects report of Hormuz agreement - Al Jazeera",
+      "title": "What’s happening on Iran war day 90 as US launches new strikes - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1hncU1oa3A3dEFtZGc3eDlKSVFKbGtxbjBDc05JdWEwN3ZOMUFCVUxDbUpJLTd1bGNPSGJ6aG0tTzJ4blRkVHFhcmU5WkZhS1B4eml0a2lRUXAtOXFhSkdPSDhTcnVBRWt3QkhVNG85Wmh5RnR2eGd3dHJkanI0VFJlWVhzdks1VlBvMjNybDZRb2hSRWFTQjNXUEp5SXJrVW4taXlmZFFrLVhnRVVNNGhpMNIBuAFBVV95cUxNNE8yQUZ1Zjlzd2s4WmNYZzZuYXBDMTJfa0Z0aGJ4S2xaaHBKRmR5bFRFT2hPNFYzS3lTUlp1R3JsckotZDlualJfTlphVVVQTV8yQ1kzalBkOWlrakhvdWhmcHlQX2UtNWVib2NiYU5HanJrUTF1TjB3YjRWeGRILW5sSjF6a25qSHdYVTdWZ3ZiSXJwRV9jdFJZYkRRZGVQOF9YR2FfUEowSVJFVlE2V1pUTDRhTGZO"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-05-25",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 25, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-25-2026/"
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOS1hjci1zVUd5ZE5XM2lEdk1DbFotUEFuWXhWcUNveVd1Vk00LXY4YkQ2YTl0djlGbHNRRFBrMUp2bFhQTUYwakFFQjJheDhxVWZ5blNoOUp3QWh1Y2dGZFJLYmpsaTRkZnJCWU1hN2NqSnA1XzZ2YjRhRmFlSkhpTWVXNzZEQnVsTmpzUWJ6SDlGMW1hNzk2VFNIX3R6UHpIWENiTdIBqgFBVV95cUxPVU1nSnItUFVKSDJBUzdZc29QQUdiQ2wtQ2tsMk56c3NEal9tMm4xOThycGFDVlJ0ZGtmQU1JSnJpRHhEYkFCZmt0OUk0dzUzd1FLTU05UWJPUTVBU0RLUWNZcDNSNmVmUFE2ZjhRM0tsV2ZEMi1lT25NYWl4cW9wekl3MkpzcUZiNFFIR1NDbFhSUXJ6NlBNZUR4b0ZYVGVSSXJwdUlYc0FZQQ"
     }
   ]
 }
