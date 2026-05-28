@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-28 04:41 UTC",
+    "updated": "2026-05-28 10:35 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-05-22",
     "period_end": "2026-05-28",
     "total_events": 150,
-    "total_risk": 167.81,
-    "normalized_risk_score": 67.1,
+    "total_risk": 182.01,
+    "normalized_risk_score": 72.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 50,
-    "security": 0,
-    "political": 34,
-    "other": 66
+    "military": 53,
+    "security": 1,
+    "political": 32,
+    "other": 64
   },
   "source_counts": {
     "news": 144,
@@ -27,15 +27,15 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 79.3
+      "risk": 92.3
     },
     {
       "name": "Israel",
-      "risk": 49.71
+      "risk": 49.66
     },
     {
       "name": "Gaza Strip",
-      "risk": 25.1
+      "risk": 17.2
     },
     {
       "name": "Syria",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Tehran",
-      "risk": 1.85
+      "risk": 4.0
     }
   ],
   "top_events": [
@@ -75,6 +75,60 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOY01FaGpRUl9JM2hqakNvTVNiUV91Ri00WjFlZU5mUTRJcDZManY4RjFWZWc3TlkxcnRCY1JFbm9oVGF4UjkyV29qWXdhdXVOSDlpS21RMXQxYWFFa2JaWmxQRVBqUnVWb2ZlUjVNR1ZnR3R0VU9uaWRNOGhnWFFkYk1xQWVfbWdjTXZjMEVmbGRCOGdibU9BV0JXLXVUaktLbkN1Wk5OakNSMHNDVU5uQ3VPb2U4Smp2QmJmS3JCcFU1UQ"
     },
     {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran and US trade air strikes after Trump dismisses report of Hormuz deal - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQMDAxUGdSUGJhV19NajdXRE5yZGtxMFRVYnpEb1I3ZEMwZlZsUnBvdlJyb3RlbG4tX0dLMXFEN25ZeER4N3pOblRJYjJGS3NyR1JEZFNlR3VsN1gxd3MxMnhTVHU5VVVadWxCV1VBcFNiRHAtczFfX3FIMW9GZEJRTHFWMzIya1ZQa0ZSMUVQQXhLWVJVSUMzTVNFOGVBNUxKMEhvQW92eWZwaW8zMFpPbDRTYjlxa3NTTVNTaQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Kuwait says air defences intercepting hostile missile, drone attacks - Reuters",
+      "location": "Kuwait",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOamh0TWJzT0NSdVFrSXJvWG45UF96QS1haFVwdFMyZTZIMXNIenBzVGYxUUNKNlVTeVV6NUJSV3ZGYVdxaS1EVUZael8zNllmelh6LTlTUi1MTlpQc3JzWVF0Yk9aMDBscXNJRTlpX25jZVJjdTRrM3l2cjU1eG5ERnRwUVhycmcxWDFGcFkxcC0walJhT25jWTF4aVhhUFdQUHRWeVVsZFRhV0lrUVV5dEVEQUdNVGpScWZ3d3ZyMl85dnd0U3c"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Heavy Israeli strikes hit southern Lebanon after large-scale evacuation orders",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cj3pgrpmlklo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran says it targeted American base after fresh US strikes",
+      "location": "Iran",
+      "url": "https://www.bbc.com/news/articles/c98r2qy5809o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "What’s happening on Iran war day 90 as US launches new strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOS1hjci1zVUd5ZE5XM2lEdk1DbFotUEFuWXhWcUNveVd1Vk00LXY4YkQ2YTl0djlGbHNRRFBrMUp2bFhQTUYwakFFQjJheDhxVWZ5blNoOUp3QWh1Y2dGZFJLYmpsaTRkZnJCWU1hN2NqSnA1XzZ2YjRhRmFlSkhpTWVXNzZEQnVsTmpzUWJ6SDlGMW1hNzk2VFNIX3R6UHpIWENiTdIBqgFBVV95cUxPVU1nSnItUFVKSDJBUzdZc29QQUdiQ2wtQ2tsMk56c3NEal9tMm4xOThycGFDVlJ0ZGtmQU1JSnJpRHhEYkFCZmt0OUk0dzUzd1FLTU05UWJPUTVBU0RLUWNZcDNSNmVmUFE2ZjhRM0tsV2ZEMi1lT25NYWl4cW9wekl3MkpzcUZiNFFIR1NDbFhSUXJ6NlBNZUR4b0ZYVGVSSXJwdUlYc0FZQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran and US trade attacks after Trump rejects report of Hormuz agreement - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQT1hncU1oa3A3dEFtZGc3eDlKSVFKbGtxbjBDc05JdWEwN3ZOMUFCVUxDbUpJLTd1bGNPSGJ6aG0tTzJ4blRkVHFhcmU5WkZhS1B4eml0a2lRUXAtOXFhSkdPSDhTcnVBRWt3QkhVNG85Wmh5RnR2eGd3dHJkanI0VFJlWVhzdks1VlBvMjNybDZRb2hSRWFTQjNXUEp5SXJrVW4taXlmZFFrLVhnRVVNNGhpMNIBuAFBVV95cUxNNE8yQUZ1Zjlzd2s4WmNYZzZuYXBDMTJfa0Z0aGJ4S2xaaHBKRmR5bFRFT2hPNFYzS3lTUlp1R3JsckotZDlualJfTlphVVVQTV8yQ1kzalBkOWlrakhvdWhmcHlQX2UtNWVib2NiYU5HanJrUTF1TjB3YjRWeGRILW5sSjF6a25qSHdYVTdWZ3ZiSXJwRV9jdFJZYkRRZGVQOF9YR2FfUEowSVJFVlE2V1pUTDRhTGZO"
+    },
+    {
       "score": 2.73,
       "date": "2026-05-25",
       "category": "military",
@@ -82,60 +136,6 @@
       "title": "Iran Update Special Report, May 25, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-25-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Exclusive: US carries out new strikes in Iran against a military site and drones, official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPSTRRSVJycmxrcVZhN2F2OF8zR2JIWW1Ua0F4V1dIV2NIYUxEMGZSRElNYzBVVlRGazQtX1NuZGNmTzZBYWx3cWlCdVg3Q0xPQkVUZHhTM21ReXdrWHNKMDhzVHRiUkJ5N0tSM1BuNl9NbmhCMUFVRFd1N0dYelB2RkpBYmRTZDVQOExXU1JtdlVsaEw1bGR6aHJUR3lFLVN3dl9ERnVnNlF2b2lLdjhkX1dHLUJNZy1HT1dIdVNB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "US strikes Iran again, official says, after Trump denies deal on Strait of Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOYWJLNTAwYTVGSkZnNzU5aUtkM0RhMUpvdXBkN1FzSW52RVhEZG9TZzdMTEJlNnc4QWUzdkhrRkh6R25nRnE3dnpUd3FxYzd3RmluZ1NuZTF1WHlYZEJKV0xnQ3FHVVlZY3RyMWVKc1NVMFVYZ2NlUXJibVZGbjRrVDk2QVVjSU5GUFJNRXd0WnNlMkZmcFpiajk1SWNTblU5bUpfSmRqQTR0UUtUam90WHJaZDhYS0JCa0h5ZUdWenFSckVa"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says new US strikes violate ceasefire - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOY2M1OFpXcm8tVlBZczVzcFhhdF9PQmw4UkdFRVRxS3BydkZPVXNiNXhyVU5fTFZXOE1TY040LXAtTFhzNEhHOU12UTNoSjllTHpzM2JxMmJUazZyVkRqUmFlbUtzd1FhdkNma1lGeHVFdjZfOHNLYW80dlJrbjJ5VmRnMURtejlVRjdOdlAwdGwxbURIdU9RMUZ1YjZVd2Rhdm84QU5xY0lJVDdVTXUzUzZPZjY5V3c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Palestinians mourn slain Hamas militant chief as Israel escalates Gaza attacks - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNemtsS3VoVVBUdExGWHcxbXFEN3B5YkJuM3NBX2pPenhtaU9rQU93YXc4YnZrY19LdmlqdnI4bUE2dzEwb25xVlIyVkRkNGFuLXZqV0RHVWprMThnRlhpdVg2dHNoMGZtMFdyWlMxT1NISlV2Y1drNm1La2JTUjgyUE5rMllzY19tZTY4NWpTaVZrTlVDNTFPdzU1cmFIWW92TGx1bXU2RmhuRFE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "German police arrest Syrian suspected of helping attack at Holocaust memorial - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObEl6X0JPVElVRmlOQnk4MUVCQ00zSmtaanJnd1VjTHNEdmZZZXk5UW51Xy0zV19tWFpaZUtCM1A0M3JBUndYUmhjUkJHeGM1UzY5TjZrdm1Xa21hZDVDWVk3d0g5OGdxcEZBZ1hCVENqY1kzVjVZeDZlcy1TaU5zT04xZ09Jb3pSZ3V5ekdvUTVnU1BZVEh0S2U1TWhvRElhdk94Y28zRElzLWM2TWZRb2RoYw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Austrian court sentences Syrian to life in prison for deadly knife attack - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQUjhYWmlKeGFKN2FQdHFBRlZldDhCeVp2M0RNNnVpekF4Z2l3TWdNUWNiN1BCd2pYUGt5c21FZHNQakJqa28zc3BGTEEwY1M2S0ZieTJLc181WTkwMHJhSE1LSXJZOURDdVJLNDh3Mktkd2p0YzlwbzVvMmFEV3VvVXRVUTdSTkNyVUFmSVQxcHZ0dUVIaGh4cnA2QjN5OWlvY05V"
     }
   ]
 }
