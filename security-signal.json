@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-29 10:14 UTC",
+    "updated": "2026-05-29 13:38 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-23",
     "period_end": "2026-05-29",
-    "total_events": 173,
-    "total_risk": 188.81,
-    "normalized_risk_score": 75.5,
+    "total_events": 179,
+    "total_risk": 199.81,
+    "normalized_risk_score": 79.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 56,
+    "military": 59,
     "security": 1,
     "political": 41,
-    "other": 75
+    "other": 78
   },
   "source_counts": {
-    "news": 167,
+    "news": 173,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 92.4
+      "risk": 93.7
     },
     {
       "name": "Israel",
-      "risk": 58.41
+      "risk": 65.06
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.55
-    },
-    {
-      "name": "Middle East",
-      "risk": 3.1
+      "risk": 21.85
     },
     {
       "name": "Lebanon",
-      "risk": 3.1
+      "risk": 6.1
+    },
+    {
+      "name": "Oman",
+      "risk": 3.85
     }
   ],
   "top_events": [
@@ -64,6 +64,33 @@
       "title": "Iran Update Special Report, May 27, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-27-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Eleven children killed, injured every 24 hours in Lebanon, UN says - Reuters",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOWtjaHhoRWtVcHE0YkgxRXRJSVo3N25NRDFxa3JqbTl1RFJCZ3VHM1RLVVZ2NUZGeFhwMVByRUVnbzJxZ0VJUWFHSThsT0lTcTVLQ0FEaE0wVDRFV3lTbUNVakl4MHhjWm1pUnpMaE9NWV9kMzdTUEFmTVVUVWk0WGhSWGpvRk1UMVkybzJEYXhmMWpxaEt3MlV3b0N2TklQRTdWOGMwQ2lPWU84bmNiaG5xdnl4dC1XS1lTY09ZcHNzZ3BtRUxaRlJNdmo"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Reactions to drone incident in Romania - Reuters",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1rUFFka0JUbWIxb0RZMklsbjc3aGxKUUw1T2dFTjVhY2wwZUF5SFMzbUhiSXpBbXE5cDl4U2ZFS1FBeE9VYnJuT1dTam1CekNNZjRaYnRzRFNpOFBHRTNZbTM2LU1mcHdkZ1dzSmlFOTFDV3AyX2RtOGlvdzltUHc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Lebanon Latest: Mass evacuations as Israel expands attacks - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdGpOajdNOGo3TGRpbHBJQWJkcUR2WGNlYURpTEFnMFlyZXlKclkxWjZral9BLVp0bEZNazFxSl9TZ2hBX1J4cFJ4dU8xMkxGZlBkbzZoVEQtTTByQ01wMURlbEkwQ3E5bmZ0alNrUVpYNUdEeWZVU3ZjM3FzMm9xeEhmdXp2SW5xOVh3RWZZc1lRelJQYkJleVM0VF9jOV9IZ2hoM05QdzFHZDEz0gGyAUFVX3lxTE5ZUWxwTnNxem9BU2FEMTZJMHJaT2VIanhiVGpxX0dLMlZHTHdpaHJUMTNFanBFeWxjT0dYaEFiZ3JtTFNqdlZZdnRSS3JMRWRuS2M2UmpfRU5VV1NzS21Kc05fSmVycEM5cTB5QnV6SE9Qa3FfeFJmQzZZUHpNNkIybHN6QVBqOUduU2N3QWdPSFRvX1JNSEd6OVJYSUcxVTlmeWMxelZKdzhMWUYxN2JLVUE"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "FTSE 100 snaps seven-day winning streak after US and Iran trade airstrikes - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUl84TjhtZU5mamhhVGJKWXVJeEd5WUMwbkpid0c3OXdxTmluT0xRU2p0UEh5Tm5TdGJhdXluUmRGXzQyY05KTEFydmNHQzVzSXJMREdnWUthTU5ib2Y0YTl6eU92aUotTVVqRUYtYTZNTjI5TnprRWFDdzFoenBvcjNWVXJMVkJ5Tl9xQzJ1MDZ1c0FEOUtINjE1eXllUU8yZVJ1ZFl6bHRrLVg5TnIyeUZJbFJEdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel strikes Beirut and southern Lebanon after large-scale evacuation orders",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cj3pgrpmlklo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says it targeted American base after fresh US strikes",
-      "location": "Iran",
-      "url": "https://www.bbc.com/news/articles/c98r2qy5809o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-05-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel intensifies strikes on Lebanon during ceasefire, videos show",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/videos/c4g0kqxqz92o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
