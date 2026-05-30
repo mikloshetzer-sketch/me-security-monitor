@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-05-29 20:39 UTC",
+    "updated": "2026-05-30 04:18 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-05-23",
-    "period_end": "2026-05-29",
-    "total_events": 181,
-    "total_risk": 205.41,
-    "normalized_risk_score": 82.2,
+    "period_start": "2026-05-24",
+    "period_end": "2026-05-30",
+    "total_events": 184,
+    "total_risk": 180.46,
+    "normalized_risk_score": 72.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 59,
-    "security": 0,
-    "political": 42,
-    "other": 80
+    "military": 53,
+    "security": 1,
+    "political": 45,
+    "other": 85
   },
   "source_counts": {
-    "news": 175,
+    "news": 178,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 94.0
+      "risk": 85.95
     },
     {
       "name": "Israel",
-      "risk": 62.71
+      "risk": 55.11
     },
     {
       "name": "Gaza Strip",
-      "risk": 25.0
-    },
-    {
-      "name": "Oman",
-      "risk": 6.85
+      "risk": 21.1
     },
     {
       "name": "Lebanon",
-      "risk": 6.6
+      "risk": 5.85
+    },
+    {
+      "name": "Middle East",
+      "risk": 4.4
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-05-29",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, May 29, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-29-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-05-28",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-28-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-05-27",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +75,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-27-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-29",
       "category": "military",
       "source_type": "news",
@@ -75,16 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOWtjaHhoRWtVcHE0YkgxRXRJSVo3N25NRDFxa3JqbTl1RFJCZ3VHM1RLVVZ2NUZGeFhwMVByRUVnbzJxZ0VJUWFHSThsT0lTcTVLQ0FEaE0wVDRFV3lTbUNVakl4MHhjWm1pUnpMaE9NWV9kMzdTUEFmTVVUVWk0WGhSWGpvRk1UMVkybzJEYXhmMWpxaEt3MlV3b0N2TklQRTdWOGMwQ2lPWU84bmNiaG5xdnl4dC1XS1lTY09ZcHNzZ3BtRUxaRlJNdmo"
     },
     {
-      "score": 3.0,
-      "date": "2026-05-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Romania says Russian drone hit apartment block, NATO vows to defend alliance territory - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPY0FxTTNJMUZNTG1PVnRLd2daS2VBbUl4S2lPZjNLUFlRTnItSWlrdW5SQU03T3lsc0VrTm1NVVVMUUt4ODNyOU9ld0FqTEFOQkJjSG9rTUg0SlJTNzE1UC1KaWtTT0IyZTlwTzhLTjBqbUdMeC1iYWxUeGJxZW9vSU9UaU1GbDQyVVcwWUFjcGtmVTdSaWpzWWl5QjV4S1Bwemw0QjI5dG1mZmhuZ0FpME9zbkdqSFdHUkExS2N3blhNSlZYcTdF"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-29",
       "category": "military",
       "source_type": "news",
@@ -93,25 +93,16 @@
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1rUFFka0JUbWIxb0RZMklsbjc3aGxKUUw1T2dFTjVhY2wwZUF5SFMzbUhiSXpBbXE5cDl4U2ZFS1FBeE9VYnJuT1dTam1CekNNZjRaYnRzRFNpOFBHRTNZbTM2LU1mcHdkZ1dzSmlFOTFDV3AyX2RtOGlvdzltUHc"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-29",
       "category": "military",
       "source_type": "news",
-      "title": "Five killed in Lebanon as Israeli forces advance across key Litani River - Al Jazeera",
+      "title": "Israeli attacks kill 14 in Lebanon as Pentagon hosts security talks - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOUZiSW9fT3pNNndCekZoMm1Bc0RuOW9veUVNU19LTjY5WXROY0U0MDhEdGR4amZfdHJLM1gzNlpSTzFjY1NfU282WDRCdHhsQ2FYT1B3QjNvZVpuSmY4dEsxVHc4ZHM2YjQtUkxVdVdZMloxMGZaSFJlOGF0R2xCS2JRcjZUdVVxdmdEZHNPMWFSSTR1QlBWclM3VmotX1ZHb3VOalBaRDBmbkdQWGZRRlZuZ9IBuAFBVV95cUxOc2NSRzhIYW5jcXFNb3ZpMDRYbGVxdjBTTkVoRzktanBfcUFIWjZ6UkF6YkU3eHJGWW5FdXJtcXJBS2s1RGhLUGJBSmwxZDBaZ2hTcXpKdFRoRlBldkNqbWl4ZEpyb0dULUF3cDNpanluUkd6MTNSZDVBTWdudmxEdHJkYnMtbkF1UjQtazRKWTVQMTRldW1JRWt4d2tKMFpvTHFtZndjR1RIaTAzTExaNlplTDBmX1FW"
     },
     {
-      "score": 3.0,
-      "date": "2026-05-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Lebanon Latest: Mass evacuations as Israel expands attacks - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdGpOajdNOGo3TGRpbHBJQWJkcUR2WGNlYURpTEFnMFlyZXlKclkxWjZral9BLVp0bEZNazFxSl9TZ2hBX1J4cFJ4dU8xMkxGZlBkbzZoVEQtTTByQ01wMURlbEkwQ3E5bmZ0alNrUVpYNUdEeWZVU3ZjM3FzMm9xeEhmdXp2SW5xOVh3RWZZc1lRelJQYkJleVM0VF9jOV9IZ2hoM05QdzFHZDEz0gGyAUFVX3lxTE5ZUWxwTnNxem9BU2FEMTZJMHJaT2VIanhiVGpxX0dLMlZHTHdpaHJUMTNFanBFeWxjT0dYaEFiZ3JtTFNqdlZZdnRSS3JMRWRuS2M2UmpfRU5VV1NzS21Kc05fSmVycEM5cTB5QnV6SE9Qa3FfeFJmQzZZUHpNNkIybHN6QVBqOUduU2N3QWdPSFRvX1JNSEd6OVJYSUcxVTlmeWMxelZKdzhMWUYxN2JLVUE"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-05-29",
       "category": "military",
       "source_type": "news",
@@ -120,16 +111,25 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbVNZZ2xCY2FxNlNWeTVTdEZ3d0lRaDZYbDFLbWpZTGNiOUE3OFhURnBTT1d4eTUyYnJ1VHNkTmNFU21IUjhPenB4NDJNUjFSOWRPWkVWbDdFOWo5MUt1ZXI4cVozQU1PYlhYNnN2a0Rfb1pYazgxQ0c5eGlWTzFhOVA1TzJEQ180V0NiMmNtc2tHX1hqLWZtRDZ0S3ZEMGoxYXlWVdIBqgFBVV95cUxNR2xGUE9LUXBhTmxoSGduTG1pbVVQMDVHbkVGckJYbmpmLVJqR3pPaXQzU0NxcDQwM29BSUlJNWRTRUlHbGlmVmpLWHVEeDYwRWxMbjVDa2dXR1pYVUNSeUtnY3p0b0VvanI0LWhNbnB1X2pScFBWcVF0X0lJMmJPRHVEMWVsTVdoZURqbGJZNzR4dXBxM0R3SGpPeUVVeVhMVFlVN0ZBaGc4QQ"
     },
     {
-      "score": 2.73,
-      "date": "2026-05-26",
+      "score": 2.7,
+      "date": "2026-05-29",
       "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, May 26, 2026",
+      "source_type": "news",
+      "title": "Lebanon Latest: Mass evacuations as Israel expands attacks - Al Jazeera",
       "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-25-2026-2/"
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdGpOajdNOGo3TGRpbHBJQWJkcUR2WGNlYURpTEFnMFlyZXlKclkxWjZral9BLVp0bEZNazFxSl9TZ2hBX1J4cFJ4dU8xMkxGZlBkbzZoVEQtTTByQ01wMURlbEkwQ3E5bmZ0alNrUVpYNUdEeWZVU3ZjM3FzMm9xeEhmdXp2SW5xOVh3RWZZc1lRelJQYkJleVM0VF9jOV9IZ2hoM05QdzFHZDEz0gGyAUFVX3lxTE5ZUWxwTnNxem9BU2FEMTZJMHJaT2VIanhiVGpxX0dLMlZHTHdpaHJUMTNFanBFeWxjT0dYaEFiZ3JtTFNqdlZZdnRSS3JMRWRuS2M2UmpfRU5VV1NzS21Kc05fSmVycEM5cTB5QnV6SE9Qa3FfeFJmQzZZUHpNNkIybHN6QVBqOUduU2N3QWdPSFRvX1JNSEd6OVJYSUcxVTlmeWMxelZKdzhMWUYxN2JLVUE"
     },
     {
       "score": 2.7,
+      "date": "2026-05-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli fighter jets strike village in south Lebanon - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQVVjeC1iLXFrem9Od2JJUW1RRU0xMk5IMC1xYlo5QkcxMGRaanpiRHB2QTlGc2JVSnNSckFOM2FkT2lrZ3lwRXNzeHpKd3JFcXItRGN2ZmhVaWVmYjU5QVlLTjVvbHg2RlBlUlFpd2ZuZ0Y0dlBpUzhCYmxvT2I0YmV3RXIwaHRTRklLNzN0eTlGQWd5VFNUbDVHUzFTdU1wVjRNQzln0gGrAUFVX3lxTE0wTnhBS2stRTJGVmZzbEdXbXJNNWJCSWJtVnBSenlQekRlNm1CSTJRV0RqOFNQT0RlZkkxMU9FRlYxZDBRUTF4MXFpY2RVVXhwVGVtR2gxRkFPenBJR3gyU1VaUlZFcnIxekZyczVXYnFJUFlTNmx4a29DYkpJd3JxaUhRQUpwWGVkdFRPN3RzX25nZU9iaFhwMDFQWXcxa1IydHEwSEF4VjV5MA"
+    },
+    {
+      "score": 2.4,
       "date": "2026-05-28",
       "category": "military",
       "source_type": "news",
