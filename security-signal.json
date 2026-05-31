@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-05-31 21:16 UTC",
+    "updated": "2026-05-31 23:18 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-05-25",
     "period_end": "2026-05-31",
-    "total_events": 166,
-    "total_risk": 156.66,
-    "normalized_risk_score": 62.7,
+    "total_events": 172,
+    "total_risk": 168.86,
+    "normalized_risk_score": 67.5,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 48,
+    "military": 51,
     "security": 1,
-    "political": 38,
+    "political": 41,
     "other": 79
   },
   "source_counts": {
-    "news": 160,
-    "isw": 6
+    "news": 165,
+    "isw": 7
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 66.65
+      "risk": 69.45
     },
     {
       "name": "Israel",
-      "risk": 53.36
+      "risk": 63.76
     },
     {
       "name": "Gaza Strip",
@@ -43,10 +43,19 @@
     },
     {
       "name": "Middle East",
-      "risk": 4.15
+      "risk": 3.65
     }
   ],
   "top_events": [
+    {
+      "score": 3.9,
+      "date": "2026-05-31",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, May 31, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-31-2026/"
+    },
     {
       "score": 3.51,
       "date": "2026-05-30",
@@ -79,9 +88,27 @@
       "date": "2026-05-31",
       "category": "military",
       "source_type": "news",
+      "title": "Netanyahu orders deeper Israeli incursion into Lebanon to hit Hezbollah - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZ19uYndNRDdIVlVObEJCQjhHUnhNUTRqWTM3NFppenBsU01tWU5ILXU2ZHA3QmVHYllWU0ZQeU1nVzlITlhsUDlFTkJoU19OUXJPUFFyMDBYZ2l2a3EtSVo0YkFRQUF0bTlvOVJ3Vm40dHFGTUoyNm9ZTnlBQWltYXZxak1xLXdOQ29XR05ZNzd3cTF1MWtuZjZRZW14dWZlLWhEcHJfRzVMTlZTMVhhbHdsQ2I0S3hIY2NqdWZMUlZWNjJteVhRd19QVEpJVFBVMjdPd0NtRQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-31",
+      "category": "military",
+      "source_type": "news",
       "title": "Panic on beach in northern Israel during Hezbollah strikes - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNVVqUk5SRjBDOEF4bUVIcHQxTnU3ZlZzOEsxSlUtWDA5MklETTdfVEpUcl9WUFNUVzVZMlRlS29lVV8tem90dGxwOE1ENmhSaU1JQUJuVWZyb3RTMkVITzA1Ti0xNFVXeEZVRTVEMDQyb05fbl9fQnRmYmRyTk51RmRzX01GdWZmQ2JNZ3oyaXgwczZYVVhJMzNVX1o4YW4xX3lUT2xsOVUtdEE2T0HSAbMBQVVfeXFMT3REU2JCTEVhN2tRRFRUN1JZZGtBdUVYVU56M3VteFpzYzZVVi1RSWR2NFN0R3NCZ21PeHdMR2pTRDVPbXZ4NFN3ZUJEM2NvV0RBbHotN2d5RkQ5bGFCQTdXNUdEMEpyU0ZKdVJsQ1lYNF8zbGQ5d0YxQmFoNUlrYkhadUtETTNMVmRzenN0Y0V3UFpUMTZndnMtU0JvcUg1ZDNDZ0N0aUZjUmktYjNVUkhhYms"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-05-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli airstrikes devastate Lebanon’s Tyre - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQ0ppVWNiSGJmTTJMd3VNM2dWdmRGZWlzSEdDLUpzSE14Y3JsMWJ2ZTlfUlFucFF3aXcyMlFZWGxTbVVwOGxIWERYQUdCanBSREFXbnVIMlJRMV9JNHRRWHIzeTlVQlBvbENWRUZPUEdCeXF0UDhYTEVrc0Ezc09vX1o1RUJsYnZ2TENuaXY0SE9ITXM4c2JGV9IBngFBVV95cUxNMHJoaGVBRVpQSDFEN05lMlpYcTZ5Skw2a3R6ZXJMcVRYNFVBM0pfQm5ldGlCa2xDUVJzZGZDLUxoMzYxeEo1SFdYLUhnUGJLVmJxTE8yNlRpZnUtNjk2SFdjTDlpaG9wcElNZEJJSnk4eFFMcGFyVzBKT1dQN1NYNHljVk1jdTVhMUx3bXFxMDJYbUJtMnpvNF9CRWJnUQ"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "Damage seen in northern Israel after Hezbollah launches rocket barrages - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPN3BLZldaZFVObVZyOWNnb2dZYkNMOVcwVVVYRm5XQkhoV2d1bktOMmNIcVlEY2dqYmdxSzhOcVNzVzQ5WmNudjlpaUdQVjhoX2ZTS1JqUzRJV1ZscnBBTm9qQXlDT2NVdjJ6Y3NUNVIzY3EwVWlJUDN2T0lkd1VXc2RXTDIyNzVQT05oZHBTb0V0RXpKazNyc01yMmx2YktPMDRYZDhpTHhZUU15dEFCVEkwM1pWNDFDYlE4b0hwSdIBxAFBVV95cUxORW5oVUNJZThteFFBU1FNU3dyUndiVTBQVkwzS2JPaEN3WUJGQ0lULTVRSmxRLWdSQTJidWJaWDhQaW8zR255ZU9hOWl0ZXpFZzB2NHRwOGYyUHVFdHVaVFNUZzg3UGFpTk9zdTFCVnZRN2Rib0R5MVZxZnZWc2t3SEVyOGUtWmNFOEZiVlVLOWtIclJ4ODV5aXhjWHhBbVlfZ0V0X1ppWWRnbm1JTXRteFRpOENmMktpMGphV2lGU3lkSkJp"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Eleven children killed, injured every 24 hours in Lebanon, UN says - Reuters",
-      "location": "Lebanon",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOWtjaHhoRWtVcHE0YkgxRXRJSVo3N25NRDFxa3JqbTl1RFJCZ3VHM1RLVVZ2NUZGeFhwMVByRUVnbzJxZ0VJUWFHSThsT0lTcTVLQ0FEaE0wVDRFV3lTbUNVakl4MHhjWm1pUnpMaE9NWV9kMzdTUEFmTVVUVWk0WGhSWGpvRk1UMVkybzJEYXhmMWpxaEt3MlV3b0N2TklQRTdWOGMwQ2lPWU84bmNiaG5xdnl4dC1XS1lTY09ZcHNzZ3BtRUxaRlJNdmo"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli fighter jets strike village in south Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQVVjeC1iLXFrem9Od2JJUW1RRU0xMk5IMC1xYlo5QkcxMGRaanpiRHB2QTlGc2JVSnNSckFOM2FkT2lrZ3lwRXNzeHpKd3JFcXItRGN2ZmhVaWVmYjU5QVlLTjVvbHg2RlBlUlFpd2ZuZ0Y0dlBpUzhCYmxvT2I0YmV3RXIwaHRTRklLNzN0eTlGQWd5VFNUbDVHUzFTdU1wVjRNQzln0gGrAUFVX3lxTE0wTnhBS2stRTJGVmZzbEdXbXJNNWJCSWJtVnBSenlQekRlNm1CSTJRV0RqOFNQT0RlZkkxMU9FRlYxZDBRUTF4MXFpY2RVVXhwVGVtR2gxRkFPenBJR3gyU1VaUlZFcnIxekZyczVXYnFJUFlTNmx4a29DYkpJd3JxaUhRQUpwWGVkdFRPN3RzX25nZU9iaFhwMDFQWXcxa1IydHEwSEF4VjV5MA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-05-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill 14 in Lebanon as Pentagon hosts security talks - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOUZiSW9fT3pNNndCekZoMm1Bc0RuOW9veUVNU19LTjY5WXROY0U0MDhEdGR4amZfdHJLM1gzNlpSTzFjY1NfU282WDRCdHhsQ2FYT1B3QjNvZVpuSmY4dEsxVHc4ZHM2YjQtUkxVdVdZMloxMGZaSFJlOGF0R2xCS2JRcjZUdVVxdmdEZHNPMWFSSTR1QlBWclM3VmotX1ZHb3VOalBaRDBmbkdQWGZRRlZuZ9IBuAFBVV95cUxOc2NSRzhIYW5jcXFNb3ZpMDRYbGVxdjBTTkVoRzktanBfcUFIWjZ6UkF6YkU3eHJGWW5FdXJtcXJBS2s1RGhLUGJBSmwxZDBaZ2hTcXpKdFRoRlBldkNqbWl4ZEpyb0dULUF3cDNpanluUkd6MTNSZDVBTWdudmxEdHJkYnMtbkF1UjQtazRKWTVQMTRldW1JRWt4d2tKMFpvTHFtZndjR1RIaTAzTExaNlplTDBmX1FW"
     }
   ]
 }
