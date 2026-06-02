@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-02 10:55 UTC",
+    "updated": "2026-06-02 16:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-05-27",
     "period_end": "2026-06-02",
-    "total_events": 157,
-    "total_risk": 162.41,
-    "normalized_risk_score": 65.0,
+    "total_events": 164,
+    "total_risk": 175.76,
+    "normalized_risk_score": 70.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 54,
-    "security": 1,
-    "political": 32,
-    "other": 70
+    "security": 3,
+    "political": 34,
+    "other": 73
   },
   "source_counts": {
-    "news": 151,
+    "news": 158,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 68.91
+      "risk": 78.16
     },
     {
       "name": "Iran",
-      "risk": 54.45
+      "risk": 59.2
     },
     {
       "name": "Gaza Strip",
-      "risk": 23.05
+      "risk": 21.75
     },
     {
       "name": "Middle East",
-      "risk": 4.75
+      "risk": 4.65
     },
     {
       "name": "Lebanon",
@@ -54,7 +54,7 @@
       "source_type": "isw",
       "title": "Iran Update Special Report, June 1, 2026",
       "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-template-053026/"
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-1-2026/"
     },
     {
       "score": 3.12,
@@ -70,9 +70,36 @@
       "date": "2026-06-02",
       "category": "military",
       "source_type": "news",
+      "title": "Israel strikes south Lebanon after stepping back from Beirut attack - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPN1dIT2RKU2Z4cFA1OUZ1WlloWFJmRVB5ajNzQkstZEVISUF6bEswTnY3Ml9tVWZuNnFySGdWWW1ibWllQWgzdUExWV9mZGNrYjg1RV9CZ0xzZ2NaQjRyMTNMTk5uZ2c5Uk5FY2kxRkFNX19VV0Z3ejRzU3dGSDY1a2F3VDU4dUhEZ0JqQ2x2YlczS3BuVi1NbzJXVjBXZ1M3YkF2cEJoNHZRSU1IRGxodGRnMEs"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c936zvne0l6o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-02",
+      "category": "military",
+      "source_type": "news",
       "title": "Clashes continue in Lebanon despite Israel and Hezbollah accepting US partial ceasefire plan",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c202rxp1z15o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel kills 8 in attacks on Lebanon after Trump announces de-escalation - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOOVdBTG9yeEVZRDYxYXJ4eFdXbV9PQnA2Y2pDMFlfRXVrTm1rQjFFWnB3Y094QW5iWUdLUDc3QWdYbHNVMVZFQzJiMWdJYVV1X0Y3UjRGX24zUFlKemZhLWlVbHoxM285SWtpUUJiOXJjNGUtbFdQd3Blc21xTXlPLWdnN2hneEJGOGlfb0lqNnJLM05VanprbzRGOFJxNi1ycDNYb2lVRUxJN0xidDY1bDhCME5wd9IBuwFBVV95cUxNU1hrbW8ycW5PZW5yYVJtYjNTUXZMU0V2emw0ZDBvNVpiQzlBVjJGQWlTN0R4MElFTGZfVWNrdHpSMl9tb1oySVdLcjAzaW5DM055d1lXaVYyczRqaFdpOHBaZXBQZjhLellWeGEyOEJ6SzI3cGZIZWF4SHREdWpIMXA2X3VKdDdsenFEb1NDUU9NWVc4b0FOOXZjVnlKUkV6dzVpTXVhRF9jZnF0aXNHTHkwYmxBY2pCbGlJ"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "Hezbollah accepts U.S. proposal for mutual halt to attacks with Israel, Lebanese embassy says - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOM295NTlhRW5YNDhDM0JFT0RKd0czY0xDaTRjX2tkVW10RGY2X0ZScFY5UDgzbWJsd0VUd2prY1RPNDBtM3lCbmFXMV9TTGcyVk1TcmxGc09zOEJVa0gwR0tHNnNtOFJ5b0dKUzJBNXEzZk1ybk9QY1R6dUt0aVdkSVNZRE1nczA3U0VXVVNVa0FEMkVyOXk3eTFtQXk5dDdrRU1sTU9iZVNvRHhlc2xCY2xPWGU2bmJYUzk1aUZlTEZyTmtudTZ3bkhuRWo"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says contradictory US positions, Israeli attacks on Lebanon delaying diplomacy - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZnIxQXZjN2g5eGVDdkhRLXdlZENwOGFQQk8tamg4eW9sWU1IOVFaV3dFMk9TOGRtUDBRSzBUN1JYY2t2bVFXVDJJb1MtNnJoLU1sSVdWbUs1RkFlTzdWd3ViakVLbnRZb3V4c2pLWmFXX3J0NWctWXhtSUZqZ28yY1g4VlhmSW5pYm5QYkdDS3MyU3d0N3ZRTDdvcWJNT3IzeFhDQnVHUHNzRERlQXNwUDM5SDJRLVJOZVNaUTJnSE1KR1FJY2lSRDJ3N1Rqdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel's Netanyahu orders attacks in Beirut's southern suburbs - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOTGVNZ0JwVmtPajlZNnZFWU96LVZ4WlpjdjdlSGtsTzhta0JoTXR3WE9zQjFqV0tFalJ6dWNWVGVtQzRXRExaUlZGUURjVEpDdFVSaUdZb2k4WFNsblBVX0phMFNhN1N2dS0taVNOOFdORnlBQm0wQ1U5aUpUQV9COThOaThpWVBGY3RSWVZ5RjMwRkJCdVNQOHc3S0xSaWNZQ1Q1a19CQUlvejV1YlhYMk5TUEtRa3pSSGJkd0wtRGpYY1hBNVE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel PM orders strikes on Beirut suburbs as Hezbollah conflict escalates",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c4g419e2xlvo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
