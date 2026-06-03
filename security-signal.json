@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-03 05:18 UTC",
+    "updated": "2026-06-03 11:23 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-28",
     "period_end": "2026-06-03",
-    "total_events": 158,
-    "total_risk": 156.66,
-    "normalized_risk_score": 62.7,
+    "total_events": 162,
+    "total_risk": 174.66,
+    "normalized_risk_score": 69.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 50,
+    "military": 54,
     "security": 2,
-    "political": 33,
-    "other": 73
+    "political": 29,
+    "other": 77
   },
   "source_counts": {
-    "news": 152,
+    "news": 156,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 71.01
+      "risk": 73.11
     },
     {
       "name": "Iran",
-      "risk": 54.7
+      "risk": 67.3
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.15
+      "risk": 12.6
     },
     {
       "name": "Middle East",
       "risk": 5.55
     },
     {
-      "name": "Lebanon",
-      "risk": 2.45
+      "name": "Tehran",
+      "risk": 5.4
     }
   ],
   "top_events": [
@@ -70,9 +70,63 @@
       "date": "2026-06-03",
       "category": "military",
       "source_type": "news",
+      "title": "Gulf tensions escalate as Iran hits Kuwait, US strikes near Hormuz - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa0pCM2JwVC1jclluOW5wcnktSUJHZ2ZLUUxwMnY5c3F6VWhuSVFLQ29mbmc0cHdhSWkyTzNyVzJvWnBxNjlVWnhqQ0FOUUpiY2YtTld2b3hWWmpYTzJueElSOUVmeTBweDFYWUwxcnZhdVlzYTNvZXp2SXJNcnNhdGh6TElzTWtzUDlvNlBQS3pQREk4a0cwb1NXa1YzWG5jb3lOaC1jZDNRT2JZQkNxbA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "One killed in Iranian attack on Kuwait, airport terminal damaged - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNejlTQXJhWnlNVk5SNmNHVG0xMnpKcm5mT0wzMFNwbjdsVGNRX0hPZ3U1dk8xRks4OXUxd3RIU0ZmSHFWdG1nTHViVERvenVrSF84b3VJT2Y5ZFNianltSUtHd2xJSEZsZ2pVMmxIdHlzZGpyTFNEQ1NnNF9DUGZ4bFRiclNfVmVfY052NmJ1T1IxZ3FfUzJjbUh1MXNOT1hGNDVaMnpHWFkyd1UwLUcwVGgtUmEtcjc1QXdvQVNyQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-03",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran's IRGC attacks US Fifth Fleet headquarters, airbase, local media reports - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVUg2VkpmQmZKcDFqQlp0LW11a0FuTVQxTW9pR3AzM1pnMThoWGNMTE03QUlwSmw4QnlrTFphcVJueXpSMGJUZ0hjaEdHM2lESHNrQUhmczNxN3BhZlNsRlFnZHJpdlZidWljRVZ0UGJIZy13ZW1oYV8zVW1sTEVLU1ZPWl81Ynd6Y0tzRkRKU2tRcHFObUNqWFF3dEVhMENrVVZQWmstYVVQVHQtQ1ptZ1NTVmdwdTFlc0lrLTVHMkZZSGJTR2pF"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Stocks dip on new Iran attacks as oil prices rise - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQeVllVU5TSEVpajhKb3hSRUx6NDY3bWU2cDJpaUtOMllscG9lckFqZzJrMEowQ0IxSENhamFtNjZuOXVGb2Ywd0VfSUhlTnUzRkR5dlJlNHI1ME02YnhJV1RWRk5PZml5QlRIRlRQWEZIMzNUYlBmQ183aGEzNXFZU3V3ZFFXb0dw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "US and Iran launch new strikes, as Kuwait says airport hit by Iranian drones",
+      "location": "Iran",
+      "url": "https://www.bbc.com/news/articles/c5yx135yg53o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "US says it attacked Iran’s Qeshm Island; Tehran targets Kuwait, Bahrain - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMV9fRUpIU1VqNDJQbXNZUGk1bF94Z2RVQ2Q3dVZaWjN6eWZVUFVwMDk0S2F3SF9mWTloelpWTGx3djB5RnhNdDRwRnRJVjBfZ3JEREoycGpDdkFBZzMtWURYRTg0eDdHQV8yY21sX0R0eTliV1FmWmJQTU9PVXhlLXJHT2JrRjBVQTJEUjdqVDU5akRIenBSMXR4bWE2ZVJZa3RiTjZaYmM4RVdWR0Y1SEcxLU5TVzJtdFHSAb8BQVVfeXFMTWxxMmhNdVg5ZjgzUGhRaEhIZW92cC12ekNNekFWc3JsZkhOTVFXZTNyNUMxc0lBMlZUUnZUUWR2WmZ4U0ZWRi0yNUJpQ0I2c2JYZ0JtTU1kelFGWmlfeDdwSEEyYm1XS1FrN25SVTNfMkFqQWlNOFhrSV8wNkdNb3JvNFVZR1JWdVIyTWZuQk5Eb1lPNXJjNmprbjBwVGw2Mzk2ZDY2THNrVXZsSE9uM09IV2QyZl82VDVnNmE5OWM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Hezbollah video shows attack on Israeli troops at Lebanon’s Beaufort Castle - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSEhxaXZwMmdEMGkyWGgtdHQ1a1B4Y1prbTZBN21GVVNwSXh0aWhfeVEzMTdTWHpZUWdwV1NkUHdhTDZ1akk0T2pqTVZnQXlrYUNQOG5qS0NWT3lpVWduaFJXU2o0R1dGNVJsOXhldEdpZmp6bjVyRmtubDlXVFl3T1dkUElfaUZmQ2N1OURyWTJXZ2R6bGs3N01fN1pEQ3BnS1Q4dzdXMlFfRkkyY0J5TlVHeEItU1cyWTdnVy1ZN2wzQdIBxwFBVV95cUxQam94RHFYaUxUWEdOUXNoaXU0T00xdHVDa0NhY2xQY2hyN1dZMmMwUHpNOEJERS1feWl0SU5qdmdDTW1OUjhBYkMzbllEWWhUblRGdVlDSFdrcUpBanNxaXR5WVdkZmlvSVVUbTU5UWQ2aWtkYzZDbFNJdzk5QnRJVVZwSHU3c2hzd0hJQ0N4UVoxcVQtcVpmMkVZaWJUUGFCSWJhZGw4bkRYcTRzNFVvYWdwNWlzLW00dW93Q3FzOG5TVFNGUGtR"
     },
     {
       "score": 2.73,
@@ -82,60 +136,6 @@
       "title": "Iran Update Special Report, May 31, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-may-31-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel strikes south Lebanon after stepping back from Beirut attack - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPN1dIT2RKU2Z4cFA1OUZ1WlloWFJmRVB5ajNzQkstZEVISUF6bEswTnY3Ml9tVWZuNnFySGdWWW1ibWllQWgzdUExWV9mZGNrYjg1RV9CZ0xzZ2NaQjRyMTNMTk5uZ2c5Uk5FY2kxRkFNX19VV0Z3ejRzU3dGSDY1a2F3VDU4dUhEZ0JqQ2x2YlczS3BuVi1NbzJXVjBXZ1M3YkF2cEJoNHZRSU1IRGxodGRnMEs"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "US fires Hellfire missile at tanker heading toward Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQUGF6b0w5ZnVMeklFdlUwaGxybjhzekdKNm55MHdVNFFOVEhzWUNMdnd0cVl3QmVBOUs2clh5TEtUMEx4bmJzSmRsU252SDBCXzJDRVNvWDdWRlBLWFlYMGFlU3YtV3QxaEZ4Qkk5dG4xbFBYYjB2THd3R3IybGRkaUdiTHV4TnR5WUx4azR6OWJ1M2RLWjdNeDJn"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c936zvne0l6o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Clashes continue in Lebanon despite Israel and Hezbollah accepting US partial ceasefire plan",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c202rxp1z15o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks on Lebanon continue after Trump saying they’d stop - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORmpUQzNBbS1DRUx6OWlVR1VaTGEyUWY0N1FhLVVjTEZJZUtXazhUWWdySEtCZUpOdWpJOUFfdG1iVS1DYnBPdFVkeWMyQnRtbVBpSWktYVlReVJnLXptczFBLUYySmdrRk5tOVVZbnhLd041NjRkNldCWnNhTFZ6MU84ek1jWXpxZWdaNG1CNHZqSlVSOTZzOHRid0pWVndSbVdQSEE1VU40LUl5TDlnZ3dzOWpZUdIBuwFBVV95cUxOSU9OemU3cjdzbWNCTlFJSElMS04wMDFnb1FFUXQ2M2lrV2lUR094UUVOMklkdUJQdXJGYWthSUVQYzhkM0JPSDVtQ1VENTZ4MnFoVHd0TXZOYnZYRkUyMmhTcUFVWmQ5VHFaMHBybmRpeHhrUVdZdWt4LW1mVVgtZUgzeW9obXdNVjFhanFKUnctSERDTkxRY3JfNGdqdnFXOHF0X29WT2R0VU9sQWNlaHQtNjBaM083OXdR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Scene of damaged hospital after Israeli strike in southern Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQOWFJNjFLQnBVOC1MUUQzSjhQWkZ2VVJMNFNFZlA3Z1YwVTdLS0lKWi1ka2JKTk5sZ2xXYWhsQ20tMTNwQ2E5bUVnaTRYblFka01BNmxOckFPS3FRLVZLUFF0TlB2R25feGgzbV9lNE5PVzN5ODJLelh5cU5nNGhSb0xMbkUtM2tJU0ZOZjJFb3YzN3JpMEV3MUlKdUFvcUlPMkpXOXJQNXZ0dFRCb2RfRG5QRjJPZDDSAbwBQVVfeXFMT0VLR2R3TkNXT0RuYV9SSThLYU1fcllCU2NNSkZZQmZWSmlIVEc1Q2NhZDJjZkhPZzgxR3h1YzN5d0lJSzNURDNvdG5MN1VjV2gzeVdBLW1qR2tYQkVsWjNzX1ZUVmt1TGlHLUd3Ymdva3dJRVhTTG9LTndsdDA5SWVrWGxxYV9xdVlFeVRLNjM1Y2pVTjFrSHN1WXZEcnBEX2FERWMwU0dlcXo5bExnNmd3WDBnTkx4YVVVNUQ"
     }
   ]
 }
