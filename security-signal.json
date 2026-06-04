@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-04 10:12 UTC",
+    "updated": "2026-06-04 13:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-05-29",
     "period_end": "2026-06-04",
-    "total_events": 172,
-    "total_risk": 190.06,
-    "normalized_risk_score": 76.0,
+    "total_events": 180,
+    "total_risk": 200.81,
+    "normalized_risk_score": 80.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 54,
+    "military": 55,
     "security": 2,
-    "political": 35,
-    "other": 81
+    "political": 39,
+    "other": 84
   },
   "source_counts": {
-    "news": 166,
+    "news": 174,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 80.11
+      "risk": 77.01
     },
     {
       "name": "Iran",
-      "risk": 67.9
+      "risk": 71.0
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.25
-    },
-    {
-      "name": "Tehran",
-      "risk": 4.8
+      "risk": 20.75
     },
     {
       "name": "Lebanon",
-      "risk": 4.15
+      "risk": 7.15
+    },
+    {
+      "name": "Oman",
+      "risk": 5.8
     }
   ],
   "top_events": [
@@ -79,6 +79,15 @@
       "date": "2026-06-04",
       "category": "military",
       "source_type": "news",
+      "title": "UNIFIL says one peacekeeper killed, two wounded in shelling in south Lebanon - Reuters",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVVpPM252MEZ4WlEwQUEtMW9Ham55WnhHRzRTaVI1SFo2REt6by1YNzNqa0tfS2oyZXBXM2NfY2hUU0E2Y2p3RGJ1T0hjV1pLRWo5VFgwTG5YTDRHc1hoaVJocVZ1U3JCMDJpY2dBVWdHcTZWTlV0V2xlQnZwWWo1XzA1WnVkS2h4V2F1LUlsMlVkczdHckFLVEZrZlIwREhwQURqOFNuUHRXWUlSWmhMLVZhdEJpOV9IRjVqeVpWaUM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-04",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli strikes kill nine people in Gaza, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSkdwNFFkeTRhSm9FUXRKM24xS05WZVozb3djc1R6ZTBtRHlBVTVyY3NWUHFTZ0lQTVZvWHlQOFZmdWN6QTRiX0VMT21DVlc2OE1iU01jclNCZnFHWC1pSjh1Vy1qdVV2ZDdwVW1UWUhjczFQbHVfR3FwRDh5R1VsaXR1VzNGUWo5ODZfQ0N4Qkpmd1BhWmcxOGtuNVlQNHJPTWZVTA"
@@ -91,6 +100,15 @@
       "title": "Israel and Lebanon agree to implement ceasefire if Hezbollah stops attacks",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c5y01pdqvkgo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill 11 people in Gaza City, medics say",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.com/news/articles/cg5prr9gr1ro?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -117,25 +135,7 @@
       "source_type": "news",
       "title": "Iran war day 97: Tehran says no progress in talks; Israel attacks Lebanon - Al Jazeera",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcEhTeDBnM1ZJY3BCa0hBYTAtV25oSnlCdHROUkFIN3lFbWFnM195WUVWaDh2cmJnckpwczg3UjhRa3NVQ2wtem9OWW12WFJrLWl5TkZmS3pYNm01dGFJQ0lzaFJNV2dmdXhDOWdDckRsYUJrQUFqT1JUVTIzaGVhbmNtRmp2cnpVczc4Zi1tUGR4QWlfVi1nNFhlY1lmTHJ3UHNiWTM4cWI3ZmZ0Q0Y0cQ"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-06-01",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, June 1, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-1-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran's IRGC attacks US Fifth Fleet headquarters, airbase, local media reports - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVUg2VkpmQmZKcDFqQlp0LW11a0FuTVQxTW9pR3AzM1pnMThoWGNMTE03QUlwSmw4QnlrTFphcVJueXpSMGJUZ0hjaEdHM2lESHNrQUhmczNxN3BhZlNsRlFnZHJpdlZidWljRVZ0UGJIZy13ZW1oYV8zVW1sTEVLU1ZPWl81Ynd6Y0tzRkRKU2tRcHFObUNqWFF3dEVhMENrVVZQWmstYVVQVHQtQ1ptZ1NTVmdwdTFlc0lrLTVHMkZZSGJTR2pF"
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcEhTeDBnM1ZJY3BCa0hBYTAtV25oSnlCdHROUkFIN3lFbWFnM195WUVWaDh2cmJnckpwczg3UjhRa3NVQ2wtem9OWW12WFJrLWl5TkZmS3pYNm01dGFJQ0lzaFJNV2dmdXhDOWdDckRsYUJrQUFqT1JUVTIzaGVhbmNtRmp2cnpVczc4Zi1tUGR4QWlfVi1nNFhlY1lmTHJ3UHNiWTM4cWI3ZmZ0Q0Y0cdIBtgFBVV95cUxOd0pyclFsMW5WaGhMbm5YVGNkM3pxMFZBNzNtcmtXNGQtWkp0eTVlUFZodXB3c29GRVBlNWVjQWhIaVZaSUxMX2dDWVdKNHk2S1U5cl9FMXJHd3I3bXprSXBteXhxQXY5N25yV2dzdHNNN1NsT0I3M1VubkJJZ1FsVXZxU0h1VGhmbkx1MTBCVWJXNW5xdHphSnY3LU51RGxfRjV0V3Q3aDlxMG0tdDhpbFR1Q0Z5QQ"
     }
   ]
 }
