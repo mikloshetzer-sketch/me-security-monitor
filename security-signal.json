@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-08 20:34 UTC",
+    "updated": "2026-06-08 23:37 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-06-02",
     "period_end": "2026-06-08",
     "total_events": 159,
-    "total_risk": 183.76,
-    "normalized_risk_score": 73.5,
+    "total_risk": 194.96,
+    "normalized_risk_score": 78.0,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 57,
+    "military": 61,
     "security": 3,
-    "political": 18,
-    "other": 81
+    "political": 16,
+    "other": 79
   },
   "source_counts": {
     "news": 153,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 104.41
+      "risk": 116.76
     },
     {
       "name": "Iran",
-      "risk": 43.7
+      "risk": 43.75
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.9
-    },
-    {
-      "name": "Lebanon",
-      "risk": 4.4
+      "risk": 16.9
     },
     {
       "name": "Tehran",
       "risk": 3.9
+    },
+    {
+      "name": "Iraq",
+      "risk": 3.25
     }
   ],
   "top_events": [
@@ -88,9 +88,27 @@
       "date": "2026-06-08",
       "category": "military",
       "source_type": "news",
-      "title": "Dollar falls from highs after Iran halts Israel strikes; yen clings to 160/$ - Reuters",
+      "title": "Dollar eases as Iran and Israel agree to halt strikes - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSjVId2FNeVRWMUxYOThKUi1uRmtrZzhnTnQ2U01uQTNDWFpVWFItUzRMT3BPWTFkU0pGajQ4WHRWMjNYb1JMSWl0bzYtTzRuQlg0WUdvdUkzdjRDc1VyUTA4c3VHSEZRZ01vNmhSZ1B6andZM1R4TVhTWjE5ZnBmeTh6aWpGWWFZQmdXQ21qVnB5ZHI2Zm9DTHFqbHI1SFdvXzNzYVc3NUk"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Meta to take legal action against Israeli spyware firm NSO, foils phishing attacks - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWlo3bW5iaGsxMlBic090Q25vcEVTYmdiWmJyQlBKc3B6YThib0FlT0F2b0Fza2pkR3lTMzVBY1RwMjc2RGJsd0JaNHAzTkZLZkppUkRTVzc3R1hMOVJhMmhVdXpJVDJ6cDJlM0FKZ3p6ZEFvNGRUMnZWTFE4WEZyX3ZBWXpJV0hxRzdvdXhKZElQZ3ZGY3VuYnZLYXdUeGpXOEpyNGlnQ05xdVVESHd0YmJBcFFjZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran and Israel say they will pause strikes but warn of retaliation if ceasefire breached again",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cj6ge150z5go?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "Why was Israel spared scrutiny for the 1967 USS Liberty attack? - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOaVdNUFU4emM3MVJzYU1mTDlTRWNwLURJRDd4eXFjWGp1N2NmZFpQWHRUYnJ4OXMxSkNvYXNRcnh4YmwycTdjLUgydVBJMDZZYUtYbE1Db0pVLTdLOFNpOXE0M25QTFNieWdpWXpONUx0NmhFRGNCd0h4Z1o2TUM2a0FRSUpEUFdlSkFXYUdDdTdxVnladnFYQUpTYm53eW81cm15V9IBqgFBVV95cUxQNjRBSzRKVWNGZml4TDRGMUpwZVZlSF9CYnpHd09BWVVRQkhPQl9TcEVzYlJxTHdRc1B1Smt6b0NrTzVGdS1WeGZUNWlfYXNiX3UzMTd0ZDNJRG5SckVEa0dVQU1DUGJ5UjF4RF9Ec29DbGtxd2kyRmhmVHpUTjFLVWdzd0VxN3JzVE4zX1ZYQnc3SlIySW5ld2JHYml1cnMzdmtsR1JmTlEzdw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "How Lebanon and Iran’s war of words became backdrop for latest Israel clash - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRUlNMnQ0YU5qLWFkQ3N4VHFIM3ZYell3SzFVVjhqRjNxYjk2OVI5U0hsYUFleXN0SWJUYkdDOWZMRW56Q1pZbWtLQjduVXhYWFJCbFpqRmNUNWlqb2FCZ3Qxb3I1WXpRVWJBRVhLZHBsZXJHRVhwUzhCeHZhZHVid1ZscTd2VUt0S3RfS0Z1LXZJNHRNcVlvcmtoc05XODZncVR3bm5rYkp5SzF1eUd6UXpTT2pIazjSAbwBQVVfeXFMTklNSEdYZFE2UlAyb2tDNzRtRS1JX1l2d3pLNlRZbWFKeEI4WjRueml0SDhwX0tFZUtVbFpkeFExeFdRaHdTYmlZSVV4bm03elZVeER5b0hfaFAzYUNneldBNlh1VzZGcVp0Mk5tYnhJWTNnVmNDdm1idC1ybUh3R1c2YUp6MHRnNHV3SHEwQnhpdDlaNWpOcEhhcU1QS05XVEJOU2V0am1PaW1xc1hQQlFLWWxKcUFtVmhVX2E"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Debris found in Jordan after Iranian missiles aimed at Israel intercepted - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQd1lqaWRSaTFzR0h4OFFxbklFcEl0eHJtSy01dVkza1VObEtLT3ZYWDlsYUIzb1dicUt4UWlvSW5Pb09idElwclBfRG52SUpxY1FEdjdMVXRvTEcxMkpndnJZZThQYm1pNEtPaVZCYjJWY2N5SXVlcWhxVk9CWjlfSy1SQWg3OTNUN01DazB6OG9OTTk2dFBVN3o0VDhPYWFpUVpOLTQ1UEJsMVFjQlhxRUgtcUlVSHPSAbwBQVVfeXFMTTQ2SGU3S2p6bmFBV3Z6ME9kWHlDMGtwYmgzcjNYd1lMU18wZDJrR1dYMUZpbmRmRGw1ZmplbWhiNHVUeTJuV2ZGUXZ3NkpKVExYNVNxLUVpS2EtS0RBN3FLMEhNdDFMTFZwdTJmMXVQOUU5QjV5MGV4bk5QVjFQNEVET2tmZnVfdE5ySDB6eGNsY2ZtSEk1d0VTVnRqbVhGTFdoNGhtSXNzM1h3d0VhaE5jR1RWR0RCY2F4Z24"
     }
   ]
 }
