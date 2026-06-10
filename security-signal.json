@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-10 04:49 UTC",
+    "updated": "2026-06-10 10:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-04",
     "period_end": "2026-06-10",
-    "total_events": 163,
-    "total_risk": 188.21,
-    "normalized_risk_score": 75.3,
+    "total_events": 160,
+    "total_risk": 190.36,
+    "normalized_risk_score": 76.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 62,
-    "security": 2,
-    "political": 18,
-    "other": 81
+    "security": 3,
+    "political": 16,
+    "other": 79
   },
   "source_counts": {
-    "news": 157,
+    "news": 154,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 103.41
+      "risk": 96.61
     },
     {
       "name": "Iran",
-      "risk": 52.0
+      "risk": 57.3
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.6
+      "risk": 16.1
+    },
+    {
+      "name": "Tehran",
+      "risk": 4.8
     },
     {
       "name": "Middle East",
       "risk": 3.9
-    },
-    {
-      "name": "Oman",
-      "risk": 2.7
     }
   ],
   "top_events": [
@@ -70,7 +70,7 @@
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
-      "title": "Iran targets US bases in Jordan and the Gulf after Trump orders strikes near Hormuz - Reuters",
+      "title": "Iran strikes US bases in Gulf after Trump orders attacks near Hormuz - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0dXSGJPLVM3VVFmRmYwcWloclNleWtLV0NrYVZfblNtdU5kY0RnOXNQSjBUQVZQS2RhR1RwQVhhT1oxVGdtVjJkdExKWG5uM3VFSTlPY0JhWms0S3RMdml0X0dVTEhuOTlEWUc3ZHlJVXl4dWFUeVFOT2xKWUhCbTh3aUVFeS1qaTNySWRBdWNMY1BhVWZUekZaUVNIZEVDVklnV1VISHpid0JObjVCU3V5bXFHaTgxaEN3M0UwOW1ac1Nz"
     },
@@ -79,16 +79,25 @@
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
-      "title": "Oil rises nearly 1% as US launches new strikes against Iran, supply tightens - Reuters",
+      "title": "European shares resilient, oil edges up after fresh Iran-US strikes - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNGJ6NWZtUjUzMDg5TTZFYWY3SGhyUjEzcURaYnpPRkpZcmlsWVZVemw5aC1JNDY1NE82VlMyLTdhWmlDUkZyTTNMRTlfM1E1ZUVCSWJ3dDJyQ3RYbF9peF9zdjlIOFJ0bEJub0dJdTRxRjR4NFBaVmxZWHNkZFJUa3hBdEpJRVdHcnhYWlppZEN1MFJ4TDdyMlJBcFFPanlWU0Q3LTIySi1SUE9SRFdEbC1VSUM0em5HcF9xSFBrZ0o"
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMzdFYTBQUjA3YzBlRWNHdUp6OXBpbVlabUYwVWJXYzlJa0pHWTVuZ2M4YXlSeEtXZHJDMUotQUdUaXotdklnOXM5R0VEX3QwWVAybFdMSE1hQktPcU9Lc1czUjR0dlRwY1pvZFZDTndsUWRHWHhWOVhiVWs4SFdsVHdUcw"
     },
     {
       "score": 3.0,
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
-      "title": "Iran strikes Bahrain and Jordan in retaliation for US attacks in Hormuz - Al Jazeera",
+      "title": "US strikes Iran in response to downing of military helicopter",
+      "location": "Iran",
+      "url": "https://www.bbc.com/news/articles/cze9359gglyo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attacks Bahrain, Kuwait, Jordan in retaliation for US strikes - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOM3dIYWhmMTlsVk1HTDRnaU1BcnlMWnNoQjV0TkdMLXZud0xZWmlfZmxPakswTndIdExsdFZudngxeTYxaGZzdGo5LXkwTXVKYXdfVllnUHVPcml0bGx1TEd3bFA4NzhsSzNaSkVKdHJuLWNLOGlfQ09SUFJ1dlF5QWw2ZHkycDluekZ6bm83TGNUZWFHRms3Yldyc3ZBSExNT29XQ2o5Ti1Yb0gxdk42NzB30gG3AUFVX3lxTE01eExVaE9ENHRPM2loS2JIX01mVHNCcGZINUl6MDNfM0dTQlBoQTZJM1ZnUU53c1kwLWZ4VURmQzVkWEZrSXVSdlRRV1RZZkMydVl4OGkzdHowZVk5MUpmR1ZMYURZR0lOd3Zkbzg1V3RGX21iSnFOTjViaUE3SWhPYzA5cEo3eDZ5Y2NkcFgweVJCbE9LM3ZlU3dvRU1LMFRUY2ktOGozQ1NlNTh6dUdGSVpkUGUwUQ"
     },
@@ -106,36 +115,27 @@
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
+      "title": "Iran war day 103: US strikes after helicopter shot down, Tehran hits back - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPWlNqcS1jN1BSQUZGQmdiU2lveE5LcUFIa3FtekRmTXY5MlZjQnR2Z3B3bldieGlpTUFfa09kQnBMdk5XZ0Z6V3dXRjJyWjlVYmpZSXByQlRqZGNQd2gtNHZMblF3UWk5VGUxZnY5Y1FUb2ZpcmdQT1N2eU5mbndmVE1YSjdGUUl6bnItbUR3NDdULTlyMWQ3OVk3amViS0NYLURidXlGc0dUdXhZb3N4c1Rn0gG3AUFVX3lxTE1qaTZKd3l1VG5rVV80blg4WHF5cjZNbUp0S3F4cDFJS05CcmxRRTRVdXN4WUV1SFhwWkZZVG1PdjVTbWJMT3hjVm1IV3h0QXhOSXlfLVNYNTZsU1pKV01RSmxuaTA3ZnhDdTdjRHVVY3g2MlZmWjZPTnQ2WkJrS2NZQ1ZxcWpCWlZ3T1pBM3V4SWtVYjVwME1ubUVLRHFaUElKOVVpU2NoTVpRSm5XMlhsWU43YTB1OA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Explosion in Bahrain as Iran attacks US bases - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOc1BPaG93WTFqOGdieUxVd3JGWjF3QTJwYjdqZmpSUjgwSUNRdzZja1hHMkVjclRhckY5NWtNRTJYckQyMFlGa2xFUHBZSE9GVkFjRE1EQmRfc09CZHpPOU93bDdRUEVLampsMTlPMG9ES01mSHhuWUo1clZpUDlJX2pzU2VKbDUzMGpac193ZEhBRnpkejJmcWg0dWjSAaIBQVVfeXFMUGlURTdFeEVwVmRvTWJudWdaZ1hlZjBuWXZpM19TMHhhMS1qS0RtQmtPUXQ1d2hzckU4YUxYaDFYbHVZbU1yTVBWd2tna1JYWlZ2bmJEbHVNWVFpbFFIVXVIcllITEs2VU9IQy1URkZicW5PeGxCVTFpM1o4UUZLakZSd3hGOEVnLVpDcnFZa2NOYXBISXRYWEpHWGNfUXRHdlNn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
       "title": "US military launches ‘self-defence strikes’ targeting Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNT0I4RTFaVXpFVzlROXc4VkhqbzlWU0JCNlhaQWplblM4UFBaOHNoRFJOR18xS2VMWlotRWZ6bExXQ3BQdUtwQ0NVU2R2UTJuRndkbWw4cXZxX2VnUjdpbkM3N0JUZHNCXzMwUWNyUzhpOUpQQzdPOF92S3NRWFJWcGdzZE5nNjE5YkNFZUs1Q2MtaDR3emtPNnJJekZVb1BUVUQ5aXdZMmh6Z9IBrwFBVV95cUxOeDdfYzR4eFZMby12bWhjWGxkMWN2YXlYUVZZdWdWalJlaEhaazFfYlp1TXI5MkVDQXd6cm00a0FGT2szYWlRMTBWWUR5b0wxQUV2YWhILTlEWlV3N0NsbXF6Mng2RTZ3RDdKY0F1bkJrYjR6b19GTUpzTnl5SEFzQnhENEZtRzdaSHlkbU5na0VBTGRQNnZIdDRQQ3NGd2p2TnAybk1ZNWpzMHl4ZFA0"
-    },
-    {
-      "score": 2.73,
-      "date": "2026-06-07",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, June 7, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-7-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches new strikes on Iran after helicopter downed - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWGZKeW81Zk5SeFFRa0s2TWRGZWR4czJsM1ZkUlR4M0xMbWdpNER1UndNRFJmTEtYZEZST0JQSUtCemFXQjN2Z3R4ZnUzemZadUYwakxFTWUyY0ZCZWpQWFhLa1Y4NjN2T1MtTW1XMU1OYTE5M3hwUEpZZ3dOXzlobUVzazRrM3ZyOEhiWUdyM2JUdkRINVZJREFUWDFLSG5hUGRjWGhIX1JnbUdqTHNYUGY1R1ZqdDNMa0hybkptaw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Most Gulf markets rebound after Iran and Israel halt attacks - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa09iM1JTQ3pyNmMwcm5uRWVuclk4TUtFQzJLNVctdmVwVElVVXQzUmxlanNCSWFvenJXSmN5Sjc4aXBtbndEd25CSDhuSTNGOW1OSDRVUEFNQXRzNFQ2c1hxN1NMdHNxdlloaU1jTjh6V19Ybkt0bDZoU2N4cjFBTVlKZXdRaEVWOS1aaW5Zd0xHMWtWc1pwVURqdUwxSE5oa1lWb19UeFBTUjkwVUhkQg"
     }
   ]
 }
