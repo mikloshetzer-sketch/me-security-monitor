@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-06-09 23:43 UTC",
+    "updated": "2026-06-10 04:49 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-06-03",
-    "period_end": "2026-06-09",
-    "total_events": 165,
-    "total_risk": 193.06,
-    "normalized_risk_score": 77.2,
+    "period_start": "2026-06-04",
+    "period_end": "2026-06-10",
+    "total_events": 163,
+    "total_risk": 188.21,
+    "normalized_risk_score": 75.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 57,
+    "military": 62,
     "security": 2,
-    "political": 22,
-    "other": 84
+    "political": 18,
+    "other": 81
   },
   "source_counts": {
-    "news": 159,
+    "news": 157,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 112.51
+      "risk": 103.41
     },
     {
       "name": "Iran",
-      "risk": 42.0
+      "risk": 52.0
     },
     {
       "name": "Gaza Strip",
-      "risk": 16.8
+      "risk": 14.6
     },
     {
       "name": "Middle East",
-      "risk": 4.5
+      "risk": 3.9
     },
     {
       "name": "Oman",
-      "risk": 3.4
+      "risk": 2.7
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-06-09",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, June 9, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-9-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-06-08",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,52 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-8-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran targets US bases in Jordan and the Gulf after Trump orders strikes near Hormuz - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0dXSGJPLVM3VVFmRmYwcWloclNleWtLV0NrYVZfblNtdU5kY0RnOXNQSjBUQVZQS2RhR1RwQVhhT1oxVGdtVjJkdExKWG5uM3VFSTlPY0JhWms0S3RMdml0X0dVTEhuOTlEWUc3ZHlJVXl4dWFUeVFOT2xKWUhCbTh3aUVFeS1qaTNySWRBdWNMY1BhVWZUekZaUVNIZEVDVklnV1VISHpid0JObjVCU3V5bXFHaTgxaEN3M0UwOW1ac1Nz"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil rises nearly 1% as US launches new strikes against Iran, supply tightens - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNGJ6NWZtUjUzMDg5TTZFYWY3SGhyUjEzcURaYnpPRkpZcmlsWVZVemw5aC1JNDY1NE82VlMyLTdhWmlDUkZyTTNMRTlfM1E1ZUVCSWJ3dDJyQ3RYbF9peF9zdjlIOFJ0bEJub0dJdTRxRjR4NFBaVmxZWHNkZFJUa3hBdEpJRVdHcnhYWlppZEN1MFJ4TDdyMlJBcFFPanlWU0Q3LTIySi1SUE9SRFdEbC1VSUM0em5HcF9xSFBrZ0o"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran strikes Bahrain and Jordan in retaliation for US attacks in Hormuz - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOM3dIYWhmMTlsVk1HTDRnaU1BcnlMWnNoQjV0TkdMLXZud0xZWmlfZmxPakswTndIdExsdFZudngxeTYxaGZzdGo5LXkwTXVKYXdfVllnUHVPcml0bGx1TEd3bFA4NzhsSzNaSkVKdHJuLWNLOGlfQ09SUFJ1dlF5QWw2ZHkycDluekZ6bm83TGNUZWFHRms3Yldyc3ZBSExNT29XQ2o5Ti1Yb0gxdk42NzB30gG3AUFVX3lxTE01eExVaE9ENHRPM2loS2JIX01mVHNCcGZINUl6MDNfM0dTQlBoQTZJM1ZnUU53c1kwLWZ4VURmQzVkWEZrSXVSdlRRV1RZZkMydVl4OGkzdHowZVk5MUpmR1ZMYURZR0lOd3Zkbzg1V3RGX21iSnFOTjViaUE3SWhPYzA5cEo3eDZ5Y2NkcFgweVJCbE9LM3ZlU3dvRU1LMFRUY2ktOGozQ1NlNTh6dUdGSVpkUGUwUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "US attacks Iran after Apache helicopter downed in Strait of Hormuz - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNa1U3RXhmWS1NWEQ1QzhPZmFULVhEMGwtOVRSSVBKVVowLUxSNUFvYmZUUGljZThPdkVOaVJicmJ2SFJENmdudGZOdWVVNmFqRTJFQ0ZjUzE1RXdJYjNKS2Q2V0Nfcm9HenY0bEF2V1pHdDRadXZxZ1loTlQwYks1VklkV04yRklIQ2FVSXJKQ1pDQmFoeEVXSmtJSEViQnhzQmh3WEg2LVVEV2lS0gGyAUFVX3lxTE4xQ2Ixb01CVTZLSDFRNFZQbGI0M1Z2YmVFZVJoanVEbUJzMk5mc1p5cUo3Z2kzcGNpaVI5RHlFaWJlZ0JaMDBnMUV4UGFFTnFDOHctallaeHJiWHM5WVZVaGhOOExlR1RPUTEwNS15Z2pqYnp1TnRDRWhFdHFzVGplMW1NbEdNVjJmdkhiQXE1ZE9rMVdxSkZRU2FYa0lZdm9CdzA0amluNG5ta0ZEN0h0THc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "US military launches ‘self-defence strikes’ targeting Iran - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNT0I4RTFaVXpFVzlROXc4VkhqbzlWU0JCNlhaQWplblM4UFBaOHNoRFJOR18xS2VMWlotRWZ6bExXQ3BQdUtwQ0NVU2R2UTJuRndkbWw4cXZxX2VnUjdpbkM3N0JUZHNCXzMwUWNyUzhpOUpQQzdPOF92S3NRWFJWcGdzZE5nNjE5YkNFZUs1Q2MtaDR3emtPNnJJekZVb1BUVUQ5aXdZMmh6Z9IBrwFBVV95cUxOeDdfYzR4eFZMby12bWhjWGxkMWN2YXlYUVZZdWdWalJlaEhaazFfYlp1TXI5MkVDQXd6cm00a0FGT2szYWlRMTBWWUR5b0wxQUV2YWhILTlEWlV3N0NsbXF6Mng2RTZ3RDdKY0F1bkJrYjR6b19GTUpzTnl5SEFzQnhENEZtRzdaSHlkbU5na0VBTGRQNnZIdDRQQ3NGd2p2TnAybk1ZNWpzMHl4ZFA0"
+    },
+    {
+      "score": 2.73,
       "date": "2026-06-07",
       "category": "military",
       "source_type": "isw",
@@ -66,76 +120,22 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-7-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-06-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches new strikes on Iran after helicopter downed - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWGZKeW81Zk5SeFFRa0s2TWRGZWR4czJsM1ZkUlR4M0xMbWdpNER1UndNRFJmTEtYZEZST0JQSUtCemFXQjN2Z3R4ZnUzemZadUYwakxFTWUyY0ZCZWpQWFhLa1Y4NjN2T1MtTW1XMU1OYTE5M3hwUEpZZ3dOXzlobUVzazRrM3ZyOEhiWUdyM2JUdkRINVZJREFUWDFLSG5hUGRjWGhIX1JnbUdqTHNYUGY1R1ZqdDNMa0hybkptaw"
+    },
+    {
+      "score": 2.7,
       "date": "2026-06-09",
       "category": "military",
       "source_type": "news",
       "title": "Most Gulf markets rebound after Iran and Israel halt attacks - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa09iM1JTQ3pyNmMwcm5uRWVuclk4TUtFQzJLNVctdmVwVElVVXQzUmxlanNCSWFvenJXSmN5Sjc4aXBtbndEd25CSDhuSTNGOW1OSDRVUEFNQXRzNFQ2c1hxN1NMdHNxdlloaU1jTjh6V19Ybkt0bDZoU2N4cjFBTVlKZXdRaEVWOS1aaW5Zd0xHMWtWc1pwVURqdUwxSE5oa1lWb19UeFBTUjkwVUhkQg"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel launched deadly strike on Lebanon's Tyre before warning - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZzJ1ZXRWdWJlMEJnZVFvSzdUX1VMbVNvTngwYVRMaHA3QUJMY0tNaE0zQy1rWjR3M3UweDZmQndHal9oZzVnOC1yZ3loTjllcDZXTmd0TXlqalNTMzJLZ01XRUxnWkQ5M05Jc2lMVkg2S0U5SWswYWtFRm5EajdFNDZ1SnR5anNmd0JuZV9rbm1ZZmp6MXoza1gyX1J3RnBRWmFONmZXYWttQ21SNTJCRy1fOVVMUzJ6MHpxZjlQbUlheUJ4MFZr"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "UN inquiry finds Israeli forces shield settlers during attacks on Palestinians - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNUmI5eEp1bjFDQWI4VVRhMVMzTTlCdWswU1FCb0tNQ0NuemJTUG5vSXl1UzZzVVF3ZS16QVNmcXY1Y2dZMl9ScFA3S3J0cWtqU3diOTRUdDNmTkRTQkk3d3R6UGN3Y1dwM2lpSUZuc3pseElkZW1PdEFaWVg4S2M4Q1dWYkhJT3ZFbTF5YnNMdkFwWmNMXy1uT1VqVjZDQXBmLUlDTlNkZ2Y3c2p2RC0wajd6b1JTcktrRmxlVm5xeU5qRlBYS0p1Yg"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military launches new strikes on Iran after Apache downing - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQN09WanUzUnFZcDRJcUFoVHdKY0tLUlZaeFhGZENDYVJ0MnUwb25zNWdOSU1VNTJJSDVWQ1Bkdlg2NzhGeDROU1pENG9wdjlPOE02enNacEEzRFR6NnpHOUhTOWIxVjN5QnFtYWlqOExubUprQTNUWGVUdkRrbFFOemoyZURyZS10dkFZaVBQR3Y1RWo3N0VhaVpIczBYbmM"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli air strikes hit Lebanese city of Tyre despite Iranian warning to stop attacks",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/c36y16nkr5no?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "'Please send help': Crew's distress call after ship hit by US missile",
-      "location": "Oman",
-      "url": "https://www.bbc.com/news/articles/cq51ep28165o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran and Israel say they will pause strikes but warn of retaliation if ceasefire breached again",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cj6ge150z5go?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "US attacks Iran after Trump calls for response to Apache helicopter downing - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNa1U3RXhmWS1NWEQ1QzhPZmFULVhEMGwtOVRSSVBKVVowLUxSNUFvYmZUUGljZThPdkVOaVJicmJ2SFJENmdudGZOdWVVNmFqRTJFQ0ZjUzE1RXdJYjNKS2Q2V0Nfcm9HenY0bEF2V1pHdDRadXZxZ1loTlQwYks1VklkV04yRklIQ2FVSXJKQ1pDQmFoeEVXSmtJSEViQnhzQmh3WEg2LVVEV2lS0gGyAUFVX3lxTE4xQ2Ixb01CVTZLSDFRNFZQbGI0M1Z2YmVFZVJoanVEbUJzMk5mc1p5cUo3Z2kzcGNpaVI5RHlFaWJlZ0JaMDBnMUV4UGFFTnFDOHctallaeHJiWHM5WVZVaGhOOExlR1RPUTEwNS15Z2pqYnp1TnRDRWhFdHFzVGplMW1NbEdNVjJmdkhiQXE1ZE9rMVdxSkZRU2FYa0lZdm9CdzA0amluNG5ta0ZEN0h0THc"
     }
   ]
 }
