@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-06-10 22:20 UTC",
+    "updated": "2026-06-11 04:59 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-06-04",
-    "period_end": "2026-06-10",
-    "total_events": 165,
-    "total_risk": 220.76,
-    "normalized_risk_score": 88.3,
+    "period_start": "2026-06-05",
+    "period_end": "2026-06-11",
+    "total_events": 169,
+    "total_risk": 200.01,
+    "normalized_risk_score": 80.0,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 69,
-    "security": 3,
-    "political": 14,
-    "other": 79
+    "military": 67,
+    "security": 4,
+    "political": 12,
+    "other": 86
   },
   "source_counts": {
-    "news": 159,
+    "news": 163,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 104.86
+      "risk": 90.36
     },
     {
       "name": "Iran",
-      "risk": 79.05
-    },
-    {
-      "name": "Tehran",
-      "risk": 7.8
+      "risk": 73.4
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.7
+      "risk": 10.45
+    },
+    {
+      "name": "Tehran",
+      "risk": 6.9
     },
     {
       "name": "Oman",
-      "risk": 6.7
+      "risk": 6.0
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, June 10, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-10-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-06-09",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-9-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-06-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran announces closure of Strait of Hormuz following US strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcWotVHBuWTNSVDRJNWlaekNFWjdqZ2ZnZ0JoYU8zbzl0SUZkRWdlSXpJZWpwekExV0o0blgySGhiQWJIOXczR0V3ME56WUhjZmFNUVBTbU5iQ2lXam9JVXRjTmczaW1ZYXVSRGZfd3NaeHVFWFFCZzNRZklybGRFbGY1VUlUM2lReXlrdkk2aDNPdGVNVlRDWjRFeTlVM2FVRHl1RnloTjRoTFdfNG01WTJndFrSAboBQVVfeXFMUFdrMU1RZnNWZ3M2eWRPNGxiRXNybTYtTHp3V2dBRlVVQ1B2V1M2c3pFTGZGZDhYSGVkV2lBUXVjeThnb2RqX2tmeDhEWFZEZE9OLUtfTGNMTXJJNTM2akMwblhlejY2MzdBMXROYmdBUGNySlE3VEQ3cTdsRVpnc3M2aGhuX2ctR1hKUEkzeU5PZlI4ZmQ4SF9VeVlmV09aSXZUSzNKRW10N0Y1Z0lDMzMwSmUtM084RkRn"
+    },
+    {
+      "score": 2.73,
       "date": "2026-06-08",
       "category": "military",
       "source_type": "isw",
@@ -66,76 +84,58 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-8-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
-      "title": "Trump threatens to attack Iran 'very hard' following latest hostilities - Reuters",
+      "title": "US, Iran exchange attacks as Trump threatens further escalation - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0dXSGJPLVM3VVFmRmYwcWloclNleWtLV0NrYVZfblNtdU5kY0RnOXNQSjBUQVZQS2RhR1RwQVhhT1oxVGdtVjJkdExKWG5uM3VFSTlPY0JhWms0S3RMdml0X0dVTEhuOTlEWUc3ZHlJVXl4dWFUeVFOT2xKWUhCbTh3aUVFeS1qaTNySWRBdWNMY1BhVWZUekZaUVNIZEVDVklnV1VISHpid0JObjVCU3V5bXFHaTgxaEN3M0UwOW1ac1Nz"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
-      "title": "Hegseth: U.S. to bomb 'key facilities' in Iran on Wednesday - Reuters",
+      "title": "Hegseth: US to bomb 'key facilities' in Iran on Wednesday - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdm85dHdSLVdLb2YwUzFIRkNuTVJFMGRaNXpOb2lScjR0YmUySnhNeVdHSUJmTDZlYXRQTE1rcHNhMk5QVDc4dUpTRTQ5UmJ0Z0FYTmpaRFZ4ZlJ5N3lDNHBpMkV6dUNQUURLRVY0RzduVjV3d0g3QmdYNWlHVFNCRDJxd0E5U3hHMU5OT3lFZFFpaWl3bnJjRGZLbjU4WTFE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran announces closure of Strait of Hormuz after US attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPUmpTVDJ1X0ZfVjgxckExb2VxOTN2QXFJam16RVhPSE9ZSFozY2ZIYU1MckpJRHI1ZDlVclNYUjM0TWh0Z3NWY1NmVUZPejFDV3ZYTjVwa1BmcF93TzJhQk9MOW5rTWsxMktNWGtBVUhiZUgtcWliUklDdGV5anJFSFVCSU1weTJ3UWliN0JfRjJraEh4VlZjaGJ2d2FWMEJzTTdFWk95YzVZaTQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches new strikes on Iran after helicopter downed - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWGZKeW81Zk5SeFFRa0s2TWRGZWR4czJsM1ZkUlR4M0xMbWdpNER1UndNRFJmTEtYZEZST0JQSUtCemFXQjN2Z3R4ZnUzemZadUYwakxFTWUyY0ZCZWpQWFhLa1Y4NjN2T1MtTW1XMU1OYTE5M3hwUEpZZ3dOXzlobUVzazRrM3ZyOEhiWUdyM2JUdkRINVZJREFUWDFLSG5hUGRjWGhIX1JnbUdqTHNYUGY1R1ZqdDNMa0hybkptaw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-06-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches new strikes on targets in Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWjBEMmZqN2hyN3g1YXI2VVZjNFlyczN0WmJwMkJEMzNEdWZRU2NyeHo1REVBRDFfUGZ2MUlkaURTT29QYlFqSGw4Tnl5STFsSVVKUTJYb0hzNUp3VGtBbHBfQk9mRG12Tmp0ZkZOdkVLdXd3Z3plZ2pVbTE4MEU3djVaSW9YWEFDdTVESHFBZDkwVlJv"
+    },
+    {
+      "score": 2.7,
       "date": "2026-06-10",
       "category": "military",
       "source_type": "news",
       "title": "Erdogan says Israel's attacks on Syria, Lebanon threaten Turkey too - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSEV5c1ZSZmVISHc0SEJoM19pdjUydm1qOUJWYThWbldHcTd3bE9PNEJlZ2NOVW91ZHJKZ3RCX205QnFOQzVEdGtRYm9rVm02QjlBMTk5V3dxMTVYUXhOTWdGRnZlNDBGRkg0WUs4cktqS0szdHp1X3k5cHhPSmJ1UjVvYjlPbnc3Yjhjb3l1elo1LW52OENYeURPWi1YNE9JbkxIUl9XZjRKTzFpdWtNbHNuZllha2M"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says US will attack Iran 'very hard' and has taken oil through Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZUdOeWRybkJaaDV4dzVCMFdsOUJSSHhBaHliNV9WajdMUXgxTGx2QldYLXF3akJSSW5meGpzcW53QnFqOWpKQVpkci1aTUY4WEtkYlFGNHk3b3B0ci0zSjYzOENmd2xzcEFzUVBFbi04dk5QdTF3dWRPTGVJemJ3cmprRURzeFQ2T1YtejUxUVFMMXBKWTJjU1ZXcDAxTEZPTnp0OTJ3"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli airstrikes kill 13 in south Lebanon, Lebanese sources say - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQaFNfbjUycVFFUU1xa2lGeUcwSk1IR24waTJfWFJqRVNyZURONmRhb3hDbk1LYlhHMVdVMEo0NFByMDZMZlVwVjBxM0RIc0tMMTMzM0F3QVdxU3FvUmtKenRFU1Q4aHZqanBsRnlhcXBHY2NRMTR5WS1fSVN1dFFOd0lwVkpkTnlqVWF4UWF2ams2RnBNS2U5QTktbjRRSnVLcTZsSFVoazc2NVhNaC15SUJPNUZ6dw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Global stock index down after data, oil rises after Iran-US strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMzdFYTBQUjA3YzBlRWNHdUp6OXBpbVlabUYwVWJXYzlJa0pHWTVuZ2M4YXlSeEtXZHJDMUotQUdUaXotdklnOXM5R0VEX3QwWVAybFdMSE1hQktPcU9Lc1czUjR0dlRwY1pvZFZDTndsUWRHWHhWOVhiVWs4SFdsVHdUcw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three Indian seafarers missing after US strike on tanker off Oman - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORWRzWENKaDVOcTgwMVNLLVlhMVhzYXphRExOeXY1dFN1S1NSdUd0YnhYVkdCMFEzQ1B2TFdKNlhnM1Z3dmVuZlJYRU16ZTlGWDR5VFRfLW8zOVRuc2NBNnNKU1ZJX2g1VnRyakxNMFhmNWVsVGdSdTUxVm9GZWJKaUY3ZVF4eEpobFNjb2daWEVwd3gwM2pIVERFenlZMXowQlJUNU13RHpveGM"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says US will hit Iran 'hard' again today",
-      "location": "Tehran",
-      "url": "https://www.bbc.com/news/articles/ce371kw2ex2o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
