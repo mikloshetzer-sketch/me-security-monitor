@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-06-12 23:52 UTC",
+    "updated": "2026-06-13 04:52 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-06-06",
-    "period_end": "2026-06-12",
-    "total_events": 172,
-    "total_risk": 199.51,
-    "normalized_risk_score": 79.8,
+    "period_start": "2026-06-07",
+    "period_end": "2026-06-13",
+    "total_events": 173,
+    "total_risk": 180.66,
+    "normalized_risk_score": 72.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 59,
+    "military": 58,
     "security": 3,
-    "political": 27,
-    "other": 83
+    "political": 31,
+    "other": 81
   },
   "source_counts": {
-    "news": 166,
+    "news": 167,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 106.5
+      "risk": 97.0
     },
     {
       "name": "Israel",
-      "risk": 61.96
+      "risk": 56.56
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.1
+      "risk": 6.5
     },
     {
       "name": "Oman",
-      "risk": 5.2
+      "risk": 4.55
     },
     {
-      "name": "Tehran",
-      "risk": 4.6
+      "name": "Middle East",
+      "risk": 4.3
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-06-12",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, June 12, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-12-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-06-11",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-11-2026/"
     },
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-06-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Exclusive: US forces shoot down Iranian attack drones, source says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOLVpqblpRT0R6RGd1RUJmVjhfQi12S3JhbUJwM2dsM2hVSGRtMy02UkZYZTdseUI4YzRyMEFzOGpqNTdiRGkwdVB2R0oyX0otZDFQXzhENzYyVnpvMnNVUWZ4U0N5MzZETmp0OG5RcmdfWGV5elVlZktyeXVObThKNUlIa1N2dUtTdDUweGxwV0ZDeC1QeW9rd3p5RWhVVFRRRVdLYTJhQ2JxbnFt"
+    },
+    {
+      "score": 2.73,
       "date": "2026-06-10",
       "category": "military",
       "source_type": "isw",
@@ -66,7 +84,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-10-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-06-12",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdVRDNDN3a1ptTmVJUV93T1NGMGF0QnVJRjhfb2hzMlh2NkVNVW9KTmxmVzNrWkJaRi1aODNFTER5anFrVEQwTmIyc3lzRkFmTHdWNGJBR09mZWFDLXdMSmQ3M0kyUDd2STM2OG0wS1dxWUtwMUxqZjM1LXpUOU82bVU4bnc4R0lDNnZyQ3ZlLW9HMUVrdGhNbV9wMzN6ZG5DU0VBLUhnYkViaVB5S0HSAbMBQVVfeXFMUEtxaTdZcXNrSmFYQkV5WXlaN29Mdk5xcXg4bmZtelJKVHJnSE9kcGMzSnBtcVpYOVVxWTZ4d0lxT0diMjJRUG5YMGM5SkxtWF9uTElTODg3VzBMcVVtQ2FDZXBqWjhYQnc2MFZLM1JhZXNIR0E2TzZLbnpIRWpkdkIycjY2U2dfVUVfZFdUam1JOU5CeXB5bFVlNEFvcDdYR0JYZVhaWDlheGEtS2Z4dng3ZFE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-06-12",
       "category": "military",
       "source_type": "news",
@@ -84,16 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaDhTX21qcUUxYl9GaWJYeHZkeXlUYlRMeTNuTDlvVDBpUkQ5ck01RHNjcVllMFFXTzZPZ2ZpSy1QNmdSdi1fRTVvNF9xckhRV3NGa0VhLTVmRDJFZFMtaGdVV0NlODZKaUhrbXBrVmhuWTFuanBad3lVa3VfLVNmVXAwanBxV0J5UWRQQV84WElyeElKRmNEQ1Rzb0FUOHpwM1pFdXp2VdIBrAFBVV95cUxOWC10aVQ0NzFHWG5QUWZrcEhOU19KT1dYSFFfTld1SjJIUE9WUnREMExIZ0YycVFjbzliRmhoQ285b2tuTGdzVFdxVjc2SFduZ1QyZ1FSYUZuOFlJNDMyblk0ZWdISWRfU2xsbjBGQk5HbkV2X0JlODFFSnhzYldoMDIzUGt6RkZkMzNXTHZEcUZabndwWFNCVHNtODV1bmVGMlpKeWktWkVhQ3BQ"
     },
     {
-      "score": 3.0,
-      "date": "2026-06-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Stock markets surge as Trump calls off strikes on Iran, touts peace deal - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeTFuU2M0cHZheWpCaXhYZGliRXdsUm1FYURCWXcwOE1IZ2N1ME1zVklRZmtDTGE3aFo2ZHItMmhQVUFueUlhSlBFclEyUEEzcFJZeVVWSkR4d1V6MUZXN3JlbXRuVUlYZ2FvYlA4V1BvTGlKd19GNmJ6Z2NvU0F6S19vZmMxM3VkSjhzU0RjNkpRbWJNNlZUbmVHUl9ONXRLN0JhVlhHWWtkZDl4YW1KcUdBUjgzVWPSAbwBQVVfeXFMTVZLR1Z2NlRNNkU4Q0ZSNnBPX2ZMM0RYODBydzFIVWJJdU5RNktqOFdKU3RsSTN4SGQ5R0JtVzRPeDJVTDZTbDg2MjB3eGt4Mk0tQlJ3YVZZWWRTRTdJRDRKdHpRUnNvSTVMaVdWWERicUwyTU02N2tDVXJPS1FtM2xQYVZaLUg4T19qMzhMS2ZFUDNnd0VVal9yYzRHeFZJZlJqcW5ST29LRzB5TGpyN3pMTExna2J4OG4yQ0I"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-06-12",
       "category": "military",
       "source_type": "news",
@@ -102,16 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQT09OaWpBakpqX1lWNUdPNHA3eXAxZDZvcHZVdjdHTVk1OHV4R2ZwUlpiZjdkbktSekRNNmlLYUdCZngzTk5Dak5CUUpNWXlOY2t6cUNOa1RrdEpvVjdkUVlSNnhsd05UV1hPSm9wUWNVMnRIc1FIQUxjZmtkNjdBVEdVM1VzNmVqa1J0bVVfMnN5SWw5b3pDa19BM03SAaIBQVVfeXFMUEQ1U00wekdPVXpILUEzRXFScWx5YWhLU0ZFcjZrRnVKR0Y1eHhLdktoSy1iM1F5MXFNRGR5UkxlNi1RbEtXN3JZYmxCRDlsSmhWN2dFbG9NS0VSemRfbUwxT3hqbmlENjBIQ3lic3R0d2EtWTIzTWlEV3I4MGhYazBScmtOUE9LN2JHTWV1Mm43UHZ4bVhmQU1HQVZkTVFkbzBn"
     },
     {
-      "score": 2.73,
-      "date": "2026-06-09",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, June 9, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-9-2026/"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-06-11",
       "category": "military",
       "source_type": "news",
@@ -120,22 +120,22 @@
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPWlhSNlNaTm02QnN2dzg4bUw0U3UwR29UTUxLRXNCamhCMWtMbHlibEhLYjM4ZXE0SGUwWG9Jd2E0SjlWYk1MYkFMbktVSGFXd2xoM3RhR08tRUZZWDdwcm1VMTl0XzhxRjdfTGpHWVczaUZtcU0zb2E5SlVwTzhtZDlqb3ZtVG14RFBkbElXbTF5WWxIQjVmcEROWVJEUFlzOHhV"
     },
     {
-      "score": 2.7,
-      "date": "2026-06-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Dollar falls after Trump halts US strikes on Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObkUxSDl1cTN2SUI4UEZoRHJOOVVHajBCRDhwR19lN2ItLWRITmxOamJOQi1oaHZNSEFGNFF6RE9fWXF5ZEtBbkFzQ0NIY2lqOFhTZm1fTkgwXzhJVlQ1RFlzREx2eHN4VEw2RTJ0NlpnSktfWHFzQVN2UTNyU3dneDZHclFjTkdnX0NyS0JSLVFsWEVTWTZHRm1vQ1BjX0hHT2R3QWN4QjV3RXVXTVhF"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-06-11",
       "category": "military",
       "source_type": "news",
       "title": "US, Iran exchange attacks as Trump threatens further escalation - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPS0dXSGJPLVM3VVFmRmYwcWloclNleWtLV0NrYVZfblNtdU5kY0RnOXNQSjBUQVZQS2RhR1RwQVhhT1oxVGdtVjJkdExKWG5uM3VFSTlPY0JhWms0S3RMdml0X0dVTEhuOTlEWUc3ZHlJVXl4dWFUeVFOT2xKWUhCbTh3aUVFeS1qaTNySWRBdWNMY1BhVWZUekZaUVNIZEVDVklnV1VISHpid0JObjVCU3V5bXFHaTgxaEN3M0UwOW1ac1Nz"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-06-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "US will receive a severe response if it attacks again, Iran's top joint military command says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNU0UyVTNTSjN3T3FSNGpQcmFZRzVKUUpTSVcxdDNpU19zNUM1ZlZ2czRWVGlVR0NJMnJVdzJOb1R6a0RTQW9YYUtrMHVDUmxxNW1DT1RNcUhza1E3ZEFuZURsMzh1STc4VVBuR2YzNFVDdG16dzlObHFLQi1DOHZJNGNMZHlTTktpOTJ1ZUZpWFR0TFBzaDdkVUxUTEllMU83Y3V2NHV5WXlFbThhLVZCNjZYXzdjY3c1Y0U1cTdKdGdJeDI4X2JIamdn"
     }
   ]
 }
