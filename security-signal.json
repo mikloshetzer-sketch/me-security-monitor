@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-14 09:57 UTC",
+    "updated": "2026-06-14 12:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-08",
     "period_end": "2026-06-14",
-    "total_events": 164,
-    "total_risk": 162.36,
-    "normalized_risk_score": 64.9,
+    "total_events": 163,
+    "total_risk": 166.01,
+    "normalized_risk_score": 66.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 48,
-    "security": 4,
-    "political": 43,
-    "other": 69
+    "military": 50,
+    "security": 3,
+    "political": 42,
+    "other": 68
   },
   "source_counts": {
-    "news": 158,
+    "news": 157,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 90.25
+      "risk": 90.4
     },
     {
       "name": "Israel",
-      "risk": 41.56
+      "risk": 44.36
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.45
+      "risk": 9.9
     },
     {
       "name": "Tehran",
       "risk": 5.5
     },
     {
-      "name": "Middle East",
-      "risk": 5.25
+      "name": "Oman",
+      "risk": 4.4
     }
   ],
   "top_events": [
@@ -70,9 +70,27 @@
       "date": "2026-06-14",
       "category": "military",
       "source_type": "news",
+      "title": "Israel says military attacks Hezbollah targets in Beirut's southern suburbs - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNb0dtcHdBNDdCYXg2eGVXYTJ5MGlRQ0ZVM1I2UnN3MTlXZEh0eHA5QmJNMGQxMF9fbHFQVnBkMzVNbW1CY003X0l3TFFSX1VrZVBzSl95QVRjZFVkdmZ3VENOR21xM2xLbTdnbHY3ZkNSMkgwTHl5WVJuRXhoNEQwQ29BM1RGNkxab3FIbFAyQ3V0bWwxalcxX1BtRkZ1NmVfWFN1dm9HbVd1RHoxTW5qN2JkN0dWWEhxSFBrdVJuYmJlNFNZdE80ag"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-14",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran says limited cyberattack disrupts services at four banks, state media says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPekNlcHljbzkyU2huU1VqQnB1SFRyVHF0bHJKWVR3RXZETDJvQTBrSVVDN3FVRzNDdjhVc2txU2cxeU5Id1dWQlVXU0l6LVJwNWZrOTlsWUMxaHFMNm16anRrMWVIWHQ5NW5vMWpLY0pUY2lDemo1c3NEVlRlSnpBTmM5dnFhSmNrRjRlTlVZbWI5RzBrdW1LQmZiVGNhNzkxeDBEb01oRUotdlA2dkdGR3Q3bWQ5bERQcHFKVDZrVlpRVUNGbXY0ZA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "Two killed in Israeli strike on Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSXBiekxBQ1JVdWZmbS1meXpjN3RiSUJ0c1oxX2czYVZRbHlRc3hGZ0k4OUZqWTdONUx1Z3BCR0NzODFpdEVUaWN4VGF0N3hTYThvU3RZelpjM0h6bXo1d01tLXB2TUJ2N1JqMlYyS0gwX0swZDVZRktjZFNmN1E1SXJPNkU1VWJRRl9ybjdjZ1FiMUNxV3hHQXRfck5Va0pOdHVxNElCUklNT1E4aHJxNnR30gG3AUFVX3lxTE5ubi1hbDNwNDc4YTVrTGF2TEwwdGVUZW5QTEJ6ekZfaHhQNXd5MHlNQ3ZDR1R2TnZ2TzlZeXpSeTBkUl92M2RlVnlRdXBfWl9DUmFXcmJxSFprNkR6VWVYVHBLaHVseUw4aUhGaEhCbkJuNUhWOVRXdTB4UXUzQ0NSbG5mc3JLYkloT3o3UmpNUTZQOUVDYnRXYm9ic2taX2JlUm5wbmZDaDlnR1p0Ny1iX0VRLXVTcw"
     },
     {
       "score": 2.73,
@@ -118,24 +136,6 @@
       "title": "Israeli attacks kill three in Gaza as post-‘ceasefire’ deaths hit 983 - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNmpZWUhzMDdxWGhoMHBLVndlYnVaU25jY2ZVQnhCM3ZzMW9pSWFfeEhRYWVHNkZ2T0VVN0VlUUlOT3BpTnJzMEQ5UlJ2Z0ZMZE13VndtTm1ocjlCOW1qT2lxMVlpSklJYnItemx0VEFyRkl4dDRJRnkzNkl6UWNCMUVKZEVGUnFXVE9GWEpyM29oTllaRlRJSTY3YkZGMW9TU1hCSmJ5ZldjaWNYMlZXMzlCQXbSAboBQVVfeXFMTU50VXVqQ3pXSC1aMHgyaExHMWhQMG9vSDNLNjM2ZVlxbG9mYkhLeWlzMl90bWhLQnNIRHJyYVQzM1hJM3RlWW5uQUxQMlZ1dnMwUUN4UmRGck8zNnlFU1lGWUhVWDRFaWFmSW16ejRmRDJlSkdiNmJWY01Cc2dJVE5lM19Oenc3N0w4Wk9fWGJEa3FXajExOFZubjlLVnpBZEwwSW1jUUVBc2Vqc1dnbFl2akNGRVlBYmpR"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "One injured as Israel hits southern Lebanon with air raids, artillery - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdVRDNDN3a1ptTmVJUV93T1NGMGF0QnVJRjhfb2hzMlh2NkVNVW9KTmxmVzNrWkJaRi1aODNFTER5anFrVEQwTmIyc3lzRkFmTHdWNGJBR09mZWFDLXdMSmQ3M0kyUDd2STM2OG0wS1dxWUtwMUxqZjM1LXpUOU82bVU4bnc4R0lDNnZyQ3ZlLW9HMUVrdGhNbV9wMzN6ZG5DU0VBLUhnYkViaVB5S0HSAbMBQVVfeXFMUEtxaTdZcXNrSmFYQkV5WXlaN29Mdk5xcXg4bmZtelJKVHJnSE9kcGMzSnBtcVpYOVVxWTZ4d0lxT0diMjJRUG5YMGM5SkxtWF9uTElTODg3VzBMcVVtQ2FDZXBqWjhYQnc2MFZLM1JhZXNIR0E2TzZLbnpIRWpkdkIycjY2U2dfVUVfZFdUam1JOU5CeXB5bFVlNEFvcDdYR0JYZVhaWDlheGEtS2Z4dng3ZFE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "US-Iran ceasefire? Not for Indian sailors being killed in Hormuz - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaDhTX21qcUUxYl9GaWJYeHZkeXlUYlRMeTNuTDlvVDBpUkQ5ck01RHNjcVllMFFXTzZPZ2ZpSy1QNmdSdi1fRTVvNF9xckhRV3NGa0VhLTVmRDJFZFMtaGdVV0NlODZKaUhrbXBrVmhuWTFuanBad3lVa3VfLVNmVXAwanBxV0J5UWRQQV84WElyeElKRmNEQ1Rzb0FUOHpwM1pFdXp2VdIBrAFBVV95cUxOWC10aVQ0NzFHWG5QUWZrcEhOU19KT1dYSFFfTld1SjJIUE9WUnREMExIZ0YycVFjbzliRmhoQ285b2tuTGdzVFdxVjc2SFduZ1QyZ1FSYUZuOFlJNDMyblk0ZWdISWRfU2xsbjBGQk5HbkV2X0JlODFFSnhzYldoMDIzUGt6RkZkMzNXTHZEcUZabndwWFNCVHNtODV1bmVGMlpKeWktWkVhQ3BQ"
     }
   ]
 }
