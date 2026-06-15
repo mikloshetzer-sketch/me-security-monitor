@@ -1,24 +1,24 @@
 # Hotspot Alert
 
-**Generated:** 2026-06-15T18:47:16.990415+00:00
+**Generated:** 2026-06-15T22:29:22.309699+00:00
 
 ## Alert: Risk spike detected — **Iran**
-- Current 24h risk (approx.): **27.5**
-- Previous 24h risk (approx.): **7.9**
-- Current share of window risk: **77%**
+- Current 24h risk (approx.): **25.3**
+- Previous 24h risk (approx.): **6.3**
+- Current share of window risk: **72%**
 - Dominant category (top location): **political**
 
 ### Top supporting items (from last 24h)
-- Iran's manager, striker pledge to play for all Iranians despite protests - Reuters (https://news.google.com/rss/articles/CBMiswFBVV95cUxOdlFyaXFBVDZhRUM1cVl3dWYxUXRYeENHbFBicmFhY3JoWEs1MC1PNEh0Qm9vZ0NYU21NOWtfeldEUEdlWEpqLWJIYjdhRm5ieFRsS3piS1hlU0tXenhMSTk0SHBTNzJ0V0l0U2k2SG9RMXNhZG9hZ0EweERTUHdVdnN1QW9lZkJOZThWWGpHQkFwSEVmTDNqSDZBQzVkQ1lEMFJNTG9YUmZOVnBUZVpuSHN5aw)
 - Political tension has undermined World Cup joy, says Iran striker (https://www.bbc.com/sport/football/articles/c9d2ep375nzo?at_medium=RSS&at_campaign=rss)
-- UN human rights chief welcomes US-Iran deal, urges restraint in the region - Reuters (https://news.google.com/rss/articles/CBMivAFBVV95cUxOaWJKZzlkYlJrak9vanZpTEtNQUllTC1MZ0JoX3VyVGZ1RFVDd0F2bGdhVzgtQTF1eTNIMHRvWWtoRE4wTUNHbHRtS0xmd1I5LTcybm5GLVRza0QybE9oNE93WnQ1c2FsODdEeGdrSm9MVnZRTDFFMEpOTjFtLUMtUnhBXzRVLU5yeklRNFEwWlBpaTUzWS0wQVVMY193S1NsSThab2wyYjNDcVo2a3o1bG9JWUtKRHdkTDNlaQ)
+- Vance says funds won't be transferred to Iran in exchange for signing deal to halt war - Reuters (https://news.google.com/rss/articles/CBMivAFBVV95cUxPek5uRUlmd0xObEpfZlZ5RVVwM0tiNGNHdzFOZmRfU1l5U1gxN1lxTllLYTI3THhSczBCd0pIRlJLbEx3alFVck1TLTc0T3RReE1VNVM3V3ZDY3czakRTX3JTdml2a0tQRVdiYndvZGthY2o2WUpBRnBmUE5CeU1wVjRCYmU4U1RsRGFQQ1NsQUpEWUcwSHAxWXZMNmZDMkx1aDVteFRRaWpXUDlFMHNJZEN2RXhLVXJBNXQybA)
+- Maersk welcomes US-Iran deal, but makes no change to Middle East operation yet - Reuters (https://news.google.com/rss/articles/CBMiwgFBVV95cUxPazdGaXNZdlFhQ2J2eEtCVWRrdEZ1dUt5VFdwN3Z4Wkl0MHFMbnJHVHRpUmtRcmVSa0pyTG1IVk5VS3JjTzJ5ejRWUllCSlA4cXRzYTlMOHpWN0NvSXVpakdDUGNoeWNzdTBEakNyWnlybE9na3ZXNktWV05TdE9adVNKSnhRQ1pPUzZOUEtNX3NLdFZRdHlPcF9ZeGE4WjZNd3BjU0VXdklTQ3YxU0d2MU9EX0xXWkxOU2I3Y04xZTRBZw)
 
 ## X POST VERSION
 
 🚨 Hotspot Alert (last 24h)
 
 Risk spike detected in **Iran**.
-Current risk: 27.5 vs previous 24h: 7.9 (share: 77%).
+Current risk: 25.3 vs previous 24h: 6.3 (share: 72%).
 Dominant category: political.
 
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor
