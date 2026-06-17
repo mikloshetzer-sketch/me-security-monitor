@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-17 05:17 UTC",
+    "updated": "2026-06-17 11:18 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-11",
     "period_end": "2026-06-17",
-    "total_events": 187,
-    "total_risk": 159.71,
-    "normalized_risk_score": 63.9,
+    "total_events": 186,
+    "total_risk": 164.86,
+    "normalized_risk_score": 65.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 29,
+    "military": 30,
     "security": 3,
-    "political": 89,
-    "other": 66
+    "political": 88,
+    "other": 65
   },
   "source_counts": {
-    "news": 181,
+    "news": 180,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 75.25
+      "risk": 78.1
     },
     {
       "name": "Israel",
-      "risk": 52.76
+      "risk": 55.71
     },
     {
       "name": "Lebanon",
-      "risk": 7.2
-    },
-    {
-      "name": "Tehran",
-      "risk": 7.0
+      "risk": 7.8
     },
     {
       "name": "Gaza Strip",
       "risk": 6.7
+    },
+    {
+      "name": "Tehran",
+      "risk": 6.5
     }
   ],
   "top_events": [
@@ -64,6 +64,24 @@
       "title": "Iran Update Special Report, June 15, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-15-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel launches fresh strikes on Lebanon despite Trump criticism",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c7vyn17g832o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran war day 110: Tehran says Israeli attacks on Lebanon threaten US deal - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZ2J2NTJrUXhMenBBb0ZLVUdIVWJwWVpXdTNLOGdKRW9OSEt3cFFNUlRLc0dDVEE2WXEzN09JV2FvVFBteEFqM21CdHZGRUhOSlNsNC1zaFNBSUdXR05IWGo1d2toYk1PaXJCY21GM3BjQ3hDOC1LT3FJOHNYLWxLUWgyVl82a2FZRlZUQXI2REdoRGxMMnRwcUVIUWNwcGNtRy01OWNvdjctVEJZNHJOeVdOWdIBuAFBVV95cUxQUVJwd3kzdHh5NFNQdHJFY0JKVWF5N1dDOG1abE8wX2c0UzN2NEJrNVprVlEyV2ZLRUFwMGoyYXRzeV9XSmJBMWJuYXkxdEJlcXNOWm5PNUV0Y3VUeFpSY2xmZ0ZIWmRCVDFKcFh4UUI4X2hxZlRBZXJ2XzV5UWdkMGFOZHBZcFRYS0VjWVl3ZnpJV0gtcW1XelB0elZEN3c5YldpYWlzWU1IU0p4TEJ3MXVyTTVob1hC"
     },
     {
       "score": 2.73,
@@ -118,24 +136,6 @@
       "title": "One Syrian security member killed in Islamic State attack in Raqqa - Reuters",
       "location": "Syria",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMGpWSGxRYkFIV0J6OFozcnhOZjBXZVVGTW85c1JtU3pDbGM2WmFoV0ZFNW9XMVdPRW5laG1GR255VUg1UGh2VG5Nc0ZCN3owdXQ3aFVXaUkxOFNNc1FsbjQ5RnJDUV91bFE3d0hSTzhDSzVsSTJ1d2lmbWw1WTdCVENJWm9pVTQ3dGtaMmdSZ3pUUWRSUlNSaXlLX1FhQzlpRV9nT0REdHNvYTVJckdsRG5hQjc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Political tension has undermined World Cup joy, says Iran striker",
-      "location": "Iran",
-      "url": "https://www.bbc.com/sport/football/articles/c9d2ep375nzo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Claims Israel’s Beirut strike pushed Trump on Iran announcement - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWW1LZlBqb2FzSnVYbkRUdHJxSHIyTEpPOWk0b0RMYTBwVVYzWWNMRjB2NnpPTE5iN0ZESi1IX1FpX0JVU0hDUm5RZWJQR1ZIMWZKY1FFQWRYeXowRFNqQ0R2bHFmcXhtTW94OXU2YS1LOUM2c2VtWGZrejN3NjlxNTFXeTVBTUZLa2RuR245Ql9GTFh5S1RNWGZhZVB0WXNUd0J6X2RISGo1SWRDWUtabkxqONIBuAFBVV95cUxOUGhTY1VqZk5HY1JxNUNESE8tc2VJcmtRNWx5VEdac0J1SE1XWEhJbmxkM3BLTnpUQWpaUm1fQ3Boc1RyRXFqQnhZVWVLcnd6bHpoUkROM2dEal9jVHpGWjdZUFdNR2JwWVVPQ3l3SHVWSVNhZ2Z2VnExcExuaUU0cnRDTVE4T0ppV2d2dFNjZVBuaTd6dm1iVUpJczZlOEctVTFVRzNya28zOU1hS3dVb3dodkVpVVNm"
     }
   ]
 }
