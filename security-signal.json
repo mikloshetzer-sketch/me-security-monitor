@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-06-16 17:22 UTC",
+    "updated": "2026-06-17 05:17 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-06-10",
-    "period_end": "2026-06-16",
-    "total_events": 175,
-    "total_risk": 166.76,
-    "normalized_risk_score": 66.7,
+    "period_start": "2026-06-11",
+    "period_end": "2026-06-17",
+    "total_events": 187,
+    "total_risk": 159.71,
+    "normalized_risk_score": 63.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 33,
+    "military": 29,
     "security": 3,
-    "political": 81,
-    "other": 58
+    "political": 89,
+    "other": 66
   },
   "source_counts": {
-    "news": 169,
+    "news": 181,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 85.3
+      "risk": 75.25
     },
     {
       "name": "Israel",
-      "risk": 48.76
-    },
-    {
-      "name": "Tehran",
-      "risk": 7.4
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 7.15
+      "risk": 52.76
     },
     {
       "name": "Lebanon",
-      "risk": 6.8
+      "risk": 7.2
+    },
+    {
+      "name": "Tehran",
+      "risk": 7.0
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 6.7
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-06-16",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, June 16, 2026",
+      "location": "Israel",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-16-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-06-15",
       "category": "military",
       "source_type": "isw",
@@ -57,7 +66,7 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-15-2026/"
     },
     {
-      "score": 3.12,
+      "score": 2.73,
       "date": "2026-06-14",
       "category": "military",
       "source_type": "isw",
@@ -66,16 +75,34 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-14-2026/"
     },
     {
-      "score": 2.73,
-      "date": "2026-06-13",
+      "score": 2.7,
+      "date": "2026-06-16",
       "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, June 13, 2026",
+      "source_type": "news",
+      "title": "Israeli drone strikes kill at least 4 in southern Lebanon - Reuters",
       "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-13-2026/"
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcGFUQ2RsbHd5S0t1bDduelQ3N2JCRDdjWDR0OEdWYzNKcm9GRGdHVHFjSklvUGRCa29tZU9jQV90NzR6bVVtOGJNaVdwUkJBM2QxTEwwQW9DNDBjNE9DcTZhdE9YaHE2alA3WkowNUVrUGZnVTlYNldtTDc2M201YnZrNFNiLThiLW03Ui13eEpDZDZidW5ZOS02LW5IWTJVNzVpcWZQUlU"
     },
     {
       "score": 2.7,
+      "date": "2026-06-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill four in southern Lebanon amid ceasefire talks - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOS3hkQVh4TUlGcWJ2RFlDY20xZkdEVHNPNjJhTGpISlotZW01Q19yaWFZcF9yVjhjLVZ5TTdlRHZTMjkzNlNUQ2dJSnpXMnNSbWd2bmpwQjdmbHo4RlpJNjJnc0lNUThlSUhMNGRELUcxRGkwS1dUZTF0OTRJRGxQcXlubEpqQ2R1VFNGQ0RSMzZUZUxELWJ3cHp2bFJtWVktcDZOeEhDRWhWWTjSAbABQVVfeXFMUEg5aUZkbkk1U1RIcWtUT0Jkd09yMVk3RWk4eVRxWVhFcmg3LWJnMmk2cFUwSUdmT3Jqckc1NG5LbV9xUnZ6MHh3cVA1WjhtTVk3WUJPX19WRDVfUE5hU0hkd25jMGZ1NWZjMXFielF2N3pYN0dxUmVoc1BHTTY1aGU5b0RNV01JSUdQaEZldVRJQXl5c051WEo3X2RYRWFPOHFSc0hHc1dlLWZNclhWWTA"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-06-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump slams Israeli attacks on Lebanon at G7 summit - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbkZLTXJHUkdCRmFlQ0lqWFo4eTRnTlRiS1BVbWZCZ3YxMDJjeFhEWkZYRlJrODZLek81RjZDWllPVmdCSGZiYWdwRGtzYVJ2YTI5Z1BDcFFrb1VoNEFyM1pMNEhvLXVKZEFhWHFieTFSR0llVkdRVW9zWFNja09ja0ExZkpGLTc2b21WRzNQXzhFelFxa1dnUk1GRnJjSFZGTWo4edIBqgFBVV95cUxORVI1ZGx4dDRrV253QnhMQS1TczNHbUNESjh3dTBmcDNtd0NEcmtMRFhmVjQtd1VvbENGRUtHRXBrNWg1UlptZ2x2OUtfNnU0cnU2TGxpTDhxM2JqZFhLYlZDYWRCTGdSUUpUWnZQTnJGcVc5SGtXZU1lNVRLVFJMYU0zLVlMUnhTTFpuSktKZTRlYWsxOHBkblExVGw1SXNGREV4djBQa0U3dw"
+    },
+    {
+      "score": 2.4,
       "date": "2026-06-15",
       "category": "military",
       "source_type": "news",
@@ -84,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQmJCOVNQRWZWLWhqMGRudVJOUWdvand5a3R3VGQxOUk4WEJRMVF6ZUNEWFBCUDJEWkVuOWNJZVlzaGFYWEFfbjU1ZG4ybGEwb29aaGJzZlIwSzdacVhXUzRnRU9XaVZqLVNCX29MYlBWeDh1bnVfY0RVNnRNUnhXcU85bXRSQmNlSkRzYi1ONG43enhjT3AyQWx3RGN6NWp3a3B2WnktZ0RjU2RtSHNYS2w3enJpbEd3ZVpZU3kxdzhrdFROemJCcEU4UQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-06-15",
       "category": "military",
       "source_type": "news",
@@ -93,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMGpWSGxRYkFIV0J6OFozcnhOZjBXZVVGTW85c1JtU3pDbGM2WmFoV0ZFNW9XMVdPRW5laG1GR255VUg1UGh2VG5Nc0ZCN3owdXQ3aFVXaUkxOFNNc1FsbjQ5RnJDUV91bFE3d0hSTzhDSzVsSTJ1d2lmbWw1WTdCVENJWm9pVTQ3dGtaMmdSZ3pUUWRSUlNSaXlLX1FhQzlpRV9nT0REdHNvYTVJckdsRG5hQjc"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-06-15",
       "category": "military",
       "source_type": "news",
@@ -102,40 +129,13 @@
       "url": "https://www.bbc.com/sport/football/articles/c9d2ep375nzo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-06-15",
       "category": "military",
       "source_type": "news",
       "title": "Claims Israel’s Beirut strike pushed Trump on Iran announcement - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWW1LZlBqb2FzSnVYbkRUdHJxSHIyTEpPOWk0b0RMYTBwVVYzWWNMRjB2NnpPTE5iN0ZESi1IX1FpX0JVU0hDUm5RZWJQR1ZIMWZKY1FFQWRYeXowRFNqQ0R2bHFmcXhtTW94OXU2YS1LOUM2c2VtWGZrejN3NjlxNTFXeTVBTUZLa2RuR245Ql9GTFh5S1RNWGZhZVB0WXNUd0J6X2RISGo1SWRDWUtabkxqONIBuAFBVV95cUxOUGhTY1VqZk5HY1JxNUNESE8tc2VJcmtRNWx5VEdac0J1SE1XWEhJbmxkM3BLTnpUQWpaUm1fQ3Boc1RyRXFqQnhZVWVLcnd6bHpoUkROM2dEal9jVHpGWjdZUFdNR2JwWVVPQ3l3SHVWSVNhZ2Z2VnExcExuaUU0cnRDTVE4T0ppV2d2dFNjZVBuaTd6dm1iVUpJczZlOEctVTFVRzNya28zOU1hS3dVb3dodkVpVVNm"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel attacks Hezbollah targets in Beirut's southern suburbs - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNb0dtcHdBNDdCYXg2eGVXYTJ5MGlRQ0ZVM1I2UnN3MTlXZEh0eHA5QmJNMGQxMF9fbHFQVnBkMzVNbW1CY003X0l3TFFSX1VrZVBzSl95QVRjZFVkdmZ3VENOR21xM2xLbTdnbHY3ZkNSMkgwTHl5WVJuRXhoNEQwQ29BM1RGNkxab3FIbFAyQ3V0bWwxalcxX1BtRkZ1NmVfWFN1dm9HbVd1RHoxTW5qN2JkN0dWWEhxSFBrdVJuYmJlNFNZdE80ag"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says limited cyberattack disrupts services at four banks, state media says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPekNlcHljbzkyU2huU1VqQnB1SFRyVHF0bHJKWVR3RXZETDJvQTBrSVVDN3FVRzNDdjhVc2txU2cxeU5Id1dWQlVXU0l6LVJwNWZrOTlsWUMxaHFMNm16anRrMWVIWHQ5NW5vMWpLY0pUY2lDemo1c3NEVlRlSnpBTmM5dnFhSmNrRjRlTlVZbWI5RzBrdW1LQmZiVGNhNzkxeDBEb01oRUotdlA2dkdGR3Q3bWQ5bERQcHFKVDZrVlpRVUNGbXY0ZA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says Israeli strike on Lebanon should not have happened, but Iran deal close - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSXA2RmM1Y0lOSlBJSHJpd285cFViUGlLNFRUa0FTZWxBbC1DdUdVM1hSbUY5Z1A4R3poZEI3QjNGbFFzSlZpalRkbnVGWVFMNzYzQXlJbXhMTjdaRjFLQlk0b3FXZVIzcVVDbm9YVmd4RmtRTWVGcndQN1VJaEZRUEppeGlUZWJGaUx6WEI1OUtoeDRpbGdNbF8xRVFRTlY3Tk9Fcg"
     }
   ]
 }
