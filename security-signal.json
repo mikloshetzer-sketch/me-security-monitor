@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-17 18:35 UTC",
+    "updated": "2026-06-17 22:14 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,30 @@
   "summary": {
     "period_start": "2026-06-11",
     "period_end": "2026-06-17",
-    "total_events": 179,
-    "total_risk": 159.31,
-    "normalized_risk_score": 63.7,
+    "total_events": 184,
+    "total_risk": 166.01,
+    "normalized_risk_score": 66.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 28,
-    "security": 3,
-    "political": 80,
-    "other": 68
+    "military": 29,
+    "security": 2,
+    "political": 84,
+    "other": 69
   },
   "source_counts": {
-    "news": 173,
+    "news": 178,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 71.25
+      "risk": 79.4
     },
     {
       "name": "Israel",
-      "risk": 55.81
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 8.35
+      "risk": 58.06
     },
     {
       "name": "Lebanon",
@@ -43,7 +39,11 @@
     },
     {
       "name": "Tehran",
-      "risk": 5.8
+      "risk": 6.8
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 5.95
     }
   ],
   "top_events": [
@@ -70,9 +70,18 @@
       "date": "2026-06-17",
       "category": "military",
       "source_type": "news",
-      "title": "Israel launches fresh airstrikes in Lebanon; Trump says he could still restart war - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSklNM1g3ZG9QYmFoMkJRS3o2T2ZRMTJ1azE5eG1YLU5TUXdEY1F5TkFBU01GMUt1UUstcHRrekJsOHBmRURqd2NTMVpzVVFoQlRPWHNvUVVQLU5ZRkJsNzZKNURTd01PQ1pubzFrR0UzdlMzbXU2RXBwLU9fT25GSU80UkRVcUlpWE9MOGhxYW4yS1lIbDJ3UkR5anJudnZPcDhhOHhqN3JxcWM"
+      "title": "Trump threatens to resume bombing campaign if Iran does not \"behave\" - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRzVtdzBFMGVLbXNTS201d0oxY2JfRFhyMXVYVEZLXzV6YlhlQ0poRFNyLXM2NWd1WUJUREowUWhCSWdyeXlnelNJTXdCemszbmFFMU5mRWptUmNGNW5IWEhBQXRLNEhIYWxsV2ZOQmgwTGlmZzJ2UVRyeTM2YWR3M3N4S19mNmN1NWNvV1lLTXdxR1N3LUxIVm0tOGdhaWtncmVWd0JlbkR4bjg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump: unfair for Iran to lack ballistic missiles if other countries have them - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNa0w0S0pySHdqVnhmUHVWZGRpUHhaRHdsZFdKMnVzTEhsUDdVYWk4aWdUVF96ak9GOVVHeVlNYXU0STRaTzR2aUpwekR5dlZZc0IyNl9uQnZqSkoxZjFmUFBCNTBZeVhZWHV4dU5aWUpNX1QxX3MwUlU5UDFSZ3NhWWo2WE1GdXlpbjVyYkRMRnNhdkoxOW5HWFBtYWdScy1xZ2t1VFdkVWVNSXV4SWVJZkJ2eTZad3ZfVE5fTndmTVhadw"
     },
     {
       "score": 3.0,
@@ -82,6 +91,15 @@
       "title": "Israel launches fresh strikes on Lebanon despite Trump criticism",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c7vyn17g832o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli air strikes on Lebanon continue despite US-Iran deal - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZjV1cGh5RmM4VnBKVU1xMlFjb0VyV2dvNDVfLWRTcm5rcV84eENKREEzVnpCQXF5TmxqR29HVTVER21WVHE0WjZ6czU0ekVTUDhhaXJfUVVjNXk3dzFhc0RrOGhDSnVKeDlGTktvX09rX2Y3ekxBTkJDOWI3dlVjb3BJa1l6YTlVdmxCTjQwdWdPWVItenoyY01aaDZuNlBiZG1tRVN2UXTSAa4BQVVfeXFMTVFwQXdJS0Zzb3FtamIwTHpxNDdRQ1Z0R09jcnlIeTA5YmdMWkpsbXMtcHJkcGo0MThJdG1yUXNtVDFwYjUzNDA2MHJLVWptUkcxMm9vY1hzOUg3aUdGd0kxbHFNTVBTUnZNd3cyOUZPUXBXVWlsNG0yTkc1ci1NbDJqU2FVM09PZkMwNkUwNGxhc0RKbWRPUlczdEtpam85YTB5Yldjc1hVc0x6cnJR"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "Israeli strikes kill four in southern Lebanon amid ceasefire talks - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOS3hkQVh4TUlGcWJ2RFlDY20xZkdEVHNPNjJhTGpISlotZW01Q19yaWFZcF9yVjhjLVZ5TTdlRHZTMjkzNlNUQ2dJSnpXMnNSbWd2bmpwQjdmbHo4RlpJNjJnc0lNUThlSUhMNGRELUcxRGkwS1dUZTF0OTRJRGxQcXlubEpqQ2R1VFNGQ0RSMzZUZUxELWJ3cHp2bFJtWVktcDZOeEhDRWhWWTjSAbABQVVfeXFMUEg5aUZkbkk1U1RIcWtUT0Jkd09yMVk3RWk4eVRxWVhFcmg3LWJnMmk2cFUwSUdmT3Jqckc1NG5LbV9xUnZ6MHh3cVA1WjhtTVk3WUJPX19WRDVfUE5hU0hkd25jMGZ1NWZjMXFielF2N3pYN0dxUmVoc1BHTTY1aGU5b0RNV01JSUdQaEZldVRJQXl5c051WEo3X2RYRWFPOHFSc0hHc1dlLWZNclhWWTA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump slams Israeli attacks on Lebanon at G7 summit - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbkZLTXJHUkdCRmFlQ0lqWFo4eTRnTlRiS1BVbWZCZ3YxMDJjeFhEWkZYRlJrODZLek81RjZDWllPVmdCSGZiYWdwRGtzYVJ2YTI5Z1BDcFFrb1VoNEFyM1pMNEhvLXVKZEFhWHFieTFSR0llVkdRVW9zWFNja09ja0ExZkpGLTc2b21WRzNQXzhFelFxa1dnUk1GRnJjSFZGTWo4edIBqgFBVV95cUxORVI1ZGx4dDRrV253QnhMQS1TczNHbUNESjh3dTBmcDNtd0NEcmtMRFhmVjQtd1VvbENGRUtHRXBrNWg1UlptZ2x2OUtfNnU0cnU2TGxpTDhxM2JqZFhLYlZDYWRCTGdSUUpUWnZQTnJGcVc5SGtXZU1lNVRLVFJMYU0zLVlMUnhTTFpuSktKZTRlYWsxOHBkblExVGw1SXNGREV4djBQa0U3dw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills one in south Lebanon, first deadly attack since US-Iran deal announcement - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQmJCOVNQRWZWLWhqMGRudVJOUWdvand5a3R3VGQxOUk4WEJRMVF6ZUNEWFBCUDJEWkVuOWNJZVlzaGFYWEFfbjU1ZG4ybGEwb29aaGJzZlIwSzdacVhXUzRnRU9XaVZqLVNCX29MYlBWeDh1bnVfY0RVNnRNUnhXcU85bXRSQmNlSkRzYi1ONG43enhjT3AyQWx3RGN6NWp3a3B2WnktZ0RjU2RtSHNYS2w3enJpbEd3ZVpZU3kxdzhrdFROemJCcEU4UQ"
     }
   ]
 }
