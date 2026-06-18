@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-18 05:03 UTC",
+    "updated": "2026-06-18 10:49 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-12",
     "period_end": "2026-06-18",
-    "total_events": 184,
-    "total_risk": 151.01,
-    "normalized_risk_score": 60.4,
+    "total_events": 181,
+    "total_risk": 148.36,
+    "normalized_risk_score": 59.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 26,
-    "security": 3,
-    "political": 87,
-    "other": 68
+    "military": 24,
+    "security": 2,
+    "political": 83,
+    "other": 72
   },
   "source_counts": {
-    "news": 178,
+    "news": 175,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 71.0
+      "risk": 72.6
     },
     {
       "name": "Israel",
-      "risk": 52.11
-    },
-    {
-      "name": "Lebanon",
-      "risk": 7.3
+      "risk": 54.16
     },
     {
       "name": "Tehran",
-      "risk": 6.0
+      "risk": 6.5
+    },
+    {
+      "name": "Lebanon",
+      "risk": 5.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 5.1
+      "risk": 4.5
     }
   ],
   "top_events": [
@@ -106,6 +106,15 @@
       "date": "2026-06-17",
       "category": "military",
       "source_type": "news",
+      "title": "Trump says 'nobody' attacked Iran girls' school 'on purpose' - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdjdDZTlvVnl1MmwtbHJfN3huRDkxcnJIV3p4ZHlNNFlLSlAzTmRsR0ZZYXo4MzhwQ0ZvSXNVMVM2X1NlaGNCNDY2VDV4dWpyYWJoNk5VWkpjN0pERy1qYXJXdGc2VmhRb184cnRrd3phU3FvUVBudzNjOEdNdHJEYzZ6T0ZVR2d2aFlSZWZmQTV6cWp5NGd1NWxkZFVEZw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-06-17",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel launches fresh strikes on Lebanon despite Trump criticism",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c7vyn17g832o?at_medium=RSS&at_campaign=rss"
@@ -117,7 +126,7 @@
       "source_type": "news",
       "title": "Israeli air strikes on Lebanon continue despite US-Iran deal - Al Jazeera",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZjV1cGh5RmM4VnBKVU1xMlFjb0VyV2dvNDVfLWRTcm5rcV84eENKREEzVnpCQXF5TmxqR29HVTVER21WVHE0WjZ6czU0ekVTUDhhaXJfUVVjNXk3dzFhc0RrOGhDSnVKeDlGTktvX09rX2Y3ekxBTkJDOWI3dlVjb3BJa1l6YTlVdmxCTjQwdWdPWVItenoyY01aaDZuNlBiZG1tRVN2UXTSAa4BQVVfeXFMTVFwQXdJS0Zzb3FtamIwTHpxNDdRQ1Z0R09jcnlIeTA5YmdMWkpsbXMtcHJkcGo0MThJdG1yUXNtVDFwYjUzNDA2MHJLVWptUkcxMm9vY1hzOUg3aUdGd0kxbHFNTVBTUnZNd3cyOUZPUXBXVWlsNG0yTkc1ci1NbDJqU2FVM09PZkMwNkUwNGxhc0RKbWRPUlczdEtpam85YTB5Yldjc1hVc0x6cnJR"
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZjV1cGh5RmM4VnBKVU1xMlFjb0VyV2dvNDVfLWRTcm5rcV84eENKREEzVnpCQXF5TmxqR29HVTVER21WVHE0WjZ6czU0ekVTUDhhaXJfUVVjNXk3dzFhc0RrOGhDSnVKeDlGTktvX09rX2Y3ekxBTkJDOWI3dlVjb3BJa1l6YTlVdmxCTjQwdWdPWVItenoyY01aaDZuNlBiZG1tRVN2UXQ"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Iran war day 110: Tehran says Israeli attacks on Lebanon threaten US deal - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZ2J2NTJrUXhMenBBb0ZLVUdIVWJwWVpXdTNLOGdKRW9OSEt3cFFNUlRLc0dDVEE2WXEzN09JV2FvVFBteEFqM21CdHZGRUhOSlNsNC1zaFNBSUdXR05IWGo1d2toYk1PaXJCY21GM3BjQ3hDOC1LT3FJOHNYLWxLUWgyVl82a2FZRlZUQXI2REdoRGxMMnRwcUVIUWNwcGNtRy01OWNvdjctVEJZNHJOeVdOWdIBuAFBVV95cUxQUVJwd3kzdHh5NFNQdHJFY0JKVWF5N1dDOG1abE8wX2c0UzN2NEJrNVprVlEyV2ZLRUFwMGoyYXRzeV9XSmJBMWJuYXkxdEJlcXNOWm5PNUV0Y3VUeFpSY2xmZ0ZIWmRCVDFKcFh4UUI4X2hxZlRBZXJ2XzV5UWdkMGFOZHBZcFRYS0VjWVl3ZnpJV0gtcW1XelB0elZEN3c5YldpYWlzWU1IU0p4TEJ3MXVyTTVob1hC"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli drone strikes kill at least 4 in southern Lebanon - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcGFUQ2RsbHd5S0t1bDduelQ3N2JCRDdjWDR0OEdWYzNKcm9GRGdHVHFjSklvUGRCa29tZU9jQV90NzR6bVVtOGJNaVdwUkJBM2QxTEwwQW9DNDBjNE9DcTZhdE9YaHE2alA3WkowNUVrUGZnVTlYNldtTDc2M201YnZrNFNiLThiLW03Ui13eEpDZDZidW5ZOS02LW5IWTJVNzVpcWZQUlU"
     }
   ]
 }
