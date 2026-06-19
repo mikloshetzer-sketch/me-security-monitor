@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-19 10:58 UTC",
+    "updated": "2026-06-19 15:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-13",
     "period_end": "2026-06-19",
-    "total_events": 181,
-    "total_risk": 148.11,
-    "normalized_risk_score": 59.2,
+    "total_events": 187,
+    "total_risk": 164.76,
+    "normalized_risk_score": 65.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 23,
-    "security": 3,
-    "political": 76,
-    "other": 79
+    "military": 26,
+    "security": 4,
+    "political": 81,
+    "other": 76
   },
   "source_counts": {
-    "news": 175,
+    "news": 181,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Iran",
-      "risk": 64.3
+      "name": "Israel",
+      "risk": 70.81
     },
     {
-      "name": "Israel",
-      "risk": 57.11
+      "name": "Iran",
+      "risk": 68.7
     },
     {
       "name": "Tehran",
       "risk": 7.2
     },
     {
-      "name": "Gaza Strip",
-      "risk": 6.85
+      "name": "Lebanon",
+      "risk": 5.7
     },
     {
-      "name": "Lebanon",
-      "risk": 4.85
+      "name": "Gaza Strip",
+      "risk": 4.55
     }
   ],
   "top_events": [
@@ -79,9 +79,54 @@
       "date": "2026-06-19",
       "category": "military",
       "source_type": "news",
+      "title": "Lebanon says Israeli strikes kill 47 as Israel says four soldiers killed by Hezbollah",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c23ymz1n9rmo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "US-Iran talks postponed as Israel launches deadly strikes in Lebanon",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/c8r2eme2n5do?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Thousands killed in US-Israeli war on Iran - but experts say true total may never be known",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cy735xlv50ko?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Can US-Iran peace ‘deal’ survive Israeli bombing of Lebanon? - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQX1llYU5YQXBzYXRxWWdYUXgzWjUwSUx5S2k0ODRYSEw4bjJFTDNwY1h3SmI5RFdjQmZlVUxJekNUcUU0U0dkY3BTQ2tCdVdtZ3ZvNHpuZnFZcy10ZHVBd0l1VktzTlhCakhHTHdQRVFlbDJUMEtBQmtYZmtjT2szWTJ6bmE0TnNJYnp2Rlh0ZFdYdzVEZG11V3ZWeDd4M1VLY0pCOdIBqgFBVV95cUxPLUNYeF9QdWNRemRuMDg3MkdqdVQzbVJ6bzhmQ2ZzT3FNc1hvOEpnWUh1cE5VQ3Y2MWtXN0hDTHdLR1ZxQkNsN3NsZ2s0YWNjRGVJWlR4S2pURGFlMURVcXBMekN5c04yV3N6SXRLV1VReTBSMGhNRlhUTWRkRzlYTm9ReGRXaVc5cnZIUFF5dmZaWEwwblI3UEZ2WFpzcnc2Z0dNN1Jfbng4dw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel strikes southern Lebanon in sudden clash surge with Hezbollah - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNN0ROSHdObkVHSDdWalMtOVFNTjRreUJQc1NCcnBFTmpaRzBDcXBnemtfU202VDVjdWRFaHVldk1KMndTd3FhM1lZc21VSlZzYlpkakYyZ3lUREJpRzN4ajRKbU4yVGdFSTdzRmxuMFZRYm5idUFpdy1fa1J4TklZN3YyZm9sQ0NwYUNBZEJRbk1wZGo4dmI5blJMUWhlbTFHTmJ0SVNkLW1yME92X3N6aEk5RnNaZ2JBU3dz0gHAAUFVX3lxTFA3MkJQY0xkX3BtZDlYbmJuN2d0RHJxMzEwOTdfb0ZEWVhhdi13ell6NjlSdGZaaHlrT0pEZ29PTERhVFB6enZqcUNvaW9HWEozZWlfVWlGcDViYUNlTHZKWjB1Z3lYSGhjMnRJc1VKUjdXWHVYYy1uUm1WRHN2eWMzbU9iUUF2QUlMbm9ncnNXdGdCdklDd3loQkpxMlF6X3RraWd0RmZZdGMzVmMwRGVBM1ZCYlRtZ3hXd2s2VGJBVA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel continues attacks on Lebanon despite US-Iran deal - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRXE5UVBxWi1DS29hdlBMRElOOXdabGEyeXNnVDZKRFZuTkd1cTc5NnNGdzdIaFB2LUpPOE1idmdGdXE1d2l5M1lHOEstT0NvVE1uMEE5WHRFTXUwSU9CTmNCT19oUHYzYnBsT0x6bWJUdHIxZUtoa0hDdC1oamp2QjJVTGVVMV9EcTBGOEZwR3FjdUdkRHZ2eUIxejdUeEx6VzY5R0NLVmpmZHfSAbABQVVfeXFMTnhTUl9mX1NsTzRHbUNpWnc2Um1icWMtZl8yZkNhRC1PamJiNDFaZ2lJbF8tMW41dG5GbFhBV0hGSnV6Rm1kVnFIejlVVUstX3RvOGk3bzU0d1ZOMHljcERkbG9tWVZOT2hLY2I1UHprWEZ0aUs5SXQybm44ajhHcHFpdjhYYy1oakJsbnlWRHpGX1JiMmJhSmM0bnllQ0ZPV0NHTmZQSGNPcWIzMlFxb1o"
     },
     {
       "score": 2.73,
@@ -91,51 +136,6 @@
       "title": "Iran Update Special Report, June 16, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-16-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran presidents sign ceasefire agreement, but Trump says he could still resume attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSklNM1g3ZG9QYmFoMkJRS3o2T2ZRMTJ1azE5eG1YLU5TUXdEY1F5TkFBU01GMUt1UUstcHRrekJsOHBmRURqd2NTMVpzVVFoQlRPWHNvUVVQLU5ZRkJsNzZKNURTd01PQ1pubzFrR0UzdlMzbXU2RXBwLU9fT25GSU80UkRVcUlpWE9MOGhxYW4yS1lIbDJ3UkR5anJudnZPcDhhOHhqN3JxcWM"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill at least 18 amid intense fighting in southern Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRmRYSFFlOTJnelNXMDFWenltYXpzSkh5b3BrYUNJRTVNYXNSU3FlVmlRM0t4eXhhbnp2eHlmWUxoMVZnNzFYRGZqLTNkSXE3VG9RNGR2aDVPYl9uakxaX2pJbFI1RlRHWFgzZ29fMGFnZ0hyMFZqREFJdkQzVGJQVHRUeDNDcGd6X1RVdlZQRDlmcVg5S3ZvNmhRWGxLZEZWRWdzSUg3bm1ZLXpF0gGyAUFVX3lxTFBTQnVqcFBDQ1M5VDloX3M1eUVudDlIYWxDQnZIQW51ZXdnR05vaGxveV9WajM5T0FtcHdMMmNNUm9NTFY1NE5yLW9DeTBXQWxmLTFRTThHSS1HY3NpV19BdEJKa2dOTk1JRHhReFRBNnBWUTNmaFgweWdkdzg5RGkzSEZrNEhmM3lzNkE1MDlaVFYxdEl5NTl0TlU4TzdjUnJPRUlfNUxWMVI1cG90eXk4UEE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel kills at least three Palestinians in Gaza City drone strike - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcVlfbEFvaWY4XzVDaE1yblhzbzByWkF1RjlQdnZva0lmNlY2bkJsMFdHZzl5XzREQ0x4cjBYSWI2X1Z4clQ5MHE1T3lLSzJUOXdJT2VNdDBET2hxS1Ftc01qcnBIRldoTjJfZlNRbEVMYUhQV1YtTURJeTRxOWlPSVYzcngtOGd0MWJZYmw1Sm1vaGRYamc0T2x1ZjhUb3BVWFBTb3VSWVptbVXSAbABQVVfeXFMTlFLdmg3cWk4S0w1b3hLc0FXM0ppSkNrYlQyZEdLV29CWkk3eWt0T2VUX0FOY1dEU203QVRzVC1tbFJaOE1FVlNJSzVHZVRIclpSMkVhSnBab1NweE1UYlZyNHVSSC0yNzJZV0I3Z0dJYk84ZU9KQjBwR3RWUVM2Y1pfRzBkVE5jTVJZUnBLenR4V3lacmxJbFluYVpGS3lfV0tpMmR6UnNBZjdjX3JKSTE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump-Netanyahu tensions: Have Israeli and US leaders clashed before? - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPLUhnMzJ3MDFlajBjNUFGeDdoaXo0ZHZSaEFhR0ZVM2NMSlp6TXV3UEljT2ZBY05IN1pzT3ZKZ0ZlVzB3TFh5czJwTGtlWUlibllUSWxuNzR4RnVqeEt4UEs3VmgxZHBPQlVXU3RQYVFweHFUQndTN0FwRnBnY1NYVVVrOHRrUUMzVUJWZnlzUmExUnZSM1VaZlVYRnJqWHFtUERFQkpnMDJvYUhEQkRXWU9R0gG3AUFVX3lxTFBwNkpPRWZIRTRFLWx1N2tTNU9CdjE2S2RLTm5hckRoUEJWbXdDckxiTEtIc2xtSjgtTkxpZ1dhS1EtdG5LVWVrQjFMdllyWkdsMlNlYUxZb2lMbFNaSDlfRGZ2YWVZTFRrRy1XdDIySHI4b01YSk96MHRWcndURnc2SHJ5YWU1cWRveDdPZVBId0RDVEZtekNwcEItdldMc1ZXbmYxc1VZNWc5eTRHWm0zY3RSNXY5dw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Pro-Israel hawks in US criticise Iran MoU but avoid clashing with Trump - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQmJtZGF4cHV3SW1DaEVjRHVyY21kbGVUU2ZBMDVSQms0dlNvTUFBZnlaM3E5MXlRY0pONTN0T042QThjLW1SMXhNQmhBc2RRZlROdktoa1M1alczOTVrQmJWRGhacjBrdk1jWDNiT1h4RmViOGN2Ni1rUGlJMDBqTlhJOEtKVkthc2JWdTc3X2hMNC1pdkRuNjhXWDVjbWpzNFFxc3JUYURNckQ2OW9jZWh30gG3AUFVX3lxTE44WF9JdkZ3ZjRWaHlCSTRqcW4xS1NJWXhzSHhiaWJHSEhMM2tPZVA1V09xeVdYWkZ5VnpfSnFFdzZpdkhHMGRoZ25XbTJ1bmo4NDRWR1BQRFZkMWJqd3lpTnhuVzlvR19LRUJ4SW4tZ0VtektyWnZZWVBJY3NCcE40ZnlMLWhOSmhmQU5HTGRpa0F3R0pETWRHR1VKVXAtM01rVVRfN193WUgxLWtwV3kxUGh1c29JSQ"
     }
   ]
 }
