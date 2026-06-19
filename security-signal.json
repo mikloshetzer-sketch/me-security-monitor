@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-19 05:26 UTC",
+    "updated": "2026-06-19 10:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-13",
     "period_end": "2026-06-19",
-    "total_events": 184,
-    "total_risk": 142.46,
-    "normalized_risk_score": 57.0,
+    "total_events": 181,
+    "total_risk": 148.11,
+    "normalized_risk_score": 59.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 22,
+    "military": 23,
     "security": 3,
-    "political": 80,
+    "political": 76,
     "other": 79
   },
   "source_counts": {
-    "news": 178,
+    "news": 175,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 65.85
+      "risk": 64.3
     },
     {
       "name": "Israel",
-      "risk": 54.56
+      "risk": 57.11
+    },
+    {
+      "name": "Tehran",
+      "risk": 7.2
     },
     {
       "name": "Gaza Strip",
       "risk": 6.85
     },
     {
-      "name": "Tehran",
-      "risk": 6.2
-    },
-    {
       "name": "Lebanon",
-      "risk": 3.85
+      "risk": 4.85
     }
   ],
   "top_events": [
@@ -64,6 +64,24 @@
       "title": "Iran Update Special Report, June 17, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-16-2026-2/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "EXCLUSIVE: Iran's Revolutionary Guards set up covert Iraqi cells to attack Gulf neighbors, sources say - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdVVhdU1ZeHBCU08wQ0tpY3l4MXNnQWVaeFRzakJETHVFV2Q0Y2c3eTc3WjRKaVJBWTNUNkpncjh1WmQ0eFM2LTc0YzZfZzYyZlFwOW9TQ0V5S2cxalFaTWlDUlhrMDBaWU9uV3o5WXZsQjVSREFrQlNHQXNGX2lSbU1FSllXR2pKWFM1M3M2amJjZ0EtUXQtNDRTbWVtMFBuUDU3MUJKdTlDcWhZZ0pNQWRQa210ZVBmNXJmNnM5REM2NGt3eXpn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel strikes southern Lebanon in sudden clash surge with Hezbollah - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNN0ROSHdObkVHSDdWalMtOVFNTjRreUJQc1NCcnBFTmpaRzBDcXBnemtfU202VDVjdWRFaHVldk1KMndTd3FhM1lZc21VSlZzYlpkakYyZ3lUREJpRzN4ajRKbU4yVGdFSTdzRmxuMFZRYm5idUFpdy1fa1J4TklZN3YyZm9sQ0NwYUNBZEJRbk1wZGo4dmI5blJMUWhlbTFHTmJ0SVNkLW1yME92X3N6aEk5RnNaZ2JBU3dz0gHAAUFVX3lxTFA3MkJQY0xkX3BtZDlYbmJuN2d0RHJxMzEwOTdfb0ZEWVhhdi13ell6NjlSdGZaaHlrT0pEZ29PTERhVFB6enZqcUNvaW9HWEozZWlfVWlGcDViYUNlTHZKWjB1Z3lYSGhjMnRJc1VKUjdXWHVYYy1uUm1WRHN2eWMzbU9iUUF2QUlMbm9ncnNXdGdCdklDd3loQkpxMlF6X3RraWd0RmZZdGMzVmMwRGVBM1ZCYlRtZ3hXd2s2VGJBVA"
     },
     {
       "score": 2.73,
@@ -88,7 +106,7 @@
       "date": "2026-06-18",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli attacks on southern Lebanon kill three despite US-Iran deal - Al Jazeera",
+      "title": "Israeli strikes kill at least 18 amid intense fighting in southern Lebanon - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRmRYSFFlOTJnelNXMDFWenltYXpzSkh5b3BrYUNJRTVNYXNSU3FlVmlRM0t4eXhhbnp2eHlmWUxoMVZnNzFYRGZqLTNkSXE3VG9RNGR2aDVPYl9uakxaX2pJbFI1RlRHWFgzZ29fMGFnZ0hyMFZqREFJdkQzVGJQVHRUeDNDcGd6X1RVdlZQRDlmcVg5S3ZvNmhRWGxLZEZWRWdzSUg3bm1ZLXpF0gGyAUFVX3lxTFBTQnVqcFBDQ1M5VDloX3M1eUVudDlIYWxDQnZIQW51ZXdnR05vaGxveV9WajM5T0FtcHdMMmNNUm9NTFY1NE5yLW9DeTBXQWxmLTFRTThHSS1HY3NpV19BdEJKa2dOTk1JRHhReFRBNnBWUTNmaFgweWdkdzg5RGkzSEZrNEhmM3lzNkE1MDlaVFYxdEl5NTl0TlU4TzdjUnJPRUlfNUxWMVI1cG90eXk4UEE"
     },
@@ -111,31 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPLUhnMzJ3MDFlajBjNUFGeDdoaXo0ZHZSaEFhR0ZVM2NMSlp6TXV3UEljT2ZBY05IN1pzT3ZKZ0ZlVzB3TFh5czJwTGtlWUlibllUSWxuNzR4RnVqeEt4UEs3VmgxZHBPQlVXU3RQYVFweHFUQndTN0FwRnBnY1NYVVVrOHRrUUMzVUJWZnlzUmExUnZSM1VaZlVYRnJqWHFtUERFQkpnMDJvYUhEQkRXWU9R0gG3AUFVX3lxTFBwNkpPRWZIRTRFLWx1N2tTNU9CdjE2S2RLTm5hckRoUEJWbXdDckxiTEtIc2xtSjgtTkxpZ1dhS1EtdG5LVWVrQjFMdllyWkdsMlNlYUxZb2lMbFNaSDlfRGZ2YWVZTFRrRy1XdDIySHI4b01YSk96MHRWcndURnc2SHJ5YWU1cWRveDdPZVBId0RDVEZtekNwcEItdldMc1ZXbmYxc1VZNWc5eTRHWm0zY3RSNXY5dw"
     },
     {
-      "score": 2.4,
-      "date": "2026-06-17",
+      "score": 2.7,
+      "date": "2026-06-18",
       "category": "military",
       "source_type": "news",
-      "title": "Trump threatens to resume bombing campaign if Iran does not \"behave\" - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRzVtdzBFMGVLbXNTS201d0oxY2JfRFhyMXVYVEZLXzV6YlhlQ0poRFNyLXM2NWd1WUJUREowUWhCSWdyeXlnelNJTXdCemszbmFFMU5mRWptUmNGNW5IWEhBQXRLNEhIYWxsV2ZOQmgwTGlmZzJ2UVRyeTM2YWR3M3N4S19mNmN1NWNvV1lLTXdxR1N3LUxIVm0tOGdhaWtncmVWd0JlbkR4bjg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump: unfair for Iran to lack ballistic missiles if other countries have them - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNa0w0S0pySHdqVnhmUHVWZGRpUHhaRHdsZFdKMnVzTEhsUDdVYWk4aWdUVF96ak9GOVVHeVlNYXU0STRaTzR2aUpwekR5dlZZc0IyNl9uQnZqSkoxZjFmUFBCNTBZeVhZWHV4dU5aWUpNX1QxX3MwUlU5UDFSZ3NhWWo2WE1GdXlpbjVyYkRMRnNhdkoxOW5HWFBtYWdScy1xZ2t1VFdkVWVNSXV4SWVJZkJ2eTZad3ZfVE5fTndmTVhadw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says 'nobody' attacked Iran girls' school 'on purpose' - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdjdDZTlvVnl1MmwtbHJfN3huRDkxcnJIV3p4ZHlNNFlLSlAzTmRsR0ZZYXo4MzhwQ0ZvSXNVMVM2X1NlaGNCNDY2VDV4dWpyYWJoNk5VWkpjN0pERy1qYXJXdGc2VmhRb184cnRrd3phU3FvUVBudzNjOEdNdHJEYzZ6T0ZVR2d2aFlSZWZmQTV6cWp5NGd1NWxkZFVEZw"
+      "title": "Pro-Israel hawks in US criticise Iran MoU but avoid clashing with Trump - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQmJtZGF4cHV3SW1DaEVjRHVyY21kbGVUU2ZBMDVSQms0dlNvTUFBZnlaM3E5MXlRY0pONTN0T042QThjLW1SMXhNQmhBc2RRZlROdktoa1M1alczOTVrQmJWRGhacjBrdk1jWDNiT1h4RmViOGN2Ni1rUGlJMDBqTlhJOEtKVkthc2JWdTc3X2hMNC1pdkRuNjhXWDVjbWpzNFFxc3JUYURNckQ2OW9jZWh30gG3AUFVX3lxTE44WF9JdkZ3ZjRWaHlCSTRqcW4xS1NJWXhzSHhiaWJHSEhMM2tPZVA1V09xeVdYWkZ5VnpfSnFFdzZpdkhHMGRoZ25XbTJ1bmo4NDRWR1BQRFZkMWJqd3lpTnhuVzlvR19LRUJ4SW4tZ0VtektyWnZZWVBJY3NCcE40ZnlMLWhOSmhmQU5HTGRpa0F3R0pETWRHR1VKVXAtM01rVVRfN193WUgxLWtwV3kxUGh1c29JSQ"
     }
   ]
 }
