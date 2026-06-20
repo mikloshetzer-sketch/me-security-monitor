@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-20 04:41 UTC",
+    "updated": "2026-06-20 09:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-14",
     "period_end": "2026-06-20",
-    "total_events": 113,
-    "total_risk": 95.47,
-    "normalized_risk_score": 38.2,
-    "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "total_events": 191,
+    "total_risk": 167.57,
+    "normalized_risk_score": 67.0,
+    "risk_level": "MEDIUM",
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 16,
-    "security": 3,
-    "political": 50,
-    "other": 44
+    "military": 33,
+    "security": 4,
+    "political": 77,
+    "other": 77
   },
   "source_counts": {
-    "news": 107,
+    "news": 185,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Iran",
-      "risk": 43.97
-    },
-    {
       "name": "Israel",
-      "risk": 39.0
+      "risk": 85.65
     },
     {
-      "name": "Iraq",
-      "risk": 3.55
+      "name": "Iran",
+      "risk": 60.47
     },
     {
       "name": "Tehran",
-      "risk": 2.3
+      "risk": 4.9
     },
     {
       "name": "Lebanon",
-      "risk": 1.95
+      "risk": 4.7
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 4.1
     }
   ],
   "top_events": [
@@ -55,6 +55,33 @@
       "title": "Iran Update Special Report, June 18, 2026",
       "location": "Israel",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-18-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "At least five killed in Israeli strikes on south Lebanon despite ceasefire - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbVUyY2ZiaHlmMU01WFZDX2M5c2Y3d3JWekJWMWZTbF9iR3d4UVdDR3ItSWEwSmE1M2taaG5GX2gzbTFZN3V0cUJXV1RzXzZXQ2ZmNWx1emtiVlk0Y3ZCLWQ4cVB3VFpYUmlZZUF1WmFfaUdmY1Ywa2d6MlBLakdUX0hKVzgwQWwzWVpNOXQ5TkhCYzhSVGZlSlJIc3Z6VHF1UndYd2JiMkR0T290dTVZXy1heVlwREF0Vm5z"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "US, Iran envoys head for talks, Israeli strikes continue after ceasefire - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMmZyRmRQdUo5dlpLWnZaTEVkV2JBOXpMS2hNTEg1LVN6YzN2VjNlMXZkNXlNdVY4bWhaMG0wd1JtVWtmV1BNbXk5UjNHODNLT3ZJZUNfcmFZSmVvWkRfQ2J2eHNoZGRiWUpwbGZBT04zbjBILVZoV21rUC1VU2pWeENyaDJNRGMtY2otYWV5eG1fdjc3RFhFNmNCQzkyTWJLRVhVbjhFZWhfQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Mona Khalil, Lebanon’s turtle advocate, dies after Israeli attack - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQT1pJMzI4QnU4MjM2Q2VvalFxY2dndktVcWpEckI4QkdGdDBPRUtBcnBWV0ZMZ3FZdnRfUGxOWVkySlJIejctN0RQSnVoZU9ycWNiYzRocGc5UTdqT1QwREpKM0xyb09RTlJ6NURPT3hkSnV4bzAtRHBnT2M3ZTFKSDd6cktRNDlQYUJzejBQMVQySE9EdnZvVWdtVDlLSlJDVHdjb1pn0gGrAUFVX3lxTE9fM0hnYnFacjUybnBPaHlKYVVmVGxhQ05GQlNKcWdpTXo2M1FBZ0RJY1ZCQjZYU1FVai1MNUR1eV9MRWx2a0RSQy1nTGxSY1JDVWpCM0h0Y09MR29CRVF6SENEZUE2NElZa2xTYld0R0RRNlVIYjZCb21ERlF0YnRneXpiZFdyMmZQOE01MGRPaHVzT2RzN05LeHhNbVdMaU1sb0pLaXJKNzdOOA"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "US-Iran talks postponed as Israel launches deadly strikes in Lebanon",
       "location": "Israel",
       "url": "https://www.bbc.com/news/articles/c8r2eme2n5do?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Thousands killed in US-Israeli war on Iran - but experts say true total may never be known",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cy735xlv50ko?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran presidents sign ceasefire agreement, but Trump says he could still resume attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSklNM1g3ZG9QYmFoMkJRS3o2T2ZRMTJ1azE5eG1YLU5TUXdEY1F5TkFBU01GMUt1UUstcHRrekJsOHBmRURqd2NTMVpzVVFoQlRPWHNvUVVQLU5ZRkJsNzZKNURTd01PQ1pubzFrR0UzdlMzbXU2RXBwLU9fT25GSU80UkRVcUlpWE9MOGhxYW4yS1lIbDJ3UkR5anJudnZPcDhhOHhqN3JxcWM"
-    },
-    {
-      "score": 2.34,
-      "date": "2026-06-16",
-      "category": "military",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, June 16, 2026",
-      "location": "Israel",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-16-2026/"
     }
   ]
 }
