@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-21 12:21 UTC",
+    "updated": "2026-06-21 16:11 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-15",
     "period_end": "2026-06-21",
-    "total_events": 186,
-    "total_risk": 167.11,
-    "normalized_risk_score": 66.8,
-    "risk_level": "MEDIUM",
-    "confidence": "HIGH"
+    "total_events": 108,
+    "total_risk": 95.65,
+    "normalized_risk_score": 38.3,
+    "risk_level": "LOW",
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 38,
-    "security": 3,
-    "political": 72,
-    "other": 73
+    "military": 21,
+    "security": 2,
+    "political": 44,
+    "other": 41
   },
   "source_counts": {
-    "news": 180,
+    "news": 102,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 77.73
+      "risk": 40.03
     },
     {
       "name": "Iran",
-      "risk": 57.58
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 14.85
+      "risk": 38.52
     },
     {
       "name": "Lebanon",
-      "risk": 7.1
+      "risk": 3.9
     },
     {
-      "name": "Tehran",
-      "risk": 3.1
+      "name": "Gaza Strip",
+      "risk": 3.85
+    },
+    {
+      "name": "Syria",
+      "risk": 3.0
     }
   ],
   "top_events": [
@@ -52,18 +52,9 @@
       "date": "2026-06-21",
       "category": "military",
       "source_type": "news",
-      "title": "US-Iran talks begin in Switzerland as Tehran says it closed Strait of Hormuz",
-      "location": "Israel",
-      "url": "https://www.bbc.com/news/articles/cwyekkwm1mmo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill dozens in Lebanon as US, Iran to hold talks on truce - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSDl2OG5XVG5xYXVhY2xOd2I3QXV3T2d0dDVGOTdZNk1NMDRVUFJMX2FFVjdrNkVkRzhOYURfS3ppUF9rLVZ2SDM5UU41Yk1HZWhWX0hvbFlpVUlBdjNmbE83ZmVLYzdfUXc2Q1FqMUFnaEhMaFNDR3JnUlJ1SjBpeFNkVTN2V215VlZCT2piTlRqZU82ZnB4dVlfTnBpS3k5UEZpajEtczg1Nkw1VFNQbk1jU1bSAboBQVVfeXFMTmx0dHpURVpIa0lJU1N1U01wMlBTUmFuamFZTTZPWEQyamhsdy1vTHlGTmxxTDRJYmFDN1hIVHE0Tm1HbmRUQUM5MUNiNG5sTFJhWE9vUzFnRHdicnAzN0RuNksxNkp6WjFOTm9wMkxrUkdQbTFNYnRKN00zblU0U3d0bmU3Y3JCbm5vVkdDcWdkWGt2X1RzSjZRWkw3QnJ1Mm1nb2xNMUhHdi1NSkhGbHhzSUpkc20wU3pn"
+      "title": "Trump says US will resume attacks if Iran does not restrain Hezbollah allies - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRnRDWmZ2cjd6SldKNEFTZ3pKNFBSeE52eUk1cUpuZ3lWdUJDTU5sbXkybHVTLWN1SWVYMDBhMUROTU01VHhaOTh1RVl5TVY3NUI5OEdFbm1IN2toZW45TDltUi1Wbk9QazZRWnpudnV6WmNxc3BmSEIwbzFuRmhSZ29pSU5jWTNkVW1vUjk0RF9PVDVTWG5rOVVJOG9DbG9IcEhuZm9fV2pfbFN1TUcyU0xQd0pmUUhCTVo5YTJkakhjeTZ0MlQwQzhn"
     },
     {
       "score": 2.73,
@@ -120,22 +111,31 @@
       "url": "https://www.bbc.com/news/articles/cx240k9l112o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-06-20",
+      "score": 2.4,
+      "date": "2026-06-19",
       "category": "military",
       "source_type": "news",
-      "title": "Mona Khalil, Lebanon’s turtle advocate, dies after Israeli attack - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQT1pJMzI4QnU4MjM2Q2VvalFxY2dndktVcWpEckI4QkdGdDBPRUtBcnBWV0ZMZ3FZdnRfUGxOWVkySlJIejctN0RQSnVoZU9ycWNiYzRocGc5UTdqT1QwREpKM0xyb09RTlJ6NURPT3hkSnV4bzAtRHBnT2M3ZTFKSDd6cktRNDlQYUJzejBQMVQySE9EdnZvVWdtVDlLSlJDVHdjb1pn0gGrAUFVX3lxTE9fM0hnYnFacjUybnBPaHlKYVVmVGxhQ05GQlNKcWdpTXo2M1FBZ0RJY1ZCQjZYU1FVai1MNUR1eV9MRWx2a0RSQy1nTGxSY1JDVWpCM0h0Y09MR29CRVF6SENEZUE2NElZa2xTYld0R0RRNlVIYjZCb21ERlF0YnRneXpiZFdyMmZQOE01MGRPaHVzT2RzN05LeHhNbVdMaU1sb0pLaXJKNzdOOA"
+      "title": "EXCLUSIVE: Iran's Revolutionary Guards set up covert Iraqi cells to attack Gulf neighbors, sources say - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdVVhdU1ZeHBCU08wQ0tpY3l4MXNnQWVaeFRzakJETHVFV2Q0Y2c3eTc3WjRKaVJBWTNUNkpncjh1WmQ0eFM2LTc0YzZfZzYyZlFwOW9TQ0V5S2cxalFaTWlDUlhrMDBaWU9uV3o5WXZsQjVSREFrQlNHQXNGX2lSbU1FSllXR2pKWFM1M3M2amJjZ0EtUXQtNDRTbWVtMFBuUDU3MUJKdTlDcWhZZ0pNQWRQa210ZVBmNXJmNnM5REM2NGt3eXpn"
     },
     {
-      "score": 2.7,
-      "date": "2026-06-20",
+      "score": 2.4,
+      "date": "2026-06-19",
       "category": "military",
       "source_type": "news",
-      "title": "Al Jazeera cameraman Ahmed Wishah killed in Israeli attack in Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMDZ1SHR3UzRuUnBzR3VJem0zcFpVYUtPYjhCX055ZHlTeEhFdkhYRWhqOHI0UGR0SW1FU3NZX0xJSmhaNjJBY1NPWHoweUVzTjhWZlJGUnVFbE5Oc0JfT09rSWR0U0lYUTl0X05Ydm1FZVVNcERLajNsWExrQUt6di1Pb1lIeElDQTk3bHBrVEg3YWgyRDRkWktWOWVSR05UX2F2enlia3JpS0nSAbABQVVfeXFMT3VhZUdFcmVlaGQ0QWtGaXRjMGFvSVAtd3l1SGEweUJodEgza0drd0ZrRl82RFhSNUJiUl80M0w1LXB1QVlWWEJDeUNuRHdpcFZoYVozOGRvSUY1LVppazhUQm1YMEhiZUFtdEpDaWR5b1NnUnhuMS1UWVplcWFtVkJqYUdkX3JtQkk4ekxwd3VqMlNLSnZ6bkdUVExkS1A1Tk5haklHbmtDVWkySGZqZHU"
+      "title": "Israeli envoy and UN official clash at hearing on children in conflict - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSWREYzZJVno5TDBkWG9GOVZTLVFIQWpkdUN1enNFZ0d0ZmpoUGg0NVlaTnBmT3RxempzMTUxRjZVTTBYZkNHa0ZBdklXZFNlbjNUeEFwN1pRN01JQmFneFpVeXZWekN2SThDUWlncjhCX3lvREFxb1NHcllPeDFFU05ibXJkUjNYbWFhWi0zejhWbGdoWVdiWlVvX0I0MWUy"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-06-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel and Hezbollah agree ceasefire, US says, as more Lebanon strikes reported",
+      "location": "Israel",
+      "url": "https://www.bbc.com/news/articles/cwyk7kkygj5o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
