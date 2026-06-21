@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-06-21T10:05:48.221655+00:00
+**Generated:** 2026-06-21T12:21:35.943573+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Israel (5.4), prev 24h: 16.2, share: 62%.
+Top current hotspot (by risk): Israel (5.6), prev 24h: 15.1, share: 52%.
 
 ## X POST VERSION
 
