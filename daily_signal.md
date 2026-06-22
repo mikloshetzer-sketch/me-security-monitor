@@ -1,6 +1,6 @@
 # Daily OSINT Signal
 
-**Generated:** 2026-06-22T18:18:46.535947+00:00
+**Generated:** 2026-06-22T22:17:00.130672+00:00
 
 ## Summary (last 24h)
 - Events recorded: **25**
