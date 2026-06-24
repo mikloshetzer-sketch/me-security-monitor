@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-24 09:51 UTC",
+    "updated": "2026-06-24 12:30 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-06-18",
     "period_end": "2026-06-24",
-    "total_events": 172,
-    "total_risk": 128.68,
-    "normalized_risk_score": 51.5,
+    "total_events": 174,
+    "total_risk": 134.33,
+    "normalized_risk_score": 53.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 29,
+    "military": 30,
     "security": 3,
-    "political": 63,
-    "other": 77
+    "political": 67,
+    "other": 74
   },
   "source_counts": {
-    "news": 166,
+    "news": 168,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 50.02
+      "risk": 54.07
     },
     {
       "name": "Israel",
-      "risk": 48.01
+      "risk": 47.81
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.3
+      "risk": 11.2
     },
     {
       "name": "Lebanon",
-      "risk": 6.6
+      "risk": 7.1
     },
     {
       "name": "Qatar",
-      "risk": 5.05
+      "risk": 5.1
     }
   ],
   "top_events": [
+    {
+      "score": 2.7,
+      "date": "2026-06-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran says card-based banking hit by cyberattack on three lenders - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRHhTemlqM2FLbkZLRG9tYmpfMVBxREt3dGF3QUNuOE9xLWF5U1A4bXYyVmc1OW1VbmtvZld3d21VNG5wYkRXYzAtRVl5QkN3eDBuc3NDRE54RVpFNUlfRW5lWWYxTWhDRDYtMUtYR1FYYURuclhRZndvMlRlRkl3M0EzYXpjS1c3SVhrcHZaNzdqNjVvUktlUkFKV3d3czRTcWFuZ2VtLWQ0SV9OYUdMMmdMdnpVdw"
+    },
     {
       "score": 2.4,
       "date": "2026-06-22",
@@ -127,15 +136,6 @@
       "title": "Israeli strikes kill at least 20 in Lebanon hours after ceasefire - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbVUyY2ZiaHlmMU01WFZDX2M5c2Y3d3JWekJWMWZTbF9iR3d4UVdDR3ItSWEwSmE1M2taaG5GX2gzbTFZN3V0cUJXV1RzXzZXQ2ZmNWx1emtiVlk0Y3ZCLWQ4cVB3VFpYUmlZZUF1WmFfaUdmY1Ywa2d6MlBLakdUX0hKVzgwQWwzWVpNOXQ5TkhCYzhSVGZlSlJIc3Z6VHF1UndYd2JiMkR0T290dTVZXy1heVlwREF0Vm5z"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-06-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill six people in Gaza including Al Jazeera cameraman, officials say",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/c4gy26p6pwzo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
