@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-25 20:23 UTC",
+    "updated": "2026-06-25 23:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-06-19",
     "period_end": "2026-06-25",
-    "total_events": 153,
-    "total_risk": 121.8,
-    "normalized_risk_score": 48.7,
+    "total_events": 150,
+    "total_risk": 123.55,
+    "normalized_risk_score": 49.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 24,
     "security": 4,
-    "political": 49,
-    "other": 76
+    "political": 50,
+    "other": 72
   },
   "source_counts": {
-    "news": 147,
-    "isw": 6
+    "news": 143,
+    "isw": 7
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 53.8
+      "risk": 56.45
     },
     {
       "name": "Israel",
-      "risk": 40.15
+      "risk": 37.45
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 4.75
     },
     {
       "name": "Qatar",
-      "risk": 4.95
+      "risk": 4.5
     },
     {
       "name": "Lebanon",
       "risk": 4.45
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 4.3
     }
   ],
   "top_events": [
+    {
+      "score": 3.9,
+      "date": "2026-06-25",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, June 25, 2026",
+      "location": "Iran",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-25-2026/"
+    },
     {
       "score": 3.0,
       "date": "2026-06-25",
@@ -127,15 +136,6 @@
       "title": "At least 13 killed and dozens injured after Qatar gas explosion",
       "location": "Qatar",
       "url": "https://www.bbc.co.uk/news/articles/cwy05llpjpno?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-06-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Lebanon Latest: Israeli attacks surge despite ceasefire efforts - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPekRkZnloLVhESGZTMTVYYXlYc25yenJhMHVuVnNJYnVSOUh4Sm55anEtU25xTmpYV0JIOXlxWFQwYWJIZnpYWW9CNjJpQkR2NzlrTk9vQlotRWZRNW1McWF5Ym1qdjd3YVZ5OEUtTWRTMmhoQWE0YkxZSWxaSmNwMmdPSGppT2tpbE9nclpld9IBlAFBVV95cUxNbjhEZjZVR0VnR01OV3NqLVhoeXMxOUV6S29uU0hMMnFjdWRrWWoyTkdPZk5HMlU3azVaVlo0S1RCWk1oYVJ5VUp5UFJVay1Fa2I0eUZSakFkV1lzb0d2STI0ajZfVkJXZ3BPSWdzamlTY1lZNkc4UktBWWVUNUYyLVBSQ1JXZ3MxdlJ6NnFMbXlzbEtq"
     }
   ]
 }
