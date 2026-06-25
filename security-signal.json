@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-25 09:46 UTC",
+    "updated": "2026-06-25 12:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-06-19",
     "period_end": "2026-06-25",
-    "total_events": 164,
-    "total_risk": 127.5,
-    "normalized_risk_score": 51.0,
+    "total_events": 160,
+    "total_risk": 124.3,
+    "normalized_risk_score": 49.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 28,
-    "security": 4,
-    "political": 57,
-    "other": 75
+    "military": 24,
+    "security": 5,
+    "political": 55,
+    "other": 76
   },
   "source_counts": {
-    "news": 158,
+    "news": 154,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 60.65
+      "risk": 60.35
     },
     {
       "name": "Israel",
-      "risk": 37.35
+      "risk": 39.05
     },
     {
       "name": "Gaza Strip",
-      "risk": 8.75
-    },
-    {
-      "name": "Lebanon",
-      "risk": 4.65
+      "risk": 6.15
     },
     {
       "name": "Qatar",
-      "risk": 4.5
+      "risk": 4.95
+    },
+    {
+      "name": "Lebanon",
+      "risk": 3.95
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-06-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli military official says one soldier killed in Lebanon after vehicle overturned - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOW44Wm5kTGNSNWE3SGd2UXVfNzlIUFNXbWM5SlBNZ2gzSWR3eDhsLVZNMU1wOEUyd01OcXVPQ3hVeWx6Sl9VWWR4c0xLQWxvM043anpJb2ppQVZZSHdILWhmd016bWM1Zjh0N3hSa3NCaE91VVdQbnd6VXp1Xy1Mcm5QZnNQdkRkRkRmQk1DQktLUlRmQ3dBQUM4VTJxamdmcTZsZUR4bVdHYjlQbTdCM0VYTm5uX3U4cXVhT1VmaUhXb2c"
+    },
     {
       "score": 2.7,
       "date": "2026-06-24",
@@ -93,15 +102,6 @@
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRHhTemlqM2FLbkZLRG9tYmpfMVBxREt3dGF3QUNuOE9xLWF5U1A4bXYyVmc1OW1VbmtvZld3d21VNG5wYkRXYzAtRVl5QkN3eDBuc3NDRE54RVpFNUlfRW5lWWYxTWhDRDYtMUtYR1FYYURuclhRZndvMlRlRkl3M0EzYXpjS1c3SVhrcHZaNzdqNjVvUktlUkFKV3d3czRTcWFuZ2VtLWQ0SV9OYUdMMmdMdnpVdw"
     },
     {
-      "score": 2.4,
-      "date": "2026-06-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Turkey detains 209 in anti-terror raids as security tightened ahead of NATO summit - Reuters",
-      "location": "Turkey",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPNXNxY1l4MUNFamxWZWhIY2l4UVlRbzJOWWRfOVBUZ1c0UWpib2JoSFhTUlVRQU93ZmN5Rjh3cGZ1SDJOOENjNW5sWmV0TVVqZDdIRjUxeWFSVkhGMTVEVDg5MWdXOERjTUpWUmhqeHo2WHlXQVRSYVZHS2hQeUNxbGpmOE9JdHhPYzlaRzA3Z2J6NzhFS3pMOHhUX0g4UmpYWjg1WllXeXFldkVpVTNUZUMtLVVYUQ"
-    },
-    {
       "score": 2.1,
       "date": "2026-06-22",
       "category": "military",
@@ -129,13 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOLWs2OHl5WVA5bE5meTdpdEJtcnhLdjBMTXltald5eHBVSW9Ha292Zzh5MEcxTS1BNmR6TDRsbVRLX1VwNFFZTm94MEZmUzZhdnhFbjdkNzhCSGE0b2dWLUw4ZTVSMjRfU2ZTMmdfVWpSWU50bXRfUWlpUGZEdzgwT1NZR2RWRHRZZnUzeldSQUsxbEtCTVd4WHUtdDEwRzFtSVgtckFxcDY"
     },
     {
-      "score": 1.8,
-      "date": "2026-06-24",
+      "score": 2.0,
+      "date": "2026-06-25",
       "category": "security",
       "source_type": "news",
-      "title": "Rubio meets Gulf leaders, pledges security amid Iran deal doubts - Reuters",
+      "title": "Rubio tells Gulf allies that Iran deal will ensure their security - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWl9XMUk4OHJjWllyc3MtYkZyTGRkbFoxZnV1Mkl4b1pkMlpMYW9yaDV1T2hTMjc1U3NEb2ZNeFBGUkNQcS13bG5UUkgtWTFON0hpZkQzMHUyWVBTY19KMVlUZEJBWUZPN2ZEblp6T01OODBFV0t0RmY5VXJaQVRZZ1p6ZFkxVXI0WXJtRFJpZ21YNUtxcWttb0FObmtndVdpRGhvYkE0eTVWbW5TLWF4QQ"
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPenV6c1N3dUFDN3dqcUZQNUVKOFVQOXU3dUt5cWEyOG1Ca1VPWmM1Q21qQjJmbEMweExXRDRxNnU3R2NNdXhuekZnVXdPbnZpdi1pUEhrTnRPbzRSTF85MW11MkktaDltTjFldTVfTEVzeFV0dlBmUzg2cVBRYWVrc0w2VXFyX2d6dDFrYmx1WmItNG9SMjI2Rm9KdmJmZ21rLVdlN21ZTzFGQdIBrwFBVV95cUxQWVdlMUFWaC0zT2tLOWpYRG8wSHhEN2NOS1JMcE8wdGxsOW5nT2xqMGhJWlplOThDMWxoRV9ITWo4YUV1bXpZbG91dFVNajgxUUtlcWJSTDRWWG9zY25OQlBCNk5IMzhNcU9IaHZYaHlsT2RGVzBWUHNSNHZ4SlQ4MmZmNlhxcWhtWlY3X3dTNEM0Y3N5S25hVVk1ZE5iVlhyX2FQZGwwbDVsY2dEYk1N"
     }
   ]
 }
