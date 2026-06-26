@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-26 16:28 UTC",
+    "updated": "2026-06-26 20:10 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,15 +9,15 @@
     "period_start": "2026-06-20",
     "period_end": "2026-06-26",
     "total_events": 147,
-    "total_risk": 103.1,
-    "normalized_risk_score": 41.2,
+    "total_risk": 106.2,
+    "normalized_risk_score": 42.5,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 16,
+    "military": 15,
     "security": 2,
-    "political": 46,
+    "political": 47,
     "other": 83
   },
   "source_counts": {
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 50.95
+      "risk": 53.85
     },
     {
       "name": "Israel",
-      "risk": 27.3
+      "risk": 24.7
     },
     {
       "name": "Gaza Strip",
-      "risk": 5.95
+      "risk": 4.85
     },
     {
-      "name": "Oman",
-      "risk": 3.45
+      "name": "Tehran",
+      "risk": 3.0
     },
     {
-      "name": "Lebanon",
-      "risk": 2.95
+      "name": "West Bank",
+      "risk": 3.0
     }
   ],
   "top_events": [
@@ -61,9 +61,27 @@
       "date": "2026-06-26",
       "category": "military",
       "source_type": "news",
-      "title": "UN pauses Strait of Hormuz evacuation plan after cargo ship attacked",
-      "location": "Oman",
-      "url": "https://www.bbc.co.uk/news/articles/cjwg9np904qo?at_medium=RSS&at_campaign=rss"
+      "title": "Trump chides Iran for ship attack after Tehran insists on control of the strait - Reuters",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcFRwZHY1bnhkUUxWazNxYUNVdjlHV2RFN2RBc0ZnS2ZMc1JKQmtSMkRzQ0lIZkN6aXFMeENhTkJ2UURUcnJTNnZRZmdiQWdHcGdHYl9IbmdLa2tmT0VOUDN4Y1dRU0dQWkFNZkNuX2Q4VFVKUE5MUjBEaGpud3czTzdJR2Jrbzl1X2x2VkZsR1lyVjN3dDFnUHhMUXN0M3pmVFdiZnJidUF6ZFViSVpkWXB1V2t1S3d4OGpwQmdhd0ZwODVQN2NF"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump accuses Iran of ceasefire breach after Strait of Hormuz attack",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckg54g0ry0vo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli prosecutors charge six settlers after West Bank mosque attack - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeDQ2VFV3azNJWWpKOXg2eEpRSUhoaFF1dXJick1uSlpxcUgyanc5dk84NzlRWmt2R3NnV0VWWFkzV01UMUtObFlnelBrYVMwLU9tMXJ5clhaRlFReW1EQ2hGU3lJYzVHZU4yZXZLamJMZ0FCR3N3UmpIUU5VY1E5LWVxNGJRSm1OQmtvdUR4U3QtUUpJaGZMbjBsSGFXOEo2bEw2TGoxNXl5NVJyaENB0gG0AUFVX3lxTFBjVnZHNDVnNnpzbnZOVkNmckhXbWtxM1VOdHZfY21pTm9JLS1zdHVSMkg3eldUX2VJRUhEYXBSdXFMME5tWGxmT0hTV1ZnU0U4aTBaNVQ2eDNENUM0WXZrYk56WlNFWkloWlV4MVNYMGlHRWZWQW9uY09zQ3pYcngzQ2xGeTkzajctamM0ZlVYOTdYNlYyMEN3YTczeEFIdV8wOTFGQlRPbzhfRFJVNUNNQWhNZQ"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Israeli attacks kill 2 in southern Lebanon despite ongoing Washington talks - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWVk3Yko3T1c0bUE0OW9iWmFoUTVZQUpockxQamlPZW10QjgxZnUtMzgwRUJfNDZHdVl1Nm1ic1FneFdPU2RuX3RvRXlqYVRFVzR5SDAtNG1uZ21Gd0Jyc1hOckxEOFdFSEhyUzNVbEZ1dHVRMEV5OWt2UGxObWxuMXYwWmZ5X2cwNlU0QjJHeWhQbVFNOVBva2Y0dGRHZFlsQmpzOERjRkZBZ3ZoTmVYWFByNlpfQWPSAbwBQVVfeXFMTVRTZHROTW5XcFFQQzNCWEEwYUFWY2lrYVFGMFIxOG1oMDJrVlVHbURKT211a185dG5aWFo3NEJ4RDBMYXZSZ1cxWm5oZUpBRUtOYW5ZVnJ3SU5RM2wxVFprTHU2bVp1WUg2SDJPU1lZMFpzVUJiamxILVVLc1NWMmRNVnJSMU5vWGJ2ZjAyek9WQjd5LVRIUEhyMkdoLVctNlZFY2d4Q0xDNDBsNUhPaW1SM2hPNW81YUI4WWE"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-06-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says card-based banking hit by cyberattack on three lenders - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRHhTemlqM2FLbkZLRG9tYmpfMVBxREt3dGF3QUNuOE9xLWF5U1A4bXYyVmc1OW1VbmtvZld3d21VNG5wYkRXYzAtRVl5QkN3eDBuc3NDRE54RVpFNUlfRW5lWWYxTWhDRDYtMUtYR1FYYURuclhRZndvMlRlRkl3M0EzYXpjS1c3SVhrcHZaNzdqNjVvUktlUkFKV3d3czRTcWFuZ2VtLWQ0SV9OYUdMMmdMdnpVdw"
-    },
-    {
-      "score": 2.0,
-      "date": "2026-06-26",
-      "category": "security",
-      "source_type": "news",
-      "title": "Montenegro police, FBI arrest Iranian wanted by US for hacking - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdmRhdnQyVHYxWjR1YWdfVmF5MER5YjhZcV9nWWlWMDUzb3pSZjZhS0NFN0pwYnYta084OUFKck15c3ZkUnpUWjhadzhCZmhBWGxUQmx3VDFxc2tkc0YtY2ZtNmhDcFdUZUlPSkFMamNrS1JGSEV5WUYyNkYtelhZTjl4dTItUWh6NEttUS16M3NqNlJBbGZ4eTl3Wkd3U2x6"
     }
   ]
 }
