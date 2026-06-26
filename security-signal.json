@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-26 20:10 UTC",
+    "updated": "2026-06-26 21:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-06-20",
     "period_end": "2026-06-26",
-    "total_events": 147,
-    "total_risk": 106.2,
-    "normalized_risk_score": 42.5,
+    "total_events": 146,
+    "total_risk": 117.6,
+    "normalized_risk_score": 47.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 15,
+    "military": 20,
     "security": 2,
-    "political": 47,
-    "other": 83
+    "political": 44,
+    "other": 80
   },
   "source_counts": {
-    "news": 141,
+    "news": 140,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 53.85
+      "risk": 65.05
     },
     {
       "name": "Israel",
-      "risk": 24.7
+      "risk": 26.4
     },
     {
       "name": "Gaza Strip",
       "risk": 4.85
     },
     {
-      "name": "Tehran",
-      "risk": 3.0
+      "name": "Oman",
+      "risk": 3.45
     },
     {
       "name": "West Bank",
@@ -61,9 +61,27 @@
       "date": "2026-06-26",
       "category": "military",
       "source_type": "news",
-      "title": "Trump chides Iran for ship attack after Tehran insists on control of the strait - Reuters",
-      "location": "Tehran",
+      "title": "US strikes Iran following attack on cargo ship in Strait of Hormuz - Reuters",
+      "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPcFRwZHY1bnhkUUxWazNxYUNVdjlHV2RFN2RBc0ZnS2ZMc1JKQmtSMkRzQ0lIZkN6aXFMeENhTkJ2UURUcnJTNnZRZmdiQWdHcGdHYl9IbmdLa2tmT0VOUDN4Y1dRU0dQWkFNZkNuX2Q4VFVKUE5MUjBEaGpud3czTzdJR2Jrbzl1X2x2VkZsR1lyVjN3dDFnUHhMUXN0M3pmVFdiZnJidUF6ZFViSVpkWXB1V2t1S3d4OGpwQmdhd0ZwODVQN2NF"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "US military conducted strikes against Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdHdZdU1zam5FTTBKVzlNWDBLU3N0dmxTbFRaMjBrVFNwNHBXQVpnTU16SmhxWUdyRWRNUkE0NXdLWE5kMDNnc25rdFIxMk1jSFd4M05LWkxzTDVlTnRBUkotNW5RaHBQaGZFaXE2RWdlb2psdHVqTHV3MU9odHVVdVZ0M1NJX3pMQ0RHcGFsTWlQTXdIY29rSV9HQXJCWW1uZHVUWnQwOA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "US conducts strikes on Iran after attack on cargo ship",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckg590wqxwpo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -73,6 +91,33 @@
       "title": "Trump accuses Iran of ceasefire breach after Strait of Hormuz attack",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/ckg54g0ry0vo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel and Lebanon sign framework agreement after US-brokered talks",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/cg5315n1v5go?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "UN pauses Strait of Hormuz evacuation plan after cargo ship attacked",
+      "location": "Oman",
+      "url": "https://www.bbc.co.uk/news/articles/cjwg9np904qo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "US strikes Iran in response to drone strike on commercial ship - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbElSaDZiOENYRU9tbm5hTFpadjBZLUhyN1ROSC1pYXlHaWhDUmw5ak9Ua3FaWmZLZ0UyZTBuZmJRVTFNM21XMlFSM3plUmJqQUFyeEQyOUp0VVpld2FwcGdwN3k4S0dKLVhiZnNTMDI1QVJGWnYzV0hKdGIta3NtZ0pUUEp5cTQ0LTM2emd4cEc4NHZwVWR0M1g4dG13TGE0S3NPZE9n0gGrAUFVX3lxTE9BWDZuT1B0b240Smo5LVVxZlhwMU9vTWhaWThDejhyNHBLLWpXS2xFRmpwYzNLbmVvSFdtTGUwYjUwWTYzWUZCN3VQbTBlTHE0aE5TZElpTk16ek1STlpYQW9VOVNoTXJpLVlzTkplSDdzUno0UFplVXN0eHRyWXA1dGY5dzdmeVY5RmppSWRMQjEyMDMtaDg1OXhHUjhKTVR4N0w5dm5qSnhxUQ"
     },
     {
       "score": 3.0,
@@ -91,51 +136,6 @@
       "title": "Israeli military official says one soldier killed in Lebanon after vehicle overturned - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOW44Wm5kTGNSNWE3SGd2UXVfNzlIUFNXbWM5SlBNZ2gzSWR3eDhsLVZNMU1wOEUyd01OcXVPQ3hVeWx6Sl9VWWR4c0xLQWxvM043anpJb2ppQVZZSHdILWhmd016bWM1Zjh0N3hSa3NCaE91VVdQbnd6VXp1Xy1Mcm5QZnNQdkRkRkRmQk1DQktLUlRmQ3dBQUM4VTJxamdmcTZsZUR4bVdHYjlQbTdCM0VYTm5uX3U4cXVhT1VmaUhXb2c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran, Israel and the Bomb - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPQjNHRVFzUGtEUGxUQ1B0ZzdiY3hjTWxsRWRUcVAwMnJ4ZC00bUFOYlRjT0h5LXBVM0pSQ2pISnpULUFwVXI1eVQwdl9QejdNRGNOV0NKUlBsUW5tM0NrQ2MweklCb3Zia1QxVW5rWUI1LUVSQTRncGZfcWllRUR0cVl0NWFuX2UtdDJIMHQ1SWVtS0XSAZgBQVVfeXFMTTBaQy1JOElJTl8za1pPdFNWcEZaUlJxN0Mtdk1UUTZtYlM0UE1IRVp3TFh0OFp2VHlzMHgyZklyTmUyTXFTd1RudVlXV3p3ZE9zWDdqN3l1WEg4NXRTV0FYQ21rUXVCNTh1QU5ZNlh6RENiRDRtVjVnbDl1Y2ZPZTlObGQ0bUdpSnFBSWxLWDZqeklYbVR4d0c"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "US reopens embassy in Kuwait months after Iranian attack - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRUQxb1JiV2g3ZXFqNmRfSFZQZXV1bEk2SmJsay1PVkdGdF9SUV9RaTk2OUVtUDZBVU00ZzZfN29lNV95dzhEa1ltUm1LbUlIQjNjdWlQTnVJWEhxS21OOFBNZ0pYWS1yamVDbWpzR0w1dDFwY2VOSTBtX180cHZRUVNuNVI1TFpieG42U3RZY3JBcTFLSnRMellod01TMmRmeXkwcS1SM2h2STA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "US forces killed Islamic State leader in Syria airstrike, Central Command says - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdk1qNTVsWmFhR1hpMjZOeTl5UkJkVWY2QTNuZmpZQkQzUDc4cWlBZTF3MGtFZ18taGVQbG1MVWQ5aVZZck1CcTEzUHBTY0dDcU1Wam12QW9oZGNjSjZVYXc2THpUa3YwTkg2S25HVzB1ZDhNd2VpSzFvWjBheWhndUpNeUs4WUl0ekw4Z2JmSXNXOXNvZUxjYkExbVg1TVgwRDZRMDdkWW8tRFZtM0ZiZVl6SDhhRDJJSy1GR1RxVnlQelFQRUtJ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says it may never be known who was at fault for strike on girls' school in Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNN1B5bUxhcEtjTm9wN01telludk12SlNOTlk3cGMyTlFEcGJsN1VuZ2VERWZuQWJsTWlRcnI2bTlZUDdnLWZxRzlqMWQzX3BINDJLdmgzR1duN28zdW5DM3hFZDJjeVZMTWsxM1VnUUpqZVdfOWJ6cjF5ZHhnWENSTkFZTUcyMVJSZ2N0QWxfTk81M0dBY0tDSHJjWEo1N1NKT3VjSWNKenR4OWZwbjZHRVY5QQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill 2 in southern Lebanon despite ongoing Washington talks - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWVk3Yko3T1c0bUE0OW9iWmFoUTVZQUpockxQamlPZW10QjgxZnUtMzgwRUJfNDZHdVl1Nm1ic1FneFdPU2RuX3RvRXlqYVRFVzR5SDAtNG1uZ21Gd0Jyc1hOckxEOFdFSEhyUzNVbEZ1dHVRMEV5OWt2UGxObWxuMXYwWmZ5X2cwNlU0QjJHeWhQbVFNOVBva2Y0dGRHZFlsQmpzOERjRkZBZ3ZoTmVYWFByNlpfQWPSAbwBQVVfeXFMTVRTZHROTW5XcFFQQzNCWEEwYUFWY2lrYVFGMFIxOG1oMDJrVlVHbURKT211a185dG5aWFo3NEJ4RDBMYXZSZ1cxWm5oZUpBRUtOYW5ZVnJ3SU5RM2wxVFprTHU2bVp1WUg2SDJPU1lZMFpzVUJiamxILVVLc1NWMmRNVnJSMU5vWGJ2ZjAyek9WQjd5LVRIUEhyMkdoLVctNlZFY2d4Q0xDNDBsNUhPaW1SM2hPNW81YUI4WWE"
     }
   ]
 }
