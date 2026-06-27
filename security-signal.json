@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-27 04:17 UTC",
+    "updated": "2026-06-27 08:50 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-21",
     "period_end": "2026-06-27",
-    "total_events": 140,
-    "total_risk": 102.46,
-    "normalized_risk_score": 41.0,
+    "total_events": 132,
+    "total_risk": 100.61,
+    "normalized_risk_score": 40.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 17,
+    "military": 18,
     "security": 3,
-    "political": 42,
-    "other": 78
+    "political": 39,
+    "other": 72
   },
   "source_counts": {
-    "news": 134,
+    "news": 126,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 57.51
+      "risk": 55.46
     },
     {
       "name": "Israel",
-      "risk": 22.35
+      "risk": 20.95
     },
     {
       "name": "Oman",
       "risk": 3.45
     },
     {
-      "name": "Gaza Strip",
-      "risk": 3.15
+      "name": "Tehran",
+      "risk": 3.0
     },
     {
-      "name": "West Bank",
-      "risk": 2.7
+      "name": "Gaza Strip",
+      "risk": 2.75
     }
   ],
   "top_events": [
@@ -61,7 +61,7 @@
       "date": "2026-06-27",
       "category": "military",
       "source_type": "news",
-      "title": "US conducts strikes on Iran after attack on cargo ship",
+      "title": "US strikes Iran after attack on cargo ship",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/ckg590wqxwpo?at_medium=RSS&at_campaign=rss"
     },
@@ -73,6 +73,15 @@
       "title": "US strikes Iran in response to drone strike on commercial ship - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbElSaDZiOENYRU9tbm5hTFpadjBZLUhyN1ROSC1pYXlHaWhDUmw5ak9Ua3FaWmZLZ0UyZTBuZmJRVTFNM21XMlFSM3plUmJqQUFyeEQyOUp0VVpld2FwcGdwN3k4S0dKLVhiZnNTMDI1QVJGWnYzV0hKdGIta3NtZ0pUUEp5cTQ0LTM2emd4cEc4NHZwVWR0M1g4dG13TGE0S3NPZE9n0gGrAUFVX3lxTE9BWDZuT1B0b240Smo5LVVxZlhwMU9vTWhaWThDejhyNHBLLWpXS2xFRmpwYzNLbmVvSFdtTGUwYjUwWTYzWUZCN3VQbTBlTHE0aE5TZElpTk16ek1STlpYQW9VOVNoTXJpLVlzTkplSDdzUno0UFplVXN0eHRyWXA1dGY5dzdmeVY5RmppSWRMQjEyMDMtaDg1OXhHUjhKTVR4N0w5dm5qSnhxUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran war day 120: Tehran condemns US strikes, says it violates MoU - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPOEJwUXpYZkFYVnduaDY5ejFiaGxOS3c4TWxmVndRQXRmOGhXZTlNOEdWOEt6V2xZblJLQnVXdjBZc3h2YlptNmdJV0hPODF1UzVzbkRHVzFHRDJnak96MUk5ZEVhd1FfZkF1LXAwcDNBa2ZuMG45V01jTlpITXBrOTBiOC1yTDVhLVlya25zTFJ2SjB5WGl0bnVrNnFab0NTTXNOTEZpdmFUcUxEY3Z30gG0AUFVX3lxTE02bDJNR1ZYRU1mUDMzdVY1VkJ4N0ZYX2VlREZNTWZpZVNxMzVVczIwNURZdkN5X25TSTNha2VWN0ptSzBjc09aQUltZHlVWEJzUE1hck5rcXJPWHJ1T09XX0NkZVBJQnMyVElVQ3h1ZnVyeV92dzM1ZnpraUtieWQ4UzRfUVpWU2EwMFZJYXZ4UFhMMmJrN3V6M0RqclZQeHZDeEg1aTN2ZVBYdGNUaE5NQWZkLQ"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Israeli prosecutors charge six settlers after West Bank mosque attack - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeDQ2VFV3azNJWWpKOXg2eEpRSUhoaFF1dXJick1uSlpxcUgyanc5dk84NzlRWmt2R3NnV0VWWFkzV01UMUtObFlnelBrYVMwLU9tMXJ5clhaRlFReW1EQ2hGU3lJYzVHZU4yZXZLamJMZ0FCR3N3UmpIUU5VY1E5LWVxNGJRSm1OQmtvdUR4U3QtUUpJaGZMbjBsSGFXOEo2bEw2TGoxNXl5NVJyaENB0gG0AUFVX3lxTFBjVnZHNDVnNnpzbnZOVkNmckhXbWtxM1VOdHZfY21pTm9JLS1zdHVSMkg3eldUX2VJRUhEYXBSdXFMME5tWGxmT0hTV1ZnU0U4aTBaNVQ2eDNENUM0WXZrYk56WlNFWkloWlV4MVNYMGlHRWZWQW9uY09zQ3pYcngzQ2xGeTkzajctamM0ZlVYOTdYNlYyMEN3YTczeEFIdV8wOTFGQlRPbzhfRFJVNUNNQWhNZQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli military official says one soldier killed in Lebanon after vehicle overturned - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPOW44Wm5kTGNSNWE3SGd2UXVfNzlIUFNXbWM5SlBNZ2gzSWR3eDhsLVZNMU1wOEUyd01OcXVPQ3hVeWx6Sl9VWWR4c0xLQWxvM043anpJb2ppQVZZSHdILWhmd016bWM1Zjh0N3hSa3NCaE91VVdQbnd6VXp1Xy1Mcm5QZnNQdkRkRkRmQk1DQktLUlRmQ3dBQUM4VTJxamdmcTZsZUR4bVdHYjlQbTdCM0VYTm5uX3U4cXVhT1VmaUhXb2c"
     }
   ]
 }
