@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-27 08:50 UTC",
+    "updated": "2026-06-27 11:47 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-21",
     "period_end": "2026-06-27",
-    "total_events": 132,
-    "total_risk": 100.61,
-    "normalized_risk_score": 40.2,
+    "total_events": 135,
+    "total_risk": 109.46,
+    "normalized_risk_score": 43.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 18,
+    "military": 21,
     "security": 3,
     "political": 39,
     "other": 72
   },
   "source_counts": {
-    "news": 126,
+    "news": 129,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 55.46
+      "risk": 62.31
     },
     {
       "name": "Israel",
-      "risk": 20.95
+      "risk": 21.15
+    },
+    {
+      "name": "West Bank",
+      "risk": 4.8
     },
     {
       "name": "Oman",
-      "risk": 3.45
+      "risk": 3.15
     },
     {
       "name": "Tehran",
       "risk": 3.0
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 2.75
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Iran Update Special Report, June 25, 2026",
       "location": "Iran",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-25-2026/"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran says it struck US-linked targets in response to US attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMXpUT2FRX1NCT3hyTF9kaXZmRVFXeDF5dmliRDNpb0R1S2VtYXJOYnMtWUlZNlM2bkRVX2twR2tqVElmeENmQzBnZ3ZyNXRiZGFZT2lpR2tuVU5ISkdTSERPb05BWDdrRHZSVV9UWkZ6S2lxUVM1VHo0dk0yZzJKVlZiTGVuaTJDRHcwdkRFZ1ktT2RHTkFoQmZVeGhuX2wzRjh0MGIyMEZQUmhXVTlhcg"
     },
     {
       "score": 3.0,
@@ -82,6 +91,15 @@
       "title": "Iran war day 120: Tehran condemns US strikes, says it violates MoU - Al Jazeera",
       "location": "Tehran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPOEJwUXpYZkFYVnduaDY5ejFiaGxOS3c4TWxmVndRQXRmOGhXZTlNOEdWOEt6V2xZblJLQnVXdjBZc3h2YlptNmdJV0hPODF1UzVzbkRHVzFHRDJnak96MUk5ZEVhd1FfZkF1LXAwcDNBa2ZuMG45V01jTlpITXBrOTBiOC1yTDVhLVlya25zTFJ2SjB5WGl0bnVrNnFab0NTTXNOTEZpdmFUcUxEY3Z30gG0AUFVX3lxTE02bDJNR1ZYRU1mUDMzdVY1VkJ4N0ZYX2VlREZNTWZpZVNxMzVVczIwNURZdkN5X25TSTNha2VWN0ptSzBjc09aQUltZHlVWEJzUE1hck5rcXJPWHJ1T09XX0NkZVBJQnMyVElVQ3h1ZnVyeV92dzM1ZnpraUtieWQ4UzRfUVpWU2EwMFZJYXZ4UFhMMmJrN3V6M0RqclZQeHZDeEg1aTN2ZVBYdGNUaE5NQWZkLQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "US, Iran trade strikes: What to know, will it unravel the MoU? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSkNZUnZVQm9OZzRUUFVOVG9URHVIQUhQekhXYnMxTEhiU0tkU1FjMlkydFJtQ2NSb0dtX3ZwZ25neEF3VmQ3RG5CWHJQdUN2V2VwejJVS2N4cEZjMlI5bVN5aDUwcWs0OTZfMzJFY0VzeEx1b0FJR0JVNTdFSEMyMnQ0MDl5ckVOVE1Iank4R05iWjlheWV5NVIzYlFzVjdI0gGmAUFVX3lxTE4tNHNGbWxpSGdPSzR6Yk5RenlIenFSdU5MTVBxRnBHaG1aRXg2ZmhMTkNNd2VYSkJlVHQ3VWw1Q0p1Z2R3V1NnUjhrYnc1OWxxUV9xUTJGbHpGTml3SkRTUmlFUTJoQTh1bGtNc1FfbE9OeF9EUmdUZkxCaEh1aXBwaHk4X0pKVUYzdFZCTkVYSnB3ODNXMlN2Q2VPT0x1N2VWUW5VREE"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Israel and Lebanon sign framework agreement after US-brokered talks",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/cg5315n1v5go?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "UN pauses Strait of Hormuz evacuation plan after cargo ship attacked",
-      "location": "Oman",
-      "url": "https://www.bbc.co.uk/news/articles/cjwg9np904qo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli prosecutors charge six settlers after West Bank mosque attack - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeDQ2VFV3azNJWWpKOXg2eEpRSUhoaFF1dXJick1uSlpxcUgyanc5dk84NzlRWmt2R3NnV0VWWFkzV01UMUtObFlnelBrYVMwLU9tMXJ5clhaRlFReW1EQ2hGU3lJYzVHZU4yZXZLamJMZ0FCR3N3UmpIUU5VY1E5LWVxNGJRSm1OQmtvdUR4U3QtUUpJaGZMbjBsSGFXOEo2bEw2TGoxNXl5NVJyaENB0gG0AUFVX3lxTFBjVnZHNDVnNnpzbnZOVkNmckhXbWtxM1VOdHZfY21pTm9JLS1zdHVSMkg3eldUX2VJRUhEYXBSdXFMME5tWGxmT0hTV1ZnU0U4aTBaNVQ2eDNENUM0WXZrYk56WlNFWkloWlV4MVNYMGlHRWZWQW9uY09zQ3pYcngzQ2xGeTkzajctamM0ZlVYOTdYNlYyMEN3YTczeEFIdV8wOTFGQlRPbzhfRFJVNUNNQWhNZQ"
     }
   ]
 }
