@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-28 21:20 UTC",
+    "updated": "2026-06-28 23:19 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-06-22",
     "period_end": "2026-06-28",
-    "total_events": 130,
-    "total_risk": 134.52,
-    "normalized_risk_score": 53.8,
+    "total_events": 125,
+    "total_risk": 136.37,
+    "normalized_risk_score": 54.5,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
-    "security": 4,
-    "political": 31,
-    "other": 61
+    "military": 35,
+    "security": 3,
+    "political": 29,
+    "other": 58
   },
   "source_counts": {
-    "news": 124,
-    "isw": 6
+    "news": 118,
+    "isw": 7
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 80.22
+      "risk": 82.92
     },
     {
       "name": "Israel",
-      "risk": 30.5
+      "risk": 30.4
     },
     {
       "name": "West Bank",
       "risk": 4.55
     },
     {
-      "name": "Qatar",
+      "name": "Iraq",
       "risk": 4.2
     },
     {
-      "name": "Iraq",
-      "risk": 3.7
+      "name": "Qatar",
+      "risk": 4.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.9,
+      "date": "2026-06-28",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, June 28, 2026",
+      "location": "Iran",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-28-2026/"
+    },
     {
       "score": 3.0,
       "date": "2026-06-28",
@@ -61,18 +70,18 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Qatar says citizen killed from shrapnel due to 'military operations' - Reuters",
-      "location": "Qatar",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ21SZFIxTGtjZXk3Q3hZMk52T1YzWHAwSE5KaURkR2VjcHdnZEotNm9qdTJDRXFQS3kzamppMjRZbDJaamFmNlQtVC1yeGh4RV9jRkpyRGVnaURYN19nU2t4UHNOOEFYS1RHUU5TdUFKTVREX0otR2hrajJyaUZjWDVwaDVzUDBhY19PVW92NmNXcVZadVEtb3NLY2RGWUpMQUFJSjhWc3hTalVjanRrdUln"
+      "title": "Gulf markets mixed as US-Iran trade attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0w3QkJTYncxeTYxQlBfSFJ4TDRIRFYwR0tmMTdnUXFVZDhudGpnOG9aeXBNMWZtYzF5M2dkaENRU2p1RVVuVmsyZjVPWHU1NHloT3duaTRuREwzX292VzVuYXd1RW5tZ0NjYkQxUnJYOWtLT1RVX0I3Z29QYU1SZ241SkpScnBNdWF0dm12REhmR0ozS1BzeXNB"
     },
     {
       "score": 3.0,
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Gulf markets mixed as US-Iran trade attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0w3QkJTYncxeTYxQlBfSFJ4TDRIRFYwR0tmMTdnUXFVZDhudGpnOG9aeXBNMWZtYzF5M2dkaENRU2p1RVVuVmsyZjVPWHU1NHloT3duaTRuREwzX292VzVuYXd1RW5tZ0NjYkQxUnJYOWtLT1RVX0I3Z29QYU1SZ241SkpScnBNdWF0dm12REhmR0ozS1BzeXNB"
+      "title": "Qatar says citizen killed from shrapnel due to 'military operations' - Reuters",
+      "location": "Qatar",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ21SZFIxTGtjZXk3Q3hZMk52T1YzWHAwSE5KaURkR2VjcHdnZEotNm9qdTJDRXFQS3kzamppMjRZbDJaamFmNlQtVC1yeGh4RV9jRkpyRGVnaURYN19nU2t4UHNOOEFYS1RHUU5TdUFKTVREX0otR2hrajJyaUZjWDVwaDVzUDBhY19PVW92NmNXcVZadVEtb3NLY2RGWUpMQUFJSjhWc3hTalVjanRrdUln"
     },
     {
       "score": 3.0,
@@ -124,18 +133,9 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Gulf countries attacked after US launches second round of strikes on Iran - Al Jazeera",
+      "title": "IRGC doubles down as Iran-US MoU jeopardised by Hormuz strikes - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNaXYtWFZFa0FRbExLZGZMeVZGX1FDVXBrdERHZ0xLbGpqVl80SWRpcUJkV3dDOFgxb1VmelN6S01sUG9FMmNId2NRODBRVUxGb1BodldkR3lfVXctb0NFelhacVdLRnJqWDQzNmpRWl9KazJQZTRmRk50U19ySHdjLU5ya0dnekZ3Qk9QR1JWM3B3M0lWYkh5Tk9yVXo4X2V6VHczTEE2NXlPSWdNV3R0Q0Zma0UwX2tUSUxJTjBlQXdNZ9IBxwFBVV95cUxNYUpEYmxVaXM5VHJwLXBReHhweTMwdm13STVQOEJnd1Fud09yV2xrYTJWcWRyWlNibDZIS0xOYnZvMmZmX0NHazZxZEtPclc1R1NKQlpieGRrNVFIRW9yaGFrSXMzRFhrY1FFVmRNVG5TWTVEOEhhSFlrSnJiYU1vcGlkX2x2Zlkyc1hGMEYwdHFZVDllRnRYZmhwaUo1TnVWdUhCdFp4SVhOZFNvc04zU09id0IyWmFpSkpYYlplbHdYRlExZ1Rj"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran and US trade attacks as Strait of Hormuz ceasefire falters - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeGlodE9kN0NOM3QzVkt2a28zV2RxUlRqU21zLTVrblAtTzRTTWNXWEs5VTFnejJBTU5ld01QdWxrc1Iwck8tMkZNY1hnY25CU1B2bHNFcFU3MmE3UnUwdkd2ZGdGLVBTVWoxeDA3a1hkWTBpNElnZFFPbldWZlJkb1RqaFR3RXFfU01ldVVpbnBGOU9ZVWwwRG1xR3VyZ2fSAaQBQVVfeXFMUDFIZFdNakJIOVRRdEVoQ3NnYWZZVEx1b2QtN19vYjhvamxHRHA0M1ZabFk1UXp4cnh1Rlp3OVRXMkY5TjhPLU1SaUQ2X3hTV3A4bDdkX2tVZGNfWFUyQkUwSUhSSmVQTkpfQ3I5Y3lOQUhjWnRoS3pETERROFJ1Uld0Q2d5V1pPbERxc2R3WkxiWFBEb1ZzcmZaSDIwNWx4Rk9EVzY"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWXhaa3JKU3UyX3FOYnhUTVhlVjcwV2hvdmZrdnZadHA1RnQ0TU4ycEhoeVVyZmFCeWxKMTJDY2Y0ZFZpYmllSkVUcE5XSFJYVmxDWW5ia3drMEJnTHl2ZnN3cXlTNmpQSFNvdEtvMmNaMU9wNS1jcUQ4NU5tS0pONVhRY1RJLUJJS2kxcnB5Um5jdVFVMWJaZnpsN19zR3lJOVlsWk530gGrAUFVX3lxTFB0cDZxdEUwUy1OWXV6TVg5WXRGZTR0U25lSFJ3Zk4zOFFMTW11NkxFdnNiUEgya21IV2VfQUdCMno2bVVLTTB2UERSMWQwZUVmSzBlaEJaU2hETlZHTW9TSUlVa3ZxU25OSkp5bkZKQ0l4SHZ5OTRfQW9nUmJyZFQycHBLM3IxZFg5UzBzWmFyOC1aUUZfVzNlWnpOYmZzcDdxZXN1RXRUeVZRTQ"
     }
   ]
 }
