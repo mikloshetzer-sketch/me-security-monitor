@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-28 14:17 UTC",
+    "updated": "2026-06-28 17:36 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-06-22",
     "period_end": "2026-06-28",
-    "total_events": 126,
-    "total_risk": 123.82,
-    "normalized_risk_score": 49.5,
+    "total_events": 131,
+    "total_risk": 134.82,
+    "normalized_risk_score": 53.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
+    "military": 34,
     "security": 5,
-    "political": 35,
-    "other": 55
+    "political": 33,
+    "other": 59
   },
   "source_counts": {
-    "news": 120,
+    "news": 125,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 73.17
+      "risk": 84.82
     },
     {
       "name": "Israel",
-      "risk": 24.4
-    },
-    {
-      "name": "Iraq",
-      "risk": 5.7
+      "risk": 26.9
     },
     {
       "name": "West Bank",
-      "risk": 4.55
+      "risk": 5.05
     },
     {
-      "name": "Syria",
-      "risk": 3.2
+      "name": "Iraq",
+      "risk": 3.7
+    },
+    {
+      "name": "Oman",
+      "risk": 2.8
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-06-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gulf markets mixed as US-Iran trade attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0w3QkJTYncxeTYxQlBfSFJ4TDRIRFYwR0tmMTdnUXFVZDhudGpnOG9aeXBNMWZtYzF5M2dkaENRU2p1RVVuVmsyZjVPWHU1NHloT3duaTRuREwzX292VzVuYXd1RW5tZ0NjYkQxUnJYOWtLT1RVX0I3Z29QYU1SZ241SkpScnBNdWF0dm12REhmR0ozS1BzeXNB"
+    },
     {
       "score": 3.0,
       "date": "2026-06-28",
@@ -88,6 +97,15 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
+      "title": "What is Article 5 of Iran-US MoU, and why is it blamed for Hormuz strikes? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYURWUjJMTTRvSlpDdkVnSDNDVHJkdFN1elNmSTFsdExZN0lSQ2FCdWZzWGUycV9JSklnVjJ6RFA4TEhwdDd5X3JFcHhsa1lMaWVmQ3JmOU56N2dFdE1iSnAxVjJPR0pDYjR2SU9MNVJZNVZJZEtLdkhELVZLWGdCVi1xMExwRXJ5M3I4Tm9jaXhjSVd3ZnFyM240RUFJRHFfMnppb2JiZU1FLWlCU2xPRNIBtgFBVV95cUxOdkpnZTZnekQzTlZEVWJzb24tdUpVNmxVQVo1OXRzQ3JpRmRMeVBBRTFqeGJkVEZWM1dfaTBUZEI1WENtQlFrLVIwTl9mZzlPOWthMnNDZ1M2OTZzU05CcHA2MGprSTlwLXVEeHRqYlZhdmhOLW8yc3hfRjJ1dVpZam1NeTB1ZTh6T21uT0VfVGxlTkJjZFBBRlJTX25CaUFHUGFYVXZaT2VHMkhLUmYzNzVEMHlzZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-28",
+      "category": "military",
+      "source_type": "news",
       "title": "Gulf countries attacked after US launches second round of strikes on Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNaXYtWFZFa0FRbExLZGZMeVZGX1FDVXBrdERHZ0xLbGpqVl80SWRpcUJkV3dDOFgxb1VmelN6S01sUG9FMmNId2NRODBRVUxGb1BodldkR3lfVXctb0NFelhacVdLRnJqWDQzNmpRWl9KazJQZTRmRk50U19ySHdjLU5ya0dnekZ3Qk9QR1JWM3B3M0lWYkh5Tk9yVXo4X2V6VHczTEE2NXlPSWdNV3R0Q0Zma0UwX2tUSUxJTjBlQXdNZ9IBxwFBVV95cUxNYUpEYmxVaXM5VHJwLXBReHhweTMwdm13STVQOEJnd1Fud09yV2xrYTJWcWRyWlNibDZIS0xOYnZvMmZmX0NHazZxZEtPclc1R1NKQlpieGRrNVFIRW9yaGFrSXMzRFhrY1FFVmRNVG5TWTVEOEhhSFlrSnJiYU1vcGlkX2x2Zlkyc1hGMEYwdHFZVDllRnRYZmhwaUo1TnVWdUhCdFp4SVhOZFNvc04zU09id0IyWmFpSkpYYlplbHdYRlExZ1Rj"
@@ -97,9 +115,18 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Iran attacks Kuwait and Bahrain in response to US strikes - Al Jazeera",
+      "title": "Iran and US trade attacks as Strait of Hormuz ceasefire falters - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeGlodE9kN0NOM3QzVkt2a28zV2RxUlRqU21zLTVrblAtTzRTTWNXWEs5VTFnejJBTU5ld01QdWxrc1Iwck8tMkZNY1hnY25CU1B2bHNFcFU3MmE3UnUwdkd2ZGdGLVBTVWoxeDA3a1hkWTBpNElnZFFPbldWZlJkb1RqaFR3RXFfU01ldVVpbnBGOU9ZVWwwRG1xR3VyZ2fSAaQBQVVfeXFMUDFIZFdNakJIOVRRdEVoQ3NnYWZZVEx1b2QtN19vYjhvamxHRHA0M1ZabFk1UXp4cnh1Rlp3OVRXMkY5TjhPLU1SaUQ2X3hTV3A4bDdkX2tVZGNfWFUyQkUwSUhSSmVQTkpfQ3I5Y3lOQUhjWnRoS3pETERROFJ1Uld0Q2d5V1pPbERxc2R3WkxiWFBEb1ZzcmZaSDIwNWx4Rk9EVzY"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel strikes Lebanon, testing days-old peace deal - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOV0gxOUhHMlZ5TUhsMkxMN3hkWDgzT0ZYVzFaTDRIMTNVZlpjdzJSWDgxaVpZOFBNeEtocm5YWE1waEhadmJadnFzUGNfVmU5MGl6aEVjZDJZLWNUSm44Vl95UTVlMVVoOWZoM2tVMjFDd0FfbHpSbFdDTjF6YklUQnhoTFlYempLR3Z2c0t5QlpMUWRlSnfSAZsBQVVfeXFMTmhkNG5kaU80dDBmemNmT2dDLXBzX3pob0piSUpxbVVadHVVNEZuc2xFTG5BWnpDZkFaVDEwT0YzUDJRY2VYd2ZkdDBNT2FXMG84MVZsOUhBcmZIcnBTV0VQVUdrQWJ1MDRHRGdoVUFuc2M1TGNIYWJYc3l4dUJ5WWs3d05zWE5WZnUySHRMRkhYN0NQSVZvV3VmMms"
     },
     {
       "score": 2.73,
@@ -109,33 +136,6 @@
       "title": "Iran Update Special Report, June 25, 2026",
       "location": "Iran",
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-25-2026/"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says it struck US-linked targets in response to US attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMXpUT2FRX1NCT3hyTF9kaXZmRVFXeDF5dmliRDNpb0R1S2VtYXJOYnMtWUlZNlM2bkRVX2twR2tqVElmeENmQzBnZ3ZyNXRiZGFZT2lpR2tuVU5ISkdTSERPb05BWDdrRHZSVV9UWkZ6S2lxUVM1VHo0dk0yZzJKVlZiTGVuaTJDRHcwdkRFZ1ktT2RHTkFoQmZVeGhuX2wzRjh0MGIyMEZQUmhXVTlhcg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Explosive drone targets Iranian Kurdish opposition camp north of Iraq's Erbil, security sources say - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaW5xT1FoZjhhZUMxZlZNYzF1S2ZkeXYzTWk1d3EwaXE5TTJhd1RfT1pBeXN1aE4weWdWUWlkYkNnV0RXcXFHU2tuTjN2bDBYMDhTeExHSDdOY3hZT2FlcHZOM2RFZ1hVeWc1VmRDaV9mS0U4SWpkenBra1JIb3YtYzFmNHVrVG80d19hTVI0Z3RCcFR2UFFZVGs0bmF0bTBfUkRHZnVfYWxpV0FmbE9CeGV2QXZZdVRUVUhldXh6Sk95OEppV3c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran and US step up attacks and threaten to escalate - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOa1VBd0lTLXNIN1ZWWnpuTUVydFpzcmdpU2ZnRFRjVlk2djhWNk1HNi1Hd1V4Q3d4czhkOHE3TzdmQ045Wkl2bUktNURLTTdNU1ZJZGhKbDd5YnY3RXZCak5OTXZNTVM1V1lpM0F1WG9tOTJOYy1zRUY4VG8wazNTU29wRFh5clkzMnFxeWdBWUdyVk1GVmhWUDRmT3E5WTJkSmlaWFJWYk5RUXQ3QnRiTWUyRE81T0d1ODhYSDJEM0FTNUxBZXFmbGtoX3F4SkE"
     }
   ]
 }
