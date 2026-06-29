@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-29 18:25 UTC",
+    "updated": "2026-06-29 21:44 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-23",
     "period_end": "2026-06-29",
-    "total_events": 137,
-    "total_risk": 160.06,
-    "normalized_risk_score": 64.0,
+    "total_events": 136,
+    "total_risk": 161.81,
+    "normalized_risk_score": 64.7,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 46,
+    "military": 47,
     "security": 3,
-    "political": 23,
+    "political": 21,
     "other": 65
   },
   "source_counts": {
-    "news": 131,
+    "news": 130,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 93.01
+      "risk": 92.56
     },
     {
       "name": "Israel",
-      "risk": 33.35
+      "risk": 32.65
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.4
+      "risk": 12.1
+    },
+    {
+      "name": "Iraq",
+      "risk": 4.05
     },
     {
       "name": "Middle East",
-      "risk": 4.3
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 3.6
+      "risk": 3.8
     }
   ],
   "top_events": [
@@ -70,9 +70,18 @@
       "date": "2026-06-29",
       "category": "military",
       "source_type": "news",
-      "title": "Wall St indexes climb as US, Iran halt attacks; Comcast surges on spin-off plan - Reuters",
+      "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills three Gaza Palestinians, including a child, Gaza health ministry says - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNnVPX2hUbm9nZjFJbVVhbG5xcVExZHJfWU96Nm9qVWZFcWxxX3pGaENMX1Z5WUZ2R2tTZ2p1QTF1Y2VWMGdVOThJazE5dTNXeF9LV1ByVUtZWU1Kc2FUQ2R5R284d0trVFZxT0l5N2d4YnRxdGdDcWl2TUZhOUU3UGUybEZiMzJyMVF6OGFBQXRyX1ZHcmlmWkNERzlzbThYTlVONURKN2ozZVM2VHYwUnJsTjlWLVR3M3hPSm03S24tdU1QSnFV"
     },
     {
       "score": 3.0,
@@ -115,7 +124,7 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Oil rises on US-Iran strikes; cautious hopes for shipping cap gains - Reuters",
+      "title": "Oil rises on US-Iran strikes, cautious hopes for shipping cap gains - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQeVE4MTEtZkdxUjFqY0VNeW1uZ09lM01DRkRxcVRkTzNFajVCMmx6QWVLdG9NQmRaMFBIdmswQ09GaExRMnNvV1lvS044S3oxQXVOSjYtcmhVelkxbmxJZ0JxOXRJOWNQbmhmSFNpalZUTVEzRldFZ01XdTdtYlhOZDdCazRjeHlJUi1ReEctQ1hfQ2toMnpZQjJXd3BJOWRBNWR4NDczX0diZ09D"
     },
@@ -127,15 +136,6 @@
       "title": "Iran canceled participation in technical talks over recent attacks, official tells state TV - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcjJ0V01LU0UwTXVYdzY5LXk2SURZV0t2cVhsZ1NyWVlHUklkeHVKZ1FQTHQ5bVdwcWFQZ09RajN0YXFsY01qR1J1OVNJcF96Qkg4SndTX1hzU0REN29aWDZfMHNkVGhzZC1qdVkzNlJtX2dscC1EZU9yM1lBSmNxZ3Z4cF9oSEdXLXRHc3hkSjU2NUN6UGNEM0ItSjl0OEJtcjR6VnN1czEtTEpRYzlTOTJ0dVRjbTVlYWZySkg0QW0zU29uR1VUdXJ1d2k"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Qatar says citizen killed from shrapnel due to 'military operations' - Reuters",
-      "location": "Qatar",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ21SZFIxTGtjZXk3Q3hZMk52T1YzWHAwSE5KaURkR2VjcHdnZEotNm9qdTJDRXFQS3kzamppMjRZbDJaamFmNlQtVC1yeGh4RV9jRkpyRGVnaURYN19nU2t4UHNOOEFYS1RHUU5TdUFKTVREX0otR2hrajJyaUZjWDVwaDVzUDBhY19PVW92NmNXcVZadVEtb3NLY2RGWUpMQUFJSjhWc3hTalVjanRrdUln"
     }
   ]
 }
