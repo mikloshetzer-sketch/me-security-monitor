@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-29 05:00 UTC",
+    "updated": "2026-06-29 11:24 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-23",
     "period_end": "2026-06-29",
-    "total_events": 126,
-    "total_risk": 125.31,
-    "normalized_risk_score": 50.1,
+    "total_events": 129,
+    "total_risk": 145.16,
+    "normalized_risk_score": 58.1,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 37,
+    "military": 43,
     "security": 3,
-    "political": 28,
-    "other": 58
+    "political": 22,
+    "other": 61
   },
   "source_counts": {
-    "news": 120,
+    "news": 123,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 77.51
+      "risk": 87.76
     },
     {
       "name": "Israel",
-      "risk": 28.1
+      "risk": 32.2
+    },
+    {
+      "name": "Middle East",
+      "risk": 4.3
     },
     {
       "name": "West Bank",
       "risk": 3.9
     },
     {
-      "name": "Iraq",
-      "risk": 3.25
-    },
-    {
-      "name": "Qatar",
-      "risk": 2.7
+      "name": "Saudi Arabia",
+      "risk": 3.6
     }
   ],
   "top_events": [
@@ -57,11 +57,47 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-june-28-2026/"
     },
     {
+      "score": 3.0,
+      "date": "2026-06-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Middle East producers push on with oil, LNG loadings despite ship attacks - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaXRmOXJlc21RaE15d095S1BmUzNld3VIT1dVbzV6YkpqT0N2elU5aUZ2MmpnelV2VnlNNmZScEkxWWNGUXU4bzBGYnlMQlVITlhJR1A4MzFJWnBRVWltTDhxNFFiNnNzT0FGN2xienl4VWxyaVFNc0hTX0JBV19GTTg0Q1VUZ2FrLU9TTE55SllpWlFNVnh0UzNFa2RwVnFiendwc05tSExzRHRSeDFSMFBiZnhSQndzV3RiU3Vn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran cyberattacks on Israel surged in 2026, Israeli cyber chief says - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOdTIwVnlkaTVydWtvSFRWY1hOYjAyQTNJN3ZnZ0hWRm40SnNsRWZ6bXItXzlhajluMi0zZFV0ajZSYmo3dkw3N1lpZE9YMmFUdFpUcGpvYjNEU2xIeHAtSGJVTDY1ZGhhZ3BwVU1pOWZqQ2RyR00takVoMHZNODZuT2ZSZVdqUGlrZEV0TE94TzdoYlBabDRIQmV3QVNJNndMckNBVTl6Wk9hYUZNc3RfNHhYQU5VZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "US says it has agreed to 'stand down' after exchange of strikes with Iran",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c872rjw17qpo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-06-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices rise as US, Iranian strikes threaten Strait of Hormuz reopening - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQno4UmNocko2ZENuREhrTUZILUJBczZVQWE2MkZDYTlmTFREOVdWcmx1UkJadWU5Nzd5WTJCMVNOTmRsdkJIdkhHYVA5Wlk4aHdPdTdPdk04N0JkSUZDRXVOWlJTTGtCNV84RG1LQlUwQTY1eUtERm1QaWs4OVhMWjJMX1duR0Z5anh1MWNMbDQ0OWlBak1UdGl4UjdmMUVGTFR6UmFKUnlDQ1pjdzdwMVBpdFJEV3ot0gG-AUFVX3lxTE1pcndSb0lmMWQzUWNJQVE3anRwZF9OaU1tcHdhNm90alVXNkk4VWZjUkZoUVIwZjVlSEVoYXNodXNJdkNSZ0UzeTN2ZlZHeURBMWNjakxYa2daNlpaakZZYnpzU1VJYnNBRjI3eFB5NHdrZTNURkdlZnV2NTR3SERBSUFXVFFXSnRxNURrSlF2SFMwS2ZkTFcxOWgxenRzWHNlek1HNUdWemN2cHgzNDhudjRtdTZ3VXRhanpJN3c"
+    },
+    {
       "score": 2.7,
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Oil climbs following renewed US, Iran strikes in Middle East - Reuters",
+      "title": "Oil steadies as US and Iran agree to halt attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQeVE4MTEtZkdxUjFqY0VNeW1uZ09lM01DRkRxcVRkTzNFajVCMmx6QWVLdG9NQmRaMFBIdmswQ09GaExRMnNvV1lvS044S3oxQXVOSjYtcmhVelkxbmxJZ0JxOXRJOWNQbmhmSFNpalZUTVEzRldFZ01XdTdtYlhOZDdCazRjeHlJUi1ReEctQ1hfQ2toMnpZQjJXd3BJOWRBNWR4NDczX0diZ09D"
     },
@@ -79,15 +115,6 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
-      "title": "Gulf markets mixed as US-Iran trade attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0w3QkJTYncxeTYxQlBfSFJ4TDRIRFYwR0tmMTdnUXFVZDhudGpnOG9aeXBNMWZtYzF5M2dkaENRU2p1RVVuVmsyZjVPWHU1NHloT3duaTRuREwzX292VzVuYXd1RW5tZ0NjYkQxUnJYOWtLT1RVX0I3Z29QYU1SZ241SkpScnBNdWF0dm12REhmR0ozS1BzeXNB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
       "title": "Qatar says citizen killed from shrapnel due to 'military operations' - Reuters",
       "location": "Qatar",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ21SZFIxTGtjZXk3Q3hZMk52T1YzWHAwSE5KaURkR2VjcHdnZEotNm9qdTJDRXFQS3kzamppMjRZbDJaamFmNlQtVC1yeGh4RV9jRkpyRGVnaURYN19nU2t4UHNOOEFYS1RHUU5TdUFKTVREX0otR2hrajJyaUZjWDVwaDVzUDBhY19PVW92NmNXcVZadVEtb3NLY2RGWUpMQUFJSjhWc3hTalVjanRrdUln"
@@ -97,45 +124,18 @@
       "date": "2026-06-28",
       "category": "military",
       "source_type": "news",
+      "title": "Gulf markets mixed as US-Iran trade attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPN0w3QkJTYncxeTYxQlBfSFJ4TDRIRFYwR0tmMTdnUXFVZDhudGpnOG9aeXBNMWZtYzF5M2dkaENRU2p1RVVuVmsyZjVPWHU1NHloT3duaTRuREwzX292VzVuYXd1RW5tZ0NjYkQxUnJYOWtLT1RVX0I3Z29QYU1SZ241SkpScnBNdWF0dm12REhmR0ozS1BzeXNB"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-06-28",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli military says it killed Hezbollah militants and attacked a launcher in the Nabatieh area - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZW9oUGZaMm8xOUZTaXdfUjRIRWMta3lUckxjeGszRDJwWkR6Tm9LWGFpdDExRkdWcDE3YmR4a3ZDYXk2U0tKZG1DNzU1aXdFcmFhcEwzRkJwZjFhbXJ3cjNzZ0JqUHgxRXo3M1U0amtNdE4xSXY1ak8yVFZjc3pkTm1FbWQzVlk2bE1LbnBvbXZRUjF1THhpODd6ZUF2SnZET2FRVHNMbXU4YUx2MnROOUdNMElud2RJTE9UdFI4dVh5SEFPVjUxMEVzYlQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches second night of strikes on Iran after ship hit by drone - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQajBRX044WFVIbHpWazNnNjNjV0UwekFBT0N6b0MyaHNDTjZMSC00Nm9kX1VmR1RxMEt0R3IwaUFzUUFqWmg1cVg1U1VfUE9EaVVaVU1jbkU4d2s1cjdlelMyM0ZSVFBJd0NWM3FlOHBiejVtNGNNOVZOeWZHa2VqZ3I1a1ZIQUdnUWl0QmpBS0tGSWFlMHdEQWdIRWtOaGdNTjVlaUIzcDJud2prT2pGQzNiTVJWUnPSAbwBQVVfeXFMTVA3Sm5UdjV5TnlPMEFiTi1YZDdCNEgwNW1mNTljT3Q2eGNveUZySmRLSjRLWnc0WjdmLUxBcS1Yd2NjNG56OXkwVnlHblZJeEo0MGE5ZDRvMi1hSTZGQkpKUUZybHJpRkFybXprQW5SN1phN1JkS3hhS1p3WmFBUWhWRVNpdlVWUlRDcktWd0ZnamNDdjVyWUhJUENITTZ0WDE0WGxjU3B3ektLcmZaR2FUYVVPaF92dG5QU0o"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran war day 121: Iran attacks Bahrain, Kuwait as US strikes near Hormuz - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZlhXTlR0cWJiZ0g4SWdRNmlPdnVlUXJZSS1yTllzYUl1UV9DRmpNNlNSaV9vdFRTbk1IbW9FeVJidmxxRy1iZzY2em1pamJjdXdadk5jU3N3U1JuenBLTllMeDdoLXFJLVJuNTlIZWtGMW02Wjg4QXNyV0xnTzFGSlNHWFItaTc2MS1HM29scWlHbWhtelM1eGprRmdfZlA5ZmdPMG5DYThwaTh5c0lrStIBtgFBVV95cUxNRmZmWndnNG9NQ0MtZnBiMmJLX0tLQm5DUXBpYmk0OG9IZnJ2Wl9PNWlQaXlKVS10VmtVbk5HRWl3ZlBhMEllMmRVRl9WYmZFOExCY3ljMjlfYnE2YkYtOFJ3VVdIb3pCQUQ5d0dEY2RKamUzM1lmNVcwQlJjT0JtTXI4V0x4TzMwUGI0MzJzNVpvOFhCYzVITWhhR2hDZVo4S3BwcUc5c19Gb0RvNzJOcWhTcWZQUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "US strikes Iran for second day: Is it a violation of war powers resolution? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZXpjSzgxUHdZZzIzU0JCczJuZ1ppcHBnUTh1bzNSUDA5Ql9UblVJaWxBZEZFcGVfT0l6RWY1ejlPbFF3cXFFU1lPbmNGU1RBckhXX2lOMDRRRGdGd00xMnBKTXBYdDJ5ZF9ELThJRlVtM0hQbi1TTnBRYS1TMzdMX2tLcHZtLWM0a1pSRHJldVBQUVBJNHBIV1NXVUxxOXg5RmhiSDV1anNhSHRRc0NJRTJmeTbSAboBQVVfeXFMTW9HZ2Jrb01kT18yQXZYUFpCVXBMQ2dudUk1WGhiYVF2VW83Sm95ZThlZ1UzdXI5WmxfUmRtekZTVm0xVFRqbmFfdm9MdVRNdDlFelFGdU41QTR6YmMtSUd6TTdpZHdMMnU0Y0ZzbHlaeC1jcnJmT2l1dlRrdmNwcnhrN1EtdXJ0ZkFLSy14MENJd282TS14MUNoVVZpZXkwUnRBYi1UdWpqWi04QVV1empja0ZNdGlyU0Rn"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-06-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "What is Article 5 of Iran-US MoU, and why is it blamed for Hormuz strikes? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYURWUjJMTTRvSlpDdkVnSDNDVHJkdFN1elNmSTFsdExZN0lSQ2FCdWZzWGUycV9JSklnVjJ6RFA4TEhwdDd5X3JFcHhsa1lMaWVmQ3JmOU56N2dFdE1iSnAxVjJPR0pDYjR2SU9MNVJZNVZJZEtLdkhELVZLWGdCVi1xMExwRXJ5M3I4Tm9jaXhjSVd3ZnFyM240RUFJRHFfMnppb2JiZU1FLWlCU2xPRNIBtgFBVV95cUxOdkpnZTZnekQzTlZEVWJzb24tdUpVNmxVQVo1OXRzQ3JpRmRMeVBBRTFqeGJkVEZWM1dfaTBUZEI1WENtQlFrLVIwTl9mZzlPOWthMnNDZ1M2OTZzU05CcHA2MGprSTlwLXVEeHRqYlZhdmhOLW8yc3hfRjJ1dVpZam1NeTB1ZTh6T21uT0VfVGxlTkJjZFBBRlJTX25CaUFHUGFYVXZaT2VHMkhLUmYzNzVEMHlzZw"
     }
   ]
 }
