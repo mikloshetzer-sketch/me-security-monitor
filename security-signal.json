@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-01 04:55 UTC",
+    "updated": "2026-07-01 10:15 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-06-25",
     "period_end": "2026-07-01",
-    "total_events": 130,
-    "total_risk": 136.28,
-    "normalized_risk_score": 54.5,
+    "total_events": 124,
+    "total_risk": 135.53,
+    "normalized_risk_score": 54.2,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 47,
     "security": 1,
-    "political": 18,
-    "other": 64
+    "political": 17,
+    "other": 59
   },
   "source_counts": {
-    "news": 124,
+    "news": 118,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 73.13
+      "risk": 73.18
     },
     {
       "name": "Gaza Strip",
-      "risk": 23.1
+      "risk": 22.7
     },
     {
       "name": "Israel",
-      "risk": 22.65
+      "risk": 20.25
+    },
+    {
+      "name": "Oman",
+      "risk": 4.5
     },
     {
       "name": "Middle East",
       "risk": 3.45
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 2.9
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-07-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Powerful storm hits Romania, one person killed - Reuters",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNOG9yVnhOaFRqZUZGV3ZPZ1ZRYWdwQl9yZHQ0Y2dZZ3d2V2I1cVk3XzVvbms0WlRVc2U1eUdYd3RBdUtjWmZyRWJ0TVZzSEZEZFozVDZDaVFnYWl5eU9Ibzc1cmdaemhLUkxKelNNVGRGSjNNT2o0bFA2enpKWFloa1JlWjAtNE91ZENTaFFsREEzVHR3WVRYRDRNbkJlSjdrYldpMQ"
+    },
     {
       "score": 2.73,
       "date": "2026-06-28",
@@ -79,18 +88,18 @@
       "date": "2026-06-29",
       "category": "military",
       "source_type": "news",
-      "title": "Middle East producers push on with oil and LNG loadings despite ship attacks - Reuters",
-      "location": "Middle East",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaXRmOXJlc21RaE15d095S1BmUzNld3VIT1dVbzV6YkpqT0N2elU5aUZ2MmpnelV2VnlNNmZScEkxWWNGUXU4bzBGYnlMQlVITlhJR1A4MzFJWnBRVWltTDhxNFFiNnNzT0FGN2xienl4VWxyaVFNc0hTX0JBV19GTTg0Q1VUZ2FrLU9TTE55SllpWlFNVnh0UzNFa2RwVnFiendwc05tSExzRHRSeDFSMFBiZnhSQndzV3RiU3Vn"
+      "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk"
     },
     {
       "score": 2.4,
       "date": "2026-06-29",
       "category": "military",
       "source_type": "news",
-      "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk"
+      "title": "Middle East producers push on with oil and LNG loadings despite ship attacks - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaXRmOXJlc21RaE15d095S1BmUzNld3VIT1dVbzV6YkpqT0N2elU5aUZ2MmpnelV2VnlNNmZScEkxWWNGUXU4bzBGYnlMQlVITlhJR1A4MzFJWnBRVWltTDhxNFFiNnNzT0FGN2xienl4VWxyaVFNc0hTX0JBV19GTTg0Q1VUZ2FrLU9TTE55SllpWlFNVnh0UzNFa2RwVnFiendwc05tSExzRHRSeDFSMFBiZnhSQndzV3RiU3Vn"
     },
     {
       "score": 2.4,
@@ -127,15 +136,6 @@
       "title": "US says it has agreed to 'stand down' after exchange of strikes with Iran",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/c872rjw17qpo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-06-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil prices rise as US, Iranian strikes threaten Strait of Hormuz reopening - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQno4UmNocko2ZENuREhrTUZILUJBczZVQWE2MkZDYTlmTFREOVdWcmx1UkJadWU5Nzd5WTJCMVNOTmRsdkJIdkhHYVA5Wlk4aHdPdTdPdk04N0JkSUZDRXVOWlJTTGtCNV84RG1LQlUwQTY1eUtERm1QaWs4OVhMWjJMX1duR0Z5anh1MWNMbDQ0OWlBak1UdGl4UjdmMUVGTFR6UmFKUnlDQ1pjdzdwMVBpdFJEV3ot0gG-AUFVX3lxTE1pcndSb0lmMWQzUWNJQVE3anRwZF9OaU1tcHdhNm90alVXNkk4VWZjUkZoUVIwZjVlSEVoYXNodXNJdkNSZ0UzeTN2ZlZHeURBMWNjakxYa2daNlpaakZZYnpzU1VJYnNBRjI3eFB5NHdrZTNURkdlZnV2NTR3SERBSUFXVFFXSnRxNURrSlF2SFMwS2ZkTFcxOWgxenRzWHNlek1HNUdWemN2cHgzNDhudjRtdTZ3VXRhanpJN3c"
     }
   ]
 }
