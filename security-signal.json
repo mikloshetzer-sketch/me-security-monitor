@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-02 16:16 UTC",
+    "updated": "2026-07-02 21:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-26",
     "period_end": "2026-07-02",
-    "total_events": 133,
-    "total_risk": 124.64,
-    "normalized_risk_score": 49.9,
+    "total_events": 132,
+    "total_risk": 124.39,
+    "normalized_risk_score": 49.8,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 41,
-    "security": 1,
-    "political": 25,
-    "other": 66
+    "military": 38,
+    "security": 2,
+    "political": 22,
+    "other": 70
   },
   "source_counts": {
-    "news": 127,
+    "news": 126,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 62.74
+      "risk": 58.89
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.1
+      "risk": 19.55
     },
     {
       "name": "Israel",
-      "risk": 19.95
+      "risk": 17.55
+    },
+    {
+      "name": "Damascus",
+      "risk": 9.5
     },
     {
       "name": "Middle East",
-      "risk": 4.25
-    },
-    {
-      "name": "Syria",
-      "risk": 3.7
+      "risk": 3.9
     }
   ],
   "top_events": [
@@ -61,9 +61,27 @@
       "date": "2026-07-02",
       "category": "military",
       "source_type": "news",
+      "title": "Bomb blast at Damascus cafe kills six, Syrian state media say",
+      "location": "Damascus",
+      "url": "https://www.bbc.co.uk/news/articles/cn0vwxyz40zo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-02",
+      "category": "military",
+      "source_type": "news",
       "title": "At least six killed in explosion inside central Damascus cafe - Al Jazeera",
       "location": "Damascus",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaEM0NlNtX0ZYLW1wenVHSEJjU3RXdEpPT0RjNEJ1OThBWURuSHJUWHgzVGJBTFpyNE5tT1IwcXp1THVRV3dvVktyN0JxQmo2YlJsMTZpclp5TG9mYVNVZnF2OV9iVnI1YXU4bVFhSk9lRXFHLWFIUnJhcmxFQ2FnVjVNVWZjaXcyNXMtSnhFX0Zkc3ZvVXRXWmhn0gGfAUFVX3lxTE9HX1NBUUtBRVZuWEItNEtaRUJrQWxleTYzNENWcXkzTmdUbVB6djRRRTI2S3paODYtd0xKTWhzM0ZLdlUwQ2N6N1RNZ20za1h4WHBiQlZ2QlhKLXlXY0p4N3BOVFk2ajZHZzdMZnZ4dWdmeGpJTE1LcENZWDBYSTljV2lyV1pkWC1raFA4M3ExS2ZhSEtyTkxnM2ZwVlRZWQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "What’s behind the deadly bombing of a crowded Damascus cafe? - Al Jazeera",
+      "location": "Damascus",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOENfSkNrWEtFemdQM045bTRIVFJUTHhqWHJqSmZkNS1Uc0tSWElMQlJ2bVpyT2JQRVdOUDZkdkIyREpnTlc0cmNwY1VWd1ZyY2FQSFczTXhKeDNHakN4dlRGZzR1Z0VaaUI3QVlNZ1IzZW9NMHI0TWhIZE52QUx1d0QzVEhPWGp0MzFWNkdET3B2MlJoVEJRQmpuWUpuMGfSAaQBQVVfeXFMTTBQeUdCeExiclkzeTM1SFFwdzM4NW4yY2phdkdlWDFScXA3c0hIX19zeHh0NEYydXg4c0d0N3h4Q1pvc0NzQmFBYVp6VjNFWnMxb2ROd09Gbmx0RFZMLXV2TTFVZk52N2I3Y2o4UWZrbzY0V1hyMjdlRjlSdmp0SldhRzR0R2RzNHVSaElHdFRXbGh5QTFORV81dTAtVXlILWJMU1U"
     },
     {
       "score": 2.4,
@@ -118,24 +136,6 @@
       "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-06-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills three Gaza Palestinians, including a child, Gaza health ministry says - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNnVPX2hUbm9nZjFJbVVhbG5xcVExZHJfWU96Nm9qVWZFcWxxX3pGaENMX1Z5WUZ2R2tTZ2p1QTF1Y2VWMGdVOThJazE5dTNXeF9LV1ByVUtZWU1Kc2FUQ2R5R284d0trVFZxT0l5N2d4YnRxdGdDcWl2TUZhOUU3UGUybEZiMzJyMVF6OGFBQXRyX1ZHcmlmWkNERzlzbThYTlVONURKN2ozZVM2VHYwUnJsTjlWLVR3M3hPSm03S24tdU1QSnFV"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-06-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "US says it has agreed to 'stand down' after exchange of strikes with Iran",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c872rjw17qpo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
