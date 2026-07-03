@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-03 14:32 UTC",
+    "updated": "2026-07-03 17:48 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-06-27",
     "period_end": "2026-07-03",
-    "total_events": 117,
-    "total_risk": 97.6,
-    "normalized_risk_score": 39.0,
+    "total_events": 115,
+    "total_risk": 102.1,
+    "normalized_risk_score": 40.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 29,
+    "military": 30,
     "security": 2,
     "political": 21,
-    "other": 65
+    "other": 62
   },
   "source_counts": {
-    "news": 111,
+    "news": 109,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 44.2
+      "risk": 43.15
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 15.25
     },
     {
       "name": "Israel",
       "risk": 13.65
     },
     {
-      "name": "Gaza Strip",
-      "risk": 12.25
-    },
-    {
       "name": "Damascus",
-      "risk": 8.85
+      "risk": 11.85
     },
     {
-      "name": "Tehran",
-      "risk": 4.7
+      "name": "Middle East",
+      "risk": 4.5
     }
   ],
   "top_events": [
@@ -64,6 +64,24 @@
       "title": "Bomb blast at Damascus cafe kills nine, Syrian state media say",
       "location": "Damascus",
       "url": "https://www.bbc.co.uk/news/articles/cn0vwxyz40zo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Mourners bury victims of Damascus cafe bombing with six lawyers among dead - Al Jazeera",
+      "location": "Damascus",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORjhHS1ZaTUtiNkNzek1LaVhXOUw4RFhsTjdaODJza0h3aFZJenBSOUlYVTBQWHFhcVdJZnpkWHdhT2V3SGsxOXJ3SzFxOW5tZ2pBV2wyMWExRmZCN2ZIN3F0MjV1QUZKSHNuMVBPazJHdkFtRkNLaUdKelJ0b3FlMGZVX0UyMEJPY0V3Y0RNSklPNFB1YVlKcDJTUF9mUHNJYmhxRS01WWY1X2M4R2tWUUNscnrSAboBQVVfeXFMTW9MLWFjQU9GQ0lWT0RzX0ZyU1pfRDI0VTNnd3o5UHdQZGo5V2p0aG1ZQkJmR1htZW1kSGhwS2Ewamtrd3lOUG15U3piMGxZc2VPdmI4OXVTaElIY2U0SUY0dU9tV0FpaDdvbHAxZkc3dVd6MXhVRHUzRDZadmhxc3hndFJrbEpUcVZDOGMxa2NpY0hHckhGblVKOXU3N1Y0WHBCLVB0OHpGRWw2Nk5EWGdGWktPWHdNMFdR"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gaza sports community pledges to continue legacy of killed goalkeeper - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVS1RM202eUFsSWFuU3lUN0U2MTFpTG04Y3pNYlVJRVdfaEJ1VllfQUJQeXpYMjU5U3pTQl9Md3lZMkI2eENES0VwTy1qUmpid1JLTGtza3ZMbU8zSW10bTJnVlNqaldiU0kzU0o1VXB3VWZFaDFqemVhX2d5MGctU0dyaDMyRmR5MDVWQ05ndXVMeUo3TS1ZRWtkYWpjS19oMDRfNGgzS01KVHB4Ri1IV9IBtgFBVV95cUxOTDhwbUhHRS1rTkhINnAwTVB5RlA0ZE55X0ZSX1djTXJKUDYwdjNLOHNzYk1tTEZuMGliMURKbndGUGExVG5FUW5kU1M5TzFIem5wb1ZGY21GWExsZmlTRXVxSm92NURYSXBNeVU4b1RzSkZhTXpadmZUbl9fbWkwWGhhUDBjb0FvbjB3UDh0a1Z2X1pNa0s0d2I4bDY1ZXFjSURDRmJ4Vkd2aS1OTDF1Y1k2eF85QQ"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "How US-Iran war may push Gulf countries to ‘diversify’ security alliances - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUEFhLXFqd3BERXJyR3lLNmYyV29oZWdEdWpWQUVRM1pYYkJ4Y09qaVlGaG1WUmwtQkJvX2xCWU1jM0lkWS1YazY2Q3ZOWkJsbVNBMDdsWW9ha242VUhLVWZxWTRtblZlcjhtV19iX25BaEM1QTlWSXZaY0dYUHZSajdSb3lvc2ozeTZ5MnhCMThjYWdGODQ0T0h2T1VWdGpZVWx2Zll6WHIyU29HdHBfQ9IBtgFBVV95cUxNcG5ZWnFzZjBoTXU5RVdZNUphUHp3UlFWOV9vTEVyQUVaMVNJWEZGbGpQXy1Sd2lYTVY3NmdqQjN1eEljWkNfbmxOZlNybnJMMjZhN0VBU1hKOFdPdGMwc1RSYnRCRkxJeGU3REx1SUg1NkFrWnBSSzVwY21ZZTBJOGFOdEF5OC1mVFhTQTZCZlFBR0kyQnEyTXY0aVBIZEFBcVZGVm8wSk5TVlJfc2lrX19ZaTVEUQ"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-06-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Middle East producers push on with oil and LNG loadings despite ship attacks - Reuters",
-      "location": "Middle East",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaXRmOXJlc21RaE15d095S1BmUzNld3VIT1dVbzV6YkpqT0N2elU5aUZ2MmpnelV2VnlNNmZScEkxWWNGUXU4bzBGYnlMQlVITlhJR1A4MzFJWnBRVWltTDhxNFFiNnNzT0FGN2xienl4VWxyaVFNc0hTX0JBV19GTTg0Q1VUZ2FrLU9TTE55SllpWlFNVnh0UzNFa2RwVnFiendwc05tSExzRHRSeDFSMFBiZnhSQndzV3RiU3Vn"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-06-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbGhfTkRBNnFnWmRfbmpsUFZjNHByR1hpUHhzMU12ZEhnQmx0cmk5bkpneU9CdmI1X01JVl9qMXZoWEg4X0dOV1Q5QnduaFJSSXB2eTRMM0l3TUQ0RGU3RzRma0V4MGd0XzhHWU5INzdSMkp0NG51QUc4OWg4T09YUGJ4OGUtVGo3Vm5wN09lbEJ3RTZSeWc1Q0dhWTZZYU42VlhkRVZ0dlk"
     }
   ]
 }
