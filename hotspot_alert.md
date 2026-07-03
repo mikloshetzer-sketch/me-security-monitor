@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-07-03T21:32:32.117743+00:00
+**Generated:** 2026-07-03T23:19:26.827421+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Tehran (1.9), prev 24h: 0.0, share: 45%.
+Top current hotspot (by risk): Damascus (3.7), prev 24h: 4.0, share: 25%.
 
 ## X POST VERSION
 
