@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-04 10:26 UTC",
+    "updated": "2026-07-04 13:59 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-06-28",
     "period_end": "2026-07-04",
-    "total_events": 110,
-    "total_risk": 81.81,
-    "normalized_risk_score": 32.7,
+    "total_events": 112,
+    "total_risk": 82.16,
+    "normalized_risk_score": 32.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 2,
+    "military": 22,
+    "security": 1,
     "political": 22,
-    "other": 65
+    "other": 67
   },
   "source_counts": {
-    "news": 104,
+    "news": 106,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 34.81
+      "risk": 37.71
     },
     {
       "name": "Damascus",
@@ -35,27 +35,18 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.5
+      "risk": 9.9
     },
     {
       "name": "Israel",
       "risk": 8.05
     },
     {
-      "name": "Tehran",
-      "risk": 3.9
+      "name": "West Bank",
+      "risk": 3.6
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-07-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran begins public mourning for Ayatollah killed in February",
-      "location": "Tehran",
-      "url": "https://www.bbc.co.uk/news/articles/cx2k4k7jqeno?at_medium=RSS&at_campaign=rss"
-    },
     {
       "score": 2.7,
       "date": "2026-07-03",
@@ -79,18 +70,18 @@
       "date": "2026-07-03",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli settlers intensify attacks in West Bank, targeting water supplies - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOc3Zodkp1MWlHWF9yNm1IRnZpWWl4Q011eGEyTXJMeEZNS3Z1VEV1T0FaQno3a3NzUnpKeGdPZWJkUXhvY0ZiS1ZZXzk1SWFPTjhoX2hySUFPSVpSaEJnTkVDdlBFSVVhdVJMdFdCRDhHQmc2aGZJTDJSSUdOZmFuNjFsMVhDRTFqZTNrcUNyQUQzaDVVUUhPeEV0dkVJQTFHVW54UDQ0bnZ2T1VsQ0xBRkdn0gG3AUFVX3lxTE5KNWVLMWNGalljcm9LYXRkT29INmFKbGFUTkMwOFp6U0VUUWQzWXFCdmllMzdPMWlTbFB2WVN3dnhxVWRMOElfN1JnUFl1WDJhZXRXZTBUb3A0MUVHSzJkY0dNR2V4U0luRDdGQ0kyMmxLdjN2ZF8zNkJWM1Nta1ZvOGZ0OEMzUUJPQzhLa1BEQkxPdjZrclZkcF9nQ1ZoSkQ5NU5lbGxta1VIV1dxQ3h6MUFrc0JwRQ"
+      "title": "Mourners bury victims of Damascus cafe bombing with six lawyers among dead - Al Jazeera",
+      "location": "Damascus",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORjhHS1ZaTUtiNkNzek1LaVhXOUw4RFhsTjdaODJza0h3aFZJenBSOUlYVTBQWHFhcVdJZnpkWHdhT2V3SGsxOXJ3SzFxOW5tZ2pBV2wyMWExRmZCN2ZIN3F0MjV1QUZKSHNuMVBPazJHdkFtRkNLaUdKelJ0b3FlMGZVX0UyMEJPY0V3Y0RNSklPNFB1YVlKcDJTUF9mUHNJYmhxRS01WWY1X2M4R2tWUUNscno"
     },
     {
       "score": 2.7,
       "date": "2026-07-03",
       "category": "military",
       "source_type": "news",
-      "title": "Mourners bury victims of Damascus cafe bombing with six lawyers among dead - Al Jazeera",
-      "location": "Damascus",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORjhHS1ZaTUtiNkNzek1LaVhXOUw4RFhsTjdaODJza0h3aFZJenBSOUlYVTBQWHFhcVdJZnpkWHdhT2V3SGsxOXJ3SzFxOW5tZ2pBV2wyMWExRmZCN2ZIN3F0MjV1QUZKSHNuMVBPazJHdkFtRkNLaUdKelJ0b3FlMGZVX0UyMEJPY0V3Y0RNSklPNFB1YVlKcDJTUF9mUHNJYmhxRS01WWY1X2M4R2tWUUNscnrSAboBQVVfeXFMTW9MLWFjQU9GQ0lWT0RzX0ZyU1pfRDI0VTNnd3o5UHdQZGo5V2p0aG1ZQkJmR1htZW1kSGhwS2Ewamtrd3lOUG15U3piMGxZc2VPdmI4OXVTaElIY2U0SUY0dU9tV0FpaDdvbHAxZkc3dVd6MXhVRHUzRDZadmhxc3hndFJrbEpUcVZDOGMxa2NpY0hHckhGblVKOXU3N1Y0WHBCLVB0OHpGRWw2Nk5EWGdGWktPWHdNMFdR"
+      "title": "Israeli settlers intensify attacks in West Bank, targeting water supplies - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOc3Zodkp1MWlHWF9yNm1IRnZpWWl4Q011eGEyTXJMeEZNS3Z1VEV1T0FaQno3a3NzUnpKeGdPZWJkUXhvY0ZiS1ZZXzk1SWFPTjhoX2hySUFPSVpSaEJnTkVDdlBFSVVhdVJMdFdCRDhHQmc2aGZJTDJSSUdOZmFuNjFsMVhDRTFqZTNrcUNyQUQzaDVVUUhPeEV0dkVJQTFHVW54UDQ0bnZ2T1VsQ0xBRkdn0gG3AUFVX3lxTE5KNWVLMWNGalljcm9LYXRkT29INmFKbGFUTkMwOFp6U0VUUWQzWXFCdmllMzdPMWlTbFB2WVN3dnhxVWRMOElfN1JnUFl1WDJhZXRXZTBUb3A0MUVHSzJkY0dNR2V4U0luRDdGQ0kyMmxLdjN2ZF8zNkJWM1Nta1ZvOGZ0OEMzUUJPQzhLa1BEQkxPdjZrclZkcF9nQ1ZoSkQ5NU5lbGxta1VIV1dxQ3h6MUFrc0JwRQ"
     },
     {
       "score": 2.4,
@@ -100,6 +91,15 @@
       "title": "Iran warns US, Israel against attacks ahead of funeral processions for Khamenei - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVjd1X1pITDBSckd0dXdzYzdCbTZ2T3o2UmFUWG5yaHRuZFZWR1pMclo4Z3BLNGYzeS1WREhPZ291WFlJcmZGOGNHclp0dEp4cVhaQTdweUx5Rl90U2tnRGdJOEtjZHNnbC05aUJRMXZJbHl3aUtKMzlxRl94SUl5N251SENtMVBqVVFHdldIcDJCTnpaamphc2VVWUlReGZCMkZpOEJYMlBxcGlOaVktWUdIR2RseW94clhPenQzVlVhOWM"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-07-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran's Revolutionary Guards say they killed Kurdish militants in northwest Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNS0JnV1Rxc1p1a0NNYXNXTzM4UEZVdU5TVlMwdzZhNGVnVFY5NzU0WEhOQUFNMkFJdjI5V19UQWRHa3VjSHhSTG9oMGc2dFZ2SE1ra1B6UWptdGtsallUdUF4M3JUYzg1TTZVYzJZRkpLZm9iZzNVZ2dLUTV4T2NQU1RlN01qZUowTVdJM1d3cUFMMnctUTdSWnVXWVlubzZVQkVQMkNMblZ3NzBaVmw3OFFIc2JYbHlPdmJkajVYYmRweTV0TFRfZ1RZY2FvSE0"
     },
     {
       "score": 2.4,
