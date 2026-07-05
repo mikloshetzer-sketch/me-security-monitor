@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-05 11:49 UTC",
+    "updated": "2026-07-05 14:09 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,9 +8,9 @@
   "summary": {
     "period_start": "2026-06-29",
     "period_end": "2026-07-05",
-    "total_events": 99,
-    "total_risk": 61.1,
-    "normalized_risk_score": 24.4,
+    "total_events": 97,
+    "total_risk": 62.25,
+    "normalized_risk_score": 24.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
@@ -18,28 +18,28 @@
     "military": 10,
     "security": 1,
     "political": 22,
-    "other": 66
+    "other": 64
   },
   "source_counts": {
-    "news": 93,
+    "news": 91,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 21.0
+      "risk": 20.8
+    },
+    {
+      "name": "Israel",
+      "risk": 11.7
     },
     {
       "name": "Damascus",
       "risk": 9.35
     },
     {
-      "name": "Israel",
-      "risk": 8.7
-    },
-    {
       "name": "Gaza Strip",
-      "risk": 7.8
+      "risk": 7.45
     },
     {
       "name": "West Bank",
@@ -47,6 +47,15 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-07-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran's supreme leader absent as senior officials attend ayatollah's funeral",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/cevllyj9vv3o?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 2.4,
       "date": "2026-07-03",
@@ -127,15 +136,6 @@
       "title": "Video: At least two killed and hundreds displaced in Israeli attack on Gaza - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQeTgzUDdZYWhidGxndllYTzVnQ0tYSmRGeVM3MWN6T3JZT2lOV1dVcGRCWWMyNWpWNFZYNTFWZDJaQldJN2l1RnRETm0zR1VpakdNNnVQaURqTldyM0lyUzZMYUtHTFFoRXV4ZU4xcmpoN1Y0Yl9LZlJ5WlVBRHBIVmdSSDJOaWlQa3FVclBJSFVuREt5X09lUV85QWhYWU5uN1dlZkNDamNaczNmS3ZGdjNHYXNoZ2Q0YXg4Sk9YNHhCOXPSAcgBQVVfeXFMTmM2LWxVaUctQmh5RUVaX0lJTWVxUm1IN3VYNEhJNWx1U1RjZVdNTlBjbXgzMlI5SGg2cDU0REd3Unk3RGI1NFd5ZjRpMWdROVlyQVdndzhObjEyRk1LV3lZdTFUbnJYbDRuajFmalpnVlRMbU1TS2FwNzNXSE9CWVpMNXhubUtrNUdBRXliTnM2eFZta1V5OW5UZWJabURoTC1QSk9QN1lwN3F6b0htY1Q5Z2QtdG41cVhJRWxmLXRYTDJGOWhMVUE"
-    },
-    {
-      "score": 1.4,
-      "date": "2026-07-02",
-      "category": "security",
-      "source_type": "news",
-      "title": "How US-Iran war may push Gulf countries to ‘diversify’ security alliances - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUEFhLXFqd3BERXJyR3lLNmYyV29oZWdEdWpWQUVRM1pYYkJ4Y09qaVlGaG1WUmwtQkJvX2xCWU1jM0lkWS1YazY2Q3ZOWkJsbVNBMDdsWW9ha242VUhLVWZxWTRtblZlcjhtV19iX25BaEM1QTlWSXZaY0dYUHZSajdSb3lvc2ozeTZ5MnhCMThjYWdGODQ0T0h2T1VWdGpZVWx2Zll6WHIyU29HdHBfQ9IBtgFBVV95cUxNcG5ZWnFzZjBoTXU5RVdZNUphUHp3UlFWOV9vTEVyQUVaMVNJWEZGbGpQXy1Sd2lYTVY3NmdqQjN1eEljWkNfbmxOZlNybnJMMjZhN0VBU1hKOFdPdGMwc1RSYnRCRkxJeGU3REx1SUg1NkFrWnBSSzVwY21ZZTBJOGFOdEF5OC1mVFhTQTZCZlFBR0kyQnEyTXY0aVBIZEFBcVZGVm8wSk5TVlJfc2lrX19ZaTVEUQ"
     }
   ]
 }
