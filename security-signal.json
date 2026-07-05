@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-05 19:42 UTC",
+    "updated": "2026-07-05 21:20 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-06-29",
     "period_end": "2026-07-05",
-    "total_events": 98,
-    "total_risk": 64.5,
-    "normalized_risk_score": 25.8,
+    "total_events": 99,
+    "total_risk": 68.14,
+    "normalized_risk_score": 27.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 9,
+    "military": 10,
     "security": 1,
     "political": 23,
     "other": 65
   },
   "source_counts": {
-    "news": 91,
+    "news": 92,
     "isw": 7
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 19.24
+      "risk": 20.25
     },
     {
       "name": "Israel",
-      "risk": 11.7
+      "risk": 11.5
     },
     {
       "name": "Damascus",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.25
+      "risk": 6.6
     },
     {
-      "name": "Syria",
-      "risk": 3.9
+      "name": "Yemen",
+      "risk": 6.4
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Iran's supreme leader absent as senior officials attend ayatollah's funeral",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/cevllyj9vv3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "50 Houthi fighters killed in renewed clashes in Yemen - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ2pITkNYS3JuMHhDZk5lRWREMUU1a0lTaDNvMnNrVlZ0aXY4VVJwMExJRXd4cXlwUS1COTBHWjFlQUZlME1UeG9tMDg0NVpFNTRPQWN5MHU1MjYzUlpmOU1COVpyUzF1d1RtNmF6X21sMzNIb1BHcHV5QkVxT2FVaVE1RHBFX1I0NkpselNsTTZRVUozOXpveGJPbmR1VzJPN1VkRE9R0gGrAUFVX3lxTE55bU9pV284X1NuZURfTUM1WnpBcjd4OGRjMEFObHhZOVNvUzB5ZUhSMGJ2cnh0eEF3SW5QZjJ3ZVBIOHJOU3FXVVpxQ09zdkY4aVBRZEtFeE1hMzI3WTFVdDdud01XTkVRSGNtRGhVajQ2d2xBU1didXg1ZzVUSk1tb1F5ZzczX0NEV0hsNXNMVi1QY3h2d2N3cVZUWFFuMV9GdzV4b3hIdmhRbw"
     },
     {
       "score": 3.0,
@@ -127,15 +136,6 @@
       "title": "What’s behind the deadly bombing of a crowded Damascus cafe? - Al Jazeera",
       "location": "Damascus",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOENfSkNrWEtFemdQM045bTRIVFJUTHhqWHJqSmZkNS1Uc0tSWElMQlJ2bVpyT2JQRVdOUDZkdkIyREpnTlc0cmNwY1VWd1ZyY2FQSFczTXhKeDNHakN4dlRGZzR1Z0VaaUI3QVlNZ1IzZW9NMHI0TWhIZE52QUx1d0QzVEhPWGp0MzFWNkdET3B2MlJoVEJRQmpuWUpuMGfSAaQBQVVfeXFMTTBQeUdCeExiclkzeTM1SFFwdzM4NW4yY2phdkdlWDFScXA3c0hIX19zeHh0NEYydXg4c0d0N3h4Q1pvc0NzQmFBYVp6VjNFWnMxb2ROd09Gbmx0RFZMLXV2TTFVZk52N2I3Y2o4UWZrbzY0V1hyMjdlRjlSdmp0SldhRzR0R2RzNHVSaElHdFRXbGh5QTFORV81dTAtVXlILWJMU1U"
-    },
-    {
-      "score": 1.4,
-      "date": "2026-07-02",
-      "category": "security",
-      "source_type": "news",
-      "title": "How US-Iran war may push Gulf countries to ‘diversify’ security alliances - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUEFhLXFqd3BERXJyR3lLNmYyV29oZWdEdWpWQUVRM1pYYkJ4Y09qaVlGaG1WUmwtQkJvX2xCWU1jM0lkWS1YazY2Q3ZOWkJsbVNBMDdsWW9ha242VUhLVWZxWTRtblZlcjhtV19iX25BaEM1QTlWSXZaY0dYUHZSajdSb3lvc2ozeTZ5MnhCMThjYWdGODQ0T0h2T1VWdGpZVWx2Zll6WHIyU29HdHBfQ9IBtgFBVV95cUxNcG5ZWnFzZjBoTXU5RVdZNUphUHp3UlFWOV9vTEVyQUVaMVNJWEZGbGpQXy1Sd2lYTVY3NmdqQjN1eEljWkNfbmxOZlNybnJMMjZhN0VBU1hKOFdPdGMwc1RSYnRCRkxJeGU3REx1SUg1NkFrWnBSSzVwY21ZZTBJOGFOdEF5OC1mVFhTQTZCZlFBR0kyQnEyTXY0aVBIZEFBcVZGVm8wSk5TVlJfc2lrX19ZaTVEUQ"
     }
   ]
 }
