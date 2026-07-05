@@ -1,10 +1,12 @@
 # Hotspot Alert
 
-**Generated:** 2026-07-05T04:30:57.219155+00:00
+**Generated:** 2026-07-05T09:23:01.089930+00:00
 
-No alert: no events detected in the last 24 hours.
+No hotspot alert: no location met the spike thresholds in the last 24 hours.
+
+Top current hotspot (by risk): Iran (0.4), prev 24h: 1.8, share: 50%.
 
 ## X POST VERSION
 
-No hotspot alert in the last 24 hours.
+No hotspot alert in the last 24 hours (no spike thresholds met).
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor
