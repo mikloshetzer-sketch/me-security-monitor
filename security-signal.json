@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-06 11:03 UTC",
+    "updated": "2026-07-06 15:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-06-30",
     "period_end": "2026-07-06",
-    "total_events": 100,
-    "total_risk": 65.94,
-    "normalized_risk_score": 26.4,
+    "total_events": 107,
+    "total_risk": 75.98,
+    "normalized_risk_score": 30.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 12,
+    "military": 14,
     "security": 1,
-    "political": 20,
-    "other": 67
+    "political": 21,
+    "other": 71
   },
   "source_counts": {
-    "news": 94,
+    "news": 101,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 19.98
+      "risk": 20.99
     },
     {
       "name": "Israel",
-      "risk": 10.15
-    },
-    {
-      "name": "Damascus",
-      "risk": 8.1
+      "risk": 13.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 8.0
+      "risk": 12.8
+    },
+    {
+      "name": "Damascus",
+      "risk": 7.8
     },
     {
       "name": "Yemen",
@@ -47,6 +47,24 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-07-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks on Gaza kill at least 6 as ‘ceasefire’ violations continue - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQblROb05BajVUMW5Sd1RUeW5lN3dOeW1aMHpCazlsdjRtbnRleVBsakhncVlMekNwYXpsYk5tN3k1MFVFNzREbG9IRW9nUFRlbGFiZmVVNzdwcHlTX0FLT3BkNEEwcE9IS1BUakFCdHZ1TU9vanAxY25YYkp1UzRWOFhMN3Z4eUlEeUZJWUZBQ05ETVJvSjNFN3p1emg2RUdVWTR1NDhpeW54R2IzREc4YVFR0gG3AUFVX3lxTE84OC1rUGM2RG5pYnExaUstQ0VyUmlwM0hXdFRoZWo0REdEc3hSMFA3ck45cFFFNkxDUk8waWJHeWZpWXo5MlNlbGdLc1BwVEpzbGJ4Y05LVmtuME5PUldIT08zRWxUNDBra2hhZ1JVT0NFcGdLcnNkZ25pTEItc1prbXMyak82MWYzZXNqUDZyTzY1RjFRNHFGLWJqdmZpVVVHQUZNWnhaTkhTRGdsU0JZQjNqX2F5TQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attack on vehicle in Lebanon kills at least four - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYTdqcUtpWldGSDhJcmVZN1c0d0l2MGpULW5tUF9DN0tockFvbkZrNFVIZmNZYy1kM1k0dDRLRW1xQ0cyendLZVB1c3RiaDV1Z2JweG4xNGhtYmItVUFqRlhGaFpjVlh6Y0tEb0Flam5yUTI5Sl82dnMtYTFSZVhlakV1dm9MOGFTWXFjUG1qZGhWc3l6OWlqb0Q1NzTSAaIBQVVfeXFMT0FqbzNSanF4aS1sV2dpMG0wNkVsOUlBZEVvWGpuOUgwcEtaTFlmRU5XZnJnZEJjSG9FMlpsdFVvSTQ1dFQ2ZWUxdlVmTV9BdkEwYjJuSlVQel9kbjJYbEowa09UWWIyazJ1OE1ZRWQ1d1BQSkRMMFQ3QmZOYXhPRnFuVUZpXzhmcE1JaU1PUHpDZG9rU3VVTHhSRjRDSXJLZ0N3"
+    },
     {
       "score": 2.7,
       "date": "2026-07-05",
@@ -118,24 +136,6 @@
       "title": "Gaza sports community pledges to continue legacy of killed goalkeeper - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVS1RM202eUFsSWFuU3lUN0U2MTFpTG04Y3pNYlVJRVdfaEJ1VllfQUJQeXpYMjU5U3pTQl9Md3lZMkI2eENES0VwTy1qUmpid1JLTGtza3ZMbU8zSW10bTJnVlNqaldiU0kzU0o1VXB3VWZFaDFqemVhX2d5MGctU0dyaDMyRmR5MDVWQ05ndXVMeUo3TS1ZRWtkYWpjS19oMDRfNGgzS01KVHB4Ri1IV9IBtgFBVV95cUxOTDhwbUhHRS1rTkhINnAwTVB5RlA0ZE55X0ZSX1djTXJKUDYwdjNLOHNzYk1tTEZuMGliMURKbndGUGExVG5FUW5kU1M5TzFIem5wb1ZGY21GWExsZmlTRXVxSm92NURYSXBNeVU4b1RzSkZhTXpadmZUbl9fbWkwWGhhUDBjb0FvbjB3UDh0a1Z2X1pNa0s0d2I4bDY1ZXFjSURDRmJ4Vkd2aS1OTDF1Y1k2eF85QQ"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-07-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Mourners bury victims of Damascus cafe bombing with six lawyers among dead - Al Jazeera",
-      "location": "Damascus",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORjhHS1ZaTUtiNkNzek1LaVhXOUw4RFhsTjdaODJza0h3aFZJenBSOUlYVTBQWHFhcVdJZnpkWHdhT2V3SGsxOXJ3SzFxOW5tZ2pBV2wyMWExRmZCN2ZIN3F0MjV1QUZKSHNuMVBPazJHdkFtRkNLaUdKelJ0b3FlMGZVX0UyMEJPY0V3Y0RNSklPNFB1YVlKcDJTUF9mUHNJYmhxRS01WWY1X2M4R2tWUUNscnrSAboBQVVfeXFMTW9MLWFjQU9GQ0lWT0RzX0ZyU1pfRDI0VTNnd3o5UHdQZGo5V2p0aG1ZQkJmR1htZW1kSGhwS2Ewamtrd3lOUG15U3piMGxZc2VPdmI4OXVTaElIY2U0SUY0dU9tV0FpaDdvbHAxZkc3dVd6MXhVRHUzRDZadmhxc3hndFJrbEpUcVZDOGMxa2NpY0hHckhGblVKOXU3N1Y0WHBCLVB0OHpGRWw2Nk5EWGdGWktPWHdNMFdR"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-07-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran warns US, Israel against attacks ahead of funeral processions for Khamenei - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQVjd1X1pITDBSckd0dXdzYzdCbTZ2T3o2UmFUWG5yaHRuZFZWR1pMclo4Z3BLNGYzeS1WREhPZ291WFlJcmZGOGNHclp0dEp4cVhaQTdweUx5Rl90U2tnRGdJOEtjZHNnbC05aUJRMXZJbHl3aUtKMzlxRl94SUl5N251SENtMVBqVVFHdldIcDJCTnpaamphc2VVWUlReGZCMkZpOEJYMlBxcGlOaVktWUdIR2RseW94clhPenQzVlVhOWM"
     }
   ]
 }
