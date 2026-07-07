@@ -1185,47 +1185,147 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 // ===== FIRMS fires layer (fires.json generated server-side) =====
-// UI expects radios: input[name="firesAge"] values: today | 5d | 15d | all
+// User-friendly analytical FIRMS panel.
+// UI ids are created dynamically below in the Layers accordion.
 
 const firesLayer = L.layerGroup();
 let firesHeat = null;
 
 let firesEnabled = false;
-let firesHeatEnabled = true; // ha alapból szeretnéd a heatet
-let firesAgeMode = "all";    // today | 5d | 15d | all  (javaslom: all, hogy rögtön láss valamit)
+let firesMarkersEnabled = true;
+let firesHeatEnabled = true;
+let firesAgeMode = "7d";        // 24h | 3d | 7d | 15d | 30d | all
+let firesSensorMode = "all";     // all | viirs | modis
+let firesConfidenceMode = "all"; // all | high | nominal | low
+let firesFrpMin = 0;
+let firesLastUpdate = "—";
+let firesLastVisibleStats = {
+  visible: 0,
+  high: 0,
+  avgFrp: 0,
+  maxFrp: 0,
+  totalAfterBBox: 0
+};
 
-// --- Age filter wiring (safe) ---
-function bindFiresAgeUi() {
-  const radios = [...document.querySelectorAll('input[name="firesAge"]')];
-  if (!radios.length) {
-    console.warn("[fires] No firesAge radios found (HTML missing?) -> defaulting to", firesAgeMode);
-    return;
+// --- FIRMS UI helpers ---
+function safeText(value, fallback = "—") {
+  const s = String(value ?? fallback);
+  return s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function setTextIfExists(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = String(value);
+}
+
+function setFirmsStatus(text, mode = "neutral") {
+  const el = document.getElementById("firmsStatusBadge");
+  if (!el) return;
+  el.textContent = text;
+  el.className = "badge-mini";
+  if (mode === "online") el.classList.add("badge-ok");
+  else if (mode === "warn") el.classList.add("badge-warn");
+  else if (mode === "error") el.classList.add("badge-alert");
+}
+
+function updateFiresUiStats() {
+  setTextIfExists("firmsVisibleCount", firesLastVisibleStats.visible);
+  setTextIfExists("firmsHighCount", firesLastVisibleStats.high);
+  setTextIfExists("firmsAvgFrp", Number(firesLastVisibleStats.avgFrp || 0).toFixed(1));
+  setTextIfExists("firmsMaxFrp", Number(firesLastVisibleStats.maxFrp || 0).toFixed(1));
+  setTextIfExists("firmsLastUpdate", firesLastUpdate);
+}
+
+function readFiresUiState() {
+  const checkedRadio = (name, fallback) => {
+    const el = [...document.querySelectorAll(`input[name="${name}"]`)].find(r => r.checked);
+    return el ? el.value : fallback;
+  };
+
+  const markersEl = document.getElementById("firesMarkersCheckbox");
+  const heatEl = document.getElementById("firesHeatCheckbox");
+  const frpEl = document.getElementById("firesFrpSelect");
+
+  if (markersEl) firesMarkersEnabled = !!markersEl.checked;
+  if (heatEl) firesHeatEnabled = !!heatEl.checked;
+
+  firesAgeMode = checkedRadio("firesAge", firesAgeMode || "7d");
+  firesSensorMode = checkedRadio("firesSensor", firesSensorMode || "all");
+  firesConfidenceMode = checkedRadio("firesConfidence", firesConfidenceMode || "all");
+
+  if (frpEl) {
+    const v = Number(frpEl.value);
+    firesFrpMin = Number.isFinite(v) ? v : 0;
   }
+}
 
-  // ha valamelyik checked, vegyük át induláskor
-  const checked = radios.find(r => r.checked);
-  if (checked) firesAgeMode = checked.value || firesAgeMode;
+function bindFiresUi() {
+  const bindChange = (selector, handler) => {
+    document.querySelectorAll(selector).forEach((el) => {
+      if (el.dataset.boundFirms === "1") return;
+      el.dataset.boundFirms = "1";
+      el.addEventListener("change", handler);
+    });
+  };
 
-  radios.forEach(r => {
-    r.addEventListener("change", () => {
-      firesAgeMode = r.value || "all";
+  bindChange('input[name="firesAge"]', () => {
+    readFiresUiState();
+    if (firesEnabled) refreshFiresSafe();
+  });
+  bindChange('input[name="firesSensor"]', () => {
+    readFiresUiState();
+    if (firesEnabled) refreshFiresSafe();
+  });
+  bindChange('input[name="firesConfidence"]', () => {
+    readFiresUiState();
+    if (firesEnabled) refreshFiresSafe();
+  });
+
+  const markersEl = document.getElementById("firesMarkersCheckbox");
+  if (markersEl && markersEl.dataset.boundFirms !== "1") {
+    markersEl.dataset.boundFirms = "1";
+    markersEl.addEventListener("change", () => {
+      readFiresUiState();
       if (firesEnabled) refreshFiresSafe();
     });
-  });
+  }
+
+  const heatEl = document.getElementById("firesHeatCheckbox");
+  if (heatEl && heatEl.dataset.boundFirms !== "1") {
+    heatEl.dataset.boundFirms = "1";
+    heatEl.addEventListener("change", () => {
+      readFiresUiState();
+      if (firesEnabled) refreshFiresSafe();
+    });
+  }
+
+  const frpEl = document.getElementById("firesFrpSelect");
+  if (frpEl && frpEl.dataset.boundFirms !== "1") {
+    frpEl.dataset.boundFirms = "1";
+    frpEl.addEventListener("change", () => {
+      readFiresUiState();
+      if (firesEnabled) refreshFiresSafe();
+    });
+  }
+
+  const refreshBtn = document.getElementById("firesRefreshBtn");
+  if (refreshBtn && refreshBtn.dataset.boundFirms !== "1") {
+    refreshBtn.dataset.boundFirms = "1";
+    refreshBtn.addEventListener("click", () => refreshFiresSafe());
+  }
 }
-bindFiresAgeUi();
 
 // --- Helpers ---
 function inMiddleEastBBox(lat, lng) {
-  // lat 10..42, lng 25..65 (durva szűrő)
+  // Broad Middle East filter.
   return lat >= 10 && lat <= 42 && lng >= 25 && lng <= 65;
 }
 
 function isoDateUTC(ms) {
-  return new Date(ms).toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
+  return new Date(ms).toISOString().slice(0, 10);
 }
+
 function isoDateLocal(ms) {
-  // Local YYYY-MM-DD
   const d = new Date(ms);
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, "0");
@@ -1234,10 +1334,18 @@ function isoDateLocal(ms) {
 }
 
 function parseAcqDateMs(f) {
-  // FIRMS tipikusan: acq_date: "YYYY-MM-DD"
   const d = String(f?.acq_date || f?.date || "").trim();
   if (!d) return NaN;
-  // Nap eleje UTC-ben (stabil buckethez)
+
+  const rawTime = String(f?.acq_time || f?.time || "").trim().replace(/[^0-9]/g, "");
+  if (rawTime) {
+    const padded = rawTime.padStart(4, "0").slice(0, 4);
+    const hh = padded.slice(0, 2);
+    const mm = padded.slice(2, 4);
+    const ms = Date.parse(`${d}T${hh}:${mm}:00Z`);
+    if (Number.isFinite(ms)) return ms;
+  }
+
   const ms = Date.parse(`${d}T00:00:00Z`);
   return Number.isFinite(ms) ? ms : NaN;
 }
@@ -1246,50 +1354,158 @@ function passFiresAgeFilter(f) {
   if (firesAgeMode === "all") return true;
 
   const ms = parseAcqDateMs(f);
-  if (!Number.isFinite(ms)) return true; // ha nincs dátum, ne dobjuk ki
+  if (!Number.isFinite(ms)) return true;
 
   const now = Date.now();
   const ageDays = (now - ms) / 86400000;
 
+  if (firesAgeMode === "24h") return ageDays <= 1;
+  if (firesAgeMode === "3d") return ageDays <= 3;
+  if (firesAgeMode === "7d") return ageDays <= 7;
+  if (firesAgeMode === "15d") return ageDays <= 15;
+  if (firesAgeMode === "30d") return ageDays <= 30;
+
+  // Backward compatibility with older controls.
   if (firesAgeMode === "today") {
-    // “today” = egyezzen a mai nappal (UTC VAGY local), hogy ne tűnjön el timezone miatt
     const acq = isoDateUTC(ms);
     const todayUtc = isoDateUTC(now);
     const todayLocal = isoDateLocal(now);
     return acq === todayUtc || acq === todayLocal;
   }
-
   if (firesAgeMode === "5d") return ageDays <= 5;
-  if (firesAgeMode === "15d") return ageDays <= 15;
 
   return true;
 }
 
-function fireIconHtml() {
-  // PIROS célkereszt (hardcoded, hogy ne tudjon “kifehéredni”)
+function fireSensor(f) {
+  const raw = String(f?.satellite || f?.instrument || f?.sensor || f?.platform || "").toLowerCase();
+  if (raw.includes("viirs") || raw.includes("n20") || raw.includes("n21") || raw.includes("suomi") || raw.includes("snpp") || raw.includes("noaa")) return "viirs";
+  if (raw.includes("modis") || raw.includes("terra") || raw.includes("aqua")) return "modis";
+  return "unknown";
+}
+
+function passFiresSensorFilter(f) {
+  if (firesSensorMode === "all") return true;
+  return fireSensor(f) === firesSensorMode;
+}
+
+function fireConfidenceLevel(f) {
+  const raw = String(f?.confidence ?? f?.confidence_level ?? "").trim().toLowerCase();
+  const num = Number(raw);
+
+  if (raw === "h" || raw === "high") return "high";
+  if (raw === "n" || raw === "nominal" || raw === "medium") return "nominal";
+  if (raw === "l" || raw === "low") return "low";
+
+  if (Number.isFinite(num)) {
+    if (num >= 80) return "high";
+    if (num >= 30) return "nominal";
+    return "low";
+  }
+
+  return "unknown";
+}
+
+function passFiresConfidenceFilter(f) {
+  if (firesConfidenceMode === "all") return true;
+  return fireConfidenceLevel(f) === firesConfidenceMode;
+}
+
+function fireFrp(f) {
+  const frp = Number(f?.frp ?? f?.FRP ?? 0);
+  return Number.isFinite(frp) ? frp : 0;
+}
+
+function passFiresFrpFilter(f) {
+  return fireFrp(f) >= firesFrpMin;
+}
+
+function fireSeverity(f) {
+  const frp = fireFrp(f);
+  if (frp >= 100) return "extreme";
+  if (frp >= 50) return "high";
+  if (frp >= 15) return "medium";
+  return "low";
+}
+
+function fireColor(f) {
+  const sev = fireSeverity(f);
+  if (sev === "extreme") return "#7b2cbf";
+  if (sev === "high") return "#d62828";
+  if (sev === "medium") return "#f77f00";
+  return "#fcbf49";
+}
+
+function fireIconHtml(f) {
+  const color = fireColor(f);
+  const sev = fireSeverity(f);
+  const size = sev === "extreme" ? 20 : sev === "high" ? 18 : sev === "medium" ? 16 : 14;
   return `
     <div style="
-      width:16px;height:16px;border-radius:999px;
-      border:2px solid rgba(255,80,80,0.98);
-      background: rgba(0,0,0,0.02);
+      width:${size}px;height:${size}px;border-radius:999px;
+      border:2px solid ${color};
+      background:${color};
+      opacity:.88;
+      box-shadow:0 0 12px ${color};
       position:relative;
-      box-shadow:0 0 10px rgba(255,80,80,0.30);
     ">
       <div style="
-        position:absolute;left:50%;top:2px;bottom:2px;
-        width:2px;background:rgba(255,80,80,0.95);
-        transform:translateX(-50%);
-      "></div>
-      <div style="
-        position:absolute;top:50%;left:2px;right:2px;
-        height:2px;background:rgba(255,80,80,0.95);
-        transform:translateY(-50%);
+        position:absolute;left:50%;top:50%;width:4px;height:4px;
+        border-radius:999px;background:rgba(0,0,0,.45);
+        transform:translate(-50%,-50%);
       "></div>
     </div>
   `;
 }
 
+function buildFirePopup(f, lat, lng) {
+  const acqDate = safeText(f?.acq_date || f?.date || "—");
+  const acqTime = safeText(f?.acq_time || f?.time || "");
+  const dt = acqTime ? `${acqDate} ${acqTime} UTC` : acqDate;
+  const frp = fireFrp(f);
+  const br = f?.brightness ?? f?.bright_ti4 ?? f?.bright_ti5 ?? "—";
+  const confidence = safeText(f?.confidence ?? f?.confidence_level ?? fireConfidenceLevel(f));
+  const sensor = fireSensor(f).toUpperCase();
+  const severity = fireSeverity(f).toUpperCase();
+
+  return `
+    <div style="min-width:240px;">
+      <b>NASA FIRMS thermal anomaly</b><br/>
+      <small>Detected: ${dt}</small>
+      <hr/>
+      <table style="width:100%;font-size:12px;line-height:1.5;">
+        <tr><td><b>Severity</b></td><td>${severity}</td></tr>
+        <tr><td><b>Sensor</b></td><td>${safeText(sensor)}</td></tr>
+        <tr><td><b>Confidence</b></td><td>${confidence}</td></tr>
+        <tr><td><b>FRP</b></td><td>${frp.toFixed(1)}</td></tr>
+        <tr><td><b>Brightness</b></td><td>${safeText(br)}</td></tr>
+        <tr><td><b>Lat / Lng</b></td><td>${lat.toFixed(4)}, ${lng.toFixed(4)}</td></tr>
+      </table>
+      <hr/>
+      <small>Thermal anomaly only. It is not automatic proof of a military strike.</small>
+    </div>
+  `;
+}
+
+function getFiresGeneratedAt(payload) {
+  const raw = payload?.generated_at || payload?.updated_at || payload?.last_update || payload?.timestamp || "";
+  if (!raw) return "—";
+  const d = new Date(raw);
+  if (Number.isFinite(d.getTime())) return d.toISOString().slice(0, 16).replace("T", " ") + " UTC";
+  return String(raw);
+}
+
 async function refreshFiresSafe() {
+  readFiresUiState();
+  bindFiresUi();
+
+  if (!firesEnabled) {
+    updateFiresUiStats();
+    return;
+  }
+
+  setFirmsStatus("Loading", "warn");
+
   try {
     const res = await fetch("fires.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`fires.json HTTP ${res.status}`);
@@ -1299,83 +1515,113 @@ async function refreshFiresSafe() {
       ? payload
       : (Array.isArray(payload?.fires) ? payload.fires : []);
 
+    firesLastUpdate = Array.isArray(payload) ? "—" : getFiresGeneratedAt(payload);
+
     firesLayer.clearLayers();
 
-    // heat újraépítés
     const heatPts = [];
     let added = 0;
+    let high = 0;
+    let frpSum = 0;
+    let maxFrp = 0;
+    let totalAfterBBox = 0;
 
     for (const f of list) {
       const lat = Number(f?.lat ?? f?.latitude);
       const lng = Number(f?.lng ?? f?.longitude);
       if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
       if (!inMiddleEastBBox(lat, lng)) continue;
+      totalAfterBBox++;
 
-      // ✅ age filter
       if (!passFiresAgeFilter(f)) continue;
+      if (!passFiresSensorFilter(f)) continue;
+      if (!passFiresConfidenceFilter(f)) continue;
+      if (!passFiresFrpFilter(f)) continue;
 
-      const icon = L.divIcon({
-        className: "", // fontos: ne kapjon leaflet-default stílust
-        html: fireIconHtml(),
-        iconSize: [16, 16],
-        iconAnchor: [8, 8],
-      });
+      const frp = fireFrp(f);
+      const severity = fireSeverity(f);
+      const confidence = fireConfidenceLevel(f);
 
-      const m = L.marker([lat, lng], { icon });
+      if (confidence === "high") high++;
+      frpSum += frp;
+      maxFrp = Math.max(maxFrp, frp);
 
-      const acqDate = String(f?.acq_date || f?.date || "—");
-      const acqTime = String(f?.acq_time || "");
-      const dt = acqTime ? `${acqDate} ${acqTime}` : acqDate;
+      if (firesMarkersEnabled) {
+        const icon = L.divIcon({
+          className: "",
+          html: fireIconHtml(f),
+          iconSize: [20, 20],
+          iconAnchor: [10, 10],
+        });
 
-      const br = f?.brightness ?? f?.bright_ti4 ?? f?.bright_ti5 ?? "";
-      const frp = f?.frp ?? "";
+        const m = L.marker([lat, lng], { icon });
+        m.bindPopup(buildFirePopup(f, lat, lng));
+        firesLayer.addLayer(m);
+      }
 
-      m.bindPopup(
-        `<b>FIRMS hotspot</b><br/>
-         <small>${dt.replace(/</g,"&lt;")}<br/>
-         br: ${String(br).replace(/</g,"&lt;")} · frp: ${String(frp).replace(/</g,"&lt;")}</small>`
-      );
-
-      firesLayer.addLayer(m);
+      const heatIntensity = severity === "extreme" ? 3.0 : severity === "high" ? 2.2 : severity === "medium" ? 1.2 : 0.55;
+      heatPts.push([lat, lng, heatIntensity]);
       added++;
-
-      // heat intensity
-      const frpNum = Number(frp);
-      const intensity = Number.isFinite(frpNum) ? Math.max(0.2, Math.min(3.0, frpNum / 20)) : 0.8;
-      heatPts.push([lat, lng, intensity]);
     }
 
-    // heat layer reset
     if (firesHeat && map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
     firesHeat = null;
 
     if (firesHeatEnabled && heatPts.length) {
-      firesHeat = L.heatLayer(heatPts, { radius: 26, blur: 18, maxZoom: 8 });
+      firesHeat = L.heatLayer(heatPts, { radius: 28, blur: 20, maxZoom: 8 });
       firesHeat.addTo(map);
       firesHeat.bringToBack();
       if (bordersLayer && map.hasLayer(bordersLayer)) bordersLayer.bringToBack();
     }
 
+    firesLastVisibleStats = {
+      visible: added,
+      high,
+      avgFrp: added ? frpSum / added : 0,
+      maxFrp,
+      totalAfterBBox
+    };
+
+    updateFiresUiStats();
+    setFirmsStatus("Online", "online");
+
     if (added === 0) {
-      console.warn("[fires] 0 markers after filters. firesAgeMode=", firesAgeMode);
-    } else {
-      // console.debug("[fires] markers:", added, "ageMode:", firesAgeMode);
+      console.warn("[fires] 0 visible markers after filters.", {
+        firesAgeMode,
+        firesSensorMode,
+        firesConfidenceMode,
+        firesFrpMin,
+        totalAfterBBox
+      });
     }
 
   } catch (e) {
     console.warn("[fires] refresh failed:", e?.message || e);
+    setFirmsStatus("Error", "error");
+    firesLastVisibleStats = { visible: 0, high: 0, avgFrp: 0, maxFrp: 0, totalAfterBBox: 0 };
+    updateFiresUiStats();
   }
 }
 
 function setFiresEnabled(on) {
   firesEnabled = !!on;
+  const checkbox = document.getElementById("firesCheckbox");
+  if (checkbox) checkbox.checked = firesEnabled;
+
   if (firesEnabled) {
     if (!map.hasLayer(firesLayer)) firesLayer.addTo(map);
     refreshFiresSafe();
   } else {
     if (map.hasLayer(firesLayer)) map.removeLayer(firesLayer);
     if (firesHeat && map.hasLayer(firesHeat)) map.removeLayer(firesHeat);
+    setFirmsStatus("Off", "neutral");
+    updateFiresUiStats();
   }
+}
+
+function setFiresMarkersEnabled(on) {
+  firesMarkersEnabled = !!on;
+  if (firesEnabled) refreshFiresSafe();
 }
 
 function setFiresHeatEnabled(on) {
@@ -1594,13 +1840,75 @@ window.setInterval(() => {
         <div class="muted">OSINT-alapú, késleltetett eseményréteg. Nem valós idejű taktikai térkép.</div>
       </div>
 
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
-        <div class="muted" style="margin-bottom:6px;">FIRMS hotspots</div>
-        <div class="row">
-          <label><input id="firesCheckbox" type="checkbox" /> Fires (fires.json)</label>
-          <label><input id="firesHeatCheckbox" type="checkbox" /> Heat</label>
+      <div class="firms-control-block" data-control-block="firms" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+          <div class="muted" style="font-weight:800;color:#22313d;">NASA FIRMS</div>
+          <span id="firmsStatusBadge" class="badge-mini">Off</span>
         </div>
-        <div class="muted">Requires fires.json (generated in Actions). No key stored in browser.</div>
+
+        <div class="row">
+          <label><input id="firesCheckbox" type="checkbox" /> FIRMS layer</label>
+          <span class="btn-mini" id="firesRefreshBtn">Refresh</span>
+        </div>
+
+        <div class="row">
+          <label><input id="firesMarkersCheckbox" type="checkbox" checked /> Hotspot markers</label>
+          <label><input id="firesHeatCheckbox" type="checkbox" checked /> Heatmap</label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
+        <div class="row">
+          <label><input type="radio" name="firesAge" value="24h" /> 24h</label>
+          <label><input type="radio" name="firesAge" value="3d" /> 3d</label>
+          <label><input type="radio" name="firesAge" value="7d" checked /> 7d</label>
+          <label><input type="radio" name="firesAge" value="15d" /> 15d</label>
+          <label><input type="radio" name="firesAge" value="30d" /> 30d</label>
+          <label><input type="radio" name="firesAge" value="all" /> All</label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Sensor</div>
+        <div class="row">
+          <label><input type="radio" name="firesSensor" value="all" checked /> All</label>
+          <label><input type="radio" name="firesSensor" value="viirs" /> VIIRS</label>
+          <label><input type="radio" name="firesSensor" value="modis" /> MODIS</label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Confidence</div>
+        <div class="row">
+          <label><input type="radio" name="firesConfidence" value="all" checked /> All</label>
+          <label><input type="radio" name="firesConfidence" value="high" /> High</label>
+          <label><input type="radio" name="firesConfidence" value="nominal" /> Nominal</label>
+          <label><input type="radio" name="firesConfidence" value="low" /> Low</label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">FRP threshold</div>
+        <select id="firesFrpSelect">
+          <option value="0" selected>0+</option>
+          <option value="10">10+</option>
+          <option value="25">25+</option>
+          <option value="50">50+</option>
+          <option value="100">100+</option>
+        </select>
+
+        <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div class="mini-item"><div class="name">Visible</div><div class="val" id="firmsVisibleCount">0</div></div>
+          <div class="mini-item"><div class="name">High conf.</div><div class="val" id="firmsHighCount">0</div></div>
+          <div class="mini-item"><div class="name">Avg FRP</div><div class="val" id="firmsAvgFrp">0.0</div></div>
+          <div class="mini-item"><div class="name">Max FRP</div><div class="val" id="firmsMaxFrp">0.0</div></div>
+        </div>
+
+        <div class="muted" style="margin-top:8px;">Last update: <span id="firmsLastUpdate">—</span></div>
+
+        <div style="margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+          <div class="muted"><span class="event-dot" style="background:#fcbf49;"></span> Low FRP</div>
+          <div class="muted"><span class="event-dot" style="background:#f77f00;"></span> Medium FRP</div>
+          <div class="muted"><span class="event-dot" style="background:#d62828;"></span> High FRP</div>
+          <div class="muted"><span class="event-dot" style="background:#7b2cbf;"></span> Extreme FRP</div>
+        </div>
+
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          NASA FIRMS thermal anomalies. A hotspot does not automatically mean a military strike. Concentrated and repeated anomalies may support an activity assessment.
+        </div>
       </div>
     `;
     layersBox.appendChild(layersExtra);
@@ -1633,7 +1941,9 @@ window.setInterval(() => {
     const poisReloadBtn = document.getElementById("poisReloadBtn");
 
     const firesCheckbox = document.getElementById("firesCheckbox");
+    const firesMarkersCheckbox = document.getElementById("firesMarkersCheckbox");
     const firesHeatCheckbox = document.getElementById("firesHeatCheckbox");
+    const firesRefreshBtn = document.getElementById("firesRefreshBtn");
 
     const israelActivityCheckbox = document.getElementById("israelActivityCheckbox");
     const israelActivityRefreshBtn = document.getElementById("israelActivityRefreshBtn");
@@ -1661,8 +1971,12 @@ window.setInterval(() => {
     poisCheckbox.addEventListener("change", (e) => setPoisEnabled(e.target.checked));
     poisReloadBtn.addEventListener("click", async () => { poisLoaded = false; await loadPoisOnce(); });
 
-    firesCheckbox.addEventListener("change", (e) => setFiresEnabled(e.target.checked));
-    firesHeatCheckbox.addEventListener("change", (e) => setFiresHeatEnabled(e.target.checked));
+    if (firesCheckbox) firesCheckbox.addEventListener("change", (e) => setFiresEnabled(e.target.checked));
+    if (firesMarkersCheckbox) firesMarkersCheckbox.addEventListener("change", (e) => setFiresMarkersEnabled(e.target.checked));
+    if (firesHeatCheckbox) firesHeatCheckbox.addEventListener("change", (e) => setFiresHeatEnabled(e.target.checked));
+    if (firesRefreshBtn) firesRefreshBtn.addEventListener("click", () => refreshFiresSafe());
+    bindFiresUi();
+    updateFiresUiStats();
 
     if (israelActivityCheckbox) {
       israelActivityCheckbox.addEventListener("change", (e) => setIsraelActivityEnabled(e.target.checked));
