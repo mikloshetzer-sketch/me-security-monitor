@@ -1,9 +1,9 @@
 # Daily OSINT Signal
 
-**Generated:** 2026-07-07T10:01:14.987430+00:00
+**Generated:** 2026-07-07T12:39:23.062475+00:00
 
 ## Summary (last 24h)
-- Events recorded: **13**
+- Events recorded: **18**
 - Dominant category: **other**
 - Highest activity location: **Damascus**
 
@@ -11,7 +11,7 @@
 
 Middle East Security Monitor – Daily Signal
 
-Events (last 24h): 13
+Events (last 24h): 18
 Dominant category: other
 Highest activity location: Damascus
 
