@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-07-06 23:32 UTC",
+    "updated": "2026-07-07 04:17 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-06-30",
-    "period_end": "2026-07-06",
-    "total_events": 120,
-    "total_risk": 91.63,
-    "normalized_risk_score": 36.7,
+    "period_start": "2026-07-01",
+    "period_end": "2026-07-07",
+    "total_events": 116,
+    "total_risk": 81.02,
+    "normalized_risk_score": 32.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 15,
-    "security": 4,
-    "political": 22,
-    "other": 79
+    "military": 16,
+    "security": 3,
+    "political": 20,
+    "other": 77
   },
   "source_counts": {
-    "news": 113,
-    "isw": 7
+    "news": 110,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 23.59
+      "risk": 21.82
     },
     {
       "name": "Israel",
-      "risk": 21.45
+      "risk": 17.45
     },
     {
       "name": "Gaza Strip",
-      "risk": 12.8
+      "risk": 11.2
     },
     {
       "name": "Damascus",
-      "risk": 7.8
+      "risk": 6.6
     },
     {
-      "name": "Syria",
-      "risk": 5.75
+      "name": "Yemen",
+      "risk": 5.1
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-07-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran fires missiles at commercial ships in Strait of Hormuz, Axios reports - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUVFSZk5WeEJaVV96QWl0TDFIZDJUNWFlNTVkNERLdkxfYlVuY2paaS1KbkFHaDB6dkpEeVQ0ZXlLLW1RTXlBTmN2XzBPaklObVJ1VzdpWkFVTDhIYWFNbWlRdDVWZDJkZF9BY0FlNmJHaDBPbmY5ZTVDMEw3M0ozbjN5N2ljem83ZVBQZ3BhUEc4VTZBYmNZVnBiTVFoWUJUdml0dEdOUVYtMG02VEJKQUhMaUZSSnJuWmc"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-06",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://www.bbc.co.uk/news/articles/crlwwwyy70do?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-06",
       "category": "military",
       "source_type": "news",
@@ -66,7 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQblROb05BajVUMW5Sd1RUeW5lN3dOeW1aMHpCazlsdjRtbnRleVBsakhncVlMekNwYXpsYk5tN3k1MFVFNzREbG9IRW9nUFRlbGFiZmVVNzdwcHlTX0FLT3BkNEEwcE9IS1BUakFCdHZ1TU9vanAxY25YYkp1UzRWOFhMN3Z4eUlEeUZJWUZBQ05ETVJvSjNFN3p1emg2RUdVWTR1NDhpeW54R2IzREc4YVFR0gG3AUFVX3lxTE84OC1rUGM2RG5pYnExaUstQ0VyUmlwM0hXdFRoZWo0REdEc3hSMFA3ck45cFFFNkxDUk8waWJHeWZpWXo5MlNlbGdLc1BwVEpzbGJ4Y05LVmtuME5PUldIT08zRWxUNDBra2hhZ1JVT0NFcGdLcnNkZ25pTEItc1prbXMyak82MWYzZXNqUDZyTzY1RjFRNHFGLWJqdmZpVVVHQUZNWnhaTkhTRGdsU0JZQjNqX2F5TQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-06",
       "category": "military",
       "source_type": "news",
@@ -75,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVzhtbXVYemJldUJWb0Uycmx0VHNOTlhyaGhRYU5wV0d6eDlJbG10bmlDRDNzbHZiQWdKaGNqR2tXa1lpNk1XOTIwUnFiMUpxeGV3UVBGbHFwaE1icEtCUnNhLUFDY2U1QTA1dF9QUUpIYi10UmdjRFdGMnI3dUFQLXlhUGtlN0lYcFMxSjFuRzdod1RzdnR1Uy1qRVBCczlndjkzZtIBqgFBVV95cUxOd281czFuaVNTOU9UOHFMa19VdlhPSy1ra1NPZ2dibGlSeE81RDNwMS1HbC1ZYmJhaEYzNHpDNnZyaGIteDBpYmZudFEzcEhfVTFvNDNwa0tWVkV0RnViMW9JcjdVdzhvU1VyazBnZVVLdmNDLTNZb1M5WDllZXNEcWt2aDd2S1JlTUE0QU93TEsxX0pROV8ySEZ5RVZQakIxVXdMcmRlaWZqdw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-06",
       "category": "military",
       "source_type": "news",
@@ -84,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYTdqcUtpWldGSDhJcmVZN1c0d0l2MGpULW5tUF9DN0tockFvbkZrNFVIZmNZYy1kM1k0dDRLRW1xQ0cyendLZVB1c3RiaDV1Z2JweG4xNGhtYmItVUFqRlhGaFpjVlh6Y0tEb0Flam5yUTI5Sl82dnMtYTFSZVhlakV1dm9MOGFTWXFjUG1qZGhWc3l6OWlqb0Q1NzTSAaIBQVVfeXFMT0FqbzNSanF4aS1sV2dpMG0wNkVsOUlBZEVvWGpuOUgwcEtaTFlmRU5XZnJnZEJjSG9FMlpsdFVvSTQ1dFQ2ZWUxdlVmTV9BdkEwYjJuSlVQel9kbjJYbEowa09UWWIyazJ1OE1ZRWQ1d1BQSkRMMFQ3QmZOYXhPRnFuVUZpXzhmcE1JaU1PUHpDZG9rU3VVTHhSRjRDSXJLZ0N3"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-07-05",
       "category": "military",
       "source_type": "news",
@@ -93,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWU4yZ1ZfdTNacnktZXFFTkVZV0ZKdGRNVy04cTBHQS1hb29UMEs2QXZUS3NIUndYUWZET2EtSHJPTXA2SW9KZXpGOExQdGMxMFJYRFZlMXJuLUNQWFhRYU9tTXg4SkcxMHJ3X0kxbFd5SGZPY09HSlBVNk03YVNfY1VUN09DMGJLSk9qQjRVaEJCUzBTMTAzOHRseVdSd3JJQllj"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-07-05",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cevllyj9vv3o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-07-05",
       "category": "military",
       "source_type": "news",
@@ -111,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQ2pITkNYS3JuMHhDZk5lRWREMUU1a0lTaDNvMnNrVlZ0aXY4VVJwMExJRXd4cXlwUS1COTBHWjFlQUZlME1UeG9tMDg0NVpFNTRPQWN5MHU1MjYzUlpmOU1COVpyUzF1d1RtNmF6X21sMzNIb1BHcHV5QkVxT2FVaVE1RHBFX1I0NkpselNsTTZRVUozOXpveGJPbmR1VzJPN1VkRE9R0gGrAUFVX3lxTE55bU9pV284X1NuZURfTUM1WnpBcjd4OGRjMEFObHhZOVNvUzB5ZUhSMGJ2cnh0eEF3SW5QZjJ3ZVBIOHJOU3FXVVpxQ09zdkY4aVBRZEtFeE1hMzI3WTFVdDdud01XTkVRSGNtRGhVajQ2d2xBU1didXg1ZzVUSk1tb1F5ZzczX0NEV0hsNXNMVi1QY3h2d2N3cVZUWFFuMV9GdzV4b3hIdmhRbw"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-07-05",
       "category": "military",
       "source_type": "news",
@@ -120,22 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPay13NkpNUTB5ZlBER1ktQ0dRN3Q3dkg5UWpyekd3VnNOTjFZclF2cjZjQS1PZktnU0VWUEpQeWdGbnUzRjlwMUFUN3BmUU9KdGtnR2RvVlREaTROVHpnTzMtNFR0OFA4MVhsdTIxYkk5VGdLQTJkcWNrQnNQZ0hnQ3BGUmNIVlVtM29rcjlVdkt4eGt0QVNQOWs2RnkyZnlOUnhXTUZWWdIBrAFBVV95cUxPR0NidUhFOXNUVG9jS3JiaTJIOUoxNHhhb1RHcTdiRVJzYTB6NFFlS3lHZG1lSy1YRG9nVGFVX2FpTFVaT0tFVU1DQVc4R1dsM0N0MXZ6LU9kT0ZaZ2oyN3JQOTZTTWVUd1pyWUN4RXN5allNVnZrWU1peWl5Xy1SRkVoQUVaR0gya3psN2doanRJal9rM2ZxRlF3T3FiSjJnc2ZjY182YUQ3clVR"
     },
     {
-      "score": 2.1,
-      "date": "2026-07-03",
-      "category": "military",
+      "score": 1.8,
+      "date": "2026-07-06",
+      "category": "security",
       "source_type": "news",
-      "title": "Bomb blast at Damascus cafe kills nine, Syrian state media say",
-      "location": "Damascus",
-      "url": "https://www.bbc.co.uk/news/articles/cn0vwxyz40zo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-07-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran nuclear and military damage revealed after restricted satellite images released",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cr5j1qn6deno?at_medium=RSS&at_campaign=rss"
+      "title": "Israeli police officer filmed throwing stun grenade into car in West Bank",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/articles/c1eyyyl8ye0o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
