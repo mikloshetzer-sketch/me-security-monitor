@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-07-07T00:00:00Z",
+  "status": "demo",
+  "module": "israel_activity_monitor",
+  "title": "Israel Military Activity Monitor – Gaza and Lebanon",
+  "description": "OSINT-based, delayed and analytical map layer showing reported Israeli military activity in Gaza and Lebanon. This dataset is not a real-time tactical feed.",
+  "data_policy": {
+    "delay_policy": "Recommended publication delay: 6–24 hours after the reported event.",
+    "precision_policy": "Coordinates are approximate and should represent public reporting locations, not live tactical positions.",
+    "confidence_policy": "Each event should include a confidence score from 1 to 5.",
+    "safety_note": "Do not publish real-time troop movements, active unit locations, or targeting information."
+  },
+  "filters": {
+    "regions": [
+      "Gaza Strip",
+      "South Lebanon",
+      "Israel-Lebanon Border"
+    ],
+    "activity_types": [
+      "airstrike",
+      "ground_activity",
+      "artillery",
+      "evacuation_warning",
+      "humanitarian_zone",
+      "cross_border_fire",
+      "drone_activity"
+    ],
+    "time_windows": [
+      "24h",
+      "7d",
+      "30d"
+    ]
+  },
+  "events": [
+    {
+      "id": "ISR-GAZA-DEMO-001",
+      "date": "2026-07-07",
+      "time_utc": "08:00",
+      "region": "Gaza Strip",
+      "country": "Palestinian Territories",
+      "location_name": "Gaza City area",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "activity_type": "airstrike",
+      "intensity": "medium",
+      "confidence": 3,
+      "summary": "Reported Israeli air activity in the Gaza City area based on open-source monitoring.",
+      "analysis_note": "Demo entry. Replace with verified OSINT reporting before publication.",
+      "source_name": "Demo source",
+      "source_url": "",
+      "source_type": "placeholder"
+    },
+    {
+      "id": "ISR-GAZA-DEMO-002",
+      "date": "2026-07-07",
+      "time_utc": "09:30",
+      "region": "Gaza Strip",
+      "country": "Palestinian Territories",
+      "location_name": "Khan Younis area",
+      "latitude": 31.3462,
+      "longitude": 34.3032,
+      "activity_type": "ground_activity",
+      "intensity": "high",
+      "confidence": 3,
+      "summary": "Reported ground activity in the Khan Younis area.",
+      "analysis_note": "Demo entry. Use only delayed and verified event-level data.",
+      "source_name": "Demo source",
+      "source_url": "",
+      "source_type": "placeholder"
+    },
+    {
+      "id": "ISR-LEB-DEMO-001",
+      "date": "2026-07-07",
+      "time_utc": "10:15",
+      "region": "South Lebanon",
+      "country": "Lebanon",
+      "location_name": "Bint Jbeil area",
+      "latitude": 33.1196,
+      "longitude": 35.4333,
+      "activity_type": "airstrike",
+      "intensity": "medium",
+      "confidence": 3,
+      "summary": "Reported Israeli strike activity in the Bint Jbeil area of South Lebanon.",
+      "analysis_note": "Demo entry. Replace with verified source-based event data.",
+      "source_name": "Demo source",
+      "source_url": "",
+      "source_type": "placeholder"
+    },
+    {
+      "id": "ISR-LEB-DEMO-002",
+      "date": "2026-07-07",
+      "time_utc": "11:00",
+      "region": "Israel-Lebanon Border",
+      "country": "Lebanon",
+      "location_name": "Naqoura border area",
+      "latitude": 33.1181,
+      "longitude": 35.1397,
+      "activity_type": "cross_border_fire",
+      "intensity": "low",
+      "confidence": 2,
+      "summary": "Reported cross-border activity near the Naqoura area.",
+      "analysis_note": "Demo entry. Border incidents should be shown as analytical event points, not as live tactical information.",
+      "source_name": "Demo source",
+      "source_url": "",
+      "source_type": "placeholder"
+    }
+  ],
+  "legend": {
+    "airstrike": "Reported airstrike or aerial attack",
+    "ground_activity": "Reported ground operation or maneuver area",
+    "artillery": "Reported artillery or indirect fire",
+    "evacuation_warning": "Public evacuation or warning notice",
+    "humanitarian_zone": "Reported humanitarian or restricted zone",
+    "cross_border_fire": "Reported cross-border fire or exchange",
+    "drone_activity": "Reported UAV or drone-related activity"
+  }
+}
