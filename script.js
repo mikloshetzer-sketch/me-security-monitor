@@ -1,4 +1,3 @@
-// =========================
 // script.js (PART 1 / 2)
 // =========================
 
@@ -1388,6 +1387,113 @@ function setFiresHeatEnabled(on) {
 window.setInterval(() => {
   if (firesEnabled) refreshFiresSafe();
 }, 10 * 60 * 1000);
+
+    // ===== Israel military activity layer (data/israel-activity.json) =====
+    let israelActivityEnabled = false;
+    let israelActivityScriptLoading = null;
+
+    const israelActivityFilters = {
+      gaza: true,
+      lebanon: true,
+      airstrike: true,
+      ground_activity: true,
+      artillery: true,
+      cross_border_fire: true,
+      drone_activity: true,
+      evacuation_warning: true,
+      humanitarian_zone: true
+    };
+
+    window.israelActivityFilters = israelActivityFilters;
+
+    function loadScriptOnce(src) {
+      return new Promise((resolve, reject) => {
+        const existing = [...document.scripts].find((s) => s.getAttribute("src") === src || s.src.endsWith(src));
+        if (existing) {
+          if (window.loadIsraelActivityLayer) resolve();
+          else existing.addEventListener("load", () => resolve(), { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Script load failed: ${src}`));
+        document.body.appendChild(script);
+      });
+    }
+
+    async function ensureIsraelActivityLayerLoaded() {
+      if (window.loadIsraelActivityLayer) return;
+      if (!israelActivityScriptLoading) {
+        israelActivityScriptLoading = loadScriptOnce("js/israel-activity-layer.js");
+      }
+      await israelActivityScriptLoading;
+      if (!window.loadIsraelActivityLayer) {
+        throw new Error("window.loadIsraelActivityLayer is not available after script load.");
+      }
+    }
+
+    function syncIsraelActivityFiltersFromUi() {
+      const getChecked = (id, fallback = true) => {
+        const el = document.getElementById(id);
+        return el ? !!el.checked : fallback;
+      };
+
+      israelActivityFilters.gaza = getChecked("israelGazaCheckbox", true);
+      israelActivityFilters.lebanon = getChecked("israelLebanonCheckbox", true);
+      israelActivityFilters.airstrike = getChecked("israelAirstrikeCheckbox", true);
+      israelActivityFilters.ground_activity = getChecked("israelGroundActivityCheckbox", true);
+      israelActivityFilters.artillery = getChecked("israelArtilleryCheckbox", true);
+      israelActivityFilters.cross_border_fire = getChecked("israelCrossBorderFireCheckbox", true);
+      israelActivityFilters.drone_activity = getChecked("israelDroneActivityCheckbox", true);
+      israelActivityFilters.evacuation_warning = getChecked("israelEvacuationWarningCheckbox", true);
+      israelActivityFilters.humanitarian_zone = getChecked("israelHumanitarianZoneCheckbox", true);
+
+      window.israelActivityFilters = israelActivityFilters;
+    }
+
+    async function refreshIsraelActivitySafe() {
+      if (!israelActivityEnabled) return;
+      try {
+        syncIsraelActivityFiltersFromUi();
+        await ensureIsraelActivityLayerLoaded();
+        if (typeof window.refreshIsraelActivityLayer === "function") {
+          await window.refreshIsraelActivityLayer();
+        }
+        if (window.israelActivityLayer && !map.hasLayer(window.israelActivityLayer)) {
+          window.israelActivityLayer.addTo(map);
+        }
+      } catch (e) {
+        console.warn("[israel-activity] refresh failed:", e?.message || e);
+      }
+    }
+
+    async function setIsraelActivityEnabled(on) {
+      israelActivityEnabled = !!on;
+      try {
+        if (israelActivityEnabled) {
+          syncIsraelActivityFiltersFromUi();
+          await ensureIsraelActivityLayerLoaded();
+          await window.loadIsraelActivityLayer(map);
+        } else {
+          if (window.israelActivityLayer && map.hasLayer(window.israelActivityLayer)) {
+            map.removeLayer(window.israelActivityLayer);
+          }
+          if (typeof window.clearIsraelActivityLayer === "function") {
+            window.clearIsraelActivityLayer();
+          }
+        }
+      } catch (e) {
+        console.warn("[israel-activity] toggle failed:", e?.message || e);
+      }
+    }
+
+    window.setInterval(() => {
+      if (israelActivityEnabled) refreshIsraelActivitySafe();
+    }, 5 * 60 * 1000);
+
     
     // ===== Control panel slicing into accordions (HARD, stable) =====
     // We move:
@@ -1397,6 +1503,25 @@ window.setInterval(() => {
     const directRows = [...controlPanel.querySelectorAll(":scope > .row")];
     const firstRow = directRows[0] || null;
     const secondRow = directRows[1] || null;
+
+    // Remove any static Israel control block from index.html before rebuilding the control panel.
+    // The dynamic block below is the single source of truth for this layer UI.
+    [
+      "israelActivityCheckbox",
+      "israelGazaCheckbox",
+      "israelLebanonCheckbox",
+      "israelAirstrikeCheckbox",
+      "israelGroundActivityCheckbox",
+      "israelArtilleryCheckbox",
+      "israelCrossBorderFireCheckbox",
+      "israelDroneActivityCheckbox",
+      "israelEvacuationWarningCheckbox",
+      "israelHumanitarianZoneCheckbox"
+    ].forEach((id) => {
+      const el = document.getElementById(id);
+      const block = el?.closest?.(".israel-activity-control-block") || el?.closest?.("[data-control-block='israel-activity']");
+      if (block) block.remove();
+    });
 
     const layersBox = document.createElement("div");
     const filtersBox = document.createElement("div");
@@ -1441,6 +1566,34 @@ window.setInterval(() => {
         </div>
       </div>
 
+      <div class="israel-activity-control-block" data-control-block="israel-activity" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;">Israel military activity</div>
+        <div class="row">
+          <label><input id="israelActivityCheckbox" type="checkbox" /> Israel Activity (Gaza / Lebanon)</label>
+          <span class="btn-mini" id="israelActivityRefreshBtn">Refresh</span>
+        </div>
+        <div class="row">
+          <label><input id="israelGazaCheckbox" type="checkbox" checked /> Gaza</label>
+          <label><input id="israelLebanonCheckbox" type="checkbox" checked /> South Lebanon</label>
+        </div>
+        <div class="row">
+          <label><input id="israelAirstrikeCheckbox" type="checkbox" checked /> Airstrikes</label>
+          <label><input id="israelGroundActivityCheckbox" type="checkbox" checked /> Ground</label>
+        </div>
+        <div class="row">
+          <label><input id="israelArtilleryCheckbox" type="checkbox" checked /> Artillery</label>
+          <label><input id="israelCrossBorderFireCheckbox" type="checkbox" checked /> Border fire</label>
+        </div>
+        <div class="row">
+          <label><input id="israelDroneActivityCheckbox" type="checkbox" checked /> Drones</label>
+          <label><input id="israelEvacuationWarningCheckbox" type="checkbox" checked /> Warnings</label>
+        </div>
+        <div class="row">
+          <label><input id="israelHumanitarianZoneCheckbox" type="checkbox" checked /> Humanitarian zones</label>
+        </div>
+        <div class="muted">OSINT-alapú, késleltetett eseményréteg. Nem valós idejű taktikai térkép.</div>
+      </div>
+
       <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;">FIRMS hotspots</div>
         <div class="row">
@@ -1482,6 +1635,20 @@ window.setInterval(() => {
     const firesCheckbox = document.getElementById("firesCheckbox");
     const firesHeatCheckbox = document.getElementById("firesHeatCheckbox");
 
+    const israelActivityCheckbox = document.getElementById("israelActivityCheckbox");
+    const israelActivityRefreshBtn = document.getElementById("israelActivityRefreshBtn");
+    const israelActivityFilterCheckboxes = [
+      "israelGazaCheckbox",
+      "israelLebanonCheckbox",
+      "israelAirstrikeCheckbox",
+      "israelGroundActivityCheckbox",
+      "israelArtilleryCheckbox",
+      "israelCrossBorderFireCheckbox",
+      "israelDroneActivityCheckbox",
+      "israelEvacuationWarningCheckbox",
+      "israelHumanitarianZoneCheckbox"
+    ].map((id) => document.getElementById(id)).filter(Boolean);
+
     eventsLayerCheckbox.addEventListener("change", (e) => { eventsEnabled = e.target.checked; updateAll(); });
 
     aircraftCheckbox.addEventListener("change", (e) => setAircraftEnabled(e.target.checked));
@@ -1496,6 +1663,16 @@ window.setInterval(() => {
 
     firesCheckbox.addEventListener("change", (e) => setFiresEnabled(e.target.checked));
     firesHeatCheckbox.addEventListener("change", (e) => setFiresHeatEnabled(e.target.checked));
+
+    if (israelActivityCheckbox) {
+      israelActivityCheckbox.addEventListener("change", (e) => setIsraelActivityEnabled(e.target.checked));
+    }
+    if (israelActivityRefreshBtn) {
+      israelActivityRefreshBtn.addEventListener("click", () => refreshIsraelActivitySafe());
+    }
+    israelActivityFilterCheckboxes.forEach((cb) => {
+      cb.addEventListener("change", () => refreshIsraelActivitySafe());
+    });
 
     // Start layers
     setAircraftEnabled(true);
