@@ -476,6 +476,47 @@
       background: rgba(255,255,255,.56);
     }
 
+
+    /* Israel Activity Monitor */
+    .israel-section{
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid rgba(34,51,68,.10);
+    }
+
+    .israel-section-title{
+      font-size:12px;
+      font-weight:900;
+      color:#22313d;
+      margin-bottom:6px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+
+    .israel-layer-note{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.35;
+    }
+
+    .israel-legend-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      display:inline-block;
+      border:1px solid rgba(255,255,255,.55);
+      box-shadow:0 0 10px rgba(0,0,0,.15);
+    }
+
+    .israel-dot-airstrike{ background:#e53935; }
+    .israel-dot-ground{ background:#fb8c00; }
+    .israel-dot-artillery{ background:#8e24aa; }
+    .israel-dot-border{ background:#f4511e; }
+    .israel-dot-warning{ background:#fdd835; }
+    .israel-dot-humanitarian{ background:#43a047; }
+    .israel-dot-drone{ background:#1e88e5; }
+
     /* Leaflet */
     .leaflet-control-zoom{
       margin-top: calc(var(--safe-top) + 140px) !important;
@@ -622,6 +663,39 @@
     <div class="muted" style="margin-top:10px;">Source filters</div>
     <div class="row"><label><input class="src-filter" type="checkbox" value="news" checked /> News</label></div>
     <div class="row"><label><input class="src-filter" type="checkbox" value="isw" checked /> ISW</label></div>
+
+
+    <div class="israel-section">
+      <div class="israel-section-title">Israel Military Activity</div>
+
+      <div class="row">
+        <label><input id="israelActivityCheckbox" type="checkbox" /> Israel activity layer</label>
+      </div>
+
+      <div class="row">
+        <label><input class="israel-region-filter" type="checkbox" value="Gaza Strip" checked /> Gaza</label>
+        <label><input class="israel-region-filter" type="checkbox" value="South Lebanon" checked /> South Lebanon</label>
+      </div>
+
+      <div class="row">
+        <label><input class="israel-type-filter" type="checkbox" value="airstrike" checked /> Airstrikes</label>
+        <label><input class="israel-type-filter" type="checkbox" value="ground_activity" checked /> Ground</label>
+      </div>
+
+      <div class="row">
+        <label><input class="israel-type-filter" type="checkbox" value="artillery" checked /> Artillery</label>
+        <label><input class="israel-type-filter" type="checkbox" value="cross_border_fire" checked /> Border fire</label>
+      </div>
+
+      <div class="row">
+        <label><input class="israel-type-filter" type="checkbox" value="evacuation_warning" checked /> Warnings</label>
+        <label><input class="israel-type-filter" type="checkbox" value="drone_activity" checked /> Drones</label>
+      </div>
+
+      <div class="israel-layer-note">
+        OSINT-alapú, késleltetett elemző réteg. Nem valós idejű taktikai térkép.
+      </div>
+    </div>
 
     <div class="muted" style="margin-top:10px;">Window</div>
     <div class="row"><label><input type="radio" name="window" value="1" checked /> 1d</label></div>
@@ -786,6 +860,11 @@
     <div class="risk-row"><div class="name">Security</div><div class="val"><span class="event-dot" style="background:#ffd84e;"></span></div></div>
     <div class="risk-row"><div class="name">Political</div><div class="val"><span class="event-dot" style="background:#4ea1ff;"></span></div></div>
     <div class="risk-row"><div class="name">Other</div><div class="val"><span class="event-dot" style="background:#b7b7b7;"></span></div></div>
+
+    <div class="risk-row"><div class="name">Israel airstrike</div><div class="val"><span class="israel-legend-dot israel-dot-airstrike"></span></div></div>
+    <div class="risk-row"><div class="name">Israel ground activity</div><div class="val"><span class="israel-legend-dot israel-dot-ground"></span></div></div>
+    <div class="risk-row"><div class="name">Cross-border fire</div><div class="val"><span class="israel-legend-dot israel-dot-border"></span></div></div>
+    <div class="risk-row"><div class="name">Drone activity</div><div class="val"><span class="israel-legend-dot israel-dot-drone"></span></div></div>
     <div class="muted" style="margin-top:8px;">Tip: a panelek külön nyithatók, így mobilon is kezelhető marad.</div>
   </div>
 
@@ -793,6 +872,7 @@
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
+  <script src="./js/israel-activity-layer.js"></script>
   <script type="module" src="./script.js"></script>
 </body>
 </html>
