@@ -1194,6 +1194,7 @@ let firesHeat = null;
 let firesEnabled = false;
 let firesMarkersEnabled = true;
 let firesHeatEnabled = true;
+let firesAreaMode = "middle_east"; // middle_east | israel_gaza | gaza | west_bank | israel_lebanon | south_lebanon | syria | iraq | yemen | iran
 let firesAgeMode = "7d";        // 24h | 3d | 7d | 15d | 30d | all
 let firesSensorMode = "all";     // all | viirs | modis
 let firesConfidenceMode = "all"; // all | high | nominal | low
@@ -1206,6 +1207,77 @@ let firesLastVisibleStats = {
   maxFrp: 0,
   totalAfterBBox: 0
 };
+
+const FIRE_AREAS = {
+  middle_east: {
+    label: "Entire Middle East",
+    bounds: [[10.0, 25.0], [42.0, 65.0]],
+    zoom: [[12.0, 26.0], [41.5, 64.5]]
+  },
+  israel_gaza: {
+    label: "Israel–Gaza",
+    bounds: [[29.0, 33.7], [33.6, 36.0]],
+    zoom: [[29.4, 33.8], [33.4, 35.9]]
+  },
+  gaza: {
+    label: "Gaza Strip",
+    bounds: [[31.20, 34.15], [31.62, 34.60]],
+    zoom: [[31.20, 34.15], [31.62, 34.60]]
+  },
+  west_bank: {
+    label: "West Bank",
+    bounds: [[31.25, 34.85], [32.75, 35.75]],
+    zoom: [[31.25, 34.85], [32.75, 35.75]]
+  },
+  israel_lebanon: {
+    label: "Israel–Lebanon",
+    bounds: [[32.5, 34.8], [34.0, 36.0]],
+    zoom: [[32.5, 34.8], [34.0, 36.0]]
+  },
+  south_lebanon: {
+    label: "South Lebanon",
+    bounds: [[33.00, 35.05], [33.75, 36.00]],
+    zoom: [[33.00, 35.05], [33.75, 36.00]]
+  },
+  syria: {
+    label: "Syria",
+    bounds: [[32.0, 35.5], [37.5, 42.5]],
+    zoom: [[32.0, 35.5], [37.5, 42.5]]
+  },
+  iraq: {
+    label: "Iraq",
+    bounds: [[29.0, 38.5], [37.5, 49.0]],
+    zoom: [[29.0, 38.5], [37.5, 49.0]]
+  },
+  yemen: {
+    label: "Yemen",
+    bounds: [[12.0, 41.5], [19.2, 54.8]],
+    zoom: [[12.0, 41.5], [19.2, 54.8]]
+  },
+  iran: {
+    label: "Iran",
+    bounds: [[24.0, 43.0], [40.0, 64.0]],
+    zoom: [[24.0, 43.0], [40.0, 64.0]]
+  }
+};
+
+function currentFireArea() {
+  return FIRE_AREAS[firesAreaMode] || FIRE_AREAS.middle_east;
+}
+
+function inFireArea(lat, lng) {
+  const area = currentFireArea();
+  const b = area.bounds || FIRE_AREAS.middle_east.bounds;
+  return lat >= b[0][0] && lat <= b[1][0] && lng >= b[0][1] && lng <= b[1][1];
+}
+
+function zoomToFireArea() {
+  const area = currentFireArea();
+  const b = area.zoom || area.bounds;
+  if (!b || !map) return;
+  map.fitBounds(L.latLngBounds(b[0], b[1]).pad(0.05));
+}
+
 
 // --- FIRMS UI helpers ---
 function safeText(value, fallback = "—") {
@@ -1245,6 +1317,9 @@ function readFiresUiState() {
   const markersEl = document.getElementById("firesMarkersCheckbox");
   const heatEl = document.getElementById("firesHeatCheckbox");
   const frpEl = document.getElementById("firesFrpSelect");
+  const areaEl = document.getElementById("firesAreaSelect");
+
+  if (areaEl) firesAreaMode = areaEl.value || firesAreaMode;
 
   if (markersEl) firesMarkersEnabled = !!markersEl.checked;
   if (heatEl) firesHeatEnabled = !!heatEl.checked;
@@ -1305,6 +1380,25 @@ function bindFiresUi() {
     frpEl.addEventListener("change", () => {
       readFiresUiState();
       if (firesEnabled) refreshFiresSafe();
+    });
+  }
+
+  const areaEl = document.getElementById("firesAreaSelect");
+  if (areaEl && areaEl.dataset.boundFirms !== "1") {
+    areaEl.dataset.boundFirms = "1";
+    areaEl.addEventListener("change", () => {
+      readFiresUiState();
+      zoomToFireArea();
+      if (firesEnabled) refreshFiresSafe();
+    });
+  }
+
+  const zoomBtn = document.getElementById("firesAreaZoomBtn");
+  if (zoomBtn && zoomBtn.dataset.boundFirms !== "1") {
+    zoomBtn.dataset.boundFirms = "1";
+    zoomBtn.addEventListener("click", () => {
+      readFiresUiState();
+      zoomToFireArea();
     });
   }
 
@@ -1531,6 +1625,7 @@ async function refreshFiresSafe() {
       const lng = Number(f?.lng ?? f?.longitude);
       if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
       if (!inMiddleEastBBox(lat, lng)) continue;
+      if (!inFireArea(lat, lng)) continue;
       totalAfterBBox++;
 
       if (!passFiresAgeFilter(f)) continue;
@@ -1591,6 +1686,7 @@ async function refreshFiresSafe() {
         firesSensorMode,
         firesConfidenceMode,
         firesFrpMin,
+        firesAreaMode,
         totalAfterBBox
       });
     }
@@ -1844,6 +1940,23 @@ window.setInterval(() => {
         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
           <div class="muted" style="font-weight:800;color:#22313d;">NASA FIRMS</div>
           <span id="firmsStatusBadge" class="badge-mini">Off</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Analysis area</div>
+        <select id="firesAreaSelect">
+          <option value="middle_east" selected>Entire Middle East</option>
+          <option value="israel_gaza">Israel–Gaza</option>
+          <option value="gaza">Gaza Strip</option>
+          <option value="west_bank">West Bank</option>
+          <option value="israel_lebanon">Israel–Lebanon</option>
+          <option value="south_lebanon">South Lebanon</option>
+          <option value="syria">Syria</option>
+          <option value="iraq">Iraq</option>
+          <option value="yemen">Yemen</option>
+          <option value="iran">Iran</option>
+        </select>
+        <div class="row" style="margin-top:6px;">
+          <span class="btn-mini" id="firesAreaZoomBtn">Zoom to area</span>
         </div>
 
         <div class="row">
