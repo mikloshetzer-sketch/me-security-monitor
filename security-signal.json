@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-08 14:41 UTC",
+    "updated": "2026-07-08 17:52 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-07-02",
     "period_end": "2026-07-08",
-    "total_events": 143,
-    "total_risk": 130.66,
-    "normalized_risk_score": 52.3,
+    "total_events": 151,
+    "total_risk": 143.46,
+    "normalized_risk_score": 57.4,
     "risk_level": "MEDIUM",
-    "confidence": "MEDIUM"
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 29,
+    "military": 31,
     "security": 4,
-    "political": 18,
-    "other": 92
+    "political": 21,
+    "other": 95
   },
   "source_counts": {
-    "news": 137,
+    "news": 145,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 54.21
-    },
-    {
-      "name": "Israel",
-      "risk": 16.25
+      "risk": 65.86
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.1
+      "risk": 17.9
+    },
+    {
+      "name": "Israel",
+      "risk": 17.25
     },
     {
       "name": "Damascus",
@@ -52,7 +52,7 @@
       "date": "2026-07-08",
       "category": "military",
       "source_type": "news",
-      "title": "Trump says interim accord to end war is 'over' after Iranian strikes - Reuters",
+      "title": "Trump says interim accord to end Iran war is 'over', warns of new US strikes - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeXVzMnQ5aVh0S2MxNlBNWXBLcWZ0TFNrUWJuVFRRWjhKSmFVb2UtcGVWNWNVajcwb2dGVERnc3E5QVZseV9qN3RqdFBueUtRUUp3WTA0UVlSREdxOHN4UmV1QUdxSDh1cHVjNFZCWkRqVGpudXpHRnNiOWlMamoyaXY3Tl9ZT0pua1lDTHFNR3hUY1BxWWxHWktDSmpSNEVSOTVTQVZLb1VXaHg0dHc"
     },
@@ -88,6 +88,15 @@
       "date": "2026-07-08",
       "category": "military",
       "source_type": "news",
+      "title": "Bowen: For all his bluster, Trump has no better option than talks with Iran",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cy8we3j14ndo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-08",
+      "category": "military",
+      "source_type": "news",
       "title": "US and Iran trade strikes after tankers hit in Strait of Hormuz",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cwykq59jwpvo?at_medium=RSS&at_campaign=rss"
@@ -115,27 +124,18 @@
       "date": "2026-07-08",
       "category": "military",
       "source_type": "news",
+      "title": "Iran signals defiance as Trump fumes over Strait of Hormuz strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVjM3Zk9ZUXBoRFhuSEpoeUdtUXJUc2daM3BLaWp0VlppN293Z3dXR0RDTUh4NThrMU92NmNDR1V1N244ejBPSkN0bk9lUjRwN1JWaG0xcVJSUVN1OEZ5cmREbGlYbWswX2NNQlRzNHNmQXVLNDBUNFNJbFgxRTRuYlVBRzRHTXNFTHVlTmJXWmY0ek9LZUU1RmVaUEtTd0FnU0ZuMmYyU0d5d9IBrwFBVV95cUxPWmNLYWZCYmFKM0dJeFBtNUFlR0paR3hDTmdDWmlsZ0JWQ0J6c3ZaSWdrY1pGaGhFdmRoTW41RVhYTGhYczc0UC1Fekw5RktaZi1MNTV2RlpGTzF0RzdONTNNdVo3N210OU93TlFGaXRrWlpKOW8yWTgya3FPVllrbTgyZHRiNjRWZG41SmZJdkpHVERqTUNPdnRYekJtdWp2cURScjRGckJGUmhteU84"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-08",
+      "category": "military",
+      "source_type": "news",
       "title": "US strikes southern Iran, Tehran claims attacks on US military sites - Al Jazeera",
       "location": "Tehran",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPa1hvbWRYQ2V0aGJILWJ3Skd3MlV2aU1lSmVjNXlEbGR2NF82TU1MTkJELUd2cEdOZHNwelBfdFo5RV9JZ1pfZnRydTBOUUdZRnE5dVRaZFRvNVpWNGpnZldndk1tdFFBaFJnZGFjOWw1S0hWRTVRamhhdHdXN3JySktHbWxkVGxRM2lnMGVHWXU2cXpGdkZpb0ZzWTczV2tkVUZF0gGoAUFVX3lxTE5EbUZ0TjNIVXJEQk9VdjlNaXMxVHZSSng1S19OM2hhMV8xSHVuLVk1bTBINjE1OFJpTGhoel9jN3BKa1o5T1p0Q3ZyMmZUVGsyb3ZqN2RvYkI1N2dTSy1JaTlnZXhXQ0M4WUdaQVp1bVoxV2NOVk0xd295V3gySGtFTWJTbjZ2VGIzRkJzcE5PcHFYSXI5QlllbGhNY3VIMndXUzZSWHh4OA"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says ceasefire ‘over’ after US, Iran trade attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWFVjdnhLM1JwSlQtRXRlblRpWlRqaU5Qbk5DenNSOTBabkVfTDFMbE5Hb3NhTnJLT21lTjhSNjF4TXZCYlpHakwxYzZfS3c2UktXclM4RDlHZXdmdXFyd1RkX0R5MW1ZM3pZaTd2WkJ0UGJWUWdJZ0NHck9Hd0ZFWWtBdlBUMFdDeHhfb0s5MXA3MEFDdGJOTtIBngFBVV95cUxNRDBFVnkza3pRTGJiZmdMTjBaU0hWWFQ0T25oc0FhbXhkdW5LZG5icUR6WG1QVEFfaDRLMWFuSUEyU3gyZmdnQV90dEc3TWRPLWhnbjc1SzZqWVltdDRfUzAwVVJBYk9BcXRfN1g1MnZnSXNvNWtqSkt2UXk1N01Kd21IS1RKQXdxZWhFUV9IRTFaUjZOejVCZlo1NlRKZw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "US strikes Iran despite promised pause for Khamenei funeral - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTlma3RkZkNEVzJ2OWRBTDEzYktnMEg1TktzV3VKaVNnQklQQVp3aEtCWWFYLXBjSFNKUTJuMllEYUJaZVpBSDJ2U3M1WTFneGVHaTcxUWpQcVR4eE04UEVDRWdfaU5INTJiUnRFbkJJVkwxRlFYVl96TmUzR0ZUcTlyVzRqSVNEcXZqQnZaWUlSUy1acFhrRmdWZVU4NEhSZDVOaWF6bENnUGpCLVHSAbMBQVVfeXFMTUF6Y2VCUHg3OGRFeHlFRUJqLXJmMDV5QV9hNjNrcVpjbTVPUWcwYXMtdzI1UkFwLVZTSl94QUw3X0Mxd1QxN09PWHVBTW12YlRiQ2dBcTljSVk0Q20yMWpPTDdPY1o5cVFiTlpyN0RQTXF3d2phOE83SkZwTWJIT3BjQWI5ZzRsXzdVVXFBeWpIb2tVaksxVGpiN1JLYVNwVHpMcVBUMW5uRThhaUFBLWRpMUU"
     }
   ]
 }
