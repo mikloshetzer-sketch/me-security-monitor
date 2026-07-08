@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-07-08T13:22:25Z",
+  "status": "demo",
+  "module": "ocha_humanitarian_layer",
+  "title": "OCHA Humanitarian Reference Layer",
+  "description": "Humanitarian reference layer for Gaza and the surrounding crossings. Demo structure prepared for later OCHA/HDX-based updates.",
+  "data_policy": {
+    "source_priority": [
+      "OCHA oPt",
+      "HDX / Humanitarian Data Exchange",
+      "UN OCHA situation updates"
+    ],
+    "usage_note": "This is a humanitarian reference layer, not a tactical or military layer.",
+    "precision_note": "Coordinates are approximate in the demo version and must be replaced by verified OCHA/HDX coordinates before analytical publication.",
+    "license_note": "Before automated use, confirm the specific dataset licence and attribution requirements."
+  },
+  "filters": {
+    "categories": [
+      "crossing",
+      "health_facility",
+      "shelter_idp_site",
+      "humanitarian_zone",
+      "access_constraint"
+    ],
+    "regions": [
+      "Gaza Strip",
+      "Israel-Gaza Border",
+      "Egypt-Gaza Border"
+    ]
+  },
+  "features": [
+    {
+      "id": "OCHA-DEMO-CROSSING-EREZ",
+      "category": "crossing",
+      "name": "Erez / Beit Hanoun Crossing",
+      "region": "Israel-Gaza Border",
+      "country": "Palestinian Territories",
+      "latitude": 31.5586,
+      "longitude": 34.5352,
+      "status": "reference",
+      "confidence": 3,
+      "summary": "Demo humanitarian crossing reference point. Replace with verified OCHA/HDX data before publication.",
+      "source_name": "OCHA / HDX placeholder",
+      "source_url": "",
+      "source_type": "placeholder",
+      "last_verified": ""
+    },
+    {
+      "id": "OCHA-DEMO-CROSSING-KEREM-SHALOM",
+      "category": "crossing",
+      "name": "Kerem Shalom Crossing",
+      "region": "Israel-Gaza Border",
+      "country": "Palestinian Territories",
+      "latitude": 31.2471,
+      "longitude": 34.284,
+      "status": "reference",
+      "confidence": 3,
+      "summary": "Demo humanitarian crossing reference point. Replace with verified OCHA/HDX data before publication.",
+      "source_name": "OCHA / HDX placeholder",
+      "source_url": "",
+      "source_type": "placeholder",
+      "last_verified": ""
+    },
+    {
+      "id": "OCHA-DEMO-CROSSING-RAFAH",
+      "category": "crossing",
+      "name": "Rafah Crossing",
+      "region": "Egypt-Gaza Border",
+      "country": "Palestinian Territories",
+      "latitude": 31.2475,
+      "longitude": 34.2552,
+      "status": "reference",
+      "confidence": 3,
+      "summary": "Demo humanitarian crossing reference point. Replace with verified OCHA/HDX data before publication.",
+      "source_name": "OCHA / HDX placeholder",
+      "source_url": "",
+      "source_type": "placeholder",
+      "last_verified": ""
+    },
+    {
+      "id": "OCHA-DEMO-HEALTH-GAZA-CITY",
+      "category": "health_facility",
+      "name": "Gaza City health facility cluster",
+      "region": "Gaza Strip",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "status": "reference",
+      "confidence": 2,
+      "summary": "Demo health-facility cluster marker for the Gaza City area. Replace with verified OCHA/WHO/HDX facility data.",
+      "source_name": "OCHA / HDX placeholder",
+      "source_url": "",
+      "source_type": "placeholder",
+      "last_verified": ""
+    },
+    {
+      "id": "OCHA-DEMO-SHELTER-CENTRAL-GAZA",
+      "category": "shelter_idp_site",
+      "name": "Central Gaza shelter / IDP site reference",
+      "region": "Gaza Strip",
+      "country": "Palestinian Territories",
+      "latitude": 31.4175,
+      "longitude": 34.3506,
+      "status": "reference",
+      "confidence": 2,
+      "summary": "Demo shelter or IDP-site reference marker. Replace with verified OCHA/HDX site data.",
+      "source_name": "OCHA / HDX placeholder",
+      "source_url": "",
+      "source_type": "placeholder",
+      "last_verified": ""
+    },
+    {
+      "id": "OCHA-DEMO-ZONE-AL-MAWASI",
+      "category": "humanitarian_zone",
+      "name": "Al-Mawasi humanitarian area reference",
+      "region": "Gaza Strip",
+      "country": "Palestinian Territories",
+      "latitude": 31.345,
+      "longitude": 34.236,
+      "status": "reference",
+      "confidence": 2,
+      "summary": "Demo humanitarian-area reference marker. Polygon geometry should be added only from verified OCHA/UN sources.",
+      "source_name": "OCHA / HDX placeholder",
+      "source_url": "",
+      "source_type": "placeholder",
+      "last_verified": ""
+    }
+  ],
+  "legend": {
+    "crossing": "Humanitarian or border crossing reference point",
+    "health_facility": "Health facility or health-service cluster",
+    "shelter_idp_site": "Shelter or internally displaced persons site",
+    "humanitarian_zone": "Humanitarian area or reference zone",
+    "access_constraint": "Access restriction or humanitarian constraint"
+  }
+}
