@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-08 10:31 UTC",
+    "updated": "2026-07-08 14:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-07-02",
     "period_end": "2026-07-08",
-    "total_events": 136,
-    "total_risk": 119.11,
-    "normalized_risk_score": 47.6,
-    "risk_level": "LOW",
+    "total_events": 143,
+    "total_risk": 130.66,
+    "normalized_risk_score": 52.3,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
+    "military": 29,
     "security": 4,
-    "political": 20,
-    "other": 85
+    "political": 18,
+    "other": 92
   },
   "source_counts": {
-    "news": 130,
+    "news": 137,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 46.35
+      "risk": 54.21
     },
     {
       "name": "Israel",
-      "risk": 16.5
+      "risk": 16.25
     },
     {
       "name": "Gaza Strip",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Damascus",
-      "risk": 11.4
+      "risk": 13.2
     },
     {
-      "name": "Middle East",
-      "risk": 5.8
+      "name": "Tehran",
+      "risk": 5.45
     }
   ],
   "top_events": [
@@ -73,6 +73,15 @@
       "title": "New US attacks on Iran were absolutely necessary, NATO chief says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSjVzSWMtZXJia2ZQc2gzLUczVUx0dVJiWXVIdVRJQm9kRlZZd0piQjJ3YjRqam1QQU9GTXhsdzlGR3dSTGxrTHU5eG1BNTNlNUdfREFPNWhiLXJhOVJuSkZ4OTlvNjlGUTZfUThPd0k5cm5uTFZIZ2Q2R251YXRGbDBocURPdXNVZzVZSGNXX05jZHNZTktvSlYtdHZ0SU9scnRBaVVlZkFRRXZhR21lWmhpRGNqdw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters",
+      "location": "Qatar",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPX0wtak4yR1c5V1VydHktZHRDdncxdk5FSFZFYl9PZ2RxRDR0eFZfVTdhU05ha0c2NWlHa1FQcWlnVjlGb0E3MFdCU2RZVWxCRFNocnl5UVZWakFTOTdfQjJreTRVTlBGMjdJUDA2ODZKSzZ4UFFQSUozdkdJVkp3WFRadV9WQ09UaHQzdW1uc3FoallwOEZyVVF6Q0g3aU9hWWtkcm1IZDJiT0JlaDBucVM5TU9yYllM"
     },
     {
       "score": 3.0,
@@ -115,27 +124,18 @@
       "date": "2026-07-08",
       "category": "military",
       "source_type": "news",
+      "title": "Trump says ceasefire ‘over’ after US, Iran trade attacks - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWFVjdnhLM1JwSlQtRXRlblRpWlRqaU5Qbk5DenNSOTBabkVfTDFMbE5Hb3NhTnJLT21lTjhSNjF4TXZCYlpHakwxYzZfS3c2UktXclM4RDlHZXdmdXFyd1RkX0R5MW1ZM3pZaTd2WkJ0UGJWUWdJZ0NHck9Hd0ZFWWtBdlBUMFdDeHhfb0s5MXA3MEFDdGJOTtIBngFBVV95cUxNRDBFVnkza3pRTGJiZmdMTjBaU0hWWFQ0T25oc0FhbXhkdW5LZG5icUR6WG1QVEFfaDRLMWFuSUEyU3gyZmdnQV90dEc3TWRPLWhnbjc1SzZqWVltdDRfUzAwVVJBYk9BcXRfN1g1MnZnSXNvNWtqSkt2UXk1N01Kd21IS1RKQXdxZWhFUV9IRTFaUjZOejVCZlo1NlRKZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-08",
+      "category": "military",
+      "source_type": "news",
       "title": "US strikes Iran despite promised pause for Khamenei funeral - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTlma3RkZkNEVzJ2OWRBTDEzYktnMEg1TktzV3VKaVNnQklQQVp3aEtCWWFYLXBjSFNKUTJuMllEYUJaZVpBSDJ2U3M1WTFneGVHaTcxUWpQcVR4eE04UEVDRWdfaU5INTJiUnRFbkJJVkwxRlFYVl96TmUzR0ZUcTlyVzRqSVNEcXZqQnZaWUlSUy1acFhrRmdWZVU4NEhSZDVOaWF6bENnUGpCLVHSAbMBQVVfeXFMTUF6Y2VCUHg3OGRFeHlFRUJqLXJmMDV5QV9hNjNrcVpjbTVPUWcwYXMtdzI1UkFwLVZTSl94QUw3X0Mxd1QxN09PWHVBTW12YlRiQ2dBcTljSVk0Q20yMWpPTDdPY1o5cVFiTlpyN0RQTXF3d2phOE83SkZwTWJIT3BjQWI5ZzRsXzdVVXFBeWpIb2tVaksxVGpiN1JLYVNwVHpMcVBUMW5uRThhaUFBLWRpMUU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military launches strikes against Iran, Central Command says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPVV9wZ2FzeG9JZjdYeVFsay04cWxoUzB1dzRnQ3RwczlRc01vZ0tNUG5aa2JYVUFlRG5vRy1mTnNsLUs2TXk3dzFKTVliRUh2ckJuWkVzQTQtUHpzT0Q4OFFILUFydHlsdUsxaTlhak1hWXViVGZNZDFkNkZSVklSUjZXRV9uLW12X3VOcUlZbmpGQnZUR3gyc3M4WVItZXdjWEpBd01GWjdvRGVzaFc4emZBY0p5YlU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches new strikes on Iran after reinstating oil sanctions over shipping attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbDVhY1RZUlFOQjM4aHdQa05DS0JCT0tfV3gxOUlqTGVFbWVTQnVhbUdDVElDMmxmVm1mUGZyOEQ5bGt1b1JmSGM3Mm1RNGZWdjFpei1wX1hXOFRXcXoxMDBmVy1SM1lMVEQ5U3E0RWNKbHJjTVlGSEd3RnZ1dmFIcWFjUFVhdDQxWjliNTZMMHkzX25IaXVreFRGN09qZ2k0VGxhVDNsTXlrV2pZTERKTmR0N2szZGZsZHB6V3lCWU1xZ0JQZXE0SFhlOWo"
     }
   ]
 }
