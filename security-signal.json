@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-09 20:05 UTC",
+    "updated": "2026-07-09 21:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,15 +9,15 @@
     "period_start": "2026-07-03",
     "period_end": "2026-07-09",
     "total_events": 167,
-    "total_risk": 172.42,
-    "normalized_risk_score": 69.0,
+    "total_risk": 172.07,
+    "normalized_risk_score": 68.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 42,
+    "military": 41,
     "security": 5,
-    "political": 12,
+    "political": 13,
     "other": 108
   },
   "source_counts": {
@@ -27,19 +27,19 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 96.32
-    },
-    {
-      "name": "Israel",
-      "risk": 18.35
+      "risk": 95.97
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.15
+      "risk": 18.0
+    },
+    {
+      "name": "Israel",
+      "risk": 15.35
     },
     {
       "name": "Damascus",
-      "risk": 10.3
+      "risk": 9.1
     },
     {
       "name": "Syria",
@@ -88,6 +88,15 @@
       "date": "2026-07-09",
       "category": "military",
       "source_type": "news",
+      "title": "Palestinians mourn Gaza World Cup screenings organiser killed in Israeli strike",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cwylznzjk04o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
       "title": "US, Iran launch more attacks as mediators urge both sides to uphold MoU - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdUEzMkJvXzN3MDQ2MWNYVl8tdWRsUWs3V2xLY19lbjBoaERod0FDTllreDRNNkVKaWVoVVc3ZFFrMERCQXMyRGFINXVydW9kU3lvcHhDV3RoSk1mdUFRcmNDMTIzWl9XbGJOelhFbC1IMUdTNER3ME5zOVlMX0p1NXNNa2VKNmt3dTRNeTYzZXp6cWlwZVBRUVY5ZGhCTzRtM0NxUjdyUDV5M2p2dDM2YmRMVdIBuAFBVV95cUxOSzZxV25fUDlyWGpsUC1ESWxrUkZsTnpWdThQSjdyMUdkN2dkcDV2ZVgxTGtDb3o2UmxlN00tZVhReWlYVUgybHJrYy1hYjlraHVNWXdYY3BUczJ4cVpNbUlXb3hDbUNXamNKMDAyaktCaUlQaXl2cXpVdk0zQTR4bHIxRkdFdVQtZmktVTZfUzZJSEducHdQSTlkS2liU2tIU0JjN0t4cW5NU0IwVjJCTzBIT0dCVTBD"
@@ -118,15 +127,6 @@
       "title": "Photos: Israeli attacks kill nine people, including two children, in Gaza - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQR3JtQ19oUWtRdEI1U014NWV4ZWQ4dU9MQXRqZHFJZTdJdk8zNUtQM3dMMGVveVdMU3pod2V1TVVHQU9zLXl6MTh1OHVySi1GQXRXMVhBdmtDcDljRWh3ZmhTQkVnZlpBWmotOTRSMTZTM2pIRk4weUFlR2RYTnY2YzNUREpsSW5Tbks4My1vYVNtTkZvWlFsNjNCQmExaWZvczJJWE1mQlo3U283V1FPelZUb9IBuAFBVV95cUxOOHgtMFlzWFhyc05Bbl80dG5RYU1KSk00UGpSTHRvaXROYnhvMnVybXFKcVN0ZmVMeUUycmxCVVpUV2pQY01NcXplVHlvUHB4d2pSRERHV1VfdzVzMERqM2EzYl82dlZPTzU3ZG5rYlNzSVpWRXBubDByVmZoWkNZY2JfeFl3cDFxdDhJLWpMeWR2Q2NyT1pkVEotVk5iS1JWdG44ZFN4TVBWLTFUZkExY0k2RFU5Q2o4"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Air raid sirens in Bahrain after uneasy night of US-Iran strikes - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOcVZtYzZFdXcxZUVscWRpUG1SenVodExwckctdV9XclNSak1KeFlCTHg0d05rZnhGVVdfMG9UN2pwakE5RWtnV21OZ3kzbkM0cVgxTTFFX0x1Und6NXpTZjBqSTVVTndYaU44YllSd1ZUYWNsM2pWNXo2cWRNTzcwREVPeEdWWW5OS2R6RnhmRVhlcTVzbWRPdGliR2ktakRYRnlLZ3lkYWd6Zm1sTWhYajl2ejXSAboBQVVfeXFMTzM5SjBlS2NlWXBYOGtrLXdhNjVXZWFlckxvOGV2YjdmREd6TUdrSHF2d1JXMHhEbjIxdzY0MWlMaWp5SmF3OU5fUnlMRVZXOXg2S2lhNkw4TmJ6aXZiRkdsZ1ZEMmU4aF9rZFcxVF9pZDllb193WEZaLU05WWpCaTdKcGFoanpZLUtSSmVaQ1R2aUJfLVVSZlM5SWYtSHg0NkNsLXRKSjhNUjdwZDhWdElHVktCczNqU1lR"
     },
     {
       "score": 3.0,
