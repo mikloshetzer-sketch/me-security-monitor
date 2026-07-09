@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-09 11:19 UTC",
+    "updated": "2026-07-09 15:34 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-07-03",
     "period_end": "2026-07-09",
     "total_events": 160,
-    "total_risk": 159.22,
-    "normalized_risk_score": 63.7,
+    "total_risk": 165.17,
+    "normalized_risk_score": 66.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 39,
+    "military": 41,
     "security": 5,
-    "political": 13,
-    "other": 103
+    "political": 10,
+    "other": 104
   },
   "source_counts": {
     "news": 154,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 79.47
+      "risk": 88.42
     },
     {
       "name": "Israel",
-      "risk": 20.0
+      "risk": 19.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.15
+      "risk": 15.75
     },
     {
       "name": "Damascus",
       "risk": 10.3
     },
     {
-      "name": "Tehran",
-      "risk": 7.05
+      "name": "Syria",
+      "risk": 7.2
     }
   ],
   "top_events": [
@@ -61,6 +61,24 @@
       "date": "2026-07-09",
       "category": "military",
       "source_type": "news",
+      "title": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQaEw3T3U5RHNmcmVFb2VhWGdmRExEb1VHVFYwbFBsX1UxWGlJRW5pM0R0NGwtQVVlUHAwckdpcHIyaXZ3dkFTR2ZvV3JKams0TzhvQ0NYVnRkOFlFa1EtR19nVHFDcTJYQVYtaG9wYWxoRjlaX3kxeW9tdTNkZ0d0MGpVNjljem9DRTJaN2pSTmtoMEhJd3ZFTzlMTmtQOHF2WWYxSVpWNmwteWZBVG5iY2F4ZUtHZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYWUtOFlPYmpMTHRWUjQ5ZTNjOFRaaVNCV0Z1aWZJY2E1UkcxV0t5M1dUYjExWWljV0lEbTd2ZE9semxVZjZQXzlYQnlQWjY0dWx0YUMyTXUtWnJsa3hYUlJGY3MxSWpuQmRUNmJxU19YZU41S0l5WDBLWlY1aTZHQVROdzNIcE1GYjlfTXJka3NNbGNTV2hvRFlxRllZd1AzOHlYRVJwSUtFUURha0NtbWdtWXBxb0MwaEEwNkFpaW9sQzlfajAwSQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
       "title": "How a Palestinian town is defending itself from Israeli settler attacks - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSkcwTTAxdGR0OGEwMl92UWUxZUlwZFRWLWpUb2I0d0xFaDR1TUhpSkdsbTJQNW56MjVZNVhxZ3hTdzg1OGFubFN0cm43WjNOaTFDOUp5b0dQMXdwbkhhS1E4Mm1vbWxiN3VnSlJ0bUpmNG5RclJqRUhfRzhtdk10dzFiSTg4LTBOV0RSNXdUV3dXNlJYLXNCVkExN2IxdG83dGVWUEhEdHpzUGlYY0JCRFAyNkRaYURXMWc"
@@ -70,7 +88,7 @@
       "date": "2026-07-09",
       "category": "military",
       "source_type": "news",
-      "title": "US, Iran launch more attacks as mediators urge warring sides to uphold MoU - Al Jazeera",
+      "title": "US, Iran launch more attacks as mediators urge both sides to uphold MoU - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdUEzMkJvXzN3MDQ2MWNYVl8tdWRsUWs3V2xLY19lbjBoaERod0FDTllreDRNNkVKaWVoVVc3ZFFrMERCQXMyRGFINXVydW9kU3lvcHhDV3RoSk1mdUFRcmNDMTIzWl9XbGJOelhFbC1IMUdTNER3ME5zOVlMX0p1NXNNa2VKNmt3dTRNeTYzZXp6cWlwZVBRUVY5ZGhCTzRtM0NxUjdyUDV5M2p2dDM2YmRMVdIBuAFBVV95cUxOSzZxV25fUDlyWGpsUC1ESWxrUkZsTnpWdThQSjdyMUdkN2dkcDV2ZVgxTGtDb3o2UmxlN00tZVhReWlYVUgybHJrYy1hYjlraHVNWXdYY3BUczJ4cVpNbUlXb3hDbUNXamNKMDAyaktCaUlQaXl2cXpVdk0zQTR4bHIxRkdFdVQtZmktVTZfUzZJSEducHdQSTlkS2liU2tIU0JjN0t4cW5NU0IwVjJCTzBIT0dCVTBD"
     },
@@ -106,36 +124,18 @@
       "date": "2026-07-09",
       "category": "military",
       "source_type": "news",
+      "title": "Deadly US strikes trigger Iranian attacks on Gulf states - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdXY3VGFxaWdKVFQtNU1xWlJFWUdFVWdRMmlPM2hWaWk0bGRoNEVCSmIyLXpkNWJlLUxwa1BuQVJZUXFaSFFmZVZSaUc0c2hTVFptMjB1RS15a2FrbEUzV09HSWVOLWhEXzluaXlTNzg4QUVzWERwam1sR01OUmJJbVAxRkNvNHc4V1VhVl8zVUxCOU1qOFdPVnF4cWZLQWg2SUZuOGlJSXRzUdIBrwFBVV95cUxOSnBQOHEtMElNVF9PY3ZveHlsVWI0RzVlel91WEQ0SEdhOE1qUkExMkR2eGdyNkd3MzhnRlJYc0NQa0ZsMW5EcHZOS01lRUFVQVdLNDFrcXZUWUo0cnpIYXd3YkhxN0ZHNDNiZGQtVmhJNWRfX3g1ei1rWVBzWTVGY2dvWEgxU3RHYTgxeHZkMWkxbEdpeDVnMDRFamxYWmJpX3pwV3BHYnRlb2EwRS13"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
       "title": "UK police arrest activists at Israeli-owned drone engine plant - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNlFCSnhDR0lWUHc0NTU0Z1ljMjYxVmI3QXl1eUZELTVEdzFvN21MajQ1ZTdnckUxWllhQUxnd1d4VnFrMlh0cnpMWlM4alQyQ1RYVE5EMnZldmVvaE1SM2lXVmtuQlVJTVZZMXRvdk1PdkxmeHlER0pXNmdsYUppNDZzWGQ5WHJ3Z1JjNnMyMTJPZWpOaXdFbXEzNjVlTnBsbDNLbjl6QlBXc21rM09BMHQzZ2jSAboBQVVfeXFMTkhjeFhTTl9lRU40S0JVMGd0bUplSzM5TGV3MVBWRkZqYWFiYjFDa3VwUjNncExpT204dEtnaHhOMXQ3ZjVqNktDMi1JejlhOFhBODdtcXdhTVVSVGYybWI1R0pfYTlPRGF1WWtBbVh4WHlHTVp0akhveXpMak9waS1KVGtLcm1ZTm1MSkNDY0FKYWNwM3RoT2lGbzhtQXFGZDNPRHlkQXZla1IyQlhUYVZPNnMyamE5Yl9R"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military carries out fresh strikes on Iran, prompting Iran attacks on Kuwait and Bahrain - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeXVzMnQ5aVh0S2MxNlBNWXBLcWZ0TFNrUWJuVFRRWjhKSmFVb2UtcGVWNWNVajcwb2dGVERnc3E5QVZseV9qN3RqdFBueUtRUUp3WTA0UVlSREdxOHN4UmV1QUdxSDh1cHVjNFZCWkRqVGpudXpHRnNiOWlMamoyaXY3Tl9ZT0pua1lDTHFNR3hUY1BxWWxHWktDSmpSNEVSOTVTQVZLb1VXaHg0dHc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "US says it has completed a new round of strikes on Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNGdfTTZZUTJuczJONlh3R3NBTmd2VFQ4YlBWSC1fYzBOT3VCUnU1NGJXaGFvcnNINVdSZFdNVjJSTHp2MExDOUFDdlJUNFY2OG1oLXRLdjgzVERUS0lLUkREbXB2Q1lKaVd5VWlpZmpNSXR6aTFzdjZYMmNBNklIaDQxUzBqcTVwM2hLYXQxTGdWX2s4UWVOYnZmcm40bVd1RldWdUlR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWDVrZVZ0Mjl3MkdHVUxrYVR3UVNFMDJfQzhqbmxxMXhnOGRkVGxDOE9kRkF4VE43WGgxT2RpZzVTcEwwcTg4UlhtaWlVeGtDVllqYWJxcEJLQUplNWZCMjRNelZZaFNUUURSRzFkclRoeGdEQXRMaEdWZGllLVByM18xR3RkNG5KMHRRVnh3SktpWGVmcFZZX3RxcnlBNjE2TWRKSkd2N011aERHUnBPQ1Q2UnR4UTYySWc"
     }
   ]
 }
