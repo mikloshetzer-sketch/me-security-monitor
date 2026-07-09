@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-09 04:14 UTC",
+    "updated": "2026-07-09 07:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-07-03",
     "period_end": "2026-07-09",
-    "total_events": 152,
-    "total_risk": 137.37,
-    "normalized_risk_score": 54.9,
+    "total_events": 155,
+    "total_risk": 145.97,
+    "normalized_risk_score": 58.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 33,
-    "security": 4,
+    "military": 35,
+    "security": 5,
     "political": 15,
     "other": 100
   },
   "source_counts": {
-    "news": 146,
+    "news": 149,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 69.81
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 14.95
+      "risk": 73.22
     },
     {
       "name": "Israel",
-      "risk": 14.0
+      "risk": 20.0
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 12.25
     },
     {
       "name": "Damascus",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Syria",
-      "risk": 4.7
+      "risk": 6.5
     }
   ],
   "top_events": [
@@ -61,9 +61,36 @@
       "date": "2026-07-09",
       "category": "military",
       "source_type": "news",
-      "title": "US says conducting new wave of strikes on Iran as ceasefire falters - Al Jazeera",
+      "title": "Oil prices little changed as markets weigh impact of US strikes on Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdklGcG9tdzh1UWdoWldFbWpRaXJELXpXclBKYzlJbzBpaXNJMWJBTnRYUFh1WndvTmNVN2x3ZHBlQm94ZVI0M24zdnVHSVZtR0dNVDMxdmM0SmJUTGZLUWZTWGdwcWlQM0JfcHlBVVB6V2lZOEo1bzFHMUZ1ZkM4b2ZCdnFWOGhOZmVkSXVIODdhUWxDYU9mNlMxdnRoRkZBUV9iNEVMakdpZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "How a Palestinian town is defending itself from Israeli settler attacks - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSkcwTTAxdGR0OGEwMl92UWUxZUlwZFRWLWpUb2I0d0xFaDR1TUhpSkdsbTJQNW56MjVZNVhxZ3hTdzg1OGFubFN0cm43WjNOaTFDOUp5b0dQMXdwbkhhS1E4Mm1vbWxiN3VnSlJ0bUpmNG5RclJqRUhfRzhtdk10dzFiSTg4LTBOV0RSNXdUV3dXNlJYLXNCVkExN2IxdG83dGVWUEhEdHpzUGlYY0JCRFAyNkRaYURXMWc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "US conducts new wave of strikes on Iran as ceasefire falters - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc2FaTkhSUlVxQjR4STljOXJidWN0UzdNeDR4dEo0RDNLOVlva3F2X3BraTlpZjI1Y1ZzUU8xdVhmQXZoSWdrNnlGZjUtTUl2R2lIRHBDWXhJZjFWTjdHV0pHV21ORkVCZTQ1eFNrck9iUUVscVBrdFhuYzM5eU1pNVlnRERYc2U3czJxSnNJTG1YdjN2dF9zU1hCNXJzelJJcTJkbjBMeHpQcGM3bHfSAbMBQVVfeXFMTUtNY04tbUMxN2tfTnpGUERzczJHUW1YQXQzczRDUjRpNmlmb2l5MENfOExad2xuMklCSHFHTjlUTGFycWJUZkh5T0NadHFoRXpkZXJmVnBkMHY1cEs2RGpvLUFYSC1NRUNiNnNoYjV6aUhtTWlLV29SSTZib0hCNFJOMXN5N2FHNmZkUnp2bk5ydnhyNUlTSHdSQ0dFZUxBRnJmLTU5ZEZud09HRkxQdk9XaE0"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "UK police arrest activists at Israeli-owned drone engine plant - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNlFCSnhDR0lWUHc0NTU0Z1ljMjYxVmI3QXl1eUZELTVEdzFvN21MajQ1ZTdnckUxWllhQUxnd1d4VnFrMlh0cnpMWlM4alQyQ1RYVE5EMnZldmVvaE1SM2lXVmtuQlVJTVZZMXRvdk1PdkxmeHlER0pXNmdsYUppNDZzWGQ5WHJ3Z1JjNnMyMTJPZWpOaXdFbXEzNjVlTnBsbDNLbjl6QlBXc21rM09BMHQzZ2jSAboBQVVfeXFMTkhjeFhTTl9lRU40S0JVMGd0bUplSzM5TGV3MVBWRkZqYWFiYjFDa3VwUjNncExpT204dEtnaHhOMXQ3ZjVqNktDMi1JejlhOFhBODdtcXdhTVVSVGYybWI1R0pfYTlPRGF1WWtBbVh4WHlHTVp0akhveXpMak9waS1KVGtLcm1ZTm1MSkNDY0FKYWNwM3RoT2lGbzhtQXFGZDNPRHlkQXZla1IyQlhUYVZPNnMyamE5Yl9R"
     },
     {
       "score": 2.7,
@@ -79,18 +106,18 @@
       "date": "2026-07-08",
       "category": "military",
       "source_type": "news",
-      "title": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
+      "title": "US says it has completed a new round of strikes on Iran - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWDVrZVZ0Mjl3MkdHVUxrYVR3UVNFMDJfQzhqbmxxMXhnOGRkVGxDOE9kRkF4VE43WGgxT2RpZzVTcEwwcTg4UlhtaWlVeGtDVllqYWJxcEJLQUplNWZCMjRNelZZaFNUUURSRzFkclRoeGdEQXRMaEdWZGllLVByM18xR3RkNG5KMHRRVnh3SktpWGVmcFZZX3RxcnlBNjE2TWRKSkd2N011aERHUnBPQ1Q2UnR4UTYySWc"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNGdfTTZZUTJuczJONlh3R3NBTmd2VFQ4YlBWSC1fYzBOT3VCUnU1NGJXaGFvcnNINVdSZFdNVjJSTHp2MExDOUFDdlJUNFY2OG1oLXRLdjgzVERUS0lLUkREbXB2Q1lKaVd5VWlpZmpNSXR6aTFzdjZYMmNBNklIaDQxUzBqcTVwM2hLYXQxTGdWX2s4UWVOYnZmcm40bVd1RldWdUlR"
     },
     {
       "score": 2.7,
       "date": "2026-07-08",
       "category": "military",
       "source_type": "news",
-      "title": "US says it has completed a new round of strikes on Iran - Reuters",
+      "title": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNGdfTTZZUTJuczJONlh3R3NBTmd2VFQ4YlBWSC1fYzBOT3VCUnU1NGJXaGFvcnNINVdSZFdNVjJSTHp2MExDOUFDdlJUNFY2OG1oLXRLdjgzVERUS0lLUkREbXB2Q1lKaVd5VWlpZmpNSXR6aTFzdjZYMmNBNklIaDQxUzBqcTVwM2hLYXQxTGdWX2s4UWVOYnZmcm40bVd1RldWdUlR"
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWDVrZVZ0Mjl3MkdHVUxrYVR3UVNFMDJfQzhqbmxxMXhnOGRkVGxDOE9kRkF4VE43WGgxT2RpZzVTcEwwcTg4UlhtaWlVeGtDVllqYWJxcEJLQUplNWZCMjRNelZZaFNUUURSRzFkclRoeGdEQXRMaEdWZGllLVByM18xR3RkNG5KMHRRVnh3SktpWGVmcFZZX3RxcnlBNjE2TWRKSkd2N011aERHUnBPQ1Q2UnR4UTYySWc"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters",
       "location": "Qatar",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPX0wtak4yR1c5V1VydHktZHRDdncxdk5FSFZFYl9PZ2RxRDR0eFZfVTdhU05ha0c2NWlHa1FQcWlnVjlGb0E3MFdCU2RZVWxCRFNocnl5UVZWakFTOTdfQjJreTRVTlBGMjdJUDA2ODZKSzZ4UFFQSUozdkdJVkp3WFRadV9WQ09UaHQzdW1uc3FoallwOEZyVVF6Q0g3aU9hWWtkcm1IZDJiT0JlaDBucVM5TU9yYllM"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bowen: For all his bluster, Trump has no better option than talks with Iran",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cy8we3j14ndo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran trade strikes after tankers hit in Strait of Hormuz",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cwykq59jwpvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "US strikes target Iranian military boats",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/videos/cn94nqzwpxwo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
