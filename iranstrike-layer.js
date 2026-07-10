@@ -5,7 +5,7 @@
     const config = {
       dataUrl: options.dataUrl || "data/iranstrike.json",
       enabled: Boolean(options.enabled),
-      maxVisible: Number(options.maxVisible || 3500),
+      maxVisible: Number(options.maxVisible || 1800),
       maxHeatPoints: Number(options.maxHeatPoints || 1200),
       defaultDays: Number(options.defaultDays || 30),
       displayMode: options.displayMode || "markers"
@@ -26,15 +26,23 @@
     let heatLayer = null;
     let rebuildTimer = null;
 
-    const paneName = "iranstrike-events-pane";
-
-    if (!map.getPane(paneName)) {
-      const pane = map.createPane(paneName);
-      pane.style.zIndex = "680";
-      pane.style.pointerEvents = "auto";
-    }
-
     const markerLayer = L.layerGroup();
+
+    if (!document.getElementById("iranstrike-marker-style")) {
+      const style = document.createElement("style");
+      style.id = "iranstrike-marker-style";
+      style.textContent = `
+        .iranstrike-div-marker {
+          background: transparent !important;
+          border: none !important;
+        }
+
+        .leaflet-marker-pane .iranstrike-div-marker {
+          z-index: 900 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
 
     const CATEGORY_COLORS = {
       airstrike: "#d73027",
@@ -338,31 +346,60 @@
         event.severity || "unknown"
       ).toLowerCase();
 
+      const category = String(
+        event.category || "other"
+      ).toLowerCase();
+
+      const color = categoryColor(category);
       const zoom = map.getZoom();
 
-      let radius =
+      let size =
         zoom >= 9
-          ? 5.5
+          ? 16
           : zoom >= 7
-            ? 4.5
-            : 3.8;
+            ? 14
+            : 12;
 
       if (severity === "critical") {
-        radius += 2;
+        size += 4;
       } else if (severity === "high") {
-        radius += 1;
+        size += 2;
       }
 
-      const marker = L.circleMarker(
+      const opacity = ageOpacity(event);
+
+      const icon = L.divIcon({
+        className: "iranstrike-div-marker",
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        popupAnchor: [0, -(size / 2 + 4)],
+        html: `
+          <span
+            title="${escapeHtml(event.title || "IranStrike event")}"
+            style="
+              display:block;
+              width:${size}px;
+              height:${size}px;
+              border-radius:999px;
+              background:${color};
+              border:2px solid #ffffff;
+              box-shadow:
+                0 0 0 1px rgba(17,24,39,.85),
+                0 2px 6px rgba(0,0,0,.45);
+              opacity:${opacity};
+            "
+          ></span>
+        `
+      });
+
+      const marker = L.marker(
         [point.lat, point.lon],
         {
-          pane: paneName,
-          radius,
-          color: "#111827",
-          weight: 1.4,
-          fillColor: categoryColor(event.category),
-          fillOpacity: ageOpacity(event),
-          opacity: 0.95
+          icon,
+          pane: "markerPane",
+          keyboard: false,
+          riseOnHover: true,
+          riseOffset: 500
         }
       );
 
@@ -708,3 +745,4 @@
 
   window.createIranStrikeLayer = createIranStrikeLayer;
 })();
+
