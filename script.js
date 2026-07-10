@@ -1805,6 +1805,210 @@ window.setInterval(() => {
       cirIncidentsController.setDisplayMode(mode);
     }
 
+    function getCirVisibleEventsForSummary() {
+      const controllerState = cirIncidentsController?.getState?.();
+      const metadata = controllerState?.source ? cirIncidentsController : null;
+
+      if (!metadata || !cirIncidentsController) return [];
+
+      const rawPayload = cirIncidentsController.__cirPayload;
+      if (!rawPayload || !Array.isArray(rawPayload.events)) return [];
+
+      const filters = readCirFiltersFromUi();
+      const latestDate = rawPayload?.analytics?.overview?.latest_event_date
+        ? new Date(`${rawPayload.analytics.overview.latest_event_date}T00:00:00Z`)
+        : null;
+
+      return rawPayload.events.filter((event) => {
+        if (filters.days > 0 && latestDate) {
+          const eventDate = new Date(event.date || event.incident_date_text || "");
+          if (Number.isNaN(eventDate.getTime())) return false;
+
+          const cutoff = new Date(latestDate);
+          cutoff.setUTCDate(cutoff.getUTCDate() - (filters.days - 1));
+
+          if (eventDate < cutoff) return false;
+        }
+
+        if (filters.categories.length > 0) {
+          const eventCategory = String(
+            event.main_category ||
+            event.category ||
+            event.sub_category ||
+            ""
+          ).toLowerCase();
+
+          const categoryMatch = filters.categories.some((category) => {
+            const value = String(category).toLowerCase();
+
+            if (value === "other") {
+              return ![
+                "airstrike",
+                "air strike",
+                "ground",
+                "rocket",
+                "artillery",
+                "civilian",
+                "infrastructure"
+              ].some((known) => eventCategory.includes(known));
+            }
+
+            return eventCategory.includes(value);
+          });
+
+          if (!categoryMatch) return false;
+        }
+
+        if (filters.search) {
+          const haystack = [
+            event.location,
+            event.location_zone,
+            event.description,
+            event.category,
+            event.main_category,
+            event.sub_category,
+            event.violence,
+            event.casualties
+          ]
+            .join(" ")
+            .toLowerCase();
+
+          if (!haystack.includes(filters.search.toLowerCase())) return false;
+        }
+
+        if (filters.ceasefireOnly) {
+          const value = String(event.ceasefire_monitoring || "").trim().toLowerCase();
+          if (!value || ["0", "no", "false", "none", "n/a", "na"].includes(value)) {
+            return false;
+          }
+        }
+
+        if (filters.casualtiesOnly) {
+          const value = `${event.casualties || ""} ${event.minor_casualties || ""}`
+            .trim()
+            .toLowerCase();
+
+          if (!value || ["0", "none", "no", "false", "n/a", "na", "unknown"].includes(value)) {
+            return false;
+          }
+        }
+
+        return true;
+      });
+    }
+
+    function countCirBy(events, selector) {
+      const counts = new Map();
+
+      events.forEach((event) => {
+        const key = String(selector(event) || "Unknown").trim() || "Unknown";
+        counts.set(key, (counts.get(key) || 0) + 1);
+      });
+
+      return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    }
+
+    function calculateCirTrend(events) {
+      if (!events.length) return "No data";
+
+      const dated = events
+        .map((event) => ({
+          event,
+          date: new Date(event.date || event.incident_date_text || "")
+        }))
+        .filter((item) => !Number.isNaN(item.date.getTime()))
+        .sort((a, b) => a.date - b.date);
+
+      if (!dated.length) return "Unknown";
+
+      const latest = dated[dated.length - 1].date;
+      const currentStart = new Date(latest);
+      currentStart.setUTCDate(currentStart.getUTCDate() - 6);
+
+      const previousEnd = new Date(currentStart);
+      previousEnd.setUTCDate(previousEnd.getUTCDate() - 1);
+
+      const previousStart = new Date(previousEnd);
+      previousStart.setUTCDate(previousStart.getUTCDate() - 6);
+
+      const current = dated.filter(
+        (item) => item.date >= currentStart && item.date <= latest
+      ).length;
+
+      const previous = dated.filter(
+        (item) => item.date >= previousStart && item.date <= previousEnd
+      ).length;
+
+      if (previous === 0 && current > 0) return "Increasing";
+      if (previous === 0 && current === 0) return "Stable";
+
+      const change = ((current - previous) / previous) * 100;
+
+      if (change >= 15) return "Increasing";
+      if (change <= -15) return "Decreasing";
+      return "Stable";
+    }
+
+    function updateCirSummary() {
+      const events = getCirVisibleEventsForSummary();
+
+      const categories = countCirBy(
+        events,
+        (event) =>
+          event.main_category ||
+          event.category ||
+          event.sub_category ||
+          "Unknown"
+      );
+
+      const locations = countCirBy(
+        events,
+        (event) =>
+          event.location ||
+          event.location_zone ||
+          "Unknown"
+      );
+
+      setTextIfExists("cirSummaryTrend", calculateCirTrend(events));
+      setTextIfExists(
+        "cirSummaryTopCategory",
+        categories[0]?.[0] || "—"
+      );
+      setTextIfExists(
+        "cirSummaryTopLocation",
+        locations[0]?.[0] || "—"
+      );
+    }
+
+    function buildCirAnalysisUrl() {
+      const params = new URLSearchParams();
+      const filters = readCirFiltersFromUi();
+
+      params.set("days", String(filters.days || 0));
+      params.set(
+        "display",
+        document.getElementById("cirDisplayModeSelect")?.value || "markers"
+      );
+
+      if (filters.search) {
+        params.set("search", filters.search);
+      }
+
+      if (filters.ceasefireOnly) {
+        params.set("ceasefire", "1");
+      }
+
+      if (filters.casualtiesOnly) {
+        params.set("casualties", "1");
+      }
+
+      if (filters.categories.length > 0) {
+        params.set("categories", filters.categories.join(","));
+      }
+
+      return `cir-analysis.html?${params.toString()}`;
+    }
+
     function updateCirUiState() {
       if (!cirIncidentsController) {
         setTextIfExists("cirLoadedCount", "0");
@@ -1846,8 +2050,22 @@ window.setInterval(() => {
           document.getElementById("cirDisplayModeSelect")?.value || "markers"
         );
         await controller.refresh();
+
+        try {
+          const response = await fetch("data/cir-incidents.json", {
+            cache: "no-store"
+          });
+
+          if (response.ok) {
+            controller.__cirPayload = await response.json();
+          }
+        } catch (payloadError) {
+          console.warn("[cir-incidents] summary payload failed:", payloadError);
+        }
+
         controller.setEnabled(cirIncidentsEnabled);
         updateCirUiState();
+        updateCirSummary();
       } catch (e) {
         console.warn("[cir-incidents] refresh failed:", e?.message || e);
         const badge = document.getElementById("cirStatusBadge");
@@ -1870,6 +2088,19 @@ window.setInterval(() => {
             document.getElementById("cirDisplayModeSelect")?.value || "markers"
           );
           await controller.refresh();
+
+          try {
+            const response = await fetch("data/cir-incidents.json", {
+              cache: "no-store"
+            });
+
+            if (response.ok) {
+              controller.__cirPayload = await response.json();
+            }
+          } catch (payloadError) {
+            console.warn("[cir-incidents] summary payload failed:", payloadError);
+          }
+
           controller.setEnabled(true);
         } else {
           controller.setEnabled(false);
@@ -2133,7 +2364,38 @@ window.setInterval(() => {
         <div class="muted" style="margin-top:8px;">
           Last update: <span id="cirLastUpdate">—</span>
         </div>
-        <div class="muted" style="margin-top:6px;line-height:1.45;">
+
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+          <div class="muted" style="font-weight:800;margin-bottom:6px;">CIR summary</div>
+
+          <div class="mini-list">
+            <div class="mini-item">
+              <div class="name">Trend</div>
+              <div class="val" id="cirSummaryTrend">—</div>
+            </div>
+
+            <div class="mini-item">
+              <div class="name">Top category</div>
+              <div class="val" id="cirSummaryTopCategory">—</div>
+            </div>
+
+            <div class="mini-item">
+              <div class="name">Top location</div>
+              <div class="val" id="cirSummaryTopLocation">—</div>
+            </div>
+          </div>
+
+          <button
+            id="openCirAnalysisBtn"
+            type="button"
+            class="btn-mini"
+            style="width:100%;margin-top:8px;padding:8px 10px;"
+          >
+            Open CIR Analysis
+          </button>
+        </div>
+
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
           Source: Centre for Information Resilience. Verified OSINT incident layer.
         </div>
       </div>
@@ -2290,6 +2552,7 @@ window.setInterval(() => {
 
     const cirIncidentsCheckbox = document.getElementById("cirIncidentsCheckbox");
     const cirRefreshBtn = document.getElementById("cirRefreshBtn");
+    const openCirAnalysisBtn = document.getElementById("openCirAnalysisBtn");
     const cirDisplayModeSelect = document.getElementById("cirDisplayModeSelect");
     const cirDaysSelect = document.getElementById("cirDaysSelect");
     const cirCeasefireOnlyCheckbox = document.getElementById("cirCeasefireOnlyCheckbox");
@@ -2347,11 +2610,18 @@ window.setInterval(() => {
       cirRefreshBtn.addEventListener("click", () => refreshCirIncidentsSafe());
     }
 
+    if (openCirAnalysisBtn) {
+      openCirAnalysisBtn.addEventListener("click", () => {
+        window.location.href = buildCirAnalysisUrl();
+      });
+    }
+
     if (cirDisplayModeSelect) {
       cirDisplayModeSelect.addEventListener("change", () => {
         if (cirIncidentsController) {
           applyCirDisplayModeFromUi();
           updateCirUiState();
+          updateCirSummary();
         }
       });
     }
@@ -2361,6 +2631,7 @@ window.setInterval(() => {
         if (cirIncidentsController) {
           cirIncidentsController.setFilters(readCirFiltersFromUi());
           updateCirUiState();
+          updateCirSummary();
         }
       });
     }
@@ -2381,6 +2652,7 @@ window.setInterval(() => {
         if (cirIncidentsController) {
           cirIncidentsController.setFilters(readCirFiltersFromUi());
           updateCirUiState();
+          updateCirSummary();
         }
       });
     }
@@ -2390,11 +2662,13 @@ window.setInterval(() => {
         if (cirIncidentsController) {
           cirIncidentsController.setFilters(readCirFiltersFromUi());
           updateCirUiState();
+          updateCirSummary();
         }
       });
     });
 
     updateCirUiState();
+    updateCirSummary();
 
     if (israelActivityCheckbox) {
       israelActivityCheckbox.addEventListener("change", (e) => setIsraelActivityEnabled(e.target.checked));
