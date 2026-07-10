@@ -194,44 +194,503 @@ window.addEventListener("DOMContentLoaded", () => {
       return set;
     }
 
-    // ===== Actors =====
+    // ===== Timeline event enrichment + actors =====
+    //
+    // The Timeline remains independent from CIR. These helpers enrich the
+    // continuously updated events.json records in browser memory only.
+    // The original JSON file is not modified.
+
     const ACTORS = [
-      { name: "IDF", patterns: ["idf", "israel defense forces"] },
-      { name: "Hezbollah", patterns: ["hezbollah"] },
-      { name: "IRGC", patterns: ["irgc", "islamic revolutionary guard", "revolutionary guards"] },
-      { name: "Houthis", patterns: ["houthi", "houthis", "ansar allah"] },
-      { name: "Hamas", patterns: ["hamas"] },
-      { name: "ISIS", patterns: ["isis", "isil", "islamic state"] },
-      { name: "PMF", patterns: ["pmf", "popular mobilization forces", "popular mobilisation forces"] },
-      { name: "US forces", patterns: ["u.s. forces", "us forces", "u.s. military", "pentagon"] },
-      { name: "Russia", patterns: ["russia", "russian"] },
-      { name: "Turkey", patterns: ["turkey", "turkish"] },
+      {
+        name: "United States",
+        patterns: [
+          /\bunited states\b/i,
+          /\bu\.s\.\b/i,
+          /\bus military\b/i,
+          /\bus forces\b/i,
+          /\bamerican forces\b/i,
+          /\bpentagon\b/i,
+          /\bwhite house\b/i
+        ]
+      },
+      {
+        name: "Iran",
+        patterns: [
+          /\biran\b/i,
+          /\biranian\b/i,
+          /\btehran\b/i
+        ]
+      },
+      {
+        name: "Israel",
+        patterns: [
+          /\bisrael\b/i,
+          /\bisraeli\b/i,
+          /\bjerusalem\b/i
+        ]
+      },
+      {
+        name: "IDF",
+        patterns: [
+          /\bidf\b/i,
+          /\bisrael defense forces\b/i,
+          /\bisraeli military\b/i,
+          /\bisraeli forces\b/i
+        ]
+      },
+      {
+        name: "IRGC",
+        patterns: [
+          /\birgc\b/i,
+          /\bislamic revolutionary guard\b/i,
+          /\brevolutionary guards?\b/i
+        ]
+      },
+      {
+        name: "Hamas",
+        patterns: [/\bhamas\b/i]
+      },
+      {
+        name: "Hezbollah",
+        patterns: [/\bhezbollah\b/i, /\bhizbollah\b/i]
+      },
+      {
+        name: "Houthis",
+        patterns: [
+          /\bhouthis?\b/i,
+          /\bansar allah\b/i
+        ]
+      },
+      {
+        name: "Palestinian Authority",
+        patterns: [
+          /\bpalestinian authority\b/i,
+          /\bpa security forces\b/i
+        ]
+      },
+      {
+        name: "Palestinians",
+        patterns: [
+          /\bpalestinians?\b/i,
+          /\bgazans?\b/i
+        ]
+      },
+      {
+        name: "Lebanon",
+        patterns: [/\blebanon\b/i, /\blebanese\b/i, /\bbeirut\b/i]
+      },
+      {
+        name: "Syria",
+        patterns: [/\bsyria\b/i, /\bsyrian\b/i, /\bdamascus\b/i]
+      },
+      {
+        name: "Iraq",
+        patterns: [/\biraq\b/i, /\biraqi\b/i, /\bbaghdad\b/i]
+      },
+      {
+        name: "Jordan",
+        patterns: [/\bjordan\b/i, /\bjordanian\b/i, /\bamman\b/i]
+      },
+      {
+        name: "Saudi Arabia",
+        patterns: [/\bsaudi arabia\b/i, /\bsaudi\b/i, /\briyadh\b/i]
+      },
+      {
+        name: "United Arab Emirates",
+        patterns: [
+          /\bunited arab emirates\b/i,
+          /\buae\b/i,
+          /\babu dhabi\b/i
+        ]
+      },
+      {
+        name: "Qatar",
+        patterns: [/\bqatar\b/i, /\bqatari\b/i, /\bdoha\b/i]
+      },
+      {
+        name: "Bahrain",
+        patterns: [/\bbahrain\b/i, /\bbahraini\b/i]
+      },
+      {
+        name: "Kuwait",
+        patterns: [/\bkuwait\b/i, /\bkuwaiti\b/i]
+      },
+      {
+        name: "Oman",
+        patterns: [/\boman\b/i, /\bomani\b/i, /\bmuscat\b/i]
+      },
+      {
+        name: "Yemen",
+        patterns: [/\byemen\b/i, /\byemeni\b/i]
+      },
+      {
+        name: "Turkey",
+        patterns: [/\bturkey\b/i, /\bturkish\b/i, /\bankara\b/i]
+      },
+      {
+        name: "Egypt",
+        patterns: [/\begypt\b/i, /\begyptian\b/i, /\bcairo\b/i]
+      },
+      {
+        name: "Russia",
+        patterns: [/\brussia\b/i, /\brussian\b/i, /\bmoscow\b/i]
+      },
+      {
+        name: "European Union",
+        patterns: [
+          /\beuropean union\b/i,
+          /\beu states?\b/i,
+          /\beu leaders?\b/i,
+          /\bbrussels\b/i
+        ]
+      },
+      {
+        name: "United Nations",
+        patterns: [
+          /\bunited nations\b/i,
+          /\bu\.n\.\b/i,
+          /\bun security council\b/i
+        ]
+      },
+      {
+        name: "NATO",
+        patterns: [/\bnato\b/i]
+      },
+      {
+        name: "ISIS",
+        patterns: [
+          /\bisis\b/i,
+          /\bisil\b/i,
+          /\bislamic state\b/i
+        ]
+      },
+      {
+        name: "PMF",
+        patterns: [
+          /\bpmf\b/i,
+          /\bpopular mobili[sz]ation forces\b/i
+        ]
+      }
     ];
+
+    const COUNTRY_ALIASES = [
+      {
+        country: "Iran",
+        patterns: [/\biran\b/i, /\biranian\b/i, /\btehran\b/i, /\bmashhad\b/i]
+      },
+      {
+        country: "Israel",
+        patterns: [/\bisrael\b/i, /\bisraeli\b/i, /\btel aviv\b/i, /\bjerusalem\b/i]
+      },
+      {
+        country: "Palestinian Territories",
+        patterns: [
+          /\bgaza\b/i,
+          /\bgaza strip\b/i,
+          /\bwest bank\b/i,
+          /\bpalestin/i,
+          /\bramallah\b/i
+        ]
+      },
+      {
+        country: "Lebanon",
+        patterns: [/\blebanon\b/i, /\blebanese\b/i, /\bbeirut\b/i, /\bnaqoura\b/i]
+      },
+      {
+        country: "Syria",
+        patterns: [/\bsyria\b/i, /\bsyrian\b/i, /\bdamascus\b/i, /\blatakia\b/i]
+      },
+      {
+        country: "Iraq",
+        patterns: [/\biraq\b/i, /\biraqi\b/i, /\bbaghdad\b/i, /\berbil\b/i]
+      },
+      {
+        country: "Jordan",
+        patterns: [/\bjordan\b/i, /\bjordanian\b/i, /\bamman\b/i, /\bazraq\b/i]
+      },
+      {
+        country: "Saudi Arabia",
+        patterns: [/\bsaudi arabia\b/i, /\bsaudi\b/i, /\briyadh\b/i]
+      },
+      {
+        country: "United Arab Emirates",
+        patterns: [/\bunited arab emirates\b/i, /\buae\b/i, /\babu dhabi\b/i, /\bdubai\b/i]
+      },
+      {
+        country: "Qatar",
+        patterns: [/\bqatar\b/i, /\bqatari\b/i, /\bdoha\b/i]
+      },
+      {
+        country: "Bahrain",
+        patterns: [/\bbahrain\b/i, /\bbahraini\b/i, /\bmanama\b/i]
+      },
+      {
+        country: "Kuwait",
+        patterns: [/\bkuwait\b/i, /\bkuwaiti\b/i]
+      },
+      {
+        country: "Oman",
+        patterns: [/\boman\b/i, /\bomani\b/i, /\bmuscat\b/i]
+      },
+      {
+        country: "Yemen",
+        patterns: [/\byemen\b/i, /\byemeni\b/i, /\bsanaa\b/i, /\baden\b/i]
+      },
+      {
+        country: "Turkey",
+        patterns: [/\bturkey\b/i, /\bturkish\b/i, /\bankara\b/i, /\bistanbul\b/i]
+      },
+      {
+        country: "Egypt",
+        patterns: [/\begypt\b/i, /\begyptian\b/i, /\bcairo\b/i, /\bsinai\b/i]
+      }
+    ];
+
+    const CATEGORY_RULES = {
+      military: [
+        /\bair ?strikes?\b/i,
+        /\bstrikes?\b/i,
+        /\bbomb(?:ing|ed|s)?\b/i,
+        /\bmissiles?\b/i,
+        /\brockets?\b/i,
+        /\bdrone attacks?\b/i,
+        /\bmilitary targets?\b/i,
+        /\bmilitary operation\b/i,
+        /\bmilitary carries out\b/i,
+        /\barmed clashes?\b/i,
+        /\bfighting\b/i,
+        /\battacks? on\b/i,
+        /\bkilled in (?:an? )?(?:israeli |us |iranian )?strike\b/i,
+        /\bwarplanes?\b/i,
+        /\bartillery\b/i,
+        /\bshelling\b/i,
+        /\bground offensive\b/i,
+        /\binvasion\b/i
+      ],
+      security: [
+        /\bescalation\b/i,
+        /\bceasefire\b/i,
+        /\btruce\b/i,
+        /\bsecurity\b/i,
+        /\bterror(?:ism|ist| attack)?\b/i,
+        /\bthreat(?:en|ens|ened|s)?\b/i,
+        /\bborder tensions?\b/i,
+        /\bhostages?\b/i,
+        /\barrests?\b/i,
+        /\bdetained?\b/i,
+        /\bblockade\b/i,
+        /\btraffic plunges\b/i,
+        /\bnear standstill\b/i,
+        /\bshipping disruption\b/i,
+        /\bmilitary buildup\b/i,
+        /\bpressure architecture\b/i
+      ],
+      political: [
+        /\bdiplomac/i,
+        /\bpeace process\b/i,
+        /\bnegotiat/i,
+        /\btalks?\b/i,
+        /\bmediators?\b/i,
+        /\bmemorandum of understanding\b/i,
+        /\bmou\b/i,
+        /\bsanctions?\b/i,
+        /\bgovernment\b/i,
+        /\bparliament\b/i,
+        /\belections?\b/i,
+        /\bprime minister\b/i,
+        /\bpresident\b/i,
+        /\bsupreme leader\b/i,
+        /\bforeign minister\b/i,
+        /\bconsensus\b/i,
+        /\baccountable\b/i,
+        /\bagreement\b/i,
+        /\brecognition\b/i,
+        /\bpolicy\b/i
+      ]
+    };
 
     let activeActor = null;
     let activePair = null;
 
-    function eventText(ev) {
-      const tags = Array.isArray(ev.tags) ? ev.tags.join(" ") : "";
+    function rawEventText(ev) {
+      const tags = Array.isArray(ev?.tags) ? ev.tags.join(" ") : "";
       const loc = ev?.location?.name || "";
-      return norm(`${ev.title || ""} ${ev.summary || ""} ${tags} ${loc}`);
+      return `${ev?.title || ""} ${ev?.summary || ""} ${tags} ${loc}`;
     }
-    function actorsInEvent(ev) {
-      const text = eventText(ev);
+
+    function eventText(ev) {
+      return norm(rawEventText(ev));
+    }
+
+    function detectActors(ev) {
+      const text = rawEventText(ev);
       const found = [];
-      for (const a of ACTORS) {
-        for (const p of a.patterns) {
-          if (text.includes(p)) { found.push(a.name); break; }
+
+      for (const actor of ACTORS) {
+        if (actor.patterns.some((pattern) => pattern.test(text))) {
+          found.push(actor.name);
         }
       }
+
+      // Avoid treating the parent state and its military organisation as
+      // separate actors when the text only contains the organisation.
+      const normalized = norm(text);
+
+      if (
+        found.includes("IDF") &&
+        !/\bisrael\b|\bisraeli\b/i.test(text)
+      ) {
+        const index = found.indexOf("Israel");
+        if (index >= 0) found.splice(index, 1);
+      }
+
+      if (
+        found.includes("IRGC") &&
+        !/\biran\b|\biranian\b/i.test(text)
+      ) {
+        const index = found.indexOf("Iran");
+        if (index >= 0) found.splice(index, 1);
+      }
+
       return [...new Set(found)];
     }
+
+    function detectCategory(ev) {
+      const existing = norm(ev?.category || "other");
+
+      if (["military", "security", "political"].includes(existing)) {
+        return existing;
+      }
+
+      const text = rawEventText(ev);
+      const scores = {
+        military: 0,
+        security: 0,
+        political: 0
+      };
+
+      for (const [category, patterns] of Object.entries(CATEGORY_RULES)) {
+        for (const pattern of patterns) {
+          if (pattern.test(text)) scores[category] += 1;
+        }
+      }
+
+      const ranked = Object.entries(scores)
+        .sort((a, b) => b[1] - a[1]);
+
+      if (!ranked.length || ranked[0][1] === 0) {
+        return "other";
+      }
+
+      // Direct kinetic terms take priority over political context.
+      if (scores.military >= 1) {
+        return "military";
+      }
+
+      return ranked[0][0];
+    }
+
+    function detectCountryFromText(ev) {
+      const locationName = String(ev?.location?.name || "").trim();
+      const tags = Array.isArray(ev?.tags) ? ev.tags.join(" ") : "";
+      const text = `${locationName} ${tags} ${ev?.title || ""} ${ev?.summary || ""}`;
+
+      if (/^middle east$/i.test(locationName)) {
+        return "Regional / Middle East";
+      }
+
+      for (const item of COUNTRY_ALIASES) {
+        if (item.patterns.some((pattern) => pattern.test(text))) {
+          return item.country;
+        }
+      }
+
+      return null;
+    }
+
+    function enrichTimelineEvent(ev, index) {
+      const original = ev && typeof ev === "object" ? ev : {};
+
+      const hasId =
+        typeof original.id === "string" ||
+        typeof original.id === "number";
+
+      const seed =
+        `${original.date || ""}|${original.title || ""}|` +
+        `${original?.location?.name || ""}|${index}`;
+
+      const id = hasId
+        ? original.id
+        : "e_" +
+          btoa(unescape(encodeURIComponent(seed)))
+            .replace(/=+/g, "")
+            .slice(0, 18);
+
+      const derivedActors = detectActors(original);
+      const derivedCategory = detectCategory(original);
+      const derivedCountry = detectCountryFromText(original);
+
+      const originalConfidence = Number(original.confidence);
+      const evidenceSignals = [
+        derivedCategory !== "other",
+        derivedActors.length > 0,
+        Boolean(derivedCountry),
+        Boolean(original?.location?.name),
+        Number.isFinite(Number(original?.location?.lat)) &&
+          Number.isFinite(Number(original?.location?.lng))
+      ].filter(Boolean).length;
+
+      const classificationConfidence = Math.min(
+        0.95,
+        Math.max(
+          Number.isFinite(originalConfidence) ? originalConfidence : 0.5,
+          0.5 + evidenceSignals * 0.08
+        )
+      );
+
+      return {
+        ...original,
+        id,
+        category: derivedCategory,
+        analysis: {
+          ...(original.analysis || {}),
+          originalCategory: norm(original.category || "other"),
+          derivedCategory,
+          actors: derivedActors,
+          country: derivedCountry,
+          classificationConfidence: Number(
+            classificationConfidence.toFixed(2)
+          ),
+          method: "timeline-rule-based-v1"
+        }
+      };
+    }
+
+    function actorsInEvent(ev) {
+      const enriched = ev?.analysis?.actors;
+
+      if (Array.isArray(enriched)) {
+        return [...new Set(enriched)];
+      }
+
+      return detectActors(ev);
+    }
+
     const pairKey = (a, b) => [a, b].sort().join(" + ");
-    function matchesActor(ev) { return !activeActor || actorsInEvent(ev).includes(activeActor); }
+
+    function matchesActor(ev) {
+      return !activeActor || actorsInEvent(ev).includes(activeActor);
+    }
+
     function matchesPair(ev) {
       if (!activePair) return true;
+
       const found = actorsInEvent(ev);
-      return found.includes(activePair.a) && found.includes(activePair.b);
+
+      return (
+        found.includes(activePair.a) &&
+        found.includes(activePair.b)
+      );
     }
 
     // ===== Region model =====
@@ -425,19 +884,46 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function getCountry(ev) {
-      const c1 = ev?.location?.country;
-      if (c1) return String(c1).trim();
+      const explicitCountry = ev?.location?.country;
+
+      if (explicitCountry) {
+        return String(explicitCountry).trim();
+      }
+
+      const derivedCountry = ev?.analysis?.country;
+
+      if (derivedCountry) {
+        return String(derivedCountry).trim();
+      }
+
+      const textCountry = detectCountryFromText(ev);
+
+      if (textCountry) {
+        return textCountry;
+      }
+
       const ll = getLatLng(ev);
+
       if (ll && bordersLoaded) {
         const inferred = inferCountryFromPoint(ll.lat, ll.lng);
         if (inferred) return inferred;
       }
-      const name = (ev?.location?.name || "").trim();
+
+      const name = String(ev?.location?.name || "").trim();
+
       if (name.includes(",")) {
-        const parts = name.split(",").map((s) => s.trim()).filter(Boolean);
+        const parts = name
+          .split(",")
+          .map((value) => value.trim())
+          .filter(Boolean);
+
         const last = parts[parts.length - 1];
-        if (last && last.length >= 3) return last;
+
+        if (last && last.length >= 3) {
+          return last;
+        }
       }
+
       return "Unknown";
     }
     function matchesRegion(ev) {
@@ -985,44 +1471,99 @@ window.addEventListener("DOMContentLoaded", () => {
         byCountry.set(c, (byCountry.get(c) || 0) + 1);
       }
       const rows = [...byCountry.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
-      countryRiskNote.textContent = bordersLoaded ? "Country counts (polygon inference ON)" : "Country counts";
+      countryRiskNote.textContent = bordersLoaded
+        ? "Country counts (metadata + text + polygon inference)"
+        : "Country counts (metadata + text inference)";
       countryRiskList.innerHTML = rows.length
         ? rows.map(([name, val]) => `<div class="rank-row"><div class="name">${name}</div><div class="val">${val}</div></div>`).join("")
         : `<div class="muted">No country data.</div>`;
     }
 
     // ===== Actor escalation =====
-    function updateEscalation(visibleEvents, selectedIndex) {
+    function updateEscalation(selectedIndex, filterFn) {
       const { a1, a2, b1, b2 } = weeklyWindows(selectedIndex);
-      const aMap = new Map();
-      const bMap = new Map();
+      const currentMap = new Map();
+      const previousMap = new Map();
 
-      for (const ev of visibleEvents) {
+      for (const ev of eventsData) {
         const idx = dateToIndex.get(ev.date);
-        if (idx === undefined) continue;
-        const actors = actorsInEvent(ev);
-        for (const a of actors) {
-          if (idx >= a1 && idx <= a2) aMap.set(a, (aMap.get(a) || 0) + 1);
-          if (idx >= b1 && idx <= b2) bMap.set(a, (bMap.get(a) || 0) + 1);
+
+        if (idx === undefined || idx < b1 || idx > a2) {
+          continue;
+        }
+
+        // Apply region, source, category, search and active actor/pair
+        // filters, but deliberately ignore the selected one-day window.
+        if (!filterFn(ev, idx, { weeklyMode: true })) {
+          continue;
+        }
+
+        for (const actor of actorsInEvent(ev)) {
+          if (idx >= a1 && idx <= a2) {
+            currentMap.set(
+              actor,
+              (currentMap.get(actor) || 0) + 1
+            );
+          }
+
+          if (idx >= b1 && idx <= b2) {
+            previousMap.set(
+              actor,
+              (previousMap.get(actor) || 0) + 1
+            );
+          }
         }
       }
 
       const rows = [];
-      const all = new Set([...aMap.keys(), ...bMap.keys()]);
-      for (const a of all) {
-        const ca = aMap.get(a) || 0;
-        const cb = bMap.get(a) || 0;
-        const delta = ca - cb;
+      const allActors = new Set([
+        ...currentMap.keys(),
+        ...previousMap.keys()
+      ]);
+
+      for (const actor of allActors) {
+        const current = currentMap.get(actor) || 0;
+        const previous = previousMap.get(actor) || 0;
+        const delta = current - previous;
+
         if (delta <= 0) continue;
-        rows.push({ a, ca, cb, delta });
+
+        rows.push({
+          actor,
+          current,
+          previous,
+          delta
+        });
       }
-      rows.sort((x, y) => y.delta - x.delta);
+
+      rows.sort((a, b) => {
+        if (b.delta !== a.delta) return b.delta - a.delta;
+        return b.current - a.current;
+      });
+
       const top = rows.slice(0, 8);
 
-      escNote.textContent = `7d vs prev 7d · (region/hotspot aware)`;
+      escNote.textContent =
+        "Latest 7d vs previous 7d · Timeline event analysis";
+
       escalationList.innerHTML = top.length
-        ? top.map(r => `<div class="rank-row"><div class="name">${r.a} (Δ ${r.delta})</div><div class="val">${r.ca} vs ${r.cb}</div></div>`).join("")
-        : `<div class="muted">No positive actor deltas.</div>`;
+        ? top
+            .map(
+              (row) => `
+                <div class="rank-row">
+                  <div class="name">
+                    ${row.actor} (Δ ${row.delta})
+                  </div>
+                  <div class="val">
+                    ${row.current} vs ${row.previous}
+                  </div>
+                </div>
+              `
+            )
+            .join("")
+        : `<div class="muted">
+            No positive actor deltas for the current filters.
+          </div>`;
     }
 
     // ===== Data =====
@@ -2781,7 +3322,7 @@ window.setInterval(() => {
       // Alerts / country / escalation
       updateAlerts(selectedIndex, filterFn);
       updateCountryRisk(visible);
-      updateEscalation(visible, selectedIndex);
+      updateEscalation(selectedIndex, filterFn);
 
       // Events list
       if (!visible.length) {
@@ -2817,13 +3358,40 @@ window.setInterval(() => {
       .then((r) => r.json())
       .then((data) => {
         if (!Array.isArray(data)) throw new Error("events.json must be an array");
-        eventsData = data.map((ev, i) => {
-          const hasId = ev && (typeof ev.id === "string" || typeof ev.id === "number");
-          if (hasId) return ev;
-          const seed = `${ev?.date || ""}|${ev?.title || ""}|${ev?.location?.name || ""}|${i}`;
-          const id = "e_" + btoa(unescape(encodeURIComponent(seed))).replace(/=+/g, "").slice(0, 18);
-          return { ...ev, id };
-        });
+        eventsData = data.map((ev, index) =>
+          enrichTimelineEvent(ev, index)
+        );
+
+        const enrichedSummary = eventsData.reduce(
+          (summary, event) => {
+            const category = norm(event.category || "other");
+
+            summary.categories[category] =
+              (summary.categories[category] || 0) + 1;
+
+            if (actorsInEvent(event).length > 0) {
+              summary.actorEvents += 1;
+            }
+
+            if (getCountry(event) !== "Unknown") {
+              summary.countryEvents += 1;
+            }
+
+            return summary;
+          },
+          {
+            categories: {},
+            actorEvents: 0,
+            countryEvents: 0
+          }
+        );
+
+        console.info(
+          "[timeline-analysis] enriched events:",
+          eventsData.length,
+          enrichedSummary
+        );
+
         updateAll();
       })
       .catch((err) => {
