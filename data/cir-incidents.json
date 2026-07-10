@@ -1,0 +1,68 @@
+name: Update CIR Incidents
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-cir-incidents
+  cancel-in-progress: false
+
+jobs:
+  update-cir-incidents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update CIR incidents
+        run: |
+          python scripts/update_cir_incidents.py
+
+      - name: Validate generated JSON
+        run: |
+          test -f data/cir-incidents.json
+          python -m json.tool data/cir-incidents.json > /dev/null
+
+      - name: Show CIR summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/cir-incidents.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+
+          stats = data.get("statistics", {})
+          print("Status:", data.get("status"))
+          print("Generated at:", data.get("generated_at"))
+          print("ArcGIS records:", stats.get("arcgis_record_count"))
+          print("Normalized events:", stats.get("normalized_event_count"))
+          print("Skipped:", stats.get("skipped_feature_count"))
+          PY
+
+      - name: Commit updated CIR data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/cir-incidents.json
+
+          if git diff --cached --quiet; then
+            echo "No CIR incident changes to commit."
+          else
+            git commit -m "Update CIR incident data"
+            git push
+          fi
