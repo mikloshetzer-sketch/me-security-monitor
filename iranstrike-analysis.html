@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IranStrike Analysis</title>
+  <style>
+    :root {
+      --bg:#f7f7f8;
+      --panel:#fff;
+      --border:#dddddf;
+      --text:#16181d;
+      --muted:#5a6170;
+      --soft:#eef0f3;
+      --accent:#111827;
+    }
+
+    * { box-sizing:border-box; }
+
+    html, body {
+      margin:0;
+      min-height:100%;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    #app {
+      display:grid;
+      grid-template-columns:390px minmax(0,1fr);
+      min-height:100vh;
+    }
+
+    aside {
+      height:100vh;
+      position:sticky;
+      top:0;
+      overflow:auto;
+      padding:16px;
+      background:#fafafa;
+      border-right:1px solid var(--border);
+    }
+
+    main {
+      min-width:0;
+      padding:18px;
+    }
+
+    h1 { font-size:22px; margin:0 0 8px; }
+    h2 { font-size:17px; margin:0 0 10px; }
+
+    .muted {
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .panel {
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      margin-bottom:12px;
+    }
+
+    button, select, input[type="search"] {
+      width:100%;
+      padding:10px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font-size:14px;
+    }
+
+    button {
+      border:none;
+      background:var(--accent);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    button.secondary {
+      margin-top:8px;
+      background:var(--soft);
+      color:var(--accent);
+      border:1px solid var(--border);
+    }
+
+    .toggle {
+      display:block;
+      margin:8px 0;
+      font-size:14px;
+    }
+
+    .grid-2, .grid-3, .grid-6 {
+      display:grid;
+      gap:8px;
+    }
+
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-6 { grid-template-columns:repeat(6,minmax(0,1fr)); }
+
+    .metric {
+      padding:10px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#fafafa;
+      min-width:0;
+    }
+
+    .metric-label {
+      font-size:11px;
+      color:var(--muted);
+    }
+
+    .metric-value {
+      margin-top:4px;
+      font-size:20px;
+      font-weight:700;
+      overflow-wrap:anywhere;
+    }
+
+    .metric-value.compact {
+      font-size:14px;
+      line-height:1.3;
+    }
+
+    .analysis-grid {
+      display:grid;
+      grid-template-columns:minmax(0,2fr) minmax(290px,1fr);
+      gap:12px;
+      align-items:start;
+    }
+
+    .chart-wrap {
+      height:275px;
+      position:relative;
+    }
+
+    canvas {
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
+    .rank-list {
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+
+    .rank-row {
+      padding:8px 10px;
+      background:#f3f4f6;
+      border-radius:9px;
+    }
+
+    .rank-head {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:10px;
+      margin-bottom:5px;
+    }
+
+    .progress {
+      height:5px;
+      overflow:hidden;
+      border-radius:999px;
+      background:#dfe3e7;
+    }
+
+    .progress span {
+      display:block;
+      height:100%;
+      background:var(--accent);
+    }
+
+    .assessment {
+      font-size:15px;
+      line-height:1.65;
+      border-left:4px solid var(--accent);
+      background:#f6f7f9;
+      padding:12px 14px;
+      border-radius:9px;
+    }
+
+    .assessment p { margin:0 0 10px; }
+
+    .raw-card {
+      padding:9px 10px;
+      background:#f3f4f6;
+      border-radius:9px;
+      margin-bottom:7px;
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    @media (max-width:1200px) {
+      .grid-6 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    }
+
+    @media (max-width:900px) {
+      #app { grid-template-columns:1fr; }
+
+      aside {
+        height:auto;
+        position:static;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+
+      .analysis-grid { grid-template-columns:1fr; }
+    }
+
+    @media (max-width:620px) {
+      .grid-2, .grid-3, .grid-6 {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <aside>
+      <h1>IranStrike Analysis</h1>
+      <div class="muted">
+        Külön Iran-fókuszú esemény- és infrastruktúra-elemzés.
+      </div>
+
+      <div class="panel">
+        <h2>Navigáció</h2>
+        <button id="backBtn">Interaktív térkép</button>
+        <button id="reloadBtn" class="secondary">Adatok újratöltése</button>
+      </div>
+
+      <div class="panel">
+        <h2>Adatlefedettség</h2>
+        <div class="muted">
+          <div><strong>Frissítés:</strong> <span id="generatedAt">—</span></div>
+          <div><strong>Első esemény:</strong> <span id="firstDate">—</span></div>
+          <div><strong>Legutóbbi esemény:</strong> <span id="lastDate">—</span></div>
+          <div><strong>Összes esemény:</strong> <span id="totalCount">—</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Szűrők</h2>
+        <select id="daysSelect">
+          <option value="1">Legutóbbi 24 óra</option>
+          <option value="3">Legutóbbi 3 nap</option>
+          <option value="7">Legutóbbi 7 nap</option>
+          <option value="30" selected>Legutóbbi 30 nap</option>
+          <option value="90">Legutóbbi 90 nap</option>
+          <option value="0">Teljes adatállomány</option>
+        </select>
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Keresés..."
+          style="margin-top:8px;"
+        />
+
+        <div id="categoryFilters" class="muted" style="margin-top:10px;">
+          Kategóriák betöltése…
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Jelenlegi kijelölés</h2>
+        <div class="grid-2">
+          <div class="metric">
+            <div class="metric-label">Esemény</div>
+            <div id="visibleCount" class="metric-value">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Koordinátával</div>
+            <div id="geoCount" class="metric-value">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Vezető kategória</div>
+            <div id="topCategorySide" class="metric-value compact">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Fő helyszín</div>
+            <div id="topLocationSide" class="metric-value compact">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Forrásmegjegyzés</h2>
+        <div class="muted">
+          Az adatok az IranStrike nyilvános API-végpontjaiból származnak.
+          A technikai hozzáférhetőség önmagában nem jelent újraközlési engedélyt.
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <section class="panel">
+        <h2>Iran Operational Situation</h2>
+        <div id="periodLabel" class="muted" style="margin-bottom:10px;">—</div>
+
+        <div class="grid-6">
+          <div class="metric">
+            <div class="metric-label">Események</div>
+            <div id="kpiEvents" class="metric-value">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Incidens/nap</div>
+            <div id="kpiDensity" class="metric-value">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Koordinátával</div>
+            <div id="kpiGeoShare" class="metric-value">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Vezető kategória</div>
+            <div id="kpiCategory" class="metric-value compact">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Fő helyszín</div>
+            <div id="kpiLocation" class="metric-value compact">—</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Trend</div>
+            <div id="kpiTrend" class="metric-value compact">—</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Operational Assessment</h2>
+        <div id="assessment" class="assessment">Betöltés…</div>
+      </section>
+
+      <div class="analysis-grid">
+        <section class="panel">
+          <h2>Napi eseménytrend</h2>
+          <div class="chart-wrap">
+            <canvas id="trendCanvas"></canvas>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Legaktívabb helyszínek</h2>
+          <div id="locationList" class="rank-list"></div>
+        </section>
+      </div>
+
+      <div class="analysis-grid">
+        <section class="panel">
+          <h2>Kategóriaeloszlás</h2>
+          <div class="chart-wrap">
+            <canvas id="categoryCanvas"></canvas>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Országok / területek</h2>
+          <div id="countryList" class="rank-list"></div>
+        </section>
+      </div>
+
+      <div class="analysis-grid">
+        <section class="panel">
+          <h2>Infrastructure / Vitals</h2>
+          <div id="vitalsPanel" class="muted">Betöltés…</div>
+        </section>
+
+        <section class="panel">
+          <h2>Latest Developments</h2>
+          <div id="developmentsPanel"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    "use strict";
+
+    const DATA_URL = "data/iranstrike.json";
+    let payload = null;
+    let events = [];
+    let selectedCategories = new Set();
+
+    const COLORS = [
+      "#d9342b",
+      "#f07623",
+      "#8c3fd1",
+      "#d94ca3",
+      "#71543a",
+      "#2676bd",
+      "#e0b800",
+      "#3a9b63",
+      "#6f7782"
+    ];
+
+    const $ = id => document.getElementById(id);
+
+    function safe(value, fallback = "—") {
+      const text = String(value ?? "").trim();
+      return text || fallback;
+    }
+
+    function parseDate(value) {
+      const date = value ? new Date(value) : null;
+      return date && !Number.isNaN(date.getTime()) ? date : null;
+    }
+
+    function formatDate(value) {
+      const date = value instanceof Date ? value : parseDate(value);
+      if (!date) return safe(value);
+
+      return new Intl.DateTimeFormat("hu-HU", {
+        year:"numeric",
+        month:"short",
+        day:"2-digit",
+        hour:"2-digit",
+        minute:"2-digit",
+        timeZone:"UTC"
+      }).format(date);
+    }
+
+    function countBy(list, selector) {
+      const map = new Map();
+
+      for (const item of list) {
+        const key = safe(selector(item), "Unknown");
+        map.set(key, (map.get(key) || 0) + 1);
+      }
+
+      return [...map.entries()]
+        .sort((a,b) => b[1] - a[1]);
+    }
+
+    function visibleEvents() {
+      const days = Number($("daysSelect").value || 0);
+      const search = $("searchInput").value.trim().toLowerCase();
+      const latest = events
+        .map(event => parseDate(event.date))
+        .filter(Boolean)
+        .sort((a,b) => b-a)[0] || new Date();
+
+      const cutoff = new Date(latest);
+      if (days > 0) cutoff.setUTCDate(cutoff.getUTCDate() - (days - 1));
+
+      return events.filter(event => {
+        const date = parseDate(event.date);
+        if (days > 0 && (!date || date < cutoff)) return false;
+
+        if (
+          selectedCategories.size &&
+          !selectedCategories.has(
+            String(event.category || "other")
+          )
+        ) {
+          return false;
+        }
+
+        if (search) {
+          const haystack = [
+            event.title,
+            event.description,
+            event.location,
+            event.country,
+            event.category,
+            event.severity
+          ].join(" ").toLowerCase();
+
+          if (!haystack.includes(search)) return false;
+        }
+
+        return true;
+      });
+    }
+
+    function dateRange(list) {
+      const dates = list
+        .map(event => parseDate(event.date))
+        .filter(Boolean)
+        .sort((a,b) => a-b);
+
+      if (!dates.length) {
+        return { first:null, last:null, days:0 };
+      }
+
+      return {
+        first:dates[0],
+        last:dates[dates.length - 1],
+        days:Math.max(
+          1,
+          Math.floor(
+            (dates[dates.length - 1] - dates[0]) / 86400000
+          ) + 1
+        )
+      };
+    }
+
+    function comparePeriod(list) {
+      const range = dateRange(list);
+      if (!range.first || !range.last) {
+        return { direction:"stable", percent:null, previous:0 };
+      }
+
+      const prevEnd = new Date(range.first);
+      prevEnd.setUTCDate(prevEnd.getUTCDate() - 1);
+
+      const prevStart = new Date(prevEnd);
+      prevStart.setUTCDate(prevStart.getUTCDate() - (range.days - 1));
+
+      const previous = events.filter(event => {
+        const date = parseDate(event.date);
+        return date && date >= prevStart && date <= prevEnd;
+      }).length;
+
+      const current = list.length;
+      const percent = previous
+        ? ((current - previous) / previous) * 100
+        : null;
+
+      let direction = "stable";
+      if (previous === 0 && current > 0) direction = "increase";
+      else if (percent !== null && percent >= 15) direction = "increase";
+      else if (percent !== null && percent <= -15) direction = "decrease";
+
+      return { direction, percent, previous };
+    }
+
+    function renderCategoryFilters() {
+      const categories = countBy(events, event => event.category || "other");
+      selectedCategories = new Set();
+
+      $("categoryFilters").innerHTML = categories
+        .map(([name,count], index) => `
+          <label class="toggle">
+            <input
+              type="checkbox"
+              class="categoryCheckbox"
+              value="${name}"
+              checked
+            />
+            <span style="
+              display:inline-block;
+              width:10px;
+              height:10px;
+              border-radius:999px;
+              background:${COLORS[index % COLORS.length]};
+              margin-right:5px;
+            "></span>
+            ${name} (${count})
+          </label>
+        `)
+        .join("");
+
+      document.querySelectorAll(".categoryCheckbox").forEach(box => {
+        selectedCategories.add(box.value);
+
+        box.addEventListener("change", () => {
+          if (box.checked) selectedCategories.add(box.value);
+          else selectedCategories.delete(box.value);
+          update();
+        });
+      });
+    }
+
+    function renderRanks(targetId, rows) {
+      const target = $(targetId);
+      if (!rows.length) {
+        target.innerHTML = `<div class="muted">Nincs adat.</div>`;
+        return;
+      }
+
+      const max = Math.max(...rows.slice(0,10).map(row => row[1]), 1);
+
+      target.innerHTML = rows.slice(0,10).map(([name,count]) => `
+        <div class="rank-row">
+          <div class="rank-head">
+            <div>${name}</div>
+            <strong>${count}</strong>
+          </div>
+          <div class="progress">
+            <span style="width:${count / max * 100}%;"></span>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function resizeCanvas(canvas) {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.max(320, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(220, Math.floor(rect.height * dpr));
+
+      const ctx = canvas.getContext("2d");
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+
+      return {ctx,width:rect.width,height:rect.height};
+    }
+
+    function drawTrend(list) {
+      const canvas = $("trendCanvas");
+      const {ctx,width,height} = resizeCanvas(canvas);
+      ctx.clearRect(0,0,width,height);
+
+      const counts = new Map();
+      for (const event of list) {
+        const date = parseDate(event.date);
+        if (!date) continue;
+        const key = date.toISOString().slice(0,10);
+        counts.set(key,(counts.get(key)||0)+1);
+      }
+
+      const rows = [...counts.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+
+      if (!rows.length) {
+        ctx.fillStyle="#5a6170";
+        ctx.font="13px Arial";
+        ctx.fillText("Nincs trendadat.",18,28);
+        return;
+      }
+
+      const pad={left:44,right:14,top:18,bottom:32};
+      const cw=width-pad.left-pad.right;
+      const ch=height-pad.top-pad.bottom;
+      const max=Math.max(1,...rows.map(row=>row[1]));
+
+      ctx.strokeStyle="#d6d8dc";
+      ctx.lineWidth=1;
+
+      for(let i=0;i<=4;i++){
+        const y=pad.top+(ch/4)*i;
+        ctx.beginPath();
+        ctx.moveTo(pad.left,y);
+        ctx.lineTo(pad.left+cw,y);
+        ctx.stroke();
+      }
+
+      ctx.strokeStyle="#111827";
+      ctx.lineWidth=2;
+      ctx.beginPath();
+
+      rows.forEach((row,index)=>{
+        const x=pad.left+(
+          rows.length===1 ? cw/2 : index/(rows.length-1)*cw
+        );
+        const y=pad.top+ch-(row[1]/max)*ch;
+
+        if(index===0) ctx.moveTo(x,y);
+        else ctx.lineTo(x,y);
+      });
+
+      ctx.stroke();
+
+      ctx.fillStyle="#5a6170";
+      ctx.font="11px Arial";
+      ctx.fillText(String(max),8,pad.top+4);
+      ctx.fillText("0",25,pad.top+ch+4);
+
+      const indices=[0,Math.floor((rows.length-1)/2),rows.length-1];
+      [...new Set(indices)].forEach(index=>{
+        const x=pad.left+(
+          rows.length===1 ? cw/2 : index/(rows.length-1)*cw
+        );
+        ctx.fillText(rows[index][0],Math.max(4,x-32),height-10);
+      });
+    }
+
+    function drawCategories(list) {
+      const canvas=$("categoryCanvas");
+      const {ctx,width,height}=resizeCanvas(canvas);
+      ctx.clearRect(0,0,width,height);
+
+      const rows=countBy(list,event=>event.category||"other").slice(0,8);
+
+      if(!rows.length){
+        ctx.fillStyle="#5a6170";
+        ctx.font="13px Arial";
+        ctx.fillText("Nincs kategóriaadat.",18,28);
+        return;
+      }
+
+      const pad={left:145,right:34,top:12,bottom:12};
+      const cw=width-pad.left-pad.right;
+      const ch=height-pad.top-pad.bottom;
+      const rowH=ch/rows.length;
+      const max=Math.max(1,...rows.map(row=>row[1]));
+
+      ctx.font="12px Arial";
+
+      rows.forEach(([name,count],index)=>{
+        const y=pad.top+index*rowH;
+        const bar=(count/max)*cw;
+
+        ctx.fillStyle="#e5e7eb";
+        ctx.fillRect(pad.left,y+5,cw,Math.max(9,rowH-10));
+
+        ctx.fillStyle=COLORS[index%COLORS.length];
+        ctx.fillRect(pad.left,y+5,bar,Math.max(9,rowH-10));
+
+        ctx.fillStyle="#16181d";
+        ctx.fillText(name,8,y+rowH/2+4);
+        ctx.fillText(
+          String(count),
+          Math.min(width-24,pad.left+bar+6),
+          y+rowH/2+4
+        );
+      });
+    }
+
+    function renderVitals() {
+      const raw = payload?.vitals?.vitals ??
+        payload?.vitals?.data ??
+        payload?.vitals ??
+        null;
+
+      if (!raw) {
+        $("vitalsPanel").textContent = "Nincs vitals adat.";
+        return;
+      }
+
+      if (Array.isArray(raw)) {
+        $("vitalsPanel").innerHTML = raw.slice(0,20).map(item => `
+          <div class="raw-card">
+            ${safe(item.name || item.label || item.title || "Status")}
+            <strong style="float:right;">
+              ${safe(item.status || item.value || item.state)}
+            </strong>
+          </div>
+        `).join("");
+        return;
+      }
+
+      if (typeof raw === "object") {
+        $("vitalsPanel").innerHTML = Object.entries(raw)
+          .slice(0,30)
+          .map(([key,value]) => `
+            <div class="raw-card">
+              ${key}
+              <strong style="float:right;">
+                ${typeof value === "object"
+                  ? safe(value.status || value.value || value.state || JSON.stringify(value))
+                  : safe(value)}
+              </strong>
+            </div>
+          `)
+          .join("");
+        return;
+      }
+
+      $("vitalsPanel").textContent = safe(raw);
+    }
+
+    function renderDevelopments() {
+      const rows = Array.isArray(payload?.developments)
+        ? payload.developments.slice(0,12)
+        : [];
+
+      $("developmentsPanel").innerHTML = rows.length
+        ? rows.map(item => `
+            <div class="raw-card">
+              <strong>${safe(item.title)}</strong>
+              <div class="muted">${formatDate(item.date)}</div>
+              ${
+                item.description
+                  ? `<div style="margin-top:5px;">${safe(item.description)}</div>`
+                  : ""
+              }
+            </div>
+          `).join("")
+        : `<div class="muted">Nincs külön development rekord.</div>`;
+    }
+
+    function createAssessment(list, comparison) {
+      if (!list.length) return ["A jelenlegi szűréshez nincs esemény."];
+
+      const categories=countBy(list,event=>event.category||"other");
+      const locations=countBy(list,event=>event.location||event.country||"Unknown");
+      const countries=countBy(list,event=>event.country||"Unknown");
+      const geo=list.filter(event=>
+        Number.isFinite(Number(event.latitude)) &&
+        Number.isFinite(Number(event.longitude))
+      ).length;
+
+      const trendText =
+        comparison.direction==="increase"
+          ? "növekedett"
+          : comparison.direction==="decrease"
+            ? "csökkent"
+            : "stabil maradt";
+
+      const percentText =
+        comparison.percent===null
+          ? "nem számítható"
+          : `${comparison.percent>0?"+":""}${comparison.percent.toFixed(1)}%`;
+
+      return [
+        `A kiválasztott időszakban ${list.length} IranStrike-esemény szerepel. Az aktivitás az előző azonos hosszúságú időszakhoz képest ${trendText} (${percentText}).`,
+        `A domináns kategória ${categories[0]?.[0] || "ismeretlen"}, a fő helyszín ${locations[0]?.[0] || "ismeretlen"}.`,
+        `A legtöbb rekord ${countries[0]?.[0] || "ismeretlen"} területéhez kapcsolódik.`,
+        `${geo} esemény rendelkezik használható koordinátával, ami a kijelölt rekordok ${(geo/Math.max(1,list.length)*100).toFixed(1)}%-a.`,
+        `Az értékelés kizárólag az IranStrike nyilvános API-adatain alapul, és nem helyettesít független forrásellenőrzést.`
+      ];
+    }
+
+    function update() {
+      const list=visibleEvents();
+      const range=dateRange(list);
+      const comparison=comparePeriod(list);
+      const categories=countBy(list,event=>event.category||"other");
+      const locations=countBy(list,event=>event.location||event.country||"Unknown");
+      const countries=countBy(list,event=>event.country||"Unknown");
+      const geo=list.filter(event=>
+        Number.isFinite(Number(event.latitude)) &&
+        Number.isFinite(Number(event.longitude))
+      ).length;
+
+      $("visibleCount").textContent=String(list.length);
+      $("geoCount").textContent=String(geo);
+      $("topCategorySide").textContent=categories[0]?.[0]||"—";
+      $("topLocationSide").textContent=locations[0]?.[0]||"—";
+
+      $("kpiEvents").textContent=String(list.length);
+      $("kpiDensity").textContent=range.days
+        ? (list.length/range.days).toFixed(1)
+        : "—";
+      $("kpiGeoShare").textContent=
+        `${(geo/Math.max(1,list.length)*100).toFixed(1)}%`;
+      $("kpiCategory").textContent=categories[0]?.[0]||"—";
+      $("kpiLocation").textContent=locations[0]?.[0]||"—";
+      $("kpiTrend").textContent=comparison.direction;
+
+      $("periodLabel").textContent=
+        range.first && range.last
+          ? `${formatDate(range.first)} → ${formatDate(range.last)}`
+          : "Nincs dátumozott esemény";
+
+      renderRanks("locationList",locations);
+      renderRanks("countryList",countries);
+      drawTrend(list);
+      drawCategories(list);
+
+      $("assessment").innerHTML=createAssessment(list,comparison)
+        .map(text=>`<p>${text}</p>`)
+        .join("");
+    }
+
+    async function loadData() {
+      const response=await fetch(DATA_URL,{cache:"no-store"});
+      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      payload=await response.json();
+      events=Array.isArray(payload.events)?payload.events:[];
+
+      const overview=payload?.analytics?.overview||{};
+
+      $("generatedAt").textContent=formatDate(payload.generated_at);
+      $("firstDate").textContent=formatDate(overview.earliest_event_date);
+      $("lastDate").textContent=formatDate(overview.latest_event_date);
+      $("totalCount").textContent=String(events.length);
+
+      renderCategoryFilters();
+      renderVitals();
+      renderDevelopments();
+      update();
+    }
+
+    $("daysSelect").addEventListener("change",update);
+    $("searchInput").addEventListener("input",update);
+    $("reloadBtn").addEventListener("click",()=>loadData().catch(console.error));
+    $("backBtn").addEventListener("click",()=>window.location.href="index.html");
+    window.addEventListener("resize",()=>payload&&update());
+
+    loadData().catch(error=>{
+      console.error(error);
+      $("assessment").innerHTML=
+        `<strong>Az IranStrike-adatok nem tölthetők be:</strong> ${safe(error.message)}`;
+    });
+  </script>
+</body>
+</html>
