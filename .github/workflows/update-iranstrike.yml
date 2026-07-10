@@ -1,0 +1,74 @@
+name: Update IranStrike Data
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17,47 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-iranstrike-data
+  cancel-in-progress: false
+
+jobs:
+  update-iranstrike:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update IranStrike data
+        run: |
+          python scripts/update_iranstrike.py
+
+      - name: Validate output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/iranstrike.json")
+          if not path.exists():
+              raise SystemExit("data/iranstrike.json was not created")
+
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          events = payload.get("events", [])
+
+          if payload.get("status") != "ok":
+              raise SystemExit("IranStrike output status is not ok")
+
+          if not isinstance(events, list):
+              raise SystemExit("IranStrike events is not a list")
+
+          print(f"Validated {len(events)} normalized events")
+          PY
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/iranstrike.json
+
+          if git diff --cached --quiet; then
+            echo "No IranStrike data changes."
+          else
+            git commit -m "Update IranStrike data"
+            git push
+          fi
+
+      - name: Upload IranStrike artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iranstrike-data
+          path: data/iranstrike.json
