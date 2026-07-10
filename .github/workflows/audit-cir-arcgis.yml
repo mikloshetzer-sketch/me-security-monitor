@@ -1,0 +1,46 @@
+name: Audit CIR ArcGIS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-cir-arcgis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run CIR ArcGIS audit
+        run: |
+          python scripts/audit_cir_arcgis.py
+
+      - name: Verify generated files
+        run: |
+          test -f data/cir-source-audit.json
+          test -f data/cir-candidate-samples.json
+          python -m json.tool data/cir-source-audit.json > /dev/null
+          python -m json.tool data/cir-candidate-samples.json > /dev/null
+
+      - name: Commit audit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/cir-source-audit.json data/cir-candidate-samples.json
+
+          if git diff --cached --quiet; then
+            echo "No CIR audit changes to commit."
+          else
+            git commit -m "Update CIR ArcGIS audit data"
+            git push
+          fi
