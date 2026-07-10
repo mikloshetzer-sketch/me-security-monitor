@@ -2689,7 +2689,7 @@ window.setInterval(() => {
         }
 
         const script = document.createElement("script");
-        script.src = "iranstrike-layer.js";
+        script.src = "iranstrike-layer.js?v=20260710-2335";
         script.async = true;
         script.dataset.iranstrikeLayerModule = "true";
         script.onload = resolve;
@@ -2712,7 +2712,7 @@ window.setInterval(() => {
       }
 
       iranStrikeController = window.createIranStrikeLayer(map, {
-        dataUrl: "data/iranstrike.json",
+        dataUrl: "data/iranstrike.json?v=20260710-2335",
         enabled: false,
         maxVisible: 4000,
         defaultDays: 30,
