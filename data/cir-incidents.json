@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T07:21:06Z",
+  "generated_at": "2026-07-10T09:55:30Z",
   "status": "ok",
   "source": {
     "name": "Centre for Information Resilience",
@@ -10,7 +10,8 @@
   },
   "data_policy": {
     "technical_note": "Downloaded from a publicly queryable ArcGIS FeatureServer.",
-    "reuse_note": "Technical accessibility does not itself grant republication rights. Confirm CIR attribution and reuse terms before public redistribution."
+    "reuse_note": "Technical accessibility does not itself grant republication rights. Confirm CIR attribution and reuse terms before public redistribution.",
+    "analytical_note": "Rolling analytics use the latest event date in the dataset as the reference date."
   },
   "statistics": {
     "arcgis_record_count": 2255,
@@ -30,6 +31,2439 @@
       "Israel": 103,
       "OPT - East Jerusalem": 52,
       "Israel - Northern Border": 27
+    }
+  },
+  "analytics": {
+    "status": "ok",
+    "reference_basis": "All rolling periods are calculated relative to the latest event date in the CIR dataset, not the current date.",
+    "overview": {
+      "total_incidents": 2255,
+      "earliest_event_date": "2023-10-07",
+      "latest_event_date": "2026-04-25",
+      "coverage_days": 932,
+      "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "top_location": "Gaza City",
+      "casualty_related_count": 2255,
+      "ceasefire_monitoring_count": 79,
+      "category_counts": {
+        "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1111,
+        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 555,
+        "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 535,
+        "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 54
+      }
+    },
+    "periods": {
+      "latest_day": {
+        "start_date": "2026-04-25",
+        "end_date": "2026-04-25",
+        "days": 1,
+        "incident_count": 1,
+        "casualty_related_count": 1,
+        "ceasefire_monitoring_count": 1,
+        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+        "top_location": "Gaza City",
+        "category_counts": {
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        "top_locations": [
+          {
+            "name": "Gaza City",
+            "count": 1
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 1
+          }
+        ]
+      },
+      "latest_7_days": {
+        "start_date": "2026-04-19",
+        "end_date": "2026-04-25",
+        "days": 7,
+        "incident_count": 7,
+        "casualty_related_count": 7,
+        "ceasefire_monitoring_count": 5,
+        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+        "top_location": "Gaza City",
+        "category_counts": {
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 3,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 3,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1
+        },
+        "top_locations": [
+          {
+            "name": "Gaza City",
+            "count": 2
+          },
+          {
+            "name": "Beit Lahia",
+            "count": 2
+          },
+          {
+            "name": "Al-Maghazi",
+            "count": 1
+          },
+          {
+            "name": "Khan Younis",
+            "count": 1
+          },
+          {
+            "name": "Nuseirat",
+            "count": 1
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 7
+          }
+        ]
+      },
+      "previous_7_days": {
+        "start_date": "2026-04-12",
+        "end_date": "2026-04-18",
+        "days": 7,
+        "incident_count": 12,
+        "casualty_related_count": 12,
+        "ceasefire_monitoring_count": 2,
+        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+        "top_location": "Bint Jbeil",
+        "category_counts": {
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 8,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2
+        },
+        "top_locations": [
+          {
+            "name": "Bint Jbeil",
+            "count": 2
+          },
+          {
+            "name": "Gaza City",
+            "count": 2
+          },
+          {
+            "name": "Turmus Ayya",
+            "count": 1
+          },
+          {
+            "name": "Meiss al-Jabal",
+            "count": 1
+          },
+          {
+            "name": "Marwaheen",
+            "count": 1
+          },
+          {
+            "name": "Al-Quzah",
+            "count": 1
+          },
+          {
+            "name": "Tibnine",
+            "count": 1
+          },
+          {
+            "name": "Tyre",
+            "count": 1
+          },
+          {
+            "name": "Naqoura",
+            "count": 1
+          },
+          {
+            "name": "Qana",
+            "count": 1
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "Lebanon - Southern Border",
+            "count": 6
+          },
+          {
+            "name": "Lebanon",
+            "count": 3
+          },
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 2
+          },
+          {
+            "name": "OPT - West Bank",
+            "count": 1
+          }
+        ]
+      },
+      "latest_30_days": {
+        "start_date": "2026-03-27",
+        "end_date": "2026-04-25",
+        "days": 30,
+        "incident_count": 39,
+        "casualty_related_count": 39,
+        "ceasefire_monitoring_count": 9,
+        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+        "top_location": "Gaza City",
+        "category_counts": {
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 23,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 8,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 8
+        },
+        "top_locations": [
+          {
+            "name": "Gaza City",
+            "count": 4
+          },
+          {
+            "name": "Naqoura",
+            "count": 4
+          },
+          {
+            "name": "Bint Jbeil",
+            "count": 3
+          },
+          {
+            "name": "Tyre",
+            "count": 3
+          },
+          {
+            "name": "Al-Maghazi",
+            "count": 2
+          },
+          {
+            "name": "Beit Lahia",
+            "count": 2
+          },
+          {
+            "name": "Beirut",
+            "count": 2
+          },
+          {
+            "name": "Khan Younis",
+            "count": 1
+          },
+          {
+            "name": "Nuseirat",
+            "count": 1
+          },
+          {
+            "name": "Turmus Ayya",
+            "count": 1
+          },
+          {
+            "name": "Meiss al-Jabal",
+            "count": 1
+          },
+          {
+            "name": "Marwaheen",
+            "count": 1
+          },
+          {
+            "name": "Al-Quzah",
+            "count": 1
+          },
+          {
+            "name": "Tibnine",
+            "count": 1
+          },
+          {
+            "name": "Qana",
+            "count": 1
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "Lebanon - Southern Border",
+            "count": 15
+          },
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 11
+          },
+          {
+            "name": "Lebanon",
+            "count": 10
+          },
+          {
+            "name": "OPT - West Bank",
+            "count": 2
+          },
+          {
+            "name": "OPT - East Jerusalem",
+            "count": 1
+          }
+        ]
+      },
+      "previous_30_days": {
+        "start_date": "2026-02-25",
+        "end_date": "2026-03-26",
+        "days": 30,
+        "incident_count": 43,
+        "casualty_related_count": 43,
+        "ceasefire_monitoring_count": 5,
+        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+        "top_location": "Beirut",
+        "category_counts": {
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 25,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 14,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 4
+        },
+        "top_locations": [
+          {
+            "name": "Beirut",
+            "count": 13
+          },
+          {
+            "name": "Khiam",
+            "count": 5
+          },
+          {
+            "name": "Gaza City",
+            "count": 4
+          },
+          {
+            "name": "Deir al-Hatab",
+            "count": 2
+          },
+          {
+            "name": "Deir al-Balah",
+            "count": 1
+          },
+          {
+            "name": "Silwan",
+            "count": 1
+          },
+          {
+            "name": "Fandaqumiya",
+            "count": 1
+          },
+          {
+            "name": "Ein Yabrud",
+            "count": 1
+          },
+          {
+            "name": "Rafah",
+            "count": 1
+          },
+          {
+            "name": "Beit Hanoun",
+            "count": 1
+          },
+          {
+            "name": "Tuqu'",
+            "count": 1
+          },
+          {
+            "name": "Al-Maghazi",
+            "count": 1
+          },
+          {
+            "name": "Burj Qalwaya",
+            "count": 1
+          },
+          {
+            "name": "Za’atara",
+            "count": 1
+          },
+          {
+            "name": "Zefta",
+            "count": 1
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "Lebanon",
+            "count": 20
+          },
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 9
+          },
+          {
+            "name": "OPT - West Bank",
+            "count": 8
+          },
+          {
+            "name": "Lebanon - Southern Border",
+            "count": 5
+          },
+          {
+            "name": "OPT - East Jerusalem",
+            "count": 1
+          }
+        ]
+      },
+      "latest_90_days": {
+        "start_date": "2026-01-26",
+        "end_date": "2026-04-25",
+        "days": 90,
+        "incident_count": 118,
+        "casualty_related_count": 118,
+        "ceasefire_monitoring_count": 28,
+        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+        "top_location": "Gaza City",
+        "category_counts": {
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 65,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 35,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 18
+        },
+        "top_locations": [
+          {
+            "name": "Gaza City",
+            "count": 15
+          },
+          {
+            "name": "Beirut",
+            "count": 15
+          },
+          {
+            "name": "Khiam",
+            "count": 6
+          },
+          {
+            "name": "Al-Maghazi",
+            "count": 5
+          },
+          {
+            "name": "Tyre",
+            "count": 5
+          },
+          {
+            "name": "Beit Lahia",
+            "count": 4
+          },
+          {
+            "name": "Naqoura",
+            "count": 4
+          },
+          {
+            "name": "Khan Younis",
+            "count": 3
+          },
+          {
+            "name": "Bint Jbeil",
+            "count": 3
+          },
+          {
+            "name": "Rafah",
+            "count": 3
+          },
+          {
+            "name": "Nuseirat",
+            "count": 2
+          },
+          {
+            "name": "Nabatieh",
+            "count": 2
+          },
+          {
+            "name": "Deir al-Hatab",
+            "count": 2
+          },
+          {
+            "name": "Beit Hanoun",
+            "count": 2
+          },
+          {
+            "name": "Khashem al-Daraj",
+            "count": 2
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 38
+          },
+          {
+            "name": "Lebanon",
+            "count": 33
+          },
+          {
+            "name": "Lebanon - Southern Border",
+            "count": 23
+          },
+          {
+            "name": "OPT - West Bank",
+            "count": 21
+          },
+          {
+            "name": "OPT - East Jerusalem",
+            "count": 2
+          },
+          {
+            "name": "Israel",
+            "count": 1
+          }
+        ]
+      },
+      "comparison_7_days": {
+        "current_count": 7,
+        "previous_count": 12,
+        "absolute_change": -5,
+        "percent_change": -41.7,
+        "direction": "decrease"
+      },
+      "comparison_30_days": {
+        "current_count": 39,
+        "previous_count": 43,
+        "absolute_change": -4,
+        "percent_change": -9.3,
+        "direction": "stable"
+      }
+    },
+    "daily_trend": [
+      {
+        "date": "2025-10-28",
+        "count": 2
+      },
+      {
+        "date": "2025-10-29",
+        "count": 6
+      },
+      {
+        "date": "2025-10-30",
+        "count": 3
+      },
+      {
+        "date": "2025-10-31",
+        "count": 1
+      },
+      {
+        "date": "2025-11-01",
+        "count": 2
+      },
+      {
+        "date": "2025-11-02",
+        "count": 2
+      },
+      {
+        "date": "2025-11-03",
+        "count": 1
+      },
+      {
+        "date": "2025-11-04",
+        "count": 1
+      },
+      {
+        "date": "2025-11-05",
+        "count": 3
+      },
+      {
+        "date": "2025-11-06",
+        "count": 1
+      },
+      {
+        "date": "2025-11-07",
+        "count": 0
+      },
+      {
+        "date": "2025-11-08",
+        "count": 1
+      },
+      {
+        "date": "2025-11-09",
+        "count": 1
+      },
+      {
+        "date": "2025-11-10",
+        "count": 3
+      },
+      {
+        "date": "2025-11-11",
+        "count": 1
+      },
+      {
+        "date": "2025-11-12",
+        "count": 0
+      },
+      {
+        "date": "2025-11-13",
+        "count": 1
+      },
+      {
+        "date": "2025-11-14",
+        "count": 0
+      },
+      {
+        "date": "2025-11-15",
+        "count": 1
+      },
+      {
+        "date": "2025-11-16",
+        "count": 2
+      },
+      {
+        "date": "2025-11-17",
+        "count": 0
+      },
+      {
+        "date": "2025-11-18",
+        "count": 4
+      },
+      {
+        "date": "2025-11-19",
+        "count": 1
+      },
+      {
+        "date": "2025-11-20",
+        "count": 4
+      },
+      {
+        "date": "2025-11-21",
+        "count": 0
+      },
+      {
+        "date": "2025-11-22",
+        "count": 5
+      },
+      {
+        "date": "2025-11-23",
+        "count": 1
+      },
+      {
+        "date": "2025-11-24",
+        "count": 1
+      },
+      {
+        "date": "2025-11-25",
+        "count": 0
+      },
+      {
+        "date": "2025-11-26",
+        "count": 2
+      },
+      {
+        "date": "2025-11-27",
+        "count": 4
+      },
+      {
+        "date": "2025-11-28",
+        "count": 0
+      },
+      {
+        "date": "2025-11-29",
+        "count": 1
+      },
+      {
+        "date": "2025-11-30",
+        "count": 0
+      },
+      {
+        "date": "2025-12-01",
+        "count": 3
+      },
+      {
+        "date": "2025-12-02",
+        "count": 1
+      },
+      {
+        "date": "2025-12-03",
+        "count": 1
+      },
+      {
+        "date": "2025-12-04",
+        "count": 4
+      },
+      {
+        "date": "2025-12-05",
+        "count": 0
+      },
+      {
+        "date": "2025-12-06",
+        "count": 2
+      },
+      {
+        "date": "2025-12-07",
+        "count": 1
+      },
+      {
+        "date": "2025-12-08",
+        "count": 4
+      },
+      {
+        "date": "2025-12-09",
+        "count": 0
+      },
+      {
+        "date": "2025-12-10",
+        "count": 1
+      },
+      {
+        "date": "2025-12-11",
+        "count": 0
+      },
+      {
+        "date": "2025-12-12",
+        "count": 0
+      },
+      {
+        "date": "2025-12-13",
+        "count": 1
+      },
+      {
+        "date": "2025-12-14",
+        "count": 2
+      },
+      {
+        "date": "2025-12-15",
+        "count": 0
+      },
+      {
+        "date": "2025-12-16",
+        "count": 2
+      },
+      {
+        "date": "2025-12-17",
+        "count": 1
+      },
+      {
+        "date": "2025-12-18",
+        "count": 0
+      },
+      {
+        "date": "2025-12-19",
+        "count": 1
+      },
+      {
+        "date": "2025-12-20",
+        "count": 2
+      },
+      {
+        "date": "2025-12-21",
+        "count": 0
+      },
+      {
+        "date": "2025-12-22",
+        "count": 2
+      },
+      {
+        "date": "2025-12-23",
+        "count": 4
+      },
+      {
+        "date": "2025-12-24",
+        "count": 1
+      },
+      {
+        "date": "2025-12-25",
+        "count": 1
+      },
+      {
+        "date": "2025-12-26",
+        "count": 1
+      },
+      {
+        "date": "2025-12-27",
+        "count": 0
+      },
+      {
+        "date": "2025-12-28",
+        "count": 0
+      },
+      {
+        "date": "2025-12-29",
+        "count": 0
+      },
+      {
+        "date": "2025-12-30",
+        "count": 1
+      },
+      {
+        "date": "2025-12-31",
+        "count": 2
+      },
+      {
+        "date": "2026-01-01",
+        "count": 1
+      },
+      {
+        "date": "2026-01-02",
+        "count": 0
+      },
+      {
+        "date": "2026-01-03",
+        "count": 2
+      },
+      {
+        "date": "2026-01-04",
+        "count": 1
+      },
+      {
+        "date": "2026-01-05",
+        "count": 3
+      },
+      {
+        "date": "2026-01-06",
+        "count": 1
+      },
+      {
+        "date": "2026-01-07",
+        "count": 2
+      },
+      {
+        "date": "2026-01-08",
+        "count": 7
+      },
+      {
+        "date": "2026-01-09",
+        "count": 0
+      },
+      {
+        "date": "2026-01-10",
+        "count": 2
+      },
+      {
+        "date": "2026-01-11",
+        "count": 2
+      },
+      {
+        "date": "2026-01-12",
+        "count": 0
+      },
+      {
+        "date": "2026-01-13",
+        "count": 0
+      },
+      {
+        "date": "2026-01-14",
+        "count": 0
+      },
+      {
+        "date": "2026-01-15",
+        "count": 4
+      },
+      {
+        "date": "2026-01-16",
+        "count": 0
+      },
+      {
+        "date": "2026-01-17",
+        "count": 2
+      },
+      {
+        "date": "2026-01-18",
+        "count": 0
+      },
+      {
+        "date": "2026-01-19",
+        "count": 1
+      },
+      {
+        "date": "2026-01-20",
+        "count": 1
+      },
+      {
+        "date": "2026-01-21",
+        "count": 8
+      },
+      {
+        "date": "2026-01-22",
+        "count": 1
+      },
+      {
+        "date": "2026-01-23",
+        "count": 0
+      },
+      {
+        "date": "2026-01-24",
+        "count": 0
+      },
+      {
+        "date": "2026-01-25",
+        "count": 3
+      },
+      {
+        "date": "2026-01-26",
+        "count": 2
+      },
+      {
+        "date": "2026-01-27",
+        "count": 1
+      },
+      {
+        "date": "2026-01-28",
+        "count": 1
+      },
+      {
+        "date": "2026-01-29",
+        "count": 1
+      },
+      {
+        "date": "2026-01-30",
+        "count": 1
+      },
+      {
+        "date": "2026-01-31",
+        "count": 3
+      },
+      {
+        "date": "2026-02-01",
+        "count": 2
+      },
+      {
+        "date": "2026-02-02",
+        "count": 2
+      },
+      {
+        "date": "2026-02-03",
+        "count": 1
+      },
+      {
+        "date": "2026-02-04",
+        "count": 3
+      },
+      {
+        "date": "2026-02-05",
+        "count": 1
+      },
+      {
+        "date": "2026-02-06",
+        "count": 2
+      },
+      {
+        "date": "2026-02-07",
+        "count": 1
+      },
+      {
+        "date": "2026-02-08",
+        "count": 0
+      },
+      {
+        "date": "2026-02-09",
+        "count": 1
+      },
+      {
+        "date": "2026-02-10",
+        "count": 1
+      },
+      {
+        "date": "2026-02-11",
+        "count": 1
+      },
+      {
+        "date": "2026-02-12",
+        "count": 0
+      },
+      {
+        "date": "2026-02-13",
+        "count": 0
+      },
+      {
+        "date": "2026-02-14",
+        "count": 1
+      },
+      {
+        "date": "2026-02-15",
+        "count": 1
+      },
+      {
+        "date": "2026-02-16",
+        "count": 2
+      },
+      {
+        "date": "2026-02-17",
+        "count": 1
+      },
+      {
+        "date": "2026-02-18",
+        "count": 2
+      },
+      {
+        "date": "2026-02-19",
+        "count": 1
+      },
+      {
+        "date": "2026-02-20",
+        "count": 0
+      },
+      {
+        "date": "2026-02-21",
+        "count": 2
+      },
+      {
+        "date": "2026-02-22",
+        "count": 0
+      },
+      {
+        "date": "2026-02-23",
+        "count": 1
+      },
+      {
+        "date": "2026-02-24",
+        "count": 1
+      },
+      {
+        "date": "2026-02-25",
+        "count": 1
+      },
+      {
+        "date": "2026-02-26",
+        "count": 0
+      },
+      {
+        "date": "2026-02-27",
+        "count": 0
+      },
+      {
+        "date": "2026-02-28",
+        "count": 0
+      },
+      {
+        "date": "2026-03-01",
+        "count": 0
+      },
+      {
+        "date": "2026-03-02",
+        "count": 8
+      },
+      {
+        "date": "2026-03-03",
+        "count": 0
+      },
+      {
+        "date": "2026-03-04",
+        "count": 0
+      },
+      {
+        "date": "2026-03-05",
+        "count": 2
+      },
+      {
+        "date": "2026-03-06",
+        "count": 5
+      },
+      {
+        "date": "2026-03-07",
+        "count": 1
+      },
+      {
+        "date": "2026-03-08",
+        "count": 1
+      },
+      {
+        "date": "2026-03-09",
+        "count": 2
+      },
+      {
+        "date": "2026-03-10",
+        "count": 1
+      },
+      {
+        "date": "2026-03-11",
+        "count": 3
+      },
+      {
+        "date": "2026-03-12",
+        "count": 2
+      },
+      {
+        "date": "2026-03-13",
+        "count": 1
+      },
+      {
+        "date": "2026-03-14",
+        "count": 0
+      },
+      {
+        "date": "2026-03-15",
+        "count": 1
+      },
+      {
+        "date": "2026-03-16",
+        "count": 2
+      },
+      {
+        "date": "2026-03-17",
+        "count": 0
+      },
+      {
+        "date": "2026-03-18",
+        "count": 2
+      },
+      {
+        "date": "2026-03-19",
+        "count": 1
+      },
+      {
+        "date": "2026-03-20",
+        "count": 1
+      },
+      {
+        "date": "2026-03-21",
+        "count": 0
+      },
+      {
+        "date": "2026-03-22",
+        "count": 4
+      },
+      {
+        "date": "2026-03-23",
+        "count": 0
+      },
+      {
+        "date": "2026-03-24",
+        "count": 1
+      },
+      {
+        "date": "2026-03-25",
+        "count": 3
+      },
+      {
+        "date": "2026-03-26",
+        "count": 1
+      },
+      {
+        "date": "2026-03-27",
+        "count": 0
+      },
+      {
+        "date": "2026-03-28",
+        "count": 0
+      },
+      {
+        "date": "2026-03-29",
+        "count": 0
+      },
+      {
+        "date": "2026-03-30",
+        "count": 3
+      },
+      {
+        "date": "2026-03-31",
+        "count": 1
+      },
+      {
+        "date": "2026-04-01",
+        "count": 2
+      },
+      {
+        "date": "2026-04-02",
+        "count": 0
+      },
+      {
+        "date": "2026-04-03",
+        "count": 1
+      },
+      {
+        "date": "2026-04-04",
+        "count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "count": 2
+      },
+      {
+        "date": "2026-04-06",
+        "count": 2
+      },
+      {
+        "date": "2026-04-07",
+        "count": 0
+      },
+      {
+        "date": "2026-04-08",
+        "count": 4
+      },
+      {
+        "date": "2026-04-09",
+        "count": 1
+      },
+      {
+        "date": "2026-04-10",
+        "count": 2
+      },
+      {
+        "date": "2026-04-11",
+        "count": 0
+      },
+      {
+        "date": "2026-04-12",
+        "count": 1
+      },
+      {
+        "date": "2026-04-13",
+        "count": 1
+      },
+      {
+        "date": "2026-04-14",
+        "count": 6
+      },
+      {
+        "date": "2026-04-15",
+        "count": 0
+      },
+      {
+        "date": "2026-04-16",
+        "count": 3
+      },
+      {
+        "date": "2026-04-17",
+        "count": 0
+      },
+      {
+        "date": "2026-04-18",
+        "count": 1
+      },
+      {
+        "date": "2026-04-19",
+        "count": 1
+      },
+      {
+        "date": "2026-04-20",
+        "count": 1
+      },
+      {
+        "date": "2026-04-21",
+        "count": 1
+      },
+      {
+        "date": "2026-04-22",
+        "count": 1
+      },
+      {
+        "date": "2026-04-23",
+        "count": 1
+      },
+      {
+        "date": "2026-04-24",
+        "count": 1
+      },
+      {
+        "date": "2026-04-25",
+        "count": 1
+      }
+    ],
+    "weekly_trend": [
+      {
+        "week_start": "2024-04-29",
+        "count": 16
+      },
+      {
+        "week_start": "2024-05-06",
+        "count": 9
+      },
+      {
+        "week_start": "2024-05-13",
+        "count": 25
+      },
+      {
+        "week_start": "2024-05-20",
+        "count": 31
+      },
+      {
+        "week_start": "2024-05-27",
+        "count": 15
+      },
+      {
+        "week_start": "2024-06-03",
+        "count": 38
+      },
+      {
+        "week_start": "2024-06-10",
+        "count": 8
+      },
+      {
+        "week_start": "2024-06-17",
+        "count": 14
+      },
+      {
+        "week_start": "2024-06-24",
+        "count": 10
+      },
+      {
+        "week_start": "2024-07-01",
+        "count": 3
+      },
+      {
+        "week_start": "2024-07-08",
+        "count": 10
+      },
+      {
+        "week_start": "2024-07-15",
+        "count": 24
+      },
+      {
+        "week_start": "2024-07-22",
+        "count": 26
+      },
+      {
+        "week_start": "2024-07-29",
+        "count": 25
+      },
+      {
+        "week_start": "2024-08-05",
+        "count": 27
+      },
+      {
+        "week_start": "2024-08-12",
+        "count": 11
+      },
+      {
+        "week_start": "2024-08-19",
+        "count": 27
+      },
+      {
+        "week_start": "2024-08-26",
+        "count": 18
+      },
+      {
+        "week_start": "2024-09-02",
+        "count": 13
+      },
+      {
+        "week_start": "2024-09-09",
+        "count": 17
+      },
+      {
+        "week_start": "2024-09-16",
+        "count": 13
+      },
+      {
+        "week_start": "2024-09-23",
+        "count": 39
+      },
+      {
+        "week_start": "2024-09-30",
+        "count": 14
+      },
+      {
+        "week_start": "2024-10-07",
+        "count": 11
+      },
+      {
+        "week_start": "2024-10-14",
+        "count": 19
+      },
+      {
+        "week_start": "2024-10-21",
+        "count": 19
+      },
+      {
+        "week_start": "2024-10-28",
+        "count": 23
+      },
+      {
+        "week_start": "2024-11-04",
+        "count": 20
+      },
+      {
+        "week_start": "2024-11-11",
+        "count": 22
+      },
+      {
+        "week_start": "2024-11-18",
+        "count": 17
+      },
+      {
+        "week_start": "2024-11-25",
+        "count": 24
+      },
+      {
+        "week_start": "2024-12-02",
+        "count": 18
+      },
+      {
+        "week_start": "2024-12-09",
+        "count": 11
+      },
+      {
+        "week_start": "2024-12-16",
+        "count": 15
+      },
+      {
+        "week_start": "2024-12-23",
+        "count": 21
+      },
+      {
+        "week_start": "2024-12-30",
+        "count": 8
+      },
+      {
+        "week_start": "2025-01-06",
+        "count": 7
+      },
+      {
+        "week_start": "2025-01-13",
+        "count": 8
+      },
+      {
+        "week_start": "2025-01-20",
+        "count": 37
+      },
+      {
+        "week_start": "2025-01-27",
+        "count": 16
+      },
+      {
+        "week_start": "2025-02-03",
+        "count": 12
+      },
+      {
+        "week_start": "2025-02-10",
+        "count": 22
+      },
+      {
+        "week_start": "2025-02-17",
+        "count": 15
+      },
+      {
+        "week_start": "2025-02-24",
+        "count": 12
+      },
+      {
+        "week_start": "2025-03-03",
+        "count": 5
+      },
+      {
+        "week_start": "2025-03-10",
+        "count": 8
+      },
+      {
+        "week_start": "2025-03-17",
+        "count": 32
+      },
+      {
+        "week_start": "2025-03-24",
+        "count": 7
+      },
+      {
+        "week_start": "2025-03-31",
+        "count": 12
+      },
+      {
+        "week_start": "2025-04-07",
+        "count": 11
+      },
+      {
+        "week_start": "2025-04-14",
+        "count": 7
+      },
+      {
+        "week_start": "2025-04-21",
+        "count": 21
+      },
+      {
+        "week_start": "2025-04-28",
+        "count": 15
+      },
+      {
+        "week_start": "2025-05-05",
+        "count": 12
+      },
+      {
+        "week_start": "2025-05-12",
+        "count": 19
+      },
+      {
+        "week_start": "2025-05-19",
+        "count": 15
+      },
+      {
+        "week_start": "2025-05-26",
+        "count": 13
+      },
+      {
+        "week_start": "2025-06-02",
+        "count": 15
+      },
+      {
+        "week_start": "2025-06-09",
+        "count": 8
+      },
+      {
+        "week_start": "2025-06-16",
+        "count": 15
+      },
+      {
+        "week_start": "2025-06-23",
+        "count": 18
+      },
+      {
+        "week_start": "2025-06-30",
+        "count": 19
+      },
+      {
+        "week_start": "2025-07-07",
+        "count": 17
+      },
+      {
+        "week_start": "2025-07-14",
+        "count": 10
+      },
+      {
+        "week_start": "2025-07-21",
+        "count": 14
+      },
+      {
+        "week_start": "2025-07-28",
+        "count": 9
+      },
+      {
+        "week_start": "2025-08-04",
+        "count": 13
+      },
+      {
+        "week_start": "2025-08-11",
+        "count": 5
+      },
+      {
+        "week_start": "2025-08-18",
+        "count": 6
+      },
+      {
+        "week_start": "2025-08-25",
+        "count": 12
+      },
+      {
+        "week_start": "2025-09-01",
+        "count": 6
+      },
+      {
+        "week_start": "2025-09-08",
+        "count": 15
+      },
+      {
+        "week_start": "2025-09-15",
+        "count": 13
+      },
+      {
+        "week_start": "2025-09-22",
+        "count": 12
+      },
+      {
+        "week_start": "2025-09-29",
+        "count": 12
+      },
+      {
+        "week_start": "2025-10-06",
+        "count": 12
+      },
+      {
+        "week_start": "2025-10-13",
+        "count": 23
+      },
+      {
+        "week_start": "2025-10-20",
+        "count": 7
+      },
+      {
+        "week_start": "2025-10-27",
+        "count": 20
+      },
+      {
+        "week_start": "2025-11-03",
+        "count": 8
+      },
+      {
+        "week_start": "2025-11-10",
+        "count": 8
+      },
+      {
+        "week_start": "2025-11-17",
+        "count": 15
+      },
+      {
+        "week_start": "2025-11-24",
+        "count": 8
+      },
+      {
+        "week_start": "2025-12-01",
+        "count": 12
+      },
+      {
+        "week_start": "2025-12-08",
+        "count": 8
+      },
+      {
+        "week_start": "2025-12-15",
+        "count": 6
+      },
+      {
+        "week_start": "2025-12-22",
+        "count": 9
+      },
+      {
+        "week_start": "2025-12-29",
+        "count": 7
+      },
+      {
+        "week_start": "2026-01-05",
+        "count": 17
+      },
+      {
+        "week_start": "2026-01-12",
+        "count": 6
+      },
+      {
+        "week_start": "2026-01-19",
+        "count": 14
+      },
+      {
+        "week_start": "2026-01-26",
+        "count": 11
+      },
+      {
+        "week_start": "2026-02-02",
+        "count": 10
+      },
+      {
+        "week_start": "2026-02-09",
+        "count": 5
+      },
+      {
+        "week_start": "2026-02-16",
+        "count": 8
+      },
+      {
+        "week_start": "2026-02-23",
+        "count": 3
+      },
+      {
+        "week_start": "2026-03-02",
+        "count": 17
+      },
+      {
+        "week_start": "2026-03-09",
+        "count": 10
+      },
+      {
+        "week_start": "2026-03-16",
+        "count": 10
+      },
+      {
+        "week_start": "2026-03-23",
+        "count": 5
+      },
+      {
+        "week_start": "2026-03-30",
+        "count": 11
+      },
+      {
+        "week_start": "2026-04-06",
+        "count": 10
+      },
+      {
+        "week_start": "2026-04-13",
+        "count": 12
+      },
+      {
+        "week_start": "2026-04-20",
+        "count": 6
+      }
+    ],
+    "category_trend": {
+      "start_date": "2026-01-26",
+      "end_date": "2026-04-25",
+      "categories": [
+        "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+        "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+      ],
+      "series": [
+        {
+          "date": "2026-01-26",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-01-27",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-01-28",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-01-29",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-01-30",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-01-31",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-01",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-02",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-03",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-04",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-02-05",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-06",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-07",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-08",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-09",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-10",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-02-11",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-12",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-13",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-14",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-15",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-02-16",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-17",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-18",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-02-19",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-20",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-21",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-22",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-23",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-24",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-02-25",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-26",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-27",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-02-28",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-01",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-02",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 5,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-03",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-04",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-05",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-06",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-03-07",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-08",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-03-09",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-10",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-11",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-03-12",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-13",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-14",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-15",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-16",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-03-17",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-18",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-19",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-20",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-21",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-22",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-23",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-24",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-25",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-26",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-27",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-28",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-29",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-03-30",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-03-31",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-01",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-02",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-03",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-04",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-05",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-04-06",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-04-07",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-08",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-09",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-10",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-11",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-12",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-13",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-04-14",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-04-15",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-16",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 3,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-17",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-18",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-19",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-04-20",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-21",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-22",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-23",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-04-24",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-04-25",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        }
+      ]
+    },
+    "hotspots": {
+      "top_locations": [
+        {
+          "name": "Gaza City",
+          "count": 309
+        },
+        {
+          "name": "Khan Younis",
+          "count": 145
+        },
+        {
+          "name": "Rafah",
+          "count": 100
+        },
+        {
+          "name": "Jabalia",
+          "count": 92
+        },
+        {
+          "name": "Jenin",
+          "count": 85
+        },
+        {
+          "name": "Nuseirat",
+          "count": 83
+        },
+        {
+          "name": "Deir al-Balah",
+          "count": 81
+        },
+        {
+          "name": "Beit Lahia",
+          "count": 74
+        },
+        {
+          "name": "Beirut",
+          "count": 70
+        },
+        {
+          "name": "Tulkarm",
+          "count": 34
+        },
+        {
+          "name": "Nablus",
+          "count": 30
+        },
+        {
+          "name": "Nour Shams",
+          "count": 29
+        },
+        {
+          "name": "Hebron",
+          "count": 20
+        },
+        {
+          "name": "Al-Maghazi",
+          "count": 17
+        },
+        {
+          "name": "Abasan al-Kabira",
+          "count": 17
+        }
+      ],
+      "top_zones": [
+        {
+          "name": "OPT - Gaza Strip",
+          "count": 1059
+        },
+        {
+          "name": "OPT - West Bank",
+          "count": 529
+        },
+        {
+          "name": "Lebanon - Southern Border",
+          "count": 246
+        },
+        {
+          "name": "Lebanon",
+          "count": 239
+        },
+        {
+          "name": "Israel",
+          "count": 103
+        },
+        {
+          "name": "OPT - East Jerusalem",
+          "count": 52
+        },
+        {
+          "name": "Israel - Northern Border",
+          "count": 27
+        }
+      ],
+      "coordinate_clusters": [
+        {
+          "latitude": 31.35,
+          "longitude": 34.29,
+          "count": 62,
+          "top_location": "Khan Younis",
+          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        },
+        {
+          "latitude": 31.54,
+          "longitude": 34.5,
+          "count": 49,
+          "top_location": "Beit Lahia",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.52,
+          "longitude": 34.44,
+          "count": 47,
+          "top_location": "Gaza City",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 32.46,
+          "longitude": 35.29,
+          "count": 39,
+          "top_location": "Jenin",
+          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        },
+        {
+          "latitude": 31.45,
+          "longitude": 34.39,
+          "count": 36,
+          "top_location": "Nuseirat",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.52,
+          "longitude": 34.45,
+          "count": 28,
+          "top_location": "Gaza City",
+          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        },
+        {
+          "latitude": 32.32,
+          "longitude": 35.06,
+          "count": 28,
+          "top_location": "Nour Shams",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.42,
+          "longitude": 34.36,
+          "count": 24,
+          "top_location": "Deir al-Balah",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.52,
+          "longitude": 34.46,
+          "count": 23,
+          "top_location": "Gaza City",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.53,
+          "longitude": 34.5,
+          "count": 23,
+          "top_location": "Jabalia",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.35,
+          "longitude": 34.3,
+          "count": 22,
+          "top_location": "Khan Younis",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.54,
+          "longitude": 34.51,
+          "count": 20,
+          "top_location": "Beit Lahia",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.5,
+          "longitude": 34.46,
+          "count": 18,
+          "top_location": "Gaza City",
+          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        },
+        {
+          "latitude": 33.85,
+          "longitude": 35.52,
+          "count": 16,
+          "top_location": "Beirut",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "latitude": 31.42,
+          "longitude": 34.35,
+          "count": 16,
+          "top_location": "Deir al-Balah",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        }
+      ]
+    },
+    "assessment": {
+      "language": "en",
+      "method": "rule_based",
+      "headline": "CIR activity trend: decrease",
+      "summary": "Verified incident activity decreased in the latest seven-day period. The dataset records 7 incidents, compared with 12 in the preceding seven days (-41.7%). Across the latest 30-day analytical window, <span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage was the most frequently recorded category. Recorded activity was most concentrated around Gaza City during the same period. The 30-day window contains 39 incidents with a casualty-related signal and 9 incidents marked for ceasefire monitoring. The latest event in the source dataset is dated 2026-04-25. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity.",
+      "paragraphs": [
+        "Verified incident activity decreased in the latest seven-day period. The dataset records 7 incidents, compared with 12 in the preceding seven days (-41.7%).",
+        "Across the latest 30-day analytical window, <span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage was the most frequently recorded category.",
+        "Recorded activity was most concentrated around Gaza City during the same period.",
+        "The 30-day window contains 39 incidents with a casualty-related signal and 9 incidents marked for ceasefire monitoring.",
+        "The latest event in the source dataset is dated 2026-04-25. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity."
+      ],
+      "key_findings": [
+        {
+          "label": "Seven-day trend",
+          "value": "decrease"
+        },
+        {
+          "label": "Seven-day change",
+          "value": "-41.7%"
+        },
+        {
+          "label": "Top 30-day category",
+          "value": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
+          "label": "Top 30-day location",
+          "value": "Gaza City"
+        },
+        {
+          "label": "Casualty-related incidents",
+          "value": 39
+        },
+        {
+          "label": "Ceasefire monitoring incidents",
+          "value": 9
+        }
+      ],
+      "top_hotspots": [
+        {
+          "name": "Gaza City",
+          "count": 309
+        },
+        {
+          "name": "Khan Younis",
+          "count": 145
+        },
+        {
+          "name": "Rafah",
+          "count": 100
+        },
+        {
+          "name": "Jabalia",
+          "count": 92
+        },
+        {
+          "name": "Jenin",
+          "count": 85
+        }
+      ]
     }
   },
   "events": [
@@ -47935,7 +50369,7 @@
       "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
       "ceasefire_monitoring": "",
       "links": [
-        "https://www.bbc.com/news/world-middle-east-68513408#:~:text=0%3A52,Nasser%20Hospital%20raid",
+        "https://www.bbc.com/news/world-middle-east-68513408#:~:text=0%3A52",
         "https://ichef.bbci.co.uk/news/1024/cpsprodpb/15D9A/production/_132889498_nasser_detainees_v4x640-nc-2x-nc.png.webp"
       ],
       "object_id": 1702
@@ -47962,7 +50396,7 @@
       "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
       "ceasefire_monitoring": "",
       "links": [
-        "https://www.bbc.com/news/world-middle-east-68513408#:~:text=0%3A52,Nasser%20Hospital%20raid",
+        "https://www.bbc.com/news/world-middle-east-68513408#:~:text=0%3A52",
         "https://ichef.bbci.co.uk/news/1024/cpsprodpb/15D9A/production/_132889498_nasser_detainees_v4x640-nc-2x-nc.png.webp"
       ],
       "object_id": 1701
