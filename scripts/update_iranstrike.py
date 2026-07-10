@@ -297,6 +297,126 @@ def extract_coordinates(
     return None, None
 
 
+IRAN_LOCATION_ALIASES = [
+    ("Tehran", ["tehran"]),
+    ("Isfahan", ["isfahan", "esfahan"]),
+    ("Mashhad", ["mashhad"]),
+    ("Tabriz", ["tabriz"]),
+    ("Shiraz", ["shiraz"]),
+    ("Bushehr", ["bushehr", "boushehr"]),
+    ("Bandar Abbas", ["bandar abbas"]),
+    ("Chabahar", ["chabahar"]),
+    ("Ahvaz", ["ahvaz"]),
+    ("Kermanshah", ["kermanshah"]),
+    ("Natanz", ["natanz"]),
+    ("Fordow", ["fordow", "fordo"]),
+    ("Arak", ["arak"]),
+    ("Qom", ["qom"]),
+    ("Karaj", ["karaj"]),
+    ("Rasht", ["rasht"]),
+    ("Zahedan", ["zahedan"]),
+    ("Kerman", ["kerman"]),
+    ("Yazd", ["yazd"]),
+    ("Semnan", ["semnan"]),
+    ("Khorramabad", ["khorramabad"]),
+    ("Dezful", ["dezful"]),
+    ("Abadan", ["abadan"]),
+    ("Kharg Island", ["kharg island", "khark island"]),
+    ("Nuclear facility", ["nuclear facility", "nuclear site"]),
+]
+
+REGIONAL_LOCATION_ALIASES = [
+    ("Gaza Strip", ["gaza", "rafah", "khan younis", "nuseirat"]),
+    ("Lebanon", ["lebanon", "beirut", "nabatieh", "naqoura", "tyre", "sidon"]),
+    ("Syria", ["syria", "damascus", "latakia", "homs", "aleppo"]),
+    ("Jordan", ["jordan", "amman", "aqaba"]),
+    ("Iraq", ["iraq", "baghdad", "erbil", "basra"]),
+    ("Israel", ["israel", "tel aviv", "haifa", "jerusalem", "eilat"]),
+    ("Persian Gulf", ["persian gulf", "strait of hormuz", "hormuz"]),
+    ("Red Sea", ["red sea", "bab el-mandeb"]),
+]
+
+
+def recursive_text_values(value: Any, depth: int = 0) -> List[str]:
+    if depth > 4:
+        return []
+
+    if isinstance(value, str):
+        text = value.strip()
+        return [text] if text else []
+
+    if isinstance(value, dict):
+        output: List[str] = []
+        for key, item in value.items():
+            key_lower = str(key).lower()
+            if any(token in key_lower for token in [
+                "location", "place", "city", "region", "province",
+                "governorate", "area", "target", "site", "country",
+                "title", "summary", "description", "text", "message",
+            ]):
+                output.extend(recursive_text_values(item, depth + 1))
+        return output
+
+    if isinstance(value, list):
+        output: List[str] = []
+        for item in value[:30]:
+            output.extend(recursive_text_values(item, depth + 1))
+        return output
+
+    return []
+
+
+def infer_location_from_text(record: Dict[str, Any]) -> Tuple[str, str]:
+    values = recursive_text_values(record)
+    text = " ".join(values).lower()
+
+    for location, aliases in IRAN_LOCATION_ALIASES:
+        if any(alias in text for alias in aliases):
+            return location, "Iran"
+
+    for location, aliases in REGIONAL_LOCATION_ALIASES:
+        if any(alias in text for alias in aliases):
+            if location in {"Persian Gulf", "Red Sea"}:
+                return location, location
+            return location, location
+
+    if any(token in text for token in ["iran", "iranian", "irgc"]):
+        return "Iran", "Iran"
+
+    return "", ""
+
+
+def infer_country_from_coordinates(
+    lat: Optional[float],
+    lon: Optional[float],
+) -> str:
+    if lat is None or lon is None:
+        return ""
+
+    # Broad regional bounding boxes. These are intentionally conservative
+    # and are only used when the API supplies coordinates but no country.
+    boxes = [
+        ("Iran", 24.0, 40.2, 43.0, 63.5),
+        ("Iraq", 28.5, 37.5, 38.5, 49.0),
+        ("Syria", 32.0, 37.5, 35.5, 42.5),
+        ("Jordan", 29.0, 33.6, 34.7, 39.4),
+        ("Israel", 29.0, 33.5, 34.0, 36.0),
+        ("Lebanon", 33.0, 34.8, 35.0, 36.8),
+        ("Saudi Arabia", 16.0, 32.5, 34.0, 56.0),
+        ("United Arab Emirates", 22.4, 26.5, 51.0, 56.5),
+        ("Qatar", 24.3, 26.3, 50.5, 52.0),
+        ("Bahrain", 25.5, 26.5, 50.2, 50.9),
+        ("Kuwait", 28.4, 30.2, 46.4, 48.7),
+        ("Oman", 16.5, 26.5, 51.8, 60.2),
+        ("Yemen", 12.0, 19.5, 42.0, 54.8),
+    ]
+
+    for country, min_lat, max_lat, min_lon, max_lon in boxes:
+        if min_lat <= lat <= max_lat and min_lon <= lon <= max_lon:
+            return country
+
+    return ""
+
 def normalize_category(record: Dict[str, Any]) -> str:
     value = clean(
         value_by_paths(
@@ -563,6 +683,10 @@ def normalize_event(
             record,
             [
                 "location.name",
+                "location.label",
+                "location.city",
+                "location.region",
+                "location.province",
                 "locationName",
                 "location_name",
                 "place",
@@ -570,6 +694,11 @@ def normalize_event(
                 "region",
                 "province",
                 "governorate",
+                "area",
+                "target",
+                "targetName",
+                "target_name",
+                "site",
                 "country",
             ],
         )
@@ -581,11 +710,26 @@ def normalize_event(
             [
                 "country",
                 "location.country",
+                "location.countryName",
                 "countryName",
                 "country_name",
             ],
         )
     )
+
+    inferred_location, inferred_country = infer_location_from_text(record)
+
+    if not location:
+        location = inferred_location
+
+    if not country:
+        country = inferred_country
+
+    if not country:
+        country = infer_country_from_coordinates(lat, lon)
+
+    if not location and country:
+        location = country
 
     source_name = clean(
         value_by_paths(
