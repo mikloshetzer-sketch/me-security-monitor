@@ -1748,6 +1748,7 @@ window.setInterval(() => {
         enabled: false,
         maxVisible: 2500,
         defaultDays: 0,
+        displayMode: "markers",
         showGraphicWarning: true
       });
 
@@ -1785,8 +1786,23 @@ window.setInterval(() => {
       return {
         days: Number(daysEl?.value || 0),
         categories: allSelected ? [] : categories,
-        search: String(searchEl?.value || "").trim()
+        search: String(searchEl?.value || "").trim(),
+        ceasefireOnly: Boolean(
+          document.getElementById("cirCeasefireOnlyCheckbox")?.checked
+        ),
+        casualtiesOnly: Boolean(
+          document.getElementById("cirCasualtiesOnlyCheckbox")?.checked
+        )
       };
+    }
+
+    function applyCirDisplayModeFromUi() {
+      if (!cirIncidentsController) return;
+
+      const mode =
+        document.getElementById("cirDisplayModeSelect")?.value || "markers";
+
+      cirIncidentsController.setDisplayMode(mode);
     }
 
     function updateCirUiState() {
@@ -1801,6 +1817,14 @@ window.setInterval(() => {
       setTextIfExists("cirLoadedCount", state.loadedCount || 0);
       setTextIfExists("cirVisibleCount", state.visibleCount || 0);
       setTextIfExists("cirLastUpdate", state.generatedAt || "—");
+
+      const modeSelect = document.getElementById("cirDisplayModeSelect");
+      if (modeSelect && !state.heatmapAvailable) {
+        [...modeSelect.options].forEach((option) => {
+          if (option.value !== "markers") option.disabled = true;
+        });
+        modeSelect.value = "markers";
+      }
 
       const badge = document.getElementById("cirStatusBadge");
       if (badge) {
@@ -1818,6 +1842,9 @@ window.setInterval(() => {
       try {
         const controller = ensureCirIncidentsController();
         controller.setFilters(readCirFiltersFromUi());
+        controller.setDisplayMode(
+          document.getElementById("cirDisplayModeSelect")?.value || "markers"
+        );
         await controller.refresh();
         controller.setEnabled(cirIncidentsEnabled);
         updateCirUiState();
@@ -1839,6 +1866,9 @@ window.setInterval(() => {
 
         if (cirIncidentsEnabled) {
           controller.setFilters(readCirFiltersFromUi());
+          controller.setDisplayMode(
+            document.getElementById("cirDisplayModeSelect")?.value || "markers"
+          );
           await controller.refresh();
           controller.setEnabled(true);
         } else {
@@ -2049,6 +2079,13 @@ window.setInterval(() => {
           <span class="btn-mini" id="cirRefreshBtn">Refresh</span>
         </div>
 
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Display</div>
+        <select id="cirDisplayModeSelect">
+          <option value="markers" selected>Markers</option>
+          <option value="heatmap">Heatmap</option>
+          <option value="both">Markers + heatmap</option>
+        </select>
+
         <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
         <select id="cirDaysSelect">
           <option value="0" selected>All available data</option>
@@ -2058,6 +2095,13 @@ window.setInterval(() => {
           <option value="30">Last 30 days</option>
           <option value="90">Last 90 days</option>
         </select>
+
+        <div class="row" style="margin-top:8px;">
+          <label><input id="cirCeasefireOnlyCheckbox" type="checkbox" /> Ceasefire monitoring only</label>
+        </div>
+        <div class="row">
+          <label><input id="cirCasualtiesOnlyCheckbox" type="checkbox" /> Casualty-related only</label>
+        </div>
 
         <div class="muted" style="margin-top:8px;margin-bottom:5px;">Categories</div>
         <div class="row">
@@ -2246,7 +2290,10 @@ window.setInterval(() => {
 
     const cirIncidentsCheckbox = document.getElementById("cirIncidentsCheckbox");
     const cirRefreshBtn = document.getElementById("cirRefreshBtn");
+    const cirDisplayModeSelect = document.getElementById("cirDisplayModeSelect");
     const cirDaysSelect = document.getElementById("cirDaysSelect");
+    const cirCeasefireOnlyCheckbox = document.getElementById("cirCeasefireOnlyCheckbox");
+    const cirCasualtiesOnlyCheckbox = document.getElementById("cirCasualtiesOnlyCheckbox");
     const cirSearchInput = document.getElementById("cirSearchInput");
     const cirFilterCheckboxes = [
       "cirAirstrikeCheckbox",
@@ -2300,6 +2347,15 @@ window.setInterval(() => {
       cirRefreshBtn.addEventListener("click", () => refreshCirIncidentsSafe());
     }
 
+    if (cirDisplayModeSelect) {
+      cirDisplayModeSelect.addEventListener("change", () => {
+        if (cirIncidentsController) {
+          applyCirDisplayModeFromUi();
+          updateCirUiState();
+        }
+      });
+    }
+
     if (cirDaysSelect) {
       cirDaysSelect.addEventListener("change", () => {
         if (cirIncidentsController) {
@@ -2308,6 +2364,17 @@ window.setInterval(() => {
         }
       });
     }
+
+    [cirCeasefireOnlyCheckbox, cirCasualtiesOnlyCheckbox]
+      .filter(Boolean)
+      .forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          if (cirIncidentsController) {
+            cirIncidentsController.setFilters(readCirFiltersFromUi());
+            updateCirUiState();
+          }
+        });
+      });
 
     if (cirSearchInput) {
       cirSearchInput.addEventListener("input", () => {
