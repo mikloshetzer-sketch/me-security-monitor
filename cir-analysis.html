@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIR Conflict Analysis</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --panel: #ffffff;
+      --border: #dddddf;
+      --text: #16181d;
+      --muted: #5a6170;
+      --soft: #eef0f3;
+      --accent: #111827;
+      --positive: #2f7d4a;
+      --negative: #a13e3e;
+      --warning: #a66a1f;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    #app {
+      display: grid;
+      grid-template-columns: 390px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    #sidebar {
+      overflow: auto;
+      padding: 16px;
+      border-right: 1px solid var(--border);
+      background: #fafafa;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    main {
+      min-width: 0;
+      padding: 18px;
+      overflow: auto;
+    }
+
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    h2 { font-size: 17px; margin: 0 0 10px; }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 8px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .metric {
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fafafa;
+      min-width: 0;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    .metric-value {
+      font-size: 21px;
+      font-weight: 700;
+      margin-top: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    button,
+    select,
+    input[type="search"] {
+      width: 100%;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .top-gap { margin-top: 8px; }
+
+    .toggle {
+      display: block;
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .status-box {
+      padding: 10px;
+      border-radius: 10px;
+      background: var(--soft);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .chart-panel { min-height: 330px; }
+
+    .chart-wrap {
+      position: relative;
+      width: 100%;
+      height: 290px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .rank-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .rank-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 9px;
+      background: #f3f4f6;
+      align-items: center;
+    }
+
+    .rank-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rank-value { font-weight: 700; }
+
+    .assessment {
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .assessment p { margin: 0 0 12px; }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      font-size: 12px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: var(--negative);
+      font-weight: 700;
+    }
+
+    @media (max-width: 1100px) {
+      .analysis-grid { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 900px) {
+      #app { grid-template-columns: 1fr; }
+
+      #sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      main { padding: 12px; }
+    }
+
+    @media (max-width: 620px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .chart-wrap { height: 250px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h1>CIR Conflict Analysis</h1>
+      <div class="muted">
+        Verified incident analysis based on the Centre for Information Resilience dataset.
+      </div>
+
+      <div class="panel top-gap">
+        <h2>Navigation</h2>
+        <button id="backToMapBtn" type="button">Open interactive map</button>
+        <button id="reloadBtn" class="secondary top-gap" type="button">Reload data</button>
+      </div>
+
+      <div class="panel">
+        <h2>Data coverage</h2>
+        <div class="status-box">
+          <div><strong>Last update:</strong> <span id="generatedAt">—</span></div>
+          <div><strong>First event:</strong> <span id="firstEventDate">—</span></div>
+          <div><strong>Latest event:</strong> <span id="latestEventDate">—</span></div>
+          <div><strong>Total incidents:</strong> <span id="totalIncidents">—</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Analysis period</h2>
+
+        <select id="periodSelect">
+          <option value="7">Latest 7 days</option>
+          <option value="30" selected>Latest 30 days</option>
+          <option value="90">Latest 90 days</option>
+          <option value="180">Latest 180 days</option>
+          <option value="all">Full dataset</option>
+        </select>
+
+        <label class="toggle">
+          <input id="casualtyOnlyCheckbox" type="checkbox" />
+          Casualty-related incidents only
+        </label>
+
+        <label class="toggle">
+          <input id="ceasefireOnlyCheckbox" type="checkbox" />
+          Ceasefire monitoring only
+        </label>
+
+        <input
+          id="searchInput"
+          class="top-gap"
+          type="search"
+          placeholder="Search location, category or description"
+        />
+      </div>
+
+      <div class="panel">
+        <h2>Categories</h2>
+        <div id="categoryFilters" class="small">Loading categories…</div>
+      </div>
+
+      <div class="panel">
+        <h2>Current selection</h2>
+        <div class="grid-2">
+          <div class="metric">
+            <div class="metric-label">Visible incidents</div>
+            <div id="selectedCount" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Reference days</div>
+            <div id="selectedDays" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Top category</div>
+            <div id="selectedTopCategory" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Top location</div>
+            <div id="selectedTopLocation" class="metric-value">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Method note</h2>
+        <div class="small">
+          Rolling periods are calculated relative to the latest event date in the CIR dataset, not the current date.
+          The dataset is a verified OSINT record, but it is not necessarily complete or real time.
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <h2>Situation overview</h2>
+            <div id="overviewRange" class="muted">—</div>
+          </div>
+          <div id="trendBadge" class="pill">—</div>
+        </div>
+
+        <div class="grid-4">
+          <div class="metric">
+            <div class="metric-label">Incidents</div>
+            <div id="overviewIncidents" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Casualty-related</div>
+            <div id="overviewCasualties" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Ceasefire monitoring</div>
+            <div id="overviewCeasefire" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Change vs previous period</div>
+            <div id="overviewChange" class="metric-value">—</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="analysis-grid">
+        <section class="panel chart-panel">
+          <div class="section-header">
+            <div>
+              <h2>Incident trend</h2>
+              <div class="muted">Daily verified incidents in the selected period</div>
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="trendCanvas"></canvas>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Top locations</h2>
+          <div id="topLocationsList" class="rank-list"></div>
+        </section>
+      </div>
+
+      <div class="analysis-grid">
+        <section class="panel chart-panel">
+          <div class="section-header">
+            <div>
+              <h2>Category distribution</h2>
+              <div class="muted">Selected incidents grouped by main category</div>
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="categoryCanvas"></canvas>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Top location zones</h2>
+          <div id="topZonesList" class="rank-list"></div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <h2>Automated assessment</h2>
+        <div id="assessmentText" class="assessment">Loading assessment…</div>
+      </section>
+
+      <section class="panel">
+        <h2>Source and limitations</h2>
+        <div class="muted">
+          Source: Centre for Information Resilience, Israel–Gaza Conflict Map.
+          The analysis is generated from the normalized CIR incident dataset stored in this repository.
+          Technical accessibility does not by itself determine republication rights.
+          Attribution and reuse terms should be reviewed separately.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    "use strict";
+
+    const DATA_URL = "data/cir-incidents.json";
+
+    let payload = null;
+    let allEvents = [];
+    let selectedCategories = new Set();
+
+    const $ = (id) => document.getElementById(id);
+
+    function safe(value, fallback = "—") {
+      const text = String(value ?? "").trim();
+      return text || fallback;
+    }
+
+    function normalize(value) {
+      return String(value ?? "").trim().toLowerCase();
+    }
+
+    function parseDate(value) {
+      if (!value) return null;
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? null : date;
+    }
+
+    function formatDate(value) {
+      const date = parseDate(value);
+      if (!date) return safe(value);
+
+      return new Intl.DateTimeFormat("en-GB", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        timeZone: "UTC"
+      }).format(date);
+    }
+
+    function categoryName(event) {
+      return safe(
+        event.main_category ||
+        event.category ||
+        event.sub_category,
+        "Unknown"
+      );
+    }
+
+    function locationName(event) {
+      return safe(
+        event.location ||
+        event.location_zone,
+        "Unknown"
+      );
+    }
+
+    function zoneName(event) {
+      return safe(
+        event.location_zone ||
+        event.location,
+        "Unknown"
+      );
+    }
+
+    function hasCasualtySignal(event) {
+      const text = normalize(
+        `${event.casualties || ""} ${event.minor_casualties || ""}`
+      );
+
+      return Boolean(text) &&
+        !["0", "none", "no", "false", "n/a", "na", "unknown"].includes(text);
+    }
+
+    function isCeasefireEvent(event) {
+      const text = normalize(event.ceasefire_monitoring);
+
+      return Boolean(text) &&
+        !["0", "none", "no", "false", "n/a", "na"].includes(text);
+    }
+
+    function latestDatasetDate() {
+      const value = payload?.analytics?.overview?.latest_event_date;
+      return value ? new Date(`${value}T00:00:00Z`) : null;
+    }
+
+    function periodStartDate(periodValue) {
+      const latest = latestDatasetDate();
+
+      if (!latest || periodValue === "all") {
+        return null;
+      }
+
+      const days = Number(periodValue);
+      const start = new Date(latest);
+      start.setUTCDate(start.getUTCDate() - (days - 1));
+
+      return start;
+    }
+
+    function eventMatches(event) {
+      const periodValue = $("periodSelect").value;
+      const startDate = periodStartDate(periodValue);
+      const eventDate = parseDate(event.date || event.incident_date_text);
+
+      if (startDate && (!eventDate || eventDate < startDate)) {
+        return false;
+      }
+
+      if (
+        $("casualtyOnlyCheckbox").checked &&
+        !hasCasualtySignal(event)
+      ) {
+        return false;
+      }
+
+      if (
+        $("ceasefireOnlyCheckbox").checked &&
+        !isCeasefireEvent(event)
+      ) {
+        return false;
+      }
+
+      if (
+        selectedCategories.size > 0 &&
+        !selectedCategories.has(categoryName(event))
+      ) {
+        return false;
+      }
+
+      const query = normalize($("searchInput").value);
+
+      if (query) {
+        const haystack = normalize([
+          event.location,
+          event.location_zone,
+          event.description,
+          event.main_category,
+          event.sub_category,
+          event.category,
+          event.violence,
+          event.casualties
+        ].join(" "));
+
+        if (!haystack.includes(query)) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function filteredEvents() {
+      return allEvents.filter(eventMatches);
+    }
+
+    function countBy(events, selector) {
+      const map = new Map();
+
+      for (const event of events) {
+        const key = selector(event);
+        map.set(key, (map.get(key) || 0) + 1);
+      }
+
+      return [...map.entries()]
+        .sort((a, b) => b[1] - a[1]);
+    }
+
+    function visibleDateRange(events) {
+      const dates = events
+        .map((event) => parseDate(event.date))
+        .filter(Boolean)
+        .sort((a, b) => a - b);
+
+      if (!dates.length) {
+        return { first: null, last: null, days: 0 };
+      }
+
+      return {
+        first: dates[0],
+        last: dates[dates.length - 1],
+        days: Math.floor(
+          (dates[dates.length - 1] - dates[0]) / 86400000
+        ) + 1
+      };
+    }
+
+    function previousPeriodComparison(events) {
+      const range = visibleDateRange(events);
+
+      if (!range.first || !range.last || range.days <= 0) {
+        return {
+          current: events.length,
+          previous: 0,
+          percent: null,
+          direction: "stable"
+        };
+      }
+
+      const previousEnd = new Date(range.first);
+      previousEnd.setUTCDate(previousEnd.getUTCDate() - 1);
+
+      const previousStart = new Date(previousEnd);
+      previousStart.setUTCDate(
+        previousStart.getUTCDate() - (range.days - 1)
+      );
+
+      const previous = allEvents.filter((event) => {
+        const eventDate = parseDate(event.date);
+        if (!eventDate) return false;
+
+        if (eventDate < previousStart || eventDate > previousEnd) {
+          return false;
+        }
+
+        if (
+          $("casualtyOnlyCheckbox").checked &&
+          !hasCasualtySignal(event)
+        ) {
+          return false;
+        }
+
+        if (
+          $("ceasefireOnlyCheckbox").checked &&
+          !isCeasefireEvent(event)
+        ) {
+          return false;
+        }
+
+        if (
+          selectedCategories.size > 0 &&
+          !selectedCategories.has(categoryName(event))
+        ) {
+          return false;
+        }
+
+        return true;
+      }).length;
+
+      const current = events.length;
+      const delta = current - previous;
+      const percent = previous > 0
+        ? (delta / previous) * 100
+        : null;
+
+      let direction = "stable";
+
+      if (previous === 0 && current > 0) {
+        direction = "increase";
+      } else if (percent !== null && percent >= 15) {
+        direction = "increase";
+      } else if (percent !== null && percent <= -15) {
+        direction = "decrease";
+      }
+
+      return {
+        current,
+        previous,
+        percent,
+        direction
+      };
+    }
+
+    function renderCategoryFilters() {
+      const categories = countBy(allEvents, categoryName);
+
+      selectedCategories = new Set();
+
+      $("categoryFilters").innerHTML = categories
+        .slice(0, 12)
+        .map(([name, count]) => `
+          <label class="toggle">
+            <input
+              type="checkbox"
+              class="category-filter"
+              value="${name.replaceAll('"', '&quot;')}"
+              checked
+            />
+            ${name} (${count})
+          </label>
+        `)
+        .join("");
+
+      document.querySelectorAll(".category-filter").forEach((checkbox) => {
+        selectedCategories.add(checkbox.value);
+
+        checkbox.addEventListener("change", () => {
+          if (checkbox.checked) {
+            selectedCategories.add(checkbox.value);
+          } else {
+            selectedCategories.delete(checkbox.value);
+          }
+
+          updateDashboard();
+        });
+      });
+    }
+
+    function renderRanks(targetId, rows) {
+      const target = $(targetId);
+
+      if (!rows.length) {
+        target.innerHTML = `
+          <div class="muted">
+            No data for the current selection.
+          </div>
+        `;
+        return;
+      }
+
+      target.innerHTML = rows
+        .slice(0, 10)
+        .map(([name, count]) => `
+          <div class="rank-row">
+            <div class="rank-name" title="${name}">${name}</div>
+            <div class="rank-value">${count}</div>
+          </div>
+        `)
+        .join("");
+    }
+
+    function resizeCanvas(canvas) {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = Math.max(320, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(220, Math.floor(rect.height * dpr));
+
+      const ctx = canvas.getContext("2d");
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      return {
+        ctx,
+        width: rect.width,
+        height: rect.height
+      };
+    }
+
+    function drawLineChart(events) {
+      const canvas = $("trendCanvas");
+      const { ctx, width, height } = resizeCanvas(canvas);
+
+      ctx.clearRect(0, 0, width, height);
+
+      const counts = new Map();
+
+      for (const event of events) {
+        const date = parseDate(event.date);
+        if (!date) continue;
+
+        const key = date.toISOString().slice(0, 10);
+        counts.set(key, (counts.get(key) || 0) + 1);
+      }
+
+      const rows = [...counts.entries()]
+        .sort((a, b) => a[0].localeCompare(b[0]));
+
+      if (!rows.length) {
+        ctx.fillStyle = "#5a6170";
+        ctx.font = "13px Arial";
+        ctx.fillText(
+          "No trend data for the current selection.",
+          18,
+          28
+        );
+        return;
+      }
+
+      const pad = {
+        left: 44,
+        right: 14,
+        top: 18,
+        bottom: 32
+      };
+
+      const chartW = width - pad.left - pad.right;
+      const chartH = height - pad.top - pad.bottom;
+      const maxValue = Math.max(1, ...rows.map((row) => row[1]));
+
+      ctx.strokeStyle = "#d6d8dc";
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i <= 4; i++) {
+        const y = pad.top + (chartH / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y);
+        ctx.lineTo(pad.left + chartW, y);
+        ctx.stroke();
+      }
+
+      ctx.strokeStyle = "#111827";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+
+      rows.forEach((row, index) => {
+        const x = pad.left +
+          (
+            rows.length === 1
+              ? chartW / 2
+              : (index / (rows.length - 1)) * chartW
+          );
+
+        const y = pad.top + chartH -
+          (row[1] / maxValue) * chartH;
+
+        if (index === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+
+      ctx.stroke();
+
+      ctx.fillStyle = "#111827";
+
+      rows.forEach((row, index) => {
+        const x = pad.left +
+          (
+            rows.length === 1
+              ? chartW / 2
+              : (index / (rows.length - 1)) * chartW
+          );
+
+        const y = pad.top + chartH -
+          (row[1] / maxValue) * chartH;
+
+        ctx.beginPath();
+        ctx.arc(x, y, 2.2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      ctx.fillStyle = "#5a6170";
+      ctx.font = "11px Arial";
+
+      const labelIndexes = [
+        0,
+        Math.floor((rows.length - 1) / 2),
+        rows.length - 1
+      ];
+
+      [...new Set(labelIndexes)].forEach((index) => {
+        const x = pad.left +
+          (
+            rows.length === 1
+              ? chartW / 2
+              : (index / (rows.length - 1)) * chartW
+          );
+
+        ctx.fillText(
+          rows[index][0],
+          Math.max(4, x - 32),
+          height - 10
+        );
+      });
+
+      ctx.fillText(String(maxValue), 8, pad.top + 4);
+      ctx.fillText("0", 25, pad.top + chartH + 4);
+    }
+
+    function drawBarChart(events) {
+      const canvas = $("categoryCanvas");
+      const { ctx, width, height } = resizeCanvas(canvas);
+
+      ctx.clearRect(0, 0, width, height);
+
+      const rows = countBy(events, categoryName).slice(0, 8);
+
+      if (!rows.length) {
+        ctx.fillStyle = "#5a6170";
+        ctx.font = "13px Arial";
+        ctx.fillText(
+          "No category data for the current selection.",
+          18,
+          28
+        );
+        return;
+      }
+
+      const pad = {
+        left: 150,
+        right: 34,
+        top: 14,
+        bottom: 18
+      };
+
+      const chartW = width - pad.left - pad.right;
+      const chartH = height - pad.top - pad.bottom;
+      const rowH = chartH / rows.length;
+      const maxValue = Math.max(1, ...rows.map((row) => row[1]));
+
+      ctx.font = "12px Arial";
+
+      rows.forEach(([name, count], index) => {
+        const y = pad.top + index * rowH;
+        const barW = (count / maxValue) * chartW;
+
+        ctx.fillStyle = "#e5e7eb";
+        ctx.fillRect(
+          pad.left,
+          y + 5,
+          chartW,
+          Math.max(10, rowH - 10)
+        );
+
+        ctx.fillStyle = "#111827";
+        ctx.fillRect(
+          pad.left,
+          y + 5,
+          barW,
+          Math.max(10, rowH - 10)
+        );
+
+        ctx.fillStyle = "#16181d";
+        ctx.fillText(
+          name.length > 22 ? `${name.slice(0, 21)}…` : name,
+          8,
+          y + rowH / 2 + 4
+        );
+
+        ctx.fillText(
+          String(count),
+          pad.left + barW + 6,
+          y + rowH / 2 + 4
+        );
+      });
+    }
+
+    function percentageText(value) {
+      if (value === null || value === undefined) {
+        return "n/a";
+      }
+
+      const sign = value > 0 ? "+" : "";
+      return `${sign}${value.toFixed(1)}%`;
+    }
+
+    function createAssessment(events, comparison) {
+      if (!events.length) {
+        return [
+          "No CIR incidents match the current selection.",
+          "Widen the time period or remove one or more filters."
+        ];
+      }
+
+      const categories = countBy(events, categoryName);
+      const locations = countBy(events, locationName);
+
+      const topCategory = categories[0]?.[0] || "Unknown";
+      const topLocation = locations[0]?.[0] || "Unknown";
+
+      const casualtyCount = events.filter(hasCasualtySignal).length;
+      const ceasefireCount = events.filter(isCeasefireEvent).length;
+
+      let trendSentence;
+
+      if (comparison.direction === "increase") {
+        trendSentence =
+          `Incident activity increased compared with the preceding equivalent period. ` +
+          `The current selection contains ${comparison.current} incidents versus ` +
+          `${comparison.previous} previously (${percentageText(comparison.percent)}).`;
+      } else if (comparison.direction === "decrease") {
+        trendSentence =
+          `Incident activity decreased compared with the preceding equivalent period. ` +
+          `The current selection contains ${comparison.current} incidents versus ` +
+          `${comparison.previous} previously (${percentageText(comparison.percent)}).`;
+      } else {
+        trendSentence =
+          `Incident activity remained broadly stable compared with the preceding equivalent period. ` +
+          `The current selection contains ${comparison.current} incidents versus ` +
+          `${comparison.previous} previously (${percentageText(comparison.percent)}).`;
+      }
+
+      return [
+        trendSentence,
+        `${topCategory} is the most frequently recorded category in the current selection.`,
+        `Recorded activity is most concentrated around ${topLocation}.`,
+        `${casualtyCount} selected incidents contain a casualty-related signal, while ${ceasefireCount} are marked for ceasefire monitoring.`,
+        `This assessment reflects the CIR dataset only and should not be treated as a complete or real-time record of all conflict activity.`
+      ];
+    }
+
+    function updateDashboard() {
+      if (!payload) return;
+
+      const events = filteredEvents();
+      const range = visibleDateRange(events);
+      const categories = countBy(events, categoryName);
+      const locations = countBy(events, locationName);
+      const zones = countBy(events, zoneName);
+      const comparison = previousPeriodComparison(events);
+
+      const casualtyCount = events.filter(hasCasualtySignal).length;
+      const ceasefireCount = events.filter(isCeasefireEvent).length;
+
+      $("selectedCount").textContent = String(events.length);
+      $("selectedDays").textContent = range.days || "—";
+      $("selectedTopCategory").textContent = categories[0]?.[0] || "—";
+      $("selectedTopLocation").textContent = locations[0]?.[0] || "—";
+
+      $("overviewIncidents").textContent = String(events.length);
+      $("overviewCasualties").textContent = String(casualtyCount);
+      $("overviewCeasefire").textContent = String(ceasefireCount);
+      $("overviewChange").textContent = percentageText(comparison.percent);
+
+      $("trendBadge").textContent = comparison.direction;
+
+      $("overviewRange").textContent =
+        range.first && range.last
+          ? `${formatDate(range.first)} → ${formatDate(range.last)}`
+          : "No dated incidents in current selection";
+
+      renderRanks("topLocationsList", locations);
+      renderRanks("topZonesList", zones);
+
+      drawLineChart(events);
+      drawBarChart(events);
+
+      const paragraphs = createAssessment(events, comparison);
+
+      $("assessmentText").innerHTML = paragraphs
+        .map((paragraph) => `<p>${paragraph}</p>`)
+        .join("");
+    }
+
+    async function loadData() {
+      $("assessmentText").textContent = "Loading assessment…";
+
+      try {
+        const response = await fetch(DATA_URL, {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        payload = await response.json();
+        allEvents = Array.isArray(payload?.events)
+          ? payload.events
+          : [];
+
+        if (!allEvents.length) {
+          throw new Error("No CIR events were found in the JSON file.");
+        }
+
+        const overview = payload?.analytics?.overview || {};
+
+        $("generatedAt").textContent = formatDate(payload.generated_at);
+        $("firstEventDate").textContent = formatDate(
+          overview.earliest_event_date
+        );
+        $("latestEventDate").textContent = formatDate(
+          overview.latest_event_date
+        );
+        $("totalIncidents").textContent = String(
+          overview.total_incidents || allEvents.length
+        );
+
+        renderCategoryFilters();
+        updateDashboard();
+      } catch (error) {
+        console.error(error);
+
+        $("assessmentText").innerHTML = `
+          <div class="error">
+            CIR data could not be loaded: ${safe(error.message)}
+          </div>
+        `;
+      }
+    }
+
+    $("periodSelect").addEventListener("change", updateDashboard);
+    $("casualtyOnlyCheckbox").addEventListener("change", updateDashboard);
+    $("ceasefireOnlyCheckbox").addEventListener("change", updateDashboard);
+    $("searchInput").addEventListener("input", updateDashboard);
+    $("reloadBtn").addEventListener("click", loadData);
+
+    $("backToMapBtn").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+
+    window.addEventListener("resize", () => {
+      if (payload) {
+        updateDashboard();
+      }
+    });
+
+    loadData();
+  </script>
+</body>
+</html>
