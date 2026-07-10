@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CIR Conflict Analysis</title>
+  <title>CIR Conflict Situation Assessment</title>
 
   <style>
     :root {
@@ -37,7 +37,7 @@
 
     #sidebar {
       overflow: auto;
-      padding: 16px;
+      padding: 14px;
       border-right: 1px solid var(--border);
       background: #fafafa;
       position: sticky;
@@ -47,12 +47,13 @@
 
     main {
       min-width: 0;
-      padding: 18px;
+      padding: 16px;
       overflow: auto;
     }
 
-    h1 { font-size: 22px; margin: 0 0 8px; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
     h2 { font-size: 17px; margin: 0 0 10px; }
+    h3 { font-size: 14px; margin: 0 0 8px; }
 
     .muted {
       color: var(--muted);
@@ -74,14 +75,14 @@
       margin-bottom: 12px;
     }
 
-    .grid-2, .grid-3, .grid-4 {
+    .grid-2, .grid-3, .grid-6 {
       display: grid;
       gap: 8px;
     }
 
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 
     .metric {
       padding: 10px;
@@ -98,15 +99,18 @@
     }
 
     .metric-value {
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 700;
       margin-top: 4px;
       overflow-wrap: anywhere;
     }
 
-    button,
-    select,
-    input[type="search"] {
+    .metric-value.compact {
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    button, select, input[type="search"] {
       width: 100%;
       border-radius: 10px;
       padding: 10px;
@@ -130,9 +134,18 @@
     .top-gap { margin-top: 8px; }
 
     .toggle {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 7px;
       margin: 8px 0;
       font-size: 14px;
+    }
+
+    .category-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      flex: 0 0 10px;
     }
 
     .status-box {
@@ -143,25 +156,44 @@
       line-height: 1.5;
     }
 
-    .chart-panel { min-height: 330px; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--soft);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
 
     .chart-wrap {
       position: relative;
       width: 100%;
-      height: 290px;
+      height: 275px;
+    }
+
+    .chart-wrap.compact {
+      height: 230px;
     }
 
     canvas {
       width: 100%;
       height: 100%;
       display: block;
-    }
-
-    .analysis-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
-      gap: 14px;
-      align-items: start;
     }
 
     .rank-list {
@@ -171,13 +203,17 @@
     }
 
     .rank-row {
+      padding: 7px 9px;
+      border-radius: 9px;
+      background: #f3f4f6;
+    }
+
+    .rank-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 10px;
-      padding: 8px 10px;
-      border-radius: 9px;
-      background: #f3f4f6;
       align-items: center;
+      margin-bottom: 5px;
     }
 
     .rank-name {
@@ -188,27 +224,75 @@
 
     .rank-value { font-weight: 700; }
 
+    .progress {
+      height: 5px;
+      border-radius: 999px;
+      background: #e1e4e8;
+      overflow: hidden;
+    }
+
+    .progress > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--accent);
+    }
+
     .assessment {
       font-size: 15px;
       line-height: 1.65;
     }
 
-    .assessment p { margin: 0 0 12px; }
+    .assessment p { margin: 0 0 11px; }
 
-    .pill {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--soft);
-      font-size: 12px;
+    .assessment-lead {
+      border-left: 4px solid var(--accent);
+      background: #f6f7f9;
+      padding: 12px 14px;
+      border-radius: 9px;
     }
 
-    .section-header {
+    .mini-map-wrap {
+      height: 250px;
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(17,24,39,.035) 25%, transparent 25%) 0 0/18px 18px,
+        linear-gradient(315deg, rgba(17,24,39,.035) 25%, transparent 25%) 0 0/18px 18px,
+        #f3f5f7;
+    }
+
+    #miniMapCanvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .mini-map-note {
+      position: absolute;
+      left: 8px;
+      bottom: 7px;
+      padding: 4px 7px;
+      border-radius: 7px;
+      background: rgba(255,255,255,.88);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .impact-list {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 10px;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .impact-row {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 10px;
+      padding: 8px 10px;
+      background: #f3f4f6;
+      border-radius: 9px;
     }
 
     .error {
@@ -216,9 +300,12 @@
       font-weight: 700;
     }
 
+    @media (max-width: 1350px) {
+      .grid-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
     @media (max-width: 1100px) {
       .analysis-grid { grid-template-columns: 1fr; }
-      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 900px) {
@@ -235,8 +322,8 @@
     }
 
     @media (max-width: 620px) {
-      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-      .chart-wrap { height: 250px; }
+      .grid-2, .grid-3, .grid-6 { grid-template-columns: 1fr; }
+      .chart-wrap, .chart-wrap.compact { height: 245px; }
     }
   </style>
 </head>
@@ -246,89 +333,99 @@
     <aside id="sidebar">
       <h1>CIR Conflict Analysis</h1>
       <div class="muted">
-        Verified incident analysis based on the Centre for Information Resilience dataset.
+        Ellenőrzött incidensek elemzése a Centre for Information Resilience adatállománya alapján.
       </div>
 
       <div class="panel top-gap">
-        <h2>Navigation</h2>
-        <button id="backToMapBtn" type="button">Open interactive map</button>
-        <button id="reloadBtn" class="secondary top-gap" type="button">Reload data</button>
+        <h2>Navigáció</h2>
+        <button id="backToMapBtn" type="button">Interaktív térkép megnyitása</button>
+        <button id="reloadBtn" class="secondary top-gap" type="button">Adatok újratöltése</button>
       </div>
 
       <div class="panel">
-        <h2>Data coverage</h2>
+        <h2>Adatlefedettség</h2>
         <div class="status-box">
-          <div><strong>Last update:</strong> <span id="generatedAt">—</span></div>
-          <div><strong>First event:</strong> <span id="firstEventDate">—</span></div>
-          <div><strong>Latest event:</strong> <span id="latestEventDate">—</span></div>
-          <div><strong>Total incidents:</strong> <span id="totalIncidents">—</span></div>
+          <div><strong>Utolsó frissítés:</strong> <span id="generatedAt">—</span></div>
+          <div><strong>Első esemény:</strong> <span id="firstEventDate">—</span></div>
+          <div><strong>Legutóbbi esemény:</strong> <span id="latestEventDate">—</span></div>
+          <div><strong>Összes incidens:</strong> <span id="totalIncidents">—</span></div>
         </div>
       </div>
 
       <div class="panel">
-        <h2>Analysis period</h2>
+        <h2>Elemzési időszak</h2>
 
         <select id="periodSelect">
-          <option value="7">Latest 7 days</option>
-          <option value="30" selected>Latest 30 days</option>
-          <option value="90">Latest 90 days</option>
-          <option value="180">Latest 180 days</option>
-          <option value="all">Full dataset</option>
+          <option value="7">Legutóbbi 7 nap</option>
+          <option value="30" selected>Legutóbbi 30 nap</option>
+          <option value="90">Legutóbbi 90 nap</option>
+          <option value="180">Legutóbbi 180 nap</option>
+          <option value="all">Teljes adatállomány</option>
         </select>
 
         <label class="toggle">
           <input id="casualtyOnlyCheckbox" type="checkbox" />
-          Casualty-related incidents only
+          Csak sérüléssel kapcsolatos események
         </label>
 
         <label class="toggle">
           <input id="ceasefireOnlyCheckbox" type="checkbox" />
-          Ceasefire monitoring only
+          Csak tűzszünet-felügyelet
         </label>
 
         <input
           id="searchInput"
           class="top-gap"
           type="search"
-          placeholder="Search location, category or description"
+          placeholder="Helyszín, kategória vagy leírás keresése"
         />
       </div>
 
       <div class="panel">
-        <h2>Categories</h2>
-        <div id="categoryFilters" class="small">Loading categories…</div>
+        <h2>Kategóriák</h2>
+        <div id="categoryFilters" class="small">Kategóriák betöltése…</div>
       </div>
 
       <div class="panel">
-        <h2>Current selection</h2>
+        <h2>Jelenlegi kijelölés</h2>
         <div class="grid-2">
           <div class="metric">
-            <div class="metric-label">Visible incidents</div>
+            <div class="metric-label">Látható események</div>
             <div id="selectedCount" class="metric-value">—</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label">Reference days</div>
+            <div class="metric-label">Kiválasztott időszak</div>
             <div id="selectedDays" class="metric-value">—</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label">Top category</div>
-            <div id="selectedTopCategory" class="metric-value">—</div>
+            <div class="metric-label">Vezető kategória</div>
+            <div id="selectedTopCategory" class="metric-value compact">—</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label">Top location</div>
-            <div id="selectedTopLocation" class="metric-value">—</div>
+            <div class="metric-label">Legaktívabb hely</div>
+            <div id="selectedTopLocation" class="metric-value compact">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Aktuális trend</div>
+            <div id="selectedTrend" class="metric-value compact">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Aktív helyszínek</div>
+            <div id="selectedLocationCount" class="metric-value">—</div>
           </div>
         </div>
       </div>
 
       <div class="panel">
-        <h2>Method note</h2>
+        <h2>Módszertani megjegyzés</h2>
         <div class="small">
-          Rolling periods are calculated relative to the latest event date in the CIR dataset, not the current date.
-          The dataset is a verified OSINT record, but it is not necessarily complete or real time.
+          A gördülő időszakok az adatállomány legfrissebb eseményéhez viszonyulnak.
+          Az adatbázis ellenőrzött OSINT-forrás, de nem feltétlenül teljes vagy valós idejű.
         </div>
       </div>
     </aside>
@@ -337,41 +434,58 @@
       <section class="panel">
         <div class="section-header">
           <div>
-            <h2>Situation overview</h2>
-            <div id="overviewRange" class="muted">—</div>
+            <h2>Conflict Situation Assessment</h2>
+            <div id="overviewRange" class="muted">Kiválasztott időszak: —</div>
           </div>
           <div id="trendBadge" class="pill">—</div>
         </div>
 
-        <div class="grid-4">
+        <div class="grid-6">
           <div class="metric">
-            <div class="metric-label">Incidents</div>
+            <div class="metric-label">Incidensek</div>
             <div id="overviewIncidents" class="metric-value">—</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label">Casualty-related</div>
+            <div class="metric-label">Sérüléssel kapcsolatos</div>
             <div id="overviewCasualties" class="metric-value">—</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label">Ceasefire monitoring</div>
+            <div class="metric-label">Tűzszünet-felügyelet</div>
             <div id="overviewCeasefire" class="metric-value">—</div>
           </div>
 
           <div class="metric">
-            <div class="metric-label">Change vs previous period</div>
+            <div class="metric-label">Aktív helyszínek</div>
+            <div id="overviewLocations" class="metric-value">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Vezető kategória</div>
+            <div id="overviewTopCategory" class="metric-value compact">—</div>
+          </div>
+
+          <div class="metric">
+            <div class="metric-label">Változás</div>
             <div id="overviewChange" class="metric-value">—</div>
           </div>
         </div>
       </section>
 
+      <section class="panel">
+        <h2>Operational Assessment</h2>
+        <div id="assessmentText" class="assessment assessment-lead">
+          Helyzetértékelés betöltése…
+        </div>
+      </section>
+
       <div class="analysis-grid">
-        <section class="panel chart-panel">
+        <section class="panel">
           <div class="section-header">
             <div>
-              <h2>Incident trend</h2>
-              <div class="muted">Daily verified incidents in the selected period</div>
+              <h2>Incidens trendje</h2>
+              <div class="muted">Naponta ellenőrzött incidensek a kiválasztott időszakban</div>
             </div>
           </div>
 
@@ -381,43 +495,54 @@
         </section>
 
         <section class="panel">
-          <h2>Top locations</h2>
+          <h2>Legaktívabb helyek</h2>
           <div id="topLocationsList" class="rank-list"></div>
         </section>
       </div>
 
       <div class="analysis-grid">
-        <section class="panel chart-panel">
+        <section class="panel">
           <div class="section-header">
             <div>
-              <h2>Category distribution</h2>
-              <div class="muted">Selected incidents grouped by main category</div>
+              <h2>Kategóriaeloszlás</h2>
+              <div class="muted">
+                A sávok színe megegyezik a bal oldali kategóriapontok és a mini térkép pontjainak színével.
+              </div>
             </div>
           </div>
 
-          <div class="chart-wrap">
+          <div class="chart-wrap compact">
             <canvas id="categoryCanvas"></canvas>
           </div>
         </section>
 
         <section class="panel">
-          <h2>Top location zones</h2>
+          <h2>Legfontosabb helyszíni zónák</h2>
           <div id="topZonesList" class="rank-list"></div>
         </section>
       </div>
 
-      <section class="panel">
-        <h2>Automated assessment</h2>
-        <div id="assessmentText" class="assessment">Loading assessment…</div>
-      </section>
+      <div class="analysis-grid">
+        <section class="panel">
+          <h2>Incidensek földrajzi eloszlása</h2>
+          <div class="mini-map-wrap">
+            <canvas id="miniMapCanvas"></canvas>
+            <div class="mini-map-note">Sematikus koordinátatérkép, nem alaptérkép</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Impact profile</h2>
+          <div id="impactList" class="impact-list"></div>
+        </section>
+      </div>
 
       <section class="panel">
-        <h2>Source and limitations</h2>
+        <h2>Forrás és korlátok</h2>
         <div class="muted">
-          Source: Centre for Information Resilience, Israel–Gaza Conflict Map.
-          The analysis is generated from the normalized CIR incident dataset stored in this repository.
-          Technical accessibility does not by itself determine republication rights.
-          Attribution and reuse terms should be reviewed separately.
+          Forrás: Centre for Information Resilience, Israel–Gaza Conflict Map.
+          Az elemzés a repóban tárolt, normalizált CIR-incidensadatokból készül.
+          A technikai hozzáférhetőség önmagában nem határozza meg az újraközlés jogát.
         </div>
       </section>
     </main>
@@ -428,12 +553,121 @@
 
     const DATA_URL = "data/cir-incidents.json";
 
+    const CATEGORY_PALETTE = [
+      "#8c1af5",
+      "#f1d400",
+      "#17cfd1",
+      "#ef31d7",
+      "#f07b27",
+      "#2487d8",
+      "#3fa65c",
+      "#d84b4b",
+      "#7a8793",
+      "#995f36",
+      "#55a7a0",
+      "#7b6bd6"
+    ];
+
     let payload = null;
     let allEvents = [];
     let selectedCategories = new Set();
     let pendingUrlState = null;
+    let categoryColors = new Map();
 
     const $ = (id) => document.getElementById(id);
+
+    function safe(value, fallback = "—") {
+      const text = String(value ?? "").trim();
+      return text || fallback;
+    }
+
+    function stripHtml(value) {
+      const input = String(value ?? "");
+      const holder = document.createElement("div");
+      holder.innerHTML = input;
+      return (holder.textContent || holder.innerText || "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function normalize(value) {
+      return stripHtml(value).trim().toLowerCase();
+    }
+
+    function cleanLabel(value, fallback = "Ismeretlen") {
+      return stripHtml(value) || fallback;
+    }
+
+    function parseDate(value) {
+      if (!value) return null;
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? null : date;
+    }
+
+    function formatDate(value) {
+      const date = value instanceof Date ? value : parseDate(value);
+      if (!date) return safe(value);
+
+      return new Intl.DateTimeFormat("hu-HU", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        timeZone: "UTC"
+      }).format(date);
+    }
+
+    function categoryName(event) {
+      return cleanLabel(
+        event.main_category ||
+        event.category ||
+        event.sub_category
+      );
+    }
+
+    function locationName(event) {
+      return cleanLabel(
+        event.location ||
+        event.location_zone
+      );
+    }
+
+    function zoneName(event) {
+      return cleanLabel(
+        event.location_zone ||
+        event.location
+      );
+    }
+
+    function hasCasualtySignal(event) {
+      const text = normalize(
+        `${event.casualties || ""} ${event.minor_casualties || ""}`
+      );
+
+      return Boolean(text) &&
+        !["0", "none", "no", "false", "n/a", "na", "unknown"].includes(text);
+    }
+
+    function isCeasefireEvent(event) {
+      const text = normalize(event.ceasefire_monitoring);
+
+      return Boolean(text) &&
+        !["0", "none", "no", "false", "n/a", "na"].includes(text);
+    }
+
+    function hasGraphicWarning(event) {
+      const text = normalize(event.graphic_warning);
+      return Boolean(text) &&
+        !["0", "none", "no", "false", "n/a", "na"].includes(text);
+    }
+
+    function hasEvidenceLink(event) {
+      return Array.isArray(event.links) && event.links.length > 0;
+    }
+
+    function latestDatasetDate() {
+      const value = payload?.analytics?.overview?.latest_event_date;
+      return value ? new Date(`${value}T00:00:00Z`) : null;
+    }
 
     function readUrlState() {
       const params = new URLSearchParams(window.location.search);
@@ -479,115 +713,23 @@
       );
     }
 
-    function safe(value, fallback = "—") {
-      const text = String(value ?? "").trim();
-      return text || fallback;
-    }
-
-    function normalize(value) {
-      return String(value ?? "").trim().toLowerCase();
-    }
-
-    function parseDate(value) {
-      if (!value) return null;
-      const date = new Date(value);
-      return Number.isNaN(date.getTime()) ? null : date;
-    }
-
-    function formatDate(value) {
-      const date = parseDate(value);
-      if (!date) return safe(value);
-
-      return new Intl.DateTimeFormat("en-GB", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-        timeZone: "UTC"
-      }).format(date);
-    }
-
-    function categoryName(event) {
-      return safe(
-        event.main_category ||
-        event.category ||
-        event.sub_category,
-        "Unknown"
-      );
-    }
-
-    function locationName(event) {
-      return safe(
-        event.location ||
-        event.location_zone,
-        "Unknown"
-      );
-    }
-
-    function zoneName(event) {
-      return safe(
-        event.location_zone ||
-        event.location,
-        "Unknown"
-      );
-    }
-
-    function hasCasualtySignal(event) {
-      const text = normalize(
-        `${event.casualties || ""} ${event.minor_casualties || ""}`
-      );
-
-      return Boolean(text) &&
-        !["0", "none", "no", "false", "n/a", "na", "unknown"].includes(text);
-    }
-
-    function isCeasefireEvent(event) {
-      const text = normalize(event.ceasefire_monitoring);
-
-      return Boolean(text) &&
-        !["0", "none", "no", "false", "n/a", "na"].includes(text);
-    }
-
-    function latestDatasetDate() {
-      const value = payload?.analytics?.overview?.latest_event_date;
-      return value ? new Date(`${value}T00:00:00Z`) : null;
-    }
-
     function periodStartDate(periodValue) {
       const latest = latestDatasetDate();
-
-      if (!latest || periodValue === "all") {
-        return null;
-      }
+      if (!latest || periodValue === "all") return null;
 
       const days = Number(periodValue);
       const start = new Date(latest);
       start.setUTCDate(start.getUTCDate() - (days - 1));
-
       return start;
     }
 
     function eventMatches(event) {
-      const periodValue = $("periodSelect").value;
-      const startDate = periodStartDate(periodValue);
+      const startDate = periodStartDate($("periodSelect").value);
       const eventDate = parseDate(event.date || event.incident_date_text);
 
-      if (startDate && (!eventDate || eventDate < startDate)) {
-        return false;
-      }
-
-      if (
-        $("casualtyOnlyCheckbox").checked &&
-        !hasCasualtySignal(event)
-      ) {
-        return false;
-      }
-
-      if (
-        $("ceasefireOnlyCheckbox").checked &&
-        !isCeasefireEvent(event)
-      ) {
-        return false;
-      }
+      if (startDate && (!eventDate || eventDate < startDate)) return false;
+      if ($("casualtyOnlyCheckbox").checked && !hasCasualtySignal(event)) return false;
+      if ($("ceasefireOnlyCheckbox").checked && !isCeasefireEvent(event)) return false;
 
       if (
         selectedCategories.size > 0 &&
@@ -610,9 +752,7 @@
           event.casualties
         ].join(" "));
 
-        if (!haystack.includes(query)) {
-          return false;
-        }
+        if (!haystack.includes(query)) return false;
       }
 
       return true;
@@ -626,12 +766,11 @@
       const map = new Map();
 
       for (const event of events) {
-        const key = selector(event);
+        const key = cleanLabel(selector(event));
         map.set(key, (map.get(key) || 0) + 1);
       }
 
-      return [...map.entries()]
-        .sort((a, b) => b[1] - a[1]);
+      return [...map.entries()].sort((a, b) => b[1] - a[1]);
     }
 
     function visibleDateRange(events) {
@@ -640,9 +779,7 @@
         .filter(Boolean)
         .sort((a, b) => a - b);
 
-      if (!dates.length) {
-        return { first: null, last: null, days: 0 };
-      }
+      if (!dates.length) return { first: null, last: null, days: 0 };
 
       return {
         first: dates[0],
@@ -661,7 +798,7 @@
           current: events.length,
           previous: 0,
           percent: null,
-          direction: "stable"
+          direction: "stabil"
         };
       }
 
@@ -669,32 +806,16 @@
       previousEnd.setUTCDate(previousEnd.getUTCDate() - 1);
 
       const previousStart = new Date(previousEnd);
-      previousStart.setUTCDate(
-        previousStart.getUTCDate() - (range.days - 1)
-      );
+      previousStart.setUTCDate(previousStart.getUTCDate() - (range.days - 1));
 
       const previous = allEvents.filter((event) => {
         const eventDate = parseDate(event.date);
-        if (!eventDate) return false;
-
-        if (eventDate < previousStart || eventDate > previousEnd) {
+        if (!eventDate || eventDate < previousStart || eventDate > previousEnd) {
           return false;
         }
 
-        if (
-          $("casualtyOnlyCheckbox").checked &&
-          !hasCasualtySignal(event)
-        ) {
-          return false;
-        }
-
-        if (
-          $("ceasefireOnlyCheckbox").checked &&
-          !isCeasefireEvent(event)
-        ) {
-          return false;
-        }
-
+        if ($("casualtyOnlyCheckbox").checked && !hasCasualtySignal(event)) return false;
+        if ($("ceasefireOnlyCheckbox").checked && !isCeasefireEvent(event)) return false;
         if (
           selectedCategories.size > 0 &&
           !selectedCategories.has(categoryName(event))
@@ -707,70 +828,31 @@
 
       const current = events.length;
       const delta = current - previous;
-      const percent = previous > 0
-        ? (delta / previous) * 100
-        : null;
+      const percent = previous > 0 ? (delta / previous) * 100 : null;
 
-      let direction = "stable";
+      let direction = "stabil";
+      if (previous === 0 && current > 0) direction = "növekvő";
+      else if (percent !== null && percent >= 15) direction = "növekvő";
+      else if (percent !== null && percent <= -15) direction = "csökkenő";
 
-      if (previous === 0 && current > 0) {
-        direction = "increase";
-      } else if (percent !== null && percent >= 15) {
-        direction = "increase";
-      } else if (percent !== null && percent <= -15) {
-        direction = "decrease";
-      }
-
-      return {
-        current,
-        previous,
-        percent,
-        direction
-      };
+      return { current, previous, percent, direction };
     }
 
     function categoryMatchesRequested(name, requestedCategories) {
       if (!requestedCategories.length) return true;
-
       const normalizedName = normalize(name);
 
       return requestedCategories.some((requested) => {
-        if (requested === "airstrike") {
-          return ["airstrike", "air strike", "aerial"].some(
-            (value) => normalizedName.includes(value)
-          );
-        }
+        const groups = {
+          airstrike: ["airstrike", "air strike", "aerial"],
+          ground: ["ground", "clash", "armed"],
+          rocket: ["rocket", "missile", "artillery", "shelling"],
+          civilian: ["civilian", "casual", "humanitarian"],
+          infrastructure: ["infrastructure", "damage", "destruction"]
+        };
 
-        if (requested === "ground") {
-          return ["ground", "clash", "armed"].some(
-            (value) => normalizedName.includes(value)
-          );
-        }
-
-        if (requested === "rocket") {
-          return ["rocket", "missile", "artillery", "shelling"].some(
-            (value) => normalizedName.includes(value)
-          );
-        }
-
-        if (requested === "civilian") {
-          return ["civilian", "casual", "humanitarian"].some(
-            (value) => normalizedName.includes(value)
-          );
-        }
-
-        if (requested === "infrastructure") {
-          return ["infrastructure", "damage", "destruction"].some(
-            (value) => normalizedName.includes(value)
-          );
-        }
-
-        if (requested === "other") {
-          return ![
-            "airstrike", "air strike", "aerial", "ground", "clash", "armed",
-            "rocket", "missile", "artillery", "shelling", "civilian",
-            "casual", "humanitarian", "infrastructure", "damage", "destruction"
-          ].some((value) => normalizedName.includes(value));
+        if (groups[requested]) {
+          return groups[requested].some((value) => normalizedName.includes(value));
         }
 
         return normalizedName.includes(requested);
@@ -779,17 +861,20 @@
 
     function renderCategoryFilters() {
       const categories = countBy(allEvents, categoryName);
-
       selectedCategories = new Set();
+      categoryColors = new Map();
+
+      categories.slice(0, 12).forEach(([name], index) => {
+        categoryColors.set(name, CATEGORY_PALETTE[index % CATEGORY_PALETTE.length]);
+      });
+
       const requestedCategories = pendingUrlState?.categories || [];
 
       $("categoryFilters").innerHTML = categories
         .slice(0, 12)
-        .map(([name, count]) => {
-          const checked = categoryMatchesRequested(
-            name,
-            requestedCategories
-          );
+        .map(([name, count], index) => {
+          const checked = categoryMatchesRequested(name, requestedCategories);
+          const color = categoryColors.get(name) || CATEGORY_PALETTE[index % CATEGORY_PALETTE.length];
 
           return `
             <label class="toggle">
@@ -799,7 +884,8 @@
                 value="${name.replaceAll('"', '&quot;')}"
                 ${checked ? "checked" : ""}
               />
-              ${name} (${count})
+              <span class="category-dot" style="background:${color};"></span>
+              <span>${name} (${count})</span>
             </label>
           `;
         })
@@ -822,20 +908,23 @@
       const target = $(targetId);
 
       if (!rows.length) {
-        target.innerHTML = `
-          <div class="muted">
-            No data for the current selection.
-          </div>
-        `;
+        target.innerHTML = `<div class="muted">Nincs adat a jelenlegi kijelöléshez.</div>`;
         return;
       }
+
+      const maxValue = Math.max(...rows.slice(0, 10).map((row) => row[1]), 1);
 
       target.innerHTML = rows
         .slice(0, 10)
         .map(([name, count]) => `
           <div class="rank-row">
-            <div class="rank-name" title="${name}">${name}</div>
-            <div class="rank-value">${count}</div>
+            <div class="rank-head">
+              <div class="rank-name" title="${name}">${name}</div>
+              <div class="rank-value">${count}</div>
+            </div>
+            <div class="progress">
+              <span style="width:${(count / maxValue) * 100}%;"></span>
+            </div>
           </div>
         `)
         .join("");
@@ -851,17 +940,12 @@
       const ctx = canvas.getContext("2d");
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      return {
-        ctx,
-        width: rect.width,
-        height: rect.height
-      };
+      return { ctx, width: rect.width, height: rect.height };
     }
 
     function drawLineChart(events) {
       const canvas = $("trendCanvas");
       const { ctx, width, height } = resizeCanvas(canvas);
-
       ctx.clearRect(0, 0, width, height);
 
       const counts = new Map();
@@ -869,32 +953,20 @@
       for (const event of events) {
         const date = parseDate(event.date);
         if (!date) continue;
-
         const key = date.toISOString().slice(0, 10);
         counts.set(key, (counts.get(key) || 0) + 1);
       }
 
-      const rows = [...counts.entries()]
-        .sort((a, b) => a[0].localeCompare(b[0]));
+      const rows = [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 
       if (!rows.length) {
         ctx.fillStyle = "#5a6170";
         ctx.font = "13px Arial";
-        ctx.fillText(
-          "No trend data for the current selection.",
-          18,
-          28
-        );
+        ctx.fillText("Nincs trendadat a jelenlegi kijelöléshez.", 18, 28);
         return;
       }
 
-      const pad = {
-        left: 44,
-        right: 14,
-        top: 18,
-        bottom: 32
-      };
-
+      const pad = { left: 44, right: 14, top: 18, bottom: 32 };
       const chartW = width - pad.left - pad.right;
       const chartH = height - pad.top - pad.bottom;
       const maxValue = Math.max(1, ...rows.map((row) => row[1]));
@@ -915,15 +987,11 @@
       ctx.beginPath();
 
       rows.forEach((row, index) => {
-        const x = pad.left +
-          (
-            rows.length === 1
-              ? chartW / 2
-              : (index / (rows.length - 1)) * chartW
-          );
+        const x = pad.left + (
+          rows.length === 1 ? chartW / 2 : (index / (rows.length - 1)) * chartW
+        );
 
-        const y = pad.top + chartH -
-          (row[1] / maxValue) * chartH;
+        const y = pad.top + chartH - (row[1] / maxValue) * chartH;
 
         if (index === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
@@ -934,15 +1002,11 @@
       ctx.fillStyle = "#111827";
 
       rows.forEach((row, index) => {
-        const x = pad.left +
-          (
-            rows.length === 1
-              ? chartW / 2
-              : (index / (rows.length - 1)) * chartW
-          );
+        const x = pad.left + (
+          rows.length === 1 ? chartW / 2 : (index / (rows.length - 1)) * chartW
+        );
 
-        const y = pad.top + chartH -
-          (row[1] / maxValue) * chartH;
+        const y = pad.top + chartH - (row[1] / maxValue) * chartH;
 
         ctx.beginPath();
         ctx.arc(x, y, 2.2, 0, Math.PI * 2);
@@ -959,18 +1023,11 @@
       ];
 
       [...new Set(labelIndexes)].forEach((index) => {
-        const x = pad.left +
-          (
-            rows.length === 1
-              ? chartW / 2
-              : (index / (rows.length - 1)) * chartW
-          );
-
-        ctx.fillText(
-          rows[index][0],
-          Math.max(4, x - 32),
-          height - 10
+        const x = pad.left + (
+          rows.length === 1 ? chartW / 2 : (index / (rows.length - 1)) * chartW
         );
+
+        ctx.fillText(rows[index][0], Math.max(4, x - 32), height - 10);
       });
 
       ctx.fillText(String(maxValue), 8, pad.top + 4);
@@ -980,7 +1037,6 @@
     function drawBarChart(events) {
       const canvas = $("categoryCanvas");
       const { ctx, width, height } = resizeCanvas(canvas);
-
       ctx.clearRect(0, 0, width, height);
 
       const rows = countBy(events, categoryName).slice(0, 8);
@@ -988,21 +1044,11 @@
       if (!rows.length) {
         ctx.fillStyle = "#5a6170";
         ctx.font = "13px Arial";
-        ctx.fillText(
-          "No category data for the current selection.",
-          18,
-          28
-        );
+        ctx.fillText("Nincs kategóriaadat a jelenlegi kijelöléshez.", 18, 28);
         return;
       }
 
-      const pad = {
-        left: 150,
-        right: 34,
-        top: 14,
-        bottom: 18
-      };
-
+      const pad = { left: 150, right: 38, top: 10, bottom: 12 };
       const chartW = width - pad.left - pad.right;
       const chartH = height - pad.top - pad.bottom;
       const rowH = chartH / rows.length;
@@ -1013,22 +1059,13 @@
       rows.forEach(([name, count], index) => {
         const y = pad.top + index * rowH;
         const barW = (count / maxValue) * chartW;
+        const color = categoryColors.get(name) || CATEGORY_PALETTE[index % CATEGORY_PALETTE.length];
 
         ctx.fillStyle = "#e5e7eb";
-        ctx.fillRect(
-          pad.left,
-          y + 5,
-          chartW,
-          Math.max(10, rowH - 10)
-        );
+        ctx.fillRect(pad.left, y + 4, chartW, Math.max(9, rowH - 8));
 
-        ctx.fillStyle = "#111827";
-        ctx.fillRect(
-          pad.left,
-          y + 5,
-          barW,
-          Math.max(10, rowH - 10)
-        );
+        ctx.fillStyle = color;
+        ctx.fillRect(pad.left, y + 4, barW, Math.max(9, rowH - 8));
 
         ctx.fillStyle = "#16181d";
         ctx.fillText(
@@ -1039,63 +1076,141 @@
 
         ctx.fillText(
           String(count),
-          pad.left + barW + 6,
+          Math.min(width - 26, pad.left + barW + 6),
           y + rowH / 2 + 4
         );
       });
     }
 
-    function percentageText(value) {
-      if (value === null || value === undefined) {
-        return "n/a";
+    function drawMiniMap(events) {
+      const canvas = $("miniMapCanvas");
+      const { ctx, width, height } = resizeCanvas(canvas);
+      ctx.clearRect(0, 0, width, height);
+
+      const points = events
+        .map((event) => ({
+          lat: Number(event.latitude),
+          lon: Number(event.longitude),
+          category: categoryName(event)
+        }))
+        .filter((point) =>
+          Number.isFinite(point.lat) &&
+          Number.isFinite(point.lon)
+        );
+
+      if (!points.length) {
+        ctx.fillStyle = "#5a6170";
+        ctx.font = "13px Arial";
+        ctx.fillText("Nincs megjeleníthető koordináta.", 18, 28);
+        return;
       }
 
-      const sign = value > 0 ? "+" : "";
-      return `${sign}${value.toFixed(1)}%`;
+      const lats = points.map((point) => point.lat);
+      const lons = points.map((point) => point.lon);
+      const minLat = Math.min(...lats);
+      const maxLat = Math.max(...lats);
+      const minLon = Math.min(...lons);
+      const maxLon = Math.max(...lons);
+      const latSpan = Math.max(0.01, maxLat - minLat);
+      const lonSpan = Math.max(0.01, maxLon - minLon);
+      const pad = 18;
+
+      ctx.strokeStyle = "rgba(17,24,39,.10)";
+      ctx.lineWidth = 1;
+
+      for (let i = 1; i < 5; i++) {
+        const x = pad + ((width - pad * 2) / 5) * i;
+        const y = pad + ((height - pad * 2) / 5) * i;
+
+        ctx.beginPath();
+        ctx.moveTo(x, pad);
+        ctx.lineTo(x, height - pad);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(pad, y);
+        ctx.lineTo(width - pad, y);
+        ctx.stroke();
+      }
+
+      points.forEach((point) => {
+        const x = pad + ((point.lon - minLon) / lonSpan) * (width - pad * 2);
+        const y = height - pad -
+          ((point.lat - minLat) / latSpan) * (height - pad * 2);
+
+        ctx.fillStyle = categoryColors.get(point.category) || "#7a8793";
+        ctx.globalAlpha = 0.7;
+        ctx.beginPath();
+        ctx.arc(x, y, 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      ctx.globalAlpha = 1;
+    }
+
+    function renderImpactProfile(events) {
+      const rows = [
+        ["Sérüléssel kapcsolatos", events.filter(hasCasualtySignal).length],
+        ["Tűzszünet-felügyelet", events.filter(isCeasefireEvent).length],
+        ["Grafikus tartalom jelzés", events.filter(hasGraphicWarning).length],
+        ["Bizonyítéklinkkel", events.filter(hasEvidenceLink).length]
+      ];
+
+      $("impactList").innerHTML = rows
+        .map(([label, value]) => `
+          <div class="impact-row">
+            <div>${label}</div>
+            <strong>${value}</strong>
+          </div>
+        `)
+        .join("");
+    }
+
+    function percentageText(value) {
+      if (value === null || value === undefined) return "n/a";
+      return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
     }
 
     function createAssessment(events, comparison) {
       if (!events.length) {
         return [
-          "No CIR incidents match the current selection.",
-          "Widen the time period or remove one or more filters."
+          "A jelenlegi szűrési feltételeknek egyetlen CIR-incidens sem felel meg.",
+          "Bővítsd az időszakot vagy kapcsold ki valamelyik szűrőt."
         ];
       }
 
       const categories = countBy(events, categoryName);
       const locations = countBy(events, locationName);
+      const zones = countBy(events, zoneName);
 
-      const topCategory = categories[0]?.[0] || "Unknown";
-      const topLocation = locations[0]?.[0] || "Unknown";
-
+      const topCategory = categories[0]?.[0] || "ismeretlen";
+      const topLocation = locations[0]?.[0] || "ismeretlen";
+      const topZone = zones[0]?.[0] || "ismeretlen";
       const casualtyCount = events.filter(hasCasualtySignal).length;
       const ceasefireCount = events.filter(isCeasefireEvent).length;
 
       let trendSentence;
 
-      if (comparison.direction === "increase") {
+      if (comparison.direction === "növekvő") {
         trendSentence =
-          `Incident activity increased compared with the preceding equivalent period. ` +
-          `The current selection contains ${comparison.current} incidents versus ` +
-          `${comparison.previous} previously (${percentageText(comparison.percent)}).`;
-      } else if (comparison.direction === "decrease") {
+          `A kiválasztott időszakban az ellenőrzött incidensaktivitás növekedett. ` +
+          `${comparison.current} esemény szerepel a jelenlegi időszakban, szemben az előző azonos hosszúságú időszak ${comparison.previous} eseményével (${percentageText(comparison.percent)}).`;
+      } else if (comparison.direction === "csökkenő") {
         trendSentence =
-          `Incident activity decreased compared with the preceding equivalent period. ` +
-          `The current selection contains ${comparison.current} incidents versus ` +
-          `${comparison.previous} previously (${percentageText(comparison.percent)}).`;
+          `A kiválasztott időszakban az ellenőrzött incidensaktivitás csökkent. ` +
+          `${comparison.current} esemény szerepel a jelenlegi időszakban, szemben az előző azonos hosszúságú időszak ${comparison.previous} eseményével (${percentageText(comparison.percent)}).`;
       } else {
         trendSentence =
-          `Incident activity remained broadly stable compared with the preceding equivalent period. ` +
-          `The current selection contains ${comparison.current} incidents versus ` +
-          `${comparison.previous} previously (${percentageText(comparison.percent)}).`;
+          `Az ellenőrzött incidensaktivitás az előző azonos hosszúságú időszakhoz képest lényegében stabil maradt. ` +
+          `A jelenlegi időszakban ${comparison.current}, az előzőben ${comparison.previous} esemény szerepel (${percentageText(comparison.percent)}).`;
       }
 
       return [
         trendSentence,
-        `${topCategory} is the most frequently recorded category in the current selection.`,
-        `Recorded activity is most concentrated around ${topLocation}.`,
-        `${casualtyCount} selected incidents contain a casualty-related signal, while ${ceasefireCount} are marked for ceasefire monitoring.`,
-        `This assessment reflects the CIR dataset only and should not be treated as a complete or real-time record of all conflict activity.`
+        `A vezető kategória ${topCategory}, míg a legtöbb eseményt ${topLocation} térségében rögzítették.`,
+        `A földrajzi koncentráció alapján a legfontosabb műveleti zóna: ${topZone}.`,
+        `A kijelölt események közül ${casualtyCount} tartalmaz sérüléssel kapcsolatos jelzést, ${ceasefireCount} pedig tűzszünet-felügyeleti megjelölést.`,
+        `Az értékelés kizárólag a CIR adatállományát tükrözi, ezért nem tekinthető a konfliktus minden eseményét lefedő, valós idejű helyzetképnek.`
       ];
     }
 
@@ -1113,65 +1228,64 @@
       const ceasefireCount = events.filter(isCeasefireEvent).length;
 
       $("selectedCount").textContent = String(events.length);
-      $("selectedDays").textContent = range.days || "—";
+      $("selectedDays").textContent =
+        $("periodSelect").value === "all"
+          ? "teljes"
+          : `${$("periodSelect").value} nap`;
+
       $("selectedTopCategory").textContent = categories[0]?.[0] || "—";
       $("selectedTopLocation").textContent = locations[0]?.[0] || "—";
+      $("selectedTrend").textContent = comparison.direction;
+      $("selectedLocationCount").textContent = String(locations.length);
 
       $("overviewIncidents").textContent = String(events.length);
       $("overviewCasualties").textContent = String(casualtyCount);
       $("overviewCeasefire").textContent = String(ceasefireCount);
+      $("overviewLocations").textContent = String(locations.length);
+      $("overviewTopCategory").textContent = categories[0]?.[0] || "—";
       $("overviewChange").textContent = percentageText(comparison.percent);
 
       $("trendBadge").textContent = comparison.direction;
 
       $("overviewRange").textContent =
         range.first && range.last
-          ? `${formatDate(range.first)} → ${formatDate(range.last)}`
-          : "No dated incidents in current selection";
+          ? `Kiválasztott időszak: ${formatDate(range.first)} → ${formatDate(range.last)}`
+          : "Kiválasztott időszak: nincs dátumozott esemény";
 
       renderRanks("topLocationsList", locations);
       renderRanks("topZonesList", zones);
-
       drawLineChart(events);
       drawBarChart(events);
+      drawMiniMap(events);
+      renderImpactProfile(events);
 
-      const paragraphs = createAssessment(events, comparison);
-
-      $("assessmentText").innerHTML = paragraphs
+      $("assessmentText").innerHTML = createAssessment(events, comparison)
         .map((paragraph) => `<p>${paragraph}</p>`)
         .join("");
     }
 
     async function loadData() {
-      $("assessmentText").textContent = "Loading assessment…";
+      $("assessmentText").textContent = "Helyzetértékelés betöltése…";
 
       try {
-        const response = await fetch(DATA_URL, {
-          cache: "no-store"
-        });
+        const response = await fetch(DATA_URL, { cache: "no-store" });
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
 
         payload = await response.json();
-        allEvents = Array.isArray(payload?.events)
-          ? payload.events
-          : [];
+        allEvents = Array.isArray(payload?.events) ? payload.events : [];
 
         if (!allEvents.length) {
-          throw new Error("No CIR events were found in the JSON file.");
+          throw new Error("A JSON-fájl nem tartalmaz CIR-eseményeket.");
         }
 
         const overview = payload?.analytics?.overview || {};
 
         $("generatedAt").textContent = formatDate(payload.generated_at);
-        $("firstEventDate").textContent = formatDate(
-          overview.earliest_event_date
-        );
-        $("latestEventDate").textContent = formatDate(
-          overview.latest_event_date
-        );
+        $("firstEventDate").textContent = formatDate(overview.earliest_event_date);
+        $("latestEventDate").textContent = formatDate(overview.latest_event_date);
         $("totalIncidents").textContent = String(
           overview.total_incidents || allEvents.length
         );
@@ -1189,7 +1303,7 @@
 
         $("assessmentText").innerHTML = `
           <div class="error">
-            CIR data could not be loaded: ${safe(error.message)}
+            A CIR-adatok nem tölthetők be: ${safe(error.message)}
           </div>
         `;
       }
@@ -1236,12 +1350,11 @@
     });
 
     window.addEventListener("resize", () => {
-      if (payload) {
-        updateDashboard();
-      }
+      if (payload) updateDashboard();
     });
 
     loadData();
   </script>
 </body>
 </html>
+
