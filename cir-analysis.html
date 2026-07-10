@@ -252,33 +252,132 @@
       border-radius: 9px;
     }
 
-    .mini-map-wrap {
-      height: 250px;
+    .risk-gauge {
       position: relative;
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      height: 120px;
+      margin: 6px 0 10px;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(17,24,39,.035) 25%, transparent 25%) 0 0/18px 18px,
-        linear-gradient(315deg, rgba(17,24,39,.035) 25%, transparent 25%) 0 0/18px 18px,
-        #f3f5f7;
     }
 
-    #miniMapCanvas {
-      width: 100%;
-      height: 100%;
-    }
-
-    .mini-map-note {
+    .risk-arc {
       position: absolute;
-      left: 8px;
-      bottom: 7px;
-      padding: 4px 7px;
-      border-radius: 7px;
-      background: rgba(255,255,255,.88);
-      font-size: 11px;
-      color: var(--muted);
+      left: 50%;
+      bottom: -58px;
+      width: 240px;
+      height: 120px;
+      transform: translateX(-50%);
+      border-radius: 240px 240px 0 0;
+      background:
+        conic-gradient(
+          from 270deg at 50% 100%,
+          #3fa65c 0deg 45deg,
+          #d7b83f 45deg 90deg,
+          #e98032 90deg 135deg,
+          #d84b4b 135deg 180deg,
+          transparent 180deg 360deg
+        );
     }
+
+    .risk-arc::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 150px;
+      height: 75px;
+      transform: translateX(-50%);
+      border-radius: 150px 150px 0 0;
+      background: var(--panel);
+    }
+
+    .risk-needle {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      width: 4px;
+      height: 74px;
+      border-radius: 999px;
+      background: #111827;
+      transform-origin: 50% 100%;
+      transform: translateX(-50%) rotate(-70deg);
+      transition: transform .35s ease;
+      z-index: 3;
+    }
+
+    .risk-center {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      width: 18px;
+      height: 18px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: #111827;
+      z-index: 4;
+    }
+
+    .risk-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      font-size: 10px;
+      text-align: center;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+
+    .assessment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .assessment-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 9px;
+      background: #f3f4f6;
+      align-items: start;
+    }
+
+    .assessment-row .value {
+      font-weight: 700;
+      text-align: right;
+      max-width: 180px;
+    }
+
+    .intel-findings {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .intel-item {
+      display: grid;
+      grid-template-columns: 12px minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      padding: 9px 10px;
+      border-radius: 9px;
+      background: #f6f7f9;
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .intel-dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      border-radius: 999px;
+      background: #7a8793;
+    }
+
+    .intel-dot.low { background: #3fa65c; }
+    .intel-dot.medium { background: #d7b83f; }
+    .intel-dot.high { background: #e98032; }
+    .intel-dot.critical { background: #d84b4b; }
 
     .impact-list {
       display: flex;
@@ -524,15 +623,35 @@
 
       <div class="analysis-grid">
         <section class="panel">
-          <h2>Incidensek földrajzi eloszlása</h2>
-          <div class="mini-map-wrap">
-            <canvas id="miniMapCanvas"></canvas>
-            <div class="mini-map-note">Sematikus koordinátatérkép, nem alaptérkép</div>
+          <div class="section-header">
+            <div>
+              <h2>Operational Assessment</h2>
+              <div class="muted">Automatikusan számított konfliktusaktivitási helyzetkép</div>
+            </div>
+            <div id="riskBadge" class="pill">—</div>
           </div>
+
+          <div class="risk-gauge" aria-label="Operational risk gauge">
+            <div class="risk-arc"></div>
+            <div id="riskNeedle" class="risk-needle"></div>
+            <div class="risk-center"></div>
+          </div>
+
+          <div class="risk-labels">
+            <span>LOW</span>
+            <span>MODERATE</span>
+            <span>HIGH</span>
+            <span>CRITICAL</span>
+          </div>
+
+          <div id="operationalAssessmentList" class="assessment-list top-gap"></div>
         </section>
 
         <section class="panel">
-          <h2>Impact profile</h2>
+          <h2>Key Intelligence Findings</h2>
+          <div id="intelFindings" class="intel-findings"></div>
+
+          <h2 style="margin-top:14px;">Impact profile</h2>
           <div id="impactList" class="impact-list"></div>
         </section>
       </div>
@@ -1082,70 +1201,218 @@
       });
     }
 
-    function drawMiniMap(events) {
-      const canvas = $("miniMapCanvas");
-      const { ctx, width, height } = resizeCanvas(canvas);
-      ctx.clearRect(0, 0, width, height);
+    function dominantShare(rows, total) {
+      if (!rows.length || total <= 0) return 0;
+      return (rows[0][1] / total) * 100;
+    }
 
-      const points = events
-        .map((event) => ({
-          lat: Number(event.latitude),
-          lon: Number(event.longitude),
-          category: categoryName(event)
-        }))
-        .filter((point) =>
-          Number.isFinite(point.lat) &&
-          Number.isFinite(point.lon)
-        );
-
-      if (!points.length) {
-        ctx.fillStyle = "#5a6170";
-        ctx.font = "13px Arial";
-        ctx.fillText("Nincs megjeleníthető koordináta.", 18, 28);
-        return;
+    function confidenceScore(events) {
+      if (!events.length) {
+        return { score: 0, label: "LOW" };
       }
 
-      const lats = points.map((point) => point.lat);
-      const lons = points.map((point) => point.lon);
-      const minLat = Math.min(...lats);
-      const maxLat = Math.max(...lats);
-      const minLon = Math.min(...lons);
-      const maxLon = Math.max(...lons);
-      const latSpan = Math.max(0.01, maxLat - minLat);
-      const lonSpan = Math.max(0.01, maxLon - minLon);
-      const pad = 18;
+      let complete = 0;
 
-      ctx.strokeStyle = "rgba(17,24,39,.10)";
-      ctx.lineWidth = 1;
+      for (const event of events) {
+        let points = 0;
 
-      for (let i = 1; i < 5; i++) {
-        const x = pad + ((width - pad * 2) / 5) * i;
-        const y = pad + ((height - pad * 2) / 5) * i;
+        if (parseDate(event.date || event.incident_date_text)) points += 1;
 
-        ctx.beginPath();
-        ctx.moveTo(x, pad);
-        ctx.lineTo(x, height - pad);
-        ctx.stroke();
+        if (
+          Number.isFinite(Number(event.latitude)) &&
+          Number.isFinite(Number(event.longitude))
+        ) {
+          points += 1;
+        }
 
-        ctx.beginPath();
-        ctx.moveTo(pad, y);
-        ctx.lineTo(width - pad, y);
-        ctx.stroke();
+        if (categoryName(event) !== "Ismeretlen") points += 1;
+        if (locationName(event) !== "Ismeretlen") points += 1;
+        if (hasEvidenceLink(event)) points += 1;
+
+        complete += points / 5;
       }
 
-      points.forEach((point) => {
-        const x = pad + ((point.lon - minLon) / lonSpan) * (width - pad * 2);
-        const y = height - pad -
-          ((point.lat - minLat) / latSpan) * (height - pad * 2);
+      const score = Math.round((complete / events.length) * 100);
 
-        ctx.fillStyle = categoryColors.get(point.category) || "#7a8793";
-        ctx.globalAlpha = 0.7;
-        ctx.beginPath();
-        ctx.arc(x, y, 3.2, 0, Math.PI * 2);
-        ctx.fill();
+      let label = "LOW";
+      if (score >= 85) label = "HIGH";
+      else if (score >= 65) label = "MODERATE";
+
+      return { score, label };
+    }
+
+    function calculateOperationalRisk(events, comparison) {
+      if (!events.length) {
+        return {
+          score: 0,
+          level: "LOW",
+          css: "low",
+          angle: -70
+        };
+      }
+
+      const locations = countBy(events, locationName);
+      const range = visibleDateRange(events);
+
+      const casualtyShare =
+        (events.filter(hasCasualtySignal).length / events.length) * 100;
+
+      const ceasefireShare =
+        (events.filter(isCeasefireEvent).length / events.length) * 100;
+
+      const concentration =
+        locations.length > 0
+          ? (locations[0][1] / events.length) * 100
+          : 0;
+
+      const density =
+        events.length / Math.max(1, range.days);
+
+      let score = 0;
+
+      score += Math.min(30, density * 8);
+      score += Math.min(20, casualtyShare * 0.25);
+      score += Math.min(15, ceasefireShare * 0.4);
+      score += Math.min(15, concentration * 0.25);
+
+      if (comparison.direction === "növekvő") score += 20;
+      else if (comparison.direction === "stabil") score += 8;
+
+      score = Math.max(0, Math.min(100, Math.round(score)));
+
+      let level = "LOW";
+      let css = "low";
+      let angle = -70;
+
+      if (score >= 75) {
+        level = "CRITICAL";
+        css = "critical";
+        angle = 70;
+      } else if (score >= 50) {
+        level = "HIGH";
+        css = "high";
+        angle = 25;
+      } else if (score >= 25) {
+        level = "MODERATE";
+        css = "medium";
+        angle = -20;
+      }
+
+      return { score, level, css, angle };
+    }
+
+    function renderOperationalAssessment(
+      events,
+      comparison,
+      categories,
+      locations,
+      zones
+    ) {
+      const risk = calculateOperationalRisk(events, comparison);
+      const confidence = confidenceScore(events);
+
+      const topCategory = categories[0]?.[0] || "—";
+      const topCategoryShare = dominantShare(categories, events.length);
+
+      const primaryHotspot = locations[0]?.[0] || "—";
+      const secondaryHotspot = locations[1]?.[0] || "—";
+      const mainZone = zones[0]?.[0] || "—";
+
+      const casualtyCount = events.filter(hasCasualtySignal).length;
+      const ceasefireCount = events.filter(isCeasefireEvent).length;
+
+      $("riskBadge").textContent = `${risk.level} · ${risk.score}/100`;
+      $("riskNeedle").style.transform =
+        `translateX(-50%) rotate(${risk.angle}deg)`;
+
+      $("operationalAssessmentList").innerHTML = [
+        ["Current activity", risk.level],
+        ["Primary hotspot", primaryHotspot],
+        ["Secondary hotspot", secondaryHotspot],
+        ["Main operational zone", mainZone],
+        ["Activity trend", comparison.direction],
+        [
+          "Dominant category",
+          `${topCategory} (${topCategoryShare.toFixed(1)}%)`
+        ],
+        ["Ceasefire monitoring", `${ceasefireCount} esemény`],
+        ["Casualty-related", `${casualtyCount} esemény`],
+        ["Data confidence", `${confidence.label} · ${confidence.score}%`]
+      ]
+        .map(([label, value]) => `
+          <div class="assessment-row">
+            <div>${label}</div>
+            <div class="value">${value}</div>
+          </div>
+        `)
+        .join("");
+
+      const findings = [];
+
+      if (comparison.direction === "növekvő") {
+        findings.push({
+          level: "critical",
+          text:
+            `Az incidensaktivitás az előző azonos hosszúságú időszakhoz képest növekedett (${percentageText(comparison.percent)}).`
+        });
+      } else if (comparison.direction === "csökkenő") {
+        findings.push({
+          level: "low",
+          text:
+            `Az incidensaktivitás az előző azonos hosszúságú időszakhoz képest csökkent (${percentageText(comparison.percent)}).`
+        });
+      } else {
+        findings.push({
+          level: "medium",
+          text:
+            `Az incidensaktivitás összességében stabil maradt (${percentageText(comparison.percent)}).`
+        });
+      }
+
+      if (locations.length) {
+        const concentration =
+          (locations[0][1] / Math.max(1, events.length)) * 100;
+
+        findings.push({
+          level: concentration >= 30 ? "high" : "medium",
+          text:
+            `A legerősebb földrajzi koncentráció ${primaryHotspot} térségében látható, amely a kiválasztott események ${concentration.toFixed(1)}%-át adja.`
+        });
+      }
+
+      if (categories.length) {
+        findings.push({
+          level: "medium",
+          text:
+            `${topCategory} a domináns eseménytípus, ${topCategoryShare.toFixed(1)}%-os részesedéssel.`
+        });
+      }
+
+      const casualtyShare =
+        events.length
+          ? (casualtyCount / events.length) * 100
+          : 0;
+
+      findings.push({
+        level: casualtyShare >= 50 ? "high" : "medium",
+        text:
+          `A sérüléssel kapcsolatos jelzések aránya ${casualtyShare.toFixed(1)}%, ami az incidensek humán következményeinek súlyát mutatja.`
       });
 
-      ctx.globalAlpha = 1;
+      findings.push({
+        level: confidence.label === "HIGH" ? "low" : "medium",
+        text:
+          `Az adatbizalmi szint ${confidence.label}, a jelenlegi események mezőteljessége alapján ${confidence.score}%.`
+      });
+
+      $("intelFindings").innerHTML = findings
+        .map((finding) => `
+          <div class="intel-item">
+            <span class="intel-dot ${finding.level}"></span>
+            <div>${finding.text}</div>
+          </div>
+        `)
+        .join("");
     }
 
     function renderImpactProfile(events) {
@@ -1256,7 +1523,13 @@
       renderRanks("topZonesList", zones);
       drawLineChart(events);
       drawBarChart(events);
-      drawMiniMap(events);
+      renderOperationalAssessment(
+        events,
+        comparison,
+        categories,
+        locations,
+        zones
+      );
       renderImpactProfile(events);
 
       $("assessmentText").innerHTML = createAssessment(events, comparison)
@@ -1357,4 +1630,3 @@
   </script>
 </body>
 </html>
-
