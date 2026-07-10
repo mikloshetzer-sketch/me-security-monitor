@@ -2661,6 +2661,263 @@ window.setInterval(() => {
       if (cirIncidentsEnabled) refreshCirIncidentsSafe();
     }, 10 * 60 * 1000);
 
+
+    // ===== IranStrike independent incident layer =====
+    let iranStrikeEnabled = false;
+    let iranStrikeController = null;
+    let iranStrikeModulePromise = null;
+
+    function loadIranStrikeModule() {
+      if (typeof window.createIranStrikeLayer === "function") {
+        return Promise.resolve();
+      }
+
+      if (iranStrikeModulePromise) {
+        return iranStrikeModulePromise;
+      }
+
+      iranStrikeModulePromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector(
+          'script[data-iranstrike-layer-module="true"]'
+        );
+
+        if (existing) {
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = "iranstrike-layer.js";
+        script.async = true;
+        script.dataset.iranstrikeLayerModule = "true";
+        script.onload = resolve;
+        script.onerror = () =>
+          reject(new Error("iranstrike-layer.js could not be loaded"));
+
+        document.head.appendChild(script);
+      });
+
+      return iranStrikeModulePromise;
+    }
+
+    async function ensureIranStrikeController() {
+      if (iranStrikeController) return iranStrikeController;
+
+      await loadIranStrikeModule();
+
+      if (typeof window.createIranStrikeLayer !== "function") {
+        throw new Error("IranStrike layer module is unavailable.");
+      }
+
+      iranStrikeController = window.createIranStrikeLayer(map, {
+        dataUrl: "data/iranstrike.json",
+        enabled: false,
+        maxVisible: 4000,
+        defaultDays: 30,
+        displayMode: "markers"
+      });
+
+      return iranStrikeController;
+    }
+
+    function readIranStrikeFilters() {
+      const categoryIds = [
+        ["iranStrikeAirstrikeCheckbox", "airstrike"],
+        ["iranStrikeMissileCheckbox", "missile"],
+        ["iranStrikeDroneCheckbox", "drone"],
+        ["iranStrikeExplosionCheckbox", "explosion"],
+        ["iranStrikeGroundCheckbox", "ground"],
+        ["iranStrikeInfrastructureCheckbox", "infrastructure"],
+        ["iranStrikeAlertCheckbox", "alert"],
+        ["iranStrikePoliticalCheckbox", "political"],
+        ["iranStrikeOtherCheckbox", "other"]
+      ];
+
+      const selected = categoryIds
+        .filter(([id]) => document.getElementById(id)?.checked)
+        .map(([, value]) => value);
+
+      const allSelected = categoryIds.every(
+        ([id]) => document.getElementById(id)?.checked
+      );
+
+      return {
+        days: Number(
+          document.getElementById("iranStrikeDaysSelect")?.value || 30
+        ),
+        categories: allSelected ? [] : selected,
+        search: String(
+          document.getElementById("iranStrikeSearchInput")?.value || ""
+        ).trim(),
+        severity: []
+      };
+    }
+
+    function updateIranStrikeUi() {
+      if (!iranStrikeController) {
+        setTextIfExists("iranStrikeLoadedCount", "0");
+        setTextIfExists("iranStrikeVisibleCount", "0");
+        setTextIfExists("iranStrikeLastUpdate", "—");
+        return;
+      }
+
+      const state = iranStrikeController.getState();
+
+      setTextIfExists(
+        "iranStrikeLoadedCount",
+        state.loadedCount || 0
+      );
+
+      setTextIfExists(
+        "iranStrikeVisibleCount",
+        state.visibleCount || 0
+      );
+
+      setTextIfExists(
+        "iranStrikeLastUpdate",
+        state.generatedAt || "—"
+      );
+
+      const badge = document.getElementById("iranStrikeStatusBadge");
+
+      if (badge) {
+        badge.className = "badge-mini";
+
+        if (iranStrikeEnabled) {
+          badge.textContent = "Online";
+          badge.classList.add("badge-ok");
+        } else {
+          badge.textContent = "Off";
+        }
+      }
+
+      const modeSelect = document.getElementById(
+        "iranStrikeDisplayModeSelect"
+      );
+
+      if (modeSelect && !state.heatmapAvailable) {
+        [...modeSelect.options].forEach(option => {
+          if (option.value !== "markers") option.disabled = true;
+        });
+        modeSelect.value = "markers";
+      }
+
+      const visible = iranStrikeController.getVisibleEvents();
+      const categoryCounts = new Map();
+      const locationCounts = new Map();
+
+      for (const event of visible) {
+        const category = String(event.category || "other");
+        const location = String(
+          event.location || event.country || "Unknown"
+        );
+
+        categoryCounts.set(
+          category,
+          (categoryCounts.get(category) || 0) + 1
+        );
+
+        locationCounts.set(
+          location,
+          (locationCounts.get(location) || 0) + 1
+        );
+      }
+
+      const topCategory = [...categoryCounts.entries()]
+        .sort((a, b) => b[1] - a[1])[0]?.[0] || "—";
+
+      const topLocation = [...locationCounts.entries()]
+        .sort((a, b) => b[1] - a[1])[0]?.[0] || "—";
+
+      setTextIfExists(
+        "iranStrikeTopCategory",
+        topCategory
+      );
+
+      setTextIfExists(
+        "iranStrikeTopLocation",
+        topLocation
+      );
+    }
+
+    async function refreshIranStrikeSafe() {
+      try {
+        const controller = await ensureIranStrikeController();
+
+        controller.setFilters(readIranStrikeFilters());
+
+        controller.setDisplayMode(
+          document.getElementById(
+            "iranStrikeDisplayModeSelect"
+          )?.value || "markers"
+        );
+
+        await controller.refresh();
+        controller.setEnabled(iranStrikeEnabled);
+        updateIranStrikeUi();
+
+      } catch (error) {
+        console.warn(
+          "[iranstrike] refresh failed:",
+          error?.message || error
+        );
+
+        const badge = document.getElementById(
+          "iranStrikeStatusBadge"
+        );
+
+        if (badge) {
+          badge.textContent = "Error";
+          badge.className = "badge-mini badge-alert";
+        }
+      }
+    }
+
+    async function setIranStrikeEnabled(value) {
+      iranStrikeEnabled = Boolean(value);
+
+      try {
+        const controller = await ensureIranStrikeController();
+
+        if (iranStrikeEnabled) {
+          controller.setFilters(readIranStrikeFilters());
+          controller.setDisplayMode(
+            document.getElementById(
+              "iranStrikeDisplayModeSelect"
+            )?.value || "markers"
+          );
+          await controller.refresh();
+          controller.setEnabled(true);
+        } else {
+          controller.setEnabled(false);
+        }
+
+        updateIranStrikeUi();
+
+      } catch (error) {
+        console.warn(
+          "[iranstrike] toggle failed:",
+          error?.message || error
+        );
+
+        const checkbox = document.getElementById(
+          "iranStrikeCheckbox"
+        );
+
+        if (checkbox) checkbox.checked = false;
+
+        iranStrikeEnabled = false;
+        updateIranStrikeUi();
+      }
+    }
+
+    window.setInterval(() => {
+      if (iranStrikeEnabled) {
+        refreshIranStrikeSafe();
+      }
+    }, 5 * 60 * 1000);
+
     // ===== Israel military activity layer (data/israel-activity.json) =====
     let israelActivityEnabled = false;
     let israelActivityScriptLoading = null;
@@ -2941,6 +3198,107 @@ window.setInterval(() => {
         </div>
       </div>
 
+
+      <div class="iranstrike-control-block" data-control-block="iranstrike" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+          <div class="muted" style="font-weight:800;">IranStrike events</div>
+          <span id="iranStrikeStatusBadge" class="badge-mini">Off</span>
+        </div>
+
+        <div class="row">
+          <label>
+            <input id="iranStrikeCheckbox" type="checkbox" />
+            IranStrike layer
+          </label>
+          <span class="btn-mini" id="iranStrikeRefreshBtn">Refresh</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Display</div>
+        <select id="iranStrikeDisplayModeSelect">
+          <option value="markers" selected>Markers</option>
+          <option value="heatmap">Heatmap</option>
+          <option value="both">Markers + heatmap</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
+        <select id="iranStrikeDaysSelect">
+          <option value="1">Last 24 hours</option>
+          <option value="3">Last 3 days</option>
+          <option value="7">Last 7 days</option>
+          <option value="30" selected>Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="0">All available data</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Categories</div>
+        <div class="row">
+          <label><input id="iranStrikeAirstrikeCheckbox" type="checkbox" checked /> Airstrike</label>
+          <label><input id="iranStrikeMissileCheckbox" type="checkbox" checked /> Missile</label>
+        </div>
+        <div class="row">
+          <label><input id="iranStrikeDroneCheckbox" type="checkbox" checked /> Drone</label>
+          <label><input id="iranStrikeExplosionCheckbox" type="checkbox" checked /> Explosion</label>
+        </div>
+        <div class="row">
+          <label><input id="iranStrikeGroundCheckbox" type="checkbox" checked /> Ground</label>
+          <label><input id="iranStrikeInfrastructureCheckbox" type="checkbox" checked /> Infrastructure</label>
+        </div>
+        <div class="row">
+          <label><input id="iranStrikeAlertCheckbox" type="checkbox" checked /> Alert</label>
+          <label><input id="iranStrikePoliticalCheckbox" type="checkbox" checked /> Political</label>
+        </div>
+        <div class="row">
+          <label><input id="iranStrikeOtherCheckbox" type="checkbox" checked /> Other</label>
+        </div>
+
+        <input
+          id="iranStrikeSearchInput"
+          class="search"
+          type="search"
+          placeholder="Search IranStrike events..."
+          style="margin-top:7px;"
+        />
+
+        <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div class="mini-item">
+            <div class="name">Loaded</div>
+            <div class="val" id="iranStrikeLoadedCount">0</div>
+          </div>
+          <div class="mini-item">
+            <div class="name">Visible</div>
+            <div class="val" id="iranStrikeVisibleCount">0</div>
+          </div>
+        </div>
+
+        <div class="muted" style="margin-top:8px;">
+          Last update: <span id="iranStrikeLastUpdate">—</span>
+        </div>
+
+        <div class="mini-list" style="margin-top:8px;">
+          <div class="mini-item">
+            <div class="name">Top category</div>
+            <div class="val" id="iranStrikeTopCategory">—</div>
+          </div>
+          <div class="mini-item">
+            <div class="name">Top location</div>
+            <div class="val" id="iranStrikeTopLocation">—</div>
+          </div>
+        </div>
+
+        <button
+          id="openIranStrikeAnalysisBtn"
+          type="button"
+          class="btn-mini"
+          style="width:100%;margin-top:8px;padding:8px 10px;"
+        >
+          Open IranStrike Analysis
+        </button>
+
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          Independent Iran-focused source. Not merged with CIR or Timeline events.
+        </div>
+      </div>
+
       <div class="israel-activity-control-block" data-control-block="israel-activity" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;">Israel military activity</div>
         <div class="row">
@@ -3095,6 +3453,13 @@ window.setInterval(() => {
     const cirRefreshBtn = document.getElementById("cirRefreshBtn");
     const openCirAnalysisBtn = document.getElementById("openCirAnalysisBtn");
     const cirDisplayModeSelect = document.getElementById("cirDisplayModeSelect");
+
+    const iranStrikeCheckbox = document.getElementById("iranStrikeCheckbox");
+    const iranStrikeRefreshBtn = document.getElementById("iranStrikeRefreshBtn");
+    const openIranStrikeAnalysisBtn = document.getElementById("openIranStrikeAnalysisBtn");
+    const iranStrikeDisplayModeSelect = document.getElementById("iranStrikeDisplayModeSelect");
+    const iranStrikeDaysSelect = document.getElementById("iranStrikeDaysSelect");
+    const iranStrikeSearchInput = document.getElementById("iranStrikeSearchInput");
     const cirDaysSelect = document.getElementById("cirDaysSelect");
     const cirCeasefireOnlyCheckbox = document.getElementById("cirCeasefireOnlyCheckbox");
     const cirCasualtiesOnlyCheckbox = document.getElementById("cirCasualtiesOnlyCheckbox");
@@ -3157,6 +3522,87 @@ window.setInterval(() => {
       });
     }
 
+
+    if (iranStrikeCheckbox) {
+      iranStrikeCheckbox.addEventListener("change", event => {
+        setIranStrikeEnabled(event.target.checked);
+      });
+    }
+
+    if (iranStrikeRefreshBtn) {
+      iranStrikeRefreshBtn.addEventListener("click", () => {
+        refreshIranStrikeSafe();
+      });
+    }
+
+    if (openIranStrikeAnalysisBtn) {
+      openIranStrikeAnalysisBtn.addEventListener("click", () => {
+        window.location.href = "iranstrike-analysis.html";
+      });
+    }
+
+    if (iranStrikeDisplayModeSelect) {
+      iranStrikeDisplayModeSelect.addEventListener("change", () => {
+        if (!iranStrikeController) return;
+
+        iranStrikeController.setDisplayMode(
+          iranStrikeDisplayModeSelect.value
+        );
+
+        updateIranStrikeUi();
+      });
+    }
+
+    if (iranStrikeDaysSelect) {
+      iranStrikeDaysSelect.addEventListener("change", () => {
+        if (!iranStrikeController) return;
+
+        iranStrikeController.setFilters(
+          readIranStrikeFilters()
+        );
+
+        updateIranStrikeUi();
+      });
+    }
+
+    if (iranStrikeSearchInput) {
+      iranStrikeSearchInput.addEventListener("input", () => {
+        if (!iranStrikeController) return;
+
+        iranStrikeController.setFilters(
+          readIranStrikeFilters()
+        );
+
+        updateIranStrikeUi();
+      });
+    }
+
+    [
+      "iranStrikeAirstrikeCheckbox",
+      "iranStrikeMissileCheckbox",
+      "iranStrikeDroneCheckbox",
+      "iranStrikeExplosionCheckbox",
+      "iranStrikeGroundCheckbox",
+      "iranStrikeInfrastructureCheckbox",
+      "iranStrikeAlertCheckbox",
+      "iranStrikePoliticalCheckbox",
+      "iranStrikeOtherCheckbox"
+    ].forEach(id => {
+      const element = document.getElementById(id);
+
+      if (!element) return;
+
+      element.addEventListener("change", () => {
+        if (!iranStrikeController) return;
+
+        iranStrikeController.setFilters(
+          readIranStrikeFilters()
+        );
+
+        updateIranStrikeUi();
+      });
+    });
+
     if (cirDisplayModeSelect) {
       cirDisplayModeSelect.addEventListener("change", () => {
         if (cirIncidentsController) {
@@ -3210,6 +3656,8 @@ window.setInterval(() => {
 
     updateCirUiState();
     updateCirSummary();
+
+    updateIranStrikeUi();
 
     if (israelActivityCheckbox) {
       israelActivityCheckbox.addEventListener("change", (e) => setIsraelActivityEnabled(e.target.checked));
