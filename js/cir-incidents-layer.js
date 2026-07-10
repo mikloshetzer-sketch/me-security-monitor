@@ -76,51 +76,66 @@
     );
   }
 
-  function markerStyle(event) {
-    const key = categoryKey(event);
+  function markerStyle(event, newestEventTime) {
+    const date = parseDate(event.date || event.incident_date_text);
+    const eventTime = date ? date.getTime() : null;
 
-    if (
-      key.includes("airstrike") ||
-      key.includes("air strike") ||
-      key.includes("aerial")
-    ) {
-      return { color: "#b14c4c", fillColor: "#d65b5b", radius: 7 };
+    if (!eventTime || !Number.isFinite(newestEventTime)) {
+      return {
+        color: "#666f78",
+        fillColor: "#8b949e",
+        radius: 6,
+        timeBand: "Unknown date",
+      };
     }
 
-    if (
-      key.includes("ground") ||
-      key.includes("clash") ||
-      key.includes("armed")
-    ) {
-      return { color: "#9b6230", fillColor: "#c27a3b", radius: 7 };
+    const ageDays = Math.max(
+      0,
+      Math.floor((newestEventTime - eventTime) / 86400000)
+    );
+
+    if (ageDays <= 7) {
+      return {
+        color: "#9f2f2f",
+        fillColor: "#e34f4f",
+        radius: 8,
+        timeBand: "Latest 7 days",
+      };
     }
 
-    if (
-      key.includes("rocket") ||
-      key.includes("missile") ||
-      key.includes("shelling") ||
-      key.includes("artillery")
-    ) {
-      return { color: "#80569b", fillColor: "#9c6fba", radius: 7 };
+    if (ageDays <= 30) {
+      return {
+        color: "#a95724",
+        fillColor: "#e98032",
+        radius: 7,
+        timeBand: "8–30 days",
+      };
     }
 
-    if (
-      key.includes("civilian") ||
-      key.includes("casual") ||
-      key.includes("humanitarian")
-    ) {
-      return { color: "#4d7e66", fillColor: "#65a27f", radius: 6 };
+    if (ageDays <= 90) {
+      return {
+        color: "#9b7a1e",
+        fillColor: "#d7b83f",
+        radius: 7,
+        timeBand: "31–90 days",
+      };
     }
 
-    if (
-      key.includes("damage") ||
-      key.includes("destruction") ||
-      key.includes("infrastructure")
-    ) {
-      return { color: "#606d78", fillColor: "#7c8b97", radius: 6 };
+    if (ageDays <= 180) {
+      return {
+        color: "#3e718c",
+        fillColor: "#67a3c1",
+        radius: 6,
+        timeBand: "91–180 days",
+      };
     }
 
-    return { color: "#3d6f8a", fillColor: "#5d8ea7", radius: 6 };
+    return {
+      color: "#5f6871",
+      fillColor: "#89929b",
+      radius: 5,
+      timeBand: "Older than 180 days",
+    };
   }
 
   function sourceLinksHtml(links) {
@@ -179,6 +194,10 @@
           <tr>
             <td style="padding:3px 8px 3px 0;"><strong>Category</strong></td>
             <td style="padding:3px 0;">${escapeHtml(category)}</td>
+          </tr>
+          <tr>
+            <td style="padding:3px 8px 3px 0;"><strong>Time band</strong></td>
+            <td style="padding:3px 0;">${escapeHtml(event._cirTimeBand || "—")}</td>
           </tr>
           ${
             subCategory
@@ -247,6 +266,7 @@
 
     let events = [];
     let metadata = null;
+    let newestEventTime = null;
     let enabled = Boolean(options.enabled);
     let destroyed = false;
     let timer = null;
@@ -330,7 +350,8 @@
           continue;
         }
 
-        const style = markerStyle(event);
+        const style = markerStyle(event, newestEventTime);
+        event._cirTimeBand = style.timeBand;
 
         const marker = L.circleMarker([latitude, longitude], {
           radius: style.radius,
@@ -383,6 +404,15 @@
       events = incoming;
       metadata = payload;
 
+      const eventTimes = events
+        .map((event) => parseDate(event.date || event.incident_date_text))
+        .filter(Boolean)
+        .map((date) => date.getTime());
+
+      newestEventTime = eventTimes.length
+        ? Math.max(...eventTimes)
+        : null;
+
       return render();
     }
 
@@ -433,6 +463,9 @@
           search: filters.search,
         },
         generatedAt: metadata?.generated_at || null,
+        newestEventDate: newestEventTime
+          ? new Date(newestEventTime).toISOString()
+          : null,
         status: metadata?.status || null,
         source: metadata?.source || null,
       };
@@ -453,6 +486,7 @@
       layer.clearLayers();
       events = [];
       metadata = null;
+      newestEventTime = null;
     }
 
     if (enabled) {
