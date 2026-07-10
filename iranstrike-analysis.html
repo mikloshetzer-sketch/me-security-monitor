@@ -195,6 +195,64 @@
       line-height:1.45;
     }
 
+
+    .vital-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .vital-card {
+      padding:10px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#fafafa;
+      min-width:0;
+    }
+
+    .vital-title {
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:5px;
+    }
+
+    .vital-value {
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .sparkline {
+      width:100%;
+      height:54px;
+      display:block;
+      margin-top:6px;
+    }
+
+    details.raw-data {
+      margin-top:10px;
+      border-top:1px solid var(--border);
+      padding-top:9px;
+    }
+
+    details.raw-data summary {
+      cursor:pointer;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .raw-json {
+      max-height:240px;
+      overflow:auto;
+      white-space:pre-wrap;
+      word-break:break-word;
+      font-family:Consolas,monospace;
+      font-size:11px;
+      margin-top:8px;
+      padding:8px;
+      background:#f3f4f6;
+      border-radius:8px;
+    }
+
     @media (max-width:1200px) {
       .grid-6 { grid-template-columns:repeat(3,minmax(0,1fr)); }
     }
@@ -709,47 +767,62 @@
       });
     }
 
-    function renderVitals() {
-      const raw = payload?.vitals?.vitals ??
-        payload?.vitals?.data ??
-        payload?.vitals ??
-        null;
+    function extractSeries(value) {
+      if (!Array.isArray(value)) return [];
+      return value.map(item => {
+        if (typeof item === "number") return item;
+        if (!item || typeof item !== "object") return null;
+        const candidate = item.v ?? item.value ?? item.y ?? item.percent ?? item.percentage ?? item.score;
+        const number = Number(candidate);
+        return Number.isFinite(number) ? number : null;
+      }).filter(Number.isFinite);
+    }
 
+    function latestDisplayValue(value) {
+      if (Array.isArray(value)) {
+        const series = extractSeries(value);
+        if (series.length) return series[series.length - 1];
+        return `${value.length} records`;
+      }
+      if (value && typeof value === "object") {
+        const candidate = value.status ?? value.value ?? value.state ?? value.current ?? value.latest;
+        if (candidate !== undefined && typeof candidate !== "object") return candidate;
+      }
+      return value;
+    }
+
+    function sparklineSvg(series) {
+      if (!series.length) return "";
+      const width=220,height=54,pad=4;
+      const min=Math.min(...series),max=Math.max(...series);
+      const span=Math.max(1,max-min);
+      const points=series.map((value,index)=>{
+        const x=pad+(index/Math.max(1,series.length-1))*(width-pad*2);
+        const y=height-pad-((value-min)/span)*(height-pad*2);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(" ");
+      return `<svg class="sparkline" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#111827" stroke-width="2" points="${points}" /></svg>`;
+    }
+
+    function renderVitals() {
+      const raw = payload?.vitals?.vitals ?? payload?.vitals?.data ?? payload?.vitals ?? null;
       if (!raw) {
         $("vitalsPanel").textContent = "Nincs vitals adat.";
         return;
       }
 
-      if (Array.isArray(raw)) {
-        $("vitalsPanel").innerHTML = raw.slice(0,20).map(item => `
-          <div class="raw-card">
-            ${safe(item.name || item.label || item.title || "Status")}
-            <strong style="float:right;">
-              ${safe(item.status || item.value || item.state)}
-            </strong>
-          </div>
-        `).join("");
-        return;
-      }
+      const entries = Array.isArray(raw)
+        ? raw.map((item,index)=>[safe(item?.name || item?.label || item?.title, `Vital ${index+1}`), item])
+        : typeof raw === "object" ? Object.entries(raw) : [["Status", raw]];
 
-      if (typeof raw === "object") {
-        $("vitalsPanel").innerHTML = Object.entries(raw)
-          .slice(0,30)
-          .map(([key,value]) => `
-            <div class="raw-card">
-              ${key}
-              <strong style="float:right;">
-                ${typeof value === "object"
-                  ? safe(value.status || value.value || value.state || JSON.stringify(value))
-                  : safe(value)}
-              </strong>
-            </div>
-          `)
-          .join("");
-        return;
-      }
+      const cards = entries.slice(0,24).map(([key,value]) => {
+        const series = extractSeries(Array.isArray(value) ? value : value?.history || value?.series || value?.data || []);
+        const latest = latestDisplayValue(value);
+        const suffix = typeof latest === "number" && latest >= 0 && latest <= 100 ? "%" : "";
+        return `<div class="vital-card"><div class="vital-title">${safe(key)}</div><div class="vital-value">${safe(latest)}${suffix}</div>${sparklineSvg(series.slice(-120))}</div>`;
+      }).join("");
 
-      $("vitalsPanel").textContent = safe(raw);
+      $("vitalsPanel").innerHTML = `<div class="vital-grid">${cards}</div><details class="raw-data"><summary>Developer mode · raw vitals</summary><div class="raw-json">${safe(JSON.stringify(raw,null,2))}</div></details>`;
     }
 
     function renderDevelopments() {
@@ -880,3 +953,4 @@
   </script>
 </body>
 </html>
+
