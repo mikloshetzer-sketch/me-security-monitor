@@ -431,8 +431,53 @@
     let payload = null;
     let allEvents = [];
     let selectedCategories = new Set();
+    let pendingUrlState = null;
 
     const $ = (id) => document.getElementById(id);
+
+    function readUrlState() {
+      const params = new URLSearchParams(window.location.search);
+      const daysRaw = params.get("days");
+      const categoriesRaw = params.get("categories") || "";
+
+      let period = "30";
+      if (daysRaw === "0") period = "all";
+      else if (["7", "30", "90", "180"].includes(daysRaw)) period = daysRaw;
+      else if (["1", "3"].includes(daysRaw)) period = "7";
+
+      return {
+        period,
+        search: params.get("search") || "",
+        ceasefire: params.get("ceasefire") === "1",
+        casualties: params.get("casualties") === "1",
+        categories: categoriesRaw
+          .split(",")
+          .map((value) => value.trim().toLowerCase())
+          .filter(Boolean)
+      };
+    }
+
+    function writeUrlState() {
+      const params = new URLSearchParams();
+      const periodValue = $("periodSelect").value;
+
+      params.set("days", periodValue === "all" ? "0" : periodValue);
+
+      if (selectedCategories.size) {
+        params.set("categories", [...selectedCategories].join(","));
+      }
+
+      const search = $("searchInput").value.trim();
+      if (search) params.set("search", search);
+      if ($("ceasefireOnlyCheckbox").checked) params.set("ceasefire", "1");
+      if ($("casualtyOnlyCheckbox").checked) params.set("casualties", "1");
+
+      window.history.replaceState(
+        {},
+        "",
+        `${window.location.pathname}?${params.toString()}`
+      );
+    }
 
     function safe(value, fallback = "—") {
       const text = String(value ?? "").trim();
@@ -684,36 +729,90 @@
       };
     }
 
+    function categoryMatchesRequested(name, requestedCategories) {
+      if (!requestedCategories.length) return true;
+
+      const normalizedName = normalize(name);
+
+      return requestedCategories.some((requested) => {
+        if (requested === "airstrike") {
+          return ["airstrike", "air strike", "aerial"].some(
+            (value) => normalizedName.includes(value)
+          );
+        }
+
+        if (requested === "ground") {
+          return ["ground", "clash", "armed"].some(
+            (value) => normalizedName.includes(value)
+          );
+        }
+
+        if (requested === "rocket") {
+          return ["rocket", "missile", "artillery", "shelling"].some(
+            (value) => normalizedName.includes(value)
+          );
+        }
+
+        if (requested === "civilian") {
+          return ["civilian", "casual", "humanitarian"].some(
+            (value) => normalizedName.includes(value)
+          );
+        }
+
+        if (requested === "infrastructure") {
+          return ["infrastructure", "damage", "destruction"].some(
+            (value) => normalizedName.includes(value)
+          );
+        }
+
+        if (requested === "other") {
+          return ![
+            "airstrike", "air strike", "aerial", "ground", "clash", "armed",
+            "rocket", "missile", "artillery", "shelling", "civilian",
+            "casual", "humanitarian", "infrastructure", "damage", "destruction"
+          ].some((value) => normalizedName.includes(value));
+        }
+
+        return normalizedName.includes(requested);
+      });
+    }
+
     function renderCategoryFilters() {
       const categories = countBy(allEvents, categoryName);
 
       selectedCategories = new Set();
+      const requestedCategories = pendingUrlState?.categories || [];
 
       $("categoryFilters").innerHTML = categories
         .slice(0, 12)
-        .map(([name, count]) => `
-          <label class="toggle">
-            <input
-              type="checkbox"
-              class="category-filter"
-              value="${name.replaceAll('"', '&quot;')}"
-              checked
-            />
-            ${name} (${count})
-          </label>
-        `)
+        .map(([name, count]) => {
+          const checked = categoryMatchesRequested(
+            name,
+            requestedCategories
+          );
+
+          return `
+            <label class="toggle">
+              <input
+                type="checkbox"
+                class="category-filter"
+                value="${name.replaceAll('"', '&quot;')}"
+                ${checked ? "checked" : ""}
+              />
+              ${name} (${count})
+            </label>
+          `;
+        })
         .join("");
 
       document.querySelectorAll(".category-filter").forEach((checkbox) => {
-        selectedCategories.add(checkbox.value);
+        if (checkbox.checked) selectedCategories.add(checkbox.value);
 
         checkbox.addEventListener("change", () => {
-          if (checkbox.checked) {
-            selectedCategories.add(checkbox.value);
-          } else {
-            selectedCategories.delete(checkbox.value);
-          }
+          if (checkbox.checked) selectedCategories.add(checkbox.value);
+          else selectedCategories.delete(checkbox.value);
 
+          writeUrlState();
           updateDashboard();
         });
       });
@@ -1077,6 +1176,12 @@
           overview.total_incidents || allEvents.length
         );
 
+        pendingUrlState = readUrlState();
+        $("periodSelect").value = pendingUrlState.period || "30";
+        $("searchInput").value = pendingUrlState.search || "";
+        $("ceasefireOnlyCheckbox").checked = Boolean(pendingUrlState.ceasefire);
+        $("casualtyOnlyCheckbox").checked = Boolean(pendingUrlState.casualties);
+
         renderCategoryFilters();
         updateDashboard();
       } catch (error) {
@@ -1090,14 +1195,44 @@
       }
     }
 
-    $("periodSelect").addEventListener("change", updateDashboard);
-    $("casualtyOnlyCheckbox").addEventListener("change", updateDashboard);
-    $("ceasefireOnlyCheckbox").addEventListener("change", updateDashboard);
-    $("searchInput").addEventListener("input", updateDashboard);
+    $("periodSelect").addEventListener("change", () => {
+      writeUrlState();
+      updateDashboard();
+    });
+
+    $("casualtyOnlyCheckbox").addEventListener("change", () => {
+      writeUrlState();
+      updateDashboard();
+    });
+
+    $("ceasefireOnlyCheckbox").addEventListener("change", () => {
+      writeUrlState();
+      updateDashboard();
+    });
+
+    $("searchInput").addEventListener("input", () => {
+      writeUrlState();
+      updateDashboard();
+    });
+
     $("reloadBtn").addEventListener("click", loadData);
 
     $("backToMapBtn").addEventListener("click", () => {
-      window.location.href = "index.html";
+      const params = new URLSearchParams();
+      const periodValue = $("periodSelect").value;
+
+      params.set("cirDays", periodValue === "all" ? "0" : periodValue);
+
+      if (selectedCategories.size) {
+        params.set("cirCategories", [...selectedCategories].join(","));
+      }
+
+      const search = $("searchInput").value.trim();
+      if (search) params.set("cirSearch", search);
+      if ($("ceasefireOnlyCheckbox").checked) params.set("cirCeasefire", "1");
+      if ($("casualtyOnlyCheckbox").checked) params.set("cirCasualties", "1");
+
+      window.location.href = `index.html?${params.toString()}`;
     });
 
     window.addEventListener("resize", () => {
