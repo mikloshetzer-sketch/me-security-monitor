@@ -34,6 +34,9 @@
     defaultDays: 0,
     showGraphicWarning: true,
     autoRefreshMs: 0,
+    displayMode: "markers",
+    heatRadius: 28,
+    heatBlur: 20,
   };
 
   function escapeHtml(value) {
@@ -263,6 +266,7 @@
 
     const options = { ...DEFAULT_OPTIONS, ...userOptions };
     const layer = L.layerGroup();
+    let heatLayer = null;
 
     let events = [];
     let metadata = null;
@@ -276,7 +280,45 @@
       categories: new Set(),
       locations: new Set(),
       search: "",
+      ceasefireOnly: false,
+      casualtiesOnly: false,
     };
+
+
+    function hasCasualtySignal(event) {
+      const text = normalise(
+        `${event.casualties || ""} ${event.minor_casualties || ""}`
+      );
+
+      if (!text) return false;
+      if (text === "0" || text === "none" || text === "no") return false;
+
+      return true;
+    }
+
+    function isCeasefireEvent(event) {
+      const value = normalise(event.ceasefire_monitoring || "");
+      return Boolean(value) && !["0", "no", "false", "none"].includes(value);
+    }
+
+    function heatWeight(event) {
+      let weight = 0.5;
+
+      if (hasCasualtySignal(event)) weight += 0.35;
+      if (isCeasefireEvent(event)) weight += 0.2;
+
+      const category = categoryKey(event);
+      if (
+        category.includes("airstrike") ||
+        category.includes("strike") ||
+        category.includes("artillery") ||
+        category.includes("rocket")
+      ) {
+        weight += 0.25;
+      }
+
+      return Math.min(1.5, weight);
+    }
 
     function eventPassesFilters(event) {
       if (filters.days > 0) {
@@ -330,6 +372,9 @@
         if (!haystack.includes(normalise(filters.search))) return false;
       }
 
+      if (filters.ceasefireOnly && !isCeasefireEvent(event)) return false;
+      if (filters.casualtiesOnly && !hasCasualtySignal(event)) return false;
+
       return true;
     }
 
@@ -338,9 +383,22 @@
 
       layer.clearLayers();
 
+      if (heatLayer && map.hasLayer(heatLayer)) {
+        map.removeLayer(heatLayer);
+      }
+      heatLayer = null;
+
       const visible = events
         .filter(eventPassesFilters)
         .slice(0, Math.max(1, Number(options.maxVisible) || 2500));
+
+      const displayMode = options.displayMode || "markers";
+      const showMarkers =
+        displayMode === "markers" || displayMode === "both";
+      const showHeat =
+        displayMode === "heatmap" || displayMode === "both";
+
+      const heatPoints = [];
 
       for (const event of visible) {
         const latitude = Number(event.latitude);
@@ -353,29 +411,47 @@
         const style = markerStyle(event, newestEventTime);
         event._cirTimeBand = style.timeBand;
 
-        const marker = L.circleMarker([latitude, longitude], {
-          radius: style.radius,
-          color: style.color,
-          fillColor: style.fillColor,
-          fillOpacity: 0.82,
-          opacity: 0.95,
-          weight: 1.5,
-        });
+        if (showMarkers) {
+          const marker = L.circleMarker([latitude, longitude], {
+            radius: style.radius,
+            color: style.color,
+            fillColor: style.fillColor,
+            fillOpacity: 0.82,
+            opacity: 0.95,
+            weight: 1.5,
+          });
 
-        marker.bindPopup(popupHtml(event, options), {
-          maxWidth: 380,
-        });
+          marker.bindPopup(popupHtml(event, options), {
+            maxWidth: 380,
+          });
 
-        marker.cirEvent = event;
-        marker.addTo(layer);
+          marker.cirEvent = event;
+          marker.addTo(layer);
+        }
+
+        if (showHeat) {
+          heatPoints.push([
+            latitude,
+            longitude,
+            heatWeight(event),
+          ]);
+        }
       }
 
-      if (enabled && !map.hasLayer(layer)) {
-        layer.addTo(map);
+      if (showHeat && heatPoints.length && typeof L.heatLayer === "function") {
+        heatLayer = L.heatLayer(heatPoints, {
+          radius: Number(options.heatRadius) || 28,
+          blur: Number(options.heatBlur) || 20,
+          maxZoom: 10,
+        });
       }
 
-      if (!enabled && map.hasLayer(layer)) {
-        map.removeLayer(layer);
+      if (enabled) {
+        if (!map.hasLayer(layer)) layer.addTo(map);
+        if (heatLayer && !map.hasLayer(heatLayer)) heatLayer.addTo(map);
+      } else {
+        if (map.hasLayer(layer)) map.removeLayer(layer);
+        if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
       }
 
       return visible.length;
@@ -446,6 +522,20 @@
         filters.search = String(nextFilters.search || "");
       }
 
+      if (Object.prototype.hasOwnProperty.call(nextFilters, "ceasefireOnly")) {
+        filters.ceasefireOnly = Boolean(nextFilters.ceasefireOnly);
+      }
+
+      if (Object.prototype.hasOwnProperty.call(nextFilters, "casualtiesOnly")) {
+        filters.casualtiesOnly = Boolean(nextFilters.casualtiesOnly);
+      }
+
+      return render();
+    }
+
+    function setDisplayMode(mode) {
+      const allowed = new Set(["markers", "heatmap", "both"]);
+      options.displayMode = allowed.has(mode) ? mode : "markers";
       return render();
     }
 
@@ -461,7 +551,11 @@
           categories: [...filters.categories],
           locations: [...filters.locations],
           search: filters.search,
+          ceasefireOnly: filters.ceasefireOnly,
+          casualtiesOnly: filters.casualtiesOnly,
         },
+        displayMode: options.displayMode || "markers",
+        heatmapAvailable: typeof L.heatLayer === "function",
         generatedAt: metadata?.generated_at || null,
         newestEventDate: newestEventTime
           ? new Date(newestEventTime).toISOString()
@@ -482,6 +576,11 @@
       if (map.hasLayer(layer)) {
         map.removeLayer(layer);
       }
+
+      if (heatLayer && map.hasLayer(heatLayer)) {
+        map.removeLayer(heatLayer);
+      }
+      heatLayer = null;
 
       layer.clearLayers();
       events = [];
@@ -506,6 +605,7 @@
       refresh,
       setEnabled,
       setFilters,
+      setDisplayMode,
       getState,
       destroy,
     };
