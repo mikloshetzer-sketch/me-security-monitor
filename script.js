@@ -2643,6 +2643,7 @@ window.setInterval(() => {
           }
 
           controller.setEnabled(true);
+          window.setTimeout(() => controller.setEnabled(true), 100);
         } else {
           controller.setEnabled(false);
         }
@@ -2717,6 +2718,9 @@ window.setInterval(() => {
         defaultDays: 30,
         displayMode: "markers"
       });
+
+      window.iranStrikeController = iranStrikeController;
+      window.iranStrikeMap = map;
 
       return iranStrikeController;
     }
