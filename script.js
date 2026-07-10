@@ -3,6 +3,7 @@
 
 import { createAircraftLayer } from "./js/aircraft-layer.js";
 import { createReportsLayer } from "./js/reports-layer.js";
+import "./js/cir-incidents-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
@@ -1730,6 +1731,134 @@ window.setInterval(() => {
   if (firesEnabled) refreshFiresSafe();
 }, 10 * 60 * 1000);
 
+
+    // ===== CIR verified incidents layer (data/cir-incidents.json) =====
+    let cirIncidentsEnabled = false;
+    let cirIncidentsController = null;
+
+    function ensureCirIncidentsController() {
+      if (cirIncidentsController) return cirIncidentsController;
+
+      if (typeof window.createCirIncidentsLayer !== "function") {
+        throw new Error("CIR layer module is not available.");
+      }
+
+      cirIncidentsController = window.createCirIncidentsLayer(map, {
+        dataUrl: "data/cir-incidents.json",
+        enabled: false,
+        maxVisible: 2500,
+        defaultDays: 0,
+        showGraphicWarning: true
+      });
+
+      return cirIncidentsController;
+    }
+
+    function readCirFiltersFromUi() {
+      const daysEl = document.getElementById("cirDaysSelect");
+      const searchEl = document.getElementById("cirSearchInput");
+
+      const categories = [
+        ["cirAirstrikeCheckbox", "airstrike"],
+        ["cirGroundCheckbox", "ground"],
+        ["cirRocketCheckbox", "rocket"],
+        ["cirCivilianCheckbox", "civilian"],
+        ["cirInfrastructureCheckbox", "infrastructure"],
+        ["cirOtherCheckbox", "other"]
+      ]
+        .filter(([id]) => document.getElementById(id)?.checked)
+        .map(([, value]) => value);
+
+      const allCategoryBoxes = [
+        "cirAirstrikeCheckbox",
+        "cirGroundCheckbox",
+        "cirRocketCheckbox",
+        "cirCivilianCheckbox",
+        "cirInfrastructureCheckbox",
+        "cirOtherCheckbox"
+      ];
+
+      const allSelected = allCategoryBoxes.every(
+        (id) => document.getElementById(id)?.checked
+      );
+
+      return {
+        days: Number(daysEl?.value || 0),
+        categories: allSelected ? [] : categories,
+        search: String(searchEl?.value || "").trim()
+      };
+    }
+
+    function updateCirUiState() {
+      if (!cirIncidentsController) {
+        setTextIfExists("cirLoadedCount", "0");
+        setTextIfExists("cirVisibleCount", "0");
+        setTextIfExists("cirLastUpdate", "—");
+        return;
+      }
+
+      const state = cirIncidentsController.getState();
+      setTextIfExists("cirLoadedCount", state.loadedCount || 0);
+      setTextIfExists("cirVisibleCount", state.visibleCount || 0);
+      setTextIfExists("cirLastUpdate", state.generatedAt || "—");
+
+      const badge = document.getElementById("cirStatusBadge");
+      if (badge) {
+        badge.className = "badge-mini";
+        if (cirIncidentsEnabled) {
+          badge.textContent = "Online";
+          badge.classList.add("badge-ok");
+        } else {
+          badge.textContent = "Off";
+        }
+      }
+    }
+
+    async function refreshCirIncidentsSafe() {
+      try {
+        const controller = ensureCirIncidentsController();
+        controller.setFilters(readCirFiltersFromUi());
+        await controller.refresh();
+        controller.setEnabled(cirIncidentsEnabled);
+        updateCirUiState();
+      } catch (e) {
+        console.warn("[cir-incidents] refresh failed:", e?.message || e);
+        const badge = document.getElementById("cirStatusBadge");
+        if (badge) {
+          badge.textContent = "Error";
+          badge.className = "badge-mini badge-alert";
+        }
+      }
+    }
+
+    async function setCirIncidentsEnabled(on) {
+      cirIncidentsEnabled = !!on;
+
+      try {
+        const controller = ensureCirIncidentsController();
+
+        if (cirIncidentsEnabled) {
+          controller.setFilters(readCirFiltersFromUi());
+          await controller.refresh();
+          controller.setEnabled(true);
+        } else {
+          controller.setEnabled(false);
+        }
+
+        updateCirUiState();
+      } catch (e) {
+        console.warn("[cir-incidents] toggle failed:", e?.message || e);
+        const checkbox = document.getElementById("cirIncidentsCheckbox");
+        if (checkbox) checkbox.checked = false;
+        cirIncidentsEnabled = false;
+        updateCirUiState();
+      }
+    }
+
+    window.setInterval(() => {
+      if (cirIncidentsEnabled) refreshCirIncidentsSafe();
+    }, 10 * 60 * 1000);
+
     // ===== Israel military activity layer (data/israel-activity.json) =====
     let israelActivityEnabled = false;
     let israelActivityScriptLoading = null;
@@ -1908,6 +2037,63 @@ window.setInterval(() => {
         </div>
       </div>
 
+
+      <div class="cir-incidents-control-block" data-control-block="cir-incidents" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+          <div class="muted" style="font-weight:800;">CIR verified incidents</div>
+          <span id="cirStatusBadge" class="badge-mini">Off</span>
+        </div>
+
+        <div class="row">
+          <label><input id="cirIncidentsCheckbox" type="checkbox" /> CIR incidents</label>
+          <span class="btn-mini" id="cirRefreshBtn">Refresh</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
+        <select id="cirDaysSelect">
+          <option value="0" selected>All available data</option>
+          <option value="1">Last 24 hours</option>
+          <option value="3">Last 3 days</option>
+          <option value="7">Last 7 days</option>
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 90 days</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Categories</div>
+        <div class="row">
+          <label><input id="cirAirstrikeCheckbox" type="checkbox" checked /> Airstrikes</label>
+          <label><input id="cirGroundCheckbox" type="checkbox" checked /> Ground</label>
+        </div>
+        <div class="row">
+          <label><input id="cirRocketCheckbox" type="checkbox" checked /> Rockets / artillery</label>
+          <label><input id="cirCivilianCheckbox" type="checkbox" checked /> Civilian</label>
+        </div>
+        <div class="row">
+          <label><input id="cirInfrastructureCheckbox" type="checkbox" checked /> Infrastructure</label>
+          <label><input id="cirOtherCheckbox" type="checkbox" checked /> Other</label>
+        </div>
+
+        <input
+          id="cirSearchInput"
+          class="search"
+          type="search"
+          placeholder="Search CIR incidents..."
+          style="margin-top:7px;"
+        />
+
+        <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div class="mini-item"><div class="name">Loaded</div><div class="val" id="cirLoadedCount">0</div></div>
+          <div class="mini-item"><div class="name">Visible</div><div class="val" id="cirVisibleCount">0</div></div>
+        </div>
+
+        <div class="muted" style="margin-top:8px;">
+          Last update: <span id="cirLastUpdate">—</span>
+        </div>
+        <div class="muted" style="margin-top:6px;line-height:1.45;">
+          Source: Centre for Information Resilience. Verified OSINT incident layer.
+        </div>
+      </div>
+
       <div class="israel-activity-control-block" data-control-block="israel-activity" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;">Israel military activity</div>
         <div class="row">
@@ -2058,6 +2244,19 @@ window.setInterval(() => {
     const firesHeatCheckbox = document.getElementById("firesHeatCheckbox");
     const firesRefreshBtn = document.getElementById("firesRefreshBtn");
 
+    const cirIncidentsCheckbox = document.getElementById("cirIncidentsCheckbox");
+    const cirRefreshBtn = document.getElementById("cirRefreshBtn");
+    const cirDaysSelect = document.getElementById("cirDaysSelect");
+    const cirSearchInput = document.getElementById("cirSearchInput");
+    const cirFilterCheckboxes = [
+      "cirAirstrikeCheckbox",
+      "cirGroundCheckbox",
+      "cirRocketCheckbox",
+      "cirCivilianCheckbox",
+      "cirInfrastructureCheckbox",
+      "cirOtherCheckbox"
+    ].map((id) => document.getElementById(id)).filter(Boolean);
+
     const israelActivityCheckbox = document.getElementById("israelActivityCheckbox");
     const israelActivityRefreshBtn = document.getElementById("israelActivityRefreshBtn");
     const israelActivityFilterCheckboxes = [
@@ -2090,6 +2289,45 @@ window.setInterval(() => {
     if (firesRefreshBtn) firesRefreshBtn.addEventListener("click", () => refreshFiresSafe());
     bindFiresUi();
     updateFiresUiStats();
+
+    if (cirIncidentsCheckbox) {
+      cirIncidentsCheckbox.addEventListener("change", (e) => {
+        setCirIncidentsEnabled(e.target.checked);
+      });
+    }
+
+    if (cirRefreshBtn) {
+      cirRefreshBtn.addEventListener("click", () => refreshCirIncidentsSafe());
+    }
+
+    if (cirDaysSelect) {
+      cirDaysSelect.addEventListener("change", () => {
+        if (cirIncidentsController) {
+          cirIncidentsController.setFilters(readCirFiltersFromUi());
+          updateCirUiState();
+        }
+      });
+    }
+
+    if (cirSearchInput) {
+      cirSearchInput.addEventListener("input", () => {
+        if (cirIncidentsController) {
+          cirIncidentsController.setFilters(readCirFiltersFromUi());
+          updateCirUiState();
+        }
+      });
+    }
+
+    cirFilterCheckboxes.forEach((cb) => {
+      cb.addEventListener("change", () => {
+        if (cirIncidentsController) {
+          cirIncidentsController.setFilters(readCirFiltersFromUi());
+          updateCirUiState();
+        }
+      });
+    });
+
+    updateCirUiState();
 
     if (israelActivityCheckbox) {
       israelActivityCheckbox.addEventListener("change", (e) => setIsraelActivityEnabled(e.target.checked));
