@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-12 10:03 UTC",
+    "updated": "2026-07-12 11:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-07-06",
     "period_end": "2026-07-12",
     "total_events": 176,
-    "total_risk": 160.44,
-    "normalized_risk_score": 64.2,
+    "total_risk": 159.99,
+    "normalized_risk_score": 64.0,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 51,
+    "military": 50,
     "security": 3,
     "political": 12,
-    "other": 110
+    "other": 111
   },
   "source_counts": {
     "news": 170,
@@ -27,11 +27,11 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 90.34
+      "risk": 91.74
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.65
+      "risk": 21.25
     },
     {
       "name": "Tehran",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Israel",
-      "risk": 9.05
+      "risk": 9.4
     }
   ],
   "top_events": [
@@ -70,15 +70,6 @@
       "date": "2026-07-12",
       "category": "military",
       "source_type": "news",
-      "title": "Iran launches attacks across the Gulf after more US strikes - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ2pxdWtFSDRQZnYxbGN3V05wYlY2aGlRd3o0SjVTeVUxV3VvVUdyeGotWWZnTjBPMTlCN1IwcmM3ZzlXbTJnTmc2b1FrRXhIXzl4TV9mbVFrTjFObUZPeW9uMUlFVkJnMGgwU1ZReVdxQVJRenBubmVaV2RVOVZ6dmN1QmZhallSeEQ3Y2Zpa2E3aXB5M2FxMS1wVTdpMlJQU2J1U3oxOF9TbERacVpz0gG0AUFVX3lxTE1kT1Vyd1dvUURZOFlqNm42SjB5VkEzOG5UQ0N2bXJJOHA3Yk9nV2dvYnlHcmJnVDU4T2JFMFhVY01BekNSV2lqc0g0U1N6ZzBpVlpnYzVUYkExbFRDZVQySmVpTFZQODAtYm1udHZCSXdVQVNsQWFQNEFvTEJNNVdqU1Q3ZkZLVV9JbWFfcU9hbi1VaGc5bDIyZEU0dUNKVVZPTkk0dVc5VG5hWGlXQzRHLVBEeA"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-12",
-      "category": "military",
-      "source_type": "news",
       "title": "Missiles and drones fired at Gulf states after night of US strikes on Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQ1BueGpGZTB1RHB3czg0SjUycDRQbmp4NWJTb3RQdE43NkNWWUlmbm9SdGJOTXRuTlhWbTVZeDRhVHg4Ykd2blBfZDdWS2FsQWxOZXJkdHEyTm5jSlQ5U1ZDX3dRSVN6aVg2RDZKVk53WW0tZlZ4NUFDbkFLVER1eHU4bjhnam5jYUJuSFc4OEwwU19YUldRWmFyMVlpZ1BsVkJOTHVZZVJpRExhalVJVTVtcWR1Z9IBuwFBVV95cUxNQmpTY21EcXRXV1pSUGhxYU1kZ25aRlE0TzRidVJWV3pLaFQzOXkxbEdLcW13c2lGUzFzcnhnYm9mNHNjVktJNTA5dDRrN040blprM3VEamgzb3JjaVdXMDJzTVpaemc3Vmg3QkxoMXdpNEhQREZscmpCMTVVSUp6SmVXMS0yTGZXVjJySFRxRHR3VE83NHZ3WnliRGRnVEFXTjZrelNrYmR0Tldjc0FYWkltSmxtY1JLQkcw"
@@ -88,9 +79,18 @@
       "date": "2026-07-12",
       "category": "military",
       "source_type": "news",
-      "title": "US forces launch new strikes on Iran; Tehran closes Strait of Hormuz - Al Jazeera",
-      "location": "Tehran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWkFyZDBTeDMzM3B3Sm85MkJ4MDJveWVKX3NuZnlBNUJRcklGWmphQ2hDa3JuNUpOcjZ3R1EzX0FlZ0FKNThoXy1oU0FQZDhreEtlRlA2T0RaQm9kYU94Vkh5eVRiTVR3OHRNb1lnc2hMY3JGUDlPTV9sckxUOF9RaXVNcnAxQUk5MmthTjVPWTJiM2MtbjcyZ0JFLXlQMWlPNTM0RXh5TGowdUVOalVTejAweVZzR1dsQXfSAb8BQVVfeXFMT1hVM2xFbGkxN0h0RjlhSHpOdlhwdlhXWEdYNVRWQVVPT3dZVjhPOU5NTmtkdEhCakh6eEw0ZkV0QkdpMnJMUFR1bUtkeWo4UnZZY0t3YVRiaEhyNmtmdjBTeFR3Z1ppX01ZUU9TRmNYWEtCaTlrdXcwZFFPYzRTQU4tYXNnVzVUdkFsUXFtNTRwN2Vnbmo2VU1odk5IMDY0YU1sRVJhenhvUElSQXhWZTBFMzM1SzlWcExESGFIZkU"
+      "title": "Iran launches attacks across the Gulf after more US strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ2pxdWtFSDRQZnYxbGN3V05wYlY2aGlRd3o0SjVTeVUxV3VvVUdyeGotWWZnTjBPMTlCN1IwcmM3ZzlXbTJnTmc2b1FrRXhIXzl4TV9mbVFrTjFObUZPeW9uMUlFVkJnMGgwU1ZReVdxQVJRenBubmVaV2RVOVZ6dmN1QmZhallSeEQ3Y2Zpa2E3aXB5M2FxMS1wVTdpMlJQU2J1U3oxOF9TbERacVpz0gG0AUFVX3lxTE1kT1Vyd1dvUURZOFlqNm42SjB5VkEzOG5UQ0N2bXJJOHA3Yk9nV2dvYnlHcmJnVDU4T2JFMFhVY01BekNSV2lqc0g0U1N6ZzBpVlpnYzVUYkExbFRDZVQySmVpTFZQODAtYm1udHZCSXdVQVNsQWFQNEFvTEJNNVdqU1Q3ZkZLVV9JbWFfcU9hbi1VaGc5bDIyZEU0dUNKVVZPTkk0dVc5VG5hWGlXQzRHLVBEeA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attacks five Gulf nations, shuts Hormuz after US bombing: All to know - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYjhJbnhrSGdFY20wRFRnMy1DZVhObENaZlJYTHdtNC1qZWVCMk5uTEMtb0c2YkZOaUs5RHR5eWk2eHhuSFdwX2dHUU5FMnhSRzdzM2xJeG8yRHdubGFFdWxuLUJiZW55QUh3Tm12aTNhSVcya0pkeThXcDN3MURHZXNXdklFMTlGSWhDcHpWanV2OE5iLTdIMU5oYlZfOWo0UFFCTXd4Sm9OSy1DVUx4QzJBQdIBuAFBVV95cUxOb2Y4amh0V0tremRhSnNrZTJiSm5mdHBDQVQ3TzBIMVA3WFBqVnpLQkpYTGkwX3RRT04wNC1WcUFRQzd4eEdLd0wxc3ZoWDdJS3psQnZEM1lfaWJLaEMtN0JGVFRyOWRHbU1VaHRhb3U3ZDRpRUNTZmJqQ2N6NGgwbWFfX3RhSFU0ZUpQRVplMWNNVW5QTWVLQ2hDa0VVdXhQLTNxMEU3bWpqcjBkdWFwVDJUNmhYWlRw"
     },
     {
       "score": 3.0,
@@ -100,6 +100,15 @@
       "title": "US CENTCOM completes third round of strikes on Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZjRnaEllYzhjUktLUzNHMTFkb3FBamgxeFRJeHVpellBZHJHYzNTSnFpVkp5cDhibnNBeENkYmtnOXZHX0xSSFN6RGdRMXlON2FybUVBNndYU2gzNUtPN0NTemFxMEc3UWgzOEt0Q2dubWttVWt4VzBldXlfRlFYMEZGRW9xbjRXRFFxaHcwVW5LVDk2aHAzb3YwaWxHemRBRDJET9IBqgFBVV95cUxPRWd1YmdaaldtU1RkZVJIcW5PVVRuZWtpU2dPWVlqVTB2WVhCWnRhSkZoaFJjVWUyeDZRdUQ3anhQNkNxUXhSdlRoQklLZ2YtWUlaSnBJNW84TU9pOGVwRlYxeFJUUGRnQVhkUjNpVEh6c3NVamVXR2RVcmpRQlNCMGgwZzN5TzVnSl92NVl6SnNjMldydC1COTF3THlfMHlGOHpPaEt0YzFFUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "US forces launch new strikes on Iran; Tehran closes Strait of Hormuz - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWkFyZDBTeDMzM3B3Sm85MkJ4MDJveWVKX3NuZnlBNUJRcklGWmphQ2hDa3JuNUpOcjZ3R1EzX0FlZ0FKNThoXy1oU0FQZDhreEtlRlA2T0RaQm9kYU94Vkh5eVRiTVR3OHRNb1lnc2hMY3JGUDlPTV9sckxUOF9RaXVNcnAxQUk5MmthTjVPWTJiM2MtbjcyZ0JFLXlQMWlPNTM0RXh5TGowdUVOalVTejAweVZzR1dsQXfSAb8BQVVfeXFMT1hVM2xFbGkxN0h0RjlhSHpOdlhwdlhXWEdYNVRWQVVPT3dZVjhPOU5NTmtkdEhCakh6eEw0ZkV0QkdpMnJMUFR1bUtkeWo4UnZZY0t3YVRiaEhyNmtmdjBTeFR3Z1ppX01ZUU9TRmNYWEtCaTlrdXcwZFFPYzRTQU4tYXNnVzVUdkFsUXFtNTRwN2Vnbmo2VU1odk5IMDY0YU1sRVJhenhvUElSQXhWZTBFMzM1SzlWcExESGFIZkU"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Power cuts plunge Gaza hospitals into darkness as Israel’s attacks persist - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd09uQlNFNnhRSDY5RVgtMWhTTTBXaml6YzNNbW5yRHZ2ODRjR3dWMkZSdFBseUZ3ZXNqLWh1YnNtelN5TEVZQ05idGJxQkk0X3RuNllGNG5qVnhVQV9KcGdPM3c3S3UzRVBXcFN3TzRIYzdyajZkNzRRWjlTVVdHaW1BTTNSSTQ0NUpNcFhaWHVBcXJXTTdyeXJjWV9sUUwwclNDSXdBSFNjVjVBUEpwSG1RQTdfRlRNMWfSAb8BQVVfeXFMTjRVTXF0S2RlZEhvYnBjbDNTLUhGWVh2VGRLclZVZWFrOUlvandULVFpejg0VWV2SzUwbzZpN2Fad0hnTEVzZ19kMEItTU5zR1NGbVpWMk43eEZkczkycFBJTE1uOG9uMFpxYklXSV9acEpsNVktTVVHOEpzeXhMWFhGSmFDdXJvLUY5OFN5eFJSSjVMQVBqekFtRTZWaGd0cU1KYVhpUGNEX2xJV2VCVkZvU2l4SkVyczN1MGYwNGs"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "US insists Iran commit to stopping attacks in Hormuz strait, say US officials - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTDI4WnJQY1UzQVd1QjZQMXRFUkM2SHdzNV9EYmd2cTQ2a1h3cTN0NTlza0JSMWFlbFhibmY0SnVRSHU0U2ZsRGpoMEhMamd5RXNZUXZRVUJRQnVzVGhtajFJbHdXSUtjNy1iOGpTODU3dG5YLUphaGlYRDRXLUZSdXF2U3laZDhaeTVvalFJbjlGOGJYaTFFdnRuMUJmZXE3U1Z0LTRxaUtiNTNnQnQ2bGdDZEVhUzV4OHdBVlBTSVVBdw"
     }
   ]
 }
