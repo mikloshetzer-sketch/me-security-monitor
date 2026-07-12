@@ -77,12 +77,26 @@
       return current;
     }
 
+    function isPlaceholderCoordinate(lat, lon) {
+      // The source uses 0,0 as a missing-coordinate placeholder.
+      return Math.abs(lat) < 0.0001 && Math.abs(lon) < 0.0001;
+    }
+
     function validWorld(lat, lon) {
-      return Number.isFinite(lat) && Number.isFinite(lon) && lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
+      return (
+        Number.isFinite(lat) &&
+        Number.isFinite(lon) &&
+        lat >= -90 &&
+        lat <= 90 &&
+        lon >= -180 &&
+        lon <= 180 &&
+        !isPlaceholderCoordinate(lat, lon)
+      );
     }
 
     function validRegion(lat, lon) {
-      return validWorld(lat, lon) && lat >= 10 && lat <= 45 && lon >= 20 && lon <= 75;
+      // Broad operational area: Eastern Mediterranean, Middle East and Gulf.
+      return validWorld(lat, lon) && lat >= 8 && lat <= 48 && lon >= 15 && lon <= 82;
     }
 
     function coordinateCandidates(event) {
@@ -138,9 +152,10 @@
 
     function getEventLatLng(event) {
       const candidates = coordinateCandidates(event);
-      return candidates.find((item) => validRegion(item.lat, item.lon)) ||
-        candidates.find((item) => validWorld(item.lat, item.lon)) ||
-        null;
+
+      // IranStrike is a regional source. Do not fall back to arbitrary
+      // world coordinates because missing positions are often encoded as 0,0.
+      return candidates.find((item) => validRegion(item.lat, item.lon)) || null;
     }
 
     function parseDate(value) {
@@ -323,6 +338,7 @@
         loaded: events.length,
         filtered: events.filter(eventMatches).length,
         coordinateUsable: usable.length,
+        rejectedCoordinates: events.filter(eventMatches).length - usable.length,
         markersOnLayer: markerLayer.getLayers().length,
         markerLayerOnMap: map.hasLayer(markerLayer),
         displayMode,
