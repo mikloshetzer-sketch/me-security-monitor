@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-12 03:58 UTC",
+    "updated": "2026-07-12 06:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-06",
     "period_end": "2026-07-12",
-    "total_events": 166,
-    "total_risk": 142.84,
-    "normalized_risk_score": 57.1,
+    "total_events": 171,
+    "total_risk": 147.79,
+    "normalized_risk_score": 59.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 46,
     "security": 3,
-    "political": 11,
-    "other": 106
+    "political": 12,
+    "other": 110
   },
   "source_counts": {
-    "news": 160,
+    "news": 165,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 81.89
+      "risk": 81.74
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.5
-    },
-    {
-      "name": "Damascus",
-      "risk": 10.1
-    },
-    {
-      "name": "Israel",
-      "risk": 9.05
+      "risk": 21.65
     },
     {
       "name": "Tehran",
-      "risk": 6.75
+      "risk": 9.75
+    },
+    {
+      "name": "Israel",
+      "risk": 8.85
+    },
+    {
+      "name": "Damascus",
+      "risk": 8.6
     }
   ],
   "top_events": [
@@ -66,6 +66,24 @@
       "url": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss"
     },
     {
+      "score": 3.0,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran launches attacks across the Gulf after more US strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ2pxdWtFSDRQZnYxbGN3V05wYlY2aGlRd3o0SjVTeVUxV3VvVUdyeGotWWZnTjBPMTlCN1IwcmM3ZzlXbTJnTmc2b1FrRXhIXzl4TV9mbVFrTjFObUZPeW9uMUlFVkJnMGgwU1ZReVdxQVJRenBubmVaV2RVOVZ6dmN1QmZhallSeEQ3Y2Zpa2E3aXB5M2FxMS1wVTdpMlJQU2J1U3oxOF9TbERacVpz0gG0AUFVX3lxTE1kT1Vyd1dvUURZOFlqNm42SjB5VkEzOG5UQ0N2bXJJOHA3Yk9nV2dvYnlHcmJnVDU4T2JFMFhVY01BekNSV2lqc0g0U1N6ZzBpVlpnYzVUYkExbFRDZVQySmVpTFZQODAtYm1udHZCSXdVQVNsQWFQNEFvTEJNNVdqU1Q3ZkZLVV9JbWFfcU9hbi1VaGc5bDIyZEU0dUNKVVZPTkk0dVc5VG5hWGlXQzRHLVBEeA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "US forces launch new strikes on Iran; Tehran closes Strait of Hormuz - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWkFyZDBTeDMzM3B3Sm85MkJ4MDJveWVKX3NuZnlBNUJRcklGWmphQ2hDa3JuNUpOcjZ3R1EzX0FlZ0FKNThoXy1oU0FQZDhreEtlRlA2T0RaQm9kYU94Vkh5eVRiTVR3OHRNb1lnc2hMY3JGUDlPTV9sckxUOF9RaXVNcnAxQUk5MmthTjVPWTJiM2MtbjcyZ0JFLXlQMWlPNTM0RXh5TGowdUVOalVTejAweVZzR1dsQXfSAb8BQVVfeXFMT1hVM2xFbGkxN0h0RjlhSHpOdlhwdlhXWEdYNVRWQVVPT3dZVjhPOU5NTmtkdEhCakh6eEw0ZkV0QkdpMnJMUFR1bUtkeWo4UnZZY0t3YVRiaEhyNmtmdjBTeFR3Z1ppX01ZUU9TRmNYWEtCaTlrdXcwZFFPYzRTQU4tYXNnVzVUdkFsUXFtNTRwN2Vnbmo2VU1odk5IMDY0YU1sRVJhenhvUElSQXhWZTBFMzM1SzlWcExESGFIZkU"
+    },
+    {
       "score": 2.7,
       "date": "2026-07-11",
       "category": "military",
@@ -73,15 +91,6 @@
       "title": "Trump says missiles aimed at Iran if Tehran targets US president - Reuters",
       "location": "Tehran",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTzc3RWxTLVZuRllmY19VQ244ZjcxcjY2TVRNWnh1WkI1ck5qUkFyMzBZNTZTYUZqbTVRSmc4V3BqMl9zY21GdnJmSGU0OTNRd0Q4ekxDMnlGQ0I1UEJScFZhUGZoZ1A1aEdZTWRYZ0FGazJ3aXpJd2Zad044SzhMWXFETXRmQnBvTnMxSjhzdXVjZnp1YmRkNWJlVWdqWWdFdnRKeHlrOFQtdjZqRk9mMFhMbFFHUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches more strikes on Iran after commercial ship struck in Strait of Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaWNfWDBGeUlZdnVYdk9zTTBTa05FcHZQZ2NTaE14ZU9SUFRKcDgyamdEaUFjVi1ycHRuaEdaV2cwU3FSWjZqb3BzNXBvMmdobFNvejdtRGo0QUk3emV4alhETFNOcWgyQUg0MnFDVF9mSHRuM3R0Zng3ZnNWUDlqajlyWndRaHk2dkdycXVNdFA0S21RYk5YRElCTVBQZjloVEF2bU5ZTEl6bDFabTdCWWVSdw"
     },
     {
       "score": 2.7,
@@ -124,18 +133,9 @@
       "date": "2026-07-10",
       "category": "military",
       "source_type": "news",
-      "title": "Lebanon historic sites destroyed by Israeli strikes - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQU0VHLXNYdFNCb0RJdzRPRFJCRFpkU19VbEs2akEzbmV3NmxfODFLWENOakEwb09Pb0xQRE94TjFSSzR6Y1NYS2ZYUXJUbU5RY3ZJOG5oeDhzUUd1QmRGSFVNTXFOYTNJbWtKUFdhYXcxNnc1UFdtVE44YWtpUmxMLXRFdXVZdlJrM1ZtOGhrMUxjNTBTd1VlMtIBngFBVV95cUxNYmpGaUFuX1ZSVk4yTlVWdGdFQk1rOGxJV3BNbk0xdUV4ZU00WFVhVlRZQmpIeldkVTZvS2RzcVlBYW05amxHOEhVcEFIX0tFaXlxTHhZV3FKT2hNLTEySmxtbWtCYzFRb3JxSmQ4RUhlTm12ZS1BSVA4bUxHdzNYQ3dSM243M2JJQktVS1d0UW5RQU1VbVVDUXZNb2Fpdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bomb attacks rattle Damascus but for most Syrians, life goes on - Al Jazeera",
-      "location": "Damascus",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbVhncE9Xb1k4SWVZbndNSm0yVENiTHlDdGtlaTZKb01PbnRDc1h4ZW43Q3o3bkdFd1JtSEstN2t0MkhjNUJYNEw4MXJSVk1XU0h2azgxVUtoUTM3a0tPUXF0Q016ZzR6OVAzbGYyUm5SZTJyWmkyaDBSYUhlNFotS2JSS3JZVnZlM0toUHZzdTJiT21JWHdsTmFLVUptZ0pCRVBPVlgwVkZiMG_SAbABQVVfeXFMT0EzaUQxbF9WSWR6eW5iWnVKZjVSUkthZjBoQXBvZlJybHVwQUFKbmN6TlMxWjk0SlVnbHQxWHRpTDFxZGdyd1E2SFlrNnhybWZlSmZsLTJSUmxiYTlINFFVUk1rTEJhd2RPcFhCc3JVSWR3Z0FudUZLR2FMcHhYSzdTUERIQXBXRTExUDJlZXN6XzlZclRMUGd3dFJZaXIwVDJLajN6MkxrYmk0eVYxaVQ"
+      "title": "Kremlin says Russia is in touch with Turkey on fate of Russian S-400 missiles - Reuters",
+      "location": "Turkey",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMEthVDdGM0cyb0p2am5ackVQbkFKckJRWXhDdGsxM2t5UFFhOGpMdkZEcUg0Z2NmWnR2X01OU3JaZGFteXF1SE5rTXFxU1JJWEF1MEdoSXRScFkzQTBhbzh6ZXRzRnZqakRjaWd6bldQeUdIR1V0TmItZnN4azViYnl4WTBMVi0xTmU0R3dXMll1bTJvbm0xd0VQQXEtSXYtc2EwSC02eDdfNmVvOUJj"
     }
   ]
 }
