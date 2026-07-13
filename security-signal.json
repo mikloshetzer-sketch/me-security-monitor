@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-13 11:29 UTC",
+    "updated": "2026-07-13 15:12 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-07",
     "period_end": "2026-07-13",
-    "total_events": 169,
-    "total_risk": 180.86,
-    "normalized_risk_score": 72.3,
+    "total_events": 168,
+    "total_risk": 178.11,
+    "normalized_risk_score": 71.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 61,
-    "security": 1,
-    "political": 11,
+    "military": 57,
+    "security": 2,
+    "political": 13,
     "other": 96
   },
   "source_counts": {
-    "news": 163,
+    "news": 162,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 117.51
+      "risk": 115.41
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.75
+      "risk": 20.3
     },
     {
       "name": "Israel",
-      "risk": 11.15
-    },
-    {
-      "name": "Tehran",
-      "risk": 6.8
+      "risk": 12.55
     },
     {
       "name": "Damascus",
       "risk": 6.6
+    },
+    {
+      "name": "Tehran",
+      "risk": 4.1
     }
   ],
   "top_events": [
@@ -61,7 +61,7 @@
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
-      "title": "Iran widens attacks on US bases in Gulf, Hormuz tensions lift oil prices - Reuters",
+      "title": "US and Iran trade attacks as Strait of Hormuz dispute deepens - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMG0wMGZybUNSMnZyOWQzck1Eb0JwcFdfWUVXNlBYbk10c3VveDRrdzVpYVJhNjdwdUdnR1ZMZDhVTXdnWE41M09iZnZwUmJzbEpsX2V0Q2xDWmdHVjZGRkxtRmVsOFU2OWM3aGsyUGljckNVb1F1WlpmMk5GQVE4S0Q4QXJQYlI4V1hZSktORXBZYm1YXzNsQUYwQ2dOSUJtSTJrNmpvR3M5Q2szcXYzWENxeGFIbnRHS0lhaXdnN3FFcnM"
     },
@@ -70,9 +70,18 @@
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
-      "title": "Hormuz traffic slows to multi-week low as renewed US, Iran strikes raise safety risk - Reuters",
+      "title": "Hormuz traffic slows to two-month low as renewed US, Iran strikes raise safety risk - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVVJyVWNDbGpUSGtYdm1NUzhqZmpSVFp2SnEtS0N4VzBJZnJTeDZ5X21NN0I4SGJ6V2lYZDBLM3FvSkNTbFRNTkkxWlhtNjRqakpmRGotN3lub0RMZkxmOUlWSUU4WEdBVUZrU09lNzl2d0xMT09aVEw3aU5KNkJaZmpEYlllTTZfMl9ULXg4cDBHZkd4MVJ4OEo0SzNwYkxRUjIta0tONkVJb2puQnhNN0g1WTQwcjZaX0ZYZG85dnZWT0pyUHZFbUY2TQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "London's FTSE 100 muted as Iran escalates strikes on US bases - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONV9YYXpONTBaSkVUYjBPdUhqYmRVMTJ1Y3lnaVI2eVN4TElWVVM3dWJTVENqT1MyVVZGUkRYTEdVZnYwdklDYnRxNHZPaGpzdzdyTlZFcmstZ0J6dU9PR0Q1R21aYWNlLURuMTlfSHF6eVZTOXRsMDAtX0k5WmNTaVhjazlLUU1CZDlSOGJJek12ZG9PdHZtbE12YjhyalR4"
     },
     {
       "score": 3.0,
@@ -88,18 +97,18 @@
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices jump as US and Iran trade attacks over Strait of Hormuz - Al Jazeera",
+      "title": "US and Iran trade strikes as ceasefire comes under growing strain - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVXpPQW5PT21veE5mSm1GdHRGSUd6UlNmZl9VbnluTWZmUE00UURUN3dIcFVJc0IwZ3pjRUY3UFk0ZzQ3QWJvOTVKMFIyMHZsUnpMRHI5eWllRllfVGtsYzhDN0t4QlZUN0tGaGtTQXhMRG9tN0YyZTRGaV84bjRPR1E4M2VwbHdMZDJaYURWeEJTRUxqR090SGNkcWdQeVhUY3lBbk13aExiX3pNMEFv0gG0AUFVX3lxTE80Z3RnTk1BTHFySjc4N3ZmYXkyQkdEOTdNTlBNRTdhT0xadFk2d05FYUpvc0dsOENwN0hRdE5MZml1d0RpMGxwd0dxaGhlVktyQ3Z5V2RaM0ZkNWs3VHBOS05YQ3V2djNoOHNPT1NLc216RmtiM1Q2WVNjbGl3aktBRUxxRjVneHpXTTZmOWlmSUZMTEpaODBfQnA1eUNmcWQtZ2xYd1BFcV9YU2pROHJOTF9Haw"
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYUtxZk1FTFlROHBiTndTZzRxdnlpcHFLNzBUTTJWczRHMVh2UWRSVi1sUnpTYUw3Z2FScVRnQ0FIWUVXVm16WjRzN2Zybmo5OEctbjk3QUVYQzVUVkl2VnFDeHNkY0ZfZExmcFBPVGdvT2c0VmhFWHF6ZHB4bnF6YTh4SnBWaVA0R1BVRXFuMGJON0lSOEpTN3ZwNC1tQjJKUUNXSzRFYXhWd9IBrwFBVV95cUxPZ2lnZG14b2VKdldrTVY5Y3NnU2RpMzgtNExhMVQyTTFJT0JHeFZmeG5UclprZGRYMncxbjJXSExzam9iQ05xVWswaTBzcWxwRXNCeldzWjc4ODc2NE5ha3NIZWxkZFBsZXRNZ0NUaWcxbDJ3SDRMek16VGoySk9NcDNxTnQ1eUxnTHdhZW5sRU80dXpMNHB3MWp1TTRmVnVMdS1EaHVlanF0a1BNZUNV"
     },
     {
       "score": 3.0,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
-      "title": "US and Iran trade strikes as ceasefire comes under growing strain - Al Jazeera",
+      "title": "Oil prices jump as US and Iran trade attacks over Strait of Hormuz - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYUtxZk1FTFlROHBiTndTZzRxdnlpcHFLNzBUTTJWczRHMVh2UWRSVi1sUnpTYUw3Z2FScVRnQ0FIWUVXVm16WjRzN2Zybmo5OEctbjk3QUVYQzVUVkl2VnFDeHNkY0ZfZExmcFBPVGdvT2c0VmhFWHF6ZHB4bnF6YTh4SnBWaVA0R1BVRXFuMGJON0lSOEpTN3ZwNC1tQjJKUUNXSzRFYXhWd9IBrwFBVV95cUxPZ2lnZG14b2VKdldrTVY5Y3NnU2RpMzgtNExhMVQyTTFJT0JHeFZmeG5UclprZGRYMncxbjJXSExzam9iQ05xVWswaTBzcWxwRXNCeldzWjc4ODc2NE5ha3NIZWxkZFBsZXRNZ0NUaWcxbDJ3SDRMek16VGoySk9NcDNxTnQ1eUxnTHdhZW5sRU80dXpMNHB3MWp1TTRmVnVMdS1EaHVlanF0a1BNZUNV"
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVXpPQW5PT21veE5mSm1GdHRGSUd6UlNmZl9VbnluTWZmUE00UURUN3dIcFVJc0IwZ3pjRUY3UFk0ZzQ3QWJvOTVKMFIyMHZsUnpMRHI5eWllRllfVGtsYzhDN0t4QlZUN0tGaGtTQXhMRG9tN0YyZTRGaV84bjRPR1E4M2VwbHdMZDJaYURWeEJTRUxqR090SGNkcWdQeVhUY3lBbk13aExiX3pNMEFv0gG0AUFVX3lxTE80Z3RnTk1BTHFySjc4N3ZmYXkyQkdEOTdNTlBNRTdhT0xadFk2d05FYUpvc0dsOENwN0hRdE5MZml1d0RpMGxwd0dxaGhlVktyQ3Z5V2RaM0ZkNWs3VHBOS05YQ3V2djNoOHNPT1NLc216RmtiM1Q2WVNjbGl3aktBRUxxRjVneHpXTTZmOWlmSUZMTEpaODBfQnA1eUNmcWQtZ2xYd1BFcV9YU2pROHJOTF9Haw"
     },
     {
       "score": 3.0,
@@ -118,15 +127,6 @@
       "title": "New Iran strikes on Gulf as US attacks escalate: What we know - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc2NiQUlwTDQ0aURjZFVXYUlkSlJoNC13SDhmNGE0TVBQRWcza3BORFdyY2F5d0cxZU41X3dma1dxUXdSOFI0YncyRzZ4YkZESXVwTWJsUS1Wb0ZUeGRRblhpU0M2OENuNlY1R3A2NUV1Sm9McFh6bU4yMEk5UmlTNmJlV09tam9NX3U3cFFZa2RBWkJMUWtqZGJ4U0dpS18xVVpB0gGoAUFVX3lxTE50S0RpWlVOT3I3a1diNm1EUk5lV0pQdThPZjNGLXhnOFNBR1Q3ZnVmcGxYc1dKcXJqZDl3M0ZJQk5acVJzbUJ6Z2hhelF3OFRfYzlRWERKaFJETE55LTFsNkxoRlp1NjRJenlWVXZYbG8xTm12YXZiZnNjRWxCV0R6S0RScllrNG1BdTlLczlYcGJaQmE0MmtIZ05XcEp2RGRKejYycnNPYQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches more strikes on Iran as Strait of Hormuz standoff deepens - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUERoNERlUmhmZkFzZnVDVkpiakF6NnNXQ2MwMDlfN21MUkYzMWlNenZ0OExOVFlOOHBQZzRjNVR3NFFUREFXV2R5NWs2aVNXQVdBWFFITUdibnJFYUhzc2pFZDJucG9rbHROVk84NnJCRlFkNjRQbjlEdjY4UktZSzhtd0hlYndzQjVKTG1GRjdmdDRLZkZXazEtbDU3TFZLNVk40gGoAUFVX3lxTE02OUxnejNEUVMwVWlhVUdYY3o4c0lOZmtCUTZxNDB2TlRHUkRWREs3aUtBcGRkMF9NcE16QnhreVk2aW5hYlpEVEIwQmZqWWwxaHdwdnFScTFFYXdtcUV4SmRpRk9WQ0I3c2N2dE9NNF9nRjNNYkcwbXBiSnYxU0FDdFFtYkhWOUdhd09rLUtmd1REM2daQnRFY2htS0hjNjN1dXJCWGpqNg"
     },
     {
       "score": 2.7,
