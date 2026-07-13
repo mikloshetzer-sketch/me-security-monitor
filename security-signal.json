@@ -1,63 +1,81 @@
 {
   "meta": {
-    "updated": "2026-07-12 19:32 UTC",
+    "updated": "2026-07-13 04:01 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-07-06",
-    "period_end": "2026-07-12",
-    "total_events": 174,
-    "total_risk": 170.2,
-    "normalized_risk_score": 68.1,
+    "period_start": "2026-07-07",
+    "period_end": "2026-07-13",
+    "total_events": 168,
+    "total_risk": 160.46,
+    "normalized_risk_score": 64.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 51,
-    "security": 3,
+    "military": 55,
+    "security": 1,
     "political": 13,
-    "other": 107
+    "other": 99
   },
   "source_counts": {
-    "news": 168,
+    "news": 162,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 96.89
+      "risk": 97.76
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.85
+      "risk": 18.2
     },
     {
       "name": "Israel",
-      "risk": 12.75
+      "risk": 10.0
     },
     {
       "name": "Tehran",
-      "risk": 9.75
+      "risk": 8.3
     },
     {
       "name": "Damascus",
-      "risk": 9.35
+      "risk": 7.8
     }
   ],
   "top_events": [
     {
       "score": 3.0,
-      "date": "2026-07-12",
+      "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
-      "title": "Iran's IRNA says 'enemy' launches missiles towards Qeshm Island - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcFNWV2l4NHpONDVaQ0VPNVczX3ZhaHJHS08ycWJvWDhabVJlZDZrQU5rSDZ0bGRNZXhudFVxSDkzQnNoSTZqWkRXd0RrSWNEVGpHMzBVS2J5ZlZXZ0RPeG93ZWF2QjJWY05oV2FlVlFTODJ3dmJOSnVVOFlJSHFLUzdfYXVhY0NDOEdOVXctakZucmJZLUoxVFhuSk9qRGxPX2lMT3lmenA5LXdmTUpaSVhGcTg"
+      "title": "Dollar jumps on renewed Middle East attacks, Hormuz closure - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVjVMa3FGTU1NQ1pSWXVaRllPTTBLc0xYR1dlQS1URUdySXZOb1ZaT3RxUFNlUmo4djVDcTNrWVpNOUFsNnpkcW5nWFJyZWlKamtvMlppZkYyTUpLeFBGc1dYUHYtcTNSTjk2aVhDSjI2OUV0MU81eDBsMUNaRGxiZHQ2SzUzRTBsd290RGZRTWl0NUZ0Mi1LVnBsMVMzSWlqNVJUeEJQQVp4cTRUUGhj"
     },
     {
       "score": 3.0,
+      "date": "2026-07-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices jump as US and Iran trade attacks over Strait of Hormuz - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVXpPQW5PT21veE5mSm1GdHRGSUd6UlNmZl9VbnluTWZmUE00UURUN3dIcFVJc0IwZ3pjRUY3UFk0ZzQ3QWJvOTVKMFIyMHZsUnpMRHI5eWllRllfVGtsYzhDN0t4QlZUN0tGaGtTQXhMRG9tN0YyZTRGaV84bjRPR1E4M2VwbHdMZDJaYURWeEJTRUxqR090SGNkcWdQeVhUY3lBbk13aExiX3pNMEFv0gG0AUFVX3lxTE80Z3RnTk1BTHFySjc4N3ZmYXkyQkdEOTdNTlBNRTdhT0xadFk2d05FYUpvc0dsOENwN0hRdE5MZml1d0RpMGxwd0dxaGhlVktyQ3Z5V2RaM0ZkNWs3VHBOS05YQ3V2djNoOHNPT1NLc216RmtiM1Q2WVNjbGl3aktBRUxxRjVneHpXTTZmOWlmSUZMTEpaODBfQnA1eUNmcWQtZ2xYd1BFcV9YU2pROHJOTF9Haw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches more strikes on Iran as Strait of Hormuz standoff deepens - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUERoNERlUmhmZkFzZnVDVkpiakF6NnNXQ2MwMDlfN21MUkYzMWlNenZ0OExOVFlOOHBQZzRjNVR3NFFUREFXV2R5NWs2aVNXQVdBWFFITUdibnJFYUhzc2pFZDJucG9rbHROVk84NnJCRlFkNjRQbjlEdjY4UktZSzhtd0hlYndzQjVKTG1GRjdmdDRLZkZXazEtbDU3TFZLNVk40gGoAUFVX3lxTE02OUxnejNEUVMwVWlhVUdYY3o4c0lOZmtCUTZxNDB2TlRHUkRWREs3aUtBcGRkMF9NcE16QnhreVk2aW5hYlpEVEIwQmZqWWwxaHdwdnFScTFFYXdtcUV4SmRpRk9WQ0I3c2N2dE9NNF9nRjNNYkcwbXBiSnYxU0FDdFFtYkhWOUdhd09rLUtmd1REM2daQnRFY2htS0hjNjN1dXJCWGpqNg"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-12",
       "category": "military",
       "source_type": "news",
@@ -66,16 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNdW16M2JEMFgyMlEyUVJHNW00cVhNVk9zaG5GLVNWMW5aY2c3bjRjRE1kaTBSdHBabHVJWUxibzl0OGpMT29Bek5xa0Y4cmc5RV80SzEwbk9CY0RjUG5WNFdyUVQ1WUJVc3A0RVVWa1VIWnhnWnNzckZYUlEzdXIybGttcDFjRW52eUl1aUNDRmJQdVNNNThfWU1fLXhJd2VBb2lxUE5TTTV6R2Etdk00LXlBUzRKcHI3WlE"
     },
     {
-      "score": 3.0,
-      "date": "2026-07-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "US says it launched strikes against Iran after attack on Cyprus-flagged container ship - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOaVlDWEtfWEhnNkZzeE9nRTlmaHlPRUlBQU9MRXZjb0MwM2lIdUUxVkt1V1ZIUDJzeGkzQXRtaEkxc09nQWhUN0VOZnN5NVlpLUF1UGt1UXZ4NmhjdzJ1UjJ1dFdsV081TXNoLWwwNFhjLTNXcVVfTFZET1l4SjVPNHNfMlhrclZhZzZFQ2FReUU0bEtLSHlGVjJLeFczQjRabHpyejB6eng3ajlnRWdHX29IVElRMU1VUFJ5bGJkblFqUjYtZl9fVy1QZDU"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-12",
       "category": "military",
       "source_type": "news",
@@ -84,58 +93,49 @@
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVlFEMTBmd3hvZzZpVnBYcnNnUlBnQW9DRlkydFVqUTM0S3I2emo0TDczX3NJSGNHdXJqZGJreUhDRDhoYnNUck9vRGVpWEVtMGNnNElfY1lzR0NZakdlSWtTZEExQ2YyWFFKWTNhLXpwbk9HRkF6VGs4V0pLTDRRT013Z3dvc1hZVWthV0x6MzFneHlxei1LZWg5NVNKUE1oV2pfTUNlbkIwNU1tVU14MmhXc1Z2VmNNZnR5Q2thYjFDMWRyaUNJbw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-12",
       "category": "military",
       "source_type": "news",
-      "title": "One Indian national missing after attack on vessel off Oman, foreign ministry says - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVWJXSGd0QTVpY0Q3ZDBxWndCTGNGOTRoSkZmYWxOUTRfdTZ4Z2lXN2FzRWJ1cjlZSnZURFBGNFJOenpWZ2dkZWNJNUdybXlZN1BQS0xDMmNhZ1dCYXIwVTNudEZvME1rUlNPLS1EMXVPamlSbzV4Z1BWYXNFQXhlNlQ2MGQ3NXFxd0dfUTd4NHptemJLdlg4ZlktMl9pd1JkQnp2YUZSQWgwQjlDNWJCWTIwYnE0aC1fRk05aFI1Y3lLRTZ4"
+      "title": "Iran's IRNA says 'enemy' launches missiles towards Qeshm Island - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcFNWV2l4NHpONDVaQ0VPNVczX3ZhaHJHS08ycWJvWDhabVJlZDZrQU5rSDZ0bGRNZXhudFVxSDkzQnNoSTZqWkRXd0RrSWNEVGpHMzBVS2J5ZlZXZ0RPeG93ZWF2QjJWY05oV2FlVlFTODJ3dmJOSnVVOFlJSHFLUzdfYXVhY0NDOEdOVXctakZucmJZLUoxVFhuSk9qRGxPX2lMT3lmenA5LXdmTUpaSVhGcTg"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "US says it launched strikes against Iran after attack on Cyprus-flagged container ship - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOaVlDWEtfWEhnNkZzeE9nRTlmaHlPRUlBQU9MRXZjb0MwM2lIdUUxVkt1V1ZIUDJzeGkzQXRtaEkxc09nQWhUN0VOZnN5NVlpLUF1UGt1UXZ4NmhjdzJ1UjJ1dFdsV081TXNoLWwwNFhjLTNXcVVfTFZET1l4SjVPNHNfMlhrclZhZzZFQ2FReUU0bEtLSHlGVjJLeFczQjRabHpyejB6eng3ajlnRWdHX29IVElRMU1VUFJ5bGJkblFqUjYtZl9fVy1QZDU"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gulf bourses subdued as US and Iran exchange strikes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPU1pXOXRCNmZyZWlJV04zUzZFZmtwSG01b1IwN3VENmRyaTRoOThIR3hHbmJVTWNpU1NVTVNtRUMzTmNWXzg1WGdfeEFnZUNEQ3BUdUwyTVdickl6aFdqRzRUOHJ2VXA4Wk9oazhIdnFoczZwa2Jld1hPOEZIRlprYk9SWndKdEU3Z3RTSWhSZWF5MnZYRzNxWVEtRUlpakhU"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil jumps 3% after US, Iran escalate strikes in Mideast - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUFpPY1lfc0lIc0xsNVlaSkZQanVuM3RZd0lUMTdLMlktT0dLajFOWExXSTZEd1pJd1kteDBWeTk5UnFHMmFtdUE1cWdmMEZwaDR4M09lV3NENXlhTHIwOUc1NEhTbGNYQTBZUmFNYlRIT3RUWWNyc3JZOXR2WXFrTWRFTmc1V2FHWnlDRW90YkJrOW1WWGstZ0d1bS1JaEJYZTcya0dUdkN4VzZQczhz"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-12",
       "category": "military",
       "source_type": "news",
       "title": "US insists Strait of Hormuz is open as it exchanges strikes with Iran",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attacks five Gulf nations, shuts Hormuz after US bombing: All to know - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYjhJbnhrSGdFY20wRFRnMy1DZVhObENaZlJYTHdtNC1qZWVCMk5uTEMtb0c2YkZOaUs5RHR5eWk2eHhuSFdwX2dHUU5FMnhSRzdzM2xJeG8yRHdubGFFdWxuLUJiZW55QUh3Tm12aTNhSVcya0pkeThXcDN3MURHZXNXdklFMTlGSWhDcHpWanV2OE5iLTdIMU5oYlZfOWo0UFFCTXd4Sm9OSy1DVUx4QzJBQdIBuAFBVV95cUxOb2Y4amh0V0tremRhSnNrZTJiSm5mdHBDQVQ3TzBIMVA3WFBqVnpLQkpYTGkwX3RRT04wNC1WcUFRQzd4eEdLd0wxc3ZoWDdJS3psQnZEM1lfaWJLaEMtN0JGVFRyOWRHbU1VaHRhb3U3ZDRpRUNTZmJqQ2N6NGgwbWFfX3RhSFU0ZUpQRVplMWNNVW5QTWVLQ2hDa0VVdXhQLTNxMEU3bWpqcjBkdWFwVDJUNmhYWlRw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Missiles and drones fired at Gulf states after night of US strikes on Iran - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQ1BueGpGZTB1RHB3czg0SjUycDRQbmp4NWJTb3RQdE43NkNWWUlmbm9SdGJOTXRuTlhWbTVZeDRhVHg4Ykd2blBfZDdWS2FsQWxOZXJkdHEyTm5jSlQ5U1ZDX3dRSVN6aVg2RDZKVk53WW0tZlZ4NUFDbkFLVER1eHU4bjhnam5jYUJuSFc4OEwwU19YUldRWmFyMVlpZ1BsVkJOTHVZZVJpRExhalVJVTVtcWR1Z9IBuwFBVV95cUxNQmpTY21EcXRXV1pSUGhxYU1kZ25aRlE0TzRidVJWV3pLaFQzOXkxbEdLcW13c2lGUzFzcnhnYm9mNHNjVktJNTA5dDRrN040blprM3VEamgzb3JjaVdXMDJzTVpaemc3Vmg3QkxoMXdpNEhQREZscmpCMTVVSUp6SmVXMS0yTGZXVjJySFRxRHR3VE83NHZ3WnliRGRnVEFXTjZrelNrYmR0Tldjc0FYWkltSmxtY1JLQkcw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran launches attacks across the Gulf after more US strikes - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ2pxdWtFSDRQZnYxbGN3V05wYlY2aGlRd3o0SjVTeVUxV3VvVUdyeGotWWZnTjBPMTlCN1IwcmM3ZzlXbTJnTmc2b1FrRXhIXzl4TV9mbVFrTjFObUZPeW9uMUlFVkJnMGgwU1ZReVdxQVJRenBubmVaV2RVOVZ6dmN1QmZhallSeEQ3Y2Zpa2E3aXB5M2FxMS1wVTdpMlJQU2J1U3oxOF9TbERacVpz0gG0AUFVX3lxTE1kT1Vyd1dvUURZOFlqNm42SjB5VkEzOG5UQ0N2bXJJOHA3Yk9nV2dvYnlHcmJnVDU4T2JFMFhVY01BekNSV2lqc0g0U1N6ZzBpVlpnYzVUYkExbFRDZVQySmVpTFZQODAtYm1udHZCSXdVQVNsQWFQNEFvTEJNNVdqU1Q3ZkZLVV9JbWFfcU9hbi1VaGc5bDIyZEU0dUNKVVZPTkk0dVc5VG5hWGlXQzRHLVBEeA"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Concern for renewed war in Iran as US attacks military, civilian targets - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcTZ3YWxEMV9tZGVTaEc5WGxLMGhfUHo0bzI5S0Z6VlN0QlFSMkF4MmtOMGo4d0VKc1dtUmdNT0pITksyTkVydTFLUGRQdW5EWklMMkRpNDBXMFRWc2xFNWY4MWg2Y002MUNNV2dUcGJmZ0pQUFY2UUlwN19nallMQldRMzNIZ2o3cXo0cmFfV0hUU3VuSmZkci1pMkVzVk1CSmlvdnh0S0RTTzZyX0Y4ck9R0gG3AUFVX3lxTE1uZnBLRVRJSjFkR1pQa0JuVlpTMzU5cjdYWE40RHNyc2lxT3VHUmVvMjMxSHFXcm9MaGprSENhdjBOaFRxMENRZFhqLUk4bnpBeUJCQ1FHd3ZWVHVNeTJ3OUlmZW1udUxmUTVKcDMxSjNZZFBjUm9DSmhCLTRpZ1lwaGoweUwzSXR4ODJOWmhudXVlMjdoSkpub2E5OGV1MzdrWEJiamZkVURoTktLZWotUVhKeTNmRQ"
     }
   ]
 }
