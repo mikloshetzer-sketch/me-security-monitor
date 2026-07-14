@@ -97,10 +97,14 @@
       enabledByDefault: false,
       required: false,
       urls: [
+        "reports.json",
+        "data/reports.json",
         "data/reddit-events.json",
         "data/reddit.json"
       ],
-      extract: extractGenericEvents
+      extract(payload) {
+        return extractReportEvents(payload, "reddit");
+      }
     },
 
     mastodon: {
@@ -109,22 +113,30 @@
       enabledByDefault: false,
       required: false,
       urls: [
+        "reports.json",
+        "data/reports.json",
         "data/mastodon-events.json",
         "data/mastodon.json"
       ],
-      extract: extractGenericEvents
+      extract(payload) {
+        return extractReportEvents(payload, "mastodon");
+      }
     },
 
     crowd: {
-      label: "Crowd reports",
+      label: "Other crowd reports",
       checkboxId: "attackAnnotationsCrowdCheckbox",
       enabledByDefault: false,
       required: false,
       urls: [
+        "reports.json",
+        "data/reports.json",
         "data/crowd-events.json",
         "data/crowd-reports.json"
       ],
-      extract: extractGenericEvents
+      extract(payload) {
+        return extractReportEvents(payload, "crowd");
+      }
     },
 
     firms: {
@@ -219,6 +231,239 @@
     );
   }
 
+  function reportSourceText(event) {
+    const source = event?.source;
+
+    const parts = [
+      event?.platform,
+      event?.network,
+      event?.source_type,
+      event?.source_name,
+      event?.feed,
+      event?.provider,
+      event?.origin,
+      event?.author,
+      event?.url,
+      event?.link,
+      event?.permalink,
+      typeof source === "string" ? source : "",
+      source?.type,
+      source?.name,
+      source?.platform,
+      source?.url
+    ];
+
+    return parts
+      .map(value => asText(value).toLowerCase())
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  function classifyReportSource(event) {
+    const explicitType = asText(
+      typeof event?.source === "object"
+        ? event.source?.type
+        : event?.source_type
+    ).toLowerCase();
+
+    if (explicitType === "reddit") {
+      return "reddit";
+    }
+
+    if (
+      explicitType === "mastodon" ||
+      explicitType === "fediverse" ||
+      explicitType === "activitypub"
+    ) {
+      return "mastodon";
+    }
+
+    const text = reportSourceText(event);
+
+    if (
+      text.includes("reddit") ||
+      text.includes("redd.it") ||
+      text.includes("/r/")
+    ) {
+      return "reddit";
+    }
+
+    if (
+      text.includes("mastodon") ||
+      text.includes("mstdn") ||
+      text.includes("fediverse") ||
+      text.includes("activitypub") ||
+      text.includes(".social/@") ||
+      text.includes(".host/@")
+    ) {
+      return "mastodon";
+    }
+
+    return "crowd";
+  }
+
+  function normalizeReportEvent(event, source) {
+    if (!event || typeof event !== "object") {
+      return null;
+    }
+
+    const location =
+      event.location &&
+      typeof event.location === "object"
+        ? event.location
+        : {};
+
+    const latitude = asNumber(
+      event.latitude ??
+      event.lat ??
+      location.latitude ??
+      location.lat
+    );
+
+    const longitude = asNumber(
+      event.longitude ??
+      event.lng ??
+      event.lon ??
+      location.longitude ??
+      location.lng ??
+      location.lon
+    );
+
+    if (!validCoordinate(latitude, longitude)) {
+      return null;
+    }
+
+    const sourceObject =
+      event.source &&
+      typeof event.source === "object"
+        ? event.source
+        : {};
+
+    const sourceUrl = asText(
+      event.source_url ||
+      event.url ||
+      event.link ||
+      event.permalink ||
+      sourceObject.url
+    );
+
+    return {
+      ...event,
+      latitude,
+      longitude,
+      location:
+        asText(
+          typeof event.location === "string"
+            ? event.location
+            : "",
+          asText(
+            event.location_name ||
+            event.city ||
+            location.name ||
+            location.label ||
+            location.city ||
+            event.region ||
+            event.country,
+            "Unknown location"
+          )
+        ),
+      title:
+        asText(
+          event.title ||
+          event.headline ||
+          event.name,
+          source === "reddit"
+            ? "Reddit security report"
+            : source === "mastodon"
+              ? "Mastodon security report"
+              : "Crowd security report"
+        ),
+      description:
+        asText(
+          event.description ||
+          event.summary ||
+          event.text ||
+          event.content ||
+          event.body
+        ),
+      category:
+        asText(
+          event.category ||
+          event.type ||
+          event.event_type,
+          "social_report"
+        ),
+      date:
+        event.date ||
+        event.timestamp ||
+        event.datetime ||
+        event.created_at ||
+        event.published_at ||
+        "",
+      source_url: sourceUrl,
+      source_label:
+        source === "reddit"
+          ? "Reddit"
+          : source === "mastodon"
+            ? "Mastodon"
+            : "Crowd report",
+      source_type: "social_media",
+      verification_status:
+        asText(
+          event.verification_status,
+          "unverified_social_report"
+        ),
+      reliability_score:
+        asText(event.confidence).toUpperCase() === "HIGH"
+          ? 48
+          : asText(event.confidence).toUpperCase() === "MED"
+            ? 38
+            : asText(event.confidence).toUpperCase() === "LOW"
+              ? 28
+              : undefined,
+      map_visualizable: true
+    };
+  }
+
+  function reportPayloadEvents(payload) {
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+
+    const candidates = [
+      payload?.events,
+      payload?.reports,
+      payload?.items,
+      payload?.data,
+      payload?.results
+    ];
+
+    for (const candidate of candidates) {
+      if (Array.isArray(candidate)) {
+        return candidate;
+      }
+    }
+
+    return [];
+  }
+
+  function extractReportEvents(payload, requestedSource) {
+    return reportPayloadEvents(payload)
+      .filter(
+        event =>
+          classifyReportSource(event) ===
+          requestedSource
+      )
+      .map(
+        event =>
+          normalizeReportEvent(
+            event,
+            requestedSource
+          )
+      )
+      .filter(Boolean);
+  }
+
   function extractGenericEvents(payload) {
     if (Array.isArray(payload)) {
       return payload.filter(validEventCoordinate);
@@ -274,8 +519,14 @@
     return `${url}${separator}v=${Date.now()}`;
   }
 
+  const sharedPayloadPromises = new Map();
+
   async function fetchJson(url) {
-    const response = await fetch(
+    if (sharedPayloadPromises.has(url)) {
+      return sharedPayloadPromises.get(url);
+    }
+
+    const promise = fetch(
       cacheBust(url),
       {
         cache: "no-store",
@@ -283,20 +534,28 @@
           Accept: "application/json"
         }
       }
-    );
+    )
+      .then(response => {
+        if (!response.ok) {
+          const error = new Error(
+            `HTTP ${response.status}: ${url}`
+          );
 
-    if (!response.ok) {
-      const error = new Error(
-        `HTTP ${response.status}: ${url}`
-      );
+          error.status = response.status;
+          error.url = url;
 
-      error.status = response.status;
-      error.url = url;
+          throw error;
+        }
 
-      throw error;
-    }
+        return response.json();
+      })
+      .catch(error => {
+        sharedPayloadPromises.delete(url);
+        throw error;
+      });
 
-    return response.json();
+    sharedPayloadPromises.set(url, promise);
+    return promise;
   }
 
   async function loadSource(source) {
@@ -911,6 +1170,7 @@
 
     try {
       ensureUi();
+      sharedPayloadPromises.clear();
 
       const results =
         await Promise.all(
@@ -940,7 +1200,15 @@
               url: result.url
             })),
           controllerConnected:
-            Boolean(findAnnotationController())
+            Boolean(findAnnotationController()),
+          reportsClassification: {
+            reddit:
+              (state.sourceData.get("reddit") || []).length,
+            mastodon:
+              (state.sourceData.get("mastodon") || []).length,
+            crowd:
+              (state.sourceData.get("crowd") || []).length
+          }
         }
       );
 
