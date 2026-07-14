@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-14 21:16 UTC",
+    "updated": "2026-07-14 23:11 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-07-08",
     "period_end": "2026-07-14",
     "total_events": 157,
-    "total_risk": 186.12,
-    "normalized_risk_score": 74.4,
+    "total_risk": 188.02,
+    "normalized_risk_score": 75.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 57,
     "security": 4,
-    "political": 12,
-    "other": 84
+    "political": 11,
+    "other": 85
   },
   "source_counts": {
     "news": 151,
@@ -27,23 +27,23 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 117.97
+      "risk": 123.37
     },
     {
       "name": "Gaza Strip",
-      "risk": 23.85
+      "risk": 23.35
     },
     {
       "name": "Israel",
       "risk": 8.55
     },
     {
-      "name": "Tehran",
-      "risk": 6.6
-    },
-    {
       "name": "Sana'a",
       "risk": 5.7
+    },
+    {
+      "name": "Iraq",
+      "risk": 4.8
     }
   ],
   "top_events": [
@@ -97,6 +97,15 @@
       "date": "2026-07-14",
       "category": "military",
       "source_type": "news",
+      "title": "Watch: The clash between US and Iran for control of the Strait of Hormuz",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/videos/cx2425dmpl3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-14",
+      "category": "military",
+      "source_type": "news",
       "title": "Can Gulf countries defend themselves against renewed Iranian attacks? - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaFFmQ0hyU2NERXZJUzZrOWdVUWc1QU5LSDVzQzFzOWpUVDJ0c3BUNXg5eVhmZFgwckFKYk9LVUEycy1pZ0J5X2p6WW9nRTlOMGF6VE96Z1laNDRJRHRfOWkyN1ZMWmRRMmZHbFZtMnVLOGptWWZRQWktTnBpYTVSVW1QU0pFTWJzN0lTTkRMQ0ZWME91TE5KNi1wdkJSS2FqZHdHWlVzREVXRnIxM2fSAbMBQVVfeXFMTml2d1Q0TUFWTk5Ib1FIVGFsTXgtaXBYNnlFS01VeGJqMkhoRGx0a3FKVktTckRfbGo2TW41TnpmdWRrVFRBV25DZVh6UFFFWmZZOFlCdTBGN3BfYnVSTHhxVmE1UTdwa1h6SGtKbnNGNVEyQXJRcEIxRzgwWS1NZGtGdHUzTGlRd3RERnV0OVdxOEVFMmp5VjU4bDJPeWxmZ1l4VmViU3hXZzVlUzJEbVp3OU0"
@@ -106,8 +115,8 @@
       "date": "2026-07-14",
       "category": "military",
       "source_type": "news",
-      "title": "US strikes new targets in Iran as Tehran hits Gulf states, Hormuz shipping - Al Jazeera",
-      "location": "Tehran",
+      "title": "US reimposes blockade on Iranian ports, launches more strikes - Al Jazeera",
+      "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOWlaMW1EUnFyd3hkSlFveHAzZXpVR0pMLUJsSVJGLV9ISTVqMEFFd0lfTlFwUUFULTVYYXZfWkp2Y2Rla1NrTzRabXBCWW5BYzJNY0hmYjdaX09SdHV3NVFmd29EYjJvRjE1ZEtSZE9JcnYzSGFpNi1kUTZJME9wdWFHcHBlY2F5cUZiMmVzRUcyUURSSEJQU1psVjN6cUtNNWd3NF9LdnbSAa4BQVVfeXFMTklTZUlQR04yUzZEOFlQaHBDNkdPamFrbDRsNzZFMjdobzlBLWdXWUNXR3dwVDd1TjY0NTE4LVJwYWhiWTB4eFp3X3UzdnduQnl1TUdIdExQaXVkclRMT2dmUzk5UVdOQ3ZRNWhWY3o0Q3VUcmRhY1NiemVKZzVxaDJ5ODR3dGhBcGFBX2pXZE1McGpqZ19idVZLV25xWmJ1c0R0UkthU3pVQUxOeWtn"
     },
     {
@@ -124,18 +133,9 @@
       "date": "2026-07-14",
       "category": "military",
       "source_type": "news",
-      "title": "What is Iran’s Pickaxe Mountain, the mystery site Trump warns he’ll attack? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTjcxNVZ1YXl1WjhoSWZOa0VuVGp2MVZIZUxMY21TcHoybGh5cklwSWNwVlhvZ0tzR014dWFRaTNDeVFqT050WXBuOHNhMWNfOGZmUE50M3QtRVlTSWE5Tmg2cTZzSzZLS3B6ZkZEQ0V5NW5VcXFQVVgySXRpRXkzaDFEVVUxM3Zuem96UHVDSXZKQzRIbkdaNWNscks4YlpvMmw3N2VhZF94OTlPS3JsZWhn0gG3AUFVX3lxTE4ybG5mYnJCUV96LVRmc0xpT2hWVzJsSnczeEpFaWwzSHl2RnEwMUgwLU03Y0ZvdlIzQUs0NjlTLWJ1ZVVIYVFIcUFfM2NsajNpSWh1YjhDUno2V0NrSnpjNXlNT0tLZmFRZjhpRkdLektuUXk5TUswbTdGZVdZdmJESm1FbXFIWW5yMFVUUHgtUk9QV2lPaHJtNHpaQjVvTlREUmlPSWJ0ZlI5REdxMC15TlhLanJHWQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military releases video of its latest strikes on Iran - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdzJWVk1wZ3M5Y1cxU01xRTBCdUpTVnlwVnNfQmJnanJjSHNhU3BPaDlhel9EdkVNTmJ0eWtzbkxNaVNpM0hXZ214enNsUmtzUkk4SVNldXNKTi1lVXlEYWo5cEJMUjNfYTh1bzQ5N3phdDI3ZV80ZUExX1lzSmNRRTh1Nkx1UGpKeVNlOWp4UTJkSnQxWTdVNjIyVTllZEZoZDFMS0xaLVRTc3PSAbABQVVfeXFMT0o3Q0ZoMDFzMkR3Z1FnWllnZ1ctLTMxcnhULVFEb2JXNGNMNUJZdHpVY2ExeXc1bVRHaFpyemhyTFhVeWNzMFBZdFR1XzFjb2FpaVJTcUpJOUx1S2ZLME94VmRzQXAzVU9IRDBDZmxGcXBmY1RadlVMSnlIUnJGWkJTTVBodUJnZFlJSzkyQVI0cEROblF4S3RWWWExSHRHU2tLLVRMckltVnJfUWJDdWI"
+      "title": "Leading Houthi threatens ‘siege’ on Saudi Arabia after Yemen airport attack - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPV0dzUVFKcENEN291dnpfS2lncGg4bWpRV0FNbWt1X2ItdHZLNjJfYnhvOUlaOGx1UG1EQmlGRGFQblRVUjc5ZjBkRVF6ZUtJaGdCY0dkSTQxZTZrcFp2TEplTFQ4Mlc2a1hBM256akc4RDltTFlnbEl2Vy1vVFhfbzYtRnJNbW1iUUpLN3RXS2lYU2t0ZUIxMjFiTTlreS1mWmw1SVVyaC1zYWJQRmNralcxXzLSAboBQVVfeXFMTm1kVVhaSThQYWRyY050TUh3UFJCU2FJTnRIOWRCY0I4STNnY3o5dWV3VVZvdWZJSjBLTGFEUC1UamlwOXhLSVVDMEUwRkV6Z21RM2x3WTE1YV9fMktFOXJ1em03MHRZZWc4eEg0S3ZDc2hQTkJXZll2aUNZdEt3LU5SdzkyM1BRbWgxMEJCdHVHSzJ1VklaRXpCcVJfaDFpQ2U3V01OWmV6VWRwSkdwRFAwOHpIa0tLcl9R"
     }
   ]
 }
