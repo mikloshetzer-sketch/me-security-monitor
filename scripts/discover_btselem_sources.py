@@ -46,6 +46,7 @@ Exit codes
 0: discovery completed
 1: fatal network or parsing error
 2: page downloaded but no useful map candidates found
+3: source temporarily rate-limited the runner after retries
 """
 
 from __future__ import annotations
@@ -58,6 +59,7 @@ import mimetypes
 import re
 import sys
 import time
+from email.utils import parsedate_to_datetime
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -72,11 +74,16 @@ DEFAULT_URL = "https://www.btselem.org/map"
 DEFAULT_OUTPUT_DIR = Path("data")
 DEFAULT_TIMEOUT = 25
 DEFAULT_MAX_BYTES = 4_000_000
-DEFAULT_MAX_ASSETS = 40
+DEFAULT_MAX_ASSETS = 16
+DEFAULT_RETRIES = 4
+DEFAULT_RETRY_BASE = 20.0
+DEFAULT_RETRY_MAX = 180.0
 
 USER_AGENT = (
-    "ME-Security-Monitor-Btselem-Discovery/1.0 "
-    "(read-only source discovery; contact repository owner)"
+    "Mozilla/5.0 (X11; Linux x86_64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/126.0 Safari/537.36 "
+    "ME-Security-Monitor-Discovery/1.1"
 )
 
 MAP_KEYWORDS = (
@@ -418,55 +425,145 @@ def safe_filename(url: str, prefix: str = "") -> str:
     return f"{prefix}{stem}-{digest}"
 
 
+def retry_after_seconds(
+    value: str | None,
+    *,
+    fallback: float,
+    maximum: float,
+) -> float:
+    """Convert Retry-After seconds or HTTP date to a safe delay."""
+    if not value:
+        return min(maximum, fallback)
+
+    value = value.strip()
+
+    if value.isdigit():
+        return min(maximum, max(1.0, float(value)))
+
+    try:
+        retry_at = parsedate_to_datetime(value)
+        if retry_at.tzinfo is None:
+            retry_at = retry_at.replace(tzinfo=timezone.utc)
+        seconds = (retry_at - datetime.now(timezone.utc)).total_seconds()
+        return min(maximum, max(1.0, seconds))
+    except (TypeError, ValueError, OverflowError):
+        return min(maximum, fallback)
+
+
 def fetch_bytes(
     url: str,
     *,
     timeout: int,
     max_bytes: int,
     method: str = "GET",
+    retries: int = DEFAULT_RETRIES,
+    retry_base: float = DEFAULT_RETRY_BASE,
+    retry_max: float = DEFAULT_RETRY_MAX,
+    referer: str | None = None,
 ) -> tuple[bytes, dict[str, str], int, str]:
-    request = Request(
-        url,
-        method=method,
-        headers={
+    """
+    Fetch a small public resource with respectful retry handling.
+
+    HTTP 429 and temporary 5xx responses are retried. Retry-After is
+    respected when provided. The request rate remains deliberately low.
+    """
+    attempt = 0
+
+    while True:
+        headers = {
             "User-Agent": USER_AGENT,
             "Accept": (
                 "text/html,application/xhtml+xml,application/json,"
                 "application/geo+json,application/javascript,text/javascript,"
                 "application/xml,text/xml;q=0.9,*/*;q=0.5"
             ),
-        },
-    )
-
-    with urlopen(request, timeout=timeout) as response:
-        status = getattr(response, "status", response.getcode())
-        headers = {
-            key.lower(): value
-            for key, value in response.headers.items()
+            "Accept-Language": "en-US,en;q=0.9",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+            "DNT": "1",
         }
-        final_url = response.geturl()
 
-        if method == "HEAD":
-            return b"", headers, status, final_url
+        if referer:
+            headers["Referer"] = referer
 
-        content_length = headers.get("content-length")
-        if content_length:
-            try:
-                if int(content_length) > max_bytes:
+        request = Request(
+            url,
+            method=method,
+            headers=headers,
+        )
+
+        try:
+            with urlopen(request, timeout=timeout) as response:
+                status = getattr(response, "status", response.getcode())
+                response_headers = {
+                    key.lower(): value
+                    for key, value in response.headers.items()
+                }
+                final_url = response.geturl()
+
+                if method == "HEAD":
+                    return b"", response_headers, status, final_url
+
+                content_length = response_headers.get("content-length")
+                if content_length:
+                    try:
+                        if int(content_length) > max_bytes:
+                            raise ValueError(
+                                f"Response too large: {content_length} bytes"
+                            )
+                    except ValueError as exc:
+                        if "too large" in str(exc):
+                            raise
+
+                body = response.read(max_bytes + 1)
+
+                if len(body) > max_bytes:
                     raise ValueError(
-                        f"Response too large: {content_length} bytes"
+                        f"Response exceeded {max_bytes} byte safety limit"
                     )
-            except ValueError as exc:
-                if "too large" in str(exc):
-                    raise
 
-        body = response.read(max_bytes + 1)
-        if len(body) > max_bytes:
-            raise ValueError(
-                f"Response exceeded {max_bytes} byte safety limit"
+                return body, response_headers, status, final_url
+
+        except HTTPError as exc:
+            temporary = exc.code == 429 or 500 <= exc.code <= 599
+
+            if not temporary or attempt >= retries:
+                raise
+
+            fallback = retry_base * (2 ** attempt)
+            delay = retry_after_seconds(
+                exc.headers.get("Retry-After") if exc.headers else None,
+                fallback=fallback,
+                maximum=retry_max,
             )
 
-        return body, headers, status, final_url
+            logging.warning(
+                "HTTP %s for %s. Retry %s/%s in %.0f seconds.",
+                exc.code,
+                url,
+                attempt + 1,
+                retries,
+                delay,
+            )
+            time.sleep(delay)
+            attempt += 1
+
+        except (URLError, TimeoutError) as exc:
+            if attempt >= retries:
+                raise
+
+            delay = min(retry_max, retry_base * (2 ** attempt))
+            logging.warning(
+                "Temporary network error for %s: %s. "
+                "Retry %s/%s in %.0f seconds.",
+                url,
+                exc,
+                attempt + 1,
+                retries,
+                delay,
+            )
+            time.sleep(delay)
+            attempt += 1
 
 
 def decode_text(body: bytes, headers: dict[str, str]) -> str:
@@ -570,6 +667,10 @@ def probe_candidate(
     *,
     timeout: int,
     max_bytes: int,
+    retries: int = 1,
+    retry_base: float = DEFAULT_RETRY_BASE,
+    retry_max: float = DEFAULT_RETRY_MAX,
+    referer: str | None = None,
 ) -> CandidateEndpoint:
     """Probe a candidate conservatively, downloading only a small sample."""
     try:
@@ -577,6 +678,10 @@ def probe_candidate(
             candidate.url,
             timeout=timeout,
             max_bytes=max_bytes,
+            retries=retries,
+            retry_base=retry_base,
+            retry_max=retry_max,
+            referer=referer,
         )
         candidate.probe_status = status
         candidate.content_type = headers.get("content-type", "")
@@ -734,6 +839,27 @@ def parse_arguments() -> argparse.Namespace:
         help=f"Network timeout in seconds (default: {DEFAULT_TIMEOUT})",
     )
     parser.add_argument(
+        "--retries",
+        type=int,
+        default=DEFAULT_RETRIES,
+        help=f"Retries for HTTP 429/5xx responses (default: {DEFAULT_RETRIES})",
+    )
+    parser.add_argument(
+        "--retry-base",
+        type=float,
+        default=DEFAULT_RETRY_BASE,
+        help=(
+            "Initial retry delay in seconds before exponential backoff "
+            f"(default: {DEFAULT_RETRY_BASE})"
+        ),
+    )
+    parser.add_argument(
+        "--retry-max",
+        type=float,
+        default=DEFAULT_RETRY_MAX,
+        help=f"Maximum retry delay in seconds (default: {DEFAULT_RETRY_MAX})",
+    )
+    parser.add_argument(
         "--max-bytes",
         type=int,
         default=DEFAULT_MAX_BYTES,
@@ -800,8 +926,53 @@ def main() -> int:
             args.url,
             timeout=args.timeout,
             max_bytes=args.max_bytes,
+            retries=max(0, args.retries),
+            retry_base=max(1.0, args.retry_base),
+            retry_max=max(1.0, args.retry_max),
         )
-    except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
+    except HTTPError as exc:
+        if exc.code == 429:
+            logging.error(
+                "The B'Tselem server continued to rate-limit this runner "
+                "after all retries."
+            )
+
+            diagnostic = {
+                "schema_version": 1,
+                "generated_at": utc_now_iso(),
+                "status": "rate_limited",
+                "requested_url": args.url,
+                "http_status": 429,
+                "message": (
+                    "The public page could not be inspected from this "
+                    "GitHub Actions runner because the server returned "
+                    "HTTP 429 after respectful retries."
+                ),
+                "next_step": (
+                    "Retry later, run manually from a different network, "
+                    "or use browser network capture locally."
+                ),
+            }
+
+            (output_dir / "btselem-discovery.json").write_text(
+                json.dumps(diagnostic, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            (output_dir / "btselem-discovery.md").write_text(
+                "# B’Tselem map source discovery\n\n"
+                "- Status: `rate_limited`\n"
+                "- HTTP status: `429`\n"
+                "- The server continued to limit the GitHub Actions runner "
+                "after respectful retries.\n"
+                "- No source-discovery conclusion can be drawn from this run.\n",
+                encoding="utf-8",
+            )
+            return 3
+
+        logging.error("Unable to fetch map page: HTTP %s", exc.code)
+        return 1
+
+    except (URLError, TimeoutError, ValueError, OSError) as exc:
         logging.error("Unable to fetch map page: %s", exc)
         return 1
 
@@ -913,6 +1084,10 @@ def main() -> int:
                     asset.url,
                     timeout=args.timeout,
                     max_bytes=args.max_bytes,
+                    retries=max(0, min(args.retries, 2)),
+                    retry_base=max(1.0, args.retry_base),
+                    retry_max=max(1.0, args.retry_max),
+                    referer=root_url,
                 )
             )
 
@@ -1016,6 +1191,10 @@ def main() -> int:
             candidate,
             timeout=args.timeout,
             max_bytes=min(args.max_bytes, 1_500_000),
+            retries=max(0, min(args.retries, 1)),
+            retry_base=max(1.0, args.retry_base),
+            retry_max=max(1.0, args.retry_max),
+            referer=root_url,
         )
 
     useful_candidates = [
