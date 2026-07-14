@@ -178,6 +178,7 @@
     showTorevonalakBrand: true,
     compactByDefault: true,
     singleExpandedCard: true,
+    fairSourceDistribution: true,
     enablePinning: true,
     enableDoubleClickZoom: true,
     doubleClickZoomLevel: 11
@@ -575,7 +576,13 @@
       .me-attack-annotation-card.is-dragging {
         cursor: grabbing;
         z-index: 9999;
-        box-shadow: 0 14px 38px rgba(15, 23, 42, 0.28);
+        transition: none !important;
+        backdrop-filter: none;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.22);
+      }
+
+      .me-attack-annotation-line-group.is-dragging {
+        visibility: hidden;
       }
 
       .me-attack-annotation-header {
@@ -1043,10 +1050,12 @@
     }
 
     function allVisibleEvents() {
-      const output = [];
+      const grouped = new Map();
 
       for (const [source, sourceEvents] of state.sources.entries()) {
         if (state.sourceEnabled.get(source) === false) continue;
+
+        const normalizedEvents = [];
 
         sourceEvents.forEach((event, index) => {
           const normalized = normalizeEvent(event, source, index);
@@ -1055,22 +1064,32 @@
           if (normalized.reliabilityScore < state.minimumReliability) return;
           if (state.hiddenIds.has(normalized.id)) return;
 
-          output.push(normalized);
+          normalizedEvents.push(normalized);
         });
+
+        normalizedEvents.sort((left, right) => {
+          return options.newestFirst
+            ? right.dateValue - left.dateValue
+            : left.dateValue - right.dateValue;
+        });
+
+        if (normalizedEvents.length) {
+          grouped.set(source, normalizedEvents);
+        }
       }
 
-      output.sort((left, right) => {
-        return options.newestFirst
-          ? right.dateValue - left.dateValue
-          : left.dateValue - right.dateValue;
-      });
+      const allEvents = [...grouped.values()].flat();
 
-      const pinned = output.filter(
-        event => state.pinnedIds.has(event.id)
-      );
+      const pinned = allEvents
+        .filter(event => state.pinnedIds.has(event.id))
+        .sort((left, right) => {
+          return options.newestFirst
+            ? right.dateValue - left.dateValue
+            : left.dateValue - right.dateValue;
+        });
 
-      const unpinned = output.filter(
-        event => !state.pinnedIds.has(event.id)
+      const pinnedIds = new Set(
+        pinned.map(event => event.id)
       );
 
       const remainingSlots = Math.max(
@@ -1078,9 +1097,56 @@
         state.limit - pinned.length
       );
 
-      return pinned.concat(
-        unpinned.slice(0, remainingSlots)
-      );
+      if (!options.fairSourceDistribution) {
+        const unpinned = allEvents
+          .filter(event => !pinnedIds.has(event.id))
+          .sort((left, right) => {
+            return options.newestFirst
+              ? right.dateValue - left.dateValue
+              : left.dateValue - right.dateValue;
+          });
+
+        return pinned.concat(
+          unpinned.slice(0, remainingSlots)
+        );
+      }
+
+      /*
+       * Round-robin selection guarantees that every enabled source receives
+       * visible card capacity before one high-volume source consumes the
+       * complete global limit.
+       */
+      const sourceQueues = [...grouped.entries()]
+        .map(([source, sourceEvents]) => ({
+          source,
+          events: sourceEvents.filter(
+            event => !pinnedIds.has(event.id)
+          ),
+          index: 0
+        }))
+        .filter(queue => queue.events.length);
+
+      const selected = [];
+
+      while (
+        selected.length < remainingSlots &&
+        sourceQueues.some(
+          queue => queue.index < queue.events.length
+        )
+      ) {
+        for (const queue of sourceQueues) {
+          if (selected.length >= remainingSlots) break;
+
+          const event = queue.events[queue.index];
+
+          if (!event) continue;
+
+          selected.push(event);
+          queue.index += 1;
+        }
+      }
+
+      return pinned.concat(selected);
     }
 
     function defaultPosition(event, index) {
@@ -1145,6 +1211,10 @@
       const group = document.createElementNS(
         "http://www.w3.org/2000/svg",
         "g"
+      );
+
+      group.classList.add(
+        "me-attack-annotation-line-group"
       );
 
       const line = document.createElementNS(
@@ -1434,37 +1504,25 @@
       let startClientY = 0;
       let startLeft = 0;
       let startTop = 0;
-      let pendingClientX = 0;
-      let pendingClientY = 0;
+      let pendingDeltaX = 0;
+      let pendingDeltaY = 0;
       let animationFrame = null;
 
-      function applyPendingPosition() {
+      function paintTransform() {
         animationFrame = null;
 
         if (!active) return;
 
-        const next = clampPosition(
-          startLeft + pendingClientX - startClientX,
-          startTop + pendingClientY - startClientY,
-          item.card
-        );
-
-        item.card.style.left = `${next.left}px`;
-        item.card.style.top = `${next.top}px`;
-
-        if (options.preservePositions) {
-          state.positions.set(item.event.id, next);
-        }
-
-        updateConnection(item);
+        item.card.style.transform =
+          `translate3d(${pendingDeltaX}px, ${pendingDeltaY}px, 0)`;
       }
 
-      function requestPositionUpdate() {
+      function requestPaint() {
         if (animationFrame !== null) return;
 
         animationFrame =
           window.requestAnimationFrame(
-            applyPendingPosition
+            paintTransform
           );
       }
 
@@ -1484,13 +1542,15 @@
         pointerId = event.pointerId;
         startClientX = event.clientX;
         startClientY = event.clientY;
-        pendingClientX = event.clientX;
-        pendingClientY = event.clientY;
         startLeft = parseFloat(item.card.style.left) || 0;
         startTop = parseFloat(item.card.style.top) || 0;
+        pendingDeltaX = 0;
+        pendingDeltaY = 0;
 
         item.card.classList.add("is-dragging");
+        item.lineGroup.classList.add("is-dragging");
         item.card.style.zIndex = "9999";
+
         handle.setPointerCapture?.(pointerId);
 
         event.preventDefault();
@@ -1500,9 +1560,13 @@
       function onPointerMove(event) {
         if (!active || event.pointerId !== pointerId) return;
 
-        pendingClientX = event.clientX;
-        pendingClientY = event.clientY;
-        requestPositionUpdate();
+        pendingDeltaX =
+          event.clientX - startClientX;
+
+        pendingDeltaY =
+          event.clientY - startClientY;
+
+        requestPaint();
 
         event.preventDefault();
         event.stopPropagation();
@@ -1511,19 +1575,37 @@
       function finishDrag(event) {
         if (!active || event.pointerId !== pointerId) return;
 
-        pendingClientX = event.clientX;
-        pendingClientY = event.clientY;
+        pendingDeltaX =
+          event.clientX - startClientX;
+
+        pendingDeltaY =
+          event.clientY - startClientY;
 
         if (animationFrame !== null) {
           window.cancelAnimationFrame(animationFrame);
           animationFrame = null;
         }
 
-        applyPendingPosition();
+        const next = clampPosition(
+          startLeft + pendingDeltaX,
+          startTop + pendingDeltaY,
+          item.card
+        );
+
+        item.card.style.transform = "";
+        item.card.style.left = `${next.left}px`;
+        item.card.style.top = `${next.top}px`;
+
+        if (options.preservePositions) {
+          state.positions.set(item.event.id, next);
+        }
 
         active = false;
         item.card.classList.remove("is-dragging");
+        item.lineGroup.classList.remove("is-dragging");
         item.card.style.zIndex = "";
+
+        updateConnection(item);
 
         try {
           handle.releasePointerCapture?.(pointerId);
@@ -1928,6 +2010,17 @@
         hiddenCount: state.hiddenIds.size,
         expandedCount: state.expandedIds.size,
         pinnedCount: state.pinnedIds.size,
+        fairSourceDistribution:
+          Boolean(options.fairSourceDistribution),
+        renderedBySource:
+          [...state.cards.values()].reduce(
+            (output, item) => {
+              const source = item.event.source;
+              output[source] = (output[source] || 0) + 1;
+              return output;
+            },
+            {}
+          ),
         sources: [...state.sources.entries()].map(
           ([source, sourceEvents]) => ({
             source,
