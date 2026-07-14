@@ -146,8 +146,8 @@
     limit: 10,
     minimumReliability: 0,
     maxDescriptionLength: 190,
-    cardWidth: 300,
-    cardMinHeight: 128,
+    cardWidth: 286,
+    cardMinHeight: 78,
     initialOffsetX: 52,
     initialOffsetY: -70,
     cascadeX: 18,
@@ -175,7 +175,12 @@
     showReliability: true,
     showSourceWarning: true,
     showSourceLink: true,
-    showTorevonalakBrand: true
+    showTorevonalakBrand: true,
+    compactByDefault: true,
+    singleExpandedCard: true,
+    enablePinning: true,
+    enableDoubleClickZoom: true,
+    doubleClickZoomLevel: 11
   };
 
   function asText(value, fallback = "") {
@@ -543,8 +548,8 @@
 
       .me-attack-annotation-card {
         position: absolute;
-        width: var(--me-annotation-card-width, 300px);
-        min-height: var(--me-annotation-card-min-height, 128px);
+        width: var(--me-annotation-card-width, 286px);
+        min-height: var(--me-annotation-card-min-height, 78px);
         border: 1px solid rgba(15, 23, 42, 0.16);
         border-left: 5px solid var(--me-source-color, #64748b);
         border-radius: 12px;
@@ -557,6 +562,14 @@
         touch-action: none;
         overflow: hidden;
         backdrop-filter: blur(7px);
+        transform: translate3d(0,0,0);
+        will-change: transform;
+      }
+
+      .me-attack-annotation-card.is-pinned {
+        box-shadow:
+          0 0 0 2px color-mix(in srgb, var(--me-source-color, #64748b) 22%, transparent),
+          0 10px 30px rgba(15, 23, 42, 0.20);
       }
 
       .me-attack-annotation-card.is-dragging {
@@ -570,7 +583,7 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 8px;
-        padding: 9px 9px 7px 11px;
+        padding: 7px 8px 7px 10px;
         background:
           linear-gradient(
             90deg,
@@ -590,9 +603,9 @@
       }
 
       .me-attack-annotation-brand {
-        margin-bottom: 5px;
+        margin-bottom: 3px;
         color: #64748b;
-        font-size: 8px;
+        font-size: 7px;
         font-weight: 850;
         letter-spacing: .075em;
         text-transform: uppercase;
@@ -601,16 +614,16 @@
       .me-attack-annotation-source-row {
         display: flex;
         align-items: center;
-        gap: 7px;
-        margin-bottom: 5px;
+        gap: 6px;
+        margin-bottom: 3px;
       }
 
       .me-attack-annotation-source-badge {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 27px;
-        height: 20px;
+        min-width: 25px;
+        height: 18px;
         padding: 0 6px;
         border-radius: 6px;
         background: var(--me-source-color, #64748b);
@@ -632,8 +645,8 @@
 
       .me-attack-annotation-title {
         margin: 0;
-        font-size: 13px;
-        line-height: 1.3;
+        font-size: 12px;
+        line-height: 1.26;
         font-weight: 760;
         color: #152033;
         overflow-wrap: anywhere;
@@ -642,15 +655,15 @@
       .me-attack-annotation-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
-        margin-top: 5px;
+        gap: 4px;
+        margin-top: 4px;
       }
 
       .me-attack-annotation-chip {
         display: inline-flex;
         align-items: center;
-        min-height: 20px;
-        padding: 2px 7px;
+        min-height: 18px;
+        padding: 1px 6px;
         border-radius: 999px;
         background: rgba(15, 23, 42, 0.07);
         color: #475569;
@@ -666,6 +679,67 @@
           white
         );
         color: var(--me-attacker-color, #64748b);
+      }
+
+      .me-attack-annotation-actions {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex: 0 0 auto;
+      }
+
+      .me-attack-annotation-action {
+        display: inline-grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        border: 1px solid rgba(15, 23, 42, 0.12);
+        border-radius: 7px;
+        background: rgba(255,255,255,.84);
+        color: #475569;
+        font-size: 12px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .me-attack-annotation-action:hover {
+        background: #ffffff;
+        color: #0f172a;
+      }
+
+      .me-attack-annotation-action.is-active {
+        background: var(--me-source-color, #64748b);
+        color: #ffffff;
+        border-color: var(--me-source-color, #64748b);
+      }
+
+      .me-attack-annotation-toggle-icon {
+        display: inline-block;
+        transition: transform .18s ease;
+      }
+
+      .me-attack-annotation-card.is-expanded
+      .me-attack-annotation-toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .me-attack-annotation-body {
+        max-height: 0;
+        padding: 0 11px;
+        opacity: 0;
+        overflow: hidden;
+        transition:
+          max-height .22s ease,
+          opacity .18s ease,
+          padding .22s ease;
+      }
+
+      .me-attack-annotation-card.is-expanded
+      .me-attack-annotation-body {
+        max-height: 620px;
+        padding: 8px 11px 10px;
+        opacity: 1;
       }
 
       .me-attack-annotation-close {
@@ -687,10 +761,6 @@
       .me-attack-annotation-close:hover {
         background: #ffffff;
         color: #0f172a;
-      }
-
-      .me-attack-annotation-body {
-        padding: 8px 11px 10px;
       }
 
       .me-attack-annotation-location {
@@ -880,6 +950,8 @@
       cards: new Map(),
       positions: new Map(),
       hiddenIds: new Set(),
+      expandedIds: new Set(),
+      pinnedIds: new Set(),
       destroyed: false
     };
 
@@ -993,7 +1065,22 @@
           : left.dateValue - right.dateValue;
       });
 
-      return output.slice(0, state.limit);
+      const pinned = output.filter(
+        event => state.pinnedIds.has(event.id)
+      );
+
+      const unpinned = output.filter(
+        event => !state.pinnedIds.has(event.id)
+      );
+
+      const remainingSlots = Math.max(
+        0,
+        state.limit - pinned.length
+      );
+
+      return pinned.concat(
+        unpinned.slice(0, remainingSlots)
+      );
     }
 
     function defaultPosition(event, index) {
@@ -1172,6 +1259,9 @@
         `
         : "";
 
+      const isExpanded = state.expandedIds.has(event.id);
+      const isPinned = state.pinnedIds.has(event.id);
+
       return `
         <div class="me-attack-annotation-header">
           <div class="me-attack-annotation-heading">
@@ -1194,20 +1284,49 @@
               <span class="me-attack-annotation-chip">
                 ${escapeHtml(humanize(event.category))}
               </span>
+              <span class="me-attack-annotation-chip">
+                ${escapeHtml(String(event.reliabilityScore))}%
+              </span>
             </div>
           </div>
-          ${
-            options.showCloseButton
-              ? `
-                <button
-                  class="me-attack-annotation-close"
-                  type="button"
-                  title="Hide analysis card"
-                  aria-label="Hide analysis card"
-                >×</button>
-              `
-              : ""
-          }
+
+          <div class="me-attack-annotation-actions">
+            ${
+              options.enablePinning
+                ? `
+                  <button
+                    class="me-attack-annotation-action me-attack-annotation-pin ${isPinned ? "is-active" : ""}"
+                    type="button"
+                    title="${isPinned ? "Unpin card" : "Pin card"}"
+                    aria-label="${isPinned ? "Unpin card" : "Pin card"}"
+                  >📌</button>
+                `
+                : ""
+            }
+
+            <button
+              class="me-attack-annotation-action me-attack-annotation-toggle"
+              type="button"
+              title="${isExpanded ? "Collapse card" : "Expand card"}"
+              aria-label="${isExpanded ? "Collapse card" : "Expand card"}"
+              aria-expanded="${isExpanded ? "true" : "false"}"
+            >
+              <span class="me-attack-annotation-toggle-icon">▾</span>
+            </button>
+
+            ${
+              options.showCloseButton
+                ? `
+                  <button
+                    class="me-attack-annotation-close"
+                    type="button"
+                    title="Hide analysis card"
+                    aria-label="Hide analysis card"
+                  >×</button>
+                `
+                : ""
+            }
+          </div>
         </div>
 
         <div class="me-attack-annotation-body">
@@ -1315,9 +1434,49 @@
       let startClientY = 0;
       let startLeft = 0;
       let startTop = 0;
+      let pendingClientX = 0;
+      let pendingClientY = 0;
+      let animationFrame = null;
+
+      function applyPendingPosition() {
+        animationFrame = null;
+
+        if (!active) return;
+
+        const next = clampPosition(
+          startLeft + pendingClientX - startClientX,
+          startTop + pendingClientY - startClientY,
+          item.card
+        );
+
+        item.card.style.left = `${next.left}px`;
+        item.card.style.top = `${next.top}px`;
+
+        if (options.preservePositions) {
+          state.positions.set(item.event.id, next);
+        }
+
+        updateConnection(item);
+      }
+
+      function requestPositionUpdate() {
+        if (animationFrame !== null) return;
+
+        animationFrame =
+          window.requestAnimationFrame(
+            applyPendingPosition
+          );
+      }
 
       function onPointerDown(event) {
-        if (event.target.closest(".me-attack-annotation-close")) {
+        if (
+          event.target.closest(
+            ".me-attack-annotation-close, " +
+            ".me-attack-annotation-toggle, " +
+            ".me-attack-annotation-pin, " +
+            "a"
+          )
+        ) {
           return;
         }
 
@@ -1325,6 +1484,8 @@
         pointerId = event.pointerId;
         startClientX = event.clientX;
         startClientY = event.clientY;
+        pendingClientX = event.clientX;
+        pendingClientY = event.clientY;
         startLeft = parseFloat(item.card.style.left) || 0;
         startTop = parseFloat(item.card.style.top) || 0;
 
@@ -1339,20 +1500,9 @@
       function onPointerMove(event) {
         if (!active || event.pointerId !== pointerId) return;
 
-        const next = clampPosition(
-          startLeft + event.clientX - startClientX,
-          startTop + event.clientY - startClientY,
-          item.card
-        );
-
-        item.card.style.left = `${next.left}px`;
-        item.card.style.top = `${next.top}px`;
-
-        if (options.preservePositions) {
-          state.positions.set(item.event.id, next);
-        }
-
-        updateConnection(item);
+        pendingClientX = event.clientX;
+        pendingClientY = event.clientY;
+        requestPositionUpdate();
 
         event.preventDefault();
         event.stopPropagation();
@@ -1360,6 +1510,16 @@
 
       function finishDrag(event) {
         if (!active || event.pointerId !== pointerId) return;
+
+        pendingClientX = event.clientX;
+        pendingClientY = event.clientY;
+
+        if (animationFrame !== null) {
+          window.cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+        }
+
+        applyPendingPosition();
 
         active = false;
         item.card.classList.remove("is-dragging");
@@ -1383,6 +1543,10 @@
       handle.addEventListener("pointercancel", finishDrag);
 
       item.cleanupDrag = function () {
+        if (animationFrame !== null) {
+          window.cancelAnimationFrame(animationFrame);
+        }
+
         handle.removeEventListener("pointerdown", onPointerDown);
         handle.removeEventListener("pointermove", onPointerMove);
         handle.removeEventListener("pointerup", finishDrag);
@@ -1425,6 +1589,14 @@
       card.dataset.source = event.source;
       card.dataset.attacker = event.attacker;
       card.dataset.reliability = String(event.reliabilityScore);
+
+      if (state.expandedIds.has(event.id)) {
+        card.classList.add("is-expanded");
+      }
+
+      if (state.pinnedIds.has(event.id)) {
+        card.classList.add("is-pinned");
+      }
 
       card.style.setProperty("--me-source-color", event.sourceColor);
       card.style.setProperty("--me-attacker-color", event.attackerColor);
@@ -1488,11 +1660,92 @@
         ".me-attack-annotation-close"
       );
 
+      const toggleButton = card.querySelector(
+        ".me-attack-annotation-toggle"
+      );
+
+      const pinButton = card.querySelector(
+        ".me-attack-annotation-pin"
+      );
+
       closeButton?.addEventListener("click", function (clickEvent) {
         clickEvent.preventDefault();
         clickEvent.stopPropagation();
+        state.expandedIds.delete(event.id);
+        state.pinnedIds.delete(event.id);
         removeCard(event.id, true);
       });
+
+      toggleButton?.addEventListener("click", function (clickEvent) {
+        clickEvent.preventDefault();
+        clickEvent.stopPropagation();
+
+        const willExpand =
+          !state.expandedIds.has(event.id);
+
+        if (
+          willExpand &&
+          options.singleExpandedCard
+        ) {
+          state.expandedIds.clear();
+        }
+
+        if (willExpand) {
+          state.expandedIds.add(event.id);
+        } else {
+          state.expandedIds.delete(event.id);
+        }
+
+        render();
+      });
+
+      pinButton?.addEventListener("click", function (clickEvent) {
+        clickEvent.preventDefault();
+        clickEvent.stopPropagation();
+
+        if (state.pinnedIds.has(event.id)) {
+          state.pinnedIds.delete(event.id);
+        } else {
+          state.pinnedIds.add(event.id);
+        }
+
+        render();
+      });
+
+      if (options.enableDoubleClickZoom) {
+        card.addEventListener("dblclick", function (doubleClickEvent) {
+          if (
+            doubleClickEvent.target.closest(
+              "button, a"
+            )
+          ) {
+            return;
+          }
+
+          doubleClickEvent.preventDefault();
+          doubleClickEvent.stopPropagation();
+
+          map.setView(
+            [event.latitude, event.longitude],
+            Math.max(
+              map.getZoom(),
+              Number(options.doubleClickZoomLevel) || 11
+            ),
+            {
+              animate: true
+            }
+          );
+
+          if (
+            options.singleExpandedCard
+          ) {
+            state.expandedIds.clear();
+          }
+
+          state.expandedIds.add(event.id);
+          render();
+        });
+      }
 
       updateConnection(item);
     }
@@ -1637,6 +1890,35 @@
       return api;
     }
 
+    function collapseAll() {
+      state.expandedIds.clear();
+      render();
+      return api;
+    }
+
+    function expandCard(id) {
+      if (options.singleExpandedCard) {
+        state.expandedIds.clear();
+      }
+
+      state.expandedIds.add(String(id));
+      render();
+      return api;
+    }
+
+    function togglePin(id) {
+      const normalizedId = String(id);
+
+      if (state.pinnedIds.has(normalizedId)) {
+        state.pinnedIds.delete(normalizedId);
+      } else {
+        state.pinnedIds.add(normalizedId);
+      }
+
+      render();
+      return api;
+    }
+
     function getState() {
       return {
         enabled: state.enabled,
@@ -1644,6 +1926,8 @@
         minimumReliability: state.minimumReliability,
         renderedCount: state.cards.size,
         hiddenCount: state.hiddenIds.size,
+        expandedCount: state.expandedIds.size,
+        pinnedCount: state.pinnedIds.size,
         sources: [...state.sources.entries()].map(
           ([source, sourceEvents]) => ({
             source,
@@ -1676,6 +1960,8 @@
       state.sources.clear();
       state.sourceEnabled.clear();
       state.hiddenIds.clear();
+      state.expandedIds.clear();
+      state.pinnedIds.clear();
     }
 
     map.on(
@@ -1695,12 +1981,17 @@
       setSourceEnabled,
       setLimit,
       setMinimumReliability,
+      collapseAll,
+      expandCard,
+      togglePin,
       restoreHidden,
       resetPositions,
       clearSource,
       clear: function () {
         state.sources.clear();
         state.hiddenIds.clear();
+        state.expandedIds.clear();
+        state.pinnedIds.clear();
         clearCards(false);
         return api;
       },
