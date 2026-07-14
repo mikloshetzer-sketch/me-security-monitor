@@ -610,82 +610,98 @@
       background:var(--navy-2);
     }
 
-    .diagram-stage {
-      position:relative;
-      height:330px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      border-radius:14px;
-      background:
-        linear-gradient(rgba(215,224,232,.28) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(215,224,232,.28) 1px,transparent 1px),
-        #fbfcfd;
-      background-size:28px 28px;
+    .attacker-chart-layout {
+      display:grid;
+      grid-template-columns:minmax(260px,380px) minmax(0,1fr);
+      gap:22px;
+      align-items:center;
     }
 
-    .diagram-lines {
-      position:absolute;
-      inset:0;
+    .donut-wrap {
+      position:relative;
+      width:min(100%,360px);
+      aspect-ratio:1;
+      margin:0 auto;
+    }
+
+    #attackerCanvas {
       width:100%;
       height:100%;
-    }
-
-    .conflict-node {
-      position:absolute;
-      min-width:112px;
-      padding:9px 10px;
-      transform:translate(-50%,-50%);
-      border:1px solid var(--border);
-      border-left:4px solid var(--actor);
-      border-radius:10px;
-      background:rgba(255,255,255,.96);
-      box-shadow:0 5px 14px rgba(26,46,66,.10);
-      text-align:center;
-    }
-
-    .conflict-node-dot {
       display:block;
-      width:9px;
-      height:9px;
-      margin:0 auto 5px;
+    }
+
+    .donut-center {
+      position:absolute;
+      inset:50% auto auto 50%;
+      transform:translate(-50%,-50%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      width:42%;
+      aspect-ratio:1;
+      border-radius:50%;
+      background:#fff;
+      border:1px solid var(--border);
+      box-shadow:0 4px 14px rgba(26,46,66,.08);
+      text-align:center;
+      pointer-events:none;
+    }
+
+    .donut-center strong {
+      color:var(--navy);
+      font-size:28px;
+      line-height:1;
+    }
+
+    .donut-center span {
+      margin-top:5px;
+      color:var(--muted);
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .attacker-legend {
+      display:grid;
+      gap:8px;
+    }
+
+    .attacker-legend-row {
+      display:grid;
+      grid-template-columns:12px minmax(0,1fr) auto auto;
+      gap:9px;
+      align-items:center;
+      padding:9px 10px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:var(--panel-soft);
+    }
+
+    .attacker-legend-dot {
+      width:10px;
+      height:10px;
       border-radius:50%;
       background:var(--actor);
     }
 
-    .conflict-node strong {
-      display:block;
+    .attacker-legend-name {
       color:var(--navy);
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .attacker-legend-count {
+      color:var(--navy);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .attacker-legend-share {
+      min-width:52px;
+      color:var(--muted);
       font-size:10px;
-    }
-
-    .conflict-node small {
-      display:block;
-      margin-top:2px;
-      color:var(--muted);
-      font-size:8px;
-    }
-
-    .diagram-targets {
-      display:flex;
-      align-items:center;
-      gap:7px;
-      flex-wrap:wrap;
-      margin-top:9px;
-      color:var(--muted);
-      font-size:9px;
-    }
-
-    .diagram-targets b {
-      padding:5px 7px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:#fff;
-      color:#344457;
-    }
-
-    .diagram-targets em {
-      color:var(--teal);
-      font-style:normal;
+      text-align:right;
     }
 
     .country-grid {
@@ -892,6 +908,10 @@
       .dashboard-grid {
         grid-template-columns:1fr;
       }
+
+      .attacker-chart-layout {
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:760px) {
@@ -965,8 +985,8 @@
     <div class="brand-wrap">
       <div class="brand-mark">ME</div>
       <div>
-        <div class="brand-title">IranStrike Intelligence Dashboard</div>
-        <div class="brand-sub">Törésvonalak · Közel-keleti esemény- és kockázatelemzés</div>
+        <div class="brand-title">Törésvonalak.blog</div>
+        <div class="brand-sub">Elemzés. Tények. Kontextus. · IranStrike Intelligence Dashboard</div>
       </div>
     </div>
 
@@ -1139,23 +1159,34 @@
       <section class="panel">
         <div class="panel-head">
           <div>
-            <h2>Konfliktuskapcsolati diagram</h2>
+            <h2>Támadó fél szerinti megoszlás</h2>
             <div class="panel-note" style="text-align:left;margin-top:3px;">
-              Egyszerű vizuális áttekintés az eseményekben szereplő fő aktorokról
+              A kiválasztott időszak eseményeinek aránya az azonosított támadó fél alapján
             </div>
           </div>
           <div class="panel-note">
-            A vonalvastagság az adott szereplő rekordmennyiségét jelzi.
+            A bizonytalan rekordok külön „Unknown actor” kategóriában maradnak.
           </div>
         </div>
-        <div id="conflictDiagram"></div>
+
+        <div class="attacker-chart-layout">
+          <div class="donut-wrap">
+            <canvas id="attackerCanvas"></canvas>
+            <div class="donut-center">
+              <strong id="attackerTotal">0</strong>
+              <span>összes esemény</span>
+            </div>
+          </div>
+
+          <div id="attackerLegend" class="attacker-legend"></div>
+        </div>
       </section>
 
       <div class="dashboard-grid">
         <section class="panel">
           <div class="panel-head">
-            <h2>Napi eseménytrend</h2>
-            <div class="panel-note">A kiválasztott időszak napi eseményszáma</div>
+            <h2>Konfliktus eszkalációs / de-eszkalációs trend</h2>
+            <div class="panel-note">Napi index, 3 napos mozgóátlag és lineáris trendvonal</div>
           </div>
           <div class="chart-wrap">
             <canvas id="trendCanvas"></canvas>
@@ -1607,78 +1638,119 @@
 
       ctx.clearRect(0,0,width,height);
 
-      const counts = new Map();
-
-      for (const event of list) {
-        const date = parseDate(event.date);
-        if (!date) continue;
-
-        const key = date.toISOString().slice(0,10);
-        counts.set(key,(counts.get(key)||0)+1);
-      }
-
-      const rows = [...counts.entries()]
-        .sort((a,b) => a[0].localeCompare(b[0]));
+      const rows = dailyEscalationRows(list);
 
       if (!rows.length) {
         ctx.fillStyle = "#64748b";
         ctx.font = "13px Arial";
-        ctx.fillText("Nincs trendadat.",18,28);
+        ctx.fillText("Nincs indexadat.",18,28);
         return;
       }
 
-      const pad = {left:44,right:16,top:18,bottom:34};
+      const daily = rows.map(row=>row.value);
+      const average = movingAverage(daily,3);
+      const trend = linearTrend(daily);
+
+      const allValues = [...daily,...average,...trend,0];
+      const minValue = Math.min(...allValues);
+      const maxValue = Math.max(...allValues);
+      const span = Math.max(.5,maxValue-minValue);
+
+      const pad = {left:52,right:18,top:30,bottom:38};
       const cw = width-pad.left-pad.right;
       const ch = height-pad.top-pad.bottom;
-      const max = Math.max(1,...rows.map(row=>row[1]));
+
+      const xFor = index =>
+        pad.left +
+        (rows.length===1 ? cw/2 : index/(rows.length-1)*cw);
+
+      const yFor = value =>
+        pad.top +
+        ch -
+        ((value-minValue)/span)*ch;
 
       ctx.strokeStyle = "#d8e1e9";
       ctx.lineWidth = 1;
 
-      for (let i=0;i<=4;i+=1) {
-        const y = pad.top+(ch/4)*i;
+      for (let i=0;i<=5;i+=1) {
+        const ratio = i/5;
+        const value = maxValue-ratio*span;
+        const y = pad.top+ratio*ch;
 
         ctx.beginPath();
         ctx.moveTo(pad.left,y);
         ctx.lineTo(pad.left+cw,y);
         ctx.stroke();
+
+        ctx.fillStyle = "#64748b";
+        ctx.font = "10px Arial";
+        ctx.fillText(value.toFixed(1),8,y+3);
       }
 
-      const points = rows.map((row,index) => {
-        const x =
-          pad.left +
-          (rows.length===1 ? cw/2 : index/(rows.length-1)*cw);
-
-        const y =
-          pad.top +
-          ch -
-          (row[1]/max)*ch;
-
-        return {x,y,row};
-      });
-
-      ctx.beginPath();
-
-      points.forEach((point,index) => {
-        if (index===0) ctx.moveTo(point.x,point.y);
-        else ctx.lineTo(point.x,point.y);
-      });
-
-      ctx.strokeStyle = "#17324d";
-      ctx.lineWidth = 2.4;
-      ctx.stroke();
-
-      points.forEach(point => {
+      if (minValue < 0 && maxValue > 0) {
+        const zeroY = yFor(0);
         ctx.beginPath();
-        ctx.arc(point.x,point.y,3,0,Math.PI*2);
-        ctx.fillStyle = "#0f766e";
+        ctx.moveTo(pad.left,zeroY);
+        ctx.lineTo(pad.left+cw,zeroY);
+        ctx.strokeStyle = "#9aa8b5";
+        ctx.lineWidth = 1.3;
+        ctx.stroke();
+      }
+
+      function drawSeries(values,color,widthValue,dash=[]) {
+        ctx.beginPath();
+
+        values.forEach((value,index) => {
+          const x = xFor(index);
+          const y = yFor(value);
+
+          if (index===0) ctx.moveTo(x,y);
+          else ctx.lineTo(x,y);
+        });
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = widthValue;
+        ctx.setLineDash(dash);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      drawSeries(daily,"#1f77b4",2.2,[]);
+      drawSeries(average,"#ff7f0e",2.4,[8,6]);
+      drawSeries(trend,"#2ca02c",2.4,[3,5]);
+
+      daily.forEach((value,index) => {
+        ctx.beginPath();
+        ctx.arc(xFor(index),yFor(value),3.1,0,Math.PI*2);
+        ctx.fillStyle = "#1f77b4";
         ctx.fill();
       });
 
-      ctx.fillStyle = "#64748b";
-      ctx.font = "11px Arial";
-      ctx.fillText(String(max),8,pad.top+4);
-      ctx.fillText("0",25,pad.top+ch+4);
+      const legend = [
+        {label:"Napi konfliktusindex",color:"#1f77b4",dash:false},
+        {label:"3 napos mozgóátlag",color:"#ff7f0e",dash:true},
+        {label:"Trendvonal",color:"#2ca02c",dash:true}
+      ];
+
+      let legendX = pad.left;
+      const legendY = 14;
+
+      ctx.font = "10px Arial";
+
+      legend.forEach(item => {
+        ctx.beginPath();
+        ctx.moveTo(legendX,legendY);
+        ctx.lineTo(legendX+22,legendY);
+        ctx.strokeStyle = item.color;
+        ctx.lineWidth = 2.5;
+        ctx.setLineDash(item.dash ? [6,4] : []);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = "#334155";
+        ctx.fillText(item.label,legendX+27,legendY+3);
+        legendX += ctx.measureText(item.label).width+62;
+      });
 
       const indices = [
         0,
@@ -1686,15 +1758,19 @@
         rows.length-1
       ];
 
+      ctx.fillStyle = "#64748b";
+      ctx.font = "10px Arial";
+
       [...new Set(indices)].forEach(index => {
-        const point = points[index];
+        const x = xFor(index);
         ctx.fillText(
-          rows[index][0],
-          Math.max(4,point.x-32),
-          height-10
+          rows[index].date.slice(5),
+          Math.max(4,x-18),
+          height-12
         );
       });
     }
+
 
     function drawCategories(list) {
       const canvas = $("categoryCanvas");
@@ -1986,136 +2062,182 @@
         .join("");
     }
 
-    function renderConflictDiagram(list) {
-      const actorCounts = new Map(
+    function drawAttackerDonut(list) {
+      const canvas = $("attackerCanvas");
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = Math.max(320, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(320, Math.floor(rect.height * dpr));
+
+      const ctx = canvas.getContext("2d");
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      ctx.clearRect(0,0,rect.width,rect.height);
+
+      const orderedKeys = ["israel","iran","usa","other","unknown"];
+      const countsMap = new Map(
         countBy(list,event=>attackerMeta(event).key)
       );
 
-      const targetCounts = new Map(
-        countBy(
-          list,
-          event => String(
-            event.country ||
-            event.location ||
-            "Unknown"
-          )
-        )
-      );
+      const rows = orderedKeys.map(key => {
+        const meta = ATTACKER_META[key];
+        return {
+          key,
+          label:meta.label,
+          color:meta.color,
+          count:countsMap.get(key)||0
+        };
+      });
 
-      const topTargets =
-        [...targetCounts.entries()].slice(0,4);
+      const total = rows.reduce((sum,row)=>sum+row.count,0);
+      $("attackerTotal").textContent = total.toLocaleString("hu-HU");
 
-      const nodes = [
-        {key:"israel",x:18,y:28},
-        {key:"iran",x:50,y:17},
-        {key:"usa",x:82,y:28},
-        {key:"other",x:30,y:78},
-        {key:"unknown",x:70,y:78}
-      ];
+      const cx = rect.width/2;
+      const cy = rect.height/2;
+      const radius = Math.min(rect.width,rect.height)*0.41;
+      const inner = radius*0.58;
 
-      const maxActor = Math.max(
-        1,
-        ...nodes.map(node=>actorCounts.get(node.key)||0)
-      );
+      let angle = -Math.PI/2;
 
-      const lineWidth = key =>
-        1.5 +
-        ((actorCounts.get(key)||0)/maxActor)*5;
+      rows.forEach(row => {
+        const share = total ? row.count/total : 0;
+        const next = angle + share*Math.PI*2;
 
-      const connections = [
-        ["iran","israel"],
-        ["israel","iran"],
-        ["usa","iran"],
-        ["other","israel"],
-        ["unknown","iran"]
-      ];
+        if (share > 0) {
+          ctx.beginPath();
+          ctx.moveTo(cx,cy);
+          ctx.arc(cx,cy,radius,angle,next);
+          ctx.closePath();
+          ctx.fillStyle = row.color;
+          ctx.fill();
 
-      const svgLines = connections
-        .map(([from,to]) => {
-          const a = nodes.find(node=>node.key===from);
-          const b = nodes.find(node=>node.key===to);
-          const color =
-            ATTACKER_META[from]?.color ||
-            ATTACKER_META.unknown.color;
+          ctx.beginPath();
+          ctx.arc(cx,cy,inner,0,Math.PI*2);
+          ctx.fillStyle = "#ffffff";
+          ctx.fill();
+        }
 
-          return `
-            <line
-              x1="${a.x}%"
-              y1="${a.y}%"
-              x2="${b.x}%"
-              y2="${b.y}%"
-              stroke="${color}"
-              stroke-width="${lineWidth(from)}"
-              stroke-dasharray="7 7"
-              marker-end="url(#arrow)"
-              opacity=".72"
-            />
-          `;
-        })
-        .join("");
+        angle = next;
+      });
 
-      const nodeHtml = nodes
-        .map(node => {
-          const meta = ATTACKER_META[node.key];
-          const count = actorCounts.get(node.key)||0;
+      ctx.beginPath();
+      ctx.arc(cx,cy,radius,0,Math.PI*2);
+      ctx.strokeStyle = "#d8e1e9";
+      ctx.lineWidth = 1;
+      ctx.stroke();
 
-          return `
-            <div
-              class="conflict-node"
-              style="
-                left:${node.x}%;
-                top:${node.y}%;
-                --actor:${meta.color};
-              "
-            >
-              <span class="conflict-node-dot"></span>
-              <strong>${escapeHtml(meta.label)}</strong>
-              <small>${count.toLocaleString("hu-HU")} event</small>
-            </div>
-          `;
-        })
-        .join("");
+      $("attackerLegend").innerHTML = rows.map(row => {
+        const share = total ? row.count/total*100 : 0;
 
-      $("conflictDiagram").innerHTML = `
-        <div class="diagram-stage">
-          <svg
-            class="diagram-lines"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <defs>
-              <marker
-                id="arrow"
-                markerWidth="8"
-                markerHeight="8"
-                refX="5"
-                refY="3"
-                orient="auto"
-              >
-                <path
-                  d="M0,0 L0,6 L6,3 z"
-                  fill="#617083"
-                ></path>
-              </marker>
-            </defs>
-
-            ${svgLines}
-          </svg>
-
-          ${nodeHtml}
-        </div>
-
-        <div class="diagram-targets">
-          <span>Leggyakoribb érintett területek:</span>
-          ${topTargets
-            .map(([name,count]) => `
-              <b>${escapeHtml(name)} <em>${count}</em></b>
-            `)
-            .join("")}
-        </div>
-      `;
+        return `
+          <div class="attacker-legend-row" style="--actor:${row.color}">
+            <span class="attacker-legend-dot"></span>
+            <span class="attacker-legend-name">${escapeHtml(row.label)}</span>
+            <span class="attacker-legend-count">${row.count.toLocaleString("hu-HU")}</span>
+            <span class="attacker-legend-share">${share.toFixed(1)}%</span>
+          </div>
+        `;
+      }).join("");
     }
+
+    function eventEscalationValue(event) {
+      const severity = String(event?.severity || "").toLowerCase();
+      const category = String(event?.category || "").toLowerCase();
+      const title = `${event?.title || ""} ${event?.description || ""}`.toLowerCase();
+
+      let value = 0;
+
+      if (severity === "critical") value -= 2.5;
+      else if (severity === "high") value -= 1.8;
+      else if (severity === "medium") value -= 1.0;
+      else if (severity === "low") value -= 0.4;
+
+      if (
+        category.includes("airstrike") ||
+        category.includes("missile") ||
+        category.includes("drone") ||
+        category.includes("explosion") ||
+        category.includes("ground") ||
+        category.includes("infrastructure")
+      ) {
+        value -= 0.35;
+      }
+
+      if (
+        title.includes("ceasefire") ||
+        title.includes("de-escal") ||
+        title.includes("truce") ||
+        title.includes("agreement") ||
+        title.includes("talks resumed") ||
+        title.includes("negotiation")
+      ) {
+        value += 1.5;
+      }
+
+      if (
+        title.includes("intercepted") ||
+        title.includes("prevented") ||
+        title.includes("defused")
+      ) {
+        value += 0.25;
+      }
+
+      return value;
+    }
+
+    function dailyEscalationRows(list) {
+      const daily = new Map();
+
+      list.forEach(event => {
+        const date = parseDate(event.date);
+        if (!date) return;
+
+        const key = date.toISOString().slice(0,10);
+
+        if (!daily.has(key)) {
+          daily.set(key,{sum:0,count:0});
+        }
+
+        const item = daily.get(key);
+        item.sum += eventEscalationValue(event);
+        item.count += 1;
+      });
+
+      return [...daily.entries()]
+        .sort((a,b)=>a[0].localeCompare(b[0]))
+        .map(([date,item])=>({
+          date,
+          value:item.count ? item.sum/item.count : 0
+        }));
+    }
+
+    function movingAverage(values,windowSize=3) {
+      return values.map((_,index) => {
+        const start = Math.max(0,index-windowSize+1);
+        const window = values.slice(start,index+1);
+        return window.reduce((sum,value)=>sum+value,0)/window.length;
+      });
+    }
+
+    function linearTrend(values) {
+      if (!values.length) return [];
+
+      const n = values.length;
+      const sumX = values.reduce((sum,_,index)=>sum+index,0);
+      const sumY = values.reduce((sum,value)=>sum+value,0);
+      const sumXY = values.reduce((sum,value,index)=>sum+index*value,0);
+      const sumXX = values.reduce((sum,_,index)=>sum+index*index,0);
+
+      const denominator = n*sumXX-sumX*sumX;
+      const slope = denominator
+        ? (n*sumXY-sumX*sumY)/denominator
+        : 0;
+
+      const intercept = (sumY-slope*sumX)/n;
+
+      return values.map((_,index)=>intercept+slope*index);
+    }
+
 
     function renderDevelopments(list) {
       const sourceRows =
@@ -2368,7 +2490,7 @@
       renderRanks("countryList",countries);
       renderAttackerCards(list);
       renderCountryCards(list);
-      renderConflictDiagram(list);
+      drawAttackerDonut(list);
       drawTrend(list);
       drawCategories(list);
       renderDevelopments(list);
@@ -2460,4 +2582,3 @@
   </script>
 </body>
 </html>
-
