@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "generated_at": "2026-07-14T13:10:25+00:00",
+  "schema_version": 3,
+  "generated_at": "2026-07-14T13:24:40+00:00",
   "source_url": "https://t.me/s/idfofficial",
   "events": [
     {
@@ -32,10 +32,21 @@
       "target_organization": "Hamas",
       "target_types": [
         "commander",
-        "armed_personnel",
-        "vehicle"
+        "armed_cell"
       ],
       "target_type": "commander",
+      "commander_types": [
+        "cell_commander",
+        "battalion_commander",
+        "naval_commander"
+      ],
+      "commander_type": "cell_commander",
+      "threat_domains": [
+        "ground",
+        "naval",
+        "command"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -47,7 +58,8 @@
           "region": "Gaza Strip",
           "country": "Palestinian Territories",
           "latitude": 31.5017,
-          "longitude": 34.4668
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
         }
       ],
       "location_count": 1,
@@ -58,6 +70,8 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18915"
     },
     {
@@ -88,10 +102,17 @@
       ],
       "target_organization": "Hamas",
       "target_types": [
-        "vehicle",
+        "individual_operative",
         "smuggling_network"
       ],
-      "target_type": "vehicle",
+      "target_type": "individual_operative",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground",
+        "weapons_logistics"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -106,6 +127,8 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18913"
     },
     {
@@ -136,11 +159,18 @@
       ],
       "target_organization": "Hamas",
       "target_types": [
-        "armed_personnel",
+        "armed_cell",
         "weapons_production",
-        "vehicle"
+        "military_structure"
       ],
-      "target_type": "armed_personnel",
+      "target_type": "armed_cell",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground",
+        "production"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "struck",
         "dismantled"
@@ -152,7 +182,8 @@
           "region": "Gaza Strip",
           "country": "Palestinian Territories",
           "latitude": 31.5017,
-          "longitude": 34.4668
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
         }
       ],
       "location_count": 1,
@@ -163,6 +194,8 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18910"
     },
     {
@@ -193,10 +226,15 @@
       ],
       "target_organization": "Hamas",
       "target_types": [
-        "armed_personnel",
-        "vehicle"
+        "individual_operative"
       ],
-      "target_type": "armed_personnel",
+      "target_type": "individual_operative",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -211,6 +249,8 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18909"
     },
     {
@@ -242,11 +282,16 @@
       ],
       "target_organization": "Hezbollah",
       "target_types": [
-        "armed_personnel",
-        "vehicle",
-        "artillery_or_launcher"
+        "weapons_storage"
       ],
-      "target_type": "armed_personnel",
+      "target_type": "weapons_storage",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground",
+        "rocket_missile"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "struck",
         "located"
@@ -261,6 +306,8 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18906"
     },
     {
@@ -292,12 +339,18 @@
       ],
       "target_organization": "Hezbollah",
       "target_types": [
-        "armed_personnel",
         "tunnel",
         "military_structure",
-        "vehicle"
+        "targeted_vehicle"
       ],
-      "target_type": "armed_personnel",
+      "target_type": "tunnel",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground",
+        "underground"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck",
@@ -313,6 +366,8 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18905"
     },
     {
@@ -344,13 +399,23 @@
       "target_organization": "Hamas",
       "target_types": [
         "commander",
-        "armed_personnel",
         "weapons_production",
-        "rocket_launcher",
-        "command_center",
-        "vehicle"
+        "rocket_launcher"
       ],
       "target_type": "commander",
+      "commander_types": [
+        "company_commander",
+        "battalion_commander",
+        "production_commander"
+      ],
+      "commander_type": "company_commander",
+      "threat_domains": [
+        "ground",
+        "rocket_missile",
+        "command",
+        "production"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -362,7 +427,8 @@
           "region": "Gaza Strip",
           "country": "Palestinian Territories",
           "latitude": 31.448,
-          "longitude": 34.3925
+          "longitude": 34.3925,
+          "matched_alias": "nuseirat"
         }
       ],
       "location_count": 1,
@@ -373,6 +439,8 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18904"
     },
     {
@@ -403,10 +471,19 @@
       ],
       "target_organization": "Hamas",
       "target_types": [
-        "commander",
-        "vehicle"
+        "commander"
       ],
       "target_type": "commander",
+      "commander_types": [
+        "cell_commander",
+        "nukhba_commander"
+      ],
+      "commander_type": "cell_commander",
+      "threat_domains": [
+        "ground",
+        "command"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -421,6 +498,8 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18902"
     },
     {
@@ -453,11 +532,21 @@
       "target_organization": "Hamas",
       "target_types": [
         "commander",
-        "armed_personnel",
-        "weapons_production",
-        "vehicle"
+        "individual_operative",
+        "weapons_production"
       ],
       "target_type": "commander",
+      "commander_types": [
+        "battalion_commander",
+        "production_commander"
+      ],
+      "commander_type": "battalion_commander",
+      "threat_domains": [
+        "ground",
+        "command",
+        "production"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -472,6 +561,8 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
       "raw_post_id": "idfofficial/18900"
     },
     {
@@ -498,14 +589,23 @@
       ],
       "activity_type": "airstrike",
       "target_organizations": [
-        "Unknown"
+        "Not explicitly stated"
       ],
-      "target_organization": "Unknown",
+      "target_organization": "Not explicitly stated",
       "target_types": [
         "commander",
-        "vehicle"
+        "individual_operative"
       ],
       "target_type": "commander",
+      "commander_types": [
+        "company_commander"
+      ],
+      "commander_type": "company_commander",
+      "threat_domains": [
+        "ground",
+        "command"
+      ],
+      "threat_domain": "ground",
       "operation_results": [
         "eliminated",
         "struck"
@@ -517,7 +617,8 @@
           "region": "Gaza Strip",
           "country": "Palestinian Territories",
           "latitude": 31.3462,
-          "longitude": 34.303
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
         }
       ],
       "location_count": 1,
@@ -528,6 +629,8 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
       "raw_post_id": "idfofficial/18898"
     }
   ]
