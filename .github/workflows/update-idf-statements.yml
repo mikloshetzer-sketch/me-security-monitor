@@ -1,0 +1,274 @@
+name: Update IDF Statements
+
+on:
+  workflow_dispatch:
+    inputs:
+      verbose:
+        description: "Enable verbose logging"
+        required: false
+        default: false
+        type: boolean
+
+      max_posts:
+        description: "Maximum number of public Telegram posts to inspect"
+        required: false
+        default: "120"
+        type: string
+
+  schedule:
+    # Four times per day, UTC.
+    - cron: "17 2,8,14,20 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-idf-statements
+  cancel-in-progress: false
+
+jobs:
+  update-idf-statements:
+    name: Build Israel Military Activity data
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Locate IDF statements script
+        id: locate_script
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          CANDIDATES=(
+            "scripts/update_idf_statements.py"
+            "update_idf_statements.py"
+          )
+
+          SCRIPT_PATH=""
+
+          for CANDIDATE in "${CANDIDATES[@]}"; do
+            if [[ -f "${CANDIDATE}" ]]; then
+              SCRIPT_PATH="${CANDIDATE}"
+              break
+            fi
+          done
+
+          if [[ -z "${SCRIPT_PATH}" ]]; then
+            SCRIPT_PATH="$(
+              find . -maxdepth 4 -type f \
+                -name "update_idf_statements.py" \
+                -print -quit \
+              | sed 's#^\./##'
+            )"
+          fi
+
+          if [[ -z "${SCRIPT_PATH}" || ! -f "${SCRIPT_PATH}" ]]; then
+            echo "ERROR: update_idf_statements.py was not found."
+            echo ""
+            echo "Expected one of these paths:"
+            echo "  scripts/update_idf_statements.py"
+            echo "  update_idf_statements.py"
+            echo ""
+            echo "Available Python files:"
+            find . -maxdepth 4 -type f -name "*.py" -print || true
+            exit 1
+          fi
+
+          echo "Found script: ${SCRIPT_PATH}"
+          echo "script_path=${SCRIPT_PATH}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify Python syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m py_compile \
+            "${{ steps.locate_script.outputs.script_path }}"
+
+      - name: Resolve workflow options
+        id: options
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          MAX_POSTS="120"
+          VERBOSE_OPTION=""
+
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            INPUT_MAX_POSTS="${{ inputs.max_posts }}"
+
+            if [[ "${INPUT_MAX_POSTS}" =~ ^[0-9]+$ ]] && \
+               [[ "${INPUT_MAX_POSTS}" -ge 1 ]] && \
+               [[ "${INPUT_MAX_POSTS}" -le 500 ]]; then
+              MAX_POSTS="${INPUT_MAX_POSTS}"
+            else
+              echo "Invalid max_posts input. Using 120."
+            fi
+
+            if [[ "${{ inputs.verbose }}" == "true" ]]; then
+              VERBOSE_OPTION="--verbose"
+            fi
+          fi
+
+          echo "max_posts=${MAX_POSTS}" >> "$GITHUB_OUTPUT"
+          echo "verbose_option=${VERBOSE_OPTION}" >> "$GITHUB_OUTPUT"
+
+      - name: Run IDF statements processor
+        id: build
+        shell: bash
+        run: |
+          set +e
+
+          python "${{ steps.locate_script.outputs.script_path }}" \
+            --source-url "https://t.me/s/idfofficial" \
+            --output "data/israel-military-activity.json" \
+            --history "data/israel-military-activity-history.json" \
+            --timeout 30 \
+            --max-posts "${{ steps.options.outputs.max_posts }}" \
+            --retention-days 730 \
+            ${{ steps.options.outputs.verbose_option }}
+
+          EXIT_CODE=$?
+          set -e
+
+          echo "exit_code=${EXIT_CODE}" >> "$GITHUB_OUTPUT"
+
+          if [[ "${EXIT_CODE}" -eq 0 ]]; then
+            echo "IDF statements data updated successfully."
+          elif [[ "${EXIT_CODE}" -eq 2 ]]; then
+            echo "No Telegram posts were parsed."
+            echo "The public Telegram page may be unavailable or its HTML layout may have changed."
+            exit 2
+          else
+            echo "Processor failed with exit code ${EXIT_CODE}."
+            exit "${EXIT_CODE}"
+          fi
+
+      - name: Verify generated JSON files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f data/israel-military-activity.json
+          test -f data/israel-military-activity-history.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          current_path = Path("data/israel-military-activity.json")
+          history_path = Path("data/israel-military-activity-history.json")
+
+          current = json.loads(current_path.read_text(encoding="utf-8"))
+          history = json.loads(history_path.read_text(encoding="utf-8"))
+
+          events = current.get("events", [])
+          map_events = current.get("map_events", [])
+          analytics = current.get("analytics", {})
+          overview = analytics.get("overview", {})
+
+          if not isinstance(events, list):
+              raise SystemExit("events must be a list")
+
+          if not isinstance(map_events, list):
+              raise SystemExit("map_events must be a list")
+
+          if not isinstance(history.get("events", []), list):
+              raise SystemExit("history events must be a list")
+
+          for event in events:
+              if not event.get("id"):
+                  raise SystemExit("Event without id found")
+
+              if event.get("activity_type") not in {
+                  "airstrike",
+                  "ground_activity",
+                  "artillery",
+                  "cross_border_fire",
+                  "drone_activity",
+                  "evacuation_warning",
+                  "humanitarian_zone",
+              }:
+                  raise SystemExit(
+                      f"Unsupported activity type: "
+                      f"{event.get('activity_type')}"
+                  )
+
+          for event in map_events:
+              if event.get("map_visualizable") is not True:
+                  raise SystemExit(
+                      "Non-visualizable event found in map_events"
+                  )
+
+              latitude = event.get("latitude")
+              longitude = event.get("longitude")
+
+              if not isinstance(latitude, (int, float)):
+                  raise SystemExit("Invalid map event latitude")
+
+              if not isinstance(longitude, (int, float)):
+                  raise SystemExit("Invalid map event longitude")
+
+          print("Generated at:", current.get("generated_at"))
+          print("Total events:", len(events))
+          print("Map events:", len(map_events))
+          print(
+              "Latest event:",
+              overview.get("latest_event_date"),
+          )
+          PY
+
+      - name: Upload generated IDF data
+        uses: actions/upload-artifact@v4
+        with:
+          name: idf-statements-data-${{ github.run_number }}
+          path: |
+            data/israel-military-activity.json
+            data/israel-military-activity-history.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit updated data
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/israel-military-activity.json
+          git add data/israel-military-activity-history.json
+
+          if git diff --cached --quiet; then
+            echo "No IDF statement data changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update IDF military activity data"
+
+          for ATTEMPT in 1 2 3; do
+            if git push; then
+              echo "Push completed."
+              exit 0
+            fi
+
+            if [[ "${ATTEMPT}" -eq 3 ]]; then
+              echo "Push failed after ${ATTEMPT} attempts."
+              exit 1
+            fi
+
+            echo "Push attempt ${ATTEMPT} failed. Rebasing and retrying."
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            sleep 5
+          done
