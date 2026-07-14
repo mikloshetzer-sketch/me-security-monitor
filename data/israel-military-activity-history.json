@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-07-14T13:24:40+00:00",
+  "schema_version": 4,
+  "generated_at": "2026-07-14T13:32:16+00:00",
   "source_url": "https://t.me/s/idfofficial",
   "events": [
     {
@@ -37,16 +37,18 @@
       "target_type": "commander",
       "commander_types": [
         "cell_commander",
-        "battalion_commander",
         "naval_commander"
       ],
       "commander_type": "cell_commander",
       "threat_domains": [
-        "ground",
         "naval",
-        "command"
+        "command",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "naval",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -70,6 +72,7 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "geospatial_confidence": "high",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18915"
@@ -109,10 +112,13 @@
       "commander_types": [],
       "commander_type": "",
       "threat_domains": [
-        "ground",
-        "weapons_logistics"
+        "weapons_logistics",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "weapons_logistics",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -127,6 +133,7 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18913"
@@ -167,10 +174,13 @@
       "commander_types": [],
       "commander_type": "",
       "threat_domains": [
-        "ground",
-        "production"
+        "production",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "production",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
       "operation_results": [
         "struck",
         "dismantled"
@@ -194,6 +204,7 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "geospatial_confidence": "high",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18910"
@@ -235,6 +246,10 @@
         "ground"
       ],
       "threat_domain": "ground",
+      "area_mentions": [
+        "Northern Gaza Strip",
+        "Yellow Line area"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -249,6 +264,7 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18909"
@@ -288,10 +304,13 @@
       "commander_types": [],
       "commander_type": "",
       "threat_domains": [
-        "ground",
-        "rocket_missile"
+        "rocket_missile",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "rocket_missile",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
       "operation_results": [
         "struck",
         "located"
@@ -306,6 +325,7 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18906"
@@ -347,10 +367,13 @@
       "commander_types": [],
       "commander_type": "",
       "threat_domains": [
-        "ground",
-        "underground"
+        "underground",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "underground",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
       "operation_results": [
         "eliminated",
         "struck",
@@ -366,6 +389,7 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18905"
@@ -405,17 +429,19 @@
       "target_type": "commander",
       "commander_types": [
         "company_commander",
-        "battalion_commander",
         "production_commander"
       ],
       "commander_type": "company_commander",
       "threat_domains": [
-        "ground",
         "rocket_missile",
+        "production",
         "command",
-        "production"
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "rocket_missile",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -439,6 +465,7 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "geospatial_confidence": "high",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18904"
@@ -480,10 +507,13 @@
       ],
       "commander_type": "cell_commander",
       "threat_domains": [
-        "ground",
-        "command"
+        "command",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -498,6 +528,7 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18902"
@@ -537,16 +568,19 @@
       ],
       "target_type": "commander",
       "commander_types": [
-        "battalion_commander",
         "production_commander"
       ],
-      "commander_type": "battalion_commander",
+      "commander_type": "production_commander",
       "threat_domains": [
-        "ground",
+        "production",
         "command",
-        "production"
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "production",
+      "area_mentions": [
+        "Northern Gaza Strip",
+        "Southern Gaza Strip"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -561,6 +595,7 @@
       "map_visualizable": false,
       "geocode_method": "none",
       "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "high",
       "raw_post_id": "idfofficial/18900"
@@ -602,10 +637,13 @@
       ],
       "commander_type": "company_commander",
       "threat_domains": [
-        "ground",
-        "command"
+        "command",
+        "ground"
       ],
-      "threat_domain": "ground",
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
       "operation_results": [
         "eliminated",
         "struck"
@@ -629,6 +667,7 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
+      "geospatial_confidence": "high",
       "classification_method": "deterministic_keyword_rules",
       "classification_confidence": "medium",
       "raw_post_id": "idfofficial/18898"
