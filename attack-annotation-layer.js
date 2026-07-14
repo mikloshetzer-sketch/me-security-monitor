@@ -1,6 +1,6 @@
 /*
  * ME Security Monitor
- * Shared draggable attack annotation layer for Leaflet maps.
+ * Shared draggable multi-source analysis card layer for Leaflet maps.
  *
  * File: attack-annotation-layer.js
  *
@@ -9,15 +9,24 @@
  *
  *   annotations.setEvents("iranstrike", iranStrikeEvents);
  *   annotations.setEvents("cir", cirEvents);
+ *   annotations.setEvents("idf", idfEvents);
+ *   annotations.setEvents("reddit", redditEvents);
+ *   annotations.setEvents("mastodon", mastodonEvents);
+ *   annotations.setEvents("reuters", reutersEvents);
+ *   annotations.setEvents("crowd", crowdEvents);
+ *   annotations.setEvents("firms", firmsEvents);
+ *
  *   annotations.setEnabled(true);
- *   annotations.setSourceEnabled("iranstrike", true);
- *   annotations.setSourceEnabled("cir", true);
+ *   annotations.setSourceEnabled("idf", true);
+ *   annotations.setMinimumReliability(40);
  *   annotations.setLimit(10);
+ *   annotations.restoreHidden();
+ *   annotations.resetPositions();
  *   annotations.refresh();
  *
  * Events must contain valid latitude/longitude values.
  * The layer does not move the original event marker. It creates a draggable
- * HTML card and draws a dashed line from the event coordinate to that card.
+ * HTML analysis card and draws a dashed line from the event coordinate to it.
  */
 
 (function () {
@@ -48,12 +57,97 @@
     }
   };
 
+  const DEFAULT_SOURCE_STYLES = {
+    iranstrike: {
+      label: "IranStrike",
+      color: "#2563eb",
+      icon: "IS",
+      reliability: 78,
+      sourceType: "processed_osint",
+      warning:
+        "Processed OSINT record. Review the original source before drawing conclusions."
+    },
+    cir: {
+      label: "CIR",
+      color: "#7c3aed",
+      icon: "CIR",
+      reliability: 72,
+      sourceType: "processed_osint",
+      warning:
+        "Historical or processed OSINT record. Source coverage may not be current."
+    },
+    idf: {
+      label: "IDF Official",
+      color: "#dc2626",
+      icon: "IDF",
+      reliability: 82,
+      sourceType: "official_belligerent",
+      warning:
+        "Official statement by a party to the conflict. Not independently verified."
+    },
+    reuters: {
+      label: "Reuters",
+      color: "#ea580c",
+      icon: "R",
+      reliability: 88,
+      sourceType: "professional_media",
+      warning:
+        "Professional media report. Check the linked report and its cited evidence."
+    },
+    reddit: {
+      label: "Reddit",
+      color: "#16a34a",
+      icon: "RD",
+      reliability: 38,
+      sourceType: "social_media",
+      warning:
+        "Unverified social-media report. Treat it as a lead, not as confirmation."
+    },
+    mastodon: {
+      label: "Mastodon",
+      color: "#475569",
+      icon: "M",
+      reliability: 36,
+      sourceType: "social_media",
+      warning:
+        "Unverified social-media report. Treat it as a lead, not as confirmation."
+    },
+    crowd: {
+      label: "Crowd report",
+      color: "#92400e",
+      icon: "CR",
+      reliability: 30,
+      sourceType: "crowd_report",
+      warning:
+        "User-submitted report. Independent verification is required."
+    },
+    firms: {
+      label: "NASA FIRMS",
+      color: "#ca8a04",
+      icon: "F",
+      reliability: 92,
+      sourceType: "remote_sensing",
+      warning:
+        "Satellite thermal anomaly. It indicates heat activity, not its cause."
+    },
+    unknown: {
+      label: "Other source",
+      color: "#64748b",
+      icon: "?",
+      reliability: 45,
+      sourceType: "unknown",
+      warning:
+        "Source classification is incomplete. Verify the report before use."
+    }
+  };
+
   const DEFAULT_OPTIONS = {
     enabled: false,
     limit: 10,
-    maxDescriptionLength: 180,
-    cardWidth: 290,
-    cardMinHeight: 118,
+    minimumReliability: 0,
+    maxDescriptionLength: 190,
+    cardWidth: 300,
+    cardMinHeight: 128,
     initialOffsetX: 52,
     initialOffsetY: -70,
     cascadeX: 18,
@@ -65,12 +159,23 @@
     cardZIndex: 790,
     sourceLabels: {
       iranstrike: "IranStrike",
-      cir: "CIR"
+      cir: "CIR",
+      idf: "IDF Official",
+      reuters: "Reuters",
+      reddit: "Reddit",
+      mastodon: "Mastodon",
+      crowd: "Crowd report",
+      firms: "NASA FIRMS"
     },
+    sourceStyles: DEFAULT_SOURCE_STYLES,
     attackerStyles: DEFAULT_ATTACKERS,
     newestFirst: true,
     showCloseButton: true,
-    preservePositions: true
+    preservePositions: true,
+    showReliability: true,
+    showSourceWarning: true,
+    showSourceLink: true,
+    showTorevonalakBrand: true
   };
 
   function asText(value, fallback = "") {
@@ -82,6 +187,12 @@
     if (value === null || value === undefined || value === "") return null;
     const number = Number(value);
     return Number.isFinite(number) ? number : null;
+  }
+
+  function asArray(value) {
+    if (Array.isArray(value)) return value;
+    if (value === null || value === undefined || value === "") return [];
+    return [value];
   }
 
   function validCoordinate(latitude, longitude) {
@@ -111,15 +222,17 @@
     const parsed = parseDate(value);
     if (!parsed) return asText(value, "Unknown time");
 
-    return new Intl.DateTimeFormat("en-GB", {
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-      timeZone: "UTC"
-    }).format(parsed) + " UTC";
+    return (
+      new Intl.DateTimeFormat("en-GB", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+        timeZone: "UTC"
+      }).format(parsed) + " UTC"
+    );
   }
 
   function truncate(value, maxLength) {
@@ -138,18 +251,51 @@
   }
 
   function slug(value) {
-    return asText(value, "unknown")
-      .toLowerCase()
-      .replace(/[^a-z0-9_-]+/g, "-")
-      .replace(/^-+|-+$/g, "") || "unknown";
+    return (
+      asText(value, "unknown")
+        .toLowerCase()
+        .replace(/[^a-z0-9_-]+/g, "-")
+        .replace(/^-+|-+$/g, "") || "unknown"
+    );
+  }
+
+  function humanize(value) {
+    return asText(value, "—")
+      .replaceAll("_", " ")
+      .replace(/\s+/g, " ")
+      .replace(/\b\w/g, character => character.toUpperCase());
+  }
+
+  function clampScore(value, fallback = 0) {
+    const number = asNumber(value);
+    const actual = Number.isFinite(number) ? number : fallback;
+    return Math.max(0, Math.min(100, Math.round(actual)));
+  }
+
+  function firstValue(event, keys, fallback = "") {
+    for (const key of keys) {
+      const value = event?.[key];
+
+      if (Array.isArray(value) && value.length) {
+        const candidate = asText(value[0]);
+        if (candidate) return candidate;
+      }
+
+      if (value !== null && value !== undefined) {
+        const candidate = asText(value);
+        if (candidate) return candidate;
+      }
+    }
+
+    return fallback;
   }
 
   function eventId(event, source, index) {
     return asText(
       event?.id ||
-      event?.event_id ||
-      event?.eventId ||
-      event?.uuid,
+        event?.event_id ||
+        event?.eventId ||
+        event?.uuid,
       `${source}-${dateValue(event?.date || event?.timestamp)}-${index}`
     );
   }
@@ -157,30 +303,30 @@
   function eventLatitude(event) {
     return asNumber(
       event?.latitude ??
-      event?.lat ??
-      event?.location?.latitude ??
-      event?.location?.lat
+        event?.lat ??
+        event?.location?.latitude ??
+        event?.location?.lat
     );
   }
 
   function eventLongitude(event) {
     return asNumber(
       event?.longitude ??
-      event?.lng ??
-      event?.lon ??
-      event?.location?.longitude ??
-      event?.location?.lng ??
-      event?.location?.lon
+        event?.lng ??
+        event?.lon ??
+        event?.location?.longitude ??
+        event?.location?.lng ??
+        event?.location?.lon
     );
   }
 
   function eventTitle(event) {
     return asText(
       event?.title ||
-      event?.headline ||
-      event?.event ||
-      event?.main_category ||
-      event?.category,
+        event?.headline ||
+        event?.event ||
+        event?.main_category ||
+        event?.category,
       "Security incident"
     );
   }
@@ -188,32 +334,33 @@
   function eventDescription(event) {
     return asText(
       event?.description ||
-      event?.summary ||
-      event?.details ||
-      event?.text ||
-      event?.violence ||
-      event?.sub_category
+        event?.summary ||
+        event?.details ||
+        event?.text ||
+        event?.violence ||
+        event?.sub_category
     );
   }
 
   function eventLocation(event) {
     return asText(
       event?.location ||
-      event?.location_name ||
-      event?.location_zone ||
-      event?.city ||
-      event?.region ||
-      event?.country,
+        event?.location_name ||
+        event?.location_zone ||
+        event?.city ||
+        event?.region ||
+        event?.country,
       "Unknown location"
     );
   }
 
   function eventCategory(event) {
     return asText(
-      event?.category ||
-      event?.main_category ||
-      event?.sub_category ||
-      event?.type,
+      event?.activity_type ||
+        event?.category ||
+        event?.main_category ||
+        event?.sub_category ||
+        event?.type,
       "other"
     );
   }
@@ -229,15 +376,70 @@
     );
   }
 
+  function eventSourceUrl(event) {
+    return asText(
+      event?.source_url ||
+        event?.url ||
+        event?.link ||
+        event?.permalink ||
+        event?.source?.url
+    );
+  }
+
+  function eventVerificationStatus(event) {
+    return asText(
+      event?.verification_status ||
+        event?.verification ||
+        event?.status,
+      "not_specified"
+    );
+  }
+
+  function eventOrganization(event) {
+    return firstValue(
+      event,
+      ["target_organization", "target_organizations", "organization"],
+      ""
+    );
+  }
+
+  function eventTargetType(event) {
+    return firstValue(
+      event,
+      ["target_type", "target_types", "target"],
+      ""
+    );
+  }
+
+  function eventThreatDomain(event) {
+    return firstValue(
+      event,
+      ["threat_domain", "threat_domains", "domain"],
+      ""
+    );
+  }
+
+  function eventOperationResult(event) {
+    return firstValue(
+      event,
+      ["operation_result", "operation_results", "result"],
+      ""
+    );
+  }
+
   function normalizeAttacker(event) {
     const explicit = asText(
       event?.attacker ||
-      event?.actor ||
-      event?.responsible_actor ||
-      event?.perpetrator
+        event?.actor ||
+        event?.responsible_actor ||
+        event?.perpetrator
     ).toLowerCase();
 
-    if (["usa", "us", "u.s.", "united states", "america", "american"].includes(explicit)) {
+    if (
+      ["usa", "us", "u.s.", "united states", "america", "american"].includes(
+        explicit
+      )
+    ) {
       return "usa";
     }
 
@@ -254,6 +456,57 @@
     }
 
     return "unknown";
+  }
+
+  function explicitReliability(event) {
+    const directCandidates = [
+      event?.reliability_score,
+      event?.confidence_score,
+      event?.source_reliability,
+      event?.reliability
+    ];
+
+    for (const value of directCandidates) {
+      const number = asNumber(value);
+      if (!Number.isFinite(number)) continue;
+      if (number >= 0 && number <= 1) return clampScore(number * 100);
+      if (number >= 1 && number <= 5) return clampScore(number * 20);
+      return clampScore(number);
+    }
+
+    const confidence = asNumber(event?.confidence);
+
+    if (Number.isFinite(confidence)) {
+      if (confidence >= 0 && confidence <= 1) {
+        return clampScore(confidence * 100);
+      }
+
+      if (confidence >= 1 && confidence <= 5) {
+        return clampScore(confidence * 20);
+      }
+
+      return clampScore(confidence);
+    }
+
+    const textual = asText(
+      event?.classification_confidence ||
+        event?.geospatial_confidence ||
+        event?.confidence_label
+    ).toLowerCase();
+
+    if (textual === "high") return 82;
+    if (textual === "medium") return 62;
+    if (textual === "low") return 38;
+
+    return null;
+  }
+
+  function reliabilityLabel(score) {
+    if (score >= 85) return "High reliability";
+    if (score >= 70) return "Moderate-high reliability";
+    if (score >= 50) return "Moderate reliability";
+    if (score >= 30) return "Low reliability";
+    return "Very low reliability";
   }
 
   function injectStyles() {
@@ -290,12 +543,12 @@
 
       .me-attack-annotation-card {
         position: absolute;
-        width: var(--me-annotation-card-width, 290px);
-        min-height: var(--me-annotation-card-min-height, 118px);
+        width: var(--me-annotation-card-width, 300px);
+        min-height: var(--me-annotation-card-min-height, 128px);
         border: 1px solid rgba(15, 23, 42, 0.16);
-        border-left: 5px solid var(--me-attacker-color, #64748b);
+        border-left: 5px solid var(--me-source-color, #64748b);
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.97);
         box-shadow: 0 10px 30px rgba(15, 23, 42, 0.20);
         color: #172033;
         font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -320,7 +573,7 @@
         background:
           linear-gradient(
             90deg,
-            color-mix(in srgb, var(--me-attacker-color, #64748b) 12%, white),
+            color-mix(in srgb, var(--me-source-color, #64748b) 12%, white),
             rgba(255, 255, 255, 0.94)
           );
         cursor: grab;
@@ -335,11 +588,52 @@
         flex: 1;
       }
 
+      .me-attack-annotation-brand {
+        margin-bottom: 5px;
+        color: #64748b;
+        font-size: 8px;
+        font-weight: 850;
+        letter-spacing: .075em;
+        text-transform: uppercase;
+      }
+
+      .me-attack-annotation-source-row {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 5px;
+      }
+
+      .me-attack-annotation-source-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 27px;
+        height: 20px;
+        padding: 0 6px;
+        border-radius: 6px;
+        background: var(--me-source-color, #64748b);
+        color: #ffffff;
+        font-size: 9px;
+        line-height: 1;
+        font-weight: 850;
+        letter-spacing: .035em;
+      }
+
+      .me-attack-annotation-source-name {
+        color: var(--me-source-color, #64748b);
+        font-size: 10px;
+        line-height: 1.2;
+        font-weight: 850;
+        letter-spacing: .035em;
+        text-transform: uppercase;
+      }
+
       .me-attack-annotation-title {
         margin: 0;
         font-size: 13px;
         line-height: 1.3;
-        font-weight: 750;
+        font-weight: 760;
         color: #152033;
         overflow-wrap: anywhere;
       }
@@ -403,7 +697,7 @@
         color: #334155;
         font-size: 11px;
         line-height: 1.35;
-        font-weight: 700;
+        font-weight: 750;
       }
 
       .me-attack-annotation-description {
@@ -414,19 +708,105 @@
         overflow-wrap: anywhere;
       }
 
-      .me-attack-annotation-footer {
+      .me-attack-annotation-details {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 4px 8px;
+        margin: 7px 0;
+        font-size: 9px;
+        line-height: 1.35;
+      }
+
+      .me-attack-annotation-detail-label {
+        color: #64748b;
+        font-weight: 700;
+      }
+
+      .me-attack-annotation-detail-value {
+        color: #334155;
+        font-weight: 700;
+        overflow-wrap: anywhere;
+      }
+
+      .me-attack-annotation-reliability {
+        margin: 8px 0 7px;
+        padding: 7px 8px;
+        border: 1px solid rgba(15, 23, 42, .10);
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+
+      .me-attack-annotation-reliability-head {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         gap: 8px;
+        margin-bottom: 5px;
+        color: #475569;
+        font-size: 9px;
+        font-weight: 750;
+      }
+
+      .me-attack-annotation-reliability-bar {
+        height: 6px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e2e8f0;
+      }
+
+      .me-attack-annotation-reliability-fill {
+        height: 100%;
+        border-radius: inherit;
+        background: var(--me-source-color, #64748b);
+      }
+
+      .me-attack-annotation-warning {
         margin-top: 7px;
+        padding: 6px 7px;
+        border-left: 3px solid var(--me-source-color, #64748b);
+        border-radius: 4px;
+        background: color-mix(
+          in srgb,
+          var(--me-source-color, #64748b) 8%,
+          white
+        );
+        color: #475569;
+        font-size: 9px;
+        line-height: 1.38;
+      }
+
+      .me-attack-annotation-footer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 8px;
         color: #64748b;
         font-size: 9px;
         line-height: 1.25;
       }
 
+      .me-attack-annotation-footer-left,
+      .me-attack-annotation-footer-right {
+        min-width: 0;
+      }
+
+      .me-attack-annotation-source-link {
+        color: var(--me-source-color, #64748b) !important;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .me-attack-annotation-source-link:hover {
+        text-decoration: underline;
+      }
+
       @media (max-width: 720px) {
         .me-attack-annotation-card {
-          width: min(var(--me-annotation-card-width, 290px), calc(100vw - 28px));
+          width: min(
+            var(--me-annotation-card-width, 300px),
+            calc(100vw - 28px)
+          );
         }
       }
     `;
@@ -440,7 +820,9 @@
     }
 
     if (typeof window.L === "undefined") {
-      throw new Error("Leaflet must be loaded before attack-annotation-layer.js.");
+      throw new Error(
+        "Leaflet must be loaded before attack-annotation-layer.js."
+      );
     }
 
     injectStyles();
@@ -451,6 +833,10 @@
       sourceLabels: {
         ...DEFAULT_OPTIONS.sourceLabels,
         ...(userOptions.sourceLabels || {})
+      },
+      sourceStyles: {
+        ...DEFAULT_OPTIONS.sourceStyles,
+        ...(userOptions.sourceStyles || {})
       },
       attackerStyles: {
         ...DEFAULT_OPTIONS.attackerStyles,
@@ -487,6 +873,7 @@
     const state = {
       enabled: Boolean(options.enabled),
       limit: Math.max(1, Number(options.limit) || 10),
+      minimumReliability: clampScore(options.minimumReliability, 0),
       sources: new Map(),
       sourceEnabled: new Map(),
       cards: new Map(),
@@ -495,8 +882,18 @@
       destroyed: false
     };
 
+    function sourceStyle(source) {
+      const normalizedSource = slug(source);
+      return (
+        options.sourceStyles[normalizedSource] ||
+        options.sourceStyles.unknown ||
+        DEFAULT_SOURCE_STYLES.unknown
+      );
+    }
+
     function sourceLabel(source) {
-      return options.sourceLabels[source] || source;
+      const style = sourceStyle(source);
+      return options.sourceLabels[source] || style.label || source;
     }
 
     function attackerStyle(attacker) {
@@ -515,14 +912,36 @@
         return null;
       }
 
+      const normalizedSource = slug(source);
       const attacker = normalizeAttacker(event);
-      const style = attackerStyle(attacker);
-      const id = `${slug(source)}:${eventId(event, source, index)}`;
+      const actorStyle = attackerStyle(attacker);
+      const srcStyle = sourceStyle(normalizedSource);
+      const explicitScore = explicitReliability(event);
+      const reliabilityScore =
+        explicitScore === null
+          ? clampScore(srcStyle.reliability, 45)
+          : explicitScore;
 
       return {
-        id,
-        source,
-        sourceLabel: sourceLabel(source),
+        id: `${normalizedSource}:${eventId(
+          event,
+          normalizedSource,
+          index
+        )}`,
+        source: normalizedSource,
+        sourceLabel: asText(
+          event?.source_label,
+          sourceLabel(normalizedSource)
+        ),
+        sourceColor: asText(event?.source_color, srcStyle.color),
+        sourceIcon: asText(event?.source_icon, srcStyle.icon),
+        sourceType: asText(event?.source_type, srcStyle.sourceType),
+        sourceUrl: eventSourceUrl(event),
+        sourceWarning: asText(
+          event?.source_warning ||
+            event?.methodology_warning,
+          srcStyle.warning
+        ),
         raw: event,
         latitude,
         longitude,
@@ -533,30 +952,44 @@
         date: eventDate(event),
         dateValue: dateValue(eventDate(event)),
         attacker,
-        attackerLabel: asText(event?.attacker_label, style.label),
-        attackerColor: asText(event?.attacker_color, style.color),
-        attackerConfidence: asText(event?.attacker_confidence, "unknown")
+        attackerLabel: asText(event?.attacker_label, actorStyle.label),
+        attackerColor: asText(event?.attacker_color, actorStyle.color),
+        attackerConfidence: asText(
+          event?.attacker_confidence ||
+            event?.classification_confidence,
+          "unknown"
+        ),
+        reliabilityScore,
+        reliabilityLabel: reliabilityLabel(reliabilityScore),
+        verificationStatus: eventVerificationStatus(event),
+        organization: eventOrganization(event),
+        targetType: eventTargetType(event),
+        threatDomain: eventThreatDomain(event),
+        operationResult: eventOperationResult(event)
       };
     }
 
     function allVisibleEvents() {
       const output = [];
 
-      for (const [source, events] of state.sources.entries()) {
+      for (const [source, sourceEvents] of state.sources.entries()) {
         if (state.sourceEnabled.get(source) === false) continue;
 
-        events.forEach((event, index) => {
+        sourceEvents.forEach((event, index) => {
           const normalized = normalizeEvent(event, source, index);
+
           if (!normalized) return;
+          if (normalized.reliabilityScore < state.minimumReliability) return;
           if (state.hiddenIds.has(normalized.id)) return;
+
           output.push(normalized);
         });
       }
 
-      output.sort((a, b) => {
+      output.sort((left, right) => {
         return options.newestFirst
-          ? b.dateValue - a.dateValue
-          : a.dateValue - b.dateValue;
+          ? right.dateValue - left.dateValue
+          : left.dateValue - right.dateValue;
       });
 
       return output.slice(0, state.limit);
@@ -568,8 +1001,8 @@
         event.longitude
       ]);
 
-      const cardWidth = Number(options.cardWidth) || 290;
-      const cardHeight = Number(options.cardMinHeight) || 118;
+      const cardWidth = Number(options.cardWidth) || 300;
+      const cardHeight = Number(options.cardMinHeight) || 128;
       const containerWidth = Math.max(1, mapContainer.clientWidth);
       const containerHeight = Math.max(1, mapContainer.clientHeight);
 
@@ -604,9 +1037,9 @@
     }
 
     function clampPosition(left, top, card) {
-      const width = card.offsetWidth || Number(options.cardWidth) || 290;
+      const width = card.offsetWidth || Number(options.cardWidth) || 300;
       const height =
-        card.offsetHeight || Number(options.cardMinHeight) || 118;
+        card.offsetHeight || Number(options.cardMinHeight) || 128;
 
       return {
         left: Math.min(
@@ -630,8 +1063,9 @@
         "http://www.w3.org/2000/svg",
         "line"
       );
+
       line.classList.add("me-attack-annotation-line");
-      line.setAttribute("stroke", event.attackerColor);
+      line.setAttribute("stroke", event.sourceColor);
       line.setAttribute("stroke-width", String(options.lineWeight));
       line.setAttribute("stroke-dasharray", options.lineDashArray);
       line.setAttribute("opacity", String(options.lineOpacity));
@@ -640,9 +1074,10 @@
         "http://www.w3.org/2000/svg",
         "circle"
       );
+
       anchor.classList.add("me-attack-annotation-anchor");
       anchor.setAttribute("r", "3.5");
-      anchor.setAttribute("fill", event.attackerColor);
+      anchor.setAttribute("fill", event.sourceColor);
       anchor.setAttribute("stroke", "#ffffff");
       anchor.setAttribute("stroke-width", "1.5");
 
@@ -659,38 +1094,147 @@
         options.maxDescriptionLength
       );
 
-      const confidenceText =
-        event.attackerConfidence &&
-        event.attackerConfidence !== "unknown"
-          ? ` · ${event.attackerConfidence} confidence`
+      const detailRows = [
+        ["Organization", event.organization],
+        ["Target", event.targetType],
+        ["Threat domain", event.threatDomain],
+        ["Result", event.operationResult],
+        ["Verification", humanize(event.verificationStatus)]
+      ].filter(([, value]) => asText(value));
+
+      const detailsHtml = detailRows.length
+        ? `
+          <div class="me-attack-annotation-details">
+            ${detailRows
+              .map(
+                ([label, value]) => `
+                  <div class="me-attack-annotation-detail-label">
+                    ${escapeHtml(label)}
+                  </div>
+                  <div class="me-attack-annotation-detail-value">
+                    ${escapeHtml(value)}
+                  </div>
+                `
+              )
+              .join("")}
+          </div>
+        `
+        : "";
+
+      const reliabilityHtml = options.showReliability
+        ? `
+          <div class="me-attack-annotation-reliability">
+            <div class="me-attack-annotation-reliability-head">
+              <span>${escapeHtml(event.reliabilityLabel)}</span>
+              <strong>${escapeHtml(
+                String(event.reliabilityScore)
+              )} / 100</strong>
+            </div>
+            <div class="me-attack-annotation-reliability-bar">
+              <div
+                class="me-attack-annotation-reliability-fill"
+                style="width:${event.reliabilityScore}%"
+              ></div>
+            </div>
+          </div>
+        `
+        : "";
+
+      const warningHtml =
+        options.showSourceWarning && event.sourceWarning
+          ? `
+            <div class="me-attack-annotation-warning">
+              ${escapeHtml(event.sourceWarning)}
+            </div>
+          `
           : "";
+
+      const sourceLinkHtml =
+        options.showSourceLink && event.sourceUrl
+          ? `
+            <a
+              class="me-attack-annotation-source-link"
+              href="${escapeHtml(event.sourceUrl)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open source ↗
+            </a>
+          `
+          : "";
+
+      const brandHtml = options.showTorevonalakBrand
+        ? `
+          <div class="me-attack-annotation-brand">
+            Törésvonalak · ME Security Monitor
+          </div>
+        `
+        : "";
 
       return `
         <div class="me-attack-annotation-header">
           <div class="me-attack-annotation-heading">
-            <h4 class="me-attack-annotation-title">${escapeHtml(event.title)}</h4>
+            ${brandHtml}
+            <div class="me-attack-annotation-source-row">
+              <span class="me-attack-annotation-source-badge">
+                ${escapeHtml(event.sourceIcon)}
+              </span>
+              <span class="me-attack-annotation-source-name">
+                ${escapeHtml(event.sourceLabel)}
+              </span>
+            </div>
+            <h4 class="me-attack-annotation-title">
+              ${escapeHtml(event.title)}
+            </h4>
             <div class="me-attack-annotation-meta">
-              <span class="me-attack-annotation-chip actor">${escapeHtml(event.attackerLabel)}</span>
-              <span class="me-attack-annotation-chip">${escapeHtml(event.category)}</span>
-              <span class="me-attack-annotation-chip">${escapeHtml(event.sourceLabel)}</span>
+              <span class="me-attack-annotation-chip actor">
+                ${escapeHtml(event.attackerLabel)}
+              </span>
+              <span class="me-attack-annotation-chip">
+                ${escapeHtml(humanize(event.category))}
+              </span>
             </div>
           </div>
           ${
             options.showCloseButton
-              ? '<button class="me-attack-annotation-close" type="button" title="Hide annotation" aria-label="Hide annotation">×</button>'
+              ? `
+                <button
+                  class="me-attack-annotation-close"
+                  type="button"
+                  title="Hide analysis card"
+                  aria-label="Hide analysis card"
+                >×</button>
+              `
               : ""
           }
         </div>
+
         <div class="me-attack-annotation-body">
-          <p class="me-attack-annotation-location">${escapeHtml(event.location)}</p>
+          <p class="me-attack-annotation-location">
+            ${escapeHtml(event.location)}
+          </p>
+
           ${
             description
-              ? `<p class="me-attack-annotation-description">${escapeHtml(description)}</p>`
+              ? `
+                <p class="me-attack-annotation-description">
+                  ${escapeHtml(description)}
+                </p>
+              `
               : ""
           }
+
+          ${detailsHtml}
+          ${reliabilityHtml}
+          ${warningHtml}
+
           <div class="me-attack-annotation-footer">
-            <span>${escapeHtml(formatDate(event.date))}</span>
-            <span>${escapeHtml(event.attackerLabel + confidenceText)}</span>
+            <div class="me-attack-annotation-footer-left">
+              ${escapeHtml(formatDate(event.date))}
+            </div>
+            <div class="me-attack-annotation-footer-right">
+              ${sourceLinkHtml}
+            </div>
           </div>
         </div>
       `;
@@ -747,6 +1291,7 @@
 
       const width = Math.max(1, mapContainer.clientWidth);
       const height = Math.max(1, mapContainer.clientHeight);
+
       svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
       svg.setAttribute("width", String(width));
       svg.setAttribute("height", String(height));
@@ -771,9 +1316,7 @@
       let startTop = 0;
 
       function onPointerDown(event) {
-        if (
-          event.target.closest(".me-attack-annotation-close")
-        ) {
+        if (event.target.closest(".me-attack-annotation-close")) {
           return;
         }
 
@@ -786,6 +1329,7 @@
 
         item.card.classList.add("is-dragging");
         handle.setPointerCapture?.(pointerId);
+
         event.preventDefault();
         event.stopPropagation();
       }
@@ -807,6 +1351,7 @@
         }
 
         updateConnection(item);
+
         event.preventDefault();
         event.stopPropagation();
       }
@@ -824,6 +1369,7 @@
         }
 
         pointerId = null;
+
         event.preventDefault();
         event.stopPropagation();
       }
@@ -867,24 +1413,27 @@
 
     function createCard(event, index) {
       const card = document.createElement("article");
+
       card.className =
         `me-attack-annotation-card source-${slug(event.source)} ` +
         `attacker-${slug(event.attacker)}`;
+
       card.dataset.annotationId = event.id;
       card.dataset.source = event.source;
       card.dataset.attacker = event.attacker;
-      card.style.setProperty(
-        "--me-attacker-color",
-        event.attackerColor
-      );
+      card.dataset.reliability = String(event.reliabilityScore);
+
+      card.style.setProperty("--me-source-color", event.sourceColor);
+      card.style.setProperty("--me-attacker-color", event.attackerColor);
       card.style.setProperty(
         "--me-annotation-card-width",
-        `${Number(options.cardWidth) || 290}px`
+        `${Number(options.cardWidth) || 300}px`
       );
       card.style.setProperty(
         "--me-annotation-card-min-height",
-        `${Number(options.cardMinHeight) || 118}px`
+        `${Number(options.cardMinHeight) || 128}px`
       );
+
       card.innerHTML = cardHtml(event);
 
       const storedPosition = state.positions.get(event.id);
@@ -901,6 +1450,7 @@
         initialPosition.top,
         card
       );
+
       card.style.left = `${clamped.left}px`;
       card.style.top = `${clamped.top}px`;
 
@@ -947,7 +1497,7 @@
 
       const visibleEvents = allVisibleEvents();
       const visibleIds = new Set(
-        visibleEvents.map((event) => event.id)
+        visibleEvents.map(event => event.id)
       );
 
       for (const id of [...state.cards.keys()]) {
@@ -962,17 +1512,16 @@
         if (existing) {
           existing.event = event;
           existing.card.style.setProperty(
+            "--me-source-color",
+            event.sourceColor
+          );
+          existing.card.style.setProperty(
             "--me-attacker-color",
             event.attackerColor
           );
-          existing.line.setAttribute(
-            "stroke",
-            event.attackerColor
-          );
-          existing.anchor.setAttribute(
-            "fill",
-            event.attackerColor
-          );
+          existing.card.innerHTML = cardHtml(event);
+          existing.line.setAttribute("stroke", event.sourceColor);
+          existing.anchor.setAttribute("fill", event.sourceColor);
           updateConnection(existing);
           return;
         }
@@ -983,12 +1532,12 @@
       window.requestAnimationFrame(updateAllConnections);
     }
 
-    function setEvents(source, events) {
+    function setEvents(source, sourceEvents) {
       const normalizedSource = slug(source);
 
       state.sources.set(
         normalizedSource,
-        Array.isArray(events) ? events.slice() : []
+        Array.isArray(sourceEvents) ? sourceEvents.slice() : []
       );
 
       if (!state.sourceEnabled.has(normalizedSource)) {
@@ -999,10 +1548,10 @@
       return api;
     }
 
-    function appendEvents(source, events) {
+    function appendEvents(source, sourceEvents) {
       const normalizedSource = slug(source);
       const current = state.sources.get(normalizedSource) || [];
-      const additions = Array.isArray(events) ? events : [];
+      const additions = Array.isArray(sourceEvents) ? sourceEvents : [];
 
       state.sources.set(
         normalizedSource,
@@ -1031,9 +1580,21 @@
 
     function setLimit(limit) {
       const parsed = Math.floor(Number(limit));
+
       state.limit = Number.isFinite(parsed)
         ? Math.max(1, parsed)
         : state.limit;
+
+      render();
+      return api;
+    }
+
+    function setMinimumReliability(score) {
+      state.minimumReliability = clampScore(
+        score,
+        state.minimumReliability
+      );
+
       render();
       return api;
     }
@@ -1053,6 +1614,7 @@
 
     function clearSource(source) {
       const normalizedSource = slug(source);
+
       state.sources.delete(normalizedSource);
       state.sourceEnabled.delete(normalizedSource);
 
@@ -1070,13 +1632,16 @@
       return {
         enabled: state.enabled,
         limit: state.limit,
+        minimumReliability: state.minimumReliability,
         renderedCount: state.cards.size,
         hiddenCount: state.hiddenIds.size,
         sources: [...state.sources.entries()].map(
-          ([source, events]) => ({
+          ([source, sourceEvents]) => ({
             source,
+            label: sourceLabel(source),
             enabled: state.sourceEnabled.get(source) !== false,
-            eventCount: events.length
+            eventCount: sourceEvents.length,
+            defaultReliability: sourceStyle(source).reliability
           })
         )
       };
@@ -1086,8 +1651,17 @@
       if (state.destroyed) return;
 
       state.destroyed = true;
-      map.off("move zoom resize viewreset", updateAllConnections);
-      window.removeEventListener("resize", updateAllConnections);
+
+      map.off(
+        "move zoom resize viewreset",
+        updateAllConnections
+      );
+
+      window.removeEventListener(
+        "resize",
+        updateAllConnections
+      );
+
       clearCards(false);
       root.remove();
       state.sources.clear();
@@ -1099,7 +1673,11 @@
       "move zoom resize viewreset",
       updateAllConnections
     );
-    window.addEventListener("resize", updateAllConnections);
+
+    window.addEventListener(
+      "resize",
+      updateAllConnections
+    );
 
     const api = {
       setEvents,
@@ -1107,6 +1685,7 @@
       setEnabled,
       setSourceEnabled,
       setLimit,
+      setMinimumReliability,
       restoreHidden,
       resetPositions,
       clearSource,
