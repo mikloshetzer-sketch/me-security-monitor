@@ -77,6 +77,168 @@ ACTIVITY_TYPES = {
     "humanitarian_zone",
 }
 
+ACTIVITY_PRIORITY = {
+    "evacuation_warning": 10,
+    "humanitarian_zone": 20,
+    "airstrike": 30,
+    "ground_activity": 40,
+    "artillery": 50,
+    "drone_activity": 60,
+    "cross_border_fire": 70,
+}
+
+TARGET_ORGANIZATION_PATTERNS: dict[str, tuple[str, ...]] = {
+    "Hamas": (
+        "hamas",
+        "al-qassam",
+        "qassam brigades",
+    ),
+    "Palestinian Islamic Jihad": (
+        "palestinian islamic jihad",
+        "islamic jihad",
+        "pij",
+        "al-quds brigades",
+    ),
+    "Hezbollah": (
+        "hezbollah",
+        "hizbullah",
+    ),
+    "Popular Front for the Liberation of Palestine": (
+        "popular front for the liberation of palestine",
+        "pflp",
+    ),
+    "Democratic Front for the Liberation of Palestine": (
+        "democratic front for the liberation of palestine",
+        "dflp",
+    ),
+}
+
+TARGET_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
+    "commander": (
+        "commander",
+        "cell commander",
+        "company commander",
+        "battalion commander",
+        "senior commander",
+        "head of",
+    ),
+    "armed_personnel": (
+        "armed terrorist",
+        "armed terrorists",
+        "terrorist cell",
+        "terrorists",
+        "operative",
+        "operatives",
+        "militant",
+        "militants",
+    ),
+    "weapons_production": (
+        "weapon production",
+        "weapons production",
+        "production array",
+        "production headquarters",
+        "manufacturing workshop",
+        "rocket launcher production",
+    ),
+    "weapons_storage": (
+        "weapons storage",
+        "weapon storage",
+        "weapons depot",
+        "weapons warehouse",
+        "arms depot",
+        "stored weapons",
+    ),
+    "tunnel": (
+        "tunnel shaft",
+        "tunnel route",
+        "underground tunnel",
+        "underground terror infrastructure",
+        "underground infrastructure",
+        "tunnel",
+    ),
+    "rocket_launcher": (
+        "rocket launcher",
+        "launch site",
+        "launching site",
+        "launching position",
+    ),
+    "command_center": (
+        "command center",
+        "command and control center",
+        "headquarters",
+        "military headquarters",
+    ),
+    "military_structure": (
+        "military structure",
+        "terrorist infrastructure",
+        "terror infrastructure",
+        "military infrastructure",
+        "structure used",
+    ),
+    "vehicle": (
+        "vehicle",
+        "truck",
+        "motorcycle",
+    ),
+    "drone_or_uav": (
+        "drone",
+        "uav",
+        "unmanned aerial vehicle",
+        "unmanned aircraft",
+    ),
+    "artillery_or_launcher": (
+        "artillery position",
+        "mortar position",
+        "missile launcher",
+        "anti-tank missile",
+    ),
+    "smuggling_network": (
+        "smuggle",
+        "smuggling",
+        "smuggler",
+    ),
+}
+
+OPERATION_RESULT_PATTERNS: dict[str, tuple[str, ...]] = {
+    "eliminated": (
+        "eliminated",
+        "neutralized",
+        "killed",
+    ),
+    "struck": (
+        "struck",
+        "strike on",
+        "airstrike",
+        "air strike",
+    ),
+    "destroyed": (
+        "destroyed",
+        "demolished",
+    ),
+    "dismantled": (
+        "dismantled",
+        "disrupted",
+    ),
+    "intercepted": (
+        "intercepted",
+        "interception",
+    ),
+    "located": (
+        "located",
+        "identified",
+        "discovered",
+    ),
+    "seized": (
+        "seized",
+        "confiscated",
+    ),
+    "warning_issued": (
+        "warning issued",
+        "warned residents",
+        "evacuation warning",
+    ),
+}
+
 REGION_PATTERNS: dict[str, tuple[str, ...]] = {
     REGION_GAZA: (
         "gaza",
@@ -674,29 +836,58 @@ def infer_regions(text: str) -> list[str]:
 
 def infer_activity_types(text: str) -> list[str]:
     normalized = normalize_text(text)
-    matches: list[tuple[int, str]] = []
+    detected: list[str] = []
 
     for activity_type, patterns in TYPE_PATTERNS.items():
-        positions = [
-            normalized.find(pattern)
-            for pattern in patterns
-            if pattern in normalized
-        ]
+        if any(pattern in normalized for pattern in patterns):
+            detected.append(activity_type)
 
-        if positions:
-            matches.append((min(positions), activity_type))
-
-    return [
-        activity_type
-        for _, activity_type in sorted(matches)
-        if activity_type in ACTIVITY_TYPES
-    ]
+    return sorted(
+        detected,
+        key=lambda activity_type: (
+            ACTIVITY_PRIORITY.get(activity_type, 999),
+            activity_type,
+        ),
+    )
 
 
-def infer_location(
+def infer_target_organizations(text: str) -> list[str]:
+    normalized = normalize_text(text)
+    organizations: list[str] = []
+
+    for organization, patterns in TARGET_ORGANIZATION_PATTERNS.items():
+        if any(pattern in normalized for pattern in patterns):
+            organizations.append(organization)
+
+    return organizations or ["Unknown"]
+
+
+def infer_target_types(text: str) -> list[str]:
+    normalized = normalize_text(text)
+    target_types: list[str] = []
+
+    for target_type, patterns in TARGET_TYPE_PATTERNS.items():
+        if any(pattern in normalized for pattern in patterns):
+            target_types.append(target_type)
+
+    return target_types or ["unspecified"]
+
+
+def infer_operation_results(text: str) -> list[str]:
+    normalized = normalize_text(text)
+    results: list[str] = []
+
+    for result, patterns in OPERATION_RESULT_PATTERNS.items():
+        if any(pattern in normalized for pattern in patterns):
+            results.append(result)
+
+    return results or ["reported"]
+
+
+def infer_locations(
     text: str,
     regions: list[str],
-) -> dict[str, Any] | None:
+) -> list[dict[str, Any]]:
     normalized = normalize_text(text)
     matches: list[tuple[int, int, dict[str, Any]]] = []
 
@@ -707,24 +898,36 @@ def infer_location(
             normalized,
         )
 
-        if match:
+        if match and location["region"] in regions:
             matches.append(
                 (
                     match.start(),
                     -len(normalized_alias),
-                    location,
+                    dict(location),
                 )
             )
 
-    if not matches:
-        return None
+    matches.sort()
 
-    _, _, location = sorted(matches)[0]
+    unique: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
 
-    if location["region"] not in regions:
-        return None
+    for _, _, location in matches:
+        key = (location["name"], location["region"])
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(location)
 
-    return dict(location)
+    return unique
+
+
+def infer_location(
+    text: str,
+    regions: list[str],
+) -> dict[str, Any] | None:
+    locations = infer_locations(text, regions)
+    return locations[0] if locations else None
 
 
 def stable_event_id(post: dict[str, str]) -> str:
@@ -778,9 +981,13 @@ def normalize_post(
     if not regions or not activity_types:
         return None
 
-    location = infer_location(text, regions)
+    locations = infer_locations(text, regions)
+    primary_location = locations[0] if locations else None
+    target_organizations = infer_target_organizations(text)
+    target_types = infer_target_types(text)
+    operation_results = infer_operation_results(text)
 
-    return {
+    event = {
         "id": stable_event_id(post),
         "source": "IDF official Telegram",
         "source_name": "IDF",
@@ -788,7 +995,7 @@ def normalize_post(
         "source_classification": SOURCE_CLASSIFICATION,
         "source_url": clean_text(post.get("source_url")),
         "date": normalize_datetime(post.get("date")),
-        "title": build_title(activity_types, location),
+        "title": build_title(activity_types, primary_location),
         "description": text,
         "actor": "Israel",
         "attacker": "israel",
@@ -799,19 +1006,37 @@ def normalize_post(
         "region": regions[0],
         "activity_types": activity_types,
         "activity_type": activity_types[0],
-        "location": location["name"] if location else "",
-        "country": location["country"] if location else "",
-        "latitude": location["latitude"] if location else None,
-        "longitude": location["longitude"] if location else None,
-        "map_visualizable": bool(location),
+        "target_organizations": target_organizations,
+        "target_organization": target_organizations[0],
+        "target_types": target_types,
+        "target_type": target_types[0],
+        "operation_results": operation_results,
+        "operation_result": operation_results[0],
+        "locations": locations,
+        "location_count": len(locations),
+        "location": primary_location["name"] if primary_location else "",
+        "country": primary_location["country"] if primary_location else "",
+        "latitude": (
+            primary_location["latitude"]
+            if primary_location
+            else None
+        ),
+        "longitude": (
+            primary_location["longitude"]
+            if primary_location
+            else None
+        ),
+        "map_visualizable": bool(locations),
         "geocode_method": (
             "curated_exact_place_name"
-            if location
+            if locations
             else "none"
         ),
-        "geocode_confidence": "high" if location else "none",
+        "geocode_confidence": "high" if locations else "none",
         "raw_post_id": clean_text(post.get("post_id")),
     }
+
+    return event
 
 
 def merge_events(
@@ -854,12 +1079,70 @@ def prune_events(
     return retained
 
 
+def build_map_events(
+    events: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    map_events: list[dict[str, Any]] = []
+
+    for event in events:
+        locations = event.get("locations") or []
+
+        # Backward compatibility with older retained records.
+        if not locations and event.get("map_visualizable") is True:
+            latitude = event.get("latitude")
+            longitude = event.get("longitude")
+            if isinstance(latitude, (int, float)) and isinstance(
+                longitude,
+                (int, float),
+            ):
+                locations = [
+                    {
+                        "name": clean_text(event.get("location")),
+                        "region": clean_text(event.get("region")),
+                        "country": clean_text(event.get("country")),
+                        "latitude": latitude,
+                        "longitude": longitude,
+                    }
+                ]
+
+        for index, location in enumerate(locations, start=1):
+            latitude = location.get("latitude")
+            longitude = location.get("longitude")
+
+            if not isinstance(latitude, (int, float)):
+                continue
+            if not isinstance(longitude, (int, float)):
+                continue
+
+            map_event = dict(event)
+            map_event["id"] = f"{event['id']}-location-{index}"
+            map_event["parent_event_id"] = event["id"]
+            map_event["location_index"] = index
+            map_event["location"] = location.get("name", "")
+            map_event["region"] = location.get(
+                "region",
+                event.get("region", ""),
+            )
+            map_event["country"] = location.get("country", "")
+            map_event["latitude"] = latitude
+            map_event["longitude"] = longitude
+            map_event["map_visualizable"] = True
+            map_event["geocode_method"] = "curated_exact_place_name"
+            map_event["geocode_confidence"] = "high"
+            map_events.append(map_event)
+
+    return map_events
+
+
 def build_analytics(
     events: list[dict[str, Any]],
 ) -> dict[str, Any]:
     region_counts: Counter[str] = Counter()
     type_counts: Counter[str] = Counter()
     location_counts: Counter[str] = Counter()
+    organization_counts: Counter[str] = Counter()
+    target_type_counts: Counter[str] = Counter()
+    result_counts: Counter[str] = Counter()
 
     for event in events:
         for region in event.get("regions") or []:
@@ -868,9 +1151,25 @@ def build_analytics(
         for activity_type in event.get("activity_types") or []:
             type_counts[activity_type] += 1
 
-        location = clean_text(event.get("location"))
-        if location:
-            location_counts[location] += 1
+        for organization in event.get("target_organizations") or []:
+            organization_counts[organization] += 1
+
+        for target_type in event.get("target_types") or []:
+            target_type_counts[target_type] += 1
+
+        for result in event.get("operation_results") or []:
+            result_counts[result] += 1
+
+        locations = event.get("locations") or []
+        if locations:
+            for location in locations:
+                name = clean_text(location.get("name"))
+                if name:
+                    location_counts[name] += 1
+        else:
+            location = clean_text(event.get("location"))
+            if location:
+                location_counts[location] += 1
 
     dates = [
         date
@@ -885,7 +1184,21 @@ def build_analytics(
         "overview": {
             "total_events": len(events),
             "map_visualizable_events": sum(
-                event.get("map_visualizable") is True
+                bool(event.get("locations"))
+                or event.get("map_visualizable") is True
+                for event in events
+            ),
+            "total_map_points": sum(
+                max(1, len(event.get("locations") or []))
+                if (
+                    event.get("locations")
+                    or event.get("map_visualizable") is True
+                )
+                else 0
+                for event in events
+            ),
+            "multi_location_events": sum(
+                len(event.get("locations") or []) > 1
                 for event in events
             ),
             "earliest_event_date": (
@@ -901,6 +1214,11 @@ def build_analytics(
         },
         "region_counts": dict(region_counts.most_common()),
         "activity_type_counts": dict(type_counts.most_common()),
+        "target_organization_counts": dict(
+            organization_counts.most_common()
+        ),
+        "target_type_counts": dict(target_type_counts.most_common()),
+        "operation_result_counts": dict(result_counts.most_common()),
         "top_locations": dict(location_counts.most_common(20)),
     }
 
@@ -1018,16 +1336,12 @@ def main() -> int:
     )
     merged = prune_events(merged, args.retention_days)
 
-    map_events = [
-        event
-        for event in merged
-        if event.get("map_visualizable") is True
-    ]
+    map_events = build_map_events(merged)
 
     generated_at = utc_now_iso()
 
     output_payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": generated_at,
         "source": {
             "name": "Israel Defense Forces official Telegram",
@@ -1041,6 +1355,12 @@ def main() -> int:
                 REGION_LEBANON,
             ],
             "supported_activity_types": sorted(ACTIVITY_TYPES),
+            "enrichment_fields": [
+                "target_organizations",
+                "target_types",
+                "operation_results",
+                "locations",
+            ],
             "geocoding": (
                 "Only curated, explicitly named locations receive "
                 "coordinates. Regional-only statements remain in events "
@@ -1049,8 +1369,10 @@ def main() -> int:
             "limitations": [
                 "Official IDF statements represent a belligerent source.",
                 "Absence of a statement does not indicate absence of activity.",
-                "One statement may contain multiple regions or activity types.",
-                "Coordinates identify the named locality, not the exact strike point.",
+                "One statement may contain multiple regions, activity types, targets or results.",
+                "One statement may generate multiple map points when several curated place names are explicit.",
+                "Coordinates identify named localities, not exact strike points.",
+                "Target and result fields are rule-based text classifications.",
             ],
         },
         "analytics": build_analytics(merged),
@@ -1059,7 +1381,7 @@ def main() -> int:
     }
 
     history_output = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": generated_at,
         "source_url": args.source_url,
         "events": merged,
@@ -1085,3 +1407,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
