@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-07-14T13:01:05+00:00",
+  "schema_version": 2,
+  "generated_at": "2026-07-14T13:10:25+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -21,18 +21,28 @@
       "ground_activity",
       "humanitarian_zone"
     ],
+    "enrichment_fields": [
+      "target_organizations",
+      "target_types",
+      "operation_results",
+      "locations"
+    ],
     "geocoding": "Only curated, explicitly named locations receive coordinates. Regional-only statements remain in events but are excluded from map_events.",
     "limitations": [
       "Official IDF statements represent a belligerent source.",
       "Absence of a statement does not indicate absence of activity.",
-      "One statement may contain multiple regions or activity types.",
-      "Coordinates identify the named locality, not the exact strike point."
+      "One statement may contain multiple regions, activity types, targets or results.",
+      "One statement may generate multiple map points when several curated place names are explicit.",
+      "Coordinates identify named localities, not exact strike points.",
+      "Target and result fields are rule-based text classifications."
     ]
   },
   "analytics": {
     "overview": {
       "total_events": 10,
       "map_visualizable_events": 4,
+      "total_map_points": 4,
+      "multi_location_events": 0,
       "earliest_event_date": "2026-07-09T13:24:37Z",
       "latest_event_date": "2026-07-14T06:02:00Z"
     },
@@ -44,6 +54,30 @@
       "airstrike": 10,
       "cross_border_fire": 1,
       "ground_activity": 1
+    },
+    "target_organization_counts": {
+      "Hamas": 7,
+      "Hezbollah": 2,
+      "Palestinian Islamic Jihad": 1,
+      "Unknown": 1
+    },
+    "target_type_counts": {
+      "vehicle": 10,
+      "armed_personnel": 7,
+      "commander": 5,
+      "weapons_production": 3,
+      "smuggling_network": 1,
+      "artillery_or_launcher": 1,
+      "tunnel": 1,
+      "military_structure": 1,
+      "rocket_launcher": 1,
+      "command_center": 1
+    },
+    "operation_result_counts": {
+      "struck": 10,
+      "eliminated": 8,
+      "located": 2,
+      "dismantled": 1
     },
     "top_locations": {
       "Gaza City": 2,
@@ -75,6 +109,31 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "armed_personnel",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668
+        }
+      ],
+      "location_count": 1,
       "location": "Gaza City",
       "country": "Palestinian Territories",
       "latitude": 31.5017,
@@ -107,6 +166,22 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "vehicle",
+        "smuggling_network"
+      ],
+      "target_type": "vehicle",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
       "location": "",
       "country": "",
       "latitude": null,
@@ -139,6 +214,31 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "armed_personnel",
+        "weapons_production",
+        "vehicle"
+      ],
+      "target_type": "armed_personnel",
+      "operation_results": [
+        "struck",
+        "dismantled"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668
+        }
+      ],
+      "location_count": 1,
       "location": "Gaza City",
       "country": "Palestinian Territories",
       "latitude": 31.5017,
@@ -171,6 +271,22 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "armed_personnel",
+        "vehicle"
+      ],
+      "target_type": "armed_personnel",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
       "location": "",
       "country": "",
       "latitude": null,
@@ -188,7 +304,7 @@
       "source_classification": "Official belligerent statement; not independently verified.",
       "source_url": "https://t.me/idfofficial/18906",
       "date": "2026-07-11T17:02:31Z",
-      "title": "IDF cross-border fire statement",
+      "title": "IDF airstrike statement",
       "description": "IDF: WATCH: Hezbollah terrorists transferring weapons within the Security Zone in southern Lebanon Earlier today (Saturday), IDF soldiers identified several Hezbollah terrorists transferring anti-tank missiles within the Security Zone in southern Lebanon. The terrorists entered the Security Zone in a vehicle and unloaded anti-tank missiles that were intended for attacks against IDF soldiers and Israeli civilians. They transferred the anti-tank missiles into a structure in the area. After additional Hezbollah terrorists transferred more weapons into the structure and entered it, the IDF struck the terrorists from the air in order to remove the threat. Following the strike, secondary explosions were identified, confirming the presence of weapons inside the structure. The IDF will continue to operate to remove any threat to its soldiers and to Israeli civilians. Attached is footage of the identification of the terrorists transferring weapons: https://bit.ly/4vix7Rb Attached is footage of the strike on the terrorists and the secondary explosions: https://bit.ly/3QSegyt",
       "actor": "Israel",
       "attacker": "israel",
@@ -200,10 +316,27 @@
       ],
       "region": "South Lebanon",
       "activity_types": [
-        "cross_border_fire",
-        "airstrike"
+        "airstrike",
+        "cross_border_fire"
       ],
-      "activity_type": "cross_border_fire",
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "armed_personnel",
+        "vehicle",
+        "artillery_or_launcher"
+      ],
+      "target_type": "armed_personnel",
+      "operation_results": [
+        "struck",
+        "located"
+      ],
+      "operation_result": "struck",
+      "locations": [],
+      "location_count": 0,
       "location": "",
       "country": "",
       "latitude": null,
@@ -221,7 +354,7 @@
       "source_classification": "Official belligerent statement; not independently verified.",
       "source_url": "https://t.me/idfofficial/18905",
       "date": "2026-07-10T18:55:46Z",
-      "title": "IDF ground operation statement",
+      "title": "IDF airstrike statement",
       "description": "IDF: The IDF eliminated a Hezbollah terrorist operating near an underground terror tunnel shaft at the Ali al-Taher Ridge Earlier today (Friday), IDF soldiers identified a Hezbollah terrorist operating near an access shaft of the underground terror infrastructure at the Ali al-Taher Ridge, within the Security Zone where IDF soldiers are operating. The terrorist posed an immediate threat to the soldiers and was eliminated in a precise aerial strike, removing the threat. In an additional strike, the IDF eliminated a suspect traveling in a vehicle who posed a threat to IDF soldiers operating within the Security Zone. IDF soldiers are operating in the Ali al-Taher Ridge area and will not allow Hezbollah terrorists to emerge from the underground terror infrastructure and operate in the area. The IDF will continue to operate to remove any threat to its soldiers and will not allow the Hezbollah terrorist organization to harm Israeli civilians. Attached is footage of the strike on the terrorist: https://bit.ly/3RucPGz",
       "actor": "Israel",
       "attacker": "israel",
@@ -233,10 +366,29 @@
       ],
       "region": "South Lebanon",
       "activity_types": [
-        "ground_activity",
-        "airstrike"
+        "airstrike",
+        "ground_activity"
       ],
-      "activity_type": "ground_activity",
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "armed_personnel",
+        "tunnel",
+        "military_structure",
+        "vehicle"
+      ],
+      "target_type": "armed_personnel",
+      "operation_results": [
+        "eliminated",
+        "struck",
+        "located"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
       "location": "",
       "country": "",
       "latitude": null,
@@ -269,6 +421,34 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "armed_personnel",
+        "weapons_production",
+        "rocket_launcher",
+        "command_center",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925
+        }
+      ],
+      "location_count": 1,
       "location": "Nuseirat",
       "country": "Palestinian Territories",
       "latitude": 31.448,
@@ -301,6 +481,22 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
       "location": "",
       "country": "",
       "latitude": null,
@@ -333,6 +529,25 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "armed_personnel",
+        "weapons_production",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
       "location": "",
       "country": "",
       "latitude": null,
@@ -365,6 +580,30 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Unknown"
+      ],
+      "target_organization": "Unknown",
+      "target_types": [
+        "commander",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303
+        }
+      ],
+      "location_count": 1,
       "location": "Khan Yunis",
       "country": "Palestinian Territories",
       "latitude": 31.3462,
@@ -377,7 +616,7 @@
   ],
   "map_events": [
     {
-      "id": "idf-idfofficial-18915",
+      "id": "idf-idfofficial-18915-location-1",
       "source": "IDF official Telegram",
       "source_name": "IDF",
       "source_type": "official_idf_statement",
@@ -399,6 +638,31 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "armed_personnel",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668
+        }
+      ],
+      "location_count": 1,
       "location": "Gaza City",
       "country": "Palestinian Territories",
       "latitude": 31.5017,
@@ -406,10 +670,12 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
-      "raw_post_id": "idfofficial/18915"
+      "raw_post_id": "idfofficial/18915",
+      "parent_event_id": "idf-idfofficial-18915",
+      "location_index": 1
     },
     {
-      "id": "idf-idfofficial-18910",
+      "id": "idf-idfofficial-18910-location-1",
       "source": "IDF official Telegram",
       "source_name": "IDF",
       "source_type": "official_idf_statement",
@@ -431,6 +697,31 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "armed_personnel",
+        "weapons_production",
+        "vehicle"
+      ],
+      "target_type": "armed_personnel",
+      "operation_results": [
+        "struck",
+        "dismantled"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668
+        }
+      ],
+      "location_count": 1,
       "location": "Gaza City",
       "country": "Palestinian Territories",
       "latitude": 31.5017,
@@ -438,10 +729,12 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
-      "raw_post_id": "idfofficial/18910"
+      "raw_post_id": "idfofficial/18910",
+      "parent_event_id": "idf-idfofficial-18910",
+      "location_index": 1
     },
     {
-      "id": "idf-idfofficial-18904",
+      "id": "idf-idfofficial-18904-location-1",
       "source": "IDF official Telegram",
       "source_name": "IDF",
       "source_type": "official_idf_statement",
@@ -463,6 +756,34 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "armed_personnel",
+        "weapons_production",
+        "rocket_launcher",
+        "command_center",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925
+        }
+      ],
+      "location_count": 1,
       "location": "Nuseirat",
       "country": "Palestinian Territories",
       "latitude": 31.448,
@@ -470,10 +791,12 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
-      "raw_post_id": "idfofficial/18904"
+      "raw_post_id": "idfofficial/18904",
+      "parent_event_id": "idf-idfofficial-18904",
+      "location_index": 1
     },
     {
-      "id": "idf-idfofficial-18898",
+      "id": "idf-idfofficial-18898-location-1",
       "source": "IDF official Telegram",
       "source_name": "IDF",
       "source_type": "official_idf_statement",
@@ -495,6 +818,30 @@
         "airstrike"
       ],
       "activity_type": "airstrike",
+      "target_organizations": [
+        "Unknown"
+      ],
+      "target_organization": "Unknown",
+      "target_types": [
+        "commander",
+        "vehicle"
+      ],
+      "target_type": "commander",
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303
+        }
+      ],
+      "location_count": 1,
       "location": "Khan Yunis",
       "country": "Palestinian Territories",
       "latitude": 31.3462,
@@ -502,7 +849,9 @@
       "map_visualizable": true,
       "geocode_method": "curated_exact_place_name",
       "geocode_confidence": "high",
-      "raw_post_id": "idfofficial/18898"
+      "raw_post_id": "idfofficial/18898",
+      "parent_event_id": "idf-idfofficial-18898",
+      "location_index": 1
     }
   ]
 }
