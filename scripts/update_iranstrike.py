@@ -13,8 +13,10 @@ Public endpoints:
 Output:
 - data/iranstrike.json
 
-The script keeps normalized fields for the map/dashboard and also preserves
-the original source record in raw_source for auditability.
+The dashboard keeps every normalized event. The map may use only records with
+map_visualizable=true. Coordinates are accepted only when the source provides a
+valid non-zero pair or when an explicit city/object alias matches the whitelist.
+The original source record is preserved in raw_source for auditability.
 """
 
 from __future__ import annotations
@@ -30,7 +32,7 @@ import urllib.request
 from collections import Counter, defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 
 BASE_URL = "https://iranstrike.com"
@@ -225,6 +227,25 @@ def number(value: Any) -> Optional[float]:
     return None
 
 
+def is_valid_coordinate_pair(
+    lat: Optional[float],
+    lon: Optional[float],
+) -> bool:
+    """Return True only for usable geographic coordinates.
+
+    IranStrike currently publishes [0, 0] placeholders. Those values are valid
+    numerically but are not real event locations, therefore they must never be
+    treated as map coordinates.
+    """
+    if lat is None or lon is None:
+        return False
+    if not (-90 <= lat <= 90 and -180 <= lon <= 180):
+        return False
+    if abs(lat) < 0.000001 and abs(lon) < 0.000001:
+        return False
+    return True
+
+
 def extract_coordinates(
     record: Dict[str, Any],
 ) -> Tuple[Optional[float], Optional[float]]:
@@ -269,9 +290,8 @@ def extract_coordinates(
         )
     )
 
-    if lat is not None and lon is not None:
-        if -90 <= lat <= 90 and -180 <= lon <= 180:
-            return lat, lon
+    if is_valid_coordinate_pair(lat, lon):
+        return lat, lon
 
     coordinates = value_by_paths(
         record,
@@ -290,50 +310,83 @@ def extract_coordinates(
         second = number(coordinates[1])
 
         if first is not None and second is not None:
-            # GeoJSON is normally [longitude, latitude].
-            if -180 <= first <= 180 and -90 <= second <= 90:
-                return second, first
+            # GeoJSON and IranStrike arrays are interpreted as [lon, lat].
+            candidate_lat = second
+            candidate_lon = first
+            if is_valid_coordinate_pair(candidate_lat, candidate_lon):
+                return candidate_lat, candidate_lon
 
     return None, None
 
 
+# Conservative whitelist. Add a place only when its name identifies one clear
+# city, installation, island, airport, port or other fixed object in this
+# conflict context. Country names and broad regions are intentionally excluded.
+GEOCODE_PLACES: Sequence[Dict[str, Any]] = [
+    {"name": "Tehran", "country": "Iran", "lat": 35.6892, "lon": 51.3890, "aliases": ["tehran"]},
+    {"name": "Isfahan", "country": "Iran", "lat": 32.6546, "lon": 51.6680, "aliases": ["isfahan", "esfahan"]},
+    {"name": "Mashhad", "country": "Iran", "lat": 36.2605, "lon": 59.6168, "aliases": ["mashhad"]},
+    {"name": "Tabriz", "country": "Iran", "lat": 38.0800, "lon": 46.2919, "aliases": ["tabriz"]},
+    {"name": "Shiraz", "country": "Iran", "lat": 29.5918, "lon": 52.5837, "aliases": ["shiraz"]},
+    {"name": "Bushehr", "country": "Iran", "lat": 28.9234, "lon": 50.8203, "aliases": ["bushehr", "boushehr"]},
+    {"name": "Bandar Abbas", "country": "Iran", "lat": 27.1832, "lon": 56.2666, "aliases": ["bandar abbas"]},
+    {"name": "Chabahar", "country": "Iran", "lat": 25.2919, "lon": 60.6430, "aliases": ["chabahar"]},
+    {"name": "Ahvaz", "country": "Iran", "lat": 31.3183, "lon": 48.6706, "aliases": ["ahvaz"]},
+    {"name": "Kermanshah", "country": "Iran", "lat": 34.3142, "lon": 47.0650, "aliases": ["kermanshah"]},
+    {"name": "Natanz nuclear facility", "country": "Iran", "lat": 33.7247, "lon": 51.7275, "aliases": ["natanz nuclear", "natanz facility", "natanz site", "natanz"]},
+    {"name": "Fordow nuclear facility", "country": "Iran", "lat": 34.8846, "lon": 50.9950, "aliases": ["fordow nuclear", "fordo nuclear", "fordow facility", "fordo facility", "fordow", "fordo"]},
+    {"name": "Arak", "country": "Iran", "lat": 34.0954, "lon": 49.7013, "aliases": ["arak"]},
+    {"name": "Qom", "country": "Iran", "lat": 34.6416, "lon": 50.8746, "aliases": ["qom"]},
+    {"name": "Karaj", "country": "Iran", "lat": 35.8400, "lon": 50.9391, "aliases": ["karaj"]},
+    {"name": "Rasht", "country": "Iran", "lat": 37.2808, "lon": 49.5832, "aliases": ["rasht"]},
+    {"name": "Zahedan", "country": "Iran", "lat": 29.4963, "lon": 60.8629, "aliases": ["zahedan"]},
+    {"name": "Kerman", "country": "Iran", "lat": 30.2839, "lon": 57.0834, "aliases": ["kerman"]},
+    {"name": "Yazd", "country": "Iran", "lat": 31.8974, "lon": 54.3569, "aliases": ["yazd"]},
+    {"name": "Semnan", "country": "Iran", "lat": 35.5769, "lon": 53.3921, "aliases": ["semnan"]},
+    {"name": "Khorramabad", "country": "Iran", "lat": 33.4878, "lon": 48.3558, "aliases": ["khorramabad"]},
+    {"name": "Dezful", "country": "Iran", "lat": 32.3831, "lon": 48.4236, "aliases": ["dezful"]},
+    {"name": "Abadan", "country": "Iran", "lat": 30.3473, "lon": 48.2934, "aliases": ["abadan"]},
+    {"name": "Kharg Island", "country": "Iran", "lat": 29.2447, "lon": 50.3129, "aliases": ["kharg island", "khark island"]},
+    {"name": "Beirut", "country": "Lebanon", "lat": 33.8938, "lon": 35.5018, "aliases": ["beirut"]},
+    {"name": "Tyre", "country": "Lebanon", "lat": 33.2705, "lon": 35.2038, "aliases": ["tyre, lebanon", "tyre city", "sur, lebanon"]},
+    {"name": "Sidon", "country": "Lebanon", "lat": 33.5606, "lon": 35.3758, "aliases": ["sidon", "saida"]},
+    {"name": "Nabatieh", "country": "Lebanon", "lat": 33.3772, "lon": 35.4838, "aliases": ["nabatieh", "nabatiyeh"]},
+    {"name": "Naqoura", "country": "Lebanon", "lat": 33.1181, "lon": 35.1396, "aliases": ["naqoura", "naquora"]},
+    {"name": "Damascus", "country": "Syria", "lat": 33.5138, "lon": 36.2765, "aliases": ["damascus"]},
+    {"name": "Aleppo", "country": "Syria", "lat": 36.2021, "lon": 37.1343, "aliases": ["aleppo"]},
+    {"name": "Homs", "country": "Syria", "lat": 34.7324, "lon": 36.7137, "aliases": ["homs"]},
+    {"name": "Latakia", "country": "Syria", "lat": 35.5317, "lon": 35.7901, "aliases": ["latakia"]},
+    {"name": "Baghdad", "country": "Iraq", "lat": 33.3152, "lon": 44.3661, "aliases": ["baghdad"]},
+    {"name": "Erbil", "country": "Iraq", "lat": 36.1911, "lon": 44.0092, "aliases": ["erbil", "arbil"]},
+    {"name": "Basra", "country": "Iraq", "lat": 30.5085, "lon": 47.7804, "aliases": ["basra", "basrah"]},
+    {"name": "Amman", "country": "Jordan", "lat": 31.9539, "lon": 35.9106, "aliases": ["amman"]},
+    {"name": "Aqaba", "country": "Jordan", "lat": 29.5321, "lon": 35.0063, "aliases": ["aqaba"]},
+    {"name": "Tel Aviv", "country": "Israel", "lat": 32.0853, "lon": 34.7818, "aliases": ["tel aviv", "tel-aviv"]},
+    {"name": "Haifa", "country": "Israel", "lat": 32.7940, "lon": 34.9896, "aliases": ["haifa"]},
+    {"name": "Jerusalem", "country": "Israel", "lat": 31.7683, "lon": 35.2137, "aliases": ["jerusalem"]},
+    {"name": "Eilat", "country": "Israel", "lat": 29.5577, "lon": 34.9519, "aliases": ["eilat"]},
+    {"name": "Gaza City", "country": "Palestinian territories", "lat": 31.5017, "lon": 34.4668, "aliases": ["gaza city"]},
+    {"name": "Rafah", "country": "Palestinian territories", "lat": 31.2969, "lon": 34.2435, "aliases": ["rafah"]},
+    {"name": "Khan Younis", "country": "Palestinian territories", "lat": 31.3462, "lon": 34.3063, "aliases": ["khan younis", "khan yunis"]},
+    {"name": "Nuseirat", "country": "Palestinian territories", "lat": 31.4470, "lon": 34.3925, "aliases": ["nuseirat", "nusairat"]},
+]
+
+
 IRAN_LOCATION_ALIASES = [
-    ("Tehran", ["tehran"]),
-    ("Isfahan", ["isfahan", "esfahan"]),
-    ("Mashhad", ["mashhad"]),
-    ("Tabriz", ["tabriz"]),
-    ("Shiraz", ["shiraz"]),
-    ("Bushehr", ["bushehr", "boushehr"]),
-    ("Bandar Abbas", ["bandar abbas"]),
-    ("Chabahar", ["chabahar"]),
-    ("Ahvaz", ["ahvaz"]),
-    ("Kermanshah", ["kermanshah"]),
-    ("Natanz", ["natanz"]),
-    ("Fordow", ["fordow", "fordo"]),
-    ("Arak", ["arak"]),
-    ("Qom", ["qom"]),
-    ("Karaj", ["karaj"]),
-    ("Rasht", ["rasht"]),
-    ("Zahedan", ["zahedan"]),
-    ("Kerman", ["kerman"]),
-    ("Yazd", ["yazd"]),
-    ("Semnan", ["semnan"]),
-    ("Khorramabad", ["khorramabad"]),
-    ("Dezful", ["dezful"]),
-    ("Abadan", ["abadan"]),
-    ("Kharg Island", ["kharg island", "khark island"]),
-    ("Nuclear facility", ["nuclear facility", "nuclear site"]),
+    (place["name"], place["aliases"])
+    for place in GEOCODE_PLACES
+    if place["country"] == "Iran"
 ]
 
 REGIONAL_LOCATION_ALIASES = [
-    ("Gaza Strip", ["gaza", "rafah", "khan younis", "nuseirat"]),
-    ("Lebanon", ["lebanon", "beirut", "nabatieh", "naqoura", "tyre", "sidon"]),
-    ("Syria", ["syria", "damascus", "latakia", "homs", "aleppo"]),
-    ("Jordan", ["jordan", "amman", "aqaba"]),
-    ("Iraq", ["iraq", "baghdad", "erbil", "basra"]),
-    ("Israel", ["israel", "tel aviv", "haifa", "jerusalem", "eilat"]),
+    ("Gaza Strip", ["gaza strip"]),
+    ("Lebanon", ["lebanon"]),
+    ("Syria", ["syria"]),
+    ("Jordan", ["jordan"]),
+    ("Iraq", ["iraq"]),
+    ("Israel", ["israel"]),
     ("Persian Gulf", ["persian gulf", "strait of hormuz", "hormuz"]),
-    ("Red Sea", ["red sea", "bab el-mandeb"]),
+    ("Red Sea", ["red sea", "bab el-mandeb", "bab al-mandab"]),
 ]
 
 
@@ -366,21 +419,62 @@ def recursive_text_values(value: Any, depth: int = 0) -> List[str]:
     return []
 
 
-def infer_location_from_text(record: Dict[str, Any]) -> Tuple[str, str]:
+def normalized_search_text(record: Dict[str, Any]) -> str:
     values = recursive_text_values(record)
-    text = " ".join(values).lower()
+    return " ".join(values).lower()
 
-    for location, aliases in IRAN_LOCATION_ALIASES:
-        if any(alias in text for alias in aliases):
-            return location, "Iran"
+
+def alias_matches(text: str, alias: str) -> bool:
+    """Match complete aliases, avoiding accidental substring hits."""
+    pattern = r"(?<![a-z0-9])" + re.escape(alias.lower()) + r"(?![a-z0-9])"
+    return re.search(pattern, text) is not None
+
+
+def geocode_from_text(
+    record: Dict[str, Any],
+) -> Optional[Dict[str, Any]]:
+    text = normalized_search_text(record)
+    if not text:
+        return None
+
+    matches: List[Tuple[int, Dict[str, Any], str]] = []
+    for place in GEOCODE_PLACES:
+        for alias in place["aliases"]:
+            if alias_matches(text, alias):
+                # Prefer the most specific/longest matching alias.
+                matches.append((len(alias), place, alias))
+
+    if not matches:
+        return None
+
+    matches.sort(key=lambda item: item[0], reverse=True)
+    _, place, matched_alias = matches[0]
+    return {
+        "location": place["name"],
+        "country": place["country"],
+        "latitude": float(place["lat"]),
+        "longitude": float(place["lon"]),
+        "geocode_method": "whitelist_text_match",
+        "geocode_match": matched_alias,
+        "geocode_confidence": "high",
+    }
+
+
+def infer_location_from_text(record: Dict[str, Any]) -> Tuple[str, str]:
+    """Infer display labels without automatically making an event mappable."""
+    text = normalized_search_text(record)
+
+    geocoded = geocode_from_text(record)
+    if geocoded:
+        return geocoded["location"], geocoded["country"]
 
     for location, aliases in REGIONAL_LOCATION_ALIASES:
-        if any(alias in text for alias in aliases):
+        if any(alias_matches(text, alias) for alias in aliases):
             if location in {"Persian Gulf", "Red Sea"}:
                 return location, location
             return location, location
 
-    if any(token in text for token in ["iran", "iranian", "irgc"]):
+    if any(alias_matches(text, token) for token in ["iran", "iranian", "irgc"]):
         return "Iran", "Iran"
 
     return "", ""
@@ -390,11 +484,11 @@ def infer_country_from_coordinates(
     lat: Optional[float],
     lon: Optional[float],
 ) -> str:
-    if lat is None or lon is None:
+    if not is_valid_coordinate_pair(lat, lon):
         return ""
 
     # Broad regional bounding boxes. These are intentionally conservative
-    # and are only used when the API supplies coordinates but no country.
+    # and are only used when the API supplies real coordinates but no country.
     boxes = [
         ("Iran", 24.0, 40.2, 43.0, 63.5),
         ("Iraq", 28.5, 37.5, 38.5, 49.0),
@@ -416,6 +510,7 @@ def infer_country_from_coordinates(
             return country
 
     return ""
+
 
 def normalize_category(record: Dict[str, Any]) -> str:
     value = clean(
@@ -621,7 +716,28 @@ def normalize_event(
     record: Dict[str, Any],
     source_collection: str,
 ) -> Dict[str, Any]:
-    lat, lon = extract_coordinates(record)
+    source_lat, source_lon = extract_coordinates(record)
+    text_geocode = geocode_from_text(record)
+
+    if is_valid_coordinate_pair(source_lat, source_lon):
+        lat, lon = source_lat, source_lon
+        map_visualizable = True
+        geocode_method = "source_coordinates"
+        geocode_match = ""
+        geocode_confidence = "source"
+    elif text_geocode:
+        lat = text_geocode["latitude"]
+        lon = text_geocode["longitude"]
+        map_visualizable = True
+        geocode_method = text_geocode["geocode_method"]
+        geocode_match = text_geocode["geocode_match"]
+        geocode_confidence = text_geocode["geocode_confidence"]
+    else:
+        lat, lon = None, None
+        map_visualizable = False
+        geocode_method = "none"
+        geocode_match = ""
+        geocode_confidence = "none"
 
     date_iso = parse_datetime(
         value_by_paths(
@@ -719,11 +835,16 @@ def normalize_event(
 
     inferred_location, inferred_country = infer_location_from_text(record)
 
-    if not location:
-        location = inferred_location
-
-    if not country:
-        country = inferred_country
+    if text_geocode:
+        # A high-confidence whitelist match is more useful than source values
+        # such as IRN, ISR or other country-level placeholders.
+        location = text_geocode["location"]
+        country = text_geocode["country"]
+    else:
+        if not location:
+            location = inferred_location
+        if not country:
+            country = inferred_country
 
     if not country:
         country = infer_country_from_coordinates(lat, lon)
@@ -766,6 +887,10 @@ def normalize_event(
         "country": country,
         "latitude": lat,
         "longitude": lon,
+        "map_visualizable": map_visualizable,
+        "geocode_method": geocode_method,
+        "geocode_match": geocode_match,
+        "geocode_confidence": geocode_confidence,
         "verified": value_by_paths(
             record,
             [
@@ -986,10 +1111,7 @@ def build_analytics(
     geocoded_count = sum(
         1
         for event in events
-        if (
-            event.get("latitude") is not None and
-            event.get("longitude") is not None
-        )
+        if event.get("map_visualizable") is True
     )
 
     return {
@@ -1091,6 +1213,11 @@ def main() -> int:
         reverse=True,
     )
 
+    map_events = [
+        event for event in normalized_events
+        if event.get("map_visualizable") is True
+    ]
+
     normalized_developments = [
         normalize_event(record, "developments")
         for record in developments
@@ -1124,6 +1251,8 @@ def main() -> int:
             "events_endpoint_records": len(event_records),
             "feed_event_records": len(feed_events),
             "normalized_events": len(normalized_events),
+            "map_visualizable_events": len(map_events),
+            "non_mappable_events": len(normalized_events) - len(map_events),
             "developments": len(normalized_developments),
         },
         "analytics": build_analytics(
@@ -1144,7 +1273,10 @@ def main() -> int:
         "summary": payloads["summary"],
         "vitals": payloads["vitals"],
         "developments": normalized_developments,
+        # Dashboard source: every normalized event.
         "events": normalized_events,
+        # Map source: only high-confidence, explicitly mappable events.
+        "map_events": map_events,
     }
 
     OUTPUT_PATH.parent.mkdir(
@@ -1162,8 +1294,8 @@ def main() -> int:
     )
 
     print(
-        f"Wrote {len(normalized_events)} events "
-        f"to {OUTPUT_PATH}"
+        f"Wrote {len(normalized_events)} dashboard events and "
+        f"{len(map_events)} map events to {OUTPUT_PATH}"
     )
 
     return 0
