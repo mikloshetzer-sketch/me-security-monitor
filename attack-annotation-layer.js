@@ -561,6 +561,7 @@
 
       .me-attack-annotation-card.is-dragging {
         cursor: grabbing;
+        z-index: 9999;
         box-shadow: 0 14px 38px rgba(15, 23, 42, 0.28);
       }
 
@@ -1328,6 +1329,7 @@
         startTop = parseFloat(item.card.style.top) || 0;
 
         item.card.classList.add("is-dragging");
+        item.card.style.zIndex = "9999";
         handle.setPointerCapture?.(pointerId);
 
         event.preventDefault();
@@ -1361,6 +1363,7 @@
 
         active = false;
         item.card.classList.remove("is-dragging");
+        item.card.style.zIndex = "";
 
         try {
           handle.releasePointerCapture?.(pointerId);
@@ -1445,6 +1448,15 @@
 
       cardHost.appendChild(card);
 
+      /*
+       * Stop mouse/touch events on the card from reaching the Leaflet map.
+       * Without this, map dragging can compete with card dragging.
+       */
+      if (window.L?.DomEvent) {
+        window.L.DomEvent.disableClickPropagation(card);
+        window.L.DomEvent.disableScrollPropagation(card);
+      }
+
       const clamped = clampPosition(
         initialPosition.left,
         initialPosition.top,
@@ -1510,19 +1522,16 @@
         const existing = state.cards.get(event.id);
 
         if (existing) {
-          existing.event = event;
-          existing.card.style.setProperty(
-            "--me-source-color",
-            event.sourceColor
-          );
-          existing.card.style.setProperty(
-            "--me-attacker-color",
-            event.attackerColor
-          );
-          existing.card.innerHTML = cardHtml(event);
-          existing.line.setAttribute("stroke", event.sourceColor);
-          existing.anchor.setAttribute("fill", event.sourceColor);
-          updateConnection(existing);
+          /*
+           * Recreate the card instead of replacing innerHTML in place.
+           *
+           * Replacing innerHTML destroys the drag handle and close-button
+           * event listeners. removeCard() runs the old drag cleanup, while
+           * createCard() binds fresh pointer listeners and automatically
+           * reuses the saved position from state.positions.
+           */
+          removeCard(event.id, false);
+          createCard(event, index);
           return;
         }
 
@@ -1710,3 +1719,4 @@
   window.createAttackAnnotationLayer =
     createAttackAnnotationLayer;
 })();
+
