@@ -116,21 +116,24 @@ TARGET_ORGANIZATION_PATTERNS: dict[str, tuple[str, ...]] = {
 TARGET_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
     "commander": (
         "commander",
-        "cell commander",
-        "company commander",
-        "battalion commander",
-        "senior commander",
         "head of",
+        "commanded",
     ),
-    "armed_personnel": (
-        "armed terrorist",
-        "armed terrorists",
+    "individual_operative": (
+        "terrorist who",
+        "operative who",
+        "militant who",
+        "suspect who",
+        "sniper operative",
+        "nukhba terrorist",
+    ),
+    "armed_cell": (
+        "armed terrorist cell",
         "terrorist cell",
-        "terrorists",
-        "operative",
-        "operatives",
-        "militant",
-        "militants",
+        "armed hamas terrorists",
+        "armed terrorists",
+        "several terrorists",
+        "terrorists operating inside",
     ),
     "weapons_production": (
         "weapon production",
@@ -139,6 +142,8 @@ TARGET_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
         "production headquarters",
         "manufacturing workshop",
         "rocket launcher production",
+        "produce weapon components",
+        "manufacture weapons",
     ),
     "weapons_storage": (
         "weapons storage",
@@ -147,6 +152,7 @@ TARGET_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
         "weapons warehouse",
         "arms depot",
         "stored weapons",
+        "weapons inside the structure",
     ),
     "tunnel": (
         "tunnel shaft",
@@ -154,35 +160,39 @@ TARGET_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
         "underground tunnel",
         "underground terror infrastructure",
         "underground infrastructure",
-        "tunnel",
+        "access shaft",
     ),
     "rocket_launcher": (
         "rocket launcher",
         "launch site",
         "launching site",
         "launching position",
+        "launcher production",
     ),
     "command_center": (
         "command center",
         "command and control center",
-        "headquarters",
         "military headquarters",
+        "operations room",
     ),
     "military_structure": (
         "military structure",
         "terrorist infrastructure",
         "terror infrastructure",
         "military infrastructure",
-        "structure used",
+        "weapon production site",
     ),
-    "vehicle": (
-        "vehicle",
-        "truck",
-        "motorcycle",
+    "targeted_vehicle": (
+        "struck the vehicle",
+        "vehicle was struck",
+        "vehicle carrying",
+        "vehicle transporting weapons",
+        "vehicle used to transfer weapons",
+        "suspect traveling in a vehicle",
     ),
     "drone_or_uav": (
-        "drone",
-        "uav",
+        "hostile drone",
+        "hostile uav",
         "unmanned aerial vehicle",
         "unmanned aircraft",
     ),
@@ -190,12 +200,110 @@ TARGET_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
         "artillery position",
         "mortar position",
         "missile launcher",
-        "anti-tank missile",
+        "anti-tank missile position",
     ),
     "smuggling_network": (
+        "attempted to smuggle",
+        "smuggling network",
+        "weapons smuggling",
+        "smuggler",
+    ),
+}
+
+COMMANDER_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
+    "cell_commander": (
+        "cell commander",
+    ),
+    "company_commander": (
+        "company commander",
+        "commander of the western company",
+        "commander of a company",
+    ),
+    "battalion_commander": (
+        "battalion commander",
+        "commander in the",
+        "battalion's commander",
+    ),
+    "naval_commander": (
+        "naval commander",
+        "commander in the naval array",
+        "naval array commander",
+    ),
+    "nukhba_commander": (
+        "nukhba commander",
+        "nukhba cell commander",
+    ),
+    "production_commander": (
+        "commander in the production array",
+        "commander in the weapons production",
+        "production headquarters commander",
+    ),
+    "senior_commander": (
+        "senior commander",
+        "high-ranking commander",
+    ),
+    "unspecified_commander": (
+        "commander",
+    ),
+}
+
+THREAT_DOMAIN_PATTERNS: dict[str, tuple[str, ...]] = {
+    "ground": (
+        "ground troops",
+        "ground forces",
+        "ground operation",
+        "idf troops",
+        "idf soldiers",
+        "close-quarters combat",
+    ),
+    "naval": (
+        "naval array",
+        "maritime domain",
+        "naval force",
+        "at sea",
+    ),
+    "rocket_missile": (
+        "rocket",
+        "missile",
+        "launcher",
+        "projectiles",
+    ),
+    "drone_uav": (
+        "drone",
+        "uav",
+        "unmanned aerial",
+        "unmanned aircraft",
+    ),
+    "underground": (
+        "tunnel",
+        "underground",
+        "shaft",
+    ),
+    "command": (
+        "commander",
+        "command center",
+        "headquarters",
+        "command and control",
+    ),
+    "production": (
+        "production",
+        "manufacturing",
+        "manufacture",
+        "produce weapon",
+    ),
+    "weapons_logistics": (
+        "weapons storage",
+        "stored weapons",
+        "transfer weapons",
+        "military equipment",
         "smuggle",
         "smuggling",
-        "smuggler",
+    ),
+    "air_defense": (
+        "air defense",
+        "intercepted",
+        "interception",
+        "aerial target",
     ),
 }
 
@@ -859,7 +967,7 @@ def infer_target_organizations(text: str) -> list[str]:
         if any(pattern in normalized for pattern in patterns):
             organizations.append(organization)
 
-    return organizations or ["Unknown"]
+    return organizations or ["Not explicitly stated"]
 
 
 def infer_target_types(text: str) -> list[str]:
@@ -882,6 +990,41 @@ def infer_operation_results(text: str) -> list[str]:
             results.append(result)
 
     return results or ["reported"]
+
+
+def infer_commander_types(
+    text: str,
+    target_types: list[str],
+) -> list[str]:
+    if "commander" not in target_types:
+        return []
+
+    normalized = normalize_text(text)
+    commander_types: list[str] = []
+
+    for commander_type, patterns in COMMANDER_TYPE_PATTERNS.items():
+        if any(pattern in normalized for pattern in patterns):
+            commander_types.append(commander_type)
+
+    # The generic fallback must not coexist with a specific subtype.
+    specific = [
+        value
+        for value in commander_types
+        if value != "unspecified_commander"
+    ]
+
+    return specific or ["unspecified_commander"]
+
+
+def infer_threat_domains(text: str) -> list[str]:
+    normalized = normalize_text(text)
+    domains: list[str] = []
+
+    for domain, patterns in THREAT_DOMAIN_PATTERNS.items():
+        if any(pattern in normalized for pattern in patterns):
+            domains.append(domain)
+
+    return domains or ["unspecified"]
 
 
 def infer_locations(
@@ -917,7 +1060,18 @@ def infer_locations(
         if key in seen:
             continue
         seen.add(key)
-        unique.append(location)
+        enriched = dict(location)
+        enriched["matched_alias"] = normalize_text(
+            next(
+                alias
+                for alias, candidate in KNOWN_LOCATIONS.items()
+                if (
+                    candidate["name"] == location["name"]
+                    and normalize_text(alias) in normalized
+                )
+            )
+        )
+        unique.append(enriched)
 
     return unique
 
@@ -986,6 +1140,8 @@ def normalize_post(
     target_organizations = infer_target_organizations(text)
     target_types = infer_target_types(text)
     operation_results = infer_operation_results(text)
+    commander_types = infer_commander_types(text, target_types)
+    threat_domains = infer_threat_domains(text)
 
     event = {
         "id": stable_event_id(post),
@@ -1010,6 +1166,14 @@ def normalize_post(
         "target_organization": target_organizations[0],
         "target_types": target_types,
         "target_type": target_types[0],
+        "commander_types": commander_types,
+        "commander_type": (
+            commander_types[0]
+            if commander_types
+            else ""
+        ),
+        "threat_domains": threat_domains,
+        "threat_domain": threat_domains[0],
         "operation_results": operation_results,
         "operation_result": operation_results[0],
         "locations": locations,
@@ -1033,6 +1197,16 @@ def normalize_post(
             else "none"
         ),
         "geocode_confidence": "high" if locations else "none",
+        "classification_method": "deterministic_keyword_rules",
+        "classification_confidence": (
+            "medium"
+            if (
+                target_organizations == ["Not explicitly stated"]
+                or target_types == ["unspecified"]
+                or threat_domains == ["unspecified"]
+            )
+            else "high"
+        ),
         "raw_post_id": clean_text(post.get("post_id")),
     }
 
@@ -1143,6 +1317,8 @@ def build_analytics(
     organization_counts: Counter[str] = Counter()
     target_type_counts: Counter[str] = Counter()
     result_counts: Counter[str] = Counter()
+    commander_type_counts: Counter[str] = Counter()
+    threat_domain_counts: Counter[str] = Counter()
 
     for event in events:
         for region in event.get("regions") or []:
@@ -1159,6 +1335,12 @@ def build_analytics(
 
         for result in event.get("operation_results") or []:
             result_counts[result] += 1
+
+        for commander_type in event.get("commander_types") or []:
+            commander_type_counts[commander_type] += 1
+
+        for domain in event.get("threat_domains") or []:
+            threat_domain_counts[domain] += 1
 
         locations = event.get("locations") or []
         if locations:
@@ -1219,6 +1401,12 @@ def build_analytics(
         ),
         "target_type_counts": dict(target_type_counts.most_common()),
         "operation_result_counts": dict(result_counts.most_common()),
+        "commander_type_counts": dict(
+            commander_type_counts.most_common()
+        ),
+        "threat_domain_counts": dict(
+            threat_domain_counts.most_common()
+        ),
         "top_locations": dict(location_counts.most_common(20)),
     }
 
@@ -1340,8 +1528,34 @@ def main() -> int:
 
     generated_at = utc_now_iso()
 
+    for event in merged:
+        if event.get("activity_type") not in ACTIVITY_TYPES:
+            raise RuntimeError(
+                f"Unsupported activity type in {event.get('id')}: "
+                f"{event.get('activity_type')}"
+            )
+
+        if not isinstance(event.get("locations", []), list):
+            raise RuntimeError(
+                f"locations must be a list in {event.get('id')}"
+            )
+
+        if event.get("map_visualizable") is True and not event.get(
+            "locations"
+        ):
+            # Backward-compatible retained records may still use the old
+            # singular location fields, but newly processed records must not.
+            if not (
+                isinstance(event.get("latitude"), (int, float))
+                and isinstance(event.get("longitude"), (int, float))
+            ):
+                raise RuntimeError(
+                    f"Visualizable event without valid coordinates: "
+                    f"{event.get('id')}"
+                )
+
     output_payload = {
-        "schema_version": 2,
+        "schema_version": 3,
         "generated_at": generated_at,
         "source": {
             "name": "Israel Defense Forces official Telegram",
@@ -1358,6 +1572,8 @@ def main() -> int:
             "enrichment_fields": [
                 "target_organizations",
                 "target_types",
+                "commander_types",
+                "threat_domains",
                 "operation_results",
                 "locations",
             ],
@@ -1372,7 +1588,9 @@ def main() -> int:
                 "One statement may contain multiple regions, activity types, targets or results.",
                 "One statement may generate multiple map points when several curated place names are explicit.",
                 "Coordinates identify named localities, not exact strike points.",
-                "Target and result fields are rule-based text classifications.",
+                "Target, commander, threat-domain and result fields are deterministic rule-based text classifications.",
+                "Not explicitly stated means the organization is not named in the statement; it is not an attribution judgment.",
+                "A vehicle is classified only when the wording indicates that the vehicle itself was targeted or operationally relevant.",
             ],
         },
         "analytics": build_analytics(merged),
@@ -1381,7 +1599,7 @@ def main() -> int:
     }
 
     history_output = {
-        "schema_version": 2,
+        "schema_version": 3,
         "generated_at": generated_at,
         "source_url": args.source_url,
         "events": merged,
@@ -1407,4 +1625,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-
