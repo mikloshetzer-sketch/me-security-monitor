@@ -512,6 +512,305 @@ def infer_country_from_coordinates(
     return ""
 
 
+
+ATTACKER_METADATA = {
+    "usa": {
+        "label": "United States",
+        "color": "#2563eb",
+    },
+    "iran": {
+        "label": "Iran",
+        "color": "#16a34a",
+    },
+    "israel": {
+        "label": "Israel",
+        "color": "#dc2626",
+    },
+    "other": {
+        "label": "Other actor",
+        "color": "#7c3aed",
+    },
+    "unknown": {
+        "label": "Unknown actor",
+        "color": "#64748b",
+    },
+}
+
+ATTACKER_STRUCTURED_PATHS = [
+    "attacker",
+    "actor",
+    "responsibleActor",
+    "responsible_actor",
+    "perpetrator",
+    "launchedBy",
+    "launched_by",
+    "firedBy",
+    "fired_by",
+    "originActor",
+    "origin_actor",
+    "military",
+    "forces",
+]
+
+ATTACKER_ALIASES = {
+    "usa": [
+        "united states",
+        "u.s.",
+        "u.s",
+        "us forces",
+        "us military",
+        "american forces",
+        "american military",
+        "centcom",
+        "u.s. central command",
+    ],
+    "iran": [
+        "iran",
+        "iranian",
+        "irgc",
+        "islamic revolutionary guard corps",
+        "revolutionary guards",
+        "iranian armed forces",
+    ],
+    "israel": [
+        "israel",
+        "israeli",
+        "idf",
+        "israel defense forces",
+        "israeli defense forces",
+        "iaf",
+        "israeli air force",
+    ],
+}
+
+ATTACK_ACTION_TERMS = [
+    "attack",
+    "attacked",
+    "attacking",
+    "strike",
+    "strikes",
+    "struck",
+    "airstrike",
+    "airstrikes",
+    "bomb",
+    "bombed",
+    "bombing",
+    "launch",
+    "launched",
+    "launches",
+    "fire",
+    "fired",
+    "fires",
+    "target",
+    "targeted",
+    "targets",
+    "hit",
+    "hits",
+    "raid",
+    "raided",
+    "conducted",
+    "carried out",
+    "intercepted",
+    "destroyed",
+]
+
+NON_EXECUTED_TERMS = [
+    "threat",
+    "threatens",
+    "threatened",
+    "warning",
+    "warns",
+    "warned",
+    "may attack",
+    "might attack",
+    "could attack",
+    "would attack",
+    "plans to attack",
+    "plan to attack",
+    "preparing to attack",
+    "ready to attack",
+    "vows to attack",
+    "promises to attack",
+    "calls for an attack",
+    "reports claim",
+    "allegedly",
+    "unconfirmed",
+]
+
+PASSIVE_PATTERNS = {
+    "usa": [
+        r"\b(?:strike|attack|airstrike|bombing|raid)s?\s+(?:carried out|conducted|launched)?\s*by\s+(?:the\s+)?(?:u\.?s\.?|united states|american|centcom)\b",
+        r"\b(?:missiles?|drones?|aircraft)\s+(?:were\s+)?(?:launched|fired|sent)\s+by\s+(?:the\s+)?(?:u\.?s\.?|united states|american forces|centcom)\b",
+        r"\b(?:launched|fired)\s+from\s+(?:a\s+)?u\.?s\.?\s+(?:base|ship|aircraft|position)\b",
+    ],
+    "iran": [
+        r"\b(?:strike|attack|airstrike|bombing|raid)s?\s+(?:carried out|conducted|launched)?\s*by\s+(?:the\s+)?(?:iran|iranian|irgc)\b",
+        r"\b(?:missiles?|rockets?|drones?|uavs?)\s+(?:were\s+)?(?:launched|fired|sent)\s+(?:by|from)\s+(?:the\s+)?(?:iran|iranian|irgc)\b",
+        r"\b(?:launched|fired)\s+from\s+iran\b",
+        r"\biran-origin(?:ated)?\s+(?:missile|drone|attack|strike)s?\b",
+    ],
+    "israel": [
+        r"\b(?:strike|attack|airstrike|bombing|raid)s?\s+(?:carried out|conducted|launched)?\s*by\s+(?:the\s+)?(?:israel|israeli|idf|iaf)\b",
+        r"\b(?:missiles?|drones?|aircraft)\s+(?:were\s+)?(?:launched|fired|sent)\s+by\s+(?:the\s+)?(?:israel|israeli|idf|iaf)\b",
+        r"\b(?:launched|fired)\s+from\s+israel\b",
+        r"\bisraeli-origin(?:ated)?\s+(?:missile|drone|attack|strike)s?\b",
+    ],
+}
+
+
+def normalize_actor_name(value: Any) -> str:
+    text = clean(value).lower()
+    if not text:
+        return ""
+
+    for actor, aliases in ATTACKER_ALIASES.items():
+        if any(alias_matches(text, alias) for alias in aliases):
+            return actor
+
+    return ""
+
+
+def attacker_sentences(record: Dict[str, Any]) -> List[str]:
+    values = recursive_text_values(record)
+    joined = " ".join(values)
+    return [
+        sentence.strip().lower()
+        for sentence in re.split(r"(?<=[.!?;])\s+|\n+", joined)
+        if sentence.strip()
+    ]
+
+
+def sentence_is_non_executed(sentence: str) -> bool:
+    return any(term in sentence for term in NON_EXECUTED_TERMS)
+
+
+def active_actor_score(sentence: str, actor: str) -> Tuple[int, str]:
+    aliases = ATTACKER_ALIASES[actor]
+    best_score = 0
+    best_evidence = ""
+
+    for alias in aliases:
+        for actor_match in re.finditer(
+            rf"(?<![a-z0-9]){re.escape(alias)}(?![a-z0-9])",
+            sentence,
+        ):
+            actor_start = actor_match.start()
+            actor_end = actor_match.end()
+
+            for action in ATTACK_ACTION_TERMS:
+                for action_match in re.finditer(
+                    rf"(?<![a-z0-9]){re.escape(action)}(?![a-z0-9])",
+                    sentence,
+                ):
+                    # The actor should normally precede the action. A short
+                    # reverse distance is accepted for forms such as
+                    # "strikes by Israel".
+                    forward_distance = action_match.start() - actor_end
+                    reverse_distance = actor_start - action_match.end()
+
+                    if 0 <= forward_distance <= 70:
+                        score = 5 if forward_distance <= 35 else 4
+                    elif 0 <= reverse_distance <= 35:
+                        score = 3
+                    else:
+                        continue
+
+                    if sentence_is_non_executed(sentence):
+                        score -= 3
+
+                    if score > best_score:
+                        best_score = score
+                        start = max(0, min(actor_start, action_match.start()) - 30)
+                        end = min(
+                            len(sentence),
+                            max(actor_end, action_match.end()) + 50,
+                        )
+                        best_evidence = sentence[start:end].strip()
+
+    return best_score, best_evidence
+
+
+def infer_attacker(record: Dict[str, Any]) -> Dict[str, str]:
+    structured = value_by_paths(record, ATTACKER_STRUCTURED_PATHS)
+    structured_actor = normalize_actor_name(structured)
+
+    if structured_actor:
+        metadata = ATTACKER_METADATA[structured_actor]
+        return {
+            "attacker": structured_actor,
+            "attacker_label": metadata["label"],
+            "attacker_color": metadata["color"],
+            "attacker_confidence": "high",
+            "attacker_method": "structured_actor_field",
+            "attacker_evidence": clean(structured),
+        }
+
+    scores: Counter = Counter()
+    evidence: Dict[str, str] = {}
+    methods: Dict[str, str] = {}
+
+    for sentence in attacker_sentences(record):
+        for actor, patterns in PASSIVE_PATTERNS.items():
+            for pattern in patterns:
+                match = re.search(pattern, sentence, flags=re.IGNORECASE)
+                if match:
+                    score = 5
+                    if sentence_is_non_executed(sentence):
+                        score -= 3
+                    if score > scores[actor]:
+                        scores[actor] = score
+                        evidence[actor] = match.group(0)
+                        methods[actor] = "passive_attack_pattern"
+
+        for actor in ATTACKER_ALIASES:
+            score, actor_evidence = active_actor_score(sentence, actor)
+            if score > scores[actor]:
+                scores[actor] = score
+                evidence[actor] = actor_evidence
+                methods[actor] = "actor_action_proximity"
+
+    if not scores:
+        metadata = ATTACKER_METADATA["unknown"]
+        return {
+            "attacker": "unknown",
+            "attacker_label": metadata["label"],
+            "attacker_color": metadata["color"],
+            "attacker_confidence": "none",
+            "attacker_method": "none",
+            "attacker_evidence": "",
+        }
+
+    ranked = scores.most_common()
+    best_actor, best_score = ranked[0]
+    second_score = ranked[1][1] if len(ranked) > 1 else 0
+
+    # Conflicting actor signals remain unknown unless one actor is clearly
+    # stronger. This protects reports describing retaliation by both sides.
+    if best_score < 3 or best_score - second_score < 2:
+        metadata = ATTACKER_METADATA["unknown"]
+        return {
+            "attacker": "unknown",
+            "attacker_label": metadata["label"],
+            "attacker_color": metadata["color"],
+            "attacker_confidence": "low",
+            "attacker_method": "conflicting_or_weak_signal",
+            "attacker_evidence": "",
+        }
+
+    confidence = "high" if best_score >= 5 else "medium"
+    metadata = ATTACKER_METADATA[best_actor]
+
+    return {
+        "attacker": best_actor,
+        "attacker_label": metadata["label"],
+        "attacker_color": metadata["color"],
+        "attacker_confidence": confidence,
+        "attacker_method": methods.get(best_actor, "text_pattern"),
+        "attacker_evidence": evidence.get(best_actor, ""),
+    }
+
+
+
 def normalize_category(record: Dict[str, Any]) -> str:
     value = clean(
         value_by_paths(
@@ -852,6 +1151,8 @@ def normalize_event(
     if not location and country:
         location = country
 
+    attacker_data = infer_attacker(record)
+
     source_name = clean(
         value_by_paths(
             record,
@@ -883,6 +1184,12 @@ def normalize_event(
         "description": description,
         "category": normalize_category(record),
         "severity": normalize_severity(record),
+        "attacker": attacker_data["attacker"],
+        "attacker_label": attacker_data["attacker_label"],
+        "attacker_color": attacker_data["attacker_color"],
+        "attacker_confidence": attacker_data["attacker_confidence"],
+        "attacker_method": attacker_data["attacker_method"],
+        "attacker_evidence": attacker_data["attacker_evidence"],
         "location": location,
         "country": country,
         "latitude": lat,
@@ -1043,6 +1350,10 @@ def build_analytics(
         event.get("severity") or "unknown"
         for event in dated
     )
+    attacker_counter = Counter(
+        event.get("attacker") or "unknown"
+        for event in dated
+    )
 
     daily_counter: Counter = Counter()
 
@@ -1157,6 +1468,9 @@ def build_analytics(
         ),
         "severity_counts": dict(
             severity_counter.most_common()
+        ),
+        "attacker_counts": dict(
+            attacker_counter.most_common()
         ),
         "top_locations": count_rows(
             location_counter
