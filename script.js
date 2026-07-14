@@ -2273,6 +2273,175 @@ window.setInterval(() => {
 }, 10 * 60 * 1000);
 
 
+    // ===== Shared latest-attack annotations (CIR + IranStrike) =====
+    let attackAnnotationsEnabled = false;
+    let attackAnnotationController = null;
+    let attackAnnotationModulePromise = null;
+
+    function loadAttackAnnotationModule() {
+      if (typeof window.createAttackAnnotationLayer === "function") {
+        return Promise.resolve();
+      }
+
+      if (attackAnnotationModulePromise) {
+        return attackAnnotationModulePromise;
+      }
+
+      attackAnnotationModulePromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector(
+          'script[data-attack-annotation-module="true"]'
+        );
+
+        if (existing) {
+          if (typeof window.createAttackAnnotationLayer === "function") {
+            resolve();
+            return;
+          }
+
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `attack-annotation-layer.js?v=${Date.now()}`;
+        script.async = true;
+        script.dataset.attackAnnotationModule = "true";
+        script.onload = resolve;
+        script.onerror = () =>
+          reject(new Error("attack-annotation-layer.js could not be loaded"));
+
+        document.head.appendChild(script);
+      });
+
+      return attackAnnotationModulePromise;
+    }
+
+    async function ensureAttackAnnotationController() {
+      if (attackAnnotationController) {
+        return attackAnnotationController;
+      }
+
+      await loadAttackAnnotationModule();
+
+      if (typeof window.createAttackAnnotationLayer !== "function") {
+        throw new Error("Attack annotation module is unavailable.");
+      }
+
+      attackAnnotationController = window.createAttackAnnotationLayer(map, {
+        enabled: false,
+        limit: Number(
+          document.getElementById("attackAnnotationLimitSelect")?.value || 10
+        ),
+        sourceLabels: {
+          cir: "CIR",
+          iranstrike: "IranStrike"
+        }
+      });
+
+      window.attackAnnotationController = attackAnnotationController;
+      return attackAnnotationController;
+    }
+
+    function readAttackAnnotationUi() {
+      return {
+        enabled: Boolean(
+          document.getElementById("attackAnnotationsCheckbox")?.checked
+        ),
+        cir: Boolean(
+          document.getElementById("attackAnnotationsCirCheckbox")?.checked
+        ),
+        iranstrike: Boolean(
+          document.getElementById("attackAnnotationsIranStrikeCheckbox")?.checked
+        ),
+        limit: Number(
+          document.getElementById("attackAnnotationLimitSelect")?.value || 10
+        )
+      };
+    }
+
+    function getIranStrikeEventsForAnnotations() {
+      if (!iranStrikeController?.getVisibleEvents) return [];
+
+      return iranStrikeController
+        .getVisibleEvents()
+        .filter((event) => event?.map_visualizable !== false);
+    }
+
+    function updateAttackAnnotationUi() {
+      const badge = document.getElementById("attackAnnotationsStatusBadge");
+      const count = document.getElementById("attackAnnotationsVisibleCount");
+
+      if (badge) {
+        badge.className = "badge-mini";
+
+        if (attackAnnotationsEnabled && attackAnnotationController) {
+          badge.textContent = "Online";
+          badge.classList.add("badge-ok");
+        } else {
+          badge.textContent = "Off";
+        }
+      }
+
+      if (count) {
+        count.textContent = String(
+          attackAnnotationController?.getState?.().renderedCount || 0
+        );
+      }
+    }
+
+    async function syncAttackAnnotations() {
+      const ui = readAttackAnnotationUi();
+      attackAnnotationsEnabled = ui.enabled;
+
+      if (!attackAnnotationsEnabled) {
+        attackAnnotationController?.setEnabled(false);
+        updateAttackAnnotationUi();
+        return;
+      }
+
+      try {
+        const controller = await ensureAttackAnnotationController();
+
+        const cirEvents = cirIncidentsController
+          ? getCirVisibleEventsForSummary()
+          : [];
+
+        const iranStrikeEvents = getIranStrikeEventsForAnnotations();
+
+        controller.setLimit(ui.limit);
+        controller.setEvents("cir", cirEvents);
+        controller.setEvents("iranstrike", iranStrikeEvents);
+        controller.setSourceEnabled("cir", ui.cir);
+        controller.setSourceEnabled("iranstrike", ui.iranstrike);
+        controller.setEnabled(true);
+        controller.refresh();
+
+        updateAttackAnnotationUi();
+      } catch (error) {
+        console.warn(
+          "[attack-annotations] synchronization failed:",
+          error?.message || error
+        );
+
+        attackAnnotationsEnabled = false;
+
+        const checkbox = document.getElementById(
+          "attackAnnotationsCheckbox"
+        );
+        if (checkbox) checkbox.checked = false;
+
+        const badge = document.getElementById(
+          "attackAnnotationsStatusBadge"
+        );
+        if (badge) {
+          badge.textContent = "Error";
+          badge.className = "badge-mini badge-alert";
+        }
+      }
+    }
+
+
     // ===== CIR verified incidents layer (data/cir-incidents.json) =====
     let cirIncidentsEnabled = false;
     let cirIncidentsController = null;
@@ -2607,6 +2776,7 @@ window.setInterval(() => {
         controller.setEnabled(cirIncidentsEnabled);
         updateCirUiState();
         updateCirSummary();
+        await syncAttackAnnotations();
       } catch (e) {
         console.warn("[cir-incidents] refresh failed:", e?.message || e);
         const badge = document.getElementById("cirStatusBadge");
@@ -2649,6 +2819,7 @@ window.setInterval(() => {
         }
 
         updateCirUiState();
+        await syncAttackAnnotations();
       } catch (e) {
         console.warn("[cir-incidents] toggle failed:", e?.message || e);
         const checkbox = document.getElementById("cirIncidentsCheckbox");
@@ -2860,6 +3031,7 @@ window.setInterval(() => {
         await controller.refresh();
         controller.setEnabled(iranStrikeEnabled);
         updateIranStrikeUi();
+        await syncAttackAnnotations();
 
       } catch (error) {
         console.warn(
@@ -3303,6 +3475,67 @@ window.setInterval(() => {
         </div>
       </div>
 
+      <div class="attack-annotations-control-block" data-control-block="attack-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+          <div class="muted" style="font-weight:800;">Latest attack cards</div>
+          <span id="attackAnnotationsStatusBadge" class="badge-mini">Off</span>
+        </div>
+
+        <div class="row">
+          <label>
+            <input id="attackAnnotationsCheckbox" type="checkbox" />
+            Show draggable attack cards
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            <input id="attackAnnotationsCirCheckbox" type="checkbox" checked />
+            CIR
+          </label>
+          <label>
+            <input id="attackAnnotationsIranStrikeCheckbox" type="checkbox" checked />
+            IranStrike
+          </label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">
+          Number of latest events
+        </div>
+
+        <select id="attackAnnotationLimitSelect">
+          <option value="5">5 events</option>
+          <option value="10" selected>10 events</option>
+          <option value="15">15 events</option>
+          <option value="20">20 events</option>
+        </select>
+
+        <div class="row" style="margin-top:7px;">
+          <span class="btn-mini" id="attackAnnotationsRefreshBtn">Refresh cards</span>
+          <span class="btn-mini" id="attackAnnotationsRestoreBtn">Restore hidden</span>
+        </div>
+
+        <div class="row" style="margin-top:6px;">
+          <span class="btn-mini" id="attackAnnotationsResetBtn">Reset positions</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;">
+          Visible cards: <span id="attackAnnotationsVisibleCount">0</span>
+        </div>
+
+        <div style="margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+          <div class="muted"><span class="event-dot" style="background:#2563eb;"></span> United States</div>
+          <div class="muted"><span class="event-dot" style="background:#16a34a;"></span> Iran</div>
+          <div class="muted"><span class="event-dot" style="background:#dc2626;"></span> Israel</div>
+          <div class="muted"><span class="event-dot" style="background:#64748b;"></span> Unknown actor</div>
+        </div>
+
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          Drag a card by its header. A dashed line keeps it connected to the original event coordinate.
+        </div>
+      </div>
+
+
       <div class="israel-activity-control-block" data-control-block="israel-activity" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;">Israel military activity</div>
         <div class="row">
@@ -3464,6 +3697,13 @@ window.setInterval(() => {
     const iranStrikeDisplayModeSelect = document.getElementById("iranStrikeDisplayModeSelect");
     const iranStrikeDaysSelect = document.getElementById("iranStrikeDaysSelect");
     const iranStrikeSearchInput = document.getElementById("iranStrikeSearchInput");
+    const attackAnnotationsCheckbox = document.getElementById("attackAnnotationsCheckbox");
+    const attackAnnotationsCirCheckbox = document.getElementById("attackAnnotationsCirCheckbox");
+    const attackAnnotationsIranStrikeCheckbox = document.getElementById("attackAnnotationsIranStrikeCheckbox");
+    const attackAnnotationLimitSelect = document.getElementById("attackAnnotationLimitSelect");
+    const attackAnnotationsRefreshBtn = document.getElementById("attackAnnotationsRefreshBtn");
+    const attackAnnotationsRestoreBtn = document.getElementById("attackAnnotationsRestoreBtn");
+    const attackAnnotationsResetBtn = document.getElementById("attackAnnotationsResetBtn");
     const cirDaysSelect = document.getElementById("cirDaysSelect");
     const cirCeasefireOnlyCheckbox = document.getElementById("cirCeasefireOnlyCheckbox");
     const cirCasualtiesOnlyCheckbox = document.getElementById("cirCasualtiesOnlyCheckbox");
@@ -3604,8 +3844,55 @@ window.setInterval(() => {
         );
 
         updateIranStrikeUi();
+        syncAttackAnnotations();
       });
     });
+
+    if (attackAnnotationsCheckbox) {
+      attackAnnotationsCheckbox.addEventListener("change", () => {
+        syncAttackAnnotations();
+      });
+    }
+
+    [
+      attackAnnotationsCirCheckbox,
+      attackAnnotationsIranStrikeCheckbox
+    ]
+      .filter(Boolean)
+      .forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          syncAttackAnnotations();
+        });
+      });
+
+    if (attackAnnotationLimitSelect) {
+      attackAnnotationLimitSelect.addEventListener("change", () => {
+        syncAttackAnnotations();
+      });
+    }
+
+    if (attackAnnotationsRefreshBtn) {
+      attackAnnotationsRefreshBtn.addEventListener("click", () => {
+        syncAttackAnnotations();
+      });
+    }
+
+    if (attackAnnotationsRestoreBtn) {
+      attackAnnotationsRestoreBtn.addEventListener("click", async () => {
+        const controller = await ensureAttackAnnotationController();
+        controller.restoreHidden();
+        await syncAttackAnnotations();
+      });
+    }
+
+    if (attackAnnotationsResetBtn) {
+      attackAnnotationsResetBtn.addEventListener("click", async () => {
+        const controller = await ensureAttackAnnotationController();
+        controller.resetPositions();
+        await syncAttackAnnotations();
+      });
+    }
+
 
     if (cirDisplayModeSelect) {
       cirDisplayModeSelect.addEventListener("change", () => {
@@ -3613,6 +3900,7 @@ window.setInterval(() => {
           applyCirDisplayModeFromUi();
           updateCirUiState();
           updateCirSummary();
+          syncAttackAnnotations();
         }
       });
     }
@@ -3623,6 +3911,7 @@ window.setInterval(() => {
           cirIncidentsController.setFilters(readCirFiltersFromUi());
           updateCirUiState();
           updateCirSummary();
+          syncAttackAnnotations();
         }
       });
     }
@@ -3634,6 +3923,8 @@ window.setInterval(() => {
           if (cirIncidentsController) {
             cirIncidentsController.setFilters(readCirFiltersFromUi());
             updateCirUiState();
+            updateCirSummary();
+            syncAttackAnnotations();
           }
         });
       });
@@ -3644,6 +3935,7 @@ window.setInterval(() => {
           cirIncidentsController.setFilters(readCirFiltersFromUi());
           updateCirUiState();
           updateCirSummary();
+          syncAttackAnnotations();
         }
       });
     }
@@ -3654,6 +3946,7 @@ window.setInterval(() => {
           cirIncidentsController.setFilters(readCirFiltersFromUi());
           updateCirUiState();
           updateCirSummary();
+          syncAttackAnnotations();
         }
       });
     });
@@ -3662,6 +3955,7 @@ window.setInterval(() => {
     updateCirSummary();
 
     updateIranStrikeUi();
+    updateAttackAnnotationUi();
 
     if (israelActivityCheckbox) {
       israelActivityCheckbox.addEventListener("change", (e) => setIsraelActivityEnabled(e.target.checked));
