@@ -3666,8 +3666,125 @@ window.setInterval(() => {
     // Rebuild controlPanel
     controlPanel.innerHTML = "";
     controlPanel.appendChild(controlTitle);
-    controlPanel.appendChild(makeAccSection("Layers", layersBox, true));
-    controlPanel.appendChild(makeAccSection("Filters", filtersBox, false));
+
+    const quickControls = document.createElement("div");
+    quickControls.className = "control-quick-grid";
+    quickControls.innerHTML = `
+      <div class="control-quick-button primary" id="meQuickLatestBtn">Latest view</div>
+      <div class="control-quick-button" id="meQuickRegionBtn">Middle East view</div>
+      <div class="control-quick-button" id="meQuickResetBtn">Reset filters</div>
+      <div class="control-quick-button" id="meQuickReloadBtn">Reload layers</div>
+    `;
+    controlPanel.appendChild(quickControls);
+
+    const quickNote = document.createElement("div");
+    quickNote.className = "control-section-note";
+    quickNote.textContent =
+      "Daily controls are placed first. Detailed filters and specialist layers remain available below.";
+    controlPanel.appendChild(quickNote);
+
+    controlPanel.appendChild(makeAccSection("Map and data layers", layersBox, true));
+    controlPanel.appendChild(makeAccSection("Filters and analysis", filtersBox, false));
+
+
+    // ===== Analyst-friendly quick controls =====
+    const meQuickLatestBtn = document.getElementById("meQuickLatestBtn");
+    const meQuickRegionBtn = document.getElementById("meQuickRegionBtn");
+    const meQuickResetBtn = document.getElementById("meQuickResetBtn");
+    const meQuickReloadBtn = document.getElementById("meQuickReloadBtn");
+
+    if (meQuickLatestBtn) {
+      meQuickLatestBtn.addEventListener("click", () => {
+        const oneDay = document.querySelector('input[name="window"][value="1"]');
+        if (oneDay) {
+          oneDay.checked = true;
+          oneDay.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+
+        const cirDays = document.getElementById("cirDaysSelect");
+        if (cirDays) {
+          cirDays.value = "1";
+          cirDays.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+
+        const iranDays = document.getElementById("iranStrikeDaysSelect");
+        if (iranDays) {
+          iranDays.value = "1";
+          iranDays.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    }
+
+    if (meQuickRegionBtn) {
+      meQuickRegionBtn.addEventListener("click", () => {
+        if (typeof map?.setView === "function") {
+          map.setView([29.5, 44.0], 4, { animate: false });
+        }
+
+        const regionSelect = document.getElementById("regionSelect");
+        if (regionSelect) {
+          regionSelect.value = "ALL";
+          regionSelect.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    }
+
+    if (meQuickResetBtn) {
+      meQuickResetBtn.addEventListener("click", () => {
+        document.querySelectorAll(".cat-filter, .src-filter").forEach((input) => {
+          input.checked = true;
+          input.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+
+        document.querySelectorAll(".israel-region-filter, .israel-type-filter")
+          .forEach((input) => {
+            input.checked = true;
+            input.dispatchEvent(new Event("change", { bubbles: true }));
+          });
+
+        const searches = [
+          "eventSearch",
+          "cirSearchInput",
+          "iranStrikeSearchInput"
+        ];
+
+        searches.forEach((id) => {
+          const input = document.getElementById(id);
+          if (!input) return;
+          input.value = "";
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+        });
+
+        const regionSelect = document.getElementById("regionSelect");
+        if (regionSelect) {
+          regionSelect.value = "ALL";
+          regionSelect.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+
+        const clearHotspot = document.getElementById("clearHotspotBtn");
+        clearHotspot?.click();
+      });
+    }
+
+    if (meQuickReloadBtn) {
+      meQuickReloadBtn.addEventListener("click", async () => {
+        const refreshButtons = [
+          "cirRefreshBtn",
+          "iranStrikeRefreshBtn",
+          "reportsRefreshBtn",
+          "poisReloadBtn",
+          "attackAnnotationsRefreshBtn"
+        ];
+
+        refreshButtons.forEach((id) => {
+          document.getElementById(id)?.click();
+        });
+
+        if (typeof refreshFiresSafe === "function" && firesEnabled) {
+          refreshFiresSafe();
+        }
+      });
+    }
 
     // ===== Bind NEW layer UI handlers =====
     const eventsLayerCheckbox = document.getElementById("eventsLayerCheckbox");
