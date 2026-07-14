@@ -1,54 +1,81 @@
 {
   "meta": {
-    "updated": "2026-07-13 21:13 UTC",
+    "updated": "2026-07-14 03:35 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-07-07",
-    "period_end": "2026-07-13",
-    "total_events": 164,
-    "total_risk": 181.71,
-    "normalized_risk_score": 72.7,
+    "period_start": "2026-07-08",
+    "period_end": "2026-07-14",
+    "total_events": 153,
+    "total_risk": 159.57,
+    "normalized_risk_score": 63.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 56,
-    "security": 3,
-    "political": 13,
-    "other": 92
+    "military": 55,
+    "security": 2,
+    "political": 12,
+    "other": 84
   },
   "source_counts": {
-    "news": 158,
+    "news": 147,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 122.56
+      "risk": 102.37
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.55
+      "risk": 20.95
     },
     {
       "name": "Israel",
-      "risk": 10.8
+      "risk": 10.35
     },
     {
       "name": "Tehran",
-      "risk": 4.1
+      "risk": 3.3
     },
     {
-      "name": "Iraq",
-      "risk": 3.9
+      "name": "Qatar",
+      "risk": 3.2
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-07-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE condemns Iran's 'brazen' attack on tankers as US launches fresh strikes",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c8d2vn38dy1o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three Palestinians killed, 15 wounded in Israeli attacks across Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZG1HaU1Ia1VIenRscG5rdEs2V01FMUJ6UWNOMzk0VHk1eUc4Ukk0SmR2VVByaHZDbXBOWTJHZTBlbHF1NU9NOEhGTVFvRDU1T3lBaXZucHRlMnJ1YndPYUdiWDdLRzBERl8yRnJWYzBLckRUQkFIMDVGREplV0VtMkRxZDBDMGR0QWNRSElGTzZfbmdKQlhOWXA1Tjg3MXpGWWd6ampuVVZTcUpU0gGyAUFVX3lxTE1SUVg3TnZxdjNFcXZPVzZGTXlITU5DVkk1Ny1GejNNbEREbVdMSzlqM01KMGpXNWNRZGY5aW1BbERCV2hMdkJYX0VUWjV6RlJTY0hqazVwejBVN0FjeEV2YXBoNzJDa3dhUEs1MW9xOUxjSVl5clNsQVZ6YW1relNTN1ZCbENSLUVnVmFDU21WaW1sS2F0U2NmMEVpM0loMk1qTXlFNWFqcWlCS2ZPeGdkQnc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "U.S. military renews strikes on Iran while tankers come under attack in Strait of Hormuz - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMG0wMGZybUNSMnZyOWQzck1Eb0JwcFdfWUVXNlBYbk10c3VveDRrdzVpYVJhNjdwdUdnR1ZMZDhVTXdnWE41M09iZnZwUmJzbEpsX2V0Q2xDWmdHVjZGRkxtRmVsOFU2OWM3aGsyUGljckNVb1F1WlpmMk5GQVE4S0Q4QXJQYlI4V1hZSktORXBZYm1YXzNsQUYwQ2dOSUJtSTJrNmpvR3M5Q2szcXYzWENxeGFIbnRHS0lhaXdnN3FFcnM"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
@@ -57,16 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQV2Q4MUdSUXZ0ZWdUWnM4SFNoV0lqYlBHTy1PMURKeFA1TS02RWRjbVZDYzJTY29obkdIa29MV2Y1WjZta2c5TXRzTEdNRjc3alR0MGtNV3QzUXpoanJyLWQ4VHV4NlM2WloyaWZaenV1Y1hqUjY1dHNaaXRiWnoxdmxLYWtyNURVQlRfblZjaFBYTmdXNDVVVFFlM1BWS3M2SzFOcm5MakVrYWNwM01aT0s2UThnckpQRDlSUjdqRjlMaWM4eTJtRG5JZU9FQQ"
     },
     {
-      "score": 3.0,
-      "date": "2026-07-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says US reinstates blockade of Iranian shipping in Strait of Hormuz after new clashes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMG0wMGZybUNSMnZyOWQzck1Eb0JwcFdfWUVXNlBYbk10c3VveDRrdzVpYVJhNjdwdUdnR1ZMZDhVTXdnWE41M09iZnZwUmJzbEpsX2V0Q2xDWmdHVjZGRkxtRmVsOFU2OWM3aGsyUGljckNVb1F1WlpmMk5GQVE4S0Q4QXJQYlI4V1hZSktORXBZYm1YXzNsQUYwQ2dOSUJtSTJrNmpvR3M5Q2szcXYzWENxeGFIbnRHS0lhaXdnN3FFcnM"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVVJyVWNDbGpUSGtYdm1NUzhqZmpSVFp2SnEtS0N4VzBJZnJTeDZ5X21NN0I4SGJ6V2lYZDBLM3FvSkNTbFRNTkkxWlhtNjRqakpmRGotN3lub0RMZkxmOUlWSUU4WEdBVUZrU09lNzl2d0xMT09aVEw3aU5KNkJaZmpEYlllTTZfMl9ULXg4cDBHZkd4MVJ4OEo0SzNwYkxRUjIta0tONkVJb2puQnhNN0g1WTQwcjZaX0ZYZG85dnZWT0pyUHZFbUY2TQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,16 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeG9fM3ZvcEZGU3RzemlVQnpqeFhlWkZkdDRYU2FqRWRYUlRjSGRmT1AwUWplLVhDZk1jTzB6b2RvREJMUjdPZEMxQzJPcXRJdmtsZzJFWmxnQW85ODlVSFBoeTdBdy14RjdPZjRWR1VmVTFsODBhTW1qbGZfbDlBQzFYcVpMZUpnSXNELURxVm0xTC1yRXNWVkxXRFAyOWZkNGpXSjdLX1hfSXZBSER5WEpsTEw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-07-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQdF9iNjRwdm9pODdabFB6TGd0b0llZjQxY3NDQWktelE1c2NnUERlYUs2TnNPc0JBaFZvWlZhM3VfRUVwTV9MZUFteVh3VlV0QVhfZi1NUGpQdEp3elpuYnFrVE9Yb1BzNmtGLWdiYlJ2THBOT3NrRmppdG5mNWFVRDcyWmFSRHJzWXJyVVpQYy16cVZKb1I1UEh4eFdYN1VURkFtQmNVanhnM2I4Y3JSLXhHTmhOMXBmSTRMZE4xam5CSlN1eGFR"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
@@ -93,7 +120,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cevlr112pmgo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
@@ -102,40 +129,13 @@
       "url": "https://www.bbc.co.uk/news/videos/c8628y50508o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
-      "date": "2026-07-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran trade strikes as ceasefire comes under growing strain - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYUtxZk1FTFlROHBiTndTZzRxdnlpcHFLNzBUTTJWczRHMVh2UWRSVi1sUnpTYUw3Z2FScVRnQ0FIWUVXVm16WjRzN2Zybmo5OEctbjk3QUVYQzVUVkl2VnFDeHNkY0ZfZExmcFBPVGdvT2c0VmhFWHF6ZHB4bnF6YTh4SnBWaVA0R1BVRXFuMGJON0lSOEpTN3ZwNC1tQjJKUUNXSzRFYXhWd9IBrwFBVV95cUxPZ2lnZG14b2VKdldrTVY5Y3NnU2RpMzgtNExhMVQyTTFJT0JHeFZmeG5UclprZGRYMncxbjJXSExzam9iQ05xVWswaTBzcWxwRXNCeldzWjc4ODc2NE5ha3NIZWxkZFBsZXRNZ0NUaWcxbDJ3SDRMek16VGoySk9NcDNxTnQ1eUxnTHdhZW5sRU80dXpMNHB3MWp1TTRmVnVMdS1EaHVlanF0a1BNZUNV"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-13",
       "category": "military",
       "source_type": "news",
       "title": "Oil prices jump as US and Iran trade attacks over Strait of Hormuz - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVXpPQW5PT21veE5mSm1GdHRGSUd6UlNmZl9VbnluTWZmUE00UURUN3dIcFVJc0IwZ3pjRUY3UFk0ZzQ3QWJvOTVKMFIyMHZsUnpMRHI5eWllRllfVGtsYzhDN0t4QlZUN0tGaGtTQXhMRG9tN0YyZTRGaV84bjRPR1E4M2VwbHdMZDJaYURWeEJTRUxqR090SGNkcWdQeVhUY3lBbk13aExiX3pNMEFv0gG0AUFVX3lxTE80Z3RnTk1BTHFySjc4N3ZmYXkyQkdEOTdNTlBNRTdhT0xadFk2d05FYUpvc0dsOENwN0hRdE5MZml1d0RpMGxwd0dxaGhlVktyQ3Z5V2RaM0ZkNWs3VHBOS05YQ3V2djNoOHNPT1NLc216RmtiM1Q2WVNjbGl3aktBRUxxRjVneHpXTTZmOWlmSUZMTEpaODBfQnA1eUNmcWQtZ2xYd1BFcV9YU2pROHJOTF9Haw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "New Iran strikes on Gulf as US attacks escalate: What we know - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc2NiQUlwTDQ0aURjZFVXYUlkSlJoNC13SDhmNGE0TVBQRWcza3BORFdyY2F5d0cxZU41X3dma1dxUXdSOFI0YncyRzZ4YkZESXVwTWJsUS1Wb0ZUeGRRblhpU0M2OENuNlY1R3A2NUV1Sm9McFh6bU4yMEk5UmlTNmJlV09tam9NX3U3cFFZa2RBWkJMUWtqZGJ4U0dpS18xVVpB0gGoAUFVX3lxTE50S0RpWlVOT3I3a1diNm1EUk5lV0pQdThPZjNGLXhnOFNBR1Q3ZnVmcGxYc1dKcXJqZDl3M0ZJQk5acVJzbUJ6Z2hhelF3OFRfYzlRWERKaFJETE55LTFsNkxoRlp1NjRJenlWVXZYbG8xTm12YXZiZnNjRWxCV0R6S0RScllrNG1BdTlLczlYcGJaQmE0MmtIZ05XcEp2RGRKejYycnNPYQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attacks US military bases in Bahrain, Kuwait, and Jordan - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTUpuZGZxZ2NndmlFQmpOdkVIMkZJbzRseVRsT3FsZWZaTDZFanJmVzczRHJQZnlRQUZ2bUswMnduQ09xRnd4SzRpQkNrWGZ3QmJ4THBRSUQ2TFFRSnNuM0ZGSDVKTlh0VFNNeGhlWUl4dlJBcWdodjNWc3ZZQXRRcmxhS01nRGtoTkp3Z29WeVZadDRQMkJKUTJ4d2lqTHVmSW1FaHhlNUZzZDVxb21B0gG0AUFVX3lxTE5IRDlOb0hXY09QaUYtQnI0UWVoOXZmUU9PWVd2SE5MRWY4dlhZRXUwdlRvWTAwT3VCOXlNX1NTVXlwS3dqR0VrS001M2VjVW1xQ2VyQTNLNUR0dmZsMUJwQ2dkd3pDX0h1bzl6M3BwVGlSc2lvRW5YUXIya0VKSHpoY2Z0eFk3WmdXWUtGVVJvck1xX1BwOHd5ZjVvb3BldkhxbVlQOFhOZzVEVU9VcWVVY3lwdA"
     }
   ]
 }
