@@ -40,17 +40,62 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
+
+      - name: Locate discovery script
+        id: locate_script
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          CANDIDATES=(
+            "scripts/discover_btselem_sources.py"
+            "discover_btselem_sources.py"
+          )
+
+          SCRIPT_PATH=""
+
+          for CANDIDATE in "${CANDIDATES[@]}"; do
+            if [[ -f "${CANDIDATE}" ]]; then
+              SCRIPT_PATH="${CANDIDATE}"
+              break
+            fi
+          done
+
+          if [[ -z "${SCRIPT_PATH}" ]]; then
+            SCRIPT_PATH="$(find . -maxdepth 4 -type f \
+              -name "discover_btselem_sources.py" \
+              -print -quit | sed 's#^\./##')"
+          fi
+
+          if [[ -z "${SCRIPT_PATH}" || ! -f "${SCRIPT_PATH}" ]]; then
+            echo "ERROR: discover_btselem_sources.py was not found."
+            echo ""
+            echo "Expected one of these paths:"
+            echo "  scripts/discover_btselem_sources.py"
+            echo "  discover_btselem_sources.py"
+            echo ""
+            echo "Python files currently present in the repository:"
+            find . -maxdepth 4 -type f -name "*.py" -print || true
+            exit 1
+          fi
+
+          echo "Found discovery script: ${SCRIPT_PATH}"
+          echo "script_path=${SCRIPT_PATH}" >> "$GITHUB_OUTPUT"
 
       - name: Verify discovery script
+        shell: bash
         run: |
-          test -f scripts/discover_btselem_sources.py
-          python -m py_compile scripts/discover_btselem_sources.py
+          set -euo pipefail
+
+          python -m py_compile \
+            "${{ steps.locate_script.outputs.script_path }}"
 
       - name: Build command options
         id: options
         shell: bash
         run: |
+          set -euo pipefail
+
           OPTIONS=""
 
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
@@ -71,7 +116,7 @@ jobs:
         run: |
           set +e
 
-          python scripts/discover_btselem_sources.py \
+          python "${{ steps.locate_script.outputs.script_path }}" \
             --url "https://www.btselem.org/map" \
             --output-dir data \
             --max-assets 40 \
@@ -95,6 +140,8 @@ jobs:
       - name: Verify generated reports
         shell: bash
         run: |
+          set -euo pipefail
+
           test -f data/btselem-discovery.json
           test -f data/btselem-discovery.md
 
@@ -130,8 +177,11 @@ jobs:
       - name: Commit updated discovery reports
         shell: bash
         run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data/btselem-discovery.json
           git add data/btselem-discovery.md
@@ -147,3 +197,4 @@ jobs:
 
           git commit -m "Update B'Tselem source discovery"
           git push
+
