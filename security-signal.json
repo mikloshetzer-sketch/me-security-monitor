@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-14 19:43 UTC",
+    "updated": "2026-07-14 21:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-08",
     "period_end": "2026-07-14",
-    "total_events": 152,
-    "total_risk": 180.42,
-    "normalized_risk_score": 72.2,
+    "total_events": 157,
+    "total_risk": 186.12,
+    "normalized_risk_score": 74.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 56,
-    "security": 3,
-    "political": 11,
-    "other": 82
+    "military": 57,
+    "security": 4,
+    "political": 12,
+    "other": 84
   },
   "source_counts": {
-    "news": 146,
+    "news": 151,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 118.87
+      "risk": 117.97
     },
     {
       "name": "Gaza Strip",
-      "risk": 23.35
+      "risk": 23.85
     },
     {
       "name": "Israel",
-      "risk": 8.75
+      "risk": 8.55
+    },
+    {
+      "name": "Tehran",
+      "risk": 6.6
     },
     {
       "name": "Sana'a",
       "risk": 5.7
-    },
-    {
-      "name": "Yemen",
-      "risk": 3.85
     }
   ],
   "top_events": [
@@ -106,6 +106,15 @@
       "date": "2026-07-14",
       "category": "military",
       "source_type": "news",
+      "title": "US strikes new targets in Iran as Tehran hits Gulf states, Hormuz shipping - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOWlaMW1EUnFyd3hkSlFveHAzZXpVR0pMLUJsSVJGLV9ISTVqMEFFd0lfTlFwUUFULTVYYXZfWkp2Y2Rla1NrTzRabXBCWW5BYzJNY0hmYjdaX09SdHV3NVFmd29EYjJvRjE1ZEtSZE9JcnYzSGFpNi1kUTZJME9wdWFHcHBlY2F5cUZiMmVzRUcyUURSSEJQU1psVjN6cUtNNWd3NF9LdnbSAa4BQVVfeXFMTklTZUlQR04yUzZEOFlQaHBDNkdPamFrbDRsNzZFMjdobzlBLWdXWUNXR3dwVDd1TjY0NTE4LVJwYWhiWTB4eFp3X3UzdnduQnl1TUdIdExQaXVkclRMT2dmUzk5UVdOQ3ZRNWhWY3o0Q3VUcmRhY1NiemVKZzVxaDJ5ODR3dGhBcGFBX2pXZE1McGpqZ19idVZLV25xWmJ1c0R0UkthU3pVQUxOeWtn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-14",
+      "category": "military",
+      "source_type": "news",
       "title": "Three Palestinians killed, 15 wounded in Israeli attacks across Gaza - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZG1HaU1Ia1VIenRscG5rdEs2V01FMUJ6UWNOMzk0VHk1eUc4Ukk0SmR2VVByaHZDbXBOWTJHZTBlbHF1NU9NOEhGTVFvRDU1T3lBaXZucHRlMnJ1YndPYUdiWDdLRzBERl8yRnJWYzBLckRUQkFIMDVGREplV0VtMkRxZDBDMGR0QWNRSElGTzZfbmdKQlhOWXA1Tjg3MXpGWWd6ampuVVZTcUpU0gGyAUFVX3lxTE1SUVg3TnZxdjNFcXZPVzZGTXlITU5DVkk1Ny1GejNNbEREbVdMSzlqM01KMGpXNWNRZGY5aW1BbERCV2hMdkJYX0VUWjV6RlJTY0hqazVwejBVN0FjeEV2YXBoNzJDa3dhUEs1MW9xOUxjSVl5clNsQVZ6YW1relNTN1ZCbENSLUVnVmFDU21WaW1sS2F0U2NmMEVpM0loMk1qTXlFNWFqcWlCS2ZPeGdkQnc"
@@ -127,15 +136,6 @@
       "title": "US military releases video of its latest strikes on Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdzJWVk1wZ3M5Y1cxU01xRTBCdUpTVnlwVnNfQmJnanJjSHNhU3BPaDlhel9EdkVNTmJ0eWtzbkxNaVNpM0hXZ214enNsUmtzUkk4SVNldXNKTi1lVXlEYWo5cEJMUjNfYTh1bzQ5N3phdDI3ZV80ZUExX1lzSmNRRTh1Nkx1UGpKeVNlOWp4UTJkSnQxWTdVNjIyVTllZEZoZDFMS0xaLVRTc3PSAbABQVVfeXFMT0o3Q0ZoMDFzMkR3Z1FnWllnZ1ctLTMxcnhULVFEb2JXNGNMNUJZdHpVY2ExeXc1bVRHaFpyemhyTFhVeWNzMFBZdFR1XzFjb2FpaVJTcUpJOUx1S2ZLME94VmRzQXAzVU9IRDBDZmxGcXBmY1RadlVMSnlIUnJGWkJTTVBodUJnZFlJSzkyQVI0cEROblF4S3RWWWExSHRHU2tLLVRMckltVnJfUWJDdWI"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attack on north Gaza police station kills eight - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVTd1V0w3alhuOVR2cVlvT1VoRUdlOVg4VG16OVpWZTJQeDhBZHlGS3h0akEyZFBwNTBCT0ZUYW8xYUZsRWowVjlFZEcwbElxN3VhdXNCVzF4alIwOGZhbmY1UGpkOHFYM3ljNHFEb0VSamlVajF6UnZBVmVuUFJsYlVtV21jZmJscVoxWER4Mm9UNk5UekNwY3FxZ0PSAaIBQVVfeXFMUGdvRGIyYlNEWGJaQnpFaEhZUG5qRkFJNkVSWWJLYk4xOVM1UzJ5U1ZBWWhROWc3V0l0ankyb0k0dFlCMHRDTGdVVnFaU2dDaEFGRHVzMk5UbU9aR0pRTDQ4Ylpvdl9Wa0J5N1FzSWhNTG9YNUtsRk5EUXBtOVpkbTNTeUw1QXZWcHZBdmRiRXh0OHRPbS00aEU1dGtlWThKLXdR"
     }
   ]
 }
