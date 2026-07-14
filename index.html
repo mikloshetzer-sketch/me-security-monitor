@@ -612,6 +612,442 @@
         left: 10px;
       }
     }
+  
+    /* =========================================================
+       ME Security Monitor – analyst-friendly left control panel
+       Inspired by the clearer workflow of the Ukraine monitor.
+       ========================================================= */
+
+    :root{
+      --sidebar-width: 338px;
+      --sidebar-bg: #f7f9fb;
+      --sidebar-card: #ffffff;
+      --sidebar-border: #d9e1e8;
+      --sidebar-text: #172033;
+      --sidebar-muted: #66778a;
+      --sidebar-accent: #0f1b33;
+      --sidebar-accent-soft: #e9eef5;
+      --sidebar-radius: 13px;
+    }
+
+    body{
+      background:#eef2f6;
+    }
+
+    #map{
+      position:fixed;
+      top:0;
+      bottom:0;
+      left:var(--sidebar-width);
+      width:calc(100vw - var(--sidebar-width));
+      height:100vh;
+    }
+
+    .topbar{
+      left:calc(var(--sidebar-width) + 14px);
+      right:14px;
+      top:12px;
+      min-height:58px;
+      padding:10px 14px;
+      border-radius:14px;
+      box-shadow:0 4px 16px rgba(15,23,42,.12);
+    }
+
+    .brand-mark{
+      width:38px;
+      height:38px;
+      border-radius:11px;
+    }
+
+    .brand-title{
+      font-size:14px;
+    }
+
+    .brand-sub{
+      font-size:11px;
+    }
+
+    .metric-pill{
+      min-height:32px;
+      padding:5px 10px;
+      font-size:11px;
+    }
+
+    .report-link{
+      min-height:32px;
+      padding:6px 11px;
+      font-size:11px;
+    }
+
+    #controlToggle{
+      display:none;
+    }
+
+    #timelineToggle{
+      top:82px;
+      right:14px;
+    }
+
+    #legendToggle{
+      left:calc(var(--sidebar-width) + 14px);
+      bottom:14px;
+    }
+
+    #controlPanel{
+      display:block !important;
+      position:fixed;
+      inset:0 auto 0 0;
+      width:var(--sidebar-width);
+      max-width:var(--sidebar-width);
+      max-height:none;
+      height:100vh;
+      padding:14px;
+      border:0;
+      border-right:1px solid var(--sidebar-border);
+      border-radius:0;
+      background:var(--sidebar-bg);
+      box-shadow:5px 0 20px rgba(15,23,42,.10);
+      backdrop-filter:none;
+      overflow-y:auto;
+      overflow-x:hidden;
+      z-index:10000;
+      scrollbar-width:thin;
+      scrollbar-color:#b8c4cf transparent;
+    }
+
+    #controlPanel.closed{
+      display:block !important;
+    }
+
+    #controlPanel::-webkit-scrollbar{
+      width:7px;
+    }
+
+    #controlPanel::-webkit-scrollbar-thumb{
+      background:#b8c4cf;
+      border-radius:20px;
+    }
+
+    .control-panel-heading{
+      display:block;
+      margin:0 0 10px;
+      padding:2px 2px 12px;
+      border-bottom:1px solid var(--sidebar-border);
+      text-transform:none;
+      letter-spacing:normal;
+    }
+
+    .control-panel-heading .control-main-title{
+      display:block;
+      color:#0f172a;
+      font-size:18px;
+      line-height:1.2;
+      font-weight:850;
+    }
+
+    .control-panel-heading .control-subtitle{
+      display:block;
+      margin-top:5px;
+      color:var(--sidebar-muted);
+      font-size:11px;
+      line-height:1.45;
+      font-weight:500;
+    }
+
+    .control-panel-heading .control-status-line{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      margin-top:9px;
+      color:#435368;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .control-panel-heading .control-status-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#22a06b;
+      box-shadow:0 0 0 3px rgba(34,160,107,.12);
+    }
+
+    #controlPanel .acc{
+      margin:10px 0 0;
+      padding:0;
+      border:1px solid var(--sidebar-border);
+      border-radius:var(--sidebar-radius);
+      background:var(--sidebar-card);
+      box-shadow:0 2px 7px rgba(15,23,42,.05);
+      overflow:hidden;
+    }
+
+    #controlPanel .acc-btn{
+      min-height:44px;
+      padding:11px 12px;
+      background:#fff;
+      color:#172033;
+      font-size:13px;
+      font-weight:800;
+      border-bottom:1px solid transparent;
+    }
+
+    #controlPanel .acc-btn[aria-expanded="true"]{
+      background:#f3f6f9;
+      border-bottom-color:var(--sidebar-border);
+    }
+
+    #controlPanel .acc-panel{
+      padding:10px;
+      background:#fbfcfd;
+    }
+
+    #controlPanel .acc-panel.closed{
+      display:none;
+    }
+
+    #controlPanel .row{
+      margin:6px 0;
+      gap:7px;
+    }
+
+    #controlPanel .row label{
+      min-height:36px;
+      padding:7px 9px;
+      flex:1 1 125px;
+      border:1px solid #dce3ea;
+      border-radius:10px;
+      background:#fff;
+      color:#243247;
+      font-size:11px;
+      font-weight:650;
+      cursor:pointer;
+      transition:.14s ease;
+    }
+
+    #controlPanel .row label:hover{
+      border-color:#aebbc8;
+      background:#f7f9fb;
+    }
+
+    #controlPanel input[type="checkbox"],
+    #controlPanel input[type="radio"]{
+      width:15px;
+      height:15px;
+      margin:0;
+      accent-color:var(--sidebar-accent);
+      flex:0 0 auto;
+    }
+
+    #controlPanel input[type="text"],
+    #controlPanel input[type="search"],
+    #controlPanel select{
+      min-height:38px;
+      padding:8px 10px;
+      border:1px solid #cfd8e1;
+      border-radius:10px;
+      background:#fff;
+      color:#1e293b;
+      font-size:11px;
+    }
+
+    #controlPanel .btn-mini,
+    #controlPanel button.btn-mini{
+      min-height:34px;
+      padding:7px 10px;
+      border:1px solid #cbd5df;
+      border-radius:9px;
+      background:#fff;
+      color:#223047;
+      font-size:11px;
+      font-weight:750;
+      box-shadow:none;
+    }
+
+    #controlPanel .btn-mini:hover,
+    #controlPanel button.btn-mini:hover{
+      background:#eef2f7;
+      border-color:#9facba;
+    }
+
+    #controlPanel .muted{
+      color:var(--sidebar-muted);
+      font-size:10.5px;
+      line-height:1.4;
+    }
+
+    #controlPanel .mini-item{
+      min-height:34px;
+      margin:5px 0;
+      padding:7px 9px;
+      align-items:center;
+      border:1px solid #e0e6ec;
+      border-radius:9px;
+      background:#fff;
+      font-size:10.5px;
+    }
+
+    #controlPanel .mini-item .val{
+      color:#152033;
+      font-weight:800;
+    }
+
+    #controlPanel [data-control-block],
+    #controlPanel .israel-section,
+    #controlPanel .attack-annotations-control-block,
+    #controlPanel .cir-incidents-control-block,
+    #controlPanel .iranstrike-control-block{
+      margin:9px 0 0 !important;
+      padding:10px !important;
+      border:1px solid #dce3ea !important;
+      border-radius:11px;
+      background:#fff;
+      box-shadow:0 1px 4px rgba(15,23,42,.035);
+    }
+
+    #controlPanel [data-control-block] > div:first-child,
+    #controlPanel .israel-section-title{
+      color:#172033 !important;
+      font-size:11px !important;
+      font-weight:850 !important;
+      letter-spacing:.025em;
+    }
+
+    #controlPanel .badge-mini{
+      min-height:22px;
+      padding:3px 7px;
+      font-size:9.5px;
+    }
+
+    #controlPanel .event-dot{
+      width:8px;
+      height:8px;
+    }
+
+    .control-quick-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin:0 0 10px;
+    }
+
+    .control-quick-button{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      padding:8px 9px;
+      border:1px solid #d0d9e2;
+      border-radius:10px;
+      background:#fff;
+      color:#243047;
+      font-size:11px;
+      font-weight:800;
+      cursor:pointer;
+      user-select:none;
+      transition:.14s ease;
+    }
+
+    .control-quick-button.primary{
+      background:var(--sidebar-accent);
+      border-color:var(--sidebar-accent);
+      color:#fff;
+    }
+
+    .control-quick-button:hover{
+      transform:translateY(-1px);
+      box-shadow:0 3px 8px rgba(15,23,42,.10);
+    }
+
+    .control-section-note{
+      margin:7px 1px 2px;
+      color:#6b7a8c;
+      font-size:10px;
+      line-height:1.4;
+    }
+
+    #timelinePanel{
+      top:122px;
+      right:14px;
+      width:360px;
+      max-height:calc(100vh - 138px);
+      border-radius:14px;
+    }
+
+    #legendPanel{
+      left:calc(var(--sidebar-width) + 14px);
+      width:300px;
+      border-radius:14px;
+    }
+
+    .leaflet-control-zoom{
+      margin-top:90px !important;
+      margin-left:14px !important;
+    }
+
+    @media (max-width: 900px){
+      #map{
+        left:0;
+        width:100vw;
+      }
+
+      .topbar{
+        left:10px;
+        right:10px;
+      }
+
+      #controlToggle{
+        display:block;
+        top:132px;
+        left:10px;
+      }
+
+      #controlPanel{
+        display:none !important;
+        inset:170px auto 10px 10px;
+        width:min(338px, calc(100vw - 20px));
+        max-width:calc(100vw - 20px);
+        height:auto;
+        max-height:calc(100vh - 180px);
+        border:1px solid var(--sidebar-border);
+        border-radius:14px;
+        box-shadow:0 12px 30px rgba(15,23,42,.18);
+      }
+
+      #controlPanel:not(.closed){
+        display:block !important;
+      }
+
+      #controlPanel.closed{
+        display:none !important;
+      }
+
+      #timelineToggle{
+        top:132px;
+        right:10px;
+      }
+
+      #timelinePanel{
+        top:170px;
+        right:10px;
+        width:calc(100vw - 20px);
+        max-height:calc(100vh - 180px);
+      }
+
+      #legendToggle{
+        left:10px;
+      }
+
+      #legendPanel{
+        left:10px;
+      }
+
+      .leaflet-control-zoom{
+        margin-top:178px !important;
+        margin-left:10px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -636,13 +1072,17 @@
   <div id="map"></div>
 
   <!-- Toggle buttons -->
-  <div id="controlToggle" class="toggle-btn">Controls</div>
-  <div id="timelineToggle" class="toggle-btn">Timeline</div>
+  <div id="controlToggle" class="toggle-btn">Main controls</div>
+  <div id="timelineToggle" class="toggle-btn">Timeline & analytics</div>
   <div id="legendToggle" class="toggle-btn">Legend</div>
 
   <!-- Control panel -->
-  <div id="controlPanel" class="panel closed">
-    <h3>Controls</h3>
+  <div id="controlPanel" class="panel">
+    <h3 class="control-panel-heading">
+      <span class="control-main-title">ME Security Monitor</span>
+      <span class="control-subtitle">Middle East events, verified incidents and operational layers</span>
+      <span class="control-status-line"><span class="control-status-dot"></span>Analytical map online</span>
+    </h3>
 
     <div class="row">
       <label><input id="heatmapCheckbox" type="checkbox" /> Heatmap</label>
