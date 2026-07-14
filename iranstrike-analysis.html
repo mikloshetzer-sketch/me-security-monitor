@@ -3,306 +3,983 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IranStrike Analysis</title>
+  <title>IranStrike Intelligence Dashboard</title>
+
   <style>
     :root {
-      --bg:#f7f7f8;
-      --panel:#fff;
-      --border:#dddddf;
-      --text:#16181d;
-      --muted:#5a6170;
-      --soft:#eef0f3;
-      --accent:#111827;
+      --bg:#eef3f7;
+      --panel:#ffffff;
+      --panel-soft:#f7f9fb;
+      --border:#d8e1e9;
+      --border-strong:#c4d0da;
+      --text:#172033;
+      --muted:#64748b;
+      --navy:#17324d;
+      --navy-2:#285879;
+      --teal:#0f766e;
+      --blue:#2563eb;
+      --green:#16a34a;
+      --red:#dc2626;
+      --amber:#d97706;
+      --purple:#7c3aed;
+      --gray:#64748b;
+      --shadow:0 8px 24px rgba(26,46,66,.08);
+      --shadow-soft:0 3px 12px rgba(26,46,66,.06);
+      --radius:14px;
+      --font:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
     }
 
     * { box-sizing:border-box; }
 
-    html, body {
-      margin:0;
-      min-height:100%;
-      font-family:Arial,Helvetica,sans-serif;
-      color:var(--text);
-      background:var(--bg);
+    html {
+      scroll-behavior:smooth;
     }
 
-    #app {
-      display:grid;
-      grid-template-columns:390px minmax(0,1fr);
+    body {
+      margin:0;
       min-height:100vh;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(40,88,121,.09), transparent 28%),
+        linear-gradient(180deg,#f7f9fb 0%,var(--bg) 100%);
+    }
+
+    button,
+    input,
+    select {
+      font:inherit;
+    }
+
+    button {
+      cursor:pointer;
+    }
+
+    .site-header {
+      position:sticky;
+      top:0;
+      z-index:30;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      min-height:68px;
+      padding:12px 22px;
+      background:rgba(255,255,255,.95);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 4px 16px rgba(26,46,66,.06);
+      backdrop-filter:blur(10px);
+    }
+
+    .brand-wrap {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-mark {
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      flex:0 0 auto;
+      background:linear-gradient(135deg,var(--navy),var(--navy-2));
+      color:#fff;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.08em;
+      box-shadow:0 5px 14px rgba(23,50,77,.22);
+    }
+
+    .brand-title {
+      color:var(--navy);
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:.045em;
+      text-transform:uppercase;
+    }
+
+    .brand-sub {
+      margin-top:2px;
+      color:var(--muted);
+      font-size:11px;
+    }
+
+    .header-actions {
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .header-btn {
+      min-height:36px;
+      padding:8px 12px;
+      border:1px solid var(--border-strong);
+      border-radius:10px;
+      background:#fff;
+      color:var(--navy);
+      font-size:11px;
+      font-weight:800;
+      text-decoration:none;
+      transition:.15s ease;
+    }
+
+    .header-btn:hover {
+      transform:translateY(-1px);
+      box-shadow:0 4px 10px rgba(26,46,66,.09);
+    }
+
+    .header-btn.primary {
+      background:var(--navy);
+      border-color:var(--navy);
+      color:#fff;
+    }
+
+    .page-shell {
+      display:grid;
+      grid-template-columns:320px minmax(0,1fr);
+      gap:18px;
+      width:min(1640px,100%);
+      margin:0 auto;
+      padding:18px;
     }
 
     aside {
-      height:100vh;
       position:sticky;
-      top:0;
+      top:86px;
+      align-self:start;
+      max-height:calc(100vh - 104px);
       overflow:auto;
-      padding:16px;
-      background:#fafafa;
-      border-right:1px solid var(--border);
+      padding-right:4px;
+      scrollbar-width:thin;
+      scrollbar-color:#b9c5d0 transparent;
     }
 
     main {
       min-width:0;
-      padding:18px;
     }
 
-    h1 { font-size:22px; margin:0 0 8px; }
-    h2 { font-size:17px; margin:0 0 10px; }
-
-    .muted {
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.45;
-    }
-
+    .side-card,
     .panel {
       background:var(--panel);
       border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      margin-bottom:12px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
     }
 
-    button, select, input[type="search"] {
+    .side-card {
+      margin-bottom:10px;
+      padding:13px;
+    }
+
+    .side-title {
+      margin:0 0 9px;
+      color:var(--navy);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .muted {
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    select,
+    input[type="search"] {
       width:100%;
-      padding:10px;
+      min-height:40px;
+      padding:9px 10px;
+      border:1px solid var(--border-strong);
       border-radius:10px;
-      border:1px solid var(--border);
-      font-size:14px;
+      outline:none;
+      background:#fff;
+      color:var(--text);
     }
 
-    button {
-      border:none;
-      background:var(--accent);
-      color:#fff;
-      cursor:pointer;
+    select:focus,
+    input[type="search"]:focus {
+      border-color:var(--navy-2);
+      box-shadow:0 0 0 3px rgba(40,88,121,.10);
     }
 
-    button.secondary {
-      margin-top:8px;
-      background:var(--soft);
-      color:var(--accent);
-      border:1px solid var(--border);
+    .category-list {
+      display:grid;
+      gap:6px;
+      margin-top:10px;
     }
 
     .toggle {
-      display:block;
-      margin:8px 0;
-      font-size:14px;
-    }
-
-    .grid-2, .grid-3, .grid-6 {
-      display:grid;
+      display:flex;
+      align-items:center;
       gap:8px;
+      min-height:34px;
+      margin:0;
+      padding:7px 9px;
+      border:1px solid var(--border);
+      border-radius:9px;
+      background:var(--panel-soft);
+      font-size:11px;
+      font-weight:650;
+      cursor:pointer;
     }
 
-    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .grid-6 { grid-template-columns:repeat(6,minmax(0,1fr)); }
+    .toggle input {
+      accent-color:var(--navy);
+    }
 
-    .metric {
-      padding:10px;
+    .side-metrics {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+    }
+
+    .side-metric {
+      min-width:0;
+      padding:9px;
       border:1px solid var(--border);
       border-radius:10px;
-      background:#fafafa;
-      min-width:0;
+      background:var(--panel-soft);
     }
 
-    .metric-label {
-      font-size:11px;
+    .side-metric span {
+      display:block;
       color:var(--muted);
+      font-size:9px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
     }
 
-    .metric-value {
+    .side-metric strong {
+      display:block;
       margin-top:4px;
-      font-size:20px;
-      font-weight:700;
+      color:var(--navy);
+      font-size:17px;
       overflow-wrap:anywhere;
     }
 
-    .metric-value.compact {
-      font-size:14px;
+    .coverage-list {
+      display:grid;
+      gap:6px;
+    }
+
+    .coverage-row {
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      padding-bottom:6px;
+      border-bottom:1px dashed var(--border);
+      color:#425267;
+      font-size:10px;
+    }
+
+    .coverage-row:last-child {
+      padding-bottom:0;
+      border-bottom:0;
+    }
+
+    .coverage-row strong {
+      color:var(--navy);
+      text-align:right;
+    }
+
+    .hero {
+      position:relative;
+      overflow:hidden;
+      margin-bottom:14px;
+      padding:24px;
+      border:1px solid var(--border);
+      border-left:6px solid var(--navy);
+      border-radius:18px;
+      background:linear-gradient(135deg,#fff 0%,#f2f6f9 100%);
+      box-shadow:var(--shadow);
+    }
+
+    .hero::after {
+      content:"";
+      position:absolute;
+      top:-110px;
+      right:-80px;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(40,88,121,.14),transparent 70%);
+    }
+
+    .hero-grid {
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:20px;
+      align-items:start;
+    }
+
+    .eyebrow {
+      color:var(--teal);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    h1 {
+      margin:7px 0 8px;
+      color:var(--navy);
+      font-size:30px;
+      line-height:1.08;
+    }
+
+    .hero p {
+      max-width:800px;
+      margin:0;
+      color:#526274;
+      font-size:13px;
+      line-height:1.62;
+    }
+
+    .risk-wrap {
+      text-align:right;
+    }
+
+    .risk-caption {
+      margin-bottom:6px;
+      color:var(--muted);
+      font-size:9px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .risk-badge {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:112px;
+      min-height:42px;
+      padding:9px 14px;
+      border:1px solid transparent;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.05em;
+    }
+
+    .risk-low {
+      border-color:rgba(22,163,74,.20);
+      background:rgba(22,163,74,.10);
+      color:#166534;
+    }
+
+    .risk-elevated {
+      border-color:rgba(217,119,6,.20);
+      background:rgba(217,119,6,.10);
+      color:#92400e;
+    }
+
+    .risk-high {
+      border-color:rgba(220,38,38,.20);
+      background:rgba(220,38,38,.10);
+      color:#991b1b;
+    }
+
+    .risk-critical {
+      background:#991b1b;
+      color:#fff;
+    }
+
+    .kpi-grid {
+      display:grid;
+      grid-template-columns:repeat(8,minmax(0,1fr));
+      gap:9px;
+      margin:14px 0;
+    }
+
+    .kpi-card {
+      min-width:0;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .kpi-label {
+      color:var(--muted);
+      font-size:9px;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .kpi-value {
+      margin-top:5px;
+      color:var(--navy);
+      font-size:21px;
+      font-weight:900;
+      overflow-wrap:anywhere;
+    }
+
+    .kpi-value.compact {
+      font-size:13px;
       line-height:1.3;
     }
 
-    .analysis-grid {
-      display:grid;
-      grid-template-columns:minmax(0,2fr) minmax(290px,1fr);
+    .panel {
+      margin-bottom:14px;
+      padding:16px;
+    }
+
+    .panel-head {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
       gap:12px;
+      margin-bottom:12px;
+    }
+
+    .panel h2 {
+      margin:0;
+      color:var(--navy);
+      font-size:17px;
+    }
+
+    .panel-note {
+      color:var(--muted);
+      font-size:10px;
+      line-height:1.4;
+      text-align:right;
+    }
+
+    .assessment-grid {
+      display:grid;
+      grid-template-columns:1.4fr repeat(2,1fr);
+      gap:10px;
+    }
+
+    .assessment-lead,
+    .assessment-item {
+      padding:13px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--panel-soft);
+    }
+
+    .assessment-lead {
+      grid-row:span 2;
+      border-left:4px solid var(--navy);
+    }
+
+    .section-kicker,
+    .assessment-item span {
+      display:block;
+      color:var(--teal);
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .assessment-lead p,
+    .assessment-item p {
+      margin:7px 0 0;
+      color:#344457;
+      line-height:1.58;
+    }
+
+    .assessment-lead p {
+      font-size:15px;
+    }
+
+    .assessment-item p {
+      font-size:11px;
+    }
+
+    .actor-grid {
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:9px;
+    }
+
+    .actor-card {
+      min-width:0;
+      padding:12px;
+      border:1px solid var(--border);
+      border-top:4px solid var(--actor);
+      border-radius:12px;
+      background:#fff;
+    }
+
+    .actor-card-head {
+      display:flex;
+      align-items:center;
+      gap:7px;
+      color:#39495b;
+      font-size:10px;
+      font-weight:800;
+    }
+
+    .actor-marker {
+      width:8px;
+      height:8px;
+      flex:0 0 auto;
+      border-radius:50%;
+      background:var(--actor);
+    }
+
+    .actor-card-value {
+      margin-top:8px;
+      color:var(--navy);
+      font-size:24px;
+      font-weight:900;
+    }
+
+    .actor-card-label {
+      color:var(--muted);
+      font-size:9px;
+    }
+
+    .actor-card-track,
+    .country-track {
+      height:5px;
+      margin-top:9px;
+      overflow:hidden;
+      border-radius:999px;
+      background:#e7edf2;
+    }
+
+    .actor-card-track span {
+      display:block;
+      height:100%;
+      background:var(--actor);
+    }
+
+    .dashboard-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);
+      gap:14px;
       align-items:start;
     }
 
     .chart-wrap {
-      height:275px;
       position:relative;
+      height:280px;
     }
 
     canvas {
+      display:block;
       width:100%;
       height:100%;
-      display:block;
     }
 
     .rank-list {
-      display:flex;
-      flex-direction:column;
+      display:grid;
       gap:7px;
     }
 
     .rank-row {
-      padding:8px 10px;
-      background:#f3f4f6;
+      padding:8px 9px;
+      border:1px solid var(--border);
       border-radius:9px;
+      background:var(--panel-soft);
     }
 
     .rank-head {
-      display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:10px;
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
       margin-bottom:5px;
+      font-size:10px;
     }
 
     .progress {
       height:5px;
       overflow:hidden;
       border-radius:999px;
-      background:#dfe3e7;
+      background:#e2e8ee;
     }
 
     .progress span {
       display:block;
       height:100%;
-      background:var(--accent);
+      background:var(--navy-2);
     }
 
-    .assessment {
-      font-size:15px;
-      line-height:1.65;
-      border-left:4px solid var(--accent);
-      background:#f6f7f9;
-      padding:12px 14px;
-      border-radius:9px;
+    .diagram-stage {
+      position:relative;
+      height:330px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:
+        linear-gradient(rgba(215,224,232,.28) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(215,224,232,.28) 1px,transparent 1px),
+        #fbfcfd;
+      background-size:28px 28px;
     }
 
-    .assessment p { margin:0 0 10px; }
+    .diagram-lines {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
 
-    .raw-card {
+    .conflict-node {
+      position:absolute;
+      min-width:112px;
       padding:9px 10px;
-      background:#f3f4f6;
-      border-radius:9px;
-      margin-bottom:7px;
-      font-size:13px;
+      transform:translate(-50%,-50%);
+      border:1px solid var(--border);
+      border-left:4px solid var(--actor);
+      border-radius:10px;
+      background:rgba(255,255,255,.96);
+      box-shadow:0 5px 14px rgba(26,46,66,.10);
+      text-align:center;
+    }
+
+    .conflict-node-dot {
+      display:block;
+      width:9px;
+      height:9px;
+      margin:0 auto 5px;
+      border-radius:50%;
+      background:var(--actor);
+    }
+
+    .conflict-node strong {
+      display:block;
+      color:var(--navy);
+      font-size:10px;
+    }
+
+    .conflict-node small {
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:8px;
+    }
+
+    .diagram-targets {
+      display:flex;
+      align-items:center;
+      gap:7px;
+      flex-wrap:wrap;
+      margin-top:9px;
+      color:var(--muted);
+      font-size:9px;
+    }
+
+    .diagram-targets b {
+      padding:5px 7px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#fff;
+      color:#344457;
+    }
+
+    .diagram-targets em {
+      color:var(--teal);
+      font-style:normal;
+    }
+
+    .country-grid {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .country-card {
+      min-width:0;
+      padding:11px;
+      border:1px solid var(--border);
+      border-radius:11px;
+      background:#fff;
+    }
+
+    .country-rank {
+      color:var(--muted);
+      font-size:9px;
+    }
+
+    .country-name {
+      margin-top:4px;
+      overflow:hidden;
+      color:var(--navy);
+      font-size:11px;
+      font-weight:800;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .country-value {
+      margin-top:7px;
+      color:var(--navy-2);
+      font-size:19px;
+      font-weight:900;
+    }
+
+    .country-track span {
+      display:block;
+      height:100%;
+      background:var(--teal);
+    }
+
+    .development-list {
+      display:grid;
+      gap:8px;
+    }
+
+    .development-card {
+      display:grid;
+      grid-template-columns:12px minmax(0,1fr);
+      gap:9px;
+      padding:11px;
+      border:1px solid var(--border);
+      border-radius:11px;
+      background:#fff;
+    }
+
+    .development-dot {
+      width:9px;
+      height:9px;
+      margin-top:4px;
+      border-radius:50%;
+      background:var(--actor);
+      box-shadow:0 0 0 4px rgba(100,116,139,.12);
+    }
+
+    .development-topline {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      color:var(--muted);
+      font-size:9px;
+    }
+
+    .actor-pill {
+      padding:3px 6px;
+      border-radius:999px;
+      background:#eef2f7;
+      color:var(--actor);
+      font-weight:800;
+    }
+
+    .development-card h3 {
+      margin:7px 0 4px;
+      color:var(--navy);
+      font-size:12px;
+    }
+
+    .development-meta {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:9px;
+    }
+
+    .development-card p {
+      margin:7px 0 0;
+      color:#46576a;
+      font-size:10px;
       line-height:1.45;
     }
 
-
     .vital-grid {
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:10px;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:8px;
     }
 
     .vital-card {
+      min-width:0;
       padding:10px;
       border:1px solid var(--border);
       border-radius:10px;
-      background:#fafafa;
-      min-width:0;
+      background:var(--panel-soft);
     }
 
     .vital-title {
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:5px;
+      color:var(--navy);
+      font-size:10px;
+      font-weight:800;
     }
 
     .vital-value {
-      font-size:20px;
-      font-weight:700;
+      margin-top:5px;
+      font-size:19px;
+      font-weight:900;
     }
 
     .sparkline {
       width:100%;
-      height:54px;
-      display:block;
-      margin-top:6px;
+      height:48px;
+      margin-top:5px;
     }
 
     details.raw-data {
       margin-top:10px;
+      padding-top:8px;
       border-top:1px solid var(--border);
-      padding-top:9px;
     }
 
     details.raw-data summary {
-      cursor:pointer;
       color:var(--muted);
-      font-size:12px;
+      font-size:10px;
+      cursor:pointer;
     }
 
     .raw-json {
-      max-height:240px;
+      max-height:220px;
       overflow:auto;
+      padding:8px;
+      border-radius:8px;
+      background:#f0f3f6;
+      font:10px Consolas,monospace;
       white-space:pre-wrap;
       word-break:break-word;
-      font-family:Consolas,monospace;
+    }
+
+    .empty-state {
+      padding:18px;
+      border:1px dashed var(--border-strong);
+      border-radius:10px;
+      color:var(--muted);
       font-size:11px;
-      margin-top:8px;
-      padding:8px;
-      background:#f3f4f6;
-      border-radius:8px;
+      text-align:center;
     }
 
-    @media (max-width:1200px) {
-      .grid-6 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .error-box {
+      padding:14px;
+      border:1px solid rgba(220,38,38,.20);
+      border-left:4px solid var(--red);
+      border-radius:10px;
+      background:rgba(220,38,38,.06);
+      color:#7f1d1d;
+      font-size:12px;
+      line-height:1.5;
     }
 
-    @media (max-width:900px) {
-      #app { grid-template-columns:1fr; }
-
-      aside {
-        height:auto;
-        position:static;
-        border-right:none;
-        border-bottom:1px solid var(--border);
+    @media (max-width:1300px) {
+      .kpi-grid {
+        grid-template-columns:repeat(4,minmax(0,1fr));
       }
 
-      .analysis-grid { grid-template-columns:1fr; }
+      .country-grid {
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
     }
 
-    @media (max-width:620px) {
-      .grid-2, .grid-3, .grid-6 {
+    @media (max-width:1050px) {
+      .page-shell {
         grid-template-columns:1fr;
+      }
+
+      aside {
+        position:static;
+        max-height:none;
+        overflow:visible;
+        padding-right:0;
+      }
+
+      .dashboard-grid {
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:760px) {
+      .site-header {
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .header-actions {
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .hero-grid {
+        grid-template-columns:1fr;
+      }
+
+      .risk-wrap {
+        text-align:left;
+      }
+
+      .kpi-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .assessment-grid {
+        grid-template-columns:1fr;
+      }
+
+      .assessment-lead {
+        grid-row:auto;
+      }
+
+      .actor-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .country-grid {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .vital-grid {
+        grid-template-columns:1fr;
+      }
+
+      h1 {
+        font-size:24px;
+      }
+    }
+
+    @media (max-width:480px) {
+      .page-shell {
+        padding:10px;
+      }
+
+      .actor-grid,
+      .country-grid,
+      .side-metrics {
+        grid-template-columns:1fr;
+      }
+
+      .kpi-grid {
+        grid-template-columns:1fr 1fr;
       }
     }
   </style>
 </head>
+
 <body>
-  <div id="app">
+  <header class="site-header">
+    <div class="brand-wrap">
+      <div class="brand-mark">ME</div>
+      <div>
+        <div class="brand-title">IranStrike Intelligence Dashboard</div>
+        <div class="brand-sub">Törésvonalak · Közel-keleti esemény- és kockázatelemzés</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button id="reloadBtn" class="header-btn" type="button">Adatok frissítése</button>
+      <button id="backBtn" class="header-btn primary" type="button">Interaktív térkép</button>
+    </div>
+  </header>
+
+  <div class="page-shell">
     <aside>
-      <h1>IranStrike Analysis</h1>
-      <div class="muted">
-        Külön Iran-fókuszú esemény- és infrastruktúra-elemzés.
-      </div>
-
-      <div class="panel">
-        <h2>Navigáció</h2>
-        <button id="backBtn">Interaktív térkép</button>
-        <button id="reloadBtn" class="secondary">Adatok újratöltése</button>
-      </div>
-
-      <div class="panel">
-        <h2>Adatlefedettség</h2>
-        <div class="muted">
-          <div><strong>Frissítés:</strong> <span id="generatedAt">—</span></div>
-          <div><strong>Első esemény:</strong> <span id="firstDate">—</span></div>
-          <div><strong>Legutóbbi esemény:</strong> <span id="lastDate">—</span></div>
-          <div><strong>Összes esemény:</strong> <span id="totalCount">—</span></div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>Szűrők</h2>
+      <section class="side-card">
+        <h2 class="side-title">Elemzési időszak</h2>
         <select id="daysSelect">
           <option value="1">Legutóbbi 24 óra</option>
           <option value="3">Legutóbbi 3 nap</option>
@@ -315,121 +992,232 @@
         <input
           id="searchInput"
           type="search"
-          placeholder="Keresés..."
+          placeholder="Keresés helyszín, támadó vagy kategória szerint..."
           style="margin-top:8px;"
         />
+      </section>
 
-        <div id="categoryFilters" class="muted" style="margin-top:10px;">
-          Kategóriák betöltése…
+      <section class="side-card">
+        <h2 class="side-title">Kategóriák</h2>
+        <div id="categoryFilters" class="category-list">
+          <div class="muted">Kategóriák betöltése…</div>
         </div>
-      </div>
+      </section>
 
-      <div class="panel">
-        <h2>Jelenlegi kijelölés</h2>
-        <div class="grid-2">
-          <div class="metric">
-            <div class="metric-label">Esemény</div>
-            <div id="visibleCount" class="metric-value">—</div>
+      <section class="side-card">
+        <h2 class="side-title">Jelenlegi kijelölés</h2>
+        <div class="side-metrics">
+          <div class="side-metric">
+            <span>Esemény</span>
+            <strong id="visibleCount">—</strong>
           </div>
-          <div class="metric">
-            <div class="metric-label">Koordinátával</div>
-            <div id="geoCount" class="metric-value">—</div>
+          <div class="side-metric">
+            <span>Térképezhető</span>
+            <strong id="geoCount">—</strong>
           </div>
-          <div class="metric">
-            <div class="metric-label">Vezető kategória</div>
-            <div id="topCategorySide" class="metric-value compact">—</div>
+          <div class="side-metric">
+            <span>Fő kategória</span>
+            <strong id="topCategorySide">—</strong>
           </div>
-          <div class="metric">
-            <div class="metric-label">Fő helyszín</div>
-            <div id="topLocationSide" class="metric-value compact">—</div>
+          <div class="side-metric">
+            <span>Fő helyszín</span>
+            <strong id="topLocationSide">—</strong>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="panel">
-        <h2>Forrásmegjegyzés</h2>
+      <section class="side-card">
+        <h2 class="side-title">Adatlefedettség</h2>
+        <div class="coverage-list">
+          <div class="coverage-row"><span>Frissítés</span><strong id="generatedAt">—</strong></div>
+          <div class="coverage-row"><span>Első esemény</span><strong id="firstDate">—</strong></div>
+          <div class="coverage-row"><span>Legutóbbi esemény</span><strong id="lastDate">—</strong></div>
+          <div class="coverage-row"><span>Összes rekord</span><strong id="totalCount">—</strong></div>
+        </div>
+      </section>
+
+      <section class="side-card">
+        <h2 class="side-title">Módszertani megjegyzés</h2>
         <div class="muted">
-          Az adatok az IranStrike nyilvános API-végpontjaiból származnak.
-          A technikai hozzáférhetőség önmagában nem jelent újraközlési engedélyt.
+          Az oldal az IranStrike nyilvános API-adatainak feldolgozott változatát használja.
+          A támadó fél és a koordináta csak akkor jelenik meg biztos értékként, ha azt a
+          feldolgozó megfelelő bizonyossággal azonosította. A dashboard nem valós idejű
+          taktikai rendszer, hanem elemzői OSINT-felület.
         </div>
-      </div>
+      </section>
     </aside>
 
     <main>
-      <section class="panel">
-        <h2>Iran Operational Situation</h2>
-        <div id="periodLabel" class="muted" style="margin-bottom:10px;">—</div>
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Operational intelligence overview</div>
+            <h1>IranStrike helyzetkép</h1>
+            <p>
+              Világos, gyorsan értelmezhető elemző dashboard a közel-keleti támadási
+              események, földrajzi koncentrációk, azonosított szereplők és
+              infrastruktúra-kockázatok áttekintéséhez.
+            </p>
+            <div id="periodLabel" class="muted" style="margin-top:10px;">—</div>
+          </div>
 
-        <div class="grid-6">
-          <div class="metric">
-            <div class="metric-label">Események</div>
-            <div id="kpiEvents" class="metric-value">—</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Incidens/nap</div>
-            <div id="kpiDensity" class="metric-value">—</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Koordinátával</div>
-            <div id="kpiGeoShare" class="metric-value">—</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Vezető kategória</div>
-            <div id="kpiCategory" class="metric-value compact">—</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Fő helyszín</div>
-            <div id="kpiLocation" class="metric-value compact">—</div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Trend</div>
-            <div id="kpiTrend" class="metric-value compact">—</div>
+          <div class="risk-wrap">
+            <div class="risk-caption">Összesített kockázati szint</div>
+            <div id="riskBadge" class="risk-badge risk-low">LOW</div>
           </div>
         </div>
       </section>
 
-      <section class="panel">
-        <h2>Operational Assessment</h2>
-        <div id="assessment" class="assessment">Betöltés…</div>
+      <section class="kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-label">Események</div>
+          <div id="kpiEvents" class="kpi-value">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Esemény / nap</div>
+          <div id="kpiDensity" class="kpi-value">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Térképi lefedettség</div>
+          <div id="kpiGeoShare" class="kpi-value">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Érintett országok</div>
+          <div id="kpiCountries" class="kpi-value">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Kritikus esemény</div>
+          <div id="kpiCritical" class="kpi-value">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Infrastruktúra</div>
+          <div id="kpiInfrastructure" class="kpi-value">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Fő támadó</div>
+          <div id="kpiActor" class="kpi-value compact">—</div>
+        </article>
+
+        <article class="kpi-card">
+          <div class="kpi-label">Trend</div>
+          <div id="kpiTrend" class="kpi-value compact">—</div>
+        </article>
       </section>
 
-      <div class="analysis-grid">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Operatív értékelés</h2>
+            <div class="panel-note" style="text-align:left;margin-top:3px;">
+              Automatikus összefoglaló a jelenlegi szűrés alapján
+            </div>
+          </div>
+        </div>
+        <div id="assessment" class="assessment-grid">
+          <div class="empty-state">Betöltés…</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Támadó fél szerinti bontás</h2>
+            <div class="panel-note" style="text-align:left;margin-top:3px;">
+              Csak a feldolgozó által azonosított szereplők kapnak konkrét besorolást
+            </div>
+          </div>
+        </div>
+        <div id="attackerCards" class="actor-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Konfliktuskapcsolati diagram</h2>
+            <div class="panel-note" style="text-align:left;margin-top:3px;">
+              Egyszerű vizuális áttekintés az eseményekben szereplő fő aktorokról
+            </div>
+          </div>
+          <div class="panel-note">
+            A vonalvastagság az adott szereplő rekordmennyiségét jelzi.
+          </div>
+        </div>
+        <div id="conflictDiagram"></div>
+      </section>
+
+      <div class="dashboard-grid">
         <section class="panel">
-          <h2>Napi eseménytrend</h2>
+          <div class="panel-head">
+            <h2>Napi eseménytrend</h2>
+            <div class="panel-note">A kiválasztott időszak napi eseményszáma</div>
+          </div>
           <div class="chart-wrap">
             <canvas id="trendCanvas"></canvas>
           </div>
         </section>
 
         <section class="panel">
-          <h2>Legaktívabb helyszínek</h2>
+          <div class="panel-head">
+            <h2>Legaktívabb helyszínek</h2>
+            <div class="panel-note">Top 10</div>
+          </div>
           <div id="locationList" class="rank-list"></div>
         </section>
       </div>
 
-      <div class="analysis-grid">
+      <div class="dashboard-grid">
         <section class="panel">
-          <h2>Kategóriaeloszlás</h2>
+          <div class="panel-head">
+            <h2>Kategóriaeloszlás</h2>
+            <div class="panel-note">Vízszintes, könnyen leolvasható bontás</div>
+          </div>
           <div class="chart-wrap">
             <canvas id="categoryCanvas"></canvas>
           </div>
         </section>
 
         <section class="panel">
-          <h2>Országok / területek</h2>
+          <div class="panel-head">
+            <h2>Országok és területek</h2>
+            <div class="panel-note">Top 10</div>
+          </div>
           <div id="countryList" class="rank-list"></div>
         </section>
       </div>
 
-      <div class="analysis-grid">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Országkártyák</h2>
+            <div class="panel-note" style="text-align:left;margin-top:3px;">
+              A leggyakrabban érintett országok és területek
+            </div>
+          </div>
+        </div>
+        <div id="countryCards" class="country-grid"></div>
+      </section>
+
+      <div class="dashboard-grid">
         <section class="panel">
-          <h2>Infrastructure / Vitals</h2>
+          <div class="panel-head">
+            <h2>Infrastructure / Vitals</h2>
+            <div class="panel-note">Az API-ban elérhető állapotmutatók</div>
+          </div>
           <div id="vitalsPanel" class="muted">Betöltés…</div>
         </section>
 
         <section class="panel">
-          <h2>Latest Developments</h2>
-          <div id="developmentsPanel"></div>
+          <div class="panel-head">
+            <h2>Legfrissebb fejlemények</h2>
+            <div class="panel-note">Legutóbbi 12 rekord</div>
+          </div>
+          <div id="developmentsPanel" class="development-list"></div>
         </section>
       </div>
     </main>
@@ -439,27 +1227,45 @@
     "use strict";
 
     const DATA_URL = "data/iranstrike.json";
+
     let payload = null;
     let events = [];
     let selectedCategories = new Set();
 
     const COLORS = [
-      "#d9342b",
-      "#f07623",
-      "#8c3fd1",
-      "#d94ca3",
-      "#71543a",
-      "#2676bd",
-      "#e0b800",
-      "#3a9b63",
-      "#6f7782"
+      "#1f5f8b",
+      "#d95d39",
+      "#7a4ea3",
+      "#c73d67",
+      "#7b5e47",
+      "#2c7a7b",
+      "#d69e2e",
+      "#3a8f5b",
+      "#718096"
     ];
+
+    const ATTACKER_META = {
+      usa: { label: "United States", color: "#2563eb" },
+      iran: { label: "Iran", color: "#16a34a" },
+      israel: { label: "Israel", color: "#dc2626" },
+      other: { label: "Other actor", color: "#7c3aed" },
+      unknown: { label: "Unknown actor", color: "#64748b" }
+    };
 
     const $ = id => document.getElementById(id);
 
     function safe(value, fallback = "—") {
       const text = String(value ?? "").trim();
       return text || fallback;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
     }
 
     function parseDate(value) {
@@ -481,6 +1287,104 @@
       }).format(date);
     }
 
+    function shortDate(value) {
+      const date = parseDate(value);
+      if (!date) return safe(value);
+
+      return new Intl.DateTimeFormat("hu-HU", {
+        month:"short",
+        day:"2-digit",
+        hour:"2-digit",
+        minute:"2-digit",
+        timeZone:"UTC"
+      }).format(date);
+    }
+
+    function normalizeAttacker(value) {
+      const actor = String(value || "unknown").trim().toLowerCase();
+
+      if (["usa","us","u.s.","united states","american"].includes(actor)) {
+        return "usa";
+      }
+
+      if (["iran","iranian","irgc"].includes(actor)) {
+        return "iran";
+      }
+
+      if (["israel","israeli","idf","iaf"].includes(actor)) {
+        return "israel";
+      }
+
+      if (actor && actor !== "unknown") {
+        return "other";
+      }
+
+      return "unknown";
+    }
+
+    function attackerMeta(event) {
+      const key = normalizeAttacker(event?.attacker);
+      const base = ATTACKER_META[key] || ATTACKER_META.unknown;
+
+      return {
+        key,
+        label: safe(event?.attacker_label, base.label),
+        color: safe(event?.attacker_color, base.color)
+      };
+    }
+
+    function mapVisualizable(event) {
+      if (event?.map_visualizable === true) return true;
+
+      const lat = Number(event?.latitude);
+      const lon = Number(event?.longitude);
+
+      return (
+        Number.isFinite(lat) &&
+        Number.isFinite(lon) &&
+        !(Math.abs(lat) < 0.000001 && Math.abs(lon) < 0.000001)
+      );
+    }
+
+    function severityScore(event) {
+      const severity = String(event?.severity || "").toLowerCase();
+
+      if (severity === "critical") return 4;
+      if (severity === "high") return 3;
+      if (severity === "medium") return 2;
+      if (severity === "low") return 1;
+
+      return 0;
+    }
+
+    function currentRiskLevel(list) {
+      if (!list.length) {
+        return { label:"LOW", className:"risk-low", score:0 };
+      }
+
+      const average =
+        list.reduce((sum,event) => sum + severityScore(event),0) /
+        list.length;
+
+      const criticalShare =
+        list.filter(event => severityScore(event) >= 4).length /
+        list.length;
+
+      if (criticalShare >= 0.15 || average >= 3.2) {
+        return { label:"CRITICAL", className:"risk-critical", score:average };
+      }
+
+      if (average >= 2.35) {
+        return { label:"HIGH", className:"risk-high", score:average };
+      }
+
+      if (average >= 1.25) {
+        return { label:"ELEVATED", className:"risk-elevated", score:average };
+      }
+
+      return { label:"LOW", className:"risk-low", score:average };
+    }
+
     function countBy(list, selector) {
       const map = new Map();
 
@@ -489,30 +1393,36 @@
         map.set(key, (map.get(key) || 0) + 1);
       }
 
-      return [...map.entries()]
-        .sort((a,b) => b[1] - a[1]);
+      return [...map.entries()].sort((a,b) => b[1] - a[1]);
     }
 
     function visibleEvents() {
       const days = Number($("daysSelect").value || 0);
       const search = $("searchInput").value.trim().toLowerCase();
-      const latest = events
-        .map(event => parseDate(event.date))
-        .filter(Boolean)
-        .sort((a,b) => b-a)[0] || new Date();
+
+      const latest =
+        events
+          .map(event => parseDate(event.date))
+          .filter(Boolean)
+          .sort((a,b) => b-a)[0] ||
+        new Date();
 
       const cutoff = new Date(latest);
-      if (days > 0) cutoff.setUTCDate(cutoff.getUTCDate() - (days - 1));
+
+      if (days > 0) {
+        cutoff.setUTCDate(cutoff.getUTCDate() - (days - 1));
+      }
 
       return events.filter(event => {
         const date = parseDate(event.date);
-        if (days > 0 && (!date || date < cutoff)) return false;
+
+        if (days > 0 && (!date || date < cutoff)) {
+          return false;
+        }
 
         if (
           selectedCategories.size &&
-          !selectedCategories.has(
-            String(event.category || "other")
-          )
+          !selectedCategories.has(String(event.category || "other"))
         ) {
           return false;
         }
@@ -524,10 +1434,15 @@
             event.location,
             event.country,
             event.category,
-            event.severity
+            event.severity,
+            event.attacker,
+            event.attacker_label,
+            event.attacker_confidence
           ].join(" ").toLowerCase();
 
-          if (!haystack.includes(search)) return false;
+          if (!haystack.includes(search)) {
+            return false;
+          }
         }
 
         return true;
@@ -558,6 +1473,7 @@
 
     function comparePeriod(list) {
       const range = dateRange(list);
+
       if (!range.first || !range.last) {
         return { direction:"stable", percent:null, previous:0 };
       }
@@ -574,29 +1490,39 @@
       }).length;
 
       const current = list.length;
+
       const percent = previous
         ? ((current - previous) / previous) * 100
         : null;
 
       let direction = "stable";
-      if (previous === 0 && current > 0) direction = "increase";
-      else if (percent !== null && percent >= 15) direction = "increase";
-      else if (percent !== null && percent <= -15) direction = "decrease";
+
+      if (previous === 0 && current > 0) {
+        direction = "increase";
+      } else if (percent !== null && percent >= 15) {
+        direction = "increase";
+      } else if (percent !== null && percent <= -15) {
+        direction = "decrease";
+      }
 
       return { direction, percent, previous };
     }
 
     function renderCategoryFilters() {
-      const categories = countBy(events, event => event.category || "other");
+      const categories = countBy(
+        events,
+        event => event.category || "other"
+      );
+
       selectedCategories = new Set();
 
       $("categoryFilters").innerHTML = categories
-        .map(([name,count], index) => `
+        .map(([name,count],index) => `
           <label class="toggle">
             <input
               type="checkbox"
               class="categoryCheckbox"
-              value="${name}"
+              value="${escapeHtml(name)}"
               checked
             />
             <span style="
@@ -605,163 +1531,215 @@
               height:10px;
               border-radius:999px;
               background:${COLORS[index % COLORS.length]};
-              margin-right:5px;
+              flex:0 0 auto;
             "></span>
-            ${name} (${count})
+            <span>${escapeHtml(name)} (${count})</span>
           </label>
         `)
         .join("");
 
-      document.querySelectorAll(".categoryCheckbox").forEach(box => {
-        selectedCategories.add(box.value);
+      document
+        .querySelectorAll(".categoryCheckbox")
+        .forEach(box => {
+          selectedCategories.add(box.value);
 
-        box.addEventListener("change", () => {
-          if (box.checked) selectedCategories.add(box.value);
-          else selectedCategories.delete(box.value);
-          update();
+          box.addEventListener("change", () => {
+            if (box.checked) {
+              selectedCategories.add(box.value);
+            } else {
+              selectedCategories.delete(box.value);
+            }
+
+            update();
+          });
         });
-      });
     }
 
     function renderRanks(targetId, rows) {
       const target = $(targetId);
+
       if (!rows.length) {
-        target.innerHTML = `<div class="muted">Nincs adat.</div>`;
+        target.innerHTML = `<div class="empty-state">Nincs adat.</div>`;
         return;
       }
 
-      const max = Math.max(...rows.slice(0,10).map(row => row[1]), 1);
+      const max = Math.max(
+        ...rows.slice(0,10).map(row => row[1]),
+        1
+      );
 
-      target.innerHTML = rows.slice(0,10).map(([name,count]) => `
-        <div class="rank-row">
-          <div class="rank-head">
-            <div>${name}</div>
-            <strong>${count}</strong>
+      target.innerHTML = rows
+        .slice(0,10)
+        .map(([name,count]) => `
+          <div class="rank-row">
+            <div class="rank-head">
+              <div>${escapeHtml(name)}</div>
+              <strong>${count}</strong>
+            </div>
+            <div class="progress">
+              <span style="width:${count / max * 100}%;"></span>
+            </div>
           </div>
-          <div class="progress">
-            <span style="width:${count / max * 100}%;"></span>
-          </div>
-        </div>
-      `).join("");
+        `)
+        .join("");
     }
 
     function resizeCanvas(canvas) {
       const rect = canvas.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
+
       canvas.width = Math.max(320, Math.floor(rect.width * dpr));
       canvas.height = Math.max(220, Math.floor(rect.height * dpr));
 
       const ctx = canvas.getContext("2d");
       ctx.setTransform(dpr,0,0,dpr,0,0);
 
-      return {ctx,width:rect.width,height:rect.height};
+      return {
+        ctx,
+        width:rect.width,
+        height:rect.height
+      };
     }
 
     function drawTrend(list) {
       const canvas = $("trendCanvas");
       const {ctx,width,height} = resizeCanvas(canvas);
+
       ctx.clearRect(0,0,width,height);
 
       const counts = new Map();
+
       for (const event of list) {
         const date = parseDate(event.date);
         if (!date) continue;
+
         const key = date.toISOString().slice(0,10);
         counts.set(key,(counts.get(key)||0)+1);
       }
 
-      const rows = [...counts.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+      const rows = [...counts.entries()]
+        .sort((a,b) => a[0].localeCompare(b[0]));
 
       if (!rows.length) {
-        ctx.fillStyle="#5a6170";
-        ctx.font="13px Arial";
+        ctx.fillStyle = "#64748b";
+        ctx.font = "13px Arial";
         ctx.fillText("Nincs trendadat.",18,28);
         return;
       }
 
-      const pad={left:44,right:14,top:18,bottom:32};
-      const cw=width-pad.left-pad.right;
-      const ch=height-pad.top-pad.bottom;
-      const max=Math.max(1,...rows.map(row=>row[1]));
+      const pad = {left:44,right:16,top:18,bottom:34};
+      const cw = width-pad.left-pad.right;
+      const ch = height-pad.top-pad.bottom;
+      const max = Math.max(1,...rows.map(row=>row[1]));
 
-      ctx.strokeStyle="#d6d8dc";
-      ctx.lineWidth=1;
+      ctx.strokeStyle = "#d8e1e9";
+      ctx.lineWidth = 1;
 
-      for(let i=0;i<=4;i++){
-        const y=pad.top+(ch/4)*i;
+      for (let i=0;i<=4;i+=1) {
+        const y = pad.top+(ch/4)*i;
+
         ctx.beginPath();
         ctx.moveTo(pad.left,y);
         ctx.lineTo(pad.left+cw,y);
         ctx.stroke();
       }
 
-      ctx.strokeStyle="#111827";
-      ctx.lineWidth=2;
-      ctx.beginPath();
+      const points = rows.map((row,index) => {
+        const x =
+          pad.left +
+          (rows.length===1 ? cw/2 : index/(rows.length-1)*cw);
 
-      rows.forEach((row,index)=>{
-        const x=pad.left+(
-          rows.length===1 ? cw/2 : index/(rows.length-1)*cw
-        );
-        const y=pad.top+ch-(row[1]/max)*ch;
+        const y =
+          pad.top +
+          ch -
+          (row[1]/max)*ch;
 
-        if(index===0) ctx.moveTo(x,y);
-        else ctx.lineTo(x,y);
+        return {x,y,row};
       });
 
+      ctx.beginPath();
+
+      points.forEach((point,index) => {
+        if (index===0) ctx.moveTo(point.x,point.y);
+        else ctx.lineTo(point.x,point.y);
+      });
+
+      ctx.strokeStyle = "#17324d";
+      ctx.lineWidth = 2.4;
       ctx.stroke();
 
-      ctx.fillStyle="#5a6170";
-      ctx.font="11px Arial";
+      points.forEach(point => {
+        ctx.beginPath();
+        ctx.arc(point.x,point.y,3,0,Math.PI*2);
+        ctx.fillStyle = "#0f766e";
+        ctx.fill();
+      });
+
+      ctx.fillStyle = "#64748b";
+      ctx.font = "11px Arial";
       ctx.fillText(String(max),8,pad.top+4);
       ctx.fillText("0",25,pad.top+ch+4);
 
-      const indices=[0,Math.floor((rows.length-1)/2),rows.length-1];
-      [...new Set(indices)].forEach(index=>{
-        const x=pad.left+(
-          rows.length===1 ? cw/2 : index/(rows.length-1)*cw
+      const indices = [
+        0,
+        Math.floor((rows.length-1)/2),
+        rows.length-1
+      ];
+
+      [...new Set(indices)].forEach(index => {
+        const point = points[index];
+        ctx.fillText(
+          rows[index][0],
+          Math.max(4,point.x-32),
+          height-10
         );
-        ctx.fillText(rows[index][0],Math.max(4,x-32),height-10);
       });
     }
 
     function drawCategories(list) {
-      const canvas=$("categoryCanvas");
-      const {ctx,width,height}=resizeCanvas(canvas);
+      const canvas = $("categoryCanvas");
+      const {ctx,width,height} = resizeCanvas(canvas);
+
       ctx.clearRect(0,0,width,height);
 
-      const rows=countBy(list,event=>event.category||"other").slice(0,8);
+      const rows = countBy(
+        list,
+        event => event.category || "other"
+      ).slice(0,8);
 
-      if(!rows.length){
-        ctx.fillStyle="#5a6170";
-        ctx.font="13px Arial";
+      if (!rows.length) {
+        ctx.fillStyle = "#64748b";
+        ctx.font = "13px Arial";
         ctx.fillText("Nincs kategóriaadat.",18,28);
         return;
       }
 
-      const pad={left:145,right:34,top:12,bottom:12};
-      const cw=width-pad.left-pad.right;
-      const ch=height-pad.top-pad.bottom;
-      const rowH=ch/rows.length;
-      const max=Math.max(1,...rows.map(row=>row[1]));
+      const pad = {left:135,right:38,top:12,bottom:12};
+      const cw = width-pad.left-pad.right;
+      const ch = height-pad.top-pad.bottom;
+      const rowH = ch/rows.length;
+      const max = Math.max(1,...rows.map(row=>row[1]));
 
-      ctx.font="12px Arial";
+      ctx.font = "12px Arial";
 
-      rows.forEach(([name,count],index)=>{
-        const y=pad.top+index*rowH;
-        const bar=(count/max)*cw;
+      rows.forEach(([name,count],index) => {
+        const y = pad.top+index*rowH;
+        const bar = (count/max)*cw;
+        const barHeight = Math.max(10,rowH-12);
 
-        ctx.fillStyle="#e5e7eb";
-        ctx.fillRect(pad.left,y+5,cw,Math.max(9,rowH-10));
+        ctx.fillStyle = "#e7edf2";
+        ctx.fillRect(pad.left,y+6,cw,barHeight);
 
-        ctx.fillStyle=COLORS[index%COLORS.length];
-        ctx.fillRect(pad.left,y+5,bar,Math.max(9,rowH-10));
+        ctx.fillStyle = COLORS[index%COLORS.length];
+        ctx.fillRect(pad.left,y+6,bar,barHeight);
 
-        ctx.fillStyle="#16181d";
+        ctx.fillStyle = "#172033";
         ctx.fillText(name,8,y+rowH/2+4);
+
+        ctx.fillStyle = "#526274";
         ctx.fillText(
           String(count),
-          Math.min(width-24,pad.left+bar+6),
+          Math.min(width-28,pad.left+bar+6),
           y+rowH/2+4
         );
       });
@@ -769,187 +1747,716 @@
 
     function extractSeries(value) {
       if (!Array.isArray(value)) return [];
-      return value.map(item => {
-        if (typeof item === "number") return item;
-        if (!item || typeof item !== "object") return null;
-        const candidate = item.v ?? item.value ?? item.y ?? item.percent ?? item.percentage ?? item.score;
-        const number = Number(candidate);
-        return Number.isFinite(number) ? number : null;
-      }).filter(Number.isFinite);
+
+      return value
+        .map(item => {
+          if (typeof item === "number") return item;
+          if (!item || typeof item !== "object") return null;
+
+          const candidate =
+            item.v ??
+            item.value ??
+            item.y ??
+            item.percent ??
+            item.percentage ??
+            item.score;
+
+          const number = Number(candidate);
+          return Number.isFinite(number) ? number : null;
+        })
+        .filter(Number.isFinite);
     }
 
     function latestDisplayValue(value) {
       if (Array.isArray(value)) {
         const series = extractSeries(value);
-        if (series.length) return series[series.length - 1];
+
+        if (series.length) {
+          return series[series.length - 1];
+        }
+
         return `${value.length} records`;
       }
+
       if (value && typeof value === "object") {
-        const candidate = value.status ?? value.value ?? value.state ?? value.current ?? value.latest;
-        if (candidate !== undefined && typeof candidate !== "object") return candidate;
+        const candidate =
+          value.status ??
+          value.value ??
+          value.state ??
+          value.current ??
+          value.latest;
+
+        if (candidate !== undefined && typeof candidate !== "object") {
+          return candidate;
+        }
       }
+
       return value;
     }
 
     function sparklineSvg(series) {
       if (!series.length) return "";
-      const width=220,height=54,pad=4;
-      const min=Math.min(...series),max=Math.max(...series);
-      const span=Math.max(1,max-min);
-      const points=series.map((value,index)=>{
-        const x=pad+(index/Math.max(1,series.length-1))*(width-pad*2);
-        const y=height-pad-((value-min)/span)*(height-pad*2);
-        return `${x.toFixed(1)},${y.toFixed(1)}`;
-      }).join(" ");
-      return `<svg class="sparkline" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#111827" stroke-width="2" points="${points}" /></svg>`;
+
+      const width = 220;
+      const height = 48;
+      const pad = 4;
+      const min = Math.min(...series);
+      const max = Math.max(...series);
+      const span = Math.max(1,max-min);
+
+      const points = series
+        .map((value,index) => {
+          const x =
+            pad +
+            (index/Math.max(1,series.length-1)) *
+            (width-pad*2);
+
+          const y =
+            height -
+            pad -
+            ((value-min)/span) *
+            (height-pad*2);
+
+          return `${x.toFixed(1)},${y.toFixed(1)}`;
+        })
+        .join(" ");
+
+      return `
+        <svg
+          class="sparkline"
+          viewBox="0 0 ${width} ${height}"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <polyline
+            fill="none"
+            stroke="#17324d"
+            stroke-width="2"
+            points="${points}"
+          />
+        </svg>
+      `;
     }
 
     function renderVitals() {
-      const raw = payload?.vitals?.vitals ?? payload?.vitals?.data ?? payload?.vitals ?? null;
+      const raw =
+        payload?.vitals?.vitals ??
+        payload?.vitals?.data ??
+        payload?.vitals ??
+        null;
+
       if (!raw) {
-        $("vitalsPanel").textContent = "Nincs vitals adat.";
+        $("vitalsPanel").innerHTML =
+          `<div class="empty-state">Nincs vitals adat.</div>`;
         return;
       }
 
       const entries = Array.isArray(raw)
-        ? raw.map((item,index)=>[safe(item?.name || item?.label || item?.title, `Vital ${index+1}`), item])
-        : typeof raw === "object" ? Object.entries(raw) : [["Status", raw]];
+        ? raw.map((item,index) => [
+            safe(
+              item?.name ||
+              item?.label ||
+              item?.title,
+              `Vital ${index+1}`
+            ),
+            item
+          ])
+        : typeof raw === "object"
+          ? Object.entries(raw)
+          : [["Status",raw]];
 
-      const cards = entries.slice(0,24).map(([key,value]) => {
-        const series = extractSeries(Array.isArray(value) ? value : value?.history || value?.series || value?.data || []);
-        const latest = latestDisplayValue(value);
-        const suffix = typeof latest === "number" && latest >= 0 && latest <= 100 ? "%" : "";
-        return `<div class="vital-card"><div class="vital-title">${safe(key)}</div><div class="vital-value">${safe(latest)}${suffix}</div>${sparklineSvg(series.slice(-120))}</div>`;
-      }).join("");
+      const cards = entries
+        .slice(0,24)
+        .map(([key,value]) => {
+          const series = extractSeries(
+            Array.isArray(value)
+              ? value
+              : value?.history ||
+                value?.series ||
+                value?.data ||
+                []
+          );
 
-      $("vitalsPanel").innerHTML = `<div class="vital-grid">${cards}</div><details class="raw-data"><summary>Developer mode · raw vitals</summary><div class="raw-json">${safe(JSON.stringify(raw,null,2))}</div></details>`;
-    }
+          const latest = latestDisplayValue(value);
 
-    function renderDevelopments() {
-      const rows = Array.isArray(payload?.developments)
-        ? payload.developments.slice(0,12)
-        : [];
+          const suffix =
+            typeof latest === "number" &&
+            latest >= 0 &&
+            latest <= 100
+              ? "%"
+              : "";
 
-      $("developmentsPanel").innerHTML = rows.length
-        ? rows.map(item => `
-            <div class="raw-card">
-              <strong>${safe(item.title)}</strong>
-              <div class="muted">${formatDate(item.date)}</div>
-              ${
-                item.description
-                  ? `<div style="margin-top:5px;">${safe(item.description)}</div>`
-                  : ""
-              }
+          return `
+            <div class="vital-card">
+              <div class="vital-title">${escapeHtml(key)}</div>
+              <div class="vital-value">${escapeHtml(safe(latest))}${suffix}</div>
+              ${sparklineSvg(series.slice(-120))}
             </div>
-          `).join("")
-        : `<div class="muted">Nincs külön development rekord.</div>`;
+          `;
+        })
+        .join("");
+
+      $("vitalsPanel").innerHTML = `
+        <div class="vital-grid">${cards}</div>
+        <details class="raw-data">
+          <summary>Developer mode · raw vitals</summary>
+          <div class="raw-json">${escapeHtml(JSON.stringify(raw,null,2))}</div>
+        </details>
+      `;
     }
 
-    function createAssessment(list, comparison) {
-      if (!list.length) return ["A jelenlegi szűréshez nincs esemény."];
+    function renderAttackerCards(list) {
+      const counts = countBy(
+        list,
+        event => attackerMeta(event).key
+      );
 
-      const categories=countBy(list,event=>event.category||"other");
-      const locations=countBy(list,event=>event.location||event.country||"Unknown");
-      const countries=countBy(list,event=>event.country||"Unknown");
-      const geo=list.filter(event=>
-        Number.isFinite(Number(event.latitude)) &&
-        Number.isFinite(Number(event.longitude))
+      const lookup = new Map(counts);
+
+      $("attackerCards").innerHTML =
+        ["israel","iran","usa","other","unknown"]
+          .map(key => {
+            const meta = ATTACKER_META[key];
+            const count = lookup.get(key) || 0;
+            const share = list.length
+              ? count/list.length*100
+              : 0;
+
+            return `
+              <article
+                class="actor-card"
+                style="--actor:${meta.color}"
+              >
+                <div class="actor-card-head">
+                  <span class="actor-marker"></span>
+                  <span>${escapeHtml(meta.label)}</span>
+                </div>
+
+                <div class="actor-card-value">
+                  ${count.toLocaleString("hu-HU")}
+                </div>
+
+                <div class="actor-card-label">
+                  esemény · ${share.toFixed(1)}%
+                </div>
+
+                <div class="actor-card-track">
+                  <span style="width:${Math.min(100,share)}%"></span>
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+    }
+
+    function renderCountryCards(list) {
+      const rows = countBy(
+        list,
+        event => event.country || event.location || "Unknown"
+      ).slice(0,12);
+
+      if (!rows.length) {
+        $("countryCards").innerHTML =
+          `<div class="empty-state">Nincs országadat.</div>`;
+        return;
+      }
+
+      const max = Math.max(1,...rows.map(row=>row[1]));
+
+      $("countryCards").innerHTML = rows
+        .map(([name,count],index) => `
+          <article class="country-card">
+            <div class="country-rank">
+              ${String(index+1).padStart(2,"0")}
+            </div>
+
+            <div class="country-name" title="${escapeHtml(name)}">
+              ${escapeHtml(name)}
+            </div>
+
+            <div class="country-value">
+              ${count.toLocaleString("hu-HU")}
+            </div>
+
+            <div class="country-track">
+              <span style="width:${count/max*100}%"></span>
+            </div>
+          </article>
+        `)
+        .join("");
+    }
+
+    function renderConflictDiagram(list) {
+      const actorCounts = new Map(
+        countBy(list,event=>attackerMeta(event).key)
+      );
+
+      const targetCounts = new Map(
+        countBy(
+          list,
+          event => String(
+            event.country ||
+            event.location ||
+            "Unknown"
+          )
+        )
+      );
+
+      const topTargets =
+        [...targetCounts.entries()].slice(0,4);
+
+      const nodes = [
+        {key:"israel",x:18,y:28},
+        {key:"iran",x:50,y:17},
+        {key:"usa",x:82,y:28},
+        {key:"other",x:30,y:78},
+        {key:"unknown",x:70,y:78}
+      ];
+
+      const maxActor = Math.max(
+        1,
+        ...nodes.map(node=>actorCounts.get(node.key)||0)
+      );
+
+      const lineWidth = key =>
+        1.5 +
+        ((actorCounts.get(key)||0)/maxActor)*5;
+
+      const connections = [
+        ["iran","israel"],
+        ["israel","iran"],
+        ["usa","iran"],
+        ["other","israel"],
+        ["unknown","iran"]
+      ];
+
+      const svgLines = connections
+        .map(([from,to]) => {
+          const a = nodes.find(node=>node.key===from);
+          const b = nodes.find(node=>node.key===to);
+          const color =
+            ATTACKER_META[from]?.color ||
+            ATTACKER_META.unknown.color;
+
+          return `
+            <line
+              x1="${a.x}%"
+              y1="${a.y}%"
+              x2="${b.x}%"
+              y2="${b.y}%"
+              stroke="${color}"
+              stroke-width="${lineWidth(from)}"
+              stroke-dasharray="7 7"
+              marker-end="url(#arrow)"
+              opacity=".72"
+            />
+          `;
+        })
+        .join("");
+
+      const nodeHtml = nodes
+        .map(node => {
+          const meta = ATTACKER_META[node.key];
+          const count = actorCounts.get(node.key)||0;
+
+          return `
+            <div
+              class="conflict-node"
+              style="
+                left:${node.x}%;
+                top:${node.y}%;
+                --actor:${meta.color};
+              "
+            >
+              <span class="conflict-node-dot"></span>
+              <strong>${escapeHtml(meta.label)}</strong>
+              <small>${count.toLocaleString("hu-HU")} event</small>
+            </div>
+          `;
+        })
+        .join("");
+
+      $("conflictDiagram").innerHTML = `
+        <div class="diagram-stage">
+          <svg
+            class="diagram-lines"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <defs>
+              <marker
+                id="arrow"
+                markerWidth="8"
+                markerHeight="8"
+                refX="5"
+                refY="3"
+                orient="auto"
+              >
+                <path
+                  d="M0,0 L0,6 L6,3 z"
+                  fill="#617083"
+                ></path>
+              </marker>
+            </defs>
+
+            ${svgLines}
+          </svg>
+
+          ${nodeHtml}
+        </div>
+
+        <div class="diagram-targets">
+          <span>Leggyakoribb érintett területek:</span>
+          ${topTargets
+            .map(([name,count]) => `
+              <b>${escapeHtml(name)} <em>${count}</em></b>
+            `)
+            .join("")}
+        </div>
+      `;
+    }
+
+    function renderDevelopments(list) {
+      const sourceRows =
+        Array.isArray(payload?.developments)
+          ? payload.developments
+          : [];
+
+      const rows = sourceRows.length
+        ? sourceRows.slice(0,12)
+        : [...list]
+            .sort(
+              (a,b) =>
+                (parseDate(b.date)||0) -
+                (parseDate(a.date)||0)
+            )
+            .slice(0,12);
+
+      if (!rows.length) {
+        $("developmentsPanel").innerHTML =
+          `<div class="empty-state">Nincs fejlemény.</div>`;
+        return;
+      }
+
+      $("developmentsPanel").innerHTML = rows
+        .map(item => {
+          const meta = attackerMeta(item);
+
+          return `
+            <article
+              class="development-card"
+              style="--actor:${meta.color}"
+            >
+              <div class="development-dot"></div>
+
+              <div>
+                <div class="development-topline">
+                  <span
+                    class="actor-pill"
+                    style="--actor:${meta.color}"
+                  >
+                    ${escapeHtml(meta.label)}
+                  </span>
+
+                  <span>${escapeHtml(shortDate(item.date))}</span>
+                </div>
+
+                <h3>${escapeHtml(safe(item.title,"IranStrike event"))}</h3>
+
+                <div class="development-meta">
+                  <span>${escapeHtml(safe(item.category,"other"))}</span>
+                  <span>${escapeHtml(safe(item.location||item.country,"Unknown location"))}</span>
+                </div>
+
+                ${
+                  item.description
+                    ? `<p>${escapeHtml(item.description)}</p>`
+                    : ""
+                }
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+    }
+
+    function createAssessment(list,comparison) {
+      if (!list.length) {
+        return {
+          summary:"A jelenlegi szűréshez nincs esemény.",
+          hotspot:"—",
+          actor:"—",
+          infrastructure:"—",
+          outlook:"—"
+        };
+      }
+
+      const locations = countBy(
+        list,
+        event => event.location || event.country || "Unknown"
+      );
+
+      const countries = countBy(
+        list,
+        event => event.country || "Unknown"
+      );
+
+      const attackers = countBy(
+        list,
+        event => attackerMeta(event).label
+      );
+
+      const geo = list.filter(mapVisualizable).length;
+
+      const infrastructure = list.filter(event =>
+        String(event.category||"")
+          .toLowerCase()
+          .includes("infrastructure")
       ).length;
+
+      const risk = currentRiskLevel(list);
 
       const trendText =
         comparison.direction==="increase"
-          ? "növekedett"
+          ? "növekvő"
           : comparison.direction==="decrease"
-            ? "csökkent"
-            : "stabil maradt";
+            ? "csökkenő"
+            : "stabil";
 
       const percentText =
         comparison.percent===null
-          ? "nem számítható"
+          ? "nincs összehasonlítható előző időszak"
           : `${comparison.percent>0?"+":""}${comparison.percent.toFixed(1)}%`;
 
-      return [
-        `A kiválasztott időszakban ${list.length} IranStrike-esemény szerepel. Az aktivitás az előző azonos hosszúságú időszakhoz képest ${trendText} (${percentText}).`,
-        `A domináns kategória ${categories[0]?.[0] || "ismeretlen"}, a fő helyszín ${locations[0]?.[0] || "ismeretlen"}.`,
-        `A legtöbb rekord ${countries[0]?.[0] || "ismeretlen"} területéhez kapcsolódik.`,
-        `${geo} esemény rendelkezik használható koordinátával, ami a kijelölt rekordok ${(geo/Math.max(1,list.length)*100).toFixed(1)}%-a.`,
-        `Az értékelés kizárólag az IranStrike nyilvános API-adatain alapul, és nem helyettesít független forrásellenőrzést.`
-      ];
+      return {
+        summary:
+          `A kiválasztott időszakban ${list.length} esemény szerepel. ` +
+          `Az aktivitás ${trendText}, az előző azonos hosszúságú időszakhoz ` +
+          `viszonyított változás ${percentText}.`,
+
+        hotspot:
+          `A fő földrajzi fókusz ${locations[0]?.[0]||"ismeretlen"}, ` +
+          `míg a legtöbb rekord ${countries[0]?.[0]||"ismeretlen"} ` +
+          `területéhez kapcsolódik.`,
+
+        actor:
+          `A leggyakrabban azonosított támadó ${attackers[0]?.[0]||"ismeretlen"}. ` +
+          `Az ismeretlen szereplőjű rekordokat a rendszer nem sorolja át automatikusan.`,
+
+        infrastructure:
+          `${infrastructure} infrastruktúrához kapcsolódó esemény és ${geo} ` +
+          `térképezhető rekord látható. A térképi lefedettség ` +
+          `${(geo/Math.max(1,list.length)*100).toFixed(1)}%.`,
+
+        outlook:
+          `Az összesített kockázati szint ${risk.label}. A mutató kizárólag ` +
+          `a rendelkezésre álló IranStrike API-adatokból számol, ezért ` +
+          `elemzői támpont, nem önálló helyzetértékelés.`
+      };
+    }
+
+    function renderAssessmentCards(data) {
+      $("assessment").innerHTML = `
+        <article class="assessment-lead">
+          <span class="section-kicker">Overall situation</span>
+          <p>${escapeHtml(data.summary)}</p>
+        </article>
+
+        <article class="assessment-item">
+          <span>Fő hotspot</span>
+          <p>${escapeHtml(data.hotspot)}</p>
+        </article>
+
+        <article class="assessment-item">
+          <span>Azonosított támadó</span>
+          <p>${escapeHtml(data.actor)}</p>
+        </article>
+
+        <article class="assessment-item">
+          <span>Infrastruktúra és térkép</span>
+          <p>${escapeHtml(data.infrastructure)}</p>
+        </article>
+
+        <article class="assessment-item">
+          <span>Kitekintés</span>
+          <p>${escapeHtml(data.outlook)}</p>
+        </article>
+      `;
     }
 
     function update() {
-      const list=visibleEvents();
-      const range=dateRange(list);
-      const comparison=comparePeriod(list);
-      const categories=countBy(list,event=>event.category||"other");
-      const locations=countBy(list,event=>event.location||event.country||"Unknown");
-      const countries=countBy(list,event=>event.country||"Unknown");
-      const geo=list.filter(event=>
-        Number.isFinite(Number(event.latitude)) &&
-        Number.isFinite(Number(event.longitude))
+      const list = visibleEvents();
+      const range = dateRange(list);
+      const comparison = comparePeriod(list);
+
+      const categories = countBy(
+        list,
+        event => event.category || "other"
+      );
+
+      const locations = countBy(
+        list,
+        event => event.location || event.country || "Unknown"
+      );
+
+      const countries = countBy(
+        list,
+        event => event.country || "Unknown"
+      );
+
+      const geo = list.filter(mapVisualizable).length;
+
+      const attackers = countBy(
+        list,
+        event => attackerMeta(event).label
+      );
+
+      const infrastructure = list.filter(event =>
+        String(event.category||"")
+          .toLowerCase()
+          .includes("infrastructure")
       ).length;
 
-      $("visibleCount").textContent=String(list.length);
-      $("geoCount").textContent=String(geo);
-      $("topCategorySide").textContent=categories[0]?.[0]||"—";
-      $("topLocationSide").textContent=locations[0]?.[0]||"—";
+      const critical = list.filter(event =>
+        String(event.severity||"").toLowerCase()==="critical"
+      ).length;
 
-      $("kpiEvents").textContent=String(list.length);
-      $("kpiDensity").textContent=range.days
-        ? (list.length/range.days).toFixed(1)
-        : "—";
-      $("kpiGeoShare").textContent=
+      const risk = currentRiskLevel(list);
+
+      $("visibleCount").textContent = String(list.length);
+      $("geoCount").textContent = String(geo);
+      $("topCategorySide").textContent =
+        categories[0]?.[0] || "—";
+      $("topLocationSide").textContent =
+        locations[0]?.[0] || "—";
+
+      $("kpiEvents").textContent = String(list.length);
+      $("kpiDensity").textContent =
+        range.days
+          ? (list.length/range.days).toFixed(1)
+          : "—";
+
+      $("kpiGeoShare").textContent =
         `${(geo/Math.max(1,list.length)*100).toFixed(1)}%`;
-      $("kpiCategory").textContent=categories[0]?.[0]||"—";
-      $("kpiLocation").textContent=locations[0]?.[0]||"—";
-      $("kpiTrend").textContent=comparison.direction;
 
-      $("periodLabel").textContent=
+      $("kpiCountries").textContent =
+        String(countries.length);
+
+      $("kpiCritical").textContent =
+        String(critical);
+
+      $("kpiInfrastructure").textContent =
+        String(infrastructure);
+
+      $("kpiActor").textContent =
+        attackers[0]?.[0] || "—";
+
+      $("kpiTrend").textContent =
+        comparison.direction;
+
+      $("riskBadge").textContent = risk.label;
+      $("riskBadge").className =
+        `risk-badge ${risk.className}`;
+
+      $("periodLabel").textContent =
         range.first && range.last
           ? `${formatDate(range.first)} → ${formatDate(range.last)}`
           : "Nincs dátumozott esemény";
 
       renderRanks("locationList",locations);
       renderRanks("countryList",countries);
+      renderAttackerCards(list);
+      renderCountryCards(list);
+      renderConflictDiagram(list);
       drawTrend(list);
       drawCategories(list);
-
-      $("assessment").innerHTML=createAssessment(list,comparison)
-        .map(text=>`<p>${text}</p>`)
-        .join("");
+      renderDevelopments(list);
+      renderAssessmentCards(
+        createAssessment(list,comparison)
+      );
     }
 
     async function loadData() {
-      const response=await fetch(DATA_URL,{cache:"no-store"});
-      if(!response.ok) throw new Error(`HTTP ${response.status}`);
+      $("assessment").innerHTML =
+        `<div class="empty-state">Adatok betöltése…</div>`;
 
-      payload=await response.json();
-      events=Array.isArray(payload.events)?payload.events:[];
+      const response = await fetch(
+        DATA_URL,
+        {cache:"no-store"}
+      );
 
-      const overview=payload?.analytics?.overview||{};
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
 
-      $("generatedAt").textContent=formatDate(payload.generated_at);
-      $("firstDate").textContent=formatDate(overview.earliest_event_date);
-      $("lastDate").textContent=formatDate(overview.latest_event_date);
-      $("totalCount").textContent=String(events.length);
+      payload = await response.json();
+
+      events = Array.isArray(payload?.events)
+        ? payload.events
+        : [];
+
+      const overview =
+        payload?.analytics?.overview || {};
+
+      $("generatedAt").textContent =
+        formatDate(payload.generated_at);
+
+      $("firstDate").textContent =
+        formatDate(overview.earliest_event_date);
+
+      $("lastDate").textContent =
+        formatDate(overview.latest_event_date);
+
+      $("totalCount").textContent =
+        String(events.length);
 
       renderCategoryFilters();
       renderVitals();
-      renderDevelopments();
       update();
     }
 
-    $("daysSelect").addEventListener("change",update);
-    $("searchInput").addEventListener("input",update);
-    $("reloadBtn").addEventListener("click",()=>loadData().catch(console.error));
-    $("backBtn").addEventListener("click",()=>window.location.href="index.html");
-    window.addEventListener("resize",()=>payload&&update());
+    $("daysSelect").addEventListener(
+      "change",
+      update
+    );
 
-    loadData().catch(error=>{
+    $("searchInput").addEventListener(
+      "input",
+      update
+    );
+
+    $("reloadBtn").addEventListener(
+      "click",
+      () => loadData().catch(showError)
+    );
+
+    $("backBtn").addEventListener(
+      "click",
+      () => {
+        window.location.href = "index.html";
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        if (payload) update();
+      }
+    );
+
+    function showError(error) {
       console.error(error);
-      $("assessment").innerHTML=
-        `<strong>Az IranStrike-adatok nem tölthetők be:</strong> ${safe(error.message)}`;
-    });
+
+      $("assessment").innerHTML = `
+        <div class="error-box">
+          <strong>Az IranStrike-adatok nem tölthetők be.</strong><br />
+          ${escapeHtml(safe(error?.message))}
+        </div>
+      `;
+    }
+
+    loadData().catch(showError);
   </script>
 </body>
 </html>
