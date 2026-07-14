@@ -2776,7 +2776,13 @@ window.setInterval(() => {
         controller.setEnabled(cirIncidentsEnabled);
         updateCirUiState();
         updateCirSummary();
-        await syncAttackAnnotations();
+
+        syncAttackAnnotations().catch((annotationError) => {
+          console.warn(
+            "[cir-incidents] optional annotation sync failed:",
+            annotationError?.message || annotationError
+          );
+        });
       } catch (e) {
         console.warn("[cir-incidents] refresh failed:", e?.message || e);
         const badge = document.getElementById("cirStatusBadge");
@@ -2813,13 +2819,26 @@ window.setInterval(() => {
           }
 
           controller.setEnabled(true);
-          window.setTimeout(() => controller.setEnabled(true), 100);
+
+          window.setTimeout(() => {
+            map.invalidateSize({ animate: false });
+            controller.setDisplayMode(
+              document.getElementById("cirDisplayModeSelect")?.value || "markers"
+            );
+            controller.setEnabled(true);
+          }, 160);
         } else {
           controller.setEnabled(false);
         }
 
         updateCirUiState();
-        await syncAttackAnnotations();
+
+        syncAttackAnnotations().catch((annotationError) => {
+          console.warn(
+            "[cir-incidents] optional annotation sync failed:",
+            annotationError?.message || annotationError
+          );
+        });
       } catch (e) {
         console.warn("[cir-incidents] toggle failed:", e?.message || e);
         const checkbox = document.getElementById("cirIncidentsCheckbox");
@@ -3686,6 +3705,9 @@ window.setInterval(() => {
     controlPanel.appendChild(makeAccSection("Map and data layers", layersBox, true));
     controlPanel.appendChild(makeAccSection("Filters and analysis", filtersBox, false));
 
+    window.setTimeout(() => {
+      map.invalidateSize({ animate: false });
+    }, 80);
 
     // ===== Analyst-friendly quick controls =====
     const meQuickLatestBtn = document.getElementById("meQuickLatestBtn");
