@@ -125,26 +125,156 @@
 
     window.israelActivityLayer = layerGroup;
 
+    let mapUtilsLoadingPromise = null;
+
     function mapUtils() {
 
         return window.MEMapUtils || null;
 
     }
 
-    function ensureMapUtils() {
+    function findLoadedScript(src) {
 
-        const utils = mapUtils();
+        return Array.from(
+            document.scripts || []
+        ).find(script => {
 
-        if (!utils) {
+            const attribute =
+                script.getAttribute("src") || "";
 
-            throw new Error(
-                "window.MEMapUtils is not available. "
-                + "Load js/map-utils.js before israel-activity-layer.js."
+            return (
+                attribute === src ||
+                script.src.endsWith(src)
             );
+
+        }) || null;
+
+    }
+
+    function loadScriptOnce(src) {
+
+        return new Promise(
+            (
+                resolve,
+                reject
+            ) => {
+
+                const existing =
+                    findLoadedScript(src);
+
+                if (existing) {
+
+                    if (mapUtils()) {
+
+                        resolve();
+
+                        return;
+
+                    }
+
+                    existing.addEventListener(
+                        "load",
+                        () => resolve(),
+                        {
+                            once: true
+                        }
+                    );
+
+                    existing.addEventListener(
+                        "error",
+                        () => reject(
+                            new Error(
+                                `Script load failed: ${src}`
+                            )
+                        ),
+                        {
+                            once: true
+                        }
+                    );
+
+                    return;
+
+                }
+
+                const script =
+                    document.createElement("script");
+
+                script.src = src;
+
+                script.async = true;
+
+                script.onload =
+                    () => resolve();
+
+                script.onerror =
+                    () => reject(
+                        new Error(
+                            `Script load failed: ${src}`
+                        )
+                    );
+
+                document.head.appendChild(script);
+
+            }
+        );
+
+    }
+
+    async function ensureMapUtilsLoaded() {
+
+        if (mapUtils()) {
+
+            return true;
 
         }
 
-        return utils;
+        if (!mapUtilsLoadingPromise) {
+
+            mapUtilsLoadingPromise =
+                loadScriptOnce(
+                    "js/map-utils.js"
+                )
+                .then(() => {
+
+                    if (!mapUtils()) {
+
+                        throw new Error(
+                            "map-utils.js loaded, but "
+                            +
+                            "window.MEMapUtils is unavailable."
+                        );
+
+                    }
+
+                    return true;
+
+                })
+                .catch(error => {
+
+                    console.warn(
+
+                        "[israel-activity] "
+                        +
+                        "map-utils unavailable; "
+                        +
+                        "continuing without marker spreading:",
+
+                        error?.message || error
+
+                    );
+
+                    return false;
+
+                })
+                .finally(() => {
+
+                    mapUtilsLoadingPromise = null;
+
+                });
+
+        }
+
+        return mapUtilsLoadingPromise;
 
     }
 
@@ -2015,11 +2145,49 @@
 
                 try {
 
+                    await ensureMapUtilsLoaded();
+
                     payload =
                         await fetchPayload();
 
                     events =
                         extractMapEvents(payload);
+
+                    if (!events.length) {
+
+                        console.warn(
+
+                            "[israel-activity] "
+                            +
+                            "Data loaded successfully, "
+                            +
+                            "but no valid map events were found.",
+
+                            {
+                                dataUrl:
+                                    currentDataUrl,
+
+                                schemaVersion:
+                                    payload?.schema_version,
+
+                                eventCount:
+                                    Array.isArray(
+                                        payload?.events
+                                    )
+                                        ? payload.events.length
+                                        : 0,
+
+                                mapEventCount:
+                                    Array.isArray(
+                                        payload?.map_events
+                                    )
+                                        ? payload.map_events.length
+                                        : 0
+                            }
+
+                        );
+
+                    }
 
                     lastRefreshAt =
                         new Date().toISOString();
@@ -2086,7 +2254,7 @@
 
         injectStyles();
 
-        ensureMapUtils();
+        await ensureMapUtilsLoaded();
 
         ensurePane();
 
@@ -2164,7 +2332,10 @@
                 Boolean(
                     mapUtils() &&
                     mapInstance
-                )
+                ),
+
+            markerCount:
+                markers.length
 
         };
 
