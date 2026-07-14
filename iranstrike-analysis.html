@@ -1185,8 +1185,8 @@
       <div class="dashboard-grid">
         <section class="panel">
           <div class="panel-head">
-            <h2>Konfliktus eszkalációs / de-eszkalációs trend</h2>
-            <div class="panel-note">Napi index, 3 napos mozgóátlag és lineáris trendvonal</div>
+            <h2>Napi eseménytrend</h2>
+            <div class="panel-note">Objektív napi eseményszám, 7 napos mozgóátlag és lineáris trendvonal</div>
           </div>
           <div class="chart-wrap">
             <canvas id="trendCanvas"></canvas>
@@ -1638,23 +1638,21 @@
 
       ctx.clearRect(0,0,width,height);
 
-      const rows = dailyEscalationRows(list);
+      const rows = dailyEventRows(list);
 
       if (!rows.length) {
         ctx.fillStyle = "#64748b";
         ctx.font = "13px Arial";
-        ctx.fillText("Nincs indexadat.",18,28);
+        ctx.fillText("Nincs eseményadat.",18,28);
         return;
       }
 
-      const daily = rows.map(row=>row.value);
-      const average = movingAverage(daily,3);
+      const daily = rows.map(row=>row.count);
+      const average = movingAverage(daily,7);
       const trend = linearTrend(daily);
 
-      const allValues = [...daily,...average,...trend,0];
-      const minValue = Math.min(...allValues);
-      const maxValue = Math.max(...allValues);
-      const span = Math.max(.5,maxValue-minValue);
+      const maxValue = Math.max(1,...daily,...average,...trend);
+      const minValue = 0;
 
       const pad = {left:52,right:18,top:30,bottom:38};
       const cw = width-pad.left-pad.right;
@@ -1667,14 +1665,14 @@
       const yFor = value =>
         pad.top +
         ch -
-        ((value-minValue)/span)*ch;
+        ((value-minValue)/(maxValue-minValue || 1))*ch;
 
       ctx.strokeStyle = "#d8e1e9";
       ctx.lineWidth = 1;
 
       for (let i=0;i<=5;i+=1) {
         const ratio = i/5;
-        const value = maxValue-ratio*span;
+        const value = maxValue-ratio*(maxValue-minValue);
         const y = pad.top+ratio*ch;
 
         ctx.beginPath();
@@ -1684,17 +1682,7 @@
 
         ctx.fillStyle = "#64748b";
         ctx.font = "10px Arial";
-        ctx.fillText(value.toFixed(1),8,y+3);
-      }
-
-      if (minValue < 0 && maxValue > 0) {
-        const zeroY = yFor(0);
-        ctx.beginPath();
-        ctx.moveTo(pad.left,zeroY);
-        ctx.lineTo(pad.left+cw,zeroY);
-        ctx.strokeStyle = "#9aa8b5";
-        ctx.lineWidth = 1.3;
-        ctx.stroke();
+        ctx.fillText(String(Math.round(value)),12,y+3);
       }
 
       function drawSeries(values,color,widthValue,dash=[]) {
@@ -1720,15 +1708,18 @@
       drawSeries(trend,"#2ca02c",2.4,[3,5]);
 
       daily.forEach((value,index) => {
+        const x = xFor(index);
+        const y = yFor(value);
+
         ctx.beginPath();
-        ctx.arc(xFor(index),yFor(value),3.1,0,Math.PI*2);
+        ctx.arc(x,y,3.1,0,Math.PI*2);
         ctx.fillStyle = "#1f77b4";
         ctx.fill();
       });
 
       const legend = [
-        {label:"Napi konfliktusindex",color:"#1f77b4",dash:false},
-        {label:"3 napos mozgóátlag",color:"#ff7f0e",dash:true},
+        {label:"Napi eseményszám",color:"#1f77b4",dash:false},
+        {label:"7 napos mozgóátlag",color:"#ff7f0e",dash:true},
         {label:"Trendvonal",color:"#2ca02c",dash:true}
       ];
 
@@ -1763,6 +1754,7 @@
 
       [...new Set(indices)].forEach(index => {
         const x = xFor(index);
+
         ctx.fillText(
           rows[index].date.slice(5),
           Math.max(4,x-18),
@@ -2140,52 +2132,7 @@
       }).join("");
     }
 
-    function eventEscalationValue(event) {
-      const severity = String(event?.severity || "").toLowerCase();
-      const category = String(event?.category || "").toLowerCase();
-      const title = `${event?.title || ""} ${event?.description || ""}`.toLowerCase();
-
-      let value = 0;
-
-      if (severity === "critical") value -= 2.5;
-      else if (severity === "high") value -= 1.8;
-      else if (severity === "medium") value -= 1.0;
-      else if (severity === "low") value -= 0.4;
-
-      if (
-        category.includes("airstrike") ||
-        category.includes("missile") ||
-        category.includes("drone") ||
-        category.includes("explosion") ||
-        category.includes("ground") ||
-        category.includes("infrastructure")
-      ) {
-        value -= 0.35;
-      }
-
-      if (
-        title.includes("ceasefire") ||
-        title.includes("de-escal") ||
-        title.includes("truce") ||
-        title.includes("agreement") ||
-        title.includes("talks resumed") ||
-        title.includes("negotiation")
-      ) {
-        value += 1.5;
-      }
-
-      if (
-        title.includes("intercepted") ||
-        title.includes("prevented") ||
-        title.includes("defused")
-      ) {
-        value += 0.25;
-      }
-
-      return value;
-    }
-
-    function dailyEscalationRows(list) {
+    function dailyEventRows(list) {
       const daily = new Map();
 
       list.forEach(event => {
@@ -2193,25 +2140,15 @@
         if (!date) return;
 
         const key = date.toISOString().slice(0,10);
-
-        if (!daily.has(key)) {
-          daily.set(key,{sum:0,count:0});
-        }
-
-        const item = daily.get(key);
-        item.sum += eventEscalationValue(event);
-        item.count += 1;
+        daily.set(key,(daily.get(key)||0)+1);
       });
 
       return [...daily.entries()]
         .sort((a,b)=>a[0].localeCompare(b[0]))
-        .map(([date,item])=>({
-          date,
-          value:item.count ? item.sum/item.count : 0
-        }));
+        .map(([date,count])=>({date,count}));
     }
 
-    function movingAverage(values,windowSize=3) {
+    function movingAverage(values,windowSize=7) {
       return values.map((_,index) => {
         const start = Math.max(0,index-windowSize+1);
         const window = values.slice(start,index+1);
@@ -2582,3 +2519,4 @@
   </script>
 </body>
 </html>
+
