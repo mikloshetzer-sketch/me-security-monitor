@@ -914,6 +914,84 @@
       }
     }
 
+  
+    .chart-toolbar {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    .chart-button-group {
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+    }
+
+    .chart-filter-btn {
+      width:auto;
+      min-height:31px;
+      padding:6px 9px;
+      border:1px solid var(--border-strong);
+      border-radius:8px;
+      background:#fff;
+      color:var(--accent);
+      font-size:9px;
+      font-weight:800;
+    }
+
+    .chart-filter-btn.active {
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fff;
+    }
+
+    .chart-granularity {
+      padding:5px 8px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:var(--panel-soft);
+      color:var(--muted);
+      font-size:9px;
+      font-weight:750;
+    }
+
+    .response-chart-wrap {
+      position:relative;
+      height:390px;
+    }
+
+    .response-chart-legend {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+      color:#425267;
+      font-size:9px;
+      font-weight:750;
+    }
+
+    .response-chart-legend span {
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    .response-chart-legend i {
+      width:9px;
+      height:9px;
+      border-radius:2px;
+      display:inline-block;
+    }
+
+    @media (max-width:620px) {
+      .response-chart-wrap {
+        height:470px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1120,6 +1198,28 @@
         </div>
       </section>
 
+      <section class="panel">
+        <div class="section-header">
+          <div>
+            <h2>Israel response activity by period</h2>
+            <div class="muted">
+              Az időszakos besorolás vizuális összehasonlítása: azonosított izraeli reakció,
+              Hamász/palesztin aktivitás és nem egyértelmű CIR-események
+            </div>
+          </div>
+        </div>
+
+        <div class="response-chart-legend">
+          <span><i style="background:#dc2626;"></i> Azonosított izraeli reakció</span>
+          <span><i style="background:#16a34a;"></i> Hamász / palesztin aktivitás</span>
+          <span><i style="background:#94a3b8;"></i> Nem egyértelmű</span>
+        </div>
+
+        <div class="response-chart-wrap">
+          <canvas id="responsePhaseCanvas"></canvas>
+        </div>
+      </section>
+
       <div class="analysis-grid">
         <section class="panel">
           <div class="section-header">
@@ -1127,6 +1227,16 @@
               <h2>Incidens trendje</h2>
               <div class="muted">Naponta ellenőrzött incidensek a kiválasztott időszakban</div>
             </div>
+          </div>
+
+          <div class="chart-toolbar">
+            <div class="chart-button-group" id="trendRangeButtons">
+              <button class="chart-filter-btn active" type="button" data-trend-range="30">30 nap</button>
+              <button class="chart-filter-btn" type="button" data-trend-range="90">90 nap</button>
+              <button class="chart-filter-btn" type="button" data-trend-range="180">180 nap</button>
+              <button class="chart-filter-btn" type="button" data-trend-range="all">Teljes időszak</button>
+            </div>
+            <div id="trendGranularityLabel" class="chart-granularity">Napi bontás</div>
           </div>
 
           <div class="chart-wrap">
@@ -1233,6 +1343,8 @@
     let selectedCategories = new Set();
     let pendingUrlState = null;
     let categoryColors = new Map();
+    let trendChartRange = "30";
+    let responsePhaseRowsCache = [];
 
     const $ = (id) => document.getElementById(id);
 
@@ -1503,6 +1615,9 @@
           topLocation
         };
       });
+
+      responsePhaseRowsCache = phaseRows;
+      drawResponsePhaseChart(phaseRows);
 
       const maxTotal = Math.max(
         1,
@@ -1823,6 +1938,148 @@
       return { ctx, width: rect.width, height: rect.height };
     }
 
+    function drawResponsePhaseChart(rows) {
+      const canvas = $("responsePhaseCanvas");
+      if (!canvas) return;
+
+      const { ctx, width, height } = resizeCanvas(canvas);
+      ctx.clearRect(0, 0, width, height);
+
+      if (!rows.length) {
+        ctx.fillStyle = "#64748b";
+        ctx.font = "13px Arial";
+        ctx.fillText("Nincs időszakos response-adat.", 18, 28);
+        return;
+      }
+
+      const labels = rows.map((row, index) => {
+        const shortLabels = [
+          "Oct 7–13",
+          "Oct 14–26",
+          "Oct 27–Dec",
+          "Jan–May 2024",
+          "Rafah 2024",
+          "H2 2024",
+          "2025",
+          "2026+"
+        ];
+        return shortLabels[index] || row.label;
+      });
+
+      const pad = { left: 118, right: 50, top: 12, bottom: 18 };
+      const chartW = width - pad.left - pad.right;
+      const chartH = height - pad.top - pad.bottom;
+      const rowH = chartH / rows.length;
+      const maxTotal = Math.max(1, ...rows.map(row => row.total));
+
+      rows.forEach((row, index) => {
+        const y = pad.top + index * rowH;
+        const barY = y + Math.max(5, rowH * 0.20);
+        const barH = Math.max(13, rowH * 0.48);
+        const scale = chartW / maxTotal;
+
+        ctx.fillStyle = "#172033";
+        ctx.font = "10px Arial";
+        ctx.fillText(
+          labels[index],
+          8,
+          barY + barH / 2 + 3
+        );
+
+        let x = pad.left;
+
+        const segments = [
+          { value: row.israelCount, color: "#dc2626" },
+          { value: row.hamasCount, color: "#16a34a" },
+          { value: row.unclearCount, color: "#94a3b8" }
+        ];
+
+        segments.forEach(segment => {
+          const segmentW = segment.value * scale;
+
+          if (segmentW > 0) {
+            ctx.fillStyle = segment.color;
+            ctx.fillRect(x, barY, segmentW, barH);
+          }
+
+          x += segmentW;
+        });
+
+        ctx.strokeStyle = "#d8e1e9";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(pad.left, barY, row.total * scale, barH);
+
+        ctx.fillStyle = "#425267";
+        ctx.font = "10px Arial";
+        ctx.fillText(
+          String(row.total),
+          Math.min(width - 28, pad.left + row.total * scale + 7),
+          barY + barH / 2 + 3
+        );
+      });
+    }
+
+    function trendEventsForChart(events) {
+      if (trendChartRange === "all") {
+        return events;
+      }
+
+      const days = Number(trendChartRange);
+      const dates = events
+        .map(event => parseDate(event.date))
+        .filter(Boolean)
+        .sort((a, b) => b - a);
+
+      const latest = dates[0];
+      if (!latest) return [];
+
+      const cutoff = new Date(latest);
+      cutoff.setUTCDate(cutoff.getUTCDate() - (days - 1));
+
+      return events.filter(event => {
+        const date = parseDate(event.date);
+        return date && date >= cutoff;
+      });
+    }
+
+    function trendAggregationMode(events) {
+      if (trendChartRange === "all") {
+        const range = visibleDateRange(events);
+        return range.days > 730 ? "month" : "week";
+      }
+
+      const days = Number(trendChartRange);
+      if (days <= 90) return "day";
+      return "week";
+    }
+
+    function aggregateTrendEvents(events, mode) {
+      const counts = new Map();
+
+      events.forEach(event => {
+        const date = parseDate(event.date);
+        if (!date) return;
+
+        let key;
+
+        if (mode === "month") {
+          key = date.toISOString().slice(0, 7);
+        } else if (mode === "week") {
+          const monday = new Date(date);
+          const day = monday.getUTCDay();
+          const shift = day === 0 ? -6 : 1 - day;
+          monday.setUTCDate(monday.getUTCDate() + shift);
+          key = monday.toISOString().slice(0, 10);
+        } else {
+          key = date.toISOString().slice(0, 10);
+        }
+
+        counts.set(key, (counts.get(key) || 0) + 1);
+      });
+
+      return [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    }
+
     function movingAverage(values, windowSize = 7) {
       return values.map((_, index) => {
         const start = Math.max(0, index - windowSize + 1);
@@ -1860,17 +2117,21 @@
       const { ctx, width, height } = resizeCanvas(canvas);
       ctx.clearRect(0, 0, width, height);
 
-      const counts = new Map();
+      const chartEvents = trendEventsForChart(events);
+      const aggregationMode = trendAggregationMode(chartEvents);
+      const rows = aggregateTrendEvents(chartEvents, aggregationMode);
 
-      for (const event of events) {
-        const date = parseDate(event.date);
-        if (!date) continue;
-        const key = date.toISOString().slice(0, 10);
-        counts.set(key, (counts.get(key) || 0) + 1);
+      const granularityLabels = {
+        day: "Napi bontás",
+        week: "Heti bontás",
+        month: "Havi bontás"
+      };
+
+      const granularityElement = $("trendGranularityLabel");
+      if (granularityElement) {
+        granularityElement.textContent =
+          granularityLabels[aggregationMode] || "Napi bontás";
       }
-
-      const rows = [...counts.entries()]
-        .sort((a, b) => a[0].localeCompare(b[0]));
 
       if (!rows.length) {
         ctx.fillStyle = "#64748b";
@@ -1884,7 +2145,12 @@
       }
 
       const daily = rows.map(row => row[1]);
-      const average = movingAverage(daily, 7);
+      const averageWindow =
+        aggregationMode === "day" ? 7 :
+        aggregationMode === "week" ? 4 :
+        3;
+
+      const average = movingAverage(daily, averageWindow);
       const trend = linearTrend(daily);
       const maxValue = Math.max(1, ...daily, ...average, ...trend);
 
@@ -1952,7 +2218,16 @@
 
       const legend = [
         { label: "Napi incidensszám", color: "#1f77b4", dash: false },
-        { label: "7 napos mozgóátlag", color: "#ff7f0e", dash: true },
+        {
+          label:
+            aggregationMode === "day"
+              ? "7 napos mozgóátlag"
+              : aggregationMode === "week"
+                ? "4 hetes mozgóátlag"
+                : "3 havi mozgóátlag",
+          color: "#ff7f0e",
+          dash: true
+        },
         { label: "Trendvonal", color: "#2ca02c", dash: true }
       ];
 
@@ -1987,7 +2262,9 @@
       [...new Set(labelIndexes)].forEach(index => {
         const x = xFor(index);
         ctx.fillText(
-          rows[index][0].slice(5),
+          aggregationMode === "month"
+            ? rows[index][0]
+            : rows[index][0].slice(5),
           Math.max(4, x - 18),
           height - 12
         );
@@ -2444,6 +2721,27 @@
       updateDashboard();
     });
 
+    document
+      .querySelectorAll("[data-trend-range]")
+      .forEach(button => {
+        button.addEventListener("click", () => {
+          trendChartRange = button.dataset.trendRange || "30";
+
+          document
+            .querySelectorAll("[data-trend-range]")
+            .forEach(item => {
+              item.classList.toggle(
+                "active",
+                item === button
+              );
+            });
+
+          if (payload) {
+            drawLineChart(filteredEvents());
+          }
+        });
+      });
+
     $("reloadBtn").addEventListener("click", loadData);
     $("reloadHeaderBtn").addEventListener("click", loadData);
 
@@ -2470,7 +2768,10 @@
     });
 
     window.addEventListener("resize", () => {
-      if (payload) updateDashboard();
+      if (payload) {
+        updateDashboard();
+        drawResponsePhaseChart(responsePhaseRowsCache);
+      }
     });
 
     loadData();
