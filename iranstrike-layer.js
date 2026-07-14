@@ -38,7 +38,15 @@
 
     const markerLayer = L.featureGroup();
 
-    const COLORS = {
+    const ATTACKER_COLORS = {
+      usa: "#2563eb",
+      iran: "#16a34a",
+      israel: "#dc2626",
+      other: "#7c3aed",
+      unknown: "#64748b"
+    };
+
+    const CATEGORY_COLORS = {
       airstrike: "#d73027",
       strike: "#ef6548",
       missile: "#f46d43",
@@ -165,7 +173,61 @@
     }
 
     function categoryColor(category) {
-      return COLORS[String(category || "other").toLowerCase()] || COLORS.other;
+      return (
+        CATEGORY_COLORS[String(category || "other").toLowerCase()] ||
+        CATEGORY_COLORS.other
+      );
+    }
+
+    function normalizeAttacker(value) {
+      const attacker = String(value || "unknown").trim().toLowerCase();
+
+      if (
+        ["usa", "us", "u.s.", "united states", "america", "american"]
+          .includes(attacker)
+      ) {
+        return "usa";
+      }
+
+      if (["iran", "iranian", "irgc"].includes(attacker)) {
+        return "iran";
+      }
+
+      if (["israel", "israeli", "idf", "iaf"].includes(attacker)) {
+        return "israel";
+      }
+
+      if (attacker && attacker !== "unknown") {
+        return "other";
+      }
+
+      return "unknown";
+    }
+
+    function attackerColor(event) {
+      const explicit = String(event?.attacker_color || "").trim();
+
+      if (/^#[0-9a-f]{6}$/i.test(explicit)) {
+        return explicit;
+      }
+
+      return (
+        ATTACKER_COLORS[normalizeAttacker(event?.attacker)] ||
+        ATTACKER_COLORS.unknown
+      );
+    }
+
+    function attackerLabel(event) {
+      const explicit = String(event?.attacker_label || "").trim();
+      if (explicit) return explicit;
+
+      const attacker = normalizeAttacker(event?.attacker);
+
+      if (attacker === "usa") return "United States";
+      if (attacker === "iran") return "Iran";
+      if (attacker === "israel") return "Israel";
+      if (attacker === "other") return "Other actor";
+      return "Unknown actor";
     }
 
     function markerSize(event) {
@@ -204,7 +266,10 @@
           event?.country,
           event?.category,
           event?.severity,
-          event?.source_name
+          event?.source_name,
+          event?.attacker,
+          event?.attacker_label,
+          event?.attacker_confidence
         ].join(" ").toLowerCase();
         if (!haystack.includes(query)) return false;
       }
@@ -214,15 +279,20 @@
 
     function markerFor(event, point) {
       const size = markerSize(event);
-      const color = categoryColor(event?.category);
+      const color = attackerColor(event);
+      const categoryRing = categoryColor(event?.category);
+      const attacker = normalizeAttacker(event?.attacker);
+      const attackerName = attackerLabel(event);
+
       const svg = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9" fill="${color}" stroke="#ffffff" stroke-width="3"/>
-          <circle cx="12" cy="12" r="11" fill="none" stroke="#111827" stroke-width="1.5"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10.5" fill="#ffffff" stroke="${categoryRing}" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="8.2" fill="${color}" stroke="#ffffff" stroke-width="2.2"/>
+          <circle cx="12" cy="12" r="11.3" fill="none" stroke="#111827" stroke-width="1"/>
         </svg>`;
 
       const icon = L.divIcon({
-        className: "iranstrike-marker-icon",
+        className: `iranstrike-marker-icon attacker-${escapeHtml(attacker)}`,
         html: svg,
         iconSize: [size, size],
         iconAnchor: [size / 2, size / 2],
@@ -241,20 +311,59 @@
         ? `<a href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener">Open source</a>`
         : "";
 
+      const confidence = String(
+        event?.attacker_confidence || "unknown"
+      ).trim();
+
+      const geocodeMethod = String(
+        event?.geocode_method || event?.geocode_source || ""
+      ).trim();
+
       marker.bindPopup(`
-        <div style="min-width:240px;line-height:1.45;">
+        <div style="min-width:250px;line-height:1.45;">
           <strong>${escapeHtml(event?.title || "IranStrike event")}</strong>
-          <div style="margin-top:5px;color:#5a6170;">${escapeHtml(event?.date || "Unknown date")}</div>
-          <div style="margin-top:6px;">
+          <div style="margin-top:5px;color:#5a6170;">
+            ${escapeHtml(event?.date || "Unknown date")}
+          </div>
+
+          <div style="margin-top:7px;padding:7px 9px;border-left:4px solid ${color};background:${color}14;border-radius:7px;">
+            <b>Attacker:</b> ${escapeHtml(attackerName)}<br />
+            <b>Confidence:</b> ${escapeHtml(confidence || "unknown")}
+          </div>
+
+          <div style="margin-top:7px;">
             <b>Category:</b> ${escapeHtml(event?.category || "other")}<br />
             <b>Severity:</b> ${escapeHtml(event?.severity || "unknown")}<br />
             <b>Location:</b> ${escapeHtml(event?.location || event?.country || "Unknown")}<br />
             <b>Coordinates:</b> ${point.lat.toFixed(4)}, ${point.lon.toFixed(4)}
+            ${
+              geocodeMethod
+                ? `<br /><b>Geocode:</b> ${escapeHtml(geocodeMethod)}`
+                : ""
+            }
           </div>
-          ${event?.description ? `<div style="margin-top:7px;">${escapeHtml(event.description)}</div>` : ""}
+
+          ${
+            event?.description
+              ? `<div style="margin-top:7px;">${escapeHtml(event.description)}</div>`
+              : ""
+          }
+
           ${sourceLink ? `<div style="margin-top:8px;">${sourceLink}</div>` : ""}
-          <div style="margin-top:7px;color:#5a6170;font-size:11px;">Source: IranStrike</div>
+
+          <div style="margin-top:7px;color:#5a6170;font-size:11px;">
+            Source: IranStrike
+          </div>
         </div>`);
+
+      marker.options.attackMetadata = {
+        attacker,
+        attackerLabel: attackerName,
+        attackerColor: color,
+        categoryColor: categoryRing,
+        eventId: event?.id || "",
+        source: "iranstrike"
+      };
 
       return marker;
     }
@@ -333,7 +442,7 @@
         }
       }
 
-      console.info("[iranstrike-layer-v3]", {
+      console.info("[iranstrike-layer-v4-attacker]", {
         enabled,
         loaded: events.length,
         filtered: events.filter(eventMatches).length,
@@ -358,7 +467,13 @@
       const response = await fetch(config.dataUrl, { cache: "no-store" });
       if (!response.ok) throw new Error(`IranStrike data HTTP ${response.status}`);
       payload = await response.json();
-      events = Array.isArray(payload?.events) ? payload.events : [];
+      events = Array.isArray(payload?.map_events)
+        ? payload.map_events
+        : Array.isArray(payload?.events)
+          ? payload.events.filter(
+              (event) => event?.map_visualizable !== false
+            )
+          : [];
       rebuild();
       return getState();
     }
@@ -401,7 +516,12 @@
         displayMode,
         filters: { ...filters },
         markerLayerOnMap: map.hasLayer(markerLayer),
-        markerCount: markerLayer.getLayers().length
+        markerCount: markerLayer.getLayers().length,
+        attackerCounts: visibleEvents.reduce((accumulator, event) => {
+          const attacker = normalizeAttacker(event?.attacker);
+          accumulator[attacker] = (accumulator[attacker] || 0) + 1;
+          return accumulator;
+        }, {})
       };
     }
 
@@ -427,15 +547,21 @@
     };
   }
 
-  if (!document.getElementById("iranstrike-v3-style")) {
+  if (!document.getElementById("iranstrike-v4-style")) {
     const style = document.createElement("style");
-    style.id = "iranstrike-v3-style";
+    style.id = "iranstrike-v4-style";
     style.textContent = `
       .iranstrike-marker-icon {
         background: transparent !important;
         border: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
+        transition: transform .16s ease, filter .16s ease;
+      }
+
+      .iranstrike-marker-icon:hover {
+        transform: scale(1.18);
+        filter: drop-shadow(0 3px 5px rgba(15, 23, 42, 0.35));
       }
       .leaflet-pane.leaflet-iranstrike-marker-pane-pane {
         z-index: 1000 !important;
