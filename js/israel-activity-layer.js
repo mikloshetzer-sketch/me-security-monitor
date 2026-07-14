@@ -125,6 +125,29 @@
 
     window.israelActivityLayer = layerGroup;
 
+    function mapUtils() {
+
+        return window.MEMapUtils || null;
+
+    }
+
+    function ensureMapUtils() {
+
+        const utils = mapUtils();
+
+        if (!utils) {
+
+            throw new Error(
+                "window.MEMapUtils is not available. "
+                + "Load js/map-utils.js before israel-activity-layer.js."
+            );
+
+        }
+
+        return utils;
+
+    }
+
     // -------------------------------------------------------------------------
     // General helpers
     // -------------------------------------------------------------------------
@@ -1408,6 +1431,31 @@
 
                     </div>
 
+                    ${
+                        Number(
+                            event.marker_overlap_count
+                        ) > 1
+                            ? `
+
+                                <div class="idf-popup__label">
+                                    Overlapping events
+                                </div>
+
+                                <div class="idf-popup__value">
+
+                                    ${escapeHtml(
+                                        String(
+                                            event.marker_overlap_count
+                                        )
+                                    )}
+                                    events share this locality
+
+                                </div>
+
+                            `
+                            : ""
+                    }
+
                 </div>
 
                 <div class="idf-popup__description">
@@ -1591,24 +1639,68 @@
 
     }
 
-    function createMarker(event) {
+    function createMarker(
+        event,
+        displayEvent = event
+    ) {
+
+        const markerEvent = {
+
+            ...event,
+
+            latitude:
+                displayEvent.display_latitude ??
+                displayEvent.latitude,
+
+            longitude:
+                displayEvent.display_longitude ??
+                displayEvent.longitude,
+
+            original_latitude:
+                displayEvent.original_latitude ??
+                event.latitude,
+
+            original_longitude:
+                displayEvent.original_longitude ??
+                event.longitude,
+
+            marker_overlap_group:
+                displayEvent.marker_overlap_group ||
+                "",
+
+            marker_overlap_index:
+                displayEvent.marker_overlap_index ??
+                0,
+
+            marker_overlap_count:
+                displayEvent.marker_overlap_count ??
+                1,
+
+            marker_pixel_offset:
+                displayEvent.marker_pixel_offset ||
+                {
+                    x: 0,
+                    y: 0
+                }
+
+        };
 
         const isModern =
             Boolean(
-                event.source_type ||
-                event.target_organization ||
-                event.threat_domain ||
-                event.operation_result
+                markerEvent.source_type ||
+                markerEvent.target_organization ||
+                markerEvent.threat_domain ||
+                markerEvent.operation_result
             );
 
         const marker =
             isModern
-                ? createModernMarker(event)
-                : createLegacyMarker(event);
+                ? createModernMarker(markerEvent)
+                : createLegacyMarker(markerEvent);
 
         marker.bindPopup(
 
-            buildPopup(event),
+            buildPopup(markerEvent),
 
             {
 
@@ -1616,7 +1708,7 @@
 
                 minWidth: 260,
 
-                autoPanPadding: [24, 24]
+                autoPanPadding: [42, 42]
 
             }
 
@@ -1625,6 +1717,41 @@
         marker.eventData = event;
 
         marker.__idfEvent = event;
+
+        marker.__idfDisplayEvent =
+            markerEvent;
+
+        const utils = mapUtils();
+
+        if (
+            utils &&
+            typeof utils.bindBringToFront === "function"
+        ) {
+
+            utils.bindBringToFront(
+                marker,
+                {
+                    resetOnClose: false
+                }
+            );
+
+        }
+
+        marker.on(
+            "popupopen",
+            () => {
+
+                if (
+                    utils &&
+                    typeof utils.bringLayerToFront === "function"
+                ) {
+
+                    utils.bringLayerToFront(marker);
+
+                }
+
+            }
+        );
 
         return marker;
 
@@ -1660,16 +1787,92 @@
         visibleEvents =
             events.filter(eventMatches);
 
-        visibleEvents.forEach(event => {
+        let displayEvents =
+            visibleEvents.map(event => ({
 
-            const marker =
-                createMarker(event);
+                ...event,
 
-            marker.addTo(group);
+                original_latitude:
+                    event.latitude,
 
-            markers.push(marker);
+                original_longitude:
+                    event.longitude,
 
-        });
+                display_latitude:
+                    event.latitude,
+
+                display_longitude:
+                    event.longitude,
+
+                marker_overlap_count:
+                    1,
+
+                marker_overlap_index:
+                    0,
+
+                marker_pixel_offset: {
+                    x: 0,
+                    y: 0
+                }
+
+            }));
+
+        const utils =
+            mapUtils();
+
+        if (
+            mapInstance &&
+            utils &&
+            typeof utils.cloneEventsWithDisplayCoordinates === "function"
+        ) {
+
+            displayEvents =
+                utils.cloneEventsWithDisplayCoordinates(
+
+                    visibleEvents,
+
+                    mapInstance,
+
+                    {
+
+                        coordinatePrecision: 6,
+
+                        minPixelRadius: 24,
+
+                        maxPixelRadius: 42,
+
+                        radiusStep: 5,
+
+                        startAngleDegrees: -90
+
+                    }
+
+                );
+
+        }
+
+        displayEvents.forEach(
+            (
+                displayEvent,
+                index
+            ) => {
+
+                const originalEvent =
+                    visibleEvents[index] ||
+                    displayEvent;
+
+                const marker =
+                    createMarker(
+                        originalEvent,
+                        displayEvent
+                    );
+
+                marker.addTo(group);
+
+                markers.push(marker);
+
+            }
+        );
 
         console.info(
 
@@ -1686,11 +1889,22 @@
                 visible:
                     visibleEvents.length,
 
+                overlappingGroups:
+                    displayEvents.filter(
+                        event =>
+                            Number(
+                                event.marker_overlap_count
+                            ) > 1
+                    ).length,
+
                 generatedAt:
                     payload?.generated_at || "",
 
                 filters:
-                    currentFilters()
+                    currentFilters(),
+
+                mapUtils:
+                    Boolean(utils)
 
             }
 
@@ -1872,6 +2086,8 @@
 
         injectStyles();
 
+        ensureMapUtils();
+
         ensurePane();
 
         const group =
@@ -1939,7 +2155,16 @@
 
             lastRefreshAt,
 
-            lastError
+            lastError,
+
+            mapUtilsAvailable:
+                Boolean(mapUtils()),
+
+            spreadEnabled:
+                Boolean(
+                    mapUtils() &&
+                    mapInstance
+                )
 
         };
 
