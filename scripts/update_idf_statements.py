@@ -221,7 +221,7 @@ COMMANDER_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
     ),
     "battalion_commander": (
         "battalion commander",
-        "commander in the",
+        "commander of the battalion",
         "battalion's commander",
     ),
     "naval_commander": (
@@ -244,6 +244,45 @@ COMMANDER_TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
     ),
     "unspecified_commander": (
         "commander",
+    ),
+}
+
+THREAT_DOMAIN_PRIORITY = {
+    "underground": 10,
+    "rocket_missile": 20,
+    "drone_uav": 30,
+    "naval": 40,
+    "production": 50,
+    "command": 60,
+    "weapons_logistics": 70,
+    "air_defense": 80,
+    "ground": 90,
+    "unspecified": 999,
+}
+
+AREA_MENTION_PATTERNS: dict[str, tuple[str, ...]] = {
+    "Northern Gaza Strip": (
+        "northern gaza strip",
+        "north gaza strip",
+        "northern gaza",
+    ),
+    "Southern Gaza Strip": (
+        "southern gaza strip",
+        "south gaza strip",
+        "southern gaza",
+    ),
+    "Central Gaza Strip": (
+        "central gaza strip",
+        "central gaza",
+    ),
+    "Yellow Line area": (
+        "yellow line",
+        "area of the yellow line",
+    ),
+    "Security Zone – South Lebanon": (
+        "security zone in southern lebanon",
+        "security zone where idf soldiers are operating",
+        "within the security zone",
     ),
 }
 
@@ -1024,7 +1063,27 @@ def infer_threat_domains(text: str) -> list[str]:
         if any(pattern in normalized for pattern in patterns):
             domains.append(domain)
 
-    return domains or ["unspecified"]
+    if not domains:
+        return ["unspecified"]
+
+    return sorted(
+        set(domains),
+        key=lambda domain: (
+            THREAT_DOMAIN_PRIORITY.get(domain, 999),
+            domain,
+        ),
+    )
+
+
+def infer_area_mentions(text: str) -> list[str]:
+    normalized = normalize_text(text)
+    mentions: list[str] = []
+
+    for label, patterns in AREA_MENTION_PATTERNS.items():
+        if any(pattern in normalized for pattern in patterns):
+            mentions.append(label)
+
+    return mentions
 
 
 def infer_locations(
@@ -1142,6 +1201,7 @@ def normalize_post(
     operation_results = infer_operation_results(text)
     commander_types = infer_commander_types(text, target_types)
     threat_domains = infer_threat_domains(text)
+    area_mentions = infer_area_mentions(text)
 
     event = {
         "id": stable_event_id(post),
@@ -1174,6 +1234,7 @@ def normalize_post(
         ),
         "threat_domains": threat_domains,
         "threat_domain": threat_domains[0],
+        "area_mentions": area_mentions,
         "operation_results": operation_results,
         "operation_result": operation_results[0],
         "locations": locations,
@@ -1197,6 +1258,13 @@ def normalize_post(
             else "none"
         ),
         "geocode_confidence": "high" if locations else "none",
+        "geospatial_confidence": (
+            "high"
+            if locations
+            else "regional_only"
+            if area_mentions
+            else "none"
+        ),
         "classification_method": "deterministic_keyword_rules",
         "classification_confidence": (
             "medium"
@@ -1303,6 +1371,7 @@ def build_map_events(
             map_event["map_visualizable"] = True
             map_event["geocode_method"] = "curated_exact_place_name"
             map_event["geocode_confidence"] = "high"
+            map_event["geospatial_confidence"] = "high"
             map_events.append(map_event)
 
     return map_events
@@ -1319,6 +1388,7 @@ def build_analytics(
     result_counts: Counter[str] = Counter()
     commander_type_counts: Counter[str] = Counter()
     threat_domain_counts: Counter[str] = Counter()
+    area_mention_counts: Counter[str] = Counter()
 
     for event in events:
         for region in event.get("regions") or []:
@@ -1341,6 +1411,9 @@ def build_analytics(
 
         for domain in event.get("threat_domains") or []:
             threat_domain_counts[domain] += 1
+
+        for area in event.get("area_mentions") or []:
+            area_mention_counts[area] += 1
 
         locations = event.get("locations") or []
         if locations:
@@ -1406,6 +1479,9 @@ def build_analytics(
         ),
         "threat_domain_counts": dict(
             threat_domain_counts.most_common()
+        ),
+        "area_mention_counts": dict(
+            area_mention_counts.most_common()
         ),
         "top_locations": dict(location_counts.most_common(20)),
     }
@@ -1540,6 +1616,11 @@ def main() -> int:
                 f"locations must be a list in {event.get('id')}"
             )
 
+        if not isinstance(event.get("area_mentions", []), list):
+            raise RuntimeError(
+                f"area_mentions must be a list in {event.get('id')}"
+            )
+
         if event.get("map_visualizable") is True and not event.get(
             "locations"
         ):
@@ -1555,7 +1636,7 @@ def main() -> int:
                 )
 
     output_payload = {
-        "schema_version": 3,
+        "schema_version": 4,
         "generated_at": generated_at,
         "source": {
             "name": "Israel Defense Forces official Telegram",
@@ -1574,8 +1655,10 @@ def main() -> int:
                 "target_types",
                 "commander_types",
                 "threat_domains",
+                "area_mentions",
                 "operation_results",
                 "locations",
+                "geospatial_confidence",
             ],
             "geocoding": (
                 "Only curated, explicitly named locations receive "
@@ -1588,6 +1671,7 @@ def main() -> int:
                 "One statement may contain multiple regions, activity types, targets or results.",
                 "One statement may generate multiple map points when several curated place names are explicit.",
                 "Coordinates identify named localities, not exact strike points.",
+                "Regional phrases are stored in area_mentions but are not converted into artificial point coordinates.",
                 "Target, commander, threat-domain and result fields are deterministic rule-based text classifications.",
                 "Not explicitly stated means the organization is not named in the statement; it is not an attribution judgment.",
                 "A vehicle is classified only when the wording indicates that the vehicle itself was targeted or operationally relevant.",
@@ -1599,7 +1683,7 @@ def main() -> int:
     }
 
     history_output = {
-        "schema_version": 3,
+        "schema_version": 4,
         "generated_at": generated_at,
         "source_url": args.source_url,
         "events": merged,
@@ -1625,3 +1709,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
