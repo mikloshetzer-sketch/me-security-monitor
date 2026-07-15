@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-15T10:15:19+00:00",
+  "generated_at": "2026-07-15T15:19:44+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,31 +46,31 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 11,
-      "map_visualizable_events": 4,
-      "total_map_points": 4,
+      "total_events": 13,
+      "map_visualizable_events": 5,
+      "total_map_points": 5,
       "multi_location_events": 0,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-14T16:38:09Z"
+      "latest_event_date": "2026-07-15T12:03:33Z"
     },
     "region_counts": {
-      "Gaza Strip": 9,
+      "Gaza Strip": 11,
       "South Lebanon": 2
     },
     "activity_type_counts": {
-      "airstrike": 11,
+      "airstrike": 13,
       "cross_border_fire": 1,
       "ground_activity": 1
     },
     "target_organization_counts": {
-      "Hamas": 8,
+      "Hamas": 10,
       "Hezbollah": 2,
       "Palestinian Islamic Jihad": 1,
       "Not explicitly stated": 1
     },
     "target_type_counts": {
-      "commander": 6,
-      "individual_operative": 5,
+      "commander": 8,
+      "individual_operative": 6,
       "weapons_production": 3,
       "armed_cell": 2,
       "military_structure": 2,
@@ -81,22 +81,22 @@
       "rocket_launcher": 1
     },
     "operation_result_counts": {
-      "struck": 11,
-      "eliminated": 9,
+      "struck": 13,
+      "eliminated": 11,
       "located": 2,
       "dismantled": 1
     },
     "commander_type_counts": {
+      "unspecified_commander": 2,
+      "nukhba_commander": 2,
       "cell_commander": 2,
       "company_commander": 2,
       "production_commander": 2,
-      "unspecified_commander": 1,
-      "naval_commander": 1,
-      "nukhba_commander": 1
+      "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 11,
-      "command": 5,
+      "ground": 13,
+      "command": 7,
       "production": 3,
       "rocket_missile": 2,
       "naval": 1,
@@ -104,18 +104,152 @@
       "underground": 1
     },
     "area_mention_counts": {
-      "Northern Gaza Strip": 6,
-      "Southern Gaza Strip": 4,
+      "Northern Gaza Strip": 7,
+      "Southern Gaza Strip": 5,
       "Security Zone – South Lebanon": 2,
       "Yellow Line area": 1
     },
     "top_locations": {
+      "Khan Yunis": 2,
       "Gaza City": 2,
-      "Nuseirat": 1,
-      "Khan Yunis": 1
+      "Nuseirat": 1
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18920",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18920",
+      "date": "2026-07-15T12:03:33Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF eliminated a terrorist who took part in the abduction of Colonel Asaf Hamami, Staff Sergeant Tomer Ahimas, and Sergeant Kiril Brodski during the October 7th massacre Yesterday (Tuesday), the IDF struck in the southern Gaza Strip and eliminated Hussam al-Shafie, a terrorist in the Eastern Khan Yunis Battalion of Hamas' military wing. During the October 7th massacre, al-Shafie infiltrated Kibbutz Nirim and took part in the abduction of Colonel Asaf Hamami, Staff Sergeant Tomer Ahimas, and Sergeant Kiril Brodski, who fell in the battle at the kibbutz. This elimination was made possible through intelligence gathering and with the direction of the IDF’s Gaza Division (143). Colonel Asaf Hamami himself served as the Commander of the Southern Brigade within the Gaza Division, and Staff Sergeant Tomer Ahimas and Sergeant Kiril Brodski served as soldiers under his command. Throughout the war, as well as in recent months, the terrorist advanced attacks and posed a threat to IDF troops operating in the area. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any immediate threat. Attached is footage of his elimination: https://bit.ly/4begEXl",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "individual_operative"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18920"
+    },
+    {
+      "id": "idf-idfofficial-18919",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18919",
+      "date": "2026-07-15T10:18:26Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: The IDF eliminated two Hamas Nukhba commanders in a strike in the northern Gaza Strip Yesterday (Tuesday), the IDF struck in the northern Gaza Strip and eliminated two Hamas Nukhba commanders. In the strike, the terrorist Ali Shamlakh, a deputy commander of a Hamas Nukhba company, was eliminated. As part of his role, Shamlakh attempted to advance terror attacks by training terrorists who were planning to execute terror attacks against Israeli civilians and IDF troops operating in the area. In addition, the strike eliminated the terrorist Nasser Louh, head of a Nukhba cell in Hamas' Sabra Battalion. The terrorists posed an immediate threat to IDF troops operating in the Gaza Strip and were eliminated in a precise aerial strike. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "nukhba_commander"
+      ],
+      "commander_type": "nukhba_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18919"
+    },
     {
       "id": "idf-idfofficial-18917",
       "source": "IDF official Telegram",
@@ -849,6 +983,80 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-18920-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18920",
+      "date": "2026-07-15T12:03:33Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF eliminated a terrorist who took part in the abduction of Colonel Asaf Hamami, Staff Sergeant Tomer Ahimas, and Sergeant Kiril Brodski during the October 7th massacre Yesterday (Tuesday), the IDF struck in the southern Gaza Strip and eliminated Hussam al-Shafie, a terrorist in the Eastern Khan Yunis Battalion of Hamas' military wing. During the October 7th massacre, al-Shafie infiltrated Kibbutz Nirim and took part in the abduction of Colonel Asaf Hamami, Staff Sergeant Tomer Ahimas, and Sergeant Kiril Brodski, who fell in the battle at the kibbutz. This elimination was made possible through intelligence gathering and with the direction of the IDF’s Gaza Division (143). Colonel Asaf Hamami himself served as the Commander of the Southern Brigade within the Gaza Division, and Staff Sergeant Tomer Ahimas and Sergeant Kiril Brodski served as soldiers under his command. Throughout the war, as well as in recent months, the terrorist advanced attacks and posed a threat to IDF troops operating in the area. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any immediate threat. Attached is footage of his elimination: https://bit.ly/4begEXl",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "individual_operative"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18920",
+      "parent_event_id": "idf-idfofficial-18920",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-18915-location-1",
       "source": "IDF official Telegram",
