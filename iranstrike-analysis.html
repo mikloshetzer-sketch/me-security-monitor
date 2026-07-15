@@ -711,39 +711,292 @@
     }
 
     .country-card {
+      position:relative;
       min-width:0;
-      padding:11px;
+      overflow:hidden;
+      padding:14px;
       border:1px solid var(--border);
+      border-top:4px solid var(--country-accent,var(--teal));
+      border-radius:13px;
+      background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--country-accent,var(--teal)) 15%, transparent), transparent 48%),
+        linear-gradient(145deg,#ffffff 0%,#f5f8fb 100%);
+      box-shadow:0 5px 16px rgba(26,46,66,.07);
+      transition:transform .16s ease, box-shadow .16s ease;
+    }
+
+    .country-card:hover {
+      transform:translateY(-2px);
+      box-shadow:0 10px 24px rgba(26,46,66,.11);
+    }
+
+    .country-card-top {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .country-flag {
+      display:grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      flex:0 0 auto;
+      border:1px solid rgba(23,50,77,.08);
       border-radius:11px;
-      background:#fff;
+      background:rgba(255,255,255,.82);
+      font-size:22px;
+      box-shadow:0 3px 9px rgba(26,46,66,.08);
     }
 
     .country-rank {
-      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:27px;
+      min-height:22px;
+      padding:3px 6px;
+      border-radius:999px;
+      background:var(--country-accent,var(--teal));
+      color:#fff;
       font-size:9px;
+      font-weight:900;
     }
 
     .country-name {
-      margin-top:4px;
+      margin-top:10px;
       overflow:hidden;
       color:var(--navy);
-      font-size:11px;
-      font-weight:800;
+      font-size:13px;
+      font-weight:900;
       text-overflow:ellipsis;
       white-space:nowrap;
     }
 
+    .country-value-row {
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:8px;
+      margin-top:8px;
+    }
+
     .country-value {
-      margin-top:7px;
       color:var(--navy-2);
-      font-size:19px;
-      font-weight:900;
+      font-size:25px;
+      font-weight:950;
+      line-height:1;
+    }
+
+    .country-share {
+      color:var(--muted);
+      font-size:10px;
+      font-weight:800;
+    }
+
+    .country-meta {
+      display:grid;
+      gap:4px;
+      margin-top:10px;
+      padding-top:9px;
+      border-top:1px solid rgba(216,225,233,.85);
+      color:#536477;
+      font-size:9px;
+      line-height:1.35;
+    }
+
+    .country-meta strong {
+      color:var(--navy);
     }
 
     .country-track span {
       display:block;
       height:100%;
-      background:var(--teal);
+      background:linear-gradient(90deg,var(--country-accent,var(--teal)),color-mix(in srgb,var(--country-accent,var(--teal)) 52%,#fff));
+    }
+
+    /* Rapid 24/48/72-hour publishable situation brief */
+    .rapid-brief-panel {
+      overflow:hidden;
+      border-left:6px solid var(--red);
+      background:
+        radial-gradient(circle at 100% 0%,rgba(220,38,38,.10),transparent 34%),
+        linear-gradient(135deg,#fff 0%,#f7fafc 100%);
+    }
+
+    .rapid-brief-head {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:13px;
+    }
+
+    .rapid-live-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:30px;
+      padding:5px 10px;
+      border:1px solid rgba(220,38,38,.16);
+      border-radius:999px;
+      background:rgba(220,38,38,.08);
+      color:#991b1b;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .rapid-live-badge::before {
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#dc2626;
+      box-shadow:0 0 0 4px rgba(220,38,38,.12);
+    }
+
+    .rapid-window-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .rapid-window-card {
+      position:relative;
+      min-width:0;
+      overflow:hidden;
+      padding:14px;
+      border:1px solid var(--border);
+      border-top:4px solid var(--window-accent,var(--navy-2));
+      border-radius:13px;
+      background:rgba(255,255,255,.94);
+      box-shadow:0 5px 16px rgba(26,46,66,.07);
+    }
+
+    .rapid-window-card::after {
+      content:"";
+      position:absolute;
+      right:-35px;
+      top:-35px;
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      background:color-mix(in srgb,var(--window-accent,var(--navy-2)) 10%,transparent);
+    }
+
+    .rapid-window-label {
+      position:relative;
+      z-index:1;
+      color:var(--window-accent,var(--navy-2));
+      font-size:10px;
+      font-weight:950;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+
+    .rapid-window-count {
+      position:relative;
+      z-index:1;
+      margin-top:7px;
+      color:var(--navy);
+      font-size:36px;
+      font-weight:950;
+      line-height:1;
+    }
+
+    .rapid-window-count span {
+      margin-left:5px;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:750;
+    }
+
+    .rapid-window-trend {
+      display:inline-flex;
+      margin-top:8px;
+      padding:4px 7px;
+      border-radius:999px;
+      background:#eef3f7;
+      color:#526274;
+      font-size:9px;
+      font-weight:850;
+    }
+
+    .rapid-window-trend.up {
+      background:rgba(220,38,38,.09);
+      color:#991b1b;
+    }
+
+    .rapid-window-trend.down {
+      background:rgba(22,163,74,.09);
+      color:#166534;
+    }
+
+    .rapid-window-facts {
+      position:relative;
+      z-index:1;
+      display:grid;
+      gap:6px;
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px solid var(--border);
+      color:#526274;
+      font-size:10px;
+      line-height:1.4;
+    }
+
+    .rapid-window-facts strong {
+      color:var(--navy);
+    }
+
+    .rapid-window-description {
+      position:relative;
+      z-index:1;
+      margin:10px 0 0;
+      color:#3e4f62;
+      font-size:10.5px;
+      line-height:1.5;
+    }
+
+    .rapid-summary-strip {
+      display:grid;
+      grid-template-columns:auto minmax(0,1fr);
+      gap:12px;
+      align-items:start;
+      margin-top:11px;
+      padding:12px 13px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#f3f7fa;
+    }
+
+    .rapid-summary-icon {
+      display:grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      border-radius:11px;
+      background:var(--navy);
+      color:#fff;
+      font-size:17px;
+      font-weight:900;
+    }
+
+    .rapid-summary-strip strong {
+      display:block;
+      color:var(--navy);
+      font-size:11px;
+    }
+
+    .rapid-summary-strip p {
+      margin:5px 0 0;
+      color:#526274;
+      font-size:11px;
+      line-height:1.55;
     }
 
     .development-list {
@@ -909,6 +1162,10 @@
         grid-template-columns:1fr;
       }
 
+      .rapid-window-grid {
+        grid-template-columns:1fr;
+      }
+
       .attacker-chart-layout {
         grid-template-columns:1fr;
       }
@@ -1002,7 +1259,8 @@
         <h2 class="side-title">Elemzési időszak</h2>
         <select id="daysSelect">
           <option value="1">Legutóbbi 24 óra</option>
-          <option value="3">Legutóbbi 3 nap</option>
+          <option value="2">Legutóbbi 48 óra</option>
+          <option value="3">Legutóbbi 72 óra</option>
           <option value="7">Legutóbbi 7 nap</option>
           <option value="30" selected>Legutóbbi 30 nap</option>
           <option value="90">Legutóbbi 90 nap</option>
@@ -1128,6 +1386,31 @@
           <div class="kpi-label">Trend</div>
           <div id="kpiTrend" class="kpi-value compact">—</div>
         </article>
+      </section>
+
+      <section class="panel rapid-brief-panel">
+        <div class="rapid-brief-head">
+          <div>
+            <div class="eyebrow">Daily intelligence brief</div>
+            <h2 style="margin-top:5px;">24 / 48 / 72 órás gyors helyzetkép</h2>
+            <div class="panel-note" style="margin-top:4px;text-align:left;">
+              Naponta publikálható összefoglaló a teljes IranStrike eseménylistából, koordinátakövetelmény nélkül
+            </div>
+          </div>
+          <div class="rapid-live-badge">Latest data window</div>
+        </div>
+
+        <div id="rapidWindowGrid" class="rapid-window-grid">
+          <div class="empty-state">A gyors helyzetkép betöltése…</div>
+        </div>
+
+        <div id="rapidSummaryStrip" class="rapid-summary-strip">
+          <div class="rapid-summary-icon">24</div>
+          <div>
+            <strong>Legfrissebb operatív összefoglaló</strong>
+            <p>Az eseményadatok betöltése folyamatban van.</p>
+          </div>
+        </div>
       </section>
 
       <section class="panel">
@@ -1438,16 +1721,20 @@
           .sort((a,b) => b-a)[0] ||
         new Date();
 
-      const cutoff = new Date(latest);
-
-      if (days > 0) {
-        cutoff.setUTCDate(cutoff.getUTCDate() - (days - 1));
-      }
+      const cutoff = days > 0
+        ? new Date(
+            latest.getTime() -
+            days * 24 * 60 * 60 * 1000
+          )
+        : null;
 
       return events.filter(event => {
         const date = parseDate(event.date);
 
-        if (days > 0 && (!date || date < cutoff)) {
+        if (
+          days > 0 &&
+          (!date || date < cutoff || date > latest)
+        ) {
           return false;
         }
 
@@ -2017,6 +2304,214 @@
           .join("");
     }
 
+    function countryVisual(name) {
+      const normalized = String(name || "").trim().toLowerCase();
+
+      const visuals = [
+        [["iran","iranian"], "🇮🇷", "#16a34a"],
+        [["israel","israeli"], "🇮🇱", "#2563eb"],
+        [["lebanon"], "🇱🇧", "#dc2626"],
+        [["syria"], "🇸🇾", "#b7791f"],
+        [["iraq"], "🇮🇶", "#7c3aed"],
+        [["jordan"], "🇯🇴", "#0f766e"],
+        [["yemen"], "🇾🇪", "#c2410c"],
+        [["saudi"], "🇸🇦", "#15803d"],
+        [["united states","usa","u.s."], "🇺🇸", "#1d4ed8"],
+        [["gaza","palestinian"], "🇵🇸", "#374151"],
+        [["united arab emirates","uae"], "🇦🇪", "#be123c"],
+        [["qatar"], "🇶🇦", "#9f1239"],
+        [["bahrain"], "🇧🇭", "#e11d48"],
+        [["kuwait"], "🇰🇼", "#047857"],
+        [["oman"], "🇴🇲", "#b91c1c"]
+      ];
+
+      for (const [aliases, flag, accent] of visuals) {
+        if (aliases.some(alias => normalized.includes(alias))) {
+          return { flag, accent };
+        }
+      }
+
+      return { flag:"🌐", accent:"#64748b" };
+    }
+
+    function eventsInRollingHours(hours) {
+      const dated = events
+        .map(event => ({ event, date:parseDate(event.date) }))
+        .filter(item => item.date)
+        .sort((a,b) => b.date-a.date);
+
+      if (!dated.length) return [];
+
+      const latest = dated[0].date;
+      const cutoff = new Date(
+        latest.getTime() - hours * 60 * 60 * 1000
+      );
+
+      return dated
+        .filter(item => item.date >= cutoff && item.date <= latest)
+        .map(item => item.event);
+    }
+
+    function previousRollingHours(hours) {
+      const dated = events
+        .map(event => ({ event, date:parseDate(event.date) }))
+        .filter(item => item.date)
+        .sort((a,b) => b.date-a.date);
+
+      if (!dated.length) return [];
+
+      const latest = dated[0].date;
+      const currentStart = new Date(
+        latest.getTime() - hours * 60 * 60 * 1000
+      );
+      const previousStart = new Date(
+        currentStart.getTime() - hours * 60 * 60 * 1000
+      );
+
+      return dated
+        .filter(item => item.date >= previousStart && item.date < currentStart)
+        .map(item => item.event);
+    }
+
+    function dominantLabel(list, selector, fallback = "Nincs adat") {
+      return countBy(list, selector)[0]?.[0] || fallback;
+    }
+
+    function windowTrend(current, previous) {
+      const delta = current - previous;
+      const percent = previous
+        ? Math.round(delta / previous * 100)
+        : current > 0
+          ? null
+          : 0;
+
+      if (delta > 0) {
+        return {
+          className:"up",
+          text:percent === null
+            ? `Új aktivitás · +${delta}`
+            : `Emelkedés · +${percent}%`
+        };
+      }
+
+      if (delta < 0) {
+        return {
+          className:"down",
+          text:`Csökkenés · ${percent}%`
+        };
+      }
+
+      return { className:"", text:"Stabil aktivitás" };
+    }
+
+    function describeWindow(list, hours) {
+      if (!list.length) {
+        return `Az elmúlt ${hours} órában nem került be dátumozott esemény a teljes IranStrike listába.`;
+      }
+
+      const actor = dominantLabel(
+        list,
+        event => attackerMeta(event).label,
+        "ismeretlen szereplő"
+      );
+      const place = dominantLabel(
+        list,
+        event => event.location || event.country || "Unknown",
+        "ismeretlen helyszín"
+      );
+      const category = dominantLabel(
+        list,
+        event => event.category || "other",
+        "egyéb"
+      );
+      const mapped = list.filter(mapVisualizable).length;
+
+      return `A ${hours} órás időablakban ${list.length} esemény szerepel. A leggyakoribb besorolás ${category}, a legtöbbször megjelenő helyszín ${place}, míg a vezető azonosított szereplő ${actor}. A rekordok közül ${mapped} rendelkezik térképi megjelenítéshez használható koordinátával.`;
+    }
+
+    function renderRapidWindows() {
+      const windows = [
+        { hours:24, label:"24 óra", accent:"#dc2626" },
+        { hours:48, label:"48 óra", accent:"#d97706" },
+        { hours:72, label:"72 óra", accent:"#285879" }
+      ];
+
+      const snapshots = windows.map(windowItem => {
+        const list = eventsInRollingHours(windowItem.hours);
+        const previous = previousRollingHours(windowItem.hours);
+        const trend = windowTrend(list.length, previous.length);
+
+        return {
+          ...windowItem,
+          list,
+          previous,
+          trend,
+          actor:dominantLabel(
+            list,
+            event => attackerMeta(event).label
+          ),
+          place:dominantLabel(
+            list,
+            event => event.location || event.country || "Unknown"
+          ),
+          category:dominantLabel(
+            list,
+            event => event.category || "other"
+          )
+        };
+      });
+
+      $("rapidWindowGrid").innerHTML = snapshots
+        .map(snapshot => `
+          <article
+            class="rapid-window-card"
+            style="--window-accent:${snapshot.accent}"
+          >
+            <div class="rapid-window-label">
+              ${escapeHtml(snapshot.label)}
+            </div>
+
+            <div class="rapid-window-count">
+              ${snapshot.list.length.toLocaleString("hu-HU")}
+              <span>esemény</span>
+            </div>
+
+            <div class="rapid-window-trend ${snapshot.trend.className}">
+              ${escapeHtml(snapshot.trend.text)}
+            </div>
+
+            <div class="rapid-window-facts">
+              <div><strong>Fő szereplő:</strong> ${escapeHtml(snapshot.actor)}</div>
+              <div><strong>Hotspot:</strong> ${escapeHtml(snapshot.place)}</div>
+              <div><strong>Fő kategória:</strong> ${escapeHtml(snapshot.category)}</div>
+            </div>
+
+            <p class="rapid-window-description">
+              ${escapeHtml(describeWindow(snapshot.list,snapshot.hours))}
+            </p>
+          </article>
+        `)
+        .join("");
+
+      const latest = snapshots[0];
+      const previous24 = latest.previous.length;
+      const direction = latest.list.length > previous24
+        ? "erősödött"
+        : latest.list.length < previous24
+          ? "mérséklődött"
+          : "lényegében változatlan maradt";
+
+      $("rapidSummaryStrip").innerHTML = `
+        <div class="rapid-summary-icon">24</div>
+        <div>
+          <strong>Legfrissebb operatív összefoglaló</strong>
+          <p>
+            Az elmúlt 24 órában ${latest.list.length.toLocaleString("hu-HU")} esemény került a teljes IranStrike adatlistába. Az aktivitás az előző 24 órás időszakhoz képest ${direction}. A leggyakoribb helyszín ${escapeHtml(latest.place)}, a vezető kategória ${escapeHtml(latest.category)}, a legtöbbször azonosított szereplő pedig ${escapeHtml(latest.actor)} volt. A számok forráseseményeket jelölnek, nem kizárólag térképezhető rekordokat.
+          </p>
+        </div>
+      `;
+    }
+
     function renderCountryCards(list) {
       const rows = countBy(
         list,
@@ -2032,25 +2527,59 @@
       const max = Math.max(1,...rows.map(row=>row[1]));
 
       $("countryCards").innerHTML = rows
-        .map(([name,count],index) => `
-          <article class="country-card">
-            <div class="country-rank">
-              ${String(index+1).padStart(2,"0")}
-            </div>
+        .map(([name,count],index) => {
+          const countryEvents = list.filter(event =>
+            (event.country || event.location || "Unknown") === name
+          );
+          const visual = countryVisual(name);
+          const share = count / Math.max(1,list.length) * 100;
+          const topCategory = dominantLabel(
+            countryEvents,
+            event => event.category || "other"
+          );
+          const topActor = dominantLabel(
+            countryEvents,
+            event => attackerMeta(event).label
+          );
 
-            <div class="country-name" title="${escapeHtml(name)}">
-              ${escapeHtml(name)}
-            </div>
+          return `
+            <article
+              class="country-card"
+              style="--country-accent:${visual.accent}"
+            >
+              <div class="country-card-top">
+                <div class="country-flag" aria-hidden="true">
+                  ${visual.flag}
+                </div>
+                <div class="country-rank">
+                  #${index+1}
+                </div>
+              </div>
 
-            <div class="country-value">
-              ${count.toLocaleString("hu-HU")}
-            </div>
+              <div class="country-name" title="${escapeHtml(name)}">
+                ${escapeHtml(name)}
+              </div>
 
-            <div class="country-track">
-              <span style="width:${count/max*100}%"></span>
-            </div>
-          </article>
-        `)
+              <div class="country-value-row">
+                <div class="country-value">
+                  ${count.toLocaleString("hu-HU")}
+                </div>
+                <div class="country-share">
+                  ${share.toFixed(1)}%
+                </div>
+              </div>
+
+              <div class="country-track">
+                <span style="width:${count/max*100}%"></span>
+              </div>
+
+              <div class="country-meta">
+                <div><strong>Fő kategória:</strong> ${escapeHtml(topCategory)}</div>
+                <div><strong>Fő szereplő:</strong> ${escapeHtml(topActor)}</div>
+              </div>
+            </article>
+          `;
+        })
         .join("");
     }
 
@@ -2427,6 +2956,7 @@
       renderRanks("countryList",countries);
       renderAttackerCards(list);
       renderCountryCards(list);
+      renderRapidWindows();
       drawAttackerDonut(list);
       drawTrend(list);
       drawCategories(list);
