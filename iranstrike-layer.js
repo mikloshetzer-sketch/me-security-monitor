@@ -246,9 +246,11 @@
 
         const latestRaw = payload?.analytics?.overview?.latest_event_date;
         const latestDate = parseDate(latestRaw) || new Date();
-        const cutoff = new Date(latestDate);
-        cutoff.setUTCDate(cutoff.getUTCDate() - (filters.days - 1));
-        if (eventDate < cutoff) return false;
+        const cutoff = new Date(
+          latestDate.getTime() -
+          filters.days * 24 * 60 * 60 * 1000
+        );
+        if (eventDate < cutoff || eventDate > latestDate) return false;
       }
 
       const category = String(event?.category || "other").toLowerCase();
@@ -512,6 +514,12 @@
         generatedAt: payload?.generated_at || "",
         source: payload?.source || null,
         analytics: payload?.analytics || null,
+        totalSourceCount: Array.isArray(payload?.events)
+          ? payload.events.length
+          : events.length,
+        totalMapSourceCount: Array.isArray(payload?.map_events)
+          ? payload.map_events.length
+          : events.length,
         heatmapAvailable: typeof L.heatLayer === "function",
         displayMode,
         filters: { ...filters },
@@ -573,3 +581,4 @@
 
   window.createIranStrikeLayer = createIranStrikeLayer;
 })();
+
