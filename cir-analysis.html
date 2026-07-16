@@ -993,23 +993,436 @@
     }
 
   </style>
+
+<style id="cir-unified-koszeg-style-v1">
+  :root{
+    --bg:#edf2f6;
+    --panel:#ffffff;
+    --panel-soft:#f7f9fb;
+    --border:#d5e0e8;
+    --border-strong:#c4d2dd;
+    --text:#173149;
+    --muted:#687c8e;
+    --soft:#edf2f6;
+    --accent:#173b57;
+    --accent-2:#2879b8;
+    --teal:#078a80;
+    --positive:#15976a;
+    --negative:#d94238;
+    --warning:#e78308;
+    --shadow:0 10px 26px rgba(20,54,78,.10);
+    --shadow-soft:0 4px 14px rgba(20,54,78,.07);
+    --radius:17px;
+  }
+
+  body{
+    background:linear-gradient(180deg,#eaf0f5 0%,#f5f8fa 42%,#edf2f6 100%);
+    color:var(--text);
+  }
+
+  .site-header{
+    position:relative;
+    top:auto;
+    z-index:30;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    min-height:168px;
+    padding:30px clamp(22px,4vw,70px);
+    border:0;
+    background:
+      radial-gradient(circle at 92% 8%,rgba(87,161,207,.27),transparent 34%),
+      linear-gradient(110deg,#17384f 0%,#204d6d 55%,#326b91 100%);
+    box-shadow:none;
+    color:#fff;
+  }
+
+  .brand-wrap{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    min-width:0;
+  }
+
+  .brand-mark{
+    width:50px;
+    height:50px;
+    display:grid;
+    place-items:center;
+    flex:0 0 auto;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:12px;
+    background:rgba(255,255,255,.10);
+    color:#fff;
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:.08em;
+    box-shadow:none;
+  }
+
+  .brand-title{
+    color:#b9e0fa;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+  }
+
+  .brand-sub{
+    margin-top:8px;
+    color:#fff;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(25px,3.2vw,47px);
+    font-weight:800;
+    line-height:1.02;
+    letter-spacing:-.025em;
+  }
+
+  .brand-description{
+    max-width:780px;
+    margin-top:9px;
+    color:rgba(255,255,255,.86);
+    font-size:12px;
+    line-height:1.55;
+  }
+
+  .header-actions{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:9px;
+    flex-wrap:wrap;
+    max-width:680px;
+  }
+
+  .header-pill,.header-btn{
+    width:auto;
+    min-height:42px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 16px;
+    border:1px solid rgba(255,255,255,.20);
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+    white-space:nowrap;
+    backdrop-filter:blur(5px);
+  }
+
+  .header-pill.cir-pill{
+    background:rgba(120,70,232,.70);
+  }
+
+  .header-btn:hover{
+    background:rgba(255,255,255,.20);
+    box-shadow:none;
+  }
+
+  .header-btn.primary{
+    background:#2879b8;
+    border-color:#2879b8;
+    color:#fff;
+  }
+
+  #app{
+    width:min(1700px,100%);
+    min-height:calc(100vh - 168px);
+    margin:0 auto;
+    padding:22px;
+    grid-template-columns:330px minmax(0,1fr);
+    gap:20px;
+  }
+
+  #sidebar{
+    top:18px;
+    height:calc(100vh - 204px);
+    padding:0 4px 0 0;
+    border-right:0;
+    background:transparent;
+  }
+
+  #sidebar > h1{
+    margin:0 0 6px;
+    color:#173850;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:24px;
+    line-height:1.06;
+  }
+
+  main{
+    padding:0;
+    overflow:visible;
+  }
+
+  .panel{
+    padding:17px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:#fff;
+    box-shadow:var(--shadow);
+  }
+
+  #sidebar .panel{
+    margin-bottom:11px;
+    padding:14px;
+    border-radius:15px;
+    box-shadow:var(--shadow-soft);
+  }
+
+  h1,h2,h3{color:#173850}
+
+  h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:20px;
+  }
+
+  .muted,.small{color:var(--muted)}
+
+  button,select,input[type="search"]{
+    min-height:40px;
+    border-color:#cad8e2;
+    border-radius:10px;
+    background:#fff;
+  }
+
+  button{
+    background:#2879b8;
+    color:#fff;
+    font-weight:800;
+  }
+
+  button.secondary{
+    border-color:#cad8e2;
+    background:#fff;
+    color:#23425a;
+  }
+
+  .toggle{
+    min-height:36px;
+    padding:8px 9px;
+    border:1px solid #dbe5ec;
+    border-radius:9px;
+    background:#f8fafc;
+  }
+
+  .toggle:hover{
+    border-color:#aec0ce;
+    background:#eef4f8;
+  }
+
+  .toggle input{accent-color:#2879b8}
+
+  .status-box,.metric,.rank-row,.assessment-row,.intel-item,.impact-row{
+    border:1px solid #dbe4eb;
+    background:#f8fafc;
+  }
+
+  .metric{
+    min-height:105px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+  }
+
+  .metric-label{
+    order:2;
+    margin-top:6px;
+    color:#65798b;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+  }
+
+  .metric-value{
+    order:1;
+    margin-top:0;
+    color:#16466a;
+    font-size:26px;
+    font-weight:900;
+  }
+
+  .metric-value.compact{font-size:15px}
+
+  .pill{
+    min-height:30px;
+    display:inline-flex;
+    align-items:center;
+    padding:5px 9px;
+    border:1px solid #d6e1e8;
+    border-radius:999px;
+    background:#edf3f7;
+    color:#214d6b;
+    font-size:10px;
+    font-weight:800;
+  }
+
+  .assessment-lead{
+    padding:14px 15px;
+    border:1px solid #d7e2e9;
+    border-left:5px solid #2879b8;
+    border-radius:12px;
+    background:#f8fafc;
+  }
+
+  .progress{
+    height:7px;
+    background:#e4ebf0;
+  }
+
+  .progress > span{
+    background:linear-gradient(90deg,#2879b8,#53a0cf);
+  }
+
+  .risk-needle,.risk-center{background:#173b57}
+
+  .chart-wrap{height:300px}
+
+  .response-baseline{
+    border-left:6px solid var(--negative);
+    border-radius:13px;
+    background:#fff7f6;
+  }
+
+  .response-summary-card{
+    min-height:100px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:13px;
+    border:1px solid #dbe4eb;
+    border-radius:12px;
+    background:#f8fafc;
+    text-align:center;
+  }
+
+  .response-summary-card strong{
+    order:1;
+    margin-top:0;
+    color:#16466a;
+    font-size:26px;
+  }
+
+  .response-summary-card span{
+    order:2;
+    margin-top:6px;
+    color:#65798b;
+    font-size:9px;
+    font-weight:800;
+  }
+
+  .response-phase{
+    border-color:#d7e2e9;
+    border-left:5px solid #2879b8;
+    border-radius:13px;
+    background:#fff;
+    box-shadow:0 4px 13px rgba(20,54,78,.055);
+  }
+
+  .response-phase-bar{
+    height:7px;
+    background:#e5edf2;
+  }
+
+  .response-phase-bar span{
+    background:linear-gradient(90deg,#2879b8,#078a80);
+  }
+
+  .response-method{
+    border-color:#cbd9e3;
+    background:#f7fafc;
+  }
+
+  .chart-filter-btn{
+    border-color:#cad8e2;
+    border-radius:999px;
+    background:#fff;
+    color:#234d69;
+  }
+
+  .chart-filter-btn.active{
+    background:#2879b8;
+    border-color:#2879b8;
+    color:#fff;
+  }
+
+  .response-chart-wrap{height:400px}
+
+  @media(max-width:1050px){
+    .site-header{
+      min-height:auto;
+      align-items:flex-start;
+      flex-direction:column;
+      padding:23px 16px;
+    }
+
+    .header-actions{
+      width:100%;
+      justify-content:flex-start;
+    }
+
+    #app{
+      grid-template-columns:1fr;
+      padding:14px;
+    }
+
+    #sidebar{
+      position:static;
+      height:auto;
+      overflow:visible;
+      padding-right:0;
+    }
+  }
+
+  @media(max-width:760px){
+    .brand-mark{display:none}
+    .brand-sub{font-size:29px}
+
+    .response-summary-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .response-phase{grid-template-columns:1fr}
+    .response-phase-value{text-align:left}
+  }
+
+  @media(max-width:520px){
+    #app{padding:10px}
+    .response-summary-grid{grid-template-columns:1fr}
+  }
+</style>
+
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="brand-wrap">
-      <div class="brand-mark">TV</div>
-      <div>
-        <div class="brand-title">Törésvonalak.blog</div>
-        <div class="brand-sub">Elemzés. Tények. Kontextus. · CIR Conflict Intelligence Dashboard</div>
+  
+<header class="site-header">
+  <div class="brand-wrap">
+    <div class="brand-mark">ME</div>
+    <div>
+      <div class="brand-title">TÖRÉSVONALAK.BLOG</div>
+      <div class="brand-sub">CIR Conflict Intelligence Dashboard</div>
+      <div class="brand-description">
+        Verified incident analysis based on the Centre for Information Resilience dataset,
+        including geographic concentration, conflict trends and operational assessments.
       </div>
     </div>
+  </div>
 
-    <div class="header-actions">
-      <button id="reloadHeaderBtn" class="header-btn" type="button">Adatok frissítése</button>
-      <button id="backHeaderBtn" class="header-btn primary" type="button">Interaktív térkép</button>
-    </div>
-  </header>
+  <div class="header-actions">
+    <span class="header-pill cir-pill">CIR verified incidents</span>
+    <button id="reloadHeaderBtn" class="header-btn" type="button">Adatok frissítése</button>
+    <button id="backHeaderBtn" class="header-btn primary" type="button">Interaktív térkép</button>
+  </div>
+</header>
+
 
   <div id="app">
     <aside id="sidebar">
