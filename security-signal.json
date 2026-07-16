@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-16 06:32 UTC",
+    "updated": "2026-07-16 14:24 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-10",
     "period_end": "2026-07-16",
-    "total_events": 168,
-    "total_risk": 190.67,
-    "normalized_risk_score": 76.3,
+    "total_events": 163,
+    "total_risk": 205.97,
+    "normalized_risk_score": 82.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 63,
-    "security": 2,
+    "military": 67,
+    "security": 3,
     "political": 18,
-    "other": 85
+    "other": 75
   },
   "source_counts": {
-    "news": 162,
+    "news": 157,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 129.61
+      "risk": 137.46
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.15
+      "risk": 19.45
     },
     {
       "name": "Israel",
-      "risk": 12.6
-    },
-    {
-      "name": "Iraq",
-      "risk": 5.2
+      "risk": 14.55
     },
     {
       "name": "Tehran",
-      "risk": 4.8
+      "risk": 9.0
+    },
+    {
+      "name": "Iraq",
+      "risk": 6.55
     }
   ],
   "top_events": [
@@ -70,9 +70,36 @@
       "date": "2026-07-16",
       "category": "military",
       "source_type": "news",
-      "title": "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
+      "title": "US military says it completed latest strikes on Iran, targets included Bandar Abbas - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQa0VSSEhJSHhNNVl6b2dXTWNoa0FjeV9KQkZOMUs5aUtvM0Rwc1FPYk9pd3NlSDgxcy1oVDZqWjQ0c1dFb3NXLUdBOTFpWlJwUld6ZXkwN1lENTREaFpVZ0lDWFY5Y0UzVjdGbHVjQVRsc0FIXzZMSVJfdkVaamtnVnNmZ2lPQm9jV0pCMjdlajFhMmRFVERaLXVvNG1JSi1yYlRxU0NUaGZIUlFhXzJteHhvcTA"
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcm1DZ002b2p4eXVXWGJheThfVE05elZjcGw2MUZ0WWNPZ0JudzZ3dkRXTlF1elByVnpiSy15V1JvOUhuTEVVcXBOVlRCTzZWbUJfdVhWRXE1dUs1MVN0UC1PemhmUEhOQWVMcVpJUXgyLUJCNEYta3FhNFBEN1RxeWczV2VHRV8yd24tbWE1cW1vQU45cmJ6Nzg0b3ctc0xuWFBzU1oxTlBlM2l1cE5oTHFXa2ZobXhzRUppUTFDblB3aE1vVDFzUUlCU3MxQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran, US step up attacks, though release of American may signal path to climbdown - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran targets military bases as US launches wave of strikes",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c2lq1ed28jxo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "US strikes oil tanker with missiles as it enforces new Iran blockade",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/clyqwkegqk0o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -88,54 +115,27 @@
       "date": "2026-07-16",
       "category": "military",
       "source_type": "news",
-      "title": "Iran launches strikes on Gulf, even as FM visits Qatar - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQNUN6a09ubUNDT0xKQVZhYzZfVGlFb0V2YWx3QlVKMTJJQjZ4czh2MjBUYnhHWUdhR2lmNXYtdVJEQUVBUzFEN1dpWmozeWxIakttVHRYZjB1MUE1WmNlSERkMEh3ckVLcURUYzhYZG9xSGhQZFZDejlWMWZqSk5WWHprWUtPSGstdks2dmQxWFB1QkpUdnpWS0ZRODM2TE9XOWRBLUo2SUhSRnlTNm9MdUhpaFhKS1dtYXfSAb8BQVVfeXFMTWV5U3F5NFBHWEY1X0Y1dFRmbkdoSnk1N2NMQnZ4VXpIdUVQZ1BZb2wxWGg1cmR2MHlGbDZUcVJTYVdKRGtzVlBYMUVaN0E3ZUpFVnJjdS1fZUV1cHRQNmtaOExmMDZIbENaSmNyN3lYc2Q2OUp1RWxnZlhiSXZPQWxuREtacDcxVm1zZkFRRDBJV0owY0NocGtiR0pXM0NzZmoyVGVuT1F0Q05tR0ZBeGdyUVFDTVJuaFNGYlFpb2M"
+      "title": "US launches new attacks on Iran as Tehran targets Gulf sites - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYzNEU1NFdUVxNlNwT0tZWUxqYzdtUFByelc5RVlkNEZ5UDhCNjd5NE1BMU8yLUFBWlBHY2VCbFprRmpyTU1tZUlaaDlscmoyOVFLallnclNQZ2xJMTZxdkxlaWozdW9uUjJFY010QzdyV190UGRfQ3p4UC1jLVF2elJ4ZFY0T21wMUxMclNZNE14R3Z2VXRadERiWVRidV9abnBz0gGoAUFVX3lxTE9iXzVJakdIWGJhQkhXVjBPOXdES1NlVkZHNmxuR3BkcjRkWEY4dU5qd0dBRFlYcEZ6VVRJcWtwUlZNYmhjYVYtSGpjYlNXN3J1Vk51bXdRWUlLOVNWampMeHoxRlNub3ZjOVZRRWVJRURIX01FWl80VWUxT3lmREs1TFoxaHBNY2tkcTllRTVzQzFHSzhEVVlHaUpFdEhqOWFxVzVnWGtyTA"
     },
     {
-      "score": 2.7,
-      "date": "2026-07-15",
+      "score": 3.0,
+      "date": "2026-07-16",
       "category": "military",
       "source_type": "news",
-      "title": "US launches multiple strikes on Iran, which retaliates against US targets in region - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQUFEyN1NxTHNCaG5RT2lOTWY4WWxWd1JQUGpLdV8wY3J0RVp3RmZaN21hcm9YX1A1TWdYc3RMU3BKNV9rd0tqdnM4SEpmamFRLXJIU1NvdnhUYlo5WDFnb2dPY2JfZU5HXzBMR184ei1kSS1zeUthWmltb1VzZWhOR0lCX2FlR0NXSGUxY0gxbVJTVkw2RFo5NnZSVXFhcGYxOUhOS1BJU2gza3VYY3VHT2JEWVV2VHdCdDdmeTRyOElucVF4Mk9r"
+      "title": "US strikes Iran, tanker, as Tehran hits Kuwait, Jordan: What’s the latest - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbzkzR3NFYXkzSWlKalJQSWJNclRZTUx3SHhKZ2hSd1JfWkpCVGRtUlUySnpwX3ZXWlZONkVwSnlSeE5vQTZfRG5yd3RWSThacVR0Q2cxX0E3NzAzRTlHQTVFejN6UWE4S2FxNndQRTZTRzdXZEdMdFNXTXVCT2lVaXpIZDhyLV82ZWNnelhmTWtVVHlNTEZiX3VNclNGVWFtbUp4Qm5OMVQ1amNZN2fSAbMBQVVfeXFMTzM5X2F4ZDJyYXZwUXB5SHI3X2xkbEdhRnliZklkVzBMU3Azbjk4Q185OWxhUVVNR2xCWUJoYTlHRG4tLU9HaEIxLW9xX0RuQXl2SGh2bzN4alBXcmV0Z1VzMGQ5a29zR0lOMVl5UlBKV0ZYUXBNY3YwVjB2amlBelF6ckRmcFN4Zm5TaU1laERuOThGalBERHNCZDhGdV81YUE3dERlcUFSaXB6dDRQRVFodlE"
     },
     {
-      "score": 2.7,
-      "date": "2026-07-15",
+      "score": 3.0,
+      "date": "2026-07-16",
       "category": "military",
       "source_type": "news",
-      "title": "US says it has begun new wave of strikes on Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObUM2X1dwWlEtWHFxM3dFS1pvOWlDcHNlR0NLTTBiTHR2RU01Y21HTXYwSW5FUng3UFZ1S21GdGhJQlJObjJySjBEa2RLSDJMN3cwNDVjMTJmNW9QVi1UOUVvQ0daRXIyVDJQN0RHX3VZWXRqVElkc0xYUEMtQlVwWW5JYzN0cnhnSmlYS1NhajlBTXhNWUZSRlZWLVo"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcmxvcGs1aXFWckc4eXhtejF1N0hTeUlYakpDOHRfdTFRUk1ab3lTaXE0QVRNWlUyQnhrWnhaVEsySmE0R0ZuODVuUy1iMEdPbFZxNXotNkF2bU1VeENlZ3kwQTBKU3E3WDYwdnlPT00wZi0zeVplanZIbjZtWjY4TVNqRlBST2VENW1OMzFRb3VGSFgtalZodnF6c2ZPc2kyM1NDeUc3LTZnWUF4SXlaeE1LYzNWcExPamZubmhWRGRLQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump threatens to bomb bridges and power plants unless Iran resumes talks",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cy0608wy8pro?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "US attacks Iran as IRGC claims strikes on US military sites in Gulf - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMlZTaHktNXZnUHFpU1JTZFNPanpEamdkcmY0cy1FQ3B0NDJORVNGcXRaanNkUC1BeFU0OHhFWnNGQ1ZXYjZuTy1VMkJwN2hnWTI3TE9kRDdUd2s0ZG1uZG5DTkE3ZUZlODJQS2U5WkM2d2tYSDFtTFJ0bm5iODdsTWsyS3BzTG42Yml5SnJrOF9KNnZHczZCUXU3Yi1UdWRxSEQ0V3RFUmZjeXVO0gGyAUFVX3lxTFA2eWZ2Mm1VRjhuLUd3R3ZyWExJU1c1dmxZRERic0hrNWxSTlJWeG02dmNCNThfbUFkZmdCS2tVbm5EbE9FOGZhT0NqNnBwRXVsZW9adGF0dDQ4WjFtNmo0Rkhwbnhha0FBV2REY3l3eVVkbVdqUlBrb21yREV1dmQ1bzdlLW9ua2swTU5QNHZmdHl5Mk45cG9TaHgycEZpdnNGUGdCS1hmR2o5c0NuOFFKOEE"
+      "title": "‘Destroyed my whole life’: Lebanese families wiped out in Israeli attacks - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZkprNEp1VnlIeTMzbFlxUTlfZDN3aHBZcU13TVlLc2JNOVpLVkxobjlmeUhncTNrNWI1VmZvZ0t4VTlNTnNrU183Yy01MW9BQUFPaHAzTDdFaEpDZUJweWZaQmVOVEk4SEVabEtLUTdfTHpEYWpZSm14UERjT0dJMGxKQWRCbjlXSWI1Y1BMdFRYNjdhLVhTZExLVUczTEJXYWpRdV9VWUxmRTjSAbABQVVfeXFMTnRBYW9nZE1hOTlUc2w0UEd3V0c3ZFNOQmtGZUhwR1VZWDFhQk9oQW1GOHNJQThnUWhCV3NZVC1NN1ZISnRPRUdORmNGRG9RUTFfSHRSZjJseUtJWVQ2N25id3VVUXVKeUYtTmE5UTJsbUhIandlNlR4QmF3YzdQTExBZUZfc1hoc3NVbU1DdFl3cHVhanZYQ1ZMYkhBWXAwaldWcjZzWkhpYXVNZ2JnTzM"
     }
   ]
 }
