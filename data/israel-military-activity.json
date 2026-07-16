@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-16T05:19:52+00:00",
+  "generated_at": "2026-07-16T10:20:57+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,24 +46,24 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 13,
+      "total_events": 14,
       "map_visualizable_events": 5,
       "total_map_points": 5,
       "multi_location_events": 0,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-15T12:03:33Z"
+      "latest_event_date": "2026-07-16T09:04:44Z"
     },
     "region_counts": {
-      "Gaza Strip": 11,
+      "Gaza Strip": 12,
       "South Lebanon": 2
     },
     "activity_type_counts": {
-      "airstrike": 13,
+      "airstrike": 14,
       "cross_border_fire": 1,
       "ground_activity": 1
     },
     "target_organization_counts": {
-      "Hamas": 10,
+      "Hamas": 11,
       "Hezbollah": 2,
       "Palestinian Islamic Jihad": 1,
       "Not explicitly stated": 1
@@ -72,19 +72,19 @@
       "commander": 8,
       "individual_operative": 6,
       "weapons_production": 3,
+      "weapons_storage": 2,
       "armed_cell": 2,
       "military_structure": 2,
       "smuggling_network": 1,
-      "weapons_storage": 1,
       "tunnel": 1,
       "targeted_vehicle": 1,
       "rocket_launcher": 1
     },
     "operation_result_counts": {
-      "struck": 13,
+      "struck": 14,
       "eliminated": 11,
-      "located": 2,
-      "dismantled": 1
+      "dismantled": 2,
+      "located": 2
     },
     "commander_type_counts": {
       "unspecified_commander": 2,
@@ -95,19 +95,20 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 13,
+      "ground": 14,
       "command": 7,
       "production": 3,
+      "weapons_logistics": 2,
       "rocket_missile": 2,
       "naval": 1,
-      "weapons_logistics": 1,
       "underground": 1
     },
     "area_mention_counts": {
       "Northern Gaza Strip": 7,
       "Southern Gaza Strip": 5,
+      "Yellow Line area": 2,
       "Security Zone – South Lebanon": 2,
-      "Yellow Line area": 1
+      "Central Gaza Strip": 1
     },
     "top_locations": {
       "Khan Yunis": 2,
@@ -116,6 +117,67 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18923",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18923",
+      "date": "2026-07-16T09:04:44Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: Overnight: The IDF struck and dismantled four Hamas weapons storage facilities Overnight (Wednesday), the IDF struck in the central Gaza Strip and dismantled four weapons storage facilities belonging to the Hamas terrorist organization. The facilities contained Kalashnikov rifles, RPGs, grenades, explosive devices, and additional military equipment. The weapons were intended to be used in attacks against IDF troops operating in the area of the Yellow Line and against Israeli civilians, and were dismantled in order to remove the threat. Prior to the strikes, steps were taken to mitigate harm to civilians, including the issuing of advance warnings, the use of precise munitions, and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "weapons_storage"
+      ],
+      "target_type": "weapons_storage",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "weapons_logistics",
+        "ground"
+      ],
+      "threat_domain": "weapons_logistics",
+      "area_mentions": [
+        "Central Gaza Strip",
+        "Yellow Line area"
+      ],
+      "operation_results": [
+        "struck",
+        "dismantled"
+      ],
+      "operation_result": "struck",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18923"
+    },
     {
       "id": "idf-idfofficial-18920",
       "source": "IDF official Telegram",
