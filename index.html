@@ -1049,6 +1049,496 @@
     }
 
   </style>
+
+  <style id="koszeg-main-map-style-v1">
+    /* ============================================================
+       Törésvonalak / Kőszeg Monitor inspired main-map skin
+       Styling and header copy only. Existing IDs and JS stay intact.
+       ============================================================ */
+
+    :root {
+      --sidebar-width: 350px;
+      --sidebar-bg: #edf2f6;
+      --sidebar-card: #ffffff;
+      --sidebar-border: #d5e0e8;
+      --sidebar-text: #173149;
+      --sidebar-muted: #687c8e;
+      --sidebar-accent: #173b57;
+      --sidebar-accent-soft: #e9f1f6;
+      --sidebar-radius: 14px;
+
+      --bg: #edf2f6;
+      --bg-soft: #f5f8fa;
+      --panel: rgba(255,255,255,.98);
+      --panel-strong: rgba(255,255,255,.99);
+      --line: rgba(26,58,82,.12);
+      --line-strong: rgba(26,58,82,.20);
+      --text: #173149;
+      --muted: #687c8e;
+      --accent: #2879b8;
+      --accent-2: #4b97c7;
+      --accent-soft: rgba(40,121,184,.10);
+      --success: #15976a;
+      --warning: #e78308;
+      --critical: #d94238;
+      --shadow: 0 10px 26px rgba(20,54,78,.12);
+      --shadow-soft: 0 4px 14px rgba(20,54,78,.08);
+    }
+
+    body {
+      background:#edf2f6;
+    }
+
+    /* Main map remains the functional centre */
+    #map {
+      left:var(--sidebar-width);
+      width:calc(100vw - var(--sidebar-width));
+    }
+
+    /* Kőszeg-style dark blue hero header over the map */
+    .topbar {
+      left:calc(var(--sidebar-width) + 16px);
+      right:16px;
+      top:14px;
+      min-height:118px;
+      padding:18px 22px;
+      align-items:center;
+      border:0;
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 94% 5%,rgba(89,166,214,.27),transparent 34%),
+        linear-gradient(110deg,#17384f 0%,#214f70 58%,#326d94 100%);
+      box-shadow:0 10px 28px rgba(14,45,67,.24);
+      color:#fff;
+      pointer-events:none;
+    }
+
+    .brand {
+      align-items:flex-start;
+      gap:14px;
+      max-width:760px;
+    }
+
+    .brand-mark {
+      width:46px;
+      height:46px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:13px;
+      background:rgba(255,255,255,.11);
+      color:#fff;
+      box-shadow:none;
+    }
+
+    .brand-title {
+      color:#b9e1fb;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.13em;
+    }
+
+    .brand-sub {
+      margin-top:5px;
+      color:#fff;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(24px,2.8vw,40px);
+      font-weight:800;
+      line-height:1.02;
+      letter-spacing:-.025em;
+    }
+
+    .brand-description {
+      max-width:720px;
+      margin-top:7px;
+      color:rgba(255,255,255,.88);
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    .top-metrics {
+      max-width:650px;
+      justify-content:flex-end;
+      gap:8px;
+    }
+
+    .metric-pill {
+      min-height:38px;
+      padding:7px 13px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      font-size:10.5px;
+      box-shadow:none;
+      backdrop-filter:blur(5px);
+    }
+
+    .metric-pill.live-pill {
+      border-color:rgba(51,211,145,.38);
+      background:rgba(21,151,106,.22);
+    }
+
+    .metric-pill .dot {
+      background:#35d38f;
+      box-shadow:0 0 0 4px rgba(53,211,143,.14);
+    }
+
+    .report-link {
+      min-height:38px;
+      padding:8px 14px;
+      border:1px solid #2879b8;
+      border-radius:999px;
+      background:#2879b8;
+      box-shadow:none;
+      font-size:10.5px;
+    }
+
+    .report-link:hover {
+      background:#1e679e;
+    }
+
+    /* Permanent light sidebar */
+    #controlPanel {
+      width:var(--sidebar-width);
+      max-width:var(--sidebar-width);
+      padding:15px;
+      border-right:1px solid var(--sidebar-border);
+      background:linear-gradient(180deg,#f4f7f9 0%,#eaf0f4 100%);
+      box-shadow:5px 0 20px rgba(20,54,78,.10);
+    }
+
+    .control-panel-heading {
+      margin:0 0 12px;
+      padding:6px 6px 15px;
+      border-bottom:1px solid var(--sidebar-border);
+    }
+
+    .control-panel-heading .control-main-title {
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:22px;
+      letter-spacing:-.015em;
+    }
+
+    .control-panel-heading .control-subtitle {
+      color:#687c8e;
+    }
+
+    .control-panel-heading .control-status-line {
+      display:inline-flex;
+      min-height:28px;
+      padding:5px 9px;
+      border:1px solid rgba(21,151,106,.24);
+      border-radius:999px;
+      background:rgba(21,151,106,.08);
+      color:#08784f;
+    }
+
+    /* Every source/filter area becomes a clean white card */
+    #controlPanel .acc,
+    #controlPanel [data-control-block],
+    #controlPanel .israel-section,
+    #controlPanel .attack-annotations-control-block,
+    #controlPanel .cir-incidents-control-block,
+    #controlPanel .iranstrike-control-block {
+      margin:10px 0 0 !important;
+      border:1px solid #d4e0e8 !important;
+      border-radius:14px;
+      background:#fff;
+      box-shadow:0 4px 13px rgba(20,54,78,.055);
+    }
+
+    #controlPanel [data-control-block],
+    #controlPanel .israel-section,
+    #controlPanel .attack-annotations-control-block,
+    #controlPanel .cir-incidents-control-block,
+    #controlPanel .iranstrike-control-block {
+      padding:11px !important;
+    }
+
+    #controlPanel .acc {
+      overflow:hidden;
+    }
+
+    #controlPanel .acc-btn {
+      min-height:46px;
+      padding:12px;
+      background:#fff;
+      color:#173149;
+    }
+
+    #controlPanel .acc-btn[aria-expanded="true"] {
+      background:#f2f6f9;
+    }
+
+    #controlPanel .acc-panel {
+      padding:11px;
+      background:#fbfcfd;
+    }
+
+    #controlPanel .row label {
+      min-height:38px;
+      border-color:#dbe5ec;
+      border-radius:10px;
+      background:#fff;
+      color:#253b50;
+    }
+
+    #controlPanel .row label:hover {
+      border-color:#adc0ce;
+      background:#f4f8fa;
+    }
+
+    #controlPanel input[type="checkbox"],
+    #controlPanel input[type="radio"] {
+      accent-color:#2879b8;
+    }
+
+    #controlPanel input[type="text"],
+    #controlPanel input[type="search"],
+    #controlPanel select {
+      border-color:#cbd8e2;
+      background:#fff;
+    }
+
+    #controlPanel .btn-mini,
+    #controlPanel button.btn-mini,
+    .control-quick-button {
+      border-color:#c8d6e0;
+      border-radius:10px;
+      background:#fff;
+      color:#23425a;
+    }
+
+    .control-quick-button.primary {
+      border-color:#2879b8;
+      background:#2879b8;
+      color:#fff;
+    }
+
+    /* Timeline and legend look like the white Kőszeg news cards */
+    #timelineToggle {
+      top:148px;
+      right:16px;
+      border:1px solid rgba(26,58,82,.13);
+      border-radius:999px;
+      background:#fff;
+      color:#173850;
+    }
+
+    #timelinePanel {
+      top:192px;
+      right:16px;
+      width:380px;
+      max-height:calc(100vh - 208px);
+      padding:16px;
+      border:1px solid #d4e0e8;
+      border-radius:17px;
+      background:rgba(255,255,255,.98);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+
+    #timelinePanel h3,
+    #legendPanel h3 {
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:21px;
+      text-transform:none;
+      letter-spacing:normal;
+    }
+
+    #timelinePanel .acc {
+      overflow:hidden;
+      margin-top:10px;
+      padding:0;
+      border:1px solid #dbe4eb;
+      border-radius:12px;
+      background:#fff;
+    }
+
+    #timelinePanel .acc-btn {
+      min-height:43px;
+      padding:10px 11px;
+      color:#173149;
+    }
+
+    #timelinePanel .acc-panel {
+      padding:10px;
+      background:#f8fafc;
+    }
+
+    .mini-item,
+    .risk-row,
+    .rank-row,
+    .event-row,
+    .hotspot-row {
+      border-color:#dbe4eb;
+      background:#fff;
+    }
+
+    #legendToggle {
+      left:calc(var(--sidebar-width) + 16px);
+      bottom:16px;
+      border-radius:999px;
+      background:#fff;
+    }
+
+    #legendPanel {
+      left:calc(var(--sidebar-width) + 16px);
+      bottom:58px;
+      width:310px;
+      border:1px solid #d4e0e8;
+      border-radius:17px;
+      background:rgba(255,255,255,.98);
+    }
+
+    .leaflet-control-zoom {
+      margin-top:150px !important;
+      margin-left:16px !important;
+    }
+
+    .leaflet-control-zoom a {
+      border-color:#d4e0e8 !important;
+      color:#173850 !important;
+      box-shadow:0 4px 12px rgba(20,54,78,.10);
+    }
+
+    .leaflet-popup-content-wrapper {
+      border:1px solid #d5e0e8;
+      border-radius:15px;
+      box-shadow:0 10px 26px rgba(20,54,78,.16);
+    }
+
+    @media (max-width:1100px) {
+      .topbar {
+        align-items:flex-start;
+        flex-direction:column;
+        min-height:150px;
+      }
+
+      .top-metrics {
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      #timelineToggle {
+        top:180px;
+      }
+
+      #timelinePanel {
+        top:224px;
+        max-height:calc(100vh - 240px);
+      }
+
+      .leaflet-control-zoom {
+        margin-top:190px !important;
+      }
+    }
+
+    @media (max-width:900px) {
+      #map {
+        left:0;
+        width:100vw;
+      }
+
+      .topbar {
+        left:10px;
+        right:10px;
+        top:10px;
+        min-height:155px;
+        padding:16px;
+      }
+
+      .brand-sub {
+        font-size:27px;
+      }
+
+      .brand-description {
+        font-size:10px;
+      }
+
+      #controlToggle {
+        display:block;
+        top:174px;
+        left:10px;
+        border-radius:999px;
+        background:#fff;
+      }
+
+      #controlPanel {
+        inset:216px auto 10px 10px;
+        width:min(350px,calc(100vw - 20px));
+        max-width:calc(100vw - 20px);
+        max-height:calc(100vh - 226px);
+      }
+
+      #timelineToggle {
+        top:174px;
+        right:10px;
+      }
+
+      #timelinePanel {
+        top:216px;
+        right:10px;
+        width:calc(100vw - 20px);
+        max-height:calc(100vh - 226px);
+      }
+
+      #legendToggle {
+        left:10px;
+      }
+
+      #legendPanel {
+        left:10px;
+      }
+
+      .leaflet-control-zoom {
+        margin-top:222px !important;
+        margin-left:10px !important;
+      }
+    }
+
+    @media (max-width:620px) {
+      .topbar {
+        min-height:178px;
+      }
+
+      .brand-mark {
+        display:none;
+      }
+
+      .brand-sub {
+        font-size:24px;
+      }
+
+      .top-metrics {
+        gap:6px;
+      }
+
+      .metric-pill,
+      .report-link {
+        min-height:32px;
+        padding:6px 9px;
+        font-size:9px;
+      }
+
+      #controlToggle,
+      #timelineToggle {
+        top:197px;
+      }
+
+      #controlPanel,
+      #timelinePanel {
+        top:238px;
+        max-height:calc(100vh - 248px);
+      }
+
+      .leaflet-control-zoom {
+        margin-top:244px !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -1056,16 +1546,18 @@
     <div class="brand">
       <div class="brand-mark">ME</div>
       <div>
-        <div class="brand-title">ME Security Monitor</div>
-        <div class="brand-sub">Közel-keleti biztonsági monitor, események, trendek és kockázati indikátorok</div>
+        <div class="brand-title">TÖRÉSVONALAK · BIZTONSÁGPOLITIKAI MONITOR</div>
+        <div class="brand-sub">Közel-Kelet Biztonsági Monitor</div>
+        <div class="brand-description">Nyílt forrású térképi események, műveleti rétegek és kockázati indikátorok egyetlen elemzőfelületen.</div>
       </div>
     </div>
 
     <div class="top-metrics">
-      <div class="metric-pill"><span class="dot"></span><span>Dashboard stílus</span></div>
-      <div class="metric-pill"><span class="dot"></span><span>Timeline / heat / risk</span></div>
-      <div class="metric-pill"><span class="dot"></span><span>Middle East focus</span></div>
-      <a class="report-link" href="./reports/" target="_blank" rel="noopener">📰 Napi jelentések</a>
+      <div class="metric-pill live-pill"><span class="dot"></span><span>Élő monitoring</span></div>
+      <div class="metric-pill"><span>OSINT térkép</span></div>
+      <div class="metric-pill"><span>Timeline és kockázat</span></div>
+      <div class="metric-pill"><span>Forrásrétegek</span></div>
+      <a class="report-link" href="./reports/" target="_blank" rel="noopener">Napi jelentések</a>
     </div>
   </div>
 
