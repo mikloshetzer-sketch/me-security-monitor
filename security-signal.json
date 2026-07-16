@@ -1,24 +1,24 @@
 {
   "meta": {
-    "updated": "2026-07-15 23:13 UTC",
+    "updated": "2026-07-16 03:38 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-07-09",
-    "period_end": "2026-07-15",
+    "period_start": "2026-07-10",
+    "period_end": "2026-07-16",
     "total_events": 165,
-    "total_risk": 201.38,
-    "normalized_risk_score": 80.6,
+    "total_risk": 186.77,
+    "normalized_risk_score": 74.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 60,
+    "military": 62,
     "security": 2,
     "political": 18,
-    "other": 85
+    "other": 83
   },
   "source_counts": {
     "news": 159,
@@ -27,28 +27,37 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 133.88
+      "risk": 123.51
     },
     {
       "name": "Gaza Strip",
-      "risk": 22.95
+      "risk": 20.15
     },
     {
       "name": "Israel",
-      "risk": 10.45
+      "risk": 11.75
     },
     {
       "name": "Tehran",
-      "risk": 8.1
+      "risk": 7.5
     },
     {
       "name": "Iraq",
-      "risk": 5.9
+      "risk": 5.55
     }
   ],
   "top_events": [
     {
       "score": 3.51,
+      "date": "2026-07-15",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, July 15, 2026",
+      "location": "Iran",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-july-15-2026/"
+    },
+    {
+      "score": 3.12,
       "date": "2026-07-14",
       "category": "military",
       "source_type": "isw",
@@ -58,6 +67,24 @@
     },
     {
       "score": 3.0,
+      "date": "2026-07-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZ09hT2dSaHFGQjJ2ckhSbUVfdGhGdVZYLXA4SGZ2ZWJCNTlkQU1LN2pYdURFX2F1QTFhNnVCMzZjMklKRXowdnF1YjdXSDR2TGVHMjBSb21pT1JmT3ZuNTNEWktLd3FZNlFHV29fVDhmTElfVXUxOWs0RDdWUHg2Qkt0QXJpMTgxUm02a08yOVBxRTJTOUhiSkVtQXBKclFWQUppMThudWFvV3dXejYyN3BBMzhiM2JKUXc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches fresh strikes on Iran as Trump warns Tehran it 'better behave'",
+      "location": "Tehran",
+      "url": "https://www.bbc.co.uk/news/articles/c9323zgq6wvo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "news",
@@ -66,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQUFEyN1NxTHNCaG5RT2lOTWY4WWxWd1JQUGpLdV8wY3J0RVp3RmZaN21hcm9YX1A1TWdYc3RMU3BKNV9rd0tqdnM4SEpmamFRLXJIU1NvdnhUYlo5WDFnb2dPY2JfZU5HXzBMR184ei1kSS1zeUthWmltb1VzZWhOR0lCX2FlR0NXSGUxY0gxbVJTVkw2RFo5NnZSVXFhcGYxOUhOS1BJU2gza3VYY3VHT2JEWVV2VHdCdDdmeTRyOElucVF4Mk9r"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "news",
@@ -75,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObUM2X1dwWlEtWHFxM3dFS1pvOWlDcHNlR0NLTTBiTHR2RU01Y21HTXYwSW5FUng3UFZ1S21GdGhJQlJObjJySjBEa2RLSDJMN3cwNDVjMTJmNW9QVi1UOUVvQ0daRXIyVDJQN0RHX3VZWXRqVElkc0xYUEMtQlVwWW5JYzN0cnhnSmlYS1NhajlBTXhNWUZSRlZWLVo"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "news",
@@ -84,16 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcmxvcGs1aXFWckc4eXhtejF1N0hTeUlYakpDOHRfdTFRUk1ab3lTaXE0QVRNWlUyQnhrWnhaVEsySmE0R0ZuODVuUy1iMEdPbFZxNXotNkF2bU1VeENlZ3kwQTBKU3E3WDYwdnlPT00wZi0zeVplanZIbjZtWjY4TVNqRlBST2VENW1OMzFRb3VGSFgtalZodnF6c2ZPc2kyM1NDeUc3LTZnWUF4SXlaeE1LYzNWcExPamZubmhWRGRLQQ"
     },
     {
-      "score": 3.0,
-      "date": "2026-07-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches fresh strikes on Iran as Trump warns Tehran it 'better behave'",
-      "location": "Tehran",
-      "url": "https://www.bbc.co.uk/news/articles/c9323zgq6wvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "news",
@@ -102,7 +120,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cy0608wy8pro?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "news",
@@ -111,31 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMlZTaHktNXZnUHFpU1JTZFNPanpEamdkcmY0cy1FQ3B0NDJORVNGcXRaanNkUC1BeFU0OHhFWnNGQ1ZXYjZuTy1VMkJwN2hnWTI3TE9kRDdUd2s0ZG1uZG5DTkE3ZUZlODJQS2U5WkM2d2tYSDFtTFJ0bm5iODdsTWsyS3BzTG42Yml5SnJrOF9KNnZHczZCUXU3Yi1UdWRxSEQ0V3RFUmZjeXVO0gGyAUFVX3lxTFA2eWZ2Mm1VRjhuLUd3R3ZyWExJU1c1dmxZRERic0hrNWxSTlJWeG02dmNCNThfbUFkZmdCS2tVbm5EbE9FOGZhT0NqNnBwRXVsZW9adGF0dDQ4WjFtNmo0Rkhwbnhha0FBV2REY3l3eVVkbVdqUlBrb21yREV1dmQ1bzdlLW9ua2swTU5QNHZmdHl5Mk45cG9TaHgycEZpdnNGUGdCS1hmR2o5c0NuOFFKOEE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "news",
       "title": "US resumes Iran ports blockade as Gulf attacks continue: What’s the latest? - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcEFKSmJnejlUYlhRZWpRRjB3SHVCcUY4YXZQRGRUS2szREpMckpCTk5JbGk4em1iR1N1bHo0amwzLTBhY29XTnNzamJoWnBSQ2JBYmtsXy1wZHh6UXJPb19FNk9GS2xhSVBlTGp0RGczSjBkd24zUUhGM0g5R1hHOHlWQmh1WnpsajdJdDRjS3d4RUt4SU9aMEF4TjFpc0dGNUtjOHNvakJZaFZ6b3B4Tld2b9IBuAFBVV95cUxPWnBGU05FSjRkajJlSG5XeU5PTTB0eFBTYW96bElIMFZTVGdBV2VidU5wQjhiOTAyRFBFdEJMQTdZVUVxcDQ0UjIxUTZOYUgtNXpka2ZpLWstRHdSbndRWTVMNXBQNlZCTmprc0EzWWZ1U0ZONmFuT1YyNUd4cGhodi0wVEVIRXRXcWJiRXluSmdMZVg5dEptTVNfWTR3SzBON1RiYlo4bkZiU3hiYTVhZUhQQkQ0NGY4"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "How Iran’s southern coast is bearing the brunt of US attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNlBuRDBXVFY5UlhBZkNacHd6dUh2Q21VbDJMUU8wVmJTNkFtWDFBS1Nma01mLTJqSUZMOFQwQ2IwS0E5QmZyS1ZqV3d1S0FjbjNEMEYxV2UybWktQWZ3azM4Mm1GZlY0d2dQdzVXRk9OcGF1WFNHalJnLWJsUGhnWmFIdDBkTU1XdGdESEtXbWFLdzF5X0E4aHA0Q3NLUVBBUzVLNFpTZTZCcjE4cGVr0gG0AUFVX3lxTE9Eb1pjT3VqYk91bkFqTWt3NlNFTnhXOHhrbW5ya2NHYWRTM3ZTbmJFaWZwRzBMTUp6TlpSMmpKdE00SWEyaGVRWTBHZHhOTERZZlJDYU53alRzTm5Cak93aml4WlVIRnljVF8wMk9lUVNsTFZkcWg2RVUyV2ZtSU90Zl9lZVFWRE9YOUVJMUQ5dkZSd3lTckRZd0VtX3J6Vi0yR292bGplQlowSkFsQW1WUWxPMA"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran launches attacks across region as US strikes continue - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNUFl5Wl9NZ3NGTHVHQ3hudUdhTmY3alpzeXlicjc1ZkNMUTVITDFHS2pqWllJNmlzVVAtN2g4T2NqTVVvRHBYOV9aVGhrUkVCNGI2VGs1ZUpjV3dCTWFtUmpnNlNTVlo1SG81YUVEU2QxZGROMEdJSDY3a1MzZ3gyMFcwemNkZzBianhzYWZpTndGbTB0T2JiN2hYamktN0tYbXJSb2xRNnlhS0tjakHSAbMBQVVfeXFMTkJBMU5zdVhobWp6WUZkanByZFpERFJuQVFaNFE0ME1iTEl3UWVTWWdnN0VXZDc2Z3N1anpNYVc1a1A4YUtUNVUyd21obUREbmlhQXVzenBNVUhkQmdGXzZqbktmVW9ReUR5QWwzZHlnaU9rVzZTUld0TVQwUzcxNDBKalMxSlQ2MUloaVNrNnBjNk9MN1FrRmVoMkU2VHhhMkxBbjg0M21yMHA3SDdfZmNKTVk"
     }
   ]
 }
