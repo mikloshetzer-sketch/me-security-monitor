@@ -1236,406 +1236,496 @@
     }
   </style>
 
+  <style id="koszeg-light-style-v2">
+    /* ============================================================
+       Törésvonalak / Kőszeg Monitor inspired LIGHT visual layer
+       Styling only — data logic and dashboard structure unchanged
+       ============================================================ */
 
-  <style id="koszeg-monitor-style-override">
     :root {
-      --bg:#0f172a;
-      --panel:#111827;
-      --panel-soft:#172033;
-      --border:rgba(255,255,255,.09);
-      --border-strong:rgba(255,255,255,.15);
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --navy:#f3f4f6;
-      --navy-2:#60a5fa;
-      --teal:#2dd4bf;
-      --blue:#60a5fa;
-      --green:#4ade80;
-      --red:#f87171;
-      --amber:#fbbf24;
-      --purple:#a78bfa;
-      --gray:#94a3b8;
-      --shadow:0 12px 30px rgba(0,0,0,.30);
-      --shadow-soft:0 8px 22px rgba(0,0,0,.18);
-      --radius:16px;
-    }
-
-    html,
-    body {
-      background:#0f172a;
-      color:#e5e7eb;
-      font-family:Arial,Helvetica,sans-serif;
+      --bg:#edf2f6;
+      --panel:#ffffff;
+      --panel-soft:#f5f8fb;
+      --border:#d6e0e8;
+      --border-strong:#c4d2dd;
+      --text:#183047;
+      --muted:#677b8f;
+      --navy:#173b57;
+      --navy-2:#2e6487;
+      --teal:#078a80;
+      --blue:#2879b8;
+      --green:#15976a;
+      --red:#d94238;
+      --amber:#e78308;
+      --purple:#7846e8;
+      --gray:#667b8d;
+      --shadow:0 8px 24px rgba(20,54,78,.08);
+      --shadow-soft:0 3px 12px rgba(20,54,78,.06);
+      --radius:18px;
     }
 
     body {
+      color:var(--text);
       background:
-        radial-gradient(circle at 10% 0%,rgba(37,99,235,.12),transparent 28%),
-        radial-gradient(circle at 92% 10%,rgba(14,165,233,.08),transparent 26%),
-        #0f172a;
+        linear-gradient(180deg,#eaf0f5 0%,#f5f8fa 44%,#edf2f6 100%);
     }
 
+    /* Large blue header — dark colour is limited to the hero area */
     .site-header {
-      background:rgba(17,24,39,.97);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      box-shadow:0 8px 24px rgba(0,0,0,.24);
-      backdrop-filter:blur(12px);
+      position:relative;
+      top:auto;
+      min-height:168px;
+      padding:30px clamp(22px,4vw,70px);
+      align-items:center;
+      background:
+        radial-gradient(circle at 92% 8%,rgba(87,161,207,.27),transparent 34%),
+        linear-gradient(110deg,#17384f 0%,#204d6d 55%,#326b91 100%);
+      border:0;
+      box-shadow:none;
+      color:#fff;
+    }
+
+    .brand-wrap {
+      align-items:flex-start;
+      gap:16px;
     }
 
     .brand-mark {
-      background:linear-gradient(135deg,#2563eb,#0ea5e9);
-      color:#fff;
-      box-shadow:0 6px 18px rgba(37,99,235,.28);
-    }
-
-    .brand-title,
-    .side-title,
-    .panel h2,
-    h1,
-    .country-name,
-    .actor-card-value,
-    .attacker-legend-name,
-    .vital-title,
-    .development-card h3,
-    .kpi-value,
-    .side-metric strong {
-      color:#f3f4f6;
-    }
-
-    .brand-sub,
-    .muted,
-    .panel-note,
-    .kpi-label,
-    .country-rank,
-    .actor-card-label,
-    .attacker-legend-share,
-    .development-topline,
-    .development-meta,
-    .coverage-row,
-    .side-metric span,
-    .risk-caption {
-      color:#9ca3af;
-    }
-
-    .header-btn {
-      border-color:rgba(255,255,255,.13);
-      background:#172033;
-      color:#e5e7eb;
+      width:50px;
+      height:50px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.10);
       box-shadow:none;
     }
 
+    .brand-title {
+      color:#b9e0fa;
+      font-size:12px;
+      letter-spacing:.13em;
+    }
+
+    .brand-sub {
+      max-width:690px;
+      margin-top:8px;
+      color:#fff;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(25px,3.2vw,47px);
+      font-weight:800;
+      line-height:1.02;
+      letter-spacing:-.025em;
+    }
+
+    .header-actions {
+      max-width:660px;
+      gap:9px;
+    }
+
+    .header-btn {
+      min-height:42px;
+      padding:9px 16px;
+      border:1px solid rgba(255,255,255,.20);
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      font-size:11px;
+      box-shadow:none;
+      backdrop-filter:blur(5px);
+    }
+
     .header-btn:hover {
-      background:#1f2937;
-      border-color:rgba(96,165,250,.42);
-      box-shadow:0 6px 16px rgba(0,0,0,.20);
+      background:rgba(255,255,255,.20);
+      box-shadow:none;
     }
 
     .header-btn.primary {
-      background:#2563eb;
-      border-color:#2563eb;
+      background:#267bb7;
+      border-color:#267bb7;
       color:#fff;
-      box-shadow:0 6px 16px rgba(37,99,235,.22);
+    }
+
+    /* Main page */
+    .page-shell {
+      width:min(1700px,100%);
+      gap:22px;
+      padding:28px;
     }
 
     aside {
-      scrollbar-color:#475569 transparent;
+      top:20px;
     }
 
     .side-card,
     .panel,
-    .kpi-card,
-    .country-card,
-    .actor-card {
-      background:rgba(255,255,255,.055);
-      border:1px solid rgba(255,255,255,.09);
-      box-shadow:0 8px 22px rgba(0,0,0,.18);
+    .hero,
+    .kpi-card {
+      border:1px solid var(--border);
+      background:#fff;
+      box-shadow:var(--shadow-soft);
     }
 
-    .side-card,
-    .panel {
-      backdrop-filter:blur(8px);
+    .side-card {
+      padding:15px;
+      border-radius:15px;
     }
 
-    .side-card:hover,
-    .panel:hover,
-    .kpi-card:hover,
-    .country-card:hover,
-    .actor-card:hover {
-      border-color:rgba(96,165,250,.24);
+    .side-title {
+      color:#164c72;
+      font-size:11px;
+      letter-spacing:.08em;
     }
 
     select,
     input[type="search"] {
-      background:#0f172a;
-      border-color:rgba(255,255,255,.12);
-      color:#f3f4f6;
+      border-color:#cbd8e2;
+      background:#fff;
     }
 
-    select:focus,
-    input[type="search"]:focus {
-      border-color:#60a5fa;
-      box-shadow:0 0 0 3px rgba(96,165,250,.14);
+    .toggle {
+      border-color:#dce5ec;
+      background:#f8fafc;
     }
 
-    select option {
-      background:#111827;
-      color:#e5e7eb;
+    .toggle:hover {
+      border-color:#aebfcd;
+      background:#eef4f8;
     }
 
-    .toggle,
-    .side-metric,
+    /* Intro card matching the Kőszeg white information block */
+    .hero {
+      padding:27px 30px;
+      border-left:7px solid #2879b8;
+      border-radius:19px;
+      background:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .hero::after {
+      background:radial-gradient(circle,rgba(40,121,184,.11),transparent 70%);
+    }
+
+    .eyebrow {
+      color:#126193;
+      font-size:10px;
+      letter-spacing:.14em;
+    }
+
+    h1 {
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(29px,3vw,45px);
+      line-height:1.06;
+      letter-spacing:-.02em;
+    }
+
+    .hero p {
+      color:#5d7285;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .risk-badge {
+      min-width:125px;
+      min-height:46px;
+      border-radius:999px;
+      box-shadow:0 5px 14px rgba(20,54,78,.09);
+    }
+
+    /* KPI strip — large number, calm white blocks */
+    .kpi-grid {
+      gap:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:19px;
+      background:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .kpi-card {
+      min-height:116px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:17px;
+      border:0;
+      border-right:1px solid var(--border);
+      border-radius:0;
+      box-shadow:none;
+      text-align:center;
+    }
+
+    .kpi-card:last-child {
+      border-right:0;
+    }
+
+    .kpi-label {
+      order:2;
+      margin-top:6px;
+      color:#65798b;
+      font-size:9px;
+      font-weight:800;
+    }
+
+    .kpi-value {
+      order:1;
+      color:#16466a;
+      font-size:28px;
+    }
+
+    .kpi-value.compact {
+      font-size:15px;
+    }
+
+    /* General white cards */
+    .panel {
+      padding:19px;
+      border-radius:17px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel h2 {
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:21px;
+    }
+
+    .panel-note {
+      color:#708294;
+    }
+
     .assessment-lead,
     .assessment-item,
     .rank-row,
     .attacker-legend-row,
     .vital-card {
-      background:rgba(0,0,0,.18);
-      border-color:rgba(255,255,255,.08);
-      color:#e5e7eb;
-    }
-
-    .toggle:hover {
-      background:rgba(255,255,255,.07);
-      border-color:rgba(96,165,250,.30);
-    }
-
-    .toggle input {
-      accent-color:#60a5fa;
-    }
-
-    .coverage-row {
-      border-bottom-color:rgba(255,255,255,.10);
-    }
-
-    .coverage-row strong,
-    .rank-head,
-    .attacker-legend-count,
-    .country-value {
-      color:#e5e7eb;
-    }
-
-    .hero {
-      border:1px solid rgba(255,255,255,.09);
-      border-left:6px solid #2563eb;
-      background:
-        radial-gradient(circle at 90% 15%,rgba(37,99,235,.22),transparent 32%),
-        linear-gradient(135deg,#111827 0%,#172033 100%);
-      box-shadow:0 14px 34px rgba(0,0,0,.26);
-    }
-
-    .hero::after {
-      background:radial-gradient(circle,rgba(14,165,233,.17),transparent 70%);
-    }
-
-    .eyebrow,
-    .section-kicker,
-    .assessment-item span {
-      color:#7dd3fc;
-    }
-
-    .hero p,
-    .assessment-lead p,
-    .assessment-item p,
-    .development-card p {
-      color:#cbd5e1;
-    }
-
-    .risk-low {
-      border-color:rgba(74,222,128,.35);
-      background:rgba(34,197,94,.13);
-      color:#bbf7d0;
-    }
-
-    .risk-elevated {
-      border-color:rgba(251,191,36,.36);
-      background:rgba(245,158,11,.13);
-      color:#fde68a;
-    }
-
-    .risk-high {
-      border-color:rgba(248,113,113,.38);
-      background:rgba(239,68,68,.13);
-      color:#fecaca;
-    }
-
-    .risk-critical {
-      background:#dc2626;
-      color:#fff;
-      box-shadow:0 0 0 4px rgba(220,38,38,.14);
-    }
-
-    .kpi-card {
-      position:relative;
-      overflow:hidden;
-    }
-
-    .kpi-card::before {
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:3px;
-      background:linear-gradient(90deg,#2563eb,#0ea5e9);
-    }
-
-    .kpi-value {
-      text-shadow:0 3px 12px rgba(0,0,0,.24);
+      border-color:#dbe4eb;
+      background:#f8fafc;
     }
 
     .assessment-lead {
-      border-left-color:#60a5fa;
-      background:rgba(37,99,235,.10);
+      border-left:5px solid #2879b8;
+      background:#fff;
     }
 
+    /* 24/48/72 daily brief — strong but light */
+    .rapid-brief-panel {
+      overflow:hidden;
+      border-left:7px solid #078a80;
+      background:
+        radial-gradient(circle at 94% 0%,rgba(8,138,128,.10),transparent 27%),
+        #fff;
+    }
+
+    .rapid-brief-head {
+      padding-bottom:13px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .rapid-live-badge {
+      border:1px solid rgba(21,151,106,.28);
+      background:rgba(21,151,106,.10);
+      color:#08784f;
+    }
+
+    .rapid-live-badge::before {
+      background:#28c987;
+      box-shadow:0 0 0 4px rgba(40,201,135,.12);
+    }
+
+    .rapid-window-grid {
+      gap:12px;
+      margin-top:15px;
+    }
+
+    .rapid-window-card {
+      min-height:255px;
+      padding:17px;
+      border:1px solid #d5e1e9;
+      border-top:5px solid var(--window-accent,#2879b8);
+      border-radius:15px;
+      background:#fff;
+      box-shadow:0 8px 20px rgba(20,54,78,.07);
+    }
+
+    .rapid-window-card:nth-child(1) {
+      --window-accent:#e78308;
+    }
+
+    .rapid-window-card:nth-child(2) {
+      --window-accent:#078a80;
+    }
+
+    .rapid-window-card:nth-child(3) {
+      --window-accent:#2879b8;
+    }
+
+    .rapid-window-card::after {
+      background:radial-gradient(circle,rgba(40,121,184,.09),transparent 70%);
+    }
+
+    .rapid-window-label {
+      color:#48677e;
+    }
+
+    .rapid-window-count {
+      color:#163f5f;
+      font-size:42px;
+    }
+
+    .rapid-window-facts {
+      border-color:#dbe5ec;
+      background:#f5f8fa;
+    }
+
+    .rapid-window-description {
+      color:#536b7e;
+    }
+
+    .rapid-summary-strip {
+      border:1px solid #d6e3eb;
+      border-left:6px solid #2879b8;
+      background:#f7fafc;
+      color:#40586c;
+    }
+
+    .rapid-summary-icon {
+      background:#2879b8;
+      color:#fff;
+      box-shadow:0 5px 13px rgba(40,121,184,.24);
+    }
+
+    .rapid-summary-strip strong {
+      color:#173850;
+    }
+
+    /* Actor cards */
     .actor-card {
-      background:rgba(255,255,255,.045);
+      border-color:#d7e2ea;
+      background:#fff;
+      box-shadow:0 4px 14px rgba(20,54,78,.055);
     }
 
-    .actor-card-head {
-      color:#cbd5e1;
-    }
-
-    .actor-card-track,
-    .country-track,
-    .progress {
-      background:rgba(255,255,255,.09);
-    }
-
-    .rank-row {
-      transition:transform .15s ease,border-color .15s ease,background .15s ease;
-    }
-
-    .rank-row:hover {
-      transform:translateY(-1px);
-      background:rgba(255,255,255,.07);
-      border-color:rgba(96,165,250,.25);
-    }
-
-    .progress span {
-      background:linear-gradient(90deg,#2563eb,#38bdf8);
-    }
-
-    .donut-center {
-      background:#111827;
-      border-color:rgba(255,255,255,.10);
-      box-shadow:0 8px 20px rgba(0,0,0,.25);
-    }
-
-    .donut-center strong {
-      color:#f3f4f6;
-    }
-
-    .donut-center span {
-      color:#9ca3af;
-    }
-
-    .attacker-legend-row {
-      transition:transform .15s ease,border-color .15s ease;
-    }
-
-    .attacker-legend-row:hover {
-      transform:translateX(2px);
-      border-color:rgba(96,165,250,.26);
+    /* Countries: more visual but still the same data */
+    .country-grid {
+      gap:12px;
     }
 
     .country-card {
       position:relative;
+      min-height:238px;
       overflow:hidden;
+      padding:16px;
+      border:1px solid #d4e0e8;
+      border-top:6px solid var(--country-accent,#2879b8);
+      border-radius:16px;
       background:
-        linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
-      transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
-    }
-
-    .country-card::after {
-      content:"";
-      position:absolute;
-      right:-26px;
-      bottom:-34px;
-      width:92px;
-      height:92px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(96,165,250,.16),transparent 70%);
-      pointer-events:none;
+        radial-gradient(circle at 105% -5%,color-mix(in srgb,var(--country-accent,#2879b8) 14%,transparent),transparent 38%),
+        #fff;
+      box-shadow:0 7px 19px rgba(20,54,78,.075);
     }
 
     .country-card:hover {
       transform:translateY(-3px);
-      border-color:rgba(96,165,250,.34);
-      box-shadow:0 12px 28px rgba(0,0,0,.26);
+      border-color:#afc3d1;
+      box-shadow:0 12px 25px rgba(20,54,78,.12);
+    }
+
+    .country-flag {
+      width:52px;
+      height:52px;
+      border:1px solid #d7e1e8;
+      border-radius:14px;
+      background:#f3f7fa;
+      font-size:28px;
+      box-shadow:0 4px 10px rgba(20,54,78,.07);
+    }
+
+    .country-rank {
+      padding:5px 8px;
+      border-radius:999px;
+      background:#edf3f7;
+      color:#557187;
+      font-weight:800;
+    }
+
+    .country-name {
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:17px;
+    }
+
+    .country-value {
+      color:var(--country-accent,#2879b8);
+      font-size:30px;
+    }
+
+    .country-share {
+      border:1px solid #d7e2e9;
+      background:#f5f8fa;
+      color:#49677e;
+    }
+
+    .country-track {
+      height:7px;
+      background:#e5edf2;
     }
 
     .country-track span {
-      background:linear-gradient(90deg,#0ea5e9,#2dd4bf);
+      background:var(--country-accent,#2879b8);
     }
 
+    .country-meta {
+      border-top:1px solid #e1e8ed;
+      color:#62798b;
+    }
+
+    /* Developments and charts */
     .development-card {
-      background:rgba(255,255,255,.055);
-      border-color:rgba(255,255,255,.085);
-      transition:transform .15s ease,border-color .15s ease;
-    }
-
-    .development-card:hover {
-      transform:translateY(-1px);
-      border-color:rgba(96,165,250,.28);
-    }
-
-    .actor-pill {
-      background:rgba(255,255,255,.08);
-    }
-
-    details.raw-data {
-      border-top-color:rgba(255,255,255,.09);
-    }
-
-    details.raw-data summary {
-      color:#9ca3af;
-    }
-
-    .raw-json {
-      background:#0b1220;
-      color:#cbd5e1;
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .empty-state {
-      border-color:rgba(255,255,255,.16);
-      color:#9ca3af;
-      background:rgba(0,0,0,.13);
-    }
-
-    .error-box {
-      border-color:rgba(248,113,113,.30);
-      border-left-color:#ef4444;
-      background:rgba(239,68,68,.10);
-      color:#fecaca;
+      border-color:#d8e2ea;
+      background:#fff;
     }
 
     canvas {
       border-radius:12px;
-      background:rgba(255,255,255,.025);
     }
 
-    /* 24 / 48 / 72 hour situation cards */
-    .rapid-window-card,
-    .time-window-card,
-    .window-card,
-    [class*="time-window-card"],
-    [class*="rapid-window-card"] {
-      background:linear-gradient(145deg,rgba(37,99,235,.14),rgba(255,255,255,.045)) !important;
-      border-color:rgba(96,165,250,.24) !important;
-      box-shadow:0 10px 24px rgba(0,0,0,.20) !important;
+    .empty-state {
+      background:#f8fafc;
     }
 
-    .rapid-window-card:hover,
-    .time-window-card:hover,
-    .window-card:hover {
-      border-color:rgba(125,211,252,.42) !important;
-      transform:translateY(-2px);
+    /* Mobile */
+    @media (max-width:1050px) {
+      .site-header {
+        min-height:auto;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .header-actions {
+        justify-content:flex-start;
+      }
     }
 
     @media (max-width:760px) {
       .site-header {
-        background:#111827;
+        padding:23px 16px;
+      }
+
+      .brand-sub {
+        font-size:29px;
+      }
+
+      .page-shell {
+        padding:13px;
+      }
+
+      .kpi-grid {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .kpi-card {
+        border-right:1px solid var(--border);
+        border-bottom:1px solid var(--border);
       }
     }
   </style>
