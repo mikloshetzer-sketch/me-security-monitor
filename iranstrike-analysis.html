@@ -1235,6 +1235,411 @@
       }
     }
   </style>
+
+
+  <style id="koszeg-monitor-style-override">
+    :root {
+      --bg:#0f172a;
+      --panel:#111827;
+      --panel-soft:#172033;
+      --border:rgba(255,255,255,.09);
+      --border-strong:rgba(255,255,255,.15);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --navy:#f3f4f6;
+      --navy-2:#60a5fa;
+      --teal:#2dd4bf;
+      --blue:#60a5fa;
+      --green:#4ade80;
+      --red:#f87171;
+      --amber:#fbbf24;
+      --purple:#a78bfa;
+      --gray:#94a3b8;
+      --shadow:0 12px 30px rgba(0,0,0,.30);
+      --shadow-soft:0 8px 22px rgba(0,0,0,.18);
+      --radius:16px;
+    }
+
+    html,
+    body {
+      background:#0f172a;
+      color:#e5e7eb;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 0%,rgba(37,99,235,.12),transparent 28%),
+        radial-gradient(circle at 92% 10%,rgba(14,165,233,.08),transparent 26%),
+        #0f172a;
+    }
+
+    .site-header {
+      background:rgba(17,24,39,.97);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 24px rgba(0,0,0,.24);
+      backdrop-filter:blur(12px);
+    }
+
+    .brand-mark {
+      background:linear-gradient(135deg,#2563eb,#0ea5e9);
+      color:#fff;
+      box-shadow:0 6px 18px rgba(37,99,235,.28);
+    }
+
+    .brand-title,
+    .side-title,
+    .panel h2,
+    h1,
+    .country-name,
+    .actor-card-value,
+    .attacker-legend-name,
+    .vital-title,
+    .development-card h3,
+    .kpi-value,
+    .side-metric strong {
+      color:#f3f4f6;
+    }
+
+    .brand-sub,
+    .muted,
+    .panel-note,
+    .kpi-label,
+    .country-rank,
+    .actor-card-label,
+    .attacker-legend-share,
+    .development-topline,
+    .development-meta,
+    .coverage-row,
+    .side-metric span,
+    .risk-caption {
+      color:#9ca3af;
+    }
+
+    .header-btn {
+      border-color:rgba(255,255,255,.13);
+      background:#172033;
+      color:#e5e7eb;
+      box-shadow:none;
+    }
+
+    .header-btn:hover {
+      background:#1f2937;
+      border-color:rgba(96,165,250,.42);
+      box-shadow:0 6px 16px rgba(0,0,0,.20);
+    }
+
+    .header-btn.primary {
+      background:#2563eb;
+      border-color:#2563eb;
+      color:#fff;
+      box-shadow:0 6px 16px rgba(37,99,235,.22);
+    }
+
+    aside {
+      scrollbar-color:#475569 transparent;
+    }
+
+    .side-card,
+    .panel,
+    .kpi-card,
+    .country-card,
+    .actor-card {
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:0 8px 22px rgba(0,0,0,.18);
+    }
+
+    .side-card,
+    .panel {
+      backdrop-filter:blur(8px);
+    }
+
+    .side-card:hover,
+    .panel:hover,
+    .kpi-card:hover,
+    .country-card:hover,
+    .actor-card:hover {
+      border-color:rgba(96,165,250,.24);
+    }
+
+    select,
+    input[type="search"] {
+      background:#0f172a;
+      border-color:rgba(255,255,255,.12);
+      color:#f3f4f6;
+    }
+
+    select:focus,
+    input[type="search"]:focus {
+      border-color:#60a5fa;
+      box-shadow:0 0 0 3px rgba(96,165,250,.14);
+    }
+
+    select option {
+      background:#111827;
+      color:#e5e7eb;
+    }
+
+    .toggle,
+    .side-metric,
+    .assessment-lead,
+    .assessment-item,
+    .rank-row,
+    .attacker-legend-row,
+    .vital-card {
+      background:rgba(0,0,0,.18);
+      border-color:rgba(255,255,255,.08);
+      color:#e5e7eb;
+    }
+
+    .toggle:hover {
+      background:rgba(255,255,255,.07);
+      border-color:rgba(96,165,250,.30);
+    }
+
+    .toggle input {
+      accent-color:#60a5fa;
+    }
+
+    .coverage-row {
+      border-bottom-color:rgba(255,255,255,.10);
+    }
+
+    .coverage-row strong,
+    .rank-head,
+    .attacker-legend-count,
+    .country-value {
+      color:#e5e7eb;
+    }
+
+    .hero {
+      border:1px solid rgba(255,255,255,.09);
+      border-left:6px solid #2563eb;
+      background:
+        radial-gradient(circle at 90% 15%,rgba(37,99,235,.22),transparent 32%),
+        linear-gradient(135deg,#111827 0%,#172033 100%);
+      box-shadow:0 14px 34px rgba(0,0,0,.26);
+    }
+
+    .hero::after {
+      background:radial-gradient(circle,rgba(14,165,233,.17),transparent 70%);
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .assessment-item span {
+      color:#7dd3fc;
+    }
+
+    .hero p,
+    .assessment-lead p,
+    .assessment-item p,
+    .development-card p {
+      color:#cbd5e1;
+    }
+
+    .risk-low {
+      border-color:rgba(74,222,128,.35);
+      background:rgba(34,197,94,.13);
+      color:#bbf7d0;
+    }
+
+    .risk-elevated {
+      border-color:rgba(251,191,36,.36);
+      background:rgba(245,158,11,.13);
+      color:#fde68a;
+    }
+
+    .risk-high {
+      border-color:rgba(248,113,113,.38);
+      background:rgba(239,68,68,.13);
+      color:#fecaca;
+    }
+
+    .risk-critical {
+      background:#dc2626;
+      color:#fff;
+      box-shadow:0 0 0 4px rgba(220,38,38,.14);
+    }
+
+    .kpi-card {
+      position:relative;
+      overflow:hidden;
+    }
+
+    .kpi-card::before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      background:linear-gradient(90deg,#2563eb,#0ea5e9);
+    }
+
+    .kpi-value {
+      text-shadow:0 3px 12px rgba(0,0,0,.24);
+    }
+
+    .assessment-lead {
+      border-left-color:#60a5fa;
+      background:rgba(37,99,235,.10);
+    }
+
+    .actor-card {
+      background:rgba(255,255,255,.045);
+    }
+
+    .actor-card-head {
+      color:#cbd5e1;
+    }
+
+    .actor-card-track,
+    .country-track,
+    .progress {
+      background:rgba(255,255,255,.09);
+    }
+
+    .rank-row {
+      transition:transform .15s ease,border-color .15s ease,background .15s ease;
+    }
+
+    .rank-row:hover {
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.07);
+      border-color:rgba(96,165,250,.25);
+    }
+
+    .progress span {
+      background:linear-gradient(90deg,#2563eb,#38bdf8);
+    }
+
+    .donut-center {
+      background:#111827;
+      border-color:rgba(255,255,255,.10);
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .donut-center strong {
+      color:#f3f4f6;
+    }
+
+    .donut-center span {
+      color:#9ca3af;
+    }
+
+    .attacker-legend-row {
+      transition:transform .15s ease,border-color .15s ease;
+    }
+
+    .attacker-legend-row:hover {
+      transform:translateX(2px);
+      border-color:rgba(96,165,250,.26);
+    }
+
+    .country-card {
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+      transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+    }
+
+    .country-card::after {
+      content:"";
+      position:absolute;
+      right:-26px;
+      bottom:-34px;
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(96,165,250,.16),transparent 70%);
+      pointer-events:none;
+    }
+
+    .country-card:hover {
+      transform:translateY(-3px);
+      border-color:rgba(96,165,250,.34);
+      box-shadow:0 12px 28px rgba(0,0,0,.26);
+    }
+
+    .country-track span {
+      background:linear-gradient(90deg,#0ea5e9,#2dd4bf);
+    }
+
+    .development-card {
+      background:rgba(255,255,255,.055);
+      border-color:rgba(255,255,255,.085);
+      transition:transform .15s ease,border-color .15s ease;
+    }
+
+    .development-card:hover {
+      transform:translateY(-1px);
+      border-color:rgba(96,165,250,.28);
+    }
+
+    .actor-pill {
+      background:rgba(255,255,255,.08);
+    }
+
+    details.raw-data {
+      border-top-color:rgba(255,255,255,.09);
+    }
+
+    details.raw-data summary {
+      color:#9ca3af;
+    }
+
+    .raw-json {
+      background:#0b1220;
+      color:#cbd5e1;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .empty-state {
+      border-color:rgba(255,255,255,.16);
+      color:#9ca3af;
+      background:rgba(0,0,0,.13);
+    }
+
+    .error-box {
+      border-color:rgba(248,113,113,.30);
+      border-left-color:#ef4444;
+      background:rgba(239,68,68,.10);
+      color:#fecaca;
+    }
+
+    canvas {
+      border-radius:12px;
+      background:rgba(255,255,255,.025);
+    }
+
+    /* 24 / 48 / 72 hour situation cards */
+    .rapid-window-card,
+    .time-window-card,
+    .window-card,
+    [class*="time-window-card"],
+    [class*="rapid-window-card"] {
+      background:linear-gradient(145deg,rgba(37,99,235,.14),rgba(255,255,255,.045)) !important;
+      border-color:rgba(96,165,250,.24) !important;
+      box-shadow:0 10px 24px rgba(0,0,0,.20) !important;
+    }
+
+    .rapid-window-card:hover,
+    .time-window-card:hover,
+    .window-card:hover {
+      border-color:rgba(125,211,252,.42) !important;
+      transform:translateY(-2px);
+    }
+
+    @media (max-width:760px) {
+      .site-header {
+        background:#111827;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -3049,4 +3454,5 @@
   </script>
 </body>
 </html>
+
 
