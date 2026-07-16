@@ -1,6 +1,387 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IDF Activity Dashboard | Törésvonalak</title><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script><style>
 :root{--bg:#f3f6f8;--p:#fff;--b:#d7e0e7;--t:#172033;--m:#66768a;--a:#285879;--r:#c83c3c;--rs:#faeded}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:Arial,sans-serif}#app{display:grid;grid-template-columns:340px 1fr;min-height:100vh}aside{padding:14px;background:#fbfcfd;border-right:1px solid var(--b);height:100vh;overflow:auto;position:sticky;top:0}main{padding:18px;min-width:0}.box,.card,.metric,.top{background:var(--p);border:1px solid var(--b);border-radius:12px;box-shadow:0 6px 20px rgba(20,35,50,.07)}.box{padding:12px;margin-bottom:12px}.brand{border-left:5px solid var(--a)}h1,h2{margin:0}.brand h1{font-size:21px;margin:5px 0}.k{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--a)}.muted{color:var(--m);font-size:12px;line-height:1.5}.label{display:block;margin:9px 0 5px;color:var(--m);font-size:11px;font-weight:700}select,input{width:100%;padding:9px;border:1px solid var(--b);border-radius:8px;background:#fff}.checks{display:grid;grid-template-columns:1fr 1fr;gap:7px}.checks label{font-size:12px}.checks input{width:auto}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.btn{padding:9px;border:0;border-radius:8px;background:var(--a);color:#fff;font-weight:700;cursor:pointer}.btn.alt{background:#f4f7f9;color:var(--a);border:1px solid var(--b)}.status{padding:9px;border-radius:8px;background:#f5f7f9;font-size:11px;line-height:1.5}.status.ok{background:#edf7f1;color:#2f7651}.status.err{background:var(--rs);color:#8b3636}.warn{background:#fff7e8;border-left:4px solid #a56718}.top{display:flex;justify-content:space-between;gap:14px;padding:16px;margin-bottom:12px}.top h1{font-size:25px;margin:4px 0}.top p{margin:0;color:var(--m);font-size:13px;line-height:1.5}.pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}.pill{padding:5px 9px;border-radius:999px;background:#e9f1f6;color:#173b55;font-size:11px;font-weight:700;white-space:nowrap}.pill.red{background:var(--rs);color:#913737}.metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:12px}.metric{padding:12px}.ml{font-size:10px;color:var(--m);text-transform:uppercase;min-height:26px}.mv{font-size:22px;font-weight:800;margin-top:5px}.mv.sm{font-size:15px}.mn{font-size:10px;color:var(--m);margin-top:4px}.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:12px}.grid.eq{grid-template-columns:1fr 1fr}.card{padding:14px;margin-bottom:12px}.head{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}.head h2{font-size:16px}.note{font-size:10px;color:var(--m)}.chart{height:260px}.chart.sm{height:225px}.lead{padding:11px;border-left:4px solid var(--r);background:var(--rs);border-radius:8px;margin-bottom:10px;color:#613232}.assessment{font-size:13px;line-height:1.6;color:#334155}.rank{display:flex;flex-direction:column;gap:7px}.rankrow{padding:8px;background:#f8fafc;border-radius:8px}.rh{display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px}.bar{height:5px;background:#e1e7ec;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:var(--a)}.table{overflow:auto;max-height:550px;border:1px solid var(--b);border-radius:8px}table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:8px;border-bottom:1px solid var(--b);vertical-align:top;text-align:left}th{position:sticky;top:0;background:#eef3f7;font-size:10px;text-transform:uppercase}.tag{display:inline-flex;margin:1px 3px 1px 0;padding:2px 6px;border-radius:999px;background:#e9f1f6;color:#173b55;font-size:9px}.tag.red{background:var(--rs);color:#913737}.empty{padding:20px;text-align:center;color:var(--m);font-size:12px}@media(max-width:1150px){.metrics{grid-template-columns:repeat(3,1fr)}.grid,.grid.eq{grid-template-columns:1fr}}@media(max-width:820px){#app{display:block}aside{position:static;height:auto;border-right:0}.top{flex-direction:column}.pills{justify-content:flex-start}}@media(max-width:600px){.metrics{grid-template-columns:repeat(2,1fr)}.checks{grid-template-columns:1fr}}
-</style></head><body><div id="app"><aside><div class="box brand"><div class="k">Törésvonalak</div><h1>IDF Source Dashboard</h1><div class="muted">Official-source analysis for the Middle East Security Monitor.</div></div><div class="box"><h2>Data status</h2><div id="status" class="status">Waiting for data…</div><div class="row"><button id="refresh" class="btn">Refresh</button><button id="reset" class="btn alt">Reset</button></div></div><div class="box"><h2>Time window</h2><label class="label">Quick range</label><select id="range"><option value="7">Last 7 days</option><option value="14">Last 14 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option><option value="365">Last 365 days</option><option value="all">All data</option><option value="custom">Custom</option></select><label class="label">From</label><input id="from" type="date"><label class="label">To</label><input id="to" type="date"></div><div class="box"><h2>Region</h2><div id="regions" class="checks"></div></div><div class="box"><h2>Activity type</h2><div id="activities" class="checks"></div></div><div class="box"><h2>Additional filters</h2><label class="label">Organization</label><select id="org"><option value="all">All</option></select><label class="label">Claimed result</label><select id="result"><option value="all">All</option></select><label class="label">Minimum reliability</label><select id="rel"><option value="0">All</option><option value="40">40+</option><option value="60">60+</option><option value="80">80+</option></select><label class="label">Search</label><input id="search" type="search" placeholder="Title, location, target…"></div><div class="box warn"><h2>Source warning</h2><div class="muted">This dashboard analyses official statements issued by a party to the conflict. It does not independently verify strikes, targets, casualties or operational results.</div></div></aside><main><header class="top"><div><div class="k" style="color:var(--r)">Official-source intelligence</div><h1>IDF Military Activity Dashboard</h1><p>Activity patterns, geographic focus, named targets and claimed operational outcomes from structured IDF statements.</p></div><div class="pills"><span class="pill red">IDF official</span><span id="generated" class="pill">Generated: —</span><span id="period" class="pill">Range: —</span></div></header><section class="metrics"><div class="metric"><div class="ml">Visible statements</div><div id="mt" class="mv">0</div><div class="mn">After filters</div></div><div class="metric"><div class="ml">Map visualizable</div><div id="mm" class="mv">0</div><div class="mn">Usable coordinates</div></div><div class="metric"><div class="ml">Airstrike records</div><div id="ma" class="mv">0</div><div class="mn">Classified as airstrikes</div></div><div class="metric"><div class="ml">Top region</div><div id="mr" class="mv sm">—</div><div id="mrn" class="mn">—</div></div><div class="metric"><div class="ml">Top organization</div><div id="mo" class="mv sm">—</div><div id="mon" class="mn">—</div></div><div class="metric"><div class="ml">Average reliability</div><div id="mrel" class="mv">0</div><div class="mn">Source/classification score</div></div></section><section class="grid"><article class="card"><div class="head"><h2>Statement activity trend</h2><span class="note">Daily count</span></div><div class="chart"><canvas id="trend"></canvas></div></article><article class="card"><div class="head"><h2>Current source assessment</h2><span class="note">Rule-based summary</span></div><div id="assessment" class="assessment"><div class="empty">No records.</div></div></article></section><section class="grid eq"><article class="card"><div class="head"><h2>Activity composition</h2></div><div class="chart sm"><canvas id="activity"></canvas></div></article><article class="card"><div class="head"><h2>Regional distribution</h2></div><div class="chart sm"><canvas id="region"></canvas></div></article></section><section class="grid eq"><article class="card"><div class="head"><h2>Target organizations</h2></div><div id="orgrank" class="rank"></div></article><article class="card"><div class="head"><h2>Target and threat profile</h2></div><div id="targetrank" class="rank"></div></article></section><article class="card"><div class="head"><h2>Filtered official statements</h2><span id="count" class="note">0 records</span></div><div class="table"><table><thead><tr><th>Date</th><th>Region / location</th><th>Activity</th><th>Organization / target</th><th>Result</th><th>Statement</th></tr></thead><tbody id="tbody"></tbody></table></div></article></main></div>
+</style>
+<style id="idf-unified-koszeg-header-v2">
+  :root{
+    --bg:#edf2f6;
+    --p:#ffffff;
+    --b:#d5e0e8;
+    --t:#173149;
+    --m:#687c8e;
+    --a:#2879b8;
+    --r:#d94238;
+    --rs:#faeded;
+    --navy:#173b57;
+    --shadow:0 10px 26px rgba(20,54,78,.10);
+    --shadow-soft:0 4px 14px rgba(20,54,78,.07);
+  }
+
+  body{
+    background:
+      linear-gradient(180deg,#eaf0f5 0%,#f5f8fa 42%,#edf2f6 100%);
+    color:var(--t);
+  }
+
+  /* Exactly the same header system used by the IranStrike dashboard */
+  .site-header{
+    position:relative;
+    top:auto;
+    z-index:30;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    min-height:168px;
+    padding:30px clamp(22px,4vw,70px);
+    border:0;
+    background:
+      radial-gradient(circle at 92% 8%,rgba(87,161,207,.27),transparent 34%),
+      linear-gradient(110deg,#17384f 0%,#204d6d 55%,#326b91 100%);
+    box-shadow:none;
+    color:#fff;
+  }
+
+  .brand-wrap{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    min-width:0;
+  }
+
+  .brand-mark{
+    width:50px;
+    height:50px;
+    display:grid;
+    place-items:center;
+    flex:0 0 auto;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:12px;
+    background:rgba(255,255,255,.10);
+    color:#fff;
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:.08em;
+    box-shadow:none;
+  }
+
+  .brand-title{
+    color:#b9e0fa;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+  }
+
+  .brand-sub{
+    margin-top:8px;
+    color:#fff;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(25px,3.2vw,47px);
+    font-weight:800;
+    line-height:1.02;
+    letter-spacing:-.025em;
+  }
+
+  .brand-description{
+    max-width:760px;
+    margin-top:9px;
+    color:rgba(255,255,255,.86);
+    font-size:12px;
+    line-height:1.55;
+  }
+
+  .header-actions{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:9px;
+    flex-wrap:wrap;
+    max-width:660px;
+  }
+
+  .header-pill{
+    min-height:42px;
+    display:inline-flex;
+    align-items:center;
+    padding:9px 16px;
+    border:1px solid rgba(255,255,255,.20);
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+    white-space:nowrap;
+    backdrop-filter:blur(5px);
+  }
+
+  .header-pill.idf-pill{
+    border-color:rgba(255,255,255,.18);
+    background:rgba(217,66,56,.82);
+  }
+
+  #app{
+    display:grid;
+    grid-template-columns:350px minmax(0,1fr);
+    min-height:calc(100vh - 168px);
+  }
+
+  aside{
+    position:sticky;
+    top:0;
+    height:calc(100vh - 168px);
+    padding:16px;
+    overflow:auto;
+    border-right:1px solid var(--b);
+    background:linear-gradient(180deg,#f4f7f9 0%,#eaf0f4 100%);
+    box-shadow:5px 0 20px rgba(20,54,78,.08);
+  }
+
+  main{
+    min-width:0;
+    padding:22px;
+  }
+
+  .box,.card,.metric{
+    border-color:var(--b);
+    background:#fff;
+    box-shadow:var(--shadow-soft);
+  }
+
+  .box{
+    padding:14px;
+    margin-bottom:11px;
+    border-radius:15px;
+  }
+
+  .brand{
+    padding:18px;
+    border-left:6px solid var(--a);
+    background:
+      radial-gradient(circle at 100% 0%,rgba(40,121,184,.10),transparent 38%),
+      #fff;
+  }
+
+  .brand .k{
+    color:#126193;
+    letter-spacing:.13em;
+  }
+
+  .brand h1{
+    margin:7px 0 6px;
+    color:#173850;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:25px;
+    line-height:1.04;
+  }
+
+  .muted{color:var(--m)}
+
+  select,input{
+    min-height:40px;
+    border-color:#cad8e2;
+    border-radius:10px;
+  }
+
+  .checks label{
+    min-height:34px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 8px;
+    border:1px solid #dbe5ec;
+    border-radius:9px;
+    background:#f8fafc;
+  }
+
+  .checks label:hover{
+    border-color:#aec0ce;
+    background:#eef4f8;
+  }
+
+  .btn{
+    min-height:38px;
+    border-radius:10px;
+    background:var(--a);
+  }
+
+  .btn.alt{
+    border-color:#cad8e2;
+    background:#fff;
+    color:#23425a;
+  }
+
+  .status{
+    border:1px solid #dbe5ec;
+    background:#f7fafc;
+  }
+
+  .warn{
+    border-left:5px solid #e78308;
+    background:#fffaf1;
+  }
+
+  .metrics{
+    gap:0;
+    overflow:hidden;
+    margin-bottom:14px;
+    border:1px solid var(--b);
+    border-radius:18px;
+    background:#fff;
+    box-shadow:var(--shadow);
+  }
+
+  .metric{
+    min-height:112px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:14px;
+    border:0;
+    border-right:1px solid var(--b);
+    border-radius:0;
+    box-shadow:none;
+    text-align:center;
+  }
+
+  .metric:last-child{border-right:0}
+
+  .ml{
+    order:2;
+    min-height:auto;
+    margin-top:6px;
+    color:#65798b;
+    font-size:9px;
+    font-weight:800;
+  }
+
+  .mv{
+    order:1;
+    margin-top:0;
+    color:#16466a;
+    font-size:29px;
+  }
+
+  .mv.sm{font-size:16px}
+  .mn{order:3;color:#7a8b9a}
+
+  .card{
+    padding:18px;
+    border-radius:17px;
+    box-shadow:var(--shadow);
+  }
+
+  .head h2{
+    color:#173850;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:21px;
+  }
+
+  .note{color:#718394}
+
+  .lead{
+    border-left:5px solid var(--r);
+    background:#fff5f4;
+    color:#623532;
+  }
+
+  .rankrow{
+    border:1px solid #dbe4eb;
+    background:#f8fafc;
+  }
+
+  .bar{
+    height:7px;
+    background:#e4ecf1;
+  }
+
+  .bar span{
+    background:linear-gradient(90deg,#2879b8,#53a0cf);
+  }
+
+  .table{
+    border-color:#d5e0e8;
+    border-radius:12px;
+    background:#fff;
+  }
+
+  th{
+    background:#edf3f7;
+    color:#35546d;
+  }
+
+  tbody tr:hover{background:#f7fafc}
+
+  .tag{
+    background:#e9f2f7;
+    color:#1b5276;
+  }
+
+  .tag.red{
+    background:#faeded;
+    color:#9a3939;
+  }
+
+  @media(max-width:1150px){
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+    }
+    .metric{border-bottom:1px solid var(--b)}
+  }
+
+  @media(max-width:900px){
+    .site-header{
+      min-height:auto;
+      align-items:flex-start;
+      flex-direction:column;
+      padding:23px 16px;
+    }
+
+    .header-actions{
+      width:100%;
+      justify-content:flex-start;
+    }
+
+    #app{display:block}
+
+    aside{
+      position:static;
+      height:auto;
+      border-right:0;
+    }
+
+    main{padding:12px}
+  }
+
+  @media(max-width:600px){
+    .brand-mark{display:none}
+    .brand-sub{font-size:29px}
+    .metrics{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+
+</head><body>
+<header class="site-header">
+  <div class="brand-wrap">
+    <div class="brand-mark">ME</div>
+    <div>
+      <div class="brand-title">TÖRÉSVONALAK.BLOG</div>
+      <div class="brand-sub">IDF Official Activity Dashboard</div>
+      <div class="brand-description">
+        Structured analysis of official Israeli military statements, geographic focus,
+        target profiles and claimed operational outcomes.
+      </div>
+    </div>
+  </div>
+
+  <div class="header-actions">
+    <span class="header-pill idf-pill">IDF official source</span>
+    <span id="generated" class="header-pill">Generated: —</span>
+    <span id="period" class="header-pill">Range: —</span>
+  </div>
+</header>
+
+<div id="app"><aside><div class="box brand"><div class="k">Törésvonalak</div><h1>IDF Source Dashboard</h1><div class="muted">Official-source analysis for the Middle East Security Monitor.</div></div><div class="box"><h2>Data status</h2><div id="status" class="status">Waiting for data…</div><div class="row"><button id="refresh" class="btn">Refresh</button><button id="reset" class="btn alt">Reset</button></div></div><div class="box"><h2>Time window</h2><label class="label">Quick range</label><select id="range"><option value="7">Last 7 days</option><option value="14">Last 14 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option><option value="365">Last 365 days</option><option value="all">All data</option><option value="custom">Custom</option></select><label class="label">From</label><input id="from" type="date"><label class="label">To</label><input id="to" type="date"></div><div class="box"><h2>Region</h2><div id="regions" class="checks"></div></div><div class="box"><h2>Activity type</h2><div id="activities" class="checks"></div></div><div class="box"><h2>Additional filters</h2><label class="label">Organization</label><select id="org"><option value="all">All</option></select><label class="label">Claimed result</label><select id="result"><option value="all">All</option></select><label class="label">Minimum reliability</label><select id="rel"><option value="0">All</option><option value="40">40+</option><option value="60">60+</option><option value="80">80+</option></select><label class="label">Search</label><input id="search" type="search" placeholder="Title, location, target…"></div><div class="box warn"><h2>Source warning</h2><div class="muted">This dashboard analyses official statements issued by a party to the conflict. It does not independently verify strikes, targets, casualties or operational results.</div></div></aside><main><section class="metrics"><div class="metric"><div class="ml">Visible statements</div><div id="mt" class="mv">0</div><div class="mn">After filters</div></div><div class="metric"><div class="ml">Map visualizable</div><div id="mm" class="mv">0</div><div class="mn">Usable coordinates</div></div><div class="metric"><div class="ml">Airstrike records</div><div id="ma" class="mv">0</div><div class="mn">Classified as airstrikes</div></div><div class="metric"><div class="ml">Top region</div><div id="mr" class="mv sm">—</div><div id="mrn" class="mn">—</div></div><div class="metric"><div class="ml">Top organization</div><div id="mo" class="mv sm">—</div><div id="mon" class="mn">—</div></div><div class="metric"><div class="ml">Average reliability</div><div id="mrel" class="mv">0</div><div class="mn">Source/classification score</div></div></section><section class="grid"><article class="card"><div class="head"><h2>Statement activity trend</h2><span class="note">Daily count</span></div><div class="chart"><canvas id="trend"></canvas></div></article><article class="card"><div class="head"><h2>Current source assessment</h2><span class="note">Rule-based summary</span></div><div id="assessment" class="assessment"><div class="empty">No records.</div></div></article></section><section class="grid eq"><article class="card"><div class="head"><h2>Activity composition</h2></div><div class="chart sm"><canvas id="activity"></canvas></div></article><article class="card"><div class="head"><h2>Regional distribution</h2></div><div class="chart sm"><canvas id="region"></canvas></div></article></section><section class="grid eq"><article class="card"><div class="head"><h2>Target organizations</h2></div><div id="orgrank" class="rank"></div></article><article class="card"><div class="head"><h2>Target and threat profile</h2></div><div id="targetrank" class="rank"></div></article></section><article class="card"><div class="head"><h2>Filtered official statements</h2><span id="count" class="note">0 records</span></div><div class="table"><table><thead><tr><th>Date</th><th>Region / location</th><th>Activity</th><th>Organization / target</th><th>Result</th><th>Statement</th></tr></thead><tbody id="tbody"></tbody></table></div></article></main></div>
 <script>
 (()=>{"use strict";const URLS=["data/israel-military-activity.json","./data/israel-military-activity.json","data/israel-activity.json","./data/israel-activity.json"],S={events:[],filtered:[],url:"",charts:{}},$=id=>document.getElementById(id),txt=(v,f="")=>String(v??"").trim()||f,num=v=>v==null||v===""?null:Number.isFinite(Number(v))?Number(v):null,arr=v=>Array.isArray(v)?v:v==null||v===""?[]:[v],esc=v=>String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"),human=v=>txt(v,"Unknown").replaceAll("_"," ").replace(/\s+/g," ").replace(/\b\w/g,c=>c.toUpperCase());const parse=v=>{if(!v)return null;const d=new Date(v);return Number.isNaN(d.getTime())?null:d},iso=v=>parse(v)?.toISOString().slice(0,10)||"",fmt=v=>{const d=parse(v);return d?new Intl.DateTimeFormat("en-GB",{year:"numeric",month:"short",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"UTC"}).format(d)+" UTC":txt(v,"Unknown")},uniq=v=>[...new Set(v.map(txt).filter(Boolean))],valid=(a,b)=>Number.isFinite(a)&&Number.isFinite(b)&&a>=-90&&a<=90&&b>=-180&&b<=180;
 function vals(e,p,s){return uniq(arr(e?.[p]).concat(arr(e?.[s])))}function reliability(e){for(const x of[e.reliability_score,e.confidence_score,e.source_reliability]){const n=num(x);if(Number.isFinite(n))return Math.max(0,Math.min(100,Math.round(n<=1?n*100:n)))}let s=72,c=txt(e.classification_confidence).toLowerCase(),g=txt(e.geospatial_confidence||e.geocode_confidence).toLowerCase();if(c==="high")s+=8;if(c==="low")s-=14;if(g==="high")s+=5;if(g==="low")s-=10;return Math.max(0,Math.min(100,s))}function norm(e,i){const lat=num(e.latitude??e.lat??e.location?.latitude??e.location?.lat),lng=num(e.longitude??e.lng??e.lon??e.location?.longitude??e.location?.lng);const acts=uniq(vals(e,"activity_types","activity_type").map(x=>x.toLowerCase()));return{...e,id:txt(e.id||e.event_id||e.uuid,`idf-${i+1}`),date:e.date||e.timestamp||e.datetime||e.published_at||e.created_at||"",title:txt(e.title||e.headline,"IDF operational statement"),description:txt(e.description||e.summary||e.details||e.text),location_name:txt(e.location_name||(typeof e.location==="string"?e.location:"")||e.city||e.region,"Unknown location"),latitude:lat,longitude:lng,map_visualizable:e.map_visualizable===true||valid(lat,lng),regions:vals(e,"regions","region"),activity_types:acts.length?acts:["other"],target_organizations:vals(e,"target_organizations","target_organization"),target_types:vals(e,"target_types","target_type"),threat_domains:vals(e,"threat_domains","threat_domain"),operation_results:vals(e,"operation_results","operation_result"),source_url:txt(e.source_url||e.url||e.link),reliability_score:reliability(e)}}function extract(p){const x=Array.isArray(p?.events)&&p.events.length?p.events:Array.isArray(p?.map_events)?p.map_events:Array.isArray(p)?p:[];return x.map(norm).filter(e=>e.date||e.description||e.title)}async function fetchJson(u){const r=await fetch(u+(u.includes("?")?"&":"?")+"v="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(`HTTP ${r.status}: ${u}`);return r.json()}async function load(){let er;for(const u of URLS)try{S.url=u;return await fetchJson(u)}catch(e){er=e}throw er||new Error("No IDF data source")}
