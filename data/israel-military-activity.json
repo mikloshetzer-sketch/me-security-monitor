@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-16T21:15:07+00:00",
+  "generated_at": "2026-07-17T05:22:35+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,27 +46,27 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 15,
+      "total_events": 16,
       "map_visualizable_events": 5,
       "total_map_points": 5,
       "multi_location_events": 0,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-16T17:22:22Z"
+      "latest_event_date": "2026-07-16T21:27:19Z"
     },
     "region_counts": {
       "Gaza Strip": 13,
-      "South Lebanon": 2
+      "South Lebanon": 3
     },
     "activity_type_counts": {
       "airstrike": 15,
-      "cross_border_fire": 1,
-      "ground_activity": 1
+      "ground_activity": 2,
+      "cross_border_fire": 1
     },
     "target_organization_counts": {
       "Hamas": 12,
+      "Not explicitly stated": 2,
       "Hezbollah": 2,
-      "Palestinian Islamic Jihad": 1,
-      "Not explicitly stated": 1
+      "Palestinian Islamic Jihad": 1
     },
     "target_type_counts": {
       "commander": 9,
@@ -75,6 +75,7 @@
       "weapons_storage": 2,
       "armed_cell": 2,
       "military_structure": 2,
+      "unspecified": 1,
       "smuggling_network": 1,
       "tunnel": 1,
       "targeted_vehicle": 1,
@@ -84,7 +85,8 @@
       "struck": 15,
       "eliminated": 12,
       "dismantled": 2,
-      "located": 2
+      "located": 2,
+      "reported": 1
     },
     "commander_type_counts": {
       "unspecified_commander": 3,
@@ -95,7 +97,7 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 15,
+      "ground": 16,
       "command": 8,
       "production": 3,
       "weapons_logistics": 2,
@@ -117,6 +119,62 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18925",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18925",
+      "date": "2026-07-16T21:27:19Z",
+      "title": "IDF ground operation statement",
+      "description": "IDF: Following reports regarding sirens that sounded in the area of Kiryat Shmona, it was determined to be false alerts that were activated in the area where IDF soldiers are operating in southern Lebanon.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "ground_activity"
+      ],
+      "activity_type": "ground_activity",
+      "target_organizations": [
+        "Not explicitly stated"
+      ],
+      "target_organization": "Not explicitly stated",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [],
+      "operation_results": [
+        "reported"
+      ],
+      "operation_result": "reported",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/18925"
+    },
     {
       "id": "idf-idfofficial-18924",
       "source": "IDF official Telegram",
