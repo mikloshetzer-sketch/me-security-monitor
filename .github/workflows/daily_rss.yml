@@ -3,10 +3,14 @@ name: Daily RSS Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 */2 * * *"   # every 2 hours (UTC)
+    - cron: "15 */2 * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: daily-rss-update
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -26,32 +32,77 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Fetch RSS feeds → events.json
+      - name: Fetch RSS feeds
         run: |
           python scripts/fetch_rss.py
 
-      - name: Generate Daily Signal
+      - name: Generate daily signal
         run: |
           python scripts/generate_daily_signal.py
 
-      - name: Generate Hotspot Alert
-        run: |
-          python scripts/generate_hotspot_alert.py
-
-      - name: Generate Security Signal
+      - name: Generate security signal
         run: |
           python scripts/generate_security_signal.py
 
-      - name: Commit and push updates
+      - name: Generate hotspot alert
+        run: |
+          python scripts/generate_hotspot_alert.py
+
+      - name: Validate security signal
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("security-signal.json")
+
+          if not path.exists():
+              raise SystemExit("ERROR: security-signal.json was not generated.")
+
+          with path.open("r", encoding="utf-8") as file:
+              data = json.load(file)
+
+          meta = data.get("meta", {})
+          summary = data.get("summary", {})
+
+          updated = meta.get("updated")
+          score = summary.get("normalized_risk_score")
+          events = summary.get("total_events")
+
+          if not updated:
+              raise SystemExit("ERROR: meta.updated is missing.")
+
+          if score is None:
+              raise SystemExit(
+                  "ERROR: summary.normalized_risk_score is missing."
+              )
+
+          if events is None:
+              raise SystemExit("ERROR: summary.total_events is missing.")
+
+          print(f"Security signal updated: {updated}")
+          print(f"Normalized risk score: {score}")
+          print(f"Total events: {events}")
+          PY
+
+      - name: Commit updates
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add events.json daily_signal.md hotspot_alert.md security-signal.json
+          git add \
+            events.json \
+            daily_signal.md \
+            security-signal.json \
+            hotspot_alert.md
 
           if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update RSS outputs and security signal"
-            git push
+            echo "No changes to commit."
+            exit 0
           fi
+
+          git commit -m "Update events and security signals"
+
+          git pull --rebase origin main
+          git push origin main
