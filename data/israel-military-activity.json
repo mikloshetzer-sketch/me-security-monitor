@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-18T15:13:40+00:00",
+  "generated_at": "2026-07-18T21:05:16+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,35 +46,36 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 18,
+      "total_events": 20,
       "map_visualizable_events": 6,
       "total_map_points": 6,
       "multi_location_events": 0,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-18T07:35:32Z"
+      "latest_event_date": "2026-07-18T17:33:21Z"
     },
     "region_counts": {
-      "Gaza Strip": 14,
-      "South Lebanon": 4
+      "Gaza Strip": 15,
+      "South Lebanon": 5
     },
     "activity_type_counts": {
-      "airstrike": 16,
+      "airstrike": 18,
       "ground_activity": 3,
+      "drone_activity": 1,
       "cross_border_fire": 1
     },
     "target_organization_counts": {
-      "Hamas": 13,
+      "Hamas": 14,
+      "Hezbollah": 3,
       "Not explicitly stated": 3,
-      "Hezbollah": 2,
-      "Palestinian Islamic Jihad": 1
+      "Palestinian Islamic Jihad": 2
     },
     "target_type_counts": {
-      "commander": 10,
+      "commander": 11,
       "individual_operative": 7,
+      "armed_cell": 3,
       "weapons_production": 3,
       "unspecified": 2,
       "weapons_storage": 2,
-      "armed_cell": 2,
       "military_structure": 2,
       "smuggling_network": 1,
       "tunnel": 1,
@@ -82,15 +83,15 @@
       "rocket_launcher": 1
     },
     "operation_result_counts": {
-      "struck": 16,
-      "eliminated": 13,
+      "struck": 18,
+      "eliminated": 14,
+      "located": 3,
       "reported": 2,
-      "dismantled": 2,
-      "located": 2
+      "dismantled": 2
     },
     "commander_type_counts": {
+      "unspecified_commander": 4,
       "company_commander": 3,
-      "unspecified_commander": 3,
       "nukhba_commander": 2,
       "cell_commander": 2,
       "production_commander": 2,
@@ -98,20 +99,21 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 18,
-      "command": 9,
+      "ground": 20,
+      "command": 10,
       "production": 3,
       "weapons_logistics": 2,
       "rocket_missile": 2,
+      "drone_uav": 1,
       "naval": 1,
       "underground": 1
     },
     "area_mention_counts": {
-      "Northern Gaza Strip": 8,
+      "Northern Gaza Strip": 9,
       "Southern Gaza Strip": 5,
+      "Central Gaza Strip": 2,
       "Yellow Line area": 2,
-      "Security Zone – South Lebanon": 2,
-      "Central Gaza Strip": 1
+      "Security Zone – South Lebanon": 2
     },
     "top_locations": {
       "Khan Yunis": 3,
@@ -120,6 +122,129 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18931",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18931",
+      "date": "2026-07-18T17:33:21Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: The IDF eliminated a sniper in the Islamic Jihad terrorist organization and a terrorist in Hamas’ Operations Headquarters in the Gaza Strip Yesterday (Friday), the IDF struck in the central Gaza Strip and eliminated the terrorist Imam Khamis Akasha Abu Brikh, a sniper in the Islamic Jihad terrorist organization. Recently, the terrorists have advanced sniping attacks against IDF troops operating in the Gaza Strip. In an additional strike yesterday in the northern Gaza Strip, the IDF eliminated the terrorist Muhammad Taysir Ahmad Ubeid, a commander in Hamas' Operations Headquarters. Throughout the war, the terrorist advanced terror attacks against Israeli civilians and IDF troops. The terrorists posed a threat to IDF troops operating in the Gaza Strip and were eliminated in aerial strikes. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any threats.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Northern Gaza Strip",
+        "Central Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18931"
+    },
+    {
+      "id": "idf-idfofficial-18930",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18930",
+      "date": "2026-07-18T16:04:15Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: Earlier today (Saturday), IDF soldiers identified a Hezbollah drone in the area of Tebnit. Following the identification, the Israeli Air Force conducted searches in the area and identified a Hezbollah terrorist cell that had been operating drones and taking cover near the Security Zone and IDF soldiers. Shortly after, the IDF struck the terrorists in order to remove the threat posed to the IDF soldiers operating nearby. The terrorists' actions constitute a violation of the ceasefire understandings. The IDF will continue to operate to remove threats to IDF soldiers and Israeli civilians.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "airstrike",
+        "drone_activity"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "armed_cell"
+      ],
+      "target_type": "armed_cell",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "drone_uav",
+        "ground"
+      ],
+      "threat_domain": "drone_uav",
+      "area_mentions": [],
+      "operation_results": [
+        "struck",
+        "located"
+      ],
+      "operation_result": "struck",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18930"
+    },
     {
       "id": "idf-idfofficial-18929",
       "source": "IDF official Telegram",
