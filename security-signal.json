@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-07-17 23:09 UTC",
+    "updated": "2026-07-18 03:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-07-11",
-    "period_end": "2026-07-17",
-    "total_events": 166,
-    "total_risk": 213.55,
-    "normalized_risk_score": 85.4,
+    "period_start": "2026-07-12",
+    "period_end": "2026-07-18",
+    "total_events": 164,
+    "total_risk": 195.44,
+    "normalized_risk_score": 78.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 70,
+    "military": 72,
     "security": 2,
-    "political": 17,
-    "other": 77
+    "political": 18,
+    "other": 72
   },
   "source_counts": {
-    "news": 160,
+    "news": 158,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 146.4
+      "risk": 130.48
     },
     {
       "name": "Gaza Strip",
-      "risk": 18.2
-    },
-    {
-      "name": "Tehran",
-      "risk": 11.1
+      "risk": 15.95
     },
     {
       "name": "Israel",
-      "risk": 8.05
+      "risk": 10.65
     },
     {
-      "name": "Middle East",
-      "risk": 4.4
+      "name": "Tehran",
+      "risk": 9.9
+    },
+    {
+      "name": "Yemen",
+      "risk": 6.4
     }
   ],
   "top_events": [
     {
-      "score": 3.12,
+      "score": 3.0,
+      "date": "2026-07-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "US strikes hit Iran for seventh consecutive night",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cy748n8zx8ro?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.73,
       "date": "2026-07-15",
       "category": "military",
       "source_type": "isw",
@@ -57,16 +66,16 @@
       "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-july-15-2026/"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-17",
       "category": "military",
       "source_type": "news",
-      "title": "US and Iran attack infrastructure, raising fears of escalation - Reuters",
+      "title": "US and Iran target infrastructure as strait shipping comes under further attack - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRW1QZlpEY3pwOHJJaDF2S2JVZG81S2xuakhndThpb1lLREpreFBCRW1TWTlZeFBGTFRaUER1dWRUU2FlaDlYTU9Yc0hzY3Juby0xSlRxN24yMGZvQ0ktN1NYcjVtZHc5a3F6UXQ5Qnc3aWNDNV84MV8ybWkxemptWEtlS1plM0kxQVNoM3A5RkpkUlZGSEtYbVVTN2RtNkhwc3VWZThNazhDTGpt"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-17",
       "category": "military",
       "source_type": "news",
@@ -75,7 +84,25 @@
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOQXVvLTBxWklNRDU2M0l1QTZhUmloM0xqbFM2RWwxaS0yckJVNXZTbkFlZDBQUHZHbDVfOGRDdlNlSDJQNUg5VnZodUs5MzdsUjQxZjFyZl9LaTdBbGhxWU16dk9kRXFKZm9OblFOX0NKNWdweGI4UXNLb0daSjNzdGVmZFJzRjZHUzZFWW51OFhXVjNpeHk2SUs2cGhNeC1VMWxsQVNjWkIzTlFBTjhiRUlrS3o2aDBWb2dCOFlHMWVBMFdt"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-07-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches multiple strikes on Iran, which retaliates against US targets in region - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQUFEyN1NxTHNCaG5RT2lOTWY4WWxWd1JQUGpLdV8wY3J0RVp3RmZaN21hcm9YX1A1TWdYc3RMU3BKNV9rd0tqdnM4SEpmamFRLXJIU1NvdnhUYlo5WDFnb2dPY2JfZU5HXzBMR184ei1kSS1zeUthWmltb1VzZWhOR0lCX2FlR0NXSGUxY0gxbVJTVkw2RFo5NnZSVXFhcGYxOUhOS1BJU2gza3VYY3VHT2JEWVV2VHdCdDdmeTRyOElucVF4Mk9r"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches new wave of strikes against Iran, military says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcm1DZ002b2p4eXVXWGJheThfVE05elZjcGw2MUZ0WWNPZ0JudzZ3dkRXTlF1elByVnpiSy15V1JvOUhuTEVVcXBOVlRCTzZWbUJfdVhWRXE1dUs1MVN0UC1PemhmUEhOQWVMcVpJUXgyLUJCNEYta3FhNFBEN1RxeWczV2VHRV8yd24tbWE1cW1vQU45cmJ6Nzg0b3ctc0xuWFBzU1oxTlBlM2l1cE5oTHFXa2ZobXhzRUppUTFDblB3aE1vVDFzUUlCU3MxQQ"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-17",
       "category": "military",
       "source_type": "news",
@@ -84,34 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSHZqQ2FSa1E2ZG9XdzN0QklxdDlUN0hBLWd0aTVJRUV5YUxlcTVEU1BKbGtRZDhOWjVDeWVFdFo5b1JpdlhUekJIT2FWZjhORlB3REFJUXN0a2s1N2tSejg3QW1SYlE4MHp4WUlXZmMxaHVJM2hoNVJJRkpmejFycWlsOW1JQ2hOYUxMUXpOc1hMX2FJQ1lOSTkyb3l5cHhOcktzaHZNTnJHRm14cXRhVlJB"
     },
     {
-      "score": 3.0,
-      "date": "2026-07-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military says it completed latest strikes on Iran, marking 6th consecutive night of attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNcU5Ec2J3b2lDc21BVGR3cWYxV185VjZLdk9tTzlndk5Tc3hPblNOQXVZY3hrYjU3bW9Mek9yZXVFV2tUV2d1NThXTnZ5SkhucHh4X3VPTlkxdk9SX2FlTndvTWRRUnB4ak01QmFWVzQ2RzVaYk1pWU1VMElXRW5jaFM5czAzR2VWeF9neExJZlgwaDhvV2pJbWh4LWV1bWJ5bnRRZmVyckRhNFNwNkVjdEJGdlFYbHc4d2FBTEx0U0ZsRFVaT1RIUmNNWHlrdw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iranians suffer new uncertainty and anxiety as US steps up attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMDFsaVNvbHhvcE55QWhLRXdNLXNoYzFXTU5TUktEZ3k5NVZFZHhidDlWaGRPZEFEVk1HUm9wSWhDN29xQWVabGlXbmxSbWwxQ3NKLUxySzB5TmFPRnFCZmxLeHNoTWJNcXNiTURDN1NfU0U0NWN4d2ZwZjJ6U256cDNXdFpoZ2lmR1RKZzBsMFFMcmJwWGNFUm5nOVFHU1hubS0tZmEwTGlPdTRzcTZocWlKQQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Strait of Hormuz transits drop as US and Iran escalate attacks across Gulf - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTVQyMmFIM0hOUXlUZjI0ZE1HNGRxWVVXS08yYmpuQkM5MXZ3YkMtLUhNWnZaejFRa3E2N0ltUzJuN1dtaWlRZDJpdFRBclIwRHlrNjRLbE9EYzlCQnNWZENmRk5XWmVFN3o0ZDBXaGh5R09rN2lWTHBBcFBFUzlWTzRaY3UySkZqR0g5VzNVUGY3MUZwc3k3R09ielFjZ21hVHV2bHRuUHl6V3YzcHdBZnFLdjhkY0M2Mmc"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-17",
       "category": "military",
       "source_type": "news",
@@ -120,22 +120,22 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQU0l2SzBLNkJrRlU3OWNGWmE1MXdfeVZfUk5MRXdETUJHQ1Z0ZFdiVm5GV09IOTRDdFZMYXR2c05HTjZzZTNZMEJmOVdUVWVoaEJNLURmdjNhNlVWb0pMSHlHUDBEa2hyQmpldkh6RVZOSHhDaUVvLW1JeWppMFpvaU9YVTdfSEtWTFluS0pOcmRwRU00Z0ZWd01qR0ZJVnZUOTAzUzlqel9lQ2U5ejYtWVd6Rmx1RHdoZEF4TDNJSTFNOUZjMnhnWHlueVg"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-17",
       "category": "military",
       "source_type": "news",
-      "title": "Iran says eight killed in latest US strikes, warns war ‘will spread’ - Al Jazeera",
+      "title": "US military says it completed latest strikes on Iran, marking 6th consecutive night of attacks - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZGFiQkZGcXRqQjFIbDdzVEVxUGV1dWR0WnlMb0JPanluS1pqckNsZXFkQmxvRHMzLTQwUVlJZ2laRDNmMGJRZEQ1N2d1S1N1dWFMdFdnRGQwT2ZBeEExVTFtd2F3SWdRSWNDNG95bU1NZlpsX2xLWmtFRjV4T1BiZlQ4SmJRVks2bGdmMnRKbHNoN3pyOUhKV1ZBcnFmb080TGNfSTc3UWFvd0Q1Q2fSAbMBQVVfeXFMTUNQS2ZSbGg0cVFyT2VCVTN4YWJrNnEtajdiSTVMN3k5MU1rRGRubTFic1YxR3gteUlBWko3MXlJb1V5WHNSYTlSdHNOVmYtTHF5NDF3WVNud24tX3duamlfYWYzZGJ5bC13QmQ4SlYwMmc0SnBoRnpXTjdpTHlTanJWU3VGNFg5d0VBN2pMTEk0Y3FZSXdIOXQwdTdPcWptTk9kU1FTR0g4aWd2OGNHaXNNaTg"
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNcU5Ec2J3b2lDc21BVGR3cWYxV185VjZLdk9tTzlndk5Tc3hPblNOQXVZY3hrYjU3bW9Mek9yZXVFV2tUV2d1NThXTnZ5SkhucHh4X3VPTlkxdk9SX2FlTndvTWRRUnB4ak01QmFWVzQ2RzVaYk1pWU1VMElXRW5jaFM5czAzR2VWeF9neExJZlgwaDhvV2pJbWh4LWV1bWJ5bnRRZmVyckRhNFNwNkVjdEJGdlFYbHc4d2FBTEx0U0ZsRFVaT1RIUmNNWHlrdw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-17",
       "category": "military",
       "source_type": "news",
-      "title": "Why is the US attacking southern Iran’s civilian infrastructure? - Al Jazeera",
+      "title": "Iranians suffer new uncertainty and anxiety as US steps up attacks - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPX1VRZmVOOWZUQzZiLXZrREdUbEhwdHpMclNyY05YQTVpc3diME5DTTd2YWZsazJEdFB0akZxM3ktVTJlTmNYblNmUWZlZHJCWWdLNjJKbTVwQW5za2tlYTRNWUdyemgwRW92RXQyUXVzYkxiYXlNOWFOeDhWSDFoaTFycUNwVjBtRmFadmtpcnJ0eXNLMWVMZEctVzQtRF9sMUxhTVNR0gGrAUFVX3lxTE5OSFFTYWptSHV3dFVwa3hBOWthWFA3WVR3bDhibmtvY29PY2U0SmpBakFzcWUtNkI5aTBDVFdoM1B6M0QtMlB5akh0Q010MjRrTmtkTEtIUUtlRkhaZWpKSDQ0V09jXzhmdGk2U2oyYXhmMFJiMXRBNjdmVW5FaXlYNk5fa3ozaThXUnlnQmw5VG56RTIyUno4QjNxR29VLXpNV0hMNl9UZUFqTQ"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMDFsaVNvbHhvcE55QWhLRXdNLXNoYzFXTU5TUktEZ3k5NVZFZHhidDlWaGRPZEFEVk1HUm9wSWhDN29xQWVabGlXbmxSbWwxQ3NKLUxySzB5TmFPRnFCZmxLeHNoTWJNcXNiTURDN1NfU0U0NWN4d2ZwZjJ6U256cDNXdFpoZ2lmR1RKZzBsMFFMcmJwWGNFUm5nOVFHU1hubS0tZmEwTGlPdTRzcTZocWlKQQ"
     }
   ]
 }
