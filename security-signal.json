@@ -1,54 +1,72 @@
 {
   "meta": {
-    "updated": "2026-07-18 23:12 UTC",
+    "updated": "2026-07-19 03:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-07-12",
-    "period_end": "2026-07-18",
-    "total_events": 169,
-    "total_risk": 220.24,
-    "normalized_risk_score": 88.1,
+    "period_start": "2026-07-13",
+    "period_end": "2026-07-19",
+    "total_events": 171,
+    "total_risk": 203.75,
+    "normalized_risk_score": 81.5,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 78,
-    "security": 1,
-    "political": 15,
-    "other": 75
+    "military": 81,
+    "security": 2,
+    "political": 14,
+    "other": 74
   },
   "source_counts": {
-    "news": 163,
+    "news": 165,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 152.43
+      "risk": 138.24
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.0
+      "risk": 16.2
     },
     {
       "name": "Tehran",
-      "risk": 12.9
+      "risk": 11.7
     },
     {
       "name": "Israel",
-      "risk": 12.85
+      "risk": 10.8
     },
     {
       "name": "Yemen",
-      "risk": 6.4
+      "risk": 5.55
     }
   ],
   "top_events": [
     {
+      "score": 3.51,
+      "date": "2026-07-18",
+      "category": "military",
+      "source_type": "isw",
+      "title": "Iran Update Special Report, July 18, 2026",
+      "location": "Iran",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-july-18-2026/"
+    },
+    {
       "score": 3.0,
+      "date": "2026-07-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Two US troops killed and one missing after Iranian attack in Jordan",
+      "location": "Tehran",
+      "url": "https://www.bbc.co.uk/news/articles/cn8nynv8ze8o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-18",
       "category": "military",
       "source_type": "news",
@@ -57,7 +75,16 @@
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUVgwRnh4bGg5bXVrMEdSNXEydXpjb0dCTmQwQlV2MHlydHJTU05DcUxIbktrZW82aGUwZ2F4R2h6bkJXOEpFQy1DREthRVFySzUzNkpVMGNSdXdTMlVjVFR4ZTkyYlRqRTU4bEo1cHR1Y3RMSDJ0UV9Ed01tbnVZbUdyN29ZZWpqQU5VZDd3b3dkS0VlMVp5UUJSZHdPVUUzVjZGNmFHWUJOYWVFZDd0ekJnV293QTg"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-07-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "US and Iran target infrastructure as strait shipping comes under further attack - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRW1QZlpEY3pwOHJJaDF2S2JVZG81S2xuakhndThpb1lLREpreFBCRW1TWTlZeFBGTFRaUER1dWRUU2FlaDlYTU9Yc0hzY3Juby0xSlRxN24yMGZvQ0ktN1NYcjVtZHc5a3F6UXQ5Qnc3aWNDNV84MV8ybWkxemptWEtlS1plM0kxQVNoM3A5RkpkUlZGSEtYbVVTN2RtNkhwc3VWZThNazhDTGpt"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-18",
       "category": "military",
       "source_type": "news",
@@ -66,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNd1Zpc0tXYzd1NVhsVFJ2VHRXTkl5ZTA0Y0I0Yk9TeFNKbFZoRWpEWTM0Y0NBdmlKUFJIMHlFRGdYWTNDZEF2THo1azkyV3JabU9GOUxGQ3hwY2pxOUJXVUVlaUxHeFpiNVFxYVA2NTZmMTNLOHY1b3JjTVJfT0piMnFoZ2ZicnVXUkdMWG5jY21MUUxLZnpKeDB0V2NqaEdyWHZBTzRXV18zQzhJek9tREx3MW8wcGVaa25MbExTV0tXZWZyd2x3X21ueGNUUQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-18",
       "category": "military",
       "source_type": "news",
@@ -75,16 +102,25 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQazdUZDlCcTM4RDlDTThjdnhKdU1rLU9WQzRDbWxrQWpIb2hjUU91V1VicGRSYjdQbkI4Qkw3c05aOW5faUZHeHlhaTdGd0pRWFhxeGtBYW1FcDhLVzNJV0NzQnRuMEpuNE5HOTZZVnN0OVkzSDRKZWJUZlZFWW83T3YzTGtYdHd4QS0tZ3ctai1TUUNTdGtHQ01PQzltSnJiY25PaDdxLWJTSWJHTHF4c0JLbE15NVVVUUUyR2ZoQ3c3VmlYZTVXcmFTdXVJdw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-18",
       "category": "military",
       "source_type": "news",
-      "title": "Two US troops killed and one missing after Iranian attack in Jordan",
-      "location": "Tehran",
-      "url": "https://www.bbc.co.uk/news/articles/cn8nynv8ze8o?at_medium=RSS&at_campaign=rss"
+      "title": "Lebanese soldier killed as army vehicle hits explosive in south Lebanon - Reuters",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeTNINXpMbWVZRWhNVnlVQXlDZ0M4NnVyQS1jTVFXaW1vQnduR3pCRG9IOEJKdG9fUmJMaGZZSno3RmliMi1zbldTNGw4X21HWkdKSWhKNkJZWkVFRmNMX20zMEZxLTBySDJySGJiUHRXSERNNzRUeGRCcjd3aWNDQURiT0Y3elc0M2ZILVBZSVF0NzJMZmppcE9odlkzYmE2WnA3T21HVE50SHZaLTlpTTBQV0Rid1dqTkxZ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-07-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "US renews strikes on Iran after two military personnel killed by Iranian attack - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcmZSOG9seXNyMUFGTW1NMF9XWUVNYUZLczBFRWFTTDZZYnRjX081R3pnUzl6NTFVM053aG50T09hb2pMSlFxTGV6T2V0ZEZaRUFtNjVTSk01MWFrb05KcHdVdHZHMktERXlFVEdKTGFrTlo0cl9SY0hjb0dpb01rMDh6Z2l5MFoyWGI2VjA3cGx1UTN1T1RqU0RCeHVLdVlWUEJIU0dHaFl2SEpKN1AySUlMeUJPQVBtWUtPY1BHUUw5bGZxTEpCRQ"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-18",
       "category": "military",
       "source_type": "news",
@@ -93,49 +129,13 @@
       "url": "https://www.bbc.co.uk/news/articles/cy748n8zx8ro?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-18",
       "category": "military",
       "source_type": "news",
       "title": "US launches seventh straight night of strikes on Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQX3F0Tk5uODljNVJMbFh5OS12WlAzeEE4VTBJRFd1NzU4UDNDVTlNUzBNNnBTaXFOODZYN1phZ2JyZ3FEVE5udkJka3ZILVFSQ3hab094dmhOUnJmdC0xUnhJWjJSaG4yZ0R6VFJTTUpKd2ZfY1dsSlRDeC04WEFpZXVad0V6SEp0QnQ3TlhtbkVSckdYNmd1YzdB0gGfAUFVX3lxTFAxbFdvUUcwd3BSUWNsak5VYlN2SmxHYU5yYmlGOVUzbm0ybzlPczhobE1NMDJDSFNkdU1Da1V2VHNaZDZVajFtY0FDcDdtVF9sc05CdzEwdW1zVnc4T2o0c1EyQjdKWnN3YXNhendhdGhXX2xwYnRMUEtZamNPS1dUTVVnUWlPQ1hGWmQ3RTJ0Qm14U0ozd3J4S1ViSmN2Zw"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military says two service members killed in Iranian strike in Jordan - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMnJZeFhCVmRDeUFKZC0xQWFqZGhWR3JjYmg2SXMyZElGVTI3RWg4bmFVdUY5UFg4dkwybURiQmlNcFlOelZiemdOcWswNUp5QkpKWEUweEpXcFplS3dTcVMzNmVkc3lUY1R2QXQ3THh3Tnd5UFFoYmlGYzJQYkhZZlRPcXVNTWxfX1pKS0drMzRiX1ptdGlySGpyQWRfd3VrVkFpOURYTTZvVXJGUDZsd25R0gG3AUFVX3lxTE5ydy0zQXoyODNZc2Q1Qmh2b0U5WnFpVU92aU44OFVvQllUUjBTOHluelRJU2FvcDVQV3BsNFYxdWJWMWFNeWMxYkE1ZHdOTW41Ny1FbFRiZkhTUC03RUthdlM3ZjFqU2U0MF9UbkNuVUhGVjlianZCcXQtRjczc2pNdEYzZlIzOU54OFd6ZDVHdjFrZm52TTQ1cnkwcUpseENIUEpVM2trMXVCRDA0RGdOcGwtZXlXTQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "A seventh night of US strikes cuts water to villages in Iran’s south - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdnp4bXVXai1STlR6Y1ZWc2VmQk5DeXMzNkpnZjMzQXBpVU1QRXAyMVNQcWFSTVRBM19DTzBHMVczbmRsWjBnRXJjUjNJdHFPeXlZOVJSeGVPS3VUT1pjMHo1YkN2d0FvNmc4ZlBZZkk5MWdqRUUtUTNWaTE3NnUtQU8yWnZqSzRNVkMzSS1FakIwMEhYNXB6WTU5eWs0S1VhZkdLb0d3aG5DM3hCNHBhZlUxdlJNelBZUlHSAb8BQVVfeXFMTXBxT1dGdjYyOW9MRk9jc0p0cDZrOHczLTlHV01EenRKdllVQmJyOTJmai1qSlB5aUp3U3JTM0UtWVJTbGdZdF9wLXVtV2oyRU9sNHdPakkwSU9GUW1MR2lQX21jc29MYXdyNjFkSXVYcGJMdnQyWUNIZjE0MGJXWVJpY1E0Szdfa1BHeGViLUdnLW5VQ0tNcFpRWm1lNHNhMVVHdXpLWXVqaE01ZW9OSms5RjhwZ2VpdHgwMTEzV1U"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Plumes of smoke rise over Kuwait after repeated Iranian attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQeDY0UDVmOWJmQVBMUDZ4eEJYTDJncVZxWUFQUmZDSkxHUmFjMlBxaTRDM2xyd3A1ME01N25zelU0bXQ5QUJJYzR0VWd3Zk5xU2dqb3MxTWhRdDI2dnRkNGlRVXhrNnJ5ZFpkeDJxZGlQa2o1YzBxT1BmU1VHbFgwTTZ4N3NHa3NYdDUyLTZFaFh0YlNfTlhxTC16dEdNNEJ1QVVHNHQ3cVJmaFhRUWR5MzgxclPSAboBQVVfeXFMUHlqVmhjNUU3ZDZJNEFWYUV6Y2xFRVpYRU5vOHRGOGRORW5ONjN4dnZ6MTZyb0JrZ3MydU9WblkwUGQwcGt0U3A0cUcyOU9oTVJjWHhiOWt0Z0owQVhrUGluOXNwTzg4T0R0ejBRMnI3X2tEbFF4cm5QSTFUd283bHpCTnZoMXh1RVI2YU56LThyNUtTREh5Y3Q2S0pmX0p2QlFqeGtjUkROZWwzb2pOM1E2V05yUTdiQ1lR"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks on residential areas in Gaza kill eight - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNRm5DVWFGcU4zaW5pRVZkb3NqM1JDc3FVajd2T256U3dibVR4cHBwY0gtM0VVdmtkOF8tMGpiaGc0WkcxN0s3eW5RRnhFYm5BY1ByaFh1UkE0OU1uU24tQkpZaVBDUndTVmdSWDNKeV9uWXQ3VVgzQ2ViYmp1U3pzbWJXZWxKbktnZHhBeXhwb3h5dWpUcDIwWFBQeUvSAaIBQVVfeXFMTWxrbDhQeUp6emZ6RVRGVmNmWEdqc1dycjZLME5zMzQ3WEozeUdkaENvd2NtNGpJSU9peUxjTG9MWFBxLW1kSlJWUHN2Vmp3ZE9Ibm9RaHdMNnZuWDBZaERkSDFiS3NvdGVXc1JOMmdPcE8tMmJCcGp4clhKNjdObl82WXhvaGoxdm1XVUJhMXR4Nmxpc3hURHVmTFVaOTh4MERn"
     }
   ]
 }
