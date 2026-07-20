@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-20 04:06 UTC",
+    "updated": "2026-07-20 07:30 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-14",
     "period_end": "2026-07-20",
-    "total_events": 162,
-    "total_risk": 187.06,
-    "normalized_risk_score": 74.8,
+    "total_events": 166,
+    "total_risk": 190.51,
+    "normalized_risk_score": 76.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
     "military": 76,
     "security": 2,
-    "political": 13,
-    "other": 71
+    "political": 14,
+    "other": 74
   },
   "source_counts": {
-    "news": 156,
+    "news": 160,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 127.01
+      "risk": 127.21
     },
     {
       "name": "Israel",
-      "risk": 13.1
+      "risk": 13.5
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.8
+      "risk": 9.9
+    },
+    {
+      "name": "Syria",
+      "risk": 8.5
     },
     {
       "name": "Tehran",
       "risk": 7.95
-    },
-    {
-      "name": "Iraq",
-      "risk": 5.75
     }
   ],
   "top_events": [
@@ -52,7 +52,7 @@
       "date": "2026-07-20",
       "category": "military",
       "source_type": "news",
-      "title": "Brent oil tops $90 as US, Iran expand strikes in the Middle East - Reuters",
+      "title": "Oil jumps 3% as US, Iran expand strikes in the Middle East - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbDB0dzIyZzhDNXdvemNBWHdxR3dnWXcwVk4xM082SDRRTm9xel9yX3hJeFBDN1hyQXZpRlVWcElHNi13amFSaXFZLUEtYWpva20xcmFjLWt2TEc0QjFlMDJRMHFPZ3dpb0hZNlBib1ZMNk4xNXdPcmNfUHRpRzNzVDRtdmZlY2MydWVLdS1uVnZXSkdHZjlYelZOZ1M0SXlnVzlBSGFUUU43YlE"
     },
@@ -61,7 +61,7 @@
       "date": "2026-07-20",
       "category": "military",
       "source_type": "news",
-      "title": "US launches Iran strikes for ninth day as another American confirmed killed - Reuters",
+      "title": "US strikes Iran for ninth day; Iran says two oil tankers in Strait of Hormuz exploded and immobilised - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbmtOemhMR1UtaVNoMENBMHltNEpKTWJNekRXUEtSa3hidndTM0VZVnRoTEJlV2ZENWtkYVFCUkJtSk8zdFhPeEJQSXRNMS1vWC03N2NJek14WklXdzhNZWkzMnZRUFpGcHg2OXotaHpyVW9jblFTYUM4U2lGcXFWa1NFbnZSQnpreVF6OXVhMW1oeHdIdkFNMjBJa09UZGgycjRkMjZ6Z1dxNC10enJIVDZJdlVSQjRxQlBZc05Tdw"
     },
@@ -70,9 +70,27 @@
       "date": "2026-07-20",
       "category": "military",
       "source_type": "news",
+      "title": "Trump says US strikes hit Iran in 'honour' of American soldiers killed",
+      "location": "Syria",
+      "url": "https://www.bbc.co.uk/news/articles/cly52xzjd3qo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran attacks Bahrain, Kuwait and Jordan after US hits Iranian nuclear site - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkZ5QXo1N2hOeXZuODFkalM2aVg4bjNlX0p4UHRzM0FLb3VBbzBKeFRGeVZCdENGMEFKRndFXzdTaDFTazgtczZnZDRBZWRHQjdHTjg3MHF1MjF3blhaM0pINlhCeGxPZkJDVTBYTkkyY0FPQjFpZEp0N3RzRFNSMkJBMFRxV3NCcmZpc256X0I1MlRUelMtc0g1RQ"
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkZ5QXo1N2hOeXZuODFkalM2aVg4bjNlX0p4UHRzM0FLb3VBbzBKeFRGeVZCdENGMEFKRndFXzdTaDFTazgtczZnZDRBZWRHQjdHTjg3MHF1MjF3blhaM0pINlhCeGxPZkJDVTBYTkkyY0FPQjFpZEp0N3RzRFNSMkJBMFRxV3NCcmZpc256X0I1MlRUelMtc0g1RdIBoAFBVV95cUxQbkZxaDI5R0M0elRWcEpiTjhNeXJnQ0NJSW9VNFhTQ2MydlF1M2c0azUxbThYcksyZDMxYkZhcG40VGwySDh1VXdoS29sT1RNdEpLSnZfMTA3QmpweW1NYlhRVmVieWQ2YU1zbzl6TWJ5d0k1S3VHLTBRYUdzMkdyYTdkdDJOWFlWM1VHcVdmSFF6NmlLXzFCb0FwVXJhTEdD"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "US soldier killed in Iraq during ‘controlled detonation’ of Iranian drone - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHltUU9hT0VWajZhM0YteFlIQkczRzN0YThsbnJsRXFtQWg4RmtfNlczVHNMZ1MzOUFkVnRUNUQwUERYMDcxekMyeThzbDNrRkVZT05JS2NId0FGLXd5Q0VETkt0MzBrNEpWekxaT2FlRXl0aDRvaWNiSGR0SW1nNXZmX3NNY0N0cldSallfQ2FHSXowOVRURFU1NmhGSzE0Vy1FQWxTOS1DNnVRN3QtcXhB0gG3AUFVX3lxTE5QeFd0eEVMajBuR0RWQlh1NkVQUERUaXV0UE9pSnlRWWRFV09Ed1NPYjBoQUpueWpqcHZhNm1aNHlVUmZXelp5azdkdXU2cTRzRW5vbWxxZlFocE9BZ2VTOC1NZFRidXBpMVpVMUpzYnJtUTc5RUdqeE5rQjAxcG5MN2w3Tlp5SnQ3a0U2OGZRNmdLUlMxOWc2LUEzT0RLNGNZLWtib1RtTndmUEhGTVhwSURhY2xtWQ"
     },
     {
       "score": 3.0,
@@ -115,27 +133,9 @@
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
-      "title": "US soldier killed in Iraq during ‘controlled detonation’ of Iranian drone - Al Jazeera",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHltUU9hT0VWajZhM0YteFlIQkczRzN0YThsbnJsRXFtQWg4RmtfNlczVHNMZ1MzOUFkVnRUNUQwUERYMDcxekMyeThzbDNrRkVZT05JS2NId0FGLXd5Q0VETkt0MzBrNEpWekxaT2FlRXl0aDRvaWNiSGR0SW1nNXZmX3NNY0N0cldSallfQ2FHSXowOVRURFU1NmhGSzE0Vy1FQWxTOS1DNnVRN3QtcXhB0gG3AUFVX3lxTE5QeFd0eEVMajBuR0RWQlh1NkVQUERUaXV0UE9pSnlRWWRFV09Ed1NPYjBoQUpueWpqcHZhNm1aNHlVUmZXelp5azdkdXU2cTRzRW5vbWxxZlFocE9BZ2VTOC1NZFRidXBpMVpVMUpzYnJtUTc5RUdqeE5rQjAxcG5MN2w3Tlp5SnQ3a0U2OGZRNmdLUlMxOWc2LUEzT0RLNGNZLWtib1RtTndmUEhGTVhwSURhY2xtWQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-19",
-      "category": "military",
-      "source_type": "news",
       "title": "US bombs Iran for eighth-straight night - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPc21SMVZpbkpCbzdWZTF6QzJheDlIcTV2bTBIaEdnZENmd1hYWjk2VmxsOVFVRFc3VTgtTFZCZHA1cVRGUTI3Qm5OVFV4SmhqdENIT1NuVTNxMkwtQkp1OXVlMnZXREdES0JDWFUtZ0FhSUJ1Wk9PTDJXdTRDSWR3bldob1doTUo4akZqN0R2d2lzQW830gGaAUFVX3lxTE03d3RYUGowYWlrOUVJNGVCS0xMVGt2OHVWbEM5SlJiWjI4aURiOG9pSTNydWRMdVVDaU5STW44eWRiMEhoSlFtNm15NFdZY0dZbG9qVDFKNkczVXF0Wno0YlZsc0VVTS1US0NhVGlxVm1vX2k4clBhekUxV1FwMElZeWlZV19BUmFfV21mRGtIenp6ZEx0X2FzLVE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Moment Iranian missiles hit airbase in Jordan killing US soldiers - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMDQweURMeTNWYzF4UFVTREVsOU5VNFJsS2g2YlU1bVNZS2k2YUdrT010WG1qWWNYSk55Um1VakN4US1EaUdoTEswa1FYV1FLV3Zrczh6Ql83elZCR0djOFJabUVqMFQyN25tSkhvTW5jUGZUbGRoOUZVeHlpRWUwWFNmbm96SC1lQ2lpazA5LUJuMktTVmk1dkd2QnNHckRLWjg1eFpDeU1RSWdSZENiSl9EYTVxQzDSAbwBQVVfeXFMT0ctaUJRX0oxdzNTZVh2YUpqdklxeDdVZ2Zpc1FLTHl2dXFGeERvR2M3eHV0SDg4ekdweTAtNnNqMEo4OWpVdjNDendaOUx3bXFSTlBETE5HSXBibFM5TEptZUFYUGR4VzUtWWZPSFhaYm9RdGlSYWZBcWFXLXVLTVRUdHBlQzN2d1gyZFkxdXN5dVZnQVlFSnQ5Q1plSDlvWVFIaWsyM1ROcXktODdJYjRPN3BBTlYxSHlvVFU"
     }
   ]
 }
