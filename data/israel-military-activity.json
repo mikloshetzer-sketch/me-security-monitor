@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-20T16:01:18+00:00",
+  "generated_at": "2026-07-20T21:31:30+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,26 +46,27 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 21,
+      "total_events": 22,
       "map_visualizable_events": 6,
       "total_map_points": 6,
       "multi_location_events": 0,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-19T15:31:32Z"
+      "latest_event_date": "2026-07-20T19:30:37Z"
     },
     "region_counts": {
       "Gaza Strip": 16,
-      "South Lebanon": 5
+      "South Lebanon": 6
     },
     "activity_type_counts": {
       "airstrike": 19,
       "ground_activity": 3,
+      "humanitarian_zone": 1,
       "drone_activity": 1,
       "cross_border_fire": 1
     },
     "target_organization_counts": {
       "Hamas": 14,
-      "Not explicitly stated": 4,
+      "Not explicitly stated": 5,
       "Hezbollah": 3,
       "Palestinian Islamic Jihad": 2
     },
@@ -73,11 +74,11 @@
       "commander": 11,
       "individual_operative": 7,
       "weapons_production": 4,
+      "unspecified": 3,
       "weapons_storage": 3,
       "military_structure": 3,
       "armed_cell": 3,
       "rocket_launcher": 2,
-      "unspecified": 2,
       "smuggling_network": 1,
       "tunnel": 1,
       "targeted_vehicle": 1
@@ -85,9 +86,9 @@
     "operation_result_counts": {
       "struck": 19,
       "eliminated": 14,
+      "reported": 3,
       "dismantled": 3,
-      "located": 3,
-      "reported": 2
+      "located": 3
     },
     "commander_type_counts": {
       "unspecified_commander": 4,
@@ -104,6 +105,7 @@
       "production": 4,
       "rocket_missile": 3,
       "weapons_logistics": 3,
+      "unspecified": 1,
       "drone_uav": 1,
       "naval": 1,
       "underground": 1
@@ -122,6 +124,62 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18943",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18943",
+      "date": "2026-07-20T19:30:37Z",
+      "title": "IDF humanitarian zone update",
+      "description": "IDF: In accordance with the directives from the political echelon, the “Safe Zone” pilot program began today (Monday) in southern Lebanon, in cooperation with the U.S. military (CENTCOM) and the Lebanese Armed Forces. As part of the pilot, teams from the IDF, the U.S. military, and the Lebanese Armed Forces are conducting coordination and planning for the continued implementation of the agreement. The IDF will respond forcefully to any violation of the agreement.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "humanitarian_zone"
+      ],
+      "activity_type": "humanitarian_zone",
+      "target_organizations": [
+        "Not explicitly stated"
+      ],
+      "target_organization": "Not explicitly stated",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "unspecified"
+      ],
+      "threat_domain": "unspecified",
+      "area_mentions": [],
+      "operation_results": [
+        "reported"
+      ],
+      "operation_result": "reported",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/18943"
+    },
     {
       "id": "idf-idfofficial-18935",
       "source": "IDF official Telegram",
