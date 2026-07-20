@@ -1,54 +1,90 @@
 {
   "meta": {
-    "updated": "2026-07-19 23:12 UTC",
+    "updated": "2026-07-20 04:06 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-07-13",
-    "period_end": "2026-07-19",
-    "total_events": 170,
-    "total_risk": 210.42,
-    "normalized_risk_score": 84.2,
+    "period_start": "2026-07-14",
+    "period_end": "2026-07-20",
+    "total_events": 162,
+    "total_risk": 187.06,
+    "normalized_risk_score": 74.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 77,
-    "security": 3,
-    "political": 14,
-    "other": 76
+    "military": 76,
+    "security": 2,
+    "political": 13,
+    "other": 71
   },
   "source_counts": {
-    "news": 164,
+    "news": 156,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 137.97
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 15.4
+      "risk": 127.01
     },
     {
       "name": "Israel",
-      "risk": 15.3
+      "risk": 13.1
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 11.8
     },
     {
       "name": "Tehran",
-      "risk": 9.2
+      "risk": 7.95
     },
     {
-      "name": "Syria",
-      "risk": 6.25
+      "name": "Iraq",
+      "risk": 5.75
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Brent oil tops $90 as US, Iran expand strikes in the Middle East - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbDB0dzIyZzhDNXdvemNBWHdxR3dnWXcwVk4xM082SDRRTm9xel9yX3hJeFBDN1hyQXZpRlVWcElHNi13amFSaXFZLUEtYWpva20xcmFjLWt2TEc0QjFlMDJRMHFPZ3dpb0hZNlBib1ZMNk4xNXdPcmNfUHRpRzNzVDRtdmZlY2MydWVLdS1uVnZXSkdHZjlYelZOZ1M0SXlnVzlBSGFUUU43YlE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches Iran strikes for ninth day as another American confirmed killed - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbmtOemhMR1UtaVNoMENBMHltNEpKTWJNekRXUEtSa3hidndTM0VZVnRoTEJlV2ZENWtkYVFCUkJtSk8zdFhPeEJQSXRNMS1vWC03N2NJek14WklXdzhNZWkzMnZRUFpGcHg2OXotaHpyVW9jblFTYUM4U2lGcXFWa1NFbnZSQnpreVF6OXVhMW1oeHdIdkFNMjBJa09UZGgycjRkMjZ6Z1dxNC10enJIVDZJdlVSQjRxQlBZc05Tdw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attacks Bahrain, Kuwait and Jordan after US hits Iranian nuclear site - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkZ5QXo1N2hOeXZuODFkalM2aVg4bjNlX0p4UHRzM0FLb3VBbzBKeFRGeVZCdENGMEFKRndFXzdTaDFTazgtczZnZDRBZWRHQjdHTjg3MHF1MjF3blhaM0pINlhCeGxPZkJDVTBYTkkyY0FPQjFpZEp0N3RzRFNSMkJBMFRxV3NCcmZpc256X0I1MlRUelMtc0g1RQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "US bombs Iran for ninth consecutive night as Hormuz tensions escalate - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNMllfMFhRY016dnp4MXpEQjB1eUR1UHU2dG9JeGJqcUlqWGJNN2dnVE9nc182SkZwMjV6UFFqWGZmV2lzN2dLSUQ4Vm5OanJWUmd1cGNfT1hzOVR5VzU0dGp4b2ZuWDFkQjY2S3IyQjVTRWNCSzRwcUpSRUU2ZTFmdndRd2paN3QxaGRxRWRNUDVvblFsZWlLY3JnTmh3VEhQZ2pocFM5Qm9yQlhVT21J0gG0AUFVX3lxTE9uaWxwX0tIVnliUjBVTGdVaXBHYVo5QnR6cFZoeE9wUXd4c2tyUDN1c0J4Vk1jWEVkaHNMU19VdkgyS3FpVVhhLUZMbjNQNTVHdk9MMUY1NjRTeXZGcXJaZEJGQUl6UDFOSHk4cEpJWXdzVzBycncxU0t2enZpb3FPM2JoOTN5blF5cUQ5aXlDN1Y3VXltdzZUMlRLSHFDMC1QQVFhN1o0Mmw5RURfUEdFdUJERg"
+    },
+    {
+      "score": 2.7,
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
@@ -57,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOR28xNFpKXzVoWU9qY0YtNnBqZlh4ck9aeTZnc1VlOVVKaTczV2J1M1pqSmRwUFc1TnFIRU5wRktydXhhXzhSY1ctbDhzU3dkX3I0dEliRDFJWDNUaFkzUUFsMEg4NnV2SWFpOGFhdHdMRHc2SDc4NE0tcXhpZ0VUVGNTQUVQazZONGdlT3hvbm4tQ0RoaFNBVkZWR0pBTlhiRmNJMnl1RFdzWWRrQl83akkybFFRUy1odzdkdFFmTmhXbS1fNDNPcG9UY0RjeFk"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
@@ -66,7 +102,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
@@ -75,16 +111,16 @@
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMnJZeFhCVmRDeUFKZC0xQWFqZGhWR3JjYmg2SXMyZElGVTI3RWg4bmFVdUY5UFg4dkwybURiQmlNcFlOelZiemdOcWswNUp5QkpKWEUweEpXcFplS3dTcVMzNmVkc3lUY1R2QXQ3THh3Tnd5UFFoYmlGYzJQYkhZZlRPcXVNTWxfX1pKS0drMzRiX1ptdGlySGpyQWRfd3VrVkFpOURYTTZvVXJGUDZsd25R0gG3AUFVX3lxTE5ydy0zQXoyODNZc2Q1Qmh2b0U5WnFpVU92aU44OFVvQllUUjBTOHluelRJU2FvcDVQV3BsNFYxdWJWMWFNeWMxYkE1ZHdOTW41Ny1FbFRiZkhTUC03RUthdlM3ZjFqU2U0MF9UbkNuVUhGVjlianZCcXQtRjczc2pNdEYzZlIzOU54OFd6ZDVHdjFrZm52TTQ1cnkwcUpseENIUEpVM2trMXVCRDA0RGdOcGwtZXlXTQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
-      "title": "Iran attacks US Gulf allies, causing a fire at Kuwait power plant - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVkZ5QXo1N2hOeXZuODFkalM2aVg4bjNlX0p4UHRzM0FLb3VBbzBKeFRGeVZCdENGMEFKRndFXzdTaDFTazgtczZnZDRBZWRHQjdHTjg3MHF1MjF3blhaM0pINlhCeGxPZkJDVTBYTkkyY0FPQjFpZEp0N3RzRFNSMkJBMFRxV3NCcmZpc256X0I1MlRUelMtc0g1RdIBoAFBVV95cUxQbkZxaDI5R0M0elRWcEpiTjhNeXJnQ0NJSW9VNFhTQ2MydlF1M2c0azUxbThYcksyZDMxYkZhcG40VGwySDh1VXdoS29sT1RNdEpLSnZfMTA3QmpweW1NYlhRVmVieWQ2YU1zbzl6TWJ5d0k1S3VHLTBRYUdzMkdyYTdkdDJOWFlWM1VHcVdmSFF6NmlLXzFCb0FwVXJhTEdD"
+      "title": "US soldier killed in Iraq during ‘controlled detonation’ of Iranian drone - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHltUU9hT0VWajZhM0YteFlIQkczRzN0YThsbnJsRXFtQWg4RmtfNlczVHNMZ1MzOUFkVnRUNUQwUERYMDcxekMyeThzbDNrRkVZT05JS2NId0FGLXd5Q0VETkt0MzBrNEpWekxaT2FlRXl0aDRvaWNiSGR0SW1nNXZmX3NNY0N0cldSallfQ2FHSXowOVRURFU1NmhGSzE0Vy1FQWxTOS1DNnVRN3QtcXhB0gG3AUFVX3lxTE5QeFd0eEVMajBuR0RWQlh1NkVQUERUaXV0UE9pSnlRWWRFV09Ed1NPYjBoQUpueWpqcHZhNm1aNHlVUmZXelp5azdkdXU2cTRzRW5vbWxxZlFocE9BZ2VTOC1NZFRidXBpMVpVMUpzYnJtUTc5RUdqeE5rQjAxcG5MN2w3Tlp5SnQ3a0U2OGZRNmdLUlMxOWc2LUEzT0RLNGNZLWtib1RtTndmUEhGTVhwSURhY2xtWQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
@@ -93,49 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPc21SMVZpbkpCbzdWZTF6QzJheDlIcTV2bTBIaEdnZENmd1hYWjk2VmxsOVFVRFc3VTgtTFZCZHA1cVRGUTI3Qm5OVFV4SmhqdENIT1NuVTNxMkwtQkp1OXVlMnZXREdES0JDWFUtZ0FhSUJ1Wk9PTDJXdTRDSWR3bldob1doTUo4akZqN0R2d2lzQW830gGaAUFVX3lxTE03d3RYUGowYWlrOUVJNGVCS0xMVGt2OHVWbEM5SlJiWjI4aURiOG9pSTNydWRMdVVDaU5STW44eWRiMEhoSlFtNm15NFdZY0dZbG9qVDFKNkczVXF0Wno0YlZsc0VVTS1US0NhVGlxVm1vX2k4clBhekUxV1FwMElZeWlZV19BUmFfV21mRGtIenp6ZEx0X2FzLVE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-07-19",
       "category": "military",
       "source_type": "news",
-      "title": "US launches new Iran strikes after two soldiers killed: What’s the latest? - Al Jazeera",
+      "title": "Moment Iranian missiles hit airbase in Jordan killing US soldiers - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQV2w4YnV1MkVuT1NrQlNGY2V5eU5RMlhyQUtTUTdpTTRjWWMxd0p5ZDEyNVR6S2tBS21mMW5zTXZxblBXN1pKUEFvNnlEU1hycUJ3Q1pCeXVQWE1ieVRMUkQ2WXdaem03QzFTWTBhRDlsR3hnaGt2TWtmU1hZSU5SUDNfbTZzaDltaXRHSHJfbHdicHRuTVhNNXJ0VTFLdUdCaTJiVFYtU19XcEpLODJRNnJ30gG3AUFVX3lxTE9hX3lOVmk5ZW9lckFQMlJWU0tRcWMwMXBSSVJodEtYcDZHNkxuVGFqQW5weWN5NjhoOHBrRkRLbjVvZVkyRWJUcXNwMUZzSDhjQy1Nblc5a0gwbmprcm1yREhzaGx5VUpGelUwRHI0OTNBRUdBUzJKdE91SzI1VTAwSl9qLXVoc3RxZFg3MlFtcnhNY3FkVTVMc2VjMWRWeWtYY3FiLU1RbG5QOWwzV1ZRVy10b1JDcw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "US says two military personnel killed by Iranian attack in Jordan - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUVgwRnh4bGg5bXVrMEdSNXEydXpjb0dCTmQwQlV2MHlydHJTU05DcUxIbktrZW82aGUwZ2F4R2h6bkJXOEpFQy1DREthRVFySzUzNkpVMGNSdXdTMlVjVFR4ZTkyYlRqRTU4bEo1cHR1Y3RMSDJ0UV9Ed01tbnVZbUdyN29ZZWpqQU5VZDd3b3dkS0VlMVp5UUJSZHdPVUUzVjZGNmFHWUJOYWVFZDd0ekJnV293QTg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran target infrastructure as strait shipping comes under further attack - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRW1QZlpEY3pwOHJJaDF2S2JVZG81S2xuakhndThpb1lLREpreFBCRW1TWTlZeFBGTFRaUER1dWRUU2FlaDlYTU9Yc0hzY3Juby0xSlRxN24yMGZvQ0ktN1NYcjVtZHc5a3F6UXQ5Qnc3aWNDNV84MV8ybWkxemptWEtlS1plM0kxQVNoM3A5RkpkUlZGSEtYbVVTN2RtNkhwc3VWZThNazhDTGpt"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military says it completed latest strikes on Iran, marking 7th consecutive night of attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNd1Zpc0tXYzd1NVhsVFJ2VHRXTkl5ZTA0Y0I0Yk9TeFNKbFZoRWpEWTM0Y0NBdmlKUFJIMHlFRGdYWTNDZEF2THo1azkyV3JabU9GOUxGQ3hwY2pxOUJXVUVlaUxHeFpiNVFxYVA2NTZmMTNLOHY1b3JjTVJfT0piMnFoZ2ZicnVXUkdMWG5jY21MUUxLZnpKeDB0V2NqaEdyWHZBTzRXV18zQzhJek9tREx3MW8wcGVaa25MbExTV0tXZWZyd2x3X21ueGNUUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli military says it struck Hezbollah fighters after drone spotted in southern Lebanon - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQazdUZDlCcTM4RDlDTThjdnhKdU1rLU9WQzRDbWxrQWpIb2hjUU91V1VicGRSYjdQbkI4Qkw3c05aOW5faUZHeHlhaTdGd0pRWFhxeGtBYW1FcDhLVzNJV0NzQnRuMEpuNE5HOTZZVnN0OVkzSDRKZWJUZlZFWW83T3YzTGtYdHd4QS0tZ3ctai1TUUNTdGtHQ01PQzltSnJiY25PaDdxLWJTSWJHTHF4c0JLbE15NVVVUUUyR2ZoQ3c3VmlYZTVXcmFTdXVJdw"
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMDQweURMeTNWYzF4UFVTREVsOU5VNFJsS2g2YlU1bVNZS2k2YUdrT010WG1qWWNYSk55Um1VakN4US1EaUdoTEswa1FYV1FLV3Zrczh6Ql83elZCR0djOFJabUVqMFQyN25tSkhvTW5jUGZUbGRoOUZVeHlpRWUwWFNmbm96SC1lQ2lpazA5LUJuMktTVmk1dkd2QnNHckRLWjg1eFpDeU1RSWdSZENiSl9EYTVxQzDSAbwBQVVfeXFMT0ctaUJRX0oxdzNTZVh2YUpqdklxeDdVZ2Zpc1FLTHl2dXFGeERvR2M3eHV0SDg4ekdweTAtNnNqMEo4OWpVdjNDendaOUx3bXFSTlBETE5HSXBibFM5TEptZUFYUGR4VzUtWWZPSFhaYm9RdGlSYWZBcWFXLXVLTVRUdHBlQzN2d1gyZFkxdXN5dVZnQVlFSnQ5Q1plSDlvWVFIaWsyM1ROcXktODdJYjRPN3BBTlYxSHlvVFU"
     }
   ]
 }
