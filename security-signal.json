@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-20 14:34 UTC",
+    "updated": "2026-07-20 18:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-07-14",
     "period_end": "2026-07-20",
-    "total_events": 153,
-    "total_risk": 199.56,
-    "normalized_risk_score": 79.8,
+    "total_events": 152,
+    "total_risk": 197.31,
+    "normalized_risk_score": 78.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 78,
+    "military": 75,
     "security": 1,
-    "political": 13,
-    "other": 61
+    "political": 11,
+    "other": 65
   },
   "source_counts": {
-    "news": 147,
+    "news": 146,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 134.96
+      "risk": 131.96
     },
     {
       "name": "Israel",
@@ -35,15 +35,15 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 12.9
-    },
-    {
-      "name": "Syria",
-      "risk": 8.2
+      "risk": 12.95
     },
     {
       "name": "Tehran",
       "risk": 7.95
+    },
+    {
+      "name": "Syria",
+      "risk": 7.9
     }
   ],
   "top_events": [
@@ -97,9 +97,27 @@
       "date": "2026-07-20",
       "category": "military",
       "source_type": "news",
+      "title": "What we know about US soldiers killed in Iran war, and Iranian casualties - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNS1VjYTZwRmFpcHE4cmFPSnBqUVVIeXBPMDdmVklLMW5TRjlBTVZ6bThlcnZHc0JQcWxxN3FBcVFhbFUwS1dsMUFxMnRlMFVxODVvZlpPNE5kaTRBLWk5d2tUd0xZcFVScVRxY0s4LUZOWjJ4ZmRnOXhhTEVMQ3BBNUFQbmhIbWNSeGFfTGNLQ3VIYVRaVkNRekVFRjZDbk1XQmpEYlpYYVkyMmFNbTJmWHdQVdIBuAFBVV95cUxNekVCY3UzUGtMQVdGVEpqSFF2b25HcExBN3A4SmFkTlVxSHI1cUJ0Rkhwa3B5LUVzY2VmV1ZIbGo4Rnh3T1A3OE5FZDZKUmFYTjNSU0F4NTBRSk45NUNjbWZ4V2R1dkVrc19Lek94d1V5M3JiVndMdGtqYkxpNXJkNXBjU1ljaHN6U201UldDbnYtWUhYNFAzaHVWQTB4MmVDb2ZHQW11R2ZHM1FyWHF2TjFqWEhGS3BC"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
       "title": "US soldier killed in Iraq during ‘controlled detonation’ of Iranian drone - Al Jazeera",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbHltUU9hT0VWajZhM0YteFlIQkczRzN0YThsbnJsRXFtQWg4RmtfNlczVHNMZ1MzOUFkVnRUNUQwUERYMDcxekMyeThzbDNrRkVZT05JS2NId0FGLXd5Q0VETkt0MzBrNEpWekxaT2FlRXl0aDRvaWNiSGR0SW1nNXZmX3NNY0N0cldSallfQ2FHSXowOVRURFU1NmhGSzE0Vy1FQWxTOS1DNnVRN3QtcXhB0gG3AUFVX3lxTE5QeFd0eEVMajBuR0RWQlh1NkVQUERUaXV0UE9pSnlRWWRFV09Ed1NPYjBoQUpueWpqcHZhNm1aNHlVUmZXelp5azdkdXU2cTRzRW5vbWxxZlFocE9BZ2VTOC1NZFRidXBpMVpVMUpzYnJtUTc5RUdqeE5rQjAxcG5MN2w3Tlp5SnQ3a0U2OGZRNmdLUlMxOWc2LUEzT0RLNGNZLWtib1RtTndmUEhGTVhwSURhY2xtWQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Why is Iran bombing Gulf states while avoiding US naval assets and Israel? - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR0FSbVZUUGJ1R1hmeHFzWVNORnNieXpxTnFubFhrQ2FMT1M4ZXZwS0I0bmlFa3NMdF9WTllFT3BLSU84dHRSbUdkVjhBZjlyN0x4bWQ0eW4tck5MQzFJWm9yR0hCNUM5ZkpCT24ydm9kWWpobk5Mdnl0UWtSaFpUbThGa3RKNG00ZWFkTnlfZHZzbjZ0TWFTTW1WdF9oNVdERFFvN2h2Skd0Z3JoLWF5bWlKMXLSAboBQVVfeXFMT3JMRHotZVd1cm5DYjFiOHZRNE0zNk5qZWNhdVJQWWEzQTJReGJjdXdpYUc3TWF4SHEzZUZFNmVhb2NmU28tRnNxUW44OHFXREhzR28xLVUzUHJiVEtMSU82Z25qdmJxSTJ2a0dScUI0UFlfdkpzdnBmXzdRRHZ2VlpodV8wTWplRTF2SFBHN1RiQ19WQmVzOEpfNDBqSmxIR3htR0Jhci1hTzh2cUhtYWo4dXZXNHR3aVRR"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "US bombs Iran for ninth consecutive night as Hormuz tensions escalate - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNMllfMFhRY016dnp4MXpEQjB1eUR1UHU2dG9JeGJqcUlqWGJNN2dnVE9nc182SkZwMjV6UFFqWGZmV2lzN2dLSUQ4Vm5OanJWUmd1cGNfT1hzOVR5VzU0dGp4b2ZuWDFkQjY2S3IyQjVTRWNCSzRwcUpSRUU2ZTFmdndRd2paN3QxaGRxRWRNUDVvblFsZWlLY3JnTmh3VEhQZ2pocFM5Qm9yQlhVT21J0gG0AUFVX3lxTE9uaWxwX0tIVnliUjBVTGdVaXBHYVo5QnR6cFZoeE9wUXd4c2tyUDN1c0J4Vk1jWEVkaHNMU19VdkgyS3FpVVhhLUZMbjNQNTVHdk9MMUY1NjRTeXZGcXJaZEJGQUl6UDFOSHk4cEpJWXdzVzBycncxU0t2enZpb3FPM2JoOTN5blF5cUQ5aXlDN1Y3VXltdzZUMlRLSHFDMC1QQVFhN1o0Mmw5RURfUEdFdUJERg"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Why is Iran bombing Gulf states while avoiding US naval assets and Israel? - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR0FSbVZUUGJ1R1hmeHFzWVNORnNieXpxTnFubFhrQ2FMT1M4ZXZwS0I0bmlFa3NMdF9WTllFT3BLSU84dHRSbUdkVjhBZjlyN0x4bWQ0eW4tck5MQzFJWm9yR0hCNUM5ZkpCT24ydm9kWWpobk5Mdnl0UWtSaFpUbThGa3RKNG00ZWFkTnlfZHZzbjZ0TWFTTW1WdF9oNVdERFFvN2h2Skd0Z3JoLWF5bWlKMXLSAboBQVVfeXFMT3JMRHotZVd1cm5DYjFiOHZRNE0zNk5qZWNhdVJQWWEzQTJReGJjdXdpYUc3TWF4SHEzZUZFNmVhb2NmU28tRnNxUW44OHFXREhzR28xLVUzUHJiVEtMSU82Z25qdmJxSTJ2a0dScUI0UFlfdkpzdnBmXzdRRHZ2VlpodV8wTWplRTF2SFBHN1RiQ19WQmVzOEpfNDBqSmxIR3htR0Jhci1hTzh2cUhtYWo4dXZXNHR3aVRR"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Rubio: US ‘open to diplomacy’ after ninth night of bombing Iran - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWVRtSktBbFhPQUJQUjF2Z3VOMlZDZ1BFc1MxWkJtdWNBQjNiX2xfOFlZRUpwZ053M1BGZkowalNZUUo1MndrWjltb3lmWTJ3QmN0V09fVzNuS1ZMcmhTeWRTRk9wLXNQT3MwSktva3FZenFKbS1IOE5Ja1E0YndkM2NHNXZ1OTBYSzNuVFpXMDhvU3VCTzREOXMwWGJNd3puMGhQQkI3V3FSX2JsQ0ktdtIBtgFBVV95cUxQUlBnR0JSMzZRQW1UQS1CU01RQ20zU1pxdEVCeERYR2RTZGE1TWI2SFFZWFV4UmVydHd5VXlNRExuVDhlTzBvVVpmRDNIcVVWVFFNUTZtLWRHQnE0Y3Nfck5kZ0EwM2ticFVpQjM3NG4xNmhtMmZTTGlQbktGRjJmWUpRTnZzLWNyQlpWYUdrc0RBdFhjVWJEWlRUR1hFVUMteHdTZ1ZHRGg5ZDN2RG51eFRWcHl2dw"
     }
   ]
 }
