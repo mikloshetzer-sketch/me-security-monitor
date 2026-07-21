@@ -1,1021 +1,583 @@
-(() => {
+(function () {
   "use strict";
 
-  const CONFIG = Object.freeze({
-    dataUrl: "./data/strike_history.json",
-    defaultDays: 7,
-    defaultActor: "ALL",
-    paneName: "strikeHistoryPane",
-    paneZIndex: 675,
-    mapDiscoveryTimeoutMs: 15000
-  });
+  function createIranStrikeLayer(map, options = {}) {
+    const config = {
+      dataUrl: options.dataUrl || "data/iranstrike.json",
+      enabled: Boolean(options.enabled),
+      maxVisible: Number(options.maxVisible || 1800),
+      maxHeatPoints: Number(options.maxHeatPoints || 1000),
+      defaultDays: Number(options.defaultDays || 30),
+      displayMode: options.displayMode || "markers",
+      autoFitOnFirstEnable: options.autoFitOnFirstEnable !== false
+    };
 
-  const state = {
-    map: null,
-    events: [],
-    latestDate: null,
-    days: CONFIG.defaultDays,
-    actor: CONFIG.defaultActor,
-    enabled: false,
-    labelsEnabled: false,
-    layerGroup: null,
-    markerById: new Map(),
-    cardById: new Map(),
-    lineById: new Map(),
-    cardPositions: new Map(),
-    annotationRoot: null,
-    svg: null,
-    cardsRoot: null,
-    initialized: false,
-    dataLoaded: false,
-    error: ""
-  };
+    let enabled = config.enabled;
+    let payload = null;
+    let events = [];
+    let visibleEvents = [];
+    let displayMode = config.displayMode;
+    let heatLayer = null;
+    let rebuildTimer = null;
+    let didAutoFit = false;
 
-  captureLeafletMapCreation();
+    let filters = {
+      days: config.defaultDays,
+      categories: [],
+      severity: [],
+      search: ""
+    };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initialize, { once: true });
-  } else {
-    initialize();
-  }
+    const PANE_NAME = "iranstrike-marker-pane";
 
-  function initialize() {
-    if (state.initialized) return;
-    state.initialized = true;
-    bindControls();
-    loadData();
-    discoverExistingMap();
-  }
-
-  function captureLeafletMapCreation() {
-    if (!window.L || typeof window.L.map !== "function") return;
-    if (window.L.map.__strikeHistoryWrapped) return;
-
-    const originalMapFactory = window.L.map;
-
-    function wrappedMapFactory(...args) {
-      const map = originalMapFactory.apply(this, args);
-      window.setTimeout(() => attachMap(map), 0);
-      return map;
-    }
-
-    Object.assign(wrappedMapFactory, originalMapFactory);
-    wrappedMapFactory.__strikeHistoryWrapped = true;
-    window.L.map = wrappedMapFactory;
-  }
-
-  function discoverExistingMap() {
-    const startedAt = Date.now();
-
-    const timer = window.setInterval(() => {
-      if (state.map) {
-        window.clearInterval(timer);
-        return;
-      }
-
-      const candidates = [
-        window.map,
-        window.meMap,
-        window.mainMap,
-        window.securityMap
-      ].filter(candidate => candidate && typeof candidate.getContainer === "function");
-
-      if (candidates.length) {
-        attachMap(candidates[0]);
-        window.clearInterval(timer);
-        return;
-      }
-
-      if (Date.now() - startedAt >= CONFIG.mapDiscoveryTimeoutMs) {
-        window.clearInterval(timer);
-      }
-    }, 300);
-  }
-
-  function attachMap(map) {
-    if (!map || typeof map.addLayer !== "function") return;
-    if (state.map === map) return;
-
-    state.map = map;
-    ensurePane();
-    state.layerGroup = window.L.layerGroup();
-    ensureAnnotationRoot();
-
-    map.on("move zoom resize", updateAllGeometry);
-    render();
-  }
-
-  function ensurePane() {
-    if (!state.map) return;
-
-    if (!state.map.getPane(CONFIG.paneName)) {
-      const pane = state.map.createPane(CONFIG.paneName);
-      pane.style.zIndex = String(CONFIG.paneZIndex);
+    if (!map.getPane(PANE_NAME)) {
+      const pane = map.createPane(PANE_NAME);
+      pane.style.zIndex = "1000";
       pane.style.pointerEvents = "auto";
     }
-  }
 
-  function ensureAnnotationRoot() {
-    if (!state.map || state.annotationRoot) return;
+    const markerLayer = L.featureGroup();
 
-    const container = state.map.getContainer();
-    if (window.getComputedStyle(container).position === "static") {
-      container.style.position = "relative";
-    }
-
-    const root = document.createElement("div");
-    root.className = "strike-history-annotation-layer";
-    root.innerHTML = [
-      '<svg class="strike-history-lines" aria-hidden="true"></svg>',
-      '<div class="strike-history-cards"></div>'
-    ].join("");
-
-    container.appendChild(root);
-
-    state.annotationRoot = root;
-    state.svg = root.querySelector(".strike-history-lines");
-    state.cardsRoot = root.querySelector(".strike-history-cards");
-  }
-
-  async function loadData() {
-    setStateBadge("Loading", "");
-
-    try {
-      const response = await fetch(
-        `${CONFIG.dataUrl}?v=${Date.now()}`,
-        { cache: "no-store" }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const payload = await response.json();
-      const rawEvents = extractEvents(payload);
-
-      state.events = rawEvents
-        .map(normalizeEvent)
-        .filter(Boolean)
-        .sort((a, b) => a.dateObject - b.dateObject);
-
-      state.latestDate =
-        parseDateValue(payload?.summary?.date_end) ||
-        parseDateValue(payload?.latest_event_date) ||
-        state.events.at(-1)?.dateObject ||
-        null;
-
-      state.dataLoaded = true;
-      state.error = "";
-
-      setNote(
-        `${state.events.length} events loaded. Latest event: ${
-          state.latestDate ? formatDate(state.latestDate) : "—"
-        }.`
-      );
-
-      setStateBadge(
-        state.enabled ? "Visible" : "Loaded",
-        state.enabled ? "active" : ""
-      );
-
-      render();
-    } catch (error) {
-      state.error = error instanceof Error ? error.message : String(error);
-      state.dataLoaded = false;
-      console.error("[StrikeHistory]", error);
-      setNote(`Data loading error: ${state.error}`);
-      setStateBadge("Error", "error");
-      render();
-    }
-  }
-
-  function extractEvents(payload) {
-    if (Array.isArray(payload)) return payload;
-    if (Array.isArray(payload?.events)) return payload.events;
-    if (Array.isArray(payload?.data)) return payload.data;
-    if (Array.isArray(payload?.strikes)) return payload.strikes;
-    return [];
-  }
-
-  function normalizeEvent(event, index) {
-    if (!event || typeof event !== "object") return null;
-
-    const latitude = toNumber(
-      event.latitude ??
-      event.lat ??
-      event.location?.latitude ??
-      event.location?.lat
-    );
-
-    const longitude = toNumber(
-      event.longitude ??
-      event.lng ??
-      event.lon ??
-      event.location?.longitude ??
-      event.location?.lng ??
-      event.location?.lon
-    );
-
-    if (!validCoordinate(latitude, longitude)) return null;
-
-    const dateObject = parseDateValue(
-      event.date ??
-      event.datetime ??
-      event.timestamp ??
-      event.event_date ??
-      event.occurred_at
-    );
-
-    if (!dateObject) return null;
-
-    const attacker = normalizeActor(
-      event.attacker ??
-      event.actor ??
-      event.originator ??
-      event.source_country
-    );
-
-    if (!attacker) return null;
-
-    const id = String(
-      event.event_id ??
-      event.id ??
-      `strike-${index}-${dateObject.toISOString()}-${latitude}-${longitude}`
-    );
-
-    return {
-      ...event,
-      event_id: id,
-      attacker,
-      latitude,
-      longitude,
-      dateObject,
-      date: dateObject.toISOString().slice(0, 10),
-      target_location: firstText(
-        event.target_location,
-        event.location_name,
-        event.target,
-        typeof event.location === "string" ? event.location : "",
-        event.city,
-        "Unknown location"
-      ),
-      target_country: firstText(
-        event.target_country,
-        event.country,
-        event.location?.country,
-        "—"
-      ),
-      description: firstText(
-        event.description,
-        event.summary,
-        event.event_description,
-        event.details,
-        "No description available."
-      ),
-      strike_type: firstText(
-        event.strike_type,
-        event.attack_type,
-        event.type,
-        event.weapon_type,
-        "—"
-      ),
-      confidence: firstText(
-        event.confidence,
-        event.confidence_level,
-        "MEDIUM"
-      ),
-      source_url: firstText(
-        event.source_url,
-        event.url,
-        event.link,
-        event.source?.url,
-        ""
-      ),
-      coordinate_note: firstText(
-        event.coordinate_note,
-        event.location_note,
-        event.geolocation_note,
-        "—"
-      )
+    const ATTACKER_COLORS = {
+      usa: "#2563eb",
+      iran: "#16a34a",
+      israel: "#dc2626",
+      other: "#7c3aed",
+      unknown: "#64748b"
     };
-  }
 
-  function selectedEvents() {
-    if (!state.latestDate) return [];
+    const CATEGORY_COLORS = {
+      airstrike: "#d73027",
+      strike: "#ef6548",
+      missile: "#f46d43",
+      drone: "#8e44ad",
+      explosion: "#d94ca3",
+      ground: "#795548",
+      movement: "#00897b",
+      defense: "#3949ab",
+      infrastructure: "#1976d2",
+      alert: "#f9a825",
+      political: "#43a047",
+      other: "#6f7782"
+    };
 
-    const end = endOfUtcDay(state.latestDate);
-    const allTime = state.days === "ALL";
-    const start = new Date(end);
-
-    if (!allTime) {
-      start.setUTCDate(start.getUTCDate() - (Number(state.days) - 1));
-      start.setUTCHours(0, 0, 0, 0);
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
     }
 
-    return state.events.filter(event => {
-      const dateMatches =
-        allTime ||
-        (event.dateObject >= start && event.dateObject <= end);
+    function finiteNumber(value) {
+      if (value === null || value === undefined || value === "") return null;
+      const parsed = Number(value);
+      return Number.isFinite(parsed) ? parsed : null;
+    }
 
-      const actorMatches =
-        state.actor === "ALL" ||
-        event.attacker === state.actor;
+    function valueAtPath(object, path) {
+      let current = object;
+      for (const part of path.split(".")) {
+        if (!current || typeof current !== "object" || !(part in current)) return null;
+        current = current[part];
+      }
+      return current;
+    }
 
-      return dateMatches && actorMatches;
-    });
-  }
+    function isPlaceholderCoordinate(lat, lon) {
+      // The source uses 0,0 as a missing-coordinate placeholder.
+      return Math.abs(lat) < 0.0001 && Math.abs(lon) < 0.0001;
+    }
 
-  function render() {
-    updateStats();
+    function validWorld(lat, lon) {
+      return (
+        Number.isFinite(lat) &&
+        Number.isFinite(lon) &&
+        lat >= -90 &&
+        lat <= 90 &&
+        lon >= -180 &&
+        lon <= 180 &&
+        !isPlaceholderCoordinate(lat, lon)
+      );
+    }
 
-    if (!state.map || !state.layerGroup) return;
+    function validRegion(lat, lon) {
+      // Broad operational area: Eastern Mediterranean, Middle East and Gulf.
+      return validWorld(lat, lon) && lat >= 8 && lat <= 48 && lon >= 15 && lon <= 82;
+    }
 
-    state.layerGroup.clearLayers();
-    state.markerById.clear();
-    clearAnnotations();
+    function coordinateCandidates(event) {
+      const candidates = [];
+      const pushPair = (latValue, lonValue, source) => {
+        const lat = finiteNumber(latValue);
+        const lon = finiteNumber(lonValue);
+        if (lat === null || lon === null) return;
+        candidates.push({ lat, lon, source });
+        candidates.push({ lat: lon, lon: lat, source: `${source}-swapped` });
+      };
 
-    if (!state.enabled) {
-      if (state.map.hasLayer(state.layerGroup)) {
-        state.map.removeLayer(state.layerGroup);
+      pushPair(event?.latitude, event?.longitude, "normalized");
+
+      const raw = event?.raw_source || {};
+      const pairs = [
+        ["latitude", "longitude"],
+        ["lat", "lng"],
+        ["lat", "lon"],
+        ["location.latitude", "location.longitude"],
+        ["location.lat", "location.lng"],
+        ["location.lat", "location.lon"],
+        ["geo.latitude", "geo.longitude"],
+        ["geo.lat", "geo.lng"],
+        ["geo.lat", "geo.lon"],
+        ["position.latitude", "position.longitude"],
+        ["position.lat", "position.lng"],
+        ["position.lat", "position.lon"]
+      ];
+
+      for (const [latPath, lonPath] of pairs) {
+        pushPair(valueAtPath(raw, latPath), valueAtPath(raw, lonPath), `raw:${latPath}/${lonPath}`);
       }
 
-      setStateBadge(
-        state.error ? "Error" : state.dataLoaded ? "Loaded" : "Ready",
-        state.error ? "error" : ""
+      const arrays = [
+        valueAtPath(raw, "coordinates"),
+        valueAtPath(raw, "geometry.coordinates"),
+        valueAtPath(raw, "location.coordinates"),
+        valueAtPath(raw, "position.coordinates")
+      ];
+
+      for (const array of arrays) {
+        if (!Array.isArray(array) || array.length < 2) continue;
+        const first = finiteNumber(array[0]);
+        const second = finiteNumber(array[1]);
+        if (first === null || second === null) continue;
+        candidates.push({ lat: second, lon: first, source: "raw-array-geojson" });
+        candidates.push({ lat: first, lon: second, source: "raw-array-latlon" });
+      }
+
+      return candidates;
+    }
+
+    function getEventLatLng(event) {
+      const candidates = coordinateCandidates(event);
+
+      // IranStrike is a regional source. Do not fall back to arbitrary
+      // world coordinates because missing positions are often encoded as 0,0.
+      return candidates.find((item) => validRegion(item.lat, item.lon)) || null;
+    }
+
+    function parseDate(value) {
+      if (!value) return null;
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? null : date;
+    }
+
+    function categoryColor(category) {
+      return (
+        CATEGORY_COLORS[String(category || "other").toLowerCase()] ||
+        CATEGORY_COLORS.other
       );
-      return;
     }
 
-    if (!state.map.hasLayer(state.layerGroup)) {
-      state.layerGroup.addTo(state.map);
+    function normalizeAttacker(value) {
+      const attacker = String(value || "unknown").trim().toLowerCase();
+
+      if (
+        ["usa", "us", "u.s.", "united states", "america", "american"]
+          .includes(attacker)
+      ) {
+        return "usa";
+      }
+
+      if (["iran", "iranian", "irgc"].includes(attacker)) {
+        return "iran";
+      }
+
+      if (["israel", "israeli", "idf", "iaf"].includes(attacker)) {
+        return "israel";
+      }
+
+      if (attacker && attacker !== "unknown") {
+        return "other";
+      }
+
+      return "unknown";
     }
 
-    selectedEvents().forEach(event => {
-      const marker = createMarker(event);
-      marker.addTo(state.layerGroup);
-      state.markerById.set(event.event_id, marker);
-    });
+    function attackerColor(event) {
+      const explicit = String(event?.attacker_color || "").trim();
 
-    if (state.labelsEnabled) {
-      renderAnnotations();
+      if (/^#[0-9a-f]{6}$/i.test(explicit)) {
+        return explicit;
+      }
+
+      return (
+        ATTACKER_COLORS[normalizeAttacker(event?.attacker)] ||
+        ATTACKER_COLORS.unknown
+      );
     }
 
-    setStateBadge("Visible", "active");
-  }
+    function attackerLabel(event) {
+      const explicit = String(event?.attacker_label || "").trim();
+      if (explicit) return explicit;
 
-  function createMarker(event) {
-    const actorClass = event.attacker.toLowerCase();
-    const confidenceClass = normalizeConfidence(event.confidence);
+      const attacker = normalizeAttacker(event?.attacker);
 
-    const icon = window.L.divIcon({
-      className: "strike-history-marker-shell",
-      html: `<div class="strike-history-marker ${actorClass} ${confidenceClass}"></div>`,
-      iconSize: [18, 18],
-      iconAnchor: [9, 9]
-    });
+      if (attacker === "usa") return "United States";
+      if (attacker === "iran") return "Iran";
+      if (attacker === "israel") return "Israel";
+      if (attacker === "other") return "Other actor";
+      return "Unknown actor";
+    }
 
-    const marker = window.L.marker(
-      [event.latitude, event.longitude],
-      {
+    function markerSize(event) {
+      const severity = String(event?.severity || "unknown").toLowerCase();
+      let size = map.getZoom() >= 8 ? 16 : 14;
+      if (severity === "critical") size += 5;
+      else if (severity === "high") size += 3;
+      else if (severity === "medium") size += 1;
+      return size;
+    }
+
+    function eventMatches(event) {
+      if (filters.days > 0) {
+        const eventDate = parseDate(event?.date);
+        if (!eventDate) return false;
+
+        const latestRaw = payload?.analytics?.overview?.latest_event_date;
+        const latestDate = parseDate(latestRaw) || new Date();
+        const cutoff = new Date(
+          latestDate.getTime() -
+          filters.days * 24 * 60 * 60 * 1000
+        );
+        if (eventDate < cutoff || eventDate > latestDate) return false;
+      }
+
+      const category = String(event?.category || "other").toLowerCase();
+      if (filters.categories.length && !filters.categories.includes(category)) return false;
+
+      const severity = String(event?.severity || "unknown").toLowerCase();
+      if (filters.severity.length && !filters.severity.includes(severity)) return false;
+
+      const query = String(filters.search || "").trim().toLowerCase();
+      if (query) {
+        const haystack = [
+          event?.title,
+          event?.description,
+          event?.location,
+          event?.country,
+          event?.category,
+          event?.severity,
+          event?.source_name,
+          event?.attacker,
+          event?.attacker_label,
+          event?.attacker_confidence
+        ].join(" ").toLowerCase();
+        if (!haystack.includes(query)) return false;
+      }
+
+      return true;
+    }
+
+    function markerFor(event, point) {
+      const size = markerSize(event);
+      const color = attackerColor(event);
+      const categoryRing = categoryColor(event?.category);
+      const attacker = normalizeAttacker(event?.attacker);
+      const attackerName = attackerLabel(event);
+
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10.5" fill="#ffffff" stroke="${categoryRing}" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="8.2" fill="${color}" stroke="#ffffff" stroke-width="2.2"/>
+          <circle cx="12" cy="12" r="11.3" fill="none" stroke="#111827" stroke-width="1"/>
+        </svg>`;
+
+      const icon = L.divIcon({
+        className: `iranstrike-marker-icon attacker-${escapeHtml(attacker)}`,
+        html: svg,
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        popupAnchor: [0, -(size / 2 + 3)]
+      });
+
+      const marker = L.marker([point.lat, point.lon], {
+        pane: PANE_NAME,
         icon,
-        pane: CONFIG.paneName,
-        keyboard: true,
-        title: `${event.attacker}: ${event.target_location}`
-      }
-    );
-
-    marker.bindTooltip(
-      [
-        `<strong>${escapeHtml(event.target_location)}</strong>`,
-        `${escapeHtml(event.attacker)} · ${escapeHtml(event.date)}`,
-        escapeHtml(event.strike_type)
-      ].join("<br>"),
-      {
-        direction: "top",
-        offset: [0, -8],
-        opacity: 0.96
-      }
-    );
-
-    marker.bindPopup(buildPopupHtml(event), {
-      maxWidth: 330
-    });
-
-    marker.on("click", () => {
-      if (!state.labelsEnabled) return;
-      focusCard(event.event_id);
-    });
-
-    return marker;
-  }
-
-  function buildPopupHtml(event) {
-    const source = safeUrl(event.source_url);
-
-    return `
-      <div class="strike-history-popup">
-        <strong>${escapeHtml(event.target_location)}</strong><br>
-        ${escapeHtml(event.attacker)} · ${escapeHtml(event.date)}<br>
-        <b>Type:</b> ${escapeHtml(event.strike_type)}<br>
-        <b>Country:</b> ${escapeHtml(event.target_country)}<br>
-        <b>Description:</b> ${escapeHtml(event.description)}
-        ${
-          source
-            ? `<br><a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>`
-            : ""
-        }
-      </div>
-    `;
-  }
-
-  function renderAnnotations() {
-    clearAnnotations();
-
-    if (!state.enabled || !state.labelsEnabled || !state.map) return;
-
-    ensureAnnotationRoot();
-
-    const events = selectedEvents();
-    const mapSize = state.map.getSize();
-
-    events.forEach((event, index) => {
-      const marker = state.markerById.get(event.event_id);
-      if (!marker) return;
-
-      const card = document.createElement("article");
-      card.className = `strike-history-card ${event.attacker.toLowerCase()}`;
-      card.dataset.eventId = event.event_id;
-      card.innerHTML = cardHtml(event);
-
-      const savedPosition = state.cardPositions.get(event.event_id);
-      const initialPosition =
-        savedPosition ||
-        calculateInitialCardPosition(marker, index, mapSize);
-
-      card.style.left = `${initialPosition.left}px`;
-      card.style.top = `${initialPosition.top}px`;
-      card.style.zIndex = String(720 + index);
-
-      state.cardsRoot.appendChild(card);
-      state.cardById.set(event.event_id, card);
-
-      const line = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "line"
-      );
-
-      line.classList.add("strike-history-line");
-      state.svg.appendChild(line);
-      state.lineById.set(event.event_id, line);
-
-      const toggle = card.querySelector(".strike-history-card-toggle");
-      toggle?.addEventListener("click", eventObject => {
-        eventObject.stopPropagation();
-        const expanded = card.classList.toggle("expanded");
-        toggle.textContent = expanded ? "−" : "+";
-        toggle.setAttribute("aria-expanded", String(expanded));
-        updateGeometry(event.event_id);
+        keyboard: false,
+        riseOnHover: true,
+        riseOffset: 10000
       });
 
-      card.addEventListener("pointerdown", () => {
-        bringCardToFront(card);
-      });
-
-      enableDragging(card, event.event_id);
-      updateGeometry(event.event_id);
-    });
-  }
-
-  function calculateInitialCardPosition(marker, index, mapSize) {
-    const point = state.map.latLngToContainerPoint(marker.getLatLng());
-    const cardWidth = 260;
-    const cardHeight = 126;
-
-    const horizontalDirection = index % 2 === 0 ? 1 : -1;
-    const column = index % 3;
-    const row = Math.floor(index / 3) % 6;
-
-    const left = clamp(
-      point.x + horizontalDirection * (28 + column * 18) -
-        (horizontalDirection < 0 ? cardWidth : 0),
-      8,
-      Math.max(8, mapSize.x - cardWidth - 8)
-    );
-
-    const top = clamp(
-      point.y - 36 + row * 24,
-      8,
-      Math.max(8, mapSize.y - cardHeight - 8)
-    );
-
-    return { left, top };
-  }
-
-  function cardHtml(event) {
-    const source = safeUrl(event.source_url);
-    const confidence =
-      firstText(event.confidence_label_hu, event.confidence, "—");
-
-    return `
-      <div class="strike-history-card-head">
-        <div style="min-width:0;">
-          <div class="strike-history-card-title">${escapeHtml(event.target_location)}</div>
-          <div class="strike-history-card-meta">${escapeHtml(event.attacker)} · ${escapeHtml(event.date)}</div>
-        </div>
-        <button
-          class="strike-history-card-toggle"
-          type="button"
-          aria-label="Show details"
-          aria-expanded="false"
-        >+</button>
-      </div>
-      <div class="strike-history-card-summary">${escapeHtml(shortText(event.description, 150))}</div>
-      <div class="strike-history-card-details">
-        <div class="detail-row"><span class="detail-label">Event:</span> ${escapeHtml(event.description)}</div>
-        <div class="detail-row"><span class="detail-label">Strike type:</span> ${escapeHtml(event.strike_type)}</div>
-        <div class="detail-row"><span class="detail-label">Target country:</span> ${escapeHtml(event.target_country)}</div>
-        <div class="detail-row"><span class="detail-label">Confidence:</span> ${escapeHtml(confidence)}</div>
-        <div class="detail-row"><span class="detail-label">Coordinates:</span> ${escapeHtml(String(event.latitude))}, ${escapeHtml(String(event.longitude))}</div>
-        <div class="detail-row"><span class="detail-label">Location note:</span> ${escapeHtml(event.coordinate_note)}</div>
-        ${
-          source
-            ? `<div class="detail-row"><a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">Open source ↗</a></div>`
-            : ""
-        }
-      </div>
-    `;
-  }
-
-  function enableDragging(card, eventId) {
-    const handle = card.querySelector(".strike-history-card-head");
-    if (!handle) return;
-
-    let active = false;
-    let pointerId = null;
-    let startX = 0;
-    let startY = 0;
-    let startLeft = 0;
-    let startTop = 0;
-
-    handle.addEventListener("pointerdown", event => {
-      if (event.target.closest("button, a")) return;
-
-      active = true;
-      pointerId = event.pointerId;
-      startX = event.clientX;
-      startY = event.clientY;
-      startLeft = parseFloat(card.style.left) || 0;
-      startTop = parseFloat(card.style.top) || 0;
-
-      card.classList.add("dragging");
-      bringCardToFront(card);
-
-      try {
-        handle.setPointerCapture(pointerId);
-      } catch (_) {
-        // Pointer capture is optional.
-      }
-
-      state.map?.dragging?.disable();
-      event.preventDefault();
-    });
-
-    handle.addEventListener("pointermove", event => {
-      if (!active || event.pointerId !== pointerId || !state.map) return;
-
-      const mapSize = state.map.getSize();
-
-      const left = clamp(
-        startLeft + event.clientX - startX,
-        4,
-        Math.max(4, mapSize.x - card.offsetWidth - 4)
-      );
-
-      const top = clamp(
-        startTop + event.clientY - startY,
-        4,
-        Math.max(4, mapSize.y - card.offsetHeight - 4)
-      );
-
-      card.style.left = `${left}px`;
-      card.style.top = `${top}px`;
-      state.cardPositions.set(eventId, { left, top });
-      updateGeometry(eventId);
-    });
-
-    const finish = event => {
-      if (!active || event.pointerId !== pointerId) return;
-
-      active = false;
-      card.classList.remove("dragging");
-
-      try {
-        handle.releasePointerCapture(pointerId);
-      } catch (_) {
-        // Pointer capture may already be released.
-      }
-
-      pointerId = null;
-      state.map?.dragging?.enable();
-      updateGeometry(eventId);
-    };
-
-    handle.addEventListener("pointerup", finish);
-    handle.addEventListener("pointercancel", finish);
-  }
-
-  function updateAllGeometry() {
-    if (!state.labelsEnabled) return;
-
-    state.cardById.forEach((card, eventId) => {
-      keepCardInsideMap(card, eventId);
-      updateGeometry(eventId);
-    });
-  }
-
-  function keepCardInsideMap(card, eventId) {
-    if (!state.map || !card) return;
-
-    const mapSize = state.map.getSize();
-
-    const left = clamp(
-      parseFloat(card.style.left) || 0,
-      4,
-      Math.max(4, mapSize.x - card.offsetWidth - 4)
-    );
-
-    const top = clamp(
-      parseFloat(card.style.top) || 0,
-      4,
-      Math.max(4, mapSize.y - card.offsetHeight - 4)
-    );
-
-    card.style.left = `${left}px`;
-    card.style.top = `${top}px`;
-    state.cardPositions.set(eventId, { left, top });
-  }
-
-  function updateGeometry(eventId) {
-    const marker = state.markerById.get(eventId);
-    const card = state.cardById.get(eventId);
-    const line = state.lineById.get(eventId);
-
-    if (!marker || !card || !line || !state.map) return;
-
-    const markerPoint =
-      state.map.latLngToContainerPoint(marker.getLatLng());
-
-    const left = parseFloat(card.style.left) || 0;
-    const top = parseFloat(card.style.top) || 0;
-    const right = left + card.offsetWidth;
-    const bottom = top + card.offsetHeight;
-
-    const cardX = clamp(markerPoint.x, left, right);
-    const cardY = clamp(markerPoint.y, top, bottom);
-
-    line.setAttribute("x1", String(markerPoint.x));
-    line.setAttribute("y1", String(markerPoint.y));
-    line.setAttribute("x2", String(cardX));
-    line.setAttribute("y2", String(cardY));
-  }
-
-  function clearAnnotations() {
-    if (state.cardsRoot) state.cardsRoot.replaceChildren();
-    if (state.svg) state.svg.replaceChildren();
-    state.cardById.clear();
-    state.lineById.clear();
-  }
-
-  function bindControls() {
-    const layerCheckbox =
-      document.getElementById("strikeHistoryLayerCheckbox");
-
-    const labelsCheckbox =
-      document.getElementById("strikeHistoryLabelsCheckbox");
-
-    const fitButton =
-      document.getElementById("strikeHistoryFitButton");
-
-    const resetCardsButton =
-      document.getElementById("strikeHistoryResetCardsButton");
-
-    if (!layerCheckbox) {
-      console.warn("[StrikeHistory] Control block not found.");
-      return;
-    }
-
-    state.enabled = layerCheckbox.checked;
-    state.labelsEnabled = Boolean(labelsCheckbox?.checked);
-
-    layerCheckbox.addEventListener("change", () => {
-      state.enabled = layerCheckbox.checked;
-
-      if (!state.enabled) {
-        state.labelsEnabled = false;
-        if (labelsCheckbox) labelsCheckbox.checked = false;
-      }
-
-      render();
-    });
-
-    labelsCheckbox?.addEventListener("change", () => {
-      state.labelsEnabled = labelsCheckbox.checked;
-
-      if (state.labelsEnabled && !state.enabled) {
-        state.enabled = true;
-        layerCheckbox.checked = true;
-      }
-
-      render();
-    });
-
-    document
-      .querySelectorAll("#strikeHistoryWindowButtons button")
-      .forEach(button => {
-        button.addEventListener("click", () => {
-          state.days =
-            button.dataset.days === "ALL"
-              ? "ALL"
-              : Number(button.dataset.days);
-
-          setActiveButton(
-            "#strikeHistoryWindowButtons button",
-            button
-          );
-
-          state.cardPositions.clear();
-          render();
-        });
-      });
-
-    document
-      .querySelectorAll("#strikeHistoryActorButtons button")
-      .forEach(button => {
-        button.addEventListener("click", () => {
-          state.actor =
-            normalizeActor(button.dataset.actor) || "ALL";
-
-          setActiveButton(
-            "#strikeHistoryActorButtons button",
-            button
-          );
-
-          state.cardPositions.clear();
-          render();
-        });
-      });
-
-    fitButton?.addEventListener("click", fitVisibleEvents);
-
-    resetCardsButton?.addEventListener("click", () => {
-      state.cardPositions.clear();
-      if (state.labelsEnabled) renderAnnotations();
-    });
-  }
-
-  function fitVisibleEvents() {
-    if (!state.map) return;
-
-    const events = selectedEvents();
-
-    if (!events.length) {
-      setNote("No visible events match the selected filters.");
-      return;
-    }
-
-    const bounds = window.L.latLngBounds(
-      events.map(event => [event.latitude, event.longitude])
-    );
-
-    if (bounds.isValid()) {
-      state.map.fitBounds(bounds.pad(0.18), {
-        maxZoom: 8
-      });
-    }
-  }
-
-  function updateStats() {
-    const events = selectedEvents();
-
-    setText("strikeHistoryTotal", events.length);
-    setText(
-      "strikeHistoryUsa",
-      events.filter(event => event.attacker === "USA").length
-    );
-    setText(
-      "strikeHistoryIran",
-      events.filter(event => event.attacker === "IRAN").length
-    );
-  }
-
-  function setActiveButton(selector, activeButton) {
-    document.querySelectorAll(selector).forEach(button => {
-      const active = button === activeButton;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-  }
-
-  function focusCard(id) {
-    const card = state.cardById.get(id);
-    if (!card) return;
-
-    bringCardToFront(card);
-
-    if (typeof card.animate === "function") {
-      card.animate(
-        [
-          { transform: "scale(1)" },
-          { transform: "scale(1.035)" },
-          { transform: "scale(1)" }
-        ],
-        { duration: 320 }
-      );
-    }
-  }
-
-  function bringCardToFront(card) {
-    const highest = Math.max(
-      720,
-      ...Array.from(state.cardById.values()).map(
-        item => Number(item.style.zIndex) || 720
-      )
-    );
-
-    card.style.zIndex = String(highest + 1);
-  }
-
-  function normalizeActor(value) {
-    const text = String(value || "").trim().toUpperCase();
-
-    if (!text) return "";
-    if (text === "ALL") return "ALL";
-
-    if (
-      text.includes("USA") ||
-      text.includes("UNITED STATES") ||
-      text.includes("U.S.")
-    ) {
-      return "USA";
-    }
-
-    if (
-      text.includes("IRAN") ||
-      text.includes("IRANIAN")
-    ) {
-      return "IRAN";
-    }
-
-    return "";
-  }
-
-  function normalizeConfidence(value) {
-    const text = String(value || "").trim().toLowerCase();
-
-    if (text.includes("high")) return "high";
-    if (text.includes("low")) return "low";
-    return "medium";
-  }
-
-  function parseDateValue(value) {
-    if (!value) return null;
-
-    const text = String(value).trim();
-    const normalized =
-      /^\d{4}-\d{2}-\d{2}$/.test(text)
-        ? `${text}T12:00:00Z`
-        : text;
-
-    const date = new Date(normalized);
-    return Number.isNaN(date.getTime()) ? null : date;
-  }
-
-  function endOfUtcDay(value) {
-    const date = new Date(value);
-    date.setUTCHours(23, 59, 59, 999);
-    return date;
-  }
-
-  function formatDate(value) {
-    const date = new Date(value);
-
-    if (Number.isNaN(date.getTime())) return "—";
-
-    return new Intl.DateTimeFormat(
-      "en-GB",
-      {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-        timeZone: "UTC"
-      }
-    ).format(date);
-  }
-
-  function firstText(...values) {
-    for (const value of values) {
-      const text = String(value ?? "").trim();
-      if (text) return text;
-    }
-    return "";
-  }
-
-  function toNumber(value) {
-    if (value === null || value === undefined || value === "") {
-      return null;
-    }
-
-    const number = Number(value);
-    return Number.isFinite(number) ? number : null;
-  }
-
-  function validCoordinate(latitude, longitude) {
-    return (
-      Number.isFinite(latitude) &&
-      Number.isFinite(longitude) &&
-      latitude >= -90 &&
-      latitude <= 90 &&
-      longitude >= -180 &&
-      longitude <= 180 &&
-      !(Math.abs(latitude) < 0.000001 && Math.abs(longitude) < 0.000001)
-    );
-  }
-
-  function setText(id, value) {
-    const element = document.getElementById(id);
-    if (element) element.textContent = String(value);
-  }
-
-  function setNote(text) {
-    const element = document.getElementById("strikeHistoryNote");
-    if (element) element.textContent = text;
-  }
-
-  function setStateBadge(text, className) {
-    const element = document.getElementById("strikeHistoryState");
-    if (!element) return;
-
-    element.textContent = text;
-    element.classList.remove("active", "error");
-
-    if (className) {
-      element.classList.add(className);
-    }
-  }
-
-  function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
-  }
-
-  function shortText(value, maxLength) {
-    const text = String(value || "")
-      .replace(/\s+/g, " ")
-      .trim();
-
-    if (text.length <= maxLength) return text;
-    return `${text.slice(0, maxLength - 1).trim()}…`;
-  }
-
-  function safeUrl(value) {
-    try {
-      const url = new URL(String(value || ""), window.location.href);
-      return ["http:", "https:"].includes(url.protocol)
-        ? url.href
+      const sourceLink = event?.source_url
+        ? `<a href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener">Open source</a>`
         : "";
-    } catch (_) {
-      return "";
+
+      const confidence = String(
+        event?.attacker_confidence || "unknown"
+      ).trim();
+
+      const geocodeMethod = String(
+        event?.geocode_method || event?.geocode_source || ""
+      ).trim();
+
+      marker.bindPopup(`
+        <div style="min-width:250px;line-height:1.45;">
+          <strong>${escapeHtml(event?.title || "IranStrike event")}</strong>
+          <div style="margin-top:5px;color:#5a6170;">
+            ${escapeHtml(event?.date || "Unknown date")}
+          </div>
+
+          <div style="margin-top:7px;padding:7px 9px;border-left:4px solid ${color};background:${color}14;border-radius:7px;">
+            <b>Attacker:</b> ${escapeHtml(attackerName)}<br />
+            <b>Confidence:</b> ${escapeHtml(confidence || "unknown")}
+          </div>
+
+          <div style="margin-top:7px;">
+            <b>Category:</b> ${escapeHtml(event?.category || "other")}<br />
+            <b>Severity:</b> ${escapeHtml(event?.severity || "unknown")}<br />
+            <b>Location:</b> ${escapeHtml(event?.location || event?.country || "Unknown")}<br />
+            <b>Coordinates:</b> ${point.lat.toFixed(4)}, ${point.lon.toFixed(4)}
+            ${
+              geocodeMethod
+                ? `<br /><b>Geocode:</b> ${escapeHtml(geocodeMethod)}`
+                : ""
+            }
+          </div>
+
+          ${
+            event?.description
+              ? `<div style="margin-top:7px;">${escapeHtml(event.description)}</div>`
+              : ""
+          }
+
+          ${sourceLink ? `<div style="margin-top:8px;">${sourceLink}</div>` : ""}
+
+          <div style="margin-top:7px;color:#5a6170;font-size:11px;">
+            Source: IranStrike
+          </div>
+        </div>`);
+
+      marker.options.attackMetadata = {
+        attacker,
+        attackerLabel: attackerName,
+        attackerColor: color,
+        categoryColor: categoryRing,
+        eventId: event?.id || "",
+        source: "iranstrike"
+      };
+
+      return marker;
     }
-  }
 
-  function escapeHtml(value) {
-    return String(value ?? "").replace(
-      /[&<>"']/g,
-      character => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-      })[character]
-    );
-  }
+    function sample(items, limit) {
+      if (items.length <= limit) return items;
+      const result = [];
+      const step = items.length / limit;
+      for (let index = 0; index < limit; index += 1) {
+        result.push(items[Math.floor(index * step)]);
+      }
+      return result;
+    }
 
-  window.MEStrikeHistory = Object.freeze({
-    refresh: loadData,
-    fitVisibleEvents,
-    getState() {
+    function clearRenderedLayers() {
+      if (map.hasLayer(markerLayer)) map.removeLayer(markerLayer);
+      if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
+      markerLayer.clearLayers();
+      heatLayer = null;
+    }
+
+    function zoomToVisible() {
+      if (!markerLayer.getLayers().length) return false;
+      const bounds = markerLayer.getBounds();
+      if (!bounds.isValid()) return false;
+      map.fitBounds(bounds.pad(0.12), { maxZoom: 8, animate: false });
+      return true;
+    }
+
+    function rebuild() {
+      clearRenderedLayers();
+
+      const usable = events
+        .filter(eventMatches)
+        .map((event) => ({ event, point: getEventLatLng(event) }))
+        .filter((item) => Boolean(item.point));
+
+      const limited = usable.slice(0, config.maxVisible);
+      visibleEvents = limited.map((item) => item.event);
+
+      if (displayMode === "markers" || displayMode === "both") {
+        for (const item of limited) {
+          markerLayer.addLayer(markerFor(item.event, item.point));
+        }
+      }
+
+      if (typeof L.heatLayer === "function" && (displayMode === "heatmap" || displayMode === "both")) {
+        const points = sample(usable, config.maxHeatPoints).map((item) => [item.point.lat, item.point.lon, 0.08]);
+        if (points.length) {
+          heatLayer = L.heatLayer(points, {
+            radius: 6,
+            blur: 5,
+            minOpacity: 0.03,
+            maxZoom: 10,
+            gradient: {
+              0.2: "#2c7bb6",
+              0.45: "#00a6ca",
+              0.65: "#fdae61",
+              0.85: "#f46d43",
+              1.0: "#d73027"
+            }
+          });
+        }
+      }
+
+      if (enabled) {
+        if (markerLayer.getLayers().length && (displayMode === "markers" || displayMode === "both")) {
+          markerLayer.addTo(map);
+        }
+        if (heatLayer && (displayMode === "heatmap" || displayMode === "both")) {
+          heatLayer.addTo(map);
+        }
+
+        if (config.autoFitOnFirstEnable && !didAutoFit && markerLayer.getLayers().length) {
+          didAutoFit = zoomToVisible();
+        }
+      }
+
+      console.info("[iranstrike-layer-v4-attacker]", {
+        enabled,
+        loaded: events.length,
+        filtered: events.filter(eventMatches).length,
+        coordinateUsable: usable.length,
+        rejectedCoordinates: events.filter(eventMatches).length - usable.length,
+        markersOnLayer: markerLayer.getLayers().length,
+        markerLayerOnMap: map.hasLayer(markerLayer),
+        displayMode,
+        mapBounds: map.getBounds().toBBoxString(),
+        markerBounds: markerLayer.getLayers().length ? markerLayer.getBounds().toBBoxString() : null
+      });
+    }
+
+    function scheduleRebuild() {
+      window.clearTimeout(rebuildTimer);
+      rebuildTimer = window.setTimeout(rebuild, 120);
+    }
+
+    map.on("zoomend", scheduleRebuild);
+
+    async function refresh() {
+      const response = await fetch(config.dataUrl, { cache: "no-store" });
+      if (!response.ok) throw new Error(`IranStrike data HTTP ${response.status}`);
+      payload = await response.json();
+      events = Array.isArray(payload?.map_events)
+        ? payload.map_events
+        : Array.isArray(payload?.events)
+          ? payload.events.filter(
+              (event) => event?.map_visualizable !== false
+            )
+          : [];
+      rebuild();
+      return getState();
+    }
+
+    function setEnabled(value) {
+      enabled = Boolean(value);
+      rebuild();
+    }
+
+    function setFilters(next = {}) {
+      filters = {
+        ...filters,
+        ...next,
+        categories: Array.isArray(next.categories)
+          ? next.categories.map((value) => String(value).toLowerCase())
+          : filters.categories,
+        severity: Array.isArray(next.severity)
+          ? next.severity.map((value) => String(value).toLowerCase())
+          : filters.severity
+      };
+      didAutoFit = false;
+      rebuild();
+    }
+
+    function setDisplayMode(value) {
+      displayMode = ["markers", "heatmap", "both"].includes(value) ? value : "markers";
+      didAutoFit = false;
+      rebuild();
+    }
+
+    function getState() {
       return {
-        enabled: state.enabled,
-        labelsEnabled: state.labelsEnabled,
-        days: state.days,
-        actor: state.actor,
-        totalEvents: state.events.length,
-        visibleEvents: selectedEvents().length,
-        latestDate:
-          state.latestDate?.toISOString?.() || null,
-        dataLoaded: state.dataLoaded,
-        error: state.error
+        enabled,
+        loadedCount: events.length,
+        visibleCount: visibleEvents.length,
+        generatedAt: payload?.generated_at || "",
+        source: payload?.source || null,
+        analytics: payload?.analytics || null,
+        totalSourceCount: Array.isArray(payload?.events)
+          ? payload.events.length
+          : events.length,
+        totalMapSourceCount: Array.isArray(payload?.map_events)
+          ? payload.map_events.length
+          : events.length,
+        heatmapAvailable: typeof L.heatLayer === "function",
+        displayMode,
+        filters: { ...filters },
+        markerLayerOnMap: map.hasLayer(markerLayer),
+        markerCount: markerLayer.getLayers().length,
+        attackerCounts: visibleEvents.reduce((accumulator, event) => {
+          const attacker = normalizeAttacker(event?.attacker);
+          accumulator[attacker] = (accumulator[attacker] || 0) + 1;
+          return accumulator;
+        }, {})
       };
     }
-  });
+
+    function destroy() {
+      window.clearTimeout(rebuildTimer);
+      map.off("zoomend", scheduleRebuild);
+      clearRenderedLayers();
+      events = [];
+      visibleEvents = [];
+      payload = null;
+    }
+
+    return {
+      refresh,
+      setEnabled,
+      setFilters,
+      setDisplayMode,
+      getState,
+      getVisibleEvents: () => [...visibleEvents],
+      getPayload: () => payload,
+      zoomToVisible,
+      destroy
+    };
+  }
+
+  if (!document.getElementById("iranstrike-v4-style")) {
+    const style = document.createElement("style");
+    style.id = "iranstrike-v4-style";
+    style.textContent = `
+      .iranstrike-marker-icon {
+        background: transparent !important;
+        border: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transition: transform .16s ease, filter .16s ease;
+      }
+
+      .iranstrike-marker-icon:hover {
+        transform: scale(1.18);
+        filter: drop-shadow(0 3px 5px rgba(15, 23, 42, 0.35));
+      }
+      .leaflet-pane.leaflet-iranstrike-marker-pane-pane {
+        z-index: 1000 !important;
+        pointer-events: auto !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  window.createIranStrikeLayer = createIranStrikeLayer;
 })();
