@@ -4289,3 +4289,4 @@ window.setInterval(() => {
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
   }
 });
+
