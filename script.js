@@ -748,7 +748,7 @@ window.addEventListener("DOMContentLoaded", () => {
         color: "#60a5fa",
         weight: borderWeight,
         opacity: borderOpacity,
-        fillColor: "#60a5fa",
+        fillColor: "#ffffff",
         fillOpacity: fillOpacity,
       };
     }
