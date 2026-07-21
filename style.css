@@ -1,205 +1,261 @@
-/* ============================================================
-   ME Security Monitor – USA–Iran Strike History module
-   This file is intentionally limited to the new strike-history UI.
-   The main page styling remains embedded in index.html.
-   ============================================================ */
+/* ==========================================================================
+   ME Security Monitor – USA–Iran Strike History
+   This stylesheet is intentionally isolated from the existing interface.
+   ========================================================================== */
 
-#controlPanel .strike-history-control-block {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  margin: 10px 0 0 !important;
-  padding: 11px !important;
-  border: 1px solid #d4e0e8 !important;
+.strike-history-section {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(34, 51, 68, 0.12);
   border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 4px 13px rgba(20,54,78,.055);
+  background: rgba(246, 248, 250, 0.92);
+  box-shadow: 0 5px 16px rgba(25, 40, 55, 0.06);
 }
 
-.strike-history-title {
-  color: #173149;
-  font-size: 11px;
+.strike-history-section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.strike-history-section-title {
+  color: #1f2a36;
+  font-size: 13px;
   font-weight: 850;
-  letter-spacing: .035em;
-  text-transform: uppercase;
+  line-height: 1.25;
 }
 
-.strike-history-note {
-  margin-top: 8px;
-  color: #687c8e;
+.strike-history-section-subtitle {
+  margin-top: 3px;
+  color: #607284;
   font-size: 10px;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
-.strike-history-segmented {
+.strike-history-state {
+  flex: 0 0 auto;
+  padding: 3px 7px;
+  border: 1px solid rgba(61, 111, 138, 0.18);
+  border-radius: 999px;
+  background: rgba(61, 111, 138, 0.08);
+  color: #3d6f8a;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.strike-history-state.error {
+  border-color: rgba(177, 76, 76, 0.25);
+  background: rgba(177, 76, 76, 0.10);
+  color: #9a3c3c;
+}
+
+.strike-history-state.active {
+  border-color: rgba(92, 139, 104, 0.26);
+  background: rgba(92, 139, 104, 0.11);
+  color: #477553;
+}
+
+.strike-history-filter-label {
+  margin: 10px 0 6px;
+  color: #607284;
+  font-size: 10px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.strike-history-button-group {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 6px;
-  margin-top: 7px;
-}
-
-.strike-history-segmented.actor {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
 }
 
-.strike-history-segmented .span-two {
-  grid-column: 1 / -1;
-}
-
-.strike-history-segmented button {
-  min-height: 32px;
-  padding: 6px 7px;
-  border: 1px solid #cbd8e2;
-  border-radius: 9px;
-  background: #fff;
-  color: #23425a;
+.strike-history-button-group button {
+  min-width: 0;
+  padding: 6px 5px;
+  border: 1px solid rgba(34, 51, 68, 0.14);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #42566a;
+  cursor: pointer;
   font: inherit;
   font-size: 10px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: background .14s ease, border-color .14s ease, transform .14s ease;
+  font-weight: 750;
+  line-height: 1.2;
 }
 
-.strike-history-segmented button:hover {
-  border-color: #9eb5c5;
-  background: #f1f6f9;
-  transform: translateY(-1px);
+.strike-history-button-group button:hover {
+  border-color: rgba(61, 111, 138, 0.35);
+  background: rgba(61, 111, 138, 0.06);
 }
 
-.strike-history-segmented button.active {
-  border-color: #2879b8;
-  background: #2879b8;
-  color: #fff;
+.strike-history-button-group button.active {
+  border-color: #3d6f8a;
+  background: #3d6f8a;
+  color: #ffffff;
+}
+
+.strike-history-actor-buttons {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .strike-history-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
-  margin-top: 9px;
+  margin-top: 10px;
 }
 
-.strike-history-stat {
+.strike-history-stats > div {
   padding: 7px 5px;
-  border: 1px solid #e0e7ed;
+  border: 1px solid rgba(34, 51, 68, 0.10);
   border-radius: 9px;
-  background: #f8fafc;
+  background: #ffffff;
   text-align: center;
 }
 
-.strike-history-stat b {
+.strike-history-stats span {
   display: block;
-  color: #173149;
-  font-size: 15px;
-  line-height: 1.1;
+  color: #607284;
+  font-size: 9px;
 }
 
-.strike-history-stat span {
-  color: #6b7d8e;
-  font-size: 8.5px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+.strike-history-stats strong {
+  display: block;
+  margin-top: 2px;
+  color: #1f2a36;
+  font-size: 14px;
 }
 
-.strike-history-stat.usa { border-bottom: 3px solid #20a66a; }
-.strike-history-stat.iran { border-bottom: 3px solid #2476c8; }
-
-.strike-history-mini-legend {
+.strike-history-actions {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
-  color: #607587;
-  font-size: 9.5px;
-  font-weight: 700;
+  gap: 6px;
+  margin-top: 9px;
 }
 
-.strike-history-mini-legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+.strike-history-actions .btn-mini {
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.strike-history-mini-legend i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 0 2px rgba(255,255,255,.8), 0 1px 5px rgba(20,54,78,.25);
+.strike-history-note {
+  margin-top: 9px;
+  color: #607284;
+  font-size: 9px;
+  line-height: 1.45;
 }
 
-.strike-history-mini-legend i.usa { background: #20a66a; }
-.strike-history-mini-legend i.iran { background: #2476c8; }
+.strike-history-marker-shell {
+  background: transparent !important;
+  border: 0 !important;
+}
 
 .strike-history-marker {
   width: 18px;
   height: 18px;
-  border: 3px solid rgba(255,255,255,.95);
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(10,30,45,.34);
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.38),
+    0 0 0 2px rgba(15, 23, 42, 0.10);
 }
 
-.strike-history-marker.usa { background: #20a66a; }
-.strike-history-marker.iran { background: #2476c8; }
-.strike-history-marker.low { opacity: .66; }
-.strike-history-marker.medium { opacity: .84; }
-.strike-history-marker.high { opacity: 1; }
+.strike-history-marker.usa {
+  background: #2e9b59;
+}
+
+.strike-history-marker.iran {
+  background: #2674c8;
+}
+
+.strike-history-marker.low {
+  opacity: 0.62;
+}
+
+.strike-history-marker.medium {
+  opacity: 0.84;
+}
+
+.strike-history-marker.high {
+  opacity: 1;
+}
+
+.strike-history-legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.16);
+}
+
+.strike-history-legend-dot.usa {
+  background: #2e9b59;
+}
+
+.strike-history-legend-dot.iran {
+  background: #2674c8;
+}
 
 .strike-history-annotation-layer {
   position: absolute;
   inset: 0;
-  z-index: 650;
+  z-index: 690;
   overflow: hidden;
   pointer-events: none;
 }
 
-.strike-history-lines {
+.strike-history-lines,
+.strike-history-cards {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.strike-history-lines {
   overflow: visible;
   pointer-events: none;
 }
 
 .strike-history-line {
-  stroke: #506b7d;
-  stroke-width: 1.4;
-  stroke-dasharray: 5 5;
-  opacity: .78;
+  stroke: rgba(31, 42, 54, 0.72);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
   vector-effect: non-scaling-stroke;
-}
-
-.strike-history-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
 }
 
 .strike-history-card {
   position: absolute;
-  width: 252px;
-  max-width: calc(100% - 12px);
-  overflow: hidden;
-  border: 1px solid #d5e1e9;
-  border-left: 5px solid #8296a5;
-  border-radius: 12px;
-  background: rgba(255,255,255,.97);
-  box-shadow: 0 7px 20px rgba(18,47,68,.17);
-  color: #173149;
+  width: min(260px, calc(100% - 16px));
+  max-width: 260px;
+  padding: 9px;
+  border: 1px solid rgba(34, 51, 68, 0.18);
+  border-left: 4px solid #607284;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 22px rgba(25, 40, 55, 0.18);
+  color: #1f2a36;
   pointer-events: auto;
   user-select: none;
-  backdrop-filter: blur(5px);
 }
 
-.strike-history-card.usa { border-left-color: #20a66a; }
-.strike-history-card.iran { border-left-color: #2476c8; }
+.strike-history-card.usa {
+  border-left-color: #2e9b59;
+}
+
+.strike-history-card.iran {
+  border-left-color: #2674c8;
+}
+
 .strike-history-card.dragging {
-  opacity: .92;
+  z-index: 9999 !important;
   cursor: grabbing;
-  box-shadow: 0 12px 30px rgba(18,47,68,.25);
+  box-shadow: 0 12px 28px rgba(25, 40, 55, 0.26);
 }
 
 .strike-history-card-head {
@@ -207,68 +263,94 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
-  padding: 9px 10px 7px;
   cursor: grab;
   touch-action: none;
 }
 
 .strike-history-card-title {
-  min-width: 0;
+  overflow: hidden;
+  color: #1f2a36;
   font-size: 11px;
-  font-weight: 900;
+  font-weight: 850;
   line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .strike-history-card-meta {
-  margin-top: 3px;
-  color: #65798a;
+  margin-top: 2px;
+  color: #607284;
   font-size: 9px;
-  font-weight: 700;
 }
 
 .strike-history-card-toggle {
-  width: 25px;
-  height: 25px;
-  flex: 0 0 25px;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   padding: 0;
-  border: 1px solid #d3dfe7;
-  border-radius: 8px;
-  background: #f4f8fa;
-  color: #173149;
-  font-size: 17px;
-  font-weight: 900;
-  line-height: 1;
+  border: 1px solid rgba(34, 51, 68, 0.14);
+  border-radius: 7px;
+  background: #f5f7f9;
+  color: #32475a;
   cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .strike-history-card-summary {
-  padding: 0 10px 9px;
-  color: #314b5f;
-  font-size: 10px;
+  margin-top: 7px;
+  color: #42566a;
+  font-size: 9px;
   line-height: 1.4;
 }
 
 .strike-history-card-details {
   display: none;
-  max-height: 230px;
-  overflow-y: auto;
-  padding: 9px 10px 10px;
-  border-top: 1px solid #e2e9ee;
-  background: #f8fafc;
-  color: #365064;
-  font-size: 9.5px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(34, 51, 68, 0.10);
+  color: #42566a;
+  font-size: 9px;
   line-height: 1.45;
   user-select: text;
 }
 
-.strike-history-card.expanded .strike-history-card-details { display: block; }
-.strike-history-card-details .detail-row { margin: 0 0 6px; }
-.strike-history-card-details .detail-label { color: #173149; font-weight: 900; }
-.strike-history-card-details a { color: #176aa7; font-weight: 800; text-decoration: none; }
-.strike-history-card-details a:hover { text-decoration: underline; }
+.strike-history-card.expanded .strike-history-card-details {
+  display: block;
+}
+
+.strike-history-card-details .detail-row + .detail-row {
+  margin-top: 5px;
+}
+
+.strike-history-card-details .detail-label {
+  color: #1f2a36;
+  font-weight: 800;
+}
+
+.strike-history-card-details a {
+  color: #2f6988;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.strike-history-card-details a:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 720px) {
-  .strike-history-card { width: 220px; }
-  .strike-history-annotation-layer { z-index: 640; }
+  .strike-history-button-group {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .strike-history-actor-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .strike-history-card {
+    max-width: 230px;
+  }
 }
+
 
