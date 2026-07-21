@@ -744,7 +744,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const inRegion = activeRegion !== "ALL" && regionContainsCountry(activeRegion, name);
       const fillOpacity = (borderFillOn && inRegion) ? borderFillOpacity : 0;
       return {
-        color: "#ffffff",
+        color: "#000000",
         weight: borderWeight,
         opacity: borderOpacity,
         fillColor: "#ffffff",
