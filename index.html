@@ -1539,6 +1539,65 @@
     }
   </style>
 
+
+  <style id="strike-history-layer-style-v1">
+    .strike-history-control-block{
+      margin:10px 0 0!important;padding:11px!important;
+      border:1px solid #d4e0e8!important;border-radius:14px;
+      background:#fff;box-shadow:0 4px 13px rgba(20,54,78,.055)
+    }
+    .strike-history-title{color:#173149;font-size:11px;font-weight:850;letter-spacing:.025em;text-transform:uppercase}
+    .strike-history-note{margin-top:7px;color:#687c8e;font-size:10px;line-height:1.4}
+    .strike-history-segmented{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:8px}
+    .strike-history-segmented.actor{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .strike-history-segmented button{
+      min-height:32px;padding:6px 7px;border:1px solid #cbd8e2;border-radius:9px;
+      background:#fff;color:#23425a;font-size:10px;font-weight:800;cursor:pointer
+    }
+    .strike-history-segmented button.active{border-color:#2879b8;background:#2879b8;color:#fff}
+    .strike-history-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px}
+    .strike-history-stat{padding:7px 5px;border:1px solid #e0e7ed;border-radius:9px;background:#f8fafc;text-align:center}
+    .strike-history-stat b{display:block;color:#173149;font-size:15px}
+    .strike-history-stat span{color:#6b7d8e;font-size:8.5px;text-transform:uppercase}
+    .strike-history-marker{
+      width:18px;height:18px;border:3px solid rgba(255,255,255,.96);border-radius:50%;
+      box-shadow:0 2px 10px rgba(12,34,52,.34)
+    }
+    .strike-history-marker.usa{background:#20a66a}
+    .strike-history-marker.iran{background:#2476c8}
+    .strike-history-marker.low{opacity:.66}.strike-history-marker.medium{opacity:.84}.strike-history-marker.high{opacity:1}
+    .strike-history-annotation-layer{position:absolute;inset:0;z-index:650;pointer-events:none;overflow:hidden}
+    .strike-history-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+    .strike-history-line{stroke:#506b7d;stroke-width:1.4;stroke-dasharray:5 5;opacity:.78;vector-effect:non-scaling-stroke}
+    .strike-history-card{
+      position:absolute;width:250px;max-width:calc(100% - 20px);border:1px solid #cfdce5;border-left:5px solid #2476c8;
+      border-radius:12px;background:rgba(255,255,255,.97);box-shadow:0 8px 22px rgba(18,47,68,.18);
+      color:#173149;pointer-events:auto;user-select:none;overflow:hidden;touch-action:none
+    }
+    .strike-history-card.usa{border-left-color:#20a66a}.strike-history-card.iran{border-left-color:#2476c8}
+    .strike-history-card.dragging{opacity:.92;cursor:grabbing;box-shadow:0 12px 30px rgba(18,47,68,.25)}
+    .strike-history-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding:9px 10px 7px;cursor:grab}
+    .strike-history-card-title{min-width:0;font-size:11px;font-weight:900;line-height:1.25}
+    .strike-history-card-meta{margin-top:3px;color:#65798a;font-size:9px;font-weight:700}
+    .strike-history-card-toggle{
+      flex:0 0 auto;width:23px;height:23px;padding:0;border:1px solid #d5e0e8;border-radius:7px;
+      background:#f5f8fa;color:#23425a;font-size:12px;font-weight:900;cursor:pointer
+    }
+    .strike-history-card-summary{padding:0 10px 9px;color:#314b5f;font-size:10px;line-height:1.4}
+    .strike-history-card-details{
+      display:none;padding:9px 10px 10px;border-top:1px solid #e2e9ee;background:#f8fafc;
+      color:#425d70;font-size:9.5px;line-height:1.45;user-select:text
+    }
+    .strike-history-card.expanded .strike-history-card-details{display:block}
+    .strike-history-card-details a{color:#176aa7;font-weight:800;text-decoration:none}
+    .strike-history-card-details .detail-row{margin:4px 0}
+    .strike-history-card-details .detail-label{color:#173149;font-weight:900}
+    .strike-history-legend{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px;color:#617586;font-size:9.5px;font-weight:700}
+    .strike-history-legend i{display:inline-block;width:10px;height:10px;margin-right:4px;border-radius:50%;vertical-align:-1px}
+    .strike-history-legend .usa{background:#20a66a}.strike-history-legend .iran{background:#2476c8}
+    @media(max-width:900px){.strike-history-card{width:220px}}
+  </style>
+
 </head>
 
 <body>
@@ -1596,6 +1655,39 @@
     <div class="row"><label><input class="src-filter" type="checkbox" value="news" checked /> News</label></div>
     <div class="row"><label><input class="src-filter" type="checkbox" value="isw" checked /> ISW</label></div>
 
+
+
+    <div class="strike-history-control-block" id="strikeHistoryControl">
+      <div class="strike-history-title">USA–Irán csapástörténet</div>
+      <div class="row" style="margin-top:8px;">
+        <label><input id="strikeHistoryLayerCheckbox" type="checkbox"> Csapáspontok</label>
+        <label><input id="strikeHistoryLabelsCheckbox" type="checkbox"> Szövegblokkok</label>
+      </div>
+      <div class="muted" style="margin-top:8px;">Időszak</div>
+      <div class="strike-history-segmented" id="strikeHistoryWindowButtons">
+        <button type="button" data-days="7" class="active">1 hét</button>
+        <button type="button" data-days="14">2 hét</button>
+        <button type="button" data-days="30">1 hónap</button>
+        <button type="button" data-days="90">3 hónap</button>
+      </div>
+      <div class="muted" style="margin-top:8px;">Támadó fél</div>
+      <div class="strike-history-segmented actor" id="strikeHistoryActorButtons">
+        <button type="button" data-actor="ALL" class="active">Összes</button>
+        <button type="button" data-actor="USA">USA</button>
+        <button type="button" data-actor="IRAN">Irán</button>
+      </div>
+      <div class="strike-history-stats">
+        <div class="strike-history-stat"><b id="strikeHistoryTotal">0</b><span>összes</span></div>
+        <div class="strike-history-stat"><b id="strikeHistoryUsa">0</b><span>USA</span></div>
+        <div class="strike-history-stat"><b id="strikeHistoryIran">0</b><span>Irán</span></div>
+      </div>
+      <div class="strike-history-legend">
+        <span><i class="usa"></i>USA</span><span><i class="iran"></i>Irán</span>
+      </div>
+      <div class="strike-history-note" id="strikeHistoryNote">
+        A szövegblokkok mozgathatók. Mozgatás közben az összekötővonal eltűnik, elengedés után visszakapcsol.
+      </div>
+    </div>
 
     <div class="israel-section">
       <div class="israel-section-title">Israel Military Activity</div>
@@ -1793,6 +1885,8 @@
     <div class="risk-row"><div class="name">Political</div><div class="val"><span class="event-dot" style="background:#4ea1ff;"></span></div></div>
     <div class="risk-row"><div class="name">Other</div><div class="val"><span class="event-dot" style="background:#b7b7b7;"></span></div></div>
 
+    <div class="risk-row"><div class="name">USA strike history</div><div class="val"><span class="event-dot" style="background:#20a66a;"></span></div></div>
+    <div class="risk-row"><div class="name">Iran strike history</div><div class="val"><span class="event-dot" style="background:#2476c8;"></span></div></div>
     <div class="risk-row"><div class="name">Israel airstrike</div><div class="val"><span class="israel-legend-dot israel-dot-airstrike"></span></div></div>
     <div class="risk-row"><div class="name">Israel ground activity</div><div class="val"><span class="israel-legend-dot israel-dot-ground"></span></div></div>
     <div class="risk-row"><div class="name">Cross-border fire</div><div class="val"><span class="israel-legend-dot israel-dot-border"></span></div></div>
@@ -1806,6 +1900,7 @@
 
   <script src="./js/map-utils.js"></script>
   <script src="./js/israel-activity-layer.js"></script>
+  <script src="./js/strike-history-layer.js"></script>
   <script type="module" src="./script.js"></script>
   <script src="./js/annotation-controller.js"></script>
   <script src="./js/dashboard-navigation.js"></script>
