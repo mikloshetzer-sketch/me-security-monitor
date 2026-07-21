@@ -1631,45 +1631,69 @@
     </div>
 
 
-
-    <!-- USA–IRAN STRIKE HISTORY -->
-    <section id="strikeHistoryControl" class="strike-history-control-block" data-control-block>
-      <div class="strike-history-title">USA–Iran Strike History</div>
-
-      <div class="row">
-        <label><input id="strikeHistoryLayerCheckbox" type="checkbox" /> Strike history layer</label>
-        <label><input id="strikeHistoryLabelsCheckbox" type="checkbox" /> Annotations</label>
+    <div class="strike-history-section" id="strikeHistorySection" data-control-block="strike-history">
+      <div class="strike-history-section-head">
+        <div>
+          <div class="strike-history-section-title">USA–Iran Strike History</div>
+          <div class="strike-history-section-subtitle">Geolocated historical strike events</div>
+        </div>
+        <span class="strike-history-state" id="strikeHistoryState">Ready</span>
       </div>
 
-      <div class="muted" style="margin-top:8px;">Period</div>
-      <div id="strikeHistoryWindowButtons" class="strike-history-segmented">
+      <div class="row">
+        <label>
+          <input id="strikeHistoryLayerCheckbox" type="checkbox" />
+          Strike history layer
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          <input id="strikeHistoryLabelsCheckbox" type="checkbox" />
+          Annotation cards
+        </label>
+      </div>
+
+      <div class="strike-history-filter-label">Time window</div>
+      <div class="strike-history-button-group" id="strikeHistoryWindowButtons">
         <button type="button" data-days="7" class="active">1 week</button>
         <button type="button" data-days="14">2 weeks</button>
         <button type="button" data-days="30">1 month</button>
         <button type="button" data-days="90">3 months</button>
-        <button type="button" data-days="ALL" class="span-two">All</button>
+        <button type="button" data-days="ALL">All</button>
       </div>
 
-      <div class="muted" style="margin-top:8px;">Attacker</div>
-      <div id="strikeHistoryActorButtons" class="strike-history-segmented actor">
-        <button type="button" data-actor="ALL" class="active">All</button>
+      <div class="strike-history-filter-label">Attacker</div>
+      <div class="strike-history-button-group strike-history-actor-buttons" id="strikeHistoryActorButtons">
+        <button type="button" data-actor="ALL" class="active">ALL</button>
         <button type="button" data-actor="USA">USA</button>
-        <button type="button" data-actor="IRAN">Iran</button>
+        <button type="button" data-actor="IRAN">IRAN</button>
       </div>
 
       <div class="strike-history-stats" aria-live="polite">
-        <div class="strike-history-stat"><b id="strikeHistoryTotal">0</b><span>Total</span></div>
-        <div class="strike-history-stat usa"><b id="strikeHistoryUsa">0</b><span>USA</span></div>
-        <div class="strike-history-stat iran"><b id="strikeHistoryIran">0</b><span>Iran</span></div>
+        <div>
+          <span>Total</span>
+          <strong id="strikeHistoryTotal">0</strong>
+        </div>
+        <div>
+          <span>USA</span>
+          <strong id="strikeHistoryUsa">0</strong>
+        </div>
+        <div>
+          <span>Iran</span>
+          <strong id="strikeHistoryIran">0</strong>
+        </div>
       </div>
 
-      <div class="strike-history-mini-legend">
-        <span><i class="usa"></i>USA strike</span>
-        <span><i class="iran"></i>Iran strike</span>
+      <div class="strike-history-actions">
+        <button type="button" class="btn-mini" id="strikeHistoryFitButton">Fit visible events</button>
+        <button type="button" class="btn-mini" id="strikeHistoryResetCardsButton">Reset cards</button>
       </div>
 
-      <div id="strikeHistoryNote" class="strike-history-note">Loading strike-history data…</div>
-    </section>
+      <div class="strike-history-note" id="strikeHistoryNote">
+        The dataset is loaded from data/strike_history.json.
+      </div>
+    </div>
 
     <div class="muted" style="margin-top:10px;">Window</div>
     <div class="row"><label><input type="radio" name="window" value="1" checked /> 1d</label></div>
@@ -1839,6 +1863,9 @@
     <div class="risk-row"><div class="name">Israel ground activity</div><div class="val"><span class="israel-legend-dot israel-dot-ground"></span></div></div>
     <div class="risk-row"><div class="name">Cross-border fire</div><div class="val"><span class="israel-legend-dot israel-dot-border"></span></div></div>
     <div class="risk-row"><div class="name">Drone activity</div><div class="val"><span class="israel-legend-dot israel-dot-drone"></span></div></div>
+
+    <div class="risk-row"><div class="name">USA strike history</div><div class="val"><span class="strike-history-legend-dot usa"></span></div></div>
+    <div class="risk-row"><div class="name">Iran strike history</div><div class="val"><span class="strike-history-legend-dot iran"></span></div></div>
     <div class="muted" style="margin-top:8px;">Tip: a panelek külön nyithatók, így mobilon is kezelhető marad.</div>
   </div>
 
