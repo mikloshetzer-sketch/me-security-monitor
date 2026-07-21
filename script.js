@@ -4,6 +4,7 @@
 import { createAircraftLayer } from "./js/aircraft-layer.js";
 import { createReportsLayer } from "./js/reports-layer.js";
 import "./js/cir-incidents-layer.js";
+import { createStrikeHistoryLayer } from "./js/strike-history-layer.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   try {
@@ -2335,7 +2336,8 @@ window.setInterval(() => {
         ),
         sourceLabels: {
           cir: "CIR",
-          iranstrike: "IranStrike"
+          iranstrike: "IranStrike",
+          strikehistory: "Strike History"
         }
       });
 
@@ -2354,6 +2356,9 @@ window.setInterval(() => {
         iranstrike: Boolean(
           document.getElementById("attackAnnotationsIranStrikeCheckbox")?.checked
         ),
+        strikehistory: Boolean(
+          document.getElementById("attackAnnotationsStrikeHistoryCheckbox")?.checked
+        ),
         limit: Number(
           document.getElementById("attackAnnotationLimitSelect")?.value || 10
         )
@@ -2364,6 +2369,14 @@ window.setInterval(() => {
       if (!iranStrikeController?.getVisibleEvents) return [];
 
       return iranStrikeController
+        .getVisibleEvents()
+        .filter((event) => event?.map_visualizable !== false);
+    }
+
+    function getStrikeHistoryEventsForAnnotations() {
+      if (!strikeHistoryController?.getVisibleEvents) return [];
+
+      return strikeHistoryController
         .getVisibleEvents()
         .filter((event) => event?.map_visualizable !== false);
     }
@@ -2408,12 +2421,15 @@ window.setInterval(() => {
           : [];
 
         const iranStrikeEvents = getIranStrikeEventsForAnnotations();
+        const strikeHistoryEvents = getStrikeHistoryEventsForAnnotations();
 
         controller.setLimit(ui.limit);
         controller.setEvents("cir", cirEvents);
         controller.setEvents("iranstrike", iranStrikeEvents);
+        controller.setEvents("strikehistory", strikeHistoryEvents);
         controller.setSourceEnabled("cir", ui.cir);
         controller.setSourceEnabled("iranstrike", ui.iranstrike);
+        controller.setSourceEnabled("strikehistory", ui.strikehistory);
         controller.setEnabled(true);
         controller.refresh();
 
@@ -3113,6 +3129,99 @@ window.setInterval(() => {
       }
     }, 5 * 60 * 1000);
 
+    // ===== Strike History layer (data/strike_history.json) =====
+    let strikeHistoryEnabled = false;
+    let strikeHistoryController = null;
+
+    function ensureStrikeHistoryController() {
+      if (strikeHistoryController) return strikeHistoryController;
+
+      strikeHistoryController = createStrikeHistoryLayer(map, {
+        dataUrl: "data/strike_history.json",
+        enabled: false,
+        defaultDays: 7,
+        defaultActor: "ALL",
+        maxVisible: 1000
+      });
+
+      window.strikeHistoryController = strikeHistoryController;
+      return strikeHistoryController;
+    }
+
+    function readStrikeHistoryFilters() {
+      return {
+        days: Number(document.getElementById("strikeHistoryDaysSelect")?.value || 7),
+        actor: String(document.getElementById("strikeHistoryActorSelect")?.value || "ALL"),
+        search: String(document.getElementById("strikeHistorySearchInput")?.value || "").trim()
+      };
+    }
+
+    function updateStrikeHistoryUi() {
+      const badge = document.getElementById("strikeHistoryStatusBadge");
+      const state = strikeHistoryController?.getState?.();
+      const visible = strikeHistoryController?.getVisibleEvents?.() || [];
+
+      setTextIfExists("strikeHistoryLoadedCount", state?.loadedCount ?? 0);
+      setTextIfExists("strikeHistoryVisibleCount", state?.visibleCount ?? 0);
+      setTextIfExists("strikeHistoryUsaCount", visible.filter(event => event.attacker === "USA").length);
+      setTextIfExists("strikeHistoryIranCount", visible.filter(event => event.attacker === "IRAN").length);
+      setTextIfExists("strikeHistoryLastUpdate", state?.generatedAt || state?.latestDate || "—");
+
+      if (badge) {
+        badge.className = "badge-mini";
+        if (state?.error) {
+          badge.textContent = "Error";
+          badge.classList.add("badge-alert");
+        } else if (strikeHistoryEnabled) {
+          badge.textContent = "Online";
+          badge.classList.add("badge-ok");
+        } else {
+          badge.textContent = state?.loaded ? "Loaded" : "Off";
+        }
+      }
+    }
+
+    async function refreshStrikeHistorySafe() {
+      try {
+        const controller = ensureStrikeHistoryController();
+        controller.setFilters(readStrikeHistoryFilters());
+        await controller.refresh();
+        controller.setEnabled(strikeHistoryEnabled);
+        updateStrikeHistoryUi();
+        await syncAttackAnnotations();
+      } catch (error) {
+        console.warn("[strike-history] refresh failed:", error?.message || error);
+        updateStrikeHistoryUi();
+      }
+    }
+
+    async function setStrikeHistoryEnabled(value) {
+      strikeHistoryEnabled = Boolean(value);
+
+      try {
+        const controller = ensureStrikeHistoryController();
+        controller.setFilters(readStrikeHistoryFilters());
+
+        if (strikeHistoryEnabled && !controller.getState().loaded) {
+          await controller.refresh();
+        }
+
+        controller.setEnabled(strikeHistoryEnabled);
+        updateStrikeHistoryUi();
+        await syncAttackAnnotations();
+      } catch (error) {
+        console.warn("[strike-history] toggle failed:", error?.message || error);
+        strikeHistoryEnabled = false;
+        const checkbox = document.getElementById("strikeHistoryCheckbox");
+        if (checkbox) checkbox.checked = false;
+        updateStrikeHistoryUi();
+      }
+    }
+
+    window.setInterval(() => {
+      if (strikeHistoryEnabled) refreshStrikeHistorySafe();
+    }, 5 * 60 * 1000);
+
     // ===== Israel military activity layer (data/israel-activity.json) =====
     let israelActivityEnabled = false;
     let israelActivityScriptLoading = null;
@@ -3494,6 +3603,52 @@ window.setInterval(() => {
         </div>
       </div>
 
+      <div class="strike-history-control-block" data-control-block="strike-history" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+          <div class="muted" style="font-weight:800;">USA–Iran Strike History</div>
+          <span id="strikeHistoryStatusBadge" class="badge-mini">Off</span>
+        </div>
+
+        <div class="row">
+          <label><input id="strikeHistoryCheckbox" type="checkbox" /> Strike History layer</label>
+          <span class="btn-mini" id="strikeHistoryRefreshBtn">Refresh</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
+        <select id="strikeHistoryDaysSelect">
+          <option value="7" selected>Last 7 days</option>
+          <option value="14">Last 14 days</option>
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="0">All available data</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Attacker</div>
+        <select id="strikeHistoryActorSelect">
+          <option value="ALL" selected>All attackers</option>
+          <option value="USA">USA</option>
+          <option value="IRAN">Iran</option>
+        </select>
+
+        <input id="strikeHistorySearchInput" class="search" type="search" placeholder="Search strike history..." style="margin-top:7px;" />
+
+        <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div class="mini-item"><div class="name">Loaded</div><div class="val" id="strikeHistoryLoadedCount">0</div></div>
+          <div class="mini-item"><div class="name">Visible</div><div class="val" id="strikeHistoryVisibleCount">0</div></div>
+          <div class="mini-item"><div class="name">USA</div><div class="val" id="strikeHistoryUsaCount">0</div></div>
+          <div class="mini-item"><div class="name">Iran</div><div class="val" id="strikeHistoryIranCount">0</div></div>
+        </div>
+
+        <div class="row" style="margin-top:8px;">
+          <span class="btn-mini" id="strikeHistoryFitBtn">Fit visible points</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;">Last update: <span id="strikeHistoryLastUpdate">—</span></div>
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          Independent historical USA–Iran strike dataset. Green markers: USA. Blue markers: Iran.
+        </div>
+      </div>
+
       <div class="attack-annotations-control-block" data-control-block="attack-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
           <div class="muted" style="font-weight:800;">Latest attack cards</div>
@@ -3515,6 +3670,10 @@ window.setInterval(() => {
           <label>
             <input id="attackAnnotationsIranStrikeCheckbox" type="checkbox" checked />
             IranStrike
+          </label>
+          <label>
+            <input id="attackAnnotationsStrikeHistoryCheckbox" type="checkbox" checked />
+            Strike History
           </label>
         </div>
 
@@ -3734,6 +3893,12 @@ window.setInterval(() => {
           iranDays.value = "1";
           iranDays.dispatchEvent(new Event("change", { bubbles: true }));
         }
+
+        const strikeHistoryDays = document.getElementById("strikeHistoryDaysSelect");
+        if (strikeHistoryDays) {
+          strikeHistoryDays.value = "7";
+          strikeHistoryDays.dispatchEvent(new Event("change", { bubbles: true }));
+        }
       });
     }
 
@@ -3836,9 +4001,16 @@ window.setInterval(() => {
     const iranStrikeDisplayModeSelect = document.getElementById("iranStrikeDisplayModeSelect");
     const iranStrikeDaysSelect = document.getElementById("iranStrikeDaysSelect");
     const iranStrikeSearchInput = document.getElementById("iranStrikeSearchInput");
+    const strikeHistoryCheckbox = document.getElementById("strikeHistoryCheckbox");
+    const strikeHistoryRefreshBtn = document.getElementById("strikeHistoryRefreshBtn");
+    const strikeHistoryDaysSelect = document.getElementById("strikeHistoryDaysSelect");
+    const strikeHistoryActorSelect = document.getElementById("strikeHistoryActorSelect");
+    const strikeHistorySearchInput = document.getElementById("strikeHistorySearchInput");
+    const strikeHistoryFitBtn = document.getElementById("strikeHistoryFitBtn");
     const attackAnnotationsCheckbox = document.getElementById("attackAnnotationsCheckbox");
     const attackAnnotationsCirCheckbox = document.getElementById("attackAnnotationsCirCheckbox");
     const attackAnnotationsIranStrikeCheckbox = document.getElementById("attackAnnotationsIranStrikeCheckbox");
+    const attackAnnotationsStrikeHistoryCheckbox = document.getElementById("attackAnnotationsStrikeHistoryCheckbox");
     const attackAnnotationLimitSelect = document.getElementById("attackAnnotationLimitSelect");
     const attackAnnotationsRefreshBtn = document.getElementById("attackAnnotationsRefreshBtn");
     const attackAnnotationsRestoreBtn = document.getElementById("attackAnnotationsRestoreBtn");
@@ -3987,6 +4159,44 @@ window.setInterval(() => {
       });
     });
 
+    if (strikeHistoryCheckbox) {
+      strikeHistoryCheckbox.addEventListener("change", event => {
+        setStrikeHistoryEnabled(event.target.checked);
+      });
+    }
+
+    if (strikeHistoryRefreshBtn) {
+      strikeHistoryRefreshBtn.addEventListener("click", () => {
+        refreshStrikeHistorySafe();
+      });
+    }
+
+    [strikeHistoryDaysSelect, strikeHistoryActorSelect]
+      .filter(Boolean)
+      .forEach(element => {
+        element.addEventListener("change", async () => {
+          const controller = ensureStrikeHistoryController();
+          controller.setFilters(readStrikeHistoryFilters());
+          updateStrikeHistoryUi();
+          await syncAttackAnnotations();
+        });
+      });
+
+    if (strikeHistorySearchInput) {
+      strikeHistorySearchInput.addEventListener("input", async () => {
+        const controller = ensureStrikeHistoryController();
+        controller.setFilters(readStrikeHistoryFilters());
+        updateStrikeHistoryUi();
+        await syncAttackAnnotations();
+      });
+    }
+
+    if (strikeHistoryFitBtn) {
+      strikeHistoryFitBtn.addEventListener("click", () => {
+        ensureStrikeHistoryController().fitBounds();
+      });
+    }
+
     if (attackAnnotationsCheckbox) {
       attackAnnotationsCheckbox.addEventListener("change", () => {
         syncAttackAnnotations();
@@ -3995,7 +4205,8 @@ window.setInterval(() => {
 
     [
       attackAnnotationsCirCheckbox,
-      attackAnnotationsIranStrikeCheckbox
+      attackAnnotationsIranStrikeCheckbox,
+      attackAnnotationsStrikeHistoryCheckbox
     ]
       .filter(Boolean)
       .forEach((checkbox) => {
