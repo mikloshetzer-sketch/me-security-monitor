@@ -1730,6 +1730,202 @@
     }
   </style>
 
+
+  <style id="manual-history-module-style">
+    /* Independent historical module. It does not override existing dashboard rules. */
+    .manual-history-panel {
+      border-left:7px solid #7846e8;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(120,70,232,.10),transparent 30%),
+        #fff;
+    }
+
+    .manual-history-title-row {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .manual-history-source-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:30px;
+      padding:6px 10px;
+      border:1px solid rgba(120,70,232,.20);
+      border-radius:999px;
+      background:rgba(120,70,232,.08);
+      color:#5b21b6;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .manual-history-source-badge::before {
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#7846e8;
+      box-shadow:0 0 0 4px rgba(120,70,232,.12);
+    }
+
+    .manual-history-method {
+      margin-top:12px;
+      padding:12px 14px;
+      border:1px solid #ddd6fe;
+      border-left:5px solid #7846e8;
+      border-radius:12px;
+      background:#faf9ff;
+      color:#4c3f67;
+      font-size:11px;
+      line-height:1.58;
+    }
+
+    .manual-history-method strong { color:#4c1d95; }
+
+    .manual-history-kpis {
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      gap:9px;
+      margin:14px 0;
+    }
+
+    .manual-history-kpi {
+      min-width:0;
+      padding:13px;
+      border:1px solid #ddd6fe;
+      border-radius:12px;
+      background:#fff;
+      text-align:center;
+    }
+
+    .manual-history-kpi strong {
+      display:block;
+      color:#4c1d95;
+      font-size:24px;
+      font-weight:950;
+      overflow-wrap:anywhere;
+    }
+
+    .manual-history-kpi span {
+      display:block;
+      margin-top:5px;
+      color:#766b88;
+      font-size:9px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .manual-history-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+      gap:14px;
+      align-items:start;
+    }
+
+    .manual-history-card {
+      min-width:0;
+      padding:14px;
+      border:1px solid #e2dff0;
+      border-radius:13px;
+      background:#fff;
+    }
+
+    .manual-history-card h3 {
+      margin:0 0 4px;
+      color:#34215f;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:16px;
+    }
+
+    .manual-history-card-note {
+      margin-bottom:10px;
+      color:#786f88;
+      font-size:9px;
+      line-height:1.4;
+    }
+
+    .manual-history-chart {
+      position:relative;
+      height:270px;
+    }
+
+    .manual-history-ranks {
+      display:grid;
+      gap:7px;
+    }
+
+    .manual-history-rank {
+      padding:9px 10px;
+      border:1px solid #e2dff0;
+      border-radius:10px;
+      background:#faf9ff;
+    }
+
+    .manual-history-rank-head {
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:6px;
+      color:#4b3f61;
+      font-size:10px;
+    }
+
+    .manual-history-rank-head strong { color:#34215f; }
+
+    .manual-history-track {
+      height:6px;
+      overflow:hidden;
+      border-radius:999px;
+      background:#ece9f5;
+    }
+
+    .manual-history-track span {
+      display:block;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#7846e8,#a78bfa);
+    }
+
+    .manual-history-empty {
+      padding:18px;
+      border:1px dashed #cfc8e5;
+      border-radius:11px;
+      background:#faf9ff;
+      color:#766b88;
+      font-size:11px;
+      text-align:center;
+    }
+
+    .manual-history-error {
+      padding:12px;
+      border:1px solid rgba(217,66,56,.18);
+      border-radius:10px;
+      background:rgba(217,66,56,.05);
+      color:#8f2d27;
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    @media (max-width:1200px) {
+      .manual-history-kpis { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    }
+
+    @media (max-width:900px) {
+      .manual-history-grid { grid-template-columns:1fr; }
+    }
+
+    @media (max-width:560px) {
+      .manual-history-kpis { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -2010,6 +2206,70 @@
           </div>
         </div>
         <div id="countryCards" class="country-grid"></div>
+      </section>
+
+
+      <section id="manualHistorySection" class="panel manual-history-panel" hidden>
+        <div class="manual-history-title-row">
+          <div>
+            <div class="eyebrow">Historical campaign intelligence</div>
+            <h2 style="margin-top:5px;">Törésvonalak Historical Strike Database</h2>
+            <div class="panel-note" style="margin-top:4px;text-align:left;">
+              Manuálisan gyűjtött, ellenőrzött és egységesített támadási adatbázis
+            </div>
+          </div>
+          <div class="manual-history-source-badge">Manually curated by Törésvonalak.blog</div>
+        </div>
+
+        <div class="manual-history-method">
+          <strong>Adatforrás és módszertan:</strong>
+          ezt az adatállományt a Törésvonalak.blog szerkesztője manuálisan gyűjti nyílt forrásokból.
+          A rekordok dátumát, helyszínét, támadó félét, támadástípusát és célpontját közzététel előtt
+          egyedileg ellenőrizzük és egységesítjük. A modul elkülönül az automatikusan frissülő IranStrike-adatfolyamtól.
+        </div>
+
+        <div id="manualHistoryStatus" class="manual-history-empty" style="margin-top:14px;">
+          A manuálisan gondozott történeti adatbázis betöltése…
+        </div>
+
+        <div id="manualHistoryContent" hidden>
+          <div class="manual-history-kpis">
+            <div class="manual-history-kpi"><strong id="mhTotal">—</strong><span>Rekord</span></div>
+            <div class="manual-history-kpi"><strong id="mhUsa">—</strong><span>USA-esemény</span></div>
+            <div class="manual-history-kpi"><strong id="mhIran">—</strong><span>Irán-esemény</span></div>
+            <div class="manual-history-kpi"><strong id="mhCountries">—</strong><span>Érintett ország</span></div>
+            <div class="manual-history-kpi"><strong id="mhGeo">—</strong><span>Koordinátával</span></div>
+            <div class="manual-history-kpi"><strong id="mhRange">—</strong><span>Adatperiódus</span></div>
+          </div>
+
+          <div class="manual-history-grid">
+            <div class="manual-history-card">
+              <h3>Napi támadási intenzitás</h3>
+              <div class="manual-history-card-note">USA és Irán eseményei napi bontásban</div>
+              <div class="manual-history-chart"><canvas id="mhTimelineCanvas"></canvas></div>
+            </div>
+
+            <div class="manual-history-card">
+              <h3>Támadó fél szerinti megoszlás</h3>
+              <div class="manual-history-card-note">Manuálisan azonosított szereplők</div>
+              <div class="manual-history-chart"><canvas id="mhActorCanvas"></canvas></div>
+            </div>
+          </div>
+
+          <div class="manual-history-grid" style="margin-top:14px;">
+            <div class="manual-history-card">
+              <h3>Támadás- és célponttípusok</h3>
+              <div class="manual-history-card-note">A rekordokban leggyakrabban előforduló kategóriák</div>
+              <div class="manual-history-chart"><canvas id="mhTypeCanvas"></canvas></div>
+            </div>
+
+            <div class="manual-history-card">
+              <h3>Földrajzi eloszlás</h3>
+              <div class="manual-history-card-note">Leggyakrabban érintett országok és területek</div>
+              <div id="mhCountryRanks" class="manual-history-ranks"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <div class="dashboard-grid">
@@ -3526,6 +3786,7 @@
       "resize",
       () => {
         if (payload) update();
+        if (manualHistoryEvents.length) mhRender();
       }
     );
 
@@ -3540,7 +3801,192 @@
       `;
     }
 
+
+
+    /* ============================================================
+       MANUALLY CURATED HISTORICAL STRIKE MODULE
+       Independent data source and rendering path. A missing or invalid
+       historical JSON never interrupts the existing IranStrike dashboard.
+       ============================================================ */
+    const MANUAL_HISTORY_URL = "data/strike_history.json";
+    let manualHistoryEvents = [];
+
+    function mhText(value, fallback = "Unknown") {
+      const text = String(value ?? "").trim();
+      return text || fallback;
+    }
+
+    function mhFirst(source, keys, fallback = "") {
+      for (const key of keys) {
+        const value = source?.[key];
+        if (value !== undefined && value !== null && String(value).trim() !== "") return value;
+      }
+      return fallback;
+    }
+
+    function mhNormalizeActor(value) {
+      const raw = String(value || "unknown").trim().toLowerCase();
+      if (/^(usa|us|u\.s\.|united states|american|u\.s\. forces)$/.test(raw)) return "USA";
+      if (/iran|iranian|irgc/.test(raw)) return "Iran";
+      if (/israel|israeli|idf|iaf/.test(raw)) return "Israel";
+      return raw && raw !== "unknown" ? mhText(value) : "Unknown";
+    }
+
+    function mhNormalizeRecord(record, index) {
+      const lat = Number(mhFirst(record,["latitude","lat"]));
+      const lon = Number(mhFirst(record,["longitude","lon","lng"]));
+      return {
+        id: mhFirst(record,["id","event_id"],`manual-${index+1}`),
+        date: mhFirst(record,["date","event_date","datetime","timestamp"]),
+        actor: mhNormalizeActor(mhFirst(record,["attacker","actor","side","responsible_actor"])),
+        country: mhText(mhFirst(record,["country","target_country","territory","area"])),
+        location: mhText(mhFirst(record,["location","place","site","target_location"])),
+        attackType: mhText(mhFirst(record,["attack_type","strike_type","weapon_type","type","method"])),
+        targetType: mhText(mhFirst(record,["target_type","target_category","category","target"])),
+        latitude: Number.isFinite(lat) ? lat : null,
+        longitude: Number.isFinite(lon) ? lon : null
+      };
+    }
+
+    function mhExtractRecords(data) {
+      if (Array.isArray(data)) return data;
+      for (const key of ["events","records","strikes","data","items"]) {
+        if (Array.isArray(data?.[key])) return data[key];
+      }
+      return [];
+    }
+
+    function mhCountBy(list, selector) {
+      const counts = new Map();
+      list.forEach(item => {
+        const key = mhText(selector(item));
+        counts.set(key,(counts.get(key)||0)+1);
+      });
+      return [...counts.entries()].sort((a,b)=>b[1]-a[1]);
+    }
+
+    function mhCanvasSetup(canvas) {
+      const box = canvas.getBoundingClientRect();
+      const ratio = Math.max(1,window.devicePixelRatio||1);
+      const width = Math.max(280,Math.round(box.width||canvas.parentElement?.clientWidth||600));
+      const height = Math.max(220,Math.round(box.height||canvas.parentElement?.clientHeight||270));
+      canvas.width = Math.round(width*ratio);
+      canvas.height = Math.round(height*ratio);
+      const ctx = canvas.getContext("2d");
+      ctx.setTransform(ratio,0,0,ratio,0,0);
+      ctx.clearRect(0,0,width,height);
+      return {ctx,width,height};
+    }
+
+    function mhDrawTimeline(list) {
+      const canvas = $("mhTimelineCanvas");
+      if (!canvas) return;
+      const {ctx,width,height}=mhCanvasSetup(canvas);
+      const byDate = new Map();
+      list.forEach(item=>{
+        const date=parseDate(item.date);
+        if (!date) return;
+        const key=date.toISOString().slice(0,10);
+        if (!byDate.has(key)) byDate.set(key,{USA:0,Iran:0,Other:0});
+        const bucket=byDate.get(key);
+        if (item.actor==="USA") bucket.USA++;
+        else if (item.actor==="Iran") bucket.Iran++;
+        else bucket.Other++;
+      });
+      const rows=[...byDate.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+      if (!rows.length) {
+        ctx.fillStyle="#766b88"; ctx.font="12px Arial"; ctx.fillText("Nincs dátumozott rekord.",20,35); return;
+      }
+      const pad={l:42,r:14,t:18,b:42};
+      const chartW=width-pad.l-pad.r, chartH=height-pad.t-pad.b;
+      const max=Math.max(1,...rows.map(([,v])=>v.USA+v.Iran+v.Other));
+      ctx.strokeStyle="#ddd8e8"; ctx.lineWidth=1;
+      for(let i=0;i<=4;i++){
+        const y=pad.t+chartH*(i/4); ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(width-pad.r,y);ctx.stroke();
+        ctx.fillStyle="#7b7288";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(String(Math.round(max*(1-i/4))),pad.l-7,y+3);
+      }
+      const slot=chartW/rows.length, bar=Math.max(3,Math.min(24,slot*.62));
+      rows.forEach(([date,v],i)=>{
+        let y=pad.t+chartH; const x=pad.l+i*slot+(slot-bar)/2;
+        [[v.USA,"#2563eb"],[v.Iran,"#16a34a"],[v.Other,"#7846e8"]].forEach(([count,color])=>{
+          const h=(count/max)*chartH; y-=h; ctx.fillStyle=color;ctx.fillRect(x,y,bar,h);
+        });
+        if(rows.length<=18 || i%Math.ceil(rows.length/12)===0){
+          ctx.save();ctx.translate(x+bar/2,height-10);ctx.rotate(-.55);ctx.fillStyle="#6f667d";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(date.slice(5),0,0);ctx.restore();
+        }
+      });
+      ctx.textAlign="left";ctx.font="10px Arial";
+      [["USA","#2563eb"],["Iran","#16a34a"],["Other","#7846e8"]].forEach(([label,color],i)=>{
+        const x=pad.l+i*72;ctx.fillStyle=color;ctx.fillRect(x,4,10,10);ctx.fillStyle="#51465f";ctx.fillText(label,x+14,13);
+      });
+    }
+
+    function mhDrawActor(list) {
+      const canvas=$("mhActorCanvas"); if(!canvas) return;
+      const {ctx,width,height}=mhCanvasSetup(canvas);
+      const rows=mhCountBy(list,x=>x.actor);
+      const total=Math.max(1,list.length); const cx=width*.5,cy=height*.47,r=Math.min(width,height)*.31,inner=r*.58;
+      const palette={USA:"#2563eb",Iran:"#16a34a",Israel:"#dc2626",Unknown:"#64748b"};
+      let start=-Math.PI/2;
+      rows.forEach(([name,count],i)=>{const angle=count/total*Math.PI*2;ctx.beginPath();ctx.arc(cx,cy,r,start,start+angle);ctx.arc(cx,cy,inner,start+angle,start,true);ctx.closePath();ctx.fillStyle=palette[name]||["#7846e8","#d97706","#0f766e"][i%3];ctx.fill();start+=angle;});
+      ctx.fillStyle="#34215f";ctx.font="bold 26px Arial";ctx.textAlign="center";ctx.fillText(String(list.length),cx,cy+5);ctx.font="9px Arial";ctx.fillStyle="#766b88";ctx.fillText("REKORD",cx,cy+22);
+      ctx.textAlign="left";ctx.font="10px Arial";
+      rows.slice(0,5).forEach(([name,count],i)=>{const y=height-58+i*13;ctx.fillStyle=palette[name]||["#7846e8","#d97706","#0f766e"][i%3];ctx.fillRect(15,y-8,9,9);ctx.fillStyle="#51465f";ctx.fillText(`${name}: ${count} (${(count/total*100).toFixed(1)}%)`,30,y);});
+    }
+
+    function mhDrawTypes(list) {
+      const canvas=$("mhTypeCanvas"); if(!canvas) return;
+      const {ctx,width,height}=mhCanvasSetup(canvas);
+      const merged=[...mhCountBy(list,x=>x.attackType).slice(0,5).map(([n,c])=>[`Attack: ${n}`,c]),...mhCountBy(list,x=>x.targetType).slice(0,5).map(([n,c])=>[`Target: ${n}`,c])].sort((a,b)=>b[1]-a[1]).slice(0,8);
+      if(!merged.length){ctx.fillStyle="#766b88";ctx.font="12px Arial";ctx.fillText("Nincs kategorizált rekord.",20,35);return;}
+      const pad={l:145,r:24,t:14,b:16}, chartW=width-pad.l-pad.r, rowH=(height-pad.t-pad.b)/merged.length, max=Math.max(...merged.map(x=>x[1]),1);
+      merged.forEach(([name,count],i)=>{const y=pad.t+i*rowH+rowH*.22, h=rowH*.52;ctx.fillStyle="#ede9f6";ctx.fillRect(pad.l,y,chartW,h);ctx.fillStyle=name.startsWith("Attack:")?"#7846e8":"#0f766e";ctx.fillRect(pad.l,y,chartW*(count/max),h);ctx.fillStyle="#51465f";ctx.font="10px Arial";ctx.textAlign="right";ctx.fillText(name.replace(/^Attack: /,"A: ").replace(/^Target: /,"T: ").slice(0,22),pad.l-8,y+h*.72);ctx.textAlign="left";ctx.font="bold 10px Arial";ctx.fillText(String(count),pad.l+chartW*(count/max)+5,y+h*.72);});
+    }
+
+    function mhRenderCountries(list) {
+      const target=$("mhCountryRanks"); if(!target) return;
+      const rows=mhCountBy(list,x=>x.country).slice(0,10); const max=rows[0]?.[1]||1;
+      target.innerHTML=rows.length?rows.map(([name,count])=>`<div class="manual-history-rank"><div class="manual-history-rank-head"><strong>${escapeHtml(name)}</strong><span>${count}</span></div><div class="manual-history-track"><span style="width:${(count/max*100).toFixed(1)}%"></span></div></div>`).join(""):'<div class="manual-history-empty">Nincs országadat.</div>';
+    }
+
+    function mhRender() {
+      const list=manualHistoryEvents;
+      const dates=list.map(x=>parseDate(x.date)).filter(Boolean).sort((a,b)=>a-b);
+      const actors=mhCountBy(list,x=>x.actor);
+      const countries=mhCountBy(list,x=>x.country).filter(([name])=>name!=="Unknown");
+      const geo=list.filter(x=>Number.isFinite(x.latitude)&&Number.isFinite(x.longitude)).length;
+      $("mhTotal").textContent=String(list.length);
+      $("mhUsa").textContent=String(actors.find(([n])=>n==="USA")?.[1]||0);
+      $("mhIran").textContent=String(actors.find(([n])=>n==="Iran")?.[1]||0);
+      $("mhCountries").textContent=String(countries.length);
+      $("mhGeo").textContent=`${geo} / ${list.length}`;
+      $("mhRange").textContent=dates.length?`${dates[0].toISOString().slice(0,10)} – ${dates.at(-1).toISOString().slice(0,10)}`:"—";
+      mhDrawTimeline(list);mhDrawActor(list);mhDrawTypes(list);mhRenderCountries(list);
+    }
+
+    async function loadManualHistory() {
+      const section=$("manualHistorySection");
+      const status=$("manualHistoryStatus");
+      const content=$("manualHistoryContent");
+      if(!section||!status||!content) return;
+      try {
+        const response=await fetch(MANUAL_HISTORY_URL,{cache:"no-store"});
+        if(!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data=await response.json();
+        manualHistoryEvents=mhExtractRecords(data).map(mhNormalizeRecord).filter(x=>x.date||x.location!=="Unknown"||x.country!=="Unknown");
+        if(!manualHistoryEvents.length) throw new Error("A fájl nem tartalmaz feldolgozható rekordot.");
+        section.hidden=false; status.hidden=true; content.hidden=false;
+        requestAnimationFrame(mhRender);
+      } catch(error) {
+        /* Intentional fail-safe: keep the module hidden and preserve all existing behavior. */
+        console.info("Manual historical database module is unavailable:",error?.message||error);
+        section.hidden=true;
+      }
+    }
+
+
     loadData().catch(showError);
+    loadManualHistory();
   </script>
 </body>
 </html>
