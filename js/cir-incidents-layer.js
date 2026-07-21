@@ -337,6 +337,7 @@
       days: Number(options.defaultDays) || 0,
       categories: new Set(),
       locations: new Set(),
+      periods: new Set(),
       search: "",
       ceasefireOnly: false,
       casualtiesOnly: false,
@@ -379,6 +380,13 @@
     }
 
     function eventPassesFilters(event) {
+      if (filters.periods.size > 0) {
+        const period = getCirPeriod(event);
+        const periodId = period?.id || "unclassified";
+
+        if (!filters.periods.has(periodId)) return false;
+      }
+
       if (filters.days > 0) {
         const date = parseDate(event.date || event.incident_date_text);
         if (!date) return false;
@@ -576,6 +584,14 @@
         );
       }
 
+      if (Object.prototype.hasOwnProperty.call(nextFilters, "periods")) {
+        filters.periods = new Set(
+          Array.isArray(nextFilters.periods)
+            ? nextFilters.periods
+            : []
+        );
+      }
+
       if (Object.prototype.hasOwnProperty.call(nextFilters, "search")) {
         filters.search = String(nextFilters.search || "");
       }
@@ -608,6 +624,7 @@
           days: filters.days,
           categories: [...filters.categories],
           locations: [...filters.locations],
+          periods: [...filters.periods],
           search: filters.search,
           ceasefireOnly: filters.ceasefireOnly,
           casualtiesOnly: filters.casualtiesOnly,
