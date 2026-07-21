@@ -85,7 +85,13 @@
       const response = await fetch(`${CONFIG.dataUrl}?v=${Date.now()}`, { cache: "no-store" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const payload = await response.json();
-      state.events = Array.isArray(payload.events) ? payload.events : [];
+      state.events = Array.isArray(payload)
+        ? payload
+        : Array.isArray(payload.events)
+          ? payload.events
+          : Array.isArray(payload.data)
+            ? payload.data
+            : [];
       state.latestDate =
         payload.summary?.date_end ||
         payload.latest_event_date ||
@@ -102,14 +108,16 @@
   function selectedEvents() {
     if (!state.latestDate) return [];
     const end = new Date(`${state.latestDate}T23:59:59Z`);
+    const allTime = state.days === "ALL";
     const start = new Date(end);
-    start.setUTCDate(start.getUTCDate() - (state.days - 1));
+    if (!allTime) start.setUTCDate(start.getUTCDate() - (Number(state.days) - 1));
     return state.events.filter(event => {
       const date = new Date(`${event.date}T12:00:00Z`);
       const actor = normalizeActor(event.attacker);
+      const dateMatches = allTime || (date >= start && date <= end);
       return Number.isFinite(Number(event.latitude)) &&
         Number.isFinite(Number(event.longitude)) &&
-        date >= start && date <= end &&
+        dateMatches &&
         (state.actor === "ALL" || actor === state.actor);
     });
   }
@@ -127,7 +135,8 @@
     }
     if (!state.map.hasLayer(state.layerGroup)) state.layerGroup.addTo(state.map);
 
-    selectedEvents().forEach(event => {
+    selectedEvents().forEach((event, eventIndex) => {
+      event.event_id = event.event_id || event.id || `strike-${eventIndex}-${event.date || "unknown"}`;
       const actor = normalizeActor(event.attacker);
       const confidence = String(event.confidence || "MEDIUM").toLowerCase();
       const marker = L.marker([Number(event.latitude), Number(event.longitude)], {
@@ -316,7 +325,7 @@
 
     document.querySelectorAll("#strikeHistoryWindowButtons button").forEach(button => {
       button.addEventListener("click", () => {
-        state.days = Number(button.dataset.days);
+        state.days = button.dataset.days === "ALL" ? "ALL" : Number(button.dataset.days);
         setActiveButton("#strikeHistoryWindowButtons button", button);
         render();
       });
