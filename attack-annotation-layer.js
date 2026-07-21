@@ -1502,11 +1502,14 @@
       let pointerId = null;
       let startClientX = 0;
       let startClientY = 0;
+      let lastClientX = 0;
+      let lastClientY = 0;
       let startLeft = 0;
       let startTop = 0;
       let pendingDeltaX = 0;
       let pendingDeltaY = 0;
       let animationFrame = null;
+      let mapDraggingWasEnabled = false;
 
       function paintTransform() {
         animationFrame = null;
@@ -1520,19 +1523,72 @@
       function requestPaint() {
         if (animationFrame !== null) return;
 
-        animationFrame =
-          window.requestAnimationFrame(
-            paintTransform
-          );
+        animationFrame = window.requestAnimationFrame(
+          paintTransform
+        );
+      }
+
+      function addGlobalDragListeners() {
+        window.addEventListener("pointermove", onPointerMove, {
+          capture: true,
+          passive: false
+        });
+        window.addEventListener("pointerup", finishDrag, {
+          capture: true,
+          passive: false
+        });
+        window.addEventListener("pointercancel", finishDrag, {
+          capture: true,
+          passive: false
+        });
+        window.addEventListener("blur", cancelDrag, {
+          capture: true
+        });
+      }
+
+      function removeGlobalDragListeners() {
+        window.removeEventListener("pointermove", onPointerMove, true);
+        window.removeEventListener("pointerup", finishDrag, true);
+        window.removeEventListener("pointercancel", finishDrag, true);
+        window.removeEventListener("blur", cancelDrag, true);
+      }
+
+      function suspendMapDragging() {
+        mapDraggingWasEnabled = Boolean(
+          map.dragging &&
+          typeof map.dragging.enabled === "function" &&
+          map.dragging.enabled()
+        );
+
+        if (
+          mapDraggingWasEnabled &&
+          typeof map.dragging.disable === "function"
+        ) {
+          map.dragging.disable();
+        }
+      }
+
+      function restoreMapDragging() {
+        if (
+          mapDraggingWasEnabled &&
+          map.dragging &&
+          typeof map.dragging.enable === "function"
+        ) {
+          map.dragging.enable();
+        }
+
+        mapDraggingWasEnabled = false;
       }
 
       function onPointerDown(event) {
         if (
+          active ||
+          event.button !== 0 ||
           event.target.closest(
             ".me-attack-annotation-close, " +
             ".me-attack-annotation-toggle, " +
             ".me-attack-annotation-pin, " +
-            "a"
+            "a, button, input, select, textarea"
           )
         ) {
           return;
@@ -1542,6 +1598,8 @@
         pointerId = event.pointerId;
         startClientX = event.clientX;
         startClientY = event.clientY;
+        lastClientX = event.clientX;
+        lastClientY = event.clientY;
         startLeft = parseFloat(item.card.style.left) || 0;
         startTop = parseFloat(item.card.style.top) || 0;
         pendingDeltaX = 0;
@@ -1551,7 +1609,14 @@
         item.lineGroup.classList.add("is-dragging");
         item.card.style.zIndex = "9999";
 
-        handle.setPointerCapture?.(pointerId);
+        suspendMapDragging();
+        addGlobalDragListeners();
+
+        try {
+          handle.setPointerCapture?.(pointerId);
+        } catch (_) {
+          // Global listeners keep dragging stable even without pointer capture.
+        }
 
         event.preventDefault();
         event.stopPropagation();
@@ -1560,11 +1625,10 @@
       function onPointerMove(event) {
         if (!active || event.pointerId !== pointerId) return;
 
-        pendingDeltaX =
-          event.clientX - startClientX;
-
-        pendingDeltaY =
-          event.clientY - startClientY;
+        lastClientX = event.clientX;
+        lastClientY = event.clientY;
+        pendingDeltaX = lastClientX - startClientX;
+        pendingDeltaY = lastClientY - startClientY;
 
         requestPaint();
 
@@ -1572,14 +1636,14 @@
         event.stopPropagation();
       }
 
-      function finishDrag(event) {
-        if (!active || event.pointerId !== pointerId) return;
+      function completeDrag(clientX, clientY, event = null) {
+        if (!active) return;
 
-        pendingDeltaX =
-          event.clientX - startClientX;
+        if (Number.isFinite(clientX)) lastClientX = clientX;
+        if (Number.isFinite(clientY)) lastClientY = clientY;
 
-        pendingDeltaY =
-          event.clientY - startClientY;
+        pendingDeltaX = lastClientX - startClientX;
+        pendingDeltaY = lastClientY - startClientY;
 
         if (animationFrame !== null) {
           window.cancelAnimationFrame(animationFrame);
@@ -1605,34 +1669,57 @@
         item.lineGroup.classList.remove("is-dragging");
         item.card.style.zIndex = "";
 
+        removeGlobalDragListeners();
+        restoreMapDragging();
         updateConnection(item);
 
         try {
-          handle.releasePointerCapture?.(pointerId);
+          if (pointerId !== null) {
+            handle.releasePointerCapture?.(pointerId);
+          }
         } catch (_) {
           // Pointer capture may already have been released.
         }
 
         pointerId = null;
 
-        event.preventDefault();
-        event.stopPropagation();
+        if (event) {
+          event.preventDefault?.();
+          event.stopPropagation?.();
+        }
       }
 
-      handle.addEventListener("pointerdown", onPointerDown);
-      handle.addEventListener("pointermove", onPointerMove);
-      handle.addEventListener("pointerup", finishDrag);
-      handle.addEventListener("pointercancel", finishDrag);
+      function finishDrag(event) {
+        if (!active || event.pointerId !== pointerId) return;
+        completeDrag(event.clientX, event.clientY, event);
+      }
+
+      function cancelDrag(event) {
+        if (!active) return;
+        completeDrag(lastClientX, lastClientY, event);
+      }
+
+      handle.addEventListener("pointerdown", onPointerDown, {
+        passive: false
+      });
 
       item.cleanupDrag = function () {
         if (animationFrame !== null) {
           window.cancelAnimationFrame(animationFrame);
+          animationFrame = null;
         }
 
+        if (active) {
+          active = false;
+          item.card.style.transform = "";
+          item.card.classList.remove("is-dragging");
+          item.lineGroup.classList.remove("is-dragging");
+          item.card.style.zIndex = "";
+        }
+
+        removeGlobalDragListeners();
+        restoreMapDragging();
         handle.removeEventListener("pointerdown", onPointerDown);
-        handle.removeEventListener("pointermove", onPointerMove);
-        handle.removeEventListener("pointerup", finishDrag);
-        handle.removeEventListener("pointercancel", finishDrag);
       };
     }
 
@@ -2103,4 +2190,3 @@
   window.createAttackAnnotationLayer =
     createAttackAnnotationLayer;
 })();
-
