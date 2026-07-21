@@ -1,0 +1,43 @@
+name: Process Strike History Excel
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/manual/usa_iran_tamadasok.xlsx"
+      - "scripts/process_strike_history.py"
+      - ".github/workflows/process-strike-history.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-strike-history:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependency
+        run: python -m pip install --upgrade openpyxl
+
+      - name: Convert Excel to JSON
+        run: |
+          python scripts/process_strike_history.py \
+            --input data/manual/usa_iran_tamadasok.xlsx \
+            --output data/strike_history.json \
+            --summary data/strike_history_summary.json \
+            --validation data/strike_history_validation.json
+
+      - name: Commit generated JSON files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update strike history data"
+          file_pattern: "data/strike_history*.json"
