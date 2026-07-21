@@ -745,10 +745,10 @@ window.addEventListener("DOMContentLoaded", () => {
       const inRegion = activeRegion !== "ALL" && regionContainsCountry(activeRegion, name);
       const fillOpacity = (borderFillOn && inRegion) ? borderFillOpacity : 0;
       return {
-        color: "#ffffff",
+        color: "#60a5fa",
         weight: borderWeight,
         opacity: borderOpacity,
-        fillColor: "#ffffff",
+        fillColor: "#60a5fa",
         fillOpacity: fillOpacity,
       };
     }
