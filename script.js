@@ -744,7 +744,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const inRegion = activeRegion !== "ALL" && regionContainsCountry(activeRegion, name);
       const fillOpacity = (borderFillOn && inRegion) ? borderFillOpacity : 0;
       return {
-        color: "#000000",
+        color: "#ffffff",
         weight: borderWeight,
         opacity: borderOpacity,
         fillColor: "#ffffff",
@@ -4289,4 +4289,3 @@ window.setInterval(() => {
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
   }
 });
-
