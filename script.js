@@ -2459,6 +2459,33 @@ window.setInterval(() => {
 
 
     // ===== CIR verified incidents layer (data/cir-incidents.json) =====
+    const CIR_OPERATION_PERIODS = [
+      { id: "period-1", start: "2023-10-07", end: "2023-10-13" },
+      { id: "period-2", start: "2023-10-14", end: "2023-10-26" },
+      { id: "period-3", start: "2023-10-27", end: "2023-12-31" },
+      { id: "period-4", start: "2024-01-01", end: "2024-05-05" },
+      { id: "period-5", start: "2024-05-06", end: "2024-08-31" },
+      { id: "period-6", start: "2024-09-01", end: "2024-12-31" },
+      { id: "period-7", start: "2025-01-01", end: "2025-12-31" },
+      { id: "period-8", start: "2026-01-01", end: null }
+    ];
+
+    function getCirOperationPeriodId(event) {
+      const rawDate = event?.date || event?.incident_date_text;
+      const date = rawDate ? new Date(rawDate) : null;
+
+      if (!date || Number.isNaN(date.getTime())) return "unclassified";
+
+      const dateKey = date.toISOString().slice(0, 10);
+      const period = CIR_OPERATION_PERIODS.find(
+        (item) =>
+          dateKey >= item.start &&
+          (item.end === null || dateKey <= item.end)
+      );
+
+      return period?.id || "unclassified";
+    }
+
     let cirIncidentsEnabled = false;
     let cirIncidentsController = null;
 
@@ -2509,9 +2536,22 @@ window.setInterval(() => {
         (id) => document.getElementById(id)?.checked
       );
 
+      const periodCheckboxIds = CIR_OPERATION_PERIODS.map(
+        (period) => `cirPeriodCheckbox-${period.id}`
+      );
+
+      const selectedPeriods = periodCheckboxIds
+        .filter((id) => document.getElementById(id)?.checked)
+        .map((id) => id.replace("cirPeriodCheckbox-", ""));
+
+      const allPeriodsSelected = periodCheckboxIds.every(
+        (id) => document.getElementById(id)?.checked
+      );
+
       return {
         days: Number(daysEl?.value || 0),
         categories: allSelected ? [] : categories,
+        periods: allPeriodsSelected ? [] : selectedPeriods,
         search: String(searchEl?.value || "").trim(),
         ceasefireOnly: Boolean(
           document.getElementById("cirCeasefireOnlyCheckbox")?.checked
@@ -2546,6 +2586,11 @@ window.setInterval(() => {
         : null;
 
       return rawPayload.events.filter((event) => {
+        if (filters.periods.length > 0) {
+          const periodId = getCirOperationPeriodId(event);
+          if (!filters.periods.includes(periodId)) return false;
+        }
+
         if (filters.days > 0 && latestDate) {
           const eventDate = new Date(event.date || event.incident_date_text || "");
           if (Number.isNaN(eventDate.getTime())) return false;
@@ -2730,6 +2775,10 @@ window.setInterval(() => {
 
       if (filters.categories.length > 0) {
         params.set("categories", filters.categories.join(","));
+      }
+
+      if (filters.periods.length > 0) {
+        params.set("periods", filters.periods.join(","));
       }
 
       return `cir-analysis.html?${params.toString()}`;
@@ -3419,6 +3468,63 @@ window.setInterval(() => {
           <option value="both">Markers + heatmap</option>
         </select>
 
+        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
+            <div class="muted" style="font-weight:800;">Operational periods</div>
+            <div style="display:flex;gap:5px;">
+              <span class="btn-mini" id="cirPeriodsAllBtn">All</span>
+              <span class="btn-mini" id="cirPeriodsNoneBtn">None</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr;gap:4px;">
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-1" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#8b5cf6;display:inline-block;flex:0 0 auto;"></span>
+              <span>2023.10.07–10.13</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-2" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#3b82f6;display:inline-block;flex:0 0 auto;"></span>
+              <span>2023.10.14–10.26</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-3" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#14b8a6;display:inline-block;flex:0 0 auto;"></span>
+              <span>2023.10.27–12.31</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-4" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;flex:0 0 auto;"></span>
+              <span>2024.01.01–05.05</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-5" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#eab308;display:inline-block;flex:0 0 auto;"></span>
+              <span>2024.05.06–08.31</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-6" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#f97316;display:inline-block;flex:0 0 auto;"></span>
+              <span>2024.09.01–12.31</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-7" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;flex:0 0 auto;"></span>
+              <span>2025.01.01–12.31</span>
+            </label>
+            <label style="display:flex;align-items:center;gap:7px;">
+              <input id="cirPeriodCheckbox-period-8" class="cir-period-filter" type="checkbox" checked />
+              <span style="width:10px;height:10px;border-radius:50%;background:#be123c;display:inline-block;flex:0 0 auto;"></span>
+              <span>2026.01.01–present</span>
+            </label>
+          </div>
+
+          <div class="muted" style="margin-top:6px;line-height:1.35;">
+            The selected periods control both markers and the heatmap.
+          </div>
+        </div>
+
         <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
         <select id="cirDaysSelect">
           <option value="0" selected>All available data</option>
@@ -3994,6 +4100,11 @@ window.setInterval(() => {
     const cirRefreshBtn = document.getElementById("cirRefreshBtn");
     const openCirAnalysisBtn = document.getElementById("openCirAnalysisBtn");
     const cirDisplayModeSelect = document.getElementById("cirDisplayModeSelect");
+    const cirPeriodsAllBtn = document.getElementById("cirPeriodsAllBtn");
+    const cirPeriodsNoneBtn = document.getElementById("cirPeriodsNoneBtn");
+    const cirPeriodCheckboxes = [
+      ...document.querySelectorAll(".cir-period-filter")
+    ];
 
     const iranStrikeCheckbox = document.getElementById("iranStrikeCheckbox");
     const iranStrikeRefreshBtn = document.getElementById("iranStrikeRefreshBtn");
@@ -4243,6 +4354,37 @@ window.setInterval(() => {
       });
     }
 
+
+    function applyCirPeriodFiltersFromUi() {
+      if (!cirIncidentsController) return;
+
+      cirIncidentsController.setFilters(readCirFiltersFromUi());
+      updateCirUiState();
+      updateCirSummary();
+      syncAttackAnnotations();
+    }
+
+    cirPeriodCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", applyCirPeriodFiltersFromUi);
+    });
+
+    if (cirPeriodsAllBtn) {
+      cirPeriodsAllBtn.addEventListener("click", () => {
+        cirPeriodCheckboxes.forEach((checkbox) => {
+          checkbox.checked = true;
+        });
+        applyCirPeriodFiltersFromUi();
+      });
+    }
+
+    if (cirPeriodsNoneBtn) {
+      cirPeriodsNoneBtn.addEventListener("click", () => {
+        cirPeriodCheckboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        applyCirPeriodFiltersFromUi();
+      });
+    }
 
     if (cirDisplayModeSelect) {
       cirDisplayModeSelect.addEventListener("change", () => {
@@ -4500,3 +4642,4 @@ window.setInterval(() => {
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
   }
 });
+
