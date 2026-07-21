@@ -79,65 +79,123 @@
     );
   }
 
-  function markerStyle(event, newestEventTime) {
-    const date = parseDate(event.date || event.incident_date_text);
-    const eventTime = date ? date.getTime() : null;
+  const CIR_PERIODS = [
+    {
+      id: "period-1",
+      start: "2023-10-07",
+      end: "2023-10-13",
+      label: "2023.10.07–2023.10.13",
+      color: "#5b21b6",
+      fillColor: "#8b5cf6",
+      radius: 7,
+    },
+    {
+      id: "period-2",
+      start: "2023-10-14",
+      end: "2023-10-26",
+      label: "2023.10.14–2023.10.26",
+      color: "#1d4ed8",
+      fillColor: "#3b82f6",
+      radius: 7,
+    },
+    {
+      id: "period-3",
+      start: "2023-10-27",
+      end: "2023-12-31",
+      label: "2023.10.27–2023.12.31",
+      color: "#0f766e",
+      fillColor: "#14b8a6",
+      radius: 6,
+    },
+    {
+      id: "period-4",
+      start: "2024-01-01",
+      end: "2024-05-05",
+      label: "2024.01.01–2024.05.05",
+      color: "#15803d",
+      fillColor: "#22c55e",
+      radius: 6,
+    },
+    {
+      id: "period-5",
+      start: "2024-05-06",
+      end: "2024-08-31",
+      label: "2024.05.06–2024.08.31",
+      color: "#a16207",
+      fillColor: "#eab308",
+      radius: 6,
+    },
+    {
+      id: "period-6",
+      start: "2024-09-01",
+      end: "2024-12-31",
+      label: "2024.09.01–2024.12.31",
+      color: "#c2410c",
+      fillColor: "#f97316",
+      radius: 6,
+    },
+    {
+      id: "period-7",
+      start: "2025-01-01",
+      end: "2025-12-31",
+      label: "2025.01.01–2025.12.31",
+      color: "#b91c1c",
+      fillColor: "#ef4444",
+      radius: 6,
+    },
+    {
+      id: "period-8",
+      start: "2026-01-01",
+      end: null,
+      label: "2026.01.01–jelen",
+      color: "#881337",
+      fillColor: "#be123c",
+      radius: 6,
+    },
+  ];
 
-    if (!eventTime || !Number.isFinite(newestEventTime)) {
-      return {
-        color: "#666f78",
-        fillColor: "#8b949e",
-        radius: 6,
-        timeBand: "Unknown date",
-      };
-    }
+  function eventDateKey(event) {
+    const rawValue = event.date || event.incident_date_text;
+    const date = parseDate(rawValue);
 
-    const ageDays = Math.max(
-      0,
-      Math.floor((newestEventTime - eventTime) / 86400000)
+    if (!date) return null;
+
+    return date.toISOString().slice(0, 10);
+  }
+
+  function getCirPeriod(event) {
+    const dateKey = eventDateKey(event);
+
+    if (!dateKey) return null;
+
+    return (
+      CIR_PERIODS.find(
+        (period) =>
+          dateKey >= period.start &&
+          (period.end === null || dateKey <= period.end)
+      ) || null
     );
+  }
 
-    if (ageDays <= 7) {
-      return {
-        color: "#9f2f2f",
-        fillColor: "#e34f4f",
-        radius: 8,
-        timeBand: "Latest 7 days",
-      };
-    }
+  function markerStyle(event) {
+    const period = getCirPeriod(event);
 
-    if (ageDays <= 30) {
+    if (!period) {
       return {
-        color: "#a95724",
-        fillColor: "#e98032",
-        radius: 7,
-        timeBand: "8–30 days",
-      };
-    }
-
-    if (ageDays <= 90) {
-      return {
-        color: "#9b7a1e",
-        fillColor: "#d7b83f",
-        radius: 7,
-        timeBand: "31–90 days",
-      };
-    }
-
-    if (ageDays <= 180) {
-      return {
-        color: "#3e718c",
-        fillColor: "#67a3c1",
-        radius: 6,
-        timeBand: "91–180 days",
+        color: "#475569",
+        fillColor: "#94a3b8",
+        radius: 5,
+        timeBand: "Ismeretlen vagy nem besorolt időszak",
+        periodId: "unclassified",
       };
     }
 
     return {
-      color: "#5f6871",
-      fillColor: "#89929b",
-      radius: 5,
-      timeBand: "Older than 180 days",
+      color: period.color,
+      fillColor: period.fillColor,
+      radius: period.radius,
+      timeBand: period.label,
+      periodId: period.id,
     };
   }
 
@@ -199,7 +257,7 @@
             <td style="padding:3px 0;">${escapeHtml(category)}</td>
           </tr>
           <tr>
-            <td style="padding:3px 8px 3px 0;"><strong>Time band</strong></td>
+            <td style="padding:3px 8px 3px 0;"><strong>Operational period</strong></td>
             <td style="padding:3px 0;">${escapeHtml(event._cirTimeBand || "—")}</td>
           </tr>
           ${
@@ -408,7 +466,7 @@
           continue;
         }
 
-        const style = markerStyle(event, newestEventTime);
+        const style = markerStyle(event);
         event._cirTimeBand = style.timeBand;
 
         if (showMarkers) {
