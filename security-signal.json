@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-22 21:31 UTC",
+    "updated": "2026-07-22 23:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-07-16",
     "period_end": "2026-07-22",
-    "total_events": 151,
-    "total_risk": 164.64,
-    "normalized_risk_score": 65.9,
+    "total_events": 152,
+    "total_risk": 170.63,
+    "normalized_risk_score": 68.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 50,
+    "military": 51,
     "security": 1,
-    "political": 16,
-    "other": 84
+    "political": 19,
+    "other": 81
   },
   "source_counts": {
-    "news": 145,
+    "news": 146,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 111.49
+      "risk": 112.48
     },
     {
       "name": "Israel",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Saudi Arabia",
-      "risk": 5.55
+      "risk": 6.6
     },
     {
-      "name": "Iraq",
-      "risk": 4.5
+      "name": "Yemen",
+      "risk": 6.45
     }
   ],
   "top_events": [
@@ -115,6 +115,15 @@
       "date": "2026-07-22",
       "category": "military",
       "source_type": "news",
+      "title": "Iranian missiles show deadly precision amid US-Iran war escalation - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZGtKR205NVlpZi1lRFlrUTJDNWdYZFNETUNjZUw5TlN2R1JPa25SZTc1aE91dUhyTlBNb1B2MTF6LVFUWkE1aG1kbnZsYVZzWTE4LUNaOXlrYTMzZDZUdU4xM290ci1fdkEwWmxhSDJIS2hWT2dkazBlVkt6ZVhzY1gzVzZrd200MThiRnhzbTVoY3FqZVZlbWtDdXFyUWpxdktETkJXUHBCOFHSAbABQVVfeXFMT2J4SnpsYzJIV0J2Q29zNkV1OWVyanFzOV83MnlwcnZlYVJCdVBLZDZRaGh2RTI5SGpxMm5FUFNFUUh4emFnVENzdVFCYmpKel9fYnY3RmtWNThXY2hjQm9RQ2g0NERIbWh5ejQzekRYc1Q1dHFoalFfaWZfclRoWmtVbk5TSzRFZlhKWXU3YTh2cUVnQU5zTmlNbkRGZmFxU3VGMHllOU56UHpVMmUyMkg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-22",
+      "category": "military",
+      "source_type": "news",
       "title": "Trump threatens to bomb Iranian bridges, power plants over ship attacks - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPal9kOGdkamY4bXBCVHQtV3paLUhyNnNPa1poQzZUd0pBeDk3WXFYaW5vTUNZUE1qc1cycU1BNUluN3JyNlI4RDBYTTZXdUctQ0dZcFlYSmtYZ2swNG1tVzZsR3NDUzluN010ckxMajdoNnlEX3BHVi1JN0N5aks5UTY3U0dLcTRjMXo5bzljNFB1eWVZYUlBbUJxS0REdEltbFRkSVdiRDNGU3F3aXEyOdIBtgFBVV95cUxPM0EzTmxWaklfa2VlNUdhc2lzTS1Bd09wY01yb3dqeUNTMW42QWVLTi1SbDh2STVvTUM4TXRKUGpybmo4bjRObzVGUTlmQ2E2eVpqWXh4ZHh3Y3JubFY2dGlWOTNnV3pVaGM4djZMT011ZHRoZDA5Rkt0eVcxLXFENE5LVzQxd0RQcUZHTEJFNmJBejNtRDM2STdfUmFzM0dpd0N0S2JkdWVtNk5hY2RwbEl1RXJrUQ"
@@ -127,15 +136,6 @@
       "title": "Israeli strike leaves two Palestinians burnt beyond recognition - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZENZNFZHQ3ZLRUtXME5LaDZhNWFoUU9zZ0REUkZaT1JPNnAxZkV3UEFyUlJZa0pQS3QyWV93cUtQY1pvbHVYSjFTOWJ4RVpwQVBPdWU1Nkw1M3RCdUptbWFFaFFKQW9ad3JDMFZ4NzFRSGxGUTRjV3ZPRFA2SmpoMlEzdGlvc2FWU2tpelQ5TThaT1pDWGpUTDNsNVk3UXhkMFpJT1premlNQy1YWjkwRUlzcXDSAboBQVVfeXFMTnlmZ3RqeGY1dUwxc3RuN3BFbXBWbVhJMjM0bnVWandaQm1NZzlyanhJSjBKUzVkZ3FkMjdPa0hFX2FmRXhBcGZjLUFURkFEUmZwN3V5emxIc0NaZEdKcGtzcmE4bi1Kdlp3Vi1UN1ZneEFteHJFNzIzcWdFb3ItVTBoNklNMXI5TjhKblpKb0d2MjVzUGEtZ0FlOVVNOTRkcW1WYXB0bnhTYkNXQTh0dkRQRWVDdVZUZnhR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Dollar advances as oil prices rise after latest US-Iran strikes, Houthi blockade - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVTNMOHhuSm5hVng5aTF1WUV1emN4ZjdEYlFCWlMtaUhoWWVTRTQ0NzdFNUotQnNIRFI1Sm5tWUlyLWZDZ1NnVGY3endKSktjMTMtVHNXU2E1UEtfS0U2UFZwX1NWbVdoYjhLaWpocVRmalNzLUh3aHI3cWFBVTBRanRIaXdSRzdLbnNEWFUtQS1CWW9hUlhIZUNRR2dCeXpCYVgxOVF5RVpGN0FRU203NTRxZGk"
     }
   ]
 }
