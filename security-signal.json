@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-23 06:40 UTC",
+    "updated": "2026-07-23 10:35 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-07-17",
     "period_end": "2026-07-23",
-    "total_events": 156,
-    "total_risk": 162.69,
-    "normalized_risk_score": 65.1,
+    "total_events": 153,
+    "total_risk": 166.79,
+    "normalized_risk_score": 66.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 52,
-    "security": 1,
-    "political": 18,
-    "other": 85
+    "military": 49,
+    "security": 2,
+    "political": 20,
+    "other": 82
   },
   "source_counts": {
-    "news": 150,
+    "news": 147,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 108.43
+      "risk": 105.63
     },
     {
       "name": "Israel",
-      "risk": 12.05
+      "risk": 12.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 12.0
+      "risk": 11.0
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.7
+      "risk": 10.1
     },
     {
-      "name": "Yemen",
-      "risk": 5.45
+      "name": "Iraq",
+      "risk": 6.9
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-07-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "US military completes 12th straight night of strikes on Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSTE4NEl0QlphNDg2Z3VzWFlvd3cxQjBmVzYtOC1HS18tRTNNUWJodlRhUzI4M05DN1lhLWZJWkJCU2wzaXVfVEdqWTBJSmtjeTI1M1BmRkdOclRtOGtCQ3B4bWpxbFVSeXMxRWtwdUtpdFRCOFNLVGFHaFFYRGUtOHZZbFdpRlNScTI5TVZBbi1uMVRvWDlHSWx2RlYxWkFrVGItb1RsdkRpQThH"
+    },
     {
       "score": 3.0,
       "date": "2026-07-23",
@@ -61,9 +70,18 @@
       "date": "2026-07-23",
       "category": "military",
       "source_type": "news",
-      "title": "US military completes 12th straight night of strikes on Iran - Reuters",
+      "title": "Houthis claim attack on oil tankers as US launches more strikes on Iran",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSTE4NEl0QlphNDg2Z3VzWFlvd3cxQjBmVzYtOC1HS18tRTNNUWJodlRhUzI4M05DN1lhLWZJWkJCU2wzaXVfVEdqWTBJSmtjeTI1M1BmRkdOclRtOGtCQ3B4bWpxbFVSeXMxRWtwdUtpdFRCOFNLVGFHaFFYRGUtOHZZbFdpRlNScTI5TVZBbi1uMVRvWDlHSWx2RlYxWkFrVGItb1RsdkRpQThH"
+      "url": "https://www.bbc.co.uk/news/articles/cpw9xzx9r4ko?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "'What was their crime?': BBC visits Iran school where strike killed 120 children",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cewrx0ldlkko?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -84,6 +102,24 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRkQ3bDFHdEZrQjNEQmtHZkRSUk1Ydnp4YXNDbHF2V0lDSkFmaEVrcmcxd3NPNVU5aXA3TnlWSFF0LW54cXBMcDcyS3ptOXlLaEl2ZVBITjN0T0Vra2llVjNBZUFTY0Z1N0FXQ0RNSnR1ZGI2MHN1bXJqdUZsdWxLNXA2dWdXVnhBejZYZEgzZnJwb2R3TTFTbdIBngFBVV95cUxQX2piN0J0Q2YwOUcyOTZBc2lFdkJpR3Q4SGJwMjhmVHlvZzJjM0pKUzgzWWZwMzRDdXhQWGRveG9NTTFwT1ZHX1ozYTdWcmlfa2J4STdFWXhuQ0U0azRaVEdIcDV3elJnRklrYWNUOHV2Z3ZrWDBEVC1DY3ZqWGRWTXpzYTJZNlZGWVlpaDIxb1R3ZFd5clItcE1VMDYtUQ"
     },
     {
+      "score": 3.0,
+      "date": "2026-07-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran, Houthis strike tankers as US bombing continues: What’s the latest? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQkpwbzIyaVpMeV8tM0tGcjJfVXlUTU1QNzRiMFNWUUlZZ0VMdDItbHFobVFtRDVld0t6UlJKQzJEQ2RwQ2pKZ0lVY1UxaXM1Z2d6S0tkUG9CZ0hLZ0oxb0VVbkNWNFNDYkdEcV9mN0FQc1JtYUhEVEd5MFJDSElacjVpWlJUM0pySFFqRWRMMndPaXVoOE5YYlkwUlZZdUFTS01hSHNEbjMyb01XMlHSAbMBQVVfeXFMUFgyM2tfcDZLYXh6SFpfeU41Q0lmR05VdXRzNXFmbmJ0SlVoNVJZLVN2VS13YWJoME04enBXZE4zNTlXcnVUSF84Vm9rbzJXRnBtN2NxZUpWR2liVUJwM0Y4dUd5ei1iaDVuYnhsRG9LUzNoZjFaNm5EVkQ5T21Sa1h6YkF2SVNfNGZoaUc3QkdkZHo0LUFtNE1taHFEbFhGYk5ibEhVcW9FQTYzMzlreUtqNWM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Travellers panic as US attacks Iran-Iraq border crossing - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVWNQUjZsY1kta3JPVFhsQS1fSkpSV2tuTlJBRkNFVk4zQTVzWkIwOWlqdngteVpfMFlXQlQ2MmNGX0c5c3RoeUx5bk5aZ1gxV2RZT3V6TlRUOF9sNXFVcGNKNDlFREwxUE0tb3k2d2xEQUdOZEVaMkpOREk2RVNUTVdlOXQzejI0SmJwam5LektQNkxOY2oyM3ZFMWVyeXRRaHZESkFheXNFZkXSAbABQVVfeXFMTVNkZWlndXl4cjdUSVJIVXVpdGdKc1NrQk5tNGhERXZZbWdRMG1sem1VdGdQUG45T2xWYmxEeVFZYlVzS3JKVVNGcnRpX0wtRG1sTHcwNXV6YXcwbUpNSjUxRV9kREpnODlfQl9EM2FTdnY1VkVPeVF0emFjRHhLUVRISHJ4WlFPN2p3Rjcya25PUnNKQll2VUNlWllFNGl3cTFFVlRHczZtd1QtRWFIMWY"
+    },
+    {
       "score": 2.7,
       "date": "2026-07-22",
       "category": "military",
@@ -100,42 +136,6 @@
       "title": "Houthis claim attacks on Saudi tankers in Red Sea, raising risk of new chokepoint in Iran war - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONHRSTEdBY3l6NGhsLTFvUDRHeThEZkgzQzdzeDVSOWk1NzJ3R3dCT1JZWkE0VWoycVhEaG0wdmtWTnFyWElMbklkcFRUMW9qTkdqWGFfVHpDaDgyTnFNWGF4clVQSENtY2x5OS14dDBYX3JjYTdXRkV1SUZlcDU3eTduYXp3VndEMzlWZmpvZjY5S3dhVmdMdk5JVFhvNzNCQmJBRjBRX1daQ2ZB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "US military says its latest strikes on Iran have ended, marking 11th successive night of attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNdjdfcnFmNzMwSTFCYWFYRXZzOGtwSlpwM2ljMXh5QU5LZXFGTnJyUER0UDhyYnl2S2FjS1dPMzZ2S3gyRHBhQk9yV3RWOHRDS3pmYUVLWldkdHhvZWFFM08tWDNreUtrelJETjlRQVdLd09LRlRRNWF4YlB3YzVZT0xrdDJyVHNWN0NKcE4xdjFQVF85dWNGV3pSSHRyS0QtTGRGR1pFUkNjcjg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump attends return of US soldiers killed in Iran war - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeWFHb3VSWjdHU01kYXVMcFJGR3M3a1RpUmdkeE0tbXdRUjg5YTBCSmJEaS0yeEpDNjNsUDVZbjkwc2xHaVZXdVlqQXB3UkpiN01nb0lZaUhIeHFsY3NWTGZRMGg5ZUN5S0Z2NXpRS3NXNEtUWWRiOHBta2ZObmdTRUk0ZzNiejlRQ3FyMmVxa1hJaU1kdUR2eA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil prices jump on US-Iran strikes, stocks flat ahead of Big Tech results - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE15bndqdmhfTjlVQXVscXkwMHFjU3hXNFR5RTdLSnY3a0trdmEzYlNGbm5LeUhxbVJSd21PR1FmQnJpeWxSdHN1aTEwalByRGZFcGtiRUhXeUZSeVdFMHFBekU3bzRvblRKMms0OW5vZkJPekhNSThGOERjRQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis say they attacked two Saudi tankers; Saudi Arabia says one ablaze in Red Sea - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPZHZGNUJIVDM4b051ZHVfNEJYZmRlSTdLdDY5S0hLUFpCcTJFeU41bW5mMGtSbVNRNGhBdnhta3JpaFVXeGkxc1VwVmZvY19Ibm9DU0VwNWt6cWJDTm02YVJFZzV3UTZmRmpHckNTWkxGV2pCQjBqZHRDdExub2U0OGlraDNlcWFKaS14R3RDdjBRYk5mZDRoYkNfVG1tcmZybXpwZ1I4d0Z1bldT"
     }
   ]
 }
