@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Közel-Kelet napi biztonsági jelentés – 2026-07-24</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #e5e7eb;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111827;
+}
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(90deg, #020617, #0f172a);
+  color: white;
+  padding: 36px 42px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+.risk {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 22px;
+  min-width: 260px;
+  text-align: center;
+}
+
+.risk strong {
+  display: block;
+  color: #f97316;
+  font-size: 40px;
+}
+
+.content { padding: 30px 40px; }
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.btn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn.secondary { background: #0f172a; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+}
+
+.label {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #475569;
+  font-weight: 800;
+}
+
+.big {
+  font-size: 30px;
+  font-weight: 900;
+  color: #2563eb;
+  margin-top: 8px;
+}
+
+.section {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  margin-top: 22px;
+}
+
+.section h2 { margin-top: 0; }
+
+.grid6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.rank-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rank-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 8px 0;
+  gap: 12px;
+}
+
+.rank-list span { overflow-wrap: anywhere; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+th {
+  text-align: left;
+  background: #f1f5f9;
+  padding: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #334155;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.event-main {
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.event-sub {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.event-actors {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #334155;
+  font-weight: 700;
+}
+
+.score {
+  color: #dc2626;
+  font-weight: 900;
+}
+
+.source-cell { font-size: 12px; }
+
+a {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sharecard {
+  background: #020617;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.sharecard img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #334155;
+}
+
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 22px;
+  margin-top: 28px;
+}
+
+@media (max-width: 1100px) {
+  .grid6 { grid-template-columns: 1fr 1fr; }
+  .cards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  .grid6, .cards { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; align-items: flex-start; }
+  .content { padding: 20px; }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header class="hero">
+  <div>
+    <h1>Közel-Kelet napi<br>biztonsági jelentés</h1>
+    <p>OSINT-alapú regionális biztonsági monitor</p>
+  </div>
+
+  <div class="risk">
+    <div>Kockázati szint</div>
+    <strong>KÖZEPES</strong>
+    <div>Index: 63.4</div>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="actions">
+  <button class="btn" onclick="window.print()">Letöltés PDF-ként</button>
+  <a class="btn secondary" href="index.html">Riportarchívum</a>
+</div>
+
+<section class="cards">
+  <div class="card">
+    <div class="label">7 napos eseményszám</div>
+    <div class="big">155</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Napi események</div>
+    <div class="big">7</div>
+  </div>
+
+  <div class="card">
+    <div class="label">FIRMS / 3 nap</div>
+    <div class="big">0</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Social / 7 nap</div>
+    <div class="big">0</div>
+  </div>
+
+  <div class="card">
+    <div class="label">Fő kockázati térség</div>
+    <div class="big" style="font-size:21px;">Iran</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Rövid napi értékelés</h2>
+  <p>
+    A rendszer aktuális kockázati szintje <strong>KÖZEPES</strong>,
+    az összesített normalizált kockázati index <strong>63.4</strong>.
+  </p>
+  <p>
+    A napi aktivitás fő fókuszpontja: <strong>Iran</strong>.
+    A legerősebb országkockázati jelzés: <strong>Iran</strong>.
+    A domináns eseményjelleg: <strong>Egyéb biztonsági esemény</strong>.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Országkockázat, szereplők és adatforrások</h2>
+  <div class="grid6">
+    <div>
+      <h3>Ország rizikó</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Iran</span>
+          <strong>99.9</strong>
+        </li>
+        
+        <li>
+          <span>Israel</span>
+          <strong>13.8</strong>
+        </li>
+        
+        <li>
+          <span>Saudi Arabia</span>
+          <strong>11.7</strong>
+        </li>
+        
+        <li>
+          <span>Gaza Strip</span>
+          <strong>8.8</strong>
+        </li>
+        
+        <li>
+          <span>Middle East</span>
+          <strong>8.4</strong>
+        </li>
+        </ol>
+    </div>
+
+    <div>
+      <h3>Helyszínek</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Iran</span>
+          <strong>4</strong>
+        </li>
+        
+        <li>
+          <span>Middle East</span>
+          <strong>2</strong>
+        </li>
+        
+        <li>
+          <span>Israel</span>
+          <strong>1</strong>
+        </li>
+        </ol>
+    </div>
+
+    <div>
+      <h3>Kategóriák</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Katonai / háborús</span>
+          <strong>4</strong>
+        </li>
+        
+        <li>
+          <span>Egyéb</span>
+          <strong>2</strong>
+        </li>
+        
+        <li>
+          <span>Politikai</span>
+          <strong>1</strong>
+        </li>
+        </ol>
+    </div>
+
+    <div>
+      <h3>Eseményjelleg</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Egyéb biztonsági esemény</span>
+          <strong>4</strong>
+        </li>
+        
+        <li>
+          <span>Katonai / háborús cselekmény</span>
+          <strong>2</strong>
+        </li>
+        
+        <li>
+          <span>Politikai / diplomáciai fejlemény</span>
+          <strong>1</strong>
+        </li>
+        </ol>
+    </div>
+
+    <div>
+      <h3>Szereplők</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Iran</span>
+          <strong>4</strong>
+        </li>
+        
+        <li>
+          <span>United States</span>
+          <strong>2</strong>
+        </li>
+        
+        <li>
+          <span>Houthis</span>
+          <strong>2</strong>
+        </li>
+        
+        <li>
+          <span>Yemen</span>
+          <strong>1</strong>
+        </li>
+        
+        <li>
+          <span>Saudi Arabia</span>
+          <strong>1</strong>
+        </li>
+        
+        <li>
+          <span>Israel</span>
+          <strong>1</strong>
+        </li>
+        
+        <li>
+          <span>Lebanon</span>
+          <strong>1</strong>
+        </li>
+        </ol>
+    </div>
+
+    <div>
+      <h3>Források</h3>
+      <ol class="rank-list">
+        <li>
+          <span>Reuters (via Google News)</span>
+          <strong>4</strong>
+        </li>
+        
+        <li>
+          <span>Al Jazeera (via Google News)</span>
+          <strong>2</strong>
+        </li>
+        
+        <li>
+          <span>BBC</span>
+          <strong>1</strong>
+        </li>
+        </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Top események</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Esemény</th>
+        <th>Helyszín</th>
+        <th>Kategória</th>
+        <th>Eseményjelleg</th>
+        <th>Súly</th>
+        <th>Forrás</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús esemény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOS2RjdGstOHhBcnk2VmZRa3dlaHA4YlM5M056cW1TcktoUDZMUHlYa3BCTmhQRlJaVnAxdkR1VGhUX180ck1vSVY5UnBjNnJyVjVVN1FzdjRlYlhVcGFHTld6RkFWUVhEVzN0T0ZQd3E2U0pGcHhZM2FlREMtckJVSXJNUERBbXZkbThpQ0U4d0dFQnNjbDRsaU1hNkp6Y19TVkRVbFE5cGk2QXdLVjd0aGJZVUNLbVNnOUpr" target="_blank" rel="noopener">US military says it completed 13th consecutive night of strikes on Iran - Reuters</a></div>
+              <div class="event-actors">Szereplők: Iran, United States</div>
+            </td>
+            <td>Iran</td>
+            <td>Katonai / háborús</td>
+            <td>Katonai / háborús cselekmény</td>
+            <td class="score">6.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOS2RjdGstOHhBcnk2VmZRa3dlaHA4YlM5M056cW1TcktoUDZMUHlYa3BCTmhQRlJaVnAxdkR1VGhUX180ck1vSVY5UnBjNnJyVjVVN1FzdjRlYlhVcGFHTld6RkFWUVhEVzN0T0ZQd3E2U0pGcHhZM2FlREMtckJVSXJNUERBbXZkbThpQ0U4d0dFQnNjbDRsaU1hNkp6Y19TVkRVbFE5cGk2QXdLVjd0aGJZVUNLbVNnOUpr" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>
+              <div class="event-main">Katonai vagy háborús esemény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxORi1CUktmSzFxVmNNOTNkRTZiTzAtbi05S1hycGVNQkRSSWxVampDQW5iNFVvS0VRVnFqLU5KV2dDRFJ5YkRMaTRabUtxcWRENW1HU1JwbWc3TkVtd0lnWHZVMG05V0hDV0o1TG9wTnZjdEJNNVljdV9FdHd2Snc1WV84d2ZFMjM5WGZBR3pETk5XS2pVQ1BILWhHYktVOWFMV2syNVlKcEF0bEoxQm9QWUxSbFBVVnPSAbwBQVVfeXFMT1JCeGlsbzdYTVROV3B4NXJwRGdCeXUzWm9hX003VHZXbDktQjc1NHVmZVZsOWx5cHRoWFZ3WlZvZFFoNWxzYUtKNi03eF81SUwwUzd6QS1YcFBEc2ZEc2pXT3FrWTl4N1ZpdmlXUmN6eUVGNHQzWVc3QVRJejN1dDdPZ09MajdManR4elAtV3pOb2RvOXk0c0lsWmJETjZMUXBiWF9jazM5YmYxbFhGTGtfRE1GNUg1b3NPM3Q" target="_blank" rel="noopener">US attacks Iran for 13th night as Trump threatens ‘bigger’ strikes - Al Jazeera</a></div>
+              <div class="event-actors">Szereplők: Iran, United States</div>
+            </td>
+            <td>Iran</td>
+            <td>Katonai / háborús</td>
+            <td>Katonai / háborús cselekmény</td>
+            <td class="score">6.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxORi1CUktmSzFxVmNNOTNkRTZiTzAtbi05S1hycGVNQkRSSWxVampDQW5iNFVvS0VRVnFqLU5KV2dDRFJ5YkRMaTRabUtxcWRENW1HU1JwbWc3TkVtd0lnWHZVMG05V0hDV0o1TG9wTnZjdEJNNVljdV9FdHd2Snc1WV84d2ZFMjM5WGZBR3pETk5XS2pVQ1BILWhHYktVOWFMV2syNVlKcEF0bEoxQm9QWUxSbFBVVnPSAbwBQVVfeXFMT1JCeGlsbzdYTVROV3B4NXJwRGdCeXUzWm9hX003VHZXbDktQjc1NHVmZVZsOWx5cHRoWFZ3WlZvZFFoNWxzYUtKNi03eF81SUwwUzd6QS1YcFBEc2ZEc2pXT3FrWTl4N1ZpdmlXUmN6eUVGNHQzWVc3QVRJejN1dDdPZ09MajdManR4elAtV3pOb2RvOXk0c0lsWmJETjZMUXBiWF9jazM5YmYxbFhGTGtfRE1GNUg1b3NPM3Q" target="_blank" rel="noopener">Al Jazeera (via Google News)</a></td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>
+              <div class="event-main">Biztonsági esemény: Iran</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQNFdZY1R2bFRCTk51X1E2U2dLZUphMDA2MVlUaGRzOEJXRXc5Vl9ObDNaVE9FNnU4eTV6TXBjYjRyR2xZekJYeGY2VHNrYW9hSjhpSjQ0aVJEdXBkSk9Ja2NXRjZjQng3Rkp1eFBHMlVwQ2paZUlVRnZUN0l3OThQRlZVLTJDanZHREpMTjFNVm9odWl5alZwRUpDbUhwSWRWeHc" target="_blank" rel="noopener">Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters</a></div>
+              <div class="event-actors">Szereplők: Houthis, Iran</div>
+            </td>
+            <td>Iran</td>
+            <td>Katonai / háborús</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">4.0</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxQNFdZY1R2bFRCTk51X1E2U2dLZUphMDA2MVlUaGRzOEJXRXc5Vl9ObDNaVE9FNnU4eTV6TXBjYjRyR2xZekJYeGY2VHNrYW9hSjhpSjQ0aVJEdXBkSk9Ja2NXRjZjQng3Rkp1eFBHMlVwQ2paZUlVRnZUN0l3OThQRlZVLTJDanZHREpMTjFNVm9odWl5alZwRUpDbUhwSWRWeHc" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>
+              <div class="event-main">Biztonsági esemény: Iran</div>
+              <div class="event-sub"><a href="https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Houthi attacks raise fears of wider Middle East conflict and more global economic damage</a></div>
+              <div class="event-actors">Szereplők: Houthis, Iran, Yemen, Saudi Arabia</div>
+            </td>
+            <td>Iran</td>
+            <td>Katonai / háborús</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">4.0</td>
+            <td class="source-cell"><a href="https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">BBC</a></td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>
+              <div class="event-main">Diplomáciai vagy politikai fejlemény: Israel</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNZl90QmVaeGdDMFBWV2JaNkRTV29BN2tJOTIyVTdYeGdrTXoyYS1PWWthTG4tUzlkWlBpNEtiWmFUTTRBRC1VYTlhNlhCb0EwZ1NoUV9CUVRlYWZLTmdhakcwbWNTUExtYkEtUVZzN1pEUkhZRzgwZHVGYU5Lekx0bXdNNHoyWnhkcW1WXzZmejU2Wm53YTdla3RZSk9NS1p5YnFUMjBxZE9HMFJvSVk40gG0AUFVX3lxTE9aU2dWYTlsVEdubkFVTWRoSlBqZnJaYTBzWUw1THpGeGo0eXJWMmpqcnBJYTAyZ1VmajdVZTI4TVBRNU9VdmFwOWg4WjV5bHI5c0NlNU1LSll2YUJvdERRMjBkbWtVWFY3VW95WFJyc1AtbHRBWVdGYVd5ZHFIamI4S094c1l3V2hYb0U0OU02MVlLNVc0SzhnLXpEWUUtQW5YSWJkaW1DcTF3SkFKSmUzMzBGSg" target="_blank" rel="noopener">Israel carries out blasts across south Lebanon despite ‘ceasefire’ deal - Al Jazeera</a></div>
+              <div class="event-actors">Szereplők: Israel, Lebanon</div>
+            </td>
+            <td>Israel</td>
+            <td>Politikai</td>
+            <td>Politikai / diplomáciai fejlemény</td>
+            <td class="score">3.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNZl90QmVaeGdDMFBWV2JaNkRTV29BN2tJOTIyVTdYeGdrTXoyYS1PWWthTG4tUzlkWlBpNEtiWmFUTTRBRC1VYTlhNlhCb0EwZ1NoUV9CUVRlYWZLTmdhakcwbWNTUExtYkEtUVZzN1pEUkhZRzgwZHVGYU5Lekx0bXdNNHoyWnhkcW1WXzZmejU2Wm53YTdla3RZSk9NS1p5YnFUMjBxZE9HMFJvSVk40gG0AUFVX3lxTE9aU2dWYTlsVEdubkFVTWRoSlBqZnJaYTBzWUw1THpGeGo0eXJWMmpqcnBJYTAyZ1VmajdVZTI4TVBRNU9VdmFwOWg4WjV5bHI5c0NlNU1LSll2YUJvdERRMjBkbWtVWFY3VW95WFJyc1AtbHRBWVdGYVd5ZHFIamI4S094c1l3V2hYb0U0OU02MVlLNVc0SzhnLXpEWUUtQW5YSWJkaW1DcTF3SkFKSmUzMzBGSg" target="_blank" rel="noopener">Al Jazeera (via Google News)</a></td>
+        </tr>
+        
+        <tr>
+            <td>6</td>
+            <td>
+              <div class="event-main">Biztonsági esemény: Middle East</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQR1d1UDB3eEFoN2xlaHVUc19mMFZjSzJBRFVvXzVhVTBXZ3VmSEFNSktSejlPMzk5N1NWVEsyTGRsX200Z3h1RXVENjRuQ3g2UnRzYndRT3lEWE9TU1FXOUdQTzhFU3plM3RQTmVuX0xhZ2JIZjU1eWRnV1ZELUVxTVVyOGN0WjlZbHczbGxUSDNmYkEwSjZmU2ZwODQyMVlfTkp2WVBuOG1FWmJVTHJYVEtoU1Yza2huYUU2NWxTUUJVdDA" target="_blank" rel="noopener">Dollar rides yield surge as Middle East and trade wars raise inflation stakes - Reuters</a></div>
+              <div class="event-actors">Szereplők: Nincs külön szereplő</div>
+            </td>
+            <td>Middle East</td>
+            <td>Egyéb</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">1.5</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQR1d1UDB3eEFoN2xlaHVUc19mMFZjSzJBRFVvXzVhVTBXZ3VmSEFNSktSejlPMzk5N1NWVEsyTGRsX200Z3h1RXVENjRuQ3g2UnRzYndRT3lEWE9TU1FXOUdQTzhFU3plM3RQTmVuX0xhZ2JIZjU1eWRnV1ZELUVxTVVyOGN0WjlZbHczbGxUSDNmYkEwSjZmU2ZwODQyMVlfTkp2WVBuOG1FWmJVTHJYVEtoU1Yza2huYUU2NWxTUUJVdDA" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
+        </tr>
+        
+        <tr>
+            <td>7</td>
+            <td>
+              <div class="event-main">Biztonsági esemény: Middle East</div>
+              <div class="event-sub"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNaFZBdXJmU1lITHlha1NMc0hvVjhaOVVFbjEya0Z1ZXZzNGFjTC1lV21nR1MwcjNERmJydnhvc0xNRzc0ODRPRlpScU9UZ0M3U3hYaEFveXdsbDYwQ01zZlk0WTZWSWJZZHhBUHAtMHNNSG1MRHB0RGRzSUVLNGdJV1VNeW54TWw5cERFekMwdmxDNVdWdVp1VGN0c0xqbnRSS0Fyejh3eXVDZ1J1elFER1doSjdPeU1CMTIwZmlvOWM2dw" target="_blank" rel="noopener">Brent hovers above $100/bbl, set for weekly rise on Middle East escalation - Reuters</a></div>
+              <div class="event-actors">Szereplők: Nincs külön szereplő</div>
+            </td>
+            <td>Middle East</td>
+            <td>Egyéb</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">0.0</td>
+            <td class="source-cell"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNaFZBdXJmU1lITHlha1NMc0hvVjhaOVVFbjEya0Z1ZXZzNGFjTC1lV21nR1MwcjNERmJydnhvc0xNRzc0ODRPRlpScU9UZ0M3U3hYaEFveXdsbDYwQ01zZlk0WTZWSWJZZHhBUHAtMHNNSG1MRHB0RGRzSUVLNGdJV1VNeW54TWw5cERFekMwdmxDNVdWdVp1VGN0c0xqbnRSS0Fyejh3eXVDZ1J1elFER1doSjdPeU1CMTIwZmlvOWM2dw" target="_blank" rel="noopener">Reuters (via Google News)</a></td>
+        </tr>
+        </tbody>
+  </table>
+</section>
+
+
+        <section class="section">
+          <h2>FIRMS hőpontok – elmúlt 3 nap</h2>
+          <p>Nincs elérhető adat a vizsgált időablakban.</p>
+        </section>
+        
+
+
+        <section class="section">
+          <h2>Social media események – elmúlt 7 nap</h2>
+          <p>Nincs elérhető adat a vizsgált időablakban.</p>
+        </section>
+        
+
+<section class="section">
+  <h2>Blogra használható összefoglaló kép</h2>
+  <p><a href="sharecards/2026-07-24-middle-east-summary.svg" target="_blank">Kép megnyitása külön oldalon</a></p>
+  <div class="sharecard">
+    <img src="sharecards/2026-07-24-middle-east-summary.svg" alt="Közel-Kelet napi OSINT összefoglaló">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Módszertani megjegyzés</h2>
+  <p>
+    Frissítés: 2026-07-24 06:40 UTC. Bizalom: HIGH.
+    A drón-, terrorjellegű és háborús események azonosítása kulcsszavas automatikus osztályozással történik.
+  </p>
+  <p>
+    FIRMS hőpontok: elmúlt 3 napos ablak. Social media események: elmúlt 7 napos ablak.
+  </p>
+</section>
+
+</main>
+
+<footer class="footer">
+  ME Security Monitor – automatikus napi OSINT jelentés
+</footer>
+
+</div>
+</body>
+</html>
