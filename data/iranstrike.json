@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T01:14:39Z",
+  "generated_at": "2026-07-25T04:31:36Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,17 +55,17 @@
     "events_endpoint_records": 10000,
     "feed_event_records": 250,
     "normalized_events": 10000,
-    "map_visualizable_events": 1837,
-    "non_mappable_events": 8163,
+    "map_visualizable_events": 1836,
+    "non_mappable_events": 8164,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 10000,
-      "earliest_event_date": "2026-03-04T10:50:11Z",
-      "latest_event_date": "2026-07-24T23:06:23Z",
-      "geocoded_events": 1837,
+      "earliest_event_date": "2026-03-04T11:29:58Z",
+      "latest_event_date": "2026-07-25T03:55:29Z",
+      "geocoded_events": 1836,
       "geocoded_share": 18.4,
       "top_category": "missile",
       "top_location": "Unknown",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 286,
-        "previous": 346,
-        "delta": -60,
-        "percent_change": -17.3,
-        "direction": "decrease"
+        "current": 293,
+        "previous": 313,
+        "delta": -20,
+        "percent_change": -6.4,
+        "direction": "stable"
       },
       "latest_30_days": {
-        "current": 1002,
-        "previous": 1199,
-        "delta": -197,
-        "percent_change": -16.4,
+        "current": 1010,
+        "previous": 1197,
+        "delta": -187,
+        "percent_change": -15.6,
         "direction": "decrease"
       }
     },
     "daily_trend": [
       {
         "date": "2026-03-04",
-        "count": 171
+        "count": 163
       },
       {
         "date": "2026-03-05",
@@ -659,15 +659,19 @@
       {
         "date": "2026-07-24",
         "count": 37
+      },
+      {
+        "date": "2026-07-25",
+        "count": 8
       }
     ],
     "category_counts": {
-      "missile": 4263,
-      "drone": 2431,
+      "missile": 4269,
+      "drone": 2427,
       "infrastructure": 1467,
       "strike": 913,
-      "airstrike": 248,
-      "movement": 184,
+      "airstrike": 247,
+      "movement": 183,
       "explosion": 180,
       "ground": 147,
       "alert": 110,
@@ -676,21 +680,21 @@
       "intercept": 12
     },
     "severity_counts": {
-      "medium": 5454,
-      "high": 2981,
-      "low": 1140,
+      "medium": 5452,
+      "high": 2986,
+      "low": 1137,
       "critical": 425
     },
     "attacker_counts": {
-      "unknown": 7759,
-      "iran": 1098,
-      "israel": 1091,
+      "unknown": 7760,
+      "iran": 1099,
+      "israel": 1089,
       "usa": 52
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 4955
+        "count": 4958
       },
       {
         "name": "Iran",
@@ -702,7 +706,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 758
+        "count": 757
       },
       {
         "name": "Tel Aviv",
@@ -718,7 +722,7 @@
       },
       {
         "name": "Tehran",
-        "count": 207
+        "count": 206
       },
       {
         "name": "Persian Gulf",
@@ -730,7 +734,7 @@
       },
       {
         "name": "Jordan",
-        "count": 115
+        "count": 114
       },
       {
         "name": "Bandar Abbas",
@@ -752,11 +756,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 4955
+        "count": 4958
       },
       {
         "name": "Iran",
-        "count": 1789
+        "count": 1788
       },
       {
         "name": "Israel",
@@ -764,7 +768,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 1026
+        "count": 1025
       },
       {
         "name": "Persian Gulf",
@@ -776,7 +780,7 @@
       },
       {
         "name": "Jordan",
-        "count": 137
+        "count": 136
       },
       {
         "name": "Syria",
@@ -800,37 +804,30 @@
     "totalCount": 10000,
     "spotlight": {
       "event": {
-        "id": "s4i28ixw42o0",
-        "timestamp": "2026-07-24T22:51:27+00:00",
-        "location": "OMN",
-        "origin": "USA",
+        "id": "3k0fgw350eo00",
+        "timestamp": "2026-07-25T03:26:51+00:00",
+        "location": "SAU",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "US missiles strike Iranian LNG tanker in Sea of Oman attempting to breach port blockade, killing 2 crew members and damaging engine",
-        "descriptionHe": "טילים אמריקאיים פוגעים בטנקר גז LNG איראני בים עומאן שניסה להפר את הסגר של נמלים, הורגים 2 חברי צוות ופוגעים במנוע הספינה",
+        "type": "report",
+        "severity": "high",
+        "description": "All flights suspended at Riyadh and Jeddah airports following missile strikes",
+        "descriptionHe": "כל הטיסות הופסקו בנתבי התעופה של ריאד וג'דה בעקבות התקפות טילים",
         "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "cruise_missile",
-            "count": 2
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/80844"
+        "sourceUrl": "https://t.me/CIG_telegram/80881"
       },
-      "headline": "US Missiles Strike Iranian Tanker in Sea of Oman",
-      "headlineHe": "טילים אמריקאים פוגעים בטנקר איראני בים עומאן",
-      "summary": "The attack killed two crew members and damaged the vessel's engine as Iran attempts to circumvent international port blockades.",
-      "summaryHe": "ההתקפה הרגה שני בני צוות וגרמה נזק למנוע הכלי, כשאיראן מנסה לעקוף חסימות נמלים בינלאומיות.",
-      "pickedAt": "2026-07-25T01:00:53.101Z",
-      "state": "TODAY"
+      "headline": "Major Saudi airports shut down after missile strikes on kingdom",
+      "headlineHe": "שדות התעופה הגדולים בסעודיה סגורים לאחר תקיפות בטילים",
+      "summary": "The suspension of operations at Riyadh and Jeddah—Saudi Arabia's two busiest aviation hubs—represents an immediate escalation in regional air defense threats and economic disruption.",
+      "summaryHe": "השעיית הטיסות בשני נמלי התעופה הקשורים ביותר בסעודיה מייצגת הסלמה מיידית בדיווחי הגנת אוויר אזוריים והפרעה כלכלית.",
+      "pickedAt": "2026-07-25T03:31:49.316Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-07-25T01:12:14.732Z",
+    "lastUpdated": "2026-07-25T04:30:10.451Z",
     "stale": false,
-    "viewerCount": 10,
+    "viewerCount": 11,
     "ceasefire": false
   },
   "summary": {
@@ -1373,92 +1370,8 @@
     "vitals": {
       "internet": 93,
       "cellular": 0,
-      "lastUpdate": "2026-07-25T01:00:41.027Z",
+      "lastUpdate": "2026-07-25T04:30:40.807Z",
       "internetHistory": [
-        {
-          "t": "2026-07-24T01:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T01:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T01:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T01:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T01:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T01:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T02:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T02:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T02:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T02:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T02:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T02:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T03:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T03:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T03:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T03:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T03:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T03:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T04:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T04:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-24T04:20:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-07-24T04:30:00.000Z",
           "v": 93
@@ -1946,6 +1859,90 @@
         {
           "t": "2026-07-25T00:40:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-07-25T00:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-07-25T01:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-07-25T01:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T01:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T01:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T01:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T01:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T02:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T02:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T02:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T02:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T02:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T02:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T03:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T03:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T03:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T03:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T03:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T03:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-25T04:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-25T04:10:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": [
@@ -2039,78 +2036,76 @@
         }
       ]
     },
-    "lastUpdated": "2026-07-25T01:00:41.027Z"
+    "lastUpdated": "2026-07-25T04:30:40.807Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a1f3c9b2",
+      "id": "iranstrike-a7f2c1e3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-24T12:52:46Z",
+      "date": "2026-07-25T03:55:29Z",
       "title": "IranStrike event",
-      "description": "US launches extensive strike campaign across Iran; B-1B bombers hit Yazd missile facility, 13+ cities targeted",
+      "description": "Yemen fires 7 ballistic missiles at Saudi ARAMCO Jazan refinery; direct hits confirmed, airport closures ordered",
+      "category": "other",
+      "severity": "critical",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a7f2c1e3",
+        "text": "Yemen fires 7 ballistic missiles at Saudi ARAMCO Jazan refinery; direct hits confirmed, airport closures ordered",
+        "textHe": "תימן שיגרה 7 טילים בליסטיים לכיוון בתחנת ARAMCO בג'יזאן; הכות ישירות אושרו, נסגרו שדות תעופה",
+        "severity": "critical",
+        "timestamp": "2026-07-25T03:55:29+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "1jhj703hae0w0",
+          "1nc5wfty4z5s0",
+          "353e4ln2qpk00",
+          "26blgmv5zs740",
+          "2rd8gu6vrma00",
+          "3k0fgw350eo00",
+          "2acfj6b0x79c0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-b4e8d2f5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-24T14:57:29Z",
+      "title": "IranStrike event",
+      "description": "U.S. strikes Iran with B-1B bombers, JDAMs on deep targets; Iran retaliates with missile strikes on Jordan, Iraq, Bahrain",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "us launches extensive strike campaign across iran;",
-      "location": "Yazd",
-      "country": "Iran",
-      "latitude": 31.8974,
-      "longitude": 54.3569,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "yazd",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "a1f3c9b2",
-        "text": "US launches extensive strike campaign across Iran; B-1B bombers hit Yazd missile facility, 13+ cities targeted",
-        "textHe": "ארה\"ב משיקה מסע תקיפות נרחב בעיראן; בומבות B-1B פגעו במתקן טילים ביזד, 13+ ערים במטרה",
-        "severity": "critical",
-        "timestamp": "2026-07-24T12:52:46+00:00",
-        "entityIds": [
-          "USA",
-          "IRN"
-        ],
-        "eventIds": [
-          "1ywbj8k347ls0",
-          "377ih98htco00",
-          "3oipm91gulu00",
-          "1r6l077ui48w0",
-          "qpuibhemjgg0",
-          "mykyc0l43f40",
-          "12vjmrwlwjeo0",
-          "17fjuxxctqyo0",
-          "1ob573j1u2rk0"
-        ],
-        "sourceCount": 3
-      }
-    },
-    {
-      "id": "iranstrike-b5e2d1a7",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-07-24T14:59:48Z",
-      "title": "IranStrike event",
-      "description": "Iran retaliates with missile strikes on Jordan, Bahrain, Iraqi Kurdistan after US airstrikes",
-      "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran retaliates with missile strikes on jordan, bahrain, iraqi kurdistan after us airs",
+      "attacker_evidence": "strikes iran with b-1b bombers, jdams on deep targets;",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2123,36 +2118,38 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b5e2d1a7",
-        "text": "Iran retaliates with missile strikes on Jordan, Bahrain, Iraqi Kurdistan after US airstrikes",
-        "textHe": "איראן משיגה בתקיפות טילים על יורדן, בחריין, כردיסטן עיראק לאחר תקיפות אמריקניות",
-        "severity": "high",
-        "timestamp": "2026-07-24T14:59:48+00:00",
+        "id": "b4e8d2f5",
+        "text": "U.S. strikes Iran with B-1B bombers, JDAMs on deep targets; Iran retaliates with missile strikes on Jordan, Iraq, Bahrain",
+        "textHe": "ארה\"ב תקפה את איראן בנושאי B-1B, תקפים עמוקים; איראן השיבה בטילים נגד ירדן, עיראק, בחריין",
+        "severity": "critical",
+        "timestamp": "2026-07-24T14:57:29+00:00",
         "entityIds": [
+          "USA",
           "IRN",
           "JOR",
-          "BHR",
-          "IRQ"
+          "IRQ",
+          "BHR"
         ],
         "eventIds": [
+          "17fjuxxctqyo0",
+          "1ob573j1u2rk0",
           "az2gwihj66o0",
-          "edspfdxdokg0",
           "dpahjhfsrpc0",
-          "20fgokveqhwg0",
-          "2bdjs022ts7b40"
+          "edspfdxdokg0",
+          "20fgokveqhwg0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-c4d8f5e3",
+      "id": "iranstrike-c6f3g9h2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-24T20:31:18Z",
+      "date": "2026-07-24T13:15:19Z",
       "title": "IranStrike event",
-      "description": "Saudi airstrikes target Houthi positions in Hodeida Port; fuel storage and telecom facilities hit",
+      "description": "IDF personnel killed in West Bank shooting; Hamas claims attack, Netanyahu vows response; 5 IDF battalions deployed",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2173,40 +2170,45 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c4d8f5e3",
-        "text": "Saudi airstrikes target Houthi positions in Hodeida Port; fuel storage and telecom facilities hit",
-        "textHe": "תקיפות סעודיות נגד עמדות חוטים בנמל חודיידה; מתקני דלק וטלקום במטרה",
+        "id": "c6f3g9h2",
+        "text": "IDF personnel killed in West Bank shooting; Hamas claims attack, Netanyahu vows response; 5 IDF battalions deployed",
+        "textHe": "חיילים בצה\"ל נהרגו בתקיפה בגדה המערבית; החמאס תובע, נתניהו מבטיח תגובה; צה\"ל פרוס 5 גדודים",
         "severity": "high",
-        "timestamp": "2026-07-24T20:31:18+00:00",
+        "timestamp": "2026-07-24T13:15:19+00:00",
         "entityIds": [
-          "SAU",
-          "YEM"
+          "ISR",
+          "LBN"
         ],
         "eventIds": [
-          "3r9lntr5qcc00",
-          "vdkwmpqpyj40",
-          "21qkudofmaow0"
+          "1aoc9pp080u80",
+          "1tkmovsao8n40",
+          "1f9gcmrvlmo00",
+          "a8e0s26bc400",
+          "2f6bkrt019j40",
+          "jqn7po94khs0",
+          "gji10t6dmy80",
+          "ttkef7xx1i80"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-d7a2c6f1",
+      "id": "iranstrike-d7k1m4n6",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-24T13:15:19Z",
+      "date": "2026-07-24T20:31:18Z",
       "title": "IranStrike event",
-      "description": "West Bank shooting attack kills Israeli officer; 3 killed, 4 wounded; Palestinian group claims responsibility",
+      "description": "Saudi airstrikes target Houthi-held Hodeida Port; Houthi blockade of Bab al-Mandeb enforced, shipping delays surge",
       "category": "other",
-      "severity": "high",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "west bank shooting attack kills israeli officer;",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
       "location": "",
       "country": "",
       "latitude": null,
@@ -2219,41 +2221,177 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d7a2c6f1",
-        "text": "West Bank shooting attack kills Israeli officer; 3 killed, 4 wounded; Palestinian group claims responsibility",
-        "textHe": "הלם ירי בגדה המערבית הרג קצין ישראלי; 3 הרוגים, 4 פצועים; קבוצה פלסטינית תבעה אחריות",
-        "severity": "high",
-        "timestamp": "2026-07-24T13:15:19+00:00",
+        "id": "d7k1m4n6",
+        "text": "Saudi airstrikes target Houthi-held Hodeida Port; Houthi blockade of Bab al-Mandeb enforced, shipping delays surge",
+        "textHe": "תקפי סעודיה נגד נמל חודיידה בשליטת החותיים; חסימת בוב אל-מנדב מאונחת, עיכובי הובלה גדלים",
+        "severity": "medium",
+        "timestamp": "2026-07-24T20:31:18+00:00",
         "entityIds": [
-          "ISR"
+          "SAU",
+          "YEM"
         ],
         "eventIds": [
-          "1aoc9pp080u80",
-          "1tkmovsao8n40",
-          "a8e0s26bc400",
-          "2f6bkrt019j40",
-          "jqn7po94khs0"
+          "21qkudofmaow0",
+          "vdkwmpqpyj40",
+          "3r9lntr5qcc00",
+          "1kx11wsoibmo0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-e8b3f4c2",
+      "id": "iranstrike-e8p5q7r3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-24T22:51:27Z",
+      "date": "2026-07-24T14:59:48Z",
       "title": "IranStrike event",
-      "description": "US strikes Iranian LNG tanker in Sea of Oman; 2 crew killed; blockade enforcement escalates shipping disruption",
+      "description": "Iran strikes King Hussein Airport in Aqaba, Jordan with ballistic missiles; satellite confirms fire damage",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran strikes king hussein airport in aqaba, jordan with ballis",
+      "location": "Aqaba",
+      "country": "Jordan",
+      "latitude": 29.5321,
+      "longitude": 35.0063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "aqaba",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "e8p5q7r3",
+        "text": "Iran strikes King Hussein Airport in Aqaba, Jordan with ballistic missiles; satellite confirms fire damage",
+        "textHe": "איראן תקפה שדה תעופה במעמקא בירדן בטילים בליסטיים; לוויין אישר נזק בשריפה",
+        "severity": "high",
+        "timestamp": "2026-07-24T14:59:48+00:00",
+        "entityIds": [
+          "IRN",
+          "JOR"
+        ],
+        "eventIds": [
+          "22ddzxs8jzb40",
+          "20fgokveqhwg0",
+          "2bdjs022ts7w0"
+        ],
+        "sourceCount": 2
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-2acfj6b0x79c0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80883",
+      "date": "2026-07-25T03:55:29Z",
+      "title": "IranStrike event",
+      "description": "Satellite imagery confirms fire at Saudi Aramco's Jazan refinery",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2acfj6b0x79c0",
+        "timestamp": "2026-07-25T03:55:29+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Satellite imagery confirms fire at Saudi Aramco's Jazan refinery",
+        "descriptionHe": "תמונות לוויין מאשרות שריפה בחזן של סעודי אראמקו",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/80883"
+      }
+    },
+    {
+      "id": "iranstrike-3k0fgw350eo00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80881",
+      "date": "2026-07-25T03:26:51Z",
+      "title": "IranStrike event",
+      "description": "All flights suspended at Riyadh and Jeddah airports following missile strikes",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3k0fgw350eo00",
+        "timestamp": "2026-07-25T03:26:51+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "All flights suspended at Riyadh and Jeddah airports following missile strikes",
+        "descriptionHe": "כל הטיסות הופסקו בנתבי התעופה של ריאד וג'דה בעקבות התקפות טילים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/80881"
+      }
+    },
+    {
+      "id": "iranstrike-2rd8gu6vrma00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80877",
+      "date": "2026-07-25T03:02:31Z",
+      "title": "IranStrike event",
+      "description": "Yemen launches Iranian Kheybar Shekan and Zolfaghar ballistic missiles at Saudi Arabia",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
       "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "us strikes iranian lng tanker in sea of oman;",
+      "attacker_evidence": "sau yemen launches iranian kheybar shekan and zolfaghar ballistic missiles a",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2266,25 +2404,259 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e8b3f4c2",
-        "text": "US strikes Iranian LNG tanker in Sea of Oman; 2 crew killed; blockade enforcement escalates shipping disruption",
-        "textHe": "ארה\"ב תוקפת טנקר LNG איראני בים עומאן; 2 אנשי צוות הרוגים; הפרת הסיסמה מחריפה הפרעות משלוח",
-        "severity": "high",
-        "timestamp": "2026-07-24T22:51:27+00:00",
-        "entityIds": [
-          "USA",
-          "IRN",
-          "YEM"
+        "id": "2rd8gu6vrma00",
+        "timestamp": "2026-07-25T03:02:31+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "s4i28ixw42o0",
-          "1kx11wsoibmo0"
+        "type": "strike",
+        "severity": "medium",
+        "description": "Yemen launches Iranian Kheybar Shekan and Zolfaghar ballistic missiles at Saudi Arabia",
+        "descriptionHe": "תימן משגרת טילים בליסטיים איראנים חיבר שכן וזולפגאר לעבר סעודיה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2
+          }
         ],
-        "sourceCount": 1
+        "sourceUrl": "https://t.me/CIG_telegram/80877"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-26blgmv5zs740",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80875",
+      "date": "2026-07-25T02:28:21Z",
+      "title": "IranStrike event",
+      "description": "Footage shows ARAMCO refinery in Jazan burning following strike",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "26blgmv5zs740",
+        "timestamp": "2026-07-25T02:28:21+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Footage shows ARAMCO refinery in Jazan burning following strike",
+        "descriptionHe": "סרטון מראה את בסיס ARAMCO בג'אזאן בוער בעקבות התקפה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/80875"
+      }
+    },
+    {
+      "id": "iranstrike-353e4ln2qpk00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80873",
+      "date": "2026-07-25T02:25:04Z",
+      "title": "IranStrike event",
+      "description": "Massive smoke plumes rise from ARAMCO refinery in Jazan following missile strike",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "353e4ln2qpk00",
+        "timestamp": "2026-07-25T02:25:04+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Massive smoke plumes rise from ARAMCO refinery in Jazan following missile strike",
+        "descriptionHe": "עמודי עשן ענקיים עולים מבסיס ARAMCO בג'אזאן בעקבות פגיעת טיל",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/80873"
+      }
+    },
+    {
+      "id": "iranstrike-1nc5wfty4z5s0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80869",
+      "date": "2026-07-25T02:15:00Z",
+      "title": "IranStrike event",
+      "description": "Ansarullah missile impacts confirmed in Jizan, Saudi Arabia targeting ARAMCO facilities and Jazan Industrial City",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1nc5wfty4z5s0",
+        "timestamp": "2026-07-25T02:15:00+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Ansarullah missile impacts confirmed in Jizan, Saudi Arabia targeting ARAMCO facilities and Jazan Industrial City",
+        "descriptionHe": "פגיעות מאושרות של טילים של אנסאר אללה בג'יזאן, סעודיה, במתקני ארמקו והעיר התעשייתית ג'יזאן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/80869"
+      }
+    },
+    {
+      "id": "iranstrike-1jhj703hae0w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80861",
+      "date": "2026-07-25T01:45:36Z",
+      "title": "IranStrike event",
+      "description": "At least 5 ballistic missiles target ARAMCO oil terminal at Jazan, Saudi Arabia with direct impacts confirmed",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1jhj703hae0w0",
+        "timestamp": "2026-07-25T01:45:36+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "At least 5 ballistic missiles target ARAMCO oil terminal at Jazan, Saudi Arabia with direct impacts confirmed",
+        "descriptionHe": "לפחות 5 טילים בליסטיים תוקפים מסוף נפט של ארמקו בג'יזאן, ערב הסעודית עם פגיעות ישירות מאומתות",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 5
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/80861"
+      }
+    },
+    {
+      "id": "iranstrike-2opdgiiw7ca00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/80858",
+      "date": "2026-07-25T01:43:30Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah ballistic missiles fired at Abha International Airport; explosions confirmed in Jizan near Saudi-Yemeni border",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2opdgiiw7ca00",
+        "timestamp": "2026-07-25T01:43:30+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Ansarallah ballistic missiles fired at Abha International Airport; explosions confirmed in Jizan near Saudi-Yemeni border",
+        "descriptionHe": "טילים בליסטיים של אנסאר אללה שוגרו לעבר נמל התעופה אבהא; פיצוצים אושרו בג'יזאן ליד הגבול הסעודי-תימני",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/80858"
+      }
+    },
     {
       "id": "iranstrike-1dd0jxawjpog0",
       "source": "IranStrike",
@@ -450786,361 +451158,6 @@
         "source": "RocketAlert",
         "sourceUrl": "https://t.me/RocketAlert/18653"
       }
-    },
-    {
-      "id": "iranstrike-jipyqd2qjfc0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18651",
-      "date": "2026-03-04T11:29:19Z",
-      "title": "IranStrike event",
-      "description": "Hostile UAV alert at Lev Ha-Hula and Mevuot Hermon Regional Council (Confrontation Line)",
-      "category": "drone",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "jipyqd2qjfc0",
-        "timestamp": "2026-03-04T11:29:19+00:00",
-        "location": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "low",
-        "description": "Hostile UAV alert at Lev Ha-Hula and Mevuot Hermon Regional Council (Confrontation Line)",
-        "descriptionHe": "התרעה על UAV עוין בלב חולה ובמבואות הרמון (קו ההתנגדות)",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18651"
-      }
-    },
-    {
-      "id": "iranstrike-1qrizzcnhdq80",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18647",
-      "date": "2026-03-04T11:27:49Z",
-      "title": "IranStrike event",
-      "description": "Hostile UAV alert at Dovev, Malkia, and Ramot Naftali (Confrontation Line)",
-      "category": "drone",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "1qrizzcnhdq80",
-        "timestamp": "2026-03-04T11:27:49+00:00",
-        "location": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "low",
-        "description": "Hostile UAV alert at Dovev, Malkia, and Ramot Naftali (Confrontation Line)",
-        "descriptionHe": "התרעה על UAV עוין בדובב, מלכיה וראמות נפתלי (קו ההתנגדות)",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18647"
-      }
-    },
-    {
-      "id": "iranstrike-3hcz9o2a2a400",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18645",
-      "date": "2026-03-04T11:26:29Z",
-      "title": "IranStrike event",
-      "description": "Hostile UAV alert at Iftach (Confrontation Line)",
-      "category": "drone",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3hcz9o2a2a400",
-        "timestamp": "2026-03-04T11:26:29+00:00",
-        "location": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Hostile UAV alert at Iftach (Confrontation Line)",
-        "descriptionHe": "התרעה על מל\"ט עוין בקו ההתמודדות",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18645"
-      }
-    },
-    {
-      "id": "iranstrike-46js5zpojb40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/70387",
-      "date": "2026-03-04T11:01:09Z",
-      "title": "IranStrike event",
-      "description": "US THAAD air defense system deployed at Muwaffaq Al-Salti Air Base in Jordan",
-      "category": "movement",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Jordan",
-      "country": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "46js5zpojb40",
-        "timestamp": "2026-03-04T11:01:09+00:00",
-        "location": "JOR",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "movement",
-        "severity": "medium",
-        "description": "US THAAD air defense system deployed at Muwaffaq Al-Salti Air Base in Jordan",
-        "descriptionHe": "מערכת הגנה אוויר THAAD של ארה\"ב הופעלה בבסיס אוויר מועפק אל-סלטי בירדן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/70387"
-      }
-    },
-    {
-      "id": "iranstrike-jp5vvu8zf1c0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/116410",
-      "date": "2026-03-04T10:58:01Z",
-      "title": "IranStrike event",
-      "description": "IAF reportedly conducting strikes in Tehran",
-      "category": "infrastructure",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn iaf reportedly conducting strikes in tehran חיל האוויר משתולל הבוקר בטהרן",
-      "location": "Tehran",
-      "country": "Iran",
-      "latitude": 35.6892,
-      "longitude": 51.389,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "tehran",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "jp5vvu8zf1c0",
-        "timestamp": "2026-03-04T10:58:01+00:00",
-        "location": "IRN",
-        "origin": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "IAF reportedly conducting strikes in Tehran",
-        "descriptionHe": "חיל האוויר משתולל הבוקר בטהרן",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/116410"
-      }
-    },
-    {
-      "id": "iranstrike-gu43edwuffs0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/70385",
-      "date": "2026-03-04T10:53:00Z",
-      "title": "IranStrike event",
-      "description": "Kurdish official tells CNN that Kurdish forces plan offensive into Iran in coming days; IAF airstrikes reportedly targeting Iranian Kurdistan police stations",
-      "category": "airstrike",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iaf airstrikes reportedly targeting iranian kurdistan police sta",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "gu43edwuffs0",
-        "timestamp": "2026-03-04T10:53:00+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Kurdish official tells CNN that Kurdish forces plan offensive into Iran in coming days; IAF airstrikes reportedly targeting Iranian Kurdistan police stations",
-        "descriptionHe": "פקיד כורדי אמר ל-CNN כי כוחות כורדים מתכננים התקפה לתוך איראן בימים הקרובים; התקפות IAF מדווחות כממוקדות בכורדיסטן האיראנית",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/70385"
-      }
-    },
-    {
-      "id": "iranstrike-t7p2eqzdkkg0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18643",
-      "date": "2026-03-04T10:50:20Z",
-      "title": "IranStrike event",
-      "description": "Hostile UAV alert in Confrontation Line locations: Mevuot Hermon Regional Council, Dovev, Malkia, Ramot Naftali",
-      "category": "drone",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "t7p2eqzdkkg0",
-        "timestamp": "2026-03-04T10:50:20+00:00",
-        "location": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Hostile UAV alert in Confrontation Line locations: Mevuot Hermon Regional Council, Dovev, Malkia, Ramot Naftali",
-        "descriptionHe": "התרעה על UAV עוין באזורי קו ההתעמתות: מועצה אזורית מבואות הרמון, דובב, מלכיה, רמות נפתלי",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18643"
-      }
-    },
-    {
-      "id": "iranstrike-2vmo4oyt6q400",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/116408",
-      "date": "2026-03-04T10:50:11Z",
-      "title": "IranStrike event",
-      "description": "Israeli threat of strike against Al-Msnaa border crossing between Lebanon and Syria prompts closure and civilian evacuation",
-      "category": "infrastructure",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
-      "attacker_evidence": "",
-      "location": "Lebanon",
-      "country": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2vmo4oyt6q400",
-        "timestamp": "2026-03-04T10:50:11+00:00",
-        "location": "SYR",
-        "origin": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "low",
-        "description": "Israeli threat of strike against Al-Msnaa border crossing between Lebanon and Syria prompts closure and civilian evacuation",
-        "descriptionHe": "איום ישראלי על תקיפת מעבר הגבול אלמצנע בין לבנון לסוריה גורם לסגירה ובריחת אזרחים",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/116408"
-      }
     }
   ],
   "map_events": [
@@ -533373,51 +533390,6 @@
         "descriptionHe": "טייס חיל האוויר הישראלי הפיל מטוס קרב איראני מעל שמי טהרן",
         "source": "abualiexpress",
         "sourceUrl": "https://t.me/abualiexpress/116419"
-      }
-    },
-    {
-      "id": "iranstrike-jp5vvu8zf1c0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/116410",
-      "date": "2026-03-04T10:58:01Z",
-      "title": "IranStrike event",
-      "description": "IAF reportedly conducting strikes in Tehran",
-      "category": "infrastructure",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn iaf reportedly conducting strikes in tehran חיל האוויר משתולל הבוקר בטהרן",
-      "location": "Tehran",
-      "country": "Iran",
-      "latitude": 35.6892,
-      "longitude": 51.389,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "tehran",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "jp5vvu8zf1c0",
-        "timestamp": "2026-03-04T10:58:01+00:00",
-        "location": "IRN",
-        "origin": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "IAF reportedly conducting strikes in Tehran",
-        "descriptionHe": "חיל האוויר משתולל הבוקר בטהרן",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/116410"
       }
     }
   ]
