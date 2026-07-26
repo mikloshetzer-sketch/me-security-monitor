@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 11:38 UTC",
+    "updated": "2026-07-26 13:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-20",
     "period_end": "2026-07-26",
-    "total_events": 168,
-    "total_risk": 152.83,
-    "normalized_risk_score": 61.1,
+    "total_events": 167,
+    "total_risk": 155.23,
+    "normalized_risk_score": 62.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 43,
+    "military": 44,
     "security": 3,
-    "political": 28,
+    "political": 26,
     "other": 94
   },
   "source_counts": {
-    "news": 162,
+    "news": 161,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 77.03
+      "risk": 79.53
     },
     {
       "name": "Israel",
-      "risk": 15.1
+      "risk": 14.85
     },
     {
       "name": "Saudi Arabia",
-      "risk": 13.0
+      "risk": 12.3
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 11.85
     },
     {
       "name": "West Bank",
       "risk": 9.95
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 8.55
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Israeli settlers set fire to West Bank mosques after deadly clash - Reuters",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUVBNcGd1UUxUT2Z6MUFrU1o4YW1XOVB5X2lXMVp4WFB5QjBlNkx2bnlocXdOVHFmMmozc1hXamVNQUdkZDl6SndsUmxrUWZXaDhadkMyZTdmektVVzQ0TkZVMWdleVRta01iUVhCWUplMnZGZVZpejc4SUNFYmlNTlBmWWVtdDczWWVYa2trT1BpRjZZaUQ5N1VWeVN2ajVOOVU1MTgyRVlhVTBFcFhpYUYtMnI1NjQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills a top Hamas security official in Gaza, medics and police say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOEdQaF9sd1FDOHRhWUhBMTFvU0lDT1RkMUVpQ1pkMWNPUmJKX3pxYlkyQXFDWkNuTE01VFZuZXNWQWxUdmY1OGlZYTdadUZ6bTczODJXQVZ1aEFxa2xVdUpRdHhWZG9CWEJxLWJRZ0N3MkVaVGdmWnBHZGJWOTlIdTdEV3hMc3czS0pMSHFOaEV2NUxrVmVfdTEwelp4SE9VTXg1cVM3V0hHT2dnendVNmJ6Ul9PM2xmNFotOWw4dGlkMWc"
     },
     {
       "score": 3.0,
@@ -93,6 +102,15 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYnVSWlhuMFM5LW94bUxZY2tSeDlTX3p1RC1yNk10aVJobG02aVpFeGc3bFowLVZIT01sQk5yekpRWHNUYmhiS3gxSmJTbF9YU2hROXlmQ3hSMVFvaVpDZlhuUXp6N0d4c2lERjlra2NFeXp6Y1Uwd3M2U3prWUp2LTNvMG5Zd05laVktTmJXaXFTNnp4V3U2RkUwV0FNM04yc0dsQWZKc1BtOFk2aDFKQlUwc21pdW9k"
     },
     {
+      "score": 2.7,
+      "date": "2026-07-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran accuses Ukraine of deadly attack on Caspian commercial vessel - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNa0FDc1lRUGJ3N3A4MFpoSU5DZG1YNVYzejZlaGlIbnk5UlNhWFdIOHo2ZFBQLWtDdnFCSkRsbHU0YkwxWFRCUnY1a0loVXZLcG91QXN6QUd0LUpsck1CN0tVR3dYM2hPMjJrWVFSN1dQNWlfMkFTYWVwREFWV3BjMDBMRFBLc1ZIRHlCWWhHZ2VXMEVWeUx3VnBrTEdKTlFLaWJtUU9wYWRyYWfSAbABQVVfeXFMTUt6SlEyMnNMbzdKcjFJbFBFNGJYTE5UWHVPaWp3NXhtVVlRUTNOVVRUSG9iakF4UWVBN0lvZUZ0M3prUjc1NUpVajBJdF9qLWwyYnVlWjYtOS15YmJ0S2dmRmpnZG9XUjdYVkRlMzA3X2JCcFFjeDRVeTRBamZZWEwyendQdkNlTEtaYUdBMUVKY2lER0gwV0VqZzFHS2dMazlab0JHaWVBVzcwOUZDOTU"
+    },
+    {
       "score": 2.4,
       "date": "2026-07-24",
       "category": "military",
@@ -118,24 +136,6 @@
       "title": "Saudi vessel sustains minor hull damage after Red Sea attack, state news agency says - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZmVnQzBKdENLU1Y5aXhpcVVpZVNtbDJyUGhJNWdlMF9zaVBRSmc4a0FFLUN1QjRVcFNvZDNjZFQwcWx6YWRNWEFOaVZoS0ZjWjFoMXlwQjN0bGk3d1lZSnVTYUNQZl9YenZOUk1ZZXMxX1RxTGhzR3VrclI2YXY5OWRWNVRpNGthOVFackVyQUpwTFlQVzh4S1M2cDM2MjdKWjRJX2R2QXpPSWpwa2hJdFBNRjhXdjhoeXJBaTczMUVrckxiU2ZPZ0hBNGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Mozambique-flagged LPG tanker attacked in Iranian waters, Indian embassy says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUFR6aTV2UkJKY2doRWZPUnlLeEtRbmRKcFRBeDZqdEJaamNfb3JqUDQ1U1l0QUZJNFR0WXdiYUxHZktsbFNaLXhoNHVfckQyeUJBWXZHcnR6aHVRNHdsRkVDbVZjeTR5UlpwcWQ5SjZEUkpLczJsazFDQ25OcEwzUHdXNnRKQmtlaWZ5OXFhR0pKdUZFN2xzSklBbU9nRUJHendMVUlOd1A4V2lkZ0kxcnFJWDJqdlJoYUlUOF82ZFNONF9UeFE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel launches military operation after deadly clash near Palestinian village - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSXhYQlZnRlhuazhreEt2OElrbXJKaGhXbm5SSXREQmpjejZ0ZlhWNi1QOXdFREtnd0ZJYXczbzdtTHlKU1hLQi1ILWRmM1dsd25hX3FjSDFEdkFrNG1CQVUyY2pjSGdqQ2VOZnBDT2RKal9SZThsbGZtdXo2NUl5R2hLSGNoUEhEVEFEaUhZSTVIampVQVRz"
     }
   ]
 }
