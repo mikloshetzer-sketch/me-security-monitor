@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 19:36 UTC",
+    "updated": "2026-07-26 21:12 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-07-20",
     "period_end": "2026-07-26",
-    "total_events": 170,
-    "total_risk": 162.99,
-    "normalized_risk_score": 65.2,
+    "total_events": 171,
+    "total_risk": 166.54,
+    "normalized_risk_score": 66.6,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 45,
+    "military": 47,
     "security": 3,
     "political": 24,
-    "other": 98
+    "other": 97
   },
   "source_counts": {
-    "news": 163,
+    "news": 164,
     "isw": 7
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 84.33
+      "risk": 85.73
+    },
+    {
+      "name": "Israel",
+      "risk": 16.9
     },
     {
       "name": "Gaza Strip",
       "risk": 15.35
     },
     {
-      "name": "Israel",
-      "risk": 13.9
-    },
-    {
       "name": "Saudi Arabia",
-      "risk": 12.65
+      "risk": 12.6
     },
     {
       "name": "West Bank",
@@ -79,18 +79,18 @@
       "date": "2026-07-26",
       "category": "military",
       "source_type": "news",
-      "title": "After Trump calls off bombing, Iran signals it will halt strikes as long as US does - Reuters",
+      "title": "Iran foreign minister says Ukraine's attack on Iranian vessel 'cannot go unanswered' - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw"
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOR0dDdnVkOGdDUi10WVpzQ1FKWjNjcmRWaEl3ZFdZdXQ2cnNmY3JIbDNyN2ZiZ1ctd1YtOG1iOEZubEM4RzZ1djNiT3M1djhBRnROYTNKUVgwSGlUa1VFbUJ0ekJIWkhTVmRhZFJNbEVGTHhvc0daZXNmUzNEMWpZNlBmUy1QeEF3Y1o4SlBzcnRnd0ZXZnc5REROeGFGRzFrM2RKQXhVY3hmc3Y3RDl2bUdZazNXRF9iZkJURF9rcTVXQjMw"
     },
     {
       "score": 3.0,
       "date": "2026-07-26",
       "category": "military",
       "source_type": "news",
-      "title": "Iran foreign minister says Ukraine's attack on Iranian vessel 'cannot go unanswered' - Reuters",
+      "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOR0dDdnVkOGdDUi10WVpzQ1FKWjNjcmRWaEl3ZFdZdXQ2cnNmY3JIbDNyN2ZiZ1ctd1YtOG1iOEZubEM4RzZ1djNiT3M1djhBRnROYTNKUVgwSGlUa1VFbUJ0ekJIWkhTVmRhZFJNbEVGTHhvc0daZXNmUzNEMWpZNlBmUy1QeEF3Y1o4SlBzcnRnd0ZXZnc5REROeGFGRzFrM2RKQXhVY3hmc3Y3RDl2bUdZazNXRF9iZkJURF9rcTVXQjMw"
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw"
     },
     {
       "score": 3.0,
@@ -111,22 +111,13 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWUkyZE4wQUxlUlhWWGxxRDJTak03aEIzMDRRLXlXNkZ4eHRPa3ZfT2FhaDljX1dKbkhGLXpDTGFNVVhyd2xPSExMX09Oa0pSTDRubUNHSTlSZXRhbThiVEZ6QVJMTVNoMVZEaGhvWF9oUGt1aEU3MjdlcWhvb1VZODFqekt5NDJXNEU5UlRLSlJPYXlTU0dveEp0SFU2OVBjUDRiVHVRcmRETDDSAbABQVVfeXFMUGdmdzhfU2d0SldDbV9tdExxanozOE1iZ1VsdXp3RC0taEtDTVlKVjV5LUxIX1JHejNxeWs2eG9SRnFvWVhHSkMzVXBtX29HODk5cjZ2Vm9YWV9jdDkzU1BaM25yd01SMExOWTVnZnpYN1dSSGZudHZ2ZWFNM043OTl6U3R4OFZJNHU5c05raFBEVXdrTWtOT2FmM0VGZUkxNTdHNFA5T3c0SmhPcnFxSUY"
     },
     {
-      "score": 2.7,
-      "date": "2026-07-25",
+      "score": 3.0,
+      "date": "2026-07-26",
       "category": "military",
       "source_type": "news",
-      "title": "Thirty-five killed, 30 injured in Syria bus collision - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQS25BNEpkNFFENTBkNHY0aDFHNGVDdVZGMzI5NzNTVXdoNXM5b1BwUEl5YlNQdTZZZDdTSk9YeWtUMjFLaENUTWVZZzRrR1p5Ql9XZkxvSnFncVN4enFwMWpIekZNRm5sdWs1MUMxZzNHMTAtdVdHSVRtY3J2YWhqb0x1ZEdaU2Zwd251TnprTjFPZkY1RUtRSnRuOEphYTUyUUQzZG01cE56WkdlX2FfOGQ0Zk1xalBiUWNDODUycC1zd3FWQkNmY0tnNks"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran war spreads to Red Sea and Caspian, Gulf quiet as US forgoes strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYnVSWlhuMFM5LW94bUxZY2tSeDlTX3p1RC1yNk10aVJobG02aVpFeGc3bFowLVZIT01sQk5yekpRWHNUYmhiS3gxSmJTbF9YU2hROXlmQ3hSMVFvaVpDZlhuUXp6N0d4c2lERjlra2NFeXp6Y1Uwd3M2U3prWUp2LTNvMG5Zd05laVktTmJXaXFTNnp4V3U2RkUwV0FNM04yc0dsQWZKc1BtOFk2aDFKQlUwc21pdW9k"
+      "title": "Israel launches military incursion into Syria amid UN condemnation - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObHAzRkdsaWMyLWQ5WFhyMFdjZjE2NHNZSUJoeEpfdjJsYnZjUk1mRWpBd0VPUjF6YjFSTWVaSzlzUXZCTjNpaFB3ZXV1WktZamR0NjlvWWZyamhrMHBVdldtSmxJQ0VHazZxaEVkN3d6cUdJNldNY2dGb0RrOHJ6SDh6SktIZldUcGo5X0RDLU00MTBCbFZDT20wbmVBYWtLdEhYdzZFLS1kS1HSAbABQVVfeXFMTUt1WENac2QtVXh3Y05UTVBfT2JlejZ6a01VV0htRmZuYWwtaGt5M3Y5Y0hnUDVqYWtDeWhEaFBVTWEzZ1paV3A0YXZCTG05b0Y0NmV6cUR1ekZhbHhyRUpsV1d5ODBmX3NjYmxjUTZUdGpwVU81MkFfSk0zLVA2Tk43a21fcjU3T2ZZT0tRTG51NVpYS1IzR08yYW4tdFJkbWpVNjBaR1lqTzdnVzFnVmM"
     },
     {
       "score": 2.7,
@@ -136,6 +127,15 @@
       "title": "Iran says Ukrainian attack on vessel in Caspian Sea killed sailor - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdWtpdWZ4NW1EX0RFb3dCV1hZYVU3ZmFESlp6Qnhhd2VLX1VXc293dFp6LUF0Mlo4YWdReXhWNGNkVWNqQS1hZmJjekx4aE1QbVJiaWp1Wl82RVVDdldZVFRhaEs2VEJPRWRRbkpQX0tDbEZ4U3FFdmVUWERaTDBHVmh1Y25RS2lpaWhhSmVzcHlUcmZzeUx4RDRobEl4aDZOYVA0T01lYWVOVDZV"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Thirty-five killed, 30 injured in Syria bus collision - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQS25BNEpkNFFENTBkNHY0aDFHNGVDdVZGMzI5NzNTVXdoNXM5b1BwUEl5YlNQdTZZZDdTSk9YeWtUMjFLaENUTWVZZzRrR1p5Ql9XZkxvSnFncVN4enFwMWpIekZNRm5sdWs1MUMxZzNHMTAtdVdHSVRtY3J2YWhqb0x1ZEdaU2Zwd251TnprTjFPZkY1RUtRSnRuOEphYTUyUUQzZG01cE56WkdlX2FfOGQ0Zk1xalBiUWNDODUycC1zd3FWQkNmY0tnNks"
     }
   ]
 }
