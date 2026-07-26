@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 03:56 UTC",
+    "updated": "2026-07-26 06:49 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-07-20",
     "period_end": "2026-07-26",
-    "total_events": 165,
-    "total_risk": 147.88,
-    "normalized_risk_score": 59.2,
+    "total_events": 166,
+    "total_risk": 150.68,
+    "normalized_risk_score": 60.3,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 46,
+    "military": 47,
     "security": 3,
-    "political": 29,
-    "other": 87
+    "political": 26,
+    "other": 90
   },
   "source_counts": {
-    "news": 159,
+    "news": 160,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 78.29
+      "risk": 78.94
     },
     {
       "name": "Israel",
-      "risk": 15.25
+      "risk": 14.15
     },
     {
       "name": "Saudi Arabia",
-      "risk": 12.9
+      "risk": 12.95
     },
     {
       "name": "Gaza Strip",
-      "risk": 6.6
+      "risk": 9.6
     },
     {
       "name": "West Bank",
@@ -47,6 +47,15 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-07-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Head of police in northern Gaza killed in Israeli strike - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWUkyZE4wQUxlUlhWWGxxRDJTak03aEIzMDRRLXlXNkZ4eHRPa3ZfT2FhaDljX1dKbkhGLXpDTGFNVVhyd2xPSExMX09Oa0pSTDRubUNHSTlSZXRhbThiVEZ6QVJMTVNoMVZEaGhvWF9oUGt1aEU3MjdlcWhvb1VZODFqekt5NDJXNEU5UlRLSlJPYXlTU0dveEp0SFU2OVBjUDRiVHVRcmRETDDSAbABQVVfeXFMUGdmdzhfU2d0SldDbV9tdExxanozOE1iZ1VsdXp3RC0taEtDTVlKVjV5LUxIX1JHejNxeWs2eG9SRnFvWVhHSkMzVXBtX29HODk5cjZ2Vm9YWV9jdDkzU1BaM25yd01SMExOWTVnZnpYN1dSSGZudHZ2ZWFNM043OTl6U3R4OFZJNHU5c05raFBEVXdrTWtOT2FmM0VGZUkxNTdHNFA5T3c0SmhPcnFxSUY"
+    },
     {
       "score": 2.7,
       "date": "2026-07-25",
@@ -115,27 +124,18 @@
       "date": "2026-07-24",
       "category": "military",
       "source_type": "news",
+      "title": "Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOck9rMklSSHp1Z0E2UmlqZUJHSWNxRXNSZGtZd1JTOFdSbUE2amI3RHFmaUNuSS1nU1NzaThJdVIwVzZFcXVIaXNjU3lrSVYtaDF5THNwWkpqUHVwTEFsWklsbnp4ZllTMndIYWhRM0RZa09qaTNiVXVCNmh5a2p6MnBidG1kWkJSUVJnb1RuOXdUcU5MRDVxbzJmcDE2UWZsaVZYRDdCdHlYcG1kUTdKT093ZXI4b3VkWjZNRzdDUDIwWEFWMHRia2FIY3dIdw"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-07-24",
+      "category": "military",
+      "source_type": "news",
       "title": "Mozambique-flagged LPG tanker attacked in Iranian waters, Indian embassy says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUFR6aTV2UkJKY2doRWZPUnlLeEtRbmRKcFRBeDZqdEJaamNfb3JqUDQ1U1l0QUZJNFR0WXdiYUxHZktsbFNaLXhoNHVfckQyeUJBWXZHcnR6aHVRNHdsRkVDbVZjeTR5UlpwcWQ5SjZEUkpLczJsazFDQ25OcEwzUHdXNnRKQmtlaWZ5OXFhR0pKdUZFN2xzSklBbU9nRUJHendMVUlOd1A4V2lkZ0kxcnFJWDJqdlJoYUlUOF82ZFNONF9UeFE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Four Palestinians and two Israelis killed in West Bank shooting",
-      "location": "West Bank",
-      "url": "https://www.bbc.co.uk/news/articles/cx2rxmye4k3o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks raise fears of wider Middle East conflict and more global economic damage",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cvgve0vxy1yo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
