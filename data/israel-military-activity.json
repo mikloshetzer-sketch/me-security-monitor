@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-26T05:40:59+00:00",
+  "generated_at": "2026-07-26T10:12:36+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,35 +46,35 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 26,
+      "total_events": 27,
       "map_visualizable_events": 7,
       "total_map_points": 8,
       "multi_location_events": 1,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-25T17:56:14Z"
+      "latest_event_date": "2026-07-26T07:03:40Z"
     },
     "region_counts": {
-      "Gaza Strip": 20,
+      "Gaza Strip": 21,
       "South Lebanon": 7
     },
     "activity_type_counts": {
-      "airstrike": 22,
+      "airstrike": 23,
       "ground_activity": 3,
       "humanitarian_zone": 2,
       "drone_activity": 1,
       "cross_border_fire": 1
     },
     "target_organization_counts": {
-      "Hamas": 17,
+      "Hamas": 18,
       "Not explicitly stated": 5,
       "Palestinian Islamic Jihad": 4,
       "Hezbollah": 3
     },
     "target_type_counts": {
-      "commander": 14,
-      "individual_operative": 7,
+      "commander": 15,
+      "individual_operative": 8,
+      "weapons_production": 5,
       "armed_cell": 5,
-      "weapons_production": 4,
       "unspecified": 3,
       "weapons_storage": 3,
       "military_structure": 3,
@@ -84,25 +84,25 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 23,
-      "eliminated": 18,
+      "struck": 24,
+      "eliminated": 19,
       "located": 4,
       "reported": 3,
       "dismantled": 3
     },
     "commander_type_counts": {
+      "unspecified_commander": 5,
       "cell_commander": 4,
       "company_commander": 4,
-      "unspecified_commander": 4,
       "nukhba_commander": 3,
       "production_commander": 2,
       "senior_commander": 1,
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 24,
-      "command": 13,
-      "production": 4,
+      "ground": 25,
+      "command": 14,
+      "production": 5,
       "rocket_missile": 3,
       "weapons_logistics": 3,
       "unspecified": 1,
@@ -111,7 +111,7 @@
       "underground": 1
     },
     "area_mention_counts": {
-      "Northern Gaza Strip": 10,
+      "Northern Gaza Strip": 11,
       "Southern Gaza Strip": 7,
       "Central Gaza Strip": 3,
       "Yellow Line area": 3,
@@ -125,6 +125,71 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18973",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18973",
+      "date": "2026-07-26T07:03:40Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: The IDF eliminated a Hamas terrorist involved in manufacturing weapons and a Hamas Nukhba terrorist Last week (Tuesday), the IDF struck in the northern Gaza Strip and eliminated the terrorist Fares Al-Masri, the head of a department in Hamas’ Weapons Production Headquarters. Al-Masri was involved in manufacturing weapons as part of Hamas’ efforts to rebuild its military capabilities, in violation of the ceasefire agreement. Additionally, in a separate strike in the northern Gaza Strip last week (Tuesday), the IDF eliminated Muhammad Abu Shakyan, a Nukhba terrorist in the Hamas terrorist organization. In recent months, both terrorists had been involved in advancing terrorist attack plans targeting IDF troops and Israeli civilians. They were eliminated in order to remove the threat. Prior to the strikes, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander",
+        "individual_operative",
+        "weapons_production"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "production",
+        "command",
+        "ground"
+      ],
+      "threat_domain": "production",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/18973"
+    },
     {
       "id": "idf-idfofficial-18972",
       "source": "IDF official Telegram",
