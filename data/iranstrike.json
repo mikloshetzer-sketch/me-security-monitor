@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T19:56:54Z",
+  "generated_at": "2026-07-26T22:14:07Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -57,14 +57,14 @@
     "normalized_events": 10000,
     "map_visualizable_events": 1824,
     "non_mappable_events": 8176,
-    "developments": 4
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 10000,
-      "earliest_event_date": "2026-03-04T13:03:21Z",
-      "latest_event_date": "2026-07-26T19:22:29Z",
+      "earliest_event_date": "2026-03-04T13:05:53Z",
+      "latest_event_date": "2026-07-26T20:09:08Z",
       "geocoded_events": 1824,
       "geocoded_share": 18.2,
       "top_category": "missile",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 231,
-        "previous": 290,
-        "delta": -59,
-        "percent_change": -20.3,
+        "current": 232,
+        "previous": 287,
+        "delta": -55,
+        "percent_change": -19.2,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 1003,
-        "previous": 1149,
-        "delta": -146,
-        "percent_change": -12.7,
+        "current": 1004,
+        "previous": 1147,
+        "delta": -143,
+        "percent_change": -12.5,
         "direction": "stable"
       }
     },
     "daily_trend": [
       {
         "date": "2026-03-04",
-        "count": 131
+        "count": 130
       },
       {
         "date": "2026-03-05",
@@ -666,13 +666,13 @@
       },
       {
         "date": "2026-07-26",
-        "count": 13
+        "count": 14
       }
     ],
     "category_counts": {
       "missile": 4254,
-      "drone": 2423,
-      "infrastructure": 1474,
+      "drone": 2422,
+      "infrastructure": 1475,
       "strike": 918,
       "airstrike": 250,
       "movement": 184,
@@ -684,8 +684,8 @@
       "intercept": 12
     },
     "severity_counts": {
-      "medium": 5462,
-      "high": 2977,
+      "medium": 5461,
+      "high": 2978,
       "low": 1142,
       "critical": 419
     },
@@ -808,31 +808,37 @@
     "totalCount": 10000,
     "spotlight": {
       "event": {
-        "id": "1brqa24xq6zk0",
-        "timestamp": "2026-07-26T16:56:02+00:00",
-        "location": "SAU",
-        "origin": "YEM",
+        "id": "31fw8rt2ujw00",
+        "timestamp": "2026-07-26T20:09:08+00:00",
+        "location": "ISR",
+        "origin": "USA",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Houthis strike industrial area of Saudi port city Jizan in response to Saudi airstrikes on Hodeida",
-        "descriptionHe": "החות'ים תוקפים את אזור התעשיה של עיר הנמל הסעודית ג'יזאן בתגובה לתקיפות סעודיות על חודידה",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/127327"
+        "type": "report",
+        "severity": "high",
+        "description": "CSIS estimates U.S. fired approximately 2,100 JASSMs and Tomahawks during third Gulf War through June 23, 2026, representing one-third of inventory",
+        "descriptionHe": "CSIS מעריכה כי ארה\"ב שיגרה כ-2,100 JASSMs וטומהוקים במהלך מלחמת הפרסי השלישית עד ה-23 ביוני 2026, המהווה שליש מהמלאי",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2100
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81017"
       },
-      "headline": "Houthis Strike Saudi Port City Jizan in Escalating Regional Tensions",
-      "headlineHe": "חות'ים תקפו את עיר הנמל הסעודית ג'יזאן בהסלמה אזורית",
-      "summary": "The attack marks a direct Houthi response to Saudi airstrikes on the Yemeni port of Hodeidah, signaling renewed tit-for-tat strikes between the two sides.",
-      "summaryHe": "ההתקפה מהווה תגובה ישירה של חות'ים לתקיפות אוויריות סעודיות על נמל חודיידה בתימן, המסמנת התקפי גומלין מחודשים בין שני הצדדים.",
-      "pickedAt": "2026-07-26T19:45:53.545Z",
+      "headline": "U.S. depleted one-third of cruise missile inventory in Gulf War",
+      "headlineHe": "ארה\"ב ניצלה שליש מהזקיפה שלה של טילי שיוט במלחמת המפרץ",
+      "summary": "The massive expenditure of 2,100 advanced cruise missiles signals prolonged high-intensity combat operations and potential constraints on future strike capabilities.",
+      "summaryHe": "הוצאת אש ענקית של 2,100 טילים מתקדמים מצביעה על פעולות קרביות בעיצומן ועל אילוצים אפשריים ביכולות התקיפה בעתיד.",
+      "pickedAt": "2026-07-26T21:45:53.477Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-07-26T19:54:15.789Z",
+    "lastUpdated": "2026-07-26T22:09:14.595Z",
     "stale": false,
-    "viewerCount": 11,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1375,68 +1381,8 @@
     "vitals": {
       "internet": 93,
       "cellular": 0,
-      "lastUpdate": "2026-07-26T19:30:41.094Z",
+      "lastUpdate": "2026-07-26T22:00:40.785Z",
       "internetHistory": [
-        {
-          "t": "2026-07-25T19:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T19:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T19:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T20:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T20:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T20:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T20:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T20:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-07-25T20:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T21:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T21:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T21:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T21:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T21:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-07-25T21:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-07-25T22:00:00.000Z",
           "v": 94
@@ -1948,6 +1894,66 @@
         {
           "t": "2026-07-26T19:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-07-26T19:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T19:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-26T19:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T19:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T20:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T20:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-26T20:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T20:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-26T20:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-26T20:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-26T21:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-26T21:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T21:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T21:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-26T21:40:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": [
@@ -2041,18 +2047,18 @@
         }
       ]
     },
-    "lastUpdated": "2026-07-26T19:30:41.094Z"
+    "lastUpdated": "2026-07-26T22:00:40.785Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c5b1",
+      "id": "iranstrike-9c2f5e1a",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-26T09:51:26Z",
+      "date": "2026-07-26T09:38:56Z",
       "title": "IranStrike event",
-      "description": "US halts Iran strikes after 13 nights; ammo shortages, selective interception",
+      "description": "US halts Iran strikes after 13 nights; ammo shortages cited by leadership",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2073,32 +2079,32 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c5b1",
-        "text": "US halts Iran strikes after 13 nights; ammo shortages, selective interception",
-        "textHe": "ארה\"ב עוצרת תקיפות בעיראן אחרי 13 לילות; מחסור בתחמושת",
+        "id": "9c2f5e1a",
+        "text": "US halts Iran strikes after 13 nights; ammo shortages cited by leadership",
+        "textHe": "ארה״ב הפסיקה תקיפות באיראן; מחסור בתחמול לפי מנהיגות",
         "severity": "high",
-        "timestamp": "2026-07-26T09:51:26+00:00",
+        "timestamp": "2026-07-26T09:38:56+00:00",
         "entityIds": [
           "USA",
           "IRN"
         ],
         "eventIds": [
-          "13tgtfvx41vg0",
           "32cw72xn27000",
+          "13tgtfvx41vg0",
           "f4isiwt2bjs"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-b3e9d6a2",
+      "id": "iranstrike-7e4d3f2b",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-07-26T19:22:29Z",
       "title": "IranStrike event",
-      "description": "Houthis down Saudi Bayraktar drone over Al Jawf; strike on Jizan port",
+      "description": "Houthis down 2 Saudi Bayraktar drones over Al Jawf; escalating air defense",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2119,9 +2125,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b3e9d6a2",
-        "text": "Houthis down Saudi Bayraktar drone over Al Jawf; strike on Jizan port",
-        "textHe": "החות\"ים הורידו מל\"ט סעודי; תקיפה על נמל ג'יזאן",
+        "id": "7e4d3f2b",
+        "text": "Houthis down 2 Saudi Bayraktar drones over Al Jawf; escalating air defense",
+        "textHe": "חות׳ים הוריסו 2 מטוסי ביירקטר סעודיים; הגנה אווירית מתגברת",
         "severity": "medium",
         "timestamp": "2026-07-26T19:22:29+00:00",
         "entityIds": [
@@ -2129,67 +2135,23 @@
           "SAU"
         ],
         "eventIds": [
+          "31fw8rt2ujw00",
           "vess11ph27k0",
           "30o36ayvklc00",
-          "1brqa24xq6zk0"
+          "1fix4fbhvusg0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-c8b1f4e3",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-07-26T12:36:41Z",
-      "title": "IranStrike event",
-      "description": "Ukraine strikes Iranian vessel in Caspian Sea; sailor killed, condemned",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "ukraine strikes iranian vessel in caspian sea;",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "c8b1f4e3",
-        "text": "Ukraine strikes Iranian vessel in Caspian Sea; sailor killed, condemned",
-        "textHe": "אוקראינה תקפה כלי עיראני בים קספיא; נהרג מלח",
-        "severity": "medium",
-        "timestamp": "2026-07-26T12:36:41+00:00",
-        "entityIds": [
-          "IRN",
-          "UKR"
-        ],
-        "eventIds": [
-          "3gk7lhxzf7g00",
-          "11iuccfr9bs00"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-d2c7a9f5",
+      "id": "iranstrike-6d5c8e9f",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-07-26T14:07:01Z",
       "title": "IranStrike event",
-      "description": "IDF demolishes structures in southern Lebanon villages; 60+ US tankers deployed",
+      "description": "IDF demolishes villages in southern Lebanon; ongoing military ops",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2210,25 +2172,163 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d2c7a9f5",
-        "text": "IDF demolishes structures in southern Lebanon villages; 60+ US tankers deployed",
-        "textHe": "צה\"ל הרס מבנים בכפרים בלבנון; 60+ מטנקרים אמריקאים",
+        "id": "6d5c8e9f",
+        "text": "IDF demolishes villages in southern Lebanon; ongoing military ops",
+        "textHe": "צה״ל הרס כפרים בדרום לבנון; ממשיך פעילות צבאית",
         "severity": "medium",
         "timestamp": "2026-07-26T14:07:01+00:00",
         "entityIds": [
           "ISR",
-          "LBN",
-          "USA"
+          "LBN"
         ],
         "eventIds": [
-          "3w0g808i4x800",
-          "6uqx486trrw0"
+          "3w0g808i4x800"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-5a1b7c4e",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-26T16:56:02Z",
+      "title": "IranStrike event",
+      "description": "Houthis strike Saudi port city Jizan in retaliation for Hodeida raids",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "5a1b7c4e",
+        "text": "Houthis strike Saudi port city Jizan in retaliation for Hodeida raids",
+        "textHe": "חות׳ים תקפו עיר נמל סעודית בגזרה; תשובה להפצצות הודיידה",
+        "severity": "medium",
+        "timestamp": "2026-07-26T16:56:02+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "1brqa24xq6zk0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-4f3a2d6c",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-26T12:36:41Z",
+      "title": "IranStrike event",
+      "description": "Ukraine strikes Iranian vessel in Caspian Sea; sailor killed",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "ukraine strikes iranian vessel in caspian sea;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "4f3a2d6c",
+        "text": "Ukraine strikes Iranian vessel in Caspian Sea; sailor killed",
+        "textHe": "אוקראינה תקפה אנייה איראנית בים קספי; ימאי נהרג",
+        "severity": "medium",
+        "timestamp": "2026-07-26T12:36:41+00:00",
+        "entityIds": [
+          "UKR",
+          "IRN"
+        ],
+        "eventIds": [
+          "3gk7lhxzf7g00",
+          "11iuccfr9bs00"
         ],
         "sourceCount": 2
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-31fw8rt2ujw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81017",
+      "date": "2026-07-26T20:09:08Z",
+      "title": "IranStrike event",
+      "description": "CSIS estimates U.S. fired approximately 2,100 JASSMs and Tomahawks during third Gulf War through June 23, 2026, representing one-third of inventory",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "31fw8rt2ujw00",
+        "timestamp": "2026-07-26T20:09:08+00:00",
+        "location": "ISR",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "CSIS estimates U.S. fired approximately 2,100 JASSMs and Tomahawks during third Gulf War through June 23, 2026, representing one-third of inventory",
+        "descriptionHe": "CSIS מעריכה כי ארה\"ב שיגרה כ-2,100 JASSMs וטומהוקים במהלך מלחמת הפרסי השלישית עד ה-23 ביוני 2026, המהווה שליש מהמלאי",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2100
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81017"
+      }
+    },
     {
       "id": "iranstrike-vess11ph27k0",
       "source": "IranStrike",
@@ -451096,50 +451196,6 @@
         "descriptionHe": "פריגטת איראנית IRIS Dena דווח כי טובעת ליד סרי לנקה עם 32 מלחים שחולצו ו-148 נעדרים; הסיבה לא ברורה",
         "source": "OSINTdefender",
         "sourceUrl": "https://t.me/OSINTdefender/17700"
-      }
-    },
-    {
-      "id": "iranstrike-20f3us3qx4v40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "OSINTdefender",
-      "source_url": "https://t.me/OSINTdefender/17698",
-      "date": "2026-03-04T13:03:21Z",
-      "title": "IranStrike event",
-      "description": "Saudi Aramco's Ras Tanura facility shut down following drone strike; situation reportedly under control",
-      "category": "drone",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "20f3us3qx4v40",
-        "timestamp": "2026-03-04T13:03:21+00:00",
-        "location": "SAU",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Saudi Aramco's Ras Tanura facility shut down following drone strike; situation reportedly under control",
-        "descriptionHe": "מתקן Ras Tanura של Saudi Aramco סגור לאחר התקפת מל\"ט; המצב דווח כי תחת שליטה",
-        "source": "OSINTdefender",
-        "sourceUrl": "https://t.me/OSINTdefender/17698"
       }
     }
   ],
