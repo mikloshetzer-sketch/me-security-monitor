@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 06:49 UTC",
+    "updated": "2026-07-26 10:13 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,54 +8,45 @@
   "summary": {
     "period_start": "2026-07-20",
     "period_end": "2026-07-26",
-    "total_events": 166,
-    "total_risk": 150.68,
-    "normalized_risk_score": 60.3,
+    "total_events": 168,
+    "total_risk": 149.43,
+    "normalized_risk_score": 59.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 47,
+    "military": 42,
     "security": 3,
-    "political": 26,
-    "other": 90
+    "political": 28,
+    "other": 95
   },
   "source_counts": {
-    "news": 160,
+    "news": 162,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 78.94
+      "risk": 79.63
     },
     {
       "name": "Israel",
-      "risk": 14.15
+      "risk": 15.35
     },
     {
       "name": "Saudi Arabia",
-      "risk": 12.95
+      "risk": 13.0
     },
     {
-      "name": "Gaza Strip",
-      "risk": 9.6
+      "name": "Yemen",
+      "risk": 7.0
     },
     {
       "name": "West Bank",
-      "risk": 6.45
+      "risk": 6.95
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-07-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Head of police in northern Gaza killed in Israeli strike - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWUkyZE4wQUxlUlhWWGxxRDJTak03aEIzMDRRLXlXNkZ4eHRPa3ZfT2FhaDljX1dKbkhGLXpDTGFNVVhyd2xPSExMX09Oa0pSTDRubUNHSTlSZXRhbThiVEZ6QVJMTVNoMVZEaGhvWF9oUGt1aEU3MjdlcWhvb1VZODFqekt5NDJXNEU5UlRLSlJPYXlTU0dveEp0SFU2OVBjUDRiVHVRcmRETDDSAbABQVVfeXFMUGdmdzhfU2d0SldDbV9tdExxanozOE1iZ1VsdXp3RC0taEtDTVlKVjV5LUxIX1JHejNxeWs2eG9SRnFvWVhHSkMzVXBtX29HODk5cjZ2Vm9YWV9jdDkzU1BaM25yd01SMExOWTVnZnpYN1dSSGZudHZ2ZWFNM043OTl6U3R4OFZJNHU5c05raFBEVXdrTWtOT2FmM0VGZUkxNTdHNFA5T3c0SmhPcnFxSUY"
-    },
     {
       "score": 2.7,
       "date": "2026-07-25",
@@ -82,6 +73,15 @@
       "title": "Iran war spreads to Red Sea and Caspian, Gulf quiet as US forgoes strikes - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYnVSWlhuMFM5LW94bUxZY2tSeDlTX3p1RC1yNk10aVJobG02aVpFeGc3bFowLVZIT01sQk5yekpRWHNUYmhiS3gxSmJTbF9YU2hROXlmQ3hSMVFvaVpDZlhuUXp6N0d4c2lERjlra2NFeXp6Y1Uwd3M2U3prWUp2LTNvMG5Zd05laVktTmJXaXFTNnp4V3U2RkUwV0FNM04yc0dsQWZKc1BtOFk2aDFKQlUwc21pdW9k"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran accuses Ukraine of deadly attack on Caspian commercial vessel - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNa0FDc1lRUGJ3N3A4MFpoSU5DZG1YNVYzejZlaGlIbnk5UlNhWFdIOHo2ZFBQLWtDdnFCSkRsbHU0YkwxWFRCUnY1a0loVXZLcG91QXN6QUd0LUpsck1CN0tVR3dYM2hPMjJrWVFSN1dQNWlfMkFTYWVwREFWV3BjMDBMRFBLc1ZIRHlCWWhHZ2VXMEVWeUx3VnBrTEdKTlFLaWJtUU9wYWRyYWfSAbABQVVfeXFMTUt6SlEyMnNMbzdKcjFJbFBFNGJYTE5UWHVPaWp3NXhtVVlRUTNOVVRUSG9iakF4UWVBN0lvZUZ0M3prUjc1NUpVajBJdF9qLWwyYnVlWjYtOS15YmJ0S2dmRmpnZG9XUjdYVkRlMzA3X2JCcFFjeDRVeTRBamZZWEwyendQdkNlTEtaYUdBMUVKY2lER0gwV0VqZzFHS2dMazlab0JHaWVBVzcwOUZDOTU"
     },
     {
       "score": 2.4,
@@ -115,18 +115,18 @@
       "date": "2026-07-24",
       "category": "military",
       "source_type": "news",
-      "title": "Israel launches military operation after deadly clash near Palestinian village - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSXhYQlZnRlhuazhreEt2OElrbXJKaGhXbm5SSXREQmpjejZ0ZlhWNi1QOXdFREtnd0ZJYXczbzdtTHlKU1hLQi1ILWRmM1dsd25hX3FjSDFEdkFrNG1CQVUyY2pjSGdqQ2VOZnBDT2RKal9SZThsbGZtdXo2NUl5R2hLSGNoUEhEVEFEaUhZSTVIampVQVRz"
+      "title": "Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOck9rMklSSHp1Z0E2UmlqZUJHSWNxRXNSZGtZd1JTOFdSbUE2amI3RHFmaUNuSS1nU1NzaThJdVIwVzZFcXVIaXNjU3lrSVYtaDF5THNwWkpqUHVwTEFsWklsbnp4ZllTMndIYWhRM0RZa09qaTNiVXVCNmh5a2p6MnBidG1kWkJSUVJnb1RuOXdUcU5MRDVxbzJmcDE2UWZsaVZYRDdCdHlYcG1kUTdKT093ZXI4b3VkWjZNRzdDUDIwWEFWMHRia2FIY3dIdw"
     },
     {
       "score": 2.4,
       "date": "2026-07-24",
       "category": "military",
       "source_type": "news",
-      "title": "Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOck9rMklSSHp1Z0E2UmlqZUJHSWNxRXNSZGtZd1JTOFdSbUE2amI3RHFmaUNuSS1nU1NzaThJdVIwVzZFcXVIaXNjU3lrSVYtaDF5THNwWkpqUHVwTEFsWklsbnp4ZllTMndIYWhRM0RZa09qaTNiVXVCNmh5a2p6MnBidG1kWkJSUVJnb1RuOXdUcU5MRDVxbzJmcDE2UWZsaVZYRDdCdHlYcG1kUTdKT093ZXI4b3VkWjZNRzdDUDIwWEFWMHRia2FIY3dIdw"
+      "title": "Israel launches military operation after deadly clash near Palestinian village - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSXhYQlZnRlhuazhreEt2OElrbXJKaGhXbm5SSXREQmpjejZ0ZlhWNi1QOXdFREtnd0ZJYXczbzdtTHlKU1hLQi1ILWRmM1dsd25hX3FjSDFEdkFrNG1CQVUyY2pjSGdqQ2VOZnBDT2RKal9SZThsbGZtdXo2NUl5R2hLSGNoUEhEVEFEaUhZSTVIampVQVRz"
     },
     {
       "score": 2.4,
