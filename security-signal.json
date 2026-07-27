@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27 15:14 UTC",
+    "updated": "2026-07-27 17:56 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-21",
     "period_end": "2026-07-27",
-    "total_events": 161,
-    "total_risk": 162.99,
-    "normalized_risk_score": 65.2,
+    "total_events": 164,
+    "total_risk": 173.49,
+    "normalized_risk_score": 69.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 48,
-    "security": 4,
+    "military": 50,
+    "security": 5,
     "political": 19,
     "other": 90
   },
   "source_counts": {
-    "news": 155,
+    "news": 158,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 80.28
+      "risk": 83.78
     },
     {
       "name": "Israel",
-      "risk": 18.65
+      "risk": 15.95
     },
     {
       "name": "West Bank",
-      "risk": 12.7
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 12.15
+      "risk": 14.7
     },
     {
       "name": "Saudi Arabia",
-      "risk": 12.05
+      "risk": 13.15
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 9.8
     }
   ],
   "top_events": [
@@ -70,9 +70,18 @@
       "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
-      "title": "Gold rises as oil retreats on pause in US-Iran strikes; Fed rate decision in focus - Reuters",
+      "title": "Saudi Arabia says it destroyed drones launched by Iran-backed groups in Iraq - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaWRZREdhWVZkczJxVE5YTlJ5QjV5eU1WamJXY0ZaeUJPYXFMRDd1bXNSVzNTa3IyZVpvVF9lUExoXzhLTkh6ZVJTa3hkc2txenhUSE8xcG5nd3NYMU9GTGlHZ0xrazRhWFhoWVdPZl9tX3p3SlEtRFBXWmIyVXM4Y2hLMHNBMWoxVHZVenhoMVVPSzFvM3EtWnM3NmJyUXFydU1UNWxfMFlsTmpYZFhlR3pEN3RfaHQ3VnFPZXVPUzFpQ1ExQ0E"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gulf stocks advance on Iran de-escalation hopes; Saudi ends flat after oil-site attacks - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVHhXdm1LMW9wUmp6UHctWldmTGpCQWlBOWVTdk5GeEtuMzNYQU42TGlWWXQtSDAxeE1aa3JvNFRDRUx6WVB5eGliS21TMEluRkJEUndXeHE1MUYzUVZlZG9CQ1V4VXFITFIyMEhJNUNlczhueTJpX2FjbFBoSmVkSnZJX0pQOS05RExueWpHMGpRMElqUTBVV0lqajBCRG9Kc1E"
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNWDlJVW0yQmNveF9ERU1hVmp0VElsZ1dDUlFKcDNuZ25pWngxcXhRWlZuTGc0elhMbXJhVnZHX1l4VW1yVE53Q0EyVHZ1VTRrbzJuMnBzM0szcjF2cnA3dUs3NmJCOWp0d0xma2xNcC1Jekhpc2g3eHNLVkpLSk9vWDByVHBCc3VXdXQwUlA3NERuQTQ1X0huSXpyTEFZSUxBSW81bm5RS3BqYWtIc3dQaDBTUHZyNHdmWkJwdzlONHBxRU9PeWlQUEg2NHA"
     },
     {
       "score": 3.0,
@@ -82,6 +91,15 @@
       "title": "Oil price dives as US and Iran pause attacks",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/clyj834jn5lo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Ukraine dismisses Iranian threats as Caspian Sea strike directly links wars",
+      "location": "Tehran",
+      "url": "https://www.bbc.co.uk/news/articles/cwyj7yl0xndo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "Iran warns Ukraine of retaliation after deadly Caspian Sea strike - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNSWtRS1NlVHUzQ3ctOXhDNDNxSFNiMi1VYWxubFF1YkJPZ2pkd1pLVnlkTlhCbkNPV3FmVTNNX0V0eGZnQVViQTk0TGY2azh4b3E5cEdJQmRrbXp3aHJXLUlnV0tFYy1jWWlrWTRlZ3Q2YUxfMGJSX25GYWg2ekY3eGVWOGIzRVE1WVdRV0M2RlVFQy10bDJOY05HTW43SVMwRFUzdDVreVJud9IBrwFBVV95cUxNMVA3NloweW5UQ3NVNmxJRHMyVlpIOVJhSEVneXJ0ZkswSXE5YkN5VExOX044RXdOdmd1djJ0Q09QclFILVJrNXJtVEtNaEw5LWdMOEhwcS1pc3kzaVEtdnVYNm1WYkQxSWVIc1F6Z25vc1dVNDlCMkRHTmx2S3JZdmMyVU9zQ0pGUnpDUGlpUURlbFk1cGU4a2VsVlRoVzVEZUZtODUxSjhfRm5sZy1j"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers set fire to West Bank mosques after deadly clash - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUVBNcGd1UUxUT2Z6MUFrU1o4YW1XOVB5X2lXMVp4WFB5QjBlNkx2bnlocXdOVHFmMmozc1hXamVNQUdkZDl6SndsUmxrUWZXaDhadkMyZTdmektVVzQ0TkZVMWdleVRta01iUVhCWUplMnZGZVZpejc4SUNFYmlNTlBmWWVtdDczWWVYa2trT1BpRjZZaUQ5N1VWeVN2ajVOOVU1MTgyRVlhVTBFcFhpYUYtMnI1NjQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw"
     }
   ]
 }
