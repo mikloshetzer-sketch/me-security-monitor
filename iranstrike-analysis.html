@@ -1921,8 +1921,20 @@
       .manual-history-grid { grid-template-columns:1fr; }
     }
 
+    .manual-history-filter{display:grid;grid-template-columns:minmax(155px,1fr) minmax(155px,1fr) auto;gap:10px;align-items:end;margin:14px 0 4px;padding:13px 14px;border:1px solid #ddd6fe;border-radius:13px;background:#faf9ff}
+    .manual-history-filter-field{min-width:0}
+    .manual-history-filter-field label{display:block;margin-bottom:5px;color:#5b4d73;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .manual-history-filter input[type="date"]{width:100%;min-height:40px;padding:8px 10px;border:1px solid #cfc8e5;border-radius:10px;outline:none;background:#fff;color:#34215f}
+    .manual-history-filter input[type="date"]:focus{border-color:#7846e8;box-shadow:0 0 0 3px rgba(120,70,232,.10)}
+    .manual-history-filter-actions{display:flex;gap:7px;flex-wrap:wrap}
+    .manual-history-filter-btn{min-height:40px;padding:8px 11px;border:1px solid #cfc8e5;border-radius:10px;background:#fff;color:#4c1d95;font-size:10px;font-weight:900;cursor:pointer}
+    .manual-history-filter-btn:hover,.manual-history-filter-btn.active{border-color:#7846e8;background:#7846e8;color:#fff}
+    .manual-history-filter-status{grid-column:1/-1;color:#766b88;font-size:10px;line-height:1.45}
+    @media(max-width:760px){.manual-history-filter{grid-template-columns:1fr 1fr}.manual-history-filter-actions,.manual-history-filter-status{grid-column:1/-1}}
     @media (max-width:560px) {
       .manual-history-kpis { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .manual-history-filter{grid-template-columns:1fr}
+      .manual-history-filter-actions,.manual-history-filter-status{grid-column:auto}
     }
   </style>
 
@@ -2233,6 +2245,18 @@
         </div>
 
         <div id="manualHistoryContent" hidden>
+          <div class="manual-history-filter" aria-label="Történeti adatbázis dátumszűrő">
+            <div class="manual-history-filter-field"><label for="mhStartDate">Kezdő dátum</label><input id="mhStartDate" type="date"></div>
+            <div class="manual-history-filter-field"><label for="mhEndDate">Záró dátum</label><input id="mhEndDate" type="date"></div>
+            <div class="manual-history-filter-actions">
+              <button id="mh7Btn" class="manual-history-filter-btn" type="button">7 nap</button>
+              <button id="mh14Btn" class="manual-history-filter-btn" type="button">14 nap</button>
+              <button id="mh30Btn" class="manual-history-filter-btn" type="button">30 nap</button>
+              <button id="mhAllBtn" class="manual-history-filter-btn" type="button">Teljes időszak</button>
+            </div>
+            <div id="mhFilterStatus" class="manual-history-filter-status">Betöltés után az utolsó 7 nap jelenik meg.</div>
+          </div>
+
           <div class="manual-history-kpis">
             <div class="manual-history-kpi"><strong id="mhTotal">—</strong><span>Rekord</span></div>
             <div class="manual-history-kpi"><strong id="mhUsa">—</strong><span>USA-esemény</span></div>
@@ -3949,18 +3973,45 @@
       target.innerHTML=rows.length?rows.map(([name,count])=>`<div class="manual-history-rank"><div class="manual-history-rank-head"><strong>${escapeHtml(name)}</strong><span>${count}</span></div><div class="manual-history-track"><span style="width:${(count/max*100).toFixed(1)}%"></span></div></div>`).join(""):'<div class="manual-history-empty">Nincs országadat.</div>';
     }
 
-    function mhRender() {
-      const list=manualHistoryEvents;
-      const dates=list.map(x=>parseDate(x.date)).filter(Boolean).sort((a,b)=>a-b);
-      const actors=mhCountBy(list,x=>x.actor);
-      const countries=mhCountBy(list,x=>x.country).filter(([name])=>name!=="Unknown");
+    function mhDateOnly(value){const d=parseDate(value);return d?new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())):null;}
+    function mhIsoDate(d){return d?d.toISOString().slice(0,10):"";}
+    function mhDataBounds(){const d=manualHistoryEvents.map(x=>mhDateOnly(x.date)).filter(Boolean).sort((a,b)=>a-b);return{first:d[0]||null,last:d.at(-1)||null};}
+    function mhFilteredEvents(){
+      const sv=$("mhStartDate")?.value||"",ev=$("mhEndDate")?.value||"";
+      const s=sv?new Date(`${sv}T00:00:00Z`):null,e=ev?new Date(`${ev}T00:00:00Z`):null;
+      return manualHistoryEvents.filter(x=>{const d=mhDateOnly(x.date);return d&&(!s||d>=s)&&(!e||d<=e);});
+    }
+    function mhSetActiveQuickButton(id){["mh7Btn","mh14Btn","mh30Btn","mhAllBtn"].forEach(x=>$(x)?.classList.toggle("active",x===id));}
+    function mhSetQuickRange(days){
+      const b=mhDataBounds();if(!b.first||!b.last)return;
+      const e=new Date(b.last),s=new Date(b.last);s.setUTCDate(s.getUTCDate()-(days-1));if(s<b.first)s.setTime(b.first.getTime());
+      $("mhStartDate").value=mhIsoDate(s);$("mhEndDate").value=mhIsoDate(e);mhSetActiveQuickButton(`mh${days}Btn`);mhRender();
+    }
+    function mhSetAllRange(){const b=mhDataBounds();if(!b.first||!b.last)return;$("mhStartDate").value=mhIsoDate(b.first);$("mhEndDate").value=mhIsoDate(b.last);mhSetActiveQuickButton("mhAllBtn");mhRender();}
+    function mhValidateRange(which){
+      const s=$("mhStartDate"),e=$("mhEndDate");if(!s||!e)return;
+      if(s.value&&e.value&&s.value>e.value){if(which==="start")e.value=s.value;else s.value=e.value;}
+      mhSetActiveQuickButton("");mhRender();
+    }
+    function mhInitDateFilter(){
+      const b=mhDataBounds();if(!b.first||!b.last)return;
+      const first=mhIsoDate(b.first),last=mhIsoDate(b.last);
+      ["mhStartDate","mhEndDate"].forEach(id=>{$(id).min=first;$(id).max=last;});
+      $("mh7Btn")?.addEventListener("click",()=>mhSetQuickRange(7));
+      $("mh14Btn")?.addEventListener("click",()=>mhSetQuickRange(14));
+      $("mh30Btn")?.addEventListener("click",()=>mhSetQuickRange(30));
+      $("mhAllBtn")?.addEventListener("click",mhSetAllRange);
+      $("mhStartDate")?.addEventListener("change",()=>mhValidateRange("start"));
+      $("mhEndDate")?.addEventListener("change",()=>mhValidateRange("end"));
+      mhSetQuickRange(7);
+    }
+    function mhRender(){
+      const list=mhFilteredEvents(),dates=list.map(x=>mhDateOnly(x.date)).filter(Boolean).sort((a,b)=>a-b);
+      const actors=mhCountBy(list,x=>x.actor),countries=mhCountBy(list,x=>x.country).filter(([name])=>name!=="Unknown");
       const geo=list.filter(x=>Number.isFinite(x.latitude)&&Number.isFinite(x.longitude)).length;
-      $("mhTotal").textContent=String(list.length);
-      $("mhUsa").textContent=String(actors.find(([n])=>n==="USA")?.[1]||0);
-      $("mhIran").textContent=String(actors.find(([n])=>n==="Iran")?.[1]||0);
-      $("mhCountries").textContent=String(countries.length);
-      $("mhGeo").textContent=`${geo} / ${list.length}`;
-      $("mhRange").textContent=dates.length?`${dates[0].toISOString().slice(0,10)} – ${dates.at(-1).toISOString().slice(0,10)}`:"—";
+      $("mhTotal").textContent=String(list.length);$("mhUsa").textContent=String(actors.find(([n])=>n==="USA")?.[1]||0);$("mhIran").textContent=String(actors.find(([n])=>n==="Iran")?.[1]||0);
+      $("mhCountries").textContent=String(countries.length);$("mhGeo").textContent=`${geo} / ${list.length}`;$("mhRange").textContent=dates.length?`${mhIsoDate(dates[0])} – ${mhIsoDate(dates.at(-1))}`:"—";
+      if($("mhFilterStatus"))$("mhFilterStatus").textContent=`Aktív időszak: ${$("mhStartDate")?.value||"—"} – ${$("mhEndDate")?.value||"—"} · ${list.length} esemény a teljes ${manualHistoryEvents.length} rekordból.`;
       mhDrawTimeline(list);mhDrawActor(list);mhDrawTypes(list);mhRenderCountries(list);
     }
 
@@ -3976,7 +4027,7 @@
         manualHistoryEvents=mhExtractRecords(data).map(mhNormalizeRecord).filter(x=>x.date||x.location!=="Unknown"||x.country!=="Unknown");
         if(!manualHistoryEvents.length) throw new Error("A fájl nem tartalmaz feldolgozható rekordot.");
         section.hidden=false; status.hidden=true; content.hidden=false;
-        requestAnimationFrame(mhRender);
+        requestAnimationFrame(mhInitDateFilter);
       } catch(error) {
         /* Intentional fail-safe: keep the module hidden and preserve all existing behavior. */
         console.info("Manual historical database module is unavailable:",error?.message||error);
