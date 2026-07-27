@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T12:32:31Z",
+  "generated_at": "2026-07-27T13:59:27Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,17 +55,17 @@
     "events_endpoint_records": 10000,
     "feed_event_records": 250,
     "normalized_events": 10000,
-    "map_visualizable_events": 1822,
-    "non_mappable_events": 8178,
+    "map_visualizable_events": 1821,
+    "non_mappable_events": 8179,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 10000,
-      "earliest_event_date": "2026-03-04T14:11:39Z",
-      "latest_event_date": "2026-07-27T12:21:49Z",
-      "geocoded_events": 1822,
+      "earliest_event_date": "2026-03-04T14:11:48Z",
+      "latest_event_date": "2026-07-27T13:31:09Z",
+      "geocoded_events": 1821,
       "geocoded_share": 18.2,
       "top_category": "missile",
       "top_location": "Unknown",
@@ -74,23 +74,23 @@
     "comparisons": {
       "latest_7_days": {
         "current": 223,
-        "previous": 308,
-        "delta": -85,
-        "percent_change": -27.6,
+        "previous": 311,
+        "delta": -88,
+        "percent_change": -28.3,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 985,
-        "previous": 1152,
-        "delta": -167,
-        "percent_change": -14.5,
+        "current": 986,
+        "previous": 1149,
+        "delta": -163,
+        "percent_change": -14.2,
         "direction": "stable"
       }
     },
     "daily_trend": [
       {
         "date": "2026-03-04",
-        "count": 108
+        "count": 107
       },
       {
         "date": "2026-03-05",
@@ -670,12 +670,12 @@
       },
       {
         "date": "2026-07-27",
-        "count": 10
+        "count": 11
       }
     ],
     "category_counts": {
-      "missile": 4254,
-      "drone": 2422,
+      "missile": 4253,
+      "drone": 2423,
       "infrastructure": 1475,
       "strike": 916,
       "airstrike": 251,
@@ -688,10 +688,10 @@
       "intercept": 12
     },
     "severity_counts": {
-      "medium": 5459,
+      "medium": 5460,
       "high": 2976,
       "low": 1147,
-      "critical": 418
+      "critical": 417
     },
     "attacker_counts": {
       "unknown": 7758,
@@ -702,7 +702,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 4961
+        "count": 4962
       },
       {
         "name": "Iran",
@@ -722,7 +722,7 @@
       },
       {
         "name": "Jerusalem",
-        "count": 290
+        "count": 289
       },
       {
         "name": "Haifa",
@@ -764,7 +764,7 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 4961
+        "count": 4962
       },
       {
         "name": "Iran",
@@ -772,7 +772,7 @@
       },
       {
         "name": "Israel",
-        "count": 1629
+        "count": 1628
       },
       {
         "name": "Lebanon",
@@ -812,31 +812,37 @@
     "totalCount": 10000,
     "spotlight": {
       "event": {
-        "id": "2qibad9pa4u00",
-        "timestamp": "2026-07-27T12:21:49+00:00",
+        "id": "3jjrghspxiw00",
+        "timestamp": "2026-07-27T13:31:09+00:00",
         "location": "SAU",
         "origin": "IRQ",
         "coordinates": [
           0,
           0
         ],
-        "type": "intercept",
+        "type": "strike",
         "severity": "medium",
-        "description": "Saudi air defenses intercept and destroy multiple drones launched from Iraqi territory by Iranian-backed militias targeting oil facilities in Eastern Province and Riyadh",
-        "descriptionHe": "הגנת אוויר סעודית יירטת והשמידה מספר מזל\"טים ששוגרו מטריטוריה עיראקית על ידי מיליציות בתמיכה איראנית לעבר מתקני נפט בנתיב מזרחי וריאד",
+        "description": "Iraqi drone attack strikes Aramco refinery in Abqaiq, Saudi Arabia, large fire observed in satellite imagery",
+        "descriptionHe": "התקפת מזל\"ט עיראקית פוגעת בחומת ארמקו בעברקיק בערב הסעודית, שריפה גדולה נצפתה בתמונות לוויין",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/81043"
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81045"
       },
-      "headline": "Saudi air defenses destroy Iranian-backed drone swarm targeting oil",
-      "headlineHe": "הגנות האוויר הסעודיות הורסות נחיל רחפנים בתגיד איראני למתקני נפט",
-      "summary": "The interception marks an escalation in Iranian proxy strikes against critical Saudi energy infrastructure, with multiple simultaneous attack vectors indicating coordinated regional pressure.",
-      "summaryHe": "ההפגת הקריאות מהווה הסלמה בהתקפות כוחות הפרוקסי האיראניים על תשתיות האנרגיה הקריטיות של סעודיה, כאשר וקטורי התקפה מרובים וסימולטניים מצביעים על לחץ אזורי מתואם.",
-      "pickedAt": "2026-07-27T12:30:54.702Z",
+      "headline": "Iraqi drone strikes Saudi Aramco refinery, massive fire erupts",
+      "headlineHe": "רחפן עיראקי תקף בחזרה רפינריית סעודי ארמקו, שריפה ענקית",
+      "summary": "The attack on Abqaiq marks escalation in cross-border drone operations targeting critical energy infrastructure in the Persian Gulf, following interception attempts hours earlier.",
+      "summaryHe": "ההתקפה על אבקייק מסמנת הסלמה בפעולות רחפנים חוצות גבולות המכוונות לתשתיות אנרגיה קריטיות במפרץ הפרסי, בעקבות ניסיונות יירוט שעות קודם לכן.",
+      "pickedAt": "2026-07-27T13:45:54.874Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-07-27T12:31:03.218Z",
+    "lastUpdated": "2026-07-27T13:51:10.606Z",
     "stale": false,
-    "viewerCount": 9,
+    "viewerCount": 10,
     "ceasefire": false
   },
   "summary": {
@@ -1377,34 +1383,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 89,
+      "internet": 88,
       "cellular": 0,
-      "lastUpdate": "2026-07-27T12:31:31.592Z",
+      "lastUpdate": "2026-07-27T13:30:41.200Z",
       "internetHistory": [
-        {
-          "t": "2026-07-26T12:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-26T12:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-26T12:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-26T13:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-26T13:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-26T13:20:00.000Z",
-          "v": 91
-        },
         {
           "t": "2026-07-26T13:30:00.000Z",
           "v": 92
@@ -1952,6 +1934,30 @@
         {
           "t": "2026-07-27T12:10:00.000Z",
           "v": 89
+        },
+        {
+          "t": "2026-07-27T12:20:00.000Z",
+          "v": 88
+        },
+        {
+          "t": "2026-07-27T12:30:00.000Z",
+          "v": 88
+        },
+        {
+          "t": "2026-07-27T12:40:00.000Z",
+          "v": 88
+        },
+        {
+          "t": "2026-07-27T12:50:00.000Z",
+          "v": 88
+        },
+        {
+          "t": "2026-07-27T13:00:00.000Z",
+          "v": 88
+        },
+        {
+          "t": "2026-07-27T13:10:00.000Z",
+          "v": 88
         }
       ],
       "cellularHistory": [
@@ -2045,18 +2051,18 @@
         }
       ]
     },
-    "lastUpdated": "2026-07-27T12:31:31.592Z"
+    "lastUpdated": "2026-07-27T13:30:41.200Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c841",
+      "id": "iranstrike-a7f2c1e9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-27T12:21:49Z",
+      "date": "2026-07-27T13:31:09Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi oil facilities; Yanbu hit over 1000km away",
+      "description": "Iraqi-backed militias and Houthis strike Saudi oil infrastructure; refinery fire reported",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2077,16 +2083,18 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c841",
-        "text": "Houthis strike Saudi oil facilities; Yanbu hit over 1000km away",
-        "textHe": "חות'ים תקפים מתקני נפט סעודיים; יניבו נפגע למעל 1000 קמ",
+        "id": "a7f2c1e9",
+        "text": "Iraqi-backed militias and Houthis strike Saudi oil infrastructure; refinery fire reported",
+        "textHe": "מיליציות בתמיכת עיראק והותיים תוקפים תשתיות נפט סעודיות; דיווחים על שריפה בחסנייה",
         "severity": "high",
-        "timestamp": "2026-07-27T12:21:49+00:00",
+        "timestamp": "2026-07-27T13:31:09+00:00",
         "entityIds": [
-          "SAU",
-          "YEM"
+          "IRQ",
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
+          "3jjrghspxiw00",
           "9m49i3rhexw0",
           "2qibad9pa4u00"
         ],
@@ -2094,14 +2102,60 @@
       }
     },
     {
-      "id": "iranstrike-b3e9d652",
+      "id": "iranstrike-b4e8d3a2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-27T10:18:17Z",
+      "date": "2026-07-26T22:27:58Z",
       "title": "IranStrike event",
-      "description": "IDF, Jordan intercept 4+ drones near Israeli border; source under investigation",
+      "description": "Houthis down three Turkish Bayraktar drones used by Saudi Air Force over Yemen",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b4e8d3a2",
+        "text": "Houthis down three Turkish Bayraktar drones used by Saudi Air Force over Yemen",
+        "textHe": "הותיים הפילו שלוש מטוסי ביירקטר טורקיים של חיל האוויר הסעודי מעל תימן",
+        "severity": "medium",
+        "timestamp": "2026-07-26T22:27:58+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "1ne4pxbxh7280",
+          "vess11ph27k0",
+          "30o36ayvklc00"
+        ],
+        "sourceCount": 3
+      }
+    },
+    {
+      "id": "iranstrike-c6b9e5f1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-27T11:30:39Z",
+      "title": "IranStrike event",
+      "description": "Multiple UAV intercepts reported along Jordan border; Israeli and Jordanian defenses active",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2122,14 +2176,15 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b3e9d652",
-        "text": "IDF, Jordan intercept 4+ drones near Israeli border; source under investigation",
-        "textHe": "צה\"ל וירדן יירטו 4+ מזל\"טים ליד הגבול; המקור בחקירה",
+        "id": "c6b9e5f1",
+        "text": "Multiple UAV intercepts reported along Jordan border; Israeli and Jordanian defenses active",
+        "textHe": "יירוטי כלים אווירי מרובים דווחו על גבול ירדן; הגנה ישראלית וירדנית פעילה",
         "severity": "medium",
-        "timestamp": "2026-07-27T10:18:17+00:00",
+        "timestamp": "2026-07-27T11:30:39+00:00",
         "entityIds": [
           "ISR",
-          "JOR"
+          "JOR",
+          "IRQ"
         ],
         "eventIds": [
           "rapeo19m5m80",
@@ -2141,106 +2196,14 @@
       }
     },
     {
-      "id": "iranstrike-c6d4a219",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-07-26T22:27:58Z",
-      "title": "IranStrike event",
-      "description": "Houthis down 3 Saudi Bayraktar drones over Yemen; air defense active",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "c6d4a219",
-        "text": "Houthis down 3 Saudi Bayraktar drones over Yemen; air defense active",
-        "textHe": "חות'ים הורסים 3 מזל\"טי סעודיים מעל תימן; הגנה אווירית פעילה",
-        "severity": "medium",
-        "timestamp": "2026-07-26T22:27:58+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "1ne4pxbxh7280",
-          "vess11ph27k0",
-          "30o36ayvklc00"
-        ],
-        "sourceCount": 3
-      }
-    },
-    {
-      "id": "iranstrike-d8f1e3b7",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-07-26T14:07:01Z",
-      "title": "IranStrike event",
-      "description": "IDF demolishes 5 southern Lebanese villages; U.S. deploys 60+ tankers to Israel",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "d8f1e3b7",
-        "text": "IDF demolishes 5 southern Lebanese villages; U.S. deploys 60+ tankers to Israel",
-        "textHe": "צה\"ל הורס 5 כפרים בדרום לבנון; ארה\"ב משגרת 60+ מטנקים",
-        "severity": "high",
-        "timestamp": "2026-07-26T14:07:01+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN",
-          "USA"
-        ],
-        "eventIds": [
-          "3w0g808i4x800",
-          "6uqx486trrw0"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-e9a5c4f3",
+      "id": "iranstrike-d9c2f4b8",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-07-26T20:09:08Z",
       "title": "IranStrike event",
-      "description": "U.S. expended 2,100 cruise missiles in Gulf War; Bab el-Mandeb traffic collapses",
+      "description": "U.S. expends 2,100 cruise missiles in Gulf War operations; sharp decline in Bab el-Mandeb shipping",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2261,24 +2224,122 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e9a5c4f3",
-        "text": "U.S. expended 2,100 cruise missiles in Gulf War; Bab el-Mandeb traffic collapses",
-        "textHe": "ארה\"ב שילחה 2,100 טילים; תנועה דרך מצר בב אל-מנדב מתמוטטת",
+        "id": "d9c2f4b8",
+        "text": "U.S. expends 2,100 cruise missiles in Gulf War operations; sharp decline in Bab el-Mandeb shipping",
+        "textHe": "ארה\"ב הוציאה 2,100 טילי שיוט בפעולות מלחמת המפרץ; ירידה חדה בהובלות דרך בב אל-מנדב",
         "severity": "high",
         "timestamp": "2026-07-26T20:09:08+00:00",
         "entityIds": [
           "USA",
-          "YEM"
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
           "31fw8rt2ujw00",
           "346aoa2m6bq00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e1a5c7d6",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-26T14:07:01Z",
+      "title": "IranStrike event",
+      "description": "IDF demolishes southern Lebanon villages; Iran intercepts unauthorized vessel transits at Hormuz",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "e1a5c7d6",
+        "text": "IDF demolishes southern Lebanon villages; Iran intercepts unauthorized vessel transits at Hormuz",
+        "textHe": "צה\"ל הרס כפרים בדרום לבנון; איראן חסמה מעברות כלי שיט בלתי מורשים בהורמוז",
+        "severity": "medium",
+        "timestamp": "2026-07-26T14:07:01+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN",
+          "IRN"
+        ],
+        "eventIds": [
+          "3w0g808i4x800",
+          "3ac9cdqkabo00"
         ],
         "sourceCount": 2
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3jjrghspxiw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81045",
+      "date": "2026-07-27T13:31:09Z",
+      "title": "IranStrike event",
+      "description": "Iraqi drone attack strikes Aramco refinery in Abqaiq, Saudi Arabia, large fire observed in satellite imagery",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3jjrghspxiw00",
+        "timestamp": "2026-07-27T13:31:09+00:00",
+        "location": "SAU",
+        "origin": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Iraqi drone attack strikes Aramco refinery in Abqaiq, Saudi Arabia, large fire observed in satellite imagery",
+        "descriptionHe": "התקפת מזל\"ט עיראקית פוגעת בחומת ארמקו בעברקיק בערב הסעודית, שריפה גדולה נצפתה בתמונות לוויין",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81045"
+      }
+    },
     {
       "id": "iranstrike-2qibad9pa4u00",
       "source": "IranStrike",
@@ -451193,50 +451254,6 @@
         "source": "RocketAlert",
         "sourceUrl": "https://t.me/RocketAlert/18800"
       }
-    },
-    {
-      "id": "iranstrike-3j0nst046fg00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18798",
-      "date": "2026-03-04T14:11:39Z",
-      "title": "IranStrike event",
-      "description": "Rocket alert: massive salvo targeting central Israel including Tel Aviv metropolitan area, Jerusalem, Samaria, and surrounding regions",
-      "category": "missile",
-      "severity": "critical",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Jerusalem",
-      "country": "Israel",
-      "latitude": 31.7683,
-      "longitude": 35.2137,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "jerusalem",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3j0nst046fg00",
-        "timestamp": "2026-03-04T14:11:39+00:00",
-        "location": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "critical",
-        "description": "Rocket alert: massive salvo targeting central Israel including Tel Aviv metropolitan area, Jerusalem, Samaria, and surrounding regions",
-        "descriptionHe": "אזעקת טילים: מטח ענק המטיל את אזור תל אביב, ירושלים, שומרון ואזורים סמוכים",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18798"
-      }
     }
   ],
   "map_events": [
@@ -532806,50 +532823,6 @@
         "descriptionHe": "אזעקת טילים: מטח המשך המטיל את אזור תל אביב, ירושלים, שומרון ואזורים סמוכים",
         "source": "RocketAlert",
         "sourceUrl": "https://t.me/RocketAlert/18800"
-      }
-    },
-    {
-      "id": "iranstrike-3j0nst046fg00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18798",
-      "date": "2026-03-04T14:11:39Z",
-      "title": "IranStrike event",
-      "description": "Rocket alert: massive salvo targeting central Israel including Tel Aviv metropolitan area, Jerusalem, Samaria, and surrounding regions",
-      "category": "missile",
-      "severity": "critical",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Jerusalem",
-      "country": "Israel",
-      "latitude": 31.7683,
-      "longitude": 35.2137,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "jerusalem",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3j0nst046fg00",
-        "timestamp": "2026-03-04T14:11:39+00:00",
-        "location": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "critical",
-        "description": "Rocket alert: massive salvo targeting central Israel including Tel Aviv metropolitan area, Jerusalem, Samaria, and surrounding regions",
-        "descriptionHe": "אזעקת טילים: מטח ענק המטיל את אזור תל אביב, ירושלים, שומרון ואזורים סמוכים",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18798"
       }
     }
   ]
