@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 06:41 UTC",
+    "updated": "2026-07-28 10:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-07-22",
     "period_end": "2026-07-28",
-    "total_events": 155,
-    "total_risk": 155.18,
-    "normalized_risk_score": 62.1,
+    "total_events": 153,
+    "total_risk": 160.04,
+    "normalized_risk_score": 64.0,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 50,
+    "military": 49,
     "security": 6,
-    "political": 17,
-    "other": 82
+    "political": 18,
+    "other": 80
   },
   "source_counts": {
-    "news": 149,
+    "news": 147,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 81.48
-    },
-    {
-      "name": "Israel",
-      "risk": 13.25
+      "risk": 87.98
     },
     {
       "name": "West Bank",
-      "risk": 13.0
+      "risk": 14.0
     },
     {
-      "name": "Saudi Arabia",
-      "risk": 10.7
+      "name": "Israel",
+      "risk": 12.75
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.65
+      "risk": 9.4
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 9.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-07-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil touches over one-week low as pause in attacks brings hope of US and Iran deal - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSklqTGZRSVh1M0h3RXpnQWVxSFhReTZHdGZtakI4Skh5NGVuZnplUUVYRzRldjVmX2Mzald4bnJFNklGNnZ0QkRTeWhqb29OR2xzb0JVWkFTUEc4QTZBMDV4bU5TOWlMb2RQNE5EeVRuaXJvZE94azM3cnZEd25tTjNTNU9uZ2dVcnZOQnh3eVE4bmIxR0RTZk1Zb3pSNnlrYXdlQWJXOWxJLWs"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says Iran talks taking place during pause in US military strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPbXJ1YUZxTGhaNGpuR1pfN0EwQmRBckJaOV9fWnlCVlkzNjJYZGdnaWF6Q0Mzejhka3Z1dlhHemU1R1FqeVBUQnVTZS1aMDVkRGl2cWNDdzM4TE5Fc3g4OW9xYVZDUF9xS0hRMVVIb1U4S3g5dFNqQkg2Z3dlSWwxMGd5N3pGb3Jtc2h1LUExajVuY0pSMXNvbzZZM1FPdWVzblhITXp6alExZ2RlZzBBaXNoMVhZYVRqOThYdzZB0gHDAUFVX3lxTFBvQjkzUHJKTkg0THExd3ZLdUNRSVpSSGt1RVoxUGJUbjVVRExtYVdnZHBYcFllendlZ2NEY043dHltamtLUVY2NTViSGJ6N2piSEUzeE9VZEp3SkVwcUdWNVJMMUYtQ3hoWDhYOENINjdVU0FqQ294Z1VyOTF3Y00ySDJjOW5VaW0xMUs5QW9LQ2I3QjhWamdzcHJvcndSRk9MZGFKOWhMcUNkTkNzVGNhT2Job3k0cmQxY0JGR0lCUkJQWQ"
+    },
     {
       "score": 2.7,
       "date": "2026-07-27",
@@ -88,6 +106,15 @@
       "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
+      "title": "Gold rises as oil retreats on pause in US-Iran strikes; Fed rate decision in focus - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVHhXdm1LMW9wUmp6UHctWldmTGpCQWlBOWVTdk5GeEtuMzNYQU42TGlWWXQtSDAxeE1aa3JvNFRDRUx6WVB5eGliS21TMEluRkJEUndXeHE1MUYzUVZlZG9CQ1V4VXFITFIyMEhJNUNlczhueTJpX2FjbFBoSmVkSnZJX0pQOS05RExueWpHMGpRMElqUTBVV0lqajBCRG9Kc1E"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
       "title": "Trump says Iran war talks taking place during lull in strikes",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/c62xn4vzmnpo?at_medium=RSS&at_campaign=rss"
@@ -97,45 +124,18 @@
       "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
+      "title": "As the US pauses the war with Iran, is Trump really running out of weapons?",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c0qvnk2ezp7o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
       "title": "Oil price dives as US and Iran pause attacks",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/clyj834jn5lo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Ukraine dismisses Iranian threats as Caspian Sea strike directly links wars",
-      "location": "Tehran",
-      "url": "https://www.bbc.co.uk/news/articles/cwyj7yl0xndo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran pause strikes for third night to make space for talks, US ambassador says",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c5y45kdkynpo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Why has the US halted its bombing of Iran? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNbFEzVW9UN2R2eGlCc2ladFhRU0lFa2Q2Q2tkRjI3TzlrNy15cmlrU3EzaDlZRzV5M2FiZWw3NTNkWnAtS1RnYnVJNTE1NEl6djNETmFsZnY4TFc4QzFmM3M1WkdwaEpNMGt1QUhDOUdwdU5wVHBoNEhyVHBvYldNQlpadWdKNGJycXfSAY8BQVVfeXFMT1M2WklvbzBBNVBlVTNoSEhac1dGcWVWSnYxREw2b0toRW55d1loZmtFVWh5VW9Ya3hVSDRFZk9jWDFUTGlOYms3M3BLTzhNdnYyeERmOU83NkhNbXhoaGNRYXRmcHNDUllTYjZCYjRiUXdPNHQ0UHVnUnJFUGJ5Yjh1c1NBSWZLaXZWNDJyeEk"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Khamenei ties US-Iran peace deal to Israel ending attacks on Lebanon - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdlZIaGtLT0ItbHVjQ0xEWFoyU2I5anhKZHp2QlZhVW1kWTRuOXRBMy1uQlc3a29vTVRTT21vMXZ3dTQ3UTkyVFZSNElnNzQ2VjZDWERjSEQ2bTFDOUpGMkVsOEozVkN0Nm9TVVphV1U5Yll1UEx1cXRsWFBKLU1xMUl1T2lUX3NqVkI1dXBaY2k3cWJiRmRRdkdQVTRacU5hTExkbndBWHQ0VGfSAbABQVVfeXFMUEVoS2VuR3pBZ1YyVzlYTTIyU0Z4eGFfSEhGd2Y0M3lMQ3ZUUFFndDVZUHh5cGhYRUU5enpINl9ha3FHclJuc3dVSkRFWXdFSXNuZjVoZU9qV0FMYjRYcjZIenBFLWRIczhIeEVIalFqLUNjR0Rscm5wMGlramFQZGJXZWRSVDdtcW9la2xxZEhlSGFvRmlYdTVybDY2MTI4Q2tLTmc4TG12TmtyczlZejM"
     }
   ]
 }
