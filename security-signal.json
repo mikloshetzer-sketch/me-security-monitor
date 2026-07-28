@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 21:32 UTC",
+    "updated": "2026-07-28 23:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-22",
     "period_end": "2026-07-28",
-    "total_events": 154,
-    "total_risk": 156.69,
+    "total_events": 153,
+    "total_risk": 156.79,
     "normalized_risk_score": 62.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 44,
+    "military": 43,
     "security": 6,
     "political": 18,
     "other": 86
   },
   "source_counts": {
-    "news": 148,
+    "news": 147,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 91.23
+      "risk": 90.53
     },
     {
       "name": "Israel",
-      "risk": 12.55
+      "risk": 12.35
     },
     {
       "name": "West Bank",
       "risk": 11.0
     },
     {
-      "name": "Gaza Strip",
-      "risk": 8.15
+      "name": "Yemen",
+      "risk": 8.85
     },
     {
-      "name": "Tehran",
-      "risk": 8.1
+      "name": "Gaza Strip",
+      "risk": 8.65
     }
   ],
   "top_events": [
@@ -64,6 +64,15 @@
       "title": "Oil prices fall 5% to two-week low after several days without US-Iran strikes - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSklqTGZRSVh1M0h3RXpnQWVxSFhReTZHdGZtakI4Skh5NGVuZnplUUVYRzRldjVmX2Mzald4bnJFNklGNnZ0QkRTeWhqb29OR2xzb0JVWkFTUEc4QTZBMDV4bU5TOWlMb2RQNE5EeVRuaXJvZE94azM3cnZEd25tTjNTNU9uZ2dVcnZOQnh3eVE4bmIxR0RTZk1Zb3pSNnlrYXdlQWJXOWxJLWs"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-07-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they fired missiles at Saudi oil tanker in Red Sea - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbnJtN1czaW5VenZ0NDdYRVM1OVVMcUhYR2E2RHNneXhfaWZBalUwSElsSWk4aEVwMC1WRnozUGs4RmkxSk1xUkV5ZXVkNWUyeEJfbTQ0Z2RRdXNmM1hsSjduWFhLOURoZHBSUm1IUDJXdHkxR0Q4NGZ3SU9FcDRudkRkVG1qcEszb1Z3bHpaV3lydjBKbWtPaUVadGJ3cmVIT2FCQzlDaGJURG4wU1NlQmFiLW1uMDl6"
     },
     {
       "score": 3.0,
@@ -97,6 +106,15 @@
       "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
+      "title": "Iran says it will halt strikes as long as US bombing pause holds - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT2hvLTRwU3J1WVZCTlA0WFVNRmhXdDVkTWhwQkdDTFZzbEVpYmRBUUppcjJudFY2M3JpQ3lzT0I0SkM4VFlmSk8xb0RuX192WjQ2dE9nbjJkUFFMTHFyZDh2c1ktdDJpSmtmdXJPYW5wNXRuM1hsQ0RqYkE4X3d1aDZ1SkpUM3ltc0h2NFNZbmpvZFhYa0ZJTlEyR0JkdDZvYWRUYXBRZE41YkVEdjV4VEZVb0hSSUxOQlFwT1U4X1FfNjJrbmhaSVkyT0w0Zw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
       "title": "Saudi Arabia says it destroyed drones launched by Iran-backed groups in Iraq - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaWRZREdhWVZkczJxVE5YTlJ5QjV5eU1WamJXY0ZaeUJPYXFMRDd1bXNSVzNTa3IyZVpvVF9lUExoXzhLTkh6ZVJTa3hkc2txenhUSE8xcG5nd3NYMU9GTGlHZ0xrazRhWFhoWVdPZl9tX3p3SlEtRFBXWmIyVXM4Y2hLMHNBMWoxVHZVenhoMVVPSzFvM3EtWnM3NmJyUXFydU1UNWxfMFlsTmpYZFhlR3pEN3RfaHQ3VnFPZXVPUzFpQ1ExQ0E"
@@ -118,24 +136,6 @@
       "title": "Trump says Iran war talks taking place during lull in strikes",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/c62xn4vzmnpo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "As the US pauses the war with Iran, is Trump really running out of weapons?",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c0qvnk2ezp7o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil price dives as US and Iran pause attacks",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/clyj834jn5lo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
