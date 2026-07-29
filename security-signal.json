@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-29 10:49 UTC",
+    "updated": "2026-07-29 14:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,72 +8,45 @@
   "summary": {
     "period_start": "2026-07-23",
     "period_end": "2026-07-29",
-    "total_events": 137,
-    "total_risk": 144.34,
-    "normalized_risk_score": 57.7,
-    "risk_level": "MEDIUM",
-    "confidence": "MEDIUM"
+    "total_events": 26,
+    "total_risk": 34.28,
+    "normalized_risk_score": 13.7,
+    "risk_level": "LOW",
+    "confidence": "LOW"
   },
   "category_counts": {
-    "military": 43,
-    "security": 6,
-    "political": 11,
-    "other": 77
+    "military": 13,
+    "security": 0,
+    "political": 3,
+    "other": 10
   },
   "source_counts": {
-    "news": 131,
+    "news": 20,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 77.43
-    },
-    {
-      "name": "Iraq",
-      "risk": 15.85
+      "risk": 17.54
     },
     {
       "name": "West Bank",
-      "risk": 10.9
+      "risk": 6.95
     },
     {
       "name": "Israel",
-      "risk": 10.35
+      "risk": 3.8
     },
     {
-      "name": "Yemen",
-      "risk": 9.8
+      "name": "Iraq",
+      "risk": 3.0
+    },
+    {
+      "name": "Tehran",
+      "risk": 2.4
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-07-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil rises as US-Iran tension escalates after Iraq strikes, missile attack - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPd0ctWlZRN0hINkdrNUJmWWxpV0ZGNGw2Y2taRk1DbFBpdzd5bFdXQmJEcW9VRExnRFBtTWlTTHBRTU5tcDN2azF6VmtxdDN6WlVncmJxSVJhYjM4Wlctb3NEcnEzSWt4djdPSWJJX3ItYmpaN0UyZ09pbV85YjlRMkQ4RTV2RDE2c2NhYlRTdEVEUUFoWEVLMVBqUzhhX2xtVlJLUFp0RWFZTFpCSGJwMTRydUQ3NUx6ejJyYWFCdzBMVWpOYWZqbzF3"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Major Gulf fighting restarts as US and Saudi strike Iran's allies in Iraq - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcFJoOXIwZmxCNHBjd05nc3dlYjNXXzd1NzdyQldTOVQ4S3NjZnNDRWdqdG1WUFRUS2tRSkJJTEhQYjJWa1FraklySUtoamVybzBfbUR4aUItanFrRG1hMDZJTzlSQ3lrS25SLUo4QzR0RVQxdmFSVUFaUFpHYWV0cmdnVURNVHJ1QzBzM0pIRTMwUmVFZmxwVVpyTklTallXU2ZLOGl3TDJ1U3VnRzd3bmZnQjVfcUw2a1pWSGdFOTNlUXFa"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-07-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR19sNWVrRDdhcXlNdTlxcUdNR0dNWDRBcjZPd21xOEM2bEYtdDJiWTEtYzlweWs5ZmtILVlhQkVUNzdaaENHbnhqTl9SSFNCZjk3eXNMS1o4SXFzT2VBS3VZZ0p6MVlrQldWNjRMUGlTN2tDR2xUOVBUdkdkTndueExrQm9vRGtTLTdBWjNGMDhZRC1qNDZXYVk3TXB0bWZ4ZFhpYUtfZ2JaalVZdjU3emN6LUptbjA"
-    },
     {
       "score": 3.0,
       "date": "2026-07-29",
@@ -97,45 +70,72 @@
       "date": "2026-07-29",
       "category": "military",
       "source_type": "news",
-      "title": "Iran attacks US bases in Middle East as Trump meets Netanyahu - Al Jazeera",
+      "title": "BBC reports from Palestinian village under weekly attack by Israeli settlers",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/programmes/p0p1f8wj?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says Iran war talks taking place during lull in strikes",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMjBFSGpuMjV3TGl0TUtZdlRCWERoc29wQU03XzJYbC1LWktVZks2ZGdpMGpUM1JFbmJLa05yQXU5QTE3WU80b1dTU18wUWdldFE4dGRTSlItYWlnNVB0TGpEa2ZGTWVCVGlJbWI4ZjVLVU5hVUtrX09OOEpacFczU1kzaDUwMThxcUR4eUZLenZaanJDODlFT2F1bk9rNGxyemtjddIBqgFBVV95cUxQOEkyVFAxd2oycDhpYVM1ZDdUYmVSaTVWMTFIQ3RZb0NZWXBmTWtFRWg2cmJrX01ISVVZSjloX3lvV2g0a3pXZTFQTDU3Z0wyTmNEOFJNd3ZiSWMtNTE1anJlMXU0SHJ1blctOFkyaFVvYVJ6UVJhQldxZG1ESzZFWllEYmFLbkRYbHg3UE9rWmdvcGY1c0s4ZHdlRERIdHUweldFM0NFd0VMZw"
+      "url": "https://www.bbc.co.uk/news/articles/c62xn4vzmnpo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
-      "date": "2026-07-29",
+      "score": 2.4,
+      "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
-      "title": "Iraqi armed groups condemn ‘dangerous escalation’ after US-Saudi strikes - Al Jazeera",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcmxYQlNidHdveXNkZ0k0VnNXcmVLVFJvOGVuZUU4QlJzMHpXOXl3ZFhzWkVkWUYwSnUxdDZtQTZ2WlZMUjBIZTFaVWZZREd4NmNwZVdNY2xjcFY1N284XzZkWmNVSWJVd1hOMndiYmNJZHFCLTk0ZU40b2lleTV5Q3NrSU5nYnVRemNwelhYMUtxX3R2d3ZyN2VDOG9iRlc0Qm5QeTN3RdIBrAFBVV95cUxNb3p2MXhyelJMVUp0SUNoTV9nMHBybDFxa09DYjE2a0R5dE9aUG5qMmdoMTlDQU1rSTdDVkY2MkU5ZTJIcjNMbjFKM2VCNU1wSTVNVWJyNTI2OHZHdW9DOXIxNFFMbHlhZzQzTzNrSjB1Q1huSVhtV3Jqa3hHQmFsTzFDZDV2ZnQ0SFc0VVpjZXk5bnV3czdPRjFqOUg2QTdiSndSQjJaTDZQLW5O"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters",
+      "title": "As the US pauses the war with Iran, is Trump really running out of weapons?",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQbExYYjdfX1I4Mmt6eFo1Ty1JWjFtdEl5dWxIRnJsbllyODZPd3pmUjc0bzlMX29iV1ZlaUJVSUwwNl8yNkd1dkI5WERxdm1NUXp6Q1RXS1JqLVgzZzZXbFA4ZU9HU2Q0UVNQS2h3N0dtTldHbE5oLUxPek9iem9uMTBiZGU0QUNNeUpwX2Z2ZVF5bkVEZ1FVVjBlVkFoRjBzVkN1ZWU2N1hSbXR0QjgyUVpveXNsT244VDQ1Zm5Nb3BUbFRjR3FNUDhmZTQ"
+      "url": "https://www.bbc.co.uk/news/articles/c0qvnk2ezp7o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-07-28",
+      "score": 2.4,
+      "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen's Houthis say they fired missiles at Saudi oil tanker in Red Sea - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbnJtN1czaW5VenZ0NDdYRVM1OVVMcUhYR2E2RHNneXhfaWZBalUwSElsSWk4aEVwMC1WRnozUGs4RmkxSk1xUkV5ZXVkNWUyeEJfbTQ0Z2RRdXNmM1hsSjduWFhLOURoZHBSUm1IUDJXdHkxR0Q4NGZ3SU9FcDRudkRkVG1qcEszb1Z3bHpaV3lydjBKbWtPaUVadGJ3cmVIT2FCQzlDaGJURG4wU1NlQmFiLW1uMDl6"
+      "title": "Ukraine dismisses Iranian threats as Caspian Sea strike directly links wars",
+      "location": "Tehran",
+      "url": "https://www.bbc.co.uk/news/articles/cwyj7yl0xndo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-07-28",
+      "score": 2.4,
+      "date": "2026-07-27",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices fall 5% to two-week low after several days without US-Iran strikes - Reuters",
+      "title": "Oil price dives as US and Iran pause attacks",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSklqTGZRSVh1M0h3RXpnQWVxSFhReTZHdGZtakI4Skh5NGVuZnplUUVYRzRldjVmX2Mzald4bnJFNklGNnZ0QkRTeWhqb29OR2xzb0JVWkFTUEc4QTZBMDV4bU5TOWlMb2RQNE5EeVRuaXJvZE94azM3cnZEd25tTjNTNU9uZ2dVcnZOQnh3eVE4bmIxR0RTZk1Zb3pSNnlrYXdlQWJXOWxJLWs"
+      "url": "https://www.bbc.co.uk/news/articles/clyj834jn5lo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-07-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "US and Iran pause strikes for third night to make space for talks, US ambassador says",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c5y45kdkynpo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.1,
+      "date": "2026-07-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers set fire to mosques, cars and farm land in West Bank, Palestinians say",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/articles/cjrv77gl4deo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 1.8,
+      "date": "2026-07-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran-backed Houthis claim missile attack on Saudi Arabia",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cj9d27v70j1o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
