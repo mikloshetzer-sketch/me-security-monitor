@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-29T10:48:07+00:00",
+  "generated_at": "2026-07-29T15:57:52+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,21 +46,21 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 32,
+      "total_events": 33,
       "map_visualizable_events": 8,
       "total_map_points": 9,
       "multi_location_events": 1,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-29T08:45:52Z"
+      "latest_event_date": "2026-07-29T11:13:33Z"
     },
     "region_counts": {
       "Gaza Strip": 25,
-      "South Lebanon": 8
+      "South Lebanon": 9
     },
     "activity_type_counts": {
       "airstrike": 27,
+      "drone_activity": 3,
       "ground_activity": 3,
-      "drone_activity": 2,
       "humanitarian_zone": 2,
       "artillery": 1,
       "cross_border_fire": 1
@@ -69,15 +69,15 @@
       "Hamas": 21,
       "Not explicitly stated": 6,
       "Palestinian Islamic Jihad": 6,
-      "Hezbollah": 3
+      "Hezbollah": 4
     },
     "target_type_counts": {
       "commander": 18,
       "individual_operative": 9,
       "armed_cell": 6,
+      "unspecified": 5,
       "weapons_production": 5,
       "weapons_storage": 4,
-      "unspecified": 4,
       "military_structure": 3,
       "rocket_launcher": 2,
       "smuggling_network": 1,
@@ -87,8 +87,8 @@
     "operation_result_counts": {
       "struck": 28,
       "eliminated": 22,
+      "reported": 5,
       "dismantled": 4,
-      "reported": 4,
       "located": 4
     },
     "commander_type_counts": {
@@ -101,13 +101,13 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 29,
+      "ground": 30,
       "command": 17,
       "production": 6,
       "weapons_logistics": 4,
+      "drone_uav": 3,
       "rocket_missile": 3,
       "unspecified": 2,
-      "drone_uav": 2,
       "naval": 1,
       "underground": 1
     },
@@ -116,7 +116,7 @@
       "Southern Gaza Strip": 8,
       "Yellow Line area": 4,
       "Central Gaza Strip": 4,
-      "Security Zone – South Lebanon": 2
+      "Security Zone – South Lebanon": 3
     },
     "top_locations": {
       "Khan Yunis": 4,
@@ -126,6 +126,65 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-18993",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/18993",
+      "date": "2026-07-29T11:13:33Z",
+      "title": "IDF drone activity statement",
+      "description": "IDF: Blatant violation of the ceasefire: Hezbollah launched an explosive drone targeting an IDF engineering vehicle in the Ali Taher Ridge area Overnight (Wednesday), Hezbollah launched an explosive drone toward an IDF engineering vehicle in the area of Ali al-taher Ridge within the Security Zone. No IDF injuries were reported. This incident constitutes a blatant violation of the ceasefire agreement in Lebanon by the Hezbollah terrorist organization. IDF soldiers continue to operate in the ridge area and will not allow terrorists in the area to advance or execute attacks against IDF soldiers.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "drone_activity"
+      ],
+      "activity_type": "drone_activity",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "drone_uav",
+        "ground"
+      ],
+      "threat_domain": "drone_uav",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
+      "operation_results": [
+        "reported"
+      ],
+      "operation_result": "reported",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/18993"
+    },
     {
       "id": "idf-idfofficial-18992",
       "source": "IDF official Telegram",
