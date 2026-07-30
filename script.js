@@ -2365,6 +2365,82 @@ window.setInterval(() => {
       }
     }
 
+    // ===== Analyst Drawing =====
+    let analystDrawingModulePromise = null;
+    let analystDrawingInitialized = false;
+
+    function loadAnalystDrawingModule() {
+      if (window.MEAnalystDrawing && typeof window.MEAnalystDrawing.init === "function") {
+        return Promise.resolve();
+      }
+
+      if (analystDrawingModulePromise) return analystDrawingModulePromise;
+
+      analystDrawingModulePromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[data-me-analyst-drawing-module="true"]');
+        if (existing) {
+          if (window.MEAnalystDrawing && typeof window.MEAnalystDrawing.init === "function") {
+            resolve();
+            return;
+          }
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `js/analyst-drawing-layer.js?v=${Date.now()}`;
+        script.async = true;
+        script.dataset.meAnalystDrawingModule = "true";
+        script.onload = resolve;
+        script.onerror = () => reject(new Error("js/analyst-drawing-layer.js could not be loaded"));
+        document.head.appendChild(script);
+      });
+
+      return analystDrawingModulePromise;
+    }
+
+    async function initializeAnalystDrawing() {
+      if (analystDrawingInitialized) {
+        return window.MEAnalystDrawing?.getState?.() || null;
+      }
+
+      const host = document.getElementById("meAnalystDrawingHost");
+      const status = document.getElementById("meAnalystDrawingLoadStatus");
+
+      try {
+        await loadAnalystDrawingModule();
+
+        if (!window.MEAnalystDrawing || typeof window.MEAnalystDrawing.init !== "function") {
+          throw new Error("MEAnalystDrawing module is unavailable.");
+        }
+
+        const state = window.MEAnalystDrawing.init({
+          map,
+          container: host,
+          buildPanel: true,
+          onStateChange: drawingState => {
+            if (!status || !drawingState) return;
+            const count = Array.isArray(drawingState.drawings)
+              ? drawingState.drawings.length
+              : Number(drawingState.count || 0);
+            status.textContent = `Saved drawings: ${count} · Active mode: ${drawingState.mode || "none"}`;
+          }
+        });
+
+        analystDrawingInitialized = true;
+        if (status) {
+          const count = Array.isArray(state?.drawings) ? state.drawings.length : 0;
+          status.textContent = `Saved drawings: ${count} · Active mode: ${state?.mode || "none"}`;
+        }
+        return state;
+      } catch (error) {
+        console.error("[analyst-drawing] initialization failed:", error?.message || error);
+        if (status) status.textContent = "Analyst Drawing could not be initialized.";
+        return null;
+      }
+    }
+
     // ===== User-created analyst annotations =====
     let analystAnnotationsModulePromise = null;
     let analystAnnotationsInitialized = false;
@@ -3993,6 +4069,13 @@ window.setInterval(() => {
         </div>
       </div>
 
+      <div class="analyst-drawing-host-block" data-control-block="analyst-drawing-host" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div id="meAnalystDrawingHost"></div>
+        <div id="meAnalystDrawingLoadStatus" class="muted" style="margin-top:8px;line-height:1.45;">
+          Analyst Drawing is loading...
+        </div>
+      </div>
+
       <div class="analyst-annotations-control-block" data-control-block="analyst-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;font-weight:800;">Analyst annotations</div>
 
@@ -4599,6 +4682,7 @@ window.setInterval(() => {
     }
 
     initializeOSINTTools();
+    initializeAnalystDrawing();
 
     if (
       analystAnnotationsCheckbox &&
