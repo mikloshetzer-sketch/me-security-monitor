@@ -2274,6 +2274,97 @@ window.setInterval(() => {
 }, 10 * 60 * 1000);
 
 
+
+    // ===== OSINT Tools =====
+    let osintToolsModulePromise = null;
+    let osintToolsInitialized = false;
+
+    function loadOSINTToolsModule() {
+      if (window.MEOSINTTools && typeof window.MEOSINTTools.init === "function") {
+        return Promise.resolve();
+      }
+
+      if (osintToolsModulePromise) return osintToolsModulePromise;
+
+      osintToolsModulePromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[data-me-osint-tools-module="true"]');
+        if (existing) {
+          if (window.MEOSINTTools && typeof window.MEOSINTTools.init === "function") {
+            resolve();
+            return;
+          }
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `js/osint-tools-layer.js?v=${Date.now()}`;
+        script.async = true;
+        script.dataset.meOsintToolsModule = "true";
+        script.onload = resolve;
+        script.onerror = () => reject(new Error("js/osint-tools-layer.js could not be loaded"));
+        document.head.appendChild(script);
+      });
+
+      return osintToolsModulePromise;
+    }
+
+    async function initializeOSINTTools() {
+      if (osintToolsInitialized) return window.MEOSINTTools?.getState?.() || null;
+
+      const byId = id => document.getElementById(id);
+      const summary = byId("meOsintSummary");
+
+      try {
+        await loadOSINTToolsModule();
+        if (!window.MEOSINTTools || typeof window.MEOSINTTools.init !== "function") {
+          throw new Error("MEOSINTTools module is unavailable.");
+        }
+
+        const api = window.MEOSINTTools.init({
+          map,
+          controls: {
+            modeButtons: {
+              coordinate: byId("meOsintCoordinateBtn"),
+              measure: byId("meOsintMeasureBtn"),
+              object: byId("meOsintObjectBtn")
+            },
+            stopButton: byId("meOsintStopBtn"),
+            objectCategory: byId("meOsintObjectCategory"),
+            objectType: byId("meOsintObjectType"),
+            exportJsonButton: byId("meOsintExportJsonBtn"),
+            exportGeoJsonButton: byId("meOsintExportGeoJsonBtn"),
+            clearCoordinatesButton: byId("meOsintClearCoordinatesBtn"),
+            clearMeasurementsButton: byId("meOsintClearMeasurementsBtn"),
+            clearObjectsButton: byId("meOsintClearObjectsBtn"),
+            clearAllButton: byId("meOsintClearAllBtn"),
+            coordinatesCount: byId("meOsintCoordinatesCount"),
+            objectsCount: byId("meOsintObjectsCount"),
+            measurementsCount: byId("meOsintMeasurementsCount"),
+            activeMode: byId("meOsintActiveMode")
+          },
+          onStateChange: state => {
+            if (!summary || !state) return;
+            const count = state.summary || {};
+            summary.textContent = `Coordinates: ${count.coordinates || 0} · Objects: ${count.objects || 0} · Measurements: ${count.measurements || 0} · Active mode: ${state.mode || "none"}`;
+          }
+        });
+
+        osintToolsInitialized = true;
+        api.refreshSummary();
+        return api.getState();
+      } catch (error) {
+        console.error("[osint-tools] initialization failed:", error?.message || error);
+        if (summary) summary.textContent = "OSINT Tools could not be initialized.";
+        ["meOsintCoordinateBtn", "meOsintMeasureBtn", "meOsintObjectBtn", "meOsintStopBtn"]
+          .map(byId)
+          .filter(Boolean)
+          .forEach(button => { button.disabled = true; });
+        return null;
+      }
+    }
+
     // ===== User-created analyst annotations =====
     let analystAnnotationsModulePromise = null;
     let analystAnnotationsInitialized = false;
@@ -3855,6 +3946,53 @@ window.setInterval(() => {
         </div>
       </div>
 
+
+      <div class="osint-tools-control-block" data-control-block="osint-tools" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;font-weight:800;">OSINT Tools</div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Mode</div>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <button type="button" class="btn-mini" id="meOsintCoordinateBtn">Coordinate marker</button>
+          <button type="button" class="btn-mini" id="meOsintMeasureBtn">Distance measure</button>
+          <button type="button" class="btn-mini" id="meOsintObjectBtn">Object identification</button>
+          <button type="button" class="btn-mini" id="meOsintStopBtn">Stop</button>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Object category</div>
+        <select id="meOsintObjectCategory"></select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Object type</div>
+        <select id="meOsintObjectType"></select>
+
+        <div class="muted" style="margin-top:9px;margin-bottom:5px;">Export</div>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <button type="button" class="btn-mini" id="meOsintExportJsonBtn">Export JSON</button>
+          <button type="button" class="btn-mini" id="meOsintExportGeoJsonBtn">Export GeoJSON</button>
+        </div>
+
+        <div class="muted" style="margin-top:9px;margin-bottom:5px;">Clear data</div>
+        <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <button type="button" class="btn-mini" id="meOsintClearCoordinatesBtn">Clear coordinates</button>
+          <button type="button" class="btn-mini" id="meOsintClearMeasurementsBtn">Clear measurements</button>
+          <button type="button" class="btn-mini" id="meOsintClearObjectsBtn">Clear objects</button>
+          <button type="button" class="btn-mini" id="meOsintClearAllBtn">Clear all</button>
+        </div>
+
+        <div style="margin-top:9px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div class="mini-item"><div class="name">Coordinates</div><div class="val" id="meOsintCoordinatesCount">0</div></div>
+          <div class="mini-item"><div class="name">Objects</div><div class="val" id="meOsintObjectsCount">0</div></div>
+          <div class="mini-item"><div class="name">Measurements</div><div class="val" id="meOsintMeasurementsCount">0</div></div>
+          <div class="mini-item"><div class="name">Active mode</div><div class="val" id="meOsintActiveMode">none</div></div>
+        </div>
+
+        <div id="meOsintSummary" class="muted" style="margin-top:8px;line-height:1.45;">
+          Coordinates: 0 · Objects: 0 · Measurements: 0 · Active mode: none
+        </div>
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          Select one mode, then click the map. Coordinates, objects and saved measurements remain in this browser and can be exported.
+        </div>
+      </div>
+
       <div class="analyst-annotations-control-block" data-control-block="analyst-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;font-weight:800;">Analyst annotations</div>
 
@@ -4459,6 +4597,8 @@ window.setInterval(() => {
         ensureStrikeHistoryController().fitBounds();
       });
     }
+
+    initializeOSINTTools();
 
     if (
       analystAnnotationsCheckbox &&
