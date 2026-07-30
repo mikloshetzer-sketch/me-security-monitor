@@ -1537,6 +1537,114 @@
         margin-top:244px !important;
       }
     }
+
+
+    /* Analyst annotations – Ukraine monitor structure adapted to ME sidebar */
+    .annotation-control-block{
+      margin:10px 0 0 !important;
+      padding:0 !important;
+      border:1px solid #d4e0e8 !important;
+      border-radius:14px;
+      background:#fff;
+      box-shadow:0 4px 13px rgba(20,54,78,.055);
+      overflow:hidden;
+    }
+
+    .annotation-control-block .acc-btn{
+      min-height:46px;
+      padding:12px;
+      background:#fff;
+      color:#173149;
+    }
+
+    .annotation-control-block .acc-btn[aria-expanded="true"]{
+      background:#f2f6f9;
+      border-bottom:1px solid #d4e0e8;
+    }
+
+    .annotation-control-block .acc-panel{
+      padding:11px;
+      background:#fbfcfd;
+    }
+
+    .annotation-toggle-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:9px;
+      padding:8px 9px;
+      border:1px solid #dbe5ec;
+      border-radius:10px;
+      background:#fff;
+      color:#253b50;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .annotation-toggle-row label{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+    }
+
+    #annotationType,
+    #annotationText{
+      width:100%;
+      margin:0 0 8px;
+      padding:9px 10px;
+      border:1px solid #cbd8e2;
+      border-radius:10px;
+      background:#fff;
+      color:#1e293b;
+      font:inherit;
+      font-size:11px;
+      outline:none;
+    }
+
+    #annotationText{
+      min-height:86px;
+      resize:vertical;
+      line-height:1.45;
+    }
+
+    .annotation-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:2px;
+    }
+
+    .annotation-actions button{
+      min-height:36px;
+      padding:8px 9px;
+      border:1px solid #2879b8;
+      border-radius:10px;
+      background:#2879b8;
+      color:#fff;
+      font-size:10.5px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .annotation-actions button.secondary{
+      border-color:#c8d6e0;
+      background:#fff;
+      color:#23425a;
+    }
+
+    #annotationsSummary{
+      margin-top:8px;
+      padding:8px 9px;
+      border:1px solid #e0e7ed;
+      border-radius:9px;
+      background:#f7f9fb;
+      color:#687c8e;
+      font-size:10.5px;
+      line-height:1.4;
+    }
+
   </style>
 
 </head>
@@ -1626,6 +1734,41 @@
 
       <div class="israel-layer-note">
         OSINT-alapú, késleltetett elemző réteg. Nem valós idejű taktikai térkép.
+      </div>
+    </div>
+
+
+
+    <!-- Elemző megjegyzések – az ukrán monitor felépítése alapján -->
+    <div class="acc annotation-control-block">
+      <button class="acc-btn" data-acc="accAnnotations" aria-expanded="false">
+        <span>Elemző megjegyzések</span><span class="acc-arrow">▶</span>
+      </button>
+      <div id="accAnnotations" class="acc-panel closed">
+        <div class="annotation-toggle-row">
+          <label><input id="toggleAnnotations" type="checkbox" checked /> Megjegyzések megjelenítése</label>
+        </div>
+
+        <select id="annotationType" aria-label="Megjegyzés típusa">
+          <option value="analysis">📊 Elemző</option>
+          <option value="operation">⚔️ Műveleti</option>
+          <option value="logistics">🚚 Logisztikai</option>
+          <option value="warning">⚠️ Figyelmeztetés</option>
+          <option value="note">📝 Megjegyzés</option>
+        </select>
+
+        <textarea
+          id="annotationText"
+          rows="4"
+          placeholder="Írd be a térképre kerülő megjegyzést..."
+        ></textarea>
+
+        <div class="annotation-actions">
+          <button id="btnAddAnnotation" type="button">+ Elhelyezés</button>
+          <button id="btnClearAnnotations" class="secondary" type="button">Törlés</button>
+        </div>
+
+        <div id="annotationsSummary">Nincs még elemző megjegyzés.</div>
       </div>
     </div>
 
