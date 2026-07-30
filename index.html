@@ -1543,6 +1543,61 @@
 
   </style>
 
+  <style id="me-panel-text-visibility-fix-v1">
+    /* Restores text hidden by legacy dark-panel component styles. */
+    #controlPanel .analysis-dashboard-navigation,
+    #controlPanel .analysis-dashboard-navigation * {
+      color: #173149 !important;
+    }
+
+    #controlPanel .analysis-dashboard-navigation__subtitle,
+    #controlPanel .analysis-dashboard-navigation__description,
+    #controlPanel .analysis-dashboard-navigation__moved-note {
+      color: #687c8e !important;
+      opacity: 1 !important;
+    }
+
+    #controlPanel .analysis-dashboard-navigation__badge {
+      color: #173149 !important;
+      background: #edf3f7 !important;
+    }
+
+    #controlPanel .analysis-dashboard-navigation__item {
+      background: #ffffff !important;
+      border-color: #d8e2ea !important;
+      color: #173149 !important;
+    }
+
+    #controlPanel .analysis-dashboard-navigation__item:hover {
+      background: #f4f8fb !important;
+      border-color: #b9cad6 !important;
+    }
+
+    #controlPanel .analysis-dashboard-navigation__icon {
+      color: #ffffff !important;
+    }
+
+    #controlPanel .analysis-dashboard-navigation__arrow {
+      color: #60788b !important;
+      opacity: 1 !important;
+    }
+
+    /* CIR operational-period date ranges. */
+    #controlPanel .cir-incidents-control-block label,
+    #controlPanel .cir-incidents-control-block label span,
+    #controlPanel .cir-incidents-control-block .cir-period-filter + span + span {
+      color: #243b50 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    #controlPanel .cir-incidents-control-block > div:first-child .muted,
+    #controlPanel .cir-incidents-control-block .muted {
+      color: #708396 !important;
+      opacity: 1 !important;
+    }
+  </style>
+
 </head>
 
 <body>
