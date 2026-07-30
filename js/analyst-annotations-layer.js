@@ -26,6 +26,9 @@
     const PANE_NAME =
         "analystAnnotationsPane";
 
+    const STYLE_ELEMENT_ID =
+        "analyst-annotations-layer-styles";
+
     const DEFAULT_TYPE =
         "analysis";
 
@@ -228,6 +231,223 @@
                 hour12: false
             }
         ).format(date);
+
+    }
+
+    // -------------------------------------------------------------------------
+    // Isolated component styles
+    // -------------------------------------------------------------------------
+
+    function injectStyles() {
+
+        if (
+            document.getElementById(
+                STYLE_ELEMENT_ID
+            )
+        ) {
+            return;
+        }
+
+        const style =
+            document.createElement("style");
+
+        style.id =
+            STYLE_ELEMENT_ID;
+
+        style.textContent = `
+
+            .analyst-annotation-div-icon {
+                width: auto !important;
+                height: auto !important;
+                margin: 0 !important;
+                background: transparent !important;
+                border: 0 !important;
+            }
+
+            .analyst-annotation-card {
+                --analyst-annotation-color: #2563eb;
+                position: relative;
+                width: 260px;
+                min-width: 220px;
+                max-width: min(280px, 78vw);
+                box-sizing: border-box;
+                overflow: hidden;
+                border:
+                    1px solid
+                    rgba(15, 23, 42, .20);
+                border-left:
+                    5px solid
+                    var(--analyst-annotation-color);
+                border-radius: 12px;
+                background:
+                    rgba(255, 255, 255, .97);
+                color: #172033;
+                box-shadow:
+                    0 8px 22px rgba(15, 23, 42, .24),
+                    0 2px 6px rgba(15, 23, 42, .14);
+                font-family:
+                    Inter,
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Arial,
+                    sans-serif;
+                line-height: 1.4;
+                white-space: normal;
+                user-select: none;
+                cursor: grab;
+                transform-origin: 22px 22px;
+                transition:
+                    box-shadow .16s ease,
+                    transform .16s ease;
+            }
+
+            .analyst-annotation-card:hover {
+                transform: translateY(-1px);
+                box-shadow:
+                    0 11px 28px rgba(15, 23, 42, .30),
+                    0 3px 8px rgba(15, 23, 42, .16);
+            }
+
+            .leaflet-marker-draggable
+            .analyst-annotation-card,
+            .analyst-annotation-card:active {
+                cursor: grabbing;
+            }
+
+            .analyst-annotation-card__header {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                min-height: 31px;
+                padding: 7px 9px 6px;
+                border-bottom:
+                    1px solid
+                    rgba(15, 23, 42, .09);
+                background: #f5f8fb;
+            }
+
+            .analyst-annotation-card__icon {
+                flex: 0 0 auto;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                height: 22px;
+                font-size: 15px;
+                line-height: 1;
+            }
+
+            .analyst-annotation-card__type {
+                min-width: 0;
+                overflow: hidden;
+                color:
+                    var(--analyst-annotation-color);
+                font-size: 11px;
+                font-weight: 850;
+                letter-spacing: .035em;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+
+            .analyst-annotation-card__text {
+                max-height: 150px;
+                overflow: auto;
+                padding: 9px 10px 8px;
+                color: #172033;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 1.48;
+                overflow-wrap: anywhere;
+                word-break: break-word;
+                user-select: text;
+                cursor: text;
+            }
+
+            .analyst-annotation-card__date {
+                padding: 0 10px 7px;
+                color: #64748b;
+                font-size: 10px;
+                font-weight: 650;
+                line-height: 1.3;
+            }
+
+            .analyst-annotation-card__footer {
+                padding: 6px 9px 7px;
+                border-top:
+                    1px solid
+                    rgba(15, 23, 42, .08);
+                background: #f8fafc;
+                color: #64748b;
+                font-size: 9px;
+                font-weight: 650;
+                line-height: 1.35;
+            }
+
+            body.analyst-annotation-placement-active
+            #map {
+                cursor: crosshair;
+            }
+
+            body.analyst-annotation-placement-active
+            #map::after {
+                content:
+                    "Click the map to place the analyst annotation";
+                position: absolute;
+                z-index: 900;
+                left: 50%;
+                bottom: 20px;
+                transform: translateX(-50%);
+                max-width:
+                    min(
+                        420px,
+                        calc(100vw - 32px)
+                    );
+                box-sizing: border-box;
+                padding: 9px 13px;
+                border:
+                    1px solid
+                    rgba(255, 255, 255, .22);
+                border-radius: 999px;
+                background:
+                    rgba(15, 23, 42, .88);
+                color: #ffffff;
+                box-shadow:
+                    0 6px 18px
+                    rgba(0, 0, 0, .25);
+                font-size: 11px;
+                font-weight: 750;
+                line-height: 1.3;
+                text-align: center;
+                pointer-events: none;
+            }
+
+            @media (max-width: 720px) {
+
+                .analyst-annotation-card {
+                    width: 230px;
+                    min-width: 200px;
+                    max-width: 72vw;
+                }
+
+                .analyst-annotation-card__text {
+                    max-height: 120px;
+                    font-size: 11px;
+                }
+
+                body.analyst-annotation-placement-active
+                #map::after {
+                    bottom: 14px;
+                    border-radius: 10px;
+                }
+
+            }
+
+        `;
+
+        document.head.appendChild(style);
 
     }
 
@@ -1140,6 +1360,8 @@
                 options.summary || null
 
         };
+
+        injectStyles();
 
         ensurePane();
 
