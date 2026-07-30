@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T04:22:24Z",
+  "generated_at": "2026-07-30T07:20:43Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,17 +55,17 @@
     "events_endpoint_records": 10000,
     "feed_event_records": 250,
     "normalized_events": 10000,
-    "map_visualizable_events": 1826,
-    "non_mappable_events": 8174,
-    "developments": 4
+    "map_visualizable_events": 1829,
+    "non_mappable_events": 8171,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 10000,
-      "earliest_event_date": "2026-03-04T21:58:05Z",
-      "latest_event_date": "2026-07-30T02:29:15Z",
-      "geocoded_events": 1826,
+      "earliest_event_date": "2026-03-04T22:08:48Z",
+      "latest_event_date": "2026-07-30T05:44:17Z",
+      "geocoded_events": 1829,
       "geocoded_share": 18.3,
       "top_category": "missile",
       "top_location": "Unknown",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 183,
-        "previous": 314,
-        "delta": -131,
-        "percent_change": -41.7,
+        "current": 185,
+        "previous": 320,
+        "delta": -135,
+        "percent_change": -42.2,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 1056,
-        "previous": 1055,
-        "delta": 1,
-        "percent_change": 0.1,
+        "current": 1058,
+        "previous": 1040,
+        "delta": 18,
+        "percent_change": 1.7,
         "direction": "stable"
       }
     },
     "daily_trend": [
       {
         "date": "2026-03-04",
-        "count": 11
+        "count": 7
       },
       {
         "date": "2026-03-05",
@@ -682,18 +682,18 @@
       },
       {
         "date": "2026-07-30",
-        "count": 19
+        "count": 23
       }
     ],
     "category_counts": {
-      "missile": 4246,
-      "drone": 2407,
+      "missile": 4248,
+      "drone": 2406,
       "infrastructure": 1482,
       "strike": 911,
       "airstrike": 266,
       "explosion": 189,
       "movement": 184,
-      "ground": 148,
+      "ground": 147,
       "alert": 109,
       "defense": 26,
       "political": 20,
@@ -701,20 +701,20 @@
     },
     "severity_counts": {
       "medium": 5449,
-      "high": 2985,
-      "low": 1152,
+      "high": 2988,
+      "low": 1149,
       "critical": 414
     },
     "attacker_counts": {
-      "unknown": 7745,
-      "iran": 1111,
+      "unknown": 7741,
+      "iran": 1115,
       "israel": 1081,
       "usa": 63
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 4939
+        "count": 4936
       },
       {
         "name": "Iran",
@@ -776,11 +776,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 4939
+        "count": 4936
       },
       {
         "name": "Iran",
-        "count": 1791
+        "count": 1794
       },
       {
         "name": "Israel",
@@ -824,31 +824,37 @@
     "totalCount": 10000,
     "spotlight": {
       "event": {
-        "id": "b4i7veu1tnk0",
-        "timestamp": "2026-07-30T02:29:15+00:00",
-        "location": "IRQ",
-        "origin": "USA",
+        "id": "fxw62tpkrw80",
+        "timestamp": "2026-07-30T05:28:58+00:00",
+        "location": "ISR",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Joint U.S.-Saudi strikes on Iranian-backed militants in Iraq with confirmed impacts in Mosul, Al-Hamdaniya, Kirkuk, Amerli, Camp Ashraf, Karbala, Al-Suwaira, Basra, and Baghdad",
-        "descriptionHe": "הפצצות משותפות של ארה\"ב וסעודיה על כוחות מופעלים ממומנים מאיראן בעיראק עם פגיעות מאומתות במוסול, אל-חמדניה, כרכוך, עמרלי, מחנה אשרף, כרבלא, אל-סואירה, בסרה וביגדאד",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/81322"
+        "description": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+        "descriptionHe": "איראן משגרת לפחות 3 טילים בליסטיים מחומיין ויזד לעבר שטח ישראלי במהלך הסלמה צבאית",
+        "source": "OSINTdefender",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/OSINTdefender/19640"
       },
-      "headline": "U.S.-Saudi strikes pound Iranian-backed militia targets across Iraq",
-      "headlineHe": "תקיפות אמריקאיות-סעודיות פוגעות בחוליות הנתמכות בידי איראן ברחבי עיראק",
-      "summary": "The strikes represent a coordinated escalation targeting Popular Mobilization Forces infrastructure across nine major Iraqi cities following Iranian missile attacks on U.S. personnel in Jordan.",
-      "summaryHe": "התקיפות מהוות הסלמה מתואמת המכוונת לתשתיות הכוחות ההון-עממיים ברחבי תשע ערים עיראקיות גדולות, בעקבות התקיפות בטילים איראניות על כוחות אמריקאים בירדן.",
-      "pickedAt": "2026-07-30T04:15:54.265Z",
+      "headline": "Iran Launches Ballistic Missiles Targeting Israeli Territory",
+      "headlineHe": "איראן משגרת טילים בליסטיים לעבר השטח הישראלי",
+      "summary": "The strikes represent an escalation in direct Iranian attacks on Israel amid broader regional tensions following U.S. military operations in the Middle East.",
+      "summaryHe": "ההתקפה מייצגת הסלמה בהתקפות איראניות ישירות על ישראל על רקע מתיחויות אזוריות רחבות יותר בעקבות פעולות צבא ארה\"ב במזרח התיכון.",
+      "pickedAt": "2026-07-30T07:01:45.152Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-07-30T04:21:12.359Z",
+    "lastUpdated": "2026-07-30T07:18:17.854Z",
     "stale": false,
-    "viewerCount": 15,
+    "viewerCount": 6,
     "ceasefire": false
   },
   "summary": {
@@ -1389,82 +1395,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 94,
       "cellular": 0,
-      "lastUpdate": "2026-07-30T04:01:40.686Z",
+      "lastUpdate": "2026-07-30T07:00:40.943Z",
       "internetHistory": [
-        {
-          "t": "2026-07-29T04:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-29T04:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T04:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-29T04:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-29T04:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T04:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-07-29T05:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T05:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T05:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T05:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T05:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T05:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T06:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T06:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T06:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T06:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T06:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-07-29T06:50:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-07-29T07:00:00.000Z",
           "v": 92
@@ -1964,6 +1898,78 @@
         {
           "t": "2026-07-30T03:40:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-07-30T03:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T04:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T04:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T04:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T04:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T04:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T04:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T05:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T05:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-07-30T05:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T05:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T05:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T05:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T06:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T06:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T06:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T06:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-07-30T06:40:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": [
@@ -2057,18 +2063,18 @@
         }
       ]
     },
-    "lastUpdated": "2026-07-30T04:01:40.686Z"
+    "lastUpdated": "2026-07-30T07:00:40.943Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f2a4c9b",
+      "id": "iranstrike-a7f2c1e3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-30T02:28:51Z",
+      "date": "2026-07-30T05:17:59Z",
       "title": "IranStrike event",
-      "description": "U.S. launches massive multi-wave strikes on Iranian military targets across 9+ southwestern cities",
+      "description": "US strikes dozens of Iranian military targets across multiple provinces; IRGC facilities, missile sites, and coastal defense targeted",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2076,7 +2082,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "massive multi-wave strikes on iranian military targets across 9+ southwestern cities ארה\"ב משיקה מתקפות",
+      "attacker_evidence": "us strikes dozens of iranian military targets across multiple provinces;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2089,107 +2095,57 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f2a4c9b",
-        "text": "U.S. launches massive multi-wave strikes on Iranian military targets across 9+ southwestern cities",
-        "textHe": "ארה\"ב משיקה מתקפות תקיפות רב-גליות על מטרות צבאיות איראניות בעשר עיירות בדרום",
+        "id": "a7f2c1e3",
+        "text": "US strikes dozens of Iranian military targets across multiple provinces; IRGC facilities, missile sites, and coastal defense targeted",
+        "textHe": "ארה\"ב תוקפת עשרות מטרות צבאיות איראניות; מתקנים של הלהיגום, אתרי טילים ודפעות חופיות",
         "severity": "critical",
-        "timestamp": "2026-07-30T02:28:51+00:00",
+        "timestamp": "2026-07-30T05:17:59+00:00",
         "entityIds": [
           "USA",
           "IRN"
         ],
         "eventIds": [
           "2zt15j80sbg00",
-          "3no3sshvpgi00",
-          "1143qrhx8aq80",
-          "29wiqvnt0r9c0",
-          "20i85fr3tfhc0",
-          "t7vkecipa4g0",
-          "2ks3qkuy4ly00",
-          "a2tbvpddo7k0",
-          "1d1ngvvnuyn40",
+          "nkd1hwocr740",
           "2zx8jnh8h7w00",
+          "1d1ngvvnuyn40",
           "12d3pn22bx280",
           "kfcndztprtc0",
-          "ypgi4fyj0c00",
-          "300rppmox9e00",
+          "29wiqvnt0r9c0",
+          "20i85fr3tfhc0",
+          "1143qrhx8aq80",
+          "3no3sshvpgi00",
+          "a2tbvpddo7k0",
           "16nmwiocv5y80",
+          "ypgi4fyj0c00",
+          "t7vkecipa4g0",
+          "2ks3qkuy4ly00",
+          "1icf0g39vwww0",
           "1w4c2elalye80",
           "2bkewstnetxc0",
-          "1icf0g39vwww0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-6e1b3d2a",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-07-30T02:29:15Z",
-      "title": "IranStrike event",
-      "description": "U.S.-Saudi strikes kill ~40 Iranian-backed militants across 9 Iraqi locations in response",
-      "category": "other",
-      "severity": "high",
-      "attacker": "usa",
-      "attacker_label": "United States",
-      "attacker_color": "#2563eb",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "u.s.-saudi strikes kill ~40 iranian-backed militants across 9 iraqi",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "6e1b3d2a",
-        "text": "U.S.-Saudi strikes kill ~40 Iranian-backed militants across 9 Iraqi locations in response",
-        "textHe": "מתקפות אמריקאיות-סעודיות הורגות כ-40 חמושים תומכי איראן בתשע מיקומים בעיראק",
-        "severity": "high",
-        "timestamp": "2026-07-30T02:29:15+00:00",
-        "entityIds": [
-          "USA",
-          "SAU",
-          "IRQ",
-          "IRN"
-        ],
-        "eventIds": [
-          "b4i7veu1tnk0",
-          "2v04dpfjy8600",
-          "398u87e89bm00",
-          "1dksua1pu7mo0",
-          "1mlrxv1acybk0",
-          "xz4kys0k4c00",
-          "3ohrjrctrd200"
+          "2gl9tyn8pdgk0",
+          "300rppmox9e00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-5c9f8e1d",
+      "id": "iranstrike-b3e8f2a1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-07-29T22:11:36Z",
+      "date": "2026-07-30T05:28:58Z",
       "title": "IranStrike event",
-      "description": "Iran fires 5 ballistic missiles at Jordan airbase; 1 impact confirmed despite air defense",
+      "description": "Iran launches ballistic missiles at US-Jordan targets; 5 missiles at Muwaffaq Salti airbase, 3 at Israeli territory",
       "category": "other",
-      "severity": "high",
+      "severity": "critical",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran fires 5 ballistic missiles at jordan airbase;",
+      "attacker_evidence": "iran launches ballistic missiles at us-jordan targets;",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2202,34 +2158,130 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5c9f8e1d",
-        "text": "Iran fires 5 ballistic missiles at Jordan airbase; 1 impact confirmed despite air defense",
-        "textHe": "איראן משיקה 5 טילים בליסטיים לעבר בסיס חיל האוויר בירדן; הכה 1 מאומת",
-        "severity": "high",
-        "timestamp": "2026-07-29T22:11:36+00:00",
+        "id": "b3e8f2a1",
+        "text": "Iran launches ballistic missiles at US-Jordan targets; 5 missiles at Muwaffaq Salti airbase, 3 at Israeli territory",
+        "textHe": "איראן משגרת טילים בליסטיים לעבר מטרות אמריקניות וירדניות; 5 טילים לבסיס מוואפק סלתי, 3 לשטח ישראלי",
+        "severity": "critical",
+        "timestamp": "2026-07-30T05:28:58+00:00",
         "entityIds": [
           "IRN",
           "USA",
-          "JOR"
+          "JOR",
+          "ISR"
         ],
         "eventIds": [
+          "2mk28wyb15400",
           "afvv0ybf9io0",
           "12pw8fs78dxs0",
-          "38bfan1broy00",
-          "l69isz4j4g00"
+          "fxw62tpkrw80",
+          "38bfan1broy00"
         ],
         "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-4a7d5b6f",
+      "id": "iranstrike-c4d9a5f2",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-30T02:29:15Z",
+      "title": "IranStrike event",
+      "description": "US-Saudi strikes target Iraqi PMF sites; 20+ killed across 8 locations including Karbala, Baghdad, Kirkuk",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Baghdad",
+      "country": "Iraq",
+      "latitude": 33.3152,
+      "longitude": 44.3661,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "baghdad",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c4d9a5f2",
+        "text": "US-Saudi strikes target Iraqi PMF sites; 20+ killed across 8 locations including Karbala, Baghdad, Kirkuk",
+        "textHe": "הגבעולים אמריקני-סעודי לעבר אתרי PMF בעיראק; 20+ הרוגים ברחבי 8 מיקומים כולל כרבלא וכלאני",
+        "severity": "high",
+        "timestamp": "2026-07-30T02:29:15+00:00",
+        "entityIds": [
+          "USA",
+          "SAU",
+          "IRQ"
+        ],
+        "eventIds": [
+          "b4i7veu1tnk0",
+          "2v04dpfjy8600",
+          "398u87e89bm00",
+          "c8sc0a1yvqw0",
+          "xz4kys0k4c00",
+          "1mlrxv1acybk0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-d5e1b8c6",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-07-30T05:44:17Z",
+      "title": "IranStrike event",
+      "description": "Jordan intercepts 5 Iranian ballistic missiles; 1 confirmed impact despite interception claims at airbase",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d5e1b8c6",
+        "text": "Jordan intercepts 5 Iranian ballistic missiles; 1 confirmed impact despite interception claims at airbase",
+        "textHe": "ירדן יוצרת 5 טילים בליסטיים איראניים; 1 פגיעה מאומתת למרות טענות יירוט בבסיס אוויר",
+        "severity": "high",
+        "timestamp": "2026-07-30T05:44:17+00:00",
+        "entityIds": [
+          "JOR",
+          "IRN"
+        ],
+        "eventIds": [
+          "34svaesiy6y00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e6f2a9d3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-07-29T17:29:07Z",
       "title": "IranStrike event",
-      "description": "Hezbollah targets IDF engineering vehicle with explosive drones in Lebanon border area",
+      "description": "Hezbollah strikes IDF engineering vehicle with explosive drone; continued cross-border attacks from Lebanon",
       "category": "other",
       "severity": "medium",
       "attacker": "israel",
@@ -2237,7 +2289,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "hezbollah targets idf engineering vehicle with explosive drones in leba",
+      "attacker_evidence": "hezbollah strikes idf engineering vehicle with explosive drone;",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -2250,9 +2302,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4a7d5b6f",
-        "text": "Hezbollah targets IDF engineering vehicle with explosive drones in Lebanon border area",
-        "textHe": "חזבאללה תוקף כלי הנדסה של צה\"ל בדרונים נפצים באזור הגבול",
+        "id": "e6f2a9d3",
+        "text": "Hezbollah strikes IDF engineering vehicle with explosive drone; continued cross-border attacks from Lebanon",
+        "textHe": "חיזבאללה תוקפת רכב הנדסה של צה\"ל בכלי טייס מתפוצץ; התקפות חוצות גבול מלבנון",
         "severity": "medium",
         "timestamp": "2026-07-29T17:29:07+00:00",
         "entityIds": [
@@ -2269,6 +2321,205 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-34svaesiy6y00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62051",
+      "date": "2026-07-30T05:44:17Z",
+      "title": "IranStrike event",
+      "description": "Jordanian military intercepts 5 ballistic missiles launched from Iran",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "passive_attack_pattern",
+      "attacker_evidence": "missiles launched from iran",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "34svaesiy6y00",
+        "timestamp": "2026-07-30T05:44:17+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "intercept",
+        "severity": "medium",
+        "description": "Jordanian military intercepts 5 ballistic missiles launched from Iran",
+        "descriptionHe": "צבא ירדן יירט 5 טילים בליסטיים ששוגרו מאיראן",
+        "source": "idkunim_il",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 5,
+            "intercepted": 5
+          }
+        ],
+        "sourceUrl": "https://t.me/idkunim_il/62051"
+      }
+    },
+    {
+      "id": "iranstrike-fxw62tpkrw80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/19640",
+      "date": "2026-07-30T05:28:58Z",
+      "title": "IranStrike event",
+      "description": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr iran launches at least 3 ballistic missiles from khomeyn and ya",
+      "location": "Yazd",
+      "country": "Iran",
+      "latitude": 31.8974,
+      "longitude": 54.3569,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "yazd",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "fxw62tpkrw80",
+        "timestamp": "2026-07-30T05:28:58+00:00",
+        "location": "ISR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+        "descriptionHe": "איראן משגרת לפחות 3 טילים בליסטיים מחומיין ויזד לעבר שטח ישראלי במהלך הסלמה צבאית",
+        "source": "OSINTdefender",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/OSINTdefender/19640"
+      }
+    },
+    {
+      "id": "iranstrike-nkd1hwocr740",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127560",
+      "date": "2026-07-30T05:17:59Z",
+      "title": "IranStrike event",
+      "description": "U.S. military strikes dozens of targets across Iran in response to Iranian attack on American forces in Jordan, targeting military command centers, missile facilities, drone sites, surveillance and coastal defense sites, naval capabilities in Khuzestan, Bushehr provinces and Persian Gulf islands; Iranian officials report 3 killed and 2 wounded in residential area strike on Qeshm Island",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "ikes dozens of targets across iran in response to iranian attack on american forces in jordan, targeting military",
+      "location": "Bushehr",
+      "country": "Iran",
+      "latitude": 28.9234,
+      "longitude": 50.8203,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bushehr",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "nkd1hwocr740",
+        "timestamp": "2026-07-30T05:17:59+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "U.S. military strikes dozens of targets across Iran in response to Iranian attack on American forces in Jordan, targeting military command centers, missile facilities, drone sites, surveillance and coastal defense sites, naval capabilities in Khuzestan, Bushehr provinces and Persian Gulf islands; Iranian officials report 3 killed and 2 wounded in residential area strike on Qeshm Island",
+        "descriptionHe": "צבא ארה\"ב תוקף עשרות יעדים ברחבי איראן בתגובה להתקפה איראנית על כוחות אמריקאיים בירדן, לעבר מרכזי פיקוד צבאיים, מתקני טילים, אתרי כטב\"ם, מעקב והגנה חופיים, יכולות ימיות בחוזאסתן, בושהר ואיים בפרסיתה; גורמים איראנים מדווחים על 3 הרוגים ו-2 פצועים בתקיפת אזור מגורים באי קשם",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/127560"
+      }
+    },
+    {
+      "id": "iranstrike-2mk28wyb15400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81327",
+      "date": "2026-07-30T04:23:14Z",
+      "title": "IranStrike event",
+      "description": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iran launches ballistic missiles from khomein, tabriz, and yazd",
+      "location": "Tabriz",
+      "country": "Iran",
+      "latitude": 38.08,
+      "longitude": 46.2919,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tabriz",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2mk28wyb15400",
+        "timestamp": "2026-07-30T04:23:14+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+        "descriptionHe": "איראן משגרת טילים בליסטיים מחומיין, תברז ויזד לעבר בסיס מועפק סלטי וכוחות אמריקאיים בירדן",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81327"
+      }
+    },
     {
       "id": "iranstrike-b4i7veu1tnk0",
       "source": "IranStrike",
@@ -451132,189 +451383,156 @@
         "source": "idkunim_il",
         "sourceUrl": "https://t.me/idkunim_il/55694"
       }
-    },
-    {
-      "id": "iranstrike-3iuplov802c00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18888",
-      "date": "2026-03-04T21:59:59Z",
-      "title": "IranStrike event",
-      "description": "Hostile UAV alert: Margaliot",
-      "category": "drone",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3iuplov802c00",
-        "timestamp": "2026-03-04T21:59:59+00:00",
-        "location": "ISR",
-        "origin": "LBN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "low",
-        "description": "Hostile UAV alert: Margaliot",
-        "descriptionHe": "התרעה על UAV עוין: מרגליות",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18888"
-      }
-    },
-    {
-      "id": "iranstrike-q2y0hyy1hds0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/55690",
-      "date": "2026-03-04T21:59:19Z",
-      "title": "IranStrike event",
-      "description": "Israeli official confirms: Kurdish ground offensive in Iran is real and significant",
-      "category": "ground",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "q2y0hyy1hds0",
-        "timestamp": "2026-03-04T21:59:19+00:00",
-        "location": "IRN",
-        "origin": "IRQ",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Israeli official confirms: Kurdish ground offensive in Iran is real and significant",
-        "descriptionHe": "גורם ישראלי מאשר: האירוע עם הכורדים אמיתי ומשמעותי",
-        "source": "idkunim_il",
-        "sourceUrl": "https://t.me/idkunim_il/55690"
-      }
-    },
-    {
-      "id": "iranstrike-22sxcjo0fly80",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18886",
-      "date": "2026-03-04T21:58:17Z",
-      "title": "IranStrike event",
-      "description": "Rocket alert: Manara",
-      "category": "missile",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "22sxcjo0fly80",
-        "timestamp": "2026-03-04T21:58:17+00:00",
-        "location": "ISR",
-        "origin": "LBN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "low",
-        "description": "Rocket alert: Manara",
-        "descriptionHe": "התרעה על רקטה: מנרה",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18886"
-      }
-    },
-    {
-      "id": "iranstrike-n61hlrssvts0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "RocketAlert",
-      "source_url": "https://t.me/RocketAlert/18884",
-      "date": "2026-03-04T21:58:05Z",
-      "title": "IranStrike event",
-      "description": "Rocket alert: Manara",
-      "category": "missile",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "n61hlrssvts0",
-        "timestamp": "2026-03-04T21:58:05+00:00",
-        "location": "ISR",
-        "origin": "LBN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "low",
-        "description": "Rocket alert: Manara",
-        "descriptionHe": "התרעה על רקטה: מנרה",
-        "source": "RocketAlert",
-        "sourceUrl": "https://t.me/RocketAlert/18884"
-      }
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-fxw62tpkrw80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/19640",
+      "date": "2026-07-30T05:28:58Z",
+      "title": "IranStrike event",
+      "description": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr iran launches at least 3 ballistic missiles from khomeyn and ya",
+      "location": "Yazd",
+      "country": "Iran",
+      "latitude": 31.8974,
+      "longitude": 54.3569,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "yazd",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "fxw62tpkrw80",
+        "timestamp": "2026-07-30T05:28:58+00:00",
+        "location": "ISR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran launches at least 3 ballistic missiles from Khomeyn and Yazd targeting Israeli territory during military escalations",
+        "descriptionHe": "איראן משגרת לפחות 3 טילים בליסטיים מחומיין ויזד לעבר שטח ישראלי במהלך הסלמה צבאית",
+        "source": "OSINTdefender",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/OSINTdefender/19640"
+      }
+    },
+    {
+      "id": "iranstrike-nkd1hwocr740",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/127560",
+      "date": "2026-07-30T05:17:59Z",
+      "title": "IranStrike event",
+      "description": "U.S. military strikes dozens of targets across Iran in response to Iranian attack on American forces in Jordan, targeting military command centers, missile facilities, drone sites, surveillance and coastal defense sites, naval capabilities in Khuzestan, Bushehr provinces and Persian Gulf islands; Iranian officials report 3 killed and 2 wounded in residential area strike on Qeshm Island",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "ikes dozens of targets across iran in response to iranian attack on american forces in jordan, targeting military",
+      "location": "Bushehr",
+      "country": "Iran",
+      "latitude": 28.9234,
+      "longitude": 50.8203,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bushehr",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "nkd1hwocr740",
+        "timestamp": "2026-07-30T05:17:59+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "U.S. military strikes dozens of targets across Iran in response to Iranian attack on American forces in Jordan, targeting military command centers, missile facilities, drone sites, surveillance and coastal defense sites, naval capabilities in Khuzestan, Bushehr provinces and Persian Gulf islands; Iranian officials report 3 killed and 2 wounded in residential area strike on Qeshm Island",
+        "descriptionHe": "צבא ארה\"ב תוקף עשרות יעדים ברחבי איראן בתגובה להתקפה איראנית על כוחות אמריקאיים בירדן, לעבר מרכזי פיקוד צבאיים, מתקני טילים, אתרי כטב\"ם, מעקב והגנה חופיים, יכולות ימיות בחוזאסתן, בושהר ואיים בפרסיתה; גורמים איראנים מדווחים על 3 הרוגים ו-2 פצועים בתקיפת אזור מגורים באי קשם",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/127560"
+      }
+    },
+    {
+      "id": "iranstrike-2mk28wyb15400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81327",
+      "date": "2026-07-30T04:23:14Z",
+      "title": "IranStrike event",
+      "description": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iran launches ballistic missiles from khomein, tabriz, and yazd",
+      "location": "Tabriz",
+      "country": "Iran",
+      "latitude": 38.08,
+      "longitude": 46.2919,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tabriz",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2mk28wyb15400",
+        "timestamp": "2026-07-30T04:23:14+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran launches ballistic missiles from Khomein, Tabriz, and Yazd targeting Muwaffaq Salti airbase and U.S. forces in Jordan",
+        "descriptionHe": "איראן משגרת טילים בליסטיים מחומיין, תברז ויזד לעבר בסיס מועפק סלטי וכוחות אמריקאיים בירדן",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81327"
+      }
+    },
     {
       "id": "iranstrike-b4i7veu1tnk0",
       "source": "IranStrike",
