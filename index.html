@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <link rel="stylesheet" href="./style.css" />
 
   <style>
     :root{
@@ -1538,64 +1537,6 @@
         margin-top:244px !important;
       }
     }
-
-
-
-  </style>
-
-  <style id="me-panel-text-visibility-fix-v1">
-    /* Restores text hidden by legacy dark-panel component styles. */
-    #controlPanel .analysis-dashboard-navigation,
-    #controlPanel .analysis-dashboard-navigation * {
-      color: #173149 !important;
-    }
-
-    #controlPanel .analysis-dashboard-navigation__subtitle,
-    #controlPanel .analysis-dashboard-navigation__description,
-    #controlPanel .analysis-dashboard-navigation__moved-note {
-      color: #687c8e !important;
-      opacity: 1 !important;
-    }
-
-    #controlPanel .analysis-dashboard-navigation__badge {
-      color: #173149 !important;
-      background: #edf3f7 !important;
-    }
-
-    #controlPanel .analysis-dashboard-navigation__item {
-      background: #ffffff !important;
-      border-color: #d8e2ea !important;
-      color: #173149 !important;
-    }
-
-    #controlPanel .analysis-dashboard-navigation__item:hover {
-      background: #f4f8fb !important;
-      border-color: #b9cad6 !important;
-    }
-
-    #controlPanel .analysis-dashboard-navigation__icon {
-      color: #ffffff !important;
-    }
-
-    #controlPanel .analysis-dashboard-navigation__arrow {
-      color: #60788b !important;
-      opacity: 1 !important;
-    }
-
-    /* CIR operational-period date ranges. */
-    #controlPanel .cir-incidents-control-block label,
-    #controlPanel .cir-incidents-control-block label span,
-    #controlPanel .cir-incidents-control-block .cir-period-filter + span + span {
-      color: #243b50 !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-
-    #controlPanel .cir-incidents-control-block > div:first-child .muted,
-    #controlPanel .cir-incidents-control-block .muted {
-      color: #708396 !important;
-      opacity: 1 !important;
-    }
   </style>
 
 </head>
@@ -1685,41 +1626,6 @@
 
       <div class="israel-layer-note">
         OSINT-alapú, késleltetett elemző réteg. Nem valós idejű taktikai térkép.
-      </div>
-    </div>
-
-
-
-    <!-- Elemző megjegyzések – az ukrán monitor felépítése alapján -->
-    <div class="acc annotation-control-block">
-      <button class="acc-btn" data-acc="accAnnotations" aria-expanded="false">
-        <span>Elemző megjegyzések</span><span class="acc-arrow">▶</span>
-      </button>
-      <div id="accAnnotations" class="acc-panel closed">
-        <div class="annotation-toggle-row">
-          <label><input id="toggleAnnotations" type="checkbox" checked /> Megjegyzések megjelenítése</label>
-        </div>
-
-        <select id="annotationType" aria-label="Megjegyzés típusa">
-          <option value="analysis">📊 Elemző</option>
-          <option value="operation">⚔️ Műveleti</option>
-          <option value="logistics">🚚 Logisztikai</option>
-          <option value="warning">⚠️ Figyelmeztetés</option>
-          <option value="note">📝 Megjegyzés</option>
-        </select>
-
-        <textarea
-          id="annotationText"
-          rows="4"
-          placeholder="Írd be a térképre kerülő megjegyzést..."
-        ></textarea>
-
-        <div class="annotation-actions">
-          <button id="btnAddAnnotation" type="button">+ Elhelyezés</button>
-          <button id="btnClearAnnotations" class="secondary" type="button">Törlés</button>
-        </div>
-
-        <div id="annotationsSummary">Nincs még elemző megjegyzés.</div>
       </div>
     </div>
 
@@ -1905,4 +1811,3 @@
   <script src="./js/dashboard-navigation.js"></script>
 </body>
 </html>
-
