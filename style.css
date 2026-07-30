@@ -279,3 +279,306 @@ body { background:#0f0f0f; }
   .panel-top-right{ top:80px; }
   .panel-bottom-left{ bottom:10px; }
 }
+/* ==========================================================================
+   ANALYST ANNOTATIONS
+   Scoped styles for js/analyst-annotations-layer.js
+   ========================================================================== */
+
+.analyst-annotation-div-icon{
+  width:auto !important;
+  height:auto !important;
+  background:transparent !important;
+  border:0 !important;
+}
+
+.analyst-annotation-card{
+  --analyst-annotation-color:#2563eb;
+  position:relative;
+  width:260px;
+  min-width:220px;
+  max-width:min(280px, 78vw);
+  box-sizing:border-box;
+  overflow:hidden;
+  border:1px solid rgba(15,23,42,0.20);
+  border-left:5px solid var(--analyst-annotation-color);
+  border-radius:12px;
+  background:rgba(255,255,255,0.97);
+  color:#172033;
+  box-shadow:
+    0 8px 22px rgba(15,23,42,0.24),
+    0 2px 6px rgba(15,23,42,0.14);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  line-height:1.4;
+  white-space:normal;
+  user-select:none;
+  cursor:grab;
+  transform-origin:22px 22px;
+  transition:
+    box-shadow .16s ease,
+    transform .16s ease;
+}
+
+.analyst-annotation-card:hover{
+  transform:translateY(-1px);
+  box-shadow:
+    0 11px 28px rgba(15,23,42,0.30),
+    0 3px 8px rgba(15,23,42,0.16);
+}
+
+.leaflet-marker-draggable .analyst-annotation-card,
+.analyst-annotation-card:active{
+  cursor:grabbing;
+}
+
+.analyst-annotation-card__header{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  min-height:31px;
+  padding:7px 9px 6px;
+  border-bottom:1px solid rgba(15,23,42,0.09);
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--analyst-annotation-color) 12%, #ffffff),
+      rgba(248,250,252,0.97)
+    );
+}
+
+.analyst-annotation-card__icon{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  font-size:15px;
+  line-height:1;
+}
+
+.analyst-annotation-card__type{
+  min-width:0;
+  overflow:hidden;
+  color:var(--analyst-annotation-color);
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.035em;
+  text-overflow:ellipsis;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.analyst-annotation-card__text{
+  max-height:150px;
+  overflow:auto;
+  padding:9px 10px 8px;
+  color:#172033;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.48;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  user-select:text;
+  cursor:text;
+}
+
+.analyst-annotation-card__date{
+  padding:0 10px 7px;
+  color:#64748b;
+  font-size:10px;
+  font-weight:650;
+  line-height:1.3;
+}
+
+.analyst-annotation-card__footer{
+  padding:6px 9px 7px;
+  border-top:1px solid rgba(15,23,42,0.08);
+  background:#f8fafc;
+  color:#64748b;
+  font-size:9px;
+  font-weight:650;
+  line-height:1.35;
+}
+
+body.analyst-annotation-placement-active #map{
+  cursor:crosshair;
+}
+
+body.analyst-annotation-placement-active #map::after{
+  content:"Click the map to place the analyst annotation";
+  position:absolute;
+  z-index:900;
+  left:50%;
+  bottom:20px;
+  transform:translateX(-50%);
+  max-width:min(420px, calc(100vw - 32px));
+  box-sizing:border-box;
+  padding:9px 13px;
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:999px;
+  background:rgba(15,23,42,0.88);
+  color:#ffffff;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  font-size:11px;
+  font-weight:750;
+  line-height:1.3;
+  text-align:center;
+  pointer-events:none;
+}
+
+/* Analyst annotations control block */
+
+[data-control-block="analyst-annotations"]{
+  display:grid;
+  gap:8px;
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-toggle-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-toggle-row label{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+  color:#ffffff;
+  font-size:12px;
+  line-height:1.35;
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-input,
+[data-control-block="analyst-annotations"] textarea,
+[data-control-block="analyst-annotations"] select{
+  width:100%;
+  box-sizing:border-box;
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:9px;
+  background:rgba(255,255,255,0.07);
+  color:#ffffff;
+  font:inherit;
+  font-size:12px;
+  outline:none;
+}
+
+[data-control-block="analyst-annotations"] textarea{
+  min-height:82px;
+  resize:vertical;
+  padding:9px 10px;
+  line-height:1.45;
+}
+
+[data-control-block="analyst-annotations"] select{
+  min-height:36px;
+  padding:7px 9px;
+}
+
+[data-control-block="analyst-annotations"] select option{
+  background:#172033;
+  color:#ffffff;
+}
+
+[data-control-block="analyst-annotations"] textarea::placeholder{
+  color:rgba(255,255,255,0.55);
+}
+
+[data-control-block="analyst-annotations"] textarea:focus,
+[data-control-block="analyst-annotations"] select:focus{
+  border-color:rgba(96,165,250,0.85);
+  box-shadow:0 0 0 3px rgba(37,99,235,0.18);
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-actions{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) auto;
+  gap:8px;
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-button{
+  min-height:34px;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:9px;
+  background:rgba(255,255,255,0.10);
+  color:#ffffff;
+  font-size:11px;
+  font-weight:750;
+  cursor:pointer;
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    transform .15s ease;
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-button:hover{
+  background:rgba(255,255,255,0.16);
+  border-color:rgba(255,255,255,0.28);
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-button:active{
+  transform:translateY(1px);
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-button.is-active{
+  border-color:rgba(96,165,250,0.90);
+  background:rgba(37,99,235,0.34);
+  box-shadow:0 0 0 3px rgba(37,99,235,0.14);
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-button--danger{
+  color:#fecaca;
+  border-color:rgba(248,113,113,0.30);
+  background:rgba(127,29,29,0.22);
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-button--danger:hover{
+  background:rgba(153,27,27,0.34);
+  border-color:rgba(248,113,113,0.45);
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-summary{
+  min-height:32px;
+  padding:7px 8px;
+  border:1px solid rgba(255,255,255,0.09);
+  border-radius:8px;
+  background:rgba(0,0,0,0.15);
+  color:rgba(255,255,255,0.76);
+  font-size:10px;
+  line-height:1.4;
+}
+
+[data-control-block="analyst-annotations"] .analyst-annotations-summary strong{
+  color:#ffffff;
+}
+
+@supports not (color:color-mix(in srgb, #000 50%, #fff)){
+  .analyst-annotation-card__header{
+    background:#f5f8fb;
+  }
+}
+
+@media (max-width:720px){
+  .analyst-annotation-card{
+    width:230px;
+    min-width:200px;
+    max-width:72vw;
+  }
+
+  .analyst-annotation-card__text{
+    max-height:120px;
+    font-size:11px;
+  }
+
+  [data-control-block="analyst-annotations"] .analyst-annotations-actions{
+    grid-template-columns:1fr;
+  }
+
+  body.analyst-annotation-placement-active #map::after{
+    bottom:14px;
+    border-radius:10px;
+  }
+}
+
