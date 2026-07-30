@@ -2274,6 +2274,106 @@ window.setInterval(() => {
 }, 10 * 60 * 1000);
 
 
+    // ===== User-created analyst annotations =====
+    let analystAnnotationsModulePromise = null;
+    let analystAnnotationsInitialized = false;
+
+    function loadAnalystAnnotationsModule() {
+      if (typeof window.initAnalystAnnotationsLayer === "function") {
+        return Promise.resolve();
+      }
+
+      if (analystAnnotationsModulePromise) {
+        return analystAnnotationsModulePromise;
+      }
+
+      analystAnnotationsModulePromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector(
+          'script[data-analyst-annotations-module="true"]'
+        );
+
+        if (existing) {
+          if (typeof window.initAnalystAnnotationsLayer === "function") {
+            resolve();
+            return;
+          }
+
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `js/analyst-annotations-layer.js?v=${Date.now()}`;
+        script.async = true;
+        script.dataset.analystAnnotationsModule = "true";
+        script.onload = resolve;
+        script.onerror = () =>
+          reject(
+            new Error(
+              "js/analyst-annotations-layer.js could not be loaded"
+            )
+          );
+
+        document.head.appendChild(script);
+      });
+
+      return analystAnnotationsModulePromise;
+    }
+
+    async function initializeAnalystAnnotations() {
+      if (analystAnnotationsInitialized) {
+        return window.getAnalystAnnotationsState?.() || null;
+      }
+
+      try {
+        await loadAnalystAnnotationsModule();
+
+        if (typeof window.initAnalystAnnotationsLayer !== "function") {
+          throw new Error("Analyst annotations module is unavailable.");
+        }
+
+        const state = window.initAnalystAnnotationsLayer({
+          map,
+          toggle: document.getElementById("analystAnnotationsCheckbox"),
+          addButton: document.getElementById("analystAnnotationAddBtn"),
+          clearButton: document.getElementById("analystAnnotationsClearBtn"),
+          textInput: document.getElementById("analystAnnotationText"),
+          typeSelect: document.getElementById("analystAnnotationType"),
+          summary: document.getElementById("analystAnnotationsSummary")
+        });
+
+        analystAnnotationsInitialized = true;
+        return state;
+      } catch (error) {
+        console.error(
+          "[analyst-annotations] initialization failed:",
+          error?.message || error
+        );
+
+        const summary = document.getElementById(
+          "analystAnnotationsSummary"
+        );
+
+        if (summary) {
+          summary.textContent =
+            "The analyst annotations layer could not be initialized.";
+        }
+
+        const checkbox = document.getElementById(
+          "analystAnnotationsCheckbox"
+        );
+
+        if (checkbox) {
+          checkbox.checked = false;
+          checkbox.disabled = true;
+        }
+
+        return null;
+      }
+    }
+
+
     // ===== Shared latest-attack annotations (CIR + IranStrike) =====
     let attackAnnotationsEnabled = false;
     let attackAnnotationController = null;
@@ -3755,6 +3855,52 @@ window.setInterval(() => {
         </div>
       </div>
 
+      <div class="analyst-annotations-control-block" data-control-block="analyst-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;font-weight:800;">Analyst annotations</div>
+
+        <div class="row">
+          <label>
+            <input id="analystAnnotationsCheckbox" type="checkbox" checked />
+            Show analyst annotations
+          </label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Annotation type</div>
+        <select id="analystAnnotationType">
+          <option value="analysis" selected>📊 Analysis</option>
+          <option value="operation">⚔️ Operational</option>
+          <option value="logistics">🚚 Logistics</option>
+          <option value="warning">⚠️ Warning</option>
+          <option value="note">📝 Note</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Analytical note</div>
+        <textarea
+          id="analystAnnotationText"
+          rows="4"
+          placeholder="Write the assessment, inference or operational note..."
+          style="width:100%;box-sizing:border-box;resize:vertical;"
+        ></textarea>
+
+        <div class="row" style="margin-top:7px;">
+          <span class="btn-mini" id="analystAnnotationAddBtn">Place on map</span>
+          <span class="btn-mini" id="analystAnnotationsClearBtn">Clear all</span>
+        </div>
+
+        <div
+          id="analystAnnotationsSummary"
+          class="muted analyst-annotations-summary"
+          style="margin-top:8px;line-height:1.45;"
+        >
+          No analyst annotations have been created.
+        </div>
+
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          Write a note, choose its type, press “Place on map”, then click the required location. Cards are draggable and stored in this browser.
+        </div>
+      </div>
+
+
       <div class="attack-annotations-control-block" data-control-block="attack-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
           <div class="muted" style="font-weight:800;">Latest attack cards</div>
@@ -4118,6 +4264,12 @@ window.setInterval(() => {
     const strikeHistoryActorSelect = document.getElementById("strikeHistoryActorSelect");
     const strikeHistorySearchInput = document.getElementById("strikeHistorySearchInput");
     const strikeHistoryFitBtn = document.getElementById("strikeHistoryFitBtn");
+    const analystAnnotationsCheckbox = document.getElementById("analystAnnotationsCheckbox");
+    const analystAnnotationAddBtn = document.getElementById("analystAnnotationAddBtn");
+    const analystAnnotationsClearBtn = document.getElementById("analystAnnotationsClearBtn");
+    const analystAnnotationText = document.getElementById("analystAnnotationText");
+    const analystAnnotationType = document.getElementById("analystAnnotationType");
+    const analystAnnotationsSummary = document.getElementById("analystAnnotationsSummary");
     const attackAnnotationsCheckbox = document.getElementById("attackAnnotationsCheckbox");
     const attackAnnotationsCirCheckbox = document.getElementById("attackAnnotationsCirCheckbox");
     const attackAnnotationsIranStrikeCheckbox = document.getElementById("attackAnnotationsIranStrikeCheckbox");
@@ -4306,6 +4458,17 @@ window.setInterval(() => {
       strikeHistoryFitBtn.addEventListener("click", () => {
         ensureStrikeHistoryController().fitBounds();
       });
+    }
+
+    if (
+      analystAnnotationsCheckbox &&
+      analystAnnotationAddBtn &&
+      analystAnnotationsClearBtn &&
+      analystAnnotationText &&
+      analystAnnotationType &&
+      analystAnnotationsSummary
+    ) {
+      initializeAnalystAnnotations();
     }
 
     if (attackAnnotationsCheckbox) {
