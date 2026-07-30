@@ -1,9 +1,9 @@
 (function (global) {
   "use strict";
 
-  const VERSION = "1.0.0";
+  const VERSION = "1.1.0";
   const STORAGE_KEY = "me_security_monitor_analyst_drawings_v1";
-  const MODES = new Set(["none", "point", "line", "polygon", "circle", "arrow", "text", "freehand", "select"]);
+  const MODES = new Set(["none", "point", "line", "polygon", "circle", "arrow", "assessment", "text", "freehand", "select"]);
 
   const DEFAULT_STYLE = Object.freeze({
     color: "#d94238",
@@ -16,6 +16,25 @@
     fontSize: 14,
     lineCap: "round",
     lineJoin: "round"
+  });
+
+
+  const CONFIDENCE_LEVELS = Object.freeze({
+    confirmed: { label: "Confirmed", color: "#15976a", score: 95 },
+    probable: { label: "Probable", color: "#e78308", score: 75 },
+    possible: { label: "Possible", color: "#d7a600", score: 50 },
+    verification: { label: "Under verification", color: "#2879b8", score: 30 },
+    unknown: { label: "Unknown", color: "#687c8e", score: 10 }
+  });
+
+  const ARROW_PRESETS = Object.freeze({
+    attack: { label: "Fő támadási irány", color: "#d94238", weight: 5, dashArray: "" },
+    secondary: { label: "Másodlagos tengely", color: "#e78308", weight: 4, dashArray: "10 7" },
+    withdrawal: { label: "Visszavonulás", color: "#2879b8", weight: 4, dashArray: "4 7" },
+    logistics: { label: "Logisztikai útvonal", color: "#7c5c2e", weight: 4, dashArray: "14 6 3 6" },
+    airstrike: { label: "Légi csapás iránya", color: "#7a3db8", weight: 4, dashArray: "" },
+    uav: { label: "UAV útvonal", color: "#1597a6", weight: 3, dashArray: "8 6" },
+    missile: { label: "Rakéta útvonal", color: "#111827", weight: 4, dashArray: "2 6" }
   });
 
   const state = {
@@ -33,7 +52,9 @@
     freehandActive: false,
     freehandPoints: [],
     handlers: {},
-    onStateChange: null
+    onStateChange: null,
+    arrowPreset: "attack",
+    assessmentConfidence: "verification"
   };
 
   function uid(prefix) {
@@ -167,6 +188,18 @@
     });
   }
 
+  function assessmentIcon(item) {
+    const L = getLeaflet();
+    const confidence = CONFIDENCE_LEVELS[item.confidence] || CONFIDENCE_LEVELS.unknown;
+    const sourceCount = Array.isArray(item.sources) ? item.sources.length : 0;
+    return L.divIcon({
+      className: "me-analyst-assessment-icon",
+      html: `<div title="${escapeHtml(confidence.label)}" style="position:relative;width:30px;height:30px;border-radius:8px;background:${escapeHtml(confidence.color)};border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.35);display:grid;place-items:center;color:#fff;font-size:15px;font-weight:900;">A${sourceCount ? `<span style="position:absolute;right:-7px;top:-7px;min-width:16px;height:16px;padding:0 3px;border-radius:9px;background:#172033;color:#fff;font-size:9px;line-height:16px;text-align:center;border:1px solid #fff;">${sourceCount}</span>` : ""}</div>`,
+      iconSize: [34, 34],
+      iconAnchor: [17, 17]
+    });
+  }
+
   function arrowHeadIcon(item) {
     const L = getLeaflet();
     const s = { ...DEFAULT_STYLE, ...(item.style || {}) };
@@ -192,6 +225,8 @@
 
     if (item.type === "point") {
       layer = L.marker(item.point, { icon: pointIcon(item), draggable: state.mode === "select" });
+    } else if (item.type === "assessment") {
+      layer = L.marker(item.point, { icon: assessmentIcon(item), draggable: state.mode === "select" });
     } else if (item.type === "text") {
       layer = L.marker(item.point, { icon: textIcon(item), draggable: state.mode === "select" });
     } else if (item.type === "circle") {
@@ -290,7 +325,7 @@
     state.drawings.forEach(item => {
       const layer = state.layers.get(item.id);
       if (!layer || !layer.dragging) return;
-      if (state.mode === "select" && ["point", "text"].includes(item.type)) layer.dragging.enable();
+      if (state.mode === "select" && ["point", "text", "assessment"].includes(item.type)) layer.dragging.enable();
       else layer.dragging.disable();
     });
   }
@@ -357,6 +392,23 @@
 
     if (state.mode === "point") {
       addDrawing({ type: "point", point: p });
+      return;
+    }
+    if (state.mode === "assessment") {
+      addDrawing({
+        type: "assessment",
+        point: p,
+        title: "Új OSINT Assessment",
+        assessment: "",
+        forecast: "",
+        confidence: state.assessmentConfidence,
+        confidenceScore: (CONFIDENCE_LEVELS[state.assessmentConfidence] || CONFIDENCE_LEVELS.unknown).score,
+        sources: [],
+        analyst: "",
+        assessmentDate: nowIso().slice(0, 10)
+      });
+      setMode("select");
+      selectDrawing(state.drawings[state.drawings.length - 1].id);
       return;
     }
     if (state.mode === "text") {
@@ -443,7 +495,7 @@
     if (["line", "arrow"].includes(draft.type) && draft.points.length >= 2) {
       const points = clone(draft.points);
       clearDraft();
-      addDrawing({ type: draft.type, points });
+      addDrawing({ type: draft.type, points, ...(draft.type === "arrow" ? { arrowPreset: state.arrowPreset, style: { ...(ARROW_PRESETS[state.arrowPreset] || ARROW_PRESETS.attack) } } : {}) });
     } else if (draft.type === "polygon" && draft.points.length >= 3) {
       const points = clone(draft.points);
       clearDraft();
@@ -499,7 +551,7 @@
         createdAt: item.createdAt,
         updatedAt: item.updatedAt
       };
-      if (["point", "text"].includes(item.type)) {
+      if (["point", "text", "assessment"].includes(item.type)) {
         return { type: "Feature", properties, geometry: { type: "Point", coordinates: [item.point.lng, item.point.lat] } };
       }
       if (item.type === "circle") {
@@ -560,11 +612,11 @@
     const g = feature?.geometry;
     if (!g) return null;
     const p = feature.properties || {};
-    const base = { id: p.id, type: p.drawingType, title: p.title || "", note: p.note || "", text: p.text || "", style: p.style || {}, radiusMeters: p.radiusMeters, createdAt: p.createdAt };
+    const base = { id: p.id, type: p.drawingType, title: p.title || "", note: p.note || "", text: p.text || "", style: p.style || {}, radiusMeters: p.radiusMeters, createdAt: p.createdAt, arrowPreset: p.arrowPreset || null, confidence: p.confidence || null, confidenceScore: p.confidenceScore ?? null, assessment: p.assessment || "", forecast: p.forecast || "", sources: Array.isArray(p.sources) ? p.sources : [], analyst: p.analyst || "", assessmentDate: p.assessmentDate || "" };
     if (g.type === "Point") {
       const point = { lat: Number(g.coordinates[1]), lng: Number(g.coordinates[0]) };
       if (base.type === "circle" || p.radiusMeters) return { ...base, type: "circle", center: point, radiusMeters: Number(p.radiusMeters) || 1000 };
-      return { ...base, type: base.type === "text" ? "text" : "point", point };
+      return { ...base, type: base.type === "text" ? "text" : base.type === "assessment" ? "assessment" : "point", point };
     }
     if (g.type === "LineString") {
       return { ...base, type: ["arrow", "freehand"].includes(base.type) ? base.type : "line", points: g.coordinates.map(c => ({ lat: Number(c[1]), lng: Number(c[0]) })) };
@@ -611,12 +663,24 @@
         ${createButton("⬠ Poligon", "polygon")}
         ${createButton("○ Kör", "circle")}
         ${createButton("➜ Nyíl", "arrow")}
+        ${createButton("A Értékelés", "assessment")}
         ${createButton("T Szöveg", "text")}
         ${createButton("✎ Szabad", "freehand")}
         ${createButton("⌖ Kijelöl", "select")}
         ${createButton("× Kilép", "none")}
       </div>
       <div id="meDrawingStatus" class="muted" style="margin-top:8px;padding:7px 8px;border:1px solid rgba(34,51,68,.10);border-radius:9px;background:#f8fafc;">Mode: none</div>
+
+      <div style="margin-top:9px;padding-top:9px;border-top:1px solid rgba(34,51,68,.10);">
+        <div class="muted" style="margin-bottom:6px;">Műveleti nyíl típusa</div>
+        <select id="meDrawingArrowPreset">
+          ${Object.entries(ARROW_PRESETS).map(([key, value]) => `<option value="${key}">${escapeHtml(value.label)}</option>`).join("")}
+        </select>
+        <div class="muted" style="margin:8px 0 6px;">Új értékelés bizalmi szintje</div>
+        <select id="meDrawingAssessmentConfidence">
+          ${Object.entries(CONFIDENCE_LEVELS).map(([key, value]) => `<option value="${key}">${escapeHtml(value.label)} (${value.score}%)</option>`).join("")}
+        </select>
+      </div>
       <div style="margin-top:9px;padding-top:9px;border-top:1px solid rgba(34,51,68,.10);">
         <div class="muted" style="margin-bottom:6px;">Megjelenés</div>
         <div class="row"><label>Vonal <input id="meDrawingColor" type="color" value="${DEFAULT_STYLE.color}" style="width:42px;height:28px;padding:0;border:0;"></label><label>Kitöltés <input id="meDrawingFillColor" type="color" value="${DEFAULT_STYLE.fillColor}" style="width:42px;height:28px;padding:0;border:0;"></label></div>
@@ -659,6 +723,20 @@
     const weight = block.querySelector("#meDrawingWeight");
     const fillOpacity = block.querySelector("#meDrawingFillOpacity");
     const dash = block.querySelector("#meDrawingDash");
+    const arrowPreset = block.querySelector("#meDrawingArrowPreset");
+    const assessmentConfidence = block.querySelector("#meDrawingAssessmentConfidence");
+    arrowPreset.addEventListener("change", () => {
+      state.arrowPreset = arrowPreset.value;
+      const preset = ARROW_PRESETS[state.arrowPreset] || ARROW_PRESETS.attack;
+      state.style.color = preset.color;
+      state.style.weight = preset.weight;
+      state.style.dashArray = preset.dashArray;
+      color.value = preset.color;
+      weight.value = String(preset.weight);
+      dash.value = preset.dashArray;
+      block.querySelector("#meDrawingWeightLabel").textContent = String(preset.weight);
+    });
+    assessmentConfidence.addEventListener("change", () => state.assessmentConfidence = assessmentConfidence.value);
     color.addEventListener("input", () => state.style.color = color.value);
     fillColor.addEventListener("input", () => state.style.fillColor = fillColor.value);
     weight.addEventListener("input", () => {
@@ -712,6 +790,14 @@
         <div style="font-weight:850;font-size:11px;margin-bottom:6px;">Kijelölt: ${escapeHtml(item.type)}</div>
         <input id="meDrawingTitleEdit" type="text" placeholder="Cím" value="${escapeHtml(item.title || "")}">
         ${item.type === "text" ? `<input id="meDrawingTextEdit" type="text" placeholder="Szöveg" value="${escapeHtml(item.text || "")}" style="margin-top:5px;">` : ""}
+        ${item.type === "assessment" ? `
+          <textarea id="meDrawingAssessmentEdit" placeholder="Értékelés" style="width:100%;min-height:76px;margin-top:5px;padding:8px;border:1px solid #cfd8e1;border-radius:9px;font:inherit;resize:vertical;">${escapeHtml(item.assessment || "")}</textarea>
+          <textarea id="meDrawingForecastEdit" placeholder="Várható következő lépés" style="width:100%;min-height:58px;margin-top:5px;padding:8px;border:1px solid #cfd8e1;border-radius:9px;font:inherit;resize:vertical;">${escapeHtml(item.forecast || "")}</textarea>
+          <select id="meDrawingConfidenceEdit" style="margin-top:5px;">${Object.entries(CONFIDENCE_LEVELS).map(([key, value]) => `<option value="${key}" ${item.confidence === key ? "selected" : ""}>${escapeHtml(value.label)} (${value.score}%)</option>`).join("")}</select>
+          <input id="meDrawingAnalystEdit" type="text" placeholder="Elemző" value="${escapeHtml(item.analyst || "")}" style="margin-top:5px;">
+          <input id="meDrawingDateEdit" type="date" value="${escapeHtml(item.assessmentDate || nowIso().slice(0,10))}" style="margin-top:5px;">
+          <textarea id="meDrawingSourcesEdit" placeholder="Források – soronként egy URL vagy hivatkozás" style="width:100%;min-height:70px;margin-top:5px;padding:8px;border:1px solid #cfd8e1;border-radius:9px;font:inherit;resize:vertical;">${escapeHtml((item.sources || []).join("\n"))}</textarea>
+        ` : ""}
         <textarea id="meDrawingNoteEdit" placeholder="Elemzői megjegyzés" style="width:100%;min-height:58px;margin-top:5px;padding:8px;border:1px solid #cfd8e1;border-radius:9px;font:inherit;resize:vertical;">${escapeHtml(item.note || "")}</textarea>
         <div class="row">
           <button id="meDrawingSaveEdit" type="button" class="btn-mini">Mentés</button>
@@ -725,6 +811,15 @@
       item.note = host.querySelector("#meDrawingNoteEdit").value.trim();
       const textInput = host.querySelector("#meDrawingTextEdit");
       if (textInput) item.text = textInput.value.trim() || "Annotation";
+      if (item.type === "assessment") {
+        item.assessment = host.querySelector("#meDrawingAssessmentEdit").value.trim();
+        item.forecast = host.querySelector("#meDrawingForecastEdit").value.trim();
+        item.confidence = host.querySelector("#meDrawingConfidenceEdit").value;
+        item.confidenceScore = (CONFIDENCE_LEVELS[item.confidence] || CONFIDENCE_LEVELS.unknown).score;
+        item.analyst = host.querySelector("#meDrawingAnalystEdit").value.trim();
+        item.assessmentDate = host.querySelector("#meDrawingDateEdit").value || nowIso().slice(0, 10);
+        item.sources = host.querySelector("#meDrawingSourcesEdit").value.split(/\r?\n/).map(v => v.trim()).filter(Boolean);
+      }
       item.updatedAt = nowIso();
       renderItem(item);
       saveStorage();
@@ -740,7 +835,9 @@
       mode: state.mode,
       selectedId: state.selectedId,
       drawings: clone(state.drawings),
-      style: clone(state.style)
+      style: clone(state.style),
+      arrowPreset: state.arrowPreset,
+      assessmentConfidence: state.assessmentConfidence
     };
   }
 
@@ -808,3 +905,4 @@
     removeDrawing
   });
 })(window);
+
