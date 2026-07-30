@@ -2365,6 +2365,127 @@ window.setInterval(() => {
       }
     }
 
+    // ===== Satellite Intelligence =====
+    let satelliteIntelligenceModulePromise = null;
+    let satelliteIntelligenceInitialized = false;
+    let satelliteIntelligenceController = null;
+
+    function loadSatelliteIntelligenceModule() {
+      if (
+        window.MESatelliteIntelligence &&
+        typeof window.MESatelliteIntelligence.init === "function"
+      ) {
+        return Promise.resolve();
+      }
+
+      if (satelliteIntelligenceModulePromise) {
+        return satelliteIntelligenceModulePromise;
+      }
+
+      satelliteIntelligenceModulePromise = new Promise((resolve, reject) => {
+        const existing = document.querySelector(
+          'script[data-me-satellite-intelligence-module="true"]'
+        );
+
+        if (existing) {
+          if (
+            window.MESatelliteIntelligence &&
+            typeof window.MESatelliteIntelligence.init === "function"
+          ) {
+            resolve();
+            return;
+          }
+
+          existing.addEventListener("load", resolve, { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `js/satellite-intelligence-layer.js?v=${Date.now()}`;
+        script.async = true;
+        script.dataset.meSatelliteIntelligenceModule = "true";
+        script.onload = resolve;
+        script.onerror = () =>
+          reject(
+            new Error(
+              "js/satellite-intelligence-layer.js could not be loaded"
+            )
+          );
+
+        document.head.appendChild(script);
+      });
+
+      return satelliteIntelligenceModulePromise;
+    }
+
+    async function initializeSatelliteIntelligence() {
+      if (satelliteIntelligenceInitialized) {
+        return satelliteIntelligenceController;
+      }
+
+      const byId = id => document.getElementById(id);
+      const summary = byId("satelliteSummary");
+
+      try {
+        await loadSatelliteIntelligenceModule();
+
+        if (
+          !window.MESatelliteIntelligence ||
+          typeof window.MESatelliteIntelligence.init !== "function"
+        ) {
+          throw new Error("MESatelliteIntelligence module is unavailable.");
+        }
+
+        satelliteIntelligenceController = window.MESatelliteIntelligence.init({
+          map,
+          dom: {
+            toggle: byId("satelliteIntelligenceToggle"),
+            baseMapSelect: byId("satelliteBaseMapSelect"),
+            sourceSelect: byId("satelliteSourceSelect"),
+            locationSelect: byId("satelliteLocationSelect"),
+            imageSelect: byId("satelliteImageSelect"),
+            opacityInput: byId("satelliteOpacity"),
+            opacityValue: byId("satelliteOpacityValue"),
+            fitButton: byId("satelliteFitBtn"),
+            refreshButton: byId("satelliteRefreshBtn"),
+            summary
+          },
+          archiveUrls: [
+            "./data/satellite/archive-index.json",
+            "./docs/data/satellite/archive-index.json",
+            "./data/satellite/satellite_archive.json",
+            "./docs/data/satellite/satellite_archive.json"
+          ],
+          zIndex: 180,
+          onStatus: message => {
+            const status = byId("satelliteStatus");
+            if (status && message) status.textContent = message;
+          }
+        });
+
+        satelliteIntelligenceInitialized = true;
+        return satelliteIntelligenceController;
+      } catch (error) {
+        console.error(
+          "[satellite-intelligence] initialization failed:",
+          error?.message || error
+        );
+
+        if (summary) {
+          summary.textContent = "Satellite Intelligence could not be initialized.";
+        }
+
+        const toggle = byId("satelliteIntelligenceToggle");
+        if (toggle) {
+          toggle.checked = false;
+          toggle.disabled = true;
+        }
+
+        return null;
+      }
+    }
+
     // ===== Analyst Drawing =====
     let analystDrawingModulePromise = null;
     let analystDrawingInitialized = false;
@@ -4076,6 +4197,61 @@ window.setInterval(() => {
         </div>
       </div>
 
+      <div class="satellite-intelligence-control-block" data-control-block="satellite-intelligence" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
+        <div class="muted" style="margin-bottom:6px;font-weight:800;">🛰 Satellite Intelligence</div>
+
+        <div class="row">
+          <label>
+            <input id="satelliteIntelligenceToggle" type="checkbox" />
+            Enable satellite layer
+          </label>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Base map</div>
+        <select id="satelliteBaseMapSelect">
+          <option value="osm" selected>OpenStreetMap</option>
+          <option value="carto">CARTO Light</option>
+          <option value="esri">Esri World Imagery</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Satellite analysis mode</div>
+        <select id="satelliteSourceSelect">
+          <option value="sentinel2" selected>Sentinel-2 archive</option>
+          <option value="hybrid">Hybrid: Esri + Sentinel-2</option>
+          <option value="off">Base map only</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Location</div>
+        <select id="satelliteLocationSelect">
+          <option value="">Loading archive...</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Archive image</div>
+        <select id="satelliteImageSelect">
+          <option value="">No image selected</option>
+        </select>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">
+          Opacity: <span id="satelliteOpacityValue">72%</span>
+        </div>
+        <input id="satelliteOpacity" type="range" min="0" max="100" step="1" value="72" style="width:100%;" />
+
+        <div class="row" style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <button type="button" class="btn-mini" id="satelliteFitBtn">Fit image</button>
+          <button type="button" class="btn-mini" id="satelliteRefreshBtn">Refresh archive</button>
+        </div>
+
+        <div id="satelliteSummary" class="muted" style="margin-top:8px;line-height:1.45;">
+          Loading Sentinel-2 archive...
+        </div>
+        <div id="satelliteStatus" class="muted" style="margin-top:6px;line-height:1.45;">
+          Satellite Intelligence is ready to initialize.
+        </div>
+        <div class="muted" style="margin-top:8px;line-height:1.45;">
+          The selected Sentinel-2 image is displayed as an analytical overlay. Existing incidents, OSINT objects and analyst drawings remain above it.
+        </div>
+      </div>
+
       <div class="analyst-annotations-control-block" data-control-block="analyst-annotations" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div class="muted" style="margin-bottom:6px;font-weight:800;">Analyst annotations</div>
 
@@ -4683,6 +4859,7 @@ window.setInterval(() => {
 
     initializeOSINTTools();
     initializeAnalystDrawing();
+    initializeSatelliteIntelligence();
 
     if (
       analystAnnotationsCheckbox &&
