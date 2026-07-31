@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-07-31T05:45:20+00:00",
+  "generated_at": "2026-07-31T10:50:40+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 37,
+      "total_events": 38,
       "map_visualizable_events": 9,
       "total_map_points": 10,
       "multi_location_events": 1,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-30T21:12:28Z"
+      "latest_event_date": "2026-07-31T10:36:20Z"
     },
     "region_counts": {
-      "Gaza Strip": 27,
+      "Gaza Strip": 28,
       "South Lebanon": 12
     },
     "activity_type_counts": {
-      "airstrike": 28,
+      "airstrike": 29,
       "drone_activity": 4,
       "ground_activity": 4,
       "cross_border_fire": 3,
@@ -67,12 +67,12 @@
     },
     "target_organization_counts": {
       "Hamas": 22,
+      "Not explicitly stated": 7,
       "Hezbollah": 7,
-      "Not explicitly stated": 6,
       "Palestinian Islamic Jihad": 6
     },
     "target_type_counts": {
-      "commander": 21,
+      "commander": 22,
       "individual_operative": 10,
       "unspecified": 6,
       "armed_cell": 6,
@@ -86,14 +86,14 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 29,
-      "eliminated": 23,
+      "struck": 30,
+      "eliminated": 24,
       "dismantled": 6,
       "located": 6,
       "reported": 6
     },
     "commander_type_counts": {
-      "unspecified_commander": 9,
+      "unspecified_commander": 10,
       "cell_commander": 5,
       "company_commander": 4,
       "nukhba_commander": 3,
@@ -103,8 +103,8 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 33,
-      "command": 20,
+      "ground": 34,
+      "command": 21,
       "production": 6,
       "rocket_missile": 5,
       "drone_uav": 4,
@@ -115,9 +115,9 @@
     },
     "area_mention_counts": {
       "Northern Gaza Strip": 14,
-      "Southern Gaza Strip": 9,
+      "Southern Gaza Strip": 10,
+      "Central Gaza Strip": 5,
       "Yellow Line area": 4,
-      "Central Gaza Strip": 4,
       "Security Zone – South Lebanon": 3
     },
     "top_locations": {
@@ -128,6 +128,69 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19006",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19006",
+      "date": "2026-07-31T10:36:20Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: The IDF eliminated Kataeb al-Mujahideen’s Commander of Central Gaza, who took part in the abduction of Noa Argamani and Avinatan Or, and directed the abduction of Sudthisak Rinthalak Earlier this week (Tuesday), the IDF struck in the southern Gaza Strip and eliminated the terrorist Ahmed Hussein Mohammed Kafina, Commander of the central Gaza area in the terrorist organization Kataeb al-Mujahideen. Mohammed Kafina infiltrated Israel during the October 7th Massacre and commanded terrorists who infiltrated with him. He took part in the abduction of Noa Argamani and Avinatan Or, and directed the abduction of Sudthisak Rinthalak. During the war and recently, Mohammed Kafina advanced terror attacks against IDF troops and Israeli civilians. The terrorist posed an immediate threat to the troops and was eliminated in a precise aerial strike. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Not explicitly stated"
+      ],
+      "target_organization": "Not explicitly stated",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip",
+        "Central Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19006"
+    },
     {
       "id": "idf-idfofficial-19004",
       "source": "IDF official Telegram",
