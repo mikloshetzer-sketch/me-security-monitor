@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-01 11:35 UTC",
+    "updated": "2026-08-01 13:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-07-26",
     "period_end": "2026-08-01",
-    "total_events": 135,
-    "total_risk": 129.2,
-    "normalized_risk_score": 51.7,
+    "total_events": 134,
+    "total_risk": 127.25,
+    "normalized_risk_score": 50.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 40,
+    "military": 39,
     "security": 4,
     "political": 9,
     "other": 82
   },
   "source_counts": {
-    "news": 135,
+    "news": 134,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 52.25
-    },
-    {
-      "name": "Israel",
-      "risk": 15.3
+      "risk": 48.75
     },
     {
       "name": "Iraq",
-      "risk": 13.95
+      "risk": 16.95
     },
     {
-      "name": "Gaza Strip",
-      "risk": 11.5
+      "name": "Israel",
+      "risk": 15.4
     },
     {
       "name": "Egypt",
       "risk": 9.9
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 9.15
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Israeli West Bank settler tells BBC attacks on Palestinians are justified as revenge",
       "location": "West Bank",
       "url": "https://www.bbc.co.uk/news/articles/c4g4djgdyk2o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iranian Kurdish parties in Iraq face a delicate balance amid Iran attacks - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORkhuN01DMFB3SjRqZ2VCMTgxNDkwdVhIRnBEb3FRQ0FjVDR1R3dqRzFGUkdvNFJqWEstSV9zM0ZRSUtqWFQ3WUtHbkx2LTlnZWctMTJxRzdvZW9WeHZsRWVrcElxOUhZVHN5azdXUHZtMXM4bU1LcGMydVNac0wzZFd0Z1JhMVY3NWJjZDliT3dJcU8zRGpNd1JoQlh4X1dBaWpqWmZJbkx5RV9odm9hbEdod9IBuAFBVV95cUxOUlN3ejg1X3MydEhCNTJqMlJfTi1keE8yaVplcjFZbHBHZF9EVFpDemVPNGhIaEwzV0QtWWVlcU4yS3ZwSUtYeGo0XzdOSkxmUU9GcEI5Y2RuNzg1WFdnTGRyNG50Mnp0aW5IMDBlc0x4b29DYVhWbHJIT2RSbDRRRjNhNEpzb2dueVNIZm1FbDZ0SHE2MjVDWHZpNFp0eEg4OTJpUW9zUWh1WDlIQlNRMEtsNThJMmNh"
     },
     {
       "score": 2.7,
@@ -100,15 +109,6 @@
       "title": "Eleven Palestinians, including children, injured in Israel’s Nablus raids - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOU3JOajZEa2NZR2lxcWdOQjAzYU1lbWJ2NlR4SFNkS2lwWFVYZXFrUkd2cS1xS2JRRVVYU3huT0Yyak9JSTZPOEUzSzhteXBfN2hOeHk4SGg5dTh6aFdzWHd2Z2JXTm9TLXZSYXh6ODVUdml0aVZxZzhUTkJYdVlsZG5nR0MwTmFhbUNJNFBSVGFURS12TnZGQlNHTHYzWGRqOFczR09CYm1fZEJL0gGyAUFVX3lxTFBIelNOMHV2THBIbzhodkNrZVZKWkF3VUxpZHNybUtLbndLQmtvcldjV0tpb2FZenNzVmVVc29zQUFkUjRMeVZHQUtQMlJTRjE2ZU52QUV3eEc4a0sxUGoxcmRvWnBaZnVwMFBXeU9tTGdEYWlYS2xTVENDdHdjVGtGNXNrVzNVUjN5RldCRVZ5Wm96SVlHdVF3cDMyZW1BUjg3QWJyTVpTZjlVbkVaSFg1UGc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill at least six, including children, across Gaza Strip - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVWlUY25TLUhnMXFBdUxUbWdIV21mUnZxR3BPOFp6SjliZ3VCZnVJa0I3YXh3SW1QOHBKTUNVVVBVUDlJT1M4aFJRMjh0ZWFLN3F5bFZPWlZ6VnVHX0xuWHlFd0I1VHFNWkE2Zk9JV2V6cVdQNzdteExuRnB5WlJ3ci1xM3h4WjhULUJuamF5ZDk1ak5tWHBRZzFmems1WTE5dU5CQWlFc0JVR2VzM3JOTTV30gG3AUFVX3lxTE1IemJmck9MSXhhSVJBWGRRVGstZEVMVWpWMWVnZUxteTljSE1FMWhqcXZ3OGtRd2taendWcFExcXgyRDkxRjdKYnBEMjEwUTVBWG9mNHZaM0ZJUFlmMHd2QkVPbnp3akJjSF9oNXBrWUZqVnNCRkdVY091ZEJ4YzluWm5tNV9ERjVhbzVON18zRlhVT184SlY4bTVCQndtcmlVekxxaDU5MDNqS2lLOHl1ejB1TlVOTQ"
     },
     {
       "score": 2.4,
