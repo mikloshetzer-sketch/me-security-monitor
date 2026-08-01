@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-01T15:17:43+00:00",
+  "generated_at": "2026-08-01T21:08:20+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,36 +46,36 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 41,
+      "total_events": 42,
       "map_visualizable_events": 10,
       "total_map_points": 11,
       "multi_location_events": 1,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-01T11:15:35Z"
+      "latest_event_date": "2026-08-01T15:54:52Z"
     },
     "region_counts": {
       "Gaza Strip": 30,
-      "South Lebanon": 13
+      "South Lebanon": 14
     },
     "activity_type_counts": {
       "airstrike": 31,
+      "ground_activity": 5,
       "drone_activity": 4,
-      "ground_activity": 4,
       "cross_border_fire": 3,
+      "evacuation_warning": 2,
       "humanitarian_zone": 2,
-      "evacuation_warning": 1,
       "artillery": 1
     },
     "target_organization_counts": {
       "Hamas": 24,
+      "Hezbollah": 8,
       "Not explicitly stated": 8,
-      "Hezbollah": 7,
       "Palestinian Islamic Jihad": 6
     },
     "target_type_counts": {
       "commander": 24,
       "individual_operative": 10,
-      "unspecified": 7,
+      "unspecified": 8,
       "armed_cell": 6,
       "weapons_production": 5,
       "military_structure": 4,
@@ -87,11 +87,11 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 32,
-      "eliminated": 26,
+      "struck": 33,
+      "eliminated": 27,
+      "located": 7,
       "reported": 7,
-      "dismantled": 6,
-      "located": 6
+      "dismantled": 6
     },
     "commander_type_counts": {
       "unspecified_commander": 11,
@@ -104,7 +104,7 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 36,
+      "ground": 37,
       "command": 23,
       "production": 6,
       "weapons_logistics": 5,
@@ -129,6 +129,65 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19013",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19013",
+      "date": "2026-08-01T15:54:52Z",
+      "title": "IDF evacuation warning",
+      "description": "IDF: The IDF eliminated several Hezbollah terrorists in the Ali al-Taher Ridge area Overnight (Saturday), IDF soldiers identified several Hezbollah terrorists in the Ali al-Taher Ridge area, in the Security Zone, where IDF soldiers are operating. Following the identification, the soldiers struck the terrorists and eliminated them in order to remove the threat. As a result of the encounter, an IDF officer was moderately injured. The officer was evacuated to receive medical treatment at a hospital, and his family has been notified. The IDF will continue to operate to remove any threat to its soldiers and will not allow the Hezbollah terrorist organization to harm Israeli civilians.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "evacuation_warning",
+        "ground_activity"
+      ],
+      "activity_type": "evacuation_warning",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck",
+        "located"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19013"
+    },
     {
       "id": "idf-idfofficial-19011",
       "source": "IDF official Telegram",
