@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-01T10:09:38+00:00",
+  "generated_at": "2026-08-01T15:17:43+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,16 +46,16 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 40,
+      "total_events": 41,
       "map_visualizable_events": 10,
       "total_map_points": 11,
       "multi_location_events": 1,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-07-31T15:17:30Z"
+      "latest_event_date": "2026-08-01T11:15:35Z"
     },
     "region_counts": {
       "Gaza Strip": 30,
-      "South Lebanon": 12
+      "South Lebanon": 13
     },
     "activity_type_counts": {
       "airstrike": 31,
@@ -63,18 +63,19 @@
       "ground_activity": 4,
       "cross_border_fire": 3,
       "humanitarian_zone": 2,
+      "evacuation_warning": 1,
       "artillery": 1
     },
     "target_organization_counts": {
       "Hamas": 24,
-      "Not explicitly stated": 7,
+      "Not explicitly stated": 8,
       "Hezbollah": 7,
       "Palestinian Islamic Jihad": 6
     },
     "target_type_counts": {
       "commander": 24,
       "individual_operative": 10,
-      "unspecified": 6,
+      "unspecified": 7,
       "armed_cell": 6,
       "weapons_production": 5,
       "military_structure": 4,
@@ -88,9 +89,9 @@
     "operation_result_counts": {
       "struck": 32,
       "eliminated": 26,
+      "reported": 7,
       "dismantled": 6,
-      "located": 6,
-      "reported": 6
+      "located": 6
     },
     "commander_type_counts": {
       "unspecified_commander": 11,
@@ -109,8 +110,8 @@
       "weapons_logistics": 5,
       "rocket_missile": 5,
       "drone_uav": 4,
+      "unspecified": 3,
       "underground": 3,
-      "unspecified": 2,
       "naval": 1
     },
     "area_mention_counts": {
@@ -128,6 +129,62 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19011",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19011",
+      "date": "2026-08-01T11:15:35Z",
+      "title": "IDF evacuation warning",
+      "description": "IDF: Overnight (Saturday), an IDF officer was moderately injured during operational activity in southern Lebanon. The officer was evacuated to receive medical treatment at a hospital, and his family has been notified.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "evacuation_warning"
+      ],
+      "activity_type": "evacuation_warning",
+      "target_organizations": [
+        "Not explicitly stated"
+      ],
+      "target_organization": "Not explicitly stated",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "unspecified"
+      ],
+      "threat_domain": "unspecified",
+      "area_mentions": [],
+      "operation_results": [
+        "reported"
+      ],
+      "operation_result": "reported",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19011"
+    },
     {
       "id": "idf-idfofficial-19010",
       "source": "IDF official Telegram",
