@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-01 15:20 UTC",
+    "updated": "2026-08-01 17:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,30 @@
   "summary": {
     "period_start": "2026-07-26",
     "period_end": "2026-08-01",
-    "total_events": 134,
-    "total_risk": 130.3,
-    "normalized_risk_score": 52.1,
+    "total_events": 137,
+    "total_risk": 135.65,
+    "normalized_risk_score": 54.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 40,
+    "military": 41,
     "security": 3,
     "political": 9,
-    "other": 82
+    "other": 84
   },
   "source_counts": {
-    "news": 134,
+    "news": 137,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 49.05
+      "risk": 47.35
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 19.05
     },
     {
       "name": "Iraq",
@@ -38,12 +42,8 @@
       "risk": 15.4
     },
     {
-      "name": "Gaza Strip",
-      "risk": 12.15
-    },
-    {
       "name": "Egypt",
-      "risk": 9.9
+      "risk": 10.35
     }
   ],
   "top_events": [
@@ -79,9 +79,27 @@
       "date": "2026-08-01",
       "category": "military",
       "source_type": "news",
-      "title": "Iran warns against ‘fire of war’ amid US strike threats on energy sites - Al Jazeera",
+      "title": "Iran warns against ‘flames of war’ amid US strike threats on energy sites - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdnVGdzU1TEZxRHNxVDc4SUJXMTViU1hYZkpXeXNnRlBvT29EdU16alJOajByWVI0WV9GU0pRY0twdWF1VGFsSklOc3BXd2ptQUFKMUJEcVREWVVFb1R4N3N1Y0pWdGlfZURLZElvaXpTdERVN2JLZmJ6TmhjU21ZZzhnQlZNeGhUUXlDdkpzeTBsU2FrRDhYMWE5VWhJb2hkaFpSYW9yVFkzWnJORFE"
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdnVGdzU1TEZxRHNxVDc4SUJXMTViU1hYZkpXeXNnRlBvT29EdU16alJOajByWVI0WV9GU0pRY0twdWF1VGFsSklOc3BXd2ptQUFKMUJEcVREWVVFb1R4N3N1Y0pWdGlfZURLZElvaXpTdERVN2JLZmJ6TmhjU21ZZzhnQlZNeGhUUXlDdkpzeTBsU2FrRDhYMWE5VWhJb2hkaFpSYW9yVFkzWnJORFHSAbMBQVVfeXFMT3ktbzZJc3NHYTdxTWl4d0U4Nk53ZXVDTlV4bzhoMVI1cnExb0Q3eWVRdXhZcjQxcUE1OHp6TkMwb1N6M3J6YWc1bm1rUndNZnFkb0ZvS3VTbTNmeW9kN2xNbHhxMkJobG9MWnQ5LW9mV2FaLXQ0S3J2aGM5RnhEN05RRzZoTEdQUHhhUzRHR3M1NXprS3ktRndHd0xOcjdwV3l4SGcyLW1tS0g1YWhPLXZ1c2M"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill four across Gaza, destroy medical supply warehouse - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmI5dVlWZ2U4Y09CajNGOTllcHpxbzUtT1YtSDBFREtXYXp1Y3h4MW0xbVZZWGhobGpkcWg2aG5yN2t1TnIydDJPTFFkX1Y5WDVIcWNkT1hUaUt5ampmanBTeFhubDJSZXd2c01vU1JjeFZOTFVMOWJuTmpteXFQUUF4MGRybDlQa2NXaU1mVmpNVFk1UW5MWi1qNFN5MWdrOS14WHlTWTZ4d0Nic2VJ0gG0AUFVX3lxTE1ObWZpSzFnQUlYNXk0d3MzMWszYVg2bERRX2tfWE96WXR1aGNfdGJ3YlQ2WFhJemRzUndaUGdNaVFLR0hSenhwT0Z6ZFlsc1ZMeHFHVGxfbGVzYTR5X0FMdXJtMjMydl9OcURqWm1uR0ZTV011b1JFbjlJVGlIVzBpaV9kYUNLXzBqbERCWEFoS3VBY2RYME9MNWs2NkczNzVrNTBfWG9kLV9wNnNRYkVvaEhSQg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike destroys Gaza hospital warehouse - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQTFURVRKZkJEbnphUDZMeEVUaUdxZHlJWGQ2VTZwSE5tV2JJblBoU1QtdGtnRXEtUTdoOUxiUWEwMmdFU3lVc1V0TEtGeUNySV9vcGZIcjd3SWVXSVVmeEpGUWtvaDk3VDZwc2J3NjA5NU1IaUtvb3NsaUlpVm1raUQ2QldPX1FBTDFKcmZxclY2emJS0gGaAUFVX3lxTE0xMm54ejlQNi03ZnB2aVl1ajFQLVVZUlhjTXEwSmIyNm1CZU5ONi1hTE1sdWFZdVVCM3BaVGpOeFZ4U2Q4XzJGc04xM2RncEp5amZPN0N3UFM5MTZHc1puU3BwREtRVlBJUzhHaFNSaUk1aDlYQnFGUXJveWYxdDRRUHJrdHlpR1NERHlZdEV5RFR1bTRHMjRaV3c"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Southern Lebanese towns near Beaufort Castle hit by Israeli strikes - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNS1RTYUVHd1dBYnRyXzczZ1NvTlNfZEVHN2ZlZGV0RERJMFk2RjNRM1k5UnJPMFp5M2E2cjdYa2tnSjhSelZKMTVmODkxTnppbll3cjFpV1FXTEJXQ01TeGZ2ODNOWlZPeGxVdzNGQVhJZkRDZTllckNTeXQxOG1SX0tiTTVxUmNrRlRNUmJMeTg4Q2RXU0RrZmVmdUV1SFpnNTdhR0NScEJMcFAyZmIzNm1wVEJRM094cElZ0gHAAUFVX3lxTFBEN2tZZW5aejRrUFB4Qzc2NHJjNEs0Rk1JTFVHSE1wcmJHQUlCQjlUS0VTODlodG5JRHlyRWU1bGxGTG9BQ0JDN0xONnJ4b3ZaeXpCVjlRR3dKdGVFV29fR2hLWWs4VUE1NG5ueW5xSUw0NWxPdTQ2cDNGQWdlYXZNdkFOcWNfcVRoY213U25DM0RkYkozNExwY0JpVE1TcDQ4Z21IZGhPWnlIWTFpSlB3OHR1MkpyMEEwUmR5N0wyVw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-07-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Eleven Palestinians, including children, injured in Israel’s Nablus raids - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOU3JOajZEa2NZR2lxcWdOQjAzYU1lbWJ2NlR4SFNkS2lwWFVYZXFrUkd2cS1xS2JRRVVYU3huT0Yyak9JSTZPOEUzSzhteXBfN2hOeHk4SGg5dTh6aFdzWHd2Z2JXTm9TLXZSYXh6ODVUdml0aVZxZzhUTkJYdVlsZG5nR0MwTmFhbUNJNFBSVGFURS12TnZGQlNHTHYzWGRqOFczR09CYm1fZEJL0gGyAUFVX3lxTFBIelNOMHV2THBIbzhodkNrZVZKWkF3VUxpZHNybUtLbndLQmtvcldjV0tpb2FZenNzVmVVc29zQUFkUjRMeVZHQUtQMlJTRjE2ZU52QUV3eEc4a0sxUGoxcmRvWnBaZnVwMFBXeU9tTGdEYWlYS2xTVENDdHdjVGtGNXNrVzNVUjN5RldCRVZ5Wm96SVlHdVF3cDMyZW1BUjg3QWJyTVpTZjlVbkVaSFg1UGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-07-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "Egypt confirms drone caused fire on two gas vessels at Damietta - Reuters",
-      "location": "Egypt",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPM3F5LWg3Mm9rYmlhejJpdzJqQW9SWnU1WHJRVm9iZ1p0TUpmRTR6Mk1JYXVUekU2c1VlTHI5bV9DbzIyejlvYU13Y2cxYU12WExOYzJoVmxsVzVoc2hiWkQ2ZWFUZ0EwZHBZZlZ1UnREZjZGc243TlQtMXVKcDQ5bUpEaDR2Tmo5eTJkdlJhSXMtZ0U2cnk0OWNLLU50YlBjbnZrei1FVm9CYWw5cUE"
     }
   ]
 }
