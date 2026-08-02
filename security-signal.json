@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-02 03:55 UTC",
+    "updated": "2026-08-02 06:47 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,9 +8,9 @@
   "summary": {
     "period_start": "2026-07-27",
     "period_end": "2026-08-02",
-    "total_events": 122,
-    "total_risk": 124.0,
-    "normalized_risk_score": 49.6,
+    "total_events": 123,
+    "total_risk": 127.75,
+    "normalized_risk_score": 51.1,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
@@ -18,20 +18,20 @@
     "military": 44,
     "security": 2,
     "political": 9,
-    "other": 67
+    "other": 68
   },
   "source_counts": {
-    "news": 122,
+    "news": 123,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 43.4
+      "risk": 44.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 19.1
+      "risk": 22.3
     },
     {
       "name": "Israel",
@@ -48,11 +48,29 @@
   ],
   "top_events": [
     {
+      "score": 3.0,
+      "date": "2026-08-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says he is cancelling strikes on Iran subject to deal being made 'rapidly'",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump cancels Iran strike, says ‘deal perimeters’ reached - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVEljRnczZFZtcGFZTzFxVW1tV21sS01MSVpPMkZGNXNCbDZ1TkRtNE9SeTQtRmlHclVUS18wNTZvbWZKQzZXQTdHWkIzWHlPQjRmcC12Ym9SaHZMSUdjQ0Q5bEZDZWJBelVvZWwtVE9helNKYXoxWkx3akRvYzJUX0k5MF80WmNFdDFpdUw4bE5EODRTZU9WUEZ30gGfAUFVX3lxTE5iZEZrWUxSM0xsZ2JaMTRiVjBBcmp5ODFSanpZallaZDZUM1pjVXBGWEtVRGtjOVJnYlYzNkdjdVlDRlplMGI4eHNSOVQ5TW9TTlJPNHEyUlQ3R1A1S2I4b0ZvVXZacEJqcGJHNC1qLWF5Xzc3cENXYnRQUjM2VHhQWnd1WXNqZ0JobU5WOUYtT3VSanFOY0ttclZjU3hvaw"
+    },
+    {
       "score": 2.7,
       "date": "2026-08-01",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strikes kill two in Gaza, destroy medicine storage warehouses - reuters.com",
+      "title": "Israeli strikes kill two in Gaza, destroy medicine storage warehouses - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQejJOMUdaM3o5dDFVSU04YTE1RzhOVjhyTzdxR2tqalUtSk1uUFlxOTJFLTN1TGgtMWRqdUktaGdCQUw3dDE1MG1hZjljOUdkYUk4RWhEZnByVHJyN2JPeFVOUG9Danp4ZUZTNmVUeDJtaXVjYUNhbk5wb1lpMGN6ZnZIVEhrelIzS0RjaEdXT3czX1Vrekh6VTRTQzUtNE8zM0pPVGY4eHA4eFdSWm8xR3pIRnNtcXdZSUQw"
     },
@@ -61,7 +79,16 @@
       "date": "2026-08-01",
       "category": "military",
       "source_type": "news",
-      "title": "Trump says he will hold off on fresh Iran attack in hope of quick deal - reuters.com",
+      "title": "Israeli strikes kill at least four in Gaza despite Trump announcing breakthrough - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNzFyTXBvZ1pGeVZXTUlTRWM3VGxjTjd5dXk4Y1RwZUYtaE9adFlFRGNkcU1tNmR6M2lCckhIN2cwMG54RUNiNzNib3RQVWxLd1FqWlY5eVZObDc4b3NCdGlLZi10a214V25teXViTkpCZXBXeDRfazBSOUNJVkZTM1RLcWt5SzUwaURiUUJMcDlOZFJFTkg5NXZXV0ZuakxZanh2YUNVMko3R1pJS3RsUFBsQjNpOXlLcHQwbHJtZ1FZWk9VdDRz"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says he will hold off on fresh Iran attack in hope of quick deal - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOQnFCZlNtaWNsWjNfQzZYSUltNnlianRRMlRsUmVqWFNEWlEwWERhVmp5dVdSazcwNmo4bTNzQjNwcW1rS1pYSFRzUXZvUkF5dEFRYzY4T3Q4UUF0ZVBFLXlxVzA5YnRXZTliVWN0M2ZlcV9WVEw4ZjZqblVxOFJ6N2JmX1FMSk5HUXdLWWpOM2l1SWI3b0E2NHB5UU5rLUFRbjRXUEZ6ajZ1VUt1N0JIdURWT1VNbkVHX2UxUVU1b1lFTzY4aFNaOEJ5TTJJdw"
     },
@@ -70,7 +97,7 @@
       "date": "2026-08-01",
       "category": "military",
       "source_type": "news",
-      "title": "Bomb carried by woman kills three, injures 21 near Moscow restaurant, authorities say - reuters.com",
+      "title": "Bomb carried by woman kills three, injures 21 near Moscow restaurant, authorities say - Reuters",
       "location": "Oman",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNkhRMDdsSlFaempsUmw0WmZQV0VzNTg5MnQ2TE9pbEs0WUg1ZDVYQWlfVWdXSjRwdUM4YThmMnB3aUs2cUVDZ0s0MnNlSDNHMDJDZU5iWmE0eFdpTmRlMlcwV05HNkI4b0d5SVJhS080bl9CZlNPUkpoSWZjRjRNZUw5alNtaFVQdERIT2p5MDlSTTFCWms4"
     },
@@ -109,33 +136,6 @@
       "title": "Israeli strikes kill seven across Gaza, destroy medical supply warehouse - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmI5dVlWZ2U4Y09CajNGOTllcHpxbzUtT1YtSDBFREtXYXp1Y3h4MW0xbVZZWGhobGpkcWg2aG5yN2t1TnIydDJPTFFkX1Y5WDVIcWNkT1hUaUt5ampmanBTeFhubDJSZXd2c01vU1JjeFZOTFVMOWJuTmpteXFQUUF4MGRybDlQa2NXaU1mVmpNVFk1UW5MWi1qNFN5MWdrOS14WHlTWTZ4d0Nic2VJ0gG0AUFVX3lxTE1ObWZpSzFnQUlYNXk0d3MzMWszYVg2bERRX2tfWE96WXR1aGNfdGJ3YlQ2WFhJemRzUndaUGdNaVFLR0hSenhwT0Z6ZFlsc1ZMeHFHVGxfbGVzYTR5X0FMdXJtMjMydl9OcURqWm1uR0ZTV011b1JFbjlJVGlIVzBpaV9kYUNLXzBqbERCWEFoS3VBY2RYME9MNWs2NkczNzVrNTBfWG9kLV9wNnNRYkVvaEhSQg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Palestinian children among those detained by Israel in West Bank raids - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNmlEVDEwZ3FTZC1oaHVyUFpiMmJfX2k1SEJNZ0lDYm1ETzlDemVFQkstaTFsU3pNRXpDNlJRYmEzVUZSSlRSZ3NfcnRDclBPMFlUZEkzTVotaTZKRUtSWDRac1VycV9oRnNBOHFJcUtKX01DRFpMbG9YVzZMTW1LTEVZdXhuUmwxdTRIMXZicW9QUDhFdWhmcmtwUFRGaVFCbkZGSERZc2x4VTls0gGyAUFVX3lxTE9vYzZzMjNsVnlWM0lGTzVTUkJKbEx1cjdoTlFJajRNY1FTYTdqaXoxemREYUJDaFNtb1lSQUg2OThTX0NlNEVJTmFNOGM0QWppSDlTckw0OWZfTmFCU1o2aGQyYjlWYXdOZUlPMkVlZFNGTDQ0TjJ2by13WHFYNTRVNFdQaHBIbHZRRDJxajJNZmZDQXNWSU1IV0N0NlF3VzFVQmpEaWtiQ1VPbFJLQ2EtWlE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel launches attacks across Gaza one day after Hamas agrees to disarm - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPQl9SSWFOWWo0SlhlYkxJNGJZaWx5d1g4ampfMzA3eXBNMmY2MFVJdVN1b2I4TzNYQkRyT3A4QkQ2WkpHTmo0cHNvLThGMFBZcjRndDRObk1uYVplOXNXZmNvazgzOVVvMUVUWlA5UFBSTUtvSURxWHpKNFctcUdTSHpLbE5hRVRDc3NxMGVSTDJwT3dPMFZqakpsWThRU0ZQSVV2MWJjMU5QSzNmQ0NQYkNFS3dvRmE0WjQzYWVIc9IBxAFBVV95cUxOeFZxekl4TXBPLW5sM2lTaTZsMmpQS3MtbjhjU3hhT0ZjMmxvOXRvYU9KU2RmR21KZGV2SUt4V1FIOE1pcTE0enE3LU42dEhlMHl6aTlheVZKUmEtVjh3dEJCWnAzNktFQUNNX3dyUkk3OEhDalRqSzlQRkNYLUlaUUU1N2U0M1dBTXY0RXNpRF9nM21KS2lGU2NwaVRrQjlNMTF0V1pzdXBKMlEzMGFYbTQtYmQ5SnpzNjhIRkJobWkyNjh6"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike destroys Gaza hospital warehouse - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQTFURVRKZkJEbnphUDZMeEVUaUdxZHlJWGQ2VTZwSE5tV2JJblBoU1QtdGtnRXEtUTdoOUxiUWEwMmdFU3lVc1V0TEtGeUNySV9vcGZIcjd3SWVXSVVmeEpGUWtvaDk3VDZwc2J3NjA5NU1IaUtvb3NsaUlpVm1raUQ2QldPX1FBTDFKcmZxclY2emJS0gGaAUFVX3lxTE0xMm54ejlQNi03ZnB2aVl1ajFQLVVZUlhjTXEwSmIyNm1CZU5ONi1hTE1sdWFZdVVCM3BaVGpOeFZ4U2Q4XzJGc04xM2RncEp5amZPN0N3UFM5MTZHc1puU3BwREtRVlBJUzhHaFNSaUk1aDlYQnFGUXJveWYxdDRRUHJrdHlpR1NERHlZdEV5RFR1bTRHMjRaV3c"
     }
   ]
 }
