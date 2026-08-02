@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-02T10:06:51+00:00",
+  "generated_at": "2026-08-02T15:18:36+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 43,
-      "map_visualizable_events": 11,
-      "total_map_points": 12,
-      "multi_location_events": 1,
+      "total_events": 44,
+      "map_visualizable_events": 12,
+      "total_map_points": 14,
+      "multi_location_events": 2,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-02T05:48:32Z"
+      "latest_event_date": "2026-08-02T14:02:13Z"
     },
     "region_counts": {
-      "Gaza Strip": 31,
+      "Gaza Strip": 32,
       "South Lebanon": 14
     },
     "activity_type_counts": {
-      "airstrike": 32,
+      "airstrike": 33,
       "ground_activity": 5,
       "drone_activity": 4,
       "cross_border_fire": 3,
@@ -67,13 +67,13 @@
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 25,
+      "Hamas": 26,
       "Hezbollah": 8,
       "Not explicitly stated": 8,
-      "Palestinian Islamic Jihad": 6
+      "Palestinian Islamic Jihad": 7
     },
     "target_type_counts": {
-      "commander": 25,
+      "commander": 26,
       "individual_operative": 11,
       "unspecified": 8,
       "armed_cell": 6,
@@ -87,14 +87,14 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 34,
-      "eliminated": 28,
+      "struck": 35,
+      "eliminated": 29,
       "located": 7,
       "reported": 7,
       "dismantled": 6
     },
     "commander_type_counts": {
-      "unspecified_commander": 11,
+      "unspecified_commander": 12,
       "cell_commander": 7,
       "nukhba_commander": 4,
       "company_commander": 4,
@@ -104,8 +104,8 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 38,
-      "command": 24,
+      "ground": 39,
+      "command": 25,
       "production": 6,
       "weapons_logistics": 5,
       "rocket_missile": 5,
@@ -115,21 +115,102 @@
       "naval": 1
     },
     "area_mention_counts": {
-      "Northern Gaza Strip": 14,
+      "Northern Gaza Strip": 15,
       "Southern Gaza Strip": 11,
       "Central Gaza Strip": 6,
       "Yellow Line area": 4,
       "Security Zone – South Lebanon": 3
     },
     "top_locations": {
+      "Gaza City": 4,
       "Khan Yunis": 4,
-      "Gaza City": 3,
       "Nuseirat": 3,
+      "Jabalia": 1,
       "Maghazi": 1,
       "Rafah": 1
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19016",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19016",
+      "date": "2026-08-02T14:02:13Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: The IDF eliminated three terrorists who attempted to advance terror attacks against IDF troops Yesterday (Saturday), the IDF struck in the area of Gaza City and eliminated Alaa Imad Khamis Tarams, a terrorist from the “Army of Islam” terrorist organization, and Hassan Ibrahim Shehadeh Qahman, a terrorist from the Islamic Jihad terrorist organization. In an additional strike in the northern Gaza Strip last week, the IDF eliminated Ahmad Khudar, a commander in the Jabalya battalion of the Hamas terrorist organization. The three terrorists attempted to advance terror attacks against Israeli civilians and IDF troops, and were eliminated in order to remove the threat. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        },
+        {
+          "name": "Jabalia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.528,
+          "longitude": 34.4831,
+          "matched_alias": "jabalya"
+        }
+      ],
+      "location_count": 2,
+      "location": "Gaza City",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19016"
+    },
     {
       "id": "idf-idfofficial-19014",
       "source": "IDF official Telegram",
@@ -2893,6 +2974,170 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19016-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19016",
+      "date": "2026-08-02T14:02:13Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: The IDF eliminated three terrorists who attempted to advance terror attacks against IDF troops Yesterday (Saturday), the IDF struck in the area of Gaza City and eliminated Alaa Imad Khamis Tarams, a terrorist from the “Army of Islam” terrorist organization, and Hassan Ibrahim Shehadeh Qahman, a terrorist from the Islamic Jihad terrorist organization. In an additional strike in the northern Gaza Strip last week, the IDF eliminated Ahmad Khudar, a commander in the Jabalya battalion of the Hamas terrorist organization. The three terrorists attempted to advance terror attacks against Israeli civilians and IDF troops, and were eliminated in order to remove the threat. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        },
+        {
+          "name": "Jabalia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.528,
+          "longitude": 34.4831,
+          "matched_alias": "jabalya"
+        }
+      ],
+      "location_count": 2,
+      "location": "Gaza City",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19016",
+      "parent_event_id": "idf-idfofficial-19016",
+      "location_index": 1
+    },
+    {
+      "id": "idf-idfofficial-19016-location-2",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19016",
+      "date": "2026-08-02T14:02:13Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: The IDF eliminated three terrorists who attempted to advance terror attacks against IDF troops Yesterday (Saturday), the IDF struck in the area of Gaza City and eliminated Alaa Imad Khamis Tarams, a terrorist from the “Army of Islam” terrorist organization, and Hassan Ibrahim Shehadeh Qahman, a terrorist from the Islamic Jihad terrorist organization. In an additional strike in the northern Gaza Strip last week, the IDF eliminated Ahmad Khudar, a commander in the Jabalya battalion of the Hamas terrorist organization. The three terrorists attempted to advance terror attacks against Israeli civilians and IDF troops, and were eliminated in order to remove the threat. IDF troops under the Southern Command remain deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Northern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        },
+        {
+          "name": "Jabalia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.528,
+          "longitude": 34.4831,
+          "matched_alias": "jabalya"
+        }
+      ],
+      "location_count": 2,
+      "location": "Jabalia",
+      "country": "Palestinian Territories",
+      "latitude": 31.528,
+      "longitude": 34.4831,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19016",
+      "parent_event_id": "idf-idfofficial-19016",
+      "location_index": 2
+    },
     {
       "id": "idf-idfofficial-19014-location-1",
       "source": "IDF official Telegram",
