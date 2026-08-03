@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-03 07:47 UTC",
+    "updated": "2026-08-03 11:45 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,63 +8,45 @@
   "summary": {
     "period_start": "2026-07-28",
     "period_end": "2026-08-03",
-    "total_events": 144,
-    "total_risk": 153.33,
-    "normalized_risk_score": 61.3,
+    "total_events": 140,
+    "total_risk": 150.83,
+    "normalized_risk_score": 60.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 54,
+    "military": 52,
     "security": 3,
-    "political": 13,
-    "other": 74
+    "political": 14,
+    "other": 71
   },
   "source_counts": {
-    "news": 138,
+    "news": 134,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 66.68
+      "risk": 66.83
     },
     {
       "name": "Gaza Strip",
-      "risk": 26.25
+      "risk": 29.1
     },
     {
       "name": "Israel",
-      "risk": 16.7
-    },
-    {
-      "name": "Egypt",
-      "risk": 11.3
+      "risk": 17.2
     },
     {
       "name": "Iraq",
-      "risk": 11.25
+      "risk": 11.0
+    },
+    {
+      "name": "Egypt",
+      "risk": 10.95
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-08-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Gold firms as oil prices slump after Trump holds off on Iran attack - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTnkxZDh5TElCa1dZeUtDT2JfblI5ZFJuQkZNQ1pvbHlkcWxHRUVfMk51N2t0ZDUtbEhOYW9aVjg5d3lMSkNXYlFMc0I5Z3o1bjh4c0pkZ3BsWkRYeWhOalNoOUZPN3pvYVRSb1NnT21rZy1TamRFMHN2MUp1WjhoSmZaT0prMExjTVk1aThUbHAwNEo3MmpsbTI2UFdsY2Z2Y0RlT2RB"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-08-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil tumbles as Trump cancels attack on Iran to reach nuclear deal - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVnBOaGh1VXBaaGQwVmloSzlPcmg5aFdQeENKS3JtNi1wQTZlQTRBUm02ODRrYkNVZkNDREwtTTdMeUhlNV94QjctaFhpMWhTWVVJaF9xeVhWdEdKZXBMbFA4alVQaDBXbnMzczBqRnVBUlVrVUJJTFhLQjdpSU9SV2lHV1FQd0hvOEs0QkZwLVZfUDhtSkVGUU02T2tPeDFXaU5SaWRtUWt3cjhE"
-    },
     {
       "score": 3.0,
       "date": "2026-08-03",
@@ -79,9 +61,9 @@
       "date": "2026-08-03",
       "category": "military",
       "source_type": "news",
-      "title": "Trump suggests new talks with Iran to begin on Monday",
-      "location": "Tehran",
-      "url": "https://www.bbc.co.uk/news/articles/c23579jzv08o?at_medium=RSS&at_campaign=rss"
+      "title": "Oil prices drop after Trump cancels attack on Iran to seek nuclear deal - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVnBOaGh1VXBaaGQwVmloSzlPcmg5aFdQeENKS3JtNi1wQTZlQTRBUm02ODRrYkNVZkNDREwtTTdMeUhlNV94QjctaFhpMWhTWVVJaF9xeVhWdEdKZXBMbFA4alVQaDBXbnMzczBqRnVBUlVrVUJJTFhLQjdpSU9SV2lHV1FQd0hvOEs0QkZwLVZfUDhtSkVGUU02T2tPeDFXaU5SaWRtUWt3cjhE"
     },
     {
       "score": 2.7,
@@ -136,6 +118,24 @@
       "title": "Trump ‘cancels attack on Iran’ saying deal is near - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZmRPbVAwTkFPMURqSVkxMzdINTdYZ3N1alBIcVRQS2sybHo2Ymk4Y1BqRDlZSEpQYTMtTWNGb3JDOGhCT3Q1TnpDcmRlMlgwMVE2c09iMko5b013VEg4eWhYMTdJa3RtWjhsbW50V2tJZDhVTVY1QW4zWGhHeHQ4azE5RDJxZXc0UUxjSGFkakZWYkMtbUIyQUZEWUozZ0HSAaQBQVVfeXFMT1F0bTZLdGdaRTB1blU4RWVod0c5cmdfWmIxVHg2Ni1ldHFlaVJ5NHZabS1IelRGd1Q5X1J0bGUwdGlLLWtBTkhndFJvYV9hVXV4Q1cwM0RQYXQ5ZUl2aHQzU19IalBUYUl0Rl9PTXA0RmpUN2VGS1ZnaE9hMmhXT0ZXbUltRG5mYl8wc2hKckJqb1A5TXhWQnUzUThPU2JtMWg3dks"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel kills 19 in Gaza as attacks escalate despite latest Trump plan - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZ19adVVFZ2hWV2R1X3djN25IMGczbkFPbXRweTlqamRJYmRPaWpIazlFYUIwNE1zZmZBVXFDbXBjRkZnWnk1d2Rhb3RwSC1XUFBudWNJdnZTdG1MY3ZOV21sdHhVQno5ZllJQ3dnR19UZ20zNTJVeFJPb2JYRms2RkxqOGVqcnVzcUpIemlUNllMT25BakRSNGJ0Z1M2SVh4Vmg3YXpn"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "No breakthrough on Strait of Hormuz as Trump halts attack on Iran - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUWJRMGhCUTV1M3RUVzBvR3dIeEJQNmtYQlZMNXpuNTFEZGZqMmJhMU1ZMWhDNVhGNm11VHVqUGZkZDRqak5jQzljSHQ5cDBoUTV6akVtZ1Aycm9lTHlwbVhFcGdXQVM5a1NtSEhDMncxWWYyWGJvMndKMktwMmJiVVV1ZzkybV93Z3ZnbVR5S2hBWFZYQk83VmNPN2Z1M0JSWUNuaVJvMEHSAa4BQVVfeXFMT2g3SWN5WGJFOXAyTFQxSE1xTmtBNWMxeGRIY2hpSV9kUnFZaGVaTVhqMUctN3V1MTViNWtwdjNMTWZxSHM4WDR1OFZLOGpqaFo4Q19Jc0dHUnlBd3E1NkY3NzJ3RDNWanhNS2dzNGo1MFhKS21pZ3VxdkV3SElfSmlQNUJrdmxiX0NjaXJTOXo0MTNJV3UtLWpnNURQSDY4ZTZvcmtPYjN4cDJtVlZB"
     }
   ]
 }
