@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.1.2";
+  const MODULE_VERSION = "1.2.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -339,6 +339,135 @@
         color: #ffffff;
       }
 
+      .me-satellite-change-details {
+        margin-top: 16px;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .me-satellite-change-details summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 13px 15px;
+        background: #f1f5f9;
+        color: #0f2942;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 900;
+        list-style: none;
+      }
+
+      .me-satellite-change-details summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .me-satellite-change-details summary::after {
+        content: "▾";
+        font-size: 16px;
+        transition: transform .18s ease;
+      }
+
+      .me-satellite-change-details[open] summary::after {
+        transform: rotate(180deg);
+      }
+
+      .me-satellite-change-body {
+        padding: 15px;
+      }
+
+      .me-satellite-change-metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .me-satellite-change-metric {
+        padding: 11px 12px;
+        border: 1px solid #dbe4ee;
+        border-radius: 11px;
+        background: #f8fafc;
+      }
+
+      .me-satellite-change-metric__label {
+        display: block;
+        margin-bottom: 5px;
+        color: #64748b;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+      }
+
+      .me-satellite-change-metric__value {
+        color: #0f172a;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .me-satellite-change-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .me-satellite-change-badge--low { background: #dcfce7; color: #166534; }
+      .me-satellite-change-badge--medium { background: #fef3c7; color: #92400e; }
+      .me-satellite-change-badge--high { background: #fed7aa; color: #9a3412; }
+      .me-satellite-change-badge--very-high { background: #fee2e2; color: #991b1b; }
+      .me-satellite-change-badge--unknown { background: #e2e8f0; color: #475569; }
+
+      .me-satellite-change-assessment {
+        margin-top: 12px;
+        padding: 12px 13px;
+        border-left: 4px solid #2563eb;
+        border-radius: 8px;
+        background: #eff6ff;
+        color: #1e3a5f;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .me-satellite-change-warnings {
+        margin: 10px 0 0;
+        padding: 10px 12px 10px 30px;
+        border-radius: 8px;
+        background: #fff7ed;
+        color: #9a3412;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .me-satellite-change-map {
+        display: block;
+        width: 100%;
+        max-height: 560px;
+        margin-top: 13px;
+        border: 1px solid #dbe4ee;
+        border-radius: 11px;
+        object-fit: contain;
+        background: #0f172a;
+      }
+
+      .me-satellite-change-note {
+        margin-top: 11px;
+        color: #64748b;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 900px) {
+        .me-satellite-change-metrics {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
       @media (max-width: 760px) {
         .me-satellite-modal-backdrop {
           align-items: flex-start;
@@ -605,6 +734,61 @@
     return number === null ? "n/a" : `${number.toFixed(1)}%`;
   }
 
+  function normalizeChangeDetection(record) {
+    const source = record?.change_detection;
+    if (!source || typeof source !== "object") return null;
+
+    const warnings = Array.isArray(source.warnings)
+      ? source.warnings.filter(Boolean).map(String)
+      : source.warnings
+        ? [String(source.warnings)]
+        : [];
+
+    return {
+      status: String(firstDefined(source.status, "unknown")),
+      score: toNumber(source.score),
+      level: String(firstDefined(source.level, "UNKNOWN")).toUpperCase(),
+      comparability: String(firstDefined(source.comparability, "UNKNOWN")).toUpperCase(),
+      comparability_score: toNumber(source.comparability_score),
+      ssim: toNumber(source.ssim),
+      changed_pixel_percent: toNumber(source.changed_pixel_percent),
+      significant_regions: toNumber(source.significant_regions),
+      largest_region_percent: toNumber(firstDefined(
+        source.largest_region_percent,
+        source.largest_region_area_percent,
+        source.largest_region
+      )),
+      largest_region_km2: toNumber(source.largest_region_km2),
+      processing_time_seconds: toNumber(firstDefined(
+        source.processing_time_seconds,
+        source.processing_time
+      )),
+      assessment: String(firstDefined(
+        source.assessment,
+        "Nincs elérhető automatikus értékelés."
+      )),
+      warnings,
+      change_map_url: String(firstDefined(
+        source.change_map_url,
+        source.map_url,
+        source.image_url,
+        ""
+      ))
+    };
+  }
+
+  function formatMetric(value, digits = 1, suffix = "") {
+    const number = toNumber(value);
+    return number === null ? "n/a" : `${number.toFixed(digits)}${suffix}`;
+  }
+
+  function changeLevelClass(level) {
+    const normalized = String(level || "").toLowerCase().replace(/_/g, "-");
+    return ["low", "medium", "high", "very-high"].includes(normalized)
+      ? normalized
+      : "unknown";
+  }
+
   function formatRecordLabel(record) {
     const date = record.timestamp ? formatDate(record.timestamp) : "dátum nélkül";
     const cloud = firstDefined(record.cloud_cover, record.imagery?.cloud_cover, record.cloud_percent);
@@ -804,6 +988,17 @@
         tasks.push(
           resolveExistingAssetUrl(after.image_url).then((url) => {
             after.image_url = url;
+          })
+        );
+      }
+
+      if (record.change_detection?.change_map_url) {
+        tasks.push(
+          resolveExistingAssetUrl(record.change_detection.change_map_url).then((url) => {
+            record.change_detection = {
+              ...record.change_detection,
+              change_map_url: url
+            };
           })
         );
       }
@@ -1135,6 +1330,116 @@
       `;
     }
 
+    function buildChangeDetectionHtml(record) {
+      const change = normalizeChangeDetection(record);
+
+      if (!change) {
+        return `
+          <details class="me-satellite-change-details">
+            <summary>Automatikus változásdetektálás</summary>
+            <div class="me-satellite-change-body">
+              <div class="me-satellite-detail-box">
+                Ehhez a rekordhoz még nem érhető el automatikus változásdetektálási eredmény.
+              </div>
+            </div>
+          </details>
+        `;
+      }
+
+      const changeMapUrl = resolveAssetUrl(change.change_map_url);
+      const levelClass = changeLevelClass(change.level);
+      const warnings = change.warnings.length
+        ? `<ul class="me-satellite-change-warnings">${change.warnings
+            .map((warning) => `<li>${escapeHtml(warning)}</li>`)
+            .join("")}</ul>`
+        : "";
+
+      const largestRegion = change.largest_region_km2 !== null
+        ? `${formatMetric(change.largest_region_km2, 3, " km²")}`
+        : formatMetric(change.largest_region_percent, 2, "%");
+
+      return `
+        <details class="me-satellite-change-details">
+          <summary>
+            <span>Automatikus változásdetektálás</span>
+            <span class="me-satellite-change-badge me-satellite-change-badge--${levelClass}">
+              ${escapeHtml(change.level)} · ${formatMetric(change.score, 1, "/100")}
+            </span>
+          </summary>
+
+          <div class="me-satellite-change-body">
+            <div class="me-satellite-change-metrics">
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Változási pontszám</span>
+                <span class="me-satellite-change-metric__value">${formatMetric(change.score, 1, "/100")}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Összehasonlíthatóság</span>
+                <span class="me-satellite-change-metric__value">${escapeHtml(change.comparability)}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Comparability score</span>
+                <span class="me-satellite-change-metric__value">${formatMetric(change.comparability_score, 1, "%")}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">SSIM</span>
+                <span class="me-satellite-change-metric__value">${formatMetric(change.ssim, 4)}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Megváltozott pixelek</span>
+                <span class="me-satellite-change-metric__value">${formatMetric(change.changed_pixel_percent, 2, "%")}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Jelentős régiók</span>
+                <span class="me-satellite-change-metric__value">${formatMetric(change.significant_regions, 0)}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Legnagyobb régió</span>
+                <span class="me-satellite-change-metric__value">${largestRegion}</span>
+              </div>
+              <div class="me-satellite-change-metric">
+                <span class="me-satellite-change-metric__label">Feldolgozási idő</span>
+                <span class="me-satellite-change-metric__value">${formatMetric(change.processing_time_seconds, 2, " s")}</span>
+              </div>
+            </div>
+
+            <div class="me-satellite-change-assessment">
+              <strong>Automatikus értékelés</strong><br>
+              ${escapeHtml(change.assessment)}
+            </div>
+
+            ${warnings}
+
+            ${changeMapUrl ? `
+              <img
+                class="me-satellite-change-map"
+                src="${escapeHtml(changeMapUrl)}"
+                alt="${escapeHtml(record.location_name)} change map"
+              >
+              <div class="me-satellite-modal__actions">
+                <a
+                  class="me-satellite-modal__button"
+                  href="${escapeHtml(changeMapUrl)}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >CHANGE MAP teljes felbontás</a>
+                <button
+                  type="button"
+                  class="me-satellite-modal__button me-satellite-modal__button--primary"
+                  data-me-satellite-show-change-map
+                >CHANGE MAP a térképen</button>
+              </div>
+            ` : ""}
+
+            <div class="me-satellite-change-note">
+              Az eredmény automatikus vizuális változásjelzés. Önmagában nem bizonyít rombolást,
+              katonai aktivitást vagy a változás okát; emberi elemzői ellenőrzés szükséges.
+            </div>
+          </div>
+        </details>
+      `;
+    }
+
     function showCompareModal(record) {
       const modal = ensureCompareModal();
       const body = modal.querySelector(".me-satellite-modal__body");
@@ -1193,6 +1498,8 @@
             </div>
           </div>
 
+          ${buildChangeDetectionHtml(record)}
+
           <div class="me-satellite-modal__actions">
             ${after.image_url ? `
               <a
@@ -1242,6 +1549,19 @@
               image_url: before.image_url
             };
             showRecord(beforeRecord, { fitBounds: true });
+          });
+
+        body
+          .querySelector("[data-me-satellite-show-change-map]")
+          ?.addEventListener("click", () => {
+            const change = normalizeChangeDetection(record);
+            if (!change?.change_map_url) return;
+
+            const changeRecord = {
+              ...record,
+              image_url: resolveAssetUrl(change.change_map_url)
+            };
+            showRecord(changeRecord, { fitBounds: true });
           });
       }
 
