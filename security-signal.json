@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-04 10:50 UTC",
+    "updated": "2026-08-04 14:42 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-07-29",
     "period_end": "2026-08-04",
     "total_events": 130,
-    "total_risk": 129.73,
-    "normalized_risk_score": 51.9,
+    "total_risk": 132.18,
+    "normalized_risk_score": 52.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 43,
     "security": 3,
-    "political": 18,
-    "other": 66
+    "political": 19,
+    "other": 65
   },
   "source_counts": {
     "news": 124,
@@ -27,26 +27,35 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 59.98
+      "risk": 60.03
     },
     {
       "name": "Gaza Strip",
-      "risk": 26.2
+      "risk": 29.7
     },
     {
       "name": "Israel",
       "risk": 15.05
     },
     {
-      "name": "Iraq",
-      "risk": 5.65
-    },
-    {
       "name": "West Bank",
       "risk": 5.4
+    },
+    {
+      "name": "Iraq",
+      "risk": 5.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "Six years on, families of those killed in huge Lebanon port blast hope for justice at last - Reuters",
+      "location": "Lebanon",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZTBUQWJhNTlGalR6X1BiS0JMLUpfRzRnMnoyQVB5cU1BcEVnc2k3cVpObzZueU8weU0wdm1mYnp3c1FYM25NRUgxbE9tZ1lCckRyYVVlZUlNemhXZl9YOGFJa2lrVTRLS0JGb01yeUd0M205a2hJdVBjRWtZYjhsbXpZWUFmMHNlMkJBZW5YMVE0clN1cEU3d0VEV3FkTTIzaWw2dEJuRExJTDB6ZVBvQW5lRzJ6bXFHS05LdTlZNkt0N0V0d2c"
+    },
     {
       "score": 3.0,
       "date": "2026-08-04",
@@ -66,6 +75,15 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZjVoa01lTFhQYVMtVjRxRWZKSng1YzFUTTNJOVI1T1pWZVNKc1czOWhJWHB3VDFFWnVrY3lLT1FnSVBfU1M1RFdrU2FsYVlKZXdhVm9VbF9PaEFNeGVMR0ZtNmlEeGhkWG1iang1U0kzb3hmWENGSnNXODRzdnZYaE1LYkY4Vm1hbzJEcEl1ZzZIRVBQLS1nYUYyTWdDdjZjXzN0NmtuZm5IV2FEdlBQby1UUnBqc0FF"
     },
     {
+      "score": 3.0,
+      "date": "2026-08-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "Mass funeral in Gaza for 112 Palestinians killed in 2023 Israeli strike",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cn0n99npjejo?at_medium=RSS&at_campaign=rss"
+    },
+    {
       "score": 2.7,
       "date": "2026-08-03",
       "category": "military",
@@ -73,15 +91,6 @@
       "title": "Trump says Iran faces 'decapitation' if it doesn't strike deal - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbWpzQ3dqaWdURjZva2hpRmpXbFNWNWFsQnlRTDF5YlpCTlBBVGxEYWZYVEhLMl84aHdvdzBhUUhxeVBqWWVHWTR5dEpleS1XY0wwR0V4N1JaMkNOaUdvWGgwWHZ0d2hubUVNU2MxMUY5dnVaS05fTlhja0JEWGp3SEdMRmswbEVIUmY1clZWdEExNDNQTFpVelhla3o0alFQS2c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "5.6-magnitude earthquake strikes north of Egypt's Suez, no damage reported - Reuters",
-      "location": "Egypt",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcjE3eW1QaE5nM2hJVXA3OEhrblV6RkJqNTZMWVVrWTZxcTFqRkh4QllhTEJVUWZ3emQ2ZjhCYm5fV1dJdkpBOHhFU21SZzluQlNXMlozaWxGMy1GNnRuamVvUW1xaFlVcTVxYlFtNzRBLWJDZzQ0UUIxUjhNRFhoWmhBUjhiZktWVzdVMmlLcmQwWmZmNzRxaE9Qdmk4T1V2RDl6ZmRn"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Trump cancels Iran strikes subject to deal being made 'rapidly'",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Why has Trump halted Iran attacks, and what is the deal he is hinting at? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTlFxR3BvcjBYNXBISkYtejNnMkNVZ1NhcG1Mdlg2cnpQdXV4UUNPUEFtSGkwZWtsLXljd1NXbVZ0alp6R1Q5Qi03OHhCc3M2MjZVUW04YktGQlBjR0VlMERaNnRDOGJBNFh6OVU2ZEk5VXpfRFZvSlR2YVc4RGxmVDZ2N2FDd3RPUzJQckpEdHh3U2ZUR01JQ2p5NXhPZlg2QjY0d2I2QmgzYUhWVUlRc9IBtgFBVV95cUxQb3VXTWhyWjQ1UGRDZWdVbzFHNTNRUWxCbXVDX0FHTk9XMnVWcjIwdk13S0ZURVVkeEZJcTFaQ2Q3R3ItVGxqTzVmMXVzM0haV1F6OUVEbjVwSmxpYXp6WEVoRVJaTGxuUEZHQ0d1MWZGTGxsVVlWUEthcEhXcld3a2l5eDliV2xnOE5GbTlWem8zRnFjY0tyTG4yaDlEbVJmb3VIWndsb0dkRHd6MEpSQ3FZdzJ3QQ"
     }
   ]
 }
