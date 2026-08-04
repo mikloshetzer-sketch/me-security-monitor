@@ -6,22 +6,37 @@ on:
       targets:
         description: |
           Maximum 5 locations. Separate locations with semicolons:
-          Location|latitude|longitude|radius_km; Location|latitude|longitude|radius_km
+          Location|latitude|longitude|radius_km
         required: true
         default: "Tehran|35.6892|51.3890|10; Isfahan|32.6546|51.6680|10; Bandar Abbas|27.1832|56.2666|12"
         type: string
-      days_back:
-        description: "Search window in days / visszakeresési időszak"
+
+      target_date:
+        description: "Target date for the AFTER image (YYYY-MM-DD)"
+        required: true
+        default: "2026-08-01"
+        type: string
+
+      comparison_days:
+        description: "Days between BEFORE and AFTER requested dates"
         required: true
         default: "30"
         type: string
+
+      tolerance_days:
+        description: "Search tolerance around each requested date (days)"
+        required: true
+        default: "5"
+        type: string
+
       max_cloud:
-        description: "Maximum cloud coverage percent / maximális felhőzet"
+        description: "Maximum cloud coverage percent"
         required: true
         default: "80"
         type: string
+
       image_size:
-        description: "Square image size in pixels / négyzetes képméret"
+        description: "Square image size in pixels"
         required: true
         default: "1024"
         type: choice
@@ -40,9 +55,9 @@ concurrency:
 
 jobs:
   build-sentinel2-images:
-    name: Build up to five Sentinel-2 archive records
+    name: Build up to five Sentinel-2 before/after records
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
@@ -87,7 +102,9 @@ jobs:
         shell: bash
         env:
           TARGETS_INPUT: ${{ inputs.targets }}
-          DAYS_BACK: ${{ inputs.days_back }}
+          TARGET_DATE: ${{ inputs.target_date }}
+          COMPARISON_DAYS: ${{ inputs.comparison_days }}
+          TOLERANCE_DAYS: ${{ inputs.tolerance_days }}
           MAX_CLOUD: ${{ inputs.max_cloud }}
           IMAGE_SIZE: ${{ inputs.image_size }}
         run: |
@@ -97,24 +114,41 @@ jobs:
           import json
           import os
           import re
+          from datetime import date
           from pathlib import Path
 
-          raw_targets = os.environ.get("TARGETS_INPUT", "")
-          days_back = int(os.environ["DAYS_BACK"])
+          raw_targets = os.environ.get("TARGETS_INPUT", "").strip()
+          target_date = os.environ["TARGET_DATE"].strip()
+          comparison_days = int(os.environ["COMPARISON_DAYS"])
+          tolerance_days = int(os.environ["TOLERANCE_DAYS"])
           max_cloud = int(os.environ["MAX_CLOUD"])
           image_size = int(os.environ["IMAGE_SIZE"])
 
-          if not 1 <= days_back <= 365:
-              raise SystemExit("days_back must be between 1 and 365.")
+          try:
+              date.fromisoformat(target_date)
+          except ValueError as error:
+              raise SystemExit(
+                  "target_date must use YYYY-MM-DD format."
+              ) from error
+
+          if not 1 <= comparison_days <= 3650:
+              raise SystemExit(
+                  "comparison_days must be between 1 and 3650."
+              )
+
+          if not 0 <= tolerance_days <= 30:
+              raise SystemExit(
+                  "tolerance_days must be between 0 and 30."
+              )
 
           if not 0 <= max_cloud <= 100:
-              raise SystemExit("max_cloud must be between 0 and 100.")
+              raise SystemExit(
+                  "max_cloud must be between 0 and 100."
+              )
 
           if image_size not in {512, 768, 1024, 1536}:
               raise SystemExit("Unsupported image_size.")
 
-          # GitHub workflow_dispatch may collapse line breaks in text inputs.
-          # Support both semicolons and real line breaks as separators.
           target_entries = [
               entry.strip()
               for entry in re.split(r"[;\r\n]+", raw_targets)
@@ -146,7 +180,8 @@ jobs:
                   radius = float(radius_text)
               except ValueError as error:
                   raise SystemExit(
-                      f"Target {entry_number}: latitude, longitude and radius must be numeric."
+                      f"Target {entry_number}: latitude, longitude and radius "
+                      "must be numeric."
                   ) from error
 
               if not -90 <= lat <= 90:
@@ -181,21 +216,26 @@ jobs:
                   f"Maximum 5 targets are allowed; received {len(parsed)}."
               )
 
-          output_path = Path("/tmp/me-sentinel2-targets.json")
-          output_path.write_text(
+          Path("/tmp/me-sentinel2-targets.json").write_text(
               json.dumps(parsed, ensure_ascii=False, indent=2),
               encoding="utf-8",
           )
 
           delimiter = "ME_SENTINEL_TARGETS_EOF"
 
-          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+          with Path(os.environ["GITHUB_OUTPUT"]).open(
+              "a",
+              encoding="utf-8",
+          ) as output:
               output.write(f"target_count={len(parsed)}\n")
               output.write(f"targets_json<<{delimiter}\n")
               output.write(json.dumps(parsed, ensure_ascii=False))
               output.write(f"\n{delimiter}\n")
 
-          print(f"Validated {len(parsed)} target(s):")
+          print(f"Validated {len(parsed)} target(s).")
+          print(f"AFTER requested date: {target_date}")
+          print(f"Comparison offset: {comparison_days} days")
+          print(f"Tolerance: ±{tolerance_days} days")
 
           for index, target in enumerate(parsed, start=1):
               print(
@@ -205,13 +245,15 @@ jobs:
               )
           PY
 
-      - name: Download Sentinel-2 images and update archive
+      - name: Download Sentinel-2 before/after images
         shell: bash
         env:
           SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
           SENTINELHUB_CLIENT_SECRET: ${{ secrets.SENTINELHUB_CLIENT_SECRET }}
           TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
-          DAYS_BACK: ${{ inputs.days_back }}
+          TARGET_DATE: ${{ inputs.target_date }}
+          COMPARISON_DAYS: ${{ inputs.comparison_days }}
+          TOLERANCE_DAYS: ${{ inputs.tolerance_days }}
           MAX_CLOUD: ${{ inputs.max_cloud }}
           IMAGE_SIZE: ${{ inputs.image_size }}
         run: |
@@ -224,10 +266,6 @@ jobs:
           import sys
 
           targets = json.loads(os.environ["TARGETS_JSON"])
-          days_back = os.environ["DAYS_BACK"]
-          max_cloud = os.environ["MAX_CLOUD"]
-          image_size = os.environ["IMAGE_SIZE"]
-
           failures = []
 
           for index, target in enumerate(targets, start=1):
@@ -249,14 +287,18 @@ jobs:
                   str(target["lon"]),
                   "--radius-km",
                   str(target["radius_km"]),
-                  "--days-back",
-                  days_back,
+                  "--target-date",
+                  os.environ["TARGET_DATE"],
+                  "--comparison-days",
+                  os.environ["COMPARISON_DAYS"],
+                  "--tolerance-days",
+                  os.environ["TOLERANCE_DAYS"],
                   "--max-cloud",
-                  max_cloud,
+                  os.environ["MAX_CLOUD"],
                   "--width",
-                  image_size,
+                  os.environ["IMAGE_SIZE"],
                   "--height",
-                  image_size,
+                  os.environ["IMAGE_SIZE"],
               ]
 
               result = subprocess.run(command, check=False)
@@ -277,7 +319,7 @@ jobs:
 
           if failures:
               print()
-              print("Failed target(s):")
+              print("Failed targets:")
 
               for failure in failures:
                   print(
@@ -296,7 +338,6 @@ jobs:
       - name: Verify generated satellite archive
         shell: bash
         env:
-          EXPECTED_TARGET_COUNT: ${{ steps.validation.outputs.target_count }}
           TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
         run: |
           set -euo pipefail
@@ -324,7 +365,9 @@ jobs:
           from pathlib import Path
 
           archive_path = Path("docs/data/satellite/archive-index.json")
-          archive = json.loads(archive_path.read_text(encoding="utf-8"))
+          archive = json.loads(
+              archive_path.read_text(encoding="utf-8")
+          )
           targets = json.loads(os.environ["TARGETS_JSON"])
 
           if not isinstance(archive, list) or not archive:
@@ -332,11 +375,19 @@ jobs:
                   "archive-index.json must contain a non-empty JSON array."
               )
 
-          required_fields = ("id", "location_name", "bbox", "image_url")
+          required_top_level = (
+              "id",
+              "location_name",
+              "bbox",
+              "image_url",
+              "before",
+              "after",
+          )
 
           for record in archive:
               missing = [
-                  field for field in required_fields
+                  field
+                  for field in required_top_level
                   if not record.get(field)
               ]
 
@@ -346,15 +397,30 @@ jobs:
                       + ", ".join(missing)
                   )
 
-              image_path = (
-                  Path("docs")
-                  / str(record["image_url"]).lstrip("./")
+              for phase in ("before", "after"):
+                  phase_data = record.get(phase) or {}
+                  phase_url = phase_data.get("image_url")
+
+                  if not phase_url:
+                      raise SystemExit(
+                          f"Archive record is missing {phase}.image_url"
+                      )
+
+                  image_path = Path(str(phase_url).lstrip("./"))
+
+                  if not image_path.is_file():
+                      raise SystemExit(
+                          f"{phase} image does not exist: {image_path}"
+                      )
+
+              current_image = Path(
+                  str(record["image_url"]).lstrip("./")
               )
 
-              if not image_path.is_file():
+              if not current_image.is_file():
                   raise SystemExit(
-                      "Archive image_url does not resolve to a file: "
-                      f"{image_path}"
+                      "Top-level image_url does not resolve to a file: "
+                      f"{current_image}"
                   )
 
           archive_names = {
@@ -379,7 +445,7 @@ jobs:
           PY
 
           echo "Generated history images:"
-          find docs/data/satellite/sentinel2/history             -maxdepth 4             -type f             -name "*.png"             -print 2>/dev/null || true
+          find docs/data/satellite/sentinel2/history             -maxdepth 5             -type f             -name "*.png"             -print 2>/dev/null || true
 
       - name: Commit generated Sentinel-2 files
         shell: bash
@@ -403,7 +469,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m             "Update ME Sentinel-2 imagery (${{ steps.validation.outputs.target_count }} locations)"
+          git commit -m             "Update ME Sentinel-2 before-after imagery (${{ steps.validation.outputs.target_count }} locations)"
 
           git push
 
@@ -414,30 +480,15 @@ jobs:
           TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
         run: |
           {
-            echo "## ME Sentinel-2 Image Builder"
+            echo "## ME Sentinel-2 Before/After Builder"
             echo
             echo "- **Requested locations:** ${{ steps.validation.outputs.target_count }}"
-            echo "- **Search window:** ${{ inputs.days_back }} days"
+            echo "- **AFTER requested date:** ${{ inputs.target_date }}"
+            echo "- **Comparison offset:** ${{ inputs.comparison_days }} days"
+            echo "- **Tolerance:** ±${{ inputs.tolerance_days }} days"
             echo "- **Maximum cloud coverage:** ${{ inputs.max_cloud }}%"
             echo "- **Image size:** ${{ inputs.image_size }} × ${{ inputs.image_size }} px"
             echo "- **Workflow result:** ${{ job.status }}"
-            echo
-            echo "### Targets"
-
-            python - <<'PY'
-          import json
-          import os
-
-          targets = json.loads(os.environ.get("TARGETS_JSON") or "[]")
-
-          for index, target in enumerate(targets, start=1):
-              print(
-                  f"{index}. **{target['location_name']}** — "
-                  f"{target['lat']}, {target['lon']} — "
-                  f"{target['radius_km']} km"
-              )
-          PY
-
             echo
             echo "Archive: docs/data/satellite/archive-index.json"
           } >> "$GITHUB_STEP_SUMMARY"
