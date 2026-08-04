@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T18:54:03Z",
+  "generated_at": "2026-08-04T20:44:18Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,18 +55,18 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 243,
-    "non_mappable_events": 757,
-    "developments": 4
+    "map_visualizable_events": 241,
+    "non_mappable_events": 759,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-08T21:02:54Z",
-      "latest_event_date": "2026-08-04T18:32:40Z",
-      "geocoded_events": 243,
-      "geocoded_share": 24.3,
+      "earliest_event_date": "2026-07-08T21:06:35Z",
+      "latest_event_date": "2026-08-04T20:26:49Z",
+      "geocoded_events": 241,
+      "geocoded_share": 24.1,
       "top_category": "infrastructure",
       "top_location": "Iran",
       "top_country": "Iran"
@@ -74,9 +74,9 @@
     "comparisons": {
       "latest_7_days": {
         "current": 96,
-        "previous": 168,
-        "delta": -72,
-        "percent_change": -42.9,
+        "previous": 171,
+        "delta": -75,
+        "percent_change": -43.9,
         "direction": "decrease"
       },
       "latest_30_days": {
@@ -90,7 +90,7 @@
     "daily_trend": [
       {
         "date": "2026-07-08",
-        "count": 20
+        "count": 16
       },
       {
         "date": "2026-07-09",
@@ -138,7 +138,7 @@
       },
       {
         "date": "2026-07-20",
-        "count": 51
+        "count": 52
       },
       {
         "date": "2026-07-21",
@@ -170,7 +170,7 @@
       },
       {
         "date": "2026-07-28",
-        "count": 27
+        "count": 28
       },
       {
         "date": "2026-07-29",
@@ -198,15 +198,15 @@
       },
       {
         "date": "2026-08-04",
-        "count": 12
+        "count": 14
       }
     ],
     "category_counts": {
-      "infrastructure": 242,
-      "missile": 221,
+      "infrastructure": 243,
+      "missile": 222,
       "strike": 172,
-      "airstrike": 103,
-      "explosion": 95,
+      "airstrike": 102,
+      "explosion": 94,
       "drone": 93,
       "movement": 35,
       "ground": 15,
@@ -215,9 +215,9 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 485,
-      "high": 394,
-      "low": 117,
+      "medium": 483,
+      "high": 395,
+      "low": 118,
       "critical": 4
     },
     "attacker_counts": {
@@ -233,7 +233,7 @@
       },
       {
         "name": "Unknown",
-        "count": 221
+        "count": 223
       },
       {
         "name": "Jordan",
@@ -241,7 +241,7 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 55
+        "count": 54
       },
       {
         "name": "Iraq",
@@ -291,11 +291,11 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 472
+        "count": 470
       },
       {
         "name": "Unknown",
-        "count": 221
+        "count": 223
       },
       {
         "name": "Jordan",
@@ -336,34 +336,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10029,
+    "totalCount": 10041,
     "spotlight": {
       "event": {
-        "id": "3qd843xe22c00",
-        "timestamp": "2026-08-04T18:32:40+00:00",
-        "location": "YEM",
-        "origin": "YEM",
+        "id": "10uotzn32pts0",
+        "timestamp": "2026-08-04T20:26:49+00:00",
+        "location": "USA",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
+        "type": "report",
         "severity": "high",
-        "description": "Indian cargo vessel sinks off Yemen following Houthi attack south of Hodeidah in Bab al-Mandab Strait, 14 crew members missing",
-        "descriptionHe": "אנייה משא הודית טבעה ליד יתמן לאחר התקפה של החות'ים דרומית להודיידה במיצר באב אל-מנדב, 14 בני צוות נעדרים",
-        "source": "OSINTdefender",
-        "sourceUrl": "https://t.me/OSINTdefender/19694"
+        "description": "U.S. military depleted nearly 80% of THAAD interceptors and about 50% of Patriot interceptors; munitions stockpiles warned as dangerously low, affecting planned military operations",
+        "descriptionHe": "הצבא האמריקאי מיצה כ-80% מיירטי THAAD וכ-50% מיירטי פטריוט; מלאי התחמושת אזוהר כ\"מסוכן נמוך\", משפיע על פעולות צבאיות מתוכננות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/81694"
       },
-      "headline": "Indian cargo ship sinks after Houthi attack in Red Sea",
-      "headlineHe": "אוניית משא הודית טבעה לאחר התקפת חות'י בים אדום",
-      "summary": "The vessel was targeted in the Bab al-Mandab Strait, a critical maritime chokepoint, with 14 crew members reported missing amid escalating attacks on commercial shipping.",
-      "summaryHe": "האונייה הותקפה במיצר באב אל-מנדב, נקודה קריטית בתנועה ימית, כאשר 14 חברי צוות נמצאים בחוסר מושג בעיצומם של התקפות הולכות וגדלות על ספינות מסחריות.",
-      "pickedAt": "2026-08-04T18:45:51.590Z",
+      "headline": "U.S. THAAD, Patriot stockpiles depleted to dangerous levels",
+      "headlineHe": "מלאי תחמושת THAAD ו-Patriot של ארה\"ב מתדלדלים לרמות מסוכנות",
+      "summary": "Pentagon warns that heavy munitions usage has crippled air defense reserves, threatening operational readiness across multiple theaters.",
+      "summaryHe": "הפנטגון מזהיר כי שימוש כבד בתחמושת הצטיידות הביטחון האווירי, המסכן את היכולת ההפעלה בחזיתות מרובות.",
+      "pickedAt": "2026-08-04T20:31:47.336Z",
       "state": "BREAKING"
     },
-    "lastUpdated": "2026-08-04T18:51:03.558Z",
+    "lastUpdated": "2026-08-04T20:42:03.611Z",
     "stale": false,
-    "viewerCount": 11,
+    "viewerCount": 8,
     "ceasefire": false
   },
   "summary": {
@@ -904,46 +903,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 92,
       "cellular": null,
-      "lastUpdate": "2026-08-04T18:31:33.818Z",
+      "lastUpdate": "2026-08-04T20:00:42.954Z",
       "internetHistory": [
-        {
-          "t": "2026-08-03T18:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T18:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T18:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T19:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T19:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T19:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T19:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T19:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T19:50:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-08-03T20:00:00.000Z",
           "v": 93
@@ -1483,22 +1446,98 @@
         {
           "t": "2026-08-04T18:20:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-08-04T18:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T18:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T18:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T19:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T19:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T19:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T19:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T19:40:00.000Z",
+          "v": 92
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-04T18:31:33.818Z"
+    "lastUpdated": "2026-08-04T20:00:42.954Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f2a8c91",
+      "id": "iranstrike-7f2a4c91",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-04T18:32:40Z",
       "title": "IranStrike event",
-      "description": "Houthi attacks sink Indian vessel, strike tanker in Bab al-Mandab; 14 crew missing",
+      "description": "Houthis sink Indian cargo vessel in Bab al-Mandab; 14 crew missing",
+      "category": "other",
+      "severity": "critical",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7f2a4c91",
+        "text": "Houthis sink Indian cargo vessel in Bab al-Mandab; 14 crew missing",
+        "textHe": "חות'ים טבעו אוניית משא הודית בבאב אל-מנדב; 14 צוללים נעדרים",
+        "severity": "critical",
+        "timestamp": "2026-08-04T18:32:40+00:00",
+        "entityIds": [
+          "YEM",
+          "IND"
+        ],
+        "eventIds": [
+          "3qd843xe22c00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-8e3b5d62",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-04T18:32:40Z",
+      "title": "IranStrike event",
+      "description": "Houthis attack shipping in Red Sea/Bab al-Mandab; cargo vessel and tanker struck",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1519,33 +1558,35 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f2a8c91",
-        "text": "Houthi attacks sink Indian vessel, strike tanker in Bab al-Mandab; 14 crew missing",
-        "textHe": "התקפות חות'ים: כלי שיט הודי שקע, טנקר פגוע בבאב אל-מנדב; 14 מצוידים נעדרים",
+        "id": "8e3b5d62",
+        "text": "Houthis attack shipping in Red Sea/Bab al-Mandab; cargo vessel and tanker struck",
+        "textHe": "חות'ים תקפו חימושים בים סוף/בבאב אל-מנדב; אוניית משא וטנקר נפגעו",
         "severity": "high",
         "timestamp": "2026-08-04T18:32:40+00:00",
         "entityIds": [
           "YEM",
-          "ISR"
+          "IND",
+          "SAU"
         ],
         "eventIds": [
           "3qd843xe22c00",
-          "22qa3j56wwu80"
+          "22qa3j56wwu80",
+          "11c8fai8u50g0"
         ],
-        "sourceCount": 2
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-4e6b1d53",
+      "id": "iranstrike-6c1d9e47",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-04T17:31:29Z",
       "title": "IranStrike event",
-      "description": "Syria-Iraq border: Syrian forces reinforce Division 72; alert level raised nationwide",
+      "description": "Syria reinforces Division 72 along Iraq border; nationwide Alert C status raised",
       "category": "other",
-      "severity": "medium",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -1564,33 +1605,76 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4e6b1d53",
-        "text": "Syria-Iraq border: Syrian forces reinforce Division 72; alert level raised nationwide",
-        "textHe": "גבול סוריה-עיראק: כוחות סוריים מחזקים חטיבה 72; רמת הכנות הועלתה בארץ",
-        "severity": "medium",
+        "id": "6c1d9e47",
+        "text": "Syria reinforces Division 72 along Iraq border; nationwide Alert C status raised",
+        "textHe": "סוריה חיזקה חטיבה 72 על גבול עיראק; הועלתה התראה C בכל המדינה",
+        "severity": "high",
         "timestamp": "2026-08-04T17:31:29+00:00",
         "entityIds": [
           "SYR",
           "IRQ"
         ],
         "eventIds": [
-          "1iu2qbjhn2740",
           "21cv5ggqtew00",
           "1nprtfbtnke80",
+          "1iu2qbjhn2740",
           "34lwy5h7a7200"
         ],
-        "sourceCount": 2
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-6c3a9f27",
+      "id": "iranstrike-5a4b7f13",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-04T20:26:49Z",
+      "title": "IranStrike event",
+      "description": "U.S. munitions stockpiles depleted; THAAD at 20%, Patriot at 50% capacity",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "5a4b7f13",
+        "text": "U.S. munitions stockpiles depleted; THAAD at 20%, Patriot at 50% capacity",
+        "textHe": "מחסני התחמושת האמריקניים דלו; THAAD ב-20%, Patriot ב-50% קיבולת",
+        "severity": "high",
+        "timestamp": "2026-08-04T20:26:49+00:00",
+        "entityIds": [
+          "USA"
+        ],
+        "eventIds": [
+          "10uotzn32pts0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-4f6e8c2a",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-04T05:52:31Z",
       "title": "IranStrike event",
-      "description": "Iran strikes merchant vessel Strait of Hormuz; Ukraine attacks Iranian ship in Caspian",
+      "description": "Iran fires missile at merchant vessel near Strait of Hormuz; vessel struck",
       "category": "other",
       "severity": "medium",
       "attacker": "iran",
@@ -1598,7 +1682,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes merchant vessel strait of hormuz;",
+      "attacker_evidence": "iran fires missile at merchant vessel near strait of hormuz;",
       "location": "Persian Gulf",
       "country": "Persian Gulf",
       "latitude": null,
@@ -1611,32 +1695,76 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6c3a9f27",
-        "text": "Iran strikes merchant vessel Strait of Hormuz; Ukraine attacks Iranian ship in Caspian",
-        "textHe": "איראן תוקפת אנייה סוחרת במצר הורמוז; אוקראינה תוקפת אנייה איראנית בים הקספי",
+        "id": "4f6e8c2a",
+        "text": "Iran fires missile at merchant vessel near Strait of Hormuz; vessel struck",
+        "textHe": "איראן ירתה טיל לעבר אוניית מסחר ליד מיצר הורמוז; אוניה נפגעה",
         "severity": "medium",
         "timestamp": "2026-08-04T05:52:31+00:00",
         "entityIds": [
-          "IRN",
-          "UKR"
+          "IRN"
         ],
         "eventIds": [
-          "19bbsnco6io0",
-          "2zfbh2j07qg00"
+          "19bbsnco6io0"
         ],
         "sourceCount": 1
       }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-10uotzn32pts0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81694",
+      "date": "2026-08-04T20:26:49Z",
+      "title": "IranStrike event",
+      "description": "U.S. military depleted nearly 80% of THAAD interceptors and about 50% of Patriot interceptors; munitions stockpiles warned as dangerously low, affecting planned military operations",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "10uotzn32pts0",
+        "timestamp": "2026-08-04T20:26:49+00:00",
+        "location": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "U.S. military depleted nearly 80% of THAAD interceptors and about 50% of Patriot interceptors; munitions stockpiles warned as dangerously low, affecting planned military operations",
+        "descriptionHe": "הצבא האמריקאי מיצה כ-80% מיירטי THAAD וכ-50% מיירטי פטריוט; מלאי התחמושת אזוהר כ\"מסוכן נמוך\", משפיע על פעולות צבאיות מתוכננות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/81694"
+      }
     },
     {
-      "id": "iranstrike-9a2f4e68",
+      "id": "iranstrike-rkrg1gjd1q80",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-04T10:53:41Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81692",
+      "date": "2026-08-04T19:11:42Z",
       "title": "IranStrike event",
-      "description": "Large explosion at Tehran aluminum factory near Khomeini Airport; cause unclear",
-      "category": "other",
+      "description": "Houthi Armed Forces strike Najran International Airport in Saudi Arabia, damaging main radar system in response to airspace violations",
+      "category": "infrastructure",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -1644,34 +1772,34 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Tehran",
-      "country": "Iran",
-      "latitude": 35.6892,
-      "longitude": 51.389,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "tehran",
-      "geocode_confidence": "high",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "9a2f4e68",
-        "text": "Large explosion at Tehran aluminum factory near Khomeini Airport; cause unclear",
-        "textHe": "פיצוץ גדול במפעל אלומיניום בטהראן ליד שדה התעופה של חומייני; הגורם לא ידוע",
+        "id": "rkrg1gjd1q80",
+        "timestamp": "2026-08-04T19:11:42+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-08-04T10:53:41+00:00",
-        "entityIds": [
-          "IRN"
-        ],
-        "eventIds": [
-          "22h6u27skrog0"
-        ],
-        "sourceCount": 1
+        "description": "Houthi Armed Forces strike Najran International Airport in Saudi Arabia, damaging main radar system in response to airspace violations",
+        "descriptionHe": "כוחות ההנוזים תקפו את שדה התעופה הבינלאומי נג'ראן בסעודיה, גרמו נזק למערכת הרדאר הראשית בתגובה להפרות מרחב אוויר",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/81692"
       }
-    }
-  ],
-  "events": [
+    },
     {
       "id": "iranstrike-3qd843xe22c00",
       "source": "IranStrike",
@@ -8765,6 +8893,50 @@
         "descriptionHe": "יחידת הפיקוח של המנהל האזרחי הרסה מבנים פלסטיניים בצפון השומרון כולל מבנה של 4 קומות בשטח של כ800 מ״ר ומבנה של 450 מ״ר",
         "source": "idkunim_il",
         "sourceUrl": "https://t.me/idkunim_il/61979"
+      }
+    },
+    {
+      "id": "iranstrike-2fzn6ckdktes0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "RocketAlert",
+      "source_url": "https://t.me/RocketAlert/30751",
+      "date": "2026-07-28T05:23:56Z",
+      "title": "IranStrike event",
+      "description": "Rocket/missile alert: salvo targeting Kissufim in Gaza Envelope",
+      "category": "missile",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2fzn6ckdktes0",
+        "timestamp": "2026-07-28T05:23:56+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "low",
+        "description": "Rocket/missile alert: salvo targeting Kissufim in Gaza Envelope",
+        "descriptionHe": "התרעת רקטות/טילים: מטח לעבר קיסופים בגוש קציע",
+        "source": "RocketAlert",
+        "sourceUrl": "https://t.me/RocketAlert/30751"
       }
     },
     {
@@ -22181,6 +22353,50 @@
         "descriptionHe": "צבא ארה\"ב השלים בהצלחה את סבב התקיפות התשיעי נגד איראן, תקף מרכזי פיקוד צבאיים ואתרי הגנה אווירית",
         "source": "idkunim_il",
         "sourceUrl": "https://t.me/idkunim_il/61648"
+      }
+    },
+    {
+      "id": "iranstrike-fkhznjjuxn40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "RocketAlert",
+      "source_url": "https://t.me/RocketAlert/30749",
+      "date": "2026-07-20T02:59:10Z",
+      "title": "IranStrike event",
+      "description": "Rocket/missile alert: salvo targeting Sa'ad and Kfar Azza in Gaza Envelope",
+      "category": "missile",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "fkhznjjuxn40",
+        "timestamp": "2026-07-20T02:59:10+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "low",
+        "description": "Rocket/missile alert: salvo targeting Sa'ad and Kfar Azza in Gaza Envelope",
+        "descriptionHe": "התרעת רקטות/טילים: מטח לעבר סעד וכפר עזה בגוש קציע",
+        "source": "RocketAlert",
+        "sourceUrl": "https://t.me/RocketAlert/30749"
       }
     },
     {
@@ -46729,51 +46945,6 @@
       }
     },
     {
-      "id": "iranstrike-3jqibd68dh200",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79114",
-      "date": "2026-07-08T21:06:35Z",
-      "title": "IranStrike event",
-      "description": "Renewed U.S. airstrikes on Jask",
-      "category": "airstrike",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3jqibd68dh200",
-        "timestamp": "2026-07-08T21:06:35+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Renewed U.S. airstrikes on Jask",
-        "descriptionHe": "הפצצות אוויר אמריקאיות מחודשות על ג'אסק",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79114"
-      }
-    },
-    {
       "id": "iranstrike-1qp8ufz1jb4w0",
       "source": "IranStrike",
       "source_collection": "events",
@@ -46816,139 +46987,6 @@
         "descriptionHe": "הפצצות אוויר אמריקאיות מחודשות על בושהר וחבהר",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79115"
-      }
-    },
-    {
-      "id": "iranstrike-17eerse93ps00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79116",
-      "date": "2026-07-08T21:06:35Z",
-      "title": "IranStrike event",
-      "description": "Renewed explosions reported in Sirik",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "17eerse93ps00",
-        "timestamp": "2026-07-08T21:06:35+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Renewed explosions reported in Sirik",
-        "descriptionHe": "פיצוצים מחודשים דווחו בסיריק",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79116"
-      }
-    },
-    {
-      "id": "iranstrike-m583sfsm4u80",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79113",
-      "date": "2026-07-08T21:02:54Z",
-      "title": "IranStrike event",
-      "description": "Fighter jets observed over Isfahan, reportedly IRIAF engaging in long-range interceptions",
-      "category": "missile",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Isfahan",
-      "country": "Iran",
-      "latitude": 32.6546,
-      "longitude": 51.668,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "isfahan",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "m583sfsm4u80",
-        "timestamp": "2026-07-08T21:02:54+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Fighter jets observed over Isfahan, reportedly IRIAF engaging in long-range interceptions",
-        "descriptionHe": "מטוסי קרב נצפו מעל אספהאן, לכאורה כוחות האוויר האיראנים בעסקת יירוטים למרחקים ארוכים",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79113"
-      }
-    },
-    {
-      "id": "iranstrike-4d801xrq9ta0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79112",
-      "date": "2026-07-08T21:02:54Z",
-      "title": "IranStrike event",
-      "description": "Power outages reported in Bandar Abbas",
-      "category": "infrastructure",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "4d801xrq9ta0",
-        "timestamp": "2026-07-08T21:02:54+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "low",
-        "description": "Power outages reported in Bandar Abbas",
-        "descriptionHe": "הפסקות חשמל דווחו בנדربאس",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79112"
       }
     }
   ],
@@ -57849,94 +57887,6 @@
         "descriptionHe": "הפצצות אוויר אמריקאיות מחודשות על בושהר וחבהר",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79115"
-      }
-    },
-    {
-      "id": "iranstrike-m583sfsm4u80",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79113",
-      "date": "2026-07-08T21:02:54Z",
-      "title": "IranStrike event",
-      "description": "Fighter jets observed over Isfahan, reportedly IRIAF engaging in long-range interceptions",
-      "category": "missile",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Isfahan",
-      "country": "Iran",
-      "latitude": 32.6546,
-      "longitude": 51.668,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "isfahan",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "m583sfsm4u80",
-        "timestamp": "2026-07-08T21:02:54+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Fighter jets observed over Isfahan, reportedly IRIAF engaging in long-range interceptions",
-        "descriptionHe": "מטוסי קרב נצפו מעל אספהאן, לכאורה כוחות האוויר האיראנים בעסקת יירוטים למרחקים ארוכים",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79113"
-      }
-    },
-    {
-      "id": "iranstrike-4d801xrq9ta0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79112",
-      "date": "2026-07-08T21:02:54Z",
-      "title": "IranStrike event",
-      "description": "Power outages reported in Bandar Abbas",
-      "category": "infrastructure",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "4d801xrq9ta0",
-        "timestamp": "2026-07-08T21:02:54+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "low",
-        "description": "Power outages reported in Bandar Abbas",
-        "descriptionHe": "הפסקות חשמל דווחו בנדربאس",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79112"
       }
     }
   ]
