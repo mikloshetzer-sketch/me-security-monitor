@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.1.1";
+  const MODULE_VERSION = "1.1.2";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -678,27 +678,141 @@
       if (typeof options.onStatus === "function") options.onStatus(message, { ...state });
     }
 
-    function resolveAssetUrl(value) {
+    function getAssetUrlCandidates(value) {
       const raw = String(value || "").trim();
-      if (!raw) return "";
+      if (!raw) return [];
 
-      if (/^(?:https?:|blob:|data:)/i.test(raw)) return raw;
+      if (/^(?:blob:|data:)/i.test(raw)) return [raw];
+      if (/^https?:/i.test(raw)) return [raw];
 
-      let relative = raw.replace(/^\.\//, "").replace(/^\//, "");
+      const clean = raw.replace(/^\.\//, "").replace(/^\//, "");
+      const candidates = [];
+      const add = (candidate) => {
+        if (!candidate) return;
+        try {
+          const absolute = new URL(candidate, document.baseURI).href;
+          if (!candidates.includes(absolute)) candidates.push(absolute);
+        } catch (_error) {
+          if (!candidates.includes(candidate)) candidates.push(candidate);
+        }
+      };
+
+      add(clean);
+
+      if (clean.startsWith("data/")) {
+        add(`docs/${clean}`);
+      } else if (clean.startsWith("docs/data/")) {
+        add(clean.slice(5));
+      }
+
       const archiveUrl = String(state.archiveUrl || "");
+      if (archiveUrl) {
+        try {
+          const archiveAbsolute = new URL(archiveUrl, document.baseURI);
+          const archiveDirectory = new URL("./", archiveAbsolute);
 
-      if (
-        relative.startsWith("data/") &&
-        (archiveUrl.includes("/docs/data/") || archiveUrl.startsWith("./docs/") || archiveUrl.startsWith("docs/"))
-      ) {
-        relative = `docs/${relative}`;
+          if (clean.startsWith("data/satellite/")) {
+            const satelliteRelative = clean.slice("data/satellite/".length);
+            add(new URL(satelliteRelative, archiveDirectory).href);
+          }
+
+          if (clean.startsWith("docs/data/satellite/")) {
+            const satelliteRelative = clean.slice("docs/data/satellite/".length);
+            add(new URL(satelliteRelative, archiveDirectory).href);
+          }
+        } catch (_error) {
+          // The document-base candidates above remain available.
+        }
       }
 
-      try {
-        return new URL(relative, document.baseURI).href;
-      } catch (_error) {
-        return relative;
+      return candidates;
+    }
+
+    function canLoadImage(url) {
+      return new Promise((resolve) => {
+        if (!url) {
+          resolve(false);
+          return;
+        }
+
+        if (/^(?:blob:|data:)/i.test(url)) {
+          resolve(true);
+          return;
+        }
+
+        const image = new Image();
+        let finished = false;
+        const finish = (result) => {
+          if (finished) return;
+          finished = true;
+          image.onload = null;
+          image.onerror = null;
+          resolve(result);
+        };
+
+        image.onload = () => finish(true);
+        image.onerror = () => finish(false);
+        image.src = url;
+
+        window.setTimeout(() => finish(false), 12000);
+      });
+    }
+
+    async function resolveExistingAssetUrl(value) {
+      const candidates = getAssetUrlCandidates(value);
+
+      for (const candidate of candidates) {
+        if (await canLoadImage(candidate)) return candidate;
       }
+
+      return candidates[0] || "";
+    }
+
+    function resolveAssetUrl(value) {
+      return getAssetUrlCandidates(value)[0] || "";
+    }
+
+    async function resolveRecordAssetUrls(record) {
+      if (!record || typeof record !== "object") return record;
+
+      const before = record.before && typeof record.before === "object"
+        ? { ...record.before }
+        : null;
+      const after = record.after && typeof record.after === "object"
+        ? { ...record.after }
+        : null;
+
+      const tasks = [];
+
+      if (record.image_url) {
+        tasks.push(
+          resolveExistingAssetUrl(record.image_url).then((url) => {
+            record.image_url = url;
+          })
+        );
+      }
+
+      if (before?.image_url) {
+        tasks.push(
+          resolveExistingAssetUrl(before.image_url).then((url) => {
+            before.image_url = url;
+          })
+        );
+      }
+
+      if (after?.image_url) {
+        tasks.push(
+          resolveExistingAssetUrl(after.image_url).then((url) => {
+            after.image_url = url;
+          })
+        );
+      }
+
+      await Promise.all(tasks);
+
+      if (before) record.before = before;
+      if (after) record.after = after;
+      return record;
     }
 
     function setBaseMap(key) {
@@ -841,11 +955,11 @@
         return state.markerControlsRoot;
       }
 
-      const host = dom.locationSelect?.closest(".toolbox-row")
-        || dom.locationSelect?.parentElement
-        || dom.summary?.parentElement;
+      const block = dom.locationSelect?.closest('[data-control-block="satellite-intelligence"]')
+        || dom.summary?.closest('[data-control-block="satellite-intelligence"]')
+        || dom.locationSelect?.parentElement;
 
-      if (!host?.parentElement) return null;
+      if (!block) return null;
 
       const root = document.createElement("div");
       root.className = "me-satellite-location-controls";
@@ -860,7 +974,19 @@
         <div class="me-satellite-location-controls__list"></div>
       `;
 
-      host.parentElement.insertBefore(root, host.nextSibling);
+      const archiveImageLabel = dom.imageSelect?.previousElementSibling;
+      const insertionPoint = archiveImageLabel && archiveImageLabel.parentElement === block
+        ? archiveImageLabel
+        : dom.imageSelect;
+
+      if (insertionPoint && insertionPoint.parentElement === block) {
+        block.insertBefore(root, insertionPoint);
+      } else if (dom.locationSelect?.parentElement === block) {
+        block.insertBefore(root, dom.locationSelect.nextSibling);
+      } else {
+        block.appendChild(root);
+      }
+
       state.markerControlsRoot = root;
 
       if (window.L?.DomEvent) {
@@ -1249,6 +1375,8 @@
         const { payload, url } = await fetchFirstAvailable(archiveUrls);
         state.records = normalizeArchive(payload).sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)));
         state.archiveUrl = url;
+
+        await Promise.all(state.records.map(resolveRecordAssetUrls));
         state.ready = true;
 
         updateLocationSelect();
