@@ -1,17 +1,14 @@
-name: ME Sentinel-2 Image Builder
+ame: ME Sentinel-2 Image Builder
 
 on:
   workflow_dispatch:
     inputs:
       targets:
         description: |
-          Maximum 5 locations, one per line:
-          Location name|latitude|longitude|radius_km
+          Maximum 5 locations. Separate locations with semicolons:
+          Location|latitude|longitude|radius_km; Location|latitude|longitude|radius_km
         required: true
-        default: |
-          Tehran|35.6892|51.3890|10
-          Isfahan|32.6546|51.6680|10
-          Bandar Abbas|27.1832|56.2666|12
+        default: "Tehran|35.6892|51.3890|10; Isfahan|32.6546|51.6680|10; Bandar Abbas|27.1832|56.2666|12"
         type: string
       days_back:
         description: "Search window in days / visszakeresési időszak"
@@ -99,6 +96,7 @@ jobs:
           python - <<'PY'
           import json
           import os
+          import re
           from pathlib import Path
 
           raw_targets = os.environ.get("TARGETS_INPUT", "")
@@ -115,44 +113,55 @@ jobs:
           if image_size not in {512, 768, 1024, 1536}:
               raise SystemExit("Unsupported image_size.")
 
+          # GitHub workflow_dispatch may collapse line breaks in text inputs.
+          # Support both semicolons and real line breaks as separators.
+          target_entries = [
+              entry.strip()
+              for entry in re.split(r"[;\r\n]+", raw_targets)
+              if entry.strip() and not entry.strip().startswith("#")
+          ]
+
           parsed = []
 
-          for line_number, raw_line in enumerate(raw_targets.splitlines(), start=1):
-              line = raw_line.strip()
-
-              if not line or line.startswith("#"):
-                  continue
-
-              parts = [part.strip() for part in line.split("|")]
+          for entry_number, entry in enumerate(target_entries, start=1):
+              parts = [part.strip() for part in entry.split("|")]
 
               if len(parts) != 4:
                   raise SystemExit(
-                      f"Line {line_number}: expected "
-                      "Location name|latitude|longitude|radius_km"
+                      f"Target {entry_number}: expected "
+                      "Location name|latitude|longitude|radius_km. "
+                      "Separate multiple targets with semicolons."
                   )
 
               location_name, lat_text, lon_text, radius_text = parts
 
               if not location_name:
-                  raise SystemExit(f"Line {line_number}: location name is empty.")
+                  raise SystemExit(
+                      f"Target {entry_number}: location name is empty."
+                  )
 
-              lat = float(lat_text)
-              lon = float(lon_text)
-              radius = float(radius_text)
+              try:
+                  lat = float(lat_text)
+                  lon = float(lon_text)
+                  radius = float(radius_text)
+              except ValueError as error:
+                  raise SystemExit(
+                      f"Target {entry_number}: latitude, longitude and radius must be numeric."
+                  ) from error
 
               if not -90 <= lat <= 90:
                   raise SystemExit(
-                      f"Line {line_number}: latitude must be between -90 and 90."
+                      f"Target {entry_number}: latitude must be between -90 and 90."
                   )
 
               if not -180 <= lon <= 180:
                   raise SystemExit(
-                      f"Line {line_number}: longitude must be between -180 and 180."
+                      f"Target {entry_number}: longitude must be between -180 and 180."
                   )
 
               if not 0.1 <= radius <= 100:
                   raise SystemExit(
-                      f"Line {line_number}: radius must be between 0.1 and 100 km."
+                      f"Target {entry_number}: radius must be between 0.1 and 100 km."
                   )
 
               parsed.append(
