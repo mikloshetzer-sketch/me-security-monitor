@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.1.0";
+  const MODULE_VERSION = "1.1.1";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -678,6 +678,29 @@
       if (typeof options.onStatus === "function") options.onStatus(message, { ...state });
     }
 
+    function resolveAssetUrl(value) {
+      const raw = String(value || "").trim();
+      if (!raw) return "";
+
+      if (/^(?:https?:|blob:|data:)/i.test(raw)) return raw;
+
+      let relative = raw.replace(/^\.\//, "").replace(/^\//, "");
+      const archiveUrl = String(state.archiveUrl || "");
+
+      if (
+        relative.startsWith("data/") &&
+        (archiveUrl.includes("/docs/data/") || archiveUrl.startsWith("./docs/") || archiveUrl.startsWith("docs/"))
+      ) {
+        relative = `docs/${relative}`;
+      }
+
+      try {
+        return new URL(relative, document.baseURI).href;
+      } catch (_error) {
+        return relative;
+      }
+    }
+
     function setBaseMap(key) {
       const normalizedKey = BASEMAP_DEFINITIONS[key] ? key : "osm";
 
@@ -840,10 +863,17 @@
       host.parentElement.insertBefore(root, host.nextSibling);
       state.markerControlsRoot = root;
 
-      root
-        .querySelector("[data-me-satellite-select-all]")
-        ?.addEventListener("change", (event) => {
-          const checked = Boolean(event.target.checked);
+      if (window.L?.DomEvent) {
+        L.DomEvent.disableClickPropagation(root);
+        L.DomEvent.disableScrollPropagation(root);
+      }
+
+      root.addEventListener("change", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLInputElement) || target.type !== "checkbox") return;
+
+        if (target.matches("[data-me-satellite-select-all]")) {
+          const checked = Boolean(target.checked);
 
           if (checked) {
             getLocations().forEach((location) => {
@@ -858,10 +888,19 @@
             .forEach((checkbox) => {
               checkbox.checked = checked;
             });
+        } else if (target.matches("[data-me-satellite-location]")) {
+          const slug = String(target.dataset.meSatelliteLocation || "");
+          if (!slug) return;
 
-          syncLocationMarkers();
-          updateSelectAllCheckbox(root);
-        });
+          if (target.checked) state.visibleLocationSlugs.add(slug);
+          else state.visibleLocationSlugs.delete(slug);
+        } else {
+          return;
+        }
+
+        syncLocationMarkers();
+        updateSelectAllCheckbox(root);
+      });
 
       return root;
     }
@@ -891,17 +930,6 @@
         const count = document.createElement("span");
         count.className = "me-satellite-location-option__count";
         count.textContent = String(location.count);
-
-        checkbox.addEventListener("change", () => {
-          if (checkbox.checked) {
-            state.visibleLocationSlugs.add(location.slug);
-          } else {
-            state.visibleLocationSlugs.delete(location.slug);
-          }
-
-          syncLocationMarkers();
-          updateSelectAllCheckbox(root);
-        });
 
         label.append(checkbox, name, count);
         list.appendChild(label);
@@ -988,6 +1016,8 @@
 
       const before = normalizePhase(record, "before");
       const after = normalizePhase(record, "after");
+      before.image_url = resolveAssetUrl(before.image_url);
+      after.image_url = resolveAssetUrl(after.image_url);
       const center = resolveRecordCenter(record);
       const bounds = record.normalized_bounds;
       const radius = firstDefined(
@@ -1166,7 +1196,9 @@
         return null;
       }
 
-      state.overlay = L.imageOverlay(record.image_url, record.normalized_bounds, {
+      const overlayUrl = resolveAssetUrl(record.image_url);
+
+      state.overlay = L.imageOverlay(overlayUrl, record.normalized_bounds, {
         opacity: state.opacity,
         interactive: false,
         className: "me-satellite-overlay",
@@ -1344,6 +1376,9 @@
         renderLocationControls();
         syncLocationMarkers();
       },
+      getVisibleLocations() {
+        return [...state.visibleLocationSlugs];
+      },
       destroy() {
         removeOverlay();
         removeAllLocationMarkers();
@@ -1369,4 +1404,3 @@
     formatRecordLabel
   };
 })();
-
