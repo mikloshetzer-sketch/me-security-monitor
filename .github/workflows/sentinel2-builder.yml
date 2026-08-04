@@ -504,18 +504,39 @@ jobs:
         if: always()
         shell: bash
         env:
-          TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
+          SUMMARY_TARGET_COUNT: ${{ steps.validation.outputs.target_count }}
+          SUMMARY_TARGET_DATE: ${{ inputs.target_date }}
+          SUMMARY_COMPARISON_DAYS: ${{ inputs.comparison_days }}
+          SUMMARY_TOLERANCE_DAYS: ${{ inputs.tolerance_days }}
+          SUMMARY_MAX_CLOUD: ${{ inputs.max_cloud }}
+          SUMMARY_IMAGE_SIZE: ${{ inputs.image_size }}
+          SUMMARY_JOB_STATUS: ${{ job.status }}
         run: |
-          {
-            echo "## ME Sentinel-2 Before/After Builder"
-            echo
-            echo "- **Requested locations:** ${{ steps.validation.outputs.target_count }}"
-            echo "- **AFTER requested date:** ${{ inputs.target_date }}"
-            echo "- **Comparison offset:** ${{ inputs.comparison_days }} days"
-            echo "- **Tolerance:** ±${{ inputs.tolerance_days }} days"
-            echo "- **Maximum cloud coverage:** ${{ inputs.max_cloud }}%"
-            echo "- **Image size:** ${{ inputs.image_size }} × ${{ inputs.image_size }} px"
-            echo "- **Workflow result:** ${{ job.status }}"
-            echo
-            echo "Archive: docs/data/satellite/archive-index.json"
-          } >> "$GITHUB_STEP_SUMMA
+          set -euo pipefail
+
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          summary_path = Path(os.environ["GITHUB_STEP_SUMMARY"])
+
+          lines = [
+              "## ME Sentinel-2 Before/After Builder",
+              "",
+              f"- **Requested locations:** {os.environ.get('SUMMARY_TARGET_COUNT', 'n/a')}",
+              f"- **AFTER requested date:** {os.environ.get('SUMMARY_TARGET_DATE', 'n/a')}",
+              f"- **Comparison offset:** {os.environ.get('SUMMARY_COMPARISON_DAYS', 'n/a')} days",
+              f"- **Tolerance:** ±{os.environ.get('SUMMARY_TOLERANCE_DAYS', 'n/a')} days",
+              f"- **Maximum cloud coverage:** {os.environ.get('SUMMARY_MAX_CLOUD', 'n/a')}%",
+              f"- **Image size:** {os.environ.get('SUMMARY_IMAGE_SIZE', 'n/a')} × "
+              f"{os.environ.get('SUMMARY_IMAGE_SIZE', 'n/a')} px",
+              f"- **Workflow result:** {os.environ.get('SUMMARY_JOB_STATUS', 'unknown')}",
+              "",
+              "Archive: `docs/data/satellite/archive-index.json`",
+              "",
+          ]
+
+          with summary_path.open("a", encoding="utf-8") as handle:
+              handle.write("\n".join(lines))
+          PY
+
