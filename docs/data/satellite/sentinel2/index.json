@@ -1,5 +1,371 @@
 [
   {
+    "id": "bandar-abbas_2026-07-31_2026-08-04T190057Z",
+    "generated_at": "2026-08-04T19:00:58Z",
+    "timestamp": "2026-07-31T07:02:09.226000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "3.0.0",
+    "location_name": "Bandar Abbas",
+    "location_slug": "bandar-abbas",
+    "requested_date": "2026-08-01",
+    "comparison_days": 30,
+    "search_tolerance_days": 5,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 80,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 27.1832,
+      "lon": 56.2666,
+      "radius_km": 12.0,
+      "bbox": [
+        56.145418,
+        27.075403,
+        56.387782,
+        27.290997
+      ]
+    },
+    "bbox": [
+      56.145418,
+      27.075403,
+      56.387782,
+      27.290997
+    ],
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-07-02",
+      "search_tolerance_days": 5,
+      "acquisition_date": "2026-07-01",
+      "acquisition_datetime": "2026-07-01T07:02:06.129000Z",
+      "date_offset_days": -1,
+      "cloud_cover_percent": 3.3,
+      "catalog_feature_id": "S2B_MSIL2A_20260701T064619_N0512_R020_T40RDQ_20260701T104133.SAFE",
+      "catalog_candidate_count": 4,
+      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T190057Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-08-01",
+      "search_tolerance_days": 5,
+      "acquisition_date": "2026-07-31",
+      "acquisition_datetime": "2026-07-31T07:02:09.226000Z",
+      "date_offset_days": -1,
+      "cloud_cover_percent": 16.61,
+      "catalog_feature_id": "S2B_MSIL2A_20260731T064629_N0512_R020_T40RDQ_20260731T104009.SAFE",
+      "catalog_candidate_count": 2,
+      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "1.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 36.3,
+      "level": "MEDIUM",
+      "confidence_percent": 96.24,
+      "comparability": "HIGH",
+      "comparability_score": 96.24,
+      "ssim": 0.839922,
+      "changed_pixel_percent": 6.5146,
+      "changed_area_km2_estimate": 29.4716,
+      "significant_regions": 112,
+      "largest_region_percent": 1.3165,
+      "largest_region_km2_estimate": 5.9559,
+      "valid_pixel_percent": 100.0,
+      "difference_threshold": 0.361496,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T190057Z.png",
+      "assessment": "A képpár több összefüggő vizuális eltérést jelez; emberi ellenőrzés indokolt. A jelentősnek minősített pixelek aránya 6.51%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.501,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification."
+      ]
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-08-01",
+      "requested_before_date": "2026-07-02",
+      "comparison_days": 30,
+      "search_tolerance_days": 5,
+      "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T190057Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T190057Z.png"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T190057Z.png",
+      "after_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
+      "change_map": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T190057Z.png",
+      "acquisition_date": "2026-07-31",
+      "cloud_cover_percent": 16.61,
+      "bounds": {
+        "west": 56.145418,
+        "south": 27.075403,
+        "east": 56.387782,
+        "north": 27.290997
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
+    "id": "isfahan_2026-08-01_2026-08-04T190048Z",
+    "generated_at": "2026-08-04T19:00:48Z",
+    "timestamp": "2026-08-01T07:20:36.468000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "3.0.0",
+    "location_name": "Isfahan",
+    "location_slug": "isfahan",
+    "requested_date": "2026-08-01",
+    "comparison_days": 30,
+    "search_tolerance_days": 5,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 80,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 32.6546,
+      "lon": 51.668,
+      "radius_km": 10.0,
+      "bbox": [
+        51.561304,
+        32.564769,
+        51.774696,
+        32.744431
+      ]
+    },
+    "bbox": [
+      51.561304,
+      32.564769,
+      51.774696,
+      32.744431
+    ],
+    "image_url": "data/satellite/sentinel2/history/isfahan/2026-08-01_after_2026-08-04T190048Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-07-02",
+      "search_tolerance_days": 5,
+      "acquisition_date": "2026-07-02",
+      "acquisition_datetime": "2026-07-02T07:20:33.674000Z",
+      "date_offset_days": 0,
+      "cloud_cover_percent": 6.06,
+      "catalog_feature_id": "S2C_MSIL2A_20260702T070621_N0512_R106_T39SWS_20260702T122409.SAFE",
+      "catalog_candidate_count": 7,
+      "image_url": "data/satellite/sentinel2/history/isfahan/2026-07-02_before_2026-08-04T190048Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-08-01",
+      "search_tolerance_days": 5,
+      "acquisition_date": "2026-08-01",
+      "acquisition_datetime": "2026-08-01T07:20:36.468000Z",
+      "date_offset_days": 0,
+      "cloud_cover_percent": 3.63,
+      "catalog_feature_id": "S2C_MSIL2A_20260801T070621_N0512_R106_T39SWS_20260801T122812.SAFE",
+      "catalog_candidate_count": 4,
+      "image_url": "data/satellite/sentinel2/history/isfahan/2026-08-01_after_2026-08-04T190048Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "1.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 33.77,
+      "level": "MEDIUM",
+      "confidence_percent": 97.91,
+      "comparability": "HIGH",
+      "comparability_score": 97.91,
+      "ssim": 0.802936,
+      "changed_pixel_percent": 5.8115,
+      "changed_area_km2_estimate": 18.2573,
+      "significant_regions": 110,
+      "largest_region_percent": 1.13,
+      "largest_region_km2_estimate": 3.5501,
+      "valid_pixel_percent": 99.9973,
+      "difference_threshold": 0.326726,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/isfahan/2026-08-01_change_2026-08-04T190048Z.png",
+      "assessment": "A képpár több összefüggő vizuális eltérést jelez; emberi ellenőrzés indokolt. A jelentősnek minősített pixelek aránya 5.81%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.512,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification."
+      ]
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-08-01",
+      "requested_before_date": "2026-07-02",
+      "comparison_days": 30,
+      "search_tolerance_days": 5,
+      "before_image_url": "data/satellite/sentinel2/history/isfahan/2026-07-02_before_2026-08-04T190048Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/isfahan/2026-08-01_after_2026-08-04T190048Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/isfahan/2026-08-01_change_2026-08-04T190048Z.png"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/isfahan/2026-08-01_after_2026-08-04T190048Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/isfahan/2026-07-02_before_2026-08-04T190048Z.png",
+      "after_image": "data/satellite/sentinel2/history/isfahan/2026-08-01_after_2026-08-04T190048Z.png",
+      "change_map": "data/satellite/sentinel2/history/isfahan/2026-08-01_change_2026-08-04T190048Z.png",
+      "acquisition_date": "2026-08-01",
+      "cloud_cover_percent": 3.63,
+      "bounds": {
+        "west": 51.561304,
+        "south": 32.564769,
+        "east": 51.774696,
+        "north": 32.744431
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
+    "id": "tehran_2026-07-30_2026-08-04T190037Z",
+    "generated_at": "2026-08-04T19:00:38Z",
+    "timestamp": "2026-07-30T07:29:48.419000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "3.0.0",
+    "location_name": "Tehran",
+    "location_slug": "tehran",
+    "requested_date": "2026-08-01",
+    "comparison_days": 30,
+    "search_tolerance_days": 5,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 80,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 35.6892,
+      "lon": 51.389,
+      "radius_km": 10.0,
+      "bbox": [
+        51.278397,
+        35.599369,
+        51.499603,
+        35.779031
+      ]
+    },
+    "bbox": [
+      51.278397,
+      35.599369,
+      51.499603,
+      35.779031
+    ],
+    "image_url": "data/satellite/sentinel2/history/tehran/2026-07-30_after_2026-08-04T190037Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-07-02",
+      "search_tolerance_days": 5,
+      "acquisition_date": "2026-06-30",
+      "acquisition_datetime": "2026-06-30T07:29:45.404000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 13.02,
+      "catalog_feature_id": "S2B_MSIL2A_20260630T071619_N0512_R006_T39SWV_20260630T094358.SAFE",
+      "catalog_candidate_count": 3,
+      "image_url": "data/satellite/sentinel2/history/tehran/2026-06-30_before_2026-08-04T190037Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-08-01",
+      "search_tolerance_days": 5,
+      "acquisition_date": "2026-07-30",
+      "acquisition_datetime": "2026-07-30T07:29:48.419000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 2.66,
+      "catalog_feature_id": "S2B_MSIL2A_20260730T071619_N0512_R006_T39SWV_20260730T094454.SAFE",
+      "catalog_candidate_count": 2,
+      "image_url": "data/satellite/sentinel2/history/tehran/2026-07-30_after_2026-08-04T190037Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "1.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 16.43,
+      "level": "LOW",
+      "confidence_percent": 97.4,
+      "comparability": "HIGH",
+      "comparability_score": 97.4,
+      "ssim": 0.968762,
+      "changed_pixel_percent": 1.2774,
+      "changed_area_km2_estimate": 4.0132,
+      "significant_regions": 43,
+      "largest_region_percent": 0.1205,
+      "largest_region_km2_estimate": 0.3786,
+      "valid_pixel_percent": 100.0,
+      "difference_threshold": 0.13,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/tehran/2026-07-30_change_2026-08-04T190037Z.png",
+      "assessment": "A képpár alapján csak korlátozott kiterjedésű vizuális eltérés azonosítható. A jelentősnek minősített pixelek aránya 1.28%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.573,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification."
+      ]
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-08-01",
+      "requested_before_date": "2026-07-02",
+      "comparison_days": 30,
+      "search_tolerance_days": 5,
+      "before_image_url": "data/satellite/sentinel2/history/tehran/2026-06-30_before_2026-08-04T190037Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/tehran/2026-07-30_after_2026-08-04T190037Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/tehran/2026-07-30_change_2026-08-04T190037Z.png"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/tehran/2026-07-30_after_2026-08-04T190037Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/tehran/2026-06-30_before_2026-08-04T190037Z.png",
+      "after_image": "data/satellite/sentinel2/history/tehran/2026-07-30_after_2026-08-04T190037Z.png",
+      "change_map": "data/satellite/sentinel2/history/tehran/2026-07-30_change_2026-08-04T190037Z.png",
+      "acquisition_date": "2026-07-30",
+      "cloud_cover_percent": 2.66,
+      "bounds": {
+        "west": 51.278397,
+        "south": 35.599369,
+        "east": 51.499603,
+        "north": 35.779031
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
     "id": "bandar-abbas_2026-07-31_2026-08-04T134147Z",
     "generated_at": "2026-08-04T13:41:47Z",
     "timestamp": "2026-07-31T07:02:09.226000Z",
