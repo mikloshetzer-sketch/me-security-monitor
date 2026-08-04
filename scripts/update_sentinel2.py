@@ -7,11 +7,18 @@ The script:
 - finds a comparison scene a configurable number of days earlier;
 - downloads true-colour PNGs for both scenes;
 - preserves the current single-image dashboard contract through top-level image_url;
-- writes a richer before/after archive record for future comparison UI.
+- performs cautious visual change detection on the generated RGB PNG pair;
+- writes a red-overlay change map and a structured change_detection result;
+- writes a richer before/after archive record for the comparison UI.
 
 Required environment variables:
     SENTINELHUB_CLIENT_ID
     SENTINELHUB_CLIENT_SECRET
+
+Required Python packages:
+    numpy
+    opencv-python-headless
+    scikit-image
 """
 
 from __future__ import annotations
@@ -28,6 +35,18 @@ import urllib.request
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from typing import Any
+
+try:
+    import cv2
+    import numpy as np
+    from skimage.metrics import structural_similarity
+except ImportError as dependency_error:  # pragma: no cover - checked at runtime
+    cv2 = None
+    np = None
+    structural_similarity = None
+    IMAGE_PROCESSING_IMPORT_ERROR = dependency_error
+else:
+    IMAGE_PROCESSING_IMPORT_ERROR = None
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
@@ -49,9 +68,11 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "2.0.3"
+WORKFLOW_VERSION = "3.0.0"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
+CHANGE_ENGINE_NAME = "ME Satellite Visual Change Detector"
+CHANGE_ENGINE_VERSION = "1.0.0"
 
 EVALSCRIPT_TRUE_COLOR = """
 //VERSION=3
@@ -456,6 +477,15 @@ def normalize_existing_record(record: Any) -> Any:
                 side_copy["image_url"] = normalize_image_url(side_copy["image_url"])
             normalized[side] = side_copy
 
+    change_detection = normalized.get("change_detection")
+    if isinstance(change_detection, dict):
+        change_copy = dict(change_detection)
+        if "change_map_url" in change_copy:
+            change_copy["change_map_url"] = normalize_image_url(
+                change_copy["change_map_url"]
+            )
+        normalized["change_detection"] = change_copy
+
     imagery = normalized.get("imagery")
     if isinstance(imagery, dict):
         imagery_copy = dict(imagery)
@@ -496,6 +526,10 @@ def save_comparison_images(
     # Backwards-compatible latest image: always the "after" image.
     LATEST_IMAGE_PATH.write_bytes(after_bytes)
 
+    change_path = location_history_dir / (
+        f"{after_date}_change_{generated_stamp}.png"
+    )
+
     return {
         "generated_stamp": generated_stamp,
         "record_id": f"{location_slug}_{after_date}_{generated_stamp}",
@@ -505,8 +539,360 @@ def save_comparison_images(
         "before_url": docs_relative_url(before_path),
         "after_abs": str(after_path),
         "after_url": docs_relative_url(after_path),
+        "change_abs": str(change_path),
+        "change_url": docs_relative_url(change_path),
     }
 
+
+
+def require_image_processing_dependencies() -> None:
+    if IMAGE_PROCESSING_IMPORT_ERROR is not None:
+        raise RuntimeError(
+            "Change detection requires numpy, opencv-python-headless and "
+            "scikit-image. Install them before running the builder. "
+            f"Import error: {IMAGE_PROCESSING_IMPORT_ERROR}"
+        )
+
+
+def load_png_bgra(path: Path) -> Any:
+    require_image_processing_dependencies()
+    data = np.frombuffer(path.read_bytes(), dtype=np.uint8)
+    image = cv2.imdecode(data, cv2.IMREAD_UNCHANGED)
+    if image is None:
+        raise RuntimeError(f"OpenCV could not decode PNG: {path}")
+
+    if image.ndim == 2:
+        image = cv2.cvtColor(image, cv2.COLOR_GRAY2BGRA)
+    elif image.shape[2] == 3:
+        alpha = np.full(image.shape[:2], 255, dtype=np.uint8)
+        image = np.dstack((image, alpha))
+    elif image.shape[2] != 4:
+        raise RuntimeError(f"Unsupported PNG channel count: {image.shape}")
+
+    return image
+
+
+def robust_channel_normalize(reference: Any, candidate: Any, mask: Any) -> Any:
+    normalized = candidate.astype(np.float32).copy()
+    reference_float = reference.astype(np.float32)
+    valid = mask > 0
+
+    if int(np.count_nonzero(valid)) < 100:
+        return candidate.copy()
+
+    for channel in range(3):
+        reference_values = reference_float[:, :, channel][valid]
+        candidate_values = normalized[:, :, channel][valid]
+
+        ref_low, ref_high = np.percentile(reference_values, [2, 98])
+        can_low, can_high = np.percentile(candidate_values, [2, 98])
+        can_span = max(float(can_high - can_low), 1.0)
+        ref_span = max(float(ref_high - ref_low), 1.0)
+
+        normalized[:, :, channel] = (
+            (normalized[:, :, channel] - can_low) * (ref_span / can_span)
+            + ref_low
+        )
+
+    return np.clip(normalized, 0, 255).astype(np.uint8)
+
+
+def apply_clahe_to_bgr(image: Any) -> Any:
+    lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+    lightness, a_channel, b_channel = cv2.split(lab)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    lightness = clahe.apply(lightness)
+    return cv2.cvtColor(
+        cv2.merge((lightness, a_channel, b_channel)),
+        cv2.COLOR_LAB2BGR,
+    )
+
+
+def classify_change_level(score: float) -> str:
+    if score < 20:
+        return "LOW"
+    if score < 45:
+        return "MEDIUM"
+    if score < 70:
+        return "HIGH"
+    return "VERY_HIGH"
+
+
+def classify_comparability(score: float) -> str:
+    if score >= 80:
+        return "HIGH"
+    if score >= 55:
+        return "MEDIUM"
+    return "LOW"
+
+
+def build_change_assessment(
+    level: str,
+    changed_percent: float,
+    comparability: str,
+) -> str:
+    if level == "LOW":
+        statement = (
+            "A képpár alapján csak korlátozott kiterjedésű vizuális eltérés "
+            "azonosítható."
+        )
+    elif level == "MEDIUM":
+        statement = (
+            "A képpár több összefüggő vizuális eltérést jelez; emberi "
+            "ellenőrzés indokolt."
+        )
+    elif level == "HIGH":
+        statement = (
+            "A képpár jelentős vizuális változást jelez; a változási térkép "
+            "részletes elemzése indokolt."
+        )
+    else:
+        statement = (
+            "A képpár nagyon nagy kiterjedésű vizuális eltérést jelez. "
+            "Először ki kell zárni a légköri és radiometriai eltéréseket."
+        )
+
+    return (
+        f"{statement} A jelentősnek minősített pixelek aránya "
+        f"{changed_percent:.2f}%. Az összehasonlíthatóság: {comparability}."
+    )
+
+
+def run_visual_change_detection(
+    *,
+    image_paths: dict[str, Any],
+    before_scene: dict[str, Any],
+    after_scene: dict[str, Any],
+    radius_km: float,
+) -> dict[str, Any]:
+    require_image_processing_dependencies()
+    started = datetime.now(timezone.utc)
+
+    before_bgra = load_png_bgra(Path(image_paths["before_abs"]))
+    after_bgra = load_png_bgra(Path(image_paths["after_abs"]))
+
+    if before_bgra.shape[:2] != after_bgra.shape[:2]:
+        after_bgra = cv2.resize(
+            after_bgra,
+            (before_bgra.shape[1], before_bgra.shape[0]),
+            interpolation=cv2.INTER_AREA,
+        )
+
+    before_bgr = before_bgra[:, :, :3]
+    after_bgr = after_bgra[:, :, :3]
+    valid_mask = (
+        (before_bgra[:, :, 3] > 0)
+        & (after_bgra[:, :, 3] > 0)
+        & (np.max(before_bgr, axis=2) > 3)
+        & (np.max(after_bgr, axis=2) > 3)
+    ).astype(np.uint8) * 255
+
+    valid_ratio = float(np.count_nonzero(valid_mask)) / float(valid_mask.size)
+    if valid_ratio < 0.35:
+        raise RuntimeError(
+            f"Only {valid_ratio * 100:.1f}% of the image pair is valid; "
+            "change detection is not reliable."
+        )
+
+    after_normalized = robust_channel_normalize(before_bgr, after_bgr, valid_mask)
+    before_enhanced = apply_clahe_to_bgr(before_bgr)
+    after_enhanced = apply_clahe_to_bgr(after_normalized)
+
+    before_gray = cv2.cvtColor(before_enhanced, cv2.COLOR_BGR2GRAY)
+    after_gray = cv2.cvtColor(after_enhanced, cv2.COLOR_BGR2GRAY)
+    before_gray = cv2.GaussianBlur(before_gray, (5, 5), 0)
+    after_gray = cv2.GaussianBlur(after_gray, (5, 5), 0)
+
+    ssim_value, ssim_map = structural_similarity(
+        before_gray,
+        after_gray,
+        full=True,
+        data_range=255,
+    )
+    ssim_difference = np.clip(1.0 - ssim_map, 0.0, 1.0)
+
+    absolute_difference = cv2.absdiff(before_gray, after_gray).astype(np.float32) / 255.0
+    combined_difference = (0.62 * ssim_difference) + (0.38 * absolute_difference)
+    valid_values = combined_difference[valid_mask > 0]
+
+    percentile_threshold = float(np.percentile(valid_values, 92.0))
+    robust_threshold = max(0.13, min(percentile_threshold, 0.42))
+    raw_change_mask = (
+        (combined_difference >= robust_threshold) & (valid_mask > 0)
+    ).astype(np.uint8) * 255
+
+    height, width = raw_change_mask.shape
+    kernel_size = max(3, int(round(min(height, width) / 300)))
+    if kernel_size % 2 == 0:
+        kernel_size += 1
+    kernel = cv2.getStructuringElement(
+        cv2.MORPH_ELLIPSE,
+        (kernel_size, kernel_size),
+    )
+    cleaned_mask = cv2.morphologyEx(raw_change_mask, cv2.MORPH_OPEN, kernel)
+    cleaned_mask = cv2.morphologyEx(cleaned_mask, cv2.MORPH_CLOSE, kernel)
+
+    minimum_region_pixels = max(24, int(valid_mask.size * 0.00008))
+    contours, _ = cv2.findContours(
+        cleaned_mask,
+        cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE,
+    )
+    retained_contours = [
+        contour
+        for contour in contours
+        if cv2.contourArea(contour) >= minimum_region_pixels
+    ]
+
+    significant_mask = np.zeros_like(cleaned_mask)
+    if retained_contours:
+        cv2.drawContours(
+            significant_mask,
+            retained_contours,
+            -1,
+            255,
+            thickness=cv2.FILLED,
+        )
+
+    valid_pixels = max(int(np.count_nonzero(valid_mask)), 1)
+    changed_pixels = int(np.count_nonzero(significant_mask))
+    changed_percent = (changed_pixels / valid_pixels) * 100.0
+    region_areas = [float(cv2.contourArea(contour)) for contour in retained_contours]
+    largest_region_pixels = max(region_areas, default=0.0)
+    largest_region_percent = (largest_region_pixels / valid_pixels) * 100.0
+
+    # Approximate ground area from the coordinate-radius AOI. This is a
+    # screening estimate, not cadastral measurement.
+    aoi_area_km2 = math.pi * float(radius_km) ** 2
+    changed_area_km2 = aoi_area_km2 * (changed_percent / 100.0)
+    largest_region_km2 = aoi_area_km2 * (largest_region_percent / 100.0)
+
+    valid = valid_mask > 0
+    before_luma = before_gray[valid].astype(np.float32)
+    after_luma = after_gray[valid].astype(np.float32)
+    mean_difference = abs(float(before_luma.mean()) - float(after_luma.mean())) / 255.0
+    contrast_difference = abs(float(before_luma.std()) - float(after_luma.std())) / 128.0
+
+    before_cloud = before_scene.get("cloud_cover_percent")
+    after_cloud = after_scene.get("cloud_cover_percent")
+    cloud_values = [
+        float(value)
+        for value in (before_cloud, after_cloud)
+        if value is not None
+    ]
+    mean_cloud = sum(cloud_values) / len(cloud_values) if cloud_values else 50.0
+
+    comparability_score = 100.0
+    comparability_score -= min(mean_difference * 120.0, 25.0)
+    comparability_score -= min(contrast_difference * 35.0, 20.0)
+    comparability_score -= min(mean_cloud * 0.32, 25.0)
+    comparability_score -= max(0.0, (0.85 - valid_ratio) * 50.0)
+    comparability_score = max(0.0, min(100.0, comparability_score))
+    comparability = classify_comparability(comparability_score)
+
+    region_factor = min(len(retained_contours) / 15.0, 1.0)
+    change_score = min(
+        100.0,
+        (changed_percent * 3.4)
+        + (largest_region_percent * 2.0)
+        + (region_factor * 12.0),
+    )
+    # Reduce confidence in the score when comparability is weak, but keep the
+    # measured changed-pixel percentage intact in the JSON.
+    change_score *= 0.65 + (comparability_score / 100.0) * 0.35
+    change_score = max(0.0, min(100.0, change_score))
+    level = classify_change_level(change_score)
+
+    warnings: list[str] = []
+    if mean_difference > 0.12:
+        warnings.append(
+            "Jelentős fényesség- vagy légköri eltérés van a két kép között."
+        )
+    if contrast_difference > 0.18:
+        warnings.append(
+            "A képek kontrasztja eltér; kisebb változások bizonytalanok lehetnek."
+        )
+    if mean_cloud > 35:
+        warnings.append(
+            "A katalógus felhőborítottsági értéke magas; az eredmény óvatosan értékelendő."
+        )
+    if comparability == "LOW":
+        warnings.append(
+            "Alacsony összehasonlíthatóság: az eredmény csak előszűrésre használható."
+        )
+    warnings.append(
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+    )
+
+    overlay = after_bgr.copy()
+    red_layer = np.zeros_like(overlay)
+    red_layer[:, :, 2] = 255
+    alpha_mask = (significant_mask.astype(np.float32) / 255.0 * 0.52)[:, :, None]
+    overlay = (
+        overlay.astype(np.float32) * (1.0 - alpha_mask)
+        + red_layer.astype(np.float32) * alpha_mask
+    ).astype(np.uint8)
+    if retained_contours:
+        cv2.drawContours(overlay, retained_contours, -1, (0, 0, 255), 2)
+
+    label = (
+        f"CHANGE {change_score:.0f}/100 | {level} | "
+        f"changed {changed_percent:.2f}%"
+    )
+    cv2.rectangle(overlay, (0, 0), (min(width, 720), 42), (15, 23, 42), -1)
+    cv2.putText(
+        overlay,
+        label,
+        (12, 28),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        0.68,
+        (255, 255, 255),
+        2,
+        cv2.LINE_AA,
+    )
+
+    change_path = Path(image_paths["change_abs"])
+    change_path.parent.mkdir(parents=True, exist_ok=True)
+    if not cv2.imwrite(str(change_path), overlay):
+        raise RuntimeError(f"Could not save change map: {change_path}")
+
+    elapsed = (datetime.now(timezone.utc) - started).total_seconds()
+    assessment = build_change_assessment(
+        level,
+        changed_percent,
+        comparability,
+    )
+
+    return {
+        "status": "completed",
+        "engine": CHANGE_ENGINE_NAME,
+        "engine_version": CHANGE_ENGINE_VERSION,
+        "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+        "interpretation": "automatic_visual_change_indication",
+        "score": round(change_score, 2),
+        "level": level,
+        "confidence_percent": round(comparability_score, 2),
+        "comparability": comparability,
+        "comparability_score": round(comparability_score, 2),
+        "ssim": round(float(ssim_value), 6),
+        "changed_pixel_percent": round(changed_percent, 4),
+        "changed_area_km2_estimate": round(changed_area_km2, 4),
+        "significant_regions": len(retained_contours),
+        "largest_region_percent": round(largest_region_percent, 4),
+        "largest_region_km2_estimate": round(largest_region_km2, 4),
+        "valid_pixel_percent": round(valid_ratio * 100.0, 4),
+        "difference_threshold": round(robust_threshold, 6),
+        "minimum_region_pixels": int(minimum_region_pixels),
+        "change_map_url": image_paths["change_url"],
+        "assessment": assessment,
+        "warnings": warnings,
+        "processing_time_seconds": round(elapsed, 3),
+        "limitations": [
+            "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+            "Small objects and limited structural damage cannot be reliably resolved.",
+            "The change score is a screening indicator and requires analyst verification.",
+        ],
+    }
 
 def scene_archive_payload(
     *,
@@ -550,6 +936,7 @@ def build_record(
     before_scene: dict[str, Any],
     after_scene: dict[str, Any],
     image_paths: dict[str, Any],
+    change_detection: dict[str, Any],
 ) -> dict[str, Any]:
     before_requested = target_date - timedelta(days=comparison_days)
 
@@ -600,6 +987,7 @@ def build_record(
         "image_url": image_paths["after_url"],
         "before": before,
         "after": after,
+        "change_detection": change_detection,
         "comparison": {
             "mode": "before_after",
             "requested_after_date": target_date.isoformat(),
@@ -608,6 +996,7 @@ def build_record(
             "search_tolerance_days": int(tolerance_days),
             "before_image_url": image_paths["before_url"],
             "after_image_url": image_paths["after_url"],
+            "change_map_url": image_paths["change_url"],
         },
         "imagery": {
             "image_available": True,
@@ -615,6 +1004,7 @@ def build_record(
             "latest_image": image_paths["latest_url"],
             "before_image": image_paths["before_url"],
             "after_image": image_paths["after_url"],
+            "change_map": image_paths["change_url"],
             "acquisition_date": after_scene["acquisition_date"],
             "cloud_cover_percent": after_scene.get("cloud_cover_percent"),
             "bounds": {
@@ -672,6 +1062,7 @@ def write_metadata(record: dict[str, Any], archive_count: int) -> None:
         "archive_record_count": int(archive_count),
         "target_area": record["target_area"],
         "comparison": record["comparison"],
+        "change_detection": record.get("change_detection"),
         "capabilities": {
             "true_color": True,
             "before_after": True,
@@ -680,7 +1071,9 @@ def write_metadata(record: dict[str, Any], archive_count: int) -> None:
             "cloud_cover_metadata": True,
             "false_color": False,
             "burn_index": False,
-            "change_detection": False,
+            "change_detection": True,
+            "change_map": True,
+            "visual_change_score": True,
             "sentinel1_radar": False,
         },
         "data_paths": {
@@ -862,6 +1255,21 @@ def main() -> None:
         after_scene=after_scene,
     )
 
+    print("Running automatic visual change detection...")
+    change_detection = run_visual_change_detection(
+        image_paths=image_paths,
+        before_scene=before_scene,
+        after_scene=after_scene,
+        radius_km=radius_km,
+    )
+    print(
+        "Change detection completed: "
+        f"score={change_detection['score']}/100 | "
+        f"level={change_detection['level']} | "
+        f"changed={change_detection['changed_pixel_percent']}% | "
+        f"comparability={change_detection['comparability']}"
+    )
+
     record = build_record(
         location_name=location_name,
         location_slug=location_slug,
@@ -878,6 +1286,7 @@ def main() -> None:
         before_scene=before_scene,
         after_scene=after_scene,
         image_paths=image_paths,
+        change_detection=change_detection,
     )
 
     write_latest_json(record)
@@ -888,6 +1297,7 @@ def main() -> None:
     print("Build completed successfully.")
     print(f"BEFORE image: {image_paths['before_abs']}")
     print(f"AFTER image: {image_paths['after_abs']}")
+    print(f"CHANGE map: {image_paths['change_abs']}")
     print(f"Latest compatibility image: {image_paths['latest_abs']}")
     print(f"Latest JSON: {LATEST_JSON_PATH}")
     print(f"Sentinel index: {INDEX_JSON_PATH} ({len(sentinel_index)} records)")
@@ -900,5 +1310,4 @@ if __name__ == "__main__":
         main()
     except Exception as error:
         print(f"ERROR: {error}", file=sys.stderr)
-        sys.exit(1)
-
+        sys.exi
