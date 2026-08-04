@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T12:29:47Z",
+  "generated_at": "2026-08-04T15:10:14Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -57,14 +57,14 @@
     "normalized_events": 1000,
     "map_visualizable_events": 246,
     "non_mappable_events": 754,
-    "developments": 5
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-08T20:52:42Z",
-      "latest_event_date": "2026-08-04T10:53:41Z",
+      "earliest_event_date": "2026-07-08T20:52:43Z",
+      "latest_event_date": "2026-08-04T14:52:49Z",
       "geocoded_events": 246,
       "geocoded_share": 24.6,
       "top_category": "infrastructure",
@@ -73,10 +73,10 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 102,
-        "previous": 180,
-        "delta": -78,
-        "percent_change": -43.3,
+        "current": 99,
+        "previous": 172,
+        "delta": -73,
+        "percent_change": -42.4,
         "direction": "decrease"
       },
       "latest_30_days": {
@@ -90,7 +90,7 @@
     "daily_trend": [
       {
         "date": "2026-07-08",
-        "count": 27
+        "count": 26
       },
       {
         "date": "2026-07-09",
@@ -198,13 +198,13 @@
       },
       {
         "date": "2026-08-04",
-        "count": 5
+        "count": 6
       }
     ],
     "category_counts": {
-      "infrastructure": 243,
+      "infrastructure": 242,
       "missile": 221,
-      "strike": 171,
+      "strike": 172,
       "airstrike": 103,
       "explosion": 98,
       "drone": 92,
@@ -215,8 +215,8 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 488,
-      "high": 395,
+      "medium": 489,
+      "high": 394,
       "low": 113,
       "critical": 4
     },
@@ -229,7 +229,7 @@
     "top_locations": [
       {
         "name": "Iran",
-        "count": 313
+        "count": 312
       },
       {
         "name": "Unknown",
@@ -272,12 +272,12 @@
         "count": 18
       },
       {
-        "name": "Tehran",
+        "name": "Red Sea",
         "count": 17
       },
       {
-        "name": "Red Sea",
-        "count": 16
+        "name": "Tehran",
+        "count": 17
       },
       {
         "name": "Ahvaz",
@@ -291,7 +291,7 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 479
+        "count": 478
       },
       {
         "name": "Unknown",
@@ -319,7 +319,7 @@
       },
       {
         "name": "Red Sea",
-        "count": 16
+        "count": 17
       },
       {
         "name": "Palestinian territories",
@@ -336,33 +336,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10020,
+    "totalCount": 10023,
     "spotlight": {
       "event": {
-        "id": "22h6u27skrog0",
-        "timestamp": "2026-08-04T10:53:41+00:00",
-        "location": "IRN",
+        "id": "22qa3j56wwu80",
+        "timestamp": "2026-08-04T14:52:49+00:00",
+        "location": "YEM",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "medium",
-        "description": "Large explosion and fire at aluminum factory in Shams Abad industrial zone south of Tehran, near Khomeini International Airport",
-        "descriptionHe": "פיצוץ ודליקה גדולה במפעל אלומיניום באזור תעשיה שמס אבאד, מדרום לטהרן - קרוב לשדה\"ת על שם ח'ומייני",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/127902"
+        "description": "Indian-flagged tanker carrying Saudi oil struck by Yemeni suicide boat 13 nautical miles off Hodeidah in Bab Al-Mandab",
+        "descriptionHe": "כלי שיט בדגל הודי המובל נפט סעודי נפגע בסירת התאבדות יממנית 13 מייל ימי מחדיידה במצר באב אל-מנדב",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "other",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81666"
       },
-      "headline": "Large explosion reported at Tehran industrial facility near airport",
-      "headlineHe": "פיצוץ ענק דווח במתקן תעשייתי בטהרן ליד שדה התעופה",
-      "summary": "The blast at the aluminum factory in Shams Abad marks the most recent significant incident and occurs amid escalating regional tensions involving missile and drone strikes.",
-      "summaryHe": "הפיצוץ במפעל האלומיניום בשמס אבאד מהווה את התקרית המשמעותית העדכנית ביותר ומתרחש בעקבות התגברות המתיחויות האזוריות הכוללות תקיפות טילים וכלי טס.",
-      "pickedAt": "2026-08-04T12:15:51.826Z",
+      "headline": "Yemeni suicide boat strikes Indian oil tanker in Red Sea",
+      "headlineHe": "סירת התאבדות תימנית תוקעת טנקר נפט הודי בים סוף",
+      "summary": "The attack marks an escalation in maritime tensions in the Bab Al-Mandab strait, a critical chokepoint for global shipping between Europe and Asia.",
+      "summaryHe": "ההתקפה מסמנת הסלמה במתיחויות ימיות במחוז באב אל-מנדב, מעבר קריטי לתחבורה גלובלית בין אירופה לאסיה.",
+      "pickedAt": "2026-08-04T15:00:51.213Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-04T12:27:03.524Z",
+    "lastUpdated": "2026-08-04T15:06:03.731Z",
     "stale": false,
-    "viewerCount": 4,
+    "viewerCount": 0,
     "ceasefire": false
   },
   "summary": {
@@ -903,94 +910,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 92,
+      "internet": 94,
       "cellular": null,
-      "lastUpdate": "2026-08-04T11:31:35.450Z",
+      "lastUpdate": "2026-08-04T15:01:38.156Z",
       "internetHistory": [
-        {
-          "t": "2026-08-03T11:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T11:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T11:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T12:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T12:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T12:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T12:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T12:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T12:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T13:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T13:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T13:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T13:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T13:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T13:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-03T14:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-03T14:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-03T14:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-03T14:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-03T14:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-03T14:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-08-03T15:00:00.000Z",
           "v": 94
@@ -1482,22 +1405,106 @@
         {
           "t": "2026-08-04T11:20:00.000Z",
           "v": 92
+        },
+        {
+          "t": "2026-08-04T11:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T11:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T11:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T12:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T12:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T12:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T12:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T12:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T12:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T13:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-04T13:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T13:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T13:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T13:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T13:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T14:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T14:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T14:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T14:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-04T14:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-08-04T14:50:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-04T11:31:35.450Z"
+    "lastUpdated": "2026-08-04T15:01:38.156Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f2c1a9b",
+      "id": "iranstrike-a7f2c1e3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-04T05:52:31Z",
+      "date": "2026-08-04T14:52:49Z",
       "title": "IranStrike event",
-      "description": "Iran strikes merchant vessel off Oman; escalating maritime attacks in Gulf",
+      "description": "Iran fires on merchant vessel; Houthis strike tanker and Saudi airport",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -1505,7 +1512,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes merchant vessel off oman;",
+      "attacker_evidence": "iran fires on merchant vessel;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -1518,87 +1525,45 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f2c1a9b",
-        "text": "Iran strikes merchant vessel off Oman; escalating maritime attacks in Gulf",
-        "textHe": "איראן תקפה אניה סחורה ליד עומאן; התגברות התקפות ימיות בתוך המפרץ",
+        "id": "a7f2c1e3",
+        "text": "Iran fires on merchant vessel; Houthis strike tanker and Saudi airport",
+        "textHe": "איראן יורה על כלי סחר; חות'ים תוקפים טנקר ושדה תעופה סעודי",
         "severity": "high",
-        "timestamp": "2026-08-04T05:52:31+00:00",
+        "timestamp": "2026-08-04T14:52:49+00:00",
         "entityIds": [
           "IRN",
           "YEM",
+          "SAU",
           "OMN"
         ],
         "eventIds": [
+          "22qa3j56wwu80",
+          "2pzazo98mma00",
           "19bbsnco6io0",
           "11c8fai8u50g0"
         ],
-        "sourceCount": 2
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-8e3d4c2f",
+      "id": "iranstrike-b4e9d2f6",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-03T19:22:28Z",
       "title": "IranStrike event",
-      "description": "Israel conducts Gaza and Lebanon operations; drone strike kills 2 in Gaza City",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Gaza City",
-      "country": "Palestinian territories",
-      "latitude": 31.5017,
-      "longitude": 34.4668,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "gaza city",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "8e3d4c2f",
-        "text": "Israel conducts Gaza and Lebanon operations; drone strike kills 2 in Gaza City",
-        "textHe": "ישראל מבצעת פעולות בעזה ובלבנון; תקיפת רחפן הרגה 2 בעיר עזה",
-        "severity": "high",
-        "timestamp": "2026-08-03T19:22:28+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "u6i22y3tkuo0",
-          "wsjjguwyewg0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-6a1b5e8c",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-03T11:08:14Z",
-      "title": "IranStrike event",
-      "description": "Iran resumes Alborz missile facility tunneling after Israeli strikes",
+      "description": "Israeli strikes in Gaza and Lebanon; Lebanese forces intercept Syrian rockets",
       "category": "other",
       "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "israeli strikes in gaza and lebanon;",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1609,30 +1574,33 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6a1b5e8c",
-        "text": "Iran resumes Alborz missile facility tunneling after Israeli strikes",
-        "textHe": "איראן חוזרת לעבודות תהילה במתקן טילים אלבורז לאחר תקיפות ישראליות",
+        "id": "b4e9d2f6",
+        "text": "Israeli strikes in Gaza and Lebanon; Lebanese forces intercept Syrian rockets",
+        "textHe": "הפצצות ישראליות בעזה ולבנון; כוחות לבנוניים חוסמים טילים סוריים",
         "severity": "medium",
-        "timestamp": "2026-08-03T11:08:14+00:00",
+        "timestamp": "2026-08-03T19:22:28+00:00",
         "entityIds": [
-          "IRN",
-          "ISR"
+          "ISR",
+          "LBN",
+          "SYR"
         ],
         "eventIds": [
-          "1qcph9p2d2f40"
+          "u6i22y3tkuo0",
+          "l4yiew86apc0",
+          "wsjjguwyewg0"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-5c9d7a1e",
+      "id": "iranstrike-c6f3a4b8",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-04T10:53:41Z",
       "title": "IranStrike event",
-      "description": "Large explosion at Tehran aluminum factory near Khomeini Airport",
+      "description": "Large explosion at Iranian aluminum factory near Tehran; industrial fire reported",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1653,9 +1621,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5c9d7a1e",
-        "text": "Large explosion at Tehran aluminum factory near Khomeini Airport",
-        "textHe": "פיצוץ גדול במפעל אלומיניום בטהרן ליד נתב\"ג חומייני",
+        "id": "c6f3a4b8",
+        "text": "Large explosion at Iranian aluminum factory near Tehran; industrial fire reported",
+        "textHe": "פיצוץ גדול במפעל אלומיניום איראני ליד טהראן",
         "severity": "medium",
         "timestamp": "2026-08-04T10:53:41+00:00",
         "entityIds": [
@@ -1668,24 +1636,24 @@
       }
     },
     {
-      "id": "iranstrike-4b8e6f3d",
+      "id": "iranstrike-d8g5c6h9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-04T10:30:38Z",
+      "date": "2026-08-03T19:09:32Z",
       "title": "IranStrike event",
-      "description": "Houthis claim strike on Saudi military target at Nejran Airport",
+      "description": "Ukrainian forces strike Iranian vessel in Caspian Sea; Iranian sailor killed",
       "category": "other",
       "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "ukrainian forces strike iranian vessel in caspian sea;",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1696,23 +1664,74 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4b8e6f3d",
-        "text": "Houthis claim strike on Saudi military target at Nejran Airport",
-        "textHe": "חותים טוענים להכה במטרה צבאית סעודית בשדה תעופה נג׳רן",
+        "id": "d8g5c6h9",
+        "text": "Ukrainian forces strike Iranian vessel in Caspian Sea; Iranian sailor killed",
+        "textHe": "כוחות אוקראיניים תוקפים אוניה איראנית בים הקספי",
         "severity": "medium",
-        "timestamp": "2026-08-04T10:30:38+00:00",
+        "timestamp": "2026-08-03T19:09:32+00:00",
         "entityIds": [
-          "YEM",
-          "SAU"
+          "UKR",
+          "IRN"
         ],
         "eventIds": [
-          "2pzazo98mma00"
+          "2zfbh2j07qg00"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-22qa3j56wwu80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/81666",
+      "date": "2026-08-04T14:52:49Z",
+      "title": "IranStrike event",
+      "description": "Indian-flagged tanker carrying Saudi oil struck by Yemeni suicide boat 13 nautical miles off Hodeidah in Bab Al-Mandab",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "22qa3j56wwu80",
+        "timestamp": "2026-08-04T14:52:49+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Indian-flagged tanker carrying Saudi oil struck by Yemeni suicide boat 13 nautical miles off Hodeidah in Bab Al-Mandab",
+        "descriptionHe": "כלי שיט בדגל הודי המובל נפט סעודי נפגע בסירת התאבדות יממנית 13 מייל ימי מחדיידה במצר באב אל-מנדב",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "other",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/81666"
+      }
+    },
     {
       "id": "iranstrike-22h6u27skrog0",
       "source": "IranStrike",
@@ -46942,51 +46961,6 @@
         "descriptionHe": "כ-10 פיצוצים דווחו בחבהאר וקונارק",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79102"
-      }
-    },
-    {
-      "id": "iranstrike-19yso47zxytc0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79101",
-      "date": "2026-07-08T20:52:42Z",
-      "title": "IranStrike event",
-      "description": "Iran's armed forces threaten massive attack on U.S. military bases in region shortly",
-      "category": "infrastructure",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "19yso47zxytc0",
-        "timestamp": "2026-07-08T20:52:42+00:00",
-        "location": "ISR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "high",
-        "description": "Iran's armed forces threaten massive attack on U.S. military bases in region shortly",
-        "descriptionHe": "כוחות משוריינים איראניים מאיימים בהתקפה 거대ה על בסיסים צבאיים אמריקאיים באזור",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79101"
       }
     }
   ],
