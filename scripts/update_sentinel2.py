@@ -1,38 +1,57 @@
+#!/usr/bin/env python3
+"""Build a two-date Sentinel-2 before/after record for the ME Security Monitor.
+
+The script:
+- accepts a location and coordinate-based area of interest;
+- finds the nearest suitable Sentinel-2 L2A scene around an "after" date;
+- finds a comparison scene a configurable number of days earlier;
+- downloads true-colour PNGs for both scenes;
+- preserves the current single-image dashboard contract through top-level image_url;
+- writes a richer before/after archive record for future comparison UI.
+
+Required environment variables:
+    SENTINELHUB_CLIENT_ID
+    SENTINELHUB_CLIENT_SECRET
+"""
+
+from __future__ import annotations
+
 import argparse
 import json
 import math
 import os
 import re
 import sys
-import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
-
-# The ME Security Monitor is published from the repository's docs directory,
-# while its main page may also be opened from the repository root during testing.
-# Therefore every generated satellite asset is stored under docs/data.
-SATELLITE_DIR = ROOT_DIR / "docs" / "data" / "satellite"
+DOCS_DIR = ROOT_DIR / "docs"
+SATELLITE_DIR = DOCS_DIR / "data" / "satellite"
 SENTINEL2_DIR = SATELLITE_DIR / "sentinel2"
 SENTINEL2_HISTORY_DIR = SENTINEL2_DIR / "history"
 
 METADATA_PATH = SATELLITE_DIR / "satellite-metadata.json"
-ARCHIVE_INDEX_PATH = SATELLITE_DIR / "archive-index.json"
 LATEST_IMAGE_PATH = SENTINEL2_DIR / "latest.png"
 LATEST_JSON_PATH = SENTINEL2_DIR / "latest.json"
-SENTINEL2_INDEX_PATH = SENTINEL2_DIR / "index.json"
+INDEX_JSON_PATH = SENTINEL2_DIR / "index.json"
+ARCHIVE_INDEX_PATH = SATELLITE_DIR / "archive-index.json"
 
 TOKEN_URL = (
     "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/"
     "protocol/openid-connect/token"
 )
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
+CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/catalog/1.0.0/search"
+
+WORKFLOW_VERSION = "2.0"
+PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
+PRODUCT_NAME = "Sentinel-2 L2A True Color"
 
 EVALSCRIPT_TRUE_COLOR = """
 //VERSION=3
@@ -69,48 +88,51 @@ def ensure_dirs() -> None:
 
 
 def safe_coord(value: float) -> float:
-    number = float(value)
-    if not math.isfinite(number):
-        raise ValueError("Coordinate must be a finite number.")
-    return round(number, 6)
-
-
-def validate_target(lat: float, lon: float, radius_km: float) -> None:
-    if not -90 <= lat <= 90:
-        raise ValueError("Latitude must be between -90 and 90.")
-    if not -180 <= lon <= 180:
-        raise ValueError("Longitude must be between -180 and 180.")
-    if not 0.5 <= radius_km <= 100:
-        raise ValueError("Radius must be between 0.5 and 100 km.")
-    if abs(lat) >= 89.5:
-        raise ValueError("Targets closer than 0.5 degrees to a pole are unsupported.")
+    return round(float(value), 6)
 
 
 def slugify(value: str) -> str:
-    normalized = unicodedata.normalize("NFKD", value.strip())
-    normalized = normalized.encode("ascii", "ignore").decode("ascii")
-    normalized = normalized.lower()
-    normalized = re.sub(r"[^a-z0-9]+", "-", normalized)
+    normalized = value.strip().lower()
+    normalized = re.sub(r"[^\w\s-]", "", normalized, flags=re.UNICODE)
+    normalized = re.sub(r"[-\s]+", "-", normalized)
     normalized = normalized.strip("-")
     return normalized or "unknown-location"
 
 
 def bbox_from_center(lat: float, lon: float, radius_km: float) -> list[float]:
     lat_delta = radius_km / 111.32
-    cosine = max(abs(math.cos(math.radians(lat))), 0.01)
+    cosine = math.cos(math.radians(lat))
+    if abs(cosine) < 1e-8:
+        raise ValueError("Longitude span is undefined too close to a pole.")
     lon_delta = radius_km / (111.32 * cosine)
 
-    west = max(-180.0, lon - lon_delta)
-    south = max(-90.0, lat - lat_delta)
-    east = min(180.0, lon + lon_delta)
-    north = min(90.0, lat + lat_delta)
-
     return [
-        safe_coord(west),
-        safe_coord(south),
-        safe_coord(east),
-        safe_coord(north),
+        safe_coord(lon - lon_delta),
+        safe_coord(lat - lat_delta),
+        safe_coord(lon + lon_delta),
+        safe_coord(lat + lat_delta),
     ]
+
+
+def parse_iso_date(value: str, argument_name: str) -> date:
+    try:
+        return date.fromisoformat(value)
+    except ValueError as error:
+        raise ValueError(
+            f"{argument_name} must use ISO format YYYY-MM-DD: {value!r}"
+        ) from error
+
+
+def iso_z(value: datetime) -> str:
+    return value.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def day_start(value: date) -> datetime:
+    return datetime.combine(value, time.min, tzinfo=timezone.utc)
+
+
+def day_end(value: date) -> datetime:
+    return datetime.combine(value, time.max, tzinfo=timezone.utc)
 
 
 def get_env_secret(name: str) -> str:
@@ -120,27 +142,58 @@ def get_env_secret(name: str) -> str:
     return value
 
 
-def http_post_form(url: str, form_data: dict[str, Any]) -> dict[str, Any]:
-    encoded = urllib.parse.urlencode(form_data).encode("utf-8")
+def request_json(
+    url: str,
+    *,
+    method: str = "GET",
+    data: bytes | None = None,
+    headers: dict[str, str] | None = None,
+    timeout: int = 60,
+) -> dict[str, Any]:
     request = urllib.request.Request(
         url=url,
-        data=encoded,
-        method="POST",
-        headers={
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "application/json",
-            "User-Agent": "ME-Security-Monitor-Sentinel2-Builder/1.0",
-        },
+        data=data,
+        method=method,
+        headers=headers or {},
     )
 
     try:
-        with urllib.request.urlopen(request, timeout=60) as response:
-            return json.loads(response.read().decode("utf-8"))
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            raw = response.read()
+            return json.loads(raw.decode("utf-8"))
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
         raise RuntimeError(f"HTTP error {error.code} from {url}: {body}") from error
     except urllib.error.URLError as error:
         raise RuntimeError(f"Network error while requesting {url}: {error}") from error
+
+
+def http_post_form(url: str, form_data: dict[str, Any]) -> dict[str, Any]:
+    encoded = urllib.parse.urlencode(form_data).encode("utf-8")
+    return request_json(
+        url,
+        method="POST",
+        data=encoded,
+        headers={
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json",
+        },
+        timeout=60,
+    )
+
+
+def http_post_json(url: str, payload: dict[str, Any], token: str) -> dict[str, Any]:
+    return request_json(
+        url,
+        method="POST",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": f"Bearer {token}",
+        },
+        timeout=120,
+    )
 
 
 def http_post_json_for_png(url: str, payload: dict[str, Any], token: str) -> bytes:
@@ -152,19 +205,20 @@ def http_post_json_for_png(url: str, payload: dict[str, Any], token: str) -> byt
             "Content-Type": "application/json",
             "Accept": "image/png",
             "Authorization": f"Bearer {token}",
-            "User-Agent": "ME-Security-Monitor-Sentinel2-Builder/1.0",
         },
     )
 
     try:
-        with urllib.request.urlopen(request, timeout=180) as response:
+        with urllib.request.urlopen(request, timeout=240) as response:
             content_type = response.headers.get("Content-Type", "")
             data = response.read()
-            if "image/png" not in content_type:
+
+            if "image/png" not in content_type.lower():
                 text = data.decode("utf-8", errors="replace")
                 raise RuntimeError(
                     f"Expected image/png, received {content_type}: {text}"
                 )
+
             return data
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
@@ -182,20 +236,132 @@ def get_access_token() -> str:
             "client_secret": get_env_secret("SENTINELHUB_CLIENT_SECRET"),
         },
     )
+
     token = response.get("access_token")
     if not token:
         raise RuntimeError("Sentinel Hub token response did not contain access_token.")
+
     return str(token)
+
+
+def parse_datetime(value: Any) -> datetime | None:
+    if not value:
+        return None
+    text = str(value).strip().replace("Z", "+00:00")
+    try:
+        parsed = datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def catalog_scene_datetime(feature: dict[str, Any]) -> datetime | None:
+    properties = feature.get("properties") or {}
+    return parse_datetime(
+        properties.get("datetime")
+        or properties.get("start_datetime")
+        or properties.get("end_datetime")
+    )
+
+
+def catalog_cloud_cover(feature: dict[str, Any]) -> float | None:
+    properties = feature.get("properties") or {}
+    value = properties.get("eo:cloud_cover")
+    if value is None:
+        value = properties.get("cloudCover")
+    try:
+        return float(value) if value is not None else None
+    except (TypeError, ValueError):
+        return None
+
+
+def build_catalog_payload(
+    bbox: list[float],
+    requested_date: date,
+    tolerance_days: int,
+    max_cloud_coverage: int,
+) -> dict[str, Any]:
+    start = day_start(requested_date - timedelta(days=tolerance_days))
+    end = day_end(requested_date + timedelta(days=tolerance_days))
+
+    return {
+        "bbox": bbox,
+        "datetime": f"{iso_z(start)}/{iso_z(end)}",
+        "collections": ["sentinel-2-l2a"],
+        "limit": 100,
+        "filter": f"eo:cloud_cover <= {int(max_cloud_coverage)}",
+        "filter-lang": "cql2-text",
+    }
+
+
+def find_best_scene(
+    token: str,
+    bbox: list[float],
+    requested_date: date,
+    tolerance_days: int,
+    max_cloud_coverage: int,
+) -> dict[str, Any]:
+    payload = build_catalog_payload(
+        bbox=bbox,
+        requested_date=requested_date,
+        tolerance_days=tolerance_days,
+        max_cloud_coverage=max_cloud_coverage,
+    )
+    response = http_post_json(CATALOG_API_URL, payload, token)
+    features = response.get("features") or []
+
+    candidates: list[tuple[float, float, datetime, dict[str, Any]]] = []
+    requested_midday = datetime.combine(
+        requested_date,
+        time(hour=12),
+        tzinfo=timezone.utc,
+    )
+
+    for feature in features:
+        scene_dt = catalog_scene_datetime(feature)
+        if scene_dt is None:
+            continue
+        cloud = catalog_cloud_cover(feature)
+        cloud_score = cloud if cloud is not None else 101.0
+        distance_seconds = abs((scene_dt - requested_midday).total_seconds())
+        candidates.append((distance_seconds, cloud_score, scene_dt, feature))
+
+    if not candidates:
+        window_start = requested_date - timedelta(days=tolerance_days)
+        window_end = requested_date + timedelta(days=tolerance_days)
+        raise RuntimeError(
+            "No Sentinel-2 L2A scene found for "
+            f"{window_start.isoformat()} to {window_end.isoformat()} "
+            f"with cloud coverage <= {max_cloud_coverage}%."
+        )
+
+    candidates.sort(key=lambda item: (item[0], item[1], item[2]))
+    _, cloud_score, scene_dt, feature = candidates[0]
+    cloud = catalog_cloud_cover(feature)
+
+    return {
+        "feature_id": feature.get("id"),
+        "acquisition_datetime": iso_z(scene_dt),
+        "acquisition_date": scene_dt.date().isoformat(),
+        "cloud_cover_percent": cloud,
+        "catalog_feature": feature,
+        "candidate_count": len(candidates),
+        "cloud_score": cloud_score,
+    }
 
 
 def build_process_payload(
     bbox: list[float],
-    start_date: str,
-    end_date: str,
+    acquisition_date: date,
     width: int,
     height: int,
     max_cloud_coverage: int,
 ) -> dict[str, Any]:
+    start = day_start(acquisition_date)
+    end = day_end(acquisition_date)
+
     return {
         "input": {
             "bounds": {
@@ -209,18 +375,18 @@ def build_process_payload(
                     "type": "sentinel-2-l2a",
                     "dataFilter": {
                         "timeRange": {
-                            "from": f"{start_date}T00:00:00Z",
-                            "to": f"{end_date}T23:59:59Z",
+                            "from": iso_z(start),
+                            "to": iso_z(end),
                         },
-                        "maxCloudCoverage": max_cloud_coverage,
+                        "maxCloudCoverage": int(max_cloud_coverage),
                         "mosaickingOrder": "leastCC",
                     },
                 }
             ],
         },
         "output": {
-            "width": width,
-            "height": height,
+            "width": int(width),
+            "height": int(height),
             "responses": [
                 {
                     "identifier": "default",
@@ -235,6 +401,7 @@ def build_process_payload(
 def load_json(path: Path, fallback: Any) -> Any:
     if not path.exists():
         return fallback
+
     try:
         with path.open("r", encoding="utf-8") as file:
             return json.load(file)
@@ -244,193 +411,353 @@ def load_json(path: Path, fallback: Any) -> Any:
 
 def write_json_atomic(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    with temporary.open("w", encoding="utf-8") as file:
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    with temporary_path.open("w", encoding="utf-8") as file:
         json.dump(payload, file, ensure_ascii=False, indent=2)
         file.write("\n")
-    temporary.replace(path)
+    temporary_path.replace(path)
 
 
-def save_png(image_bytes: bytes, location_slug: str) -> dict[str, Any]:
-    LATEST_IMAGE_PATH.write_bytes(image_bytes)
+def docs_relative_url(path: Path) -> str:
+    return path.relative_to(DOCS_DIR).as_posix()
 
-    generated = utc_now()
-    timestamp = generated.strftime("%Y-%m-%dT%H%M%SZ")
-    record_id = f"{location_slug}_{timestamp}"
 
+def normalize_image_url(value: Any) -> Any:
+    if not isinstance(value, str):
+        return value
+    normalized = value.strip().replace("\\", "/")
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+    if normalized.startswith("docs/"):
+        normalized = normalized[len("docs/") :]
+    return normalized
+
+
+def normalize_existing_record(record: Any) -> Any:
+    if not isinstance(record, dict):
+        return record
+
+    normalized = dict(record)
+
+    for field in ("image_url", "url", "overlay_url", "file_url"):
+        if field in normalized:
+            normalized[field] = normalize_image_url(normalized[field])
+
+    for side in ("before", "after"):
+        side_value = normalized.get(side)
+        if isinstance(side_value, dict):
+            side_copy = dict(side_value)
+            if "image_url" in side_copy:
+                side_copy["image_url"] = normalize_image_url(side_copy["image_url"])
+            normalized[side] = side_copy
+
+    imagery = normalized.get("imagery")
+    if isinstance(imagery, dict):
+        imagery_copy = dict(imagery)
+        for field in (
+            "image_url",
+            "latest_image",
+            "history_image",
+            "before_image",
+            "after_image",
+        ):
+            if field in imagery_copy:
+                imagery_copy[field] = normalize_image_url(imagery_copy[field])
+        normalized["imagery"] = imagery_copy
+
+    return normalized
+
+
+def save_comparison_images(
+    before_bytes: bytes,
+    after_bytes: bytes,
+    location_slug: str,
+    before_scene: dict[str, Any],
+    after_scene: dict[str, Any],
+) -> dict[str, Any]:
     location_history_dir = SENTINEL2_HISTORY_DIR / location_slug
     location_history_dir.mkdir(parents=True, exist_ok=True)
 
-    history_name = f"{timestamp}.png"
-    history_path = location_history_dir / history_name
-    history_path.write_bytes(image_bytes)
+    generated_stamp = utc_now().strftime("%Y-%m-%dT%H%M%SZ")
+    before_date = before_scene["acquisition_date"]
+    after_date = after_scene["acquisition_date"]
 
-    # Paths are intentionally repository-root relative because the current ME
-    # dashboard first loads ./docs/data/satellite/archive-index.json.
-    latest_web_path = "./docs/data/satellite/sentinel2/latest.png"
-    history_web_path = (
-        f"./docs/data/satellite/sentinel2/history/{location_slug}/{history_name}"
-    )
+    before_path = location_history_dir / f"{before_date}_before_{generated_stamp}.png"
+    after_path = location_history_dir / f"{after_date}_after_{generated_stamp}.png"
+
+    before_path.write_bytes(before_bytes)
+    after_path.write_bytes(after_bytes)
+
+    # Backwards-compatible latest image: always the "after" image.
+    LATEST_IMAGE_PATH.write_bytes(after_bytes)
 
     return {
-        "record_id": record_id,
-        "timestamp": timestamp,
-        "latest_web_path": latest_web_path,
-        "history_web_path": history_web_path,
+        "generated_stamp": generated_stamp,
+        "record_id": f"{location_slug}_{after_date}_{generated_stamp}",
         "latest_abs": str(LATEST_IMAGE_PATH),
-        "history_abs": str(history_path),
+        "latest_url": docs_relative_url(LATEST_IMAGE_PATH),
+        "before_abs": str(before_path),
+        "before_url": docs_relative_url(before_path),
+        "after_abs": str(after_path),
+        "after_url": docs_relative_url(after_path),
+    }
+
+
+def scene_archive_payload(
+    *,
+    role: str,
+    requested_date: date,
+    scene: dict[str, Any],
+    image_url: str,
+    tolerance_days: int,
+) -> dict[str, Any]:
+    acquisition_date = parse_iso_date(scene["acquisition_date"], "acquisition_date")
+    offset = (acquisition_date - requested_date).days
+
+    return {
+        "role": role,
+        "requested_date": requested_date.isoformat(),
+        "search_tolerance_days": int(tolerance_days),
+        "acquisition_date": scene["acquisition_date"],
+        "acquisition_datetime": scene["acquisition_datetime"],
+        "date_offset_days": offset,
+        "cloud_cover_percent": scene.get("cloud_cover_percent"),
+        "catalog_feature_id": scene.get("feature_id"),
+        "catalog_candidate_count": scene.get("candidate_count"),
+        "image_url": image_url,
     }
 
 
 def build_record(
+    *,
     location_name: str,
     location_slug: str,
     lat: float,
     lon: float,
     radius_km: float,
     bbox: list[float],
-    start_date: str,
-    end_date: str,
+    target_date: date,
+    comparison_days: int,
+    tolerance_days: int,
     width: int,
     height: int,
     max_cloud_coverage: int,
+    before_scene: dict[str, Any],
+    after_scene: dict[str, Any],
     image_paths: dict[str, Any],
 ) -> dict[str, Any]:
+    before_requested = target_date - timedelta(days=comparison_days)
+
+    before = scene_archive_payload(
+        role="before",
+        requested_date=before_requested,
+        scene=before_scene,
+        image_url=image_paths["before_url"],
+        tolerance_days=tolerance_days,
+    )
+    after = scene_archive_payload(
+        role="after",
+        requested_date=target_date,
+        scene=after_scene,
+        image_url=image_paths["after_url"],
+        tolerance_days=tolerance_days,
+    )
+
     generated_at = utc_now_iso()
+
     return {
         "id": image_paths["record_id"],
-        "record_id": image_paths["record_id"],
         "generated_at": generated_at,
-        "timestamp": image_paths["timestamp"],
+        "timestamp": after_scene["acquisition_datetime"],
         "provider": "sentinel2",
-        "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
-        "product": "Sentinel-2 L2A True Color",
+        "source": PROVIDER_NAME,
+        "product": PRODUCT_NAME,
+        "workflow_version": WORKFLOW_VERSION,
         "location_name": location_name,
         "location_slug": location_slug,
-        # Direct fields used by the ME Satellite Intelligence layer.
-        "image_url": image_paths["history_web_path"],
-        "bbox": bbox,
-        "lat": safe_coord(lat),
-        "lon": safe_coord(lon),
-        "radius_km": radius_km,
+        "requested_date": target_date.isoformat(),
+        "comparison_days": int(comparison_days),
+        "search_tolerance_days": int(tolerance_days),
+        "image_size": {
+            "width": int(width),
+            "height": int(height),
+        },
+        "max_cloud_coverage_requested": int(max_cloud_coverage),
         "target_area": {
             "mode": "coordinate_radius",
-            "name": location_name,
             "lat": safe_coord(lat),
             "lon": safe_coord(lon),
-            "radius_km": radius_km,
+            "radius_km": float(radius_km),
             "bbox": bbox,
+        },
+        # Existing Satellite Intelligence v1 compatibility.
+        "bbox": bbox,
+        "image_url": image_paths["after_url"],
+        "before": before,
+        "after": after,
+        "comparison": {
+            "mode": "before_after",
+            "requested_after_date": target_date.isoformat(),
+            "requested_before_date": before_requested.isoformat(),
+            "comparison_days": int(comparison_days),
+            "search_tolerance_days": int(tolerance_days),
+            "before_image_url": image_paths["before_url"],
+            "after_image_url": image_paths["after_url"],
         },
         "imagery": {
             "image_available": True,
-            "image_url": image_paths["history_web_path"],
-            "latest_image": image_paths["latest_web_path"],
-            "history_image": image_paths["history_web_path"],
-            "requested_time_range": {
-                "from": start_date,
-                "to": end_date,
-            },
-            "acquisition_date": None,
-            "cloud_cover_percent": None,
-            "max_cloud_coverage_requested": max_cloud_coverage,
-            "width": width,
-            "height": height,
+            "image_url": image_paths["after_url"],
+            "latest_image": image_paths["latest_url"],
+            "before_image": image_paths["before_url"],
+            "after_image": image_paths["after_url"],
+            "acquisition_date": after_scene["acquisition_date"],
+            "cloud_cover_percent": after_scene.get("cloud_cover_percent"),
             "bounds": {
                 "west": bbox[0],
                 "south": bbox[1],
                 "east": bbox[2],
                 "north": bbox[3],
             },
+            "width": int(width),
+            "height": int(height),
         },
     }
 
 
-def update_list_index(path: Path, record: dict[str, Any]) -> list[dict[str, Any]]:
-    index = load_json(path, [])
-    if isinstance(index, dict):
-        index = index.get("records") or index.get("images") or []
-    if not isinstance(index, list):
-        index = []
+def update_record_list(path: Path, record: dict[str, Any]) -> list[dict[str, Any]]:
+    existing = load_json(path, [])
+    if not isinstance(existing, list):
+        existing = []
 
-    index = [
-        item
-        for item in index
-        if isinstance(item, dict) and item.get("id") != record["id"]
+    normalized_existing = [
+        normalize_existing_record(item)
+        for item in existing
+        if isinstance(item, dict)
     ]
-    index.append(record)
-    index.sort(key=lambda item: str(item.get("generated_at", "")), reverse=True)
-    write_json_atomic(path, index)
-    return index
+
+    # Keep historical runs. Only exact record IDs are replaced.
+    records = [item for item in normalized_existing if item.get("id") != record["id"]]
+    records.append(record)
+    records.sort(key=lambda item: str(item.get("generated_at", "")), reverse=True)
+    write_json_atomic(path, records)
+    return records
 
 
-def write_metadata(record: dict[str, Any], record_count: int) -> None:
+def write_latest_json(record: dict[str, Any]) -> None:
+    write_json_atomic(LATEST_JSON_PATH, record)
+
+
+def write_metadata(record: dict[str, Any], archive_count: int) -> None:
     metadata = {
         "generated_at": utc_now_iso(),
-        "module": "satellite-intelligence",
+        "module": "satellite",
         "status": "ok",
+        "workflow_version": WORKFLOW_VERSION,
         "default_provider": "sentinel2",
         "provider": {
             "key": "sentinel2",
             "name": "Sentinel-2",
             "type": "optical",
             "enabled": True,
-            "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+            "source": PROVIDER_NAME,
             "resolution_m": 10,
             "auth_required": True,
         },
         "latest_record": record,
-        "record_count": record_count,
-        "imagery": record["imagery"],
+        "archive_record_count": int(archive_count),
         "target_area": record["target_area"],
+        "comparison": record["comparison"],
         "capabilities": {
-            "coordinate_target": True,
             "true_color": True,
-            "archive": True,
-            "history": True,
-            "leaflet_image_overlay": True,
+            "before_after": True,
+            "catalog_scene_selection": True,
+            "actual_acquisition_date": True,
+            "cloud_cover_metadata": True,
             "false_color": False,
             "burn_index": False,
-            "before_after": False,
             "change_detection": False,
             "sentinel1_radar": False,
         },
         "data_paths": {
-            "archive_index": "docs/data/satellite/archive-index.json",
-            "latest_image": "docs/data/satellite/sentinel2/latest.png",
-            "latest_json": "docs/data/satellite/sentinel2/latest.json",
-            "sentinel2_index": "docs/data/satellite/sentinel2/index.json",
-            "history_dir": "docs/data/satellite/sentinel2/history/",
+            "latest_image": docs_relative_url(LATEST_IMAGE_PATH),
+            "latest_json": docs_relative_url(LATEST_JSON_PATH),
+            "index_json": docs_relative_url(INDEX_JSON_PATH),
+            "archive_index_json": docs_relative_url(ARCHIVE_INDEX_PATH),
+            "history_dir": docs_relative_url(SENTINEL2_HISTORY_DIR) + "/",
         },
     }
     write_json_atomic(METADATA_PATH, metadata)
 
 
+def validate_args(args: argparse.Namespace) -> None:
+    if not -90 <= args.lat <= 90:
+        raise ValueError("Latitude must be between -90 and 90.")
+    if not -180 <= args.lon <= 180:
+        raise ValueError("Longitude must be between -180 and 180.")
+    if not 0.1 <= args.radius_km <= 100:
+        raise ValueError("radius-km must be between 0.1 and 100.")
+    if not 1 <= args.days_back <= 365:
+        raise ValueError("days-back must be between 1 and 365.")
+    if not 1 <= args.comparison_days <= 3650:
+        raise ValueError("comparison-days must be between 1 and 3650.")
+    if not 0 <= args.tolerance_days <= 30:
+        raise ValueError("tolerance-days must be between 0 and 30.")
+    if not 0 <= args.max_cloud <= 100:
+        raise ValueError("max-cloud must be between 0 and 100.")
+    if not 128 <= args.width <= 2500 or not 128 <= args.height <= 2500:
+        raise ValueError("width and height must be between 128 and 2500 pixels.")
+    if not args.location_name.strip():
+        raise ValueError("location-name must not be empty.")
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Build a Sentinel-2 True Color overlay for ME Security Monitor"
+        description="ME Sentinel-2 before/after True Color image builder"
     )
+
     parser.add_argument("--location-name", required=True, type=str)
     parser.add_argument("--lat", required=True, type=float)
     parser.add_argument("--lon", required=True, type=float)
     parser.add_argument("--radius-km", default=10, type=float)
+
+    # Kept for compatibility with the existing workflow. If --target-date is
+    # omitted, days-back defines the latest acceptable requested date window
+    # only indirectly; the requested target date remains today.
     parser.add_argument("--days-back", default=30, type=int)
+    parser.add_argument("--target-date", default=None, type=str)
+    parser.add_argument("--comparison-days", default=30, type=int)
+    parser.add_argument("--tolerance-days", default=5, type=int)
+
     parser.add_argument("--width", default=1024, type=int)
     parser.add_argument("--height", default=1024, type=int)
     parser.add_argument("--max-cloud", default=80, type=int)
+
     return parser.parse_args()
 
 
-def validate_args(args: argparse.Namespace) -> None:
-    if not args.location_name.strip():
-        raise ValueError("Location name cannot be empty.")
-    if not 1 <= int(args.days_back) <= 365:
-        raise ValueError("days-back must be between 1 and 365.")
-    if not 256 <= int(args.width) <= 2500:
-        raise ValueError("width must be between 256 and 2500 pixels.")
-    if not 256 <= int(args.height) <= 2500:
-        raise ValueError("height must be between 256 and 2500 pixels.")
-    if not 0 <= int(args.max_cloud) <= 100:
-        raise ValueError("max-cloud must be between 0 and 100.")
+def download_scene_image(
+    *,
+    token: str,
+    bbox: list[float],
+    scene: dict[str, Any],
+    width: int,
+    height: int,
+    max_cloud: int,
+) -> bytes:
+    acquisition_date = parse_iso_date(scene["acquisition_date"], "acquisition_date")
+    payload = build_process_payload(
+        bbox=bbox,
+        acquisition_date=acquisition_date,
+        width=width,
+        height=height,
+        max_cloud_coverage=max_cloud,
+    )
+    image_bytes = http_post_json_for_png(PROCESS_API_URL, payload, token)
+    if len(image_bytes) < 1000:
+        raise RuntimeError("Downloaded image is unexpectedly small.")
+    if not image_bytes.startswith(b"\x89PNG\r\n\x1a\n"):
+        raise RuntimeError("Downloaded content is not a valid PNG signature.")
+    return image_bytes
 
 
 def main() -> None:
@@ -441,42 +768,95 @@ def main() -> None:
     lat = safe_coord(args.lat)
     lon = safe_coord(args.lon)
     radius_km = float(args.radius_km)
-    validate_target(lat, lon, radius_km)
-
     location_name = args.location_name.strip()
     location_slug = slugify(location_name)
 
-    end_dt = utc_now().date()
-    start_dt = end_dt - timedelta(days=int(args.days_back))
-    start_date = start_dt.isoformat()
-    end_date = end_dt.isoformat()
+    target_date = (
+        parse_iso_date(args.target_date, "target-date")
+        if args.target_date
+        else utc_now().date()
+    )
+    before_requested_date = target_date - timedelta(days=args.comparison_days)
     bbox = bbox_from_center(lat=lat, lon=lon, radius_km=radius_km)
 
-    print("ME Sentinel-2 build started")
+    print("ME Sentinel-2 before/after build started")
     print(f"Location: {location_name}")
     print(f"Location slug: {location_slug}")
     print(f"Coordinate: {lat}, {lon}")
     print(f"Radius: {radius_km} km")
     print(f"BBox: {bbox}")
-    print(f"Time range: {start_date} to {end_date}")
+    print(f"Requested AFTER date: {target_date.isoformat()}")
+    print(f"Requested BEFORE date: {before_requested_date.isoformat()}")
+    print(f"Comparison distance: {args.comparison_days} days")
+    print(f"Search tolerance: ±{args.tolerance_days} days")
+    print(f"Maximum cloud coverage: {args.max_cloud}%")
 
     token = get_access_token()
-    payload = build_process_payload(
+
+    print("Searching Catalog API for BEFORE scene...")
+    before_scene = find_best_scene(
+        token=token,
         bbox=bbox,
-        start_date=start_date,
-        end_date=end_date,
-        width=int(args.width),
-        height=int(args.height),
-        max_cloud_coverage=int(args.max_cloud),
+        requested_date=before_requested_date,
+        tolerance_days=args.tolerance_days,
+        max_cloud_coverage=args.max_cloud,
     )
-    image_bytes = http_post_json_for_png(PROCESS_API_URL, payload, token)
+    print(
+        "BEFORE selected: "
+        f"{before_scene['acquisition_datetime']} | "
+        f"cloud={before_scene.get('cloud_cover_percent')}% | "
+        f"feature={before_scene.get('feature_id')}"
+    )
 
-    if len(image_bytes) < 1000:
-        raise RuntimeError("Downloaded image is unexpectedly small.")
-    if not image_bytes.startswith(b"\x89PNG\r\n\x1a\n"):
-        raise RuntimeError("Downloaded content is not a valid PNG file.")
+    print("Searching Catalog API for AFTER scene...")
+    after_scene = find_best_scene(
+        token=token,
+        bbox=bbox,
+        requested_date=target_date,
+        tolerance_days=args.tolerance_days,
+        max_cloud_coverage=args.max_cloud,
+    )
+    print(
+        "AFTER selected: "
+        f"{after_scene['acquisition_datetime']} | "
+        f"cloud={after_scene.get('cloud_cover_percent')}% | "
+        f"feature={after_scene.get('feature_id')}"
+    )
 
-    image_paths = save_png(image_bytes=image_bytes, location_slug=location_slug)
+    if before_scene["feature_id"] == after_scene["feature_id"]:
+        print(
+            "WARNING: BEFORE and AFTER resolved to the same catalog feature. "
+            "Increase comparison-days or reduce tolerance-days if this is unintended."
+        )
+
+    print("Downloading BEFORE image...")
+    before_bytes = download_scene_image(
+        token=token,
+        bbox=bbox,
+        scene=before_scene,
+        width=args.width,
+        height=args.height,
+        max_cloud=args.max_cloud,
+    )
+
+    print("Downloading AFTER image...")
+    after_bytes = download_scene_image(
+        token=token,
+        bbox=bbox,
+        scene=after_scene,
+        width=args.width,
+        height=args.height,
+        max_cloud=args.max_cloud,
+    )
+
+    image_paths = save_comparison_images(
+        before_bytes=before_bytes,
+        after_bytes=after_bytes,
+        location_slug=location_slug,
+        before_scene=before_scene,
+        after_scene=after_scene,
+    )
+
     record = build_record(
         location_name=location_name,
         location_slug=location_slug,
@@ -484,25 +864,30 @@ def main() -> None:
         lon=lon,
         radius_km=radius_km,
         bbox=bbox,
-        start_date=start_date,
-        end_date=end_date,
-        width=int(args.width),
-        height=int(args.height),
-        max_cloud_coverage=int(args.max_cloud),
+        target_date=target_date,
+        comparison_days=args.comparison_days,
+        tolerance_days=args.tolerance_days,
+        width=args.width,
+        height=args.height,
+        max_cloud_coverage=args.max_cloud,
+        before_scene=before_scene,
+        after_scene=after_scene,
         image_paths=image_paths,
     )
 
-    write_json_atomic(LATEST_JSON_PATH, record)
-    sentinel_index = update_list_index(SENTINEL2_INDEX_PATH, record)
-    archive_index = update_list_index(ARCHIVE_INDEX_PATH, record)
-    write_metadata(record, len(archive_index))
+    write_latest_json(record)
+    sentinel_index = update_record_list(INDEX_JSON_PATH, record)
+    archive_index = update_record_list(ARCHIVE_INDEX_PATH, record)
+    write_metadata(record, archive_count=len(archive_index))
 
-    print(f"Latest Sentinel-2 image saved: {image_paths['latest_abs']}")
-    print(f"History Sentinel-2 image saved: {image_paths['history_abs']}")
-    print(f"Latest JSON saved: {LATEST_JSON_PATH}")
-    print(f"Sentinel-2 index saved: {SENTINEL2_INDEX_PATH} ({len(sentinel_index)} records)")
-    print(f"ME archive index saved: {ARCHIVE_INDEX_PATH} ({len(archive_index)} records)")
-    print(f"Metadata updated: {METADATA_PATH}")
+    print("Build completed successfully.")
+    print(f"BEFORE image: {image_paths['before_abs']}")
+    print(f"AFTER image: {image_paths['after_abs']}")
+    print(f"Latest compatibility image: {image_paths['latest_abs']}")
+    print(f"Latest JSON: {LATEST_JSON_PATH}")
+    print(f"Sentinel index: {INDEX_JSON_PATH} ({len(sentinel_index)} records)")
+    print(f"ME archive index: {ARCHIVE_INDEX_PATH} ({len(archive_index)} records)")
+    print(f"Metadata: {METADATA_PATH}")
 
 
 if __name__ == "__main__":
