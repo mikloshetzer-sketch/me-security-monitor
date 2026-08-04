@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.0.0";
+  const MODULE_VERSION = "1.1.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -48,14 +48,318 @@
       .me-satellite-overlay {
         image-rendering: auto;
       }
+
       .me-satellite-loading {
         opacity: .75;
       }
+
       .me-satellite-status-error {
         color: #b42318 !important;
       }
+
       .me-satellite-status-ok {
         color: #175cd3 !important;
+      }
+
+      .me-satellite-location-controls {
+        margin-top: 12px;
+        padding: 10px;
+        border: 1px solid rgba(30, 64, 175, .16);
+        border-radius: 12px;
+        background: rgba(248, 250, 252, .82);
+      }
+
+      .me-satellite-location-controls__title {
+        margin: 0 0 8px;
+        font-size: 12px;
+        font-weight: 800;
+        color: #16324f;
+      }
+
+      .me-satellite-location-controls__list {
+        display: grid;
+        gap: 6px;
+        max-height: 190px;
+        overflow-y: auto;
+        padding-right: 3px;
+      }
+
+      .me-satellite-location-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 30px;
+        padding: 5px 7px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 12px;
+        color: #20364d;
+        transition: background .15s ease;
+      }
+
+      .me-satellite-location-option:hover {
+        background: rgba(37, 99, 235, .08);
+      }
+
+      .me-satellite-location-option--all {
+        margin-bottom: 5px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid rgba(30, 64, 175, .14);
+        border-radius: 0;
+        font-weight: 800;
+      }
+
+      .me-satellite-location-option input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        accent-color: #111827;
+        flex: 0 0 auto;
+      }
+
+      .me-satellite-location-option__name {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .me-satellite-location-option__count {
+        margin-left: auto;
+        color: #64748b;
+        font-size: 11px;
+      }
+
+      .me-satellite-marker-wrapper {
+        background: transparent;
+        border: 0;
+      }
+
+      .me-satellite-marker {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 112px;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+      }
+
+      .me-satellite-marker__label {
+        max-width: 150px;
+        margin-bottom: 4px;
+        padding: 3px 8px;
+        border: 1px solid rgba(15, 23, 42, .35);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, .18);
+        color: #111827;
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.15;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .me-satellite-marker__dot {
+        width: 14px;
+        height: 14px;
+        border: 3px solid #ffffff;
+        border-radius: 50%;
+        background: #050505;
+        box-shadow:
+          0 0 0 2px rgba(5, 5, 5, .9),
+          0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-marker:hover .me-satellite-marker__dot {
+        transform: scale(1.18);
+      }
+
+      .me-satellite-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 10050;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+        background: rgba(15, 23, 42, .58);
+        backdrop-filter: blur(2px);
+      }
+
+      .me-satellite-modal-backdrop.is-open {
+        display: flex;
+      }
+
+      .me-satellite-modal {
+        width: min(1040px, 96vw);
+        max-height: 92vh;
+        overflow: auto;
+        border: 1px solid rgba(148, 163, 184, .45);
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 26px 80px rgba(15, 23, 42, .36);
+      }
+
+      .me-satellite-modal__header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 16px 18px;
+        border-bottom: 1px solid #e2e8f0;
+        background: rgba(255, 255, 255, .98);
+      }
+
+      .me-satellite-modal__title {
+        margin: 0;
+        color: #102a43;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .me-satellite-modal__close {
+        width: 38px;
+        height: 38px;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #334155;
+        cursor: pointer;
+        font-size: 23px;
+        line-height: 1;
+      }
+
+      .me-satellite-modal__body {
+        padding: 18px;
+      }
+
+      .me-satellite-compare-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .me-satellite-compare-card {
+        min-width: 0;
+        border: 1px solid #dbe4ee;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #f8fafc;
+      }
+
+      .me-satellite-compare-card__head {
+        padding: 11px 12px;
+        border-bottom: 1px solid #dbe4ee;
+        background: #ffffff;
+      }
+
+      .me-satellite-compare-card__phase {
+        display: block;
+        color: #0f172a;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .me-satellite-compare-card__meta {
+        margin-top: 4px;
+        color: #475569;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .me-satellite-compare-card__image-wrap {
+        position: relative;
+        min-height: 260px;
+        background: #0f172a;
+      }
+
+      .me-satellite-compare-card__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 260px;
+        max-height: 520px;
+        object-fit: contain;
+        background: #0f172a;
+      }
+
+      .me-satellite-modal__details {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .me-satellite-detail-box {
+        padding: 13px 14px;
+        border: 1px solid #dbe4ee;
+        border-radius: 12px;
+        background: #f8fafc;
+        color: #334155;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .me-satellite-detail-box strong {
+        color: #0f172a;
+      }
+
+      .me-satellite-modal__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 16px;
+      }
+
+      .me-satellite-modal__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        padding: 8px 13px;
+        border: 1px solid #cbd5e1;
+        border-radius: 9px;
+        background: #ffffff;
+        color: #174ea6;
+        font-size: 12px;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .me-satellite-modal__button--primary {
+        border-color: #1769aa;
+        background: #1769aa;
+        color: #ffffff;
+      }
+
+      @media (max-width: 760px) {
+        .me-satellite-modal-backdrop {
+          align-items: flex-start;
+          padding: 8px;
+        }
+
+        .me-satellite-modal {
+          width: 100%;
+          max-height: calc(100vh - 16px);
+          border-radius: 13px;
+        }
+
+        .me-satellite-compare-grid,
+        .me-satellite-modal__details {
+          grid-template-columns: 1fr;
+        }
+
+        .me-satellite-compare-card__image-wrap,
+        .me-satellite-compare-card__image {
+          min-height: 210px;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -217,6 +521,90 @@
     return Number.isNaN(date.getTime()) ? String(value) : date.toLocaleString("hu-HU");
   }
 
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function resolveRecordCenter(record) {
+    const lat = toNumber(firstDefined(
+      record?.target_area?.lat,
+      record?.lat,
+      record?.latitude
+    ));
+    const lon = toNumber(firstDefined(
+      record?.target_area?.lon,
+      record?.lon,
+      record?.lng,
+      record?.longitude
+    ));
+
+    if (lat !== null && lon !== null) return [lat, lon];
+
+    const bounds = record?.normalized_bounds;
+    if (
+      Array.isArray(bounds) &&
+      bounds.length === 2 &&
+      Array.isArray(bounds[0]) &&
+      Array.isArray(bounds[1])
+    ) {
+      return [
+        (Number(bounds[0][0]) + Number(bounds[1][0])) / 2,
+        (Number(bounds[0][1]) + Number(bounds[1][1])) / 2
+      ];
+    }
+
+    return null;
+  }
+
+  function normalizePhase(record, phaseName) {
+    const phase = record?.[phaseName] || {};
+    const fallbackImage = phaseName === "after" ? record?.image_url : "";
+
+    return {
+      image_url: String(firstDefined(
+        phase.image_url,
+        phase.url,
+        phase.file_url,
+        fallbackImage,
+        ""
+      )),
+      requested_date: String(firstDefined(
+        phase.requested_date,
+        phase.requested,
+        record?.requested_date,
+        ""
+      )),
+      acquisition_date: String(firstDefined(
+        phase.acquisition_date,
+        phase.timestamp,
+        phase.date,
+        ""
+      )),
+      cloud_cover_percent: firstDefined(
+        phase.cloud_cover_percent,
+        phase.cloud_cover,
+        phase.cloud,
+        null
+      ),
+      product_id: String(firstDefined(
+        phase.product_id,
+        phase.scene_id,
+        phase.id,
+        ""
+      ))
+    };
+  }
+
+  function formatCloud(value) {
+    const number = toNumber(value);
+    return number === null ? "n/a" : `${number.toFixed(1)}%`;
+  }
+
   function formatRecordLabel(record) {
     const date = record.timestamp ? formatDate(record.timestamp) : "dátum nélkül";
     const cloud = firstDefined(record.cloud_cover, record.imagery?.cloud_cover, record.cloud_percent);
@@ -269,6 +657,11 @@
       currentRecord: null,
       baseLayer: null,
       overlay: null,
+      markerLayer: L.layerGroup(),
+      locationMarkers: new Map(),
+      visibleLocationSlugs: new Set(),
+      markerControlsRoot: null,
+      modalRoot: null,
       ready: false,
       loading: false,
       lastError: null
@@ -325,6 +718,381 @@
       return [...grouped.values()].sort((a, b) => a.name.localeCompare(b.name, "hu"));
     }
 
+    function getLatestRecordForLocation(slug) {
+      return state.records
+        .filter((record) => record.location_slug === slug)
+        .sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)))[0]
+        || null;
+    }
+
+    function ensureMarkerLayer() {
+      if (!map.hasLayer(state.markerLayer)) {
+        state.markerLayer.addTo(map);
+      }
+      return state.markerLayer;
+    }
+
+    function removeAllLocationMarkers() {
+      state.markerLayer.clearLayers();
+      state.locationMarkers.clear();
+    }
+
+    function createLocationMarker(record) {
+      const center = resolveRecordCenter(record);
+      if (!center) return null;
+
+      const safeName = escapeHtml(record.location_name);
+      const icon = L.divIcon({
+        className: "me-satellite-marker-wrapper",
+        html: `
+          <div class="me-satellite-marker" title="${safeName}">
+            <div class="me-satellite-marker__label">${safeName}</div>
+            <div class="me-satellite-marker__dot"></div>
+          </div>
+        `,
+        iconSize: [1, 1],
+        iconAnchor: [0, 0]
+      });
+
+      const marker = L.marker(center, {
+        icon,
+        keyboard: true,
+        riseOnHover: true,
+        zIndexOffset: 620
+      });
+
+      marker.on("click", () => {
+        state.selectedLocationSlug = record.location_slug;
+        state.selectedRecordId = record.id;
+
+        if (dom.locationSelect) {
+          dom.locationSelect.value = record.location_slug;
+        }
+
+        updateImageSelect();
+
+        if (dom.imageSelect) {
+          dom.imageSelect.value = record.id;
+        }
+
+        state.currentRecord = record;
+        showCompareModal(record);
+      });
+
+      return marker;
+    }
+
+    function syncLocationMarkers() {
+      ensureMarkerLayer();
+      removeAllLocationMarkers();
+
+      getLocations().forEach((location) => {
+        if (!state.visibleLocationSlugs.has(location.slug)) return;
+
+        const record = getLatestRecordForLocation(location.slug);
+        if (!record) return;
+
+        const marker = createLocationMarker(record);
+        if (!marker) return;
+
+        marker.addTo(state.markerLayer);
+        state.locationMarkers.set(location.slug, marker);
+      });
+    }
+
+    function updateSelectAllCheckbox(root) {
+      const allCheckbox = root?.querySelector("[data-me-satellite-select-all]");
+      if (!allCheckbox) return;
+
+      const locations = getLocations();
+      const checkedCount = locations.filter((location) => (
+        state.visibleLocationSlugs.has(location.slug)
+      )).length;
+
+      allCheckbox.checked = locations.length > 0 && checkedCount === locations.length;
+      allCheckbox.indeterminate = checkedCount > 0 && checkedCount < locations.length;
+    }
+
+    function ensureLocationControls() {
+      if (state.markerControlsRoot?.isConnected) {
+        return state.markerControlsRoot;
+      }
+
+      const host = dom.locationSelect?.closest(".toolbox-row")
+        || dom.locationSelect?.parentElement
+        || dom.summary?.parentElement;
+
+      if (!host?.parentElement) return null;
+
+      const root = document.createElement("div");
+      root.className = "me-satellite-location-controls";
+      root.innerHTML = `
+        <div class="me-satellite-location-controls__title">
+          Térképi helyszínek
+        </div>
+        <label class="me-satellite-location-option me-satellite-location-option--all">
+          <input type="checkbox" data-me-satellite-select-all>
+          <span class="me-satellite-location-option__name">Összes helyszín</span>
+        </label>
+        <div class="me-satellite-location-controls__list"></div>
+      `;
+
+      host.parentElement.insertBefore(root, host.nextSibling);
+      state.markerControlsRoot = root;
+
+      root
+        .querySelector("[data-me-satellite-select-all]")
+        ?.addEventListener("change", (event) => {
+          const checked = Boolean(event.target.checked);
+
+          if (checked) {
+            getLocations().forEach((location) => {
+              state.visibleLocationSlugs.add(location.slug);
+            });
+          } else {
+            state.visibleLocationSlugs.clear();
+          }
+
+          root
+            .querySelectorAll("[data-me-satellite-location]")
+            .forEach((checkbox) => {
+              checkbox.checked = checked;
+            });
+
+          syncLocationMarkers();
+          updateSelectAllCheckbox(root);
+        });
+
+      return root;
+    }
+
+    function renderLocationControls() {
+      const root = ensureLocationControls();
+      if (!root) return;
+
+      const list = root.querySelector(".me-satellite-location-controls__list");
+      if (!list) return;
+
+      list.replaceChildren();
+
+      getLocations().forEach((location) => {
+        const label = document.createElement("label");
+        label.className = "me-satellite-location-option";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = state.visibleLocationSlugs.has(location.slug);
+        checkbox.dataset.meSatelliteLocation = location.slug;
+
+        const name = document.createElement("span");
+        name.className = "me-satellite-location-option__name";
+        name.textContent = location.name;
+
+        const count = document.createElement("span");
+        count.className = "me-satellite-location-option__count";
+        count.textContent = String(location.count);
+
+        checkbox.addEventListener("change", () => {
+          if (checkbox.checked) {
+            state.visibleLocationSlugs.add(location.slug);
+          } else {
+            state.visibleLocationSlugs.delete(location.slug);
+          }
+
+          syncLocationMarkers();
+          updateSelectAllCheckbox(root);
+        });
+
+        label.append(checkbox, name, count);
+        list.appendChild(label);
+      });
+
+      updateSelectAllCheckbox(root);
+    }
+
+    function ensureCompareModal() {
+      if (state.modalRoot?.isConnected) return state.modalRoot;
+
+      const backdrop = document.createElement("div");
+      backdrop.className = "me-satellite-modal-backdrop";
+      backdrop.setAttribute("role", "dialog");
+      backdrop.setAttribute("aria-modal", "true");
+      backdrop.innerHTML = `
+        <div class="me-satellite-modal">
+          <div class="me-satellite-modal__header">
+            <h3 class="me-satellite-modal__title">Satellite Intelligence</h3>
+            <button
+              type="button"
+              class="me-satellite-modal__close"
+              aria-label="Bezárás"
+            >×</button>
+          </div>
+          <div class="me-satellite-modal__body"></div>
+        </div>
+      `;
+
+      const close = () => {
+        backdrop.classList.remove("is-open");
+        document.body.style.removeProperty("overflow");
+      };
+
+      backdrop
+        .querySelector(".me-satellite-modal__close")
+        ?.addEventListener("click", close);
+
+      backdrop.addEventListener("click", (event) => {
+        if (event.target === backdrop) close();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && backdrop.classList.contains("is-open")) {
+          close();
+        }
+      });
+
+      document.body.appendChild(backdrop);
+      state.modalRoot = backdrop;
+      return backdrop;
+    }
+
+    function phaseCardHtml(label, phase) {
+      const image = phase.image_url
+        ? `<img
+            class="me-satellite-compare-card__image"
+            src="${escapeHtml(phase.image_url)}"
+            alt="${escapeHtml(label)} Sentinel-2 image"
+          >`
+        : `<div class="me-satellite-detail-box">Nincs elérhető kép.</div>`;
+
+      return `
+        <section class="me-satellite-compare-card">
+          <div class="me-satellite-compare-card__head">
+            <span class="me-satellite-compare-card__phase">${escapeHtml(label)}</span>
+            <div class="me-satellite-compare-card__meta">
+              Kért dátum: <strong>${escapeHtml(phase.requested_date || "n/a")}</strong><br>
+              Felvétel: <strong>${escapeHtml(phase.acquisition_date || "n/a")}</strong><br>
+              Felhőzet: <strong>${escapeHtml(formatCloud(phase.cloud_cover_percent))}</strong>
+            </div>
+          </div>
+          <div class="me-satellite-compare-card__image-wrap">
+            ${image}
+          </div>
+        </section>
+      `;
+    }
+
+    function showCompareModal(record) {
+      const modal = ensureCompareModal();
+      const body = modal.querySelector(".me-satellite-modal__body");
+      const title = modal.querySelector(".me-satellite-modal__title");
+
+      const before = normalizePhase(record, "before");
+      const after = normalizePhase(record, "after");
+      const center = resolveRecordCenter(record);
+      const bounds = record.normalized_bounds;
+      const radius = firstDefined(
+        record?.target_area?.radius_km,
+        record?.radius_km,
+        record?.radius,
+        "n/a"
+      );
+
+      if (title) {
+        title.textContent = `Satellite Intelligence – ${record.location_name}`;
+      }
+
+      if (body) {
+        body.innerHTML = `
+          <div class="me-satellite-compare-grid">
+            ${phaseCardHtml("BEFORE", before)}
+            ${phaseCardHtml("AFTER", after)}
+          </div>
+
+          <div class="me-satellite-modal__details">
+            <div class="me-satellite-detail-box">
+              <strong>Helyszín adatai</strong><br>
+              Név: ${escapeHtml(record.location_name)}<br>
+              Koordináta: ${center
+                ? `${center[0].toFixed(6)}, ${center[1].toFixed(6)}`
+                : "n/a"}<br>
+              Sugár: ${escapeHtml(radius)} km<br>
+              BBox: ${bounds
+                ? escapeHtml(bounds.flat().map((value) => Number(value).toFixed(6)).join(", "))
+                : "n/a"}
+            </div>
+
+            <div class="me-satellite-detail-box">
+              <strong>Adatforrás</strong><br>
+              ${escapeHtml(firstDefined(
+                record.source,
+                record.provider,
+                "Sentinel-2 / Copernicus Data Space Ecosystem"
+              ))}<br>
+              Rekord: ${escapeHtml(record.id)}<br>
+              Feldolgozás: ${escapeHtml(firstDefined(
+                record.workflow_version,
+                record.version,
+                "n/a"
+              ))}
+            </div>
+          </div>
+
+          <div class="me-satellite-modal__actions">
+            ${after.image_url ? `
+              <a
+                class="me-satellite-modal__button me-satellite-modal__button--primary"
+                href="${escapeHtml(after.image_url)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >AFTER teljes felbontás</a>
+            ` : ""}
+            ${before.image_url ? `
+              <a
+                class="me-satellite-modal__button"
+                href="${escapeHtml(before.image_url)}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >BEFORE teljes felbontás</a>
+            ` : ""}
+            <button
+              type="button"
+              class="me-satellite-modal__button"
+              data-me-satellite-show-after
+            >AFTER a térképen</button>
+            <button
+              type="button"
+              class="me-satellite-modal__button"
+              data-me-satellite-show-before
+            >BEFORE a térképen</button>
+          </div>
+        `;
+
+        body
+          .querySelector("[data-me-satellite-show-after]")
+          ?.addEventListener("click", () => {
+            const afterRecord = {
+              ...record,
+              image_url: after.image_url || record.image_url
+            };
+            showRecord(afterRecord, { fitBounds: true });
+          });
+
+        body
+          .querySelector("[data-me-satellite-show-before]")
+          ?.addEventListener("click", () => {
+            if (!before.image_url) return;
+            const beforeRecord = {
+              ...record,
+              image_url: before.image_url
+            };
+            showRecord(beforeRecord, { fitBounds: true });
+          });
+      }
+
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
+
     function getRecordsForSelectedLocation() {
       if (!state.selectedLocationSlug) return [...state.records];
       return state.records.filter((record) => record.location_slug === state.selectedLocationSlug);
@@ -377,7 +1145,6 @@
       }
       if (!record) return "Nincs kiválasztott műholdkép.";
 
-      const bounds = record.normalized_bounds;
       const modeLabel = state.mode === "hybrid"
         ? "Hybrid: Esri + Sentinel-2"
         : "Sentinel-2 archívum";
@@ -385,10 +1152,9 @@
       return [
         `<strong>${record.location_name}</strong>`,
         `Mód: ${modeLabel}`,
-        `Dátum: ${formatDate(record.timestamp)}`,
-        bounds ? `Terület: ${bounds.flat().map((value) => Number(value).toFixed(4)).join(", ")}` : "",
-        `Forrás: ${firstDefined(record.source, record.provider, "Sentinel-2 / Copernicus")}`
-      ].filter(Boolean).join("<br>");
+        `Aktuális overlay: ${formatDate(record.timestamp)}`,
+        "A részletes BEFORE/AFTER nézet a térképi fekete pontra kattintva nyílik meg."
+      ].join("<br>");
     }
 
     function showRecord(record, { fitBounds = false } = {}) {
@@ -455,6 +1221,23 @@
 
         updateLocationSelect();
         updateImageSelect();
+
+        const locations = getLocations();
+        const knownSlugs = new Set(locations.map((location) => location.slug));
+
+        [...state.visibleLocationSlugs].forEach((slug) => {
+          if (!knownSlugs.has(slug)) state.visibleLocationSlugs.delete(slug);
+        });
+
+        if (state.visibleLocationSlugs.size === 0) {
+          locations.forEach((location) => {
+            state.visibleLocationSlugs.add(location.slug);
+          });
+        }
+
+        renderLocationControls();
+        syncLocationMarkers();
+
         state.currentRecord = getSelectedRecord();
         applySelectedRecord({ fitBounds: false });
 
@@ -523,6 +1306,7 @@
     dom.fitButton?.addEventListener("click", fitToCurrent);
     dom.refreshButton?.addEventListener("click", loadArchive);
 
+    ensureMarkerLayer();
     setBaseMap(state.baseMap);
     setOpacity(state.opacity || DEFAULT_OPACITY);
     loadArchive();
@@ -541,10 +1325,35 @@
       getSelectedRecord,
       getRecords: () => [...state.records],
       getLocations,
+      showCompareModal,
+      showAllLocations() {
+        getLocations().forEach((location) => {
+          state.visibleLocationSlugs.add(location.slug);
+        });
+        renderLocationControls();
+        syncLocationMarkers();
+      },
+      hideAllLocations() {
+        state.visibleLocationSlugs.clear();
+        renderLocationControls();
+        syncLocationMarkers();
+      },
+      setLocationVisible(slug, visible) {
+        if (visible) state.visibleLocationSlugs.add(String(slug));
+        else state.visibleLocationSlugs.delete(String(slug));
+        renderLocationControls();
+        syncLocationMarkers();
+      },
       destroy() {
         removeOverlay();
+        removeAllLocationMarkers();
+        if (map.hasLayer(state.markerLayer)) map.removeLayer(state.markerLayer);
         if (state.baseLayer && map.hasLayer(state.baseLayer)) map.removeLayer(state.baseLayer);
+        state.markerControlsRoot?.remove();
+        state.modalRoot?.remove();
         state.baseLayer = null;
+        state.markerControlsRoot = null;
+        state.modalRoot = null;
         state.ready = false;
       }
     };
@@ -560,3 +1369,4 @@
     formatRecordLabel
   };
 })();
+
