@@ -1,0 +1,434 @@
+name: ME Sentinel-2 Image Builder
+
+on:
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: |
+          Maximum 5 locations, one per line:
+          Location name|latitude|longitude|radius_km
+        required: true
+        default: |
+          Tehran|35.6892|51.3890|10
+          Isfahan|32.6546|51.6680|10
+          Bandar Abbas|27.1832|56.2666|12
+        type: string
+      days_back:
+        description: "Search window in days / visszakeresési időszak"
+        required: true
+        default: "30"
+        type: string
+      max_cloud:
+        description: "Maximum cloud coverage percent / maximális felhőzet"
+        required: true
+        default: "80"
+        type: string
+      image_size:
+        description: "Square image size in pixels / négyzetes képméret"
+        required: true
+        default: "1024"
+        type: choice
+        options:
+          - "512"
+          - "768"
+          - "1024"
+          - "1536"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: me-sentinel2-builder
+  cancel-in-progress: false
+
+jobs:
+  build-sentinel2-images:
+    name: Build up to five Sentinel-2 archive records
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify required repository files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f scripts/update_sentinel2.py
+          echo "Builder script found: scripts/update_sentinel2.py"
+
+      - name: Verify Sentinel Hub secrets
+        shell: bash
+        env:
+          SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
+          SENTINELHUB_CLIENT_SECRET: ${{ secrets.SENTINELHUB_CLIENT_SECRET }}
+        run: |
+          set -euo pipefail
+
+          test -n "$SENTINELHUB_CLIENT_ID" || {
+            echo "::error::Missing repository secret: SENTINELHUB_CLIENT_ID"
+            exit 1
+          }
+
+          test -n "$SENTINELHUB_CLIENT_SECRET" || {
+            echo "::error::Missing repository secret: SENTINELHUB_CLIENT_SECRET"
+            exit 1
+          }
+
+          echo "Required Sentinel Hub secrets are configured."
+
+      - name: Validate shared settings and target list
+        id: validation
+        shell: bash
+        env:
+          TARGETS_INPUT: ${{ inputs.targets }}
+          DAYS_BACK: ${{ inputs.days_back }}
+          MAX_CLOUD: ${{ inputs.max_cloud }}
+          IMAGE_SIZE: ${{ inputs.image_size }}
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          raw_targets = os.environ.get("TARGETS_INPUT", "")
+          days_back = int(os.environ["DAYS_BACK"])
+          max_cloud = int(os.environ["MAX_CLOUD"])
+          image_size = int(os.environ["IMAGE_SIZE"])
+
+          if not 1 <= days_back <= 365:
+              raise SystemExit("days_back must be between 1 and 365.")
+
+          if not 0 <= max_cloud <= 100:
+              raise SystemExit("max_cloud must be between 0 and 100.")
+
+          if image_size not in {512, 768, 1024, 1536}:
+              raise SystemExit("Unsupported image_size.")
+
+          parsed = []
+
+          for line_number, raw_line in enumerate(raw_targets.splitlines(), start=1):
+              line = raw_line.strip()
+
+              if not line or line.startswith("#"):
+                  continue
+
+              parts = [part.strip() for part in line.split("|")]
+
+              if len(parts) != 4:
+                  raise SystemExit(
+                      f"Line {line_number}: expected "
+                      "Location name|latitude|longitude|radius_km"
+                  )
+
+              location_name, lat_text, lon_text, radius_text = parts
+
+              if not location_name:
+                  raise SystemExit(f"Line {line_number}: location name is empty.")
+
+              lat = float(lat_text)
+              lon = float(lon_text)
+              radius = float(radius_text)
+
+              if not -90 <= lat <= 90:
+                  raise SystemExit(
+                      f"Line {line_number}: latitude must be between -90 and 90."
+                  )
+
+              if not -180 <= lon <= 180:
+                  raise SystemExit(
+                      f"Line {line_number}: longitude must be between -180 and 180."
+                  )
+
+              if not 0.1 <= radius <= 100:
+                  raise SystemExit(
+                      f"Line {line_number}: radius must be between 0.1 and 100 km."
+                  )
+
+              parsed.append(
+                  {
+                      "location_name": location_name,
+                      "lat": lat,
+                      "lon": lon,
+                      "radius_km": radius,
+                  }
+              )
+
+          if not parsed:
+              raise SystemExit("At least one valid target is required.")
+
+          if len(parsed) > 5:
+              raise SystemExit(
+                  f"Maximum 5 targets are allowed; received {len(parsed)}."
+              )
+
+          output_path = Path("/tmp/me-sentinel2-targets.json")
+          output_path.write_text(
+              json.dumps(parsed, ensure_ascii=False, indent=2),
+              encoding="utf-8",
+          )
+
+          delimiter = "ME_SENTINEL_TARGETS_EOF"
+
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write(f"target_count={len(parsed)}\n")
+              output.write(f"targets_json<<{delimiter}\n")
+              output.write(json.dumps(parsed, ensure_ascii=False))
+              output.write(f"\n{delimiter}\n")
+
+          print(f"Validated {len(parsed)} target(s):")
+
+          for index, target in enumerate(parsed, start=1):
+              print(
+                  f"{index}. {target['location_name']} | "
+                  f"{target['lat']}, {target['lon']} | "
+                  f"{target['radius_km']} km"
+              )
+          PY
+
+      - name: Download Sentinel-2 images and update archive
+        shell: bash
+        env:
+          SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
+          SENTINELHUB_CLIENT_SECRET: ${{ secrets.SENTINELHUB_CLIENT_SECRET }}
+          TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
+          DAYS_BACK: ${{ inputs.days_back }}
+          MAX_CLOUD: ${{ inputs.max_cloud }}
+          IMAGE_SIZE: ${{ inputs.image_size }}
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+
+          targets = json.loads(os.environ["TARGETS_JSON"])
+          days_back = os.environ["DAYS_BACK"]
+          max_cloud = os.environ["MAX_CLOUD"]
+          image_size = os.environ["IMAGE_SIZE"]
+
+          failures = []
+
+          for index, target in enumerate(targets, start=1):
+              location_name = target["location_name"]
+
+              print()
+              print("=" * 72)
+              print(f"[{index}/{len(targets)}] Processing: {location_name}")
+              print("=" * 72)
+
+              command = [
+                  sys.executable,
+                  "scripts/update_sentinel2.py",
+                  "--location-name",
+                  location_name,
+                  "--lat",
+                  str(target["lat"]),
+                  "--lon",
+                  str(target["lon"]),
+                  "--radius-km",
+                  str(target["radius_km"]),
+                  "--days-back",
+                  days_back,
+                  "--max-cloud",
+                  max_cloud,
+                  "--width",
+                  image_size,
+                  "--height",
+                  image_size,
+              ]
+
+              result = subprocess.run(command, check=False)
+
+              if result.returncode != 0:
+                  failures.append(
+                      {
+                          "location_name": location_name,
+                          "returncode": result.returncode,
+                      }
+                  )
+                  print(
+                      f"::error::Sentinel-2 processing failed for "
+                      f"{location_name} with exit code {result.returncode}"
+                  )
+              else:
+                  print(f"Completed: {location_name}")
+
+          if failures:
+              print()
+              print("Failed target(s):")
+
+              for failure in failures:
+                  print(
+                      f"- {failure['location_name']} "
+                      f"(exit code {failure['returncode']})"
+                  )
+
+              raise SystemExit(
+                  f"{len(failures)} of {len(targets)} target(s) failed."
+              )
+
+          print()
+          print(f"All {len(targets)} target(s) processed successfully.")
+          PY
+
+      - name: Verify generated satellite archive
+        shell: bash
+        env:
+          EXPECTED_TARGET_COUNT: ${{ steps.validation.outputs.target_count }}
+          TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
+        run: |
+          set -euo pipefail
+
+          REQUIRED_FILES=(
+            "docs/data/satellite/archive-index.json"
+            "docs/data/satellite/satellite-metadata.json"
+            "docs/data/satellite/sentinel2/latest.png"
+            "docs/data/satellite/sentinel2/latest.json"
+            "docs/data/satellite/sentinel2/index.json"
+          )
+
+          for file in "${REQUIRED_FILES[@]}"; do
+            test -s "$file" || {
+              echo "::error::Required output is missing or empty: $file"
+              exit 1
+            }
+
+            ls -lh "$file"
+          done
+
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          archive_path = Path("docs/data/satellite/archive-index.json")
+          archive = json.loads(archive_path.read_text(encoding="utf-8"))
+          targets = json.loads(os.environ["TARGETS_JSON"])
+
+          if not isinstance(archive, list) or not archive:
+              raise SystemExit(
+                  "archive-index.json must contain a non-empty JSON array."
+              )
+
+          required_fields = ("id", "location_name", "bbox", "image_url")
+
+          for record in archive:
+              missing = [
+                  field for field in required_fields
+                  if not record.get(field)
+              ]
+
+              if missing:
+                  raise SystemExit(
+                      "Archive record is missing required fields: "
+                      + ", ".join(missing)
+                  )
+
+              image_path = (
+                  Path("docs")
+                  / str(record["image_url"]).lstrip("./")
+              )
+
+              if not image_path.is_file():
+                  raise SystemExit(
+                      "Archive image_url does not resolve to a file: "
+                      f"{image_path}"
+                  )
+
+          archive_names = {
+              str(record.get("location_name", "")).strip()
+              for record in archive
+          }
+
+          missing_targets = [
+              target["location_name"]
+              for target in targets
+              if target["location_name"] not in archive_names
+          ]
+
+          if missing_targets:
+              raise SystemExit(
+                  "Processed locations missing from archive-index.json: "
+                  + ", ".join(missing_targets)
+              )
+
+          print(f"Archive verified: {len(archive)} total record(s)")
+          print(f"Current run verified: {len(targets)} target(s)")
+          PY
+
+          echo "Generated history images:"
+          find docs/data/satellite/sentinel2/history             -maxdepth 4             -type f             -name "*.png"             -print 2>/dev/null || true
+
+      - name: Commit generated Sentinel-2 files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email             "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/data/satellite/archive-index.json
+          git add docs/data/satellite/satellite-metadata.json
+          git add docs/data/satellite/sentinel2/latest.json
+          git add docs/data/satellite/sentinel2/index.json
+          git add -f docs/data/satellite/sentinel2/latest.png
+          git add -f docs/data/satellite/sentinel2/history
+
+          git status --short
+
+          if git diff --cached --quiet; then
+            echo "No Sentinel-2 changes to commit."
+            exit 0
+          fi
+
+          git commit -m             "Update ME Sentinel-2 imagery (${{ steps.validation.outputs.target_count }} locations)"
+
+          git push
+
+      - name: Write workflow summary
+        if: always()
+        shell: bash
+        env:
+          TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
+        run: |
+          {
+            echo "## ME Sentinel-2 Image Builder"
+            echo
+            echo "- **Requested locations:** ${{ steps.validation.outputs.target_count }}"
+            echo "- **Search window:** ${{ inputs.days_back }} days"
+            echo "- **Maximum cloud coverage:** ${{ inputs.max_cloud }}%"
+            echo "- **Image size:** ${{ inputs.image_size }} × ${{ inputs.image_size }} px"
+            echo "- **Workflow result:** ${{ job.status }}"
+            echo
+            echo "### Targets"
+
+            python - <<'PY'
+          import json
+          import os
+
+          targets = json.loads(os.environ.get("TARGETS_JSON") or "[]")
+
+          for index, target in enumerate(targets, start=1):
+              print(
+                  f"{index}. **{target['location_name']}** — "
+                  f"{target['lat']}, {target['lon']} — "
+                  f"{target['radius_km']} km"
+              )
+          PY
+
+            echo
+            echo "Archive: docs/data/satellite/archive-index.json"
+          } >> "$GITHUB_STEP_SUMMARY"
