@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.3.1";
+  const MODULE_VERSION = "1.4.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -582,6 +582,101 @@
         box-shadow: 0 2px 8px rgba(15, 23, 42, .18);
       }
 
+
+      .me-satellite-firms-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 66px;
+        padding: 4px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: .02em;
+      }
+
+      .me-satellite-firms-badge--inside {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .me-satellite-firms-badge--nearby {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      .me-satellite-firms-badge--none {
+        background: #e2e8f0;
+        color: #475569;
+      }
+
+      .me-satellite-firms-badge--unavailable {
+        background: #e0e7ff;
+        color: #3730a3;
+      }
+
+      .me-satellite-firms-summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .me-satellite-firms-summary__item {
+        padding: 9px 10px;
+        border: 1px solid #dbe4ee;
+        border-radius: 9px;
+        background: #f8fafc;
+      }
+
+      .me-satellite-firms-summary__label {
+        display: block;
+        color: #64748b;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .me-satellite-firms-summary__value {
+        display: block;
+        margin-top: 3px;
+        color: #0f172a;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .me-satellite-firms-details {
+        margin-top: 7px;
+        padding: 8px 9px;
+        border-left: 3px solid #f59e0b;
+        background: #fffbeb;
+        color: #78350f;
+        font-size: 11px;
+        line-height: 1.55;
+      }
+
+      .me-satellite-firms-hotspot-list {
+        display: grid;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .me-satellite-firms-hotspot {
+        padding: 7px 8px;
+        border: 1px solid #fde68a;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #713f12;
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 760px) {
+        .me-satellite-firms-summary {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
       @media (max-width: 640px) {
         .me-satellite-region-item {
           grid-template-columns: 40px minmax(0, 1fr);
@@ -940,9 +1035,53 @@
                 : null,
               mean_change_intensity: toNumber(region.mean_change_intensity),
               max_change_intensity: toNumber(region.max_change_intensity),
-              interpretation: String(firstDefined(region.interpretation, "visual_change_candidate"))
+              interpretation: String(firstDefined(region.interpretation, "visual_change_candidate")),
+              firms_correlation: (() => {
+                const firms = region.firms_correlation || {};
+                return {
+                  classification: String(
+                    firstDefined(firms.classification, "NONE")
+                  ).toUpperCase(),
+                  inside_hotspot_count: toNumber(
+                    firms.inside_hotspot_count
+                  ) ?? 0,
+                  nearby_hotspot_count: toNumber(
+                    firms.nearby_hotspot_count
+                  ) ?? 0,
+                  nearest_distance_km: toNumber(
+                    firms.nearest_distance_km
+                  ),
+                  hotspots: Array.isArray(firms.hotspots)
+                    ? firms.hotspots
+                    : [],
+                  note: String(firstDefined(firms.note, ""))
+                };
+              })()
             }))
-        : []
+        : [],
+      firms_correlation: (() => {
+        const firms = source.firms_correlation || {};
+        return {
+          status: String(firstDefined(firms.status, "unavailable")).toLowerCase(),
+          provider: String(firstDefined(firms.provider, "NASA LANCE FIRMS")),
+          window_start: String(firstDefined(firms.window_start, "")),
+          window_end: String(firstDefined(firms.window_end, "")),
+          aoi_hotspot_count: toNumber(firms.aoi_hotspot_count) ?? 0,
+          regions_with_correlation: toNumber(
+            firms.regions_with_correlation
+          ) ?? 0,
+          inside_region_hotspot_matches: toNumber(
+            firms.inside_region_hotspot_matches
+          ) ?? 0,
+          nearby_hotspot_matches: toNumber(
+            firms.nearby_hotspot_matches
+          ) ?? 0,
+          nearby_threshold_km: toNumber(
+            firms.nearby_threshold_km
+          ),
+          errors: Array.isArray(firms.errors) ? firms.errors : []
+        };
+      })()
     };
   }
 
@@ -1567,6 +1706,137 @@
       return true;
     }
 
+
+    function firmsBadgeClass(classification) {
+      const value = String(classification || "NONE").toUpperCase();
+
+      if (value === "INSIDE") return "inside";
+      if (value === "NEARBY") return "nearby";
+      if (value === "NONE") return "none";
+      return "unavailable";
+    }
+
+    function formatFirmsConfidence(value) {
+      if (value === null || value === undefined || value === "") return "n/a";
+
+      const number = toNumber(value);
+      if (number !== null) return `${number.toFixed(0)}%`;
+
+      return String(value).toUpperCase();
+    }
+
+    function buildFirmsHotspotsHtml(region) {
+      const firms = region.firms_correlation || {};
+      const hotspots = Array.isArray(firms.hotspots)
+        ? firms.hotspots
+        : [];
+
+      if (!hotspots.length) return "";
+
+      return `
+        <div class="me-satellite-firms-hotspot-list">
+          ${hotspots.slice(0, 5).map((hotspot, index) => `
+            <div class="me-satellite-firms-hotspot">
+              <strong>Hőpont ${index + 1}</strong><br>
+              Idő: ${escapeHtml(
+                firstDefined(
+                  hotspot.acquisition_datetime_utc,
+                  hotspot.acquisition_date,
+                  "n/a"
+                )
+              )}<br>
+              Szenzor: ${escapeHtml(
+                [hotspot.satellite, hotspot.instrument]
+                  .filter(Boolean)
+                  .join(" / ") || hotspot.source || "n/a"
+              )}<br>
+              FRP: ${formatMetric(hotspot.frp, 2, " MW")}
+              · Bizonyosság: ${escapeHtml(
+                formatFirmsConfidence(hotspot.confidence)
+              )}<br>
+              Távolság: ${formatMetric(
+                hotspot.distance_km,
+                3,
+                " km"
+              )}
+              ${hotspot.inside_region_bbox
+                ? "· <strong>régión belül</strong>"
+                : "· közeli találat"}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function buildFirmsSummaryHtml(change) {
+      const firms = change.firms_correlation || {};
+      const status = firms.status || "unavailable";
+
+      return `
+        <div class="me-satellite-region-section">
+          <div class="me-satellite-region-section__header">
+            <span class="me-satellite-region-section__title">
+              NASA FIRMS korreláció
+            </span>
+            <span class="me-satellite-firms-badge me-satellite-firms-badge--${escapeHtml(
+              status === "completed" || status === "partial"
+                ? "nearby"
+                : "unavailable"
+            )}">
+              ${escapeHtml(status.toUpperCase())}
+            </span>
+          </div>
+
+          <div class="me-satellite-firms-summary">
+            <div class="me-satellite-firms-summary__item">
+              <span class="me-satellite-firms-summary__label">
+                AOI hőpontok
+              </span>
+              <span class="me-satellite-firms-summary__value">
+                ${formatMetric(firms.aoi_hotspot_count, 0)}
+              </span>
+            </div>
+
+            <div class="me-satellite-firms-summary__item">
+              <span class="me-satellite-firms-summary__label">
+                Korreláló régiók
+              </span>
+              <span class="me-satellite-firms-summary__value">
+                ${formatMetric(firms.regions_with_correlation, 0)}
+              </span>
+            </div>
+
+            <div class="me-satellite-firms-summary__item">
+              <span class="me-satellite-firms-summary__label">
+                Régión belüli egyezés
+              </span>
+              <span class="me-satellite-firms-summary__value">
+                ${formatMetric(firms.inside_region_hotspot_matches, 0)}
+              </span>
+            </div>
+
+            <div class="me-satellite-firms-summary__item">
+              <span class="me-satellite-firms-summary__label">
+                Közeli egyezés
+              </span>
+              <span class="me-satellite-firms-summary__value">
+                ${formatMetric(firms.nearby_hotspot_matches, 0)}
+              </span>
+            </div>
+          </div>
+
+          <div class="me-satellite-firms-details">
+            Időablak:
+            <strong>${escapeHtml(firms.window_start || "n/a")}</strong>
+            –
+            <strong>${escapeHtml(firms.window_end || "n/a")}</strong>.
+            A FIRMS-egyezés térbeli-időbeli jelzés; önmagában nem bizonyít
+            támadást, tűz okát vagy fizikai károsodást.
+          </div>
+        </div>
+      `;
+    }
+
     function buildRegionListHtml(change) {
       if (!change.regions.length) {
         return `
@@ -1609,7 +1879,29 @@
               <span class="me-satellite-region-item__meta">
                 Koordináta: ${escapeHtml(coordinate)}<br>
                 Területi arány: ${formatMetric(region.area_percent, 3, "%")}
-                · Intenzitás: ${formatMetric(region.mean_change_intensity, 3)}
+                · Intenzitás: ${formatMetric(region.mean_change_intensity, 3)}<br>
+                FIRMS:
+                <span class="me-satellite-firms-badge me-satellite-firms-badge--${firmsBadgeClass(
+                  region.firms_correlation?.classification
+                )}">
+                  ${escapeHtml(
+                    region.firms_correlation?.classification || "NONE"
+                  )}
+                </span>
+                · belül: ${formatMetric(
+                  region.firms_correlation?.inside_hotspot_count,
+                  0
+                )}
+                · közel: ${formatMetric(
+                  region.firms_correlation?.nearby_hotspot_count,
+                  0
+                )}
+                · legközelebb: ${formatMetric(
+                  region.firms_correlation?.nearest_distance_km,
+                  3,
+                  " km"
+                )}
+                ${buildFirmsHotspotsHtml(region)}
               </span>
             </span>
             <span class="me-satellite-region-item__size">
@@ -1715,6 +2007,8 @@
             </div>
 
             ${warnings}
+
+            ${buildFirmsSummaryHtml(change)}
 
             ${buildRegionListHtml(change)}
 
