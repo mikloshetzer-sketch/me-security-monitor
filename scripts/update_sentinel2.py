@@ -68,11 +68,11 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "3.0.0"
+WORKFLOW_VERSION = "3.1.0"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 CHANGE_ENGINE_NAME = "ME Satellite Visual Change Detector"
-CHANGE_ENGINE_VERSION = "1.0.0"
+CHANGE_ENGINE_VERSION = "1.1.0"
 
 EVALSCRIPT_TRUE_COLOR = """
 //VERSION=3
@@ -658,12 +658,36 @@ def build_change_assessment(
     )
 
 
+
+def pixel_to_geo(
+    *,
+    x: float,
+    y: float,
+    width: int,
+    height: int,
+    bbox: list[float],
+) -> tuple[float, float]:
+    west, south, east, north = [float(value) for value in bbox]
+    longitude = west + (float(x) / max(width - 1, 1)) * (east - west)
+    latitude = north - (float(y) / max(height - 1, 1)) * (north - south)
+    return latitude, longitude
+
+
+def classify_region_size(area_km2: float) -> str:
+    if area_km2 >= 1.0:
+        return "LARGE"
+    if area_km2 >= 0.25:
+        return "MEDIUM"
+    return "SMALL"
+
+
 def run_visual_change_detection(
     *,
     image_paths: dict[str, Any],
     before_scene: dict[str, Any],
     after_scene: dict[str, Any],
     radius_km: float,
+    bbox: list[float],
 ) -> dict[str, Any]:
     require_image_processing_dependencies()
     started = datetime.now(timezone.utc)
@@ -757,15 +781,157 @@ def run_visual_change_detection(
     valid_pixels = max(int(np.count_nonzero(valid_mask)), 1)
     changed_pixels = int(np.count_nonzero(significant_mask))
     changed_percent = (changed_pixels / valid_pixels) * 100.0
-    region_areas = [float(cv2.contourArea(contour)) for contour in retained_contours]
-    largest_region_pixels = max(region_areas, default=0.0)
-    largest_region_percent = (largest_region_pixels / valid_pixels) * 100.0
 
     # Approximate ground area from the coordinate-radius AOI. This is a
     # screening estimate, not cadastral measurement.
     aoi_area_km2 = math.pi * float(radius_km) ** 2
+    pixel_area_km2 = aoi_area_km2 / float(valid_pixels)
     changed_area_km2 = aoi_area_km2 * (changed_percent / 100.0)
-    largest_region_km2 = aoi_area_km2 * (largest_region_percent / 100.0)
+
+    contour_entries: list[dict[str, Any]] = []
+
+    for contour in retained_contours:
+        contour_area_pixels = float(cv2.contourArea(contour))
+        if contour_area_pixels <= 0:
+            continue
+
+        x, y, region_width, region_height = cv2.boundingRect(contour)
+        moments = cv2.moments(contour)
+
+        if moments["m00"]:
+            centroid_x = float(moments["m10"] / moments["m00"])
+            centroid_y = float(moments["m01"] / moments["m00"])
+        else:
+            centroid_x = float(x + region_width / 2.0)
+            centroid_y = float(y + region_height / 2.0)
+
+        region_mask = np.zeros_like(significant_mask)
+        cv2.drawContours(
+            region_mask,
+            [contour],
+            -1,
+            255,
+            thickness=cv2.FILLED,
+        )
+        region_values = combined_difference[
+            (region_mask > 0) & (valid_mask > 0)
+        ]
+        mean_intensity = (
+            float(region_values.mean()) if region_values.size else 0.0
+        )
+        max_intensity = (
+            float(region_values.max()) if region_values.size else 0.0
+        )
+
+        centroid_lat, centroid_lon = pixel_to_geo(
+            x=centroid_x,
+            y=centroid_y,
+            width=width,
+            height=height,
+            bbox=bbox,
+        )
+        north_west_lat, north_west_lon = pixel_to_geo(
+            x=x,
+            y=y,
+            width=width,
+            height=height,
+            bbox=bbox,
+        )
+        south_east_lat, south_east_lon = pixel_to_geo(
+            x=x + region_width,
+            y=y + region_height,
+            width=width,
+            height=height,
+            bbox=bbox,
+        )
+
+        area_percent = (
+            contour_area_pixels / float(valid_pixels)
+        ) * 100.0
+        area_km2 = contour_area_pixels * pixel_area_km2
+
+        contour_entries.append(
+            {
+                "_contour": contour,
+                "area_pixels": contour_area_pixels,
+                "area_percent": area_percent,
+                "area_km2_estimate": area_km2,
+                "relative_size": classify_region_size(area_km2),
+                "centroid_pixel": {
+                    "x": round(centroid_x, 2),
+                    "y": round(centroid_y, 2),
+                },
+                "centroid": {
+                    "lat": round(centroid_lat, 6),
+                    "lon": round(centroid_lon, 6),
+                },
+                "bbox_pixel": {
+                    "x": int(x),
+                    "y": int(y),
+                    "width": int(region_width),
+                    "height": int(region_height),
+                },
+                "bbox_geo": [
+                    round(north_west_lon, 6),
+                    round(south_east_lat, 6),
+                    round(south_east_lon, 6),
+                    round(north_west_lat, 6),
+                ],
+                "mean_change_intensity": mean_intensity,
+                "max_change_intensity": max_intensity,
+            }
+        )
+
+    contour_entries.sort(
+        key=lambda item: item["area_pixels"],
+        reverse=True,
+    )
+
+    region_areas = [
+        float(entry["area_pixels"])
+        for entry in contour_entries
+    ]
+    largest_region_pixels = max(region_areas, default=0.0)
+    largest_region_percent = (
+        largest_region_pixels / valid_pixels
+    ) * 100.0
+    largest_region_km2 = largest_region_pixels * pixel_area_km2
+
+    maximum_region_records = 25
+    region_records: list[dict[str, Any]] = []
+
+    for rank, entry in enumerate(
+        contour_entries[:maximum_region_records],
+        start=1,
+    ):
+        region_records.append(
+            {
+                "id": f"R{rank:02d}",
+                "rank": rank,
+                "area_pixels": round(entry["area_pixels"], 2),
+                "area_percent": round(entry["area_percent"], 5),
+                "area_km2_estimate": round(
+                    entry["area_km2_estimate"],
+                    5,
+                ),
+                "relative_size": entry["relative_size"],
+                "centroid_pixel": entry["centroid_pixel"],
+                "centroid": entry["centroid"],
+                "bbox_pixel": entry["bbox_pixel"],
+                "bbox_geo": entry["bbox_geo"],
+                "mean_change_intensity": round(
+                    entry["mean_change_intensity"],
+                    6,
+                ),
+                "max_change_intensity": round(
+                    entry["max_change_intensity"],
+                    6,
+                ),
+                "interpretation": (
+                    "visual_change_candidate_requires_analyst_review"
+                ),
+            }
+        )
 
     valid = valid_mask > 0
     before_luma = before_gray[valid].astype(np.float32)
@@ -835,6 +1001,52 @@ def run_visual_change_detection(
     if retained_contours:
         cv2.drawContours(overlay, retained_contours, -1, (0, 0, 255), 2)
 
+    # Number the largest regions to support analyst review. Labels are limited
+    # to avoid covering the entire image when many small regions are present.
+    maximum_map_labels = min(20, len(contour_entries))
+    for rank, entry in enumerate(
+        contour_entries[:maximum_map_labels],
+        start=1,
+    ):
+        center_x = int(round(entry["centroid_pixel"]["x"]))
+        center_y = int(round(entry["centroid_pixel"]["y"]))
+        marker_radius = 14 if rank < 10 else 17
+
+        cv2.circle(
+            overlay,
+            (center_x, center_y),
+            marker_radius,
+            (15, 23, 42),
+            thickness=-1,
+        )
+        cv2.circle(
+            overlay,
+            (center_x, center_y),
+            marker_radius,
+            (255, 255, 255),
+            thickness=2,
+        )
+
+        marker_text = str(rank)
+        text_size, _ = cv2.getTextSize(
+            marker_text,
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.48,
+            1,
+        )
+        text_x = center_x - text_size[0] // 2
+        text_y = center_y + text_size[1] // 2
+        cv2.putText(
+            overlay,
+            marker_text,
+            (text_x, text_y),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.48,
+            (255, 255, 255),
+            1,
+            cv2.LINE_AA,
+        )
+
     label = (
         f"CHANGE {change_score:.0f}/100 | {level} | "
         f"changed {changed_percent:.2f}%"
@@ -878,6 +1090,9 @@ def run_visual_change_detection(
         "changed_pixel_percent": round(changed_percent, 4),
         "changed_area_km2_estimate": round(changed_area_km2, 4),
         "significant_regions": len(retained_contours),
+        "region_records_returned": len(region_records),
+        "regions_truncated": len(contour_entries) > len(region_records),
+        "regions": region_records,
         "largest_region_percent": round(largest_region_percent, 4),
         "largest_region_km2_estimate": round(largest_region_km2, 4),
         "valid_pixel_percent": round(valid_ratio * 100.0, 4),
@@ -891,6 +1106,7 @@ def run_visual_change_detection(
             "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
             "Small objects and limited structural damage cannot be reliably resolved.",
             "The change score is a screening indicator and requires analyst verification.",
+            "Numbered regions are visual-change candidates, not automatically classified objects or events.",
         ],
     }
 
@@ -1261,6 +1477,7 @@ def main() -> None:
         before_scene=before_scene,
         after_scene=after_scene,
         radius_km=radius_km,
+        bbox=bbox,
     )
     print(
         "Change detection completed: "
@@ -1310,4 +1527,4 @@ if __name__ == "__main__":
         main()
     except Exception as error:
         print(f"ERROR: {error}", file=sys.stderr)
-        sys.exi
+        sys.exit(1)
