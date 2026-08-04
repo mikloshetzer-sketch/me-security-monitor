@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.3.0";
+  const MODULE_VERSION = "1.3.1";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -1453,7 +1453,6 @@
       const close = () => {
         backdrop.classList.remove("is-open");
         document.body.style.removeProperty("overflow");
-        clearRegionHighlight();
       };
 
       backdrop
@@ -1889,7 +1888,11 @@
                 .forEach((item) => item.classList.remove("is-active"));
 
               button.classList.add("is-active");
-              focusRegion(region, record);
+
+              if (focusRegion(region, record)) {
+                state.modalRoot?.classList.remove("is-open");
+                document.body.style.removeProperty("overflow");
+              }
             });
           });
       }
@@ -2077,6 +2080,7 @@
         applySelectedRecord({ fitBounds: false });
       } else {
         removeOverlay();
+        clearRegionHighlight();
       }
 
       notify(state.enabled ? "Műholdas réteg bekapcsolva" : "Műholdas réteg kikapcsolva");
