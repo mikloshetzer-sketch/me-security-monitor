@@ -49,7 +49,7 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "2.0.1"
+WORKFLOW_VERSION = "2.0.3"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 
@@ -182,14 +182,17 @@ def http_post_form(url: str, form_data: dict[str, Any]) -> dict[str, Any]:
     )
 
 
-def http_post_json(url: str, payload: dict[str, Any], token: str) -> dict[str, Any]:
+def http_post_catalog_json(
+    url: str,
+    payload: dict[str, Any],
+    token: str,
+) -> dict[str, Any]:
     return request_json(
         url,
         method="POST",
         data=json.dumps(payload).encode("utf-8"),
         headers={
             "Content-Type": "application/json",
-            "Accept": "application/json",
             "Authorization": f"Bearer {token}",
         },
         timeout=120,
@@ -291,8 +294,6 @@ def build_catalog_payload(
         "datetime": f"{iso_z(start)}/{iso_z(end)}",
         "collections": ["sentinel-2-l2a"],
         "limit": 100,
-        "filter": f"eo:cloud_cover <= {int(max_cloud_coverage)}",
-        "filter-lang": "cql2-text",
     }
 
 
@@ -309,7 +310,7 @@ def find_best_scene(
         tolerance_days=tolerance_days,
         max_cloud_coverage=max_cloud_coverage,
     )
-    response = http_post_json(CATALOG_API_URL, payload, token)
+    response = http_post_catalog_json(CATALOG_API_URL, payload, token)
     features = response.get("features") or []
 
     candidates: list[tuple[float, float, datetime, dict[str, Any]]] = []
@@ -324,6 +325,10 @@ def find_best_scene(
         if scene_dt is None:
             continue
         cloud = catalog_cloud_cover(feature)
+
+        if cloud is not None and cloud > float(max_cloud_coverage):
+            continue
+
         cloud_score = cloud if cloud is not None else 101.0
         distance_seconds = abs((scene_dt - requested_midday).total_seconds())
         candidates.append((distance_seconds, cloud_score, scene_dt, feature))
@@ -896,3 +901,4 @@ if __name__ == "__main__":
     except Exception as error:
         print(f"ERROR: {error}", file=sys.stderr)
         sys.exit(1)
+
