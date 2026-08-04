@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-04T19:39:17Z",
+  "generated_at": "2026-08-04T20:39:26Z",
   "module": "satellite",
   "status": "ok",
-  "workflow_version": "3.1.0",
+  "workflow_version": "3.2.0",
   "default_provider": "sentinel2",
   "provider": {
     "key": "sentinel2",
@@ -14,13 +14,13 @@
     "auth_required": true
   },
   "latest_record": {
-    "id": "bandar-abbas_2026-07-31_2026-08-04T193917Z",
-    "generated_at": "2026-08-04T19:39:17Z",
+    "id": "bandar-abbas_2026-07-31_2026-08-04T203924Z",
+    "generated_at": "2026-08-04T20:39:26Z",
     "timestamp": "2026-07-31T07:02:09.226000Z",
     "provider": "sentinel2",
     "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
     "product": "Sentinel-2 L2A True Color",
-    "workflow_version": "3.1.0",
+    "workflow_version": "3.2.0",
     "location_name": "Bandar Abbas",
     "location_slug": "bandar-abbas",
     "requested_date": "2026-08-01",
@@ -49,7 +49,7 @@
       56.387782,
       27.290997
     ],
-    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T203924Z.png",
     "before": {
       "role": "before",
       "requested_date": "2026-07-02",
@@ -60,7 +60,7 @@
       "cloud_cover_percent": 3.3,
       "catalog_feature_id": "S2B_MSIL2A_20260701T064619_N0512_R020_T40RDQ_20260701T104133.SAFE",
       "catalog_candidate_count": 4,
-      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png"
+      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T203924Z.png"
     },
     "after": {
       "role": "after",
@@ -72,12 +72,12 @@
       "cloud_cover_percent": 16.61,
       "catalog_feature_id": "S2B_MSIL2A_20260731T064629_N0512_R020_T40RDQ_20260731T104009.SAFE",
       "catalog_candidate_count": 2,
-      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png"
+      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T203924Z.png"
     },
     "change_detection": {
       "status": "completed",
       "engine": "ME Satellite Visual Change Detector",
-      "engine_version": "1.1.0",
+      "engine_version": "1.2.0",
       "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
       "interpretation": "automatic_visual_change_indication",
       "score": 36.3,
@@ -121,7 +121,68 @@
           ],
           "mean_change_intensity": 0.625804,
           "max_change_intensity": 0.889726,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 4,
+            "nearest_distance_km": 2.612,
+            "hotspots": [
+              {
+                "latitude": 27.27341,
+                "longitude": 56.35288,
+                "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "l",
+                "frp": 5.61,
+                "daynight": "D",
+                "distance_km": 2.612,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.2751,
+                "longitude": 56.35399,
+                "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 7.62,
+                "daynight": "D",
+                "distance_km": 2.713,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 9.62,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 9.689,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R02",
@@ -152,7 +213,68 @@
           ],
           "mean_change_intensity": 0.576326,
           "max_change_intensity": 0.877293,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 4,
+            "nearest_distance_km": 5.029,
+            "hotspots": [
+              {
+                "latitude": 27.27341,
+                "longitude": 56.35288,
+                "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "l",
+                "frp": 5.61,
+                "daynight": "D",
+                "distance_km": 5.029,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.2751,
+                "longitude": 56.35399,
+                "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 7.62,
+                "daynight": "D",
+                "distance_km": 5.168,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 8.341,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 8.483,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R03",
@@ -183,7 +305,55 @@
           ],
           "mean_change_intensity": 0.620698,
           "max_change_intensity": 0.865882,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 3,
+            "nearest_distance_km": 8.411,
+            "hotspots": [
+              {
+                "latitude": 27.27341,
+                "longitude": 56.35288,
+                "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "l",
+                "frp": 5.61,
+                "daynight": "D",
+                "distance_km": 8.411,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.2751,
+                "longitude": 56.35399,
+                "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 7.62,
+                "daynight": "D",
+                "distance_km": 8.521,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 9.772,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R04",
@@ -214,7 +384,15 @@
           ],
           "mean_change_intensity": 0.606213,
           "max_change_intensity": 0.879294,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R05",
@@ -245,7 +423,15 @@
           ],
           "mean_change_intensity": 0.604164,
           "max_change_intensity": 0.865882,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R06",
@@ -276,7 +462,15 @@
           ],
           "mean_change_intensity": 0.569818,
           "max_change_intensity": 0.84651,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R07",
@@ -307,7 +501,42 @@
           ],
           "mean_change_intensity": 0.528962,
           "max_change_intensity": 0.803294,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 7.765,
+            "hotspots": [
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 7.765,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 8.059,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R08",
@@ -338,7 +567,68 @@
           ],
           "mean_change_intensity": 0.606716,
           "max_change_intensity": 0.864392,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 4,
+            "nearest_distance_km": 4.43,
+            "hotspots": [
+              {
+                "latitude": 27.27341,
+                "longitude": 56.35288,
+                "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "l",
+                "frp": 5.61,
+                "daynight": "D",
+                "distance_km": 4.43,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.2751,
+                "longitude": 56.35399,
+                "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 7.62,
+                "daynight": "D",
+                "distance_km": 4.61,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 7.314,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 7.419,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R09",
@@ -369,7 +659,15 @@
           ],
           "mean_change_intensity": 0.61654,
           "max_change_intensity": 0.848,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R10",
@@ -400,7 +698,15 @@
           ],
           "mean_change_intensity": 0.530424,
           "max_change_intensity": 0.684078,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R11",
@@ -431,7 +737,15 @@
           ],
           "mean_change_intensity": 0.619872,
           "max_change_intensity": 0.876314,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R12",
@@ -462,7 +776,42 @@
           ],
           "mean_change_intensity": 0.503114,
           "max_change_intensity": 0.730275,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 8.245,
+            "hotspots": [
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 8.245,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 8.557,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R13",
@@ -493,7 +842,42 @@
           ],
           "mean_change_intensity": 0.4614,
           "max_change_intensity": 0.69898,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 6.559,
+            "hotspots": [
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 6.559,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 6.683,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R14",
@@ -524,7 +908,15 @@
           ],
           "mean_change_intensity": 0.583177,
           "max_change_intensity": 0.821176,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R15",
@@ -555,7 +947,42 @@
           ],
           "mean_change_intensity": 0.59187,
           "max_change_intensity": 0.898667,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 9.296,
+            "hotspots": [
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 9.296,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 9.578,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R16",
@@ -586,7 +1013,15 @@
           ],
           "mean_change_intensity": 0.607163,
           "max_change_intensity": 0.828627,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R17",
@@ -617,7 +1052,42 @@
           ],
           "mean_change_intensity": 0.594044,
           "max_change_intensity": 0.904627,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 0.56,
+            "hotspots": [
+              {
+                "latitude": 27.2751,
+                "longitude": 56.35399,
+                "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 7.62,
+                "daynight": "D",
+                "distance_km": 0.56,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.27341,
+                "longitude": 56.35288,
+                "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "l",
+                "frp": 5.61,
+                "daynight": "D",
+                "distance_km": 0.702,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R18",
@@ -648,7 +1118,42 @@
           ],
           "mean_change_intensity": 0.473767,
           "max_change_intensity": 0.655021,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 6.844,
+            "hotspots": [
+              {
+                "latitude": 27.19162,
+                "longitude": 56.30207,
+                "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 1.14,
+                "daynight": "N",
+                "distance_km": 6.844,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.19037,
+                "longitude": 56.30493,
+                "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+                "source": "VIIRS_NOAA20_NRT",
+                "satellite": "N20",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 16.57,
+                "daynight": "D",
+                "distance_km": 6.846,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R19",
@@ -679,7 +1184,15 @@
           ],
           "mean_change_intensity": 0.528914,
           "max_change_intensity": 0.69302,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R20",
@@ -710,7 +1223,15 @@
           ],
           "mean_change_intensity": 0.58628,
           "max_change_intensity": 0.838248,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R21",
@@ -741,7 +1262,15 @@
           ],
           "mean_change_intensity": 0.501378,
           "max_change_intensity": 0.684078,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R22",
@@ -772,7 +1301,15 @@
           ],
           "mean_change_intensity": 0.546011,
           "max_change_intensity": 0.769856,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R23",
@@ -803,7 +1340,15 @@
           ],
           "mean_change_intensity": 0.545474,
           "max_change_intensity": 0.792863,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R24",
@@ -834,7 +1379,15 @@
           ],
           "mean_change_intensity": 0.574427,
           "max_change_intensity": 0.794353,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         },
         {
           "id": "R25",
@@ -865,7 +1418,42 @@
           ],
           "mean_change_intensity": 0.581293,
           "max_change_intensity": 0.806335,
-          "interpretation": "visual_change_candidate_requires_analyst_review"
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 2,
+            "nearest_distance_km": 6.911,
+            "hotspots": [
+              {
+                "latitude": 27.27341,
+                "longitude": 56.35288,
+                "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+                "source": "VIIRS_SNPP_NRT",
+                "satellite": "N",
+                "instrument": "VIIRS",
+                "confidence": "l",
+                "frp": 5.61,
+                "daynight": "D",
+                "distance_km": 6.911,
+                "inside_region_bbox": false
+              },
+              {
+                "latitude": 27.2751,
+                "longitude": 56.35399,
+                "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 7.62,
+                "daynight": "D",
+                "distance_km": 6.987,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          }
         }
       ],
       "largest_region_percent": 1.3165,
@@ -873,18 +1461,48 @@
       "valid_pixel_percent": 100.0,
       "difference_threshold": 0.361496,
       "minimum_region_pixels": 83,
-      "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T203924Z.png",
       "assessment": "A képpár több összefüggő vizuális eltérést jelez; emberi ellenőrzés indokolt. A jelentősnek minősített pixelek aránya 6.51%. Az összehasonlíthatóság: HIGH.",
       "warnings": [
         "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
       ],
-      "processing_time_seconds": 0.51,
+      "processing_time_seconds": 0.482,
       "limitations": [
         "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
         "Small objects and limited structural damage cannot be reliably resolved.",
         "The change score is a screening indicator and requires analyst verification.",
         "Numbered regions are visual-change candidates, not automatically classified objects or events."
-      ]
+      ],
+      "firms_correlation": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-07-29",
+        "window_end": "2026-08-02",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 2
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 1
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 1
+          }
+        ],
+        "aoi_hotspot_count": 4,
+        "regions_with_correlation": 11,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 29,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
     },
     "comparison": {
       "mode": "before_after",
@@ -892,17 +1510,17 @@
       "requested_before_date": "2026-07-02",
       "comparison_days": 30,
       "search_tolerance_days": 5,
-      "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png",
-      "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
-      "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png"
+      "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T203924Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T203924Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T203924Z.png"
     },
     "imagery": {
       "image_available": true,
-      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
+      "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T203924Z.png",
       "latest_image": "data/satellite/sentinel2/latest.png",
-      "before_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png",
-      "after_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
-      "change_map": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png",
+      "before_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T203924Z.png",
+      "after_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T203924Z.png",
+      "change_map": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T203924Z.png",
       "acquisition_date": "2026-07-31",
       "cloud_cover_percent": 16.61,
       "bounds": {
@@ -915,7 +1533,7 @@
       "height": 1024
     }
   },
-  "archive_record_count": 12,
+  "archive_record_count": 15,
   "target_area": {
     "mode": "coordinate_radius",
     "lat": 27.1832,
@@ -934,14 +1552,14 @@
     "requested_before_date": "2026-07-02",
     "comparison_days": 30,
     "search_tolerance_days": 5,
-    "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png",
-    "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
-    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png"
+    "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T203924Z.png",
+    "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T203924Z.png",
+    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T203924Z.png"
   },
   "change_detection": {
     "status": "completed",
     "engine": "ME Satellite Visual Change Detector",
-    "engine_version": "1.1.0",
+    "engine_version": "1.2.0",
     "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
     "interpretation": "automatic_visual_change_indication",
     "score": 36.3,
@@ -985,7 +1603,68 @@
         ],
         "mean_change_intensity": 0.625804,
         "max_change_intensity": 0.889726,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 4,
+          "nearest_distance_km": 2.612,
+          "hotspots": [
+            {
+              "latitude": 27.27341,
+              "longitude": 56.35288,
+              "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "l",
+              "frp": 5.61,
+              "daynight": "D",
+              "distance_km": 2.612,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.2751,
+              "longitude": 56.35399,
+              "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 7.62,
+              "daynight": "D",
+              "distance_km": 2.713,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 9.62,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 9.689,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R02",
@@ -1016,7 +1695,68 @@
         ],
         "mean_change_intensity": 0.576326,
         "max_change_intensity": 0.877293,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 4,
+          "nearest_distance_km": 5.029,
+          "hotspots": [
+            {
+              "latitude": 27.27341,
+              "longitude": 56.35288,
+              "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "l",
+              "frp": 5.61,
+              "daynight": "D",
+              "distance_km": 5.029,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.2751,
+              "longitude": 56.35399,
+              "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 7.62,
+              "daynight": "D",
+              "distance_km": 5.168,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 8.341,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 8.483,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R03",
@@ -1047,7 +1787,55 @@
         ],
         "mean_change_intensity": 0.620698,
         "max_change_intensity": 0.865882,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 3,
+          "nearest_distance_km": 8.411,
+          "hotspots": [
+            {
+              "latitude": 27.27341,
+              "longitude": 56.35288,
+              "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "l",
+              "frp": 5.61,
+              "daynight": "D",
+              "distance_km": 8.411,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.2751,
+              "longitude": 56.35399,
+              "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 7.62,
+              "daynight": "D",
+              "distance_km": 8.521,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 9.772,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R04",
@@ -1078,7 +1866,15 @@
         ],
         "mean_change_intensity": 0.606213,
         "max_change_intensity": 0.879294,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R05",
@@ -1109,7 +1905,15 @@
         ],
         "mean_change_intensity": 0.604164,
         "max_change_intensity": 0.865882,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R06",
@@ -1140,7 +1944,15 @@
         ],
         "mean_change_intensity": 0.569818,
         "max_change_intensity": 0.84651,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R07",
@@ -1171,7 +1983,42 @@
         ],
         "mean_change_intensity": 0.528962,
         "max_change_intensity": 0.803294,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 7.765,
+          "hotspots": [
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 7.765,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 8.059,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R08",
@@ -1202,7 +2049,68 @@
         ],
         "mean_change_intensity": 0.606716,
         "max_change_intensity": 0.864392,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 4,
+          "nearest_distance_km": 4.43,
+          "hotspots": [
+            {
+              "latitude": 27.27341,
+              "longitude": 56.35288,
+              "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "l",
+              "frp": 5.61,
+              "daynight": "D",
+              "distance_km": 4.43,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.2751,
+              "longitude": 56.35399,
+              "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 7.62,
+              "daynight": "D",
+              "distance_km": 4.61,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 7.314,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 7.419,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R09",
@@ -1233,7 +2141,15 @@
         ],
         "mean_change_intensity": 0.61654,
         "max_change_intensity": 0.848,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R10",
@@ -1264,7 +2180,15 @@
         ],
         "mean_change_intensity": 0.530424,
         "max_change_intensity": 0.684078,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R11",
@@ -1295,7 +2219,15 @@
         ],
         "mean_change_intensity": 0.619872,
         "max_change_intensity": 0.876314,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R12",
@@ -1326,7 +2258,42 @@
         ],
         "mean_change_intensity": 0.503114,
         "max_change_intensity": 0.730275,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 8.245,
+          "hotspots": [
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 8.245,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 8.557,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R13",
@@ -1357,7 +2324,42 @@
         ],
         "mean_change_intensity": 0.4614,
         "max_change_intensity": 0.69898,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 6.559,
+          "hotspots": [
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 6.559,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 6.683,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R14",
@@ -1388,7 +2390,15 @@
         ],
         "mean_change_intensity": 0.583177,
         "max_change_intensity": 0.821176,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R15",
@@ -1419,7 +2429,42 @@
         ],
         "mean_change_intensity": 0.59187,
         "max_change_intensity": 0.898667,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 9.296,
+          "hotspots": [
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 9.296,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 9.578,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R16",
@@ -1450,7 +2495,15 @@
         ],
         "mean_change_intensity": 0.607163,
         "max_change_intensity": 0.828627,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R17",
@@ -1481,7 +2534,42 @@
         ],
         "mean_change_intensity": 0.594044,
         "max_change_intensity": 0.904627,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 0.56,
+          "hotspots": [
+            {
+              "latitude": 27.2751,
+              "longitude": 56.35399,
+              "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 7.62,
+              "daynight": "D",
+              "distance_km": 0.56,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.27341,
+              "longitude": 56.35288,
+              "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "l",
+              "frp": 5.61,
+              "daynight": "D",
+              "distance_km": 0.702,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R18",
@@ -1512,7 +2600,42 @@
         ],
         "mean_change_intensity": 0.473767,
         "max_change_intensity": 0.655021,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 6.844,
+          "hotspots": [
+            {
+              "latitude": 27.19162,
+              "longitude": 56.30207,
+              "acquisition_datetime_utc": "2026-07-30T22:20:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 1.14,
+              "daynight": "N",
+              "distance_km": 6.844,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.19037,
+              "longitude": 56.30493,
+              "acquisition_datetime_utc": "2026-07-31T09:54:00Z",
+              "source": "VIIRS_NOAA20_NRT",
+              "satellite": "N20",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 16.57,
+              "daynight": "D",
+              "distance_km": 6.846,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R19",
@@ -1543,7 +2666,15 @@
         ],
         "mean_change_intensity": 0.528914,
         "max_change_intensity": 0.69302,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R20",
@@ -1574,7 +2705,15 @@
         ],
         "mean_change_intensity": 0.58628,
         "max_change_intensity": 0.838248,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R21",
@@ -1605,7 +2744,15 @@
         ],
         "mean_change_intensity": 0.501378,
         "max_change_intensity": 0.684078,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R22",
@@ -1636,7 +2783,15 @@
         ],
         "mean_change_intensity": 0.546011,
         "max_change_intensity": 0.769856,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R23",
@@ -1667,7 +2822,15 @@
         ],
         "mean_change_intensity": 0.545474,
         "max_change_intensity": 0.792863,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R24",
@@ -1698,7 +2861,15 @@
         ],
         "mean_change_intensity": 0.574427,
         "max_change_intensity": 0.794353,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NONE",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 0,
+          "nearest_distance_km": null,
+          "hotspots": [],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       },
       {
         "id": "R25",
@@ -1729,7 +2900,42 @@
         ],
         "mean_change_intensity": 0.581293,
         "max_change_intensity": 0.806335,
-        "interpretation": "visual_change_candidate_requires_analyst_review"
+        "interpretation": "visual_change_candidate_requires_analyst_review",
+        "firms_correlation": {
+          "classification": "NEARBY",
+          "inside_hotspot_count": 0,
+          "nearby_hotspot_count": 2,
+          "nearest_distance_km": 6.911,
+          "hotspots": [
+            {
+              "latitude": 27.27341,
+              "longitude": 56.35288,
+              "acquisition_datetime_utc": "2026-07-31T09:37:00Z",
+              "source": "VIIRS_SNPP_NRT",
+              "satellite": "N",
+              "instrument": "VIIRS",
+              "confidence": "l",
+              "frp": 5.61,
+              "daynight": "D",
+              "distance_km": 6.911,
+              "inside_region_bbox": false
+            },
+            {
+              "latitude": 27.2751,
+              "longitude": 56.35399,
+              "acquisition_datetime_utc": "2026-07-31T09:00:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 7.62,
+              "daynight": "D",
+              "distance_km": 6.987,
+              "inside_region_bbox": false
+            }
+          ],
+          "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+        }
       }
     ],
     "largest_region_percent": 1.3165,
@@ -1737,18 +2943,48 @@
     "valid_pixel_percent": 100.0,
     "difference_threshold": 0.361496,
     "minimum_region_pixels": 83,
-    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png",
+    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T203924Z.png",
     "assessment": "A képpár több összefüggő vizuális eltérést jelez; emberi ellenőrzés indokolt. A jelentősnek minősített pixelek aránya 6.51%. Az összehasonlíthatóság: HIGH.",
     "warnings": [
       "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
     ],
-    "processing_time_seconds": 0.51,
+    "processing_time_seconds": 0.482,
     "limitations": [
       "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
       "Small objects and limited structural damage cannot be reliably resolved.",
       "The change score is a screening indicator and requires analyst verification.",
       "Numbered regions are visual-change candidates, not automatically classified objects or events."
-    ]
+    ],
+    "firms_correlation": {
+      "status": "completed",
+      "provider": "NASA LANCE FIRMS",
+      "window_start": "2026-07-29",
+      "window_end": "2026-08-02",
+      "sources": [
+        {
+          "source": "VIIRS_SNPP_NRT",
+          "status": "completed",
+          "hotspot_count": 2
+        },
+        {
+          "source": "VIIRS_NOAA20_NRT",
+          "status": "completed",
+          "hotspot_count": 1
+        },
+        {
+          "source": "VIIRS_NOAA21_NRT",
+          "status": "completed",
+          "hotspot_count": 1
+        }
+      ],
+      "aoi_hotspot_count": 4,
+      "regions_with_correlation": 11,
+      "inside_region_hotspot_matches": 0,
+      "nearby_hotspot_matches": 29,
+      "nearby_threshold_km": 10.0,
+      "errors": [],
+      "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+    }
   },
   "capabilities": {
     "true_color": true,
