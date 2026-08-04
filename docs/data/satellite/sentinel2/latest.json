@@ -1,0 +1,88 @@
+{
+  "id": "bandar-abbas_2026-07-31_2026-08-04T133515Z",
+  "generated_at": "2026-08-04T13:35:15Z",
+  "timestamp": "2026-07-31T07:02:09.226000Z",
+  "provider": "sentinel2",
+  "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+  "product": "Sentinel-2 L2A True Color",
+  "workflow_version": "2.0.3",
+  "location_name": "Bandar Abbas",
+  "location_slug": "bandar-abbas",
+  "requested_date": "2026-08-01",
+  "comparison_days": 30,
+  "search_tolerance_days": 5,
+  "image_size": {
+    "width": 1024,
+    "height": 1024
+  },
+  "max_cloud_coverage_requested": 80,
+  "target_area": {
+    "mode": "coordinate_radius",
+    "lat": 27.1832,
+    "lon": 56.2666,
+    "radius_km": 12.0,
+    "bbox": [
+      56.145418,
+      27.075403,
+      56.387782,
+      27.290997
+    ]
+  },
+  "bbox": [
+    56.145418,
+    27.075403,
+    56.387782,
+    27.290997
+  ],
+  "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T133515Z.png",
+  "before": {
+    "role": "before",
+    "requested_date": "2026-07-02",
+    "search_tolerance_days": 5,
+    "acquisition_date": "2026-07-01",
+    "acquisition_datetime": "2026-07-01T07:02:06.129000Z",
+    "date_offset_days": -1,
+    "cloud_cover_percent": 3.3,
+    "catalog_feature_id": "S2B_MSIL2A_20260701T064619_N0512_R020_T40RDQ_20260701T104133.SAFE",
+    "catalog_candidate_count": 4,
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T133515Z.png"
+  },
+  "after": {
+    "role": "after",
+    "requested_date": "2026-08-01",
+    "search_tolerance_days": 5,
+    "acquisition_date": "2026-07-31",
+    "acquisition_datetime": "2026-07-31T07:02:09.226000Z",
+    "date_offset_days": -1,
+    "cloud_cover_percent": 16.61,
+    "catalog_feature_id": "S2B_MSIL2A_20260731T064629_N0512_R020_T40RDQ_20260731T104009.SAFE",
+    "catalog_candidate_count": 2,
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T133515Z.png"
+  },
+  "comparison": {
+    "mode": "before_after",
+    "requested_after_date": "2026-08-01",
+    "requested_before_date": "2026-07-02",
+    "comparison_days": 30,
+    "search_tolerance_days": 5,
+    "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T133515Z.png",
+    "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T133515Z.png"
+  },
+  "imagery": {
+    "image_available": true,
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T133515Z.png",
+    "latest_image": "data/satellite/sentinel2/latest.png",
+    "before_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T133515Z.png",
+    "after_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T133515Z.png",
+    "acquisition_date": "2026-07-31",
+    "cloud_cover_percent": 16.61,
+    "bounds": {
+      "west": 56.145418,
+      "south": 27.075403,
+      "east": 56.387782,
+      "north": 27.290997
+    },
+    "width": 1024,
+    "height": 1024
+  }
+}
