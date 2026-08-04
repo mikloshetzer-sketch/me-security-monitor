@@ -70,6 +70,24 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install change-detection dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m pip install --upgrade pip
+          python -m pip install             "numpy>=1.26,<3"             "opencv-python-headless>=4.10,<5"             "scikit-image>=0.24,<1"
+
+          python - <<'PY'
+          import cv2
+          import numpy
+          import skimage
+
+          print(f"OpenCV: {cv2.__version__}")
+          print(f"NumPy: {numpy.__version__}")
+          print(f"scikit-image: {skimage.__version__}")
+          PY
+
       - name: Verify required repository files
         shell: bash
         run: |
@@ -245,7 +263,7 @@ jobs:
               )
           PY
 
-      - name: Download Sentinel-2 before/after images
+      - name: Build Sentinel-2 images and change detection
         shell: bash
         env:
           SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
@@ -411,7 +429,30 @@ jobs:
 
               return direct_path
 
-          for record in archive:
+          def records_for_location(location_name):
+              expected = str(location_name).strip().casefold()
+              return [
+                  record
+                  for record in archive
+                  if str(record.get("location_name", "")).strip().casefold()
+                  == expected
+              ]
+
+          verified_results = []
+
+          for target in targets:
+              location_name = target["location_name"]
+              matches = records_for_location(location_name)
+
+              if not matches:
+                  raise SystemExit(
+                      "Processed location missing from archive-index.json: "
+                      + location_name
+                  )
+
+              # The builder writes newest records first.
+              record = matches[0]
+
               missing = [
                   field
                   for field in required_top_level
@@ -420,7 +461,7 @@ jobs:
 
               if missing:
                   raise SystemExit(
-                      "Archive record is missing required fields: "
+                      f"{location_name}: archive record is missing fields: "
                       + ", ".join(missing)
                   )
 
@@ -430,14 +471,14 @@ jobs:
 
                   if not phase_url:
                       raise SystemExit(
-                          f"Archive record is missing {phase}.image_url"
+                          f"{location_name}: missing {phase}.image_url"
                       )
 
                   image_path = resolve_repo_file(phase_url)
 
                   if image_path is None or not image_path.is_file():
                       raise SystemExit(
-                          f"{phase} image does not exist: "
+                          f"{location_name}: {phase} image does not exist: "
                           f"{phase_url} (resolved as {image_path})"
                       )
 
@@ -445,34 +486,153 @@ jobs:
 
               if current_image is None or not current_image.is_file():
                   raise SystemExit(
-                      "Top-level image_url does not resolve to a file: "
-                      f"{record['image_url']} "
+                      f"{location_name}: top-level image_url does not "
+                      f"resolve to a file: {record['image_url']} "
                       f"(resolved as {current_image})"
                   )
 
-          archive_names = {
-              str(record.get("location_name", "")).strip()
-              for record in archive
-          }
+              change = record.get("change_detection")
 
-          missing_targets = [
-              target["location_name"]
-              for target in targets
-              if target["location_name"] not in archive_names
-          ]
+              if not isinstance(change, dict):
+                  raise SystemExit(
+                      f"{location_name}: change_detection block is missing."
+                  )
 
-          if missing_targets:
-              raise SystemExit(
-                  "Processed locations missing from archive-index.json: "
-                  + ", ".join(missing_targets)
+              if change.get("status") != "completed":
+                  raise SystemExit(
+                      f"{location_name}: change detection status is not "
+                      f"completed: {change.get('status')}"
+                  )
+
+              required_change_fields = (
+                  "score",
+                  "level",
+                  "comparability",
+                  "comparability_score",
+                  "ssim",
+                  "changed_pixel_percent",
+                  "significant_regions",
+                  "change_map_url",
+                  "assessment",
+                  "warnings",
               )
 
-          print(f"Archive verified: {len(archive)} total record(s)")
-          print(f"Current run verified: {len(targets)} target(s)")
+              missing_change = [
+                  field
+                  for field in required_change_fields
+                  if field not in change
+              ]
+
+              if missing_change:
+                  raise SystemExit(
+                      f"{location_name}: change_detection is missing fields: "
+                      + ", ".join(missing_change)
+                  )
+
+              change_map_path = resolve_repo_file(
+                  change.get("change_map_url")
+              )
+
+              if (
+                  change_map_path is None
+                  or not change_map_path.is_file()
+                  or change_map_path.stat().st_size == 0
+              ):
+                  raise SystemExit(
+                      f"{location_name}: change map does not exist: "
+                      f"{change.get('change_map_url')} "
+                      f"(resolved as {change_map_path})"
+                  )
+
+              score = float(change["score"])
+              changed_percent = float(
+                  change["changed_pixel_percent"]
+              )
+              comparability_score = float(
+                  change["comparability_score"]
+              )
+              ssim = float(change["ssim"])
+              regions = int(change["significant_regions"])
+
+              if not 0.0 <= score <= 100.0:
+                  raise SystemExit(
+                      f"{location_name}: invalid change score: {score}"
+                  )
+
+              if not 0.0 <= changed_percent <= 100.0:
+                  raise SystemExit(
+                      f"{location_name}: invalid changed pixel percent: "
+                      f"{changed_percent}"
+                  )
+
+              if not 0.0 <= comparability_score <= 100.0:
+                  raise SystemExit(
+                      f"{location_name}: invalid comparability score: "
+                      f"{comparability_score}"
+                  )
+
+              if not -1.0 <= ssim <= 1.0:
+                  raise SystemExit(
+                      f"{location_name}: invalid SSIM value: {ssim}"
+                  )
+
+              if regions < 0:
+                  raise SystemExit(
+                      f"{location_name}: invalid region count: {regions}"
+                  )
+
+              verified_results.append(
+                  {
+                      "location_name": location_name,
+                      "score": score,
+                      "level": str(change["level"]),
+                      "comparability": str(change["comparability"]),
+                      "comparability_score": comparability_score,
+                      "changed_pixel_percent": changed_percent,
+                      "significant_regions": regions,
+                      "change_map": str(change_map_path),
+                  }
+              )
+
+          results_path = Path(
+              "/tmp/me-sentinel2-change-results.json"
+          )
+          results_path.write_text(
+              json.dumps(
+                  verified_results,
+                  ensure_ascii=False,
+                  indent=2,
+              ),
+              encoding="utf-8",
+          )
+
+          print(
+              f"Archive verified: {len(archive)} total record(s)"
+          )
+          print(
+              f"Current run verified: {len(verified_results)} target(s)"
+          )
+
+          for result in verified_results:
+              print(
+                  f"- {result['location_name']}: "
+                  f"score={result['score']}/100, "
+                  f"level={result['level']}, "
+                  f"changed={result['changed_pixel_percent']}%, "
+                  f"comparability={result['comparability']} "
+                  f"({result['comparability_score']}%), "
+                  f"regions={result['significant_regions']}"
+              )
           PY
 
-          echo "Generated history images:"
+          echo "Generated BEFORE/AFTER and change-map images:"
           find docs/data/satellite/sentinel2/history             -maxdepth 5             -type f             -name "*.png"             -print 2>/dev/null || true
+
+          CHANGE_MAP_COUNT="$(
+            find docs/data/satellite/sentinel2/history               -maxdepth 5               -type f               -name "*_change_*.png"               | wc -l
+          )"
+
+          echo "Change maps present in repository: $CHANGE_MAP_COUNT"
 
       - name: Commit generated Sentinel-2 files
         shell: bash
@@ -496,7 +656,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m             "Update ME Sentinel-2 before-after imagery (${{ steps.validation.outputs.target_count }} locations)"
+          git commit -m             "Update ME Sentinel-2 imagery and change detection (${{ steps.validation.outputs.target_count }} locations)"
 
           git push
 
@@ -515,26 +675,87 @@ jobs:
           set -euo pipefail
 
           python - <<'PY'
+          import json
           import os
           from pathlib import Path
 
           summary_path = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          results_path = Path(
+              "/tmp/me-sentinel2-change-results.json"
+          )
 
           lines = [
-              "## ME Sentinel-2 Before/After Builder",
+              "## ME Sentinel-2 Change Detection",
               "",
-              f"- **Requested locations:** {os.environ.get('SUMMARY_TARGET_COUNT', 'n/a')}",
-              f"- **AFTER requested date:** {os.environ.get('SUMMARY_TARGET_DATE', 'n/a')}",
-              f"- **Comparison offset:** {os.environ.get('SUMMARY_COMPARISON_DAYS', 'n/a')} days",
-              f"- **Tolerance:** ±{os.environ.get('SUMMARY_TOLERANCE_DAYS', 'n/a')} days",
-              f"- **Maximum cloud coverage:** {os.environ.get('SUMMARY_MAX_CLOUD', 'n/a')}%",
-              f"- **Image size:** {os.environ.get('SUMMARY_IMAGE_SIZE', 'n/a')} × "
+              f"- **Requested locations:** "
+              f"{os.environ.get('SUMMARY_TARGET_COUNT', 'n/a')}",
+              f"- **AFTER requested date:** "
+              f"{os.environ.get('SUMMARY_TARGET_DATE', 'n/a')}",
+              f"- **Comparison offset:** "
+              f"{os.environ.get('SUMMARY_COMPARISON_DAYS', 'n/a')} days",
+              f"- **Tolerance:** "
+              f"±{os.environ.get('SUMMARY_TOLERANCE_DAYS', 'n/a')} days",
+              f"- **Maximum cloud coverage:** "
+              f"{os.environ.get('SUMMARY_MAX_CLOUD', 'n/a')}%",
+              f"- **Image size:** "
+              f"{os.environ.get('SUMMARY_IMAGE_SIZE', 'n/a')} × "
               f"{os.environ.get('SUMMARY_IMAGE_SIZE', 'n/a')} px",
-              f"- **Workflow result:** {os.environ.get('SUMMARY_JOB_STATUS', 'unknown')}",
-              "",
-              "Archive: `docs/data/satellite/archive-index.json`",
+              f"- **Workflow result:** "
+              f"{os.environ.get('SUMMARY_JOB_STATUS', 'unknown')}",
               "",
           ]
+
+          if results_path.is_file():
+              results = json.loads(
+                  results_path.read_text(encoding="utf-8")
+              )
+
+              lines.extend(
+                  [
+                      "### Automatic visual change indication",
+                      "",
+                      "| Location | Score | Level | Changed pixels | "
+                      "Comparability | Regions |",
+                      "|---|---:|---|---:|---|---:|",
+                  ]
+              )
+
+              for result in results:
+                  lines.append(
+                      f"| {result['location_name']} "
+                      f"| {result['score']:.2f}/100 "
+                      f"| {result['level']} "
+                      f"| {result['changed_pixel_percent']:.2f}% "
+                      f"| {result['comparability']} "
+                      f"({result['comparability_score']:.1f}%) "
+                      f"| {result['significant_regions']} |"
+                  )
+
+              lines.extend(
+                  [
+                      "",
+                      "> The output is an automatic visual change "
+                      "indication. It does not by itself confirm damage, "
+                      "military activity, or the cause of a detected change.",
+                      "",
+                  ]
+              )
+          else:
+              lines.extend(
+                  [
+                      "Change-detection results were not available because "
+                      "the verification step did not complete.",
+                      "",
+                  ]
+              )
+
+          lines.extend(
+              [
+                  "Archive: "
+                  "`docs/data/satellite/archive-index.json`",
+                  "",
+              ]
+          )
 
           with summary_path.open("a", encoding="utf-8") as handle:
               handle.write("\n".join(lines))
