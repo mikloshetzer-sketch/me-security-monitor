@@ -15,6 +15,9 @@ Required environment variables:
     SENTINELHUB_CLIENT_ID
     SENTINELHUB_CLIENT_SECRET
 
+Optional environment variables:
+    FIRMS_KEY
+
 Required Python packages:
     numpy
     opencv-python-headless
@@ -24,6 +27,7 @@ Required Python packages:
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import math
 import os
@@ -68,11 +72,22 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "3.1.0"
+WORKFLOW_VERSION = "3.2.0"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 CHANGE_ENGINE_NAME = "ME Satellite Visual Change Detector"
-CHANGE_ENGINE_VERSION = "1.1.0"
+CHANGE_ENGINE_VERSION = "1.2.0"
+
+FIRMS_AREA_API_BASE = (
+    "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
+)
+FIRMS_SOURCES = (
+    "VIIRS_SNPP_NRT",
+    "VIIRS_NOAA20_NRT",
+    "VIIRS_NOAA21_NRT",
+)
+FIRMS_DAY_RANGE = 5
+FIRMS_NEARBY_DISTANCE_KM = 10.0
 
 EVALSCRIPT_TRUE_COLOR = """
 //VERSION=3
@@ -656,6 +671,446 @@ def build_change_assessment(
         f"{statement} A jelentősnek minősített pixelek aránya "
         f"{changed_percent:.2f}%. Az összehasonlíthatóság: {comparability}."
     )
+
+
+
+
+def parse_optional_float(value: Any) -> float | None:
+    if value is None:
+        return None
+
+    stripped = str(value).strip()
+    if not stripped:
+        return None
+
+    try:
+        number = float(stripped)
+    except (TypeError, ValueError):
+        return None
+
+    return number if math.isfinite(number) else None
+
+
+def haversine_distance_km(
+    lat1: float,
+    lon1: float,
+    lat2: float,
+    lon2: float,
+) -> float:
+    earth_radius_km = 6371.0088
+    lat1_radians = math.radians(lat1)
+    lat2_radians = math.radians(lat2)
+    delta_lat = math.radians(lat2 - lat1)
+    delta_lon = math.radians(lon2 - lon1)
+
+    value = (
+        math.sin(delta_lat / 2.0) ** 2
+        + math.cos(lat1_radians)
+        * math.cos(lat2_radians)
+        * math.sin(delta_lon / 2.0) ** 2
+    )
+    return 2.0 * earth_radius_km * math.asin(min(1.0, math.sqrt(value)))
+
+
+def normalize_firms_confidence(value: Any) -> str | float | None:
+    if value is None:
+        return None
+
+    stripped = str(value).strip()
+    if not stripped:
+        return None
+
+    numeric = parse_optional_float(stripped)
+    if numeric is not None:
+        return round(numeric, 2)
+
+    return stripped.lower()
+
+
+def build_firms_area_url(
+    *,
+    map_key: str,
+    source: str,
+    bbox: list[float],
+    start_date: date,
+    day_range: int = FIRMS_DAY_RANGE,
+) -> str:
+    west, south, east, north = [float(value) for value in bbox]
+    area = ",".join(
+        f"{value:.6f}"
+        for value in (west, south, east, north)
+    )
+    encoded_key = urllib.parse.quote(map_key.strip(), safe="")
+    encoded_source = urllib.parse.quote(source, safe="")
+    encoded_area = urllib.parse.quote(area, safe=",.-")
+
+    return (
+        f"{FIRMS_AREA_API_BASE}/{encoded_key}/{encoded_source}/"
+        f"{encoded_area}/{int(day_range)}/{start_date.isoformat()}"
+    )
+
+
+def download_firms_csv(url: str) -> str:
+    request = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "text/csv,text/plain;q=0.9,*/*;q=0.5",
+            "User-Agent": "ME-Security-Monitor/3.2",
+        },
+        method="GET",
+    )
+
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            return response.read().decode("utf-8-sig", errors="replace")
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(
+            f"FIRMS HTTP {error.code}: {body[:500]}"
+        ) from error
+    except urllib.error.URLError as error:
+        raise RuntimeError(f"FIRMS network error: {error.reason}") from error
+
+
+def parse_firms_rows(
+    *,
+    csv_text: str,
+    source: str,
+) -> list[dict[str, Any]]:
+    stripped = csv_text.strip()
+
+    if not stripped:
+        return []
+
+    lowered = stripped.lower()
+    if lowered.startswith("invalid") or lowered.startswith("error"):
+        raise RuntimeError(f"FIRMS API response: {stripped[:500]}")
+
+    rows: list[dict[str, Any]] = []
+
+    for raw in csv.DictReader(stripped.splitlines()):
+        latitude = parse_optional_float(raw.get("latitude"))
+        longitude = parse_optional_float(raw.get("longitude"))
+
+        if latitude is None or longitude is None:
+            continue
+
+        acquisition_date = str(raw.get("acq_date") or "").strip()
+        acquisition_time = str(raw.get("acq_time") or "").strip().zfill(4)
+        acquisition_datetime = None
+
+        if acquisition_date:
+            time_value = acquisition_time if acquisition_time.isdigit() else "0000"
+            acquisition_datetime = (
+                f"{acquisition_date}T{time_value[:2]}:{time_value[2:4]}:00Z"
+            )
+
+        rows.append(
+            {
+                "latitude": round(latitude, 6),
+                "longitude": round(longitude, 6),
+                "acquisition_date": acquisition_date or None,
+                "acquisition_time_utc": acquisition_time or None,
+                "acquisition_datetime_utc": acquisition_datetime,
+                "source": source,
+                "satellite": str(raw.get("satellite") or "").strip() or None,
+                "instrument": str(raw.get("instrument") or "").strip() or None,
+                "confidence": normalize_firms_confidence(
+                    raw.get("confidence")
+                ),
+                "frp": parse_optional_float(raw.get("frp")),
+                "daynight": str(raw.get("daynight") or "").strip() or None,
+                "brightness": parse_optional_float(
+                    raw.get("bright_ti4")
+                    or raw.get("brightness")
+                ),
+                "scan": parse_optional_float(raw.get("scan")),
+                "track": parse_optional_float(raw.get("track")),
+            }
+        )
+
+    return rows
+
+
+def deduplicate_firms_hotspots(
+    hotspots: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    unique: dict[tuple[Any, ...], dict[str, Any]] = {}
+
+    for hotspot in hotspots:
+        key = (
+            round(float(hotspot["latitude"]), 4),
+            round(float(hotspot["longitude"]), 4),
+            hotspot.get("acquisition_date"),
+            hotspot.get("acquisition_time_utc"),
+            hotspot.get("source"),
+        )
+        unique[key] = hotspot
+
+    return list(unique.values())
+
+
+def query_firms_hotspots(
+    *,
+    map_key: str,
+    bbox: list[float],
+    after_acquisition_date: date,
+) -> dict[str, Any]:
+    start_date = after_acquisition_date - timedelta(days=2)
+    all_hotspots: list[dict[str, Any]] = []
+    source_results: list[dict[str, Any]] = []
+    errors: list[str] = []
+
+    for source in FIRMS_SOURCES:
+        url = build_firms_area_url(
+            map_key=map_key,
+            source=source,
+            bbox=bbox,
+            start_date=start_date,
+        )
+
+        try:
+            rows = parse_firms_rows(
+                csv_text=download_firms_csv(url),
+                source=source,
+            )
+            all_hotspots.extend(rows)
+            source_results.append(
+                {
+                    "source": source,
+                    "status": "completed",
+                    "hotspot_count": len(rows),
+                }
+            )
+        except Exception as error:
+            errors.append(f"{source}: {error}")
+            source_results.append(
+                {
+                    "source": source,
+                    "status": "failed",
+                    "hotspot_count": 0,
+                    "error": str(error),
+                }
+            )
+
+    deduplicated = deduplicate_firms_hotspots(all_hotspots)
+    completed_sources = sum(
+        1 for result in source_results
+        if result["status"] == "completed"
+    )
+
+    return {
+        "status": (
+            "completed"
+            if completed_sources == len(FIRMS_SOURCES)
+            else "partial"
+            if completed_sources > 0
+            else "failed"
+        ),
+        "provider": "NASA LANCE FIRMS",
+        "window_start": start_date.isoformat(),
+        "window_end": (
+            start_date + timedelta(days=FIRMS_DAY_RANGE - 1)
+        ).isoformat(),
+        "day_range": FIRMS_DAY_RANGE,
+        "sources": source_results,
+        "hotspot_count": len(deduplicated),
+        "hotspots": deduplicated,
+        "errors": errors,
+    }
+
+
+def point_inside_geo_bbox(
+    *,
+    latitude: float,
+    longitude: float,
+    bbox_geo: list[float] | None,
+) -> bool:
+    if not bbox_geo or len(bbox_geo) != 4:
+        return False
+
+    west, south, east, north = [float(value) for value in bbox_geo]
+    return west <= longitude <= east and south <= latitude <= north
+
+
+def summarize_firms_hotspot(
+    hotspot: dict[str, Any],
+    *,
+    distance_km: float,
+    inside_region: bool,
+) -> dict[str, Any]:
+    return {
+        "latitude": hotspot["latitude"],
+        "longitude": hotspot["longitude"],
+        "acquisition_datetime_utc": hotspot.get(
+            "acquisition_datetime_utc"
+        ),
+        "source": hotspot.get("source"),
+        "satellite": hotspot.get("satellite"),
+        "instrument": hotspot.get("instrument"),
+        "confidence": hotspot.get("confidence"),
+        "frp": (
+            round(float(hotspot["frp"]), 3)
+            if hotspot.get("frp") is not None
+            else None
+        ),
+        "daynight": hotspot.get("daynight"),
+        "distance_km": round(distance_km, 3),
+        "inside_region_bbox": bool(inside_region),
+    }
+
+
+def correlate_firms_with_regions(
+    *,
+    change_detection: dict[str, Any],
+    firms_result: dict[str, Any],
+) -> dict[str, Any]:
+    hotspots = firms_result.get("hotspots") or []
+    regions = change_detection.get("regions") or []
+
+    total_inside = 0
+    total_nearby = 0
+    correlated_regions = 0
+
+    for region in regions:
+        centroid = region.get("centroid") or {}
+        centroid_lat = parse_optional_float(centroid.get("lat"))
+        centroid_lon = parse_optional_float(centroid.get("lon"))
+        bbox_geo = region.get("bbox_geo")
+
+        matches: list[dict[str, Any]] = []
+
+        if centroid_lat is not None and centroid_lon is not None:
+            for hotspot in hotspots:
+                latitude = float(hotspot["latitude"])
+                longitude = float(hotspot["longitude"])
+                inside = point_inside_geo_bbox(
+                    latitude=latitude,
+                    longitude=longitude,
+                    bbox_geo=bbox_geo,
+                )
+                distance_km = haversine_distance_km(
+                    centroid_lat,
+                    centroid_lon,
+                    latitude,
+                    longitude,
+                )
+
+                if inside or distance_km <= FIRMS_NEARBY_DISTANCE_KM:
+                    matches.append(
+                        summarize_firms_hotspot(
+                            hotspot,
+                            distance_km=distance_km,
+                            inside_region=inside,
+                        )
+                    )
+
+        matches.sort(
+            key=lambda item: (
+                not item["inside_region_bbox"],
+                item["distance_km"],
+            )
+        )
+        inside_count = sum(
+            1 for item in matches if item["inside_region_bbox"]
+        )
+        nearby_count = len(matches) - inside_count
+
+        if inside_count:
+            classification = "INSIDE"
+        elif nearby_count:
+            classification = "NEARBY"
+        else:
+            classification = "NONE"
+
+        total_inside += inside_count
+        total_nearby += nearby_count
+        if classification != "NONE":
+            correlated_regions += 1
+
+        region["firms_correlation"] = {
+            "classification": classification,
+            "inside_hotspot_count": inside_count,
+            "nearby_hotspot_count": nearby_count,
+            "nearest_distance_km": (
+                matches[0]["distance_km"] if matches else None
+            ),
+            "hotspots": matches[:10],
+            "note": (
+                "A FIRMS hőpont térbeli-időbeli korrelációt jelez, "
+                "de önmagában nem bizonyít támadást vagy káreseményt."
+            ),
+        }
+
+    return {
+        "status": firms_result.get("status", "unknown"),
+        "provider": firms_result.get("provider"),
+        "window_start": firms_result.get("window_start"),
+        "window_end": firms_result.get("window_end"),
+        "sources": firms_result.get("sources", []),
+        "aoi_hotspot_count": firms_result.get("hotspot_count", 0),
+        "regions_with_correlation": correlated_regions,
+        "inside_region_hotspot_matches": total_inside,
+        "nearby_hotspot_matches": total_nearby,
+        "nearby_threshold_km": FIRMS_NEARBY_DISTANCE_KM,
+        "errors": firms_result.get("errors", []),
+        "interpretation": (
+            "spatiotemporal_screening_indicator_requires_analyst_review"
+        ),
+    }
+
+
+def enrich_change_detection_with_firms(
+    *,
+    change_detection: dict[str, Any],
+    bbox: list[float],
+    after_scene: dict[str, Any],
+) -> dict[str, Any]:
+    map_key = os.environ.get("FIRMS_KEY", "").strip()
+
+    if not map_key:
+        change_detection["firms_correlation"] = {
+            "status": "unavailable",
+            "reason": "FIRMS_KEY environment variable is not configured.",
+            "provider": "NASA LANCE FIRMS",
+        }
+        return change_detection
+
+    acquisition_value = (
+        after_scene.get("acquisition_date")
+        or str(after_scene.get("acquisition_datetime") or "")[:10]
+    )
+
+    try:
+        acquisition_date = date.fromisoformat(str(acquisition_value))
+    except ValueError:
+        change_detection["firms_correlation"] = {
+            "status": "unavailable",
+            "reason": "AFTER acquisition date is invalid.",
+            "provider": "NASA LANCE FIRMS",
+        }
+        return change_detection
+
+    try:
+        firms_result = query_firms_hotspots(
+            map_key=map_key,
+            bbox=bbox,
+            after_acquisition_date=acquisition_date,
+        )
+        change_detection["firms_correlation"] = (
+            correlate_firms_with_regions(
+                change_detection=change_detection,
+                firms_result=firms_result,
+            )
+        )
+    except Exception as error:
+        change_detection["firms_correlation"] = {
+            "status": "failed",
+            "provider": "NASA LANCE FIRMS",
+            "reason": str(error),
+        }
+
+    return change_detection
 
 
 
@@ -1479,6 +1934,21 @@ def main() -> None:
         radius_km=radius_km,
         bbox=bbox,
     )
+
+    print("Correlating change regions with NASA FIRMS hotspots...")
+    change_detection = enrich_change_detection_with_firms(
+        change_detection=change_detection,
+        bbox=bbox,
+        after_scene=after_scene,
+    )
+    firms_status = (
+        change_detection.get("firms_correlation", {}).get(
+            "status",
+            "unknown",
+        )
+    )
+    print(f"FIRMS correlation status: {firms_status}")
+
     print(
         "Change detection completed: "
         f"score={change_detection['score']}/100 | "
