@@ -100,6 +100,7 @@ jobs:
         env:
           SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
           SENTINELHUB_CLIENT_SECRET: ${{ secrets.SENTINELHUB_CLIENT_SECRET }}
+          FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
         run: |
           set -euo pipefail
 
@@ -113,7 +114,12 @@ jobs:
             exit 1
           }
 
-          echo "Required Sentinel Hub secrets are configured."
+          test -n "$FIRMS_KEY" || {
+            echo "::error::Missing repository secret: FIRMS_KEY"
+            exit 1
+          }
+
+          echo "Required Sentinel Hub and NASA FIRMS secrets are configured."
 
       - name: Validate shared settings and target list
         id: validation
@@ -268,6 +274,7 @@ jobs:
         env:
           SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
           SENTINELHUB_CLIENT_SECRET: ${{ secrets.SENTINELHUB_CLIENT_SECRET }}
+          FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
           TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
           TARGET_DATE: ${{ inputs.target_date }}
           COMPARISON_DAYS: ${{ inputs.comparison_days }}
@@ -591,6 +598,26 @@ jobs:
                       "changed_pixel_percent": changed_percent,
                       "significant_regions": regions,
                       "change_map": str(change_map_path),
+                      "firms_status": str(
+                          (change.get("firms_correlation") or {}).get(
+                              "status",
+                              "unavailable",
+                          )
+                      ),
+                      "firms_aoi_hotspots": int(
+                          (change.get("firms_correlation") or {}).get(
+                              "aoi_hotspot_count",
+                              0,
+                          )
+                          or 0
+                      ),
+                      "firms_correlated_regions": int(
+                          (change.get("firms_correlation") or {}).get(
+                              "regions_with_correlation",
+                              0,
+                          )
+                          or 0
+                      ),
                   }
               )
 
@@ -621,7 +648,10 @@ jobs:
                   f"changed={result['changed_pixel_percent']}%, "
                   f"comparability={result['comparability']} "
                   f"({result['comparability_score']}%), "
-                  f"regions={result['significant_regions']}"
+                  f"regions={result['significant_regions']}, "
+                  f"FIRMS={result['firms_status']}, "
+                  f"hotspots={result['firms_aoi_hotspots']}, "
+                  f"correlated_regions={result['firms_correlated_regions']}"
               )
           PY
 
@@ -715,8 +745,9 @@ jobs:
                       "### Automatic visual change indication",
                       "",
                       "| Location | Score | Level | Changed pixels | "
-                      "Comparability | Regions |",
-                      "|---|---:|---|---:|---|---:|",
+                      "Comparability | Regions | FIRMS | Hotspots | "
+                      "Correlated regions |",
+                      "|---|---:|---|---:|---|---:|---|---:|---:|",
                   ]
               )
 
@@ -728,7 +759,10 @@ jobs:
                       f"| {result['changed_pixel_percent']:.2f}% "
                       f"| {result['comparability']} "
                       f"({result['comparability_score']:.1f}%) "
-                      f"| {result['significant_regions']} |"
+                      f"| {result['significant_regions']} "
+                      f"| {result.get('firms_status', 'unavailable')} "
+                      f"| {result.get('firms_aoi_hotspots', 0)} "
+                      f"| {result.get('firms_correlated_regions', 0)} |"
                   )
 
               lines.extend(
@@ -737,6 +771,10 @@ jobs:
                       "> The output is an automatic visual change "
                       "indication. It does not by itself confirm damage, "
                       "military activity, or the cause of a detected change.",
+                      "",
+                      "> FIRMS correlation is a spatial-temporal screening "
+                      "indicator. A hotspot does not by itself prove an "
+                      "attack, fire cause, or physical damage.",
                       "",
                   ]
               )
@@ -760,4 +798,3 @@ jobs:
           with summary_path.open("a", encoding="utf-8") as handle:
               handle.write("\n".join(lines))
           PY
-
