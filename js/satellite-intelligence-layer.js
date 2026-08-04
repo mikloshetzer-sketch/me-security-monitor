@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.2.0";
+  const MODULE_VERSION = "1.3.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -455,6 +455,153 @@
         background: #0f172a;
       }
 
+
+      .me-satellite-region-section {
+        margin-top: 14px;
+        border: 1px solid #dbe4ee;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .me-satellite-region-section__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 11px 12px;
+        border-bottom: 1px solid #e2e8f0;
+        background: #f8fafc;
+      }
+
+      .me-satellite-region-section__title {
+        color: #0f172a;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .me-satellite-region-section__hint {
+        color: #64748b;
+        font-size: 11px;
+        text-align: right;
+      }
+
+      .me-satellite-region-list {
+        display: grid;
+        gap: 7px;
+        max-height: 360px;
+        overflow-y: auto;
+        padding: 9px;
+      }
+
+      .me-satellite-region-item {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 9px 10px;
+        border: 1px solid #dbe4ee;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #334155;
+        cursor: pointer;
+        text-align: left;
+        transition:
+          border-color .15s ease,
+          box-shadow .15s ease,
+          transform .15s ease;
+      }
+
+      .me-satellite-region-item:hover,
+      .me-satellite-region-item:focus-visible {
+        border-color: #2563eb;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, .14);
+        outline: none;
+        transform: translateY(-1px);
+      }
+
+      .me-satellite-region-item.is-active {
+        border-color: #dc2626;
+        background: #fff7f7;
+        box-shadow: 0 0 0 2px rgba(220, 38, 38, .12);
+      }
+
+      .me-satellite-region-item__id {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        border-radius: 8px;
+        background: #0f172a;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .me-satellite-region-item__main {
+        min-width: 0;
+      }
+
+      .me-satellite-region-item__title {
+        display: block;
+        color: #0f172a;
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .me-satellite-region-item__meta {
+        display: block;
+        margin-top: 3px;
+        color: #64748b;
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      .me-satellite-region-item__size {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 70px;
+        padding: 5px 7px;
+        border-radius: 999px;
+        background: #eef2ff;
+        color: #3730a3;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .me-satellite-region-highlight-label {
+        padding: 3px 7px;
+        border: 1px solid rgba(15, 23, 42, .35);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, .96);
+        color: #991b1b;
+        font-size: 11px;
+        font-weight: 900;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, .18);
+      }
+
+      @media (max-width: 640px) {
+        .me-satellite-region-item {
+          grid-template-columns: 40px minmax(0, 1fr);
+        }
+
+        .me-satellite-region-item__size {
+          grid-column: 2;
+          justify-self: start;
+        }
+
+        .me-satellite-region-section__header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .me-satellite-region-section__hint {
+          text-align: left;
+        }
+      }
+
       .me-satellite-change-note {
         margin-top: 11px;
         color: #64748b;
@@ -773,7 +920,29 @@
         source.map_url,
         source.image_url,
         ""
-      ))
+      )),
+      regions: Array.isArray(source.regions)
+        ? source.regions
+            .filter((region) => region && typeof region === "object")
+            .map((region, index) => ({
+              id: String(firstDefined(region.id, `R${String(index + 1).padStart(2, "0")}`)),
+              rank: toNumber(firstDefined(region.rank, index + 1)),
+              area_pixels: toNumber(region.area_pixels),
+              area_percent: toNumber(region.area_percent),
+              area_km2_estimate: toNumber(region.area_km2_estimate),
+              relative_size: String(firstDefined(region.relative_size, "UNKNOWN")).toUpperCase(),
+              centroid: {
+                lat: toNumber(region.centroid?.lat),
+                lon: toNumber(firstDefined(region.centroid?.lon, region.centroid?.lng))
+              },
+              bbox_geo: Array.isArray(region.bbox_geo)
+                ? region.bbox_geo.map(Number)
+                : null,
+              mean_change_intensity: toNumber(region.mean_change_intensity),
+              max_change_intensity: toNumber(region.max_change_intensity),
+              interpretation: String(firstDefined(region.interpretation, "visual_change_candidate"))
+            }))
+        : []
     };
   }
 
@@ -846,6 +1015,7 @@
       visibleLocationSlugs: new Set(),
       markerControlsRoot: null,
       modalRoot: null,
+      regionHighlight: null,
       ready: false,
       loading: false,
       lastError: null
@@ -1283,6 +1453,7 @@
       const close = () => {
         backdrop.classList.remove("is-open");
         document.body.style.removeProperty("overflow");
+        clearRegionHighlight();
       };
 
       backdrop
@@ -1327,6 +1498,142 @@
             ${image}
           </div>
         </section>
+      `;
+    }
+
+
+    function regionBounds(region) {
+      const bbox = region?.bbox_geo;
+
+      if (
+        Array.isArray(bbox) &&
+        bbox.length === 4 &&
+        bbox.every((value) => Number.isFinite(Number(value)))
+      ) {
+        const [west, south, east, north] = bbox.map(Number);
+        return [[south, west], [north, east]];
+      }
+
+      const lat = toNumber(region?.centroid?.lat);
+      const lon = toNumber(region?.centroid?.lon);
+
+      if (lat !== null && lon !== null) {
+        const delta = 0.01;
+        return [[lat - delta, lon - delta], [lat + delta, lon + delta]];
+      }
+
+      return null;
+    }
+
+    function clearRegionHighlight() {
+      if (state.regionHighlight && map.hasLayer(state.regionHighlight)) {
+        map.removeLayer(state.regionHighlight);
+      }
+      state.regionHighlight = null;
+    }
+
+    function focusRegion(region, record) {
+      const bounds = regionBounds(region);
+      if (!bounds) return false;
+
+      clearRegionHighlight();
+
+      state.regionHighlight = L.rectangle(bounds, {
+        color: "#dc2626",
+        weight: 3,
+        opacity: 1,
+        fillColor: "#ef4444",
+        fillOpacity: 0.12,
+        dashArray: "7 5",
+        interactive: false,
+        pane: "overlayPane"
+      }).addTo(map);
+
+      state.regionHighlight.bindTooltip(
+        `${escapeHtml(region.id)} · ${formatMetric(region.area_km2_estimate, 3, " km²")}`,
+        {
+          permanent: true,
+          direction: "top",
+          className: "me-satellite-region-highlight-label"
+        }
+      ).openTooltip();
+
+      map.fitBounds(bounds, {
+        padding: [42, 42],
+        maxZoom: 15
+      });
+
+      state.selectedLocationSlug = record.location_slug;
+      state.selectedRecordId = record.id;
+      return true;
+    }
+
+    function buildRegionListHtml(change) {
+      if (!change.regions.length) {
+        return `
+          <div class="me-satellite-region-section">
+            <div class="me-satellite-region-section__header">
+              <span class="me-satellite-region-section__title">
+                Rangsorolt változási régiók
+              </span>
+            </div>
+            <div class="me-satellite-detail-box">
+              Ehhez a futáshoz még nem készült objektumalapú régiólista.
+              Futtasd a Sentinel-2 builder 3.1.0 vagy újabb verzióját.
+            </div>
+          </div>
+        `;
+      }
+
+      const items = change.regions.map((region) => {
+        const coordinate = (
+          region.centroid.lat !== null &&
+          region.centroid.lon !== null
+        )
+          ? `${region.centroid.lat.toFixed(6)}, ${region.centroid.lon.toFixed(6)}`
+          : "n/a";
+
+        return `
+          <button
+            type="button"
+            class="me-satellite-region-item"
+            data-me-satellite-region-id="${escapeHtml(region.id)}"
+          >
+            <span class="me-satellite-region-item__id">
+              ${escapeHtml(region.id)}
+            </span>
+            <span class="me-satellite-region-item__main">
+              <span class="me-satellite-region-item__title">
+                ${formatMetric(region.area_km2_estimate, 3, " km²")}
+                · ${escapeHtml(region.relative_size)}
+              </span>
+              <span class="me-satellite-region-item__meta">
+                Koordináta: ${escapeHtml(coordinate)}<br>
+                Területi arány: ${formatMetric(region.area_percent, 3, "%")}
+                · Intenzitás: ${formatMetric(region.mean_change_intensity, 3)}
+              </span>
+            </span>
+            <span class="me-satellite-region-item__size">
+              #${formatMetric(region.rank, 0)}
+            </span>
+          </button>
+        `;
+      }).join("");
+
+      return `
+        <div class="me-satellite-region-section">
+          <div class="me-satellite-region-section__header">
+            <span class="me-satellite-region-section__title">
+              Rangsorolt változási régiók (${change.regions.length})
+            </span>
+            <span class="me-satellite-region-section__hint">
+              Kattintásra térképi nagyítás és kiemelés
+            </span>
+          </div>
+          <div class="me-satellite-region-list">
+            ${items}
+          </div>
+        </div>
       `;
     }
 
@@ -1409,6 +1716,8 @@
             </div>
 
             ${warnings}
+
+            ${buildRegionListHtml(change)}
 
             ${changeMapUrl ? `
               <img
@@ -1562,6 +1871,26 @@
               image_url: resolveAssetUrl(change.change_map_url)
             };
             showRecord(changeRecord, { fitBounds: true });
+          });
+
+        const normalizedChange = normalizeChangeDetection(record);
+        body
+          .querySelectorAll("[data-me-satellite-region-id]")
+          .forEach((button) => {
+            button.addEventListener("click", () => {
+              const regionId = button.dataset.meSatelliteRegionId;
+              const region = normalizedChange?.regions.find(
+                (item) => item.id === regionId
+              );
+              if (!region) return;
+
+              body
+                .querySelectorAll(".me-satellite-region-item.is-active")
+                .forEach((item) => item.classList.remove("is-active"));
+
+              button.classList.add("is-active");
+              focusRegion(region, record);
+            });
           });
       }
 
@@ -1829,6 +2158,7 @@
       },
       destroy() {
         removeOverlay();
+        clearRegionHighlight();
         removeAllLocationMarkers();
         if (map.hasLayer(state.markerLayer)) map.removeLayer(state.markerLayer);
         if (state.baseLayer && map.hasLayer(state.baseLayer)) map.removeLayer(state.baseLayer);
