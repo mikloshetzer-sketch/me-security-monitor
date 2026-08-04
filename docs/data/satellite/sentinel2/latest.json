@@ -1,11 +1,11 @@
 {
-  "id": "bandar-abbas_2026-07-31_2026-08-04T190057Z",
-  "generated_at": "2026-08-04T19:00:58Z",
+  "id": "bandar-abbas_2026-07-31_2026-08-04T193917Z",
+  "generated_at": "2026-08-04T19:39:17Z",
   "timestamp": "2026-07-31T07:02:09.226000Z",
   "provider": "sentinel2",
   "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
   "product": "Sentinel-2 L2A True Color",
-  "workflow_version": "3.0.0",
+  "workflow_version": "3.1.0",
   "location_name": "Bandar Abbas",
   "location_slug": "bandar-abbas",
   "requested_date": "2026-08-01",
@@ -34,7 +34,7 @@
     56.387782,
     27.290997
   ],
-  "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
+  "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
   "before": {
     "role": "before",
     "requested_date": "2026-07-02",
@@ -45,7 +45,7 @@
     "cloud_cover_percent": 3.3,
     "catalog_feature_id": "S2B_MSIL2A_20260701T064619_N0512_R020_T40RDQ_20260701T104133.SAFE",
     "catalog_candidate_count": 4,
-    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T190057Z.png"
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png"
   },
   "after": {
     "role": "after",
@@ -57,12 +57,12 @@
     "cloud_cover_percent": 16.61,
     "catalog_feature_id": "S2B_MSIL2A_20260731T064629_N0512_R020_T40RDQ_20260731T104009.SAFE",
     "catalog_candidate_count": 2,
-    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png"
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png"
   },
   "change_detection": {
     "status": "completed",
     "engine": "ME Satellite Visual Change Detector",
-    "engine_version": "1.0.0",
+    "engine_version": "1.1.0",
     "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
     "interpretation": "automatic_visual_change_indication",
     "score": 36.3,
@@ -74,21 +74,801 @@
     "changed_pixel_percent": 6.5146,
     "changed_area_km2_estimate": 29.4716,
     "significant_regions": 112,
+    "region_records_returned": 25,
+    "regions_truncated": true,
+    "regions": [
+      {
+        "id": "R01",
+        "rank": 1,
+        "area_pixels": 13805.0,
+        "area_percent": 1.31655,
+        "area_km2_estimate": 5.95592,
+        "relative_size": "LARGE",
+        "centroid_pixel": {
+          "x": 764.52,
+          "y": 74.21
+        },
+        "centroid": {
+          "lat": 27.275357,
+          "lon": 56.326545
+        },
+        "bbox_pixel": {
+          "x": 616,
+          "y": 0,
+          "width": 236,
+          "height": 174
+        },
+        "bbox_geo": [
+          56.291358,
+          27.254327,
+          56.34727,
+          27.290997
+        ],
+        "mean_change_intensity": 0.625804,
+        "max_change_intensity": 0.889726,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R02",
+        "rank": 2,
+        "area_pixels": 3894.5,
+        "area_percent": 0.37141,
+        "area_km2_estimate": 1.68021,
+        "relative_size": "LARGE",
+        "centroid_pixel": {
+          "x": 663.34,
+          "y": 115.62
+        },
+        "centroid": {
+          "lat": 27.266631,
+          "lon": 56.302574
+        },
+        "bbox_pixel": {
+          "x": 613,
+          "y": 79,
+          "width": 101,
+          "height": 86
+        },
+        "bbox_geo": [
+          56.290647,
+          27.256224,
+          56.314575,
+          27.274348
+        ],
+        "mean_change_intensity": 0.576326,
+        "max_change_intensity": 0.877293,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R03",
+        "rank": 3,
+        "area_pixels": 3239.0,
+        "area_percent": 0.3089,
+        "area_km2_estimate": 1.39741,
+        "relative_size": "LARGE",
+        "centroid_pixel": {
+          "x": 516.48,
+          "y": 80.46
+        },
+        "centroid": {
+          "lat": 27.274041,
+          "lon": 56.267781
+        },
+        "bbox_pixel": {
+          "x": 480,
+          "y": 49,
+          "width": 72,
+          "height": 71
+        },
+        "bbox_geo": [
+          56.259137,
+          27.265707,
+          56.276195,
+          27.28067
+        ],
+        "mean_change_intensity": 0.620698,
+        "max_change_intensity": 0.865882,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R04",
+        "rank": 4,
+        "area_pixels": 2334.5,
+        "area_percent": 0.22264,
+        "area_km2_estimate": 1.00718,
+        "relative_size": "LARGE",
+        "centroid_pixel": {
+          "x": 149.42,
+          "y": 167.61
+        },
+        "centroid": {
+          "lat": 27.255673,
+          "lon": 56.180818
+        },
+        "bbox_pixel": {
+          "x": 112,
+          "y": 138,
+          "width": 76,
+          "height": 62
+        },
+        "bbox_geo": [
+          56.171952,
+          27.248848,
+          56.189958,
+          27.261914
+        ],
+        "mean_change_intensity": 0.606213,
+        "max_change_intensity": 0.879294,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R05",
+        "rank": 5,
+        "area_pixels": 2251.5,
+        "area_percent": 0.21472,
+        "area_km2_estimate": 0.97137,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 316.92,
+          "y": 149.22
+        },
+        "centroid": {
+          "lat": 27.25955,
+          "lon": 56.220501
+        },
+        "bbox_pixel": {
+          "x": 280,
+          "y": 125,
+          "width": 74,
+          "height": 58
+        },
+        "bbox_geo": [
+          56.211754,
+          27.25243,
+          56.229286,
+          27.264654
+        ],
+        "mean_change_intensity": 0.604164,
+        "max_change_intensity": 0.865882,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R06",
+        "rank": 6,
+        "area_pixels": 1932.0,
+        "area_percent": 0.18425,
+        "area_km2_estimate": 0.83353,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 318.51,
+          "y": 210.41
+        },
+        "centroid": {
+          "lat": 27.246654,
+          "lon": 56.220877
+        },
+        "bbox_pixel": {
+          "x": 290,
+          "y": 181,
+          "width": 61,
+          "height": 57
+        },
+        "bbox_geo": [
+          56.214123,
+          27.240839,
+          56.228575,
+          27.252852
+        ],
+        "mean_change_intensity": 0.569818,
+        "max_change_intensity": 0.84651,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R07",
+        "rank": 7,
+        "area_pixels": 1427.5,
+        "area_percent": 0.13614,
+        "area_km2_estimate": 0.61587,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 439.78,
+          "y": 224.96
+        },
+        "centroid": {
+          "lat": 27.243587,
+          "lon": 56.249609
+        },
+        "bbox_pixel": {
+          "x": 413,
+          "y": 199,
+          "width": 52,
+          "height": 50
+        },
+        "bbox_geo": [
+          56.243264,
+          27.238521,
+          56.255583,
+          27.249058
+        ],
+        "mean_change_intensity": 0.528962,
+        "max_change_intensity": 0.803294,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R08",
+        "rank": 8,
+        "area_pixels": 1393.5,
+        "area_percent": 0.13289,
+        "area_km2_estimate": 0.6012,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 703.75,
+          "y": 162.35
+        },
+        "centroid": {
+          "lat": 27.256781,
+          "lon": 56.312147
+        },
+        "bbox_pixel": {
+          "x": 680,
+          "y": 142,
+          "width": 48,
+          "height": 42
+        },
+        "bbox_geo": [
+          56.30652,
+          27.25222,
+          56.317892,
+          27.261071
+        ],
+        "mean_change_intensity": 0.606716,
+        "max_change_intensity": 0.864392,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R09",
+        "rank": 9,
+        "area_pixels": 1338.0,
+        "area_percent": 0.1276,
+        "area_km2_estimate": 0.57726,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 112.24,
+          "y": 238.27
+        },
+        "centroid": {
+          "lat": 27.240782,
+          "lon": 56.17201
+        },
+        "bbox_pixel": {
+          "x": 87,
+          "y": 217,
+          "width": 50,
+          "height": 47
+        },
+        "bbox_geo": [
+          56.16603,
+          27.23536,
+          56.177875,
+          27.245265
+        ],
+        "mean_change_intensity": 0.61654,
+        "max_change_intensity": 0.848,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R10",
+        "rank": 10,
+        "area_pixels": 1322.0,
+        "area_percent": 0.12608,
+        "area_km2_estimate": 0.57035,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 233.0,
+          "y": 987.96
+        },
+        "centroid": {
+          "lat": 27.082788,
+          "lon": 56.200619
+        },
+        "bbox_pixel": {
+          "x": 163,
+          "y": 967,
+          "width": 141,
+          "height": 37
+        },
+        "bbox_geo": [
+          56.184035,
+          27.079407,
+          56.21744,
+          27.087205
+        ],
+        "mean_change_intensity": 0.530424,
+        "max_change_intensity": 0.684078,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R11",
+        "rank": 11,
+        "area_pixels": 1226.5,
+        "area_percent": 0.11697,
+        "area_km2_estimate": 0.52915,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 220.26,
+          "y": 210.43
+        },
+        "centroid": {
+          "lat": 27.24665,
+          "lon": 56.1976
+        },
+        "bbox_pixel": {
+          "x": 197,
+          "y": 191,
+          "width": 55,
+          "height": 38
+        },
+        "bbox_geo": [
+          56.19209,
+          27.242736,
+          56.205121,
+          27.250744
+        ],
+        "mean_change_intensity": 0.619872,
+        "max_change_intensity": 0.876314,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R12",
+        "rank": 12,
+        "area_pixels": 1114.0,
+        "area_percent": 0.10624,
+        "area_km2_estimate": 0.48062,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 1006.24,
+          "y": 591.12
+        },
+        "centroid": {
+          "lat": 27.166421,
+          "lon": 56.383811
+        },
+        "bbox_pixel": {
+          "x": 979,
+          "y": 562,
+          "width": 45,
+          "height": 50
+        },
+        "bbox_geo": [
+          56.377358,
+          27.16202,
+          56.388019,
+          27.172557
+        ],
+        "mean_change_intensity": 0.503114,
+        "max_change_intensity": 0.730275,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R13",
+        "rank": 13,
+        "area_pixels": 998.0,
+        "area_percent": 0.09518,
+        "area_km2_estimate": 0.43057,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 452.84,
+          "y": 658.37
+        },
+        "centroid": {
+          "lat": 27.152248,
+          "lon": 56.252702
+        },
+        "bbox_pixel": {
+          "x": 416,
+          "y": 636,
+          "width": 79,
+          "height": 60
+        },
+        "bbox_geo": [
+          56.243975,
+          27.144317,
+          56.262691,
+          27.156962
+        ],
+        "mean_change_intensity": 0.4614,
+        "max_change_intensity": 0.69898,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R14",
+        "rank": 14,
+        "area_pixels": 988.0,
+        "area_percent": 0.09422,
+        "area_km2_estimate": 0.42625,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 95.0,
+          "y": 57.33
+        },
+        "centroid": {
+          "lat": 27.278914,
+          "lon": 56.167925
+        },
+        "bbox_pixel": {
+          "x": 73,
+          "y": 36,
+          "width": 47,
+          "height": 44
+        },
+        "bbox_geo": [
+          56.162713,
+          27.274137,
+          56.173848,
+          27.28341
+        ],
+        "mean_change_intensity": 0.583177,
+        "max_change_intensity": 0.821176,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R15",
+        "rank": 15,
+        "area_pixels": 883.5,
+        "area_percent": 0.08426,
+        "area_km2_estimate": 0.38117,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 421.73,
+          "y": 155.25
+        },
+        "centroid": {
+          "lat": 27.25828,
+          "lon": 56.245332
+        },
+        "bbox_pixel": {
+          "x": 395,
+          "y": 140,
+          "width": 63,
+          "height": 30
+        },
+        "bbox_geo": [
+          56.238999,
+          27.25517,
+          56.253925,
+          27.261492
+        ],
+        "mean_change_intensity": 0.59187,
+        "max_change_intensity": 0.898667,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R16",
+        "rank": 16,
+        "area_pixels": 880.5,
+        "area_percent": 0.08397,
+        "area_km2_estimate": 0.37988,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 245.88,
+          "y": 270.94
+        },
+        "centroid": {
+          "lat": 27.233897,
+          "lon": 56.20367
+        },
+        "bbox_pixel": {
+          "x": 224,
+          "y": 255,
+          "width": 46,
+          "height": 31
+        },
+        "bbox_geo": [
+          56.198487,
+          27.230723,
+          56.209385,
+          27.237257
+        ],
+        "mean_change_intensity": 0.607163,
+        "max_change_intensity": 0.828627,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R17",
+        "rank": 17,
+        "area_pixels": 753.0,
+        "area_percent": 0.07181,
+        "area_km2_estimate": 0.32487,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 904.24,
+          "y": 74.33
+        },
+        "centroid": {
+          "lat": 27.275333,
+          "lon": 56.359647
+        },
+        "bbox_pixel": {
+          "x": 885,
+          "y": 54,
+          "width": 38,
+          "height": 39
+        },
+        "bbox_geo": [
+          56.355088,
+          27.271398,
+          56.364091,
+          27.279617
+        ],
+        "mean_change_intensity": 0.594044,
+        "max_change_intensity": 0.904627,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R18",
+        "rank": 18,
+        "area_pixels": 722.0,
+        "area_percent": 0.06886,
+        "area_km2_estimate": 0.31149,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 537.4,
+          "y": 736.06
+        },
+        "centroid": {
+          "lat": 27.135874,
+          "lon": 56.272736
+        },
+        "bbox_pixel": {
+          "x": 499,
+          "y": 717,
+          "width": 73,
+          "height": 45
+        },
+        "bbox_geo": [
+          56.263639,
+          27.130408,
+          56.280933,
+          27.139892
+        ],
+        "mean_change_intensity": 0.473767,
+        "max_change_intensity": 0.655021,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R19",
+        "rank": 19,
+        "area_pixels": 693.5,
+        "area_percent": 0.06614,
+        "area_km2_estimate": 0.2992,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 69.74,
+          "y": 1018.81
+        },
+        "centroid": {
+          "lat": 27.076286,
+          "lon": 56.161941
+        },
+        "bbox_pixel": {
+          "x": 9,
+          "y": 1008,
+          "width": 114,
+          "height": 16
+        },
+        "bbox_geo": [
+          56.14755,
+          27.075192,
+          56.174559,
+          27.078564
+        ],
+        "mean_change_intensity": 0.528914,
+        "max_change_intensity": 0.69302,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R20",
+        "rank": 20,
+        "area_pixels": 625.5,
+        "area_percent": 0.05965,
+        "area_km2_estimate": 0.26986,
+        "relative_size": "MEDIUM",
+        "centroid_pixel": {
+          "x": 392.07,
+          "y": 61.59
+        },
+        "centroid": {
+          "lat": 27.278017,
+          "lon": 56.238305
+        },
+        "bbox_pixel": {
+          "x": 369,
+          "y": 49,
+          "width": 50,
+          "height": 29
+        },
+        "bbox_geo": [
+          56.23284,
+          27.274559,
+          56.244685,
+          27.28067
+        ],
+        "mean_change_intensity": 0.58628,
+        "max_change_intensity": 0.838248,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R21",
+        "rank": 21,
+        "area_pixels": 524.0,
+        "area_percent": 0.04997,
+        "area_km2_estimate": 0.22607,
+        "relative_size": "SMALL",
+        "centroid_pixel": {
+          "x": 326.17,
+          "y": 842.86
+        },
+        "centroid": {
+          "lat": 27.113368,
+          "lon": 56.222692
+        },
+        "bbox_pixel": {
+          "x": 299,
+          "y": 832,
+          "width": 54,
+          "height": 22
+        },
+        "bbox_geo": [
+          56.216256,
+          27.111019,
+          56.229049,
+          27.115656
+        ],
+        "mean_change_intensity": 0.501378,
+        "max_change_intensity": 0.684078,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R22",
+        "rank": 22,
+        "area_pixels": 523.0,
+        "area_percent": 0.04988,
+        "area_km2_estimate": 0.22564,
+        "relative_size": "SMALL",
+        "centroid_pixel": {
+          "x": 250.12,
+          "y": 121.49
+        },
+        "centroid": {
+          "lat": 27.265393,
+          "lon": 56.204675
+        },
+        "bbox_pixel": {
+          "x": 226,
+          "y": 111,
+          "width": 45,
+          "height": 23
+        },
+        "bbox_geo": [
+          56.198961,
+          27.262757,
+          56.209622,
+          27.267604
+        ],
+        "mean_change_intensity": 0.546011,
+        "max_change_intensity": 0.769856,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R23",
+        "rank": 23,
+        "area_pixels": 488.0,
+        "area_percent": 0.04654,
+        "area_km2_estimate": 0.21054,
+        "relative_size": "SMALL",
+        "centroid_pixel": {
+          "x": 70.74,
+          "y": 116.88
+        },
+        "centroid": {
+          "lat": 27.266365,
+          "lon": 56.162178
+        },
+        "bbox_pixel": {
+          "x": 43,
+          "y": 107,
+          "width": 46,
+          "height": 22
+        },
+        "bbox_geo": [
+          56.155605,
+          27.263811,
+          56.166503,
+          27.268447
+        ],
+        "mean_change_intensity": 0.545474,
+        "max_change_intensity": 0.792863,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R24",
+        "rank": 24,
+        "area_pixels": 478.0,
+        "area_percent": 0.04559,
+        "area_km2_estimate": 0.20622,
+        "relative_size": "SMALL",
+        "centroid_pixel": {
+          "x": 13.4,
+          "y": 165.74
+        },
+        "centroid": {
+          "lat": 27.256067,
+          "lon": 56.148593
+        },
+        "bbox_pixel": {
+          "x": 0,
+          "y": 150,
+          "width": 31,
+          "height": 29
+        },
+        "bbox_geo": [
+          56.145418,
+          27.253273,
+          56.152762,
+          27.259385
+        ],
+        "mean_change_intensity": 0.574427,
+        "max_change_intensity": 0.794353,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      },
+      {
+        "id": "R25",
+        "rank": 25,
+        "area_pixels": 465.0,
+        "area_percent": 0.04435,
+        "area_km2_estimate": 0.20062,
+        "relative_size": "SMALL",
+        "centroid_pixel": {
+          "x": 585.77,
+          "y": 28.0
+        },
+        "centroid": {
+          "lat": 27.285095,
+          "lon": 56.284196
+        },
+        "bbox_pixel": {
+          "x": 570,
+          "y": 17,
+          "width": 32,
+          "height": 22
+        },
+        "bbox_geo": [
+          56.28046,
+          27.282778,
+          56.288041,
+          27.287414
+        ],
+        "mean_change_intensity": 0.581293,
+        "max_change_intensity": 0.806335,
+        "interpretation": "visual_change_candidate_requires_analyst_review"
+      }
+    ],
     "largest_region_percent": 1.3165,
     "largest_region_km2_estimate": 5.9559,
     "valid_pixel_percent": 100.0,
     "difference_threshold": 0.361496,
     "minimum_region_pixels": 83,
-    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T190057Z.png",
+    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png",
     "assessment": "A képpár több összefüggő vizuális eltérést jelez; emberi ellenőrzés indokolt. A jelentősnek minősített pixelek aránya 6.51%. Az összehasonlíthatóság: HIGH.",
     "warnings": [
       "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
     ],
-    "processing_time_seconds": 0.501,
+    "processing_time_seconds": 0.51,
     "limitations": [
       "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
       "Small objects and limited structural damage cannot be reliably resolved.",
-      "The change score is a screening indicator and requires analyst verification."
+      "The change score is a screening indicator and requires analyst verification.",
+      "Numbered regions are visual-change candidates, not automatically classified objects or events."
     ]
   },
   "comparison": {
@@ -97,17 +877,17 @@
     "requested_before_date": "2026-07-02",
     "comparison_days": 30,
     "search_tolerance_days": 5,
-    "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T190057Z.png",
-    "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
-    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T190057Z.png"
+    "before_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png",
+    "after_image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
+    "change_map_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png"
   },
   "imagery": {
     "image_available": true,
-    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
+    "image_url": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
     "latest_image": "data/satellite/sentinel2/latest.png",
-    "before_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T190057Z.png",
-    "after_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T190057Z.png",
-    "change_map": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T190057Z.png",
+    "before_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-01_before_2026-08-04T193917Z.png",
+    "after_image": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_after_2026-08-04T193917Z.png",
+    "change_map": "data/satellite/sentinel2/history/bandar-abbas/2026-07-31_change_2026-08-04T193917Z.png",
     "acquisition_date": "2026-07-31",
     "cloud_cover_percent": 16.61,
     "bounds": {
