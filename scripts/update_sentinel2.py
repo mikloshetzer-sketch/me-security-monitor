@@ -47,9 +47,9 @@ TOKEN_URL = (
     "protocol/openid-connect/token"
 )
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
-CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/catalog/1.0.0/search"
+CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "2.0"
+WORKFLOW_VERSION = "2.0.1"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 
