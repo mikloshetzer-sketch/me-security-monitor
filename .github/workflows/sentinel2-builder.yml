@@ -384,6 +384,33 @@ jobs:
               "after",
           )
 
+          def resolve_repo_file(url_value):
+              relative = str(url_value or "").strip().lstrip("./")
+
+              if not relative:
+                  return None
+
+              direct_path = Path(relative)
+
+              if direct_path.is_file():
+                  return direct_path
+
+              if relative.startswith("data/"):
+                  docs_path = Path("docs") / relative
+
+                  if docs_path.is_file():
+                      return docs_path
+
+              if relative.startswith("docs/"):
+                  return direct_path
+
+              fallback_path = Path("docs") / relative
+
+              if fallback_path.is_file():
+                  return fallback_path
+
+              return direct_path
+
           for record in archive:
               missing = [
                   field
@@ -406,21 +433,21 @@ jobs:
                           f"Archive record is missing {phase}.image_url"
                       )
 
-                  image_path = Path(str(phase_url).lstrip("./"))
+                  image_path = resolve_repo_file(phase_url)
 
-                  if not image_path.is_file():
+                  if image_path is None or not image_path.is_file():
                       raise SystemExit(
-                          f"{phase} image does not exist: {image_path}"
+                          f"{phase} image does not exist: "
+                          f"{phase_url} (resolved as {image_path})"
                       )
 
-              current_image = Path(
-                  str(record["image_url"]).lstrip("./")
-              )
+              current_image = resolve_repo_file(record["image_url"])
 
-              if not current_image.is_file():
+              if current_image is None or not current_image.is_file():
                   raise SystemExit(
                       "Top-level image_url does not resolve to a file: "
-                      f"{current_image}"
+                      f"{record['image_url']} "
+                      f"(resolved as {current_image})"
                   )
 
           archive_names = {
@@ -491,4 +518,4 @@ jobs:
             echo "- **Workflow result:** ${{ job.status }}"
             echo
             echo "Archive: docs/data/satellite/archive-index.json"
-          } >> "$GITHUB_STEP_SUMMARY"
+          } >> "$GITHUB_STEP_SUMMA
