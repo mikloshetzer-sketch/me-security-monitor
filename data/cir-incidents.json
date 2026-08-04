@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T09:11:57Z",
+  "generated_at": "2026-08-04T14:42:04Z",
   "status": "ok",
   "source": {
     "name": "Centre for Information Resilience",
@@ -14,20 +14,20 @@
     "analytical_note": "Rolling analytics use the latest event date in the dataset as the reference date."
   },
   "statistics": {
-    "arcgis_record_count": 2255,
-    "normalized_event_count": 2255,
+    "arcgis_record_count": 2280,
+    "normalized_event_count": 2280,
     "skipped_feature_count": 0,
     "category_counts": {
-      "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1111,
-      "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 555,
-      "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 535,
-      "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 54
+      "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1121,
+      "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 565,
+      "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 539,
+      "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 55
     },
     "location_counts": {
-      "OPT - Gaza Strip": 1059,
-      "OPT - West Bank": 529,
-      "Lebanon - Southern Border": 246,
-      "Lebanon": 239,
+      "OPT - Gaza Strip": 1067,
+      "OPT - West Bank": 537,
+      "Lebanon - Southern Border": 250,
+      "Lebanon": 244,
       "Israel": 103,
       "OPT - East Jerusalem": 52,
       "Israel - Northern Border": 27
@@ -37,76 +37,79 @@
     "status": "ok",
     "reference_basis": "All rolling periods are calculated relative to the latest event date in the CIR dataset, not the current date.",
     "overview": {
-      "total_incidents": 2255,
+      "total_incidents": 2280,
       "earliest_event_date": "2023-10-07",
-      "latest_event_date": "2026-04-25",
-      "coverage_days": 932,
+      "latest_event_date": "2026-07-22",
+      "coverage_days": 1020,
       "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
       "top_location": "Gaza City",
-      "casualty_related_count": 2255,
-      "ceasefire_monitoring_count": 82,
+      "casualty_related_count": 2280,
+      "ceasefire_monitoring_count": 98,
       "category_counts": {
-        "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1111,
-        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 555,
-        "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 535,
-        "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 54
+        "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1121,
+        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 565,
+        "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 539,
+        "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 55
       }
     },
     "periods": {
       "latest_day": {
-        "start_date": "2026-04-25",
-        "end_date": "2026-04-25",
+        "start_date": "2026-07-22",
+        "end_date": "2026-07-22",
         "days": 1,
         "incident_count": 1,
         "casualty_related_count": 1,
-        "ceasefire_monitoring_count": 1,
-        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
-        "top_location": "Gaza City",
+        "ceasefire_monitoring_count": 0,
+        "top_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+        "top_location": "Rafat",
         "category_counts": {
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1
         },
         "top_locations": [
           {
-            "name": "Gaza City",
+            "name": "Rafat",
             "count": 1
           }
         ],
         "top_zones": [
           {
-            "name": "OPT - Gaza Strip",
+            "name": "OPT - West Bank",
             "count": 1
           }
         ]
       },
       "latest_7_days": {
-        "start_date": "2026-04-19",
-        "end_date": "2026-04-25",
+        "start_date": "2026-07-16",
+        "end_date": "2026-07-22",
         "days": 7,
-        "incident_count": 7,
-        "casualty_related_count": 7,
-        "ceasefire_monitoring_count": 5,
-        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
-        "top_location": "Gaza City",
+        "incident_count": 6,
+        "casualty_related_count": 6,
+        "ceasefire_monitoring_count": 2,
+        "top_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+        "top_location": "Rafat",
         "category_counts": {
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 3,
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 3,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 3
         },
         "top_locations": [
           {
-            "name": "Gaza City",
-            "count": 2
-          },
-          {
-            "name": "Beit Lahia",
-            "count": 2
-          },
-          {
-            "name": "Al-Maghazi",
+            "name": "Rafat",
             "count": 1
           },
           {
-            "name": "Khan Younis",
+            "name": "Deir Jarir",
+            "count": 1
+          },
+          {
+            "name": "Chaqra",
+            "count": 1
+          },
+          {
+            "name": "al-Tuwani",
+            "count": 1
+          },
+          {
+            "name": "Ramallah",
             "count": 1
           },
           {
@@ -116,79 +119,46 @@
         ],
         "top_zones": [
           {
+            "name": "OPT - West Bank",
+            "count": 4
+          },
+          {
+            "name": "Lebanon - Southern Border",
+            "count": 1
+          },
+          {
             "name": "OPT - Gaza Strip",
-            "count": 7
+            "count": 1
           }
         ]
       },
       "previous_7_days": {
-        "start_date": "2026-04-12",
-        "end_date": "2026-04-18",
+        "start_date": "2026-07-09",
+        "end_date": "2026-07-15",
         "days": 7,
-        "incident_count": 12,
-        "casualty_related_count": 12,
-        "ceasefire_monitoring_count": 5,
+        "incident_count": 2,
+        "casualty_related_count": 2,
+        "ceasefire_monitoring_count": 1,
         "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
-        "top_location": "Bint Jbeil",
+        "top_location": "Debaal",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 8,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
         },
         "top_locations": [
           {
-            "name": "Bint Jbeil",
-            "count": 2
-          },
-          {
-            "name": "Gaza City",
-            "count": 2
-          },
-          {
-            "name": "Turmus Ayya",
+            "name": "Debaal",
             "count": 1
           },
           {
-            "name": "Meiss al-Jabal",
-            "count": 1
-          },
-          {
-            "name": "Marwaheen",
-            "count": 1
-          },
-          {
-            "name": "Al-Quzah",
-            "count": 1
-          },
-          {
-            "name": "Tibnine",
-            "count": 1
-          },
-          {
-            "name": "Tyre",
-            "count": 1
-          },
-          {
-            "name": "Naqoura",
-            "count": 1
-          },
-          {
-            "name": "Qana",
+            "name": "Deir Jarir",
             "count": 1
           }
         ],
         "top_zones": [
           {
-            "name": "Lebanon - Southern Border",
-            "count": 6
-          },
-          {
             "name": "Lebanon",
-            "count": 3
-          },
-          {
-            "name": "OPT - Gaza Strip",
-            "count": 2
+            "count": 1
           },
           {
             "name": "OPT - West Bank",
@@ -197,50 +167,42 @@
         ]
       },
       "latest_30_days": {
-        "start_date": "2026-03-27",
-        "end_date": "2026-04-25",
+        "start_date": "2026-06-23",
+        "end_date": "2026-07-22",
         "days": 30,
-        "incident_count": 39,
-        "casualty_related_count": 39,
-        "ceasefire_monitoring_count": 12,
-        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
-        "top_location": "Gaza City",
+        "incident_count": 11,
+        "casualty_related_count": 11,
+        "ceasefire_monitoring_count": 5,
+        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+        "top_location": "Deir Jarir",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 23,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 8,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 8
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 6,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2
         },
         "top_locations": [
           {
+            "name": "Deir Jarir",
+            "count": 2
+          },
+          {
             "name": "Gaza City",
-            "count": 4
-          },
-          {
-            "name": "Naqoura",
-            "count": 4
-          },
-          {
-            "name": "Bint Jbeil",
-            "count": 3
-          },
-          {
-            "name": "Tyre",
-            "count": 3
-          },
-          {
-            "name": "Al-Maghazi",
             "count": 2
           },
           {
-            "name": "Beit Lahia",
-            "count": 2
+            "name": "Rafat",
+            "count": 1
           },
           {
-            "name": "Beirut",
-            "count": 2
+            "name": "Chaqra",
+            "count": 1
           },
           {
-            "name": "Khan Younis",
+            "name": "al-Tuwani",
+            "count": 1
+          },
+          {
+            "name": "Ramallah",
             "count": 1
           },
           {
@@ -248,209 +210,125 @@
             "count": 1
           },
           {
-            "name": "Turmus Ayya",
+            "name": "Debaal",
             "count": 1
           },
           {
-            "name": "Meiss al-Jabal",
-            "count": 1
-          },
-          {
-            "name": "Marwaheen",
-            "count": 1
-          },
-          {
-            "name": "Al-Quzah",
-            "count": 1
-          },
-          {
-            "name": "Tibnine",
-            "count": 1
-          },
-          {
-            "name": "Qana",
+            "name": "Nablus",
             "count": 1
           }
         ],
         "top_zones": [
           {
-            "name": "Lebanon - Southern Border",
-            "count": 15
+            "name": "OPT - West Bank",
+            "count": 6
           },
           {
             "name": "OPT - Gaza Strip",
-            "count": 11
+            "count": 3
+          },
+          {
+            "name": "Lebanon - Southern Border",
+            "count": 1
           },
           {
             "name": "Lebanon",
-            "count": 10
-          },
-          {
-            "name": "OPT - West Bank",
-            "count": 2
-          },
-          {
-            "name": "OPT - East Jerusalem",
             "count": 1
           }
         ]
       },
       "previous_30_days": {
-        "start_date": "2026-02-25",
-        "end_date": "2026-03-26",
+        "start_date": "2026-05-24",
+        "end_date": "2026-06-22",
         "days": 30,
-        "incident_count": 43,
-        "casualty_related_count": 43,
+        "incident_count": 7,
+        "casualty_related_count": 7,
         "ceasefire_monitoring_count": 5,
         "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
-        "top_location": "Beirut",
+        "top_location": "Al-Mawasi",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 25,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 14,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 4
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 6,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
         },
         "top_locations": [
           {
-            "name": "Beirut",
-            "count": 13
+            "name": "Al-Mawasi",
+            "count": 1
+          },
+          {
+            "name": "Deir Dibwan",
+            "count": 1
           },
           {
             "name": "Khiam",
-            "count": 5
-          },
-          {
-            "name": "Gaza City",
-            "count": 4
-          },
-          {
-            "name": "Deir al-Hatab",
-            "count": 2
-          },
-          {
-            "name": "Deir al-Balah",
             "count": 1
           },
           {
-            "name": "Silwan",
+            "name": "Nabatieh",
             "count": 1
           },
           {
-            "name": "Fandaqumiya",
+            "name": "Tyre",
             "count": 1
           },
           {
-            "name": "Ein Yabrud",
+            "name": "Choukine",
             "count": 1
           },
           {
-            "name": "Rafah",
-            "count": 1
-          },
-          {
-            "name": "Beit Hanoun",
-            "count": 1
-          },
-          {
-            "name": "Tuqu'",
-            "count": 1
-          },
-          {
-            "name": "Al-Maghazi",
-            "count": 1
-          },
-          {
-            "name": "Burj Qalwaya",
-            "count": 1
-          },
-          {
-            "name": "Za’atara",
-            "count": 1
-          },
-          {
-            "name": "Zefta",
+            "name": "Qaraoun",
             "count": 1
           }
         ],
         "top_zones": [
           {
             "name": "Lebanon",
-            "count": 20
-          },
-          {
-            "name": "OPT - Gaza Strip",
-            "count": 9
-          },
-          {
-            "name": "OPT - West Bank",
-            "count": 8
+            "count": 3
           },
           {
             "name": "Lebanon - Southern Border",
-            "count": 5
+            "count": 2
           },
           {
-            "name": "OPT - East Jerusalem",
+            "name": "OPT - Gaza Strip",
+            "count": 1
+          },
+          {
+            "name": "OPT - West Bank",
             "count": 1
           }
         ]
       },
       "latest_90_days": {
-        "start_date": "2026-01-26",
-        "end_date": "2026-04-25",
+        "start_date": "2026-04-24",
+        "end_date": "2026-07-22",
         "days": 90,
-        "incident_count": 118,
-        "casualty_related_count": 118,
-        "ceasefire_monitoring_count": 31,
-        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+        "incident_count": 27,
+        "casualty_related_count": 27,
+        "ceasefire_monitoring_count": 18,
+        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
         "top_location": "Gaza City",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 65,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 35,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 18
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 12,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 10,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 4,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 1
         },
         "top_locations": [
           {
             "name": "Gaza City",
-            "count": 15
-          },
-          {
-            "name": "Beirut",
-            "count": 15
-          },
-          {
-            "name": "Khiam",
             "count": 6
           },
           {
-            "name": "Al-Maghazi",
-            "count": 5
-          },
-          {
-            "name": "Tyre",
-            "count": 5
-          },
-          {
-            "name": "Beit Lahia",
-            "count": 4
-          },
-          {
-            "name": "Naqoura",
-            "count": 4
-          },
-          {
-            "name": "Khan Younis",
-            "count": 3
-          },
-          {
-            "name": "Bint Jbeil",
-            "count": 3
-          },
-          {
-            "name": "Rafah",
-            "count": 3
+            "name": "Deir Jarir",
+            "count": 2
           },
           {
             "name": "Nuseirat",
+            "count": 2
+          },
+          {
+            "name": "Nablus",
             "count": 2
           },
           {
@@ -458,413 +336,81 @@
             "count": 2
           },
           {
-            "name": "Deir al-Hatab",
-            "count": 2
+            "name": "Rafat",
+            "count": 1
           },
           {
-            "name": "Beit Hanoun",
-            "count": 2
+            "name": "Chaqra",
+            "count": 1
           },
           {
-            "name": "Khashem al-Daraj",
-            "count": 2
+            "name": "al-Tuwani",
+            "count": 1
+          },
+          {
+            "name": "Ramallah",
+            "count": 1
+          },
+          {
+            "name": "Debaal",
+            "count": 1
+          },
+          {
+            "name": "Al-Mawasi",
+            "count": 1
+          },
+          {
+            "name": "Deir Dibwan",
+            "count": 1
+          },
+          {
+            "name": "Khiam",
+            "count": 1
+          },
+          {
+            "name": "Tyre",
+            "count": 1
+          },
+          {
+            "name": "Choukine",
+            "count": 1
           }
         ],
         "top_zones": [
           {
             "name": "OPT - Gaza Strip",
-            "count": 38
-          },
-          {
-            "name": "Lebanon",
-            "count": 33
-          },
-          {
-            "name": "Lebanon - Southern Border",
-            "count": 23
+            "count": 10
           },
           {
             "name": "OPT - West Bank",
-            "count": 21
+            "count": 8
           },
           {
-            "name": "OPT - East Jerusalem",
-            "count": 2
+            "name": "Lebanon",
+            "count": 5
           },
           {
-            "name": "Israel",
-            "count": 1
+            "name": "Lebanon - Southern Border",
+            "count": 4
           }
         ]
       },
       "comparison_7_days": {
-        "current_count": 7,
-        "previous_count": 12,
-        "absolute_change": -5,
-        "percent_change": -41.7,
-        "direction": "decrease"
+        "current_count": 6,
+        "previous_count": 2,
+        "absolute_change": 4,
+        "percent_change": 200.0,
+        "direction": "increase"
       },
       "comparison_30_days": {
-        "current_count": 39,
-        "previous_count": 43,
-        "absolute_change": -4,
-        "percent_change": -9.3,
-        "direction": "stable"
+        "current_count": 11,
+        "previous_count": 7,
+        "absolute_change": 4,
+        "percent_change": 57.1,
+        "direction": "increase"
       }
     },
     "daily_trend": [
-      {
-        "date": "2025-10-28",
-        "count": 2
-      },
-      {
-        "date": "2025-10-29",
-        "count": 6
-      },
-      {
-        "date": "2025-10-30",
-        "count": 3
-      },
-      {
-        "date": "2025-10-31",
-        "count": 1
-      },
-      {
-        "date": "2025-11-01",
-        "count": 2
-      },
-      {
-        "date": "2025-11-02",
-        "count": 2
-      },
-      {
-        "date": "2025-11-03",
-        "count": 1
-      },
-      {
-        "date": "2025-11-04",
-        "count": 1
-      },
-      {
-        "date": "2025-11-05",
-        "count": 3
-      },
-      {
-        "date": "2025-11-06",
-        "count": 1
-      },
-      {
-        "date": "2025-11-07",
-        "count": 0
-      },
-      {
-        "date": "2025-11-08",
-        "count": 1
-      },
-      {
-        "date": "2025-11-09",
-        "count": 1
-      },
-      {
-        "date": "2025-11-10",
-        "count": 3
-      },
-      {
-        "date": "2025-11-11",
-        "count": 1
-      },
-      {
-        "date": "2025-11-12",
-        "count": 0
-      },
-      {
-        "date": "2025-11-13",
-        "count": 1
-      },
-      {
-        "date": "2025-11-14",
-        "count": 0
-      },
-      {
-        "date": "2025-11-15",
-        "count": 1
-      },
-      {
-        "date": "2025-11-16",
-        "count": 2
-      },
-      {
-        "date": "2025-11-17",
-        "count": 0
-      },
-      {
-        "date": "2025-11-18",
-        "count": 4
-      },
-      {
-        "date": "2025-11-19",
-        "count": 1
-      },
-      {
-        "date": "2025-11-20",
-        "count": 4
-      },
-      {
-        "date": "2025-11-21",
-        "count": 0
-      },
-      {
-        "date": "2025-11-22",
-        "count": 5
-      },
-      {
-        "date": "2025-11-23",
-        "count": 1
-      },
-      {
-        "date": "2025-11-24",
-        "count": 1
-      },
-      {
-        "date": "2025-11-25",
-        "count": 0
-      },
-      {
-        "date": "2025-11-26",
-        "count": 2
-      },
-      {
-        "date": "2025-11-27",
-        "count": 4
-      },
-      {
-        "date": "2025-11-28",
-        "count": 0
-      },
-      {
-        "date": "2025-11-29",
-        "count": 1
-      },
-      {
-        "date": "2025-11-30",
-        "count": 0
-      },
-      {
-        "date": "2025-12-01",
-        "count": 3
-      },
-      {
-        "date": "2025-12-02",
-        "count": 1
-      },
-      {
-        "date": "2025-12-03",
-        "count": 1
-      },
-      {
-        "date": "2025-12-04",
-        "count": 4
-      },
-      {
-        "date": "2025-12-05",
-        "count": 0
-      },
-      {
-        "date": "2025-12-06",
-        "count": 2
-      },
-      {
-        "date": "2025-12-07",
-        "count": 1
-      },
-      {
-        "date": "2025-12-08",
-        "count": 4
-      },
-      {
-        "date": "2025-12-09",
-        "count": 0
-      },
-      {
-        "date": "2025-12-10",
-        "count": 1
-      },
-      {
-        "date": "2025-12-11",
-        "count": 0
-      },
-      {
-        "date": "2025-12-12",
-        "count": 0
-      },
-      {
-        "date": "2025-12-13",
-        "count": 1
-      },
-      {
-        "date": "2025-12-14",
-        "count": 2
-      },
-      {
-        "date": "2025-12-15",
-        "count": 0
-      },
-      {
-        "date": "2025-12-16",
-        "count": 2
-      },
-      {
-        "date": "2025-12-17",
-        "count": 1
-      },
-      {
-        "date": "2025-12-18",
-        "count": 0
-      },
-      {
-        "date": "2025-12-19",
-        "count": 1
-      },
-      {
-        "date": "2025-12-20",
-        "count": 2
-      },
-      {
-        "date": "2025-12-21",
-        "count": 0
-      },
-      {
-        "date": "2025-12-22",
-        "count": 2
-      },
-      {
-        "date": "2025-12-23",
-        "count": 4
-      },
-      {
-        "date": "2025-12-24",
-        "count": 1
-      },
-      {
-        "date": "2025-12-25",
-        "count": 1
-      },
-      {
-        "date": "2025-12-26",
-        "count": 1
-      },
-      {
-        "date": "2025-12-27",
-        "count": 0
-      },
-      {
-        "date": "2025-12-28",
-        "count": 0
-      },
-      {
-        "date": "2025-12-29",
-        "count": 0
-      },
-      {
-        "date": "2025-12-30",
-        "count": 1
-      },
-      {
-        "date": "2025-12-31",
-        "count": 2
-      },
-      {
-        "date": "2026-01-01",
-        "count": 1
-      },
-      {
-        "date": "2026-01-02",
-        "count": 0
-      },
-      {
-        "date": "2026-01-03",
-        "count": 2
-      },
-      {
-        "date": "2026-01-04",
-        "count": 1
-      },
-      {
-        "date": "2026-01-05",
-        "count": 3
-      },
-      {
-        "date": "2026-01-06",
-        "count": 1
-      },
-      {
-        "date": "2026-01-07",
-        "count": 2
-      },
-      {
-        "date": "2026-01-08",
-        "count": 7
-      },
-      {
-        "date": "2026-01-09",
-        "count": 0
-      },
-      {
-        "date": "2026-01-10",
-        "count": 2
-      },
-      {
-        "date": "2026-01-11",
-        "count": 2
-      },
-      {
-        "date": "2026-01-12",
-        "count": 0
-      },
-      {
-        "date": "2026-01-13",
-        "count": 0
-      },
-      {
-        "date": "2026-01-14",
-        "count": 0
-      },
-      {
-        "date": "2026-01-15",
-        "count": 4
-      },
-      {
-        "date": "2026-01-16",
-        "count": 0
-      },
-      {
-        "date": "2026-01-17",
-        "count": 2
-      },
-      {
-        "date": "2026-01-18",
-        "count": 0
-      },
-      {
-        "date": "2026-01-19",
-        "count": 1
-      },
-      {
-        "date": "2026-01-20",
-        "count": 1
-      },
-      {
-        "date": "2026-01-21",
-        "count": 8
-      },
-      {
-        "date": "2026-01-22",
-        "count": 1
-      },
-      {
-        "date": "2026-01-23",
-        "count": 0
-      },
       {
         "date": "2026-01-24",
         "count": 0
@@ -1232,61 +778,361 @@
       {
         "date": "2026-04-25",
         "count": 1
+      },
+      {
+        "date": "2026-04-26",
+        "count": 0
+      },
+      {
+        "date": "2026-04-27",
+        "count": 0
+      },
+      {
+        "date": "2026-04-28",
+        "count": 0
+      },
+      {
+        "date": "2026-04-29",
+        "count": 0
+      },
+      {
+        "date": "2026-04-30",
+        "count": 0
+      },
+      {
+        "date": "2026-05-01",
+        "count": 0
+      },
+      {
+        "date": "2026-05-02",
+        "count": 0
+      },
+      {
+        "date": "2026-05-03",
+        "count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "count": 0
+      },
+      {
+        "date": "2026-05-05",
+        "count": 1
+      },
+      {
+        "date": "2026-05-06",
+        "count": 0
+      },
+      {
+        "date": "2026-05-07",
+        "count": 1
+      },
+      {
+        "date": "2026-05-08",
+        "count": 1
+      },
+      {
+        "date": "2026-05-09",
+        "count": 0
+      },
+      {
+        "date": "2026-05-10",
+        "count": 0
+      },
+      {
+        "date": "2026-05-11",
+        "count": 0
+      },
+      {
+        "date": "2026-05-12",
+        "count": 1
+      },
+      {
+        "date": "2026-05-13",
+        "count": 0
+      },
+      {
+        "date": "2026-05-14",
+        "count": 0
+      },
+      {
+        "date": "2026-05-15",
+        "count": 0
+      },
+      {
+        "date": "2026-05-16",
+        "count": 0
+      },
+      {
+        "date": "2026-05-17",
+        "count": 1
+      },
+      {
+        "date": "2026-05-18",
+        "count": 0
+      },
+      {
+        "date": "2026-05-19",
+        "count": 0
+      },
+      {
+        "date": "2026-05-20",
+        "count": 0
+      },
+      {
+        "date": "2026-05-21",
+        "count": 0
+      },
+      {
+        "date": "2026-05-22",
+        "count": 1
+      },
+      {
+        "date": "2026-05-23",
+        "count": 0
+      },
+      {
+        "date": "2026-05-24",
+        "count": 0
+      },
+      {
+        "date": "2026-05-25",
+        "count": 0
+      },
+      {
+        "date": "2026-05-26",
+        "count": 1
+      },
+      {
+        "date": "2026-05-27",
+        "count": 0
+      },
+      {
+        "date": "2026-05-28",
+        "count": 0
+      },
+      {
+        "date": "2026-05-29",
+        "count": 0
+      },
+      {
+        "date": "2026-05-30",
+        "count": 0
+      },
+      {
+        "date": "2026-05-31",
+        "count": 0
+      },
+      {
+        "date": "2026-06-01",
+        "count": 0
+      },
+      {
+        "date": "2026-06-02",
+        "count": 0
+      },
+      {
+        "date": "2026-06-03",
+        "count": 1
+      },
+      {
+        "date": "2026-06-04",
+        "count": 0
+      },
+      {
+        "date": "2026-06-05",
+        "count": 0
+      },
+      {
+        "date": "2026-06-06",
+        "count": 0
+      },
+      {
+        "date": "2026-06-07",
+        "count": 0
+      },
+      {
+        "date": "2026-06-08",
+        "count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "count": 2
+      },
+      {
+        "date": "2026-06-10",
+        "count": 0
+      },
+      {
+        "date": "2026-06-11",
+        "count": 0
+      },
+      {
+        "date": "2026-06-12",
+        "count": 0
+      },
+      {
+        "date": "2026-06-13",
+        "count": 0
+      },
+      {
+        "date": "2026-06-14",
+        "count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "count": 0
+      },
+      {
+        "date": "2026-06-16",
+        "count": 0
+      },
+      {
+        "date": "2026-06-17",
+        "count": 1
+      },
+      {
+        "date": "2026-06-18",
+        "count": 0
+      },
+      {
+        "date": "2026-06-19",
+        "count": 0
+      },
+      {
+        "date": "2026-06-20",
+        "count": 0
+      },
+      {
+        "date": "2026-06-21",
+        "count": 0
+      },
+      {
+        "date": "2026-06-22",
+        "count": 0
+      },
+      {
+        "date": "2026-06-23",
+        "count": 0
+      },
+      {
+        "date": "2026-06-24",
+        "count": 0
+      },
+      {
+        "date": "2026-06-25",
+        "count": 0
+      },
+      {
+        "date": "2026-06-26",
+        "count": 0
+      },
+      {
+        "date": "2026-06-27",
+        "count": 0
+      },
+      {
+        "date": "2026-06-28",
+        "count": 0
+      },
+      {
+        "date": "2026-06-29",
+        "count": 0
+      },
+      {
+        "date": "2026-06-30",
+        "count": 0
+      },
+      {
+        "date": "2026-07-01",
+        "count": 0
+      },
+      {
+        "date": "2026-07-02",
+        "count": 0
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0
+      },
+      {
+        "date": "2026-07-04",
+        "count": 1
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0
+      },
+      {
+        "date": "2026-07-07",
+        "count": 2
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0
+      },
+      {
+        "date": "2026-07-09",
+        "count": 1
+      },
+      {
+        "date": "2026-07-10",
+        "count": 1
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0
+      },
+      {
+        "date": "2026-07-16",
+        "count": 0
+      },
+      {
+        "date": "2026-07-17",
+        "count": 2
+      },
+      {
+        "date": "2026-07-18",
+        "count": 1
+      },
+      {
+        "date": "2026-07-19",
+        "count": 0
+      },
+      {
+        "date": "2026-07-20",
+        "count": 0
+      },
+      {
+        "date": "2026-07-21",
+        "count": 2
+      },
+      {
+        "date": "2026-07-22",
+        "count": 1
       }
     ],
     "weekly_trend": [
-      {
-        "week_start": "2024-04-29",
-        "count": 16
-      },
-      {
-        "week_start": "2024-05-06",
-        "count": 9
-      },
-      {
-        "week_start": "2024-05-13",
-        "count": 25
-      },
-      {
-        "week_start": "2024-05-20",
-        "count": 31
-      },
-      {
-        "week_start": "2024-05-27",
-        "count": 15
-      },
-      {
-        "week_start": "2024-06-03",
-        "count": 38
-      },
-      {
-        "week_start": "2024-06-10",
-        "count": 8
-      },
-      {
-        "week_start": "2024-06-17",
-        "count": 14
-      },
-      {
-        "week_start": "2024-06-24",
-        "count": 10
-      },
-      {
-        "week_start": "2024-07-01",
-        "count": 3
-      },
-      {
-        "week_start": "2024-07-08",
-        "count": 10
-      },
-      {
-        "week_start": "2024-07-15",
-        "count": 24
-      },
-      {
-        "week_start": "2024-07-22",
-        "count": 26
-      },
       {
         "week_start": "2024-07-29",
         "count": 25
@@ -1650,556 +1496,699 @@
       {
         "week_start": "2026-04-20",
         "count": 6
+      },
+      {
+        "week_start": "2026-04-27",
+        "count": 1
+      },
+      {
+        "week_start": "2026-05-04",
+        "count": 3
+      },
+      {
+        "week_start": "2026-05-11",
+        "count": 2
+      },
+      {
+        "week_start": "2026-05-18",
+        "count": 1
+      },
+      {
+        "week_start": "2026-05-25",
+        "count": 1
+      },
+      {
+        "week_start": "2026-06-01",
+        "count": 1
+      },
+      {
+        "week_start": "2026-06-08",
+        "count": 4
+      },
+      {
+        "week_start": "2026-06-15",
+        "count": 1
+      },
+      {
+        "week_start": "2026-06-22",
+        "count": 0
+      },
+      {
+        "week_start": "2026-06-29",
+        "count": 1
+      },
+      {
+        "week_start": "2026-07-06",
+        "count": 4
+      },
+      {
+        "week_start": "2026-07-13",
+        "count": 3
+      },
+      {
+        "week_start": "2026-07-20",
+        "count": 3
       }
     ],
     "category_trend": {
-      "start_date": "2026-01-26",
-      "end_date": "2026-04-25",
+      "start_date": "2026-04-24",
+      "end_date": "2026-07-22",
       "categories": [
+        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
         "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
         "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
-        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction"
       ],
       "series": [
         {
-          "date": "2026-01-26",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-01-27",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-01-28",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-01-29",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-01-30",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-01-31",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-01",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-02",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-03",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-04",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-02-05",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-06",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-07",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-08",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-09",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-10",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-02-11",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-12",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-13",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-14",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-15",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-02-16",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-17",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-18",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-02-19",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-20",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-21",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-22",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-23",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-24",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-02-25",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-26",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-27",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-02-28",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-01",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-02",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 5,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-03",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-04",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-05",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-06",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-03-07",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-08",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-03-09",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-10",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-11",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-03-12",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-13",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-14",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-15",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-16",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-03-17",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-18",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-19",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-20",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-21",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-22",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-23",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-24",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-25",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-26",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-27",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-28",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-29",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-03-30",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-03-31",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-01",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-02",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-03",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-04",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-05",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-04-06",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-04-07",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-08",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-09",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-10",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-11",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-12",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-13",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-04-14",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 4,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-04-15",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-16",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 3,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-17",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-18",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-19",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-04-20",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-21",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-22",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-04-23",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
           "date": "2026-04-24",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
         },
         {
           "date": "2026-04-25",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-04-26",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-04-27",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-04-28",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-04-29",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-04-30",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-01",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-02",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-03",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-04",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-05",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-06",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-07",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-08",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-09",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-10",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-11",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-12",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-13",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-14",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-15",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-16",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-17",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-18",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-19",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-20",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-21",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-22",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 1
+        },
+        {
+          "date": "2026-05-23",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-24",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-25",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-26",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-27",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-28",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-29",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-30",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-05-31",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-01",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-02",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-03",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-04",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-05",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-06",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-07",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-08",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-09",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-10",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-11",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-12",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-13",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-14",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-15",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-16",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-17",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-18",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-19",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-20",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-21",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-22",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-23",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-24",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-25",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-26",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-27",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-28",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-29",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-06-30",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-01",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-02",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-03",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-04",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-05",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-06",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-07",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-08",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-09",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-10",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-11",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-12",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-13",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-14",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-15",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-16",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-17",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-18",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-19",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-20",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-21",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
+        },
+        {
+          "date": "2026-07-22",
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 0
         }
       ]
     },
@@ -2207,7 +2196,7 @@
       "top_locations": [
         {
           "name": "Gaza City",
-          "count": 309
+          "count": 313
         },
         {
           "name": "Khan Younis",
@@ -2222,16 +2211,16 @@
           "count": 92
         },
         {
+          "name": "Nuseirat",
+          "count": 85
+        },
+        {
           "name": "Jenin",
           "count": 85
         },
         {
-          "name": "Nuseirat",
-          "count": 83
-        },
-        {
           "name": "Deir al-Balah",
-          "count": 81
+          "count": 82
         },
         {
           "name": "Beit Lahia",
@@ -2247,7 +2236,7 @@
         },
         {
           "name": "Nablus",
-          "count": 30
+          "count": 32
         },
         {
           "name": "Nour Shams",
@@ -2269,19 +2258,19 @@
       "top_zones": [
         {
           "name": "OPT - Gaza Strip",
-          "count": 1059
+          "count": 1067
         },
         {
           "name": "OPT - West Bank",
-          "count": 529
+          "count": 537
         },
         {
           "name": "Lebanon - Southern Border",
-          "count": 246
+          "count": 250
         },
         {
           "name": "Lebanon",
-          "count": 239
+          "count": 244
         },
         {
           "name": "Israel",
@@ -2314,7 +2303,7 @@
         {
           "latitude": 31.52,
           "longitude": 34.44,
-          "count": 47,
+          "count": 48,
           "top_location": "Gaza City",
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
@@ -2328,7 +2317,7 @@
         {
           "latitude": 31.45,
           "longitude": 34.39,
-          "count": 36,
+          "count": 37,
           "top_location": "Nuseirat",
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
@@ -2349,7 +2338,7 @@
         {
           "latitude": 31.42,
           "longitude": 34.36,
-          "count": 24,
+          "count": 25,
           "top_location": "Deir al-Balah",
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
@@ -2384,8 +2373,15 @@
         {
           "latitude": 31.5,
           "longitude": 34.46,
-          "count": 18,
+          "count": 19,
           "top_location": "Gaza City",
+          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        },
+        {
+          "latitude": 32.22,
+          "longitude": 35.26,
+          "count": 17,
+          "top_location": "Nablus",
           "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
         },
         {
@@ -2394,58 +2390,51 @@
           "count": 16,
           "top_location": "Beirut",
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
-        },
-        {
-          "latitude": 31.42,
-          "longitude": 34.35,
-          "count": 16,
-          "top_location": "Deir al-Balah",
-          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         }
       ]
     },
     "assessment": {
       "language": "en",
       "method": "rule_based",
-      "headline": "CIR activity trend: decrease",
-      "summary": "Verified incident activity decreased in the latest seven-day period. The dataset records 7 incidents, compared with 12 in the preceding seven days (-41.7%). Across the latest 30-day analytical window, <span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage was the most frequently recorded category. Recorded activity was most concentrated around Gaza City during the same period. The 30-day window contains 39 incidents with a casualty-related signal and 12 incidents marked for ceasefire monitoring. The latest event in the source dataset is dated 2026-04-25. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity.",
+      "headline": "CIR activity trend: increase",
+      "summary": "Verified incident activity increased in the latest seven-day period. The dataset records 6 incidents, compared with 2 in the preceding seven days (+200.0%). Across the latest 30-day analytical window, <span style='color:#ffff00; font-size:1.5em;'>●</span> Violence was the most frequently recorded category. Recorded activity was most concentrated around Deir Jarir during the same period. The 30-day window contains 11 incidents with a casualty-related signal and 5 incidents marked for ceasefire monitoring. The latest event in the source dataset is dated 2026-07-22. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity.",
       "paragraphs": [
-        "Verified incident activity decreased in the latest seven-day period. The dataset records 7 incidents, compared with 12 in the preceding seven days (-41.7%).",
-        "Across the latest 30-day analytical window, <span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage was the most frequently recorded category.",
-        "Recorded activity was most concentrated around Gaza City during the same period.",
-        "The 30-day window contains 39 incidents with a casualty-related signal and 12 incidents marked for ceasefire monitoring.",
-        "The latest event in the source dataset is dated 2026-04-25. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity."
+        "Verified incident activity increased in the latest seven-day period. The dataset records 6 incidents, compared with 2 in the preceding seven days (+200.0%).",
+        "Across the latest 30-day analytical window, <span style='color:#ffff00; font-size:1.5em;'>●</span> Violence was the most frequently recorded category.",
+        "Recorded activity was most concentrated around Deir Jarir during the same period.",
+        "The 30-day window contains 11 incidents with a casualty-related signal and 5 incidents marked for ceasefire monitoring.",
+        "The latest event in the source dataset is dated 2026-07-22. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity."
       ],
       "key_findings": [
         {
           "label": "Seven-day trend",
-          "value": "decrease"
+          "value": "increase"
         },
         {
           "label": "Seven-day change",
-          "value": "-41.7%"
+          "value": "+200.0%"
         },
         {
           "label": "Top 30-day category",
-          "value": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+          "value": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
         },
         {
           "label": "Top 30-day location",
-          "value": "Gaza City"
+          "value": "Deir Jarir"
         },
         {
           "label": "Casualty-related incidents",
-          "value": 39
+          "value": 11
         },
         {
           "label": "Ceasefire monitoring incidents",
-          "value": 12
+          "value": 5
         }
       ],
       "top_hotspots": [
         {
           "name": "Gaza City",
-          "count": 309
+          "count": 313
         },
         {
           "name": "Khan Younis",
@@ -2460,13 +2449,677 @@
           "count": 92
         },
         {
-          "name": "Jenin",
+          "name": "Nuseirat",
           "count": 85
         }
       ]
     }
   },
   "events": [
+    {
+      "id": "IPIN3892",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-22T00:00:00Z",
+      "incident_date_text": "2026-07-22",
+      "location": "Rafat",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.8719, 35.2001000000",
+      "latitude": 31.8719,
+      "longitude": 35.2001,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Content shows at least two excavators demolishing at least one commercial structure.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/qudsn/status/2079827412213227536",
+        "https://x.com/Aljazeeraquds/status/2079864195646939249"
+      ],
+      "object_id": 4337
+    },
+    {
+      "id": "IPIN3896",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-21T00:00:00Z",
+      "incident_date_text": "2026-07-21",
+      "location": "Deir Jarir",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.963, 35.2991",
+      "latitude": 31.963,
+      "longitude": 35.2991,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "3 – Moderate",
+      "description": "Footage shows a plain clothed individual appearing to be shot in a residential area.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/josepgoded/status/2079439339449184412"
+      ],
+      "object_id": 4340
+    },
+    {
+      "id": "IPIN3894",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-21T00:00:00Z",
+      "incident_date_text": "2026-07-21",
+      "location": "Chaqra",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.2029000000, 35.484",
+      "latitude": 33.2029,
+      "longitude": 35.484,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Content shows an active fire and smoke clouds at what appears to be an industrial site.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/SLWETWT/status/2079615095227703412?s=20"
+      ],
+      "object_id": 4338
+    },
+    {
+      "id": "IPIN3864",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-18T00:00:00Z",
+      "incident_date_text": "2026-07-18",
+      "location": "al-Tuwani",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.412, 35.1545",
+      "latitude": 31.412,
+      "longitude": 35.1545,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Other forms of violence",
+      "category": "Violence by Israeli settlers",
+      "violence": "1 – None",
+      "description": "Footage shows a section of a mosque and a vehicle on fire.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/YehudaShaul/status/2078829326456271293",
+        "https://www.gettyimages.co.uk/detail/news-photo/palestinian-man-checks-the-damaged-al-taqwa-mosque-whose-news-photo/2286118505",
+        "https://x.com/EyeonPalestine/status/2078631841536369003"
+      ],
+      "object_id": 4323
+    },
+    {
+      "id": "IPIN3877",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-17T00:00:00Z",
+      "incident_date_text": "2026-07-17",
+      "location": "Ramallah",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.8994, 35.2057000000",
+      "latitude": 31.8994,
+      "longitude": 35.2057,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows smoke rising into air outside of the Palestine Medical Complex.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/EyeonPalestine/status/2078056141045514247"
+      ],
+      "object_id": 4331
+    },
+    {
+      "id": "IPIN3874",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-17T00:00:00Z",
+      "incident_date_text": "2026-07-17",
+      "location": "Nuseirat",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.4471, 34.3859",
+      "latitude": 31.4471,
+      "longitude": 34.3859,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "5 – Graphic",
+      "description": "Content shows at least nine casualties 80 metres southeast of the Ahmad Yassin Mosque.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/Da5YrV-ImE2/",
+        "https://www.instagram.com/p/Da5ZIhPO9Xd/?e=a9595ec6-2e85-4476-885f-1f7a32e7cb47&g=5"
+      ],
+      "object_id": 4329
+    },
+    {
+      "id": "IPIN3895",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-10T00:00:00Z",
+      "incident_date_text": "2026-07-10",
+      "location": "Debaal",
+      "location_zone": "Lebanon",
+      "coordinates_text": "33.2497, 35.3485",
+      "latitude": 33.2497,
+      "longitude": 35.3485,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to water or fuel Infrastructure",
+      "category": "Damage to water/fuel infrastructure",
+      "violence": "1 – None",
+      "description": "Content shows what appears to be water infrastructure completely destroyed.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/SLWETWT/status/2075526319601811725?s=20"
+      ],
+      "object_id": 4339
+    },
+    {
+      "id": "IPIN3862",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-09T00:00:00Z",
+      "incident_date_text": "2026-07-09",
+      "location": "Deir Jarir",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.9718, 35.2912",
+      "latitude": 31.9718,
+      "longitude": 35.2912,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Other forms of violence",
+      "category": "Violence by Israeli settlers",
+      "violence": "1 – None",
+      "description": "Footage shows two plain clothed individuals, wearing face coverings, appearing to damage a vehicle parked outside of a residential building on the outskirts of Deir Jarir.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [],
+      "object_id": 4321
+    },
+    {
+      "id": "IPIN3872",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-07T00:00:00Z",
+      "incident_date_text": "2026-07-07",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5213, 34.4294",
+      "latitude": 31.5213,
+      "longitude": 34.4294,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to temporary shelters",
+      "category": "Damage to shelters involving casualties or significant impact",
+      "violence": "4 – Severe",
+      "description": "Footage shows what appears to be one possible covered casualty next to damaged temporary structures.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FF5500; font-size:1.5em;'>●</span> Severe",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.gettyimages.co.uk/detail/news-photo/palestinian-men-carry-a-body-wrapped-in-a-white-shroud-news-photo/2284549367",
+        "https://www.instagram.com/p/DafVp6QIfno/?e=1630b3ef-a470-44d4-a298-ccb7f264d7bf&g=5"
+      ],
+      "object_id": 4327
+    },
+    {
+      "id": "IPIN3859",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-07T00:00:00Z",
+      "incident_date_text": "2026-07-07",
+      "location": "Nablus",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.2243, 35.2613",
+      "latitude": 32.2243,
+      "longitude": 35.2613,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "1 – None",
+      "description": "Footage shows two Police officers throwing what appears to be tear gas canisters towards an ambulance.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://www.gettyimages.co.uk/detail/news-photo/palestinian-ambulance-seen-surrounded-by-tear-gas-smoke-news-photo/2284499399?adppopup=true",
+        "https://www.gettyimages.co.uk/detail/news-photo/firefighters-intervene-to-extinguish-the-fire-that-broke-news-photo/2284490726",
+        "https://x.com/EyeonPalestine/status/2074450582740390356",
+        "https://x.com/Marianasoux/status/2074455158998638966/video/1"
+      ],
+      "object_id": 4318
+    },
+    {
+      "id": "IPIN3857",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-04T00:00:00Z",
+      "incident_date_text": "2026-07-04",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5042000000, 34.4579",
+      "latitude": 31.5042,
+      "longitude": 34.4579,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "5 – Graphic",
+      "description": "Content shows one adult casualty in the Sabra neighbourhood.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://t.me/QudsNen/229868",
+        "https://x.com/MosabAbuToha/status/2073398406974742708",
+        "https://x.com/paldf/status/2073388889985708373"
+      ],
+      "object_id": 4317
+    },
+    {
+      "id": "IPIN3871",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-06-17T00:00:00Z",
+      "incident_date_text": "2026-06-17",
+      "location": "Al-Mawasi",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.3624, 34.2651",
+      "latitude": 31.3624,
+      "longitude": 34.2651,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "4 – Severe",
+      "description": "Aerial footage and UGC shows an explosion and at least three adult casualties on a beach.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FF5500; font-size:1.5em;'>●</span> Severe",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://x.com/idfonline/status/2068575921351610824",
+        "https://x.com/gazanotice/status/2067283607295582285"
+      ],
+      "object_id": 4326
+    },
+    {
+      "id": "IPIN3865",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-06-14T00:00:00Z",
+      "incident_date_text": "2026-06-14",
+      "location": "Deir Dibwan",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.917, 35.2513",
+      "latitude": 31.917,
+      "longitude": 35.2513,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows three vehicles and land on fire in a residential area along Route 4575.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/1NationMediaX/status/2066547853464309849"
+      ],
+      "object_id": 4324
+    },
+    {
+      "id": "IPIN3883",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-06-09T00:00:00Z",
+      "incident_date_text": "2026-06-09",
+      "location": "Khiam",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.3564, 35.6031000000",
+      "latitude": 33.3564,
+      "longitude": 35.6031,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to water or fuel Infrastructure",
+      "category": "Damage to water/fuel infrastructure",
+      "violence": "1 – None",
+      "description": "Content shows damage, an active fire, and the removal of unexploded ordnance from what appears to be to be the Ibl Al-Saqi water refinery station.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/LebarmyOfficial/status/2064991265708483062?s=20",
+        "https://x.com/InfoSudLiban/status/2064397896477266177?s=20"
+      ],
+      "object_id": 4335
+    },
+    {
+      "id": "IPIN3879",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-06-09T00:00:00Z",
+      "incident_date_text": "2026-06-09",
+      "location": "Nabatieh",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.3749, 35.4801000000",
+      "latitude": 33.3749,
+      "longitude": 35.4801,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to residential buildings",
+      "category": "Damage to residential buildings involving casualties or significant impact",
+      "violence": "3 – Moderate",
+      "description": "Bodycam footage shows paramedics pull at least one casualty of an unknown age from the rubble of a residential building.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [],
+      "object_id": 4332
+    },
+    {
+      "id": "IPIN3882",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-06-08T00:00:00Z",
+      "incident_date_text": "2026-06-08",
+      "location": "Tyre",
+      "location_zone": "Lebanon",
+      "coordinates_text": "33.2587, 35.213",
+      "latitude": 33.2587,
+      "longitude": 35.213,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Content shows a destroyed vehicle approximately 40 metres from the Lebanese Red Cross building in Tyre.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/cbonneauimages/status/2064077196507881505?s=20"
+      ],
+      "object_id": 4334
+    },
+    {
+      "id": "IPIN3885",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-06-03T00:00:00Z",
+      "incident_date_text": "2026-06-03",
+      "location": "Choukine",
+      "location_zone": "Lebanon",
+      "coordinates_text": "33.3618, 35.4657",
+      "latitude": 33.3618,
+      "longitude": 35.4657,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "3 – Moderate",
+      "description": "Bodycam footage shows a vehicle engulfed in flames, at least one adult casualty, a casualty of an unknown age and one possible covered casualty.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/fouadkhreiss/status/2062226070774898996?s=20"
+      ],
+      "object_id": 4336
+    },
+    {
+      "id": "IPIN3898",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-26T00:00:00Z",
+      "incident_date_text": "2026-05-26",
+      "location": "Qaraoun",
+      "location_zone": "Lebanon",
+      "coordinates_text": "33.5478, 35.6895",
+      "latitude": 33.5478,
+      "longitude": 35.6895,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to water or fuel Infrastructure",
+      "category": "Damage to water/fuel infrastructure",
+      "violence": "1 – None",
+      "description": "Footage shows dust and smoke clouds on the road adjacent to Qaraoun Dam,",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/LRALitani/status/2059254199951536500?s=20",
+        "https://x.com/LRALitani/status/2059245320328937733?s=20",
+        "https://x.com/LRALitani/status/2059243825265099036?s=20",
+        "https://www.instagram.com/reel/DY2pDDbDtz3/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ=="
+      ],
+      "object_id": 4341
+    },
+    {
+      "id": "IPIN3870",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-22T00:00:00Z",
+      "incident_date_text": "2026-05-22",
+      "location": "Deir Qanoun al-Nahr",
+      "location_zone": "Lebanon",
+      "coordinates_text": "33.3017000000, 35.2956",
+      "latitude": 33.3017,
+      "longitude": 35.2956,
+      "main_category": "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction",
+      "sub_category": "Obstruction of aid",
+      "category": "Obstruction of humanitarian aid or medical assistance",
+      "violence": "4 – Severe",
+      "description": "Footage shows a strike on an ambulance and at least seven casualties on a road.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FF5500; font-size:1.5em;'>●</span> Severe",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [],
+      "object_id": 4325
+    },
+    {
+      "id": "IPIN3873",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-17T00:00:00Z",
+      "incident_date_text": "2026-05-17",
+      "location": "Deir al-Balah",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.4211, 34.3602000000",
+      "latitude": 31.4211,
+      "longitude": 34.3602,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "5 – Graphic",
+      "description": "Footage shows damage to a small concrete building and at least two adult casualties.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/DYcPlRMtBu1/?hl=en&e=e22340fa-4bd4-452f-a6cc-6267833c4825&g=5",
+        "https://x.com/owdabisan3/status/2056210186914644064",
+        "https://x.com/OnlinePalEng/status/2055965285132210612"
+      ],
+      "object_id": 4328
+    },
+    {
+      "id": "IPIN3881",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-12T00:00:00Z",
+      "incident_date_text": "2026-05-12",
+      "location": "Nuseirat",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.4449, 34.3976",
+      "latitude": 31.4449,
+      "longitude": 34.3976,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to residential buildings",
+      "category": "Damage to residential buildings involving casualties or significant impact",
+      "violence": "5 – Graphic",
+      "description": "Footage shows a collapsed residential building and at least two casualties.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://x.com/Aljarmaqnetnews/status/2054270306848555425"
+      ],
+      "object_id": 4333
+    },
+    {
+      "id": "IPIN3875",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-08T00:00:00Z",
+      "incident_date_text": "2026-05-08",
+      "location": "Nabatieh",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.3838, 35.4862",
+      "latitude": 33.3838,
+      "longitude": 35.4862,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to education facilities",
+      "category": "Damage to education facilities involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows damage to both campuses of the Collège des Sœurs Antonines school.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://www.facebook.com/share/v/1Bdjf6n67j/",
+        "https://x.com/SweeneySteve/status/2053883507278070038?s=20",
+        "https://x.com/sahouraxo/status/2053857158870057013?s=20"
+      ],
+      "object_id": 4330
+    },
+    {
+      "id": "IPIN3863",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-07T00:00:00Z",
+      "incident_date_text": "2026-05-07",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5211, 34.4368",
+      "latitude": 31.5211,
+      "longitude": 34.4368,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "5 – Graphic",
+      "description": "Content shows damage to a small concrete structure and at least three adult casualties on Khalid al-Rdaydeh Street.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.anadoluimages.com/p/at-least-2-killed-in-israeli-bomb-attack-on-police-control-point-in-gaza/31710607",
+        "https://www.anadoluimages.com/p/3-palestinians-killed-several-injured-in-israeli-strike-in-gaza-city-despite-cea/31711214",
+        "https://www.anadoluimages.com/p/at-least-2-killed-in-israeli-bomb-attack-on-police-control-point-in-gaza/31710602",
+        "https://x.com/nowgnna/status/2052357376800366746"
+      ],
+      "object_id": 4322
+    },
+    {
+      "id": "IPIN3861",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-05T00:00:00Z",
+      "incident_date_text": "2026-05-05",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5372, 34.4616",
+      "latitude": 31.5372,
+      "longitude": 34.4616,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "3 – Moderate",
+      "description": "Footage shows at least two adult casualties adjacent to Omar Bin al-Khattab street in the Sheikh Radwan neighbourhood.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/DX9aOMQIWbS/?hl=en&e=1bdfde86-a4a4-4e8e-875d-0c1ca3374b12&g=5"
+      ],
+      "object_id": 4320
+    },
+    {
+      "id": "IPIN3860",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-05-03T00:00:00Z",
+      "incident_date_text": "2026-05-03",
+      "location": "Nablus",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.2221, 35.261",
+      "latitude": 32.2221,
+      "longitude": 35.261,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "5 – Graphic",
+      "description": "Footage shows a plain-clothed individual lying on the ground surrounded by a pool of blood.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "",
+      "links": [],
+      "object_id": 4319
+    },
     {
       "id": "IPIN3841",
       "source": "CIR",
