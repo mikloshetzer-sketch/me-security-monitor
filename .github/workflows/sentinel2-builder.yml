@@ -57,18 +57,21 @@ jobs:
   build-sentinel2-images:
     name: Build up to five Sentinel-2 before/after records
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          # The workflow only needs the current repository state. Avoid
+          # downloading the complete, image-heavy Git history on every run.
+          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
       - name: Install change-detection dependencies
         shell: bash
@@ -76,7 +79,10 @@ jobs:
           set -euo pipefail
 
           python -m pip install --upgrade pip
-          python -m pip install             "numpy>=1.26,<3"             "opencv-python-headless>=4.10,<5"             "scikit-image>=0.24,<1"
+          python -m pip install \
+            "numpy>=1.26,<3" \
+            "opencv-python-headless>=4.10,<5" \
+            "scikit-image>=0.24,<1"
 
           python - <<'PY'
           import cv2
@@ -92,10 +98,22 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test -f scripts/update_sentinel2.py
+
+          test -f scripts/update_sentinel2.py || {
+            echo "::error::Missing builder script: scripts/update_sentinel2.py"
+            exit 1
+          }
+
           echo "Builder script found: scripts/update_sentinel2.py"
 
-      - name: Verify Sentinel Hub secrets
+          if test -s data/iranstrike.json; then
+            echo "IranStrike source found: data/iranstrike.json"
+            ls -lh data/iranstrike.json
+          else
+            echo "::warning::data/iranstrike.json is missing or empty. The builder will continue, but IranStrike correlation will be unavailable."
+          fi
+
+      - name: Verify Sentinel Hub and FIRMS secrets
         shell: bash
         env:
           SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
@@ -269,7 +287,7 @@ jobs:
               )
           PY
 
-      - name: Build Sentinel-2 images and change detection
+      - name: Build Sentinel-2 images and analysis records
         shell: bash
         env:
           SENTINELHUB_CLIENT_ID: ${{ secrets.SENTINELHUB_CLIENT_ID }}
@@ -360,7 +378,7 @@ jobs:
           print(f"All {len(targets)} target(s) processed successfully.")
           PY
 
-      - name: Verify generated satellite archive
+      - name: Verify legacy and scalable satellite outputs
         shell: bash
         env:
           TARGETS_JSON: ${{ steps.validation.outputs.targets_json }}
@@ -369,6 +387,7 @@ jobs:
 
           REQUIRED_FILES=(
             "docs/data/satellite/archive-index.json"
+            "docs/data/satellite/locations.json"
             "docs/data/satellite/satellite-metadata.json"
             "docs/data/satellite/sentinel2/latest.png"
             "docs/data/satellite/sentinel2/latest.json"
@@ -390,9 +409,10 @@ jobs:
           from pathlib import Path
 
           archive_path = Path("docs/data/satellite/archive-index.json")
-          archive = json.loads(
-              archive_path.read_text(encoding="utf-8")
-          )
+          locations_path = Path("docs/data/satellite/locations.json")
+
+          archive = json.loads(archive_path.read_text(encoding="utf-8"))
+          locations = json.loads(locations_path.read_text(encoding="utf-8"))
           targets = json.loads(os.environ["TARGETS_JSON"])
 
           if not isinstance(archive, list) or not archive:
@@ -400,14 +420,10 @@ jobs:
                   "archive-index.json must contain a non-empty JSON array."
               )
 
-          required_top_level = (
-              "id",
-              "location_name",
-              "bbox",
-              "image_url",
-              "before",
-              "after",
-          )
+          if not isinstance(locations, list) or not locations:
+              raise SystemExit(
+                  "locations.json must contain a non-empty JSON array."
+              )
 
           def resolve_repo_file(url_value):
               relative = str(url_value or "").strip().lstrip("./")
@@ -415,100 +431,166 @@ jobs:
               if not relative:
                   return None
 
-              direct_path = Path(relative)
-
-              if direct_path.is_file():
-                  return direct_path
+              candidates = [Path(relative)]
 
               if relative.startswith("data/"):
-                  docs_path = Path("docs") / relative
+                  candidates.append(Path("docs") / relative)
+              elif not relative.startswith("docs/"):
+                  candidates.append(Path("docs") / relative)
 
-                  if docs_path.is_file():
-                      return docs_path
+              for candidate in candidates:
+                  if candidate.is_file():
+                      return candidate
 
-              if relative.startswith("docs/"):
-                  return direct_path
+              return candidates[-1]
 
-              fallback_path = Path("docs") / relative
-
-              if fallback_path.is_file():
-                  return fallback_path
-
-              return direct_path
-
-          def records_for_location(location_name):
+          def matching_location(location_name):
               expected = str(location_name).strip().casefold()
-              return [
-                  record
-                  for record in archive
-                  if str(record.get("location_name", "")).strip().casefold()
-                  == expected
-              ]
+
+              for location in locations:
+                  actual = str(
+                      location.get("name")
+                      or location.get("location_name")
+                      or ""
+                  ).strip().casefold()
+
+                  if actual == expected:
+                      return location
+
+              return None
+
+          def matching_legacy_record(location_name):
+              expected = str(location_name).strip().casefold()
+
+              for record in archive:
+                  actual = str(
+                      record.get("location_name", "")
+                  ).strip().casefold()
+
+                  if actual == expected:
+                      return record
+
+              return None
 
           verified_results = []
 
           for target in targets:
               location_name = target["location_name"]
-              matches = records_for_location(location_name)
+              location = matching_location(location_name)
 
-              if not matches:
+              if not location:
                   raise SystemExit(
-                      "Processed location missing from archive-index.json: "
+                      "Processed location missing from locations.json: "
                       + location_name
                   )
 
-              # The builder writes newest records first.
-              record = matches[0]
+              required_location_fields = (
+                  "slug",
+                  "name",
+                  "lat",
+                  "lon",
+                  "bbox",
+                  "latest_record_id",
+                  "latest_record_url",
+                  "latest_thumbnail_url",
+                  "index_url",
+              )
 
-              missing = [
+              missing_location = [
                   field
-                  for field in required_top_level
-                  if not record.get(field)
+                  for field in required_location_fields
+                  if location.get(field) in (None, "", [])
               ]
 
-              if missing:
+              if missing_location:
                   raise SystemExit(
-                      f"{location_name}: archive record is missing fields: "
-                      + ", ".join(missing)
+                      f"{location_name}: locations.json entry is missing: "
+                      + ", ".join(missing_location)
+                  )
+
+              location_index_path = resolve_repo_file(
+                  location["index_url"]
+              )
+              record_path = resolve_repo_file(
+                  location["latest_record_url"]
+              )
+              thumbnail_path = resolve_repo_file(
+                  location["latest_thumbnail_url"]
+              )
+
+              for label, path in (
+                  ("location index", location_index_path),
+                  ("detailed record", record_path),
+                  ("latest thumbnail", thumbnail_path),
+              ):
+                  if path is None or not path.is_file() or path.stat().st_size == 0:
+                      raise SystemExit(
+                          f"{location_name}: {label} is missing or empty: {path}"
+                      )
+
+              location_index = json.loads(
+                  location_index_path.read_text(encoding="utf-8")
+              )
+
+              if not isinstance(location_index, list) or not location_index:
+                  raise SystemExit(
+                      f"{location_name}: location index must be a non-empty array."
+                  )
+
+              latest_record_id = str(location["latest_record_id"])
+
+              if not any(
+                  str(item.get("id")) == latest_record_id
+                  for item in location_index
+                  if isinstance(item, dict)
+              ):
+                  raise SystemExit(
+                      f"{location_name}: latest record is missing from location index: "
+                      f"{latest_record_id}"
+                  )
+
+              record = json.loads(record_path.read_text(encoding="utf-8"))
+
+              required_record_fields = (
+                  "id",
+                  "location_name",
+                  "location_slug",
+                  "bbox",
+                  "image_url",
+                  "before",
+                  "after",
+                  "change_detection",
+              )
+
+              missing_record = [
+                  field
+                  for field in required_record_fields
+                  if record.get(field) in (None, "", [])
+              ]
+
+              if missing_record:
+                  raise SystemExit(
+                      f"{location_name}: detailed record is missing: "
+                      + ", ".join(missing_record)
                   )
 
               for phase in ("before", "after"):
                   phase_data = record.get(phase) or {}
                   phase_url = phase_data.get("image_url")
+                  phase_path = resolve_repo_file(phase_url)
 
-                  if not phase_url:
-                      raise SystemExit(
-                          f"{location_name}: missing {phase}.image_url"
-                      )
-
-                  image_path = resolve_repo_file(phase_url)
-
-                  if image_path is None or not image_path.is_file():
+                  if phase_path is None or not phase_path.is_file():
                       raise SystemExit(
                           f"{location_name}: {phase} image does not exist: "
-                          f"{phase_url} (resolved as {image_path})"
+                          f"{phase_url} (resolved as {phase_path})"
                       )
 
-              current_image = resolve_repo_file(record["image_url"])
-
-              if current_image is None or not current_image.is_file():
-                  raise SystemExit(
-                      f"{location_name}: top-level image_url does not "
-                      f"resolve to a file: {record['image_url']} "
-                      f"(resolved as {current_image})"
-                  )
-
-              change = record.get("change_detection")
-
-              if not isinstance(change, dict):
-                  raise SystemExit(
-                      f"{location_name}: change_detection block is missing."
-                  )
+              change = record.get("change_detection") or {}
 
               if change.get("status") != "completed":
                   raise SystemExit(
-                      f"{location_name}: change detection status is not "
-                      f"completed: {change.get('status')}"
+                      f"{location_name}: change detection status is not completed: "
+                      f"{change.get('status')}"
                   )
 
               required_change_fields = (
@@ -522,6 +604,7 @@ jobs:
                   "change_map_url",
                   "assessment",
                   "warnings",
+                  "regions",
               )
 
               missing_change = [
@@ -551,13 +634,31 @@ jobs:
                       f"(resolved as {change_map_path})"
                   )
 
+              imagery = record.get("imagery") or {}
+              thumbnail_urls = {
+                  "before": imagery.get("before_thumbnail"),
+                  "after": imagery.get("after_thumbnail"),
+                  "change": imagery.get("change_thumbnail"),
+              }
+
+              for thumbnail_name, thumbnail_url in thumbnail_urls.items():
+                  thumbnail = resolve_repo_file(thumbnail_url)
+
+                  if (
+                      thumbnail is None
+                      or not thumbnail.is_file()
+                      or thumbnail.stat().st_size == 0
+                      or thumbnail.suffix.lower() != ".webp"
+                  ):
+                      raise SystemExit(
+                          f"{location_name}: {thumbnail_name} WebP thumbnail "
+                          f"is missing or invalid: {thumbnail_url} "
+                          f"(resolved as {thumbnail})"
+                      )
+
               score = float(change["score"])
-              changed_percent = float(
-                  change["changed_pixel_percent"]
-              )
-              comparability_score = float(
-                  change["comparability_score"]
-              )
+              changed_percent = float(change["changed_pixel_percent"])
+              comparability_score = float(change["comparability_score"])
               ssim = float(change["ssim"])
               regions = int(change["significant_regions"])
 
@@ -588,42 +689,60 @@ jobs:
                       f"{location_name}: invalid region count: {regions}"
                   )
 
+              firms = change.get("firms_correlation") or {}
+              iranstrike = change.get("iranstrike_correlation") or {}
+
+              # Keep the legacy archive as a verified migration fallback.
+              legacy_record = matching_legacy_record(location_name)
+
+              if not legacy_record:
+                  raise SystemExit(
+                      "Processed location missing from archive-index.json: "
+                      + location_name
+                  )
+
+              if str(legacy_record.get("id")) != str(record.get("id")):
+                  raise SystemExit(
+                      f"{location_name}: scalable and legacy latest record IDs "
+                      "do not match."
+                  )
+
               verified_results.append(
                   {
                       "location_name": location_name,
+                      "location_slug": location["slug"],
+                      "record_id": record["id"],
+                      "record_path": str(record_path),
+                      "location_index_path": str(location_index_path),
+                      "thumbnail_count": 3,
                       "score": score,
                       "level": str(change["level"]),
                       "comparability": str(change["comparability"]),
                       "comparability_score": comparability_score,
                       "changed_pixel_percent": changed_percent,
                       "significant_regions": regions,
-                      "change_map": str(change_map_path),
                       "firms_status": str(
-                          (change.get("firms_correlation") or {}).get(
-                              "status",
-                              "unavailable",
-                          )
+                          firms.get("status", "unavailable")
                       ),
                       "firms_aoi_hotspots": int(
-                          (change.get("firms_correlation") or {}).get(
-                              "aoi_hotspot_count",
-                              0,
-                          )
-                          or 0
+                          firms.get("aoi_hotspot_count", 0) or 0
                       ),
                       "firms_correlated_regions": int(
-                          (change.get("firms_correlation") or {}).get(
-                              "regions_with_correlation",
-                              0,
-                          )
-                          or 0
+                          firms.get("regions_with_correlation", 0) or 0
+                      ),
+                      "iranstrike_status": str(
+                          iranstrike.get("status", "unavailable")
+                      ),
+                      "iranstrike_aoi_events": int(
+                          iranstrike.get("aoi_event_count", 0) or 0
+                      ),
+                      "iranstrike_correlated_regions": int(
+                          iranstrike.get("regions_with_correlation", 0) or 0
                       ),
                   }
               )
 
-          results_path = Path(
-              "/tmp/me-sentinel2-change-results.json"
-          )
+          results_path = Path("/tmp/me-sentinel2-change-results.json")
           results_path.write_text(
               json.dumps(
                   verified_results,
@@ -633,12 +752,9 @@ jobs:
               encoding="utf-8",
           )
 
-          print(
-              f"Archive verified: {len(archive)} total record(s)"
-          )
-          print(
-              f"Current run verified: {len(verified_results)} target(s)"
-          )
+          print(f"Legacy archive verified: {len(archive)} total record(s)")
+          print(f"Scalable index verified: {len(locations)} location(s)")
+          print(f"Current run verified: {len(verified_results)} target(s)")
 
           for result in verified_results:
               print(
@@ -649,20 +765,35 @@ jobs:
                   f"comparability={result['comparability']} "
                   f"({result['comparability_score']}%), "
                   f"regions={result['significant_regions']}, "
-                  f"FIRMS={result['firms_status']}, "
-                  f"hotspots={result['firms_aoi_hotspots']}, "
-                  f"correlated_regions={result['firms_correlated_regions']}"
+                  f"FIRMS={result['firms_status']} "
+                  f"({result['firms_aoi_hotspots']} AOI hotspots, "
+                  f"{result['firms_correlated_regions']} regions), "
+                  f"IranStrike={result['iranstrike_status']} "
+                  f"({result['iranstrike_aoi_events']} AOI events, "
+                  f"{result['iranstrike_correlated_regions']} regions)"
               )
           PY
 
-          echo "Generated BEFORE/AFTER and change-map images:"
-          find docs/data/satellite/sentinel2/history             -maxdepth 5             -type f             -name "*.png"             -print 2>/dev/null || true
+          echo "Generated PNG analysis images:"
+          find docs/data/satellite/sentinel2/history \
+            -maxdepth 5 \
+            -type f \
+            -name "*.png" \
+            -print 2>/dev/null || true
 
-          CHANGE_MAP_COUNT="$(
-            find docs/data/satellite/sentinel2/history               -maxdepth 5               -type f               -name "*_change_*.png"               | wc -l
-          )"
+          echo "Generated WebP thumbnails:"
+          find docs/data/satellite/sentinel2/history \
+            -maxdepth 5 \
+            -type f \
+            -name "*_thumb.webp" \
+            -print 2>/dev/null || true
 
-          echo "Change maps present in repository: $CHANGE_MAP_COUNT"
+          echo "Generated scalable record files:"
+          find docs/data/satellite/locations \
+            -maxdepth 4 \
+            -type f \
+            -name "*.json" \
+            -print 2>/dev/null || true
 
       - name: Commit generated Sentinel-2 files
         shell: bash
@@ -670,14 +801,12 @@ jobs:
           set -euo pipefail
 
           git config user.name "github-actions[bot]"
-          git config user.email             "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add docs/data/satellite/archive-index.json
-          git add docs/data/satellite/satellite-metadata.json
-          git add docs/data/satellite/sentinel2/latest.json
-          git add docs/data/satellite/sentinel2/index.json
-          git add -f docs/data/satellite/sentinel2/latest.png
-          git add -f docs/data/satellite/sentinel2/history
+          # The complete satellite directory now contains both the legacy
+          # migration fallback and the scalable lazy-loading data layout.
+          git add -f docs/data/satellite
 
           git status --short
 
@@ -686,7 +815,8 @@ jobs:
             exit 0
           fi
 
-          git commit -m             "Update ME Sentinel-2 imagery and change detection (${{ steps.validation.outputs.target_count }} locations)"
+          git commit -m \
+            "Update ME Sentinel-2 scalable analysis (${{ steps.validation.outputs.target_count }} locations)"
 
           git push
 
@@ -710,12 +840,11 @@ jobs:
           from pathlib import Path
 
           summary_path = Path(os.environ["GITHUB_STEP_SUMMARY"])
-          results_path = Path(
-              "/tmp/me-sentinel2-change-results.json"
-          )
+          results_path = Path("/tmp/me-sentinel2-change-results.json")
+          locations_path = Path("docs/data/satellite/locations.json")
 
           lines = [
-              "## ME Sentinel-2 Change Detection",
+              "## ME Sentinel-2 Scalable Analysis",
               "",
               f"- **Requested locations:** "
               f"{os.environ.get('SUMMARY_TARGET_COUNT', 'n/a')}",
@@ -742,12 +871,11 @@ jobs:
 
               lines.extend(
                   [
-                      "### Automatic visual change indication",
+                      "### Automatic visual and OSINT correlation results",
                       "",
-                      "| Location | Score | Level | Changed pixels | "
-                      "Comparability | Regions | FIRMS | Hotspots | "
-                      "Correlated regions |",
-                      "|---|---:|---|---:|---|---:|---|---:|---:|",
+                      "| Location | Score | Level | Changed | Regions | "
+                      "FIRMS | Hotspots | IranStrike | Events | Thumbnails |",
+                      "|---|---:|---|---:|---:|---|---:|---|---:|---:|",
                   ]
               )
 
@@ -757,39 +885,64 @@ jobs:
                       f"| {result['score']:.2f}/100 "
                       f"| {result['level']} "
                       f"| {result['changed_pixel_percent']:.2f}% "
-                      f"| {result['comparability']} "
-                      f"({result['comparability_score']:.1f}%) "
                       f"| {result['significant_regions']} "
                       f"| {result.get('firms_status', 'unavailable')} "
                       f"| {result.get('firms_aoi_hotspots', 0)} "
-                      f"| {result.get('firms_correlated_regions', 0)} |"
+                      f"| {result.get('iranstrike_status', 'unavailable')} "
+                      f"| {result.get('iranstrike_aoi_events', 0)} "
+                      f"| {result.get('thumbnail_count', 0)} |"
                   )
 
               lines.extend(
                   [
                       "",
-                      "> The output is an automatic visual change "
-                      "indication. It does not by itself confirm damage, "
-                      "military activity, or the cause of a detected change.",
+                      "### Scalable output",
                       "",
-                      "> FIRMS correlation is a spatial-temporal screening "
-                      "indicator. A hotspot does not by itself prove an "
-                      "attack, fire cause, or physical damage.",
+                      f"- **Detailed records created or verified:** {len(results)}",
+                      f"- **WebP thumbnails created or verified:** "
+                      f"{sum(item.get('thumbnail_count', 0) for item in results)}",
+                  ]
+              )
+
+              if locations_path.is_file():
+                  locations = json.loads(
+                      locations_path.read_text(encoding="utf-8")
+                  )
+                  lines.append(
+                      f"- **Locations in lightweight index:** {len(locations)}"
+                  )
+
+              lines.extend(
+                  [
+                      "",
+                      "> Visual change detection is a screening indicator. "
+                      "It does not independently confirm damage, military "
+                      "activity, or the cause of a detected change.",
+                      "",
+                      "> FIRMS and IranStrike matches are spatial-temporal "
+                      "correlations. They require analyst verification and do "
+                      "not independently prove causation.",
                       "",
                   ]
               )
           else:
               lines.extend(
                   [
-                      "Change-detection results were not available because "
-                      "the verification step did not complete.",
+                      "Verification results were not available because the "
+                      "verification step did not complete.",
                       "",
                   ]
               )
 
           lines.extend(
               [
-                  "Archive: "
+                  "Lightweight locations index: "
+                  "`docs/data/satellite/locations.json`",
+                  "",
+                  "Per-location indexes and detailed records: "
+                  "`docs/data/satellite/locations/`",
+                  "",
+                  "Legacy migration fallback: "
                   "`docs/data/satellite/archive-index.json`",
                   "",
               ]
@@ -798,3 +951,4 @@ jobs:
           with summary_path.open("a", encoding="utf-8") as handle:
               handle.write("\n".join(lines))
           PY
+
