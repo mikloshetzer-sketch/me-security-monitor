@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.0.0";
+  const MODULE_VERSION = "2.0.1";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -952,34 +952,90 @@
     const slug = String(firstDefined(
       entry.slug,
       entry.location_slug,
+      entry.id,
       `location-${index + 1}`
-    ));
+    )).trim();
+
     const name = String(firstDefined(
       entry.name,
       entry.location_name,
+      entry.target_area?.name,
       slug
+    )).trim();
+
+    const lat = toNumber(firstDefined(
+      entry.lat,
+      entry.latitude,
+      entry.target_area?.lat,
+      entry.target_area?.latitude
     ));
-    const lat = toNumber(firstDefined(entry.lat, entry.latitude));
+
     const lon = toNumber(firstDefined(
       entry.lon,
       entry.lng,
-      entry.longitude
+      entry.longitude,
+      entry.target_area?.lon,
+      entry.target_area?.lng,
+      entry.target_area?.longitude
     ));
-    const bbox = Array.isArray(entry.bbox) && entry.bbox.length === 4
+
+    const radiusKm = toNumber(firstDefined(
+      entry.radius_km,
+      entry.radius,
+      entry.target_area?.radius_km,
+      10
+    ));
+
+    let bbox = Array.isArray(entry.bbox) && entry.bbox.length === 4
       ? entry.bbox.map(Number)
-      : null;
+      : Array.isArray(entry.target_area?.bbox) &&
+          entry.target_area.bbox.length === 4
+        ? entry.target_area.bbox.map(Number)
+        : null;
 
     if (
+      !bbox &&
+      lat !== null &&
+      lon !== null &&
+      radiusKm !== null &&
+      radiusKm > 0
+    ) {
+      const latDelta = radiusKm / 111.32;
+      const cosine = Math.max(
+        Math.abs(Math.cos((lat * Math.PI) / 180)),
+        0.15
+      );
+      const lonDelta = radiusKm / (111.32 * cosine);
+
+      bbox = [
+        lon - lonDelta,
+        lat - latDelta,
+        lon + lonDelta,
+        lat + latDelta
+      ];
+    }
+
+    if (
+      !slug ||
       lat === null ||
       lon === null ||
+      lat < -90 ||
+      lat > 90 ||
+      lon < -180 ||
+      lon > 180 ||
       !bbox ||
       bbox.some((value) => !Number.isFinite(value))
     ) {
+      console.warn(
+        "[ME Satellite Intelligence] Rejected location entry",
+        { index, entry }
+      );
       return null;
     }
 
     const latestRecordId = String(firstDefined(
       entry.latest_record_id,
+      entry.latest_record,
       entry.record_id,
       `${slug}-latest`
     ));
@@ -987,12 +1043,12 @@
     return {
       ...entry,
       slug,
-      name,
+      name: name || slug,
       location_slug: slug,
-      location_name: name,
+      location_name: name || slug,
       lat,
       lon,
-      radius_km: toNumber(entry.radius_km),
+      radius_km: radiusKm,
       bbox,
       normalized_bounds: [
         [bbox[1], bbox[0]],
@@ -1001,20 +1057,27 @@
       latest_record_id: latestRecordId,
       latest_record_url: String(firstDefined(
         entry.latest_record_url,
+        entry.record_url,
         ""
       )),
       latest_thumbnail_url: String(firstDefined(
         entry.latest_thumbnail_url,
+        entry.thumbnail_url,
         ""
       )),
       index_url: String(firstDefined(
         entry.index_url,
         `data/satellite/locations/${slug}/index.json`
       )),
-      record_count: Number(entry.record_count || 0),
+      record_count: Number(firstDefined(
+        entry.record_count,
+        entry.records_count,
+        0
+      )),
       timestamp: String(firstDefined(
         entry.updated_at,
         entry.generated_at,
+        entry.timestamp,
         ""
       ))
     };
@@ -1082,6 +1145,17 @@
       ),
       __summaryOnly: true
     });
+  }
+
+  function extractLocationsPayload(payload) {
+    if (Array.isArray(payload)) return payload;
+    if (!payload || typeof payload !== "object") return [];
+
+    if (Array.isArray(payload.locations)) return payload.locations;
+    if (Array.isArray(payload.items)) return payload.items;
+    if (Array.isArray(payload.data)) return payload.data;
+
+    return [];
   }
 
   function normalizeArchive(payload) {
@@ -2723,10 +2797,29 @@
         return;
       }
 
+      const previousSlug = state.selectedLocationSlug;
+      const hasPrevious = locations.some(
+        (location) => location.slug === previousSlug
+      );
+
       locations.forEach((location, index) => {
-        dom.locationSelect.add(new Option(`${location.name} (${location.count})`, location.slug, index === 0, index === 0));
+        const selected = hasPrevious
+          ? location.slug === previousSlug
+          : index === 0;
+
+        dom.locationSelect.add(
+          new Option(
+            `${location.name} (${location.count})`,
+            location.slug,
+            selected,
+            selected
+          )
+        );
       });
-      state.selectedLocationSlug = locations[0].slug;
+
+      state.selectedLocationSlug = hasPrevious
+        ? previousSlug
+        : locations[0].slug;
     }
 
     function updateImageSelect() {
@@ -2826,6 +2919,9 @@
 
     async function loadLegacyArchive() {
       const { payload, url } = await fetchFirstAvailable(archiveUrls);
+      state.locations = [];
+      state.locationIndexCache.clear();
+      state.recordDetailCache.clear();
       state.records = normalizeArchive(payload).sort((a, b) => (
         String(b.timestamp).localeCompare(String(a.timestamp))
       ));
@@ -2840,12 +2936,23 @@
 
     async function loadScalableLocations() {
       const { payload, url } = await fetchFirstAvailable(locationsUrls);
-      const locations = asArray(payload)
+      const rawLocations = extractLocationsPayload(payload);
+      const locations = rawLocations
         .map(normalizeLocationEntry)
         .filter(Boolean);
 
+      console.info("[ME Satellite Intelligence] locations.json", {
+        url,
+        rawCount: rawLocations.length,
+        acceptedCount: locations.length,
+        rejectedCount: rawLocations.length - locations.length
+      });
+
       if (!locations.length) {
-        throw new Error("locations.json contains no valid locations.");
+        throw new Error(
+          `locations.json contains no valid locations ` +
+          `(raw records: ${rawLocations.length}).`
+        );
       }
 
       state.locations = locations;
@@ -3101,4 +3208,3 @@
     formatRecordLabel
   };
 })();
-
