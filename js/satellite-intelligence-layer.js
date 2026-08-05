@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.2.0";
+  const MODULE_VERSION = "2.2.1";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -706,6 +706,87 @@
       .me-satellite-iranstrike-badge--inside { background: #dbeafe; color: #1e40af; }
       .me-satellite-iranstrike-badge--nearby { background: #e0e7ff; color: #4338ca; }
       .me-satellite-iranstrike-badge--none { background: #e2e8f0; color: #475569; }
+
+
+      .me-satellite-iranstrike-marker-wrapper {
+        background: transparent;
+        border: 0;
+      }
+
+      .me-satellite-iranstrike-marker {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        transform: rotate(45deg);
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-iranstrike-marker--inside {
+        border: 3px solid #ffffff;
+        background: #1d4ed8;
+        box-shadow:
+          0 0 0 3px rgba(29, 78, 216, .88),
+          0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-iranstrike-marker--nearby {
+        border: 4px solid #3b82f6;
+        background: rgba(147, 197, 253, .35);
+        box-shadow:
+          0 0 0 2px rgba(255, 255, 255, .92),
+          0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-iranstrike-marker::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        content: "✦";
+        transform: translate(-50%, -52%) rotate(-45deg);
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .me-satellite-iranstrike-popup {
+        min-width: 240px;
+        color: #334155;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .me-satellite-iranstrike-popup strong {
+        color: #0f172a;
+      }
+
+      .me-satellite-iranstrike-popup__status {
+        display: inline-flex;
+        margin-bottom: 6px;
+        padding: 3px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .me-satellite-iranstrike-popup__status--inside {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .me-satellite-iranstrike-popup__status--nearby {
+        background: #e0e7ff;
+        color: #3730a3;
+      }
+
+      .me-satellite-iranstrike-popup__source {
+        display: inline-flex;
+        margin-top: 7px;
+        color: #1d4ed8;
+        font-weight: 800;
+        text-decoration: none;
+      }
 
       @media (max-width: 760px) {
         .me-region-intelligence-grid {
@@ -1643,6 +1724,9 @@
       firmsHotspotLayer: L.layerGroup(),
       firmsHotspotMarkers: [],
       firmsHotspotsVisible: true,
+      iranStrikeLayer: L.layerGroup(),
+      iranStrikeMarkers: [],
+      iranStrikeVisible: true,
       selectedRegion: null,
       ready: false,
       loading: false,
@@ -2426,6 +2510,124 @@
       }
     }
 
+
+    function ensureIranStrikeLayer() {
+      if (!map.hasLayer(state.iranStrikeLayer)) {
+        state.iranStrikeLayer.addTo(map);
+      }
+      return state.iranStrikeLayer;
+    }
+
+    function clearIranStrikeMarkers() {
+      state.iranStrikeLayer.clearLayers();
+      state.iranStrikeMarkers = [];
+    }
+
+    function iranStrikeMarkerIcon(event) {
+      const inside = Boolean(event?.inside_region_bbox);
+      const status = inside ? "inside" : "nearby";
+
+      return L.divIcon({
+        className: "me-satellite-iranstrike-marker-wrapper",
+        html: `
+          <div
+            class="me-satellite-iranstrike-marker me-satellite-iranstrike-marker--${status}"
+            title="${inside ? "IranStrike – régión belül" : "IranStrike – közeli esemény"}"
+          ></div>
+        `,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -13]
+      });
+    }
+
+    function buildIranStrikePopupHtml(event, region) {
+      const inside = Boolean(event?.inside_region_bbox);
+      const status = inside ? "INSIDE" : "NEARBY";
+      const statusClass = inside ? "inside" : "nearby";
+      const sourceUrl = String(event?.source_url || "").trim();
+      const description = String(event?.description || "").trim();
+
+      return `
+        <div class="me-satellite-iranstrike-popup">
+          <span class="me-satellite-iranstrike-popup__status me-satellite-iranstrike-popup__status--${statusClass}">
+            ${status}
+          </span><br>
+          <strong>${escapeHtml(event?.title || region?.id || "IranStrike event")}</strong><br>
+          Dátum: ${escapeHtml(firstDefined(event?.date, "n/a"))}<br>
+          Támadó: ${escapeHtml(firstDefined(
+            event?.attacker_label,
+            event?.attacker,
+            "n/a"
+          ))}<br>
+          Kategória: ${escapeHtml(firstDefined(event?.category, "n/a"))}<br>
+          Súlyosság: ${escapeHtml(firstDefined(event?.severity, "n/a"))}<br>
+          Távolság a régió középpontjától:
+          ${formatMetric(event?.distance_km, 3, " km")}<br>
+          Pozíció:
+          ${formatMetric(event?.latitude, 6)},
+          ${formatMetric(event?.longitude, 6)}
+          ${description ? `<br><br>${escapeHtml(description)}` : ""}
+          ${sourceUrl ? `
+            <br><a
+              class="me-satellite-iranstrike-popup__source"
+              href="${escapeHtml(sourceUrl)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Forrás megnyitása ↗</a>
+          ` : ""}
+        </div>
+      `;
+    }
+
+    function drawIranStrikeEvents(region) {
+      clearIranStrikeMarkers();
+
+      if (!state.iranStrikeVisible || !region) return;
+
+      const events = Array.isArray(
+        region?.iranstrike_correlation?.events
+      )
+        ? region.iranstrike_correlation.events
+        : [];
+
+      if (!events.length) return;
+
+      ensureIranStrikeLayer();
+
+      events.forEach((event) => {
+        const lat = toNumber(event?.latitude);
+        const lon = toNumber(event?.longitude);
+
+        if (lat === null || lon === null) return;
+
+        const marker = L.marker([lat, lon], {
+          icon: iranStrikeMarkerIcon(event),
+          keyboard: true,
+          riseOnHover: true,
+          zIndexOffset: 970
+        });
+
+        marker.bindPopup(buildIranStrikePopupHtml(event, region), {
+          maxWidth: 340,
+          className: "me-satellite-iranstrike-leaflet-popup"
+        });
+
+        marker.addTo(state.iranStrikeLayer);
+        state.iranStrikeMarkers.push(marker);
+      });
+    }
+
+    function setIranStrikeVisible(visible) {
+      state.iranStrikeVisible = Boolean(visible);
+
+      if (state.iranStrikeVisible) {
+        drawIranStrikeEvents(state.selectedRegion);
+      } else {
+        clearIranStrikeMarkers();
+      }
+    }
+
     function regionBounds(region) {
       const bbox = region?.bbox_geo;
 
@@ -2494,6 +2696,7 @@
       state.selectedLocationSlug = record.location_slug;
       state.selectedRecordId = record.id;
       drawFirmsHotspots(region);
+      drawIranStrikeEvents(region);
       return true;
     }
 
@@ -3482,6 +3685,7 @@
         removeOverlay();
         clearRegionHighlight();
         clearFirmsHotspots();
+        clearIranStrikeMarkers();
         state.selectedRegion = null;
       }
 
@@ -3589,12 +3793,18 @@
       },
       setFirmsHotspotsVisible,
       clearFirmsHotspots,
+      setIranStrikeVisible,
+      clearIranStrikeMarkers,
       destroy() {
         removeOverlay();
         clearRegionHighlight();
         clearFirmsHotspots();
+        clearIranStrikeMarkers();
         if (map.hasLayer(state.firmsHotspotLayer)) {
           map.removeLayer(state.firmsHotspotLayer);
+        }
+        if (map.hasLayer(state.iranStrikeLayer)) {
+          map.removeLayer(state.iranStrikeLayer);
         }
         removeAllLocationMarkers();
         if (map.hasLayer(state.markerLayer)) map.removeLayer(state.markerLayer);
@@ -3619,3 +3829,4 @@
     formatRecordLabel
   };
 })();
+
