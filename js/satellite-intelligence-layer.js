@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "1.4.0";
+  const MODULE_VERSION = "1.5.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_ARCHIVE_URLS = [
     "./data/satellite/archive-index.json",
@@ -615,6 +615,98 @@
         color: #3730a3;
       }
 
+
+      .me-satellite-firms-marker-wrapper {
+        background: transparent;
+        border: 0;
+      }
+
+      .me-satellite-firms-marker {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        box-shadow: 0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-firms-marker--inside {
+        border: 3px solid #ffffff;
+        background: #dc2626;
+        box-shadow:
+          0 0 0 3px rgba(220, 38, 38, .92),
+          0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-firms-marker--nearby {
+        border: 4px solid #f59e0b;
+        background: rgba(245, 158, 11, .22);
+        box-shadow:
+          0 0 0 2px rgba(255, 255, 255, .92),
+          0 3px 10px rgba(15, 23, 42, .35);
+      }
+
+      .me-satellite-firms-marker::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        content: "🔥";
+        transform: translate(-50%, -52%);
+        font-size: 11px;
+        line-height: 1;
+      }
+
+      .me-satellite-firms-map-control {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        padding: 9px 10px;
+        border: 1px solid #dbe4ee;
+        border-radius: 9px;
+        background: #ffffff;
+        color: #334155;
+        font-size: 11px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .me-satellite-firms-map-control input {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        accent-color: #dc2626;
+      }
+
+      .me-satellite-firms-popup {
+        min-width: 220px;
+        color: #334155;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .me-satellite-firms-popup strong {
+        color: #0f172a;
+      }
+
+      .me-satellite-firms-popup__status {
+        display: inline-flex;
+        margin-bottom: 6px;
+        padding: 3px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .me-satellite-firms-popup__status--inside {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .me-satellite-firms-popup__status--nearby {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
       .me-satellite-firms-summary {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1155,6 +1247,10 @@
       markerControlsRoot: null,
       modalRoot: null,
       regionHighlight: null,
+      firmsHotspotLayer: L.layerGroup(),
+      firmsHotspotMarkers: [],
+      firmsHotspotsVisible: true,
+      selectedRegion: null,
       ready: false,
       loading: false,
       lastError: null
@@ -1640,6 +1736,123 @@
     }
 
 
+
+    function ensureFirmsHotspotLayer() {
+      if (!map.hasLayer(state.firmsHotspotLayer)) {
+        state.firmsHotspotLayer.addTo(map);
+      }
+      return state.firmsHotspotLayer;
+    }
+
+    function clearFirmsHotspots() {
+      state.firmsHotspotLayer.clearLayers();
+      state.firmsHotspotMarkers = [];
+    }
+
+    function hotspotMarkerIcon(hotspot) {
+      const inside = Boolean(hotspot?.inside_region_bbox);
+      const status = inside ? "inside" : "nearby";
+
+      return L.divIcon({
+        className: "me-satellite-firms-marker-wrapper",
+        html: `
+          <div
+            class="me-satellite-firms-marker me-satellite-firms-marker--${status}"
+            title="${inside ? "FIRMS – régión belül" : "FIRMS – közeli hőpont"}"
+          ></div>
+        `,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -12]
+      });
+    }
+
+    function buildFirmsPopupHtml(hotspot, region) {
+      const inside = Boolean(hotspot?.inside_region_bbox);
+      const status = inside ? "INSIDE" : "NEARBY";
+      const statusClass = inside ? "inside" : "nearby";
+
+      const sensor = [
+        hotspot?.satellite,
+        hotspot?.instrument
+      ].filter(Boolean).join(" / ")
+        || hotspot?.source
+        || "n/a";
+
+      return `
+        <div class="me-satellite-firms-popup">
+          <span class="me-satellite-firms-popup__status me-satellite-firms-popup__status--${statusClass}">
+            ${status}
+          </span><br>
+          <strong>${escapeHtml(region?.id || "FIRMS")}</strong><br>
+          Idő: ${escapeHtml(firstDefined(
+            hotspot?.acquisition_datetime_utc,
+            hotspot?.acquisition_date,
+            "n/a"
+          ))}<br>
+          Szenzor: ${escapeHtml(sensor)}<br>
+          FRP: ${formatMetric(hotspot?.frp, 2, " MW")}<br>
+          Bizonyosság: ${escapeHtml(
+            formatFirmsConfidence(hotspot?.confidence)
+          )}<br>
+          Távolság a régió középpontjától:
+          ${formatMetric(hotspot?.distance_km, 3, " km")}<br>
+          Pozíció:
+          ${formatMetric(hotspot?.latitude, 6)},
+          ${formatMetric(hotspot?.longitude, 6)}
+        </div>
+      `;
+    }
+
+    function drawFirmsHotspots(region) {
+      clearFirmsHotspots();
+      state.selectedRegion = region || null;
+
+      if (!state.firmsHotspotsVisible || !region) return;
+
+      const hotspots = Array.isArray(
+        region?.firms_correlation?.hotspots
+      )
+        ? region.firms_correlation.hotspots
+        : [];
+
+      if (!hotspots.length) return;
+
+      ensureFirmsHotspotLayer();
+
+      hotspots.forEach((hotspot) => {
+        const lat = toNumber(hotspot?.latitude);
+        const lon = toNumber(hotspot?.longitude);
+
+        if (lat === null || lon === null) return;
+
+        const marker = L.marker([lat, lon], {
+          icon: hotspotMarkerIcon(hotspot),
+          keyboard: true,
+          riseOnHover: true,
+          zIndexOffset: 980
+        });
+
+        marker.bindPopup(buildFirmsPopupHtml(hotspot, region), {
+          maxWidth: 320,
+          className: "me-satellite-firms-leaflet-popup"
+        });
+
+        marker.addTo(state.firmsHotspotLayer);
+        state.firmsHotspotMarkers.push(marker);
+      });
+    }
+
+    function setFirmsHotspotsVisible(visible) {
+      state.firmsHotspotsVisible = Boolean(visible);
+
+      if (state.firmsHotspotsVisible) {
+        drawFirmsHotspots(state.selectedRegion);
+      } else {
+        clearFirmsHotspots();
+      }
+    }
+
     function regionBounds(region) {
       const bbox = region?.bbox_geo;
 
@@ -1703,6 +1916,7 @@
 
       state.selectedLocationSlug = record.location_slug;
       state.selectedRecordId = record.id;
+      drawFirmsHotspots(region);
       return true;
     }
 
@@ -1824,6 +2038,15 @@
               </span>
             </div>
           </div>
+
+          <label class="me-satellite-firms-map-control">
+            <input
+              type="checkbox"
+              data-me-satellite-firms-map-toggle
+              ${state.firmsHotspotsVisible ? "checked" : ""}
+            >
+            FIRMS-hőpontok megjelenítése a térképen
+          </label>
 
           <div class="me-satellite-firms-details">
             Időablak:
@@ -2167,6 +2390,13 @@
           });
 
         const normalizedChange = normalizeChangeDetection(record);
+
+        body
+          .querySelector("[data-me-satellite-firms-map-toggle]")
+          ?.addEventListener("change", (event) => {
+            setFirmsHotspotsVisible(Boolean(event.target.checked));
+          });
+
         body
           .querySelectorAll("[data-me-satellite-region-id]")
           .forEach((button) => {
@@ -2375,6 +2605,8 @@
       } else {
         removeOverlay();
         clearRegionHighlight();
+        clearFirmsHotspots();
+        state.selectedRegion = null;
       }
 
       notify(state.enabled ? "Műholdas réteg bekapcsolva" : "Műholdas réteg kikapcsolva");
@@ -2454,9 +2686,15 @@
       getVisibleLocations() {
         return [...state.visibleLocationSlugs];
       },
+      setFirmsHotspotsVisible,
+      clearFirmsHotspots,
       destroy() {
         removeOverlay();
         clearRegionHighlight();
+        clearFirmsHotspots();
+        if (map.hasLayer(state.firmsHotspotLayer)) {
+          map.removeLayer(state.firmsHotspotLayer);
+        }
         removeAllLocationMarkers();
         if (map.hasLayer(state.markerLayer)) map.removeLayer(state.markerLayer);
         if (state.baseLayer && map.hasLayer(state.baseLayer)) map.removeLayer(state.baseLayer);
