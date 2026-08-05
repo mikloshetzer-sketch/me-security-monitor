@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.0.1";
+  const MODULE_VERSION = "2.1.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -1526,6 +1526,26 @@
         add(clean.slice(5));
       }
 
+      const locationsUrl = String(state.locationsUrl || "");
+      if (locationsUrl) {
+        try {
+          const locationsAbsolute = new URL(locationsUrl, document.baseURI);
+          const locationsDirectory = new URL("./", locationsAbsolute);
+
+          if (clean.startsWith("data/satellite/")) {
+            const satelliteRelative = clean.slice("data/satellite/".length);
+            add(new URL(satelliteRelative, locationsDirectory).href);
+          }
+
+          if (clean.startsWith("docs/data/satellite/")) {
+            const satelliteRelative = clean.slice("docs/data/satellite/".length);
+            add(new URL(satelliteRelative, locationsDirectory).href);
+          }
+        } catch (_error) {
+          // Document-base candidates remain available.
+        }
+      }
+
       const archiveUrl = String(state.archiveUrl || "");
       if (archiveUrl) {
         try {
@@ -1713,9 +1733,24 @@
     }
 
     async function fetchJson(url) {
-      const response = await fetch(url, { cache: "no-store" });
-      if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`);
-      return response.json();
+      const candidates = getAssetUrlCandidates(url);
+      const errors = [];
+
+      for (const candidate of candidates) {
+        try {
+          const response = await fetch(candidate, { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          return await response.json();
+        } catch (error) {
+          errors.push(`${candidate}: ${error.message}`);
+        }
+      }
+
+      throw new Error(
+        `JSON resource could not be loaded. ${errors.join(" | ")}`
+      );
     }
 
     async function loadLocationRecords(slug, { force = false } = {}) {
@@ -1734,14 +1769,31 @@
       );
       if (!location) return [];
 
-      const indexUrl = resolveAssetUrl(location.index_url);
-      const payload = await fetchJson(indexUrl);
-      const summaries = asArray(payload)
-        .map((item) => normalizeLocationRecordSummary(item, location))
-        .filter(Boolean)
-        .sort((a, b) => (
-          String(b.timestamp).localeCompare(String(a.timestamp))
-        ));
+      let summaries = [];
+
+      try {
+        const payload = await fetchJson(location.index_url);
+        summaries = asArray(payload)
+          .map((item) => normalizeLocationRecordSummary(item, location))
+          .filter(Boolean)
+          .sort((a, b) => (
+            String(b.timestamp).localeCompare(String(a.timestamp))
+          ));
+      } catch (error) {
+        console.warn(
+          "[ME Satellite Intelligence] Location index unavailable; " +
+          "using latest record from locations.json.",
+          { slug, indexUrl: location.index_url, error }
+        );
+
+        const fallback = locationEntryToRecord(location);
+        summaries = fallback ? [fallback] : [];
+      }
+
+      if (!summaries.length) {
+        const fallback = locationEntryToRecord(location);
+        if (fallback) summaries = [fallback];
+      }
 
       state.records = [
         ...state.records.filter(
@@ -1764,7 +1816,18 @@
       const recordUrl = String(record.record_url || "");
       if (!recordUrl) return record;
 
-      const payload = await fetchJson(resolveAssetUrl(recordUrl));
+      let payload;
+      try {
+        payload = await fetchJson(recordUrl);
+      } catch (error) {
+        console.warn(
+          "[ME Satellite Intelligence] Detailed record unavailable; " +
+          "keeping lightweight summary.",
+          { recordUrl, error }
+        );
+        return record;
+      }
+
       const detailed = normalizeRecord(payload);
       if (!detailed) return record;
 
@@ -2994,7 +3057,11 @@
         state.ready = true;
         updateLocationSelect();
 
-        if (state.selectedLocationSlug) {
+        // In scalable mode the first location index is not fetched during
+        // initial page load. The lightweight pseudo-record from locations.json
+        // is enough to populate the controls and markers. Detailed data is
+        // loaded only after an explicit location or marker interaction.
+        if (state.dataMode === "legacy" && state.selectedLocationSlug) {
           await loadLocationRecords(state.selectedLocationSlug);
         }
 
@@ -3031,7 +3098,8 @@
           removeOverlay();
           setSummary(
             `<strong>${locations.length} helyszín betöltve.</strong><br>` +
-            "A részletes archívum és a képek csak helyszínválasztáskor töltődnek le."
+            "A helyszínlista aktív. A részletes rekordok és képek csak " +
+            "kiválasztáskor töltődnek le."
           );
         }
 
