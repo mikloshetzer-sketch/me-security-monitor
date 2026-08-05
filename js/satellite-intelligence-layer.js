@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.1.0";
+  const MODULE_VERSION = "2.2.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -587,6 +587,131 @@
         box-shadow: 0 2px 8px rgba(15, 23, 42, .18);
       }
 
+
+      .me-region-intelligence-panel {
+        margin-top: 14px;
+        border: 1px solid #b8c7d9;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, .08);
+      }
+
+      .me-region-intelligence-panel__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 13px 15px;
+        background: linear-gradient(135deg, #102a43, #1f5f86);
+        color: #ffffff;
+      }
+
+      .me-region-intelligence-panel__title {
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .me-region-intelligence-panel__score {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 74px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .16);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .me-region-intelligence-panel__body {
+        padding: 14px;
+      }
+
+      .me-region-intelligence-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .me-region-intelligence-metric {
+        padding: 10px 11px;
+        border: 1px solid #dbe4ee;
+        border-radius: 10px;
+        background: #f8fafc;
+      }
+
+      .me-region-intelligence-metric__label {
+        display: block;
+        color: #64748b;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+      }
+
+      .me-region-intelligence-metric__value {
+        display: block;
+        margin-top: 4px;
+        color: #0f172a;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .me-region-intelligence-assessment {
+        margin-top: 11px;
+        padding: 11px 12px;
+        border-left: 4px solid #2563eb;
+        border-radius: 8px;
+        background: #eff6ff;
+        color: #1e3a5f;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .me-region-intelligence-events {
+        display: grid;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .me-region-intelligence-event {
+        padding: 8px 9px;
+        border: 1px solid #c7d2fe;
+        border-radius: 8px;
+        background: #f8faff;
+        color: #334155;
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .me-region-intelligence-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 11px;
+      }
+
+      .me-satellite-iranstrike-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 66px;
+        padding: 4px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .me-satellite-iranstrike-badge--inside { background: #dbeafe; color: #1e40af; }
+      .me-satellite-iranstrike-badge--nearby { background: #e0e7ff; color: #4338ca; }
+      .me-satellite-iranstrike-badge--none { background: #e2e8f0; color: #475569; }
+
+      @media (max-width: 760px) {
+        .me-region-intelligence-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
 
       .me-satellite-firms-badge {
         display: inline-flex;
@@ -1366,6 +1491,27 @@
                     : [],
                   note: String(firstDefined(firms.note, ""))
                 };
+              })(),
+              iranstrike_correlation: (() => {
+                const strikes = region.iranstrike_correlation || {};
+                return {
+                  classification: String(
+                    firstDefined(strikes.classification, "NONE")
+                  ).toUpperCase(),
+                  inside_event_count: toNumber(
+                    strikes.inside_event_count
+                  ) ?? 0,
+                  nearby_event_count: toNumber(
+                    strikes.nearby_event_count
+                  ) ?? 0,
+                  nearest_distance_km: toNumber(
+                    strikes.nearest_distance_km
+                  ),
+                  events: Array.isArray(strikes.events)
+                    ? strikes.events
+                    : [],
+                  note: String(firstDefined(strikes.note, ""))
+                };
               })()
             }))
         : [],
@@ -1390,6 +1536,21 @@
             firms.nearby_threshold_km
           ),
           errors: Array.isArray(firms.errors) ? firms.errors : []
+        };
+      })(),
+      iranstrike_correlation: (() => {
+        const strikes = source.iranstrike_correlation || {};
+        return {
+          status: String(firstDefined(strikes.status, "unavailable")).toLowerCase(),
+          provider: String(firstDefined(strikes.provider, "IranStrike")),
+          window_start: String(firstDefined(strikes.window_start, "")),
+          window_end: String(firstDefined(strikes.window_end, "")),
+          aoi_event_count: toNumber(strikes.aoi_event_count) ?? 0,
+          regions_with_correlation: toNumber(strikes.regions_with_correlation) ?? 0,
+          inside_region_event_matches: toNumber(strikes.inside_region_event_matches) ?? 0,
+          nearby_event_matches: toNumber(strikes.nearby_event_matches) ?? 0,
+          nearby_threshold_km: toNumber(strikes.nearby_threshold_km),
+          aoi_events: Array.isArray(strikes.aoi_events) ? strikes.aoi_events : []
         };
       })()
     };
@@ -2312,8 +2473,12 @@
         pane: "overlayPane"
       }).addTo(map);
 
+      const intelligence = calculateRegionIntelligence(
+        region,
+        normalizeChangeDetection(record)
+      );
       state.regionHighlight.bindTooltip(
-        `${escapeHtml(region.id)} · ${formatMetric(region.area_km2_estimate, 3, " km²")}`,
+        `${escapeHtml(region.id)} · ${formatMetric(region.area_km2_estimate, 3, " km²")} · ${intelligence.score}/100`,
         {
           permanent: true,
           direction: "top",
@@ -2349,6 +2514,143 @@
       if (number !== null) return `${number.toFixed(0)}%`;
 
       return String(value).toUpperCase();
+    }
+
+    function iranStrikeBadgeClass(classification) {
+      const value = String(classification || "NONE").toUpperCase();
+      if (value === "INSIDE") return "inside";
+      if (value === "NEARBY") return "nearby";
+      return "none";
+    }
+
+    function calculateRegionIntelligence(region, change) {
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+      const area = Math.max(0, toNumber(region?.area_km2_estimate) || 0);
+      const intensity = Math.max(0, toNumber(region?.mean_change_intensity) || 0);
+      const areaPercent = Math.max(0, toNumber(region?.area_percent) || 0);
+
+      let score = 0;
+      score += Math.min(22, area * 4.4);
+      score += Math.min(22, intensity * 36);
+      score += Math.min(10, areaPercent * 3);
+      score += Math.min(18, (firms.inside_hotspot_count || 0) * 4.5);
+      score += Math.min(8, (firms.nearby_hotspot_count || 0) * 1.5);
+      score += Math.min(14, (strikes.inside_event_count || 0) * 7);
+      score += Math.min(6, (strikes.nearby_event_count || 0) * 2);
+
+      if (String(change?.comparability || "").toUpperCase() === "HIGH") score += 5;
+      score = Math.max(0, Math.min(100, Math.round(score)));
+
+      const level = score >= 80 ? "VERY HIGH"
+        : score >= 60 ? "HIGH"
+        : score >= 35 ? "MEDIUM"
+        : "LOW";
+
+      return { score, level };
+    }
+
+    function buildIranStrikeEventsHtml(region) {
+      const strikes = region?.iranstrike_correlation || {};
+      const events = Array.isArray(strikes.events) ? strikes.events : [];
+      if (!events.length) return "";
+
+      return `
+        <div class="me-region-intelligence-events">
+          ${events.slice(0, 4).map((event, index) => `
+            <div class="me-region-intelligence-event">
+              <strong>IranStrike ${index + 1}</strong>
+              · ${escapeHtml(firstDefined(event.date, "n/a"))}<br>
+              ${escapeHtml(firstDefined(event.title, event.category, "Esemény"))}<br>
+              Szereplő: ${escapeHtml(firstDefined(event.attacker_label, event.attacker, "n/a"))}
+              · Súlyosság: ${escapeHtml(firstDefined(event.severity, "n/a"))}<br>
+              Távolság: ${formatMetric(event.distance_km, 3, " km")}
+              ${event.inside_region_bbox ? "· <strong>régión belül</strong>" : "· közeli esemény"}
+              ${event.source_url ? `<br><a href="${escapeHtml(event.source_url)}" target="_blank" rel="noopener noreferrer">Forrás megnyitása</a>` : ""}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function buildRegionAssessment(region, change) {
+      const intelligence = calculateRegionIntelligence(region, change);
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+      const signals = [];
+
+      if ((firms.inside_hotspot_count || 0) > 0) {
+        signals.push(`${firms.inside_hotspot_count} FIRMS-hőpont található a régión belül`);
+      } else if ((firms.nearby_hotspot_count || 0) > 0) {
+        signals.push(`${firms.nearby_hotspot_count} FIRMS-hőpont található a közelben`);
+      }
+
+      if ((strikes.inside_event_count || 0) > 0) {
+        signals.push(`${strikes.inside_event_count} IranStrike-esemény esik a régión belülre`);
+      } else if ((strikes.nearby_event_count || 0) > 0) {
+        signals.push(`${strikes.nearby_event_count} IranStrike-esemény található a közelben`);
+      }
+
+      const signalText = signals.length
+        ? signals.join("; ")
+        : "nem található közvetlen FIRMS- vagy IranStrike-egyezés";
+
+      return `A(z) ${escapeHtml(region.id)} régió becsült területe ${formatMetric(region.area_km2_estimate, 3, " km²")}, ` +
+        `átlagos változási intenzitása ${formatMetric(region.mean_change_intensity, 3)}. ` +
+        `${signalText}. Az összesített elemzői prioritás ${intelligence.score}/100 (${intelligence.level}). ` +
+        `Ez automatikus korrelációs jelzés, nem bizonyítja önmagában a változás okát vagy fizikai károsodást.`;
+    }
+
+    function buildRegionIntelligencePanelHtml(region, change) {
+      if (!region) return "";
+      const intelligence = calculateRegionIntelligence(region, change);
+      const firms = region.firms_correlation || {};
+      const strikes = region.iranstrike_correlation || {};
+
+      return `
+        <section class="me-region-intelligence-panel" data-me-region-intelligence-panel>
+          <div class="me-region-intelligence-panel__header">
+            <span class="me-region-intelligence-panel__title">
+              Region Intelligence – ${escapeHtml(region.id)}
+            </span>
+            <span class="me-region-intelligence-panel__score">
+              ${intelligence.score}/100 · ${escapeHtml(intelligence.level)}
+            </span>
+          </div>
+          <div class="me-region-intelligence-panel__body">
+            <div class="me-region-intelligence-grid">
+              <div class="me-region-intelligence-metric">
+                <span class="me-region-intelligence-metric__label">Terület</span>
+                <span class="me-region-intelligence-metric__value">${formatMetric(region.area_km2_estimate, 3, " km²")}</span>
+              </div>
+              <div class="me-region-intelligence-metric">
+                <span class="me-region-intelligence-metric__label">Intenzitás</span>
+                <span class="me-region-intelligence-metric__value">${formatMetric(region.mean_change_intensity, 3)}</span>
+              </div>
+              <div class="me-region-intelligence-metric">
+                <span class="me-region-intelligence-metric__label">FIRMS</span>
+                <span class="me-region-intelligence-metric__value">${formatMetric(firms.inside_hotspot_count, 0)} belül / ${formatMetric(firms.nearby_hotspot_count, 0)} közel</span>
+              </div>
+              <div class="me-region-intelligence-metric">
+                <span class="me-region-intelligence-metric__label">IranStrike</span>
+                <span class="me-region-intelligence-metric__value">${formatMetric(strikes.inside_event_count, 0)} belül / ${formatMetric(strikes.nearby_event_count, 0)} közel</span>
+              </div>
+            </div>
+
+            <div class="me-region-intelligence-assessment">
+              ${buildRegionAssessment(region, change)}
+            </div>
+
+            ${buildIranStrikeEventsHtml(region)}
+
+            <div class="me-region-intelligence-actions">
+              <button type="button" class="me-satellite-modal__button me-satellite-modal__button--primary" data-me-region-show-map="${escapeHtml(region.id)}">
+                Régió megjelenítése a térképen
+              </button>
+            </div>
+          </div>
+        </section>
+      `;
     }
 
     function buildFirmsHotspotsHtml(region) {
@@ -2535,7 +2837,16 @@
                   region.firms_correlation?.nearest_distance_km,
                   3,
                   " km"
-                )}
+                )}<br>
+                IranStrike:
+                <span class="me-satellite-iranstrike-badge me-satellite-iranstrike-badge--${iranStrikeBadgeClass(
+                  region.iranstrike_correlation?.classification
+                )}">
+                  ${escapeHtml(region.iranstrike_correlation?.classification || "NONE")}
+                </span>
+                · belül: ${formatMetric(region.iranstrike_correlation?.inside_event_count, 0)}
+                · közel: ${formatMetric(region.iranstrike_correlation?.nearby_event_count, 0)}
+                · prioritás: ${calculateRegionIntelligence(region, change).score}/100
                 ${buildFirmsHotspotsHtml(region)}
               </span>
             </span>
@@ -2644,6 +2955,10 @@
             ${warnings}
 
             ${buildFirmsSummaryHtml(change)}
+
+            <div data-me-region-intelligence-host>
+              ${buildRegionIntelligencePanelHtml(change.regions[0], change)}
+            </div>
 
             ${buildRegionListHtml(change)}
 
@@ -2804,6 +3119,20 @@
         const normalizedChange = normalizeChangeDetection(record);
 
         body
+          .querySelector("[data-me-region-show-map]")
+          ?.addEventListener("click", (event) => {
+            const regionId = event.currentTarget.dataset.meRegionShowMap;
+            const region = normalizedChange?.regions.find(
+              (item) => item.id === regionId
+            );
+            if (!region) return;
+            if (focusRegion(region, record)) {
+              state.modalRoot?.classList.remove("is-open");
+              document.body.style.removeProperty("overflow");
+            }
+          });
+
+        body
           .querySelector("[data-me-satellite-firms-map-toggle]")
           ?.addEventListener("change", (event) => {
             setFirmsHotspotsVisible(Boolean(event.target.checked));
@@ -2825,9 +3154,23 @@
 
               button.classList.add("is-active");
 
-              if (focusRegion(region, record)) {
-                state.modalRoot?.classList.remove("is-open");
-                document.body.style.removeProperty("overflow");
+              const intelligenceHost = body.querySelector(
+                "[data-me-region-intelligence-host]"
+              );
+              if (intelligenceHost) {
+                intelligenceHost.innerHTML = buildRegionIntelligencePanelHtml(
+                  region,
+                  normalizedChange
+                );
+
+                intelligenceHost
+                  .querySelector("[data-me-region-show-map]")
+                  ?.addEventListener("click", () => {
+                    if (focusRegion(region, record)) {
+                      state.modalRoot?.classList.remove("is-open");
+                      document.body.style.removeProperty("overflow");
+                    }
+                  });
               }
             });
           });
