@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-05T05:24:34+00:00",
+  "generated_at": "2026-08-05T10:46:02+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,20 +46,20 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 45,
+      "total_events": 46,
       "map_visualizable_events": 13,
       "total_map_points": 15,
       "multi_location_events": 2,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-03T15:01:52Z"
+      "latest_event_date": "2026-08-05T09:17:42Z"
     },
     "region_counts": {
-      "Gaza Strip": 33,
+      "Gaza Strip": 34,
       "South Lebanon": 14
     },
     "activity_type_counts": {
       "airstrike": 34,
-      "ground_activity": 5,
+      "ground_activity": 6,
       "drone_activity": 4,
       "cross_border_fire": 3,
       "evacuation_warning": 2,
@@ -68,19 +68,19 @@
     },
     "target_organization_counts": {
       "Hamas": 26,
+      "Not explicitly stated": 9,
       "Palestinian Islamic Jihad": 8,
-      "Hezbollah": 8,
-      "Not explicitly stated": 8
+      "Hezbollah": 8
     },
     "target_type_counts": {
       "commander": 27,
       "individual_operative": 12,
       "unspecified": 8,
       "armed_cell": 6,
+      "military_structure": 5,
       "weapons_production": 5,
-      "military_structure": 4,
       "weapons_storage": 4,
-      "tunnel": 2,
+      "tunnel": 3,
       "rocket_launcher": 2,
       "command_center": 1,
       "smuggling_network": 1,
@@ -89,9 +89,9 @@
     "operation_result_counts": {
       "struck": 36,
       "eliminated": 30,
-      "located": 7,
-      "reported": 7,
-      "dismantled": 6
+      "located": 8,
+      "dismantled": 7,
+      "reported": 7
     },
     "commander_type_counts": {
       "unspecified_commander": 12,
@@ -104,21 +104,21 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 40,
+      "ground": 41,
       "command": 26,
+      "rocket_missile": 6,
       "production": 6,
       "weapons_logistics": 5,
-      "rocket_missile": 5,
+      "underground": 4,
       "drone_uav": 4,
       "unspecified": 3,
-      "underground": 3,
       "naval": 1
     },
     "area_mention_counts": {
       "Northern Gaza Strip": 15,
-      "Southern Gaza Strip": 11,
+      "Southern Gaza Strip": 12,
       "Central Gaza Strip": 7,
-      "Yellow Line area": 4,
+      "Yellow Line area": 5,
       "Security Zone – South Lebanon": 3
     },
     "top_locations": {
@@ -132,6 +132,69 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19025",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19025",
+      "date": "2026-08-05T09:17:42Z",
+      "title": "IDF ground operation statement",
+      "description": "IDF: Special footage: Underground terror tunnel route containing dozens of rockets dismantled in the southern Gaza Strip Troops from the Paratroopers Brigade, under the command of the Gaza Division (143), located an underground route containing dozens of rockets belonging to terrorist organizations operating in the Gaza Strip. The route was dismantled in cooperation with the engineering forces of the Gaza Division and the Yahalom Unit. The troops are operating in the southern Gaza Strip, to clear the Yellow Line area of terrorist infrastructure above and below ground. IDF troops in the Southern Command are deployed in the area in accordance with the ceasefire framework and will continue to operate to remove any immediate threat. Attached are the following: Footage from the body camera of a K9 from the Oketz Unit inside the underground terror tunnel route: https://bit.ly/4g0cV18 Footage of the dismantling of the underground terror tunnel route: https://bit.ly/4fR49Ce Photos from inside the underground terror tunnel route: https://IDFANC.activetrail.biz/",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "ground_activity"
+      ],
+      "activity_type": "ground_activity",
+      "target_organizations": [
+        "Not explicitly stated"
+      ],
+      "target_organization": "Not explicitly stated",
+      "target_types": [
+        "tunnel",
+        "military_structure"
+      ],
+      "target_type": "tunnel",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "underground",
+        "rocket_missile",
+        "ground"
+      ],
+      "threat_domain": "underground",
+      "area_mentions": [
+        "Southern Gaza Strip",
+        "Yellow Line area"
+      ],
+      "operation_results": [
+        "dismantled",
+        "located"
+      ],
+      "operation_result": "dismantled",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19025"
+    },
     {
       "id": "idf-idfofficial-19019",
       "source": "IDF official Telegram",
