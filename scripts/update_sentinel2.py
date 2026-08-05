@@ -80,11 +80,12 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "3.3.0"
+WORKFLOW_VERSION = "4.0.0"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 CHANGE_ENGINE_NAME = "ME Satellite Visual Change Detector"
-CHANGE_ENGINE_VERSION = "1.3.0"
+CHANGE_ENGINE_VERSION = "2.0.0"
+DATA_SCHEMA_VERSION = "2.0.0"
 
 FIRMS_AREA_API_BASE = (
     "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
@@ -2129,6 +2130,7 @@ def lightweight_record_summary(record: dict[str, Any]) -> dict[str, Any]:
     iranstrike = change.get("iranstrike_correlation") or {}
 
     return {
+        "data_schema_version": DATA_SCHEMA_VERSION,
         "id": record.get("id"),
         "generated_at": record.get("generated_at"),
         "timestamp": record.get("timestamp"),
@@ -2189,6 +2191,7 @@ def write_scalable_satellite_outputs(
 
     latest_summary = summaries[0]
     location_entry = {
+        "data_schema_version": DATA_SCHEMA_VERSION,
         "slug": location_slug,
         "name": record["location_name"],
         "lat": record["target_area"]["lat"],
@@ -2569,4 +2572,4 @@ if __name__ == "__main__":
         main()
     except Exception as error:
         print(f"ERROR: {error}", file=sys.stderr)
-        sys.exit(1)
+        sys.exit(1
