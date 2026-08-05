@@ -80,7 +80,7 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "4.0.0"
+WORKFLOW_VERSION = "4.0.1"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 CHANGE_ENGINE_NAME = "ME Satellite Visual Change Detector"
@@ -2572,4 +2572,5 @@ if __name__ == "__main__":
         main()
     except Exception as error:
         print(f"ERROR: {error}", file=sys.stderr)
-        sys.exit(1
+        sys.exit(1)
+
