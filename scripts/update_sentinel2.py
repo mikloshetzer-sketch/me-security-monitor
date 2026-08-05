@@ -65,6 +65,14 @@ LATEST_JSON_PATH = SENTINEL2_DIR / "latest.json"
 INDEX_JSON_PATH = SENTINEL2_DIR / "index.json"
 ARCHIVE_INDEX_PATH = SATELLITE_DIR / "archive-index.json"
 
+# Scalable satellite data layout. The legacy archive remains available during
+# migration so the current frontend keeps working.
+LOCATIONS_INDEX_PATH = SATELLITE_DIR / "locations.json"
+LOCATIONS_DIR = SATELLITE_DIR / "locations"
+
+# IranStrike normalizer writes this file in the repository root/data folder.
+IRANSTRIKE_DATA_PATH = ROOT_DIR / "data" / "iranstrike.json"
+
 TOKEN_URL = (
     "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/"
     "protocol/openid-connect/token"
@@ -72,11 +80,11 @@ TOKEN_URL = (
 PROCESS_API_URL = "https://sh.dataspace.copernicus.eu/api/v1/process"
 CATALOG_API_URL = "https://sh.dataspace.copernicus.eu/catalog/v1/search"
 
-WORKFLOW_VERSION = "3.2.0"
+WORKFLOW_VERSION = "3.3.0"
 PROVIDER_NAME = "Sentinel Hub / Copernicus Data Space Ecosystem"
 PRODUCT_NAME = "Sentinel-2 L2A True Color"
 CHANGE_ENGINE_NAME = "ME Satellite Visual Change Detector"
-CHANGE_ENGINE_VERSION = "1.2.0"
+CHANGE_ENGINE_VERSION = "1.3.0"
 
 FIRMS_AREA_API_BASE = (
     "https://firms.modaps.eosdis.nasa.gov/api/area/csv"
@@ -88,6 +96,11 @@ FIRMS_SOURCES = (
 )
 FIRMS_DAY_RANGE = 5
 FIRMS_NEARBY_DISTANCE_KM = 10.0
+
+IRANSTRIKE_NEARBY_DISTANCE_KM = 10.0
+THUMBNAIL_SIZE = 420
+THUMBNAIL_WEBP_QUALITY = 78
+LOCATION_INDEX_RECORD_LIMIT = 50
 
 EVALSCRIPT_TRUE_COLOR = """
 //VERSION=3
@@ -121,6 +134,7 @@ def ensure_dirs() -> None:
     SATELLITE_DIR.mkdir(parents=True, exist_ok=True)
     SENTINEL2_DIR.mkdir(parents=True, exist_ok=True)
     SENTINEL2_HISTORY_DIR.mkdir(parents=True, exist_ok=True)
+    LOCATIONS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def safe_coord(value: float) -> float:
@@ -585,6 +599,76 @@ def load_png_bgra(path: Path) -> Any:
         raise RuntimeError(f"Unsupported PNG channel count: {image.shape}")
 
     return image
+
+
+
+def write_webp_thumbnail(
+    *,
+    source_path: Path,
+    destination_path: Path,
+    max_size: int = THUMBNAIL_SIZE,
+    quality: int = THUMBNAIL_WEBP_QUALITY,
+) -> None:
+    require_image_processing_dependencies()
+    image = cv2.imread(str(source_path), cv2.IMREAD_UNCHANGED)
+
+    if image is None:
+        raise RuntimeError(f"OpenCV could not read image for thumbnail: {source_path}")
+
+    height, width = image.shape[:2]
+    scale = min(1.0, float(max_size) / float(max(height, width)))
+    target_width = max(1, int(round(width * scale)))
+    target_height = max(1, int(round(height * scale)))
+
+    if (target_width, target_height) != (width, height):
+        image = cv2.resize(
+            image,
+            (target_width, target_height),
+            interpolation=cv2.INTER_AREA,
+        )
+
+    destination_path.parent.mkdir(parents=True, exist_ok=True)
+    success = cv2.imwrite(
+        str(destination_path),
+        image,
+        [int(cv2.IMWRITE_WEBP_QUALITY), int(quality)],
+    )
+
+    if not success or not destination_path.is_file():
+        raise RuntimeError(f"Failed to write WebP thumbnail: {destination_path}")
+
+
+def create_record_thumbnails(
+    *,
+    image_paths: dict[str, Any],
+    location_slug: str,
+) -> dict[str, str]:
+    location_history_dir = SENTINEL2_HISTORY_DIR / location_slug
+    stamp = str(image_paths["generated_stamp"])
+
+    thumbnail_paths = {
+        "before": location_history_dir / f"{stamp}_before_thumb.webp",
+        "after": location_history_dir / f"{stamp}_after_thumb.webp",
+        "change": location_history_dir / f"{stamp}_change_thumb.webp",
+    }
+
+    source_paths = {
+        "before": Path(image_paths["before_abs"]),
+        "after": Path(image_paths["after_abs"]),
+        "change": Path(image_paths["change_abs"]),
+    }
+
+    result: dict[str, str] = {}
+
+    for key, destination in thumbnail_paths.items():
+        write_webp_thumbnail(
+            source_path=source_paths[key],
+            destination_path=destination,
+        )
+        result[f"{key}_thumbnail_abs"] = str(destination)
+        result[f"{key}_thumbnail_url"] = docs_relative_url(destination)
+
+    return result
 
 
 def robust_channel_normalize(reference: Any, candidate: Any, mask: Any) -> Any:
@@ -1112,6 +1196,325 @@ def enrich_change_detection_with_firms(
 
     return change_detection
 
+
+
+
+def parse_event_datetime(value: Any) -> datetime | None:
+    if value in (None, ""):
+        return None
+
+    normalized = str(value).strip().replace("Z", "+00:00")
+
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        return None
+
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+
+    return parsed.astimezone(timezone.utc)
+
+
+def load_iranstrike_events() -> tuple[list[dict[str, Any]], str | None]:
+    if not IRANSTRIKE_DATA_PATH.is_file():
+        return [], f"IranStrike data file not found: {IRANSTRIKE_DATA_PATH}"
+
+    payload = load_json(IRANSTRIKE_DATA_PATH, {})
+    if not isinstance(payload, dict):
+        return [], "IranStrike data is not a JSON object."
+
+    raw_events = payload.get("map_events")
+    if not isinstance(raw_events, list):
+        raw_events = payload.get("events")
+
+    if not isinstance(raw_events, list):
+        return [], "IranStrike data contains no map_events or events array."
+
+    events: list[dict[str, Any]] = []
+
+    for raw in raw_events:
+        if not isinstance(raw, dict):
+            continue
+
+        if raw.get("map_visualizable") is False:
+            continue
+
+        latitude = parse_optional_float(raw.get("latitude", raw.get("lat")))
+        longitude = parse_optional_float(
+            raw.get("longitude", raw.get("lon", raw.get("lng")))
+        )
+        event_datetime = parse_event_datetime(
+            raw.get("date")
+            or raw.get("timestamp")
+            or raw.get("datetime")
+        )
+
+        if (
+            latitude is None
+            or longitude is None
+            or event_datetime is None
+            or not (-90 <= latitude <= 90)
+            or not (-180 <= longitude <= 180)
+            or (abs(latitude) < 0.000001 and abs(longitude) < 0.000001)
+        ):
+            continue
+
+        events.append(
+            {
+                "id": str(raw.get("id") or raw.get("event_id") or ""),
+                "date": event_datetime.isoformat().replace("+00:00", "Z"),
+                "latitude": round(latitude, 6),
+                "longitude": round(longitude, 6),
+                "title": str(raw.get("title") or "IranStrike event"),
+                "description": str(raw.get("description") or ""),
+                "location": str(raw.get("location") or ""),
+                "country": str(raw.get("country") or ""),
+                "category": str(raw.get("category") or "other"),
+                "severity": str(raw.get("severity") or "unknown"),
+                "attacker": str(raw.get("attacker") or "unknown"),
+                "attacker_label": str(
+                    raw.get("attacker_label")
+                    or raw.get("attacker")
+                    or "Unknown actor"
+                ),
+                "attacker_confidence": str(
+                    raw.get("attacker_confidence") or "unknown"
+                ),
+                "source_name": str(raw.get("source_name") or "IranStrike"),
+                "source_url": str(raw.get("source_url") or ""),
+                "geocode_method": str(raw.get("geocode_method") or ""),
+                "geocode_confidence": str(
+                    raw.get("geocode_confidence") or ""
+                ),
+                "_datetime": event_datetime,
+            }
+        )
+
+    return events, None
+
+
+def summarize_iranstrike_event(
+    event: dict[str, Any],
+    *,
+    distance_km: float,
+    inside_region: bool,
+) -> dict[str, Any]:
+    return {
+        key: value
+        for key, value in {
+            "id": event.get("id"),
+            "date": event.get("date"),
+            "latitude": event.get("latitude"),
+            "longitude": event.get("longitude"),
+            "title": event.get("title"),
+            "description": event.get("description"),
+            "location": event.get("location"),
+            "country": event.get("country"),
+            "category": event.get("category"),
+            "severity": event.get("severity"),
+            "attacker": event.get("attacker"),
+            "attacker_label": event.get("attacker_label"),
+            "attacker_confidence": event.get("attacker_confidence"),
+            "source_name": event.get("source_name"),
+            "source_url": event.get("source_url"),
+            "geocode_method": event.get("geocode_method"),
+            "geocode_confidence": event.get("geocode_confidence"),
+            "distance_km": round(distance_km, 3),
+            "inside_region_bbox": bool(inside_region),
+        }.items()
+        if value not in (None, "")
+    }
+
+
+def correlate_iranstrike_with_regions(
+    *,
+    change_detection: dict[str, Any],
+    events: list[dict[str, Any]],
+    target_lat: float,
+    target_lon: float,
+    target_bbox: list[float],
+    window_start: datetime,
+    window_end: datetime,
+) -> dict[str, Any]:
+    in_window = [
+        event
+        for event in events
+        if window_start <= event["_datetime"] <= window_end
+    ]
+
+    aoi_matches: list[dict[str, Any]] = []
+
+    for event in in_window:
+        distance_km = haversine_distance_km(
+            target_lat,
+            target_lon,
+            float(event["latitude"]),
+            float(event["longitude"]),
+        )
+        inside_aoi_bbox = point_inside_geo_bbox(
+            latitude=float(event["latitude"]),
+            longitude=float(event["longitude"]),
+            bbox_geo=target_bbox,
+        )
+
+        if inside_aoi_bbox or distance_km <= IRANSTRIKE_NEARBY_DISTANCE_KM:
+            aoi_matches.append(
+                summarize_iranstrike_event(
+                    event,
+                    distance_km=distance_km,
+                    inside_region=inside_aoi_bbox,
+                )
+            )
+
+    aoi_matches.sort(
+        key=lambda item: (
+            not item.get("inside_region_bbox", False),
+            item.get("distance_km", 999999),
+            item.get("date", ""),
+        )
+    )
+
+    regions = change_detection.get("regions") or []
+    regions_with_correlation = 0
+    total_inside = 0
+    total_nearby = 0
+
+    for region in regions:
+        centroid = region.get("centroid") or {}
+        centroid_lat = parse_optional_float(centroid.get("lat"))
+        centroid_lon = parse_optional_float(centroid.get("lon"))
+        bbox_geo = region.get("bbox_geo")
+        matches: list[dict[str, Any]] = []
+
+        if centroid_lat is not None and centroid_lon is not None:
+            for event in in_window:
+                inside = point_inside_geo_bbox(
+                    latitude=float(event["latitude"]),
+                    longitude=float(event["longitude"]),
+                    bbox_geo=bbox_geo,
+                )
+                distance_km = haversine_distance_km(
+                    centroid_lat,
+                    centroid_lon,
+                    float(event["latitude"]),
+                    float(event["longitude"]),
+                )
+
+                if inside or distance_km <= IRANSTRIKE_NEARBY_DISTANCE_KM:
+                    matches.append(
+                        summarize_iranstrike_event(
+                            event,
+                            distance_km=distance_km,
+                            inside_region=inside,
+                        )
+                    )
+
+        matches.sort(
+            key=lambda item: (
+                not item.get("inside_region_bbox", False),
+                item.get("distance_km", 999999),
+                item.get("date", ""),
+            )
+        )
+        inside_count = sum(
+            1 for item in matches if item.get("inside_region_bbox")
+        )
+        nearby_count = len(matches) - inside_count
+
+        if inside_count:
+            classification = "INSIDE"
+        elif nearby_count:
+            classification = "NEARBY"
+        else:
+            classification = "NONE"
+
+        if classification != "NONE":
+            regions_with_correlation += 1
+
+        total_inside += inside_count
+        total_nearby += nearby_count
+
+        region["iranstrike_correlation"] = {
+            "classification": classification,
+            "inside_event_count": inside_count,
+            "nearby_event_count": nearby_count,
+            "nearest_distance_km": (
+                matches[0].get("distance_km") if matches else None
+            ),
+            "events": matches[:10],
+            "note": (
+                "IranStrike events provide spatial-temporal correlation only. "
+                "They do not independently prove the cause of a visual change."
+            ),
+        }
+
+    return {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": IRANSTRIKE_DATA_PATH.as_posix(),
+        "window_start": window_start.isoformat().replace("+00:00", "Z"),
+        "window_end": window_end.isoformat().replace("+00:00", "Z"),
+        "source_event_count": len(events),
+        "events_in_time_window": len(in_window),
+        "aoi_event_count": len(aoi_matches),
+        "aoi_events": aoi_matches[:25],
+        "regions_with_correlation": regions_with_correlation,
+        "inside_region_event_matches": total_inside,
+        "nearby_event_matches": total_nearby,
+        "nearby_threshold_km": IRANSTRIKE_NEARBY_DISTANCE_KM,
+        "interpretation": (
+            "spatiotemporal_screening_indicator_requires_analyst_review"
+        ),
+    }
+
+
+def enrich_change_detection_with_iranstrike(
+    *,
+    change_detection: dict[str, Any],
+    target_lat: float,
+    target_lon: float,
+    bbox: list[float],
+    before_scene: dict[str, Any],
+    after_scene: dict[str, Any],
+) -> dict[str, Any]:
+    events, error = load_iranstrike_events()
+
+    if error:
+        change_detection["iranstrike_correlation"] = {
+            "status": "unavailable",
+            "provider": "IranStrike normalized event dataset",
+            "reason": error,
+        }
+        return change_detection
+
+    before_dt = parse_event_datetime(before_scene.get("acquisition_datetime"))
+    after_dt = parse_event_datetime(after_scene.get("acquisition_datetime"))
+
+    if before_dt is None or after_dt is None:
+        change_detection["iranstrike_correlation"] = {
+            "status": "unavailable",
+            "provider": "IranStrike normalized event dataset",
+            "reason": "Sentinel acquisition dates are invalid.",
+        }
+        return change_detection
+
+    window_start = min(before_dt, after_dt)
+    window_end = max(before_dt, after_dt)
+
+    change_detection["iranstrike_correlation"] = (
+        correlate_iranstrike_with_regions(
+            change_detection=change_detection,
+            events=events,
+            target_lat=target_lat,
+            target_lon=target_lon,
+            target_bbox=bbox,
+            window_start=window_start,
+            window_end=window_end,
+        )
+    )
+
+    return change_detection
 
 
 def pixel_to_geo(
@@ -1659,6 +2062,10 @@ def build_record(
         "before": before,
         "after": after,
         "change_detection": change_detection,
+        "source_correlations": {
+            "firms": change_detection.get("firms_correlation"),
+            "iranstrike": change_detection.get("iranstrike_correlation"),
+        },
         "comparison": {
             "mode": "before_after",
             "requested_after_date": target_date.isoformat(),
@@ -1668,6 +2075,9 @@ def build_record(
             "before_image_url": image_paths["before_url"],
             "after_image_url": image_paths["after_url"],
             "change_map_url": image_paths["change_url"],
+            "before_thumbnail_url": image_paths.get("before_thumbnail_url"),
+            "after_thumbnail_url": image_paths.get("after_thumbnail_url"),
+            "change_thumbnail_url": image_paths.get("change_thumbnail_url"),
         },
         "imagery": {
             "image_available": True,
@@ -1676,6 +2086,9 @@ def build_record(
             "before_image": image_paths["before_url"],
             "after_image": image_paths["after_url"],
             "change_map": image_paths["change_url"],
+            "before_thumbnail": image_paths.get("before_thumbnail_url"),
+            "after_thumbnail": image_paths.get("after_thumbnail_url"),
+            "change_thumbnail": image_paths.get("change_thumbnail_url"),
             "acquisition_date": after_scene["acquisition_date"],
             "cloud_cover_percent": after_scene.get("cloud_cover_percent"),
             "bounds": {
@@ -1707,6 +2120,122 @@ def update_record_list(path: Path, record: dict[str, Any]) -> list[dict[str, Any
     records.sort(key=lambda item: str(item.get("generated_at", "")), reverse=True)
     write_json_atomic(path, records)
     return records
+
+
+
+def lightweight_record_summary(record: dict[str, Any]) -> dict[str, Any]:
+    change = record.get("change_detection") or {}
+    firms = change.get("firms_correlation") or {}
+    iranstrike = change.get("iranstrike_correlation") or {}
+
+    return {
+        "id": record.get("id"),
+        "generated_at": record.get("generated_at"),
+        "timestamp": record.get("timestamp"),
+        "requested_date": record.get("requested_date"),
+        "location_name": record.get("location_name"),
+        "location_slug": record.get("location_slug"),
+        "bbox": record.get("bbox"),
+        "record_url": (
+            f"data/satellite/locations/{record.get('location_slug')}/"
+            f"records/{record.get('id')}.json"
+        ),
+        "thumbnail_url": (
+            (record.get("imagery") or {}).get("after_thumbnail")
+            or record.get("image_url")
+        ),
+        "change_score": change.get("score"),
+        "change_level": change.get("level"),
+        "comparability": change.get("comparability"),
+        "changed_pixel_percent": change.get("changed_pixel_percent"),
+        "firms_status": firms.get("status", "unavailable"),
+        "firms_hotspot_count": firms.get("aoi_hotspot_count", 0),
+        "iranstrike_status": iranstrike.get("status", "unavailable"),
+        "iranstrike_event_count": iranstrike.get("aoi_event_count", 0),
+    }
+
+
+def write_scalable_satellite_outputs(
+    record: dict[str, Any],
+) -> dict[str, Any]:
+    location_slug = str(record["location_slug"])
+    location_dir = LOCATIONS_DIR / location_slug
+    records_dir = location_dir / "records"
+    record_path = records_dir / f"{record['id']}.json"
+    location_index_path = location_dir / "index.json"
+
+    write_json_atomic(record_path, record)
+
+    existing_location_index = load_json(location_index_path, [])
+    if not isinstance(existing_location_index, list):
+        existing_location_index = []
+
+    summaries = [
+        item
+        for item in existing_location_index
+        if isinstance(item, dict) and item.get("id") != record["id"]
+    ]
+    summaries.append(lightweight_record_summary(record))
+    summaries.sort(
+        key=lambda item: str(item.get("generated_at", "")),
+        reverse=True,
+    )
+    summaries = summaries[:LOCATION_INDEX_RECORD_LIMIT]
+    write_json_atomic(location_index_path, summaries)
+
+    locations = load_json(LOCATIONS_INDEX_PATH, [])
+    if not isinstance(locations, list):
+        locations = []
+
+    latest_summary = summaries[0]
+    location_entry = {
+        "slug": location_slug,
+        "name": record["location_name"],
+        "lat": record["target_area"]["lat"],
+        "lon": record["target_area"]["lon"],
+        "radius_km": record["target_area"]["radius_km"],
+        "bbox": record["bbox"],
+        "latest_record_id": latest_summary["id"],
+        "latest_record_url": latest_summary["record_url"],
+        "latest_thumbnail_url": latest_summary["thumbnail_url"],
+        "record_count": len(summaries),
+        "change_score": latest_summary.get("change_score"),
+        "change_level": latest_summary.get("change_level"),
+        "firms_status": latest_summary.get("firms_status"),
+        "firms_hotspot_count": latest_summary.get(
+            "firms_hotspot_count",
+            0,
+        ),
+        "iranstrike_status": latest_summary.get(
+            "iranstrike_status",
+            "unavailable",
+        ),
+        "iranstrike_event_count": latest_summary.get(
+            "iranstrike_event_count",
+            0,
+        ),
+        "updated_at": record["generated_at"],
+        "index_url": (
+            f"data/satellite/locations/{location_slug}/index.json"
+        ),
+    }
+
+    locations = [
+        item
+        for item in locations
+        if isinstance(item, dict) and item.get("slug") != location_slug
+    ]
+    locations.append(location_entry)
+    locations.sort(key=lambda item: str(item.get("name", "")).casefold())
+    write_json_atomic(LOCATIONS_INDEX_PATH, locations)
+
+    return {
+        "record_path": record_path,
+        "location_index_path": location_index_path,
+        "locations_index_path": LOCATIONS_INDEX_PATH,
+        "location_record_count": len(summaries),
+        "location_count": len(locations),
+    }
 
 
 def write_latest_json(record: dict[str, Any]) -> None:
@@ -1745,6 +2274,10 @@ def write_metadata(record: dict[str, Any], archive_count: int) -> None:
             "change_detection": True,
             "change_map": True,
             "visual_change_score": True,
+            "webp_thumbnails": True,
+            "lazy_loading_layout": True,
+            "firms_correlation": True,
+            "iranstrike_correlation": True,
             "sentinel1_radar": False,
         },
         "data_paths": {
@@ -1752,6 +2285,8 @@ def write_metadata(record: dict[str, Any], archive_count: int) -> None:
             "latest_json": docs_relative_url(LATEST_JSON_PATH),
             "index_json": docs_relative_url(INDEX_JSON_PATH),
             "archive_index_json": docs_relative_url(ARCHIVE_INDEX_PATH),
+            "locations_index_json": docs_relative_url(LOCATIONS_INDEX_PATH),
+            "locations_dir": docs_relative_url(LOCATIONS_DIR) + "/",
             "history_dir": docs_relative_url(SENTINEL2_HISTORY_DIR) + "/",
         },
     }
@@ -1935,6 +2470,14 @@ def main() -> None:
         bbox=bbox,
     )
 
+    print("Creating lightweight WebP thumbnails...")
+    image_paths.update(
+        create_record_thumbnails(
+            image_paths=image_paths,
+            location_slug=location_slug,
+        )
+    )
+
     print("Correlating change regions with NASA FIRMS hotspots...")
     change_detection = enrich_change_detection_with_firms(
         change_detection=change_detection,
@@ -1948,6 +2491,23 @@ def main() -> None:
         )
     )
     print(f"FIRMS correlation status: {firms_status}")
+
+    print("Correlating change regions with IranStrike events...")
+    change_detection = enrich_change_detection_with_iranstrike(
+        change_detection=change_detection,
+        target_lat=lat,
+        target_lon=lon,
+        bbox=bbox,
+        before_scene=before_scene,
+        after_scene=after_scene,
+    )
+    iranstrike_status = (
+        change_detection.get("iranstrike_correlation", {}).get(
+            "status",
+            "unknown",
+        )
+    )
+    print(f"IranStrike correlation status: {iranstrike_status}")
 
     print(
         "Change detection completed: "
@@ -1979,6 +2539,7 @@ def main() -> None:
     write_latest_json(record)
     sentinel_index = update_record_list(INDEX_JSON_PATH, record)
     archive_index = update_record_list(ARCHIVE_INDEX_PATH, record)
+    scalable_outputs = write_scalable_satellite_outputs(record)
     write_metadata(record, archive_count=len(archive_index))
 
     print("Build completed successfully.")
@@ -1989,6 +2550,17 @@ def main() -> None:
     print(f"Latest JSON: {LATEST_JSON_PATH}")
     print(f"Sentinel index: {INDEX_JSON_PATH} ({len(sentinel_index)} records)")
     print(f"ME archive index: {ARCHIVE_INDEX_PATH} ({len(archive_index)} records)")
+    print(
+        "Scalable location index: "
+        f"{scalable_outputs['location_index_path']} "
+        f"({scalable_outputs['location_record_count']} records)"
+    )
+    print(
+        "Scalable locations index: "
+        f"{scalable_outputs['locations_index_path']} "
+        f"({scalable_outputs['location_count']} locations)"
+    )
+    print(f"Detailed record: {scalable_outputs['record_path']}")
     print(f"Metadata: {METADATA_PATH}")
 
 
