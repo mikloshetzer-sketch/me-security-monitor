@@ -91,9 +91,175 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ===== Map =====
     const map = L.map("map").setView([33.5, 44.0], 6);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap",
-    }).addTo(map);
+
+    /*
+     * Global basemap manager.
+     *
+     * Only this block owns Leaflet tile basemaps. Analytical overlays
+     * (Sentinel, FIRMS, IranStrike, events, borders, aircraft, reports,
+     * drawings and heatmaps) remain independent and are not removed when
+     * the basemap changes.
+     */
+    const GLOBAL_BASEMAP_DEFINITIONS = Object.freeze({
+      osm: {
+        label: "OpenStreetMap",
+        url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        options: {
+          maxZoom: 19,
+          attribution: "&copy; OpenStreetMap contributors"
+        }
+      },
+
+      carto: {
+        label: "CARTO Light",
+        url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        options: {
+          subdomains: "abcd",
+          maxZoom: 20,
+          attribution:
+            "&copy; OpenStreetMap contributors &copy; CARTO"
+        }
+      },
+
+      esri: {
+        label: "Esri World Imagery",
+        url:
+          "https://server.arcgisonline.com/ArcGIS/rest/services/" +
+          "World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        options: {
+          maxZoom: 20,
+          attribution: "Tiles &copy; Esri"
+        }
+      },
+
+      dark: {
+        label: "CARTO Dark Matter",
+        url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        options: {
+          subdomains: "abcd",
+          maxZoom: 20,
+          attribution:
+            "&copy; OpenStreetMap contributors &copy; CARTO"
+        }
+      },
+
+      topo: {
+        label: "Esri World Topographic",
+        url:
+          "https://server.arcgisonline.com/ArcGIS/rest/services/" +
+          "World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+        options: {
+          maxZoom: 20,
+          attribution: "Tiles &copy; Esri"
+        }
+      }
+    });
+
+    const globalBaseMapLayers = new Map();
+    let activeGlobalBaseMapKey = "osm";
+    let activeGlobalBaseMapLayer = null;
+
+    function createGlobalBaseMapLayer(key) {
+      const normalizedKey =
+        GLOBAL_BASEMAP_DEFINITIONS[key] ? key : "osm";
+
+      if (globalBaseMapLayers.has(normalizedKey)) {
+        return globalBaseMapLayers.get(normalizedKey);
+      }
+
+      const definition =
+        GLOBAL_BASEMAP_DEFINITIONS[normalizedKey];
+
+      const layer = L.tileLayer(
+        definition.url,
+        {
+          ...definition.options,
+          pane: "tilePane",
+          meGlobalBaseMap: true,
+          meGlobalBaseMapKey: normalizedKey
+        }
+      );
+
+      globalBaseMapLayers.set(normalizedKey, layer);
+      return layer;
+    }
+
+    function setGlobalBaseMap(key, options = {}) {
+      const normalizedKey =
+        GLOBAL_BASEMAP_DEFINITIONS[key] ? key : "osm";
+      const nextLayer =
+        createGlobalBaseMapLayer(normalizedKey);
+
+      if (
+        activeGlobalBaseMapLayer &&
+        activeGlobalBaseMapLayer !== nextLayer &&
+        map.hasLayer(activeGlobalBaseMapLayer)
+      ) {
+        map.removeLayer(activeGlobalBaseMapLayer);
+      }
+
+      /*
+       * Defensive cleanup: remove only tile layers explicitly marked as
+       * global basemaps. Analytical raster overlays are not touched.
+       */
+      map.eachLayer((layer) => {
+        if (
+          layer !== nextLayer &&
+          layer instanceof L.TileLayer &&
+          layer?.options?.meGlobalBaseMap === true &&
+          map.hasLayer(layer)
+        ) {
+          map.removeLayer(layer);
+        }
+      });
+
+      if (!map.hasLayer(nextLayer)) {
+        nextLayer.addTo(map);
+      }
+
+      if (typeof nextLayer.bringToBack === "function") {
+        nextLayer.bringToBack();
+      }
+
+      activeGlobalBaseMapKey = normalizedKey;
+      activeGlobalBaseMapLayer = nextLayer;
+
+      document
+        .querySelectorAll(
+          "#satelliteBaseMapSelect, [data-me-global-basemap-select]"
+        )
+        .forEach((select) => {
+          if (
+            select instanceof HTMLSelectElement &&
+            select.value !== normalizedKey
+          ) {
+            select.value = normalizedKey;
+          }
+        });
+
+      window.dispatchEvent(
+        new CustomEvent("me:basemapchange", {
+          detail: {
+            key: normalizedKey,
+            label:
+              GLOBAL_BASEMAP_DEFINITIONS[normalizedKey].label,
+            source: options.source || "global"
+          }
+        })
+      );
+
+      return nextLayer;
+    }
+
+    window.MEBaseMapManager = Object.freeze({
+      definitions: GLOBAL_BASEMAP_DEFINITIONS,
+      setBaseMap: setGlobalBaseMap,
+      getActiveKey: () => activeGlobalBaseMapKey,
+      getActiveLayer: () => activeGlobalBaseMapLayer,
+      getMap: () => map
+    });
+
+    setGlobalBaseMap("osm", { source: "startup" });
 
     const clusterGroup = L.markerClusterGroup({
       showCoverageOnHover: false,
@@ -2437,6 +2603,17 @@ window.setInterval(() => {
           throw new Error("MESatelliteIntelligence module is unavailable.");
         }
 
+        const satelliteBaseMapSelect =
+          byId("satelliteBaseMapSelect");
+
+        if (
+          satelliteBaseMapSelect &&
+          window.MEBaseMapManager
+        ) {
+          satelliteBaseMapSelect.value =
+            window.MEBaseMapManager.getActiveKey();
+        }
+
         satelliteIntelligenceController = window.MESatelliteIntelligence.init({
           map,
           dom: {
@@ -4208,10 +4385,15 @@ window.setInterval(() => {
         </div>
 
         <div class="muted" style="margin-top:8px;margin-bottom:5px;">Base map</div>
-        <select id="satelliteBaseMapSelect">
+        <select
+          id="satelliteBaseMapSelect"
+          data-me-global-basemap-select
+        >
           <option value="osm" selected>OpenStreetMap</option>
           <option value="carto">CARTO Light</option>
           <option value="esri">Esri World Imagery</option>
+          <option value="dark">CARTO Dark Matter</option>
+          <option value="topo">Esri World Topographic</option>
         </select>
 
         <div class="muted" style="margin-top:8px;margin-bottom:5px;">Satellite analysis mode</div>
@@ -5206,4 +5388,5 @@ window.setInterval(() => {
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
   }
 });
+
 
