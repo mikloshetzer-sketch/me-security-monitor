@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-06 06:47 UTC",
+    "updated": "2026-08-06 10:49 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,9 +8,9 @@
   "summary": {
     "period_start": "2026-07-31",
     "period_end": "2026-08-06",
-    "total_events": 137,
-    "total_risk": 120.83,
-    "normalized_risk_score": 48.3,
+    "total_events": 138,
+    "total_risk": 123.63,
+    "normalized_risk_score": 49.5,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
@@ -18,32 +18,32 @@
     "military": 32,
     "security": 4,
     "political": 34,
-    "other": 67
+    "other": 68
   },
   "source_counts": {
-    "news": 131,
+    "news": 132,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 53.98
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 18.5
+      "risk": 53.78
     },
     {
       "name": "Israel",
-      "risk": 17.7
+      "risk": 21.35
     },
     {
-      "name": "West Bank",
-      "risk": 6.6
+      "name": "Gaza Strip",
+      "risk": 16.65
     },
     {
       "name": "Yemen",
       "risk": 5.0
+    },
+    {
+      "name": "West Bank",
+      "risk": 4.7
     }
   ],
   "top_events": [
@@ -52,7 +52,25 @@
       "date": "2026-08-06",
       "category": "military",
       "source_type": "news",
-      "title": "At least one Lebanese person, two Israeli soldiers killed in south Lebanon - aljazeera.com",
+      "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gulf shipping traffic down after Houthis say they attacked Saudi tanker - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVTZaTFF1d0RtUUU0YWlhZ0RkNW9nXzcwWVhfdUlaMnByRGhLcDVCbFhOeE0xa0dJZk5yaU1DaUVKSXpHMTZCY2pMS0NoZERmUWRVRGtjSDVuenBmTjBlOHZZX3MzVzBZS3lMSm9EUXpneVlCaC1NcW9tQ1YzN0ZJMGlmdmJmWlcxMlpMQjZfUEJIdHMtNFhCeXE1QjFXMGh1RGItaDFZaXZPcFNwWWM1Q3R3ZUxtUGlSZ1NoVWRuMmpMVkU"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "At least one Lebanese person, two Israeli soldiers killed in south Lebanon - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcXRPdktqM3JRRGVmOXlYbEVvazZMRWxhZ2diMW5GaVBfVGY3VjQwcTFmRjBiM01hN1h1SFpGTEVIeUJyc3VyMjBySHh6OVQwM0ZTcEJEcFpodEdqZzlpQlJqVmcxcF9CM09MZC1CMEdKTUVfY0lVZ3gzenVwV29RbVYybkxSdGRfNF8wQ04xWjBnTHpUMTNYWHJrZnFiN2ZZZ1VBRkpTd3VBSmUyV1ZJS1RSMNIBuAFBVV95cUxOLWd2WUpNa2ZTcURKcGpEd1B2ZTk3SnZpbndKc1M5UldLc1V2eXpOMFRnRlV2MzBYeVR6LWg1V2VaQTZSQ09CQnFoMUNRd3c0M0hySURuX09QVEYxeHVCUWdqT3Utcmc1YWN2SF8xbzF5VHNXc2Fqd3Q5cVZaZ3FyUFc1QldSeW5zWU5CN0JRU2Nsa2pmQUJ5T3M4REJFU0JtU1hiakREVjl4Q3JHdHlqY09hdlkzdy11"
     },
@@ -88,18 +106,9 @@
       "date": "2026-08-05",
       "category": "military",
       "source_type": "news",
-      "title": "Israel strikes south Lebanon after first evacuation warning in weeks",
+      "title": "Israel strikes south Lebanon after two soldiers killed by explosion",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/c998711dyjvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Photos: Israeli forces raid occupied West Bank’s Qalandiya refugee camp - aljazeera.com",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRVdDbHh4b3RDQlRNRl91UDExRi1Nb3V6Qk1MVFltRENYRzFBa1FsOUhYUjB3R2MzQ2ZfaWRGOF9zMkVLOXoxdXdjTzhLNC1aYklFT1lsWVJZazJhcG5ock9QdjhvU2xLTGtNWmJ4RzhxdmdKaF9Cd3RpZUNYZmNHUDZCUjJmVDVMNWtqMHJkQmJZR05LRWZvRFFVSkNBeTQ0NXgxNkdMVk4wZS1hdzdZalBn0gG3AUFVX3lxTE8tRUROSmljc2FuNmY0UjUzRkRrTEd3OXdPNFJUb3BZNDI1WFBKWG5zZl9sZWdFNEVMbnpUcmcxcmVtbzBMM2NUTXpndHIxMHdQZXRxUkRJYVd0R3FJS3JPNndWN1BacGdDcDJSN3VLZ0ctMXZTU19XU0ZKTXJSVk9zM280S0s5MkZwTV9OTUNUeDVOX2NlUEI4eEN3LXY3a1FsdUJqbGhKa05mcUJZSDdIdUg4RDdUSQ"
     },
     {
       "score": 2.4,
@@ -127,15 +136,6 @@
       "title": "Six years on, families of those killed in huge Lebanon port blast hope for justice at last - Reuters",
       "location": "Lebanon",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZTBUQWJhNTlGalR6X1BiS0JMLUpfRzRnMnoyQVB5cU1BcEVnc2k3cVpObzZueU8weU0wdm1mYnp3c1FYM25NRUgxbE9tZ1lCckRyYVVlZUlNemhXZl9YOGFJa2lrVTRLS0JGb01yeUd0M205a2hJdVBjRWtZYjhsbXpZWUFmMHNlMkJBZW5YMVE0clN1cEU3d0VEV3FkTTIzaWw2dEJuRExJTDB6ZVBvQW5lRzJ6bXFHS05LdTlZNkt0N0V0d2c"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Mass funeral in Gaza for 112 Palestinians killed in 2023 Israeli strike",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cn0n99npjejo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
