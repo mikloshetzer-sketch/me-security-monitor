@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.5.0";
+  const MODULE_VERSION = "2.5.1";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -37,6 +37,23 @@
     esri: {
       label: "Esri World Imagery",
       url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      options: {
+        maxZoom: 20,
+        attribution: "Tiles &copy; Esri"
+      }
+    },
+    dark: {
+      label: "CARTO Dark Matter",
+      url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+      options: {
+        subdomains: "abcd",
+        maxZoom: 20,
+        attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+      }
+    },
+    topo: {
+      label: "Esri World Topographic",
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
       options: {
         maxZoom: 20,
         attribution: "Tiles &copy; Esri"
@@ -1997,7 +2014,10 @@
     const state = {
       enabled: false,
       mode: dom.sourceSelect?.value || "sentinel2",
-      baseMap: dom.baseMapSelect?.value || "osm",
+      baseMap:
+        window.MEBaseMapManager?.getActiveKey?.() ||
+        dom.baseMapSelect?.value ||
+        "osm",
       opacity: Math.min(1, Math.max(0, Number(dom.opacityInput?.value || 72) / 100)),
       archiveUrl: null,
       locationsUrl: null,
@@ -2212,8 +2232,44 @@
     }
 
     function setBaseMap(key) {
-      const normalizedKey = BASEMAP_DEFINITIONS[key] ? key : "osm";
+      const normalizedKey =
+        BASEMAP_DEFINITIONS[key] ? key : "osm";
 
+      /*
+       * The application-level Leaflet map owns the basemap.
+       * Satellite Intelligence only requests a change and never removes
+       * analytical overlays or creates a competing background tile layer.
+       */
+      if (
+        window.MEBaseMapManager &&
+        typeof window.MEBaseMapManager.setBaseMap === "function"
+      ) {
+        state.baseLayer =
+          window.MEBaseMapManager.setBaseMap(
+            normalizedKey,
+            { source: MODULE_NAME }
+          );
+        state.baseMap = normalizedKey;
+
+        if (
+          dom.baseMapSelect &&
+          dom.baseMapSelect.value !== normalizedKey
+        ) {
+          dom.baseMapSelect.value = normalizedKey;
+        }
+
+        applyMode();
+        notify(
+          `Háttértérkép: ` +
+          `${BASEMAP_DEFINITIONS[normalizedKey].label}`
+        );
+        return state.baseLayer;
+      }
+
+      /*
+       * Backward-compatible fallback for pages that load this module
+       * without the global map manager.
+       */
       if (state.baseLayer && map.hasLayer(state.baseLayer)) {
         map.removeLayer(state.baseLayer);
       }
@@ -2222,13 +2278,22 @@
       state.baseMap = normalizedKey;
       state.baseLayer.addTo(map);
 
-      if (typeof state.baseLayer.bringToBack === "function") state.baseLayer.bringToBack();
-      if (dom.baseMapSelect && dom.baseMapSelect.value !== normalizedKey) {
+      if (typeof state.baseLayer.bringToBack === "function") {
+        state.baseLayer.bringToBack();
+      }
+
+      if (
+        dom.baseMapSelect &&
+        dom.baseMapSelect.value !== normalizedKey
+      ) {
         dom.baseMapSelect.value = normalizedKey;
       }
 
       applyMode();
-      notify(`Háttértérkép: ${BASEMAP_DEFINITIONS[normalizedKey].label}`);
+      notify(
+        `Háttértérkép: ` +
+        `${BASEMAP_DEFINITIONS[normalizedKey].label}`
+      );
       return state.baseLayer;
     }
 
@@ -4891,5 +4956,4 @@
     formatRecordLabel
   };
 })();
-
 
