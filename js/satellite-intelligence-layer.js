@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.5.1";
+  const MODULE_VERSION = "2.2.1";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -37,23 +37,6 @@
     esri: {
       label: "Esri World Imagery",
       url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-      options: {
-        maxZoom: 20,
-        attribution: "Tiles &copy; Esri"
-      }
-    },
-    dark: {
-      label: "CARTO Dark Matter",
-      url: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-      options: {
-        subdomains: "abcd",
-        maxZoom: 20,
-        attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
-      }
-    },
-    topo: {
-      label: "Esri World Topographic",
-      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
       options: {
         maxZoom: 20,
         attribution: "Tiles &copy; Esri"
@@ -593,209 +576,6 @@
         font-weight: 900;
       }
 
-
-
-      .me-satellite-region-smart-label {
-        display: grid;
-        gap: 1px;
-        min-width: 74px;
-        text-align: center;
-        line-height: 1.15;
-      }
-
-      .me-satellite-region-smart-label__id {
-        font-size: 11px;
-        font-weight: 950;
-      }
-
-      .me-satellite-region-smart-label__meta {
-        font-size: 9px;
-        font-weight: 850;
-        opacity: .9;
-      }
-
-      .me-satellite-region-hover {
-        min-width: 250px;
-        max-width: 330px;
-        color: #334155;
-        font-size: 11px;
-        line-height: 1.5;
-      }
-
-      .me-satellite-region-hover__title {
-        margin-bottom: 7px;
-        color: #0f172a;
-        font-size: 13px;
-        font-weight: 950;
-      }
-
-      .me-satellite-region-hover__grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-      }
-
-      .me-satellite-region-hover__metric {
-        padding: 6px 7px;
-        border: 1px solid #dbe4ee;
-        border-radius: 7px;
-        background: #f8fafc;
-      }
-
-      .me-satellite-region-hover__metric span {
-        display: block;
-        color: #64748b;
-        font-size: 9px;
-        font-weight: 850;
-        text-transform: uppercase;
-      }
-
-      .me-satellite-region-hover__metric strong {
-        display: block;
-        margin-top: 2px;
-        color: #0f172a;
-        font-size: 11px;
-      }
-
-      .me-satellite-region-map-legend {
-        position: absolute;
-        right: 14px;
-        bottom: 52px;
-        z-index: 750;
-        min-width: 178px;
-        padding: 10px 11px;
-        border: 1px solid rgba(148, 163, 184, .5);
-        border-radius: 11px;
-        background: rgba(255, 255, 255, .94);
-        box-shadow: 0 8px 24px rgba(15, 23, 42, .14);
-        color: #334155;
-        font-size: 10px;
-        line-height: 1.45;
-        backdrop-filter: blur(3px);
-      }
-
-      .me-satellite-region-map-legend__title {
-        margin-bottom: 7px;
-        color: #0f172a;
-        font-size: 11px;
-        font-weight: 950;
-      }
-
-      .me-satellite-region-map-legend__item {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        margin-top: 5px;
-      }
-
-      .me-satellite-region-map-legend__swatch {
-        width: 18px;
-        height: 11px;
-        border-radius: 3px;
-        flex: 0 0 auto;
-      }
-
-      .me-satellite-region-map-legend__swatch--active {
-        border: 2px solid #dc2626;
-        background: rgba(239, 68, 68, .22);
-      }
-
-      .me-satellite-region-map-legend__swatch--high {
-        border: 2px solid #ea580c;
-        background: rgba(249, 115, 22, .18);
-      }
-
-      .me-satellite-region-map-legend__swatch--medium {
-        border: 2px solid #d97706;
-        background: rgba(245, 158, 11, .16);
-      }
-
-      .me-satellite-region-map-legend__swatch--low {
-        border: 2px solid #475569;
-        background: rgba(148, 163, 184, .15);
-      }
-
-      @media (max-width: 820px) {
-        .me-satellite-region-map-legend {
-          right: 8px;
-          bottom: 42px;
-          min-width: 148px;
-          padding: 8px 9px;
-        }
-      }
-
-      .me-satellite-region-overview-label {
-        padding: 2px 6px;
-        border: 1px solid rgba(71, 85, 105, .34);
-        border-radius: 6px;
-        background: rgba(255, 255, 255, .9);
-        color: #475569;
-        font-size: 10px;
-        font-weight: 850;
-        box-shadow: 0 1px 5px rgba(15, 23, 42, .14);
-        white-space: nowrap;
-      }
-
-      .me-satellite-region-overview-label.is-active {
-        border-color: rgba(220, 38, 38, .55);
-        background: rgba(255, 255, 255, .97);
-        color: #991b1b;
-        font-size: 11px;
-        font-weight: 950;
-      }
-
-      .me-region-spatial-summary {
-        margin-top: 12px;
-        padding: 12px;
-        border: 1px solid #dbe4ee;
-        border-radius: 11px;
-        background: #f8fafc;
-      }
-
-      .me-region-spatial-summary__headline {
-        color: #0f172a;
-        font-size: 12px;
-        font-weight: 900;
-        line-height: 1.55;
-      }
-
-      .me-region-spatial-bands {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 7px;
-        margin-top: 10px;
-      }
-
-      .me-region-spatial-band {
-        padding: 8px 6px;
-        border: 1px solid #dbe4ee;
-        border-radius: 9px;
-        background: #ffffff;
-        text-align: center;
-      }
-
-      .me-region-spatial-band__label {
-        display: block;
-        color: #64748b;
-        font-size: 9px;
-        font-weight: 900;
-        letter-spacing: .02em;
-      }
-
-      .me-region-spatial-band__value {
-        display: block;
-        margin-top: 3px;
-        color: #0f172a;
-        font-size: 14px;
-        font-weight: 950;
-      }
-
-      @media (max-width: 760px) {
-        .me-region-spatial-bands {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
       .me-satellite-region-highlight-label {
         padding: 3px 7px;
         border: 1px solid rgba(15, 23, 42, .35);
@@ -1136,99 +916,6 @@
       .me-satellite-firms-popup__status--nearby {
         background: #fef3c7;
         color: #92400e;
-      }
-
-
-      .me-satellite-cluster-count {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 18px;
-        height: 18px;
-        padding: 0 4px;
-        transform: translate(-50%, -50%);
-        border: 2px solid rgba(255, 255, 255, .96);
-        border-radius: 999px;
-        background: #ffffff;
-        color: #0f172a;
-        box-shadow: 0 1px 4px rgba(15, 23, 42, .3);
-        font-size: 9px;
-        font-weight: 950;
-        line-height: 1;
-      }
-
-      .me-satellite-firms-marker.is-cluster {
-        width: 30px;
-        height: 30px;
-      }
-
-      .me-satellite-firms-marker.is-cluster::after {
-        display: none;
-      }
-
-      .me-satellite-iranstrike-marker.is-cluster {
-        width: 31px;
-        height: 31px;
-      }
-
-      .me-satellite-iranstrike-marker.is-cluster::after {
-        display: none;
-      }
-
-      .me-satellite-cluster-popup {
-        min-width: 290px;
-        max-width: 390px;
-        color: #334155;
-        font-size: 12px;
-        line-height: 1.5;
-      }
-
-      .me-satellite-cluster-popup__head {
-        margin-bottom: 9px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #e2e8f0;
-      }
-
-      .me-satellite-cluster-popup__title {
-        color: #0f172a;
-        font-size: 14px;
-        font-weight: 950;
-      }
-
-      .me-satellite-cluster-popup__meta {
-        margin-top: 3px;
-        color: #64748b;
-        font-size: 11px;
-      }
-
-      .me-satellite-cluster-popup__list {
-        display: grid;
-        gap: 7px;
-        max-height: 330px;
-        overflow-y: auto;
-        padding-right: 4px;
-      }
-
-      .me-satellite-cluster-popup__item {
-        padding: 8px 9px;
-        border: 1px solid #dbe4ee;
-        border-radius: 8px;
-        background: #f8fafc;
-      }
-
-      .me-satellite-cluster-popup__item strong {
-        color: #0f172a;
-      }
-
-      .me-satellite-cluster-popup__item a {
-        display: inline-flex;
-        margin-top: 5px;
-        color: #1d4ed8;
-        font-weight: 800;
-        text-decoration: none;
       }
 
       .me-satellite-firms-summary {
@@ -2014,10 +1701,7 @@
     const state = {
       enabled: false,
       mode: dom.sourceSelect?.value || "sentinel2",
-      baseMap:
-        window.MEBaseMapManager?.getActiveKey?.() ||
-        dom.baseMapSelect?.value ||
-        "osm",
+      baseMap: dom.baseMapSelect?.value || "osm",
       opacity: Math.min(1, Math.max(0, Number(dom.opacityInput?.value || 72) / 100)),
       archiveUrl: null,
       locationsUrl: null,
@@ -2037,9 +1721,6 @@
       markerControlsRoot: null,
       modalRoot: null,
       regionHighlight: null,
-      regionOverviewLayer: L.layerGroup(),
-      regionOverviewItems: new Map(),
-      regionLegendElement: null,
       firmsHotspotLayer: L.layerGroup(),
       firmsHotspotMarkers: [],
       firmsHotspotsVisible: true,
@@ -2232,44 +1913,8 @@
     }
 
     function setBaseMap(key) {
-      const normalizedKey =
-        BASEMAP_DEFINITIONS[key] ? key : "osm";
+      const normalizedKey = BASEMAP_DEFINITIONS[key] ? key : "osm";
 
-      /*
-       * The application-level Leaflet map owns the basemap.
-       * Satellite Intelligence only requests a change and never removes
-       * analytical overlays or creates a competing background tile layer.
-       */
-      if (
-        window.MEBaseMapManager &&
-        typeof window.MEBaseMapManager.setBaseMap === "function"
-      ) {
-        state.baseLayer =
-          window.MEBaseMapManager.setBaseMap(
-            normalizedKey,
-            { source: MODULE_NAME }
-          );
-        state.baseMap = normalizedKey;
-
-        if (
-          dom.baseMapSelect &&
-          dom.baseMapSelect.value !== normalizedKey
-        ) {
-          dom.baseMapSelect.value = normalizedKey;
-        }
-
-        applyMode();
-        notify(
-          `Háttértérkép: ` +
-          `${BASEMAP_DEFINITIONS[normalizedKey].label}`
-        );
-        return state.baseLayer;
-      }
-
-      /*
-       * Backward-compatible fallback for pages that load this module
-       * without the global map manager.
-       */
       if (state.baseLayer && map.hasLayer(state.baseLayer)) {
         map.removeLayer(state.baseLayer);
       }
@@ -2278,33 +1923,19 @@
       state.baseMap = normalizedKey;
       state.baseLayer.addTo(map);
 
-      if (typeof state.baseLayer.bringToBack === "function") {
-        state.baseLayer.bringToBack();
-      }
-
-      if (
-        dom.baseMapSelect &&
-        dom.baseMapSelect.value !== normalizedKey
-      ) {
+      if (typeof state.baseLayer.bringToBack === "function") state.baseLayer.bringToBack();
+      if (dom.baseMapSelect && dom.baseMapSelect.value !== normalizedKey) {
         dom.baseMapSelect.value = normalizedKey;
       }
 
       applyMode();
-      notify(
-        `Háttértérkép: ` +
-        `${BASEMAP_DEFINITIONS[normalizedKey].label}`
-      );
+      notify(`Háttértérkép: ${BASEMAP_DEFINITIONS[normalizedKey].label}`);
       return state.baseLayer;
     }
 
     function removeOverlay() {
-      if (state.overlay && map.hasLayer(state.overlay)) {
-        map.removeLayer(state.overlay);
-      }
+      if (state.overlay && map.hasLayer(state.overlay)) map.removeLayer(state.overlay);
       state.overlay = null;
-      clearRegionHighlight();
-      clearRegionOverview();
-      removeRegionLegend();
     }
 
     function getLocations() {
@@ -2763,51 +2394,6 @@
 
 
 
-
-    function coordinateClusterKey(latitude, longitude, precision = 4) {
-      const lat = toNumber(latitude);
-      const lon = toNumber(longitude);
-
-      if (lat === null || lon === null) return null;
-
-      return `${lat.toFixed(precision)}|${lon.toFixed(precision)}`;
-    }
-
-    function groupItemsByCoordinate(items, precision = 4) {
-      const groups = new Map();
-
-      asArray(items).forEach((item) => {
-        const lat = toNumber(item?.latitude);
-        const lon = toNumber(item?.longitude);
-        const key = coordinateClusterKey(lat, lon, precision);
-
-        if (!key) return;
-
-        if (!groups.has(key)) {
-          groups.set(key, {
-            key,
-            latitude: lat,
-            longitude: lon,
-            items: []
-          });
-        }
-
-        groups.get(key).items.push(item);
-      });
-
-      return [...groups.values()].sort((a, b) => (
-        b.items.length - a.items.length
-      ));
-    }
-
-    function clusterStatus(items) {
-      return asArray(items).some(
-        (item) => Boolean(item?.inside_region_bbox)
-      )
-        ? "inside"
-        : "nearby";
-    }
-
     function ensureFirmsHotspotLayer() {
       if (!map.hasLayer(state.firmsHotspotLayer)) {
         state.firmsHotspotLayer.addTo(map);
@@ -2820,35 +2406,21 @@
       state.firmsHotspotMarkers = [];
     }
 
-    function hotspotMarkerIcon(hotspotOrGroup) {
-      const items = Array.isArray(hotspotOrGroup?.items)
-        ? hotspotOrGroup.items
-        : [hotspotOrGroup];
-      const count = items.length;
-      const status = clusterStatus(items);
-      const inside = status === "inside";
+    function hotspotMarkerIcon(hotspot) {
+      const inside = Boolean(hotspot?.inside_region_bbox);
+      const status = inside ? "inside" : "nearby";
 
       return L.divIcon({
         className: "me-satellite-firms-marker-wrapper",
         html: `
           <div
-            class="me-satellite-firms-marker me-satellite-firms-marker--${status} ${count > 1 ? "is-cluster" : ""}"
-            title="${
-              count > 1
-                ? `FIRMS – ${count} hőpont ezen a koordinátán`
-                : inside
-                  ? "FIRMS – régión belül"
-                  : "FIRMS – közeli hőpont"
-            }"
-          >
-            ${count > 1
-              ? `<span class="me-satellite-cluster-count">${count}</span>`
-              : ""}
-          </div>
+            class="me-satellite-firms-marker me-satellite-firms-marker--${status}"
+            title="${inside ? "FIRMS – régión belül" : "FIRMS – közeli hőpont"}"
+          ></div>
         `,
-        iconSize: count > 1 ? [30, 30] : [22, 22],
-        iconAnchor: count > 1 ? [15, 15] : [11, 11],
-        popupAnchor: [0, count > 1 ? -16 : -12]
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -12]
       });
     }
 
@@ -2889,62 +2461,6 @@
       `;
     }
 
-    function buildFirmsClusterPopupHtml(group, region) {
-      const items = group.items;
-      const maxFrp = items.reduce((maximum, item) => {
-        const frp = toNumber(item?.frp);
-        return frp === null ? maximum : Math.max(maximum, frp);
-      }, 0);
-
-      return `
-        <div class="me-satellite-cluster-popup">
-          <div class="me-satellite-cluster-popup__head">
-            <div class="me-satellite-cluster-popup__title">
-              NASA FIRMS · ${items.length} hőpont
-            </div>
-            <div class="me-satellite-cluster-popup__meta">
-              ${escapeHtml(region?.id || "Régió")} ·
-              ${formatMetric(group.latitude, 6)},
-              ${formatMetric(group.longitude, 6)} ·
-              max. FRP ${formatMetric(maxFrp, 2, " MW")}
-            </div>
-          </div>
-
-          <div class="me-satellite-cluster-popup__list">
-            ${items.map((hotspot, index) => {
-              const sensor = [
-                hotspot?.satellite,
-                hotspot?.instrument
-              ].filter(Boolean).join(" / ")
-                || hotspot?.source
-                || "n/a";
-
-              return `
-                <div class="me-satellite-cluster-popup__item">
-                  <strong>Hőpont ${index + 1}</strong><br>
-                  Idő: ${escapeHtml(firstDefined(
-                    hotspot?.acquisition_datetime_utc,
-                    hotspot?.acquisition_date,
-                    "n/a"
-                  ))}<br>
-                  Szenzor: ${escapeHtml(sensor)}<br>
-                  FRP: ${formatMetric(hotspot?.frp, 2, " MW")}
-                  · Bizonyosság: ${escapeHtml(
-                    formatFirmsConfidence(hotspot?.confidence)
-                  )}<br>
-                  Távolság: ${formatMetric(
-                    hotspot?.distance_km,
-                    3,
-                    " km"
-                  )}
-                </div>
-              `;
-            }).join("")}
-          </div>
-        </div>
-      `;
-    }
-
     function drawFirmsHotspots(region) {
       clearFirmsHotspots();
       state.selectedRegion = region || null;
@@ -2957,32 +2473,27 @@
         ? region.firms_correlation.hotspots
         : [];
 
-      const groups = groupItemsByCoordinate(hotspots);
-
-      if (!groups.length) return;
+      if (!hotspots.length) return;
 
       ensureFirmsHotspotLayer();
 
-      groups.forEach((group) => {
-        const marker = L.marker(
-          [group.latitude, group.longitude],
-          {
-            icon: hotspotMarkerIcon(group),
-            keyboard: true,
-            riseOnHover: true,
-            zIndexOffset: 980
-          }
-        );
+      hotspots.forEach((hotspot) => {
+        const lat = toNumber(hotspot?.latitude);
+        const lon = toNumber(hotspot?.longitude);
 
-        marker.bindPopup(
-          group.items.length > 1
-            ? buildFirmsClusterPopupHtml(group, region)
-            : buildFirmsPopupHtml(group.items[0], region),
-          {
-            maxWidth: 410,
-            className: "me-satellite-firms-leaflet-popup"
-          }
-        );
+        if (lat === null || lon === null) return;
+
+        const marker = L.marker([lat, lon], {
+          icon: hotspotMarkerIcon(hotspot),
+          keyboard: true,
+          riseOnHover: true,
+          zIndexOffset: 980
+        });
+
+        marker.bindPopup(buildFirmsPopupHtml(hotspot, region), {
+          maxWidth: 320,
+          className: "me-satellite-firms-leaflet-popup"
+        });
 
         marker.addTo(state.firmsHotspotLayer);
         state.firmsHotspotMarkers.push(marker);
@@ -3012,35 +2523,21 @@
       state.iranStrikeMarkers = [];
     }
 
-    function iranStrikeMarkerIcon(eventOrGroup) {
-      const items = Array.isArray(eventOrGroup?.items)
-        ? eventOrGroup.items
-        : [eventOrGroup];
-      const count = items.length;
-      const status = clusterStatus(items);
-      const inside = status === "inside";
+    function iranStrikeMarkerIcon(event) {
+      const inside = Boolean(event?.inside_region_bbox);
+      const status = inside ? "inside" : "nearby";
 
       return L.divIcon({
         className: "me-satellite-iranstrike-marker-wrapper",
         html: `
           <div
-            class="me-satellite-iranstrike-marker me-satellite-iranstrike-marker--${status} ${count > 1 ? "is-cluster" : ""}"
-            title="${
-              count > 1
-                ? `IranStrike – ${count} esemény ezen a koordinátán`
-                : inside
-                  ? "IranStrike – régión belül"
-                  : "IranStrike – közeli esemény"
-            }"
-          >
-            ${count > 1
-              ? `<span class="me-satellite-cluster-count">${count}</span>`
-              : ""}
-          </div>
+            class="me-satellite-iranstrike-marker me-satellite-iranstrike-marker--${status}"
+            title="${inside ? "IranStrike – régión belül" : "IranStrike – közeli esemény"}"
+          ></div>
         `,
-        iconSize: count > 1 ? [31, 31] : [22, 22],
-        iconAnchor: count > 1 ? [16, 16] : [11, 11],
-        popupAnchor: [0, count > 1 ? -18 : -13]
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -13]
       });
     }
 
@@ -3083,87 +2580,6 @@
       `;
     }
 
-    function buildIranStrikeClusterPopupHtml(group, region) {
-      const items = group.items;
-      const categories = new Map();
-      const severities = new Map();
-
-      items.forEach((event) => {
-        const category = String(event?.category || "unknown");
-        const severity = String(event?.severity || "unknown");
-
-        categories.set(category, (categories.get(category) || 0) + 1);
-        severities.set(severity, (severities.get(severity) || 0) + 1);
-      });
-
-      const categoryText = [...categories.entries()]
-        .map(([name, count]) => `${name}: ${count}`)
-        .join(" · ");
-
-      const severityText = [...severities.entries()]
-        .map(([name, count]) => `${name}: ${count}`)
-        .join(" · ");
-
-      return `
-        <div class="me-satellite-cluster-popup">
-          <div class="me-satellite-cluster-popup__head">
-            <div class="me-satellite-cluster-popup__title">
-              IranStrike · ${items.length} esemény
-            </div>
-            <div class="me-satellite-cluster-popup__meta">
-              ${escapeHtml(region?.id || "Régió")} ·
-              ${formatMetric(group.latitude, 6)},
-              ${formatMetric(group.longitude, 6)}<br>
-              Kategóriák: ${escapeHtml(categoryText || "n/a")}<br>
-              Súlyosság: ${escapeHtml(severityText || "n/a")}
-            </div>
-          </div>
-
-          <div class="me-satellite-cluster-popup__list">
-            ${items.map((event, index) => {
-              const sourceUrl = String(event?.source_url || "").trim();
-              const description = String(event?.description || "").trim();
-
-              return `
-                <div class="me-satellite-cluster-popup__item">
-                  <strong>
-                    ${index + 1}. ${escapeHtml(
-                      event?.title || event?.category || "IranStrike esemény"
-                    )}
-                  </strong><br>
-                  Dátum: ${escapeHtml(firstDefined(event?.date, "n/a"))}<br>
-                  Támadó: ${escapeHtml(firstDefined(
-                    event?.attacker_label,
-                    event?.attacker,
-                    "n/a"
-                  ))}
-                  · Kategória: ${escapeHtml(
-                    firstDefined(event?.category, "n/a")
-                  )}
-                  · Súlyosság: ${escapeHtml(
-                    firstDefined(event?.severity, "n/a")
-                  )}<br>
-                  Távolság: ${formatMetric(
-                    event?.distance_km,
-                    3,
-                    " km"
-                  )}
-                  ${description
-                    ? `<br>${escapeHtml(description)}`
-                    : ""}
-                  ${sourceUrl
-                    ? `<br><a href="${escapeHtml(sourceUrl)}"
-                        target="_blank"
-                        rel="noopener noreferrer">Forrás megnyitása ↗</a>`
-                    : ""}
-                </div>
-              `;
-            }).join("")}
-          </div>
-        </div>
-      `;
-    }
-
     function drawIranStrikeEvents(region) {
       clearIranStrikeMarkers();
 
@@ -3175,32 +2591,27 @@
         ? region.iranstrike_correlation.events
         : [];
 
-      const groups = groupItemsByCoordinate(events);
-
-      if (!groups.length) return;
+      if (!events.length) return;
 
       ensureIranStrikeLayer();
 
-      groups.forEach((group) => {
-        const marker = L.marker(
-          [group.latitude, group.longitude],
-          {
-            icon: iranStrikeMarkerIcon(group),
-            keyboard: true,
-            riseOnHover: true,
-            zIndexOffset: 970
-          }
-        );
+      events.forEach((event) => {
+        const lat = toNumber(event?.latitude);
+        const lon = toNumber(event?.longitude);
 
-        marker.bindPopup(
-          group.items.length > 1
-            ? buildIranStrikeClusterPopupHtml(group, region)
-            : buildIranStrikePopupHtml(group.items[0], region),
-          {
-            maxWidth: 430,
-            className: "me-satellite-iranstrike-leaflet-popup"
-          }
-        );
+        if (lat === null || lon === null) return;
+
+        const marker = L.marker([lat, lon], {
+          icon: iranStrikeMarkerIcon(event),
+          keyboard: true,
+          riseOnHover: true,
+          zIndexOffset: 970
+        });
+
+        marker.bindPopup(buildIranStrikePopupHtml(event, region), {
+          maxWidth: 340,
+          className: "me-satellite-iranstrike-leaflet-popup"
+        });
 
         marker.addTo(state.iranStrikeLayer);
         state.iranStrikeMarkers.push(marker);
@@ -3215,355 +2626,6 @@
       } else {
         clearIranStrikeMarkers();
       }
-    }
-
-
-    function clearRegionOverview() {
-      if (
-        state.regionOverviewLayer &&
-        map.hasLayer(state.regionOverviewLayer)
-      ) {
-        map.removeLayer(state.regionOverviewLayer);
-      }
-
-      state.regionOverviewLayer.clearLayers();
-      state.regionOverviewItems.clear();
-    }
-
-    function regionPriorityBand(score) {
-      if (score >= 60) return "HIGH";
-      if (score >= 35) return "MEDIUM";
-      return "LOW";
-    }
-
-    function regionOverviewStyle(region, activeRegionId) {
-      const active = String(region?.id) === String(activeRegionId);
-      const change = normalizeChangeDetection(state.currentRecord);
-      const intelligence = calculateRegionIntelligence(region, change);
-      const band = regionPriorityBand(intelligence.score);
-
-      if (active) {
-        return {
-          color: "#dc2626",
-          weight: 3,
-          opacity: 1,
-          fillColor: "#ef4444",
-          fillOpacity: 0.19,
-          dashArray: "7 5"
-        };
-      }
-
-      if (band === "HIGH") {
-        return {
-          color: "#ea580c",
-          weight: 2.3,
-          opacity: 0.94,
-          fillColor: "#f97316",
-          fillOpacity: 0.14,
-          dashArray: "5 4"
-        };
-      }
-
-      if (band === "MEDIUM") {
-        return {
-          color: "#d97706",
-          weight: 2,
-          opacity: 0.9,
-          fillColor: "#f59e0b",
-          fillOpacity: 0.12,
-          dashArray: "5 4"
-        };
-      }
-
-      return {
-        color: "#475569",
-        weight: 2,
-        opacity: 0.88,
-        fillColor: "#94a3b8",
-        fillOpacity: 0.11,
-        dashArray: "5 4"
-      };
-    }
-
-    function visibleRegionLabelLimit(zoom) {
-      if (zoom < 13) return 10;
-      if (zoom < 15) return 20;
-      return Number.POSITIVE_INFINITY;
-    }
-
-    function regionOverviewLabel(region, active, zoom) {
-      const change = normalizeChangeDetection(state.currentRecord);
-      const intelligence = calculateRegionIntelligence(region, change);
-      const firms = region?.firms_correlation || {};
-      const strikes = region?.iranstrike_correlation || {};
-      const firmsCount =
-        (toNumber(firms.inside_hotspot_count) || 0) +
-        (toNumber(firms.nearby_hotspot_count) || 0);
-      const strikeCount =
-        (toNumber(strikes.inside_event_count) || 0) +
-        (toNumber(strikes.nearby_event_count) || 0);
-
-      if (!active && region.rank > visibleRegionLabelLimit(zoom)) {
-        return "";
-      }
-
-      if (zoom < 11 && !active) {
-        return `
-          <div class="me-satellite-region-smart-label">
-            <span class="me-satellite-region-smart-label__id">
-              ${escapeHtml(region?.id || "R")}
-            </span>
-          </div>
-        `;
-      }
-
-      return `
-        <div class="me-satellite-region-smart-label">
-          <span class="me-satellite-region-smart-label__id">
-            ${escapeHtml(region?.id || "R")} · ${intelligence.score}/100
-          </span>
-          <span class="me-satellite-region-smart-label__meta">
-            ${formatMetric(region?.area_km2_estimate, 3, " km²")}
-          </span>
-          ${zoom >= 14 || active ? `
-            <span class="me-satellite-region-smart-label__meta">
-              🔥${firmsCount} · 🎯${strikeCount}
-            </span>
-          ` : ""}
-        </div>
-      `;
-    }
-
-    function buildRegionHoverHtml(region) {
-      const change = normalizeChangeDetection(state.currentRecord);
-      const intelligence = calculateRegionIntelligence(region, change);
-      const firms = region?.firms_correlation || {};
-      const strikes = region?.iranstrike_correlation || {};
-      const spatial = buildIranStrikeSpatialSummary(region);
-
-      const firmsCount =
-        (toNumber(firms.inside_hotspot_count) || 0) +
-        (toNumber(firms.nearby_hotspot_count) || 0);
-      const strikeCount =
-        (toNumber(strikes.inside_event_count) || 0) +
-        (toNumber(strikes.nearby_event_count) || 0);
-
-      return `
-        <div class="me-satellite-region-hover">
-          <div class="me-satellite-region-hover__title">
-            Region ${escapeHtml(region?.id || "n/a")}
-          </div>
-
-          <div class="me-satellite-region-hover__grid">
-            <div class="me-satellite-region-hover__metric">
-              <span>Terület</span>
-              <strong>${formatMetric(
-                region?.area_km2_estimate,
-                3,
-                " km²"
-              )}</strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>Prioritás</span>
-              <strong>${intelligence.score}/100 · ${escapeHtml(
-                intelligence.level
-              )}</strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>Intenzitás</span>
-              <strong>${formatMetric(
-                region?.mean_change_intensity,
-                3
-              )}</strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>Relatív méret</span>
-              <strong>${escapeHtml(
-                region?.relative_size || "n/a"
-              )}</strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>NASA FIRMS</span>
-              <strong>${firmsCount} hőpont</strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>IranStrike</span>
-              <strong>
-                ${strikeCount} esemény /
-                ${spatial.coordinateGroupCount} hely
-              </strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>Legközelebbi esemény</span>
-              <strong>${formatMetric(
-                spatial.nearestDistanceKm,
-                3,
-                " km"
-              )}</strong>
-            </div>
-
-            <div class="me-satellite-region-hover__metric">
-              <span>Közelségi pontszám</span>
-              <strong>${spatial.proximityScore}/100</strong>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function ensureRegionLegend() {
-      if (state.regionLegendElement?.isConnected) return;
-
-      const mapContainer = map.getContainer();
-      const legend = document.createElement("div");
-      legend.className = "me-satellite-region-map-legend";
-      legend.innerHTML = `
-        <div class="me-satellite-region-map-legend__title">
-          Sentinel régiók
-        </div>
-        <div class="me-satellite-region-map-legend__item">
-          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--active"></span>
-          Aktív régió
-        </div>
-        <div class="me-satellite-region-map-legend__item">
-          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--high"></span>
-          Magas prioritás
-        </div>
-        <div class="me-satellite-region-map-legend__item">
-          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--medium"></span>
-          Közepes prioritás
-        </div>
-        <div class="me-satellite-region-map-legend__item">
-          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--low"></span>
-          Alacsony prioritás
-        </div>
-        <div class="me-satellite-region-map-legend__item">
-          🔥 FIRMS · 🎯 IranStrike
-        </div>
-      `;
-
-      mapContainer.appendChild(legend);
-      state.regionLegendElement = legend;
-    }
-
-    function removeRegionLegend() {
-      if (state.regionLegendElement?.isConnected) {
-        state.regionLegendElement.remove();
-      }
-      state.regionLegendElement = null;
-    }
-
-    function renderRegionOverview(activeRegion = null) {
-      clearRegionOverview();
-
-      if (!state.currentRecord) {
-        removeRegionLegend();
-        return;
-      }
-
-      const change = normalizeChangeDetection(state.currentRecord);
-      const regions = Array.isArray(change?.regions)
-        ? change.regions
-        : [];
-
-      if (!regions.length) {
-        removeRegionLegend();
-        return;
-      }
-
-      ensureRegionLegend();
-      state.regionOverviewLayer.addTo(map);
-
-      const activeRegionId = firstDefined(
-        activeRegion?.id,
-        state.selectedRegion?.id,
-        ""
-      );
-      const zoom = map.getZoom();
-
-      regions.forEach((region) => {
-        const bounds = regionBounds(region);
-        if (!bounds) return;
-
-        const active =
-          String(region?.id) === String(activeRegionId);
-
-        const rectangle = L.rectangle(
-          bounds,
-          regionOverviewStyle(region, activeRegionId)
-        );
-
-        rectangle.on("click", () => {
-          state.selectedRegion = region;
-          renderRegionOverview(region);
-          focusRegion(region, state.currentRecord, {
-            fitBounds: true
-          });
-        });
-
-        const label = regionOverviewLabel(region, active, zoom);
-
-        if (label) {
-          rectangle.bindTooltip(label, {
-            permanent: active || region.rank <= visibleRegionLabelLimit(zoom),
-            direction: "center",
-            className:
-              "me-satellite-region-overview-label" +
-              (active ? " is-active" : "")
-          });
-        }
-
-        rectangle.bindPopup(
-          buildRegionHoverHtml(region),
-          {
-            maxWidth: 350,
-            className: "me-satellite-region-hover-popup"
-          }
-        );
-
-        rectangle.on("mouseover", function () {
-          if (!active) {
-            this.setStyle({
-              weight: Math.max(
-                2.8,
-                Number(this.options.weight || 2) + 0.6
-              ),
-              fillOpacity: Math.min(
-                0.22,
-                Number(this.options.fillOpacity || 0.1) + 0.06
-              )
-            });
-          }
-        });
-
-        rectangle.on("mouseout", function () {
-          if (!active) {
-            this.setStyle(
-              regionOverviewStyle(region, activeRegionId)
-            );
-          }
-        });
-
-        rectangle.addTo(state.regionOverviewLayer);
-        state.regionOverviewItems.set(region.id, rectangle);
-      });
-
-      if (
-        typeof state.regionOverviewLayer.bringToFront === "function"
-      ) {
-        state.regionOverviewLayer.bringToFront();
-      }
-    }
-
-    function refreshRegionOverviewForZoom() {
-      if (!state.currentRecord) return;
-      renderRegionOverview(state.selectedRegion);
     }
 
     function regionBounds(region) {
@@ -3596,52 +2658,40 @@
       state.regionHighlight = null;
     }
 
-    function focusRegion(
-      region,
-      record,
-      { fitBounds = true } = {}
-    ) {
+    function focusRegion(region, record) {
       const bounds = regionBounds(region);
-      if (!bounds || !record) return false;
+      if (!bounds) return false;
 
       clearRegionHighlight();
-      state.selectedRegion = region;
-      state.currentRecord = record;
-
-      renderRegionOverview(region);
 
       state.regionHighlight = L.rectangle(bounds, {
         color: "#dc2626",
         weight: 3,
         opacity: 1,
         fillColor: "#ef4444",
-        fillOpacity: 0.16,
-        dashArray: "7 5"
+        fillOpacity: 0.12,
+        dashArray: "7 5",
+        interactive: false,
+        pane: "overlayPane"
       }).addTo(map);
 
-      const change = normalizeChangeDetection(record);
       const intelligence = calculateRegionIntelligence(
         region,
-        change
+        normalizeChangeDetection(record)
       );
-
       state.regionHighlight.bindTooltip(
-        `${escapeHtml(region.id)} · ` +
-        `${formatMetric(region.area_km2_estimate, 3, " km²")} · ` +
-        `${intelligence.score}/100`,
+        `${escapeHtml(region.id)} · ${formatMetric(region.area_km2_estimate, 3, " km²")} · ${intelligence.score}/100`,
         {
           permanent: true,
-          direction: "center",
+          direction: "top",
           className: "me-satellite-region-highlight-label"
         }
       ).openTooltip();
 
-      if (fitBounds) {
-        map.fitBounds(bounds, {
-          padding: [42, 42],
-          maxZoom: 15
-        });
-      }
+      map.fitBounds(bounds, {
+        padding: [42, 42],
+        maxZoom: 15
+      });
 
       state.selectedLocationSlug = record.location_slug;
       state.selectedRecordId = record.id;
@@ -3676,200 +2726,31 @@
       return "none";
     }
 
-
-    function classifyIranStrikeDistance(distanceKm, insideRegion = false) {
-      const distance = toNumber(distanceKm);
-
-      if (insideRegion || distance === 0) return "INSIDE";
-      if (distance === null) return "UNKNOWN";
-      if (distance <= 1) return "VERY_CLOSE";
-      if (distance <= 3) return "CLOSE";
-      if (distance <= 10) return "NEAR";
-      if (distance <= 20) return "DISTANT";
-      return "OUTSIDE_AOI";
-    }
-
-    function iranStrikeProximityScore(distanceKm, insideRegion = false) {
-      const distance = toNumber(distanceKm);
-
-      if (insideRegion || distance === 0) return 100;
-      if (distance === null) return 0;
-      if (distance <= 1) return Math.round(100 - distance * 5);
-      if (distance <= 3) {
-        return Math.round(95 - (distance - 1) * 7.5);
-      }
-      if (distance <= 10) {
-        return Math.round(80 - (distance - 3) * (30 / 7));
-      }
-      if (distance <= 20) {
-        return Math.round(50 - (distance - 10) * 3);
-      }
-      return Math.max(0, Math.round(20 - (distance - 20)));
-    }
-
-    function buildIranStrikeSpatialSummary(region) {
-      const correlation = region?.iranstrike_correlation || {};
-      const events = Array.isArray(correlation.events)
-        ? correlation.events
-        : [];
-      const coordinateGroups = groupItemsByCoordinate(events);
-
-      const bands = {
-        INSIDE: 0,
-        VERY_CLOSE: 0,
-        CLOSE: 0,
-        NEAR: 0,
-        DISTANT: 0,
-        OUTSIDE_AOI: 0,
-        UNKNOWN: 0
-      };
-
-      const distances = [];
-      const scores = [];
-
-      events.forEach((event) => {
-        const inside = Boolean(event?.inside_region_bbox);
-        const distance = toNumber(event?.distance_km);
-        const band = classifyIranStrikeDistance(distance, inside);
-
-        bands[band] += 1;
-
-        if (distance !== null) distances.push(distance);
-        scores.push(iranStrikeProximityScore(distance, inside));
-      });
-
-      return {
-        eventCount: events.length,
-        coordinateGroupCount: coordinateGroups.length,
-        nearestDistanceKm: distances.length
-          ? Math.min(...distances)
-          : null,
-        averageDistanceKm: distances.length
-          ? distances.reduce((sum, value) => sum + value, 0) /
-            distances.length
-          : null,
-        proximityScore: scores.length
-          ? Math.round(
-              scores.reduce((sum, value) => sum + value, 0) /
-              scores.length
-            )
-          : 0,
-        bands
-      };
-    }
-
-    function buildIranStrikeSpatialSummaryHtml(region) {
-      const spatial = buildIranStrikeSpatialSummary(region);
-      const bands = spatial.bands;
-
-      return `
-        <div class="me-region-spatial-summary">
-          <div class="me-region-spatial-summary__headline">
-            IranStrike térbeli összegzés:
-            ${spatial.eventCount} esemény,
-            ${spatial.coordinateGroupCount} koordinátacsoport ·
-            legközelebbi ${formatMetric(
-              spatial.nearestDistanceKm,
-              3,
-              " km"
-            )} ·
-            átlag ${formatMetric(
-              spatial.averageDistanceKm,
-              3,
-              " km"
-            )} ·
-            közelségi pontszám
-            <strong>${spatial.proximityScore}/100</strong>
-          </div>
-
-          <div class="me-region-spatial-bands">
-            <div class="me-region-spatial-band">
-              <span class="me-region-spatial-band__label">INSIDE</span>
-              <span class="me-region-spatial-band__value">${bands.INSIDE}</span>
-            </div>
-            <div class="me-region-spatial-band">
-              <span class="me-region-spatial-band__label">VERY CLOSE</span>
-              <span class="me-region-spatial-band__value">${bands.VERY_CLOSE}</span>
-            </div>
-            <div class="me-region-spatial-band">
-              <span class="me-region-spatial-band__label">CLOSE</span>
-              <span class="me-region-spatial-band__value">${bands.CLOSE}</span>
-            </div>
-            <div class="me-region-spatial-band">
-              <span class="me-region-spatial-band__label">NEAR</span>
-              <span class="me-region-spatial-band__value">${bands.NEAR}</span>
-            </div>
-            <div class="me-region-spatial-band">
-              <span class="me-region-spatial-band__label">DISTANT</span>
-              <span class="me-region-spatial-band__value">${bands.DISTANT}</span>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
     function calculateRegionIntelligence(region, change) {
       const firms = region?.firms_correlation || {};
       const strikes = region?.iranstrike_correlation || {};
-      const spatial = buildIranStrikeSpatialSummary(region);
-      const area = Math.max(
-        0,
-        toNumber(region?.area_km2_estimate) || 0
-      );
-      const intensity = Math.max(
-        0,
-        toNumber(region?.mean_change_intensity) || 0
-      );
-      const areaPercent = Math.max(
-        0,
-        toNumber(region?.area_percent) || 0
-      );
+      const area = Math.max(0, toNumber(region?.area_km2_estimate) || 0);
+      const intensity = Math.max(0, toNumber(region?.mean_change_intensity) || 0);
+      const areaPercent = Math.max(0, toNumber(region?.area_percent) || 0);
 
       let score = 0;
-      score += Math.min(20, area * 4);
+      score += Math.min(22, area * 4.4);
       score += Math.min(22, intensity * 36);
-      score += Math.min(8, areaPercent * 3);
-      score += Math.min(
-        18,
-        (firms.inside_hotspot_count || 0) * 4.5
-      );
-      score += Math.min(
-        7,
-        (firms.nearby_hotspot_count || 0) * 1.25
-      );
-      score += Math.min(
-        12,
-        (strikes.inside_event_count || 0) * 6
-      );
-      score += Math.min(
-        5,
-        (strikes.nearby_event_count || 0) * 0.2
-      );
-      score += Math.min(13, spatial.proximityScore * 0.13);
+      score += Math.min(10, areaPercent * 3);
+      score += Math.min(18, (firms.inside_hotspot_count || 0) * 4.5);
+      score += Math.min(8, (firms.nearby_hotspot_count || 0) * 1.5);
+      score += Math.min(14, (strikes.inside_event_count || 0) * 7);
+      score += Math.min(6, (strikes.nearby_event_count || 0) * 2);
 
-      if (
-        String(change?.comparability || "").toUpperCase() === "HIGH"
-      ) {
-        score += 5;
-      }
-
+      if (String(change?.comparability || "").toUpperCase() === "HIGH") score += 5;
       score = Math.max(0, Math.min(100, Math.round(score)));
 
-      const level = score >= 80
-        ? "VERY HIGH"
-        : score >= 60
-          ? "HIGH"
-          : score >= 35
-            ? "MEDIUM"
-            : "LOW";
+      const level = score >= 80 ? "VERY HIGH"
+        : score >= 60 ? "HIGH"
+        : score >= 35 ? "MEDIUM"
+        : "LOW";
 
-      return {
-        score,
-        level,
-        proximityScore: spatial.proximityScore,
-        iranStrikeEventCount: spatial.eventCount,
-        iranStrikeCoordinateGroups: spatial.coordinateGroupCount
-      };
+      return { score, level };
     }
 
     function buildIranStrikeEventsHtml(region) {
@@ -3955,18 +2836,13 @@
               </div>
               <div class="me-region-intelligence-metric">
                 <span class="me-region-intelligence-metric__label">IranStrike</span>
-                <span class="me-region-intelligence-metric__value">
-                  ${intelligence.iranStrikeEventCount} esemény /
-                  ${intelligence.iranStrikeCoordinateGroups} hely
-                </span>
+                <span class="me-region-intelligence-metric__value">${formatMetric(strikes.inside_event_count, 0)} belül / ${formatMetric(strikes.nearby_event_count, 0)} közel</span>
               </div>
             </div>
 
             <div class="me-region-intelligence-assessment">
               ${buildRegionAssessment(region, change)}
             </div>
-
-            ${buildIranStrikeSpatialSummaryHtml(region)}
 
             ${buildIranStrikeEventsHtml(region)}
 
@@ -4623,7 +3499,6 @@
 
       if (fitBounds) map.fitBounds(record.normalized_bounds, { padding: [18, 18] });
       setSummary(buildSummary(record));
-      renderRegionOverview(state.selectedRegion);
       return state.overlay;
     }
 
@@ -4836,8 +3711,6 @@
     dom.toggle?.addEventListener("change", () => setEnabled(dom.toggle.checked));
     dom.baseMapSelect?.addEventListener("change", () => setBaseMap(dom.baseMapSelect.value));
     dom.sourceSelect?.addEventListener("change", () => applyMode());
-    map.on("zoomend", refreshRegionOverviewForZoom);
-
     dom.locationSelect?.addEventListener("change", async () => {
       state.selectedLocationSlug = dom.locationSelect.value || null;
       state.selectedRecordId = null;
@@ -4956,4 +3829,3 @@
     formatRecordLabel
   };
 })();
-
