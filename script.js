@@ -90,6 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== Map =====
+    const MAIN_MAP_VERSION = "2.5.2";
     const map = L.map("map").setView([33.5, 44.0], 6);
 
     /*
@@ -256,7 +257,60 @@ window.addEventListener("DOMContentLoaded", () => {
       setBaseMap: setGlobalBaseMap,
       getActiveKey: () => activeGlobalBaseMapKey,
       getActiveLayer: () => activeGlobalBaseMapLayer,
-      getMap: () => map
+      getMap: () => map,
+      version: MAIN_MAP_VERSION
+    });
+
+    /*
+     * Global, delegated basemap selector binding.
+     *
+     * The Satellite Intelligence controls are created dynamically later in
+     * this file. Listening on document guarantees that the basemap selector
+     * works regardless of when the control or the Satellite module loads.
+     */
+    document.addEventListener("change", (event) => {
+      const target = event.target;
+
+      if (!(target instanceof HTMLSelectElement)) {
+        return;
+      }
+
+      if (
+        target.id !== "satelliteBaseMapSelect" &&
+        !target.matches("[data-me-global-basemap-select]")
+      ) {
+        return;
+      }
+
+      setGlobalBaseMap(
+        target.value,
+        { source: "global-basemap-select" }
+      );
+    });
+
+    /*
+     * Keep every compatible selector synchronized when another component
+     * changes the basemap programmatically.
+     */
+    window.addEventListener("me:basemapchange", (event) => {
+      const key = event?.detail?.key;
+
+      if (!GLOBAL_BASEMAP_DEFINITIONS[key]) {
+        return;
+      }
+
+      document
+        .querySelectorAll(
+          "#satelliteBaseMapSelect, [data-me-global-basemap-select]"
+        )
+        .forEach((select) => {
+          if (
+            select instanceof HTMLSelectElement &&
+            select.value !== key
+          ) {
+            select.value = key;
+          }
+        });
     });
 
     setGlobalBaseMap("osm", { source: "startup" });
@@ -5388,5 +5442,3 @@ window.setInterval(() => {
     alert("Hiba történt inicializáláskor. Nyisd meg a konzolt (F12) a részletekért.");
   }
 });
-
-
