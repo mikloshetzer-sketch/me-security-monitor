@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.3.0";
+  const MODULE_VERSION = "2.4.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -574,6 +574,79 @@
         color: #3730a3;
         font-size: 10px;
         font-weight: 900;
+      }
+
+
+      .me-satellite-region-overview-label {
+        padding: 2px 6px;
+        border: 1px solid rgba(71, 85, 105, .34);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, .9);
+        color: #475569;
+        font-size: 10px;
+        font-weight: 850;
+        box-shadow: 0 1px 5px rgba(15, 23, 42, .14);
+        white-space: nowrap;
+      }
+
+      .me-satellite-region-overview-label.is-active {
+        border-color: rgba(220, 38, 38, .55);
+        background: rgba(255, 255, 255, .97);
+        color: #991b1b;
+        font-size: 11px;
+        font-weight: 950;
+      }
+
+      .me-region-spatial-summary {
+        margin-top: 12px;
+        padding: 12px;
+        border: 1px solid #dbe4ee;
+        border-radius: 11px;
+        background: #f8fafc;
+      }
+
+      .me-region-spatial-summary__headline {
+        color: #0f172a;
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1.55;
+      }
+
+      .me-region-spatial-bands {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 10px;
+      }
+
+      .me-region-spatial-band {
+        padding: 8px 6px;
+        border: 1px solid #dbe4ee;
+        border-radius: 9px;
+        background: #ffffff;
+        text-align: center;
+      }
+
+      .me-region-spatial-band__label {
+        display: block;
+        color: #64748b;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: .02em;
+      }
+
+      .me-region-spatial-band__value {
+        display: block;
+        margin-top: 3px;
+        color: #0f172a;
+        font-size: 14px;
+        font-weight: 950;
+      }
+
+      @media (max-width: 760px) {
+        .me-region-spatial-bands {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
 
       .me-satellite-region-highlight-label {
@@ -1814,6 +1887,8 @@
       markerControlsRoot: null,
       modalRoot: null,
       regionHighlight: null,
+      regionOverviewLayer: L.layerGroup(),
+      regionOverviewItems: new Map(),
       firmsHotspotLayer: L.layerGroup(),
       firmsHotspotMarkers: [],
       firmsHotspotsVisible: true,
@@ -2027,8 +2102,12 @@
     }
 
     function removeOverlay() {
-      if (state.overlay && map.hasLayer(state.overlay)) map.removeLayer(state.overlay);
+      if (state.overlay && map.hasLayer(state.overlay)) {
+        map.removeLayer(state.overlay);
+      }
       state.overlay = null;
+      clearRegionHighlight();
+      clearRegionOverview();
     }
 
     function getLocations() {
@@ -2941,6 +3020,127 @@
       }
     }
 
+
+    function clearRegionOverview() {
+      if (
+        state.regionOverviewLayer &&
+        map.hasLayer(state.regionOverviewLayer)
+      ) {
+        map.removeLayer(state.regionOverviewLayer);
+      }
+
+      state.regionOverviewLayer.clearLayers();
+      state.regionOverviewItems.clear();
+    }
+
+    function regionOverviewStyle(region, activeRegionId) {
+      const active = String(region?.id) === String(activeRegionId);
+
+      return active
+        ? {
+            color: "#dc2626",
+            weight: 3,
+            opacity: 1,
+            fillColor: "#ef4444",
+            fillOpacity: 0.16,
+            dashArray: "7 5"
+          }
+        : {
+            color: "#64748b",
+            weight: 1.5,
+            opacity: 0.72,
+            fillColor: "#94a3b8",
+            fillOpacity: 0.07,
+            dashArray: "4 4"
+          };
+    }
+
+    function regionOverviewLabel(region, active, zoom) {
+      if (zoom < 9 && !active) return "";
+      if (zoom < 11 && !active) {
+        return escapeHtml(region?.id || "R");
+      }
+
+      const change = normalizeChangeDetection(state.currentRecord);
+      const intelligence = calculateRegionIntelligence(region, change);
+
+      return active
+        ? `${escapeHtml(region?.id || "R")} · ` +
+          `${formatMetric(region?.area_km2_estimate, 3, " km²")} · ` +
+          `${intelligence.score}/100`
+        : `${escapeHtml(region?.id || "R")} · ` +
+          `${formatMetric(region?.area_km2_estimate, 3, " km²")}`;
+    }
+
+    function renderRegionOverview(activeRegion = null) {
+      clearRegionOverview();
+
+      if (!state.currentRecord) return;
+
+      const change = normalizeChangeDetection(state.currentRecord);
+      const regions = Array.isArray(change?.regions)
+        ? change.regions
+        : [];
+
+      if (!regions.length) return;
+
+      state.regionOverviewLayer.addTo(map);
+
+      const activeRegionId = firstDefined(
+        activeRegion?.id,
+        state.selectedRegion?.id,
+        ""
+      );
+      const zoom = map.getZoom();
+
+      regions.forEach((region) => {
+        const bounds = regionBounds(region);
+        if (!bounds) return;
+
+        const active =
+          String(region?.id) === String(activeRegionId);
+
+        const rectangle = L.rectangle(
+          bounds,
+          regionOverviewStyle(region, activeRegionId)
+        );
+
+        rectangle.on("click", () => {
+          state.selectedRegion = region;
+          renderRegionOverview(region);
+          focusRegion(region, state.currentRecord, {
+            fitBounds: true
+          });
+        });
+
+        const label = regionOverviewLabel(region, active, zoom);
+
+        if (label) {
+          rectangle.bindTooltip(label, {
+            permanent: active || zoom >= 10,
+            direction: "center",
+            className:
+              "me-satellite-region-overview-label" +
+              (active ? " is-active" : "")
+          });
+        }
+
+        rectangle.addTo(state.regionOverviewLayer);
+        state.regionOverviewItems.set(region.id, rectangle);
+      });
+
+      if (
+        typeof state.regionOverviewLayer.bringToFront === "function"
+      ) {
+        state.regionOverviewLayer.bringToFront();
+      }
+    }
+
+    function refreshRegionOverviewForZoom() {
+      if (!state.currentRecord) return;
+      renderRegionOverview(state.selectedRegion);
+    }
+
     function regionBounds(region) {
       const bbox = region?.bbox_geo;
 
@@ -2971,40 +3171,52 @@
       state.regionHighlight = null;
     }
 
-    function focusRegion(region, record) {
+    function focusRegion(
+      region,
+      record,
+      { fitBounds = true } = {}
+    ) {
       const bounds = regionBounds(region);
-      if (!bounds) return false;
+      if (!bounds || !record) return false;
 
       clearRegionHighlight();
+      state.selectedRegion = region;
+      state.currentRecord = record;
+
+      renderRegionOverview(region);
 
       state.regionHighlight = L.rectangle(bounds, {
         color: "#dc2626",
         weight: 3,
         opacity: 1,
         fillColor: "#ef4444",
-        fillOpacity: 0.12,
-        dashArray: "7 5",
-        interactive: false,
-        pane: "overlayPane"
+        fillOpacity: 0.16,
+        dashArray: "7 5"
       }).addTo(map);
 
+      const change = normalizeChangeDetection(record);
       const intelligence = calculateRegionIntelligence(
         region,
-        normalizeChangeDetection(record)
+        change
       );
+
       state.regionHighlight.bindTooltip(
-        `${escapeHtml(region.id)} · ${formatMetric(region.area_km2_estimate, 3, " km²")} · ${intelligence.score}/100`,
+        `${escapeHtml(region.id)} · ` +
+        `${formatMetric(region.area_km2_estimate, 3, " km²")} · ` +
+        `${intelligence.score}/100`,
         {
           permanent: true,
-          direction: "top",
+          direction: "center",
           className: "me-satellite-region-highlight-label"
         }
       ).openTooltip();
 
-      map.fitBounds(bounds, {
-        padding: [42, 42],
-        maxZoom: 15
-      });
+      if (fitBounds) {
+        map.fitBounds(bounds, {
+          padding: [42, 42],
+          maxZoom: 15
+        });
+      }
 
       state.selectedLocationSlug = record.location_slug;
       state.selectedRecordId = record.id;
@@ -3039,31 +3251,200 @@
       return "none";
     }
 
+
+    function classifyIranStrikeDistance(distanceKm, insideRegion = false) {
+      const distance = toNumber(distanceKm);
+
+      if (insideRegion || distance === 0) return "INSIDE";
+      if (distance === null) return "UNKNOWN";
+      if (distance <= 1) return "VERY_CLOSE";
+      if (distance <= 3) return "CLOSE";
+      if (distance <= 10) return "NEAR";
+      if (distance <= 20) return "DISTANT";
+      return "OUTSIDE_AOI";
+    }
+
+    function iranStrikeProximityScore(distanceKm, insideRegion = false) {
+      const distance = toNumber(distanceKm);
+
+      if (insideRegion || distance === 0) return 100;
+      if (distance === null) return 0;
+      if (distance <= 1) return Math.round(100 - distance * 5);
+      if (distance <= 3) {
+        return Math.round(95 - (distance - 1) * 7.5);
+      }
+      if (distance <= 10) {
+        return Math.round(80 - (distance - 3) * (30 / 7));
+      }
+      if (distance <= 20) {
+        return Math.round(50 - (distance - 10) * 3);
+      }
+      return Math.max(0, Math.round(20 - (distance - 20)));
+    }
+
+    function buildIranStrikeSpatialSummary(region) {
+      const correlation = region?.iranstrike_correlation || {};
+      const events = Array.isArray(correlation.events)
+        ? correlation.events
+        : [];
+      const coordinateGroups = groupItemsByCoordinate(events);
+
+      const bands = {
+        INSIDE: 0,
+        VERY_CLOSE: 0,
+        CLOSE: 0,
+        NEAR: 0,
+        DISTANT: 0,
+        OUTSIDE_AOI: 0,
+        UNKNOWN: 0
+      };
+
+      const distances = [];
+      const scores = [];
+
+      events.forEach((event) => {
+        const inside = Boolean(event?.inside_region_bbox);
+        const distance = toNumber(event?.distance_km);
+        const band = classifyIranStrikeDistance(distance, inside);
+
+        bands[band] += 1;
+
+        if (distance !== null) distances.push(distance);
+        scores.push(iranStrikeProximityScore(distance, inside));
+      });
+
+      return {
+        eventCount: events.length,
+        coordinateGroupCount: coordinateGroups.length,
+        nearestDistanceKm: distances.length
+          ? Math.min(...distances)
+          : null,
+        averageDistanceKm: distances.length
+          ? distances.reduce((sum, value) => sum + value, 0) /
+            distances.length
+          : null,
+        proximityScore: scores.length
+          ? Math.round(
+              scores.reduce((sum, value) => sum + value, 0) /
+              scores.length
+            )
+          : 0,
+        bands
+      };
+    }
+
+    function buildIranStrikeSpatialSummaryHtml(region) {
+      const spatial = buildIranStrikeSpatialSummary(region);
+      const bands = spatial.bands;
+
+      return `
+        <div class="me-region-spatial-summary">
+          <div class="me-region-spatial-summary__headline">
+            IranStrike térbeli összegzés:
+            ${spatial.eventCount} esemény,
+            ${spatial.coordinateGroupCount} koordinátacsoport ·
+            legközelebbi ${formatMetric(
+              spatial.nearestDistanceKm,
+              3,
+              " km"
+            )} ·
+            átlag ${formatMetric(
+              spatial.averageDistanceKm,
+              3,
+              " km"
+            )} ·
+            közelségi pontszám
+            <strong>${spatial.proximityScore}/100</strong>
+          </div>
+
+          <div class="me-region-spatial-bands">
+            <div class="me-region-spatial-band">
+              <span class="me-region-spatial-band__label">INSIDE</span>
+              <span class="me-region-spatial-band__value">${bands.INSIDE}</span>
+            </div>
+            <div class="me-region-spatial-band">
+              <span class="me-region-spatial-band__label">VERY CLOSE</span>
+              <span class="me-region-spatial-band__value">${bands.VERY_CLOSE}</span>
+            </div>
+            <div class="me-region-spatial-band">
+              <span class="me-region-spatial-band__label">CLOSE</span>
+              <span class="me-region-spatial-band__value">${bands.CLOSE}</span>
+            </div>
+            <div class="me-region-spatial-band">
+              <span class="me-region-spatial-band__label">NEAR</span>
+              <span class="me-region-spatial-band__value">${bands.NEAR}</span>
+            </div>
+            <div class="me-region-spatial-band">
+              <span class="me-region-spatial-band__label">DISTANT</span>
+              <span class="me-region-spatial-band__value">${bands.DISTANT}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     function calculateRegionIntelligence(region, change) {
       const firms = region?.firms_correlation || {};
       const strikes = region?.iranstrike_correlation || {};
-      const area = Math.max(0, toNumber(region?.area_km2_estimate) || 0);
-      const intensity = Math.max(0, toNumber(region?.mean_change_intensity) || 0);
-      const areaPercent = Math.max(0, toNumber(region?.area_percent) || 0);
+      const spatial = buildIranStrikeSpatialSummary(region);
+      const area = Math.max(
+        0,
+        toNumber(region?.area_km2_estimate) || 0
+      );
+      const intensity = Math.max(
+        0,
+        toNumber(region?.mean_change_intensity) || 0
+      );
+      const areaPercent = Math.max(
+        0,
+        toNumber(region?.area_percent) || 0
+      );
 
       let score = 0;
-      score += Math.min(22, area * 4.4);
+      score += Math.min(20, area * 4);
       score += Math.min(22, intensity * 36);
-      score += Math.min(10, areaPercent * 3);
-      score += Math.min(18, (firms.inside_hotspot_count || 0) * 4.5);
-      score += Math.min(8, (firms.nearby_hotspot_count || 0) * 1.5);
-      score += Math.min(14, (strikes.inside_event_count || 0) * 7);
-      score += Math.min(6, (strikes.nearby_event_count || 0) * 2);
+      score += Math.min(8, areaPercent * 3);
+      score += Math.min(
+        18,
+        (firms.inside_hotspot_count || 0) * 4.5
+      );
+      score += Math.min(
+        7,
+        (firms.nearby_hotspot_count || 0) * 1.25
+      );
+      score += Math.min(
+        12,
+        (strikes.inside_event_count || 0) * 6
+      );
+      score += Math.min(
+        5,
+        (strikes.nearby_event_count || 0) * 0.2
+      );
+      score += Math.min(13, spatial.proximityScore * 0.13);
 
-      if (String(change?.comparability || "").toUpperCase() === "HIGH") score += 5;
+      if (
+        String(change?.comparability || "").toUpperCase() === "HIGH"
+      ) {
+        score += 5;
+      }
+
       score = Math.max(0, Math.min(100, Math.round(score)));
 
-      const level = score >= 80 ? "VERY HIGH"
-        : score >= 60 ? "HIGH"
-        : score >= 35 ? "MEDIUM"
-        : "LOW";
+      const level = score >= 80
+        ? "VERY HIGH"
+        : score >= 60
+          ? "HIGH"
+          : score >= 35
+            ? "MEDIUM"
+            : "LOW";
 
-      return { score, level };
+      return {
+        score,
+        level,
+        proximityScore: spatial.proximityScore,
+        iranStrikeEventCount: spatial.eventCount,
+        iranStrikeCoordinateGroups: spatial.coordinateGroupCount
+      };
     }
 
     function buildIranStrikeEventsHtml(region) {
@@ -3149,13 +3530,18 @@
               </div>
               <div class="me-region-intelligence-metric">
                 <span class="me-region-intelligence-metric__label">IranStrike</span>
-                <span class="me-region-intelligence-metric__value">${formatMetric(strikes.inside_event_count, 0)} belül / ${formatMetric(strikes.nearby_event_count, 0)} közel</span>
+                <span class="me-region-intelligence-metric__value">
+                  ${intelligence.iranStrikeEventCount} esemény /
+                  ${intelligence.iranStrikeCoordinateGroups} hely
+                </span>
               </div>
             </div>
 
             <div class="me-region-intelligence-assessment">
               ${buildRegionAssessment(region, change)}
             </div>
+
+            ${buildIranStrikeSpatialSummaryHtml(region)}
 
             ${buildIranStrikeEventsHtml(region)}
 
@@ -3812,6 +4198,7 @@
 
       if (fitBounds) map.fitBounds(record.normalized_bounds, { padding: [18, 18] });
       setSummary(buildSummary(record));
+      renderRegionOverview(state.selectedRegion);
       return state.overlay;
     }
 
@@ -4024,6 +4411,8 @@
     dom.toggle?.addEventListener("change", () => setEnabled(dom.toggle.checked));
     dom.baseMapSelect?.addEventListener("change", () => setBaseMap(dom.baseMapSelect.value));
     dom.sourceSelect?.addEventListener("change", () => applyMode());
+    map.on("zoomend", refreshRegionOverviewForZoom);
+
     dom.locationSelect?.addEventListener("change", async () => {
       state.selectedLocationSlug = dom.locationSelect.value || null;
       state.selectedRecordId = null;
