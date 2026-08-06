@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.4.0";
+  const MODULE_VERSION = "2.5.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -576,6 +576,136 @@
         font-weight: 900;
       }
 
+
+
+      .me-satellite-region-smart-label {
+        display: grid;
+        gap: 1px;
+        min-width: 74px;
+        text-align: center;
+        line-height: 1.15;
+      }
+
+      .me-satellite-region-smart-label__id {
+        font-size: 11px;
+        font-weight: 950;
+      }
+
+      .me-satellite-region-smart-label__meta {
+        font-size: 9px;
+        font-weight: 850;
+        opacity: .9;
+      }
+
+      .me-satellite-region-hover {
+        min-width: 250px;
+        max-width: 330px;
+        color: #334155;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      .me-satellite-region-hover__title {
+        margin-bottom: 7px;
+        color: #0f172a;
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      .me-satellite-region-hover__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .me-satellite-region-hover__metric {
+        padding: 6px 7px;
+        border: 1px solid #dbe4ee;
+        border-radius: 7px;
+        background: #f8fafc;
+      }
+
+      .me-satellite-region-hover__metric span {
+        display: block;
+        color: #64748b;
+        font-size: 9px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .me-satellite-region-hover__metric strong {
+        display: block;
+        margin-top: 2px;
+        color: #0f172a;
+        font-size: 11px;
+      }
+
+      .me-satellite-region-map-legend {
+        position: absolute;
+        right: 14px;
+        bottom: 52px;
+        z-index: 750;
+        min-width: 178px;
+        padding: 10px 11px;
+        border: 1px solid rgba(148, 163, 184, .5);
+        border-radius: 11px;
+        background: rgba(255, 255, 255, .94);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, .14);
+        color: #334155;
+        font-size: 10px;
+        line-height: 1.45;
+        backdrop-filter: blur(3px);
+      }
+
+      .me-satellite-region-map-legend__title {
+        margin-bottom: 7px;
+        color: #0f172a;
+        font-size: 11px;
+        font-weight: 950;
+      }
+
+      .me-satellite-region-map-legend__item {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 5px;
+      }
+
+      .me-satellite-region-map-legend__swatch {
+        width: 18px;
+        height: 11px;
+        border-radius: 3px;
+        flex: 0 0 auto;
+      }
+
+      .me-satellite-region-map-legend__swatch--active {
+        border: 2px solid #dc2626;
+        background: rgba(239, 68, 68, .22);
+      }
+
+      .me-satellite-region-map-legend__swatch--high {
+        border: 2px solid #ea580c;
+        background: rgba(249, 115, 22, .18);
+      }
+
+      .me-satellite-region-map-legend__swatch--medium {
+        border: 2px solid #d97706;
+        background: rgba(245, 158, 11, .16);
+      }
+
+      .me-satellite-region-map-legend__swatch--low {
+        border: 2px solid #475569;
+        background: rgba(148, 163, 184, .15);
+      }
+
+      @media (max-width: 820px) {
+        .me-satellite-region-map-legend {
+          right: 8px;
+          bottom: 42px;
+          min-width: 148px;
+          padding: 8px 9px;
+        }
+      }
 
       .me-satellite-region-overview-label {
         padding: 2px 6px;
@@ -1889,6 +2019,7 @@
       regionHighlight: null,
       regionOverviewLayer: L.layerGroup(),
       regionOverviewItems: new Map(),
+      regionLegendElement: null,
       firmsHotspotLayer: L.layerGroup(),
       firmsHotspotMarkers: [],
       firmsHotspotsVisible: true,
@@ -2108,6 +2239,7 @@
       state.overlay = null;
       clearRegionHighlight();
       clearRegionOverview();
+      removeRegionLegend();
     }
 
     function getLocations() {
@@ -3033,57 +3165,254 @@
       state.regionOverviewItems.clear();
     }
 
+    function regionPriorityBand(score) {
+      if (score >= 60) return "HIGH";
+      if (score >= 35) return "MEDIUM";
+      return "LOW";
+    }
+
     function regionOverviewStyle(region, activeRegionId) {
       const active = String(region?.id) === String(activeRegionId);
+      const change = normalizeChangeDetection(state.currentRecord);
+      const intelligence = calculateRegionIntelligence(region, change);
+      const band = regionPriorityBand(intelligence.score);
 
-      return active
-        ? {
-            color: "#dc2626",
-            weight: 3,
-            opacity: 1,
-            fillColor: "#ef4444",
-            fillOpacity: 0.16,
-            dashArray: "7 5"
-          }
-        : {
-            color: "#64748b",
-            weight: 1.5,
-            opacity: 0.72,
-            fillColor: "#94a3b8",
-            fillOpacity: 0.07,
-            dashArray: "4 4"
-          };
+      if (active) {
+        return {
+          color: "#dc2626",
+          weight: 3,
+          opacity: 1,
+          fillColor: "#ef4444",
+          fillOpacity: 0.19,
+          dashArray: "7 5"
+        };
+      }
+
+      if (band === "HIGH") {
+        return {
+          color: "#ea580c",
+          weight: 2.3,
+          opacity: 0.94,
+          fillColor: "#f97316",
+          fillOpacity: 0.14,
+          dashArray: "5 4"
+        };
+      }
+
+      if (band === "MEDIUM") {
+        return {
+          color: "#d97706",
+          weight: 2,
+          opacity: 0.9,
+          fillColor: "#f59e0b",
+          fillOpacity: 0.12,
+          dashArray: "5 4"
+        };
+      }
+
+      return {
+        color: "#475569",
+        weight: 2,
+        opacity: 0.88,
+        fillColor: "#94a3b8",
+        fillOpacity: 0.11,
+        dashArray: "5 4"
+      };
+    }
+
+    function visibleRegionLabelLimit(zoom) {
+      if (zoom < 13) return 10;
+      if (zoom < 15) return 20;
+      return Number.POSITIVE_INFINITY;
     }
 
     function regionOverviewLabel(region, active, zoom) {
-      if (zoom < 9 && !active) return "";
-      if (zoom < 11 && !active) {
-        return escapeHtml(region?.id || "R");
-      }
-
       const change = normalizeChangeDetection(state.currentRecord);
       const intelligence = calculateRegionIntelligence(region, change);
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+      const firmsCount =
+        (toNumber(firms.inside_hotspot_count) || 0) +
+        (toNumber(firms.nearby_hotspot_count) || 0);
+      const strikeCount =
+        (toNumber(strikes.inside_event_count) || 0) +
+        (toNumber(strikes.nearby_event_count) || 0);
 
-      return active
-        ? `${escapeHtml(region?.id || "R")} · ` +
-          `${formatMetric(region?.area_km2_estimate, 3, " km²")} · ` +
-          `${intelligence.score}/100`
-        : `${escapeHtml(region?.id || "R")} · ` +
-          `${formatMetric(region?.area_km2_estimate, 3, " km²")}`;
+      if (!active && region.rank > visibleRegionLabelLimit(zoom)) {
+        return "";
+      }
+
+      if (zoom < 11 && !active) {
+        return `
+          <div class="me-satellite-region-smart-label">
+            <span class="me-satellite-region-smart-label__id">
+              ${escapeHtml(region?.id || "R")}
+            </span>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="me-satellite-region-smart-label">
+          <span class="me-satellite-region-smart-label__id">
+            ${escapeHtml(region?.id || "R")} · ${intelligence.score}/100
+          </span>
+          <span class="me-satellite-region-smart-label__meta">
+            ${formatMetric(region?.area_km2_estimate, 3, " km²")}
+          </span>
+          ${zoom >= 14 || active ? `
+            <span class="me-satellite-region-smart-label__meta">
+              🔥${firmsCount} · 🎯${strikeCount}
+            </span>
+          ` : ""}
+        </div>
+      `;
+    }
+
+    function buildRegionHoverHtml(region) {
+      const change = normalizeChangeDetection(state.currentRecord);
+      const intelligence = calculateRegionIntelligence(region, change);
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+      const spatial = buildIranStrikeSpatialSummary(region);
+
+      const firmsCount =
+        (toNumber(firms.inside_hotspot_count) || 0) +
+        (toNumber(firms.nearby_hotspot_count) || 0);
+      const strikeCount =
+        (toNumber(strikes.inside_event_count) || 0) +
+        (toNumber(strikes.nearby_event_count) || 0);
+
+      return `
+        <div class="me-satellite-region-hover">
+          <div class="me-satellite-region-hover__title">
+            Region ${escapeHtml(region?.id || "n/a")}
+          </div>
+
+          <div class="me-satellite-region-hover__grid">
+            <div class="me-satellite-region-hover__metric">
+              <span>Terület</span>
+              <strong>${formatMetric(
+                region?.area_km2_estimate,
+                3,
+                " km²"
+              )}</strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>Prioritás</span>
+              <strong>${intelligence.score}/100 · ${escapeHtml(
+                intelligence.level
+              )}</strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>Intenzitás</span>
+              <strong>${formatMetric(
+                region?.mean_change_intensity,
+                3
+              )}</strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>Relatív méret</span>
+              <strong>${escapeHtml(
+                region?.relative_size || "n/a"
+              )}</strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>NASA FIRMS</span>
+              <strong>${firmsCount} hőpont</strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>IranStrike</span>
+              <strong>
+                ${strikeCount} esemény /
+                ${spatial.coordinateGroupCount} hely
+              </strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>Legközelebbi esemény</span>
+              <strong>${formatMetric(
+                spatial.nearestDistanceKm,
+                3,
+                " km"
+              )}</strong>
+            </div>
+
+            <div class="me-satellite-region-hover__metric">
+              <span>Közelségi pontszám</span>
+              <strong>${spatial.proximityScore}/100</strong>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function ensureRegionLegend() {
+      if (state.regionLegendElement?.isConnected) return;
+
+      const mapContainer = map.getContainer();
+      const legend = document.createElement("div");
+      legend.className = "me-satellite-region-map-legend";
+      legend.innerHTML = `
+        <div class="me-satellite-region-map-legend__title">
+          Sentinel régiók
+        </div>
+        <div class="me-satellite-region-map-legend__item">
+          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--active"></span>
+          Aktív régió
+        </div>
+        <div class="me-satellite-region-map-legend__item">
+          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--high"></span>
+          Magas prioritás
+        </div>
+        <div class="me-satellite-region-map-legend__item">
+          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--medium"></span>
+          Közepes prioritás
+        </div>
+        <div class="me-satellite-region-map-legend__item">
+          <span class="me-satellite-region-map-legend__swatch me-satellite-region-map-legend__swatch--low"></span>
+          Alacsony prioritás
+        </div>
+        <div class="me-satellite-region-map-legend__item">
+          🔥 FIRMS · 🎯 IranStrike
+        </div>
+      `;
+
+      mapContainer.appendChild(legend);
+      state.regionLegendElement = legend;
+    }
+
+    function removeRegionLegend() {
+      if (state.regionLegendElement?.isConnected) {
+        state.regionLegendElement.remove();
+      }
+      state.regionLegendElement = null;
     }
 
     function renderRegionOverview(activeRegion = null) {
       clearRegionOverview();
 
-      if (!state.currentRecord) return;
+      if (!state.currentRecord) {
+        removeRegionLegend();
+        return;
+      }
 
       const change = normalizeChangeDetection(state.currentRecord);
       const regions = Array.isArray(change?.regions)
         ? change.regions
         : [];
 
-      if (!regions.length) return;
+      if (!regions.length) {
+        removeRegionLegend();
+        return;
+      }
 
+      ensureRegionLegend();
       state.regionOverviewLayer.addTo(map);
 
       const activeRegionId = firstDefined(
@@ -3117,13 +3446,44 @@
 
         if (label) {
           rectangle.bindTooltip(label, {
-            permanent: active || zoom >= 10,
+            permanent: active || region.rank <= visibleRegionLabelLimit(zoom),
             direction: "center",
             className:
               "me-satellite-region-overview-label" +
               (active ? " is-active" : "")
           });
         }
+
+        rectangle.bindPopup(
+          buildRegionHoverHtml(region),
+          {
+            maxWidth: 350,
+            className: "me-satellite-region-hover-popup"
+          }
+        );
+
+        rectangle.on("mouseover", function () {
+          if (!active) {
+            this.setStyle({
+              weight: Math.max(
+                2.8,
+                Number(this.options.weight || 2) + 0.6
+              ),
+              fillOpacity: Math.min(
+                0.22,
+                Number(this.options.fillOpacity || 0.1) + 0.06
+              )
+            });
+          }
+        });
+
+        rectangle.on("mouseout", function () {
+          if (!active) {
+            this.setStyle(
+              regionOverviewStyle(region, activeRegionId)
+            );
+          }
+        });
 
         rectangle.addTo(state.regionOverviewLayer);
         state.regionOverviewItems.set(region.id, rectangle);
@@ -4531,4 +4891,5 @@
     formatRecordLabel
   };
 })();
+
 
