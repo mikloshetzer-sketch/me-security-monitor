@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.2.1";
+  const MODULE_VERSION = "2.3.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -916,6 +916,99 @@
       .me-satellite-firms-popup__status--nearby {
         background: #fef3c7;
         color: #92400e;
+      }
+
+
+      .me-satellite-cluster-count {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        transform: translate(-50%, -50%);
+        border: 2px solid rgba(255, 255, 255, .96);
+        border-radius: 999px;
+        background: #ffffff;
+        color: #0f172a;
+        box-shadow: 0 1px 4px rgba(15, 23, 42, .3);
+        font-size: 9px;
+        font-weight: 950;
+        line-height: 1;
+      }
+
+      .me-satellite-firms-marker.is-cluster {
+        width: 30px;
+        height: 30px;
+      }
+
+      .me-satellite-firms-marker.is-cluster::after {
+        display: none;
+      }
+
+      .me-satellite-iranstrike-marker.is-cluster {
+        width: 31px;
+        height: 31px;
+      }
+
+      .me-satellite-iranstrike-marker.is-cluster::after {
+        display: none;
+      }
+
+      .me-satellite-cluster-popup {
+        min-width: 290px;
+        max-width: 390px;
+        color: #334155;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .me-satellite-cluster-popup__head {
+        margin-bottom: 9px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .me-satellite-cluster-popup__title {
+        color: #0f172a;
+        font-size: 14px;
+        font-weight: 950;
+      }
+
+      .me-satellite-cluster-popup__meta {
+        margin-top: 3px;
+        color: #64748b;
+        font-size: 11px;
+      }
+
+      .me-satellite-cluster-popup__list {
+        display: grid;
+        gap: 7px;
+        max-height: 330px;
+        overflow-y: auto;
+        padding-right: 4px;
+      }
+
+      .me-satellite-cluster-popup__item {
+        padding: 8px 9px;
+        border: 1px solid #dbe4ee;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+
+      .me-satellite-cluster-popup__item strong {
+        color: #0f172a;
+      }
+
+      .me-satellite-cluster-popup__item a {
+        display: inline-flex;
+        margin-top: 5px;
+        color: #1d4ed8;
+        font-weight: 800;
+        text-decoration: none;
       }
 
       .me-satellite-firms-summary {
@@ -2394,6 +2487,51 @@
 
 
 
+
+    function coordinateClusterKey(latitude, longitude, precision = 4) {
+      const lat = toNumber(latitude);
+      const lon = toNumber(longitude);
+
+      if (lat === null || lon === null) return null;
+
+      return `${lat.toFixed(precision)}|${lon.toFixed(precision)}`;
+    }
+
+    function groupItemsByCoordinate(items, precision = 4) {
+      const groups = new Map();
+
+      asArray(items).forEach((item) => {
+        const lat = toNumber(item?.latitude);
+        const lon = toNumber(item?.longitude);
+        const key = coordinateClusterKey(lat, lon, precision);
+
+        if (!key) return;
+
+        if (!groups.has(key)) {
+          groups.set(key, {
+            key,
+            latitude: lat,
+            longitude: lon,
+            items: []
+          });
+        }
+
+        groups.get(key).items.push(item);
+      });
+
+      return [...groups.values()].sort((a, b) => (
+        b.items.length - a.items.length
+      ));
+    }
+
+    function clusterStatus(items) {
+      return asArray(items).some(
+        (item) => Boolean(item?.inside_region_bbox)
+      )
+        ? "inside"
+        : "nearby";
+    }
+
     function ensureFirmsHotspotLayer() {
       if (!map.hasLayer(state.firmsHotspotLayer)) {
         state.firmsHotspotLayer.addTo(map);
@@ -2406,21 +2544,35 @@
       state.firmsHotspotMarkers = [];
     }
 
-    function hotspotMarkerIcon(hotspot) {
-      const inside = Boolean(hotspot?.inside_region_bbox);
-      const status = inside ? "inside" : "nearby";
+    function hotspotMarkerIcon(hotspotOrGroup) {
+      const items = Array.isArray(hotspotOrGroup?.items)
+        ? hotspotOrGroup.items
+        : [hotspotOrGroup];
+      const count = items.length;
+      const status = clusterStatus(items);
+      const inside = status === "inside";
 
       return L.divIcon({
         className: "me-satellite-firms-marker-wrapper",
         html: `
           <div
-            class="me-satellite-firms-marker me-satellite-firms-marker--${status}"
-            title="${inside ? "FIRMS – régión belül" : "FIRMS – közeli hőpont"}"
-          ></div>
+            class="me-satellite-firms-marker me-satellite-firms-marker--${status} ${count > 1 ? "is-cluster" : ""}"
+            title="${
+              count > 1
+                ? `FIRMS – ${count} hőpont ezen a koordinátán`
+                : inside
+                  ? "FIRMS – régión belül"
+                  : "FIRMS – közeli hőpont"
+            }"
+          >
+            ${count > 1
+              ? `<span class="me-satellite-cluster-count">${count}</span>`
+              : ""}
+          </div>
         `,
-        iconSize: [22, 22],
-        iconAnchor: [11, 11],
-        popupAnchor: [0, -12]
+        iconSize: count > 1 ? [30, 30] : [22, 22],
+        iconAnchor: count > 1 ? [15, 15] : [11, 11],
+        popupAnchor: [0, count > 1 ? -16 : -12]
       });
     }
 
@@ -2461,6 +2613,62 @@
       `;
     }
 
+    function buildFirmsClusterPopupHtml(group, region) {
+      const items = group.items;
+      const maxFrp = items.reduce((maximum, item) => {
+        const frp = toNumber(item?.frp);
+        return frp === null ? maximum : Math.max(maximum, frp);
+      }, 0);
+
+      return `
+        <div class="me-satellite-cluster-popup">
+          <div class="me-satellite-cluster-popup__head">
+            <div class="me-satellite-cluster-popup__title">
+              NASA FIRMS · ${items.length} hőpont
+            </div>
+            <div class="me-satellite-cluster-popup__meta">
+              ${escapeHtml(region?.id || "Régió")} ·
+              ${formatMetric(group.latitude, 6)},
+              ${formatMetric(group.longitude, 6)} ·
+              max. FRP ${formatMetric(maxFrp, 2, " MW")}
+            </div>
+          </div>
+
+          <div class="me-satellite-cluster-popup__list">
+            ${items.map((hotspot, index) => {
+              const sensor = [
+                hotspot?.satellite,
+                hotspot?.instrument
+              ].filter(Boolean).join(" / ")
+                || hotspot?.source
+                || "n/a";
+
+              return `
+                <div class="me-satellite-cluster-popup__item">
+                  <strong>Hőpont ${index + 1}</strong><br>
+                  Idő: ${escapeHtml(firstDefined(
+                    hotspot?.acquisition_datetime_utc,
+                    hotspot?.acquisition_date,
+                    "n/a"
+                  ))}<br>
+                  Szenzor: ${escapeHtml(sensor)}<br>
+                  FRP: ${formatMetric(hotspot?.frp, 2, " MW")}
+                  · Bizonyosság: ${escapeHtml(
+                    formatFirmsConfidence(hotspot?.confidence)
+                  )}<br>
+                  Távolság: ${formatMetric(
+                    hotspot?.distance_km,
+                    3,
+                    " km"
+                  )}
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    }
+
     function drawFirmsHotspots(region) {
       clearFirmsHotspots();
       state.selectedRegion = region || null;
@@ -2473,27 +2681,32 @@
         ? region.firms_correlation.hotspots
         : [];
 
-      if (!hotspots.length) return;
+      const groups = groupItemsByCoordinate(hotspots);
+
+      if (!groups.length) return;
 
       ensureFirmsHotspotLayer();
 
-      hotspots.forEach((hotspot) => {
-        const lat = toNumber(hotspot?.latitude);
-        const lon = toNumber(hotspot?.longitude);
+      groups.forEach((group) => {
+        const marker = L.marker(
+          [group.latitude, group.longitude],
+          {
+            icon: hotspotMarkerIcon(group),
+            keyboard: true,
+            riseOnHover: true,
+            zIndexOffset: 980
+          }
+        );
 
-        if (lat === null || lon === null) return;
-
-        const marker = L.marker([lat, lon], {
-          icon: hotspotMarkerIcon(hotspot),
-          keyboard: true,
-          riseOnHover: true,
-          zIndexOffset: 980
-        });
-
-        marker.bindPopup(buildFirmsPopupHtml(hotspot, region), {
-          maxWidth: 320,
-          className: "me-satellite-firms-leaflet-popup"
-        });
+        marker.bindPopup(
+          group.items.length > 1
+            ? buildFirmsClusterPopupHtml(group, region)
+            : buildFirmsPopupHtml(group.items[0], region),
+          {
+            maxWidth: 410,
+            className: "me-satellite-firms-leaflet-popup"
+          }
+        );
 
         marker.addTo(state.firmsHotspotLayer);
         state.firmsHotspotMarkers.push(marker);
@@ -2523,21 +2736,35 @@
       state.iranStrikeMarkers = [];
     }
 
-    function iranStrikeMarkerIcon(event) {
-      const inside = Boolean(event?.inside_region_bbox);
-      const status = inside ? "inside" : "nearby";
+    function iranStrikeMarkerIcon(eventOrGroup) {
+      const items = Array.isArray(eventOrGroup?.items)
+        ? eventOrGroup.items
+        : [eventOrGroup];
+      const count = items.length;
+      const status = clusterStatus(items);
+      const inside = status === "inside";
 
       return L.divIcon({
         className: "me-satellite-iranstrike-marker-wrapper",
         html: `
           <div
-            class="me-satellite-iranstrike-marker me-satellite-iranstrike-marker--${status}"
-            title="${inside ? "IranStrike – régión belül" : "IranStrike – közeli esemény"}"
-          ></div>
+            class="me-satellite-iranstrike-marker me-satellite-iranstrike-marker--${status} ${count > 1 ? "is-cluster" : ""}"
+            title="${
+              count > 1
+                ? `IranStrike – ${count} esemény ezen a koordinátán`
+                : inside
+                  ? "IranStrike – régión belül"
+                  : "IranStrike – közeli esemény"
+            }"
+          >
+            ${count > 1
+              ? `<span class="me-satellite-cluster-count">${count}</span>`
+              : ""}
+          </div>
         `,
-        iconSize: [22, 22],
-        iconAnchor: [11, 11],
-        popupAnchor: [0, -13]
+        iconSize: count > 1 ? [31, 31] : [22, 22],
+        iconAnchor: count > 1 ? [16, 16] : [11, 11],
+        popupAnchor: [0, count > 1 ? -18 : -13]
       });
     }
 
@@ -2580,6 +2807,87 @@
       `;
     }
 
+    function buildIranStrikeClusterPopupHtml(group, region) {
+      const items = group.items;
+      const categories = new Map();
+      const severities = new Map();
+
+      items.forEach((event) => {
+        const category = String(event?.category || "unknown");
+        const severity = String(event?.severity || "unknown");
+
+        categories.set(category, (categories.get(category) || 0) + 1);
+        severities.set(severity, (severities.get(severity) || 0) + 1);
+      });
+
+      const categoryText = [...categories.entries()]
+        .map(([name, count]) => `${name}: ${count}`)
+        .join(" · ");
+
+      const severityText = [...severities.entries()]
+        .map(([name, count]) => `${name}: ${count}`)
+        .join(" · ");
+
+      return `
+        <div class="me-satellite-cluster-popup">
+          <div class="me-satellite-cluster-popup__head">
+            <div class="me-satellite-cluster-popup__title">
+              IranStrike · ${items.length} esemény
+            </div>
+            <div class="me-satellite-cluster-popup__meta">
+              ${escapeHtml(region?.id || "Régió")} ·
+              ${formatMetric(group.latitude, 6)},
+              ${formatMetric(group.longitude, 6)}<br>
+              Kategóriák: ${escapeHtml(categoryText || "n/a")}<br>
+              Súlyosság: ${escapeHtml(severityText || "n/a")}
+            </div>
+          </div>
+
+          <div class="me-satellite-cluster-popup__list">
+            ${items.map((event, index) => {
+              const sourceUrl = String(event?.source_url || "").trim();
+              const description = String(event?.description || "").trim();
+
+              return `
+                <div class="me-satellite-cluster-popup__item">
+                  <strong>
+                    ${index + 1}. ${escapeHtml(
+                      event?.title || event?.category || "IranStrike esemény"
+                    )}
+                  </strong><br>
+                  Dátum: ${escapeHtml(firstDefined(event?.date, "n/a"))}<br>
+                  Támadó: ${escapeHtml(firstDefined(
+                    event?.attacker_label,
+                    event?.attacker,
+                    "n/a"
+                  ))}
+                  · Kategória: ${escapeHtml(
+                    firstDefined(event?.category, "n/a")
+                  )}
+                  · Súlyosság: ${escapeHtml(
+                    firstDefined(event?.severity, "n/a")
+                  )}<br>
+                  Távolság: ${formatMetric(
+                    event?.distance_km,
+                    3,
+                    " km"
+                  )}
+                  ${description
+                    ? `<br>${escapeHtml(description)}`
+                    : ""}
+                  ${sourceUrl
+                    ? `<br><a href="${escapeHtml(sourceUrl)}"
+                        target="_blank"
+                        rel="noopener noreferrer">Forrás megnyitása ↗</a>`
+                    : ""}
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    }
+
     function drawIranStrikeEvents(region) {
       clearIranStrikeMarkers();
 
@@ -2591,27 +2899,32 @@
         ? region.iranstrike_correlation.events
         : [];
 
-      if (!events.length) return;
+      const groups = groupItemsByCoordinate(events);
+
+      if (!groups.length) return;
 
       ensureIranStrikeLayer();
 
-      events.forEach((event) => {
-        const lat = toNumber(event?.latitude);
-        const lon = toNumber(event?.longitude);
+      groups.forEach((group) => {
+        const marker = L.marker(
+          [group.latitude, group.longitude],
+          {
+            icon: iranStrikeMarkerIcon(group),
+            keyboard: true,
+            riseOnHover: true,
+            zIndexOffset: 970
+          }
+        );
 
-        if (lat === null || lon === null) return;
-
-        const marker = L.marker([lat, lon], {
-          icon: iranStrikeMarkerIcon(event),
-          keyboard: true,
-          riseOnHover: true,
-          zIndexOffset: 970
-        });
-
-        marker.bindPopup(buildIranStrikePopupHtml(event, region), {
-          maxWidth: 340,
-          className: "me-satellite-iranstrike-leaflet-popup"
-        });
+        marker.bindPopup(
+          group.items.length > 1
+            ? buildIranStrikeClusterPopupHtml(group, region)
+            : buildIranStrikePopupHtml(group.items[0], region),
+          {
+            maxWidth: 430,
+            className: "me-satellite-iranstrike-leaflet-popup"
+          }
+        );
 
         marker.addTo(state.iranStrikeLayer);
         state.iranStrikeMarkers.push(marker);
