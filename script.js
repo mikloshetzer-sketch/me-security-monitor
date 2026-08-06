@@ -90,17 +90,23 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // ===== Map =====
-    const MAIN_MAP_VERSION = "2.5.2";
+    const MAIN_MAP_VERSION = "2.5.3";
+    const BASEMAP_PANE_NAME = "meBasemapPane";
     const map = L.map("map").setView([33.5, 44.0], 6);
 
     /*
-     * Global basemap manager.
+     * Dedicated pane for the single active basemap.
      *
-     * Only this block owns Leaflet tile basemaps. Analytical overlays
+     * Keeping basemaps in their own pane prevents analytical overlays
      * (Sentinel, FIRMS, IranStrike, events, borders, aircraft, reports,
-     * drawings and heatmaps) remain independent and are not removed when
-     * the basemap changes.
+     * drawings and heatmaps) from being reordered or removed.
      */
+    if (!map.getPane(BASEMAP_PANE_NAME)) {
+      const baseMapPane = map.createPane(BASEMAP_PANE_NAME);
+      baseMapPane.style.zIndex = "100";
+      baseMapPane.style.pointerEvents = "none";
+    }
+
     const GLOBAL_BASEMAP_DEFINITIONS = Object.freeze({
       osm: {
         label: "OpenStreetMap",
@@ -160,6 +166,63 @@ window.addEventListener("DOMContentLoaded", () => {
     let activeGlobalBaseMapKey = "osm";
     let activeGlobalBaseMapLayer = null;
 
+    function ensureBaseMapSelectOptions(select) {
+      if (!(select instanceof HTMLSelectElement)) {
+        return;
+      }
+
+      const activeKey =
+        GLOBAL_BASEMAP_DEFINITIONS[select.value]
+          ? select.value
+          : activeGlobalBaseMapKey;
+
+      const expectedOptions = Object.entries(
+        GLOBAL_BASEMAP_DEFINITIONS
+      );
+
+      const currentSignature = Array.from(select.options)
+        .map((option) => `${option.value}:${option.textContent}`)
+        .join("|");
+
+      const expectedSignature = expectedOptions
+        .map(([key, definition]) => `${key}:${definition.label}`)
+        .join("|");
+
+      if (currentSignature !== expectedSignature) {
+        select.replaceChildren(
+          ...expectedOptions.map(([key, definition]) => {
+            const option = document.createElement("option");
+            option.value = key;
+            option.textContent = definition.label;
+            return option;
+          })
+        );
+      }
+
+      select.value =
+        GLOBAL_BASEMAP_DEFINITIONS[activeKey]
+          ? activeKey
+          : "osm";
+    }
+
+    function synchronizeBaseMapSelectors(key = activeGlobalBaseMapKey) {
+      document
+        .querySelectorAll(
+          "#satelliteBaseMapSelect, " +
+          "[data-me-global-basemap-select]"
+        )
+        .forEach((select) => {
+          ensureBaseMapSelectOptions(select);
+
+          if (
+            select instanceof HTMLSelectElement &&
+            select.value !== key
+          ) {
+            select.value = key;
+          }
+        });
+    }
+
     function createGlobalBaseMapLayer(key) {
       const normalizedKey =
         GLOBAL_BASEMAP_DEFINITIONS[key] ? key : "osm";
@@ -175,7 +238,7 @@ window.addEventListener("DOMContentLoaded", () => {
         definition.url,
         {
           ...definition.options,
-          pane: "tilePane",
+          pane: BASEMAP_PANE_NAME,
           meGlobalBaseMap: true,
           meGlobalBaseMapKey: normalizedKey
         }
@@ -185,58 +248,46 @@ window.addEventListener("DOMContentLoaded", () => {
       return layer;
     }
 
+    function removeCompetingTileLayers(nextLayer) {
+      const removableLayers = [];
+
+      map.eachLayer((layer) => {
+        if (
+          layer !== nextLayer &&
+          layer instanceof L.TileLayer &&
+          map.hasLayer(layer)
+        ) {
+          removableLayers.push(layer);
+        }
+      });
+
+      removableLayers.forEach((layer) => {
+        map.removeLayer(layer);
+      });
+    }
+
     function setGlobalBaseMap(key, options = {}) {
       const normalizedKey =
         GLOBAL_BASEMAP_DEFINITIONS[key] ? key : "osm";
       const nextLayer =
         createGlobalBaseMapLayer(normalizedKey);
 
-      if (
-        activeGlobalBaseMapLayer &&
-        activeGlobalBaseMapLayer !== nextLayer &&
-        map.hasLayer(activeGlobalBaseMapLayer)
-      ) {
-        map.removeLayer(activeGlobalBaseMapLayer);
-      }
-
       /*
-       * Defensive cleanup: remove only tile layers explicitly marked as
-       * global basemaps. Analytical raster overlays are not touched.
+       * Remove every competing Leaflet tile layer before adding the selected
+       * basemap. Current analytical layers use ImageOverlay, LayerGroup,
+       * GeoJSON, HeatLayer, markers, vectors and dedicated panes, so they
+       * remain untouched.
        */
-      map.eachLayer((layer) => {
-        if (
-          layer !== nextLayer &&
-          layer instanceof L.TileLayer &&
-          layer?.options?.meGlobalBaseMap === true &&
-          map.hasLayer(layer)
-        ) {
-          map.removeLayer(layer);
-        }
-      });
+      removeCompetingTileLayers(nextLayer);
 
       if (!map.hasLayer(nextLayer)) {
         nextLayer.addTo(map);
       }
 
-      if (typeof nextLayer.bringToBack === "function") {
-        nextLayer.bringToBack();
-      }
-
       activeGlobalBaseMapKey = normalizedKey;
       activeGlobalBaseMapLayer = nextLayer;
 
-      document
-        .querySelectorAll(
-          "#satelliteBaseMapSelect, [data-me-global-basemap-select]"
-        )
-        .forEach((select) => {
-          if (
-            select instanceof HTMLSelectElement &&
-            select.value !== normalizedKey
-          ) {
-            select.value = normalizedKey;
-          }
-        });
+      synchronizeBaseMapSelectors(normalizedKey);
 
       window.dispatchEvent(
         new CustomEvent("me:basemapchange", {
@@ -258,15 +309,13 @@ window.addEventListener("DOMContentLoaded", () => {
       getActiveKey: () => activeGlobalBaseMapKey,
       getActiveLayer: () => activeGlobalBaseMapLayer,
       getMap: () => map,
+      synchronizeSelectors: synchronizeBaseMapSelectors,
       version: MAIN_MAP_VERSION
     });
 
     /*
-     * Global, delegated basemap selector binding.
-     *
-     * The Satellite Intelligence controls are created dynamically later in
-     * this file. Listening on document guarantees that the basemap selector
-     * works regardless of when the control or the Satellite module loads.
+     * Delegated binding is required because Satellite Intelligence creates
+     * its controls dynamically.
      */
     document.addEventListener("change", (event) => {
       const target = event.target;
@@ -282,16 +331,14 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      ensureBaseMapSelectOptions(target);
+
       setGlobalBaseMap(
         target.value,
         { source: "global-basemap-select" }
       );
     });
 
-    /*
-     * Keep every compatible selector synchronized when another component
-     * changes the basemap programmatically.
-     */
     window.addEventListener("me:basemapchange", (event) => {
       const key = event?.detail?.key;
 
@@ -299,18 +346,21 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      document
-        .querySelectorAll(
-          "#satelliteBaseMapSelect, [data-me-global-basemap-select]"
-        )
-        .forEach((select) => {
-          if (
-            select instanceof HTMLSelectElement &&
-            select.value !== key
-          ) {
-            select.value = key;
-          }
-        });
+      synchronizeBaseMapSelectors(key);
+    });
+
+    /*
+     * The selector can be inserted or rewritten by a dynamically loaded
+     * module. Keep its five options and current value synchronized without
+     * touching any other control.
+     */
+    const baseMapSelectObserver = new MutationObserver(() => {
+      synchronizeBaseMapSelectors(activeGlobalBaseMapKey);
+    });
+
+    baseMapSelectObserver.observe(document.documentElement, {
+      childList: true,
+      subtree: true
     });
 
     setGlobalBaseMap("osm", { source: "startup" });
