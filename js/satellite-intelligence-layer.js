@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
-  const MODULE_VERSION = "2.5.1";
+  const MODULE_VERSION = "2.6.0";
   const DEFAULT_OPACITY = 0.72;
   const DEFAULT_LOCATIONS_URLS = [
     "./data/satellite/locations.json",
@@ -888,6 +888,138 @@
         font-size: 12px;
         line-height: 1.6;
       }
+
+      .me-region-attribution {
+        margin-top: 12px;
+        padding: 12px;
+        border: 1px solid #dbe4ee;
+        border-radius: 12px;
+        background: #f8fafc;
+      }
+
+      .me-region-attribution__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 9px;
+      }
+
+      .me-region-attribution__title {
+        color: #0f172a;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .me-region-attribution__subtitle {
+        margin-top: 2px;
+        color: #64748b;
+        font-size: 9px;
+        line-height: 1.4;
+      }
+
+      .me-region-attribution__confidence {
+        flex: 0 0 auto;
+        padding: 5px 8px;
+        border-radius: 999px;
+        background: #e0ecff;
+        color: #1e3a8a;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .me-region-attribution__hypothesis {
+        padding: 10px 11px;
+        border-left: 4px solid #f97316;
+        border-radius: 8px;
+        background: #fff7ed;
+        color: #7c2d12;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .me-region-attribution__evidence {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 9px;
+      }
+
+      .me-region-attribution__evidence-card {
+        padding: 8px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .me-region-attribution__evidence-label {
+        display: block;
+        color: #64748b;
+        font-size: 8px;
+        font-weight: 900;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+      }
+
+      .me-region-attribution__evidence-value {
+        display: block;
+        margin-top: 3px;
+        color: #0f172a;
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .me-region-attribution__reasoning,
+      .me-region-attribution__alternatives,
+      .me-region-attribution__timeline {
+        margin-top: 9px;
+        padding: 9px 10px;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #334155;
+        font-size: 10px;
+        line-height: 1.55;
+      }
+
+      .me-region-attribution__timeline-item {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 8px;
+        padding: 4px 0;
+        border-bottom: 1px solid #eef2f7;
+      }
+
+      .me-region-attribution__timeline-item:last-child {
+        border-bottom: 0;
+      }
+
+      .me-region-attribution__timeline-time {
+        color: #64748b;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .me-region-attribution__warning {
+        margin-top: 9px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: #fff7ed;
+        color: #9a3412;
+        font-size: 9px;
+        line-height: 1.45;
+      }
+
+      .me-region-attribution__ai-result {
+        margin-top: 9px;
+        padding: 10px;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        background: #eff6ff;
+        color: #1e3a5f;
+        font-size: 10px;
+        line-height: 1.55;
+        white-space: pre-wrap;
+      }
+
 
       .me-region-intelligence-events {
         display: grid;
@@ -3808,6 +3940,699 @@
       `;
     }
 
+
+    // ===== Change Attribution / AI handoff =====
+    //
+    // This layer deliberately separates:
+    //   1) observed facts,
+    //   2) deterministic correlation,
+    //   3) later AI interpretation.
+    //
+    // The deterministic result is useful on its own and also becomes the
+    // structured input for a future AI service. No API key is stored here.
+
+    function parseDateMs(value) {
+      if (!value) return null;
+      const ms = new Date(value).getTime();
+      return Number.isFinite(ms) ? ms : null;
+    }
+
+    function isoOrNull(value) {
+      const ms = parseDateMs(value);
+      return ms === null ? null : new Date(ms).toISOString();
+    }
+
+    function eventDateValue(item) {
+      return firstDefined(
+        item?.acquisition_datetime_utc,
+        item?.datetime,
+        item?.timestamp,
+        item?.date,
+        item?.acquisition_date,
+        null
+      );
+    }
+
+    function recordObservationWindow(record = state.currentRecord) {
+      const before = normalizePhase(record || {}, "before");
+      const after = normalizePhase(record || {}, "after");
+
+      const beforeMs = parseDateMs(
+        firstDefined(before.acquisition_date, before.requested_date, null)
+      );
+      const afterMs = parseDateMs(
+        firstDefined(after.acquisition_date, record?.timestamp, after.requested_date, null)
+      );
+
+      return {
+        before: beforeMs === null ? null : new Date(beforeMs).toISOString(),
+        after: afterMs === null ? null : new Date(afterMs).toISOString(),
+        beforeMs,
+        afterMs
+      };
+    }
+
+    function isWithinObservationWindow(value, windowInfo, toleranceHours = 24) {
+      const ms = parseDateMs(value);
+      if (ms === null) return false;
+
+      const tolerance = Math.max(0, Number(toleranceHours) || 0) * 3600000;
+      const start = windowInfo?.beforeMs;
+      const end = windowInfo?.afterMs;
+
+      if (start === null || start === undefined || end === null || end === undefined) {
+        return false;
+      }
+
+      return ms >= Math.min(start, end) - tolerance &&
+        ms <= Math.max(start, end) + tolerance;
+    }
+
+    function buildRegionTimeline(region, record = state.currentRecord) {
+      const timeline = [];
+      const windowInfo = recordObservationWindow(record);
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+
+      if (windowInfo.before) {
+        timeline.push({
+          timestamp: windowInfo.before,
+          type: "SATELLITE_BEFORE",
+          label: "Sentinel BEFORE",
+          source: "Sentinel-2"
+        });
+      }
+
+      (Array.isArray(strikes.events) ? strikes.events : []).forEach((event) => {
+        const timestamp = isoOrNull(eventDateValue(event));
+        if (!timestamp) return;
+        timeline.push({
+          timestamp,
+          type: "IRANSTRIKE",
+          label: String(firstDefined(
+            event.title,
+            event.category,
+            "IranStrike event"
+          )),
+          distance_km: toNumber(event.distance_km),
+          inside_region: Boolean(event.inside_region_bbox),
+          source_url: String(firstDefined(event.source_url, ""))
+        });
+      });
+
+      (Array.isArray(firms.hotspots) ? firms.hotspots : []).forEach((hotspot) => {
+        const timestamp = isoOrNull(eventDateValue(hotspot));
+        if (!timestamp) return;
+        timeline.push({
+          timestamp,
+          type: "FIRMS",
+          label: "NASA FIRMS thermal anomaly",
+          distance_km: toNumber(hotspot.distance_km),
+          inside_region: Boolean(hotspot.inside_region_bbox),
+          frp_mw: toNumber(hotspot.frp),
+          confidence: String(firstDefined(hotspot.confidence, "")),
+          source: String(firstDefined(
+            hotspot.satellite,
+            hotspot.instrument,
+            hotspot.source,
+            "NASA FIRMS"
+          ))
+        });
+      });
+
+      if (windowInfo.after) {
+        timeline.push({
+          timestamp: windowInfo.after,
+          type: "SATELLITE_AFTER",
+          label: "Sentinel AFTER",
+          source: "Sentinel-2"
+        });
+      }
+
+      return timeline.sort((a, b) =>
+        String(a.timestamp).localeCompare(String(b.timestamp))
+      );
+    }
+
+    function calculateRegionAttribution(region, change, record = state.currentRecord) {
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+      const spatial = buildIranStrikeSpatialSummary(region);
+      const windowInfo = recordObservationWindow(record);
+
+      const hotspots = Array.isArray(firms.hotspots) ? firms.hotspots : [];
+      const strikeEvents = Array.isArray(strikes.events) ? strikes.events : [];
+
+      const firmsInside = Math.max(0, toNumber(firms.inside_hotspot_count) || 0);
+      const firmsNearby = Math.max(0, toNumber(firms.nearby_hotspot_count) || 0);
+      const strikesInside = Math.max(0, toNumber(strikes.inside_event_count) || 0);
+      const strikesNearby = Math.max(0, toNumber(strikes.nearby_event_count) || 0);
+
+      const firmsInWindow = hotspots.filter((hotspot) =>
+        isWithinObservationWindow(eventDateValue(hotspot), windowInfo, 24)
+      ).length;
+
+      const strikesInWindow = strikeEvents.filter((event) =>
+        isWithinObservationWindow(eventDateValue(event), windowInfo, 24)
+      ).length;
+
+      const frpValues = hotspots
+        .map((hotspot) => toNumber(hotspot.frp))
+        .filter((value) => value !== null && value >= 0);
+
+      const maxFrp = frpValues.length ? Math.max(...frpValues) : null;
+      const meanFrp = frpValues.length
+        ? frpValues.reduce((sum, value) => sum + value, 0) / frpValues.length
+        : null;
+
+      const area = Math.max(0, toNumber(region?.area_km2_estimate) || 0);
+      const intensity = Math.max(0, toNumber(region?.mean_change_intensity) || 0);
+      const comparabilityHigh =
+        String(change?.comparability || "").toUpperCase() === "HIGH";
+
+      let strikeScore = 0;
+      strikeScore += Math.min(42, strikesInside * 24);
+      strikeScore += Math.min(18, strikesNearby * 4);
+      strikeScore += Math.min(25, spatial.proximityScore * 0.25);
+      strikeScore += Math.min(15, strikesInWindow * 7.5);
+      strikeScore = Math.min(100, Math.round(strikeScore));
+
+      let fireScore = 0;
+      fireScore += Math.min(38, firmsInside * 5);
+      fireScore += Math.min(15, firmsNearby * 1.5);
+      fireScore += Math.min(22, firmsInWindow * 4);
+      if (toNumber(firms.nearest_distance_km) !== null) {
+        const distance = Number(firms.nearest_distance_km);
+        fireScore += distance <= 0.5 ? 15 : distance <= 1 ? 12 : distance <= 3 ? 6 : 0;
+      }
+      if (maxFrp !== null) {
+        fireScore += maxFrp >= 50 ? 10 : maxFrp >= 20 ? 6 : maxFrp >= 5 ? 3 : 0;
+      }
+      fireScore = Math.min(100, Math.round(fireScore));
+
+      let morphologyScore = 0;
+      morphologyScore += Math.min(45, intensity * 75);
+      morphologyScore += Math.min(35, area * 4);
+      if (comparabilityHigh) morphologyScore += 20;
+      morphologyScore = Math.min(100, Math.round(morphologyScore));
+
+      const combinedMilitaryFire =
+        strikeScore > 0 && fireScore > 0
+          ? Math.round((strikeScore * 0.55) + (fireScore * 0.35) + (morphologyScore * 0.10))
+          : 0;
+
+      let hypothesisCode = "UNATTRIBUTED_SURFACE_CHANGE";
+      let hypothesisLabel = "Nem azonosított felszíni változás";
+      let hypothesisEnglish = "Unattributed surface change";
+      let confidence = Math.round(
+        Math.min(
+          72,
+          morphologyScore * 0.35 +
+          Math.max(strikeScore, fireScore) * 0.35
+        )
+      );
+
+      if (combinedMilitaryFire >= 45) {
+        hypothesisCode = "STRIKE_FIRE_RELATED";
+        hypothesisLabel = "Csapással és/vagy követő tűzzel összefüggő változás";
+        hypothesisEnglish = "Strike/fire-related surface change";
+        confidence = Math.min(
+          96,
+          Math.round(
+            combinedMilitaryFire +
+            Math.min(10, strikesInWindow * 3) +
+            Math.min(8, firmsInWindow * 1.5)
+          )
+        );
+      } else if (strikeScore >= 38) {
+        hypothesisCode = "STRIKE_RELATED";
+        hypothesisLabel = "Csapással összefüggő változás lehetséges";
+        hypothesisEnglish = "Possible strike-related surface change";
+        confidence = Math.min(
+          92,
+          Math.round(strikeScore * 0.78 + morphologyScore * 0.22)
+        );
+      } else if (fireScore >= 38) {
+        hypothesisCode = "FIRE_THERMAL_RELATED";
+        hypothesisLabel = "Tűzzel vagy hőhatással összefüggő változás lehetséges";
+        hypothesisEnglish = "Possible fire/thermal-related surface change";
+        confidence = Math.min(
+          90,
+          Math.round(fireScore * 0.78 + morphologyScore * 0.22)
+        );
+      }
+
+      if (!comparabilityHigh) {
+        confidence = Math.max(0, confidence - 8);
+      }
+
+      confidence = Math.max(0, Math.min(100, confidence));
+
+      const confidenceLevel =
+        confidence >= 80 ? "HIGH" :
+        confidence >= 55 ? "MEDIUM" :
+        confidence >= 30 ? "LOW" :
+        "VERY LOW";
+
+      const reasons = [];
+      if (strikesInside > 0) {
+        reasons.push(`${strikesInside} IranStrike-esemény található a régión belül.`);
+      } else if (strikesNearby > 0) {
+        reasons.push(`${strikesNearby} IranStrike-esemény található a régió közelében.`);
+      }
+
+      if (spatial.nearestDistanceKm !== null) {
+        reasons.push(
+          `A legközelebbi azonosított csapás távolsága ${formatMetric(
+            spatial.nearestDistanceKm,
+            3,
+            " km"
+          )}.`
+        );
+      }
+
+      if (firmsInside > 0) {
+        reasons.push(`${firmsInside} FIRMS-hőpont esik a régión belülre.`);
+      } else if (firmsNearby > 0) {
+        reasons.push(`${firmsNearby} FIRMS-hőpont található a közelben.`);
+      }
+
+      if (strikesInWindow > 0) {
+        reasons.push(
+          `${strikesInWindow} csapás időben is a BEFORE–AFTER megfigyelési ablakhoz illeszkedik.`
+        );
+      }
+
+      if (firmsInWindow > 0) {
+        reasons.push(
+          `${firmsInWindow} hőanomália időben is a megfigyelési ablakhoz illeszkedik.`
+        );
+      }
+
+      if (maxFrp !== null) {
+        reasons.push(
+          `A régióhoz rendelt FIRMS-adatok legnagyobb FRP-értéke ${formatMetric(
+            maxFrp,
+            1,
+            " MW"
+          )}.`
+        );
+      }
+
+      if (!reasons.length) {
+        reasons.push(
+          "A rendelkezésre álló FIRMS- és IranStrike-adatok nem adnak közvetlen magyarázó jelet."
+        );
+      }
+
+      const alternatives = [];
+      if (hypothesisCode !== "FIRE_THERMAL_RELATED") {
+        alternatives.push("nem katonai eredetű tűz vagy hőhatás");
+      }
+      alternatives.push("építési, földmunka- vagy bontási tevékenység");
+      alternatives.push("szezonális vagy környezeti felszínváltozás");
+      alternatives.push("felhő-, árnyék-, geometriai vagy kép-összehasonlíthatósági műtermék");
+
+      return {
+        schema_version: "1.0",
+        hypothesis_code: hypothesisCode,
+        hypothesis_label_hu: hypothesisLabel,
+        hypothesis_label_en: hypothesisEnglish,
+        confidence_score: confidence,
+        confidence_level: confidenceLevel,
+        component_scores: {
+          strike_correlation: strikeScore,
+          thermal_correlation: fireScore,
+          change_morphology: morphologyScore,
+          combined_strike_fire: combinedMilitaryFire
+        },
+        evidence_summary: {
+          firms_inside: firmsInside,
+          firms_nearby: firmsNearby,
+          firms_in_observation_window: firmsInWindow,
+          firms_nearest_distance_km: toNumber(firms.nearest_distance_km),
+          firms_max_frp_mw: maxFrp,
+          firms_mean_frp_mw: meanFrp,
+          iranstrike_inside: strikesInside,
+          iranstrike_nearby: strikesNearby,
+          iranstrike_in_observation_window: strikesInWindow,
+          iranstrike_nearest_distance_km: spatial.nearestDistanceKm,
+          iranstrike_proximity_score: spatial.proximityScore
+        },
+        observation_window: {
+          before: windowInfo.before,
+          after: windowInfo.after
+        },
+        reasons,
+        alternative_hypotheses: alternatives,
+        caveat:
+          "Automatikus korrelációs becslés. A térbeli és időbeli együttállás nem bizonyít okozati kapcsolatot; emberi elemzői ellenőrzés szükséges."
+      };
+    }
+
+    function buildRegionAiPayload(region, change, record = state.currentRecord) {
+      if (!region) return null;
+
+      const attribution = calculateRegionAttribution(region, change, record);
+      const intelligence = calculateRegionIntelligence(region, change);
+      const firms = region?.firms_correlation || {};
+      const strikes = region?.iranstrike_correlation || {};
+      const before = normalizePhase(record || {}, "before");
+      const after = normalizePhase(record || {}, "after");
+
+      return {
+        schema: "me-security-monitor.region-change-intelligence",
+        schema_version: "1.0",
+        generated_at: new Date().toISOString(),
+        producer: {
+          module: MODULE_NAME,
+          module_version: MODULE_VERSION
+        },
+        task: {
+          type: "region_change_attribution",
+          instruction:
+            "Assess the most plausible causes of the observed satellite change. Separate observed facts from inference; compare alternative hypotheses; use temporal and spatial correlation; do not claim causation unless supported by independent evidence."
+        },
+        location: {
+          slug: String(firstDefined(record?.location_slug, "")),
+          name: String(firstDefined(record?.location_name, "")),
+          center: resolveRecordCenter(record || {}) || null
+        },
+        observation: {
+          record_id: String(firstDefined(record?.id, "")),
+          before: {
+            acquisition_date: String(firstDefined(before.acquisition_date, "")),
+            requested_date: String(firstDefined(before.requested_date, "")),
+            product_id: String(firstDefined(before.product_id, ""))
+          },
+          after: {
+            acquisition_date: String(firstDefined(after.acquisition_date, record?.timestamp, "")),
+            requested_date: String(firstDefined(after.requested_date, "")),
+            product_id: String(firstDefined(after.product_id, ""))
+          },
+          comparability: String(firstDefined(change?.comparability, "UNKNOWN")),
+          comparability_score: toNumber(change?.comparability_score),
+          ssim: toNumber(change?.ssim),
+          changed_pixel_percent: toNumber(change?.changed_pixel_percent)
+        },
+        region: {
+          id: String(firstDefined(region.id, "")),
+          rank: toNumber(region.rank),
+          area_km2: toNumber(region.area_km2_estimate),
+          area_percent: toNumber(region.area_percent),
+          relative_size: String(firstDefined(region.relative_size, "")),
+          centroid: region.centroid || null,
+          bbox_geo: Array.isArray(region.bbox_geo) ? [...region.bbox_geo] : null,
+          mean_change_intensity: toNumber(region.mean_change_intensity),
+          max_change_intensity: toNumber(region.max_change_intensity),
+          interpretation: String(firstDefined(region.interpretation, "")),
+          priority_score: intelligence.score,
+          priority_level: intelligence.level
+        },
+        evidence: {
+          firms: {
+            classification: String(firstDefined(firms.classification, "NONE")),
+            inside_hotspot_count: toNumber(firms.inside_hotspot_count) || 0,
+            nearby_hotspot_count: toNumber(firms.nearby_hotspot_count) || 0,
+            nearest_distance_km: toNumber(firms.nearest_distance_km),
+            hotspots: (Array.isArray(firms.hotspots) ? firms.hotspots : []).map((hotspot) => ({
+              timestamp: isoOrNull(eventDateValue(hotspot)),
+              latitude: toNumber(firstDefined(hotspot.latitude, hotspot.lat)),
+              longitude: toNumber(firstDefined(hotspot.longitude, hotspot.lon, hotspot.lng)),
+              distance_km: toNumber(hotspot.distance_km),
+              inside_region: Boolean(hotspot.inside_region_bbox),
+              frp_mw: toNumber(hotspot.frp),
+              confidence: String(firstDefined(hotspot.confidence, "")),
+              satellite: String(firstDefined(hotspot.satellite, "")),
+              instrument: String(firstDefined(hotspot.instrument, ""))
+            }))
+          },
+          iranstrike: {
+            classification: String(firstDefined(strikes.classification, "NONE")),
+            inside_event_count: toNumber(strikes.inside_event_count) || 0,
+            nearby_event_count: toNumber(strikes.nearby_event_count) || 0,
+            nearest_distance_km: toNumber(strikes.nearest_distance_km),
+            events: (Array.isArray(strikes.events) ? strikes.events : []).map((event) => ({
+              timestamp: isoOrNull(eventDateValue(event)),
+              title: String(firstDefined(event.title, event.category, "IranStrike event")),
+              attacker: String(firstDefined(event.attacker_label, event.attacker, "")),
+              category: String(firstDefined(event.category, "")),
+              severity: String(firstDefined(event.severity, "")),
+              description: String(firstDefined(event.description, "")),
+              latitude: toNumber(firstDefined(event.latitude, event.lat)),
+              longitude: toNumber(firstDefined(event.longitude, event.lon, event.lng)),
+              distance_km: toNumber(event.distance_km),
+              inside_region: Boolean(event.inside_region_bbox),
+              source_url: String(firstDefined(event.source_url, ""))
+            }))
+          }
+        },
+        deterministic_attribution: attribution,
+        timeline: buildRegionTimeline(region, record),
+        analytical_rules: {
+          note:
+            "Scores are deterministic heuristic correlations for triage, not proof of causation.",
+          human_review_required: true
+        }
+      };
+    }
+
+    function getRegionById(regionId, record = state.currentRecord) {
+      const change = normalizeChangeDetection(record);
+      if (!change?.regions?.length) return { region: null, change };
+      const target = regionId
+        ? change.regions.find((item) => String(item.id) === String(regionId))
+        : state.selectedRegion
+          ? change.regions.find((item) => String(item.id) === String(state.selectedRegion?.id))
+          : change.regions[0];
+      return { region: target || null, change };
+    }
+
+    async function copyTextToClipboard(textValue) {
+      const value = String(textValue || "");
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return true;
+      }
+
+      const textarea = document.createElement("textarea");
+      textarea.value = value;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      const ok = document.execCommand("copy");
+      textarea.remove();
+      return ok;
+    }
+
+    async function copyRegionAiPayload(regionId) {
+      const { region, change } = getRegionById(regionId);
+      if (!region) throw new Error("A régió nem található.");
+
+      const payload = buildRegionAiPayload(region, change, state.currentRecord);
+      await copyTextToClipboard(JSON.stringify(payload, null, 2));
+
+      window.dispatchEvent(
+        new CustomEvent("me:region-ai-payload", {
+          detail: {
+            regionId: region.id,
+            payload
+          }
+        })
+      );
+
+      notify(`AI-adatcsomag másolva: ${region.id}`);
+      return payload;
+    }
+
+    async function requestRegionAiAnalysis(regionId, requestOptions = {}) {
+      const { region, change } = getRegionById(regionId);
+      if (!region) throw new Error("A régió nem található.");
+
+      const payload = buildRegionAiPayload(region, change, state.currentRecord);
+      const endpoint = String(firstDefined(
+        requestOptions.endpoint,
+        options.aiEndpoint,
+        window.ME_SATELLITE_AI_ENDPOINT,
+        ""
+      )).trim();
+
+      if (!endpoint) {
+        window.dispatchEvent(
+          new CustomEvent("me:region-ai-request", {
+            detail: {
+              regionId: region.id,
+              payload
+            }
+          })
+        );
+
+        return {
+          mode: "handoff",
+          payload,
+          message:
+            "AI endpoint nincs konfigurálva. A strukturált adatcsomag elkészült és eseményként átadásra került."
+        };
+      }
+
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(requestOptions.headers || {})
+        },
+        body: JSON.stringify({
+          task: "region_change_attribution",
+          payload
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`AI endpoint HTTP ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      window.dispatchEvent(
+        new CustomEvent("me:region-ai-result", {
+          detail: {
+            regionId: region.id,
+            payload,
+            result
+          }
+        })
+      );
+
+      return {
+        mode: "endpoint",
+        payload,
+        result
+      };
+    }
+
+    function buildRegionAttributionHtml(region, change) {
+      const attribution = calculateRegionAttribution(
+        region,
+        change,
+        state.currentRecord
+      );
+
+      const timeline = buildRegionTimeline(region, state.currentRecord)
+        .slice(0, 12);
+
+      const timelineHtml = timeline.length
+        ? `
+          <div class="me-region-attribution__timeline">
+            <strong>Idővonal</strong>
+            ${timeline.map((item) => `
+              <div class="me-region-attribution__timeline-item">
+                <span class="me-region-attribution__timeline-time">
+                  ${escapeHtml(
+                    item.timestamp
+                      ? item.timestamp.replace("T", " ").replace(".000Z", "Z")
+                      : "n/a"
+                  )}
+                </span>
+                <span>
+                  ${escapeHtml(item.label)}
+                  ${item.distance_km !== undefined && item.distance_km !== null
+                    ? ` · ${formatMetric(item.distance_km, 3, " km")}`
+                    : ""}
+                </span>
+              </div>
+            `).join("")}
+          </div>
+        `
+        : "";
+
+      return `
+        <div class="me-region-attribution" data-me-region-attribution>
+          <div class="me-region-attribution__header">
+            <div>
+              <div class="me-region-attribution__title">Change Attribution</div>
+              <div class="me-region-attribution__subtitle">
+                Lehetséges okok térbeli, időbeli és képi korreláció alapján
+              </div>
+            </div>
+            <span class="me-region-attribution__confidence">
+              ${attribution.confidence_score}/100 ·
+              ${escapeHtml(attribution.confidence_level)}
+            </span>
+          </div>
+
+          <div class="me-region-attribution__hypothesis">
+            <strong>Elsődleges hipotézis</strong><br>
+            ${escapeHtml(attribution.hypothesis_label_hu)}
+          </div>
+
+          <div class="me-region-attribution__evidence">
+            <div class="me-region-attribution__evidence-card">
+              <span class="me-region-attribution__evidence-label">Strike score</span>
+              <span class="me-region-attribution__evidence-value">
+                ${attribution.component_scores.strike_correlation}/100
+              </span>
+            </div>
+            <div class="me-region-attribution__evidence-card">
+              <span class="me-region-attribution__evidence-label">Thermal score</span>
+              <span class="me-region-attribution__evidence-value">
+                ${attribution.component_scores.thermal_correlation}/100
+              </span>
+            </div>
+            <div class="me-region-attribution__evidence-card">
+              <span class="me-region-attribution__evidence-label">Change morphology</span>
+              <span class="me-region-attribution__evidence-value">
+                ${attribution.component_scores.change_morphology}/100
+              </span>
+            </div>
+          </div>
+
+          <div class="me-region-attribution__reasoning">
+            <strong>Indoklás</strong><br>
+            ${attribution.reasons
+              .map((reason) => `• ${escapeHtml(reason)}`)
+              .join("<br>")}
+          </div>
+
+          <div class="me-region-attribution__alternatives">
+            <strong>Alternatív magyarázatok</strong><br>
+            ${attribution.alternative_hypotheses
+              .map((item) => `• ${escapeHtml(item)}`)
+              .join("<br>")}
+          </div>
+
+          ${timelineHtml}
+
+          <div class="me-region-attribution__warning">
+            ${escapeHtml(attribution.caveat)}
+          </div>
+
+          <div class="me-region-intelligence-actions">
+            <button
+              type="button"
+              class="me-satellite-modal__button"
+              data-me-region-copy-ai="${escapeHtml(region.id)}"
+            >
+              AI-adatcsomag másolása
+            </button>
+            <button
+              type="button"
+              class="me-satellite-modal__button"
+              data-me-region-request-ai="${escapeHtml(region.id)}"
+            >
+              AI-elemzés előkészítése
+            </button>
+          </div>
+
+          <div
+            class="me-region-attribution__ai-result"
+            data-me-region-ai-result="${escapeHtml(region.id)}"
+            hidden
+          ></div>
+        </div>
+      `;
+    }
+
     function calculateRegionIntelligence(region, change) {
       const firms = region?.firms_correlation || {};
       const strikes = region?.iranstrike_correlation || {};
@@ -3965,6 +4790,8 @@
             <div class="me-region-intelligence-assessment">
               ${buildRegionAssessment(region, change)}
             </div>
+
+            ${buildRegionAttributionHtml(region, change)}
 
             ${buildIranStrikeSpatialSummaryHtml(region)}
 
@@ -4833,6 +5660,82 @@
       return true;
     }
 
+    // Delegated handlers are used because region panels are rebuilt dynamically.
+    document.addEventListener("click", async (event) => {
+      const copyButton = event.target?.closest?.("[data-me-region-copy-ai]");
+      if (copyButton) {
+        const regionId = copyButton.dataset.meRegionCopyAi;
+        const originalText = copyButton.textContent;
+        copyButton.disabled = true;
+        copyButton.textContent = "Másolás…";
+
+        try {
+          await copyRegionAiPayload(regionId);
+          copyButton.textContent = "AI-adatcsomag másolva";
+        } catch (error) {
+          console.error("[ME Satellite Intelligence] AI payload copy failed:", error);
+          copyButton.textContent = "Másolási hiba";
+        } finally {
+          window.setTimeout(() => {
+            copyButton.disabled = false;
+            copyButton.textContent = originalText;
+          }, 1600);
+        }
+        return;
+      }
+
+      const requestButton = event.target?.closest?.("[data-me-region-request-ai]");
+      if (!requestButton) return;
+
+      const regionId = requestButton.dataset.meRegionRequestAi;
+      const resultHost = document.querySelector(
+        `[data-me-region-ai-result="${CSS.escape(String(regionId))}"]`
+      );
+      const originalText = requestButton.textContent;
+
+      requestButton.disabled = true;
+      requestButton.textContent = "AI-adatcsomag készítése…";
+
+      try {
+        const response = await requestRegionAiAnalysis(regionId);
+
+        if (resultHost) {
+          resultHost.hidden = false;
+
+          if (response.mode === "endpoint") {
+            resultHost.textContent =
+              typeof response.result === "string"
+                ? response.result
+                : JSON.stringify(response.result, null, 2);
+          } else {
+            resultHost.textContent =
+              "Az AI-kompatibilis régiócsomag elkészült. " +
+              "Backend endpoint még nincs konfigurálva; a csomag a " +
+              "\"me:region-ai-request\" böngészőeseményen keresztül átadható " +
+              "egy későbbi AI-integrációnak.";
+          }
+        }
+
+        requestButton.textContent =
+          response.mode === "endpoint"
+            ? "AI-elemzés elkészült"
+            : "AI-csomag elkészült";
+      } catch (error) {
+        console.error("[ME Satellite Intelligence] AI request failed:", error);
+        if (resultHost) {
+          resultHost.hidden = false;
+          resultHost.textContent = `AI-előkészítési hiba: ${error?.message || error}`;
+        }
+        requestButton.textContent = "AI-előkészítési hiba";
+      } finally {
+        window.setTimeout(() => {
+          requestButton.disabled = false;
+          requestButton.textContent = originalText;
+        }, 1800);
+      }
+    });
+
+
     dom.toggle?.addEventListener("change", () => setEnabled(dom.toggle.checked));
     dom.baseMapSelect?.addEventListener("change", () => setBaseMap(dom.baseMapSelect.value));
     dom.sourceSelect?.addEventListener("change", () => applyMode());
@@ -4922,6 +5825,20 @@
       clearFirmsHotspots,
       setIranStrikeVisible,
       clearIranStrikeMarkers,
+      calculateRegionAttribution(regionId = null) {
+        const { region, change } = getRegionById(regionId);
+        return region
+          ? calculateRegionAttribution(region, change, state.currentRecord)
+          : null;
+      },
+      buildRegionAiPayload(regionId = null) {
+        const { region, change } = getRegionById(regionId);
+        return region
+          ? buildRegionAiPayload(region, change, state.currentRecord)
+          : null;
+      },
+      copyRegionAiPayload,
+      requestRegionAiAnalysis,
       destroy() {
         removeOverlay();
         clearRegionHighlight();
@@ -4953,7 +5870,10 @@
     version: MODULE_VERSION,
     baseMaps: { ...BASEMAP_DEFINITIONS },
     normalizeArchive,
-    formatRecordLabel
+    formatRecordLabel,
+    aiSchema: {
+      name: "me-security-monitor.region-change-intelligence",
+      version: "1.0"
+    }
   };
 })();
-
