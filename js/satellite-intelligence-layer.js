@@ -1,4 +1,4 @@
-function () {
+(function () {
   "use strict";
 
   const MODULE_NAME = "ME Satellite Intelligence";
