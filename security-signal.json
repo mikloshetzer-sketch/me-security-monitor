@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-07 15:10 UTC",
+    "updated": "2026-08-07 17:09 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-08-01",
     "period_end": "2026-08-07",
-    "total_events": 143,
-    "total_risk": 126.99,
+    "total_events": 139,
+    "total_risk": 126.89,
     "normalized_risk_score": 50.8,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 28,
+    "military": 29,
     "security": 3,
-    "political": 36,
-    "other": 76
+    "political": 35,
+    "other": 72
   },
   "source_counts": {
-    "news": 137,
+    "news": 133,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 50.09
+      "risk": 50.34
     },
     {
       "name": "Israel",
-      "risk": 23.2
+      "risk": 22.9
     },
     {
       "name": "Yemen",
@@ -39,14 +39,23 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.45
+      "risk": 11.0
     },
     {
       "name": "Saudi Arabia",
-      "risk": 5.15
+      "risk": 8.15
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia, Turkey and Pakistan sign defence pact",
+      "location": "Saudi Arabia",
+      "url": "https://www.bbc.co.uk/news/articles/c30418m4mj4o?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 3.0,
       "date": "2026-08-07",
@@ -79,18 +88,18 @@
       "date": "2026-08-06",
       "category": "military",
       "source_type": "news",
-      "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
+      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
     },
     {
       "score": 2.7,
       "date": "2026-08-06",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
+      "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Rights groups say Israeli attack that killed Lebanese journalist an apparent war crime",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/cx2md67y3nlo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel strikes south Lebanon after two soldiers killed by explosion",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c998711dyjvo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
