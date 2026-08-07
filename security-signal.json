@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-07 11:08 UTC",
+    "updated": "2026-08-07 13:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-08-01",
     "period_end": "2026-08-07",
-    "total_events": 142,
-    "total_risk": 124.73,
-    "normalized_risk_score": 49.9,
+    "total_events": 146,
+    "total_risk": 128.53,
+    "normalized_risk_score": 51.4,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
-    "security": 2,
-    "political": 36,
-    "other": 73
+    "military": 28,
+    "security": 3,
+    "political": 37,
+    "other": 78
   },
   "source_counts": {
-    "news": 136,
+    "news": 140,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 49.74
+      "risk": 51.44
     },
     {
       "name": "Israel",
-      "risk": 25.0
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 12.8
+      "risk": 23.2
     },
     {
       "name": "Yemen",
-      "risk": 12.5
+      "risk": 18.5
     },
     {
-      "name": "Damascus",
-      "risk": 6.0
+      "name": "Gaza Strip",
+      "risk": 11.3
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 4.65
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi strikes in Yemen as Saudi Arabia braces for attacks: What we know - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVy1aejJVOTJEdzhFTzNTUV80eUpJUnh1ZjRzcE1BMm1ueDF3XzZOMmVDTWVWVzc2S29kTDdBVUhoQTE0Mm1OTkdDYmpnUVBGT3h1MFkwQWFuM3pVcW9xOW9YSGJweklEMTdEM0hnSFBKQTI0RXpRUWRxNHdLYkxhZWhaaTFWRkxycDlvUmhIOXlseTQ4ZkdJbzFmWEtVcWVELTBmV2NlOU85TXE4NW5SSzVB0gG3AUFVX3lxTE5CTGxzYlNCcC1aMTA2Qk1RYTBaVjlNZnRKdWs5QWJMbDMyR3A2SWo3NmhOaXBHbkFfZUxFSXVOMm9CNU5KYmNBZUw0dmRua0NFTnhJdkZYMzBEXzJfWmpKWnF0dktQTnU0OUFYbnA5S0FTQjFzaDlacG1NNi1xOENqVVBUYXYwQmNZeEVMRUZHYVJ5OE5hWGRyX24zLVo4WUNtWU9TbE91NVJYcVdrYmhJLVhiUG9qOA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi attacks on gov’t forces hint that a major battle in Yemen is brewing - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSm5zYllnbms2MmxrX093bTdMTWdaTVJiUkF6T09VNzFvYmRaTG5LYjZWR3p1a2RVdVFrRE9XN2VZc0VIRy1nNUE4ZlJ0eFNIYXduUHQ5Y3VZSVBjdzdyOVpiVkdvZkp0YS01NGJFM1dEZjFMck5IVWNKR3BBV1RHU0Z4X3NiS3dMNUpTQjlZT3EtS2JIemNSSEdIUXFvMVpfUU5la0l3S2ZQQWZXOEVBWXNycEzSAboBQVVfeXFMTV95RXlyQ1c1ZkpEMzlLbFVLYTAtV1d0cHlnbzk1eHV4QWwyd04wMk5VYmJVeTllVlVuU0Z6ZjVWSlhmWTRDOVB6WHhBcTlZOEJ3RGtvdjJaOTE3ZzJNTlZGcTh2N2JpY3dxYkN2WHpOcWNISXRCaFpxWkJKQ3hsNGZpalZYQWJaZHRfS0U1ZWNwZEY0OUxYMnRCMGpKSFVqMlRBYWpmSFFJUUlSaXZDd2VMaVlkNXpyNlpR"
+    },
     {
       "score": 2.7,
       "date": "2026-08-06",
@@ -61,18 +79,18 @@
       "date": "2026-08-06",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
+      "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
     },
     {
       "score": 2.7,
       "date": "2026-08-06",
       "category": "military",
       "source_type": "news",
-      "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
+      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Israel strikes south Lebanon after two soldiers killed by explosion",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/c998711dyjvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Two killed, several wounded in minibus blast near Syria’s Damascus - Al Jazeera",
-      "location": "Damascus",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNQTZTbnFZTmxQcFlVd3VzYTdnYjI4SmExaTZLVDdLanlWYWRSdDdZeVNncmVUWTVGd3BCQ2luZm42NE1vY2dqWGFPT0lwVW1lOUFnU3ZWTUJUaWx3U0RWNFZLUHlkZkJ2N3BTUDBEZUJYZEwtSUlkRE1WdzZzMnlJWEF1MXVZak9KUE9UcjhQUkdYUFAwQTcxU1EzN1B3STRNNy1RVNIBqgFBVV95cUxPRElMZXU2ZW44NWE0Y1B5c3hXdjk3aGpjUl83MHBBWGwzbE5MWHI0dmlFV2RXZlZQZmYzbFhCUzBLZ3RwazF1bzQ4Nlh6aEhMc2RLa1Y3LVRvek1aNmZMOWRETkF4SUh0akU3U1I1VFRBRXI3NlJUTmRzbVlxdXcwWjVPQXZfTmY1RUwwd0NydzR5SnNHeVktaXFadUhEQlF2X0NVNHBpZkROZw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "UNICEF says one child killed per day in Gaza since ‘ceasefire’ - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcFpsYmlrSUkyWWtxZ1A0Ui1mWkhzd1pWZUhUanB5c2pKcDJHQ2VBbVNlWExSZ0Q2cTZjdENKa3A0MFpaSDlUb3ROR3BCWEJmN0FlX0lLaElRTnRaLUtNUmVRaW80UmFwNHY2RllhTUp1ak9weWFmTkpmYXNvdTZKM1F3eG9pR196Z3JJX0NmUkZwRWR0SUJvQnpCdlBqX0ZfU2JzUdIBqgFBVV95cUxQeVA1NXh4dzliZ3hYYTJmU0FjZXZIdWxfV0JLQlFnelV5TDJMdHFrUklWcjMxQ1pmWUpMOGMySE95TmFhRWhtZVI4LU5Md3FDY2E5VDlzSGZ0NENFcGVfNndWLVNCbW81Uk0tTUxEWkszTmtxVldBeHkwV3lSNDgyMGZsU19aM19ZSDVjNlFXZXlOSUdMLTl0c2NfeWxkeW43Y0ZaTEpGX2EwQQ"
     }
   ]
 }
