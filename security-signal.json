@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-08 20:49 UTC",
+    "updated": "2026-08-08 22:48 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-08-02",
     "period_end": "2026-08-08",
-    "total_events": 131,
-    "total_risk": 114.98,
-    "normalized_risk_score": 46.0,
+    "total_events": 132,
+    "total_risk": 117.03,
+    "normalized_risk_score": 46.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 27,
     "security": 5,
-    "political": 23,
-    "other": 76
+    "political": 26,
+    "other": 74
   },
   "source_counts": {
     "news": 125,
-    "isw": 6
+    "isw": 7
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 40.23
+      "risk": 42.48
     },
     {
       "name": "Yemen",
@@ -35,15 +35,15 @@
     },
     {
       "name": "Israel",
-      "risk": 17.2
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 9.6
+      "risk": 17.05
     },
     {
       "name": "Saudi Arabia",
-      "risk": 9.05
+      "risk": 9.55
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 9.55
     }
   ],
   "top_events": [
@@ -61,9 +61,18 @@
       "date": "2026-08-08",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen’s government forces attack Houthis amid renewed shelling of Marib - aljazeera.com",
+      "title": "Yemen’s government forces attack Houthis amid renewed shelling of Marib - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1AzREREQzR3M0QwQzdkemNKOV9YQ3V5aFhZcllaMGNWaE1TV0VlVnFiUkltT0FMX1BJYmU4VDFMcUxCZ3FBSWFjYy1CeG1QYXZVUHZRaFRZYnR3a01JOFVjejh4U0liN1Y2V2dvUEpCWDNJbkVjaUlmVDFCQkRCdkJrMWJsYndDTENqN0x3cUQ2V1V2ZjJFc1VWYjJBSTBoRG52THVNbEdFYVgwVTZj0gG0AUFVX3lxTE5hS184eDhSSlIzenRlR25Fcy1ZNmQ1b3J6eEY0SHhycFBCVEFIdEdhdlFycFFhSGFPWlU4enZWT1AtdVJRTV8xdnpMU2F3VEhXQThkanhGQXdKQ2dhLUhMYThFRUpkWV9pSzFBb2dHRmNPMUlqWnJ4VDZvT1FtbEZ6WUdDSlZLOG1zZ29BNkNZTGJYVl9RM2JpV2JyWU03WWFscGpoM2FZMWplQjMwaURUUERKSg"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
     },
     {
       "score": 2.7,
@@ -88,7 +97,7 @@
       "date": "2026-08-07",
       "category": "military",
       "source_type": "news",
-      "title": "Houthi strikes in Yemen as Saudi Arabia braces for attacks: What we know - aljazeera.com",
+      "title": "Houthi strikes in Yemen as Saudi Arabia braces for attacks: What we know - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVy1aejJVOTJEdzhFTzNTUV80eUpJUnh1ZjRzcE1BMm1ueDF3XzZOMmVDTWVWVzc2S29kTDdBVUhoQTE0Mm1OTkdDYmpnUVBGT3h1MFkwQWFuM3pVcW9xOW9YSGJweklEMTdEM0hnSFBKQTI0RXpRUWRxNHdLYkxhZWhaaTFWRkxycDlvUmhIOXlseTQ4ZkdJbzFmWEtVcWVELTBmV2NlOU85TXE4NW5SSzVB0gG3AUFVX3lxTE5CTGxzYlNCcC1aMTA2Qk1RYTBaVjlNZnRKdWs5QWJMbDMyR3A2SWo3NmhOaXBHbkFfZUxFSXVOMm9CNU5KYmNBZUw0dmRua0NFTnhJdkZYMzBEXzJfWmpKWnF0dktQTnU0OUFYbnA5S0FTQjFzaDlacG1NNi1xOENqVVBUYXYwQmNZeEVMRUZHYVJ5OE5hWGRyX24zLVo4WUNtWU9TbE91NVJYcVdrYmhJLVhiUG9qOA"
     },
@@ -97,7 +106,7 @@
       "date": "2026-08-07",
       "category": "military",
       "source_type": "news",
-      "title": "Medics among six Palestinians injured in Israeli attacks across West Bank - aljazeera.com",
+      "title": "Medics among six Palestinians injured in Israeli attacks across West Bank - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORjlBaVpOU3JLMDdxSTRsZDQwODdmZkNVQUI2MHM0VnFXRWlrc0VxZHozdTdrZkxET1R4ZTM3cUptY3V6RDVfZE12UmlGdWM4WUVXTXRrVFdvX2dxNHhxVFVjY3M3SXZnUEhJOGJBOUlBTncyZl9mXzBsZDZqdHpxSXVlRHpHaHpiOFZIeUpLQ1dLeEgyeHlDWUVJR3dkZXh5WkY4RllvVVZHNmQ0NG9rcWRnRdIBuAFBVV95cUxQcnlYZUVqRlNBbXBQQXh6ZXdPeG5PcmwydDZ0aU54SWdDb01yQnk4OUwwbF9ENnIwUWN5LUs0cUIyWS1fdUp5RFFoeGR3RmhVTm4xSmFERE43UG1GS1piOVBZZF9INlhGMXRJaXg1VTNDOEkwbXF3TFQ4RDBJVDlLMUwzUXh0RE54OWgtRk04cElsdVNhcjJSSnhHMlNIaFI5YnlQazNYb3VZQnl3WmhMWHNOSzBnQXM1"
     },
@@ -106,18 +115,9 @@
       "date": "2026-08-07",
       "category": "military",
       "source_type": "news",
-      "title": "Houthi attacks on gov’t forces hint that a major battle in Yemen is brewing - aljazeera.com",
+      "title": "Houthi attacks on gov’t forces hint that a major battle in Yemen is brewing - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSm5zYllnbms2MmxrX093bTdMTWdaTVJiUkF6T09VNzFvYmRaTG5LYjZWR3p1a2RVdVFrRE9XN2VZc0VIRy1nNUE4ZlJ0eFNIYXduUHQ5Y3VZSVBjdzdyOVpiVkdvZkp0YS01NGJFM1dEZjFMck5IVWNKR3BBV1RHU0Z4X3NiS3dMNUpTQjlZT3EtS2JIemNSSEdIUXFvMVpfUU5la0l3S2ZQQWZXOEVBWXNycEzSAboBQVVfeXFMTV95RXlyQ1c1ZkpEMzlLbFVLYTAtV1d0cHlnbzk1eHV4QWwyd04wMk5VYmJVeTllVlVuU0Z6ZjVWSlhmWTRDOVB6WHhBcTlZOEJ3RGtvdjJaOTE3ZzJNTlZGcTh2N2JpY3dxYkN2WHpOcWNISXRCaFpxWkJKQ3hsNGZpalZYQWJaZHRfS0U1ZWNwZEY0OUxYMnRCMGpKSFVqMlRBYWpmSFFJUUlSaXZDd2VMaVlkNXpyNlpR"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
     },
     {
       "score": 2.4,
