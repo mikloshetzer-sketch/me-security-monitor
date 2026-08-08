@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-08 07:17 UTC",
+    "updated": "2026-08-08 09:02 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-08-02",
     "period_end": "2026-08-08",
-    "total_events": 135,
-    "total_risk": 109.08,
-    "normalized_risk_score": 43.6,
+    "total_events": 138,
+    "total_risk": 115.58,
+    "normalized_risk_score": 46.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
+    "military": 28,
     "security": 5,
-    "political": 27,
+    "political": 28,
     "other": 77
   },
   "source_counts": {
-    "news": 129,
+    "news": 132,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 38.64
+      "risk": 39.24
     },
     {
       "name": "Israel",
-      "risk": 19.3
+      "risk": 19.5
     },
     {
       "name": "Yemen",
-      "risk": 16.25
+      "risk": 18.95
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.05
+      "risk": 10.65
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.15
+      "risk": 8.55
     }
   ],
   "top_events": [
+    {
+      "score": 2.7,
+      "date": "2026-08-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis strike Marib again as UN warns Yemen nearing wider conflict - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSlRnMTdUcUhvNmFDVTdUd2JoQzVrRGZ5SHpDNTB1VGNzd0h1dnpCNUszSEJWRlRlbWpUQmtKOUM2WklINTcwcGh6M0NucGU2d19yaUlRZDdPcDZCcG91RE9oYWl6U3ZGTWV3dlpJa3IwNll2blJUMXBVTjRUbkwwU2NVUmVpbkw2XzRpV0RMUDlMQy1JM3dpNVEwcEJkMVlrR1BxVVhlM3JIQ05YVDJaR0lVQWpUYkYybEE"
+    },
     {
       "score": 2.7,
       "date": "2026-08-07",
@@ -64,6 +73,15 @@
       "title": "Houthi strikes in Yemen as Saudi Arabia braces for attacks: What we know - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVy1aejJVOTJEdzhFTzNTUV80eUpJUnh1ZjRzcE1BMm1ueDF3XzZOMmVDTWVWVzc2S29kTDdBVUhoQTE0Mm1OTkdDYmpnUVBGT3h1MFkwQWFuM3pVcW9xOW9YSGJweklEMTdEM0hnSFBKQTI0RXpRUWRxNHdLYkxhZWhaaTFWRkxycDlvUmhIOXlseTQ4ZkdJbzFmWEtVcWVELTBmV2NlOU85TXE4NW5SSzVB0gG3AUFVX3lxTE5CTGxzYlNCcC1aMTA2Qk1RYTBaVjlNZnRKdWs5QWJMbDMyR3A2SWo3NmhOaXBHbkFfZUxFSXVOMm9CNU5KYmNBZUw0dmRua0NFTnhJdkZYMzBEXzJfWmpKWnF0dktQTnU0OUFYbnA5S0FTQjFzaDlacG1NNi1xOENqVVBUYXYwQmNZeEVMRUZHYVJ5OE5hWGRyX24zLVo4WUNtWU9TbE91NVJYcVdrYmhJLVhiUG9qOA"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Medics among six Palestinians injured in Israeli attacks across West Bank - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORjlBaVpOU3JLMDdxSTRsZDQwODdmZkNVQUI2MHM0VnFXRWlrc0VxZHozdTdrZkxET1R4ZTM3cUptY3V6RDVfZE12UmlGdWM4WUVXTXRrVFdvX2dxNHhxVFVjY3M3SXZnUEhJOGJBOUlBTncyZl9mXzBsZDZqdHpxSXVlRHpHaHpiOFZIeUpLQ1dLeEgyeHlDWUVJR3dkZXh5WkY4RllvVVZHNmQ0NG9rcWRnRdIBuAFBVV95cUxQcnlYZUVqRlNBbXBQQXh6ZXdPeG5PcmwydDZ0aU54SWdDb01yQnk4OUwwbF9ENnIwUWN5LUs0cUIyWS1fdUp5RFFoeGR3RmhVTm4xSmFERE43UG1GS1piOVBZZF9INlhGMXRJaXg1VTNDOEkwbXF3TFQ4RDBJVDlLMUwzUXh0RE54OWgtRk04cElsdVNhcjJSSnhHMlNIaFI5YnlQazNYb3VZQnl3WmhMWHNOSzBnQXM1"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Houthi attacks kill at least 30 Yemeni government troops - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcmtNNXV0bmtoZ3g2MVQzTUktLUl0U2R2YlA3Qk83WFZmQXJMYjQ0LU1Za0dHQklueDZ6N2JwQzhvV0VpZTdNVkI0YjdlMWlfcmUwSVU2c3YtUDJCdk1pb3YwY1dFYXdMd3FuMUxMb2dnSEVUZHVtWktubVNjU2RSUnNaLS16Y0hsclh5Wk1Kb09oQzRvT3pSNWZqblZfN2NIQzBfYmw1RkxEbll1Mnc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks reportedly kill at least 30 Yemeni government forces",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/ckgdmdr0lmgo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Rights groups say Israeli attack that killed Lebanese journalist an apparent war crime",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/cx2md67y3nlo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
