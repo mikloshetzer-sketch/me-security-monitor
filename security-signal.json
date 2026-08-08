@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-08 14:50 UTC",
+    "updated": "2026-08-08 16:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-08-02",
     "period_end": "2026-08-08",
     "total_events": 128,
-    "total_risk": 109.48,
-    "normalized_risk_score": 43.8,
+    "total_risk": 109.13,
+    "normalized_risk_score": 43.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
+    "military": 25,
     "security": 5,
-    "political": 25,
-    "other": 72
+    "political": 24,
+    "other": 74
   },
   "source_counts": {
     "news": 122,
@@ -27,15 +27,15 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 37.44
-    },
-    {
-      "name": "Yemen",
-      "risk": 18.5
+      "risk": 40.43
     },
     {
       "name": "Israel",
-      "risk": 18.0
+      "risk": 17.5
+    },
+    {
+      "name": "Yemen",
+      "risk": 16.1
     },
     {
       "name": "Gaza Strip",
@@ -43,10 +43,19 @@
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.15
+      "risk": 8.55
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18"
+    },
     {
       "score": 2.7,
       "date": "2026-08-07",
@@ -127,15 +136,6 @@
       "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks kill at least 30 Yemeni government troops - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcmtNNXV0bmtoZ3g2MVQzTUktLUl0U2R2YlA3Qk83WFZmQXJMYjQ0LU1Za0dHQklueDZ6N2JwQzhvV0VpZTdNVkI0YjdlMWlfcmUwSVU2c3YtUDJCdk1pb3YwY1dFYXdMd3FuMUxMb2dnSEVUZHVtWktubVNjU2RSUnNaLS16Y0hsclh5Wk1Kb09oQzRvT3pSNWZqblZfN2NIQzBfYmw1RkxEbll1Mnc"
     }
   ]
 }
