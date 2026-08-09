@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-09 20:52 UTC",
+    "updated": "2026-08-09 22:51 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-08-03",
     "period_end": "2026-08-09",
     "total_events": 134,
-    "total_risk": 104.78,
-    "normalized_risk_score": 41.9,
+    "total_risk": 107.88,
+    "normalized_risk_score": 43.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 22,
+    "military": 23,
     "security": 3,
     "political": 26,
-    "other": 83
+    "other": 82
   },
   "source_counts": {
     "news": 127,
@@ -27,11 +27,11 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.34
+      "risk": 33.94
     },
     {
       "name": "Yemen",
-      "risk": 18.85
+      "risk": 21.85
     },
     {
       "name": "Israel",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.95
+      "risk": 8.45
     }
   ],
   "top_events": [
@@ -52,9 +52,18 @@
       "date": "2026-08-09",
       "category": "military",
       "source_type": "news",
-      "title": "Israel military closes Palestinian Christian village Taybeh to halt settler attacks - Reuters",
+      "title": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNcWhzbGhpYTNuV1JTcU8wSEotZ01CQ3lJb1pteWZiUzRpVVdmdmhUYldVSlV5cXNnR0pKQTFZVmFZeG1VUjZJWkN5Tm5Vak9FTmZFd1RncERPZnJBQmQwdllYaktkQ1VKeWQ5Qi1WaUdSdVlwbGRGaFM0NUJrNmt4MExPczhrVHdSZTVBQlJ4OUN5WVpvSi1XMDE0N0hub292RmlkOUJ1eG9xbkh2U0RXdEpraUF5VU01bXY2NFVqUVFYdjRLT0JWaVN3a0FjY0E"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis resume attacks on Yemen's Mocha port city, Yemeni military spokesperson says - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQY1pLdDR5UUhyOFl0d1dQNFFWV3lPV1RkNVg0TFgtSjVidElQVlpTcmt1cFQ0QmI4bTNsOXdjNlozM1RWLU9DUThrNmNjTURRZV9sSjJPbTVIYTR2ZUZQYzQ2NGdFbVRsSVlzeno5NWhiajhucW8ySmYwc1B6cENtOHg1RVhBY0pKUUFHSENiM0w5dU1lNkNJNTB0S0FLSFNKZnpZRHJLaGZHSVk2OFg1X3B0TEUyT0R4V2EtWHoxY2pjVF9IOHl4ZEpZZGF3QQ"
     },
     {
       "score": 3.0,
@@ -127,15 +136,6 @@
       "title": "Medics among six Palestinians injured in Israeli attacks across West Bank - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORjlBaVpOU3JLMDdxSTRsZDQwODdmZkNVQUI2MHM0VnFXRWlrc0VxZHozdTdrZkxET1R4ZTM3cUptY3V6RDVfZE12UmlGdWM4WUVXTXRrVFdvX2dxNHhxVFVjY3M3SXZnUEhJOGJBOUlBTncyZl9mXzBsZDZqdHpxSXVlRHpHaHpiOFZIeUpLQ1dLeEgyeHlDWUVJR3dkZXh5WkY4RllvVVZHNmQ0NG9rcWRnRdIBuAFBVV95cUxQcnlYZUVqRlNBbXBQQXh6ZXdPeG5PcmwydDZ0aU54SWdDb01yQnk4OUwwbF9ENnIwUWN5LUs0cUIyWS1fdUp5RFFoeGR3RmhVTm4xSmFERE43UG1GS1piOVBZZF9INlhGMXRJaXg1VTNDOEkwbXF3TFQ4RDBJVDlLMUwzUXh0RE54OWgtRk04cElsdVNhcjJSSnhHMlNIaFI5YnlQazNYb3VZQnl3WmhMWHNOSzBnQXM1"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi strikes in Yemen as Saudi Arabia braces for attacks: What we know - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVy1aejJVOTJEdzhFTzNTUV80eUpJUnh1ZjRzcE1BMm1ueDF3XzZOMmVDTWVWVzc2S29kTDdBVUhoQTE0Mm1OTkdDYmpnUVBGT3h1MFkwQWFuM3pVcW9xOW9YSGJweklEMTdEM0hnSFBKQTI0RXpRUWRxNHdLYkxhZWhaaTFWRkxycDlvUmhIOXlseTQ4ZkdJbzFmWEtVcWVELTBmV2NlOU85TXE4NW5SSzVB0gG3AUFVX3lxTE5CTGxzYlNCcC1aMTA2Qk1RYTBaVjlNZnRKdWs5QWJMbDMyR3A2SWo3NmhOaXBHbkFfZUxFSXVOMm9CNU5KYmNBZUw0dmRua0NFTnhJdkZYMzBEXzJfWmpKWnF0dktQTnU0OUFYbnA5S0FTQjFzaDlacG1NNi1xOENqVVBUYXYwQmNZeEVMRUZHYVJ5OE5hWGRyX24zLVo4WUNtWU9TbE91NVJYcVdrYmhJLVhiUG9qOA"
     }
   ]
 }
