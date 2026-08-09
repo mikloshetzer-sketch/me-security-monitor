@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-09 07:18 UTC",
+    "updated": "2026-08-09 09:04 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-08-03",
     "period_end": "2026-08-09",
-    "total_events": 132,
-    "total_risk": 100.03,
-    "normalized_risk_score": 40.0,
+    "total_events": 128,
+    "total_risk": 101.48,
+    "normalized_risk_score": 40.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 24,
-    "security": 4,
-    "political": 25,
-    "other": 79
+    "military": 25,
+    "security": 3,
+    "political": 24,
+    "other": 76
   },
   "source_counts": {
-    "news": 125,
-    "isw": 7
+    "news": 122,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 37.29
+      "risk": 31.99
     },
     {
       "name": "Yemen",
-      "risk": 16.1
+      "risk": 19.1
     },
     {
       "name": "Israel",
@@ -39,14 +39,32 @@
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.1
+      "risk": 9.0
     },
     {
-      "name": "Gaza Strip",
-      "risk": 6.65
+      "name": "West Bank",
+      "risk": 7.3
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they attacked Saudi Aramco Jazan refinery, fire extinguished - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVzBVeVBiZENRc3B0WldHbXZqbXBjLU5ucDVuODRNY3pIWFRKaWlES0lzRDVoWEFjOFBLQVkxeGVHd0pHWWV6Y0V0OFphUk81YksyX3BHQ0I2MVY2RHdfNDY1dE9XdGozaVQ0RWsyaXNieWlRT2RYdHNRNEp4ZHptOHBBTVFST2pfZXVIbkJZUlIteElMRTlQWEt5eGZ6RU9JMjRtUmdCYWVXUUM0TUE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settler attacks rise as West Bank residents lose land - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPc01TMEpMVEhCU3VJSkt3ZXV0WlVNbTVjTkNfQkJTckFCSnVtUklaN0VacGhGRlg1bURSSW9SdWtsa2FucDVpQ3ZyUFBKakFTTlUyV3JWNXlQeHJfdWxLM3hBLURqeVpuQVdMUlpDSU5QazA5NG5zeXBRakl4Ym9CUVhFeXZJa25mcW9NdNIBkgFBVV95cUxPV2JKQkNLTTBYaG1lMnBoa0gxdkdzXzFpeE5fbWdDR2RJUlJOOHo5LVVyU3ZEV0UzZHJVazlsN0FQaW1BdkQtWDNoVnJrVWtWa1VpaEkwcmU3eEtMamlTSlhJRXNBNUY5OFpLQVFiYloxcXVmY1FFTUdmaFZRemNYMkVzM2VaTTNBQzF3cmRqeFpyZw"
+    },
     {
       "score": 2.7,
       "date": "2026-08-08",
@@ -118,24 +136,6 @@
       "title": "Gulf shipping traffic down after Houthis say they attacked Saudi tanker - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVTZaTFF1d0RtUUU0YWlhZ0RkNW9nXzcwWVhfdUlaMnByRGhLcDVCbFhOeE0xa0dJZk5yaU1DaUVKSXpHMTZCY2pMS0NoZERmUWRVRGtjSDVuenBmTjBlOHZZX3MzVzBZS3lMSm9EUXpneVlCaC1NcW9tQ1YzN0ZJMGlmdmJmWlcxMlpMQjZfUEJIdHMtNFhCeXE1QjFXMGh1RGItaDFZaXZPcFNwWWM1Q3R3ZUxtUGlSZ1NoVWRuMmpMVkU"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Syria says bomb on minibus near Damascus wounded 14, deaths reported mistakenly - Reuters",
-      "location": "Damascus",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWFkyalJWQ2txUksxbXpvMFRkWUJYSkVlNjBGTXVjRnFJOF9ONkJ2ZWUyUG9uMmxWSENpMFpoSUlZdzRwNVJZWU1wY0tHSmxCNy04S2xBQjRvYWtEeVNPb3hpQ0tIY2ZiR3BqRURVazhJSG9uZFBfc1EwTzVGZWs1cHpUUzlYU3hkZ3hJLWVmcGZaSl9ONFdlbzhPajNiYWo3RkQ4T1BqWVY0c2twZlFINFBmZDdOMXJ2cjZMSEhQOGFXMmh5cEEwaXR3"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORWNLdnd6QTJNaVRGaG5aOVJqRjBnOFAzT05ubjAxY2dya0luUWg4Rk5xZU5KOXF2aEEzY3pQcDlLWXhvQmlNcXBKMTk4M09lWHFqM0ltOXlyeXdxQTFVRTZTTDR2Rl9pNFlDQm1PdFhpRE1zc1hhTzQ2MkZPR0lFbmZ4WXVLRzVLcmdOLXc1QVhUNm1GQlY4MWgxekxSM1NtOGNPS0tlbnJlSDRybFdZNFlqM2k0b1NNeWFaZA"
     }
   ]
 }
