@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-10 15:17 UTC",
+    "updated": "2026-08-10 17:10 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,134 +8,134 @@
   "summary": {
     "period_start": "2026-08-04",
     "period_end": "2026-08-10",
-    "total_events": 22,
-    "total_risk": 17.04,
-    "normalized_risk_score": 6.8,
+    "total_events": 127,
+    "total_risk": 101.68,
+    "normalized_risk_score": 40.7,
     "risk_level": "LOW",
-    "confidence": "LOW"
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 5,
-    "security": 2,
-    "political": 3,
-    "other": 12
+    "military": 21,
+    "security": 6,
+    "political": 23,
+    "other": 77
   },
   "source_counts": {
-    "news": 16,
+    "news": 121,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 4.14
-    },
-    {
-      "name": "Israel",
-      "risk": 3.6
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 2.65
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 2.1
+      "risk": 33.69
     },
     {
       "name": "Yemen",
-      "risk": 2.0
+      "risk": 21.5
+    },
+    {
+      "name": "Israel",
+      "risk": 10.75
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 8.95
+    },
+    {
+      "name": "West Bank",
+      "risk": 6.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "New Houthi missile and drone attacks kill seven in Yemen’s al-Makha - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbXBnNnBjc3d5Vzk1aDRaV1hyNFRwYk81RWFWWEc4SHA4Rk53M0ZoMXNoQ2dkeEVKU0RLYktnbUJKYzZpZXhuS3NXUEZMY0VUOHp4YUkxdGg0UUI0bDJJN2E2b3VaQkRmWnlPbXpsV1hPS3hxel84a1N3UUV5NzExcG5ZTXREdlZhQk9XaS1EdlI4MmQ4M29aSGhWbnYtY1FaSV9XZ0thN2VMbk3SAbABQVVfeXFMTUpDUWZjMVBTU0UtX01sOEtHd0VmY2lGakF5eTk1empsc2h6bzhDTWVQOTJyTk1Tampkb1BjOUlKQnpSRVVPbkllY0JSWlNZV1NEdWp1bm9hUllWelE3MDhkcXVUTllhUVlWQkJiTVZ6dWc4WlZ2c1U2QlZ1cVFmb2RrUkxCN1RVd3FFUEVyUl9tV3F5SnJvMDB1bHB6OThnUHhSSmQ4TzJMOW9YSFN0MTU"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Clashes in Iraq’s Kut city during protests over power shortages - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOa2xiQi1ENFY0dmFvemhhaW14a3drWHRjRFg2VmN4Vk9KTGRDNUl3WGhDa2RFbE55Q2w2UG9zbS1pQnRCVm5oeUEwUlNuendDZXh4OVIzWXFIYzZUcDZhOGI5c2dMNzFpUzhHY0ZFSWE3bUlqcEgwNUdWUl9oYWN6c3lYVHVlYS15Y1pHWEJTbkhjTFB0clNmeXVhcXVwSUpDdG1qWE9ZT0ZEelBaekJzM0hfM21FT3NMdUpyONIBwgFBVV95cUxQRmRsTzctZEowb0ctSHJHQlltVXVDS3RsTzFpWFdYaWg3SnRoRk9Ibm1vbmVJblVKRzVEd01oWTQ1ZGtrZ1ppcTBxSmswSFpNVGQwWlJJeVdiTlBvRFZnbDBNaTJEM09MVHBPX2RySWFGYUh5TmRXVEhLQmZtYk1Mc3lZWTNDc3FzRGpXWTdqZHI3MXVrVHFTUjRuZEhTbmdyZ2lOejlMdEpEZHNGakdKaEt5RFg0MDBIUWpRX1dnUjB1UQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli military closes Palestinian Christian village Taybeh, citing settler attacks - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNcWhzbGhpYTNuV1JTcU8wSEotZ01CQ3lJb1pteWZiUzRpVVdmdmhUYldVSlV5cXNnR0pKQTFZVmFZeG1VUjZJWkN5Tm5Vak9FTmZFd1RncERPZnJBQmQwdllYaktkQ1VKeWQ5Qi1WaUdSdVlwbGRGaFM0NUJrNmt4MExPczhrVHdSZTVBQlJ4OUN5WVpvSi1XMDE0N0hub292RmlkOUJ1eG9xbkh2U0RXdEpraUF5VU01bXY2NFVqUVFYdjRLT0JWaVN3a0FjY0E"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni military says Houthi attack on Mocha kills 7, wounds 30 - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQY1pLdDR5UUhyOFl0d1dQNFFWV3lPV1RkNVg0TFgtSjVidElQVlpTcmt1cFQ0QmI4bTNsOXdjNlozM1RWLU9DUThrNmNjTURRZV9sSjJPbTVIYTR2ZUZQYzQ2NGdFbVRsSVlzeno5NWhiajhucW8ySmYwc1B6cENtOHg1RVhBY0pKUUFHSENiM0w5dU1lNkNJNTB0S0FLSFNKZnpZRHJLaGZHSVk2OFg1X3B0TEUyT0R4V2EtWHoxY2pjVF9IOHl4ZEpZZGF3QQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis attack Saudi refinery after kingdom signs defence pact - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVzBVeVBiZENRc3B0WldHbXZqbXBjLU5ucDVuODRNY3pIWFRKaWlES0lzRDVoWEFjOFBLQVkxeGVHd0pHWWV6Y0V0OFphUk81YksyX3BHQ0I2MVY2RHdfNDY1dE9XdGozaVQ0RWsyaXNieWlRT2RYdHNRNEp4ZHptOHBBTVFST2pfZXVIbkJZUlIteElMRTlQWEt5eGZ6RU9JMjRtUmdCYWVXUUM0TUE"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi attacks kill seven in Yemen, refinery targeted in Saudi Arabia - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTUZxOWROQkhqU0lHQ25IUWpWc2lwNmFPSUNWSTRGN2tDTFBwRlBXWlpXeEZLaGpGQi14RkFWVzZMdUlxSWVvNWxUdE0wa01hcUU1elJRamNBdEtQdXVSSVIyNVVyeV9tZTlyakdWTW5fYVlKdHNlbzJENHpGOFNaa2lUcXRtejdsNXRNcWpWRlNWVW0wQ1ZiaVVmN1BpQjdVV1ktQVJB0gGrAUFVX3lxTE1YV2laV1dHR0h1YXdEV3RLZHBSNDVnYVZZZHhFWjNxZG1DZ3FkRDkya24xV1FJTUROaHhSUUs5QnJ1ZTNUR04xSTgtWFM2ZDhyZ2Q2UFV4c3JBUnpSdzE0dWJmTWcya0tEeWx1YS10b1ZEWi00Mk1CY1VxMEdUaklsQl9OQlR0RkdRT1p0Uks4c3VfOWJheXBFVnlpQUJkNm0xcVBCMjZicVJxcw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settler attacks rise as West Bank residents lose land - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPc01TMEpMVEhCU3VJSkt3ZXV0WlVNbTVjTkNfQkJTckFCSnVtUklaN0VacGhGRlg1bURSSW9SdWtsa2FucDVpQ3ZyUFBKakFTTlUyV3JWNXlQeHJfdWxLM3hBLURqeVpuQVdMUlpDSU5QazA5NG5zeXBRakl4Ym9CUVhFeXZJa25mcW9NdNIBkgFBVV95cUxPV2JKQkNLTTBYaG1lMnBoa0gxdkdzXzFpeE5fbWdDR2RJUlJOOHo5LVVyU3ZEV0UzZHJVazlsN0FQaW1BdkQtWDNoVnJrVWtWa1VpaEkwcmU3eEtMamlTSlhJRXNBNUY5OFpLQVFiYloxcXVmY1FFTUdmaFZRemNYMkVzM2VaTTNBQzF3cmRqeFpyZw"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-08-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQajV4Uk9FTWd2WFJTWWVSZS1pdkl4OGFERFdzeExaYy1udkYxWGdXYWxRdHUwd2kwLVRtRTdhRkdVdUZuNXZ3U09EQUR3OXUwUzVtZmZZeWZkWmlkTThUTDBYNVBjbE9IWVBQZnhhcHBfcFVnZTc0NG1uMk54dElXNkhzQUFZR3VkRW5QZkthVjdfdTJOaXR6YWxiZmtfdzJROGg3bWFuOVhuV2ZkTDNLNkg4d18"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-08-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen’s government forces attack Houthis amid renewed shelling of Marib - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1AzREREQzR3M0QwQzdkemNKOV9YQ3V5aFhZcllaMGNWaE1TV0VlVnFiUkltT0FMX1BJYmU4VDFMcUxCZ3FBSWFjYy1CeG1QYXZVUHZRaFRZYnR3a01JOFVjejh4U0liN1Y2V2dvUEpCWDNJbkVjaUlmVDFCQkRCdkJrMWJsYndDTENqN0x3cUQ2V1V2ZjJFc1VWYjJBSTBoRG52THVNbEdFYVgwVTZj0gG0AUFVX3lxTE5hS184eDhSSlIzenRlR25Fcy1ZNmQ1b3J6eEY0SHhycFBCVEFIdEdhdlFycFFhSGFPWlU4enZWT1AtdVJRTV8xdnpMU2F3VEhXQThkanhGQXdKQ2dhLUhMYThFRUpkWV9pSzFBb2dHRmNPMUlqWnJ4VDZvT1FtbEZ6WUdDSlZLOG1zZ29BNkNZTGJYVl9RM2JpV2JyWU03WWFscGpoM2FZMWplQjMwaURUUERKSg"
+    },
     {
       "score": 2.1,
       "date": "2026-08-07",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia, Turkey and Pakistan sign defence pact",
-      "location": "Saudi Arabia",
-      "url": "https://www.bbc.co.uk/news/articles/c30418m4mj4o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks reportedly kill at least 30 Yemeni government forces",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/ckgdmdr0lmgo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Rights groups say Israeli attack that killed Lebanese journalist an apparent war crime",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/cx2md67y3nlo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-08-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel strikes south Lebanon after two soldiers killed by explosion",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c998711dyjvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.2,
-      "date": "2026-08-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Mass funeral in Gaza for 112 Palestinians killed in 2023 Israeli strike",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cn0n99npjejo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.0,
-      "date": "2026-08-10",
-      "category": "political",
-      "source_type": "news",
-      "title": "Netanyahu's rejection of Trump's 15-point Gaza plan unlikely to be final word",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/ce3q5282ep3o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.0,
-      "date": "2026-08-05",
-      "category": "security",
-      "source_type": "news",
-      "title": "UN rights chief alarmed by rise in Iran executions since March",
+      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
       "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c75gvzxrz49o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.8,
-      "date": "2026-08-04",
-      "category": "security",
-      "source_type": "news",
-      "title": "Arrests in Egypt after people allegedly impersonate judges",
-      "location": "Egypt",
-      "url": "https://www.bbc.co.uk/news/articles/cn0n9wpvlwpo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.6,
-      "date": "2026-08-06",
-      "category": "political",
-      "source_type": "news",
-      "title": "Iran says deal with Oman on Strait of Hormuz is in final stages",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/ckg9d3eyeggo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.59,
-      "date": "2026-08-09",
-      "category": "other",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, August 9, 2026",
-      "location": "Iran",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-august-9-2026/"
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
     }
   ]
 }
