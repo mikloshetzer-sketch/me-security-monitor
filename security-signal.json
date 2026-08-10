@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-10 17:10 UTC",
+    "updated": "2026-08-10 19:18 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-08-04",
     "period_end": "2026-08-10",
-    "total_events": 127,
-    "total_risk": 101.68,
-    "normalized_risk_score": 40.7,
+    "total_events": 126,
+    "total_risk": 107.33,
+    "normalized_risk_score": 42.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 6,
+    "military": 23,
+    "security": 7,
     "political": 23,
-    "other": 77
+    "other": 73
   },
   "source_counts": {
-    "news": 121,
+    "news": 120,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.69
+      "risk": 40.43
     },
     {
       "name": "Yemen",
@@ -35,18 +35,36 @@
     },
     {
       "name": "Israel",
-      "risk": 10.75
+      "risk": 9.95
     },
     {
       "name": "Gaza Strip",
       "risk": 8.95
     },
     {
-      "name": "West Bank",
-      "risk": 6.2
+      "name": "Iraq",
+      "risk": 7.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says Iran must pay compensation for those it has killed and wounded - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaUhMZEhSUHlDeTNnSy1ULU9POGxpNFhwbG1UQml2MExiQUowVVJTMm9lYzZLR1NRRnBXUnZha1o2X05pVjRzMGxRSDFtazRNYzBrQ20zb3FUM3I1N1ByUmdrWUdpLUw3OHkwVmlSQzMxYnFQdzJDcEhKSlhjbWFCWGxzUkZ4aXhaUEtXLUxsZ05HODJya0VUTHFoNkQtOU9hbkZfN2FDdzRwaU5ybUVLMUVpbE9kSWo5REo0"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump signals shift to economic pressure on Iran over new military strikes - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZUp2OWhnVmxOYkpZTTM5TEktOUY1REswc3Roc04zNDNKbDAwQl9ib2JhZ1QtbHY3UHJXc2JjVkNYam5WNVJPR1lNNnlmS3ZkX253WTJtRE9ESG1BdnVSanQxWk9MR2NDeG15dlpzaEZrTm1Rcnowc1RLRmlaSnNPVmJxRHBUU0M1RWlqNTlSYmtDbW1zRzVDZHNkSk5SR1RWMWFmeVVMUHBCNzlJeVZmXzEyeURfd015SmfSAb8BQVVfeXFMUFFkMFhlblVNbUtKdmNacEI5cHVJRjJJbW44VXFoQzkwNXozeEoxZHFIWHZ2aEllSGpEQkYwVXhQV210LUFsMUloaWFZVXlQdmJjcTBOb2JmdzlaWnVyQkcxSUd1eGFtMzRUaW1BaktraDBxcnJGZjNvSjBJSXpaMzJtLTBPcGgyaWE2ZHE1TkhkY19ZRXdqR1Vubk1JbVJJMDZ6d2w1dmwtVVZPb244OGtYeW1pRC1tN2p1b3BiZlU"
+    },
     {
       "score": 3.0,
       "date": "2026-08-10",
@@ -102,15 +120,6 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTUZxOWROQkhqU0lHQ25IUWpWc2lwNmFPSUNWSTRGN2tDTFBwRlBXWlpXeEZLaGpGQi14RkFWVzZMdUlxSWVvNWxUdE0wa01hcUU1elJRamNBdEtQdXVSSVIyNVVyeV9tZTlyakdWTW5fYVlKdHNlbzJENHpGOFNaa2lUcXRtejdsNXRNcWpWRlNWVW0wQ1ZiaVVmN1BpQjdVV1ktQVJB0gGrAUFVX3lxTE1YV2laV1dHR0h1YXdEV3RLZHBSNDVnYVZZZHhFWjNxZG1DZ3FkRDkya24xV1FJTUROaHhSUUs5QnJ1ZTNUR04xSTgtWFM2ZDhyZ2Q2UFV4c3JBUnpSdzE0dWJmTWcya0tEeWx1YS10b1ZEWi00Mk1CY1VxMEdUaklsQl9OQlR0RkdRT1p0Uks4c3VfOWJheXBFVnlpQUJkNm0xcVBCMjZicVJxcw"
     },
     {
-      "score": 2.7,
-      "date": "2026-08-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settler attacks rise as West Bank residents lose land - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPc01TMEpMVEhCU3VJSkt3ZXV0WlVNbTVjTkNfQkJTckFCSnVtUklaN0VacGhGRlg1bURSSW9SdWtsa2FucDVpQ3ZyUFBKakFTTlUyV3JWNXlQeHJfdWxLM3hBLURqeVpuQVdMUlpDSU5QazA5NG5zeXBRakl4Ym9CUVhFeXZJa25mcW9NdNIBkgFBVV95cUxPV2JKQkNLTTBYaG1lMnBoa0gxdkdzXzFpeE5fbWdDR2RJUlJOOHo5LVVyU3ZEV0UzZHJVazlsN0FQaW1BdkQtWDNoVnJrVWtWa1VpaEkwcmU3eEtMamlTSlhJRXNBNUY5OFpLQVFiYloxcXVmY1FFTUdmaFZRemNYMkVzM2VaTTNBQzF3cmRqeFpyZw"
-    },
-    {
       "score": 2.4,
       "date": "2026-08-08",
       "category": "military",
@@ -127,15 +136,6 @@
       "title": "Yemen’s government forces attack Houthis amid renewed shelling of Marib - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1AzREREQzR3M0QwQzdkemNKOV9YQ3V5aFhZcllaMGNWaE1TV0VlVnFiUkltT0FMX1BJYmU4VDFMcUxCZ3FBSWFjYy1CeG1QYXZVUHZRaFRZYnR3a01JOFVjejh4U0liN1Y2V2dvUEpCWDNJbkVjaUlmVDFCQkRCdkJrMWJsYndDTENqN0x3cUQ2V1V2ZjJFc1VWYjJBSTBoRG52THVNbEdFYVgwVTZj0gG0AUFVX3lxTE5hS184eDhSSlIzenRlR25Fcy1ZNmQ1b3J6eEY0SHhycFBCVEFIdEdhdlFycFFhSGFPWlU4enZWT1AtdVJRTV8xdnpMU2F3VEhXQThkanhGQXdKQ2dhLUhMYThFRUpkWV9pSzFBb2dHRmNPMUlqWnJ4VDZvT1FtbEZ6WUdDSlZLOG1zZ29BNkNZTGJYVl9RM2JpV2JyWU03WWFscGpoM2FZMWplQjMwaURUUERKSg"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa3M0RkZsT0JHNHhwVXVvVURQZWs0R1hMbHFpa0RsdXE4MjNaME9lUXc4bXc1M1J4em93djJwZ3U4bS1UczdEaVJDRENsYXlYS2xJQ19ZeTVmRU1mLTBxWHFySVIzRjh3OG5JWFU5b1BpNjYtUlFDNzllUG56Tm9VcTgyYUExX1FzZ3ltLWxXNEE2R3NYZ2I4bTRRUFZtbm5WQUo2UDc2X2hUb3ZaOUpvdVVFWFdQdmx0NXFaeHl3XzdjQQ"
     }
   ]
 }
