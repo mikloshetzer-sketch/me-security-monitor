@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T04:18:46Z",
+  "generated_at": "2026-08-10T06:01:47Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -57,14 +57,14 @@
     "normalized_events": 1000,
     "map_visualizable_events": 238,
     "non_mappable_events": 762,
-    "developments": 4
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-09T12:23:01Z",
-      "latest_event_date": "2026-08-09T18:45:58Z",
+      "earliest_event_date": "2026-07-09T13:14:01Z",
+      "latest_event_date": "2026-08-10T05:45:14Z",
       "geocoded_events": 238,
       "geocoded_share": 23.8,
       "top_category": "infrastructure",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 74,
-        "previous": 146,
-        "delta": -72,
-        "percent_change": -49.3,
+        "current": 72,
+        "previous": 138,
+        "delta": -66,
+        "percent_change": -47.8,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 973,
-        "previous": 22,
-        "delta": 951,
-        "percent_change": 4322.7,
+        "current": 919,
+        "previous": 23,
+        "delta": 896,
+        "percent_change": 3895.7,
         "direction": "increase"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-09",
-        "count": 19
+        "count": 18
       },
       {
         "date": "2026-07-10",
@@ -215,14 +215,18 @@
       {
         "date": "2026-08-09",
         "count": 14
+      },
+      {
+        "date": "2026-08-10",
+        "count": 1
       }
     ],
     "category_counts": {
       "infrastructure": 254,
-      "missile": 210,
+      "missile": 209,
       "strike": 169,
+      "drone": 99,
       "airstrike": 99,
-      "drone": 98,
       "explosion": 93,
       "movement": 36,
       "ground": 17,
@@ -237,8 +241,8 @@
       "critical": 4
     },
     "attacker_counts": {
-      "unknown": 587,
-      "iran": 318,
+      "unknown": 588,
+      "iran": 317,
       "israel": 62,
       "usa": 33
     },
@@ -352,34 +356,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10099,
+    "totalCount": 10100,
     "spotlight": {
       "event": {
-        "id": "1fiswksok44g0",
-        "timestamp": "2026-08-09T17:29:00+00:00",
-        "location": "LBN",
-        "origin": "ISR",
+        "id": "24ialcz3an280",
+        "timestamp": "2026-08-09T07:36:36+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "medium",
-        "description": "Reports of explosion in Al-Mansouri, southern Lebanon; unclear if Israeli airstrike or controlled IDF demolition",
-        "descriptionHe": "דיווחים על פיצוץ בתל אל-מנצורי, דרום לבנון; לא ברור אם תקיפת חיל אוויר או הריסה מבוקרת של צה\"ל",
+        "description": "Houthis claim responsibility for attack on Aramco facilities in Jizan, Saudi Arabia using UAVs, precision hit on target reported",
+        "descriptionHe": "החות'ים טוענים לאחריות על התקיפה במתקני אראמכו בג'יזאן, סעודיה באמצעות כטב\"מ, דיווח על פגיעה מדויקת",
         "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128190"
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/128157"
       },
-      "headline": "Explosion Rocks Southern Lebanon as Conflict Intensifies",
-      "headlineHe": "התפוצצות ברחוק הדרום של לבנון כשהסכסוך מתגבר",
-      "summary": "The blast in Al-Mansouri follows escalating ground operations and airstrikes across Lebanon and the broader region, with unclear attribution between Israeli and Hezbollah forces.",
-      "summaryHe": "ההתפוצצות ב-Al-Mansouri באה בעקבות הסתלקות יבשתית מתגברת ופעולות אוויר בכל לבנון ובאזור הרחב, כאשר ההשמה בין כוחות ישראליים ללבנוני עדיין לא ברורה.",
-      "pickedAt": "2026-08-10T03:15:51.110Z",
+      "headline": "Houthis claim drone strike on Saudi Aramco facilities",
+      "headlineHe": "חות'ים טוענים להכת בדרון על מתקני ארמקו בסעודיה",
+      "summary": "The attack marks an escalation in cross-border drone operations targeting critical Saudi energy infrastructure, with Houthis claiming a precision hit on Aramco installations in Jizan province.",
+      "summaryHe": "ההתקפה מסמנת הסלמה בפעולות דרונים חוצות גבול המכוונות לתשתיות אנרגיה קריטיות בסעודיה, כשחות'ים טוענים להכה דיוקית על מתקני ארמקו בחבל ג'יזאן.",
+      "pickedAt": "2026-08-10T05:45:51.522Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-08-10T04:18:04.202Z",
+    "lastUpdated": "2026-08-10T06:00:03.591Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 5,
     "ceasefire": false
   },
   "summary": {
@@ -922,44 +932,8 @@
     "vitals": {
       "internet": 94,
       "cellular": null,
-      "lastUpdate": "2026-08-10T04:01:36.268Z",
+      "lastUpdate": "2026-08-10T05:31:43.199Z",
       "internetHistory": [
-        {
-          "t": "2026-08-09T04:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-09T04:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-09T04:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-09T04:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-09T04:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-09T04:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-09T05:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-09T05:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-09T05:20:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-08-09T05:30:00.000Z",
           "v": 93
@@ -1499,22 +1473,58 @@
         {
           "t": "2026-08-10T03:50:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-08-10T04:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-08-10T04:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-10T04:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-10T04:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-08-10T04:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-10T04:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-10T05:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-10T05:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-10T05:20:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-10T04:01:36.268Z"
+    "lastUpdated": "2026-08-10T05:31:43.199Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c3e1",
+      "id": "iranstrike-a7f2c1e8",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-09T07:36:36Z",
+      "date": "2026-08-09T09:43:58Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Aramco facilities in Jizan, Saudi Arabia; drone hit reported",
+      "description": "Houthis strike Saudi energy infrastructure; Aramco refinery, Jubail gas facilities targeted",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1535,34 +1545,34 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c3e1",
-        "text": "Houthis strike Aramco facilities in Jizan, Saudi Arabia; drone hit reported",
-        "textHe": "חות'ים תקפו מתקנים של ארמקו בג'יזאן; דיווח על פגיעת כלי טיס",
+        "id": "a7f2c1e8",
+        "text": "Houthis strike Saudi energy infrastructure; Aramco refinery, Jubail gas facilities targeted",
+        "textHe": "חות'ים תוקפים תשתיות אנרגיה בסעודיה; זיקוק ארמקו ומתקני גז בג'וביל",
         "severity": "high",
-        "timestamp": "2026-08-09T07:36:36+00:00",
+        "timestamp": "2026-08-09T09:43:58+00:00",
         "entityIds": [
           "YEM",
           "SAU"
         ],
         "eventIds": [
           "24ialcz3an280",
-          "231pgcgdkm680",
-          "xhu38l5orxc0"
+          "akth1b6cqa00",
+          "3r7uyacvnzi00"
         ],
         "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-b5e8d2a9",
+      "id": "iranstrike-b4e9d3f1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-09T18:45:58Z",
       "title": "IranStrike event",
-      "description": "IDF ground ops and demolitions in southern Lebanon; ridge advances ongoing",
+      "description": "IDF ground operations in Lebanon: advances on Ali al-Tahir ridge, demolitions in Zoutar and Al-Mansouri",
       "category": "other",
-      "severity": "medium",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -1581,10 +1591,10 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b5e8d2a9",
-        "text": "IDF ground ops and demolitions in southern Lebanon; ridge advances ongoing",
-        "textHe": "פעולות קרקע של צה״ל והריסות בדרום לבנון; התקדמויות על הרכס מתמשכות",
-        "severity": "medium",
+        "id": "b4e9d3f1",
+        "text": "IDF ground operations in Lebanon: advances on Ali al-Tahir ridge, demolitions in Zoutar and Al-Mansouri",
+        "textHe": "כוחות צה\"ל פועלים בלבנון: התקדמות בחוד הר עלי אל-תחיר, הרסות בזוטר ואל-מנסורה",
+        "severity": "high",
         "timestamp": "2026-08-09T18:45:58+00:00",
         "entityIds": [
           "ISR",
@@ -1593,22 +1603,20 @@
         "eventIds": [
           "1rwbct3vmgv40",
           "2uugnlpraig00",
-          "1fiswksok44g0",
-          "zfy8mjj0xkw0",
-          "w9clqlnd9rk0"
+          "1fiswksok44g0"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c9k4l6f2",
+      "id": "iranstrike-c6d5a2b9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-09T17:19:48Z",
+      "date": "2026-08-09T09:46:48Z",
       "title": "IranStrike event",
-      "description": "Saudi strikes in Yemen; Houthis target Al-Mokha port with missiles",
+      "description": "Houthis attack Saudi-backed Al-Mokha port in Yemen; multiple strikes on military/civilian facility",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1629,18 +1637,16 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c9k4l6f2",
-        "text": "Saudi strikes in Yemen; Houthis target Al-Mokha port with missiles",
-        "textHe": "תקיפות סעודיות ביימן; חות'ים תקפו נמל אל-מוכא בטילים",
+        "id": "c6d5a2b9",
+        "text": "Houthis attack Saudi-backed Al-Mokha port in Yemen; multiple strikes on military/civilian facility",
+        "textHe": "חות'ים תוקפים נמל אל-מוכא בתמיכת סעודיה; מספר תקיפות על מתקנים צבאיים ואזרחיים",
         "severity": "medium",
-        "timestamp": "2026-08-09T17:19:48+00:00",
+        "timestamp": "2026-08-09T09:46:48+00:00",
         "entityIds": [
-          "SAU",
-          "YEM"
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
-          "8wb2247falg0",
-          "36e5qgp7fku00",
           "3fxa2jpahw600",
           "18t4y5rr53q80"
         ],
@@ -1648,14 +1654,14 @@
       }
     },
     {
-      "id": "iranstrike-d3m8n1p7",
+      "id": "iranstrike-d8c7f5e2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-09T09:43:58Z",
+      "date": "2026-08-09T17:19:48Z",
       "title": "IranStrike event",
-      "description": "Iraqi militias target Saudi facilities; 3 militants arrested in Baghdad",
+      "description": "Saudi operations in Yemen: drone and airstrikes on Ghor Al-Mashwat and Saada districts",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1664,36 +1670,132 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Baghdad",
-      "country": "Iraq",
-      "latitude": 33.3152,
-      "longitude": 44.3661,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "baghdad",
-      "geocode_confidence": "high",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d3m8n1p7",
-        "text": "Iraqi militias target Saudi facilities; 3 militants arrested in Baghdad",
-        "textHe": "מיליציות עיראקיות תקפו מתקנים סעודיים; 3 מחבלים נעצרו בבגדאד",
+        "id": "d8c7f5e2",
+        "text": "Saudi operations in Yemen: drone and airstrikes on Ghor Al-Mashwat and Saada districts",
+        "textHe": "פעילות סעודית בתימן: תקיפות מל\"ט ותקיפות אוויריות בגהור אל-משוואט וסאדה",
         "severity": "medium",
-        "timestamp": "2026-08-09T09:43:58+00:00",
+        "timestamp": "2026-08-09T17:19:48+00:00",
         "entityIds": [
-          "IRQ",
-          "SAU"
+          "SAU",
+          "YEM"
         ],
         "eventIds": [
-          "akth1b6cqa00",
-          "39htyxzbny800"
+          "36e5qgp7fku00",
+          "8wb2247falg0"
         ],
         "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-e9a1b4c3",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-10T05:45:14Z",
+      "title": "IranStrike event",
+      "description": "Saudi military drones intercepted in Iran: two Chinese-made UAVs downed near Sirri Island",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "saudi military drones intercepted in iran: two chinese-made uavs downed near sirri island מ",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "e9a1b4c3",
+        "text": "Saudi military drones intercepted in Iran: two Chinese-made UAVs downed near Sirri Island",
+        "textHe": "מל\"ט צבאיים סעודיים מופסקים באיראן: שני מל\"טים סיניים הושמדו ליד אי סירי",
+        "severity": "medium",
+        "timestamp": "2026-08-10T05:45:14+00:00",
+        "entityIds": [
+          "SAU",
+          "IRN"
+        ],
+        "eventIds": [
+          "2x1c0eqp69600"
+        ],
+        "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-2x1c0eqp69600",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128203",
+      "date": "2026-08-10T05:45:14Z",
+      "title": "IranStrike event",
+      "description": "Two Chinese-made UAVs reportedly used by Saudi military downed in Sirri Island area of southern Iran according to Shia sources",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2x1c0eqp69600",
+        "timestamp": "2026-08-10T05:45:14+00:00",
+        "location": "IRN",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Two Chinese-made UAVs reportedly used by Saudi military downed in Sirri Island area of southern Iran according to Shia sources",
+        "descriptionHe": "דרום איראן: שני כטב\"מים מתוצרת סין, שהיו כפי הנראה בשימוש של צבא סעודיה, הופלו באזור האי סיריק בדרום איראן - כך ע\"פ מקורות שיעים",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2,
+            "intercepted": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/128203"
+      }
+    },
     {
       "id": "iranstrike-1rwbct3vmgv40",
       "source": "IranStrike",
@@ -46899,58 +47001,6 @@
         "descriptionHe": "איראן משגרת טילים בליסטיים בטווח בינוני לעבר בסיס עלי אל-סלם בכווית",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79202"
-      }
-    },
-    {
-      "id": "iranstrike-yp3z4gdvuv40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126244",
-      "date": "2026-07-09T12:23:01Z",
-      "title": "IranStrike event",
-      "description": "Jordanian military intercepts 8 Iranian ballistic missiles fired at Jordanian territory",
-      "category": "missile",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "rdanian military intercepts 8 iranian ballistic missiles fired at jordanian territory צבא ירדן יירט 8 טילים בליס",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "yp3z4gdvuv40",
-        "timestamp": "2026-07-09T12:23:01+00:00",
-        "location": "JOR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "intercept",
-        "severity": "medium",
-        "description": "Jordanian military intercepts 8 Iranian ballistic missiles fired at Jordanian territory",
-        "descriptionHe": "צבא ירדן יירט 8 טילים בליסטיים איראנים ששוגרו לשטחו",
-        "source": "abualiexpress",
-        "weapons": [
-          {
-            "type": "ballistic_missile",
-            "count": 8,
-            "intercepted": 8
-          }
-        ],
-        "sourceUrl": "https://t.me/abualiexpress/126244"
       }
     }
   ],
