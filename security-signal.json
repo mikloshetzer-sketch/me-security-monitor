@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-11 13:44 UTC",
+    "updated": "2026-08-11 15:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-08-05",
     "period_end": "2026-08-11",
     "total_events": 134,
-    "total_risk": 103.88,
-    "normalized_risk_score": 41.6,
+    "total_risk": 105.43,
+    "normalized_risk_score": 42.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 21,
     "security": 7,
-    "political": 23,
-    "other": 83
+    "political": 21,
+    "other": 85
   },
   "source_counts": {
     "news": 128,
@@ -27,7 +27,7 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 40.83
+      "risk": 42.53
     },
     {
       "name": "Yemen",
@@ -39,14 +39,23 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 8.1
+      "risk": 7.65
     },
     {
       "name": "Saudi Arabia",
-      "risk": 7.15
+      "risk": 6.95
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis kill three in first deadly attack since start of Iran war - reports",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 3.0,
       "date": "2026-08-11",
@@ -117,7 +126,7 @@
       "source_type": "news",
       "title": "Houthi attacks kill seven in Yemen, refinery targeted in Saudi Arabia - Al Jazeera",
       "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTUZxOWROQkhqU0lHQ25IUWpWc2lwNmFPSUNWSTRGN2tDTFBwRlBXWlpXeEZLaGpGQi14RkFWVzZMdUlxSWVvNWxUdE0wa01hcUU1elJRamNBdEtQdXVSSVIyNVVyeV9tZTlyakdWTW5fYVlKdHNlbzJENHpGOFNaa2lUcXRtejdsNXRNcWpWRlNWVW0wQ1ZiaVVmN1BpQjdVV1ktQVJB0gGrAUFVX3lxTE1YV2laV1dHR0h1YXdEV3RLZHBSNDVnYVZZZHhFWjNxZG1DZ3FkRDkya24xV1FJTUROaHhSUUs5QnJ1ZTNUR04xSTgtWFM2ZDhyZ2Q2UFV4c3JBUnpSdzE0dWJmTWcya0tEeWx1YS10b1ZEWi00Mk1CY1VxMEdUaklsQl9OQlR0RkdRT1p0Uks4c3VfOWJheXBFVnlpQUJkNm0xcVBCMjZicVJxcw"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTUZxOWROQkhqU0lHQ25IUWpWc2lwNmFPSUNWSTRGN2tDTFBwRlBXWlpXeEZLaGpGQi14RkFWVzZMdUlxSWVvNWxUdE0wa01hcUU1elJRamNBdEtQdXVSSVIyNVVyeV9tZTlyakdWTW5fYVlKdHNlbzJENHpGOFNaa2lUcXRtejdsNXRNcWpWRlNWVW0wQ1ZiaVVmN1BpQjdVV1ktQVJB"
     },
     {
       "score": 2.4,
@@ -127,15 +136,6 @@
       "title": "Israeli settler attacks rise as West Bank residents lose land - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPc01TMEpMVEhCU3VJSkt3ZXV0WlVNbTVjTkNfQkJTckFCSnVtUklaN0VacGhGRlg1bURSSW9SdWtsa2FucDVpQ3ZyUFBKakFTTlUyV3JWNXlQeHJfdWxLM3hBLURqeVpuQVdMUlpDSU5QazA5NG5zeXBRakl4Ym9CUVhFeXZJa25mcW9NdNIBkgFBVV95cUxPV2JKQkNLTTBYaG1lMnBoa0gxdkdzXzFpeE5fbWdDR2RJUlJOOHo5LVVyU3ZEV0UzZHJVazlsN0FQaW1BdkQtWDNoVnJrVWtWa1VpaEkwcmU3eEtMamlTSlhJRXNBNUY5OFpLQVFiYloxcXVmY1FFTUdmaFZRemNYMkVzM2VaTTNBQzF3cmRqeFpyZw"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis strike Marib again as UN warns Yemen nearing wider conflict - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSlRnMTdUcUhvNmFDVTdUd2JoQzVrRGZ5SHpDNTB1VGNzd0h1dnpCNUszSEJWRlRlbWpUQmtKOUM2WklINTcwcGh6M0NucGU2d19yaUlRZDdPcDZCcG91RE9oYWl6U3ZGTWV3dlpJa3IwNll2blJUMXBVTjRUbkwwU2NVUmVpbkw2XzRpV0RMUDlMQy1JM3dpNVEwcEJkMVlrR1BxVVhlM3JIQ05YVDJaR0lVQWpUYkYybEE"
     }
   ]
 }
