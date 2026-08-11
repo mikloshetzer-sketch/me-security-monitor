@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-11 21:06 UTC",
+    "updated": "2026-08-11 23:05 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-08-05",
     "period_end": "2026-08-11",
-    "total_events": 132,
-    "total_risk": 105.4,
-    "normalized_risk_score": 42.2,
+    "total_events": 136,
+    "total_risk": 113.4,
+    "normalized_risk_score": 45.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 19,
+    "military": 21,
     "security": 7,
-    "political": 24,
-    "other": 82
+    "political": 23,
+    "other": 85
   },
   "source_counts": {
-    "news": 132,
+    "news": 136,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 42.8
+      "risk": 42.7
     },
     {
       "name": "Yemen",
-      "risk": 18.0
+      "risk": 21.2
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 9.65
     },
     {
       "name": "Israel",
       "risk": 9.2
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 7.4
     },
     {
       "name": "Saudi Arabia",
@@ -47,6 +47,15 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR"
+    },
     {
       "score": 3.0,
       "date": "2026-08-11",
@@ -97,9 +106,27 @@
       "date": "2026-08-10",
       "category": "military",
       "source_type": "news",
+      "title": "Yemen's Houthis attack Saudi refinery after kingdom signs defence pact - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVzBVeVBiZENRc3B0WldHbXZqbXBjLU5ucDVuODRNY3pIWFRKaWlES0lzRDVoWEFjOFBLQVkxeGVHd0pHWWV6Y0V0OFphUk81YksyX3BHQ0I2MVY2RHdfNDY1dE9XdGozaVQ0RWsyaXNieWlRT2RYdHNRNEp4ZHptOHBBTVFST2pfZXVIbkJZUlIteElMRTlQWEt5eGZ6RU9JMjRtUmdCYWVXUUM0TUE"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-10",
+      "category": "military",
+      "source_type": "news",
       "title": "New Houthi missile and drone attacks kill seven in Yemen’s al-Makha - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbXBnNnBjc3d5Vzk1aDRaV1hyNFRwYk81RWFWWEc4SHA4Rk53M0ZoMXNoQ2dkeEVKU0RLYktnbUJKYzZpZXhuS3NXUEZMY0VUOHp4YUkxdGg0UUI0bDJJN2E2b3VaQkRmWnlPbXpsV1hPS3hxel84a1N3UUV5NzExcG5ZTXREdlZhQk9XaS1EdlI4MmQ4M29aSGhWbnYtY1FaSV9XZ0thN2VMbk3SAbABQVVfeXFMTUpDUWZjMVBTU0UtX01sOEtHd0VmY2lGakF5eTk1empsc2h6bzhDTWVQOTJyTk1Tampkb1BjOUlKQnpSRVVPbkllY0JSWlNZV1NEdWp1bm9hUllWelE3MDhkcXVUTllhUVlWQkJiTVZ6dWc4WlZ2c1U2QlZ1cVFmb2RrUkxCN1RVd3FFUEVyUl9tV3F5SnJvMDB1bHB6OThnUHhSSmQ4TzJMOW9YSFN0MTU"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Clashes in Iraq’s Kut city during protests over power shortages - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOa2xiQi1ENFY0dmFvemhhaW14a3drWHRjRFg2VmN4Vk9KTGRDNUl3WGhDa2RFbE55Q2w2UG9zbS1pQnRCVm5oeUEwUlNuendDZXh4OVIzWXFIYzZUcDZhOGI5c2dMNzFpUzhHY0ZFSWE3bUlqcEgwNUdWUl9oYWN6c3lYVHVlYS15Y1pHWEJTbkhjTFB0clNmeXVhcXVwSUpDdG1qWE9ZT0ZEelBaekJzM0hfM21FT3NMdUpyONIBwgFBVV95cUxQRmRsTzctZEowb0ctSHJHQlltVXVDS3RsTzFpWFdYaWg3SnRoRk9Ibm1vbmVJblVKRzVEd01oWTQ1ZGtrZ1ppcTBxSmswSFpNVGQwWlJJeVdiTlBvRFZnbDBNaTJEM09MVHBPX2RySWFGYUh5TmRXVEhLQmZtYk1Mc3lZWTNDc3FzRGpXWTdqZHI3MXVrVHFTUjRuZEhTbmdyZ2lOejlMdEpEZHNGakdKaEt5RFg0MDBIUWpRX1dnUjB1UQ"
     },
     {
       "score": 2.4,
@@ -109,33 +136,6 @@
       "title": "Yemeni military says Houthi attack on Mocha kills 7, wounds 30 - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQY1pLdDR5UUhyOFl0d1dQNFFWV3lPV1RkNVg0TFgtSjVidElQVlpTcmt1cFQ0QmI4bTNsOXdjNlozM1RWLU9DUThrNmNjTURRZV9sSjJPbTVIYTR2ZUZQYzQ2NGdFbVRsSVlzeno5NWhiajhucW8ySmYwc1B6cENtOHg1RVhBY0pKUUFHSENiM0w5dU1lNkNJNTB0S0FLSFNKZnpZRHJLaGZHSVk2OFg1X3B0TEUyT0R4V2EtWHoxY2pjVF9IOHl4ZEpZZGF3QQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks kill seven in Yemen, refinery targeted in Saudi Arabia - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTUZxOWROQkhqU0lHQ25IUWpWc2lwNmFPSUNWSTRGN2tDTFBwRlBXWlpXeEZLaGpGQi14RkFWVzZMdUlxSWVvNWxUdE0wa01hcUU1elJRamNBdEtQdXVSSVIyNVVyeV9tZTlyakdWTW5fYVlKdHNlbzJENHpGOFNaa2lUcXRtejdsNXRNcWpWRlNWVW0wQ1ZiaVVmN1BpQjdVV1ktQVJB0gGrAUFVX3lxTE1YV2laV1dHR0h1YXdEV3RLZHBSNDVnYVZZZHhFWjNxZG1DZ3FkRDkya24xV1FJTUROaHhSUUs5QnJ1ZTNUR04xSTgtWFM2ZDhyZ2Q2UFV4c3JBUnpSdzE0dWJmTWcya0tEeWx1YS10b1ZEWi00Mk1CY1VxMEdUaklsQl9OQlR0RkdRT1p0Uks4c3VfOWJheXBFVnlpQUJkNm0xcVBCMjZicVJxcw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settler attacks rise as West Bank residents lose land - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPc01TMEpMVEhCU3VJSkt3ZXV0WlVNbTVjTkNfQkJTckFCSnVtUklaN0VacGhGRlg1bURSSW9SdWtsa2FucDVpQ3ZyUFBKakFTTlUyV3JWNXlQeHJfdWxLM3hBLURqeVpuQVdMUlpDSU5QazA5NG5zeXBRakl4Ym9CUVhFeXZJa25mcW9NdNIBkgFBVV95cUxPV2JKQkNLTTBYaG1lMnBoa0gxdkdzXzFpeE5fbWdDR2RJUlJOOHo5LVVyU3ZEV0UzZHJVazlsN0FQaW1BdkQtWDNoVnJrVWtWa1VpaEkwcmU3eEtMamlTSlhJRXNBNUY5OFpLQVFiYloxcXVmY1FFTUdmaFZRemNYMkVzM2VaTTNBQzF3cmRqeFpyZw"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis strike Marib again as UN warns Yemen nearing wider conflict - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSlRnMTdUcUhvNmFDVTdUd2JoQzVrRGZ5SHpDNTB1VGNzd0h1dnpCNUszSEJWRlRlbWpUQmtKOUM2WklINTcwcGh6M0NucGU2d19yaUlRZDdPcDZCcG91RE9oYWl6U3ZGTWV3dlpJa3IwNll2blJUMXBVTjRUbkwwU2NVUmVpbkw2XzRpV0RMUDlMQy1JM3dpNVEwcEJkMVlrR1BxVVhlM3JIQ05YVDJaR0lVQWpUYkYybEE"
     }
   ]
 }
