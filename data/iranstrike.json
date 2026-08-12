@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T00:00:49Z",
+  "generated_at": "2026-08-12T02:45:37Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,43 +55,39 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 233,
-    "non_mappable_events": 767,
-    "developments": 4
+    "map_visualizable_events": 231,
+    "non_mappable_events": 769,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-09T21:34:38Z",
-      "latest_event_date": "2026-08-11T19:50:04Z",
-      "geocoded_events": 233,
-      "geocoded_share": 23.3,
+      "earliest_event_date": "2026-07-10T09:28:21Z",
+      "latest_event_date": "2026-08-12T02:08:07Z",
+      "geocoded_events": 231,
+      "geocoded_share": 23.1,
       "top_category": "infrastructure",
       "top_location": "Iran",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 64,
-        "previous": 96,
-        "delta": -32,
-        "percent_change": -33.3,
-        "direction": "decrease"
+        "current": 66,
+        "previous": 77,
+        "delta": -11,
+        "percent_change": -14.3,
+        "direction": "stable"
       },
       "latest_30_days": {
-        "current": 828,
-        "previous": 82,
-        "delta": 746,
-        "percent_change": 909.8,
+        "current": 830,
+        "previous": 126,
+        "delta": 704,
+        "percent_change": 558.7,
         "direction": "increase"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-07-09",
-        "count": 2
-      },
       {
         "date": "2026-07-10",
         "count": 4
@@ -223,12 +219,16 @@
       {
         "date": "2026-08-11",
         "count": 10
+      },
+      {
+        "date": "2026-08-12",
+        "count": 2
       }
     ],
     "category_counts": {
-      "infrastructure": 255,
-      "missile": 211,
-      "strike": 169,
+      "infrastructure": 254,
+      "missile": 213,
+      "strike": 168,
       "drone": 102,
       "airstrike": 97,
       "explosion": 90,
@@ -240,20 +240,20 @@
     },
     "severity_counts": {
       "medium": 486,
-      "high": 377,
+      "high": 378,
       "low": 133,
-      "critical": 4
+      "critical": 3
     },
     "attacker_counts": {
-      "unknown": 591,
-      "iran": 313,
-      "israel": 63,
+      "unknown": 593,
+      "iran": 312,
+      "israel": 62,
       "usa": 33
     },
     "top_locations": [
       {
         "name": "Iran",
-        "count": 287
+        "count": 289
       },
       {
         "name": "Unknown",
@@ -360,19 +360,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10129,
+    "totalCount": 10131,
     "spotlight": {
-      "event": null,
-      "headline": null,
-      "headlineHe": null,
-      "summary": null,
-      "summaryHe": null,
-      "state": "CALM",
-      "pickedAt": "2026-08-12T00:00:03.500Z"
+      "event": {
+        "id": "1oesni8pb9b40",
+        "timestamp": "2026-08-12T00:45:54+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "US pilot reports Iranian drone swarms in jellyfish formation coordinated with surface-to-air missiles, F-15 shot down using intelligence-feeding tactic observed from Ukraine war",
+        "descriptionHe": "טייס אמריקאי דיווח על שלשלות מזל\"טים איראנים בתצורת מדוזה מתואמות עם טילי הגנה אוויר קרקע, F-15 הופל בעזרת טקטיקה של הנחת מודיעין",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82098"
+      },
+      "headline": "US F-15 Shot Down by Iranian Drone Swarm Attack",
+      "headlineHe": "מטוס F-15 אמריקאי הורס בהתקפת נחיל כוורת איראנית",
+      "summary": "The incident marks a significant escalation in air-to-air tactics, employing coordinated drone formations with surface-to-air missiles in a strategy reportedly mirroring Ukrainian battlefield innovations.",
+      "summaryHe": "התקרית מסמנת הסלמה משמעותית בטקטיקות קרב אוויר, תוך שימוש בתצורות נחיל כוורת מתואמות עם טילי הגנה אוויר-קרקע בטקטיקה הנראית כמשכפלת חידושים של שדה הקרב האוקראיני.",
+      "pickedAt": "2026-08-12T02:31:44.787Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-12T00:00:03.483Z",
+    "lastUpdated": "2026-08-12T02:45:03.598Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 5,
     "ceasefire": false
   },
   "summary": {
@@ -915,80 +930,8 @@
     "vitals": {
       "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-08-11T23:30:44.004Z",
+      "lastUpdate": "2026-08-12T02:30:43.327Z",
       "internetHistory": [
-        {
-          "t": "2026-08-10T23:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-10T23:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-10T23:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T00:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T00:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T00:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T00:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T00:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T00:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T01:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T01:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T01:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T01:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T01:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T01:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-11T02:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T02:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-11T02:20:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-08-11T02:30:00.000Z",
           "v": 94
@@ -1488,22 +1431,140 @@
         {
           "t": "2026-08-11T23:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-08-11T23:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-11T23:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-11T23:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-11T23:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T00:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T00:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T00:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T00:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T00:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-12T00:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T01:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T01:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T01:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T01:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T01:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T01:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T02:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-12T02:10:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-11T23:30:44.004Z"
+    "lastUpdated": "2026-08-12T02:30:43.327Z"
   },
   "developments": [
     {
-      "id": "iranstrike-hth_sar_01",
+      "id": "iranstrike-a7f2b1c4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-12T02:08:07Z",
+      "title": "IranStrike event",
+      "description": "Iranian drone swarms with SAM coordination down F-15; CENTCOM fired 50 PAC-3s",
+      "category": "other",
+      "severity": "high",
+      "attacker": "usa",
+      "attacker_label": "United States",
+      "attacker_color": "#2563eb",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "centcom fired 50 pac-3s נחיל רחפנים איראני עם תיאום מערכות הגנה",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a7f2b1c4",
+        "text": "Iranian drone swarms with SAM coordination down F-15; CENTCOM fired 50 PAC-3s",
+        "textHe": "נחיל רחפנים איראני עם תיאום מערכות הגנה אווירית הוריד F-15; קנטקום ירה 50 פטריוט",
+        "severity": "high",
+        "timestamp": "2026-08-12T02:08:07+00:00",
+        "entityIds": [
+          "IRN",
+          "USA",
+          "ISR"
+        ],
+        "eventIds": [
+          "1oesni8pb9b40",
+          "10vd3vc3kguo0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-b3e8d2a9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-11T19:50:04Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi military targets in Mokha, Marib with ballistic missiles, drones; casualties reported",
+      "description": "Houthis strike Saudi military in Marib/Mokha with ballistic missiles, drones; casualties",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1524,9 +1585,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "hth_sar_01",
-        "text": "Houthis strike Saudi military targets in Mokha, Marib with ballistic missiles, drones; casualties reported",
-        "textHe": "חות'ים תקפו מטרות צבאיות סעודיות במוכה ומעריב בטילים וללא טיל; דווחו על אבודים",
+        "id": "b3e8d2a9",
+        "text": "Houthis strike Saudi military in Marib/Mokha with ballistic missiles, drones; casualties",
+        "textHe": "חותיים תקפו צבא סעודי במערב עם טילים וקרקעיות; הרוגים",
         "severity": "high",
         "timestamp": "2026-08-11T19:50:04+00:00",
         "entityIds": [
@@ -1540,37 +1601,37 @@
       }
     },
     {
-      "id": "iranstrike-isr_lbn_02",
+      "id": "iranstrike-c5g9h1f6",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-11T16:08:10Z",
       "title": "IranStrike event",
-      "description": "IDF conducts multiple drone and artillery strikes in southern Lebanon, including Nabatieh area",
+      "description": "IDF strikes southern Lebanon; multiple drone/artillery ops vs. Hezbollah positions",
       "category": "other",
       "severity": "medium",
       "attacker": "israel",
       "attacker_label": "Israel",
       "attacker_color": "#dc2626",
-      "attacker_confidence": "medium",
+      "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf conducts multiple drone and artillery strikes in southern lebanon, including nabatieh area צה\"ל",
-      "location": "Nabatieh",
+      "attacker_evidence": "idf strikes southern lebanon;",
+      "location": "Lebanon",
       "country": "Lebanon",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "nabatieh",
-      "geocode_confidence": "high",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "isr_lbn_02",
-        "text": "IDF conducts multiple drone and artillery strikes in southern Lebanon, including Nabatieh area",
-        "textHe": "צה\"ל ביצע מספר תקפים בטילי חיל אויר ותותחים בדרום לבנון, כולל אזור נבטיה",
+        "id": "c5g9h1f6",
+        "text": "IDF strikes southern Lebanon; multiple drone/artillery ops vs. Hezbollah positions",
+        "textHe": "צה\"ל תקף דרום לבנון; מסדרי רחפנים וארטילריה נגד עמדות",
         "severity": "medium",
         "timestamp": "2026-08-11T16:08:10+00:00",
         "entityIds": [
@@ -1587,14 +1648,14 @@
       }
     },
     {
-      "id": "iranstrike-hth_sea_03",
+      "id": "iranstrike-d7k2m3b8",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-11T12:09:45Z",
       "title": "IranStrike event",
-      "description": "Houthis attack Saudi vessel near Bab el-Mandeb; crew members killed; maritime operations continue",
+      "description": "Houthis target Saudi vessel near Bab el-Mandeb; attack on Saada military position",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1615,9 +1676,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "hth_sea_03",
-        "text": "Houthis attack Saudi vessel near Bab el-Mandeb; crew members killed; maritime operations continue",
-        "textHe": "חות'ים תקפו אונייה סעודית ליד בקע המנדב; אנשי צוות נהרגו; פעילויות ימיות מתמשכות",
+        "id": "d7k2m3b8",
+        "text": "Houthis target Saudi vessel near Bab el-Mandeb; attack on Saada military position",
+        "textHe": "חותיים תקפו כלי שיט סעודי; הרוגים בצוות",
         "severity": "medium",
         "timestamp": "2026-08-11T12:09:45+00:00",
         "entityIds": [
@@ -1632,14 +1693,14 @@
       }
     },
     {
-      "id": "iranstrike-usa_irn_04",
+      "id": "iranstrike-e9n4p5c2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-11T14:58:33Z",
       "title": "IranStrike event",
-      "description": "U.S. strikes Iran-bound vessel; oil spill from Iranian tankers reported in Strait of Hormuz",
+      "description": "US strikes Iran-flagged vessel; oil spill from tankers washes ashore Iranian coast",
       "category": "other",
       "severity": "medium",
       "attacker": "iran",
@@ -1647,9 +1708,9 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "strikes iran-bound vessel;",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
+      "attacker_evidence": "us strikes iran-flagged vessel;",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1660,9 +1721,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "usa_irn_04",
-        "text": "U.S. strikes Iran-bound vessel; oil spill from Iranian tankers reported in Strait of Hormuz",
-        "textHe": "ארה\"ב תקפה אונייה המיועדת לאיראן; דווח על שפכת נפט מטנקרים איראניים במחלף הורמוז",
+        "id": "e9n4p5c2",
+        "text": "US strikes Iran-flagged vessel; oil spill from tankers washes ashore Iranian coast",
+        "textHe": "ארה\"ב תקפה כלי איראני; דליפת נפט מטנקרים על חופי איראן",
         "severity": "medium",
         "timestamp": "2026-08-11T14:58:33+00:00",
         "entityIds": [
@@ -1678,6 +1739,102 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-10vd3vc3kguo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82107",
+      "date": "2026-08-12T02:08:07Z",
+      "title": "IranStrike event",
+      "description": "CENTCOM fired 50 PAC-3 air defense missiles in a single day during Iranian ballistic missile strikes last month",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "10vd3vc3kguo0",
+        "timestamp": "2026-08-12T02:08:07+00:00",
+        "location": "ISR",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "defense",
+        "severity": "medium",
+        "description": "CENTCOM fired 50 PAC-3 air defense missiles in a single day during Iranian ballistic missile strikes last month",
+        "descriptionHe": "CENTCOM שיגר 50 טילי הגנה אוויר PAC-3 ביום אחד במהלך התקיפות בטילים בליסטיים איראניים בחודש שעבר",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "other",
+            "count": 50
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82107"
+      }
+    },
+    {
+      "id": "iranstrike-1oesni8pb9b40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82098",
+      "date": "2026-08-12T00:45:54Z",
+      "title": "IranStrike event",
+      "description": "US pilot reports Iranian drone swarms in jellyfish formation coordinated with surface-to-air missiles, F-15 shot down using intelligence-feeding tactic observed from Ukraine war",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1oesni8pb9b40",
+        "timestamp": "2026-08-12T00:45:54+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "US pilot reports Iranian drone swarms in jellyfish formation coordinated with surface-to-air missiles, F-15 shot down using intelligence-feeding tactic observed from Ukraine war",
+        "descriptionHe": "טייס אמריקאי דיווח על שלשלות מזל\"טים איראנים בתצורת מדוזה מתואמות עם טילי הגנה אוויר קרקע, F-15 הופל בעזרת טקטיקה של הנחת מודיעין",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82098"
+      }
+    },
     {
       "id": "iranstrike-aqaxcu8qk8g0",
       "source": "IranStrike",
@@ -46843,95 +47000,6 @@
         "source": "abualiexpress",
         "sourceUrl": "https://t.me/abualiexpress/126286"
       }
-    },
-    {
-      "id": "iranstrike-2q3zuws9nn000",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/61339",
-      "date": "2026-07-09T22:29:37Z",
-      "title": "IranStrike event",
-      "description": "Israeli strike eliminates multiple IRGC commanders during Khamenei funeral procession in Mashhad",
-      "category": "strike",
-      "severity": "critical",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn israeli strike eliminates multiple irgc commanders during khamen",
-      "location": "Mashhad",
-      "country": "Iran",
-      "latitude": 36.2605,
-      "longitude": 59.6168,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "mashhad",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2q3zuws9nn000",
-        "timestamp": "2026-07-09T22:29:37+00:00",
-        "location": "IRN",
-        "origin": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "critical",
-        "description": "Israeli strike eliminates multiple IRGC commanders during Khamenei funeral procession in Mashhad",
-        "descriptionHe": "דיווח על מספר אנשי בסיג' שחוסלו במשהד במהלך הלווית חמינאי שמתקיימת כעת",
-        "source": "idkunim_il",
-        "sourceUrl": "https://t.me/idkunim_il/61339"
-      }
-    },
-    {
-      "id": "iranstrike-tqnskqc1qkw0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79262",
-      "date": "2026-07-09T21:34:38Z",
-      "title": "IranStrike event",
-      "description": "Armed attack on Basij and IRGC checkpoints near Imam Reza Shrine in Mashhad kills at least 4 militiamen; attackers in military uniforms fled scene",
-      "category": "infrastructure",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn armed attack on basij and irgc checkpoints near imam reza shrine in mashhad kill",
-      "location": "Mashhad",
-      "country": "Iran",
-      "latitude": 36.2605,
-      "longitude": 59.6168,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "mashhad",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "tqnskqc1qkw0",
-        "timestamp": "2026-07-09T21:34:38+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Armed attack on Basij and IRGC checkpoints near Imam Reza Shrine in Mashhad kills at least 4 militiamen; attackers in military uniforms fled scene",
-        "descriptionHe": "התקפה חמושה על נקודות בדיקה של בסיג' וקודס ליד מקדש אמאם רזה במשהד הורגת לפחות 4 מיליציונים; התוקפים בזיהוי צבאי ברחו מהזירה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79262"
-      }
     }
   ],
   "map_events": [
@@ -57374,95 +57442,6 @@
         "descriptionHe": "תקיפת כטב\"ם ישראלי על רכב באזור כפר רמאן בנפת נבטיה בדרום לבנון, נפגעים דווחו",
         "source": "abualiexpress",
         "sourceUrl": "https://t.me/abualiexpress/126298"
-      }
-    },
-    {
-      "id": "iranstrike-2q3zuws9nn000",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/61339",
-      "date": "2026-07-09T22:29:37Z",
-      "title": "IranStrike event",
-      "description": "Israeli strike eliminates multiple IRGC commanders during Khamenei funeral procession in Mashhad",
-      "category": "strike",
-      "severity": "critical",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn israeli strike eliminates multiple irgc commanders during khamen",
-      "location": "Mashhad",
-      "country": "Iran",
-      "latitude": 36.2605,
-      "longitude": 59.6168,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "mashhad",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2q3zuws9nn000",
-        "timestamp": "2026-07-09T22:29:37+00:00",
-        "location": "IRN",
-        "origin": "ISR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "critical",
-        "description": "Israeli strike eliminates multiple IRGC commanders during Khamenei funeral procession in Mashhad",
-        "descriptionHe": "דיווח על מספר אנשי בסיג' שחוסלו במשהד במהלך הלווית חמינאי שמתקיימת כעת",
-        "source": "idkunim_il",
-        "sourceUrl": "https://t.me/idkunim_il/61339"
-      }
-    },
-    {
-      "id": "iranstrike-tqnskqc1qkw0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79262",
-      "date": "2026-07-09T21:34:38Z",
-      "title": "IranStrike event",
-      "description": "Armed attack on Basij and IRGC checkpoints near Imam Reza Shrine in Mashhad kills at least 4 militiamen; attackers in military uniforms fled scene",
-      "category": "infrastructure",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn armed attack on basij and irgc checkpoints near imam reza shrine in mashhad kill",
-      "location": "Mashhad",
-      "country": "Iran",
-      "latitude": 36.2605,
-      "longitude": 59.6168,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "mashhad",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "tqnskqc1qkw0",
-        "timestamp": "2026-07-09T21:34:38+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Armed attack on Basij and IRGC checkpoints near Imam Reza Shrine in Mashhad kills at least 4 militiamen; attackers in military uniforms fled scene",
-        "descriptionHe": "התקפה חמושה על נקודות בדיקה של בסיג' וקודס ליד מקדש אמאם רזה במשהד הורגת לפחות 4 מיליציונים; התוקפים בזיהוי צבאי ברחו מהזירה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79262"
       }
     }
   ]
