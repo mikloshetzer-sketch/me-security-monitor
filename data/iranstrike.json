@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T15:15:49Z",
+  "generated_at": "2026-08-13T16:12:39Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -57,14 +57,14 @@
     "normalized_events": 1000,
     "map_visualizable_events": 229,
     "non_mappable_events": 771,
-    "developments": 3
+    "developments": 2
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-11T22:41:18Z",
-      "latest_event_date": "2026-08-13T10:57:30Z",
+      "earliest_event_date": "2026-07-11T23:09:15Z",
+      "latest_event_date": "2026-08-13T15:47:18Z",
       "geocoded_events": 229,
       "geocoded_share": 22.9,
       "top_category": "infrastructure",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 58,
-        "previous": 62,
-        "delta": -4,
-        "percent_change": -6.5,
-        "direction": "stable"
+        "current": 54,
+        "previous": 64,
+        "delta": -10,
+        "percent_change": -15.6,
+        "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 765,
-        "previous": 168,
-        "delta": 597,
-        "percent_change": 355.4,
+        "current": 753,
+        "previous": 182,
+        "delta": 571,
+        "percent_change": 313.7,
         "direction": "increase"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-11",
-        "count": 11
+        "count": 10
       },
       {
         "date": "2026-07-12",
@@ -222,14 +222,14 @@
       },
       {
         "date": "2026-08-13",
-        "count": 4
+        "count": 5
       }
     ],
     "category_counts": {
-      "infrastructure": 252,
+      "infrastructure": 251,
       "missile": 212,
       "strike": 171,
-      "drone": 100,
+      "drone": 101,
       "airstrike": 96,
       "explosion": 91,
       "movement": 38,
@@ -239,8 +239,8 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 486,
-      "high": 377,
+      "medium": 487,
+      "high": 376,
       "low": 134,
       "critical": 3
     },
@@ -257,7 +257,7 @@
       },
       {
         "name": "Unknown",
-        "count": 245
+        "count": 246
       },
       {
         "name": "Jordan",
@@ -284,12 +284,12 @@
         "count": 23
       },
       {
-        "name": "Israel",
+        "name": "Red Sea",
         "count": 21
       },
       {
-        "name": "Red Sea",
-        "count": 21
+        "name": "Israel",
+        "count": 20
       },
       {
         "name": "Aqaba",
@@ -319,7 +319,7 @@
       },
       {
         "name": "Unknown",
-        "count": 245
+        "count": 246
       },
       {
         "name": "Jordan",
@@ -339,7 +339,7 @@
       },
       {
         "name": "Israel",
-        "count": 29
+        "count": 28
       },
       {
         "name": "Red Sea",
@@ -360,34 +360,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10143,
+    "totalCount": 10144,
     "spotlight": {
       "event": {
-        "id": "2c00fcjallzw0",
-        "timestamp": "2026-08-13T05:48:01+00:00",
-        "location": "LBN",
-        "origin": "ISR",
+        "id": "2wjgflg9ppo00",
+        "timestamp": "2026-08-13T15:47:18+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "medium",
-        "description": "Israeli fighter jets strike southern Lebanon multiple times: twice in Almuntouri village (western Tyre district) and once in Deir Saryan village (Nabatieh district)",
-        "descriptionHe": "מטוסי קרב ישראלים תקפו הלילה מספר פעמים בדרום לבנון: פעמיים בכפר אלמנצורי בגזרה המערבית (נפת צור) ופעם אחת בכפר דיר סריאן בנפת נבטיה",
+        "description": "Houthis attack Saudi Aramco oil facilities in Jizan, southwestern Saudi Arabia with two drones, reporting direct hits on target",
+        "descriptionHe": "החות'ים תוקפים מתקני נפט של אראמכו הסעודית בג'יזאן בדרום מערב סעודיה עם שני כטב\"מים, דיווחים על פגיעות טובות במטרה",
         "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128400"
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/128443"
       },
-      "headline": "Israeli jets strike multiple targets across southern Lebanon",
-      "headlineHe": "מטוסי קרב ישראליים תוקפים מטרות מרובות בדרום לבנון",
-      "summary": "The strikes mark continued Israeli military operations targeting positions in Lebanese territory amid ongoing regional tensions.",
-      "summaryHe": "התקפות אלו מסמנות המשך פעולות צבאיות ישראליות המכוונות לעמדות בשטח לבנוני תוך מתח אזורי מתמשך.",
-      "pickedAt": "2026-08-13T14:45:50.084Z",
-      "state": "TODAY"
+      "headline": "Houthis Hit Saudi Oil Facility with Drone Attack",
+      "headlineHe": "חות'ים תקפו מתקן נפט סעודי במל\"ט",
+      "summary": "The attack on Aramco infrastructure in Jizan marks an escalation in Houthi operations against Saudi energy assets, occurring amid broader regional tensions.",
+      "summaryHe": "התקיפה על תשתיות ארמקו בג'יזאן מהווה הסלמה בפעולות חות'ים נגד נכסי אנרגיה סעודיים, מתוך מתח אזורי רחב.",
+      "pickedAt": "2026-08-13T16:01:48.500Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-13T15:12:03.630Z",
+    "lastUpdated": "2026-08-13T16:12:03.996Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 5,
     "ceasefire": false
   },
   "summary": {
@@ -930,20 +936,8 @@
     "vitals": {
       "internet": 90,
       "cellular": null,
-      "lastUpdate": "2026-08-13T15:00:43.412Z",
+      "lastUpdate": "2026-08-13T15:31:40.340Z",
       "internetHistory": [
-        {
-          "t": "2026-08-12T15:00:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T15:10:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T15:20:00.000Z",
-          "v": 90
-        },
         {
           "t": "2026-08-12T15:30:00.000Z",
           "v": 90
@@ -1503,22 +1497,34 @@
         {
           "t": "2026-08-13T14:40:00.000Z",
           "v": 90
+        },
+        {
+          "t": "2026-08-13T14:50:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-13T15:00:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-13T15:10:00.000Z",
+          "v": 90
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-13T15:00:43.412Z"
+    "lastUpdated": "2026-08-13T15:31:40.340Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f2a4c1e",
+      "id": "iranstrike-8c7d2e1f",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-13T05:48:01Z",
+      "date": "2026-08-13T15:47:18Z",
       "title": "IranStrike event",
-      "description": "IDF strikes southern Lebanon villages; multiple airstrikes on Almuntouri, Deir Saryan, Al-Mansouri",
+      "description": "IDF strikes Lebanon 3 times; Houthis hit Saudi oil with 2 drones",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -1526,7 +1532,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes southern lebanon villages;",
+      "attacker_evidence": "idf strikes lebanon 3 times;",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -1539,76 +1545,33 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f2a4c1e",
-        "text": "IDF strikes southern Lebanon villages; multiple airstrikes on Almuntouri, Deir Saryan, Al-Mansouri",
-        "textHe": "צה\"ל תקף כפרים בדרום לבנון; הפציצות אווירות מרובות על אל-מנסורי ודיר סריאן",
+        "id": "8c7d2e1f",
+        "text": "IDF strikes Lebanon 3 times; Houthis hit Saudi oil with 2 drones",
+        "textHe": "צה\"ל תקף בלבנון 3 פעמים; חותים פגעו בנפט סעודי עם 2 מזל\"טים",
         "severity": "high",
-        "timestamp": "2026-08-13T05:48:01+00:00",
+        "timestamp": "2026-08-13T15:47:18+00:00",
         "entityIds": [
           "ISR",
-          "LBN"
+          "LBN",
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
-          "2c00fcjallzw0",
-          "1goaam3iruio0"
+          "2wjgflg9ppo00",
+          "2c00fcjallzw0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-6e3b9d47",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-12T16:22:00Z",
-      "title": "IranStrike event",
-      "description": "IDF eliminates Gaza militants; drone strike in Beit Lahia kills 1, wounds 2; Hamas cell leader targeted",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "6e3b9d47",
-        "text": "IDF eliminates Gaza militants; drone strike in Beit Lahia kills 1, wounds 2; Hamas cell leader targeted",
-        "textHe": "צה\"ל ביטל מיליטנטים בעזה; תקיפת רחפן בבית לאהיה הרגה אחד פצע 2; מנהיג תא חמאס",
-        "severity": "medium",
-        "timestamp": "2026-08-12T16:22:00+00:00",
-        "entityIds": [
-          "ISR"
-        ],
-        "eventIds": [
-          "c5aq3ou23bc0",
-          "3vnq8se759c00",
-          "25l4p5vxqj280"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-5d1c8f6a",
+      "id": "iranstrike-9a5b4c3d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-13T10:57:30Z",
       "title": "IranStrike event",
-      "description": "U.S. military aid arrives in Israel; thousands of tons equipment including D9 bulldozers and armored vehicles",
+      "description": "U.S. delivers military equipment to Israel: bulldozers, armored vehicles",
       "category": "other",
       "severity": "low",
       "attacker": "unknown",
@@ -1629,9 +1592,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5d1c8f6a",
-        "text": "U.S. military aid arrives in Israel; thousands of tons equipment including D9 bulldozers and armored vehicles",
-        "textHe": "עזרה צבאית אמריקאית הגיעה לישראל; אלפי טונות ציוד כולל דחפורי D9 וכלים משוריינים",
+        "id": "9a5b4c3d",
+        "text": "U.S. delivers military equipment to Israel: bulldozers, armored vehicles",
+        "textHe": "ארה\"ב מסרה לישראל ציוד צבאי: בולדוזרים וכלי שריון",
         "severity": "low",
         "timestamp": "2026-08-13T10:57:30+00:00",
         "entityIds": [
@@ -1639,14 +1602,65 @@
           "USA"
         ],
         "eventIds": [
-          "3igt6jj3xcg00",
-          "um3rn6j5nb40"
+          "um3rn6j5nb40",
+          "3igt6jj3xcg00"
         ],
         "sourceCount": 2
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-2wjgflg9ppo00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128443",
+      "date": "2026-08-13T15:47:18Z",
+      "title": "IranStrike event",
+      "description": "Houthis attack Saudi Aramco oil facilities in Jizan, southwestern Saudi Arabia with two drones, reporting direct hits on target",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2wjgflg9ppo00",
+        "timestamp": "2026-08-13T15:47:18+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthis attack Saudi Aramco oil facilities in Jizan, southwestern Saudi Arabia with two drones, reporting direct hits on target",
+        "descriptionHe": "החות'ים תוקפים מתקני נפט של אראמכו הסעודית בג'יזאן בדרום מערב סעודיה עם שני כטב\"מים, דיווחים על פגיעות טובות במטרה",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/128443"
+      }
+    },
     {
       "id": "iranstrike-3igt6jj3xcg00",
       "source": "IranStrike",
@@ -46859,51 +46873,6 @@
         "descriptionHe": "כוחות מיוחדים איראניים פורסים מוקשים בנתיב הספנות המיועד של עומאן",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79337"
-      }
-    },
-    {
-      "id": "iranstrike-2ygisxi3vsy00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "idkunim_il",
-      "source_url": "https://t.me/idkunim_il/61373",
-      "date": "2026-07-11T22:41:18Z",
-      "title": "IranStrike event",
-      "description": "IRGC threatens to destroy any vessel transiting Strait of Hormuz without authorization; warns of attacks on all U.S. bases in region if U.S. or Israel respond",
-      "category": "infrastructure",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2ygisxi3vsy00",
-        "timestamp": "2026-07-11T22:41:18+00:00",
-        "location": "IRN",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "high",
-        "description": "IRGC threatens to destroy any vessel transiting Strait of Hormuz without authorization; warns of attacks on all U.S. bases in region if U.S. or Israel respond",
-        "descriptionHe": "משמרות המהפכה מאיימים: כל כלי שיט שיעבור במצר ללא אישור יושמד. אם ארה\"ב או ישראל יגיבו - נתקוף את כל הבסיסים האמריקאיים באזור",
-        "source": "idkunim_il",
-        "sourceUrl": "https://t.me/idkunim_il/61373"
       }
     }
   ],
