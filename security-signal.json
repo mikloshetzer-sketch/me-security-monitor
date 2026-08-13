@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-13 19:27 UTC",
+    "updated": "2026-08-13 21:04 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-07",
     "period_end": "2026-08-13",
-    "total_events": 129,
-    "total_risk": 114.15,
-    "normalized_risk_score": 45.7,
+    "total_events": 127,
+    "total_risk": 113.95,
+    "normalized_risk_score": 45.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 24,
     "security": 6,
-    "political": 19,
+    "political": 17,
     "other": 80
   },
   "source_counts": {
-    "news": 129,
+    "news": 127,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 32.15
+      "risk": 29.35
     },
     {
       "name": "Yemen",
-      "risk": 24.1
+      "risk": 26.7
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.9
-    },
-    {
-      "name": "Israel",
-      "risk": 10.6
+      "risk": 12.4
     },
     {
       "name": "West Bank",
       "risk": 10.45
+    },
+    {
+      "name": "Israel",
+      "risk": 10.1
     }
   ],
   "top_events": [
@@ -52,18 +52,18 @@
       "date": "2026-08-13",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWVhsYXl4b0NkRk9GdFhWN0lBcU16ckh5aG9SakN2TzBSMGIxSVUxYm9TY3VndmdwM0YwMjlrTGZQMmNaTWJHTlhzZXFBM004ZHhsQm1wNDVMNFNfXzZtTVVFZXBaOWRNV3h2Wjc3dXZsbGlseE1LZ00wUno4ZkMwMGpOR3JxczRNaTlGdHZsWTd1a1lpZWNiQnBfYWl4TXhwQjNNRlRXeDhETTlrYkg3R01UeTJkQUdIbkhGN1dIVl85ZFpOdVF0ZlJB"
+      "title": "Israeli strikes in Gaza kill two people, first fatalities in more than a week, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTXBrNkhJSGJCUkpPZDllVjhwdkNrTk1DbG52ZVROOTZjQXo1cUxkMk8zcktGTzJkRzBLaEpxSHhINnZXMWJzNFZfSHRncDRVd2tKQjgwUC1Yd3hta196OTBHRk44YWZLdXFiOWdBRU1WY3llYndNclBJeWxNWURENlR4WnpUbVFOOWN2QnZWaUdZQzdSOHN5TDdXM1R1RzlXdVdHUE1xRXJjeHVlRmhHZl9XSzV6RnNScmRDQkFzUU9sT0ZlSFE"
     },
     {
       "score": 3.0,
       "date": "2026-08-13",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strikes in Gaza kill two people, first fatalities in more than a week, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTXBrNkhJSGJCUkpPZDllVjhwdkNrTk1DbG52ZVROOTZjQXo1cUxkMk8zcktGTzJkRzBLaEpxSHhINnZXMWJzNFZfSHRncDRVd2tKQjgwUC1Yd3hta196OTBHRk44YWZLdXFiOWdBRU1WY3llYndNclBJeWxNWURENlR4WnpUbVFOOWN2QnZWaUdZQzdSOHN5TDdXM1R1RzlXdVdHUE1xRXJjeHVlRmhHZl9XSzV6RnNScmRDQkFzUU9sT0ZlSFE"
+      "title": "Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWVhsYXl4b0NkRk9GdFhWN0lBcU16ckh5aG9SakN2TzBSMGIxSVUxYm9TY3VndmdwM0YwMjlrTGZQMmNaTWJHTlhzZXFBM004ZHhsQm1wNDVMNFNfXzZtTVVFZXBaOWRNV3h2Wjc3dXZsbGlseE1LZ00wUno4ZkMwMGpOR3JxczRNaTlGdHZsWTd1a1lpZWNiQnBfYWl4TXhwQjNNRlRXeDhETTlrYkg3R01UeTJkQUdIbkhGN1dIVl85ZFpOdVF0ZlJB"
     },
     {
       "score": 3.0,
@@ -82,6 +82,24 @@
       "title": "Israeli strikes in south Lebanon a ‘violation of international law’: PM - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRnB4UF9QTFotQjZJTEhMQWhtX0VqQ2czNjlLMFBzYlJ6enBpQnE2anVNaGtNR0RnUEJoeFI2OW9EV1NvUUtZVHR2WkZWRU5NR0lzUnhrMnhUbm9XN2Z3aXZzV081cFV1YUVqVmF2bE1YS1NQX04yRmZhYXR6eWc3RnppZTlldDhTb3ZIY0dWYUJvamxZNjl1cG5SOFk3ck5waVNmSlhaRC16TlUtTkHSAbMBQVVfeXFMT3d0QnR0SEVDM3lfTWtxejVDOVotWGpCRFJsUHZyamZxVW1RWWVMMlBxT3IxUlFYaVF0aHVNTkNFdXVCY200RTZnN1M1V2pvZ3hoLTB5RnZxVDlPY2NpWmp1MURSUlZGYkZOX0pLX3RDd2RYdTBpblJyVjNJNmdRWHp6eGVVbGNkX21kT2lvV2pKeEVwMjRKWi1lci1VaUNIS1Z5cmF3WElBbV9iaFV0SmtibTA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni forces say Houthi attack repelled in Taiz amid escalation - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObG1mck84WmVJcXVfRFQ3M2pxMU9YLVNaaUd3dTdZQ2djQWo0TWJyS0lSUW80c2lzUmJaZnJqdUhuREdVR2hZMkJQdlJHZVF1NTMzQWhTRTNSRTdNTzhmQU91amNkR0JPLVlOVVFCcFBlemlBeTNHclRTaE9WT2VEcmJqaFVyMml1Ylk3WktiV3VJOUdQVzJiZXEzbERDMkFHU2d4dHJPU0XSAa4BQVVfeXFMTWthMFhZcFFuYVZUZktxRGdjTTBCSFFNaXhzXzh5dzlLNkdZblg4c2w5WW9RTllxMWx4MTlUSDdFUFlncjZLT3k1YTVHb0Fha0lLQ29LTlBhYUVuay1IbTRid2s3V3VORzV0bGJJRVRKWXo1bW9OT1RBdktkaUMzdGFhbmlZZEdIUGNRbDNmX1JMNlhydGVha0tEblV2bXZ1UE9iT2ZiOTlCc1locXJ3"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Israeli raids, arrests continue as UN warns West Bank at ‘breaking point’ - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVEJOcWo5Tlp5aXRYcW9LeWNOUnVVLUJzVzVNUWZlbUtqMFJ2YnlYZ1RYRWdSdXA0UzUwbWd4OVBjUTVOMmJlSXhkLW9UbmgtVmNXNGJ1VUg1MUVYOFo3VGZqaVlzdGt0aWczZ2tPVVJCUzJRc0FiSF9wRmk1S0c4RjFlTnNuMEZ2ODJqbXJlbl8tdmUxTzBVM0V4M3VSenJ3aktfWTdDVnRvY3QwMjBUdFk1N2tBQdIBuwFBVV95cUxOejZsdEZldnd5TThhc3RoVTNQSFhmY1NIeXI1alJPVXVsa2phWDlyRF8weVMtcFFyY1FOR01xX2NxcFQyYjlkQVA0S18tTzhOMGJPRk1ibHBJNk5idV9TMWh5M1p5NmNhV0NXNndkTWZXbnhJQmJUc1dFZ1Bkd3E0SG9iRDlkUmFnUjdmUnQwY2xQeFRQWV9HYUtCSnlMZG9IRFVFQVg1ZjExWGJKYVpWWWt2WGtQbGw5cWI4"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "US strikes in Yemen killed 153 civilians in 2025, says Pentagon review - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUEtxZkw5RlRZdzJFMWZidXFLZmlSbzVnczVxYUpweW55eTZTNEJ2MTFQUnJGaE1SaU9oODMxZE9qLU9rbGNWZjcxMFQwTzhHZVRZR2pOQTFUQWhiTE8zbTgxT0VsM0c5OGtyelpPWmFvUzI0b19EaDFvNHA2bkpPYldqVk5sYUtVdXMyc1Nad1U5MC1SVnlGX3lzV2tzX0duSUpZU3oyN2tLc3d5TklV0gG0AUFVX3lxTE1HOG5TOEtjUVhSS2Z3VFhqMmQ5bUt4X3h5Z2hLTmRjX0QxV2VQeFVEMmtmYkFaUkdjZW43LXhjcERLMFU4ZnczMDVkTGplQXMzOWtQb3R1NmNzQkVYVVh6SWpLaWdua1ctaXVTZUtVSjM2TFRLbGNJTk9XNE9oUW84NnVqWUxqYjdVQV9ZbnRmYm9fTXpEYzFucDB4SmhmYkllSmhoT0pqZVhiY0ZPOFBwQzFxSw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli air strike kills one in northern Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPN1ljRVZMV2c2cVJOVEt0YVZhdkdtR0hfcHVvZGVZZThfdUszaW5WMmMzYnd1bXBnc09pQ3NObm9jaF8wc0xELUJueU1FMGZwZ0RhMDZWeHFWazd5ZlZVeloyN1VsWGJsNnoyZ2IxUy1MMko3VFR3Y2h2dWhPclhFT2czeVZ6LXN1NWdNeUpHSdIBlAFBVV95cUxQcks3bWNfYnpRcTBYd2t3SmJxOXRvcmw3dWZ5QWljNjRIbXlha1dwTV95VjhzdF9fbzhaTkRtMGUzdHVZM2xpbjRjempPMlA1NUlINFJTazVSRmgtYmpkLUpPdmJPU2M5clJaaExQMGJIU1VnT3d4MVdsRHVORTJpV3k2bFBEQ3pBVHFjZ2VnYlVPYUVi"
     }
   ]
 }
