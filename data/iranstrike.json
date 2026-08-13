@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T20:21:47Z",
+  "generated_at": "2026-08-13T21:29:09Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,18 +55,18 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 228,
-    "non_mappable_events": 772,
+    "map_visualizable_events": 227,
+    "non_mappable_events": 773,
     "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-11T23:33:37Z",
-      "latest_event_date": "2026-08-13T17:25:17Z",
-      "geocoded_events": 228,
-      "geocoded_share": 22.8,
+      "earliest_event_date": "2026-07-11T23:34:05Z",
+      "latest_event_date": "2026-08-13T20:59:02Z",
+      "geocoded_events": 227,
+      "geocoded_share": 22.7,
       "top_category": "infrastructure",
       "top_location": "Iran",
       "top_country": "Iran"
@@ -74,23 +74,23 @@
     "comparisons": {
       "latest_7_days": {
         "current": 56,
-        "previous": 66,
-        "delta": -10,
-        "percent_change": -15.2,
+        "previous": 68,
+        "delta": -12,
+        "percent_change": -17.6,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 754,
-        "previous": 185,
-        "delta": 569,
-        "percent_change": 307.6,
+        "current": 752,
+        "previous": 198,
+        "delta": 554,
+        "percent_change": 279.8,
         "direction": "increase"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-11",
-        "count": 8
+        "count": 7
       },
       {
         "date": "2026-07-12",
@@ -222,16 +222,16 @@
       },
       {
         "date": "2026-08-13",
-        "count": 7
+        "count": 8
       }
     ],
     "category_counts": {
       "infrastructure": 252,
-      "missile": 212,
+      "missile": 213,
       "strike": 170,
       "drone": 102,
       "airstrike": 96,
-      "explosion": 91,
+      "explosion": 90,
       "movement": 37,
       "ground": 16,
       "alert": 10,
@@ -239,14 +239,14 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 487,
-      "high": 376,
+      "medium": 488,
+      "high": 375,
       "low": 134,
       "critical": 3
     },
     "attacker_counts": {
-      "unknown": 594,
-      "iran": 311,
+      "unknown": 593,
+      "iran": 312,
       "israel": 63,
       "usa": 32
     },
@@ -265,19 +265,19 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 50
+        "count": 49
       },
       {
         "name": "Iraq",
         "count": 34
       },
       {
-        "name": "Lebanon",
+        "name": "Persian Gulf",
         "count": 31
       },
       {
-        "name": "Persian Gulf",
-        "count": 30
+        "name": "Lebanon",
+        "count": 31
       },
       {
         "name": "Erbil",
@@ -315,7 +315,7 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 429
+        "count": 428
       },
       {
         "name": "Unknown",
@@ -335,7 +335,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 30
+        "count": 31
       },
       {
         "name": "Israel",
@@ -360,32 +360,38 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10146,
+    "totalCount": 10147,
     "spotlight": {
       "event": {
-        "id": "tpwnpay8w9s0",
-        "timestamp": "2026-08-13T17:25:17+00:00",
+        "id": "3k3xyb6jdbw00",
+        "timestamp": "2026-08-13T20:59:02+00:00",
         "location": "ARE",
         "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "high",
-        "description": "IRGC-linked Fars News publishes satellite imagery claiming destruction of U.S. military and economic assets in UAE including data center, refinery unit, aluminum facility, and radar at Al Dhafra Air Base",
-        "descriptionHe": "סוכנות חדשות פארס הקשורה למשמרות המהפכה פרסמה תמונות לוויין טוענות הרסה של נכסים צבאיים וכלכליים אמריקאיים בעמירויות כולל מרכז נתונים, יחידת זיקוק, מתקן אלומיניום, ומכ\"ם בבסיס אל-ظفרה",
+        "type": "strike",
+        "severity": "medium",
+        "description": "Two ADNOC vessels attacked in Strait of Hormuz; two anti-ship cruise missiles launched from Sirik, Iranian territory",
+        "descriptionHe": "שתי ספינות של ADNOC התקפו במצר הורמוז; שני טילי שיוט נגד ספינות שוגרו מסיריק, שטח איראני",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/82185"
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82196"
       },
-      "headline": "Iran Claims Destruction of U.S. Military Assets in UAE",
-      "headlineHe": "איראן טוענת להשמדת נכסי צבא אמריקאי בעאיחוד הערבי",
-      "summary": "IRGC-linked media released satellite imagery alleging strikes on a U.S. air base and critical infrastructure, marking escalation in regional tensions.",
-      "summaryHe": "תקשורת קשורה לכוללי הגדודים האסלמים פרסמה תמונות לוויין טוענות על פגיעות בבסיס אוויר אמריקאי ובתשתיות קריטיות, המסמנות הסלמה במתיחויות אזוריות.",
-      "pickedAt": "2026-08-13T19:30:51.326Z",
-      "state": "TODAY"
+      "headline": "Iran-linked forces attack oil tankers in strategic Hormuz Strait",
+      "headlineHe": "כוחות קשורים לאיראן תוקפים טנקרים במ海פה האסטרטגית של הורמוז",
+      "summary": "Two anti-ship cruise missiles were launched from Iranian territory at commercial vessels, marking a significant escalation in regional maritime tensions amid broader U.S.-Iran hostilities.",
+      "summaryHe": "שתי טילים נגד-ספינות הושקו מטריטוריה איראנית כנגד אוניות מסחריות, המהווה הסלמה משמעותית במתיחות ימיות אזוריות וסכסוך רחב יותר בין ארה\"ב לאיראן.",
+      "pickedAt": "2026-08-13T21:15:52.024Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-13T20:12:04.111Z",
+    "lastUpdated": "2026-08-13T21:27:04.106Z",
     "stale": false,
     "viewerCount": 4,
     "ceasefire": false
@@ -930,32 +936,8 @@
     "vitals": {
       "internet": 89,
       "cellular": null,
-      "lastUpdate": "2026-08-13T20:00:43.185Z",
+      "lastUpdate": "2026-08-13T21:00:43.244Z",
       "internetHistory": [
-        {
-          "t": "2026-08-12T20:00:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T20:10:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T20:20:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T20:30:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T20:40:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-12T20:50:00.000Z",
-          "v": 90
-        },
         {
           "t": "2026-08-12T21:00:00.000Z",
           "v": 90
@@ -1503,32 +1485,56 @@
         {
           "t": "2026-08-13T19:40:00.000Z",
           "v": 89
+        },
+        {
+          "t": "2026-08-13T19:50:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-13T20:00:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-13T20:10:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-13T20:20:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-13T20:30:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-13T20:40:00.000Z",
+          "v": 89
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-13T20:00:43.185Z"
+    "lastUpdated": "2026-08-13T21:00:43.244Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a4f7c2e1",
+      "id": "iranstrike-a7f2c1e9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-13T17:25:17Z",
+      "date": "2026-08-13T20:59:02Z",
       "title": "IranStrike event",
-      "description": "Iran claims destruction of US assets in UAE; Washington Post reports 45 MQ-9s lost",
+      "description": "Iran launches 2 anti-ship missiles at UAE tankers in Strait of Hormuz; claims strikes on US assets",
       "category": "other",
       "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran launches 2 anti-ship missiles at uae tankers in strait of",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1539,76 +1545,32 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a4f7c2e1",
-        "text": "Iran claims destruction of US assets in UAE; Washington Post reports 45 MQ-9s lost",
-        "textHe": "איראן טוענת להשמדת נכסים אמריקניים בעאדי; וושינגטון פוסט דיווחה על אובדן 45 כטלי MQ-9",
+        "id": "a7f2c1e9",
+        "text": "Iran launches 2 anti-ship missiles at UAE tankers in Strait of Hormuz; claims strikes on US assets",
+        "textHe": "איראן שוגרת 2 טילים נגד כלי שיט של איחוד האמירות בצלח הורמוז; טוענת לפגיעה בנכסים אמריקניים",
         "severity": "high",
-        "timestamp": "2026-08-13T17:25:17+00:00",
+        "timestamp": "2026-08-13T20:59:02+00:00",
         "entityIds": [
           "IRN",
-          "USA",
-          "ARE"
+          "ARE",
+          "USA"
         ],
         "eventIds": [
-          "tpwnpay8w9s0",
-          "2u1nqt7asui00"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-b6d3e9f2",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-13T05:48:01Z",
-      "title": "IranStrike event",
-      "description": "Israeli jets strike southern Lebanon twice in Tyre and Nabatieh districts",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "israeli jets strike southern lebanon twice in tyre and nabatieh distr",
-      "location": "Nabatieh",
-      "country": "Lebanon",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "nabatieh",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "b6d3e9f2",
-        "text": "Israeli jets strike southern Lebanon twice in Tyre and Nabatieh districts",
-        "textHe": "מטוסי קרב ישראליים תקפו את דרום לבנון פעמיים בנפות צור ונבטייה",
-        "severity": "medium",
-        "timestamp": "2026-08-13T05:48:01+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "2c00fcjallzw0"
+          "3k3xyb6jdbw00",
+          "tpwnpay8w9s0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c8e2f5a3",
+      "id": "iranstrike-b3e8d2f5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-13T15:47:18Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones",
+      "description": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones, reporting direct hits",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1629,9 +1591,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c8e2f5a3",
-        "text": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones",
-        "textHe": "חותים תקפו מתקנות aramco בג'יזאן עם 2 כטלים",
+        "id": "b3e8d2f5",
+        "text": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones, reporting direct hits",
+        "textHe": "החותים תוקפים מתקנות aramco בג'יזאן ב-2 כלים אל-מנוסים, מדווחים על פגיעות ישירות",
         "severity": "medium",
         "timestamp": "2026-08-13T15:47:18+00:00",
         "entityIds": [
@@ -1645,14 +1607,58 @@
       }
     },
     {
-      "id": "iranstrike-d1a9b4c6",
+      "id": "iranstrike-c6f1a4d3",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-13T05:48:01Z",
+      "title": "IranStrike event",
+      "description": "IDF conducts multiple airstrikes in southern Lebanon; targets Almuntouri and Deir Saryan villages",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf conducts multiple airstrikes in southern lebanon;",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c6f1a4d3",
+        "text": "IDF conducts multiple airstrikes in southern Lebanon; targets Almuntouri and Deir Saryan villages",
+        "textHe": "צה\"ל מבצע מספר תקיפות אוויריות בדרום לבנון; תוקף כפרים במונטורי וידיר סריאן",
+        "severity": "medium",
+        "timestamp": "2026-08-13T05:48:01+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "2c00fcjallzw0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d8e5b7c2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-13T10:57:30Z",
       "title": "IranStrike event",
-      "description": "U.S. delivers military equipment shipment to Israel including D9 bulldozers",
+      "description": "USA delivers thousands of tons military equipment to Israel including D9 bulldozers, armored vehicles",
       "category": "other",
       "severity": "low",
       "attacker": "unknown",
@@ -1673,9 +1679,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d1a9b4c6",
-        "text": "U.S. delivers military equipment shipment to Israel including D9 bulldozers",
-        "textHe": "ארה\"ב משלחת ציוד צבאי לישראל כולל בולדוזרים D9",
+        "id": "d8e5b7c2",
+        "text": "USA delivers thousands of tons military equipment to Israel including D9 bulldozers, armored vehicles",
+        "textHe": "ארה\"ב מעבירה אלפי טונות ציוד צבאי לישראל כולל בולדוזרים D9 וכלי שריון",
         "severity": "low",
         "timestamp": "2026-08-13T10:57:30+00:00",
         "entityIds": [
@@ -1691,6 +1697,57 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3k3xyb6jdbw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82196",
+      "date": "2026-08-13T20:59:02Z",
+      "title": "IranStrike event",
+      "description": "Two ADNOC vessels attacked in Strait of Hormuz; two anti-ship cruise missiles launched from Sirik, Iranian territory",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "two anti-ship cruise missiles launched from sirik, iranian territory שתי ספינות של adnoc התקפו במצר הורמוז;",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3k3xyb6jdbw00",
+        "timestamp": "2026-08-13T20:59:02+00:00",
+        "location": "ARE",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Two ADNOC vessels attacked in Strait of Hormuz; two anti-ship cruise missiles launched from Sirik, Iranian territory",
+        "descriptionHe": "שתי ספינות של ADNOC התקפו במצר הורמוז; שני טילי שיוט נגד ספינות שוגרו מסיריק, שטח איראני",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82196"
+      }
+    },
     {
       "id": "iranstrike-tpwnpay8w9s0",
       "source": "IranStrike",
@@ -46909,51 +46966,6 @@
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79346"
       }
-    },
-    {
-      "id": "iranstrike-26kwz47zasf40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79344",
-      "date": "2026-07-11T23:33:37Z",
-      "title": "IranStrike event",
-      "description": "Air defenses active in Khuzestan Province, explosions reported in Bandar Abbas",
-      "category": "explosion",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "26kwz47zasf40",
-        "timestamp": "2026-07-11T23:33:37+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Air defenses active in Khuzestan Province, explosions reported in Bandar Abbas",
-        "descriptionHe": "הגנות אוויר פעילות בחוזה חוזסתان, דיווחים על פיצוצים בנדر עבאס",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79344"
-      }
     }
   ],
   "map_events": [
@@ -57218,51 +57230,6 @@
         "descriptionHe": "דיווחים על פיצוצים בקנגן ובאחواז",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79347"
-      }
-    },
-    {
-      "id": "iranstrike-26kwz47zasf40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79344",
-      "date": "2026-07-11T23:33:37Z",
-      "title": "IranStrike event",
-      "description": "Air defenses active in Khuzestan Province, explosions reported in Bandar Abbas",
-      "category": "explosion",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "26kwz47zasf40",
-        "timestamp": "2026-07-11T23:33:37+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Air defenses active in Khuzestan Province, explosions reported in Bandar Abbas",
-        "descriptionHe": "הגנות אוויר פעילות בחוזה חוזסתان, דיווחים על פיצוצים בנדر עבאס",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79344"
       }
     }
   ]
