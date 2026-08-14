@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-14 11:09 UTC",
+    "updated": "2026-08-14 13:45 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-08-08",
     "period_end": "2026-08-14",
-    "total_events": 132,
-    "total_risk": 108.25,
-    "normalized_risk_score": 43.3,
+    "total_events": 131,
+    "total_risk": 107.9,
+    "normalized_risk_score": 43.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 23,
-    "security": 7,
-    "political": 17,
+    "military": 22,
+    "security": 8,
+    "political": 16,
     "other": 85
   },
   "source_counts": {
-    "news": 132,
+    "news": 131,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 35.1
+      "risk": 37.15
     },
     {
       "name": "Yemen",
-      "risk": 23.2
+      "risk": 20.8
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.7
+      "risk": 13.65
+    },
+    {
+      "name": "Israel",
+      "risk": 10.25
     },
     {
       "name": "West Bank",
       "risk": 9.8
-    },
-    {
-      "name": "Israel",
-      "risk": 8.3
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "US warns Iran it will step up economic pressure; two more ships attacked in Hormuz - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcUdkcXFHNHlWMzdKeGE0QzFWU2FRNTl4aHYxMk5VNEU1REROam1XMW5hQnVPMlVCOHV5Y1k5X2N6eEx1UlpJOExJVFlXQzU5bWE1LXE1ZndpQUtpeFpVb2FoWUhlODVPWUVxeTNwcjNXQXRzMFloclJMNFBqNDJiUmFjam1kODNyQ1BvYU90dmptbG1mLWd6enN6dDZRb2JiRFg2TGdNSzJaM1g1c2xPd0lqTFBSblp6RGFKWktyVkI3dEVRMmJqNDdfLUc"
+    },
     {
       "score": 3.0,
       "date": "2026-08-14",
@@ -61,7 +70,7 @@
       "date": "2026-08-13",
       "category": "military",
       "source_type": "news",
-      "title": "UAE says Iran attacked two ADNOC vessels in Strait of Hormuz; no injuries - reuters.com",
+      "title": "UAE says Iran attacked two ADNOC vessels in Strait of Hormuz; no injuries - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVGt4emw3dzdDaUdoNmsxMmRjMlkwZUJCUVlURko4RzRvMjUybnlUMVRGUnFLT0plclNLYkt0dGN1RV9fZnQ3QlE2UkN0d002blZDVUtTX0JwQXhkbXVDZ25WbDBLWld0anI2MmEtMUJOUFVNUTVDeVhpOXlldTQtQmlMVmVzcE1KS0tnWHhUNWtodmJRNjJWNFEyak9ZSGRadktNS3FMZ2tjc0o3MEh6eXEwcTZjY1Q3dmg1eg"
     },
@@ -70,7 +79,7 @@
       "date": "2026-08-13",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - reuters.com",
+      "title": "Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWVhsYXl4b0NkRk9GdFhWN0lBcU16ckh5aG9SakN2TzBSMGIxSVUxYm9TY3VndmdwM0YwMjlrTGZQMmNaTWJHTlhzZXFBM004ZHhsQm1wNDVMNFNfXzZtTVVFZXBaOWRNV3h2Wjc3dXZsbGlseE1LZ00wUno4ZkMwMGpOR3JxczRNaTlGdHZsWTd1a1lpZWNiQnBfYWl4TXhwQjNNRlRXeDhETTlrYkg3R01UeTJkQUdIbkhGN1dIVl85ZFpOdVF0ZlJB"
     },
@@ -79,7 +88,7 @@
       "date": "2026-08-13",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strikes in Gaza kill two people, first fatalities in more than a week, medics say - reuters.com",
+      "title": "Israeli strikes in Gaza kill two people, first fatalities in more than a week, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTXBrNkhJSGJCUkpPZDllVjhwdkNrTk1DbG52ZVROOTZjQXo1cUxkMk8zcktGTzJkRzBLaEpxSHhINnZXMWJzNFZfSHRncDRVd2tKQjgwUC1Yd3hta196OTBHRk44YWZLdXFiOWdBRU1WY3llYndNclBJeWxNWURENlR4WnpUbVFOOWN2QnZWaUdZQzdSOHN5TDdXM1R1RzlXdVdHUE1xRXJjeHVlRmhHZl9XSzV6RnNScmRDQkFzUU9sT0ZlSFE"
     },
@@ -124,18 +133,9 @@
       "date": "2026-08-12",
       "category": "military",
       "source_type": "news",
-      "title": "Israel's military says it targeted a Hamas commander planning attacks in Gaza - reuters.com",
+      "title": "Israel's military says it targeted a Hamas commander planning attacks in Gaza - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPUk51TkRwcXdfMzk0VGlTSW5zeENZQnVLaXktNVpMQzFzMGJYazBQbFk3YlZrNmdDaW5kWjlnQ25IT1pVekljNl93X0dsUEUxREZicF9FUm1qYzZMaEcxa2tOU0dQV3E5bC1kMGI5bVBaQWI1TVZvVng1VGZDSDMzdDcyVDkwNVNoNW5aVUZKYUk5NFdlMjJZeDBhWVVaS2ZTdmQ0QWpNZnF0UFd3M1RjZ3NGbUVzXzRldGRpeklUMGZ0Y2c"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Four killed in the Red Sea as Yemen's Houthis claim Tuesday ship attack - reuters.com",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUExFQktvY2cyS2RZZW1TRzFEWkY2ZnR1VGVCM1FZei1ueVZ5UFJvWjNybWlVdy1NdWUtOXVnS2w2NWpoZ1JKZ1dKam8zQ2pISlZYTGxlVnVBcUZubW85RnloSXNxMXNmcktDMjZIUVZpZTl2TlgzX3A5Q0N5Ul92NlhsT2RrZDNZOUc2RDh0VHBXNWFoa29KczBzQnR2SjBFVS1ZV1VsVklzZkZUSXpQbkpzcTNSSnJMTDJvOG1PN3lNMmhYOWUtLW5B"
     }
   ]
 }
