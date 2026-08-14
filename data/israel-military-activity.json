@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-14T15:08:29+00:00",
+  "generated_at": "2026-08-14T20:44:23+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 50,
-      "map_visualizable_events": 14,
-      "total_map_points": 16,
+      "total_events": 51,
+      "map_visualizable_events": 15,
+      "total_map_points": 17,
       "multi_location_events": 2,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-13T13:00:20Z"
+      "latest_event_date": "2026-08-14T15:36:07Z"
     },
     "region_counts": {
-      "Gaza Strip": 37,
+      "Gaza Strip": 38,
       "South Lebanon": 15
     },
     "activity_type_counts": {
-      "airstrike": 37,
+      "airstrike": 38,
       "ground_activity": 7,
       "drone_activity": 4,
       "cross_border_fire": 3,
@@ -67,13 +67,13 @@
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 29,
+      "Hamas": 30,
       "Hezbollah": 9,
       "Not explicitly stated": 9,
       "Palestinian Islamic Jihad": 8
     },
     "target_type_counts": {
-      "commander": 29,
+      "commander": 30,
       "individual_operative": 12,
       "unspecified": 9,
       "military_structure": 6,
@@ -87,8 +87,8 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 39,
-      "eliminated": 30,
+      "struck": 40,
+      "eliminated": 31,
       "located": 9,
       "dismantled": 7,
       "reported": 7
@@ -96,7 +96,7 @@
     "commander_type_counts": {
       "unspecified_commander": 13,
       "cell_commander": 7,
-      "company_commander": 5,
+      "company_commander": 6,
       "nukhba_commander": 5,
       "production_commander": 2,
       "battalion_commander": 1,
@@ -104,8 +104,8 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 45,
-      "command": 29,
+      "ground": 46,
+      "command": 30,
       "rocket_missile": 6,
       "production": 6,
       "weapons_logistics": 5,
@@ -116,13 +116,13 @@
     },
     "area_mention_counts": {
       "Northern Gaza Strip": 17,
-      "Southern Gaza Strip": 12,
+      "Southern Gaza Strip": 13,
       "Central Gaza Strip": 7,
       "Yellow Line area": 6,
       "Security Zone – South Lebanon": 4
     },
     "top_locations": {
-      "Khan Yunis": 5,
+      "Khan Yunis": 6,
       "Gaza City": 4,
       "Nuseirat": 3,
       "Deir al-Balah": 1,
@@ -132,6 +132,77 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19058",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19058",
+      "date": "2026-08-14T15:36:07Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF eliminated a Hamas company commander who advanced terror attacks against IDF troops in the Khan Yunis area Yesterday (Thursday), the IDF struck in the southern Gaza Strip and eliminated the terrorist Hudhaifa Khaled Suleiman Qawari, a company commander in the Khan Yunis brigade of Hamas׳ military wing. Throughout the war, the terrorist took part in training the company’s terrorists, the transfer of weapons throughout the southern Gaza Strip, and advanced efforts to rehabilitate and rebuild the Hamas terrorist organization. Recently, the terrorist advanced terror attacks against IDF troops and Israeli civilians and was subsequently eliminated in order to remove the threat he posed. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "company_commander"
+      ],
+      "commander_type": "company_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19058"
+    },
     {
       "id": "idf-idfofficial-19051",
       "source": "IDF official Telegram",
@@ -3359,6 +3430,79 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19058-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19058",
+      "date": "2026-08-14T15:36:07Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF eliminated a Hamas company commander who advanced terror attacks against IDF troops in the Khan Yunis area Yesterday (Thursday), the IDF struck in the southern Gaza Strip and eliminated the terrorist Hudhaifa Khaled Suleiman Qawari, a company commander in the Khan Yunis brigade of Hamas׳ military wing. Throughout the war, the terrorist took part in training the company’s terrorists, the transfer of weapons throughout the southern Gaza Strip, and advanced efforts to rehabilitate and rebuild the Hamas terrorist organization. Recently, the terrorist advanced terror attacks against IDF troops and Israeli civilians and was subsequently eliminated in order to remove the threat he posed. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "company_commander"
+      ],
+      "commander_type": "company_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Southern Gaza Strip"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19058",
+      "parent_event_id": "idf-idfofficial-19058",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19051-location-1",
       "source": "IDF official Telegram",
