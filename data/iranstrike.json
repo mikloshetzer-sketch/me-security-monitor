@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T08:02:45Z",
+  "generated_at": "2026-08-14T09:28:18Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,43 +55,39 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 225,
-    "non_mappable_events": 775,
-    "developments": 4
+    "map_visualizable_events": 224,
+    "non_mappable_events": 776,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-11T23:42:29Z",
-      "latest_event_date": "2026-08-14T02:11:32Z",
-      "geocoded_events": 225,
-      "geocoded_share": 22.5,
+      "earliest_event_date": "2026-07-12T00:02:34Z",
+      "latest_event_date": "2026-08-14T08:50:18Z",
+      "geocoded_events": 224,
+      "geocoded_share": 22.4,
       "top_category": "infrastructure",
       "top_location": "Iran",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 60,
-        "previous": 68,
-        "delta": -8,
-        "percent_change": -11.8,
+        "current": 62,
+        "previous": 64,
+        "delta": -2,
+        "percent_change": -3.1,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 750,
-        "previous": 202,
-        "delta": 548,
-        "percent_change": 271.3,
+        "current": 743,
+        "previous": 223,
+        "delta": 520,
+        "percent_change": 233.2,
         "direction": "increase"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-07-11",
-        "count": 3
-      },
       {
         "date": "2026-07-12",
         "count": 94
@@ -226,14 +222,14 @@
       },
       {
         "date": "2026-08-14",
-        "count": 2
+        "count": 5
       }
     ],
     "category_counts": {
       "infrastructure": 253,
-      "missile": 214,
-      "strike": 170,
-      "drone": 103,
+      "missile": 213,
+      "strike": 169,
+      "drone": 105,
       "airstrike": 95,
       "explosion": 87,
       "movement": 37,
@@ -243,25 +239,25 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 491,
-      "high": 372,
-      "low": 134,
+      "medium": 493,
+      "high": 369,
+      "low": 135,
       "critical": 3
     },
     "attacker_counts": {
-      "unknown": 593,
-      "iran": 312,
+      "unknown": 594,
+      "iran": 311,
       "israel": 63,
       "usa": 32
     },
     "top_locations": [
       {
         "name": "Iran",
-        "count": 289
+        "count": 288
       },
       {
         "name": "Unknown",
-        "count": 247
+        "count": 249
       },
       {
         "name": "Jordan",
@@ -301,7 +297,7 @@
       },
       {
         "name": "Tehran",
-        "count": 17
+        "count": 16
       },
       {
         "name": "Syria",
@@ -319,11 +315,11 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 427
+        "count": 425
       },
       {
         "name": "Unknown",
-        "count": 247
+        "count": 249
       },
       {
         "name": "Jordan",
@@ -364,32 +360,38 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10151,
+    "totalCount": 10154,
     "spotlight": {
       "event": {
-        "id": "3man3m6al3w00",
-        "timestamp": "2026-08-14T02:11:32+00:00",
-        "location": "YEM",
-        "origin": "YEM",
+        "id": "3qjbcfau5uy00",
+        "timestamp": "2026-08-14T08:50:18+00:00",
+        "location": "OMN",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "movement",
+        "type": "strike",
         "severity": "medium",
-        "description": "Houthi forces capture Al-'Uraysh and Mafraq Al-Mukha on Route 423 toward Mokha port; cut off Taiz-Al Hodeidah Road south of Hays in Al-Khawkha sector",
-        "descriptionHe": "כוחות החות'ים כובשים את אל-עוראיש ומפרק אל-מוخה בדרך 423 לעבר נמל מוכה; חותכים את כביש טאיז-אל חדידה דרומית להייס בסקטור אל-חווכה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/82218"
+        "description": "Iranian suicide drone strikes oil tanker in Strait of Hormuz, causing damage",
+        "descriptionHe": "כטב\"ם אובה-מיתי איראני תוקף מיכלית נפט בהורמוז, גורם לנזק",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/128472"
       },
-      "headline": "Houthis seize key Yemen port positions, cut major supply route",
-      "headlineHe": "חות'ים תופסים עמדות אסטרטגיות בנמל תימן, חותכים דרך אספקה עיקרית",
-      "summary": "The capture extends Houthi control over critical infrastructure in southwestern Yemen and threatens further regional disruption of shipping and humanitarian access.",
-      "summaryHe": "הכיבוש מרחיב את השליטה של חות'ים בתשתיות קריטיות בדרום-מערב תימן וחוזר בחזקה על הפרעות אזוריות בהובלה והגישה הומניטרית.",
-      "pickedAt": "2026-08-14T06:01:48.676Z",
-      "state": "TODAY"
+      "headline": "Iranian drone strikes oil tanker in strategic Strait of Hormuz",
+      "headlineHe": "כלי טיס ללא טייס איראני תוקף טנקר נפט בתעלה אסטרטגית",
+      "summary": "The attack on a commercial vessel marks an escalation in Iran-linked maritime attacks targeting global energy infrastructure amid broader regional tensions.",
+      "summaryHe": "ההתקפה על הספינה המסחרית מסמנת הסלמה בהתקפות ימיות הקשורות לאיראן על תשתיות אנרגיה גלובליות בעקבות מתחים אזוריים רחבים יותר.",
+      "pickedAt": "2026-08-14T09:15:51.863Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-14T07:54:03.381Z",
+    "lastUpdated": "2026-08-14T09:27:03.437Z",
     "stale": false,
     "viewerCount": 2,
     "ceasefire": false
@@ -932,46 +934,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 90,
+      "internet": 89,
       "cellular": null,
-      "lastUpdate": "2026-08-14T07:31:35.549Z",
+      "lastUpdate": "2026-08-14T09:01:34.934Z",
       "internetHistory": [
-        {
-          "t": "2026-08-13T07:30:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-13T07:40:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-13T07:50:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-13T08:00:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-13T08:10:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-13T08:20:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-13T08:30:00.000Z",
-          "v": 89
-        },
-        {
-          "t": "2026-08-13T08:40:00.000Z",
-          "v": 89
-        },
-        {
-          "t": "2026-08-13T08:50:00.000Z",
-          "v": 89
-        },
         {
           "t": "2026-08-13T09:00:00.000Z",
           "v": 90
@@ -1511,22 +1477,58 @@
         {
           "t": "2026-08-14T07:20:00.000Z",
           "v": 90
+        },
+        {
+          "t": "2026-08-14T07:30:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T07:40:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-14T07:50:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T08:00:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T08:10:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T08:20:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T08:30:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T08:40:00.000Z",
+          "v": 89
+        },
+        {
+          "t": "2026-08-14T08:50:00.000Z",
+          "v": 89
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-14T07:31:35.549Z"
+    "lastUpdated": "2026-08-14T09:01:34.934Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e3",
+      "id": "iranstrike-c4f2a1e9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-13T20:59:02Z",
+      "date": "2026-08-14T08:50:18Z",
       "title": "IranStrike event",
-      "description": "Iran strikes UAE shipping & infrastructure; 2 cruise missiles hit Strait of Hormuz; claims US base damage",
+      "description": "Iran strikes tanker, vessels in Strait of Hormuz; targets oil infrastructure",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -1534,7 +1536,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes uae shipping & infrastructure;",
+      "attacker_evidence": "iran strikes tanker, vessels in strait of hormuz;",
       "location": "Persian Gulf",
       "country": "Persian Gulf",
       "latitude": null,
@@ -1547,32 +1549,32 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e3",
-        "text": "Iran strikes UAE shipping & infrastructure; 2 cruise missiles hit Strait of Hormuz; claims US base damage",
-        "textHe": "איראן תקפה ספינות ותשתיות בחו״ם; שתי טילים נחתו בתעלת הורמוז; טוענת נזק לבסיס אמריקני",
+        "id": "c4f2a1e9",
+        "text": "Iran strikes tanker, vessels in Strait of Hormuz; targets oil infrastructure",
+        "textHe": "איראן תקפה טנקר וספינות בתעלת הורמוז; מטרות בתשתיות נפט",
         "severity": "high",
-        "timestamp": "2026-08-13T20:59:02+00:00",
+        "timestamp": "2026-08-14T08:50:18+00:00",
         "entityIds": [
           "IRN",
           "ARE",
-          "USA"
+          "OMN"
         ],
         "eventIds": [
-          "3k3xyb6jdbw00",
-          "tpwnpay8w9s0"
+          "3qjbcfau5uy00",
+          "3k3xyb6jdbw00"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-b4e9d2f5",
+      "id": "iranstrike-b7e3d2c5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-14T02:11:32Z",
       "title": "IranStrike event",
-      "description": "Houthis launch major offensive in Yemen; capture Mokha port, Al-'Uraysh, Mafraq Al-Mukha; cut Taiz road",
+      "description": "Houthis capture Mokha positions, cut Taiz-Hodeidah road; offensive ongoing",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1593,9 +1595,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b4e9d2f5",
-        "text": "Houthis launch major offensive in Yemen; capture Mokha port, Al-'Uraysh, Mafraq Al-Mukha; cut Taiz road",
-        "textHe": "חוטים משיקים התקפה גדולה בתימן; כבשו עיר מוכה, אל-עוריש וקטעו דרך לטעיז",
+        "id": "b7e3d2c5",
+        "text": "Houthis capture Mokha positions, cut Taiz-Hodeidah road; offensive ongoing",
+        "textHe": "החות'ים תפסו עמדות במוכה, חתכו כביש טאיז-חודיידה; התקפה מתמשכת",
         "severity": "high",
         "timestamp": "2026-08-14T02:11:32+00:00",
         "entityIds": [
@@ -1610,14 +1612,14 @@
       }
     },
     {
-      "id": "iranstrike-c6b3e4a1",
+      "id": "iranstrike-a6f9b1d3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-13T23:50:44Z",
+      "date": "2026-08-14T08:41:43Z",
       "title": "IranStrike event",
-      "description": "Iran launches Shahed-136 drone attack on Erbil; US lost 45 MQ-9s; Iran boosting missile production capacity",
+      "description": "Houthis, Iran strike Saudi oil; exports collapse amid refinery/tanker attacks",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -1625,7 +1627,99 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches shahed-136 drone attack on erbil;",
+      "attacker_evidence": "houthis, iran strike saudi oil;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a6f9b1d3",
+        "text": "Houthis, Iran strike Saudi oil; exports collapse amid refinery/tanker attacks",
+        "textHe": "החות'ים ואיראן תוקפים נפט סעודי; ייצוא קורס לאחור מהתקפות",
+        "severity": "high",
+        "timestamp": "2026-08-14T08:41:43+00:00",
+        "entityIds": [
+          "YEM",
+          "IRN",
+          "SAU"
+        ],
+        "eventIds": [
+          "141sbokwflsw0",
+          "2wjgflg9ppo00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-d8e7c2f4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-13T17:25:17Z",
+      "title": "IranStrike event",
+      "description": "Iran claims destruction of U.S. assets in UAE; lost 45 MQ-9 drones reported",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d8e7c2f4",
+        "text": "Iran claims destruction of U.S. assets in UAE; lost 45 MQ-9 drones reported",
+        "textHe": "איראן טוענת הרסת נכסי ארה\"ב בעאו; דווח על אובדן 45 מזל\"ט",
+        "severity": "medium",
+        "timestamp": "2026-08-13T17:25:17+00:00",
+        "entityIds": [
+          "IRN",
+          "USA",
+          "ARE"
+        ],
+        "eventIds": [
+          "tpwnpay8w9s0",
+          "2u1nqt7asui00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-e5f6a3b2",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-13T23:50:44Z",
+      "title": "IranStrike event",
+      "description": "Iran strikes Erbil with Shahed-136; Israeli assessment: Iranian capacity restored by mid-2027",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran strikes erbil with shahed-136;",
       "location": "Erbil",
       "country": "Iraq",
       "latitude": 36.1911,
@@ -1638,43 +1732,43 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c6b3e4a1",
-        "text": "Iran launches Shahed-136 drone attack on Erbil; US lost 45 MQ-9s; Iran boosting missile production capacity",
-        "textHe": "איראן שיגרה מל״טי שאהד לארביל; ארה״ב איבדה 45 מל״טים; איראן מגבירה ייצור טילים",
-        "severity": "high",
+        "id": "e5f6a3b2",
+        "text": "Iran strikes Erbil with Shahed-136; Israeli assessment: Iranian capacity restored by mid-2027",
+        "textHe": "איראן תקפה ארביל בשהד-136; הערכה: יכולת איראן שוקמת עד אמצע 2027",
+        "severity": "medium",
         "timestamp": "2026-08-13T23:50:44+00:00",
         "entityIds": [
           "IRN",
-          "IRQ",
-          "USA"
+          "IRQ"
         ],
         "eventIds": [
           "370rbn8bdc200",
-          "2kqo04o9eho00",
-          "2u1nqt7asui00"
+          "2kqo04o9eho00"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-d5c7f1b2",
+      "id": "iranstrike-3qjbcfau5uy00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-13T15:47:18Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128472",
+      "date": "2026-08-14T08:50:18Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones; IDF strikes southern Lebanon positions",
-      "category": "other",
+      "description": "Iranian suicide drone strikes oil tanker in Strait of Hormuz, causing damage",
+      "category": "drone",
       "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes southern lebanon positions חוטים תקפו מתקני סעודי",
-      "location": "Lebanon",
-      "country": "Lebanon",
+      "attacker_evidence": "omn iranian suicide drone strikes oil tanker in strait of hormuz, causing damage כט",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1685,26 +1779,116 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d5c7f1b2",
-        "text": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones; IDF strikes southern Lebanon positions",
-        "textHe": "חוטים תקפו מתקני סעודי ארמקו בג'יזאן; צה״ל תקף עמדות בדרום לבנון",
+        "id": "3qjbcfau5uy00",
+        "timestamp": "2026-08-14T08:50:18+00:00",
+        "location": "OMN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-08-13T15:47:18+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU",
-          "ISR",
-          "LBN"
+        "description": "Iranian suicide drone strikes oil tanker in Strait of Hormuz, causing damage",
+        "descriptionHe": "כטב\"ם אובה-מיתי איראני תוקף מיכלית נפט בהורמוז, גורם לנזק",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
         ],
-        "eventIds": [
-          "2wjgflg9ppo00",
-          "2c00fcjallzw0"
-        ],
-        "sourceCount": 2
+        "sourceUrl": "https://t.me/abualiexpress/128472"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-33bkf78rws800",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/19821",
+      "date": "2026-08-14T08:43:38Z",
+      "title": "IranStrike event",
+      "description": "U.S. Central Command announces creation of Task Force Falcon Strike, first multinational multi-domain attack drone task force in Middle East with personnel from U.S. and regional partners",
+      "category": "drone",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "33bkf78rws800",
+        "timestamp": "2026-08-14T08:43:38+00:00",
+        "location": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "U.S. Central Command announces creation of Task Force Falcon Strike, first multinational multi-domain attack drone task force in Middle East with personnel from U.S. and regional partners",
+        "descriptionHe": "הפיקוד המרכזי של ארה\"ב מכריז על יצירת כוח התגמול פלקון שריק, כוח מזל\"טי התקפה רב-תחום רב-לאומי ראשון במזרח התיכון עם כוח אדם מארה\"ב ושותפים אזוריים",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/19821"
+      }
+    },
+    {
+      "id": "iranstrike-141sbokwflsw0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82222",
+      "date": "2026-08-14T08:41:43Z",
+      "title": "IranStrike event",
+      "description": "Saudi oil exports collapsing as a result of Houthi attacks on oil refineries and ships",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "141sbokwflsw0",
+        "timestamp": "2026-08-14T08:41:43+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Saudi oil exports collapsing as a result of Houthi attacks on oil refineries and ships",
+        "descriptionHe": "ייצוא הנפט הסעודי קורס כתוצאה מהתקפות של חות'ים על בתי זיקוק ספינות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82222"
+      }
+    },
     {
       "id": "iranstrike-3man3m6al3w00",
       "source": "IranStrike",
@@ -46846,140 +47030,6 @@
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79359"
       }
-    },
-    {
-      "id": "iranstrike-3fvknscppqu00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79357",
-      "date": "2026-07-11T23:52:55Z",
-      "title": "IranStrike event",
-      "description": "Reports of air defense activity in Tehran",
-      "category": "infrastructure",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Tehran",
-      "country": "Iran",
-      "latitude": 35.6892,
-      "longitude": 51.389,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "tehran",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3fvknscppqu00",
-        "timestamp": "2026-07-11T23:52:55+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "high",
-        "description": "Reports of air defense activity in Tehran",
-        "descriptionHe": "דיווחים על פעילות הגנה אווירית בטהראן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79357"
-      }
-    },
-    {
-      "id": "iranstrike-98fpahncutc0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79353",
-      "date": "2026-07-11T23:42:47Z",
-      "title": "IranStrike event",
-      "description": "U.S. Central Command launches third round of strikes against Iran in response to IRGC attack on Cyprus-flagged container ship M/V GFS Galaxy in Strait of Hormuz",
-      "category": "strike",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "hird round of strikes against iran in response to irgc attack on cyprus-flagged container ship m/v gfs galaxy i",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "98fpahncutc0",
-        "timestamp": "2026-07-11T23:42:47+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "U.S. Central Command launches third round of strikes against Iran in response to IRGC attack on Cyprus-flagged container ship M/V GFS Galaxy in Strait of Hormuz",
-        "descriptionHe": "פקודת מרכז ארה\"ב משיקה סיבוב שלישי של תקיפות נגד איראן בתגובה להתקפת משמרות המהפכה על ספינת מטענים בדגל קפריסין ב\"מצר הורמוז",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79353"
-      }
-    },
-    {
-      "id": "iranstrike-19ahjrwfad4w0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79352",
-      "date": "2026-07-11T23:42:29Z",
-      "title": "IranStrike event",
-      "description": "American ATACMS and HIMARS missiles launched from Kuwait strike targets in Iran",
-      "category": "missile",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "missiles launched from kuwait strike targets in iran טילי atacms ו/או himars אמריקאיים משוגרים מכويתית",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "19ahjrwfad4w0",
-        "timestamp": "2026-07-11T23:42:29+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "American ATACMS and HIMARS missiles launched from Kuwait strike targets in Iran",
-        "descriptionHe": "טילי ATACMS ו/או HIMARS אמריקאיים משוגרים מכويתית תוקפים מטרות באיראן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79352"
-      }
     }
   ],
   "map_events": [
@@ -57117,50 +57167,6 @@
         "descriptionHe": "פיצוצים דווחו בקשם וחבהר",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79359"
-      }
-    },
-    {
-      "id": "iranstrike-3fvknscppqu00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79357",
-      "date": "2026-07-11T23:52:55Z",
-      "title": "IranStrike event",
-      "description": "Reports of air defense activity in Tehran",
-      "category": "infrastructure",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Tehran",
-      "country": "Iran",
-      "latitude": 35.6892,
-      "longitude": 51.389,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "tehran",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3fvknscppqu00",
-        "timestamp": "2026-07-11T23:52:55+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "high",
-        "description": "Reports of air defense activity in Tehran",
-        "descriptionHe": "דיווחים על פעילות הגנה אווירית בטהראן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79357"
       }
     }
   ]
