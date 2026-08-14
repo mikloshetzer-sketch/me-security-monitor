@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-14 20:47 UTC",
+    "updated": "2026-08-14 22:42 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,54 +8,45 @@
   "summary": {
     "period_start": "2026-08-08",
     "period_end": "2026-08-14",
-    "total_events": 137,
-    "total_risk": 106.33,
-    "normalized_risk_score": 42.5,
+    "total_events": 104,
+    "total_risk": 69.58,
+    "normalized_risk_score": 27.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 6,
-    "political": 14,
-    "other": 96
+    "military": 11,
+    "security": 3,
+    "political": 7,
+    "other": 83
   },
   "source_counts": {
-    "news": 131,
+    "news": 98,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 34.73
-    },
-    {
-      "name": "Yemen",
-      "risk": 18.4
+      "risk": 23.49
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.8
+      "risk": 12.75
     },
     {
       "name": "Israel",
-      "risk": 11.2
+      "risk": 7.4
+    },
+    {
+      "name": "Yemen",
+      "risk": 5.2
     },
     {
       "name": "West Bank",
-      "risk": 9.2
+      "risk": 4.55
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-08-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U"
-    },
     {
       "score": 2.7,
       "date": "2026-08-13",
@@ -88,33 +79,6 @@
       "date": "2026-08-13",
       "category": "military",
       "source_type": "news",
-      "title": "Will all-out war in Yemen reignite as the Houthis escalate attacks? - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNUx1NlFUQ0lkSkpES0NkeXpmYlQ3anlWLVQtSi1CSTNaTUJRVGlpM3F0RFdTX0U0c19QNGFqZlE1Y1g0Z2FjZnRCSVIzYklRYTZfcUMyWjBRbHltY0w3WUxrSXJZX3RUaGNyRUkwZmhGNnpXM21DTG5naWs0WEFvM01EcFZpaEllSFdpeGwtTHU4LV8ySWF6U25iNlduVDZ5WWVRSF930gGrAUFVX3lxTE5wd1RXTmdZalhXRHlxQXd0TXNyR1NwaGdkR0xLb3pQUmRYYlhQZnEzNXVzVDZpVm1hSENhQnVzTFhrU1daeVQtUkY3ZmNGTzlkV2E3X2VROEVRWWVKNjZhTXFTZGRyYjNOczVvT3VIanJNLTdfU3VBUy1GcDNORGp4ZVRYVXRxX2hrVVhlbzIyaHVCWUxDOENNdEtGSVFsam9JUzJSQVNSbTl2dw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes in south Lebanon a ‘violation of international law’: PM - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRnB4UF9QTFotQjZJTEhMQWhtX0VqQ2czNjlLMFBzYlJ6enBpQnE2anVNaGtNR0RnUEJoeFI2OW9EV1NvUUtZVHR2WkZWRU5NR0lzUnhrMnhUbm9XN2Z3aXZzV081cFV1YUVqVmF2bE1YS1NQX04yRmZhYXR6eWc3RnppZTlldDhTb3ZIY0dWYUJvamxZNjl1cG5SOFk3ck5waVNmSlhaRC16TlUtTkHSAbMBQVVfeXFMT3d0QnR0SEVDM3lfTWtxejVDOVotWGpCRFJsUHZyamZxVW1RWWVMMlBxT3IxUlFYaVF0aHVNTkNFdXVCY200RTZnN1M1V2pvZ3hoLTB5RnZxVDlPY2NpWmp1MURSUlZGYkZOX0pLX3RDd2RYdTBpblJyVjNJNmdRWHp6eGVVbGNkX21kT2lvV2pKeEVwMjRKWi1lci1VaUNIS1Z5cmF3WElBbV9iaFV0SmtibTA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemeni forces say Houthi attack repelled in Taiz amid escalation - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObG1mck84WmVJcXVfRFQ3M2pxMU9YLVNaaUd3dTdZQ2djQWo0TWJyS0lSUW80c2lzUmJaZnJqdUhuREdVR2hZMkJQdlJHZVF1NTMzQWhTRTNSRTdNTzhmQU91amNkR0JPLVlOVVFCcFBlemlBeTNHclRTaE9WT2VEcmJqaFVyMml1Ylk3WktiV3VJOUdQVzJiZXEzbERDMkFHU2d4dHJPU0XSAa4BQVVfeXFMTWthMFhZcFFuYVZUZktxRGdjTTBCSFFNaXhzXzh5dzlLNkdZblg4c2w5WW9RTllxMWx4MTlUSDdFUFlncjZLT3k1YTVHb0Fha0lLQ29LTlBhYUVuay1IbTRid2s3V3VORzV0bGJJRVRKWXo1bW9OT1RBdktkaUMzdGFhbmlZZEdIUGNRbDNmX1JMNlhydGVha0tEblV2bXZ1UE9iT2ZiOTlCc1locXJ3"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-13",
-      "category": "military",
-      "source_type": "news",
       "title": "Gaza City police chief killed as Israel pushes on with deadly strikes - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQR1ZYTzVwVTRyd01hTV9WZ0hDeUxIeldPc1RNNjVQOFo5U2NSdUJTV0k4ZUJnMmJtR3Z0c0hYQ1FIMmp1dkMyWkVzVDJEaVBfXzJYZFI2cEg1TWpya2NSdC0zbDNkRnRQbW5MakRyOGktN0xIREd3bGt4UG9JbEJ6UFNCSFlhQk81MFRYTTA2MzhIeDhfeTFsYXNQenpaT3EyXzZRUDJaVGlRVjU3aVdR0gG0AUFVX3lxTE81WERIWXdheUE3Vm9SRGFjWk1fSm40RkdkUjJ2dVFpMThvTUhGbVdsZXM3RVRsblA4YWZyc0dKaE9Pc2ltam5COXBsMHNQeWJRV0k1dndMY19yakNVSEFWLUJ2NnlYVlV6QlItNXZXWHhSOG9pUEo2WFVLbGtBV1p3Z2JVb1FvU21LdEJDNDZNRkdrOXFuYTkwWEJXSDVaM3NpckZ4ZEdlS0VCNUtwamFEOFBVMw"
@@ -136,6 +100,42 @@
       "title": "New attacks on shipping as Iran war talks hit fresh impasse - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVzI4ZllHeXZmVDVJVE40M0w5NkYtdkFzM0RyYlZvY1pXbEJoc1d4RHNvVWxTem1kMEhGNUxmc0tZZmZ2ZkpZamtDNkd6bjRTVXhCVEF6dGhOSXltR0RQc3RPc0RFUzctZ00xRjAzX0hwNy1oYlU0a0dMYU9iUjdqYXZ4ZWM5YXhBMUhEREduYVo2QkVsT2ktQ19NaFNpUF85TmhFcnF1REktbFZfRklXb0EtbzZsLUZ1Vk53TFRR"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-08-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli troops clash with settlers besieging Palestinian homes in West Bank - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTzBUMnJpVHJxTTZTRmFPbDdrN2pHb3ozZDdDSVpoOEhGOGhaMFJJOG1hTENuMTRaeFU3MVIzX3hIa2Q4Nk1RYjN4WGVfR0JrOVVpQUhFTWs5TWZLdEdwMER5cDVDTWFiWjFKcGt2aEJsSzhNZDZpSFJjSlpOWnFGM2tFV1ZJSmNLY1NHYWdUOEJFNWZLVW42NGwyRzVTQUswSXZUMEtzM3dsN1dja0JRZFdtSU9IOVdnVUg3aWU1ZWkzVkFX"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-08-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "‘Burn in hell’: Israeli settlers spread hate through graffiti, attacks - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbERKRHloOGpxMFI1QXQzVWJpVkNDaXl6T2ZqMWlmN2lzXzVpQ1ZxMllmY2FHSkJVWGl5Uy1DSU82VUVaamdyRnIwME9DUnRraFVjb3ZaZG9FM3JtVWs4WjJpWWlLN1dwTWpEMEVCdFpWemV3dTZVTW43VEVGSXZIMTkxR3BaUzVBQkpFWEdQYWlRaGtiS2NkX2ZoNGJyMVBiVDJ3V0NPY0FqYWJ1Z0kxTdIBtgFBVV95cUxOUkJYWW00LVdqSFBoYlVoUEpwYzBXSE9UU1pmYVBrdGs2dVJrMFJ6OHhQZXcwSmtqenNray14WUdBR1AtZlFtMHN1ZDhNM3VrOHQ1cnllcTU0REtXQk1YbHVKYUJmaTFBeFJtVFQxUmhvcmNYLWVQYzJ1RHRvbFgzRFIzSWRCc2NrVFVCVHVWMjUxQnk3a1ZDSXhRQk1XS2JUNlJZVTNST2k5NEtHd2htemtiVExydw"
+    },
+    {
+      "score": 2.1,
+      "date": "2026-08-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis reportedly kill six in first deadly attack since start of Iran war",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.1,
+      "date": "2026-08-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel demolishes home of Palestinian killed during settler attack - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZkVoRlpFSHZNUk5MODFRbHRzMzE5aWdvTTJZSDJkX0NiU2lfSkdUdXlydkhXcUFTLWJBUWNqMWFTd2I3aGlXMXRVLW43ME91M241bHoxckM2aUdyRzBSYTRRTnI4VnVpdXN4XzB5LTdpOXlaMnowMTNGWDJiZ09yN2hSR0FJbHpMRnoyeG1GR0lhdlRsT2EtRjg5NXBRV210Mk5LalJVanRCYk4xZ0x4SjhvQjFYY0Y50gG-AUFVX3lxTE5QWXZqX3hTOGs1Y08zd0xjVGtwQkUzMVV1Q3lER25USlR0U1JYN3dGbmE1MnpRUmFtUnh2a21jNnNFVFl0STFaeUt4d01lSE52NkxpUWRsdEJnUWpGM0dBZHZPMlYzWVl1V0VLNHFvaHNTQnpYMkNwNnRGR18tNjA5bUU2NTBnUFgwdF84VFZ0YkM2WXdWSnFuNzYzTmZpWDVjbmU2N2hfZDBiQmhCZzEteXVKYnNJNkhmTWlyalE"
     }
   ]
 }
