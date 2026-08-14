@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T00:43:42Z",
+  "generated_at": "2026-08-14T03:13:50Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,8 +55,8 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 227,
-    "non_mappable_events": 773,
+    "map_visualizable_events": 225,
+    "non_mappable_events": 775,
     "developments": 4
   },
   "analytics": {
@@ -64,33 +64,33 @@
     "overview": {
       "total_events": 1000,
       "earliest_event_date": "2026-07-11T23:42:29Z",
-      "latest_event_date": "2026-08-13T23:50:44Z",
-      "geocoded_events": 227,
-      "geocoded_share": 22.7,
+      "latest_event_date": "2026-08-14T02:11:32Z",
+      "geocoded_events": 225,
+      "geocoded_share": 22.5,
       "top_category": "infrastructure",
       "top_location": "Iran",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 58,
+        "current": 60,
         "previous": 68,
-        "delta": -10,
-        "percent_change": -14.7,
+        "delta": -8,
+        "percent_change": -11.8,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 752,
-        "previous": 201,
-        "delta": 551,
-        "percent_change": 274.1,
+        "current": 750,
+        "previous": 202,
+        "delta": 548,
+        "percent_change": 271.3,
         "direction": "increase"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-11",
-        "count": 5
+        "count": 3
       },
       {
         "date": "2026-07-12",
@@ -223,30 +223,34 @@
       {
         "date": "2026-08-13",
         "count": 10
+      },
+      {
+        "date": "2026-08-14",
+        "count": 2
       }
     ],
     "category_counts": {
-      "infrastructure": 252,
+      "infrastructure": 253,
       "missile": 214,
       "strike": 170,
       "drone": 103,
-      "airstrike": 96,
-      "explosion": 88,
+      "airstrike": 95,
+      "explosion": 87,
       "movement": 37,
-      "ground": 16,
+      "ground": 17,
       "alert": 10,
       "defense": 10,
       "political": 4
     },
     "severity_counts": {
-      "medium": 490,
-      "high": 373,
+      "medium": 491,
+      "high": 372,
       "low": 134,
       "critical": 3
     },
     "attacker_counts": {
-      "unknown": 592,
-      "iran": 313,
+      "unknown": 593,
+      "iran": 312,
       "israel": 63,
       "usa": 32
     },
@@ -257,7 +261,7 @@
       },
       {
         "name": "Unknown",
-        "count": 245
+        "count": 247
       },
       {
         "name": "Jordan",
@@ -265,7 +269,7 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 49
+        "count": 48
       },
       {
         "name": "Iraq",
@@ -281,7 +285,7 @@
       },
       {
         "name": "Erbil",
-        "count": 24
+        "count": 23
       },
       {
         "name": "Red Sea",
@@ -315,11 +319,11 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 428
+        "count": 427
       },
       {
         "name": "Unknown",
-        "count": 245
+        "count": 247
       },
       {
         "name": "Jordan",
@@ -327,7 +331,7 @@
       },
       {
         "name": "Iraq",
-        "count": 72
+        "count": 71
       },
       {
         "name": "Lebanon",
@@ -360,40 +364,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10149,
+    "totalCount": 10151,
     "spotlight": {
       "event": {
-        "id": "370rbn8bdc200",
-        "timestamp": "2026-08-13T23:50:44+00:00",
-        "location": "IRQ",
-        "origin": "IRN",
+        "id": "33azli6t2c200",
+        "timestamp": "2026-08-14T02:00:40+00:00",
+        "location": "YEM",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
+        "type": "movement",
         "severity": "medium",
-        "description": "Iran conducts Shahed-136 drone attack against Erbil, Iraqi Kurdistan",
-        "descriptionHe": "איראן ערכה התקפת מזל\"ט Shahed-136 נגד אربיל בכردיסטן עיראקית",
+        "description": "Houthi forces initiate offensive against Saudi-backed forces in Mokha port city, capturing multiple strategic positions with ongoing clashes",
+        "descriptionHe": "כוחות חוות'י משחררים התקפה נגד כוחות בתמיכת סעודיה בעיר הנמל מוקא, תופסים מספר עמדות אסטרטגיות עם קרבות בעקצה",
         "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "drone",
-            "count": 1
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/82209"
+        "sourceUrl": "https://t.me/CIG_telegram/82215"
       },
-      "headline": "Iran fires drone at Kurdish Iraq as regional tensions escalate",
-      "headlineHe": "איראן משגרת כלי רחוף לעבר כורדיסטן עירק כתוגבר המתח האזורי",
-      "summary": "The attack marks Iran's direct involvement in cross-border strikes as U.S.-Iran tensions and proxy conflicts intensify across the Middle East.",
-      "summaryHe": "ההתקפה מסמנת את המעורבות הישירה של איראן בהתקפות חוצות גבולות כאשר המתח בין ארה\"ב לאיראן וסכסוכי פרוקסי מתעצמים ברחבי המזרח התיכון.",
-      "pickedAt": "2026-08-14T00:15:51.017Z",
+      "headline": "Houthis Launch Major Offensive Against Saudi Forces in Mokha",
+      "headlineHe": "חות'ים משיקים התקפה גדולה נגד כוחות סעודיים במוכה",
+      "summary": "The assault represents an escalation of Houthi operations in Yemen's strategic port region, building on territorial gains along key supply routes.",
+      "summaryHe": "התקפה זו מייצגת הסלמה בפעילויות חות'ים באזור הנמל האסטרטגי של תימן, ובנויה על רקע שיגור שליטה בשטחים לאורך נתיבי אספקה חיוניים.",
+      "pickedAt": "2026-08-14T03:01:45.533Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-14T00:42:03.408Z",
+    "lastUpdated": "2026-08-14T03:09:03.434Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 2,
     "ceasefire": false
   },
   "summary": {
@@ -936,68 +934,8 @@
     "vitals": {
       "internet": 91,
       "cellular": null,
-      "lastUpdate": "2026-08-14T00:30:43.113Z",
+      "lastUpdate": "2026-08-14T03:00:42.750Z",
       "internetHistory": [
-        {
-          "t": "2026-08-13T00:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T00:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T00:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-13T01:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-13T01:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-13T01:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T01:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T01:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T01:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T02:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T02:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-13T02:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-13T02:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-13T02:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-13T02:50:00.000Z",
-          "v": 91
-        },
         {
           "t": "2026-08-13T03:00:00.000Z",
           "v": 91
@@ -1509,22 +1447,82 @@
         {
           "t": "2026-08-14T00:10:00.000Z",
           "v": 91
+        },
+        {
+          "t": "2026-08-14T00:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T00:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T00:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T00:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T01:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T01:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T01:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T01:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T01:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T01:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T02:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T02:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T02:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T02:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-14T02:40:00.000Z",
+          "v": 91
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-14T00:30:43.113Z"
+    "lastUpdated": "2026-08-14T03:00:42.750Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2e1c9",
+      "id": "iranstrike-a7f2c1e3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-13T23:50:44Z",
+      "date": "2026-08-13T20:59:02Z",
       "title": "IranStrike event",
-      "description": "Iran strikes UAE oil infrastructure, Iraqi Kurdistan; claims U.S. asset destruction",
+      "description": "Iran strikes UAE shipping & infrastructure; 2 cruise missiles hit Strait of Hormuz; claims US base damage",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -1532,9 +1530,9 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes uae oil infrastructure, iraqi kurdistan;",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker_evidence": "iran strikes uae shipping & infrastructure;",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1545,19 +1543,17 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2e1c9",
-        "text": "Iran strikes UAE oil infrastructure, Iraqi Kurdistan; claims U.S. asset destruction",
-        "textHe": "איראן תקפה תשתיות נפט בעמ״א וכردיסתן עיראקית; טוענת להשמדת נכסים אמריקאיים",
+        "id": "a7f2c1e3",
+        "text": "Iran strikes UAE shipping & infrastructure; 2 cruise missiles hit Strait of Hormuz; claims US base damage",
+        "textHe": "איראן תקפה ספינות ותשתיות בחו״ם; שתי טילים נחתו בתעלת הורמוז; טוענת נזק לבסיס אמריקני",
         "severity": "high",
-        "timestamp": "2026-08-13T23:50:44+00:00",
+        "timestamp": "2026-08-13T20:59:02+00:00",
         "entityIds": [
           "IRN",
           "ARE",
-          "IRQ",
           "USA"
         ],
         "eventIds": [
-          "370rbn8bdc200",
           "3k3xyb6jdbw00",
           "tpwnpay8w9s0"
         ],
@@ -1565,15 +1561,156 @@
       }
     },
     {
-      "id": "iranstrike-b4c6d2e8",
+      "id": "iranstrike-b4e9d2f5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-14T02:11:32Z",
+      "title": "IranStrike event",
+      "description": "Houthis launch major offensive in Yemen; capture Mokha port, Al-'Uraysh, Mafraq Al-Mukha; cut Taiz road",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b4e9d2f5",
+        "text": "Houthis launch major offensive in Yemen; capture Mokha port, Al-'Uraysh, Mafraq Al-Mukha; cut Taiz road",
+        "textHe": "חוטים משיקים התקפה גדולה בתימן; כבשו עיר מוכה, אל-עוריש וקטעו דרך לטעיז",
+        "severity": "high",
+        "timestamp": "2026-08-14T02:11:32+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "3man3m6al3w00",
+          "33azli6t2c200"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-c6b3e4a1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-13T23:50:44Z",
+      "title": "IranStrike event",
+      "description": "Iran launches Shahed-136 drone attack on Erbil; US lost 45 MQ-9s; Iran boosting missile production capacity",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran launches shahed-136 drone attack on erbil;",
+      "location": "Erbil",
+      "country": "Iraq",
+      "latitude": 36.1911,
+      "longitude": 44.0092,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "erbil",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c6b3e4a1",
+        "text": "Iran launches Shahed-136 drone attack on Erbil; US lost 45 MQ-9s; Iran boosting missile production capacity",
+        "textHe": "איראן שיגרה מל״טי שאהד לארביל; ארה״ב איבדה 45 מל״טים; איראן מגבירה ייצור טילים",
+        "severity": "high",
+        "timestamp": "2026-08-13T23:50:44+00:00",
+        "entityIds": [
+          "IRN",
+          "IRQ",
+          "USA"
+        ],
+        "eventIds": [
+          "370rbn8bdc200",
+          "2kqo04o9eho00",
+          "2u1nqt7asui00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-d5c7f1b2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-13T15:47:18Z",
       "title": "IranStrike event",
-      "description": "Houthis target Saudi oil; drone strike reports direct hits on Aramco facilities",
+      "description": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones; IDF strikes southern Lebanon positions",
       "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes southern lebanon positions חוטים תקפו מתקני סעודי",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d5c7f1b2",
+        "text": "Houthis strike Saudi Aramco oil facilities in Jizan with 2 drones; IDF strikes southern Lebanon positions",
+        "textHe": "חוטים תקפו מתקני סעודי ארמקו בג'יזאן; צה״ל תקף עמדות בדרום לבנון",
+        "severity": "medium",
+        "timestamp": "2026-08-13T15:47:18+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU",
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "2wjgflg9ppo00",
+          "2c00fcjallzw0"
+        ],
+        "sourceCount": 2
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-3man3m6al3w00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82218",
+      "date": "2026-08-14T02:11:32Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces capture Al-'Uraysh and Mafraq Al-Mukha on Route 423 toward Mokha port; cut off Taiz-Al Hodeidah Road south of Hays in Al-Khawkha sector",
+      "category": "infrastructure",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -1593,84 +1730,41 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b4c6d2e8",
-        "text": "Houthis target Saudi oil; drone strike reports direct hits on Aramco facilities",
-        "textHe": "חות'ים תוקפים נפט סעודי; דו״ם לדיווחי פגיעה ישירה בת施עות ארמקו",
+        "id": "3man3m6al3w00",
+        "timestamp": "2026-08-14T02:11:32+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
         "severity": "medium",
-        "timestamp": "2026-08-13T15:47:18+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "2wjgflg9ppo00"
-        ],
-        "sourceCount": 1
+        "description": "Houthi forces capture Al-'Uraysh and Mafraq Al-Mukha on Route 423 toward Mokha port; cut off Taiz-Al Hodeidah Road south of Hays in Al-Khawkha sector",
+        "descriptionHe": "כוחות החות'ים כובשים את אל-עוראיש ומפרק אל-מוخה בדרך 423 לעבר נמל מוכה; חותכים את כביש טאיז-אל חדידה דרומית להייס בסקטור אל-חווכה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82218"
       }
     },
     {
-      "id": "iranstrike-c5d7e3f9",
+      "id": "iranstrike-33azli6t2c200",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-13T05:48:01Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82215",
+      "date": "2026-08-14T02:00:40Z",
       "title": "IranStrike event",
-      "description": "IDF strikes southern Lebanon villages; multiple airstrikes in Tyre and Nabatieh",
-      "category": "other",
+      "description": "Houthi forces initiate offensive against Saudi-backed forces in Mokha port city, capturing multiple strategic positions with ongoing clashes",
+      "category": "ground",
       "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes southern lebanon villages;",
-      "location": "Nabatieh",
-      "country": "Lebanon",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "nabatieh",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "c5d7e3f9",
-        "text": "IDF strikes southern Lebanon villages; multiple airstrikes in Tyre and Nabatieh",
-        "textHe": "צה״ל תוקף כפרים בדרום לבנון; מכות אויר מרובות בצור ובנבטיה",
-        "severity": "medium",
-        "timestamp": "2026-08-13T05:48:01+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "2c00fcjallzw0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-d6e8f4a0",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-13T10:57:30Z",
-      "title": "IranStrike event",
-      "description": "U.S. delivers heavy equipment to Israel; thousands of tons military supplies arrive",
-      "category": "other",
-      "severity": "low",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1681,24 +1775,22 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d6e8f4a0",
-        "text": "U.S. delivers heavy equipment to Israel; thousands of tons military supplies arrive",
-        "textHe": "ארה״ב משלחת ציוד כבד לישראל; אלפי טונות של אמצעים צבאיים הגיעו",
-        "severity": "low",
-        "timestamp": "2026-08-13T10:57:30+00:00",
-        "entityIds": [
-          "USA",
-          "ISR"
+        "id": "33azli6t2c200",
+        "timestamp": "2026-08-14T02:00:40+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "3igt6jj3xcg00",
-          "um3rn6j5nb40"
-        ],
-        "sourceCount": 2
+        "type": "movement",
+        "severity": "medium",
+        "description": "Houthi forces initiate offensive against Saudi-backed forces in Mokha port city, capturing multiple strategic positions with ongoing clashes",
+        "descriptionHe": "כוחות חוות'י משחררים התקפה נגד כוחות בתמיכת סעודיה בעיר הנמל מוקא, תופסים מספר עמדות אסטרטגיות עם קרבות בעקצה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82215"
       }
-    }
-  ],
-  "events": [
+    },
     {
       "id": "iranstrike-370rbn8bdc200",
       "source": "IranStrike",
@@ -46841,51 +46933,6 @@
       }
     },
     {
-      "id": "iranstrike-3ptk0e4lkko00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79348",
-      "date": "2026-07-11T23:42:29Z",
-      "title": "IranStrike event",
-      "description": "U.S. airstrikes against Sirik and Bandar Abbas in southern Iran, multiple targets hit",
-      "category": "airstrike",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "and bandar abbas in southern iran, multiple targets hit תקיפות אוויריות אמריקאיות נגד סירק וברندר עבא",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3ptk0e4lkko00",
-        "timestamp": "2026-07-11T23:42:29+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "U.S. airstrikes against Sirik and Bandar Abbas in southern Iran, multiple targets hit",
-        "descriptionHe": "תקיפות אוויריות אמריקאיות נגד סירק וברندר עבאס בדרום איראן, מטרות מרובות פוגעות",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79348"
-      }
-    },
-    {
       "id": "iranstrike-19ahjrwfad4w0",
       "source": "IranStrike",
       "source_collection": "events",
@@ -46928,50 +46975,6 @@
         "descriptionHe": "טילי ATACMS ו/או HIMARS אמריקאיים משוגרים מכويתית תוקפים מטרות באיראן",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79352"
-      }
-    },
-    {
-      "id": "iranstrike-16esq0px54xs0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79350",
-      "date": "2026-07-11T23:42:29Z",
-      "title": "IranStrike event",
-      "description": "Explosions reported in Erbil",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Erbil",
-      "country": "Iraq",
-      "latitude": 36.1911,
-      "longitude": 44.0092,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "erbil",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "16esq0px54xs0",
-        "timestamp": "2026-07-11T23:42:29+00:00",
-        "location": "IRQ",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Explosions reported in Erbil",
-        "descriptionHe": "דיווחים על פיצוצים בארביל",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79350"
       }
     }
   ],
@@ -57154,95 +57157,6 @@
         "descriptionHe": "דיווחים על פעילות הגנה אווירית בטהראן",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79357"
-      }
-    },
-    {
-      "id": "iranstrike-3ptk0e4lkko00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79348",
-      "date": "2026-07-11T23:42:29Z",
-      "title": "IranStrike event",
-      "description": "U.S. airstrikes against Sirik and Bandar Abbas in southern Iran, multiple targets hit",
-      "category": "airstrike",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "and bandar abbas in southern iran, multiple targets hit תקיפות אוויריות אמריקאיות נגד סירק וברندר עבא",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3ptk0e4lkko00",
-        "timestamp": "2026-07-11T23:42:29+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "U.S. airstrikes against Sirik and Bandar Abbas in southern Iran, multiple targets hit",
-        "descriptionHe": "תקיפות אוויריות אמריקאיות נגד סירק וברندר עבאס בדרום איראן, מטרות מרובות פוגעות",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79348"
-      }
-    },
-    {
-      "id": "iranstrike-16esq0px54xs0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79350",
-      "date": "2026-07-11T23:42:29Z",
-      "title": "IranStrike event",
-      "description": "Explosions reported in Erbil",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Erbil",
-      "country": "Iraq",
-      "latitude": 36.1911,
-      "longitude": 44.0092,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "erbil",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "16esq0px54xs0",
-        "timestamp": "2026-07-11T23:42:29+00:00",
-        "location": "IRQ",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Explosions reported in Erbil",
-        "descriptionHe": "דיווחים על פיצוצים בארביל",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79350"
       }
     }
   ]
