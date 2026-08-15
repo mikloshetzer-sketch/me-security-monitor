@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-15 16:42 UTC",
+    "updated": "2026-08-15 18:48 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-08-09",
     "period_end": "2026-08-15",
-    "total_events": 134,
-    "total_risk": 110.28,
-    "normalized_risk_score": 44.1,
+    "total_events": 137,
+    "total_risk": 116.03,
+    "normalized_risk_score": 46.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
+    "military": 27,
     "security": 4,
-    "political": 15,
-    "other": 89
+    "political": 14,
+    "other": 92
   },
   "source_counts": {
-    "news": 128,
+    "news": 131,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 34.74
+      "risk": 34.44
     },
     {
       "name": "Yemen",
-      "risk": 23.05
+      "risk": 24.85
     },
     {
       "name": "Israel",
-      "risk": 15.45
+      "risk": 18.45
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.55
+      "risk": 14.0
     },
     {
       "name": "West Bank",
-      "risk": 8.45
+      "risk": 7.95
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Mocha port halts operations after Houthi attacks, port director says - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV2FPbFJIdUZSc2djcmg5V0I3VE9WY0pQaWRRdGxaM21PRXloRHluMFhBVk04SjlMVmxKdmFxblFJMFRQME5QTGFBODdSbC05LWtkNm9UM3M1Vl9kTkpTY3ppaFloSXAyV0hUU3lseUR3Rl94TlZsVDhmS0VJWE9Damc4dGRla1pRUHdENG02ZExWcnh4ZDIzbC1uUmN0cFljUDN6MGd0QlVoSVcyajZXNExMMzY4SHd6QmNoQWZDYm5udTEweGpR"
+    },
     {
       "score": 3.0,
       "date": "2026-08-15",
@@ -61,7 +70,16 @@
       "date": "2026-08-15",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strikes kill nine in southern Lebanon as attacks intensify - aljazeera.com",
+      "title": "Israeli strikes kill 11 in south Lebanon, health ministry says​ - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVXM0UF9hbGcwOHNUVUZ1Zms5RDF1UWhGVWVyRHRSbm5zdXpSSmxoMGhsLWNhUE90YkVCU2tESnBPTUFURDFFTkpzUFhRRElKdkJNQmpZV0RhOEhLS0FhSVFNUkd0dDhON0dicVl4OTc0X2RzN1gxVlJMbzJqMlNpRTl0QlVtdWp4eHQ3ZklZRXZsU205NG1Bdl9jXzhTa0xDcExkLUVQY0tUcXBpOWlHMk5n"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill 11 in southern Lebanon as attacks intensify - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNelhxblFxbjdvdUYyRC1QRm04Q2k0R0FMSUxDRnFoOXAtY3NGR0d3VDk1X0tRRlJRbDdCcFZOSnFtOVJaZkFmOENXN0Nac3dDbkhSZGJVekF4MGJocXpacjBUVk1lNlVzdm94ajdwYXFkcGFzWDhsWlF4R2xhVF90aTNaYzNuT2pKZHp3SkNWZFJNSjJOTnVBbDNGVW5VZWNEZDdUUEYtWGXSAa4BQVVfeXFMT3lmV0E4Ym1SbDRUX2ZjMWluVEMxbUFJOGZpWnhRcmota2dhMENmeVdvRWVqYW1YQXZwQkZ0UnpVd01OUFBDWGNHVzdoTmMzLUQ4aWVfVDdKbnVSRHFXeFhrbktTUmdGTVZQVkhuOXAxVER5RDE3S0VDY2NVVnBBN2c5NWpzS2hQaFpYMlJHSjlMZ21aZF9xVFNTQ0NLanc4cHlSUWlhQmdSZGdlaVFR"
     },
@@ -70,7 +88,7 @@
       "date": "2026-08-15",
       "category": "military",
       "source_type": "news",
-      "title": "Did the US really destroy Iran’s ballistic missile capability? - aljazeera.com",
+      "title": "Did the US really destroy Iran’s ballistic missile capability? - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcVdBZ1NHc24wbTZjVl9IUmxULVBCcUFlY1lJQzRWNnhxNlBiX2NkT0trazczTzlYOVZPZVNRZnBSNldpcEVMR0p2eFJxRkxoVVVnWXh0Ymszc3BCNUFfU2EyMFNJOFp1RXpGb0NCSjhkdW44Y2FZb3B0WjdTYUpOUUY4VnYyakhGdEZiUmdXRk9xMmhzM0lV0gGcAUFVX3lxTFBFeDJ3VEt0dUEtRHBaNFVtUTBQV1dJZW9UbzM5TGFOX2NQeFNWNmJpV1ZWbnA5LVhIMkswZmdpYnBiQ1JLenRxcG9Od2ZRQVMzaFBUWlotdnJQZUJSSmxuZVhHd1dNU0hBdXVNYTE1cnliTHczRW1IQnI1elY2SEhoMXJJcXFZTnIxOWxTTFNNWTc3eGVaajg0UUpLbw"
     },
@@ -97,7 +115,7 @@
       "date": "2026-08-14",
       "category": "military",
       "source_type": "news",
-      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - aljazeera.com",
+      "title": "UAE accuses Iran of attacks on two ADNOC vessels in Strait of Hormuz - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQem5NN3dXREFuR3F1YmR6UGZ3Y05uZGxfVFdOMmxDdE1DekEzVUUwTjUwUFI5YWhHTm9tMmN2a1ZXZ2gwSzcteG85MlNna1BvLVhQNUdaa1M2VUtrYVdFRXJlS09vdEctOFB1LUpwZHQzOEc2ZkY2V0E0Wm5fY2J0Uk5Oa3p0ekh2Sy14cXJsVGhvaE5IejlSbElZd2M5aWZyT0t2Rlo3bVhGaWNCOVHSAbMBQVVfeXFMT05jRkpzcEVyYUJUTXVfNDQyUTVGNXlMX3kyVFc3UDZPWExiRTMtQzJ2Y3BETG9rWE4tRTBmTk90emJMbjY3Y0REUTlSTUVjb1czYlo1amVjUlpNNTI5aGhtQkdfUXB4enVqdVBpU0lSalJUV1BabXp6alVDUnd5UTBrM2tFTnNRSVBHODlla1ZXOTA1dGctUjQwck5vc05VZHlYcVBhdFlDWEN4el9VSi1yX0U"
     },
@@ -106,7 +124,7 @@
       "date": "2026-08-14",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen’s government says Houthi attack on al-Makha kills at least four - aljazeera.com",
+      "title": "Yemen’s government says Houthi attack on al-Makha kills at least four - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTVBOTXhzdU1DUmFZVk9lVmFiYXZUZndyUlRuQzA5TGRfNm9NRUg1eGtzZEc3TzZsVlloQTFMVWxBMVFsUlJWOUx3M2xENVp0c0xDYTgwYnhlU3llY1hfMjBKVm10cU1JYlJxYXZNQWoyaGR6Q3JFSDZ0OXhBVlcwNmwtOUtla2t1dGhwOGhEUFl2clZKQjM2TFF1SHZSNEE0QTRKTkJwYXZpVHkydUHSAbMBQVVfeXFMTWFYbkV5dmRyZUFsaHF6UUxfTlM0c3J1dGZoNDQ3ZTlxTFVJMnJsblZFVFBjUEJkSEt1TDJJTEhVVVotX19ZQWtKdlh0TURJWVZSNEJSempWX3VYU0FiSXdld1hsY2JRaElMM2pEdUVEZnVPTFpsalIxbVE1UlcyTFpLeFJRUW4wd0lZbjlESWFjY0dfaHBENjAzQjloUWQwQ3hrRXZpYWdValk1TnRUajhpSkk"
     },
@@ -115,27 +133,9 @@
       "date": "2026-08-14",
       "category": "military",
       "source_type": "news",
-      "title": "Houthi attack on port kills four eroding truce with Yemen’s government - aljazeera.com",
+      "title": "Houthi attack on port kills four eroding truce with Yemen’s government - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaThDTlI0Q2gxMndJOHd1c1IxWHYzVUNrOWFnRzUtYXIzV2xZRUQ3SDhQT3l1dnp0WGFDTU1LOUpzTzUwdGVHNmZ0QUdUX3VXUTlwc1M0LVIya1dwTnNCTWFCdWtRUEVLRmtwdERlY1l2MVplRXUwdTR4aGRNdm5hRk1pX2o4dnF1ZkFpeXdPeFI3YXRVc2tRU0dVMGFjZGlJN3lEY040ZzFIVTFBQnVNTlN6VVpBUFlQNHBwRNIBwgFBVV95cUxQUkQwRE5aY3lkY0Rkc1JLekFGazNVZDBhQ0o5SnB3WGNkVDFKdEVOaERpU2NuX2QxU042UU9hZEZsb3laVldSQkh4dVZfRGdGaTFXaDNEcUdoLWF1SG54TXJlaTVxelRXSGZmMlJ5MVRFazN4blk5dFJIdGdwVnRiSGNnNjhxd2RQV2VoQVo2eFVkNE9UdGFtVFRyTmdfbHZ6dWdMemVoay0zMXpnUU5BZGE0UENUQUhsV2JxRE9naUxtUQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE says Iran attacked two ADNOC vessels in Strait of Hormuz; no injuries - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVGt4emw3dzdDaUdoNmsxMmRjMlkwZUJCUVlURko4RzRvMjUybnlUMVRGUnFLT0plclNLYkt0dGN1RV9fZnQ3QlE2UkN0d002blZDVUtTX0JwQXhkbXVDZ25WbDBLWld0anI2MmEtMUJOUFVNUTVDeVhpOXlldTQtQmlMVmVzcE1KS0tnWHhUNWtodmJRNjJWNFEyak9ZSGRadktNS3FMZ2tjc0o3MEh6eXEwcTZjY1Q3dmg1eg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWVhsYXl4b0NkRk9GdFhWN0lBcU16ckh5aG9SakN2TzBSMGIxSVUxYm9TY3VndmdwM0YwMjlrTGZQMmNaTWJHTlhzZXFBM004ZHhsQm1wNDVMNFNfXzZtTVVFZXBaOWRNV3h2Wjc3dXZsbGlseE1LZ00wUno4ZkMwMGpOR3JxczRNaTlGdHZsWTd1a1lpZWNiQnBfYWl4TXhwQjNNRlRXeDhETTlrYkg3R01UeTJkQUdIbkhGN1dIVl85ZFpOdVF0ZlJB"
     }
   ]
 }
