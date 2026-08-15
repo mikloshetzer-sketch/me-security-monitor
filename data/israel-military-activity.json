@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-15T03:03:55+00:00",
+  "generated_at": "2026-08-15T08:44:17+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,20 +46,20 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 51,
-      "map_visualizable_events": 15,
-      "total_map_points": 17,
+      "total_events": 52,
+      "map_visualizable_events": 16,
+      "total_map_points": 18,
       "multi_location_events": 2,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-14T15:36:07Z"
+      "latest_event_date": "2026-08-15T07:42:59Z"
     },
     "region_counts": {
       "Gaza Strip": 38,
-      "South Lebanon": 15
+      "South Lebanon": 16
     },
     "activity_type_counts": {
-      "airstrike": 38,
-      "ground_activity": 7,
+      "airstrike": 39,
+      "ground_activity": 8,
       "drone_activity": 4,
       "cross_border_fire": 3,
       "evacuation_warning": 2,
@@ -68,7 +68,7 @@
     },
     "target_organization_counts": {
       "Hamas": 30,
-      "Hezbollah": 9,
+      "Hezbollah": 10,
       "Not explicitly stated": 9,
       "Palestinian Islamic Jihad": 8
     },
@@ -76,7 +76,7 @@
       "commander": 30,
       "individual_operative": 12,
       "unspecified": 9,
-      "military_structure": 6,
+      "military_structure": 7,
       "armed_cell": 6,
       "weapons_storage": 5,
       "weapons_production": 5,
@@ -87,9 +87,9 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 40,
+      "struck": 41,
       "eliminated": 31,
-      "located": 9,
+      "located": 10,
       "dismantled": 7,
       "reported": 7
     },
@@ -104,7 +104,7 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 46,
+      "ground": 47,
       "command": 30,
       "rocket_missile": 6,
       "production": 6,
@@ -119,12 +119,13 @@
       "Southern Gaza Strip": 13,
       "Central Gaza Strip": 7,
       "Yellow Line area": 6,
-      "Security Zone – South Lebanon": 4
+      "Security Zone – South Lebanon": 5
     },
     "top_locations": {
       "Khan Yunis": 6,
       "Gaza City": 4,
       "Nuseirat": 3,
+      "Nabatieh": 1,
       "Deir al-Balah": 1,
       "Jabalia": 1,
       "Maghazi": 1,
@@ -132,6 +133,75 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19059",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19059",
+      "date": "2026-08-15T07:42:59Z",
+      "title": "IDF airstrike statement – Nabatieh",
+      "description": "IDF: In response to an action against IDF soldiers in the Security Zone: the IDF struck Hezbollah terror infrastructure in the areas of Nabatieh and Ansar In response to an action by the Hezbollah terrorist organization against IDF soldiers in the Ali al-Taher Ridge, which is located in the Security Zone where IDF soldiers are operating, the IDF struck overnight (Saturday) Hezbollah terror infrastructure in the areas of Nabatieh and Ansar in southern Lebanon. The IDF will not allow the Hezbollah terrorist organization to harm Israeli civilians and IDF soldiers, and will continue to operate to remove threats.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "airstrike",
+        "ground_activity"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "military_structure"
+      ],
+      "target_type": "military_structure",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
+      "operation_results": [
+        "struck",
+        "located"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Nabatieh",
+          "region": "South Lebanon",
+          "country": "Lebanon",
+          "latitude": 33.3772,
+          "longitude": 35.4839,
+          "matched_alias": "nabatieh"
+        }
+      ],
+      "location_count": 1,
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4839,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19059"
+    },
     {
       "id": "idf-idfofficial-19058",
       "source": "IDF official Telegram",
@@ -3430,6 +3500,77 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19059-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19059",
+      "date": "2026-08-15T07:42:59Z",
+      "title": "IDF airstrike statement – Nabatieh",
+      "description": "IDF: In response to an action against IDF soldiers in the Security Zone: the IDF struck Hezbollah terror infrastructure in the areas of Nabatieh and Ansar In response to an action by the Hezbollah terrorist organization against IDF soldiers in the Ali al-Taher Ridge, which is located in the Security Zone where IDF soldiers are operating, the IDF struck overnight (Saturday) Hezbollah terror infrastructure in the areas of Nabatieh and Ansar in southern Lebanon. The IDF will not allow the Hezbollah terrorist organization to harm Israeli civilians and IDF soldiers, and will continue to operate to remove threats.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "airstrike",
+        "ground_activity"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "military_structure"
+      ],
+      "target_type": "military_structure",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
+      "operation_results": [
+        "struck",
+        "located"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Nabatieh",
+          "region": "South Lebanon",
+          "country": "Lebanon",
+          "latitude": 33.3772,
+          "longitude": 35.4839,
+          "matched_alias": "nabatieh"
+        }
+      ],
+      "location_count": 1,
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4839,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19059",
+      "parent_event_id": "idf-idfofficial-19059",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19058-location-1",
       "source": "IDF official Telegram",
