@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-16T08:46:04+00:00",
+  "generated_at": "2026-08-16T14:37:02+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 55,
-      "map_visualizable_events": 16,
-      "total_map_points": 18,
-      "multi_location_events": 2,
+      "total_events": 56,
+      "map_visualizable_events": 17,
+      "total_map_points": 20,
+      "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-16T05:01:34Z"
+      "latest_event_date": "2026-08-16T14:18:45Z"
     },
     "region_counts": {
-      "Gaza Strip": 38,
+      "Gaza Strip": 39,
       "South Lebanon": 19
     },
     "activity_type_counts": {
-      "airstrike": 41,
+      "airstrike": 42,
       "ground_activity": 8,
       "drone_activity": 6,
       "evacuation_warning": 3,
@@ -67,15 +67,15 @@
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 30,
+      "Hamas": 31,
       "Hezbollah": 12,
       "Not explicitly stated": 10,
-      "Palestinian Islamic Jihad": 8
+      "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
       "commander": 32,
       "individual_operative": 12,
-      "unspecified": 10,
+      "unspecified": 11,
       "military_structure": 7,
       "armed_cell": 6,
       "weapons_storage": 5,
@@ -87,7 +87,7 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 43,
+      "struck": 44,
       "eliminated": 33,
       "located": 10,
       "reported": 8,
@@ -104,7 +104,7 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 50,
+      "ground": 51,
       "command": 32,
       "drone_uav": 6,
       "rocket_missile": 6,
@@ -122,9 +122,9 @@
       "Security Zone – South Lebanon": 5
     },
     "top_locations": {
-      "Khan Yunis": 6,
+      "Khan Yunis": 7,
+      "Nuseirat": 4,
       "Gaza City": 4,
-      "Nuseirat": 3,
       "Nabatieh": 1,
       "Deir al-Balah": 1,
       "Jabalia": 1,
@@ -133,6 +133,80 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19065",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19065",
+      "date": "2026-08-16T14:18:45Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF struck two terrorists from the Islamic Jihad and Hamas terrorist organizations Earlier today (Sunday), the IDF struck an Islamic Jihad terrorist in the Khan Yunis area and a Hamas terrorist in the Nuseirat area in the Gaza Strip. The terrorists advanced terror attacks and were struck in precise aerial strikes to remove the threat. Prior to the strikes, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [],
+      "operation_results": [
+        "struck"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        },
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925,
+          "matched_alias": "nuseirat"
+        }
+      ],
+      "location_count": 2,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19065"
+    },
     {
       "id": "idf-idfofficial-19064",
       "source": "IDF official Telegram",
@@ -3682,6 +3756,158 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19065-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19065",
+      "date": "2026-08-16T14:18:45Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF struck two terrorists from the Islamic Jihad and Hamas terrorist organizations Earlier today (Sunday), the IDF struck an Islamic Jihad terrorist in the Khan Yunis area and a Hamas terrorist in the Nuseirat area in the Gaza Strip. The terrorists advanced terror attacks and were struck in precise aerial strikes to remove the threat. Prior to the strikes, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [],
+      "operation_results": [
+        "struck"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        },
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925,
+          "matched_alias": "nuseirat"
+        }
+      ],
+      "location_count": 2,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19065",
+      "parent_event_id": "idf-idfofficial-19065",
+      "location_index": 1
+    },
+    {
+      "id": "idf-idfofficial-19065-location-2",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19065",
+      "date": "2026-08-16T14:18:45Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF struck two terrorists from the Islamic Jihad and Hamas terrorist organizations Earlier today (Sunday), the IDF struck an Islamic Jihad terrorist in the Khan Yunis area and a Hamas terrorist in the Nuseirat area in the Gaza Strip. The terrorists advanced terror attacks and were struck in precise aerial strikes to remove the threat. Prior to the strikes, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas",
+        "Palestinian Islamic Jihad"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [],
+      "operation_results": [
+        "struck"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        },
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925,
+          "matched_alias": "nuseirat"
+        }
+      ],
+      "location_count": 2,
+      "location": "Nuseirat",
+      "country": "Palestinian Territories",
+      "latitude": 31.448,
+      "longitude": 34.3925,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19065",
+      "parent_event_id": "idf-idfofficial-19065",
+      "location_index": 2
+    },
     {
       "id": "idf-idfofficial-19059-location-1",
       "source": "IDF official Telegram",
