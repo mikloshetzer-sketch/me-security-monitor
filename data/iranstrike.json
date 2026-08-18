@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T16:13:14Z",
+  "generated_at": "2026-08-18T17:44:44Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,42 +55,42 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 216,
-    "non_mappable_events": 784,
+    "map_visualizable_events": 215,
+    "non_mappable_events": 785,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-12T21:46:06Z",
-      "latest_event_date": "2026-08-18T15:12:17Z",
-      "geocoded_events": 216,
-      "geocoded_share": 21.6,
+      "earliest_event_date": "2026-07-12T21:59:43Z",
+      "latest_event_date": "2026-08-18T17:34:26Z",
+      "geocoded_events": 215,
+      "geocoded_share": 21.5,
       "top_category": "infrastructure",
       "top_location": "Iran",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 75,
-        "previous": 61,
-        "delta": 14,
-        "percent_change": 23.0,
+        "current": 76,
+        "previous": 63,
+        "delta": 13,
+        "percent_change": 20.6,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 585,
-        "previous": 363,
-        "delta": 222,
-        "percent_change": 61.2,
+        "current": 583,
+        "previous": 371,
+        "delta": 212,
+        "percent_change": 57.1,
         "direction": "increase"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-12",
-        "count": 35
+        "count": 33
       },
       {
         "date": "2026-07-13",
@@ -238,16 +238,16 @@
       },
       {
         "date": "2026-08-18",
-        "count": 14
+        "count": 16
       }
     ],
     "category_counts": {
       "infrastructure": 260,
-      "missile": 200,
+      "missile": 202,
       "strike": 175,
       "drone": 114,
       "airstrike": 97,
-      "explosion": 74,
+      "explosion": 72,
       "movement": 38,
       "ground": 17,
       "defense": 11,
@@ -261,15 +261,15 @@
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 593,
-      "iran": 291,
+      "unknown": 591,
+      "iran": 293,
       "israel": 84,
       "usa": 32
     },
     "top_locations": [
       {
         "name": "Iran",
-        "count": 271
+        "count": 272
       },
       {
         "name": "Unknown",
@@ -376,32 +376,39 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10213,
+    "totalCount": 10215,
     "spotlight": {
       "event": {
-        "id": "39diumdsltq00",
-        "timestamp": "2026-08-18T15:12:17+00:00",
+        "id": "ee1g3n4ctpc0",
+        "timestamp": "2026-08-18T16:45:23+00:00",
         "location": "ARE",
-        "origin": "YEM",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "intercept",
+        "type": "strike",
         "severity": "medium",
-        "description": "UAE air defense systems intercept missiles reportedly launched by Houthis",
-        "descriptionHe": "מערכות ההגנה האווירית של איחוד האמירויות יירטו טילים ששוגרו כנראה על ידי החות'ים",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128745"
+        "description": "Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+        "descriptionHe": "איראן משגרת 2 טילים בליסטיים לעבר איחוד האמירויות; אחד יורט, האחר נופל במים הטריטוריאליים של האמירויות",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82403"
       },
-      "headline": "UAE intercepts incoming missiles in latest Houthi attack",
-      "headlineHe": "האUAE יירטה טילים נכנסים בהתקפה חוטית אחרונה",
-      "summary": "The interception marks the latest escalation in Houthi strikes targeting the Arabian Peninsula, following a claimed drone attack on Saudi Aramco facilities hours earlier.",
-      "summaryHe": "היירוט מסמן את ההסלמה האחרונה בהתקפות חוטיות על חצי האי ערב, בעקבות התקפת רחפן מתוקבלת על מתקני aramco סעודיים שעות קודם לכן.",
-      "pickedAt": "2026-08-18T16:00:51.273Z",
+      "headline": "Iran launches ballistic missiles at UAE; one intercepted, one lands in waters",
+      "headlineHe": "איראן שיגרה טילים בליסטיים לעבר איחוד האמירויות; אחד יוחסם, אחד נחת במימים",
+      "summary": "The direct Iranian attack marks a significant escalation in regional tensions, with one missile successfully intercepted by UAE air defenses but a second breaching defensive systems into Emirati territorial waters.",
+      "summaryHe": "ההתקפה הישירה האיראנית מסמנת הסלמה משמעותית במתחים אזוריים, כאשר טיל אחד הצליח להיות מיוחסם על ידי הגנת אוויר של איחוד האמירויות אך השני חדר דרך מערכות הגנה למימים של איחוד האמירויות.",
+      "pickedAt": "2026-08-18T17:30:52.837Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-18T16:12:04.142Z",
+    "lastUpdated": "2026-08-18T17:42:05.421Z",
     "stale": false,
     "viewerCount": 8,
     "ceasefire": false
@@ -946,56 +953,8 @@
     "vitals": {
       "internet": 92,
       "cellular": null,
-      "lastUpdate": "2026-08-18T15:30:42.799Z",
+      "lastUpdate": "2026-08-18T17:30:42.826Z",
       "internetHistory": [
-        {
-          "t": "2026-08-17T15:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-17T15:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T15:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T16:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T16:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T16:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T16:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T16:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T16:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T17:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T17:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-17T17:20:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-08-17T17:30:00.000Z",
           "v": 92
@@ -1519,11 +1478,59 @@
         {
           "t": "2026-08-18T15:10:00.000Z",
           "v": 92
+        },
+        {
+          "t": "2026-08-18T15:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-18T15:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-18T15:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-18T15:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-18T16:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-18T16:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-18T16:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-18T16:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-18T16:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-18T16:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-18T17:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-18T17:10:00.000Z",
+          "v": 92
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-18T15:30:42.799Z"
+    "lastUpdated": "2026-08-18T17:30:42.826Z"
   },
   "developments": [
     {
@@ -1532,9 +1539,54 @@
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
+      "date": "2026-08-18T17:34:26Z",
+      "title": "IranStrike event",
+      "description": "Iran fires 2 ballistic missiles at UAE; one intercepted, one lands in territorial waters",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran fires 2 ballistic missiles at uae;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a7f2c1e9",
+        "text": "Iran fires 2 ballistic missiles at UAE; one intercepted, one lands in territorial waters",
+        "textHe": "איראן ירתה 2 טילים בליסטיים לעבר איחוד הנסיכויות; אחד יורט למטה, אחד נחת במים שלטוניים",
+        "severity": "high",
+        "timestamp": "2026-08-18T17:34:26+00:00",
+        "entityIds": [
+          "IRN",
+          "ARE"
+        ],
+        "eventIds": [
+          "3jc2x5avvwg00",
+          "ee1g3n4ctpc0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-b5e8d2f1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
       "date": "2026-08-18T12:30:45Z",
       "title": "IranStrike event",
-      "description": "Israel strikes Syria airbase 8+ times; damages Abu al-Duhur runway in Idlib",
+      "description": "IAF conducts 8+ strikes on Abu al-Duhur airbase in Idlib, Syria; runway damaged",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -1542,7 +1594,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "israel strikes syria airbase 8+ times;",
+      "attacker_evidence": "iaf conducts 8+ strikes on abu al-duhur airbase in idlib, syria;",
       "location": "Syria",
       "country": "Syria",
       "latitude": null,
@@ -1555,9 +1607,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e9",
-        "text": "Israel strikes Syria airbase 8+ times; damages Abu al-Duhur runway in Idlib",
-        "textHe": "ישראל תקפה בסיס אוויר בסוריה 8+ פעמים; נזק למסלול באבו אל-דוחור באידליב",
+        "id": "b5e8d2f1",
+        "text": "IAF conducts 8+ strikes on Abu al-Duhur airbase in Idlib, Syria; runway damaged",
+        "textHe": "חיל האוויר הישראלי תקף 8+ פעמים בשדה תעופה אבו אל-דוהור בעדליב, סוריה",
         "severity": "high",
         "timestamp": "2026-08-18T12:30:45+00:00",
         "entityIds": [
@@ -1570,18 +1622,18 @@
           "ejtvb7g3dow0",
           "20n7040mtcm80"
         ],
-        "sourceCount": 3
+        "sourceCount": 4
       }
     },
     {
-      "id": "iranstrike-b3e8d2f4",
+      "id": "iranstrike-c3a9e4b2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-18T15:12:17Z",
+      "date": "2026-08-18T14:49:06Z",
       "title": "IranStrike event",
-      "description": "Houthis target UAE; air defense intercepts missiles; vessel strike off Mokha",
+      "description": "Houthi forces claim Saudi Aramco refinery drone strike; vessel hit off Yemen coast",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1602,77 +1654,31 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b3e8d2f4",
-        "text": "Houthis target UAE; air defense intercepts missiles; vessel strike off Mokha",
-        "textHe": "החות'ים תוקפים את האמירויות; הגנה אווירית יירטת טילים; פגיעה בספינה ליד מוכה",
+        "id": "c3a9e4b2",
+        "text": "Houthi forces claim Saudi Aramco refinery drone strike; vessel hit off Yemen coast",
+        "textHe": "כוחות החוות טוענים להתקפת רחפן על בתחזוקה סעודית; אנייה נפגעה מול חוף תימן",
         "severity": "high",
-        "timestamp": "2026-08-18T15:12:17+00:00",
+        "timestamp": "2026-08-18T14:49:06+00:00",
         "entityIds": [
           "YEM",
-          "ARE"
+          "SAU"
         ],
         "eventIds": [
-          "39diumdsltq00",
-          "1srorls3e55s0",
-          "3i6nqg9u3zs00",
+          "3nprxtezhhc00",
           "2lso5lfx7og00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-c5a9e1b6",
+      "id": "iranstrike-d6c1f7a3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-18T12:10:09Z",
+      "date": "2026-08-18T10:47:19Z",
       "title": "IranStrike event",
-      "description": "Houthis claim drone strike on Saudi Aramco refinery; escalating regional attacks",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "c5a9e1b6",
-        "text": "Houthis claim drone strike on Saudi Aramco refinery; escalating regional attacks",
-        "textHe": "החות'ים טוענים לתקיפת רחפן בחסן ארמקו; התגברות התקפות במרחב",
-        "severity": "high",
-        "timestamp": "2026-08-18T12:10:09+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "3nprxtezhhc00"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-d6b2f4c8",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-18T09:53:53Z",
-      "title": "IranStrike event",
-      "description": "IDF operations in southern Lebanon; ground raids, strikes on multiple villages",
+      "description": "IDF operations in Lebanon: cluster munitions injure Thai workers near Metula; demolitio ns in Marjayoun",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1693,33 +1699,31 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d6b2f4c8",
-        "text": "IDF operations in southern Lebanon; ground raids, strikes on multiple villages",
-        "textHe": "פעולות צה\"ל בדרום לבנון; פשיטות קרקע, תקיפות בכפרים מרובים",
+        "id": "d6c1f7a3",
+        "text": "IDF operations in Lebanon: cluster munitions injure Thai workers near Metula; demolitio ns in Marjayoun",
+        "textHe": "פעולות צה\"ל בלבנון: תחמושת אשכול פגעה בעובדים תאילנדיים; הריסות במרג'יון",
         "severity": "high",
-        "timestamp": "2026-08-18T09:53:53+00:00",
+        "timestamp": "2026-08-18T10:47:19+00:00",
         "entityIds": [
           "ISR",
           "LBN"
         ],
         "eventIds": [
           "3utr432ved600",
-          "ggpobxrui8w0",
-          "muqpid2wfqo0",
-          "26gu9c9tqukg0"
+          "ggpobxrui8w0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-e7c3a5d2",
+      "id": "iranstrike-e8b3h5c4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-18T10:37:01Z",
       "title": "IranStrike event",
-      "description": "Iran drone strike on Kurdish PM office in Erbil; 65km oil slick from tanker attacks",
+      "description": "Iran drone strike on Iraq's KRG PM office in Erbil; no casualties; Iranian tanker attacks leave 65km oil slick",
       "category": "other",
       "severity": "medium",
       "attacker": "iran",
@@ -1727,7 +1731,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran drone strike on kurdish pm office in erbil;",
+      "attacker_evidence": "iran drone strike on iraq's krg pm office in erbil;",
       "location": "Erbil",
       "country": "Iraq",
       "latitude": 36.1911,
@@ -1740,9 +1744,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e7c3a5d2",
-        "text": "Iran drone strike on Kurdish PM office in Erbil; 65km oil slick from tanker attacks",
-        "textHe": "תקיפת רחפן איראנית על משרד ראש הממשלה הכורדי בארביל; שדה שמן 65 ק\"מ",
+        "id": "e8b3h5c4",
+        "text": "Iran drone strike on Iraq's KRG PM office in Erbil; no casualties; Iranian tanker attacks leave 65km oil slick",
+        "textHe": "תקיפת רחפן איראנית על משרד ראש ממשלת כורדיסטן בארביל; דליפת נפט 65 ק״מ",
         "severity": "medium",
         "timestamp": "2026-08-18T10:37:01+00:00",
         "entityIds": [
@@ -1759,6 +1763,109 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3jc2x5avvwg00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62609",
+      "date": "2026-08-18T17:34:26Z",
+      "title": "IranStrike event",
+      "description": "Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "are iran launches 2 missiles toward uae;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3jc2x5avvwg00",
+        "timestamp": "2026-08-18T17:34:26+00:00",
+        "location": "ARE",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Iran launches 2 missiles toward UAE; one falls in territorial waters, second lands outside state borders",
+        "descriptionHe": "איחוד האמירויות: 2 טילים שוגרו מאיראן. אחד נפל במים הטריטוריאליים, השני מחוץ לגבולות המדינה",
+        "source": "idkunim_il",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/idkunim_il/62609"
+      }
+    },
+    {
+      "id": "iranstrike-ee1g3n4ctpc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82403",
+      "date": "2026-08-18T16:45:23Z",
+      "title": "IranStrike event",
+      "description": "Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "are iran launches 2 ballistic missiles at uae;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "ee1g3n4ctpc0",
+        "timestamp": "2026-08-18T16:45:23+00:00",
+        "location": "ARE",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Iran launches 2 ballistic missiles at UAE; one intercepted, one falls in Emirati territorial waters",
+        "descriptionHe": "איראן משגרת 2 טילים בליסטיים לעבר איחוד האמירויות; אחד יורט, האחר נופל במים הטריטוריאליים של האמירויות",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82403"
+      }
+    },
     {
       "id": "iranstrike-39diumdsltq00",
       "source": "IranStrike",
@@ -46958,94 +47065,6 @@
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79474"
       }
-    },
-    {
-      "id": "iranstrike-25x7b4wrkkn40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79469",
-      "date": "2026-07-12T21:46:07Z",
-      "title": "IranStrike event",
-      "description": "Reports of explosions in Bushehr",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bushehr",
-      "country": "Iran",
-      "latitude": 28.9234,
-      "longitude": 50.8203,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bushehr",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "25x7b4wrkkn40",
-        "timestamp": "2026-07-12T21:46:07+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Reports of explosions in Bushehr",
-        "descriptionHe": "דיווחים על פיצוצים בבושהר",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79469"
-      }
-    },
-    {
-      "id": "iranstrike-vd3xt0yyjhc0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79468",
-      "date": "2026-07-12T21:46:06Z",
-      "title": "IranStrike event",
-      "description": "Explosions reported in central Iran, Khandab and Markazi regions",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "vd3xt0yyjhc0",
-        "timestamp": "2026-07-12T21:46:06+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Explosions reported in central Iran, Khandab and Markazi regions",
-        "descriptionHe": "דיווחים על פיצוצים במרכז איראן, אזורי חندאب ומרכזי",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79468"
-      }
     }
   ],
   "map_events": [
@@ -56770,50 +56789,6 @@
         "descriptionHe": "דיווחים על פיצוצים בחבהר, דרום-מזרח איראן",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79474"
-      }
-    },
-    {
-      "id": "iranstrike-25x7b4wrkkn40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79469",
-      "date": "2026-07-12T21:46:07Z",
-      "title": "IranStrike event",
-      "description": "Reports of explosions in Bushehr",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bushehr",
-      "country": "Iran",
-      "latitude": 28.9234,
-      "longitude": 50.8203,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bushehr",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "25x7b4wrkkn40",
-        "timestamp": "2026-07-12T21:46:07+00:00",
-        "location": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Reports of explosions in Bushehr",
-        "descriptionHe": "דיווחים על פיצוצים בבושהר",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79469"
       }
     }
   ]
