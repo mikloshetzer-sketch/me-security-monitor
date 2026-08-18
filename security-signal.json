@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-18 13:09 UTC",
+    "updated": "2026-08-18 14:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-12",
     "period_end": "2026-08-18",
-    "total_events": 113,
-    "total_risk": 101.86,
-    "normalized_risk_score": 40.7,
+    "total_events": 109,
+    "total_risk": 102.91,
+    "normalized_risk_score": 41.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 24,
     "security": 6,
-    "political": 11,
-    "other": 72
+    "political": 12,
+    "other": 67
   },
   "source_counts": {
-    "news": 109,
+    "news": 105,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 25.56
+      "risk": 25.41
     },
     {
       "name": "Israel",
-      "risk": 21.6
+      "risk": 24.6
     },
     {
       "name": "Yemen",
-      "risk": 13.8
+      "risk": 15.6
     },
     {
       "name": "Gaza Strip",
       "risk": 10.25
     },
     {
-      "name": "Syria",
-      "risk": 6.8
+      "name": "Iraq",
+      "risk": 6.4
     }
   ],
   "top_events": [
@@ -79,9 +79,18 @@
       "date": "2026-08-18",
       "category": "military",
       "source_type": "news",
-      "title": "Eight air strikes hit airbase in Syria’s Idlib - Al Jazeera",
-      "location": "Syria",
+      "title": "Syria, US say Israel attacked airbase in Idlib - Al Jazeera",
+      "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQUVsYWd6czEya1NyZVFUNWd2dlJFcm54TzNVN1lZQzJHMHFDbXk4QkF6ZllpTUo1WUVuSC1rc19PcUxxV2dLVXBoS0hWT2tlZkFKS3lVcEh1Smdxc3NpU0pxclFRd25YSUQzd25MZ0ExU2pWa2hoVG5RcVh5NHhRbUFTVTNGV2dhNEF3ZS1XVdIBlAFBVV95cUxNWS1KR3ctLW1NbVlJcjNUTjROUnFUbVp3a2h1ZXh2WGNWM2JvVGIwYnJIRDU4cTdUMU9pQWxlTVRIQW5ReWx6VGplZDZXVUdBUGQ5d0N6QldMV1dLcHBtR01RanZKTnQyYXEtLWxxbng4aVNHZDYxMXF4b3J4d1UyRjBERkNZR3pxZkpBT0hEbU5INkxG"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni government escalates attacks against Houthis: What’s next? - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQN3p1ak1tV3dnUEVxNVpKd0VlSTJuUDNmN0dDbnBBYkc3aDh4ZU9IQjNqMzVBdHBuQjRVd3FJYTM5Ui15a0ZOUUdaWEpaYnRfVnFpSEszR1g3LXI0QjZyWG0xc0RsN0tzbmluMEFqLUNLaE02ZFUyWWJUR3AwMlRscnRia0gwT043dTg1M2lKcVNlbTVQb3JTWWRmN1lYYzRZY1BEcVJn0gGrAUFVX3lxTE5FNU1jQ0Z4cTVGZUd6bnAwS1VCRDc5QW9RNWI2WDJ6dmZSTjREdi1vUUJxT1RnRmtnU0VEZmtXYVQtejNXemY1Z1N5V0VvdmZpQmVZdlV3Z0s1UGZsVU1UckxuUGJBY0tHUjVyLWhSZzdPQjZpTC11bEZVTzFnaXNib19uQmpUZzdGZDFaY09pRzlFU1RmUFBORXRKSGx1MHRRYWdLajZsbmVZRQ"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Trump's envoys meet mediators, Israel strikes Gaza - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQWlULVBMUTk3T05wRS0tNnBRUWFReXlURUhCaTNIZVlRaUtVOHczUm5CTi1YRWlveXN6cC1hWDBKOTJqbUpna3JYZUhzLTVrTnU0bXFWd3JncVNCeUc3NTNING9KeHFSNWpUWWhCNFBGUm1aQzBna3c1OFNtclBMZEY1VERJS0x1elM2ZEVwXzZVeTRzelkyM3ZoWTNGeGRGZkE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Why has Israel escalated attacks in southern Lebanon despite ceasefire? - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQdlJXVVpubVFvQ0ZEdGozSWQxWUNVNTYwM3ZtaEw3NklHd3F2R0NJN1p3ZHBBaVN4VWNiVGhWaGwzaUw5NEtHZzEyM2xld2RteFhjcXZTejdLT2drTy1kWDViZ1MtanVuQm9kM1MyLTVkZVJpakFLSTFVWkZwbjl0OEpaV2Y5cEF4Vk5RM2xZUEVTV01CczlXSHRPdEEtaHVjYmswdHZjWkZjRUMtRjhSUtIBtgFBVV95cUxNS0tQa0NydXRYR0NONnFlRVBhRXlnOF9PZTBUUC1WbjhIMTZFNGVDQnhqaVBxT3kzR2k2UEVndWtRWndvdDBNR2FxeW8xcGNfVTI1TEpCR1A5dWFUcThLLVljSTg0aDg2UU9hWTBPdGhBaS1oQmFua2Y3T0Jlc2doWFYxVWZRYlJkenIwRTRvQVNwYWVxSnVHN2ZDOU1DUm0yWDRWNDcwQktnUUd3YXBGVEdoVzNrdw"
     }
   ]
 }
