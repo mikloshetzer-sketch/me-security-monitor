@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-18 08:54 UTC",
+    "updated": "2026-08-18 10:48 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-08-12",
     "period_end": "2026-08-18",
-    "total_events": 113,
-    "total_risk": 90.01,
-    "normalized_risk_score": 36.0,
+    "total_events": 112,
+    "total_risk": 96.51,
+    "normalized_risk_score": 38.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 22,
-    "security": 4,
-    "political": 14,
-    "other": 73
+    "military": 23,
+    "security": 6,
+    "political": 12,
+    "other": 71
   },
   "source_counts": {
-    "news": 109,
+    "news": 108,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 28.56
+      "risk": 25.71
     },
     {
       "name": "Israel",
-      "risk": 18.95
+      "risk": 21.6
     },
     {
       "name": "Yemen",
-      "risk": 11.65
+      "risk": 11.35
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.25
+      "risk": 9.75
     },
     {
-      "name": "Iraq",
-      "risk": 6.1
+      "name": "Syria",
+      "risk": 7.25
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Eight Israeli airstrikes hit Syria's Abu al-Duhur airbase, no casualties, state TV reports - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNdGU5SDV5WlhteEdoT2hlZTBkZzY2N1hnYU5sZHF1N3FqTGc1UEd1Mm9MTjk5V24telp3cWVsc08yU3dqU3lJemxZaGhXb0t4UUNBdkpXTFFUckwzRDZ2cDFOenpsN013aW5RRDVWSUxHRHpkVTBzeTV6NmRRR2NhWGtoeEpjLURMTEY5bjlyck5zLXQ5cU9KVTRwNDFQUjZuWU9lRU1vRnBORm5zdi1zTVpIb3VqY0FLRjZZUzBQYktDOEs3Rl9nOHBOZF9zQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Eight air strikes hit airbase in Syria’s Idlib - Al Jazeera",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQUVsYWd6czEya1NyZVFUNWd2dlJFcm54TzNVN1lZQzJHMHFDbXk4QkF6ZllpTUo1WUVuSC1rc19PcUxxV2dLVXBoS0hWT2tlZkFKS3lVcEh1Smdxc3NpU0pxclFRd25YSUQzd25MZ0ExU2pWa2hoVG5RcVh5NHhRbUFTVTNGV2dhNEF3ZS1XVdIBlAFBVV95cUxNWS1KR3ctLW1NbVlJcjNUTjROUnFUbVp3a2h1ZXh2WGNWM2JvVGIwYnJIRDU4cTdUMU9pQWxlTVRIQW5ReWx6VGplZDZXVUdBUGQ5d0N6QldMV1dLcHBtR01RanZKTnQyYXEtLWxxbng4aVNHZDYxMXF4b3J4d1UyRjBERkNZR3pxZkpBT0hEbU5INkxG"
+    },
     {
       "score": 2.7,
       "date": "2026-08-17",
@@ -118,24 +136,6 @@
       "title": "Erdogan says Hamas acted sincerely, criticises Israeli attacks - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPcmg5cTJqUTFZaC1OZDVKdnhhZkNjU2ZRRGpzMk1WenFXZU95eFViZl9CTlcyYkJHa0tlU3lIYm80cWdaYmVXRmRhWDZaa0Z0M28zX2dnN0dxcWNLc1gwTWlNbE9VYjEybENFWkN6MWFiRTl6bmdMZ3NoMjlsZGd6UzRGMNIBiAFBVV95cUxNdm81b3JNdkUyQVJVSG11LTF2bnRTTkU5YUNlSUw2OGVFSWtIVmVLVERObU52YzR6d2pMRDRHd1pvX0Z2Wjl5MkxZcXFjS0JONlhCd2ZldzQ0ZlU5X3EzeFplc1BlQ3NQSFZOaVQwb2hNZHJwc21Ta2t0VHIyUl9CSnBsb2RfMmNq"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE says Iran attacked ADNOC vessel in Hormuz, urges waterway's reopening - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbEFoM0Z1VnBsRUlGMUtsU3pXUWd6WUVvVW84ak5jbVpIZ25ld1VfR3RITUJ4MEx1ZTRJaGdXSDRadGVRNThPMzFlOVNsNWo4QzV2eTMzVmoxb1RDSE5QNXZkQ1d3bl9oSk85SUFxNEgxU1N6ME9UWHJ6dENMZmk1LWhacTJreTc4VlgtaGRxaFVQbFltR2UwMVN3Z1V3WUJLeHdDNy0wU0NldXRLaVA0NVY5WTZLQ1NOQjJQQWFHSjMtMk9icXc"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Mocha port halts operations after Houthi attacks, port director says - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV2FPbFJIdUZSc2djcmg5V0I3VE9WY0pQaWRRdGxaM21PRXloRHluMFhBVk04SjlMVmxKdmFxblFJMFRQME5QTGFBODdSbC05LWtkNm9UM3M1Vl9kTkpTY3ppaFloSXAyV0hUU3lseUR3Rl94TlZsVDhmS0VJWE9Damc4dGRla1pRUHdENG02ZExWcnh4ZDIzbC1uUmN0cFljUDN6MGd0QlVoSVcyajZXNExMMzY4SHd6QmNoQWZDYm5udTEweGpR"
     }
   ]
 }
