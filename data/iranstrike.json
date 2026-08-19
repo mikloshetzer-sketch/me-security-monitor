@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T05:46:57Z",
+  "generated_at": "2026-08-19T06:17:54Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -64,7 +64,7 @@
     "overview": {
       "total_events": 1000,
       "earliest_event_date": "2026-07-12T22:16:44Z",
-      "latest_event_date": "2026-08-18T20:40:53Z",
+      "latest_event_date": "2026-08-19T05:46:01Z",
       "geocoded_events": 216,
       "geocoded_share": 21.6,
       "top_category": "infrastructure",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 79,
-        "previous": 64,
+        "current": 81,
+        "previous": 66,
         "delta": 15,
-        "percent_change": 23.4,
+        "percent_change": 22.7,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 578,
-        "previous": 370,
-        "delta": 208,
-        "percent_change": 56.2,
+        "current": 570,
+        "previous": 388,
+        "delta": 182,
+        "percent_change": 46.9,
         "direction": "increase"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-12",
-        "count": 30
+        "count": 28
       },
       {
         "date": "2026-07-13",
@@ -239,15 +239,19 @@
       {
         "date": "2026-08-18",
         "count": 19
+      },
+      {
+        "date": "2026-08-19",
+        "count": 2
       }
     ],
     "category_counts": {
-      "infrastructure": 261,
+      "infrastructure": 262,
       "missile": 203,
       "strike": 176,
       "drone": 114,
       "airstrike": 97,
-      "explosion": 69,
+      "explosion": 68,
       "movement": 38,
       "ground": 17,
       "defense": 11,
@@ -255,8 +259,8 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 513,
-      "high": 349,
+      "medium": 514,
+      "high": 348,
       "low": 136,
       "critical": 2
     },
@@ -281,7 +285,7 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 47
+        "count": 48
       },
       {
         "name": "Lebanon",
@@ -325,7 +329,7 @@
       },
       {
         "name": "Ahvaz",
-        "count": 12
+        "count": 11
       }
     ],
     "top_countries": [
@@ -376,34 +380,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10228,
+    "totalCount": 10230,
     "spotlight": {
       "event": {
-        "id": "3hs4gtjpk3k00",
-        "timestamp": "2026-08-18T20:40:53+00:00",
-        "location": "SYR",
-        "origin": "ISR",
+        "id": "13qwrysnlaak0",
+        "timestamp": "2026-08-19T05:46:01+00:00",
+        "location": "ARE",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "medium",
-        "description": "Israeli Air Force strikes airbase near Aleppo in response to Syrian approval of Turkish military deployment, citing security threat violation",
-        "descriptionHe": "חיל האוויר תוקף בסיס אווירי ליד חלב בתגובה לאישור סוריה התפרסות צבאית טורקית, בטענה להפרת הסכם סטטוס קוו",
+        "description": "Iran fires two ballistic missiles toward UAE; both fall into sea according to official UAE statement",
+        "descriptionHe": "איראן שיגרה שני טילים בליסטיים לעבר איחוד האמירויות; שניהם נפלו בים לפי הצהרה רשמית של איחוד האמירויות",
         "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128771"
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/128775"
       },
-      "headline": "Israeli warplanes strike Syrian airbase near Aleppo in escalating regional tensions",
-      "headlineHe": "מטוסי ישראל תוקפים בסיס אוויר סורי ליד חלב בהסלמה אזורית",
-      "summary": "The strike follows Syria's approval of Turkish military deployment, which Israel views as a security threat that justifies direct military response.",
-      "summaryHe": "התקיפה באה לאחר אישור סוריה של כוח צבאי טורקי, שישראל רואה בו איום ביטחוני המצדיק תגובה צבאית ישירה.",
-      "pickedAt": "2026-08-19T05:30:51.272Z",
-      "state": "TODAY"
+      "headline": "Iran Fires Two Ballistic Missiles Toward UAE; Both Fall Into Sea",
+      "headlineHe": "איראן משגרת שתי טילים בליסטיים לעבר איחוד האמירויות; שניהם נפלו לים",
+      "summary": "This marks the latest Iranian missile launch toward UAE territory, escalating regional tensions following similar incidents earlier in the week.",
+      "summaryHe": "זה מסמן את השיגור האחרון של איראן של טילים לעבר שטח איחוד האמירויות, המגביר את המתחים האזוריים בעקבות תקריות דומות מוקדם בשבוע.",
+      "pickedAt": "2026-08-19T06:00:51.860Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-19T05:42:03.648Z",
+    "lastUpdated": "2026-08-19T06:15:03.511Z",
     "stale": false,
-    "viewerCount": 5,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1527,63 +1537,14 @@
   },
   "developments": [
     {
-      "id": "iranstrike-7f2a9c4e",
+      "id": "iranstrike-a7f2c9e1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-18T20:40:53Z",
+      "date": "2026-08-19T05:46:01Z",
       "title": "IranStrike event",
-      "description": "Israel conducts sustained air campaign on Syrian airbases; 8+ strikes on Abu al-Duhur in Idlib",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "7f2a9c4e",
-        "text": "Israel conducts sustained air campaign on Syrian airbases; 8+ strikes on Abu al-Duhur in Idlib",
-        "textHe": "ישראל מנהלת מסע אווירי מתמשך על בסיסי אוויר סוריים; 8+ תקיפות על אבו דוחור באידליב",
-        "severity": "high",
-        "timestamp": "2026-08-18T20:40:53+00:00",
-        "entityIds": [
-          "ISR",
-          "SYR"
-        ],
-        "eventIds": [
-          "20n7040mtcm80",
-          "ejtvb7g3dow0",
-          "1pbe6ebg4e680",
-          "22zmg718pmqo0",
-          "3hs4gtjpk3k00",
-          "1aj5igqelza80"
-        ],
-        "sourceCount": 4
-      }
-    },
-    {
-      "id": "iranstrike-5e8b1d3a",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-18T17:34:26Z",
-      "title": "IranStrike event",
-      "description": "Iran launches 2 ballistic missiles at UAE; 1 intercepted, 1 strikes territorial waters",
+      "description": "Iran fires 6 ballistic missiles at UAE; most fall into sea/territorial waters",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -1591,7 +1552,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches 2 ballistic missiles at uae;",
+      "attacker_evidence": "iran fires 6 ballistic missiles at uae;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -1604,32 +1565,80 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5e8b1d3a",
-        "text": "Iran launches 2 ballistic missiles at UAE; 1 intercepted, 1 strikes territorial waters",
-        "textHe": "איראן שיגרה 2 טילים בליסטיים לעבר איחוד האמירויות; 1 יורט, 1 פגע בחזקת טריטוריאלית",
+        "id": "a7f2c9e1",
+        "text": "Iran fires 6 ballistic missiles at UAE; most fall into sea/territorial waters",
+        "textHe": "איראן שיגרה 6 טילים בליסטיים לעבר איחוד האמירויות; רובם נפלו בים",
         "severity": "high",
-        "timestamp": "2026-08-18T17:34:26+00:00",
+        "timestamp": "2026-08-19T05:46:01+00:00",
         "entityIds": [
           "IRN",
           "ARE"
         ],
         "eventIds": [
-          "ee1g3n4ctpc0",
+          "13qwrysnlaak0",
+          "3hs4gtjpk3k00",
           "3jc2x5avvwg00",
-          "8c6ngu384880"
+          "ee1g3n4ctpc0"
+        ],
+        "sourceCount": 4
+      }
+    },
+    {
+      "id": "iranstrike-b3e8d6f4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-18T20:40:53Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes Syrian airbases; multiple strikes on Abu al-Duhur in Idlib",
+      "category": "other",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes syrian airbases;",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b3e8d6f4",
+        "text": "IDF strikes Syrian airbases; multiple strikes on Abu al-Duhur in Idlib",
+        "textHe": "צה\"ל תקף בסיסי אוויר סוריים; מספר תקפות על אבו אל-דוהור בעדליב",
+        "severity": "high",
+        "timestamp": "2026-08-18T20:40:53+00:00",
+        "entityIds": [
+          "ISR",
+          "SYR"
+        ],
+        "eventIds": [
+          "3hs4gtjpk3k00",
+          "22zmg718pmqo0",
+          "1pbe6ebg4e680",
+          "ejtvb7g3dow0"
         ],
         "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-6c3f2b7d",
+      "id": "iranstrike-c5d1b2a8",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-18T14:49:06Z",
       "title": "IranStrike event",
-      "description": "Houthi forces intensify operations: drone strike on Saudi Aramco refinery; missile hits Yemen tanker",
+      "description": "Houthi attacks escalate: drone strike on Saudi refinery, missile hits vessel",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1650,9 +1659,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6c3f2b7d",
-        "text": "Houthi forces intensify operations: drone strike on Saudi Aramco refinery; missile hits Yemen tanker",
-        "textHe": "כוחות חוסי עוצמים הפעילות: התקפת רחפנים על זיקוק סעודי ארמקו; טיל פגע בטנקר תימני",
+        "id": "c5d1b2a8",
+        "text": "Houthi attacks escalate: drone strike on Saudi refinery, missile hits vessel",
+        "textHe": "התקפות חותיים מתגברות: תקיפת רחפן על זקק סעודי, טיל פגע בספינה",
         "severity": "high",
         "timestamp": "2026-08-18T14:49:06+00:00",
         "entityIds": [
@@ -1661,31 +1670,30 @@
         ],
         "eventIds": [
           "3nprxtezhhc00",
-          "2lso5lfx7og00",
-          "3ijr3xpjssi00"
+          "2lso5lfx7og00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-4a9e6f2c",
+      "id": "iranstrike-d9c4f7b2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-18T10:47:19Z",
+      "date": "2026-08-19T05:46:01Z",
       "title": "IranStrike event",
-      "description": "Hezbollah cluster munitions strike northern Israel; IDF demolishes Lebanese infrastructure in Marjayoun",
+      "description": "UAE halts Iran trade; seizes oil tanker in Strait of Hormuz after missile attacks",
       "category": "other",
       "severity": "high",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "hezbollah cluster munitions strike northern israel;",
-      "location": "Israel",
-      "country": "Israel",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1696,10 +1704,55 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4a9e6f2c",
-        "text": "Hezbollah cluster munitions strike northern Israel; IDF demolishes Lebanese infrastructure in Marjayoun",
-        "textHe": "תקיפת תבערות של חזבאללה בצפון ישראל; צה\"ל הרס תשתיות לבנוניות במרג עיון",
+        "id": "d9c4f7b2",
+        "text": "UAE halts Iran trade; seizes oil tanker in Strait of Hormuz after missile attacks",
+        "textHe": "איחוד האמירויות מעצר סחר עם איראן; תפס טנקר נפט בתעלת הורמוז",
         "severity": "high",
+        "timestamp": "2026-08-19T05:46:01+00:00",
+        "entityIds": [
+          "ARE",
+          "IRN"
+        ],
+        "eventIds": [
+          "2qoar8gh9d600",
+          "8c6ngu384880"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-e2a6c3d7",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-18T10:47:19Z",
+      "title": "IranStrike event",
+      "description": "Cluster munitions from Lebanon injure Thai workers; IDF demolishes structures",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "e2a6c3d7",
+        "text": "Cluster munitions from Lebanon injure Thai workers; IDF demolishes structures",
+        "textHe": "תחמונים צרורים מלבנון פגעו בעובדים תאים; צה\"ל הרס מבנים",
+        "severity": "medium",
         "timestamp": "2026-08-18T10:47:19+00:00",
         "entityIds": [
           "LBN",
@@ -1711,24 +1764,71 @@
         ],
         "sourceCount": 2
       }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-2qoar8gh9d600",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128775",
+      "date": "2026-08-19T05:46:01Z",
+      "title": "IranStrike event",
+      "description": "Iranian Revolutionary Guard reportedly seizes UAE-flagged oil tanker AMARA in Strait of Hormuz, redirects toward Bandar Abbas",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2qoar8gh9d600",
+        "timestamp": "2026-08-19T05:46:01+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Iranian Revolutionary Guard reportedly seizes UAE-flagged oil tanker AMARA in Strait of Hormuz, redirects toward Bandar Abbas",
+        "descriptionHe": "משמרות המהפכה האיראנים כביכול השתלטו על מכלית הנפט של איחוד האמירויות AMARA במיצר הורמוז, והחונים לעבר בנדר עבאס",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/128775"
+      }
     },
     {
-      "id": "iranstrike-3d7c8e1f",
+      "id": "iranstrike-13qwrysnlaak0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-18T10:37:01Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128775",
+      "date": "2026-08-19T05:46:01Z",
       "title": "IranStrike event",
-      "description": "Iranian attacks on maritime targets: 65 km oil slick off Oman; UAE halts Iran trade ties",
-      "category": "other",
+      "description": "Iran fires two ballistic missiles toward UAE; both fall into sea according to official UAE statement",
+      "category": "missile",
       "severity": "medium",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian attacks on maritime targets: 65 km oil slick off oman;",
+      "attacker_evidence": "are iran fires two ballistic missiles toward uae;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -1741,24 +1841,28 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "3d7c8e1f",
-        "text": "Iranian attacks on maritime targets: 65 km oil slick off Oman; UAE halts Iran trade ties",
-        "textHe": "התקיפות איראניות על מטרות ימיות: סימון שמן 65 ק\"מ מול חופי עומאן; איחוד האמירויות מונע סחר עם איראן",
+        "id": "13qwrysnlaak0",
+        "timestamp": "2026-08-19T05:46:01+00:00",
+        "location": "ARE",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-08-18T10:37:01+00:00",
-        "entityIds": [
-          "IRN",
-          "ARE",
-          "OMN"
+        "description": "Iran fires two ballistic missiles toward UAE; both fall into sea according to official UAE statement",
+        "descriptionHe": "איראן שיגרה שני טילים בליסטיים לעבר איחוד האמירויות; שניהם נפלו בים לפי הצהרה רשמית של איחוד האמירויות",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2
+          }
         ],
-        "eventIds": [
-          "3e5ng75uiow00"
-        ],
-        "sourceCount": 1
+        "sourceUrl": "https://t.me/abualiexpress/128775"
       }
-    }
-  ],
-  "events": [
+    },
     {
       "id": "iranstrike-3hs4gtjpk3k00",
       "source": "IranStrike",
@@ -46886,96 +46990,6 @@
       }
     },
     {
-      "id": "iranstrike-27fg5qgcvnk00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79475",
-      "date": "2026-07-12T22:16:44Z",
-      "title": "IranStrike event",
-      "description": "Explosion heard in Ahvaz",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Ahvaz",
-      "country": "Iran",
-      "latitude": 31.3183,
-      "longitude": 48.6706,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "ahvaz",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "27fg5qgcvnk00",
-        "timestamp": "2026-07-12T22:16:44+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Explosion heard in Ahvaz",
-        "descriptionHe": "פיצוץ שנשמע באחواז",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79475"
-      }
-    },
-    {
-      "id": "iranstrike-241wbm2a7ccg0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79480",
-      "date": "2026-07-12T22:16:44Z",
-      "title": "IranStrike event",
-      "description": "ATACMS missiles launched from Kuwait toward Iran",
-      "category": "missile",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn atacms missiles launched from kuwait toward iran טילי atacms שוגרו מכווית לעבר איראן",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "241wbm2a7ccg0",
-        "timestamp": "2026-07-12T22:16:44+00:00",
-        "location": "IRN",
-        "origin": "KWT",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "ATACMS missiles launched from Kuwait toward Iran",
-        "descriptionHe": "טילי ATACMS שוגרו מכווית לעבר איראן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79480"
-      }
-    },
-    {
       "id": "iranstrike-1zmkiryy6cio0",
       "source": "IranStrike",
       "source_collection": "events",
@@ -47067,6 +47081,51 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-2qoar8gh9d600",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/128775",
+      "date": "2026-08-19T05:46:01Z",
+      "title": "IranStrike event",
+      "description": "Iranian Revolutionary Guard reportedly seizes UAE-flagged oil tanker AMARA in Strait of Hormuz, redirects toward Bandar Abbas",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2qoar8gh9d600",
+        "timestamp": "2026-08-19T05:46:01+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Iranian Revolutionary Guard reportedly seizes UAE-flagged oil tanker AMARA in Strait of Hormuz, redirects toward Bandar Abbas",
+        "descriptionHe": "משמרות המהפכה האיראנים כביכול השתלטו על מכלית הנפט של איחוד האמירויות AMARA במיצר הורמוז, והחונים לעבר בנדר עבאס",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/128775"
+      }
+    },
     {
       "id": "iranstrike-3hs4gtjpk3k00",
       "source": "IranStrike",
@@ -56744,51 +56803,6 @@
         "descriptionHe": "ארה\"ב תוקפת אתרי תחמושת אוויר-קרקע בבסיס צבאי בחוזה בפיצוץ קטסטרופלי",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79478"
-      }
-    },
-    {
-      "id": "iranstrike-27fg5qgcvnk00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79475",
-      "date": "2026-07-12T22:16:44Z",
-      "title": "IranStrike event",
-      "description": "Explosion heard in Ahvaz",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Ahvaz",
-      "country": "Iran",
-      "latitude": 31.3183,
-      "longitude": 48.6706,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "ahvaz",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "27fg5qgcvnk00",
-        "timestamp": "2026-07-12T22:16:44+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Explosion heard in Ahvaz",
-        "descriptionHe": "פיצוץ שנשמע באחواז",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79475"
       }
     },
     {
