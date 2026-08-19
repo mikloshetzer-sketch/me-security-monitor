@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-19T08:53:45+00:00",
+  "generated_at": "2026-08-19T14:52:22+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 58,
-      "map_visualizable_events": 17,
-      "total_map_points": 20,
+      "total_events": 59,
+      "map_visualizable_events": 18,
+      "total_map_points": 21,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-18T17:33:52Z"
+      "latest_event_date": "2026-08-19T12:39:57Z"
     },
     "region_counts": {
-      "Gaza Strip": 41,
+      "Gaza Strip": 42,
       "South Lebanon": 19
     },
     "activity_type_counts": {
-      "airstrike": 44,
+      "airstrike": 45,
       "ground_activity": 8,
       "drone_activity": 6,
       "evacuation_warning": 3,
@@ -67,13 +67,13 @@
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 32,
+      "Hamas": 33,
       "Hezbollah": 12,
       "Not explicitly stated": 11,
       "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
-      "commander": 34,
+      "commander": 35,
       "individual_operative": 13,
       "unspecified": 11,
       "military_structure": 7,
@@ -87,14 +87,14 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 46,
+      "struck": 47,
       "eliminated": 33,
       "located": 10,
       "reported": 8,
       "dismantled": 7
     },
     "commander_type_counts": {
-      "unspecified_commander": 14,
+      "unspecified_commander": 15,
       "company_commander": 7,
       "cell_commander": 7,
       "nukhba_commander": 6,
@@ -104,8 +104,8 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 53,
-      "command": 34,
+      "ground": 54,
+      "command": 35,
       "drone_uav": 6,
       "rocket_missile": 6,
       "production": 6,
@@ -117,13 +117,13 @@
     "area_mention_counts": {
       "Northern Gaza Strip": 18,
       "Southern Gaza Strip": 13,
-      "Central Gaza Strip": 7,
+      "Central Gaza Strip": 8,
       "Yellow Line area": 6,
       "Security Zone – South Lebanon": 5
     },
     "top_locations": {
       "Khan Yunis": 7,
-      "Nuseirat": 4,
+      "Nuseirat": 5,
       "Gaza City": 4,
       "Nabatieh": 1,
       "Deir al-Balah": 1,
@@ -133,6 +133,76 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19075",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19075",
+      "date": "2026-08-19T12:39:57Z",
+      "title": "IDF airstrike statement – Nuseirat",
+      "description": "IDF: The IDF struck a commander who infiltrated Israeli territory and participated in the October 7th Massacre and an additional commander from the Hamas terrorist organization A short while ago, the IDF struck a commander in Hamas' military wing in the Nuseirat area in the central Gaza Strip. The terrorists infiltrated Israeli territory and participated in the October 7th Massacre. Shortly afterward, the IDF and ISA struck in the Tuffah area a commander from the Hamas terrorist organization. The terrorist planned to carry out terror attacks against IDF troops operating in the Gaza Strip. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Central Gaza Strip"
+      ],
+      "operation_results": [
+        "struck"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925,
+          "matched_alias": "nuseirat"
+        }
+      ],
+      "location_count": 1,
+      "location": "Nuseirat",
+      "country": "Palestinian Territories",
+      "latitude": 31.448,
+      "longitude": 34.3925,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19075"
+    },
     {
       "id": "idf-idfofficial-19070",
       "source": "IDF official Telegram",
@@ -3878,6 +3948,78 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19075-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19075",
+      "date": "2026-08-19T12:39:57Z",
+      "title": "IDF airstrike statement – Nuseirat",
+      "description": "IDF: The IDF struck a commander who infiltrated Israeli territory and participated in the October 7th Massacre and an additional commander from the Hamas terrorist organization A short while ago, the IDF struck a commander in Hamas' military wing in the Nuseirat area in the central Gaza Strip. The terrorists infiltrated Israeli territory and participated in the October 7th Massacre. Shortly afterward, the IDF and ISA struck in the Tuffah area a commander from the Hamas terrorist organization. The terrorist planned to carry out terror attacks against IDF troops operating in the Gaza Strip. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [
+        "Central Gaza Strip"
+      ],
+      "operation_results": [
+        "struck"
+      ],
+      "operation_result": "struck",
+      "locations": [
+        {
+          "name": "Nuseirat",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.448,
+          "longitude": 34.3925,
+          "matched_alias": "nuseirat"
+        }
+      ],
+      "location_count": 1,
+      "location": "Nuseirat",
+      "country": "Palestinian Territories",
+      "latitude": 31.448,
+      "longitude": 34.3925,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19075",
+      "parent_event_id": "idf-idfofficial-19075",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19065-location-1",
       "source": "IDF official Telegram",
