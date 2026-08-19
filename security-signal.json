@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-19 16:48 UTC",
+    "updated": "2026-08-19 18:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-13",
     "period_end": "2026-08-19",
-    "total_events": 122,
-    "total_risk": 108.74,
-    "normalized_risk_score": 43.5,
+    "total_events": 127,
+    "total_risk": 119.84,
+    "normalized_risk_score": 47.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 23,
+    "military": 26,
     "security": 5,
-    "political": 19,
-    "other": 75
+    "political": 20,
+    "other": 76
   },
   "source_counts": {
-    "news": 118,
+    "news": 123,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 31.79
+      "risk": 35.04
     },
     {
       "name": "Israel",
-      "risk": 26.35
+      "risk": 27.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.95
+      "risk": 18.95
+    },
+    {
+      "name": "Syria",
+      "risk": 8.0
     },
     {
       "name": "Iraq",
       "risk": 5.55
-    },
-    {
-      "name": "Yemen",
-      "risk": 5.4
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Turkey slams Israel's 'untenable' claims after strikes on Syrian base - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeTdCNlA1LTNVZ0ttZ2VXTGJLVnR5YjBnUnZMNFVWVzc5cUJEcHdxekdHLXBzcDNLUnp1TUx4N3J6SzJQQ0pOTEtSRFVWOTJpZC1xZEd4QTA1TkpEaG1mOXdTM2pQWU5kV3FqWTM3SlJUZEYyb180ZWxMRHlSZlVveDMtWkNJMTFwMWs0VTB6R1M1aHhNRVAzdXc2V29oOVBBRV8wM2FmWnE4OTNJVWpWU3E0Z0VBcnQ4"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "EXCLUSIVE: Mossad director, Syria foreign minister discussed Turkish military deployments before strikes, sources say - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVkl0OHlnRWFEd2x4RkNFcloyYWw0UEhZTjU2VW9KUTlsUGlWN1JUelNlYmtmYkRyRFh6b0ttNTF0c3o3SEtLdFFpVGxhRV82VHlBR2F6ZUJtWGd3SWFjcTNySkt2cnNiMnRaRDd2Z3piUlVQa2pVQzVzbXRyREdDSUx2OGNPX25tSFBGcEpzbXJZQzFFWWRQaFhoQWQ0NWlOR1A5V3ExSkVKN0REV0wwMW0yNVRTYm96RzFZOVpVT0lEbkd6U3h3VHBlbw"
     },
     {
       "score": 3.0,
@@ -88,9 +97,27 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
+      "title": "Multiple deadly Israeli strikes in Gaza in under 24 hours",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/videos/cp3rgxzk5x2o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
       "title": "US condemns 'unnecessary escalation' after Israeli airstrikes on Syrian airbase",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/c62vy3wl31lo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "NATO ‘prepared’ to defend allies amid report of Iranian strike plans - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYkVKc09MNnM3LVBfaktoMjNQOEJTaThaR0tvTGxQZC1xZ2lpRGhTSklaaUNHMUdVZkNoZmlaUnZlS2dpaTFMWlhCUjNGZlRDQTZPaE1wUUJvREhHRHNRTUNmQVF3cFJYU2M3YjFtRFRURm9QZVZJQnd1QTh5QlE2Unp0N0d4NEI2c0pmeHloVktGdmJPempfbm5XSnhlcHVmRDJfWDBNZmNtbTjSAbABQVVfeXFMTWpjNzlyWFVLcUZiY2RXczdEUnQ4ZUlmTnh4dV9reElDVnRrSGxHMFRXd2VxWHQ1U1V5Y3dNZE52UGlwZ3B2Z3pVSGJJT2xCWENfYVY5UUxCc2Z2eG1NdHJTVC03VUtwY1ljcTFCcWpRN0ItQ1NjQkhLVkVhWjJhcm9wQlJhUFR5dzFGZzNBMHVhMWNacWVuMEtwSHJ3eGRKNzMyb3k2VjNpT25OX3l1RWY"
     },
     {
       "score": 3.0,
@@ -109,33 +136,6 @@
       "title": "UAE says two missiles detected earlier were launched from Iran - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOaVFKQ0k0Vk10ckR0U1JfNHlsLW9nWUtrc09mMUx4UzFzRHJsVk4zYkJQT2NFNHVoVTRyYjE3OTJOcXVtcHFoWGRpQndUTXFnQjFKVGZQM1ZRTkpEeVVPZlF4ZXUydnRUckVmOHU2SEtXU000ZVFhVE8teGhQZFFPbnVFX3dBM1pNa0oxbnFoTmF2bUM3MjFj"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli airstrikes hit Syrian airbase, drawing Turkish condemnation - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNdGU5SDV5WlhteEdoT2hlZTBkZzY2N1hnYU5sZHF1N3FqTGc1UEd1Mm9MTjk5V24telp3cWVsc08yU3dqU3lJemxZaGhXb0t4UUNBdkpXTFFUckwzRDZ2cDFOenpsN013aW5RRDVWSUxHRHpkVTBzeTV6NmRRR2NhWGtoeEpjLURMTEY5bjlyck5zLXQ5cU9KVTRwNDFQUjZuWU9lRU1vRnBORm5zdi1zTVpIb3VqY0FLRjZZUzBQYktDOEs3Rl9nOHBOZF9zQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Why has Trump threatened to bomb Oman – for a second time? - Al Jazeera",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTjdhcGw4aWM5Z1luSFB3SmxSdEZTdElLOERSTFdEUkVHQmhSa1FlOFZCMFdraWlPNW12VU1HcjIyQmZhcUFVNW91VkZmXzBrMUpHbVg0RkpmSTRqNEhNRFdTbFIxQnBGMEZFa3JTa1lrUDlZekVibXBDdmJGaEtmR3dzOEdpQUNwTEFtNmZNNzhMYjJmVk02SDEwczXSAaIBQVVfeXFMTXdMcDdfV2ZkT0hPQ3N3Rzc3WDhaNGU3c0laZUVhUmViUlFuM01ibDdjR1VWT0k5T2VleWk1NHRQd05vekZLNzljaDUyTmx6M0hYRVp3bGktbjRFMy1leGtzaURwNEtnMWFEWG02R1dTSlBrSV82dU5TUVE5RTFsSXR5ZGt2bF9YQTZPTjJhVmlGNlFEamlNZXFZWmpzM0R1OWRn"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Analysis: Syrian airbase attack is an Israeli message to Damascus, Ankara - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTWFCUTc0LVpkd21oaEJYRFNyUUFOREtzZG9aQjVRTW9jSjhkMjJGMGFNUkhxY2dsWlpvNkc0NDM5NHhPRUR0NmwwRnQyQ1h3VkE5YUFyUjRZOFJsX2d1dDlsc0s3RVpnc00tbkh1UTNta2w4RUg5RWtZNVl4Q3V2Y25IMXFYaTJIQ2NyWjIxUHZLaXZXWGJnTHQxS0o5Ynp5WUVscjVCSXd2X1dpRVg0MUZpWWtkcVXSAbwBQVVfeXFMTm5fckd6eHo0SjJlQzB6UjN3T1dYWDFnWFlXdWU2cG1QUHFSU1BodVJIX0xDTEZUd3VndE5ndGZNMzJIR3F6bmhKZEFoTWtLaVVyaVoydi11bEVkVkp6QXJOOW40c1Rya2U1MTVNZEdWX29fckttalFaSTRmUjhMWks1LWZpVF9aRjN2RE9XRUl1d2U2aE50WUU1MFRBbngyTGZjVXBoYUg4YnNxcTdrUmF3NC1XSW9MUWE1UDU"
     }
   ]
 }
