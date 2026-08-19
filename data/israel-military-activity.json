@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-19T14:52:22+00:00",
+  "generated_at": "2026-08-19T20:44:29+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,36 +46,36 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 59,
-      "map_visualizable_events": 18,
-      "total_map_points": 21,
+      "total_events": 61,
+      "map_visualizable_events": 20,
+      "total_map_points": 23,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-19T12:39:57Z"
+      "latest_event_date": "2026-08-19T16:10:31Z"
     },
     "region_counts": {
-      "Gaza Strip": 42,
+      "Gaza Strip": 44,
       "South Lebanon": 19
     },
     "activity_type_counts": {
-      "airstrike": 45,
+      "airstrike": 46,
       "ground_activity": 8,
       "drone_activity": 6,
+      "humanitarian_zone": 3,
       "evacuation_warning": 3,
       "cross_border_fire": 3,
-      "humanitarian_zone": 2,
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 33,
+      "Hamas": 35,
       "Hezbollah": 12,
       "Not explicitly stated": 11,
       "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
-      "commander": 35,
+      "commander": 36,
       "individual_operative": 13,
-      "unspecified": 11,
+      "unspecified": 12,
       "military_structure": 7,
       "armed_cell": 6,
       "weapons_storage": 5,
@@ -87,44 +87,45 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 47,
-      "eliminated": 33,
+      "struck": 48,
+      "eliminated": 34,
       "located": 10,
-      "reported": 8,
+      "reported": 9,
       "dismantled": 7
     },
     "commander_type_counts": {
       "unspecified_commander": 15,
-      "company_commander": 7,
+      "company_commander": 8,
+      "nukhba_commander": 7,
       "cell_commander": 7,
-      "nukhba_commander": 6,
       "battalion_commander": 3,
       "senior_commander": 2,
       "production_commander": 2,
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 54,
-      "command": 35,
+      "ground": 55,
+      "command": 36,
+      "weapons_logistics": 6,
       "drone_uav": 6,
       "rocket_missile": 6,
       "production": 6,
-      "weapons_logistics": 5,
       "underground": 4,
       "unspecified": 3,
       "naval": 1
     },
     "area_mention_counts": {
-      "Northern Gaza Strip": 18,
-      "Southern Gaza Strip": 13,
+      "Northern Gaza Strip": 19,
+      "Southern Gaza Strip": 14,
       "Central Gaza Strip": 8,
       "Yellow Line area": 6,
       "Security Zone – South Lebanon": 5
     },
     "top_locations": {
-      "Khan Yunis": 7,
+      "Khan Yunis": 8,
       "Nuseirat": 5,
       "Gaza City": 4,
+      "Beit Lahia": 1,
       "Nabatieh": 1,
       "Deir al-Balah": 1,
       "Jabalia": 1,
@@ -133,6 +134,144 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19081",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19081",
+      "date": "2026-08-19T16:10:31Z",
+      "title": "IDF airstrike statement – Beit Lahia",
+      "description": "IDF: In a strike in the Al-Shati area: The IDF eliminated a company commander and three Nukhba platoon commanders in the Hamas terrorist organization Yesterday (Tuesday), the IDF struck in the Al-Shati area and eliminated four Nukhba commanders from the Beit Lahia battalion in the military wing of the Hamas terrorist organization. The IDF now confirms that the terrorists who were eliminated in the strike are: * Muhammad Hamdi Ahmad Al-Masri, a Nukbah company commander who advanced terror attacks against IDF troops. * Samed Samir Harb Abu Habal, a Nukbah platoon commander who infiltrated Israeli territory during the October 7th Massacre. * Muhammad Attar, a Nukhba platoon commander who was involved in advancing and carrying out terrorist attacks against IDF troops. * Muhammad Fathi Hussein Nasser, a Nukhba platoon commander who was involved in advancing and carrying out terrorist attacks against IDF troops. The commanders’ activities posed a threat to IDF troops. They were eliminated in an aerial strike to remove the threat they posed. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. The IDF will continue to operate in accordance with international law and take measures to mitigate harm to civilians prior to conducting strikes. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "company_commander",
+        "nukhba_commander"
+      ],
+      "commander_type": "company_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Beit Lahia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5464,
+          "longitude": 34.4951,
+          "matched_alias": "beit lahia"
+        }
+      ],
+      "location_count": 1,
+      "location": "Beit Lahia",
+      "country": "Palestinian Territories",
+      "latitude": 31.5464,
+      "longitude": 34.4951,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19081"
+    },
+    {
+      "id": "idf-idfofficial-19078",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19078",
+      "date": "2026-08-19T14:55:46Z",
+      "title": "IDF humanitarian zone update – Khan Yunis",
+      "description": "IDF: More than 2 million tons of food, a 72% decrease in prices, and an increase of more than 50% in the number of hospital beds: The scope of the humanitarian response in the Gaza Strip since the beginning of the ceasefire Since the beginning of the ceasefire in October 2025, the IDF has continued to facilitate the entry of humanitarian aid and goods into the Gaza Strip, in coordination with the UN and international organizations. Scope of Assistance: Food : More than 2 million tons of food have entered the Gaza Strip since the beginning of the ceasefire. A wide variety of food has entered, including meat, poultry, eggs, cheese, fruits, and vegetables. - Since the beginning of the ceasefire, food prices have decreased by approximately 72%. - Approximately 600 trucks enter the Gaza Strip every day, with 70–80% of the trucks carrying food. - Today, 41 bakeries operated by international organizations are operating in the Gaza Strip, producing more than 3 million pita breads per day, alongside dozens of local bakeries. Water: - More than 70,000 cubic meters of water are supplied to the Gaza Strip on average every day – more than 60 liters per person per day. - Approximately 250 water trucks operate every day, with approximately 2,800 distribution points throughout the Gaza Strip. - More than 78,000 tons of hygiene and sanitation equipment have entered the Gaza Strip, alongside waste removal equipment and water purification tablets. - Four water pipelines are currently operational in the Gaza Strip – Three of them transport water from Israel – in addition to desalination facilities, including two major desalination plants, one of which (in Khan Yunis) is connected to the “Kela” power line from Israel, as well as dozens of water wells throughout the Gaza Strip. Medical: - More than 21,000 tons of medical equipment have entered the Gaza Strip since the beginning of the ceasefire. - The number of hospital beds has increased by more than 50%. - In coordination with international organizations, advanced medical equipment has also entered the Gaza Strip, including X-ray machines, generators, and oxygen tanks . - In northern Gaza, 8 permanent hospitals, 4 field hospitals, and 4 medical centers are currently operating. - In southern Gaza, 2 permanent hospitals and 8 field hospitals are currently operating. The volume of aid entering the Gaza Strip significantly exceeds the humanitarian needs as defined by UN agencies, international organizations, and assessments conducted throughout the war. At the same time, Hamas remains the primary obstacle to further improving the situation in the Gaza Strip. The organization interferes with humanitarian operations, exploits civilian infrastructure, influences distribution mechanisms, and continues repeated attempts to smuggle prohibited items under the guise of humanitarian aid. Israel will continue working together with its international partners to improve the humanitarian response, while preventing Hamas from exploiting it at the expense of Gazan civilians.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "humanitarian_zone"
+      ],
+      "activity_type": "humanitarian_zone",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "weapons_logistics"
+      ],
+      "threat_domain": "weapons_logistics",
+      "area_mentions": [
+        "Northern Gaza Strip",
+        "Southern Gaza Strip"
+      ],
+      "operation_results": [
+        "reported"
+      ],
+      "operation_result": "reported",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19078"
+    },
     {
       "id": "idf-idfofficial-19075",
       "source": "IDF official Telegram",
@@ -3948,6 +4087,148 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19081-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19081",
+      "date": "2026-08-19T16:10:31Z",
+      "title": "IDF airstrike statement – Beit Lahia",
+      "description": "IDF: In a strike in the Al-Shati area: The IDF eliminated a company commander and three Nukhba platoon commanders in the Hamas terrorist organization Yesterday (Tuesday), the IDF struck in the Al-Shati area and eliminated four Nukhba commanders from the Beit Lahia battalion in the military wing of the Hamas terrorist organization. The IDF now confirms that the terrorists who were eliminated in the strike are: * Muhammad Hamdi Ahmad Al-Masri, a Nukbah company commander who advanced terror attacks against IDF troops. * Samed Samir Harb Abu Habal, a Nukbah platoon commander who infiltrated Israeli territory during the October 7th Massacre. * Muhammad Attar, a Nukhba platoon commander who was involved in advancing and carrying out terrorist attacks against IDF troops. * Muhammad Fathi Hussein Nasser, a Nukhba platoon commander who was involved in advancing and carrying out terrorist attacks against IDF troops. The commanders’ activities posed a threat to IDF troops. They were eliminated in an aerial strike to remove the threat they posed. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. The IDF will continue to operate in accordance with international law and take measures to mitigate harm to civilians prior to conducting strikes. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "company_commander",
+        "nukhba_commander"
+      ],
+      "commander_type": "company_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Beit Lahia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5464,
+          "longitude": 34.4951,
+          "matched_alias": "beit lahia"
+        }
+      ],
+      "location_count": 1,
+      "location": "Beit Lahia",
+      "country": "Palestinian Territories",
+      "latitude": 31.5464,
+      "longitude": 34.4951,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19081",
+      "parent_event_id": "idf-idfofficial-19081",
+      "location_index": 1
+    },
+    {
+      "id": "idf-idfofficial-19078-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19078",
+      "date": "2026-08-19T14:55:46Z",
+      "title": "IDF humanitarian zone update – Khan Yunis",
+      "description": "IDF: More than 2 million tons of food, a 72% decrease in prices, and an increase of more than 50% in the number of hospital beds: The scope of the humanitarian response in the Gaza Strip since the beginning of the ceasefire Since the beginning of the ceasefire in October 2025, the IDF has continued to facilitate the entry of humanitarian aid and goods into the Gaza Strip, in coordination with the UN and international organizations. Scope of Assistance: Food : More than 2 million tons of food have entered the Gaza Strip since the beginning of the ceasefire. A wide variety of food has entered, including meat, poultry, eggs, cheese, fruits, and vegetables. - Since the beginning of the ceasefire, food prices have decreased by approximately 72%. - Approximately 600 trucks enter the Gaza Strip every day, with 70–80% of the trucks carrying food. - Today, 41 bakeries operated by international organizations are operating in the Gaza Strip, producing more than 3 million pita breads per day, alongside dozens of local bakeries. Water: - More than 70,000 cubic meters of water are supplied to the Gaza Strip on average every day – more than 60 liters per person per day. - Approximately 250 water trucks operate every day, with approximately 2,800 distribution points throughout the Gaza Strip. - More than 78,000 tons of hygiene and sanitation equipment have entered the Gaza Strip, alongside waste removal equipment and water purification tablets. - Four water pipelines are currently operational in the Gaza Strip – Three of them transport water from Israel – in addition to desalination facilities, including two major desalination plants, one of which (in Khan Yunis) is connected to the “Kela” power line from Israel, as well as dozens of water wells throughout the Gaza Strip. Medical: - More than 21,000 tons of medical equipment have entered the Gaza Strip since the beginning of the ceasefire. - The number of hospital beds has increased by more than 50%. - In coordination with international organizations, advanced medical equipment has also entered the Gaza Strip, including X-ray machines, generators, and oxygen tanks . - In northern Gaza, 8 permanent hospitals, 4 field hospitals, and 4 medical centers are currently operating. - In southern Gaza, 2 permanent hospitals and 8 field hospitals are currently operating. The volume of aid entering the Gaza Strip significantly exceeds the humanitarian needs as defined by UN agencies, international organizations, and assessments conducted throughout the war. At the same time, Hamas remains the primary obstacle to further improving the situation in the Gaza Strip. The organization interferes with humanitarian operations, exploits civilian infrastructure, influences distribution mechanisms, and continues repeated attempts to smuggle prohibited items under the guise of humanitarian aid. Israel will continue working together with its international partners to improve the humanitarian response, while preventing Hamas from exploiting it at the expense of Gazan civilians.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "humanitarian_zone"
+      ],
+      "activity_type": "humanitarian_zone",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "weapons_logistics"
+      ],
+      "threat_domain": "weapons_logistics",
+      "area_mentions": [
+        "Northern Gaza Strip",
+        "Southern Gaza Strip"
+      ],
+      "operation_results": [
+        "reported"
+      ],
+      "operation_result": "reported",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan yunis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19078",
+      "parent_event_id": "idf-idfofficial-19078",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19075-location-1",
       "source": "IDF official Telegram",
