@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-19 20:53 UTC",
+    "updated": "2026-08-19 22:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-13",
     "period_end": "2026-08-19",
-    "total_events": 114,
-    "total_risk": 115.59,
-    "normalized_risk_score": 46.2,
-    "risk_level": "LOW",
+    "total_events": 132,
+    "total_risk": 130.69,
+    "normalized_risk_score": 52.3,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
-    "security": 5,
-    "political": 18,
-    "other": 65
+    "military": 29,
+    "security": 6,
+    "political": 20,
+    "other": 77
   },
   "source_counts": {
-    "news": 110,
+    "news": 128,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 29.44
+      "risk": 35.79
     },
     {
       "name": "Israel",
-      "risk": 28.75
+      "risk": 29.85
     },
     {
       "name": "Gaza Strip",
-      "risk": 22.0
-    },
-    {
-      "name": "Yemen",
-      "risk": 10.75
+      "risk": 24.15
     },
     {
       "name": "Syria",
-      "risk": 7.7
+      "risk": 9.8
+    },
+    {
+      "name": "Iraq",
+      "risk": 5.55
     }
   ],
   "top_events": [
@@ -70,15 +70,6 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "Israel admits its troops killed 5-year-old Hind Rajab in Gaza, opens criminal probe - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQ1Zxdm1rckV4MGpjNEsycF9zT0lrcDR1OUtSMmttLUJ0WHNwaTFsMVQyRkVaaDRHMnZjNkhvVEY5RVE0XzhZTmhjRXBGd256UVZ5TTR3S2ZNaS1nWDVwVnFsUTc4eFVYTVdIUS1jZXVMckpnQXV6QXNPVTRGYmNsbXpPbTl3b0Jhc1ZtT1pkVXpac19TUWpXR1dXeVR6SGhoa2xkMkFpa0hLV2RBSmZZeFFxYnB1cTJI"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-08-19",
-      "category": "military",
-      "source_type": "news",
       "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB"
@@ -97,6 +88,15 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
+      "title": "Israel admits its troops killed 5-year-old Hind Rajab in Gaza, opens criminal probe - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQ1Zxdm1rckV4MGpjNEsycF9zT0lrcDR1OUtSMmttLUJ0WHNwaTFsMVQyRkVaaDRHMnZjNkhvVEY5RVE0XzhZTmhjRXBGd256UVZ5TTR3S2ZNaS1nWDVwVnFsUTc4eFVYTVdIUS1jZXVMckpnQXV6QXNPVTRGYmNsbXpPbTl3b0Jhc1ZtT1pkVXpac19TUWpXR1dXeVR6SGhoa2xkMkFpa0hLV2RBSmZZeFFxYnB1cTJI"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
       "title": "UAE stocks fall after missile scare; Qatar at over one-year low - Reuters",
       "location": "United Arab Emirates",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTFBZeTZITFl5NWRzUU9DUDZZZVM4ck5NQnY2bFdpZDRHUW9ZNGZRRHdSSjdpM3NUWlFSbnR1Rkl6ajFnbW51bktTY2VqWWdNeURtOVZXS1ZzOVNFRTE3dG5JdV9TbW0tTkh2VnRxblBiZmZRWmlueDQ1d3BFNVluSGExd1hVNS1JNjdUQmt0TG9WZ2s"
@@ -107,7 +107,7 @@
       "category": "military",
       "source_type": "news",
       "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
-      "location": "Gaza Strip",
+      "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss"
     },
     {
@@ -129,13 +129,13 @@
       "url": "https://www.bbc.co.uk/news/articles/c62vy3wl31lo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-08-18",
+      "score": 3.0,
+      "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "UAE says two missiles detected earlier were launched from Iran - Reuters",
+      "title": "NATO ‘prepared’ to defend allies amid report of Iranian strike plans - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOaVFKQ0k0Vk10ckR0U1JfNHlsLW9nWUtrc09mMUx4UzFzRHJsVk4zYkJQT2NFNHVoVTRyYjE3OTJOcXVtcHFoWGRpQndUTXFnQjFKVGZQM1ZRTkpEeVVPZlF4ZXUydnRUckVmOHU2SEtXU000ZVFhVE8teGhQZFFPbnVFX3dBM1pNa0oxbnFoTmF2bUM3MjFj"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYkVKc09MNnM3LVBfaktoMjNQOEJTaThaR0tvTGxQZC1xZ2lpRGhTSklaaUNHMUdVZkNoZmlaUnZlS2dpaTFMWlhCUjNGZlRDQTZPaE1wUUJvREhHRHNRTUNmQVF3cFJYU2M3YjFtRFRURm9QZVZJQnd1QTh5QlE2Unp0N0d4NEI2c0pmeHloVktGdmJPempfbm5XSnhlcHVmRDJfWDBNZmNtbTjSAbABQVVfeXFMTWpjNzlyWFVLcUZiY2RXczdEUnQ4ZUlmTnh4dV9reElDVnRrSGxHMFRXd2VxWHQ1U1V5Y3dNZE52UGlwZ3B2Z3pVSGJJT2xCWENfYVY5UUxCc2Z2eG1NdHJTVC03VUtwY1ljcTFCcWpRN0ItQ1NjQkhLVkVhWjJhcm9wQlJhUFR5dzFGZzNBMHVhMWNacWVuMEtwSHJ3eGRKNzMyb3k2VjNpT25OX3l1RWY"
     }
   ]
 }
