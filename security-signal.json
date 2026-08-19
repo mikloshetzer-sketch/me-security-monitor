@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-19 18:55 UTC",
+    "updated": "2026-08-19 20:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-13",
     "period_end": "2026-08-19",
-    "total_events": 127,
-    "total_risk": 119.84,
-    "normalized_risk_score": 47.9,
+    "total_events": 114,
+    "total_risk": 115.59,
+    "normalized_risk_score": 46.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 26,
     "security": 5,
-    "political": 20,
-    "other": 76
+    "political": 18,
+    "other": 65
   },
   "source_counts": {
-    "news": 123,
+    "news": 110,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 35.04
+      "risk": 29.44
     },
     {
       "name": "Israel",
-      "risk": 27.1
+      "risk": 28.75
     },
     {
       "name": "Gaza Strip",
-      "risk": 18.95
+      "risk": 22.0
+    },
+    {
+      "name": "Yemen",
+      "risk": 10.75
     },
     {
       "name": "Syria",
-      "risk": 8.0
-    },
-    {
-      "name": "Iraq",
-      "risk": 5.55
+      "risk": 7.7
     }
   ],
   "top_events": [
@@ -61,9 +61,18 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "EXCLUSIVE: Mossad director, Syria foreign minister discussed Turkish military deployments before strikes, sources say - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVkl0OHlnRWFEd2x4RkNFcloyYWw0UEhZTjU2VW9KUTlsUGlWN1JUelNlYmtmYkRyRFh6b0ttNTF0c3o3SEtLdFFpVGxhRV82VHlBR2F6ZUJtWGd3SWFjcTNySkt2cnNiMnRaRDd2Z3piUlVQa2pVQzVzbXRyREdDSUx2OGNPX25tSFBGcEpzbXJZQzFFWWRQaFhoQWQ0NWlOR1A5V3ExSkVKN0REV0wwMW0yNVRTYm96RzFZOVpVT0lEbkd6U3h3VHBlbw"
+      "title": "Israeli airstrike kills nine Palestinians at Gaza police station, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWHQxTVdDZDFBWlVVb2FyWXBaaC14cE5nZnIwdFN4Z3plZW5XUjdISFR3dEctVW5nRzF6T21QblV5N3NoMTRMWXVqSWxLdGtZT01kcVZQcWE0S3lJTGpSX2Q3Snh6Z3VQaVhZSVZsUTlWblZncGZGUnhxVTJYUm4zSC02VHdUMlFEUFMwR3BOU3RaVzc0X2gxWnEtcFB3VkZpbGZGcUgtNWlXdDBzN0xRS05FUnlOaEwzQm1uNnlKWm1Iekxi"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel admits its troops killed 5-year-old Hind Rajab in Gaza, opens criminal probe - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQ1Zxdm1rckV4MGpjNEsycF9zT0lrcDR1OUtSMmttLUJ0WHNwaTFsMVQyRkVaaDRHMnZjNkhvVEY5RVE0XzhZTmhjRXBGd256UVZ5TTR3S2ZNaS1nWDVwVnFsUTc4eFVYTVdIUS1jZXVMckpnQXV6QXNPVTRGYmNsbXpPbTl3b0Jhc1ZtT1pkVXpac19TUWpXR1dXeVR6SGhoa2xkMkFpa0hLV2RBSmZZeFFxYnB1cTJI"
     },
     {
       "score": 3.0,
@@ -73,6 +82,15 @@
       "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "EXCLUSIVE: Mossad chief, Syrian foreign minister discussed Turkish military deployments before strikes, sources say - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVkl0OHlnRWFEd2x4RkNFcloyYWw0UEhZTjU2VW9KUTlsUGlWN1JUelNlYmtmYkRyRFh6b0ttNTF0c3o3SEtLdFFpVGxhRV82VHlBR2F6ZUJtWGd3SWFjcTNySkt2cnNiMnRaRDd2Z3piUlVQa2pVQzVzbXRyREdDSUx2OGNPX25tSFBGcEpzbXJZQzFFWWRQaFhoQWQ0NWlOR1A5V3ExSkVKN0REV0wwMW0yNVRTYm96RzFZOVpVT0lEbkd6U3h3VHBlbw"
     },
     {
       "score": 3.0,
@@ -109,24 +127,6 @@
       "title": "US condemns 'unnecessary escalation' after Israeli airstrikes on Syrian airbase",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/c62vy3wl31lo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-08-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "NATO ‘prepared’ to defend allies amid report of Iranian strike plans - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYkVKc09MNnM3LVBfaktoMjNQOEJTaThaR0tvTGxQZC1xZ2lpRGhTSklaaUNHMUdVZkNoZmlaUnZlS2dpaTFMWlhCUjNGZlRDQTZPaE1wUUJvREhHRHNRTUNmQVF3cFJYU2M3YjFtRFRURm9QZVZJQnd1QTh5QlE2Unp0N0d4NEI2c0pmeHloVktGdmJPempfbm5XSnhlcHVmRDJfWDBNZmNtbTjSAbABQVVfeXFMTWpjNzlyWFVLcUZiY2RXczdEUnQ4ZUlmTnh4dV9reElDVnRrSGxHMFRXd2VxWHQ1U1V5Y3dNZE52UGlwZ3B2Z3pVSGJJT2xCWENfYVY5UUxCc2Z2eG1NdHJTVC03VUtwY1ljcTFCcWpRN0ItQ1NjQkhLVkVhWjJhcm9wQlJhUFR5dzFGZzNBMHVhMWNacWVuMEtwSHJ3eGRKNzMyb3k2VjNpT25OX3l1RWY"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-08-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE imposes indefinite trade embargo on Iran over alleged missile attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUmllc1dobzVIUzRBUl9ydXdrRTlTUDFwZW9qWGZlbFAwcWh4MkhTX3NjOUQ3S2tlMVRudUZ3TVR6bk9SdWFQN3g2QmNpYm1ZT3gxTEJfVVdnNmFMS01nNXNaMkZ3T0hQcFpOM0RUdTV0b0E5a1UxUHR0dWZ3QUlhSkZzWkl6MGsyVVFWMDNVRTNHeWx2NExYUlFNcnU4MDNBR0xKaEtlcjlBcElhQXRzbmlFOGPSAboBQVVfeXFMUHdKbW85MVRhT242aE5QLVZENFc5VVNSeTVHNHZzZkJPSHdnY1JGd2J5UEk0RzhKYXdmNWs5c2xTWHQ4UUNkRXVYaTZuQkNySWt4dzZtQzNHNnhYOWRRMVVGaFl6NlpNaGxfQ1d1TGQtbzl3TEJCUG00WG50YUpkNk1fc2laQTBOVW95SnYyZlNsZDNVcjdwc1V3ZXY4TnBSMWR4dFpPMURRQkUxMURQUlFyRHo2VHgtYlNn"
     },
     {
       "score": 2.7,
