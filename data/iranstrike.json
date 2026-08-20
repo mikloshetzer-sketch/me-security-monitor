@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T14:01:52Z",
+  "generated_at": "2026-08-20T15:49:17Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -63,8 +63,8 @@
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-12T22:27:15Z",
-      "latest_event_date": "2026-08-20T05:47:01Z",
+      "earliest_event_date": "2026-07-12T22:33:33Z",
+      "latest_event_date": "2026-08-20T14:41:28Z",
       "geocoded_events": 214,
       "geocoded_share": 21.4,
       "top_category": "infrastructure",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 77,
-        "previous": 55,
+        "current": 75,
+        "previous": 53,
         "delta": 22,
-        "percent_change": 40.0,
+        "percent_change": 41.5,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 520,
-        "previous": 422,
-        "delta": 98,
-        "percent_change": 23.2,
-        "direction": "increase"
+        "current": 498,
+        "previous": 437,
+        "delta": 61,
+        "percent_change": 14.0,
+        "direction": "stable"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-12",
-        "count": 20
+        "count": 18
       },
       {
         "date": "2026-07-13",
@@ -246,16 +246,16 @@
       },
       {
         "date": "2026-08-20",
-        "count": 2
+        "count": 4
       }
     ],
     "category_counts": {
       "infrastructure": 264,
       "missile": 203,
-      "strike": 176,
-      "drone": 114,
+      "strike": 177,
+      "drone": 115,
       "airstrike": 99,
-      "explosion": 63,
+      "explosion": 61,
       "movement": 38,
       "ground": 18,
       "defense": 11,
@@ -264,8 +264,8 @@
     },
     "severity_counts": {
       "medium": 515,
-      "high": 347,
-      "low": 136,
+      "high": 345,
+      "low": 138,
       "critical": 2
     },
     "attacker_counts": {
@@ -384,34 +384,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10238,
+    "totalCount": 10240,
     "spotlight": {
       "event": {
-        "id": "2yi391cnb5600",
-        "timestamp": "2026-08-20T05:47:01+00:00",
-        "location": "LBN",
-        "origin": "ISR",
+        "id": "3kp32958vaw00",
+        "timestamp": "2026-08-20T14:41:28+00:00",
+        "location": "YEM",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
-        "severity": "high",
-        "description": "Israeli fighter jets conduct series of approximately 10 airstrikes on Ali al-Tahir ridge and nearby Ramah village in southern Lebanon, reportedly using bunker busters",
-        "descriptionHe": "מטוסי קרב ישראליים ביצעו סדרת כעשר תקיפות אוויריות על רכס עלי א-טאהר וכפר רמאן הסמוך בדרום לבנון, לפי דיווחים בשימוש בפצצות חודרות בונקרים",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128841"
+        "severity": "low",
+        "description": "Rajum hexacopter UAV operated by Yemeni forces strikes target in Harib district south of Marib, causing one fatality and multiple injuries among Shabwa Defense Forces",
+        "descriptionHe": "מזל\"ט הקסקופטר Rajum המופעל על ידי כוחות ימניים תוקף מטרה במחוז Harib דרומית למריב, גורם למוות אחד וחבורה של פצועים בבין כוחות הגנת שבוה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82488"
       },
-      "headline": "Israeli jets strike Lebanese ridge with bunker busters in escalating campaign",
-      "headlineHe": "מטוסי קרב ישראליים תוקפים רכס בלבנון בפצצות חודרות בונקרים",
-      "summary": "The airstrikes on Ali al-Tahir ridge mark a significant intensification of Israeli operations in southern Lebanon, following sustained artillery bombardment throughout the night.",
-      "summaryHe": "התקפות האוויר על רכס עלי אל-תחיר מהווים הסלמה משמעותית של פעילות ישראלית בדרום לבנון, בעקבות הפגזה תופסת ממושכת במשך הלילה.",
-      "pickedAt": "2026-08-20T13:15:50.626Z",
-      "state": "TODAY"
+      "headline": "Yemeni drone strikes target in southern Yemen, kills one",
+      "headlineHe": "רחפן תימני תוקף מטרה בדרום תימן, הרג אחד",
+      "summary": "Houthi-affiliated forces demonstrated continued UAV capability in Yemen's ongoing civil war, striking Saudi-backed militia positions in Shabwa province.",
+      "summaryHe": "כוחות הודים הפגינו יכולת רחפן מתמשכת במלחמת האזרחים התימנית, תוקפים עמדות מיליציה בתמיכת סעודית בחבל שבוה.",
+      "pickedAt": "2026-08-20T15:30:50.863Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-20T14:00:04.556Z",
+    "lastUpdated": "2026-08-20T15:45:03.930Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -952,58 +958,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 90,
+      "internet": 91,
       "cellular": null,
-      "lastUpdate": "2026-08-20T13:30:43.048Z",
+      "lastUpdate": "2026-08-20T15:30:42.939Z",
       "internetHistory": [
-        {
-          "t": "2026-08-19T13:30:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-19T13:40:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-19T13:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T14:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T14:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T14:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T14:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T14:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-19T14:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T15:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T15:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-19T15:20:00.000Z",
-          "v": 91
-        },
         {
           "t": "2026-08-19T15:30:00.000Z",
           "v": 92
@@ -1527,22 +1485,70 @@
         {
           "t": "2026-08-20T13:10:00.000Z",
           "v": 90
+        },
+        {
+          "t": "2026-08-20T13:20:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-20T13:30:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-20T13:40:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-20T13:50:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-20T14:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-20T14:10:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-20T14:20:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-20T14:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-20T14:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-20T14:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-20T15:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-20T15:10:00.000Z",
+          "v": 91
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-20T13:30:43.048Z"
+    "lastUpdated": "2026-08-20T15:30:42.939Z"
   },
   "developments": [
     {
-      "id": "iranstrike-3f7a2c91",
+      "id": "iranstrike-a7f2c9d1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-20T05:47:01Z",
       "title": "IranStrike event",
-      "description": "IDF launches intensive strikes on southern Lebanon; airstrikes and artillery target Ali al-Tahir ridge",
+      "description": "IDF strikes Ali al-Tahir ridge in Lebanon with airstrikes and artillery barrage",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -1550,7 +1556,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf launches intensive strikes on southern lebanon;",
+      "attacker_evidence": "idf strikes ali al-tahir ridge in lebanon with airstrikes and",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -1563,9 +1569,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "3f7a2c91",
-        "text": "IDF launches intensive strikes on southern Lebanon; airstrikes and artillery target Ali al-Tahir ridge",
-        "textHe": "צה\"ל משיק תקיפות אינטנסיביות בדרום לבנון; תקיפות אוויריות וארטילריה על רכס עלי אל-טאהיר",
+        "id": "a7f2c9d1",
+        "text": "IDF strikes Ali al-Tahir ridge in Lebanon with airstrikes and artillery barrage",
+        "textHe": "צה\"ל תוקף את רכס עלי אל-תהיר בלבנון בתקיפות אווריות והפצצת ארטילריה",
         "severity": "high",
         "timestamp": "2026-08-20T05:47:01+00:00",
         "entityIds": [
@@ -1580,14 +1586,14 @@
       }
     },
     {
-      "id": "iranstrike-5e4b1a72",
+      "id": "iranstrike-b3e8f5a2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-19T16:29:18Z",
       "title": "IranStrike event",
-      "description": "Israel strikes Syrian airbase and reports military action tied to Turkish positioning",
+      "description": "Israeli airstrikes target Abu al-Duhur Airbase in Syria; Netanyahu cites Turkish positioning",
       "category": "other",
       "severity": "medium",
       "attacker": "israel",
@@ -1595,9 +1601,9 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "israel strikes syrian airbase and reports military action tied t",
-      "location": "Israel",
-      "country": "Israel",
+      "attacker_evidence": "israeli airstrikes target abu al-duhur airbase in syria;",
+      "location": "Syria",
+      "country": "Syria",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1608,9 +1614,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5e4b1a72",
-        "text": "Israel strikes Syrian airbase and reports military action tied to Turkish positioning",
-        "textHe": "ישראל תוקפת בסיס אוויר סורי ודיווחת על פעולה צבאית הקשורה לעמדה טורקית",
+        "id": "b3e8f5a2",
+        "text": "Israeli airstrikes target Abu al-Duhur Airbase in Syria; Netanyahu cites Turkish positioning",
+        "textHe": "תקיפות ישראליות בבסיס אבו אל-דוחור בסוריה; נתניהו מתייחס לכיול טורקי",
         "severity": "medium",
         "timestamp": "2026-08-19T16:29:18+00:00",
         "entityIds": [
@@ -1625,24 +1631,24 @@
       }
     },
     {
-      "id": "iranstrike-4c9d6e33",
+      "id": "iranstrike-c6d4b8e9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-19T16:35:03Z",
+      "date": "2026-08-20T14:41:28Z",
       "title": "IranStrike event",
-      "description": "UAE suspends trade and financial ties with Iran amid regional escalation",
+      "description": "Yemeni forces strike SDF in Harib; Saudi coalition shells Saada enclaves",
       "category": "other",
-      "severity": "medium",
+      "severity": "low",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1653,23 +1659,120 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4c9d6e33",
-        "text": "UAE suspends trade and financial ties with Iran amid regional escalation",
-        "textHe": "איחוד האמירויות מעלה את הסחר והקשרים הפיננסיים עם איראן בעקבות הסלמה אזורית",
-        "severity": "medium",
-        "timestamp": "2026-08-19T16:35:03+00:00",
+        "id": "c6d4b8e9",
+        "text": "Yemeni forces strike SDF in Harib; Saudi coalition shells Saada enclaves",
+        "textHe": "כוחות תימן תוקפים כוחות הגנה שבא בהריב; הקואליציה הסעודית מטחנת מעוזי סעדה",
+        "severity": "low",
+        "timestamp": "2026-08-20T14:41:28+00:00",
         "entityIds": [
-          "ARE",
-          "IRN"
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
-          "1cqfpw77vfk00"
+          "3kp32958vaw00",
+          "3hxf4zjntka00"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3kp32958vaw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82488",
+      "date": "2026-08-20T14:41:28Z",
+      "title": "IranStrike event",
+      "description": "Rajum hexacopter UAV operated by Yemeni forces strikes target in Harib district south of Marib, causing one fatality and multiple injuries among Shabwa Defense Forces",
+      "category": "drone",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3kp32958vaw00",
+        "timestamp": "2026-08-20T14:41:28+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "low",
+        "description": "Rajum hexacopter UAV operated by Yemeni forces strikes target in Harib district south of Marib, causing one fatality and multiple injuries among Shabwa Defense Forces",
+        "descriptionHe": "מזל\"ט הקסקופטר Rajum המופעל על ידי כוחות ימניים תוקף מטרה במחוז Harib דרומית למריב, גורם למוות אחד וחבורה של פצועים בבין כוחות הגנת שבוה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82488"
+      }
+    },
+    {
+      "id": "iranstrike-3hxf4zjntka00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82488",
+      "date": "2026-08-20T14:41:28Z",
+      "title": "IranStrike event",
+      "description": "Saudi-led coalition conducts artillery bombardments against Al-Thabit enclaves in Qatabar, Ghafirah sub-district, and Al-Ghur locality in Saada governorate",
+      "category": "strike",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3hxf4zjntka00",
+        "timestamp": "2026-08-20T14:41:28+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "low",
+        "description": "Saudi-led coalition conducts artillery bombardments against Al-Thabit enclaves in Qatabar, Ghafirah sub-district, and Al-Ghur locality in Saada governorate",
+        "descriptionHe": "הקואליציה בהנהגת סעודיה מטיחה הפצפוצי ארטילריה נגד מבצרי אל-תאביט בקתבר, תת-מחוז גפירה, ומקום אל-גור בנובד סעדה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82488"
+      }
+    },
     {
       "id": "iranstrike-2yi391cnb5600",
       "source": "IranStrike",
@@ -46888,96 +46991,6 @@
         "descriptionHe": "פיצוצים חוזרים באחواז",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/79490"
-      }
-    },
-    {
-      "id": "iranstrike-3lwyzj7l8ds00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79487",
-      "date": "2026-07-12T22:27:15Z",
-      "title": "IranStrike event",
-      "description": "Explosions reported in Behbahan",
-      "category": "explosion",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3lwyzj7l8ds00",
-        "timestamp": "2026-07-12T22:27:15+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Explosions reported in Behbahan",
-        "descriptionHe": "פיצוצים דווחו בבהבהן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79487"
-      }
-    },
-    {
-      "id": "iranstrike-3fbp7lli2bk00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79486",
-      "date": "2026-07-12T22:27:15Z",
-      "title": "IranStrike event",
-      "description": "Explosions reported in Omedah",
-      "category": "explosion",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3fbp7lli2bk00",
-        "timestamp": "2026-07-12T22:27:15+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Explosions reported in Omedah",
-        "descriptionHe": "פיצוצים דווחו בעומדה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79486"
       }
     }
   ],
