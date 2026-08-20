@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-20 10:48 UTC",
+    "updated": "2026-08-20 13:12 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,42 @@
   "summary": {
     "period_start": "2026-08-14",
     "period_end": "2026-08-20",
-    "total_events": 13,
-    "total_risk": 14.42,
-    "normalized_risk_score": 5.8,
+    "total_events": 133,
+    "total_risk": 119.22,
+    "normalized_risk_score": 47.7,
     "risk_level": "LOW",
-    "confidence": "LOW"
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 4,
-    "security": 0,
-    "political": 2,
-    "other": 7
+    "military": 28,
+    "security": 3,
+    "political": 20,
+    "other": 82
   },
   "source_counts": {
-    "news": 9,
+    "news": 129,
     "isw": 4
   },
   "top_locations": [
     {
+      "name": "Iran",
+      "risk": 35.72
+    },
+    {
       "name": "Israel",
-      "risk": 7.2
+      "risk": 28.6
     },
     {
       "name": "Gaza Strip",
-      "risk": 4.4
+      "risk": 20.0
     },
     {
-      "name": "Iran",
-      "risk": 2.12
+      "name": "Syria",
+      "risk": 6.95
     },
     {
-      "name": "West Bank",
-      "risk": 0.7
+      "name": "Iraq",
+      "risk": 4.9
     }
   ],
   "top_events": [
@@ -48,9 +52,72 @@
       "date": "2026-08-20",
       "category": "military",
       "source_type": "news",
+      "title": "Israel and Turkey step up warnings over Syria after airbase bombing - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQLTlfMHNQWDJxLTRQUnk3S3BmSThwcFNFWTY4dHhTaVZlaENYcFliSkRTVFMzRVliRkgweUxUVThXN0ZfU2Q0Rl9WVXBCZkxBQXZPcUlkeVNKa2kwcFQzM3FVakJMRlQ2N1FBZ3hVUGNXb25ySko1UFVEQjZqU3dfekJUdVBYMFVkQ3RiSm1mMTZFUTFsNFhidHNxY0lsbnVCeTNJOUh0eEQ5dVRMM3VtajlWWlFxOFhfRTFjdXlTWjNtLUhi"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-20",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Turkey slams Israel's 'untenable' claims after strikes on Syrian base - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeTdCNlA1LTNVZ0ttZ2VXTGJLVnR5YjBnUnZMNFVWVzc5cUJEcHdxekdHLXBzcDNLUnp1TUx4N3J6SzJQQ0pOTEtSRFVWOTJpZC1xZEd4QTA1TkpEaG1mOXdTM2pQWU5kV3FqWTM3SlJUZEYyb180ZWxMRHlSZlVveDMtWkNJMTFwMWs0VTB6R1M1aHhNRVAzdXc2V29oOVBBRV8wM2FmWnE4OTNJVWpWU3E0Z0VBcnQ4"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdzR1UDJHQ1pYM2Y2dzJ4Wmo3d3VCNFBEbDZQamtaSm5wdF9uWUdwRzdNa0ZtTFdzaUppUkdtelNyaDV0ZnU4aWY1aUlBLWhNdzN2VmhvZzJNdk8zM3gwSXZvc0p6Zld0UHhRQ0RjY2NTekZOekZnMEhwWlo1OXc2Mk1KZ0ZkZHF4WFR5NVRMejB2eDQxdXJJR0VocU5QVmRHbHFTZXlJNWRfdE43Sko3cXlYalB2VmFWSFczb044NlZEU21vOTNHOHpB"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "EXCLUSIVE: Mossad chief, Syrian foreign minister discussed Turkish military deployments before strikes, sources say - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVkl0OHlnRWFEd2x4RkNFcloyYWw0UEhZTjU2VW9KUTlsUGlWN1JUelNlYmtmYkRyRFh6b0ttNTF0c3o3SEtLdFFpVGxhRV82VHlBR2F6ZUJtWGd3SWFjcTNySkt2cnNiMnRaRDd2Z3piUlVQa2pVQzVzbXRyREdDSUx2OGNPX25tSFBGcEpzbXJZQzFFWWRQaFhoQWQ0NWlOR1A5V3ExSkVKN0REV0wwMW0yNVRTYm96RzFZOVpVT0lEbkd6U3h3VHBlbw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel admits its troops killed 5-year-old Hind Rajab in Gaza, opens criminal probe - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQ1Zxdm1rckV4MGpjNEsycF9zT0lrcDR1OUtSMmttLUJ0WHNwaTFsMVQyRkVaaDRHMnZjNkhvVEY5RVE0XzhZTmhjRXBGd256UVZ5TTR3S2ZNaS1nWDVwVnFsUTc4eFVYTVdIUS1jZXVMckpnQXV6QXNPVTRGYmNsbXpPbTl3b0Jhc1ZtT1pkVXpac19TUWpXR1dXeVR6SGhoa2xkMkFpa0hLV2RBSmZZeFFxYnB1cTJI"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli airstrike kills nine Palestinians at Gaza police station, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWHQxTVdDZDFBWlVVb2FyWXBaaC14cE5nZnIwdFN4Z3plZW5XUjdISFR3dEctVW5nRzF6T21QblV5N3NoMTRMWXVqSWxLdGtZT01kcVZQcWE0S3lJTGpSX2Q3Snh6Z3VQaVhZSVZsUTlWblZncGZGUnhxVTJYUm4zSC02VHdUMlFEUFMwR3BOU3RaVzc0X2gxWnEtcFB3VkZpbGZGcUgtNWlXdDBzN0xRS05FUnlOaEwzQm1uNnlKWm1Iekxi"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "UAE stocks fall after missile scare; Qatar at over one-year low - Reuters",
+      "location": "United Arab Emirates",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTFBZeTZITFl5NWRzUU9DUDZZZVM4ck5NQnY2bFdpZDRHUW9ZNGZRRHdSSjdpM3NUWlFSbnR1Rkl6ajFnbW51bktTY2VqWWdNeURtOVZXS1ZzOVNFRTE3dG5JdV9TbW0tTkh2VnRxblBiZmZRWmlueDQ1d3BFNVluSGExd1hVNS1JNjdUQmt0TG9WZ2s"
     },
     {
       "score": 2.7,
@@ -69,69 +136,6 @@
       "title": "US condemns 'unnecessary escalation' after Israeli airstrikes on Syrian airbase",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/c62vy3wl31lo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.5,
-      "date": "2026-08-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Eleven killed in Israeli strikes on southern Lebanon, authorities say",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c4gjygx4gjeo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.0,
-      "date": "2026-08-20",
-      "category": "political",
-      "source_type": "news",
-      "title": "Australia 'outraged' after Israel decides not to open criminal investigation into killing of aid worker in Gaza",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cp87g29r718o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.7,
-      "date": "2026-08-17",
-      "category": "political",
-      "source_type": "news",
-      "title": "Kushner hails 'very good' meeting with Netanyahu after Hamas talks on Gaza peace plan",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.59,
-      "date": "2026-08-19",
-      "category": "other",
-      "source_type": "isw",
-      "title": "Iran Update, August 19, 2026",
-      "location": "Iran",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-august-19-2026/"
-    },
-    {
-      "score": 0.52,
-      "date": "2026-08-18",
-      "category": "other",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, August 18, 2026",
-      "location": "Iran",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-august-18-2026/"
-    },
-    {
-      "score": 0.5,
-      "date": "2026-08-20",
-      "category": "other",
-      "source_type": "news",
-      "title": "Israel opens up bids for highly sensitive West Bank settlement project",
-      "location": "West Bank",
-      "url": "https://www.bbc.co.uk/news/articles/cly50gn1e54o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.45,
-      "date": "2026-08-17",
-      "category": "other",
-      "source_type": "isw",
-      "title": "Iran Update Special Report, August 17, 2026",
-      "location": "Iran",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-special-report-august-17-2026/"
     }
   ]
 }
