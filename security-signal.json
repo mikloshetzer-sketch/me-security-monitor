@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-20 03:11 UTC",
+    "updated": "2026-08-20 04:54 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-08-14",
     "period_end": "2026-08-20",
-    "total_events": 128,
-    "total_risk": 110.92,
-    "normalized_risk_score": 44.4,
+    "total_events": 129,
+    "total_risk": 112.22,
+    "normalized_risk_score": 44.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
-    "security": 5,
+    "military": 28,
+    "security": 3,
     "political": 19,
-    "other": 77
+    "other": 79
   },
   "source_counts": {
-    "news": 124,
+    "news": 125,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 30.87
+      "risk": 31.77
     },
     {
       "name": "Israel",
-      "risk": 24.4
+      "risk": 26.6
     },
     {
       "name": "Gaza Strip",
@@ -39,7 +39,7 @@
     },
     {
       "name": "Syria",
-      "risk": 8.75
+      "risk": 6.95
     },
     {
       "name": "Iraq",
@@ -47,6 +47,15 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 2.7,
       "date": "2026-08-19",
@@ -70,18 +79,18 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli airstrike kills nine Palestinians at Gaza police station, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWHQxTVdDZDFBWlVVb2FyWXBaaC14cE5nZnIwdFN4Z3plZW5XUjdISFR3dEctVW5nRzF6T21QblV5N3NoMTRMWXVqSWxLdGtZT01kcVZQcWE0S3lJTGpSX2Q3Snh6Z3VQaVhZSVZsUTlWblZncGZGUnhxVTJYUm4zSC02VHdUMlFEUFMwR3BOU3RaVzc0X2gxWnEtcFB3VkZpbGZGcUgtNWlXdDBzN0xRS05FUnlOaEwzQm1uNnlKWm1Iekxi"
+      "title": "EXCLUSIVE: Mossad chief, Syrian foreign minister discussed Turkish military deployments before strikes, sources say - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVkl0OHlnRWFEd2x4RkNFcloyYWw0UEhZTjU2VW9KUTlsUGlWN1JUelNlYmtmYkRyRFh6b0ttNTF0c3o3SEtLdFFpVGxhRV82VHlBR2F6ZUJtWGd3SWFjcTNySkt2cnNiMnRaRDd2Z3piUlVQa2pVQzVzbXRyREdDSUx2OGNPX25tSFBGcEpzbXJZQzFFWWRQaFhoQWQ0NWlOR1A5V3ExSkVKN0REV0wwMW0yNVRTYm96RzFZOVpVT0lEbkd6U3h3VHBlbw"
     },
     {
       "score": 2.7,
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "EXCLUSIVE: Mossad chief, Syrian foreign minister discussed Turkish military deployments before strikes, sources say - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVkl0OHlnRWFEd2x4RkNFcloyYWw0UEhZTjU2VW9KUTlsUGlWN1JUelNlYmtmYkRyRFh6b0ttNTF0c3o3SEtLdFFpVGxhRV82VHlBR2F6ZUJtWGd3SWFjcTNySkt2cnNiMnRaRDd2Z3piUlVQa2pVQzVzbXRyREdDSUx2OGNPX25tSFBGcEpzbXJZQzFFWWRQaFhoQWQ0NWlOR1A5V3ExSkVKN0REV0wwMW0yNVRTYm96RzFZOVpVT0lEbkd6U3h3VHBlbw"
+      "title": "Israeli airstrike kills nine Palestinians at Gaza police station, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNWHQxTVdDZDFBWlVVb2FyWXBaaC14cE5nZnIwdFN4Z3plZW5XUjdISFR3dEctVW5nRzF6T21QblV5N3NoMTRMWXVqSWxLdGtZT01kcVZQcWE0S3lJTGpSX2Q3Snh6Z3VQaVhZSVZsUTlWblZncGZGUnhxVTJYUm4zSC02VHdUMlFEUFMwR3BOU3RaVzc0X2gxWnEtcFB3VkZpbGZGcUgtNWlXdDBzN0xRS05FUnlOaEwzQm1uNnlKWm1Iekxi"
     },
     {
       "score": 2.7,
@@ -106,15 +115,6 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "Israel confirms soldiers fired at car in which Hind Rajab was killed and opens criminal investigation",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/crl7yjlpx2po?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-19",
-      "category": "military",
-      "source_type": "news",
       "title": "Multiple deadly Israeli strikes in Gaza in under 24 hours",
       "location": "Gaza Strip",
       "url": "https://www.bbc.co.uk/news/videos/cp3rgxzk5x2o?at_medium=RSS&at_campaign=rss"
@@ -133,9 +133,9 @@
       "date": "2026-08-19",
       "category": "military",
       "source_type": "news",
-      "title": "NATO ‘prepared’ to defend allies amid report of Iranian strike plans - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYkVKc09MNnM3LVBfaktoMjNQOEJTaThaR0tvTGxQZC1xZ2lpRGhTSklaaUNHMUdVZkNoZmlaUnZlS2dpaTFMWlhCUjNGZlRDQTZPaE1wUUJvREhHRHNRTUNmQVF3cFJYU2M3YjFtRFRURm9QZVZJQnd1QTh5QlE2Unp0N0d4NEI2c0pmeHloVktGdmJPempfbm5XSnhlcHVmRDJfWDBNZmNtbTjSAbABQVVfeXFMTWpjNzlyWFVLcUZiY2RXczdEUnQ4ZUlmTnh4dV9reElDVnRrSGxHMFRXd2VxWHQ1U1V5Y3dNZE52UGlwZ3B2Z3pVSGJJT2xCWENfYVY5UUxCc2Z2eG1NdHJTVC03VUtwY1ljcTFCcWpRN0ItQ1NjQkhLVkVhWjJhcm9wQlJhUFR5dzFGZzNBMHVhMWNacWVuMEtwSHJ3eGRKNzMyb3k2VjNpT25OX3l1RWY"
+      "title": "What’s behind Israel’s latest attack on Syria? - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVDVVNkUzdmFEdjA5RGNTeEQxUjBacW9EQjA0R0hfRFBnenAyVXk3WVJnbU13ejdwRWw0ekl2MDA5NGswVTR6YjY4ZTViUWxyUXFDQVlrV2JvX0d6UUpDeVlvYkNaMUhTWEpVU2VaOHk4ZlU4akQtUHNhc0hwOUZOWUp0QW5YNDZUbjJPX0dqUEdFNHdQdGR6NFlRam03VEHSAaQBQVVfeXFMT05hNm5uTVBJaHRNRFNndkFQcHR1TkRmclVmblZaenl3MDE0Z1J6SmJOSExtNjNxYUwxM0lYWmRYZ05nQVFDZlFhUlRoUks2dzBQU0NNSXpRYTVFUUc4MFozcVRISUs2Q3c4MHUzbVRkdVJKN0ViVThzY2doTTVhYU1LQUpjUS1IX3B2OGVab0M4Z1dVQThyZjlGU1hHMlB0SnlkOU8"
     }
   ]
 }
