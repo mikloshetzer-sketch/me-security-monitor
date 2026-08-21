@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T13:11:37Z",
+  "generated_at": "2026-08-21T13:59:03Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -63,8 +63,8 @@
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-12T22:47:11Z",
-      "latest_event_date": "2026-08-21T10:29:00Z",
+      "earliest_event_date": "2026-07-12T23:04:40Z",
+      "latest_event_date": "2026-08-21T13:29:47Z",
       "geocoded_events": 209,
       "geocoded_share": 20.9,
       "top_category": "infrastructure",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 70,
-        "previous": 60,
+        "current": 69,
+        "previous": 59,
         "delta": 10,
-        "percent_change": 16.7,
+        "percent_change": 16.9,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 470,
-        "previous": 480,
-        "delta": -10,
-        "percent_change": -2.1,
+        "current": 468,
+        "previous": 489,
+        "delta": -21,
+        "percent_change": -4.3,
         "direction": "stable"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-12",
-        "count": 8
+        "count": 7
       },
       {
         "date": "2026-07-13",
@@ -250,14 +250,14 @@
       },
       {
         "date": "2026-08-21",
-        "count": 7
+        "count": 8
       }
     ],
     "category_counts": {
-      "infrastructure": 265,
+      "infrastructure": 264,
       "missile": 201,
       "strike": 182,
-      "drone": 116,
+      "drone": 117,
       "airstrike": 99,
       "explosion": 54,
       "movement": 40,
@@ -273,10 +273,10 @@
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 584,
+      "unknown": 585,
       "iran": 292,
       "israel": 94,
-      "usa": 30
+      "usa": 29
     },
     "top_locations": [
       {
@@ -388,32 +388,38 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10250,
+    "totalCount": 10251,
     "spotlight": {
       "event": {
-        "id": "j2kofm2uwhc0",
-        "timestamp": "2026-08-21T10:29:00+00:00",
-        "location": "LBN",
-        "origin": "ISR",
+        "id": "2orqzth5m3q00",
+        "timestamp": "2026-08-21T13:29:47+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "high",
-        "description": "Hezbollah-aligned Al-Manar reports preparation for IDF capture of Ali al-Tahir ridge and strategic Emad-4 facility in southern Lebanon",
-        "descriptionHe": "רשת אלמנאר המזוהה עם חזבאללה מדווחת על הכנה לכיבוש צה\"ל של רכס עלי א-טאהר והמתקן האסטרטגי עמאד 4 בדרום לבנון",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128913"
+        "description": "Houthi drone strike on Jazan Oil Refinery in southern Saudi Arabia on August 5 damages additional large oil storage tank, satellite imagery confirms fire",
+        "descriptionHe": "התקפת מזל\"ט של החות'ים על בתחזוקת הנפט ג'אזאן בדרום ערב הסעודית ב-5 באוגוסט פוגעת בטנק אחסון נפט גדול נוסף, תמונות לוויין מאששות שריפה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82538"
       },
-      "headline": "Hezbollah reports Israeli forces preparing major Lebanon offensive",
-      "headlineHe": "חזבאללה מדווח על הכנות כוחות ישראליים לתקיפה גדולה בלבנון",
-      "summary": "Intelligence sources indicate an imminent IDF operation targeting key strategic positions in southern Lebanon's Nabatieh district.",
-      "summaryHe": "מקורות מודיעין מצביעים על מבצע צה\"ל קרוב בתרגום על עמדות אסטרטגיות בנבטייה בדרום לבנון.",
-      "pickedAt": "2026-08-21T12:30:50.989Z",
-      "state": "TODAY"
+      "headline": "Houthi Drone Strikes Saudi Oil Refinery, Satellite Confirms Major Fire",
+      "headlineHe": "מל\"ט חות\"י תקף חידרת נפט סעודית, לוויין אישר שריפה גדולה",
+      "summary": "The attack on Jazan represents an escalation in Houthi targeting of critical Saudi energy infrastructure, with confirmed satellite imagery documenting substantial damage to oil storage facilities.",
+      "summaryHe": "ההתקפה על ג'אזאן מהווה הסלמה בתקיפת חות\"י של תשתיות אנרגיה קריטיות סעודיות, עם אישור של צילום לוויין לנזק משמעותי במתקני אחסון נפט.",
+      "pickedAt": "2026-08-21T13:31:43.749Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-21T13:09:03.467Z",
+    "lastUpdated": "2026-08-21T13:57:03.412Z",
     "stale": false,
     "viewerCount": 2,
     "ceasefire": false
@@ -956,34 +962,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 91,
+      "internet": 92,
       "cellular": null,
-      "lastUpdate": "2026-08-21T12:30:42.864Z",
+      "lastUpdate": "2026-08-21T13:31:38.522Z",
       "internetHistory": [
-        {
-          "t": "2026-08-20T12:30:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-20T12:40:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-20T12:50:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-20T13:00:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-20T13:10:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-08-20T13:20:00.000Z",
-          "v": 90
-        },
         {
           "t": "2026-08-20T13:30:00.000Z",
           "v": 90
@@ -1531,30 +1513,54 @@
         {
           "t": "2026-08-21T12:10:00.000Z",
           "v": 91
+        },
+        {
+          "t": "2026-08-21T12:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-21T12:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-21T12:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-21T12:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-21T13:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-21T13:10:00.000Z",
+          "v": 92
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-21T12:30:42.864Z"
+    "lastUpdated": "2026-08-21T13:31:38.522Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e9",
+      "id": "iranstrike-a7f2k1m9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-21T08:37:21Z",
+      "date": "2026-08-21T10:29:00Z",
       "title": "IranStrike event",
-      "description": "IDF conducts sustained ops in southern Lebanon: strikes on Ali al-Tahir ridge, villages; artillery throughout night",
+      "description": "IDF conducts sustained air and artillery campaign across southern Lebanon targeting strategic positions",
       "category": "other",
       "severity": "high",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf conducts sustained ops in southern lebanon: strikes on ali al-tahir ridge, villages;",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -1567,33 +1573,79 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e9",
-        "text": "IDF conducts sustained ops in southern Lebanon: strikes on Ali al-Tahir ridge, villages; artillery throughout night",
-        "textHe": "צה\"ל מנהל פעולות מתמשכות בדרום לבנון: תקיפות על רכס עלי אל-טאהיר, כפרים; ארטילריה כל הלילה",
+        "id": "a7f2k1m9",
+        "text": "IDF conducts sustained air and artillery campaign across southern Lebanon targeting strategic positions",
+        "textHe": "צה\"ל מנהל מבצע אוויר והנדנדות ממושך בדרום לבנון על מטרות אסטרטגיות",
         "severity": "high",
-        "timestamp": "2026-08-21T08:37:21+00:00",
+        "timestamp": "2026-08-21T10:29:00+00:00",
         "entityIds": [
           "ISR",
           "LBN"
         ],
         "eventIds": [
+          "2bopexlpx3fo0",
+          "z5ith86syb40",
           "2zc6s9i1giw00",
           "kbzxymgo3pc0",
-          "2bopexlpx3fo0",
-          "z5ith86syb40"
+          "j2kofm2uwhc0"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-b5d8e4f2",
+      "id": "iranstrike-b4e8n2p5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-21T13:29:47Z",
+      "title": "IranStrike event",
+      "description": "Houthis damage Saudi Jazan refinery; claim strikes on Najran military airfield and oil facilities",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b4e8n2p5",
+        "text": "Houthis damage Saudi Jazan refinery; claim strikes on Najran military airfield and oil facilities",
+        "textHe": "חות'ים פגעו בחסן רמיה של ערבستן; תובעים התקפות על שדה אוויר ובמתקני נפט",
+        "severity": "high",
+        "timestamp": "2026-08-21T13:29:47+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "2orqzth5m3q00",
+          "16w53583wkjg0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-c6d3x8r4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-21T08:45:46Z",
       "title": "IranStrike event",
-      "description": "IDF eliminates Palestinian militant leaders in West Bank ops; stabbing attempts during Jenin, Talpiot raids",
+      "description": "IDF eliminates high-profile Palestinian commanders during West Bank security operations",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1614,32 +1666,34 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b5d8e4f2",
-        "text": "IDF eliminates Palestinian militant leaders in West Bank ops; stabbing attempts during Jenin, Talpiot raids",
-        "textHe": "צה\"ל ביטל מנהיגי פעילים פלסטיניים בפעולות בגדה; ניסיונות דקירה בפעילויות ביניין, טלביות",
+        "id": "c6d3x8r4",
+        "text": "IDF eliminates high-profile Palestinian commanders during West Bank security operations",
+        "textHe": "צה\"ל ביטל מפקדים פלסטינים בכירים בעת מבצעים בגדה המערבית",
         "severity": "medium",
         "timestamp": "2026-08-21T08:45:46+00:00",
         "entityIds": [
           "ISR"
         ],
         "eventIds": [
-          "272z9gcgs5us0",
-          "3kpl4i3jwwu00"
+          "3kpl4i3jwwu00",
+          "272z9gcgs5us0"
         ],
         "sourceCount": 2
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-c9a3f6b1",
+      "id": "iranstrike-2orqzth5m3q00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-20T17:19:01Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82538",
+      "date": "2026-08-21T13:29:47Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi military airfield, oil facilities in Najran; claim responsibility for drone operations",
-      "category": "other",
-      "severity": "medium",
+      "description": "Houthi drone strike on Jazan Oil Refinery in southern Saudi Arabia on August 5 damages additional large oil storage tank, satellite imagery confirms fire",
+      "category": "drone",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -1658,23 +1712,28 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c9a3f6b1",
-        "text": "Houthis strike Saudi military airfield, oil facilities in Najran; claim responsibility for drone operations",
-        "textHe": "חות'ים תקפו בסיס צבאי סעודי, מתקני נפט בנג'ראן; טענו אחריות לפעולות כטס",
-        "severity": "medium",
-        "timestamp": "2026-08-20T17:19:01+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
+        "id": "2orqzth5m3q00",
+        "timestamp": "2026-08-21T13:29:47+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "16w53583wkjg0"
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthi drone strike on Jazan Oil Refinery in southern Saudi Arabia on August 5 damages additional large oil storage tank, satellite imagery confirms fire",
+        "descriptionHe": "התקפת מזל\"ט של החות'ים על בתחזוקת הנפט ג'אזאן בדרום ערב הסעודית ב-5 באוגוסט פוגעת בטנק אחסון נפט גדול נוסף, תמונות לוויין מאששות שריפה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
         ],
-        "sourceCount": 1
+        "sourceUrl": "https://t.me/CIG_telegram/82538"
       }
-    }
-  ],
-  "events": [
+    },
     {
       "id": "iranstrike-j2kofm2uwhc0",
       "source": "IranStrike",
@@ -46942,51 +47001,6 @@
         "descriptionHe": "דיווחים על פיצוצים בכרמאנשאה בצפון-מערב איראן",
         "source": "idkunim_il",
         "sourceUrl": "https://t.me/idkunim_il/61404"
-      }
-    },
-    {
-      "id": "iranstrike-35rby7uvh6e00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79501",
-      "date": "2026-07-12T22:47:11Z",
-      "title": "IranStrike event",
-      "description": "United States strikes Khondab nuclear facility",
-      "category": "infrastructure",
-      "severity": "high",
-      "attacker": "usa",
-      "attacker_label": "United States",
-      "attacker_color": "#2563eb",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irn united states strikes khondab nuclear facility ארצות הברית תוקפת את מתק",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "35rby7uvh6e00",
-        "timestamp": "2026-07-12T22:47:11+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "United States strikes Khondab nuclear facility",
-        "descriptionHe": "ארצות הברית תוקפת את מתקם הגרעין בחונداب",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79501"
       }
     }
   ],
