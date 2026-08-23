@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T14:04:03Z",
+  "generated_at": "2026-08-23T14:41:09Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -63,8 +63,8 @@
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-13T01:06:04Z",
-      "latest_event_date": "2026-08-23T05:46:01Z",
+      "earliest_event_date": "2026-07-13T01:15:02Z",
+      "latest_event_date": "2026-08-23T14:14:53Z",
       "geocoded_events": 203,
       "geocoded_share": 20.3,
       "top_category": "infrastructure",
@@ -73,24 +73,24 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 57,
+        "current": 55,
         "previous": 68,
-        "delta": -11,
-        "percent_change": -16.2,
+        "delta": -13,
+        "percent_change": -19.1,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 409,
-        "previous": 550,
-        "delta": -141,
-        "percent_change": -25.6,
+        "current": 405,
+        "previous": 568,
+        "delta": -163,
+        "percent_change": -28.7,
         "direction": "decrease"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-13",
-        "count": 52
+        "count": 50
       },
       {
         "date": "2026-07-14",
@@ -254,16 +254,16 @@
       },
       {
         "date": "2026-08-23",
-        "count": 1
+        "count": 3
       }
     ],
     "category_counts": {
-      "infrastructure": 264,
-      "missile": 201,
+      "infrastructure": 265,
+      "missile": 200,
       "strike": 182,
-      "drone": 120,
+      "drone": 121,
       "airstrike": 99,
-      "explosion": 51,
+      "explosion": 50,
       "movement": 40,
       "ground": 19,
       "defense": 10,
@@ -272,8 +272,8 @@
     },
     "severity_counts": {
       "medium": 517,
-      "high": 339,
-      "low": 142,
+      "high": 338,
+      "low": 143,
       "critical": 2
     },
     "attacker_counts": {
@@ -289,11 +289,11 @@
       },
       {
         "name": "Unknown",
-        "count": 267
+        "count": 269
       },
       {
         "name": "Jordan",
-        "count": 81
+        "count": 80
       },
       {
         "name": "Lebanon",
@@ -325,7 +325,7 @@
       },
       {
         "name": "Israel",
-        "count": 22
+        "count": 21
       },
       {
         "name": "Aqaba",
@@ -351,11 +351,11 @@
       },
       {
         "name": "Unknown",
-        "count": 267
+        "count": 269
       },
       {
         "name": "Jordan",
-        "count": 100
+        "count": 99
       },
       {
         "name": "Iraq",
@@ -371,7 +371,7 @@
       },
       {
         "name": "Israel",
-        "count": 29
+        "count": 28
       },
       {
         "name": "Syria",
@@ -392,33 +392,41 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10259,
+    "totalCount": 10261,
     "spotlight": {
       "event": {
-        "id": "7xidivq2ud40",
-        "timestamp": "2026-08-23T05:46:01+00:00",
-        "location": "QAT",
+        "id": "232s6vhytgyo0",
+        "timestamp": "2026-08-23T14:06:50+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "low",
-        "description": "Qatar cuts government budgets by up to 30% and reduces foreign aid by 85% due to severe damage to LNG revenues from Iranian attacks on Ras Laffan facility and shipping disruptions through Strait of Hormuz",
-        "descriptionHe": "קטר קיצצה את תקציבי משרדי הממשלה בשיעור של עד 30%, וצמצמה ב-85% את המימון למסיוע חוץ בשל פגיעה קשה בהכנסות LNG מהתקיפות האיראניות על מתקן ראס לאפאן וקשיים בהובלת גז דרך מצר הורמוז",
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthis shoot down Saudi Scan Eagle drone",
+        "descriptionHe": "החות'ים הצליחו להפיל כטב\"ם סעודי מסוג Scan Eagle",
         "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/128985"
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 0
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/129015"
       },
-      "headline": "Qatar slashes budget 30% after Iranian attacks on LNG facility",
-      "headlineHe": "קטר חותכת תקציב ב-30% לאחר התקפות איראניות על מתקן LNG",
-      "summary": "The economic fallout from Iranian strikes on critical energy infrastructure is cascading through regional oil-dependent economies, disrupting global energy markets.",
-      "summaryHe": "ההשלכות הכלכליות מהתקפות איראניות על תשתיות אנרגיה קריטיות משפיעות על כלכלות תלויות נפט באזור, וחוסמות שווקי אנרגיה גלובליים.",
-      "pickedAt": "2026-08-23T12:45:50.766Z",
-      "state": "TODAY"
+      "headline": "Houthis shoot down Saudi surveillance drone over Yemen",
+      "headlineHe": "חות'ים הפילו מטוס ריגול סעודי מעל תימן",
+      "summary": "The interception adds to escalating tensions in the region amid broader Iranian-backed operations targeting Gulf shipping and infrastructure.",
+      "summaryHe": "ההשמדה מוסיפה למתיחות הגדלה באזור באמצעות פעולות בתמיכת איראן המכוונות לספנות ותשתיות בתוך המפרץ.",
+      "pickedAt": "2026-08-23T14:15:50.501Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-23T14:03:18.882Z",
+    "lastUpdated": "2026-08-23T14:39:04.165Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 1,
     "ceasefire": false
   },
   "summary": {
@@ -961,20 +969,8 @@
     "vitals": {
       "internet": 91,
       "cellular": null,
-      "lastUpdate": "2026-08-23T13:30:43.307Z",
+      "lastUpdate": "2026-08-23T14:00:43.125Z",
       "internetHistory": [
-        {
-          "t": "2026-08-22T13:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-22T13:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-22T13:50:00.000Z",
-          "v": 91
-        },
         {
           "t": "2026-08-22T14:00:00.000Z",
           "v": 91
@@ -1534,76 +1530,42 @@
         {
           "t": "2026-08-23T13:10:00.000Z",
           "v": 91
+        },
+        {
+          "t": "2026-08-23T13:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-23T13:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-23T13:40:00.000Z",
+          "v": 91
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-23T13:30:43.307Z"
+    "lastUpdated": "2026-08-23T14:00:43.125Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7c2f1b3",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-22T14:24:00Z",
-      "title": "IranStrike event",
-      "description": "IDF conducts multiple strikes in southern Syria; 1 killed, 2 wounded in Bayt Jan",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf conducts multiple strikes in southern syria;",
-      "location": "Syria",
-      "country": "Syria",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "a7c2f1b3",
-        "text": "IDF conducts multiple strikes in southern Syria; 1 killed, 2 wounded in Bayt Jan",
-        "textHe": "צה\"ל מבצע מספר תקיפות בדרום סוריה; הרוג ופצועים בבית ג'אן",
-        "severity": "medium",
-        "timestamp": "2026-08-22T14:24:00+00:00",
-        "entityIds": [
-          "ISR",
-          "SYR"
-        ],
-        "eventIds": [
-          "1nrfmbhodwn40",
-          "2idxam1bv1m00",
-          "1xj04b91ftkw0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-b4d9e2c5",
+      "id": "iranstrike-a7f2c1e4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-22T18:14:48Z",
       "title": "IranStrike event",
-      "description": "IDF fighter jets strike southern Lebanon villages of Tzarbeen and Almansouri",
+      "description": "IDF strikes Lebanon, Syria; targets militants, reports Syrian civilian casualties",
       "category": "other",
-      "severity": "medium",
+      "severity": "high",
       "attacker": "israel",
       "attacker_label": "Israel",
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf fighter jets strike southern lebanon villages of tzarbeen and almanso",
+      "attacker_evidence": "idf strikes lebanon, syria;",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -1616,32 +1578,34 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b4d9e2c5",
-        "text": "IDF fighter jets strike southern Lebanon villages of Tzarbeen and Almansouri",
-        "textHe": "קרב חיל האוויר בכפרים צרבין ואל-מנסורי בדרום לבנון",
-        "severity": "medium",
+        "id": "a7f2c1e4",
+        "text": "IDF strikes Lebanon, Syria; targets militants, reports Syrian civilian casualties",
+        "textHe": "צה\"ל תקף בלבנון וסוריה; פעולות נגד מיליציות עם דיווחי אבדות אזרחיות בסוריה",
+        "severity": "high",
         "timestamp": "2026-08-22T18:14:48+00:00",
         "entityIds": [
           "ISR",
-          "LBN"
+          "LBN",
+          "SYR"
         ],
         "eventIds": [
-          "3il8bdnggky0"
+          "3il8bdnggky0",
+          "1xj04b91ftkw0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c6f1a3d7",
+      "id": "iranstrike-b3e6d2f9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-23T05:46:01Z",
+      "date": "2026-08-23T14:06:50Z",
       "title": "IranStrike event",
-      "description": "Qatar reduces budgets 30% and foreign aid 85% due to Iranian attacks on LNG",
+      "description": "Houthis shoot down Saudi Scan Eagle drone; Iranian economic coercion impacts Qatar",
       "category": "other",
-      "severity": "low",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -1660,23 +1624,166 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c6f1a3d7",
-        "text": "Qatar reduces budgets 30% and foreign aid 85% due to Iranian attacks on LNG",
-        "textHe": "קטר מפחיתה תקציבים 30% וסיוע חו\"ל 85% בשל התקפות איראניות על גז",
-        "severity": "low",
-        "timestamp": "2026-08-23T05:46:01+00:00",
+        "id": "b3e6d2f9",
+        "text": "Houthis shoot down Saudi Scan Eagle drone; Iranian economic coercion impacts Qatar",
+        "textHe": "חוסיים הוריסו מל\"ט סעודי; הצפיפות הכלכלית של איראן משפיעה על קטאר",
+        "severity": "medium",
+        "timestamp": "2026-08-23T14:06:50+00:00",
         "entityIds": [
-          "QAT",
-          "IRN"
+          "YEM",
+          "SAU",
+          "IRN",
+          "QAT"
         ],
         "eventIds": [
+          "232s6vhytgyo0",
           "7xidivq2ud40"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-c5g4h1k2",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-22T17:07:33Z",
+      "title": "IranStrike event",
+      "description": "IDF neutralizes attempted weapon seizure in Benjamin; eliminates Hamas battalion commander",
+      "category": "other",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c5g4h1k2",
+        "text": "IDF neutralizes attempted weapon seizure in Benjamin; eliminates Hamas battalion commander",
+        "textHe": "צה\"ל ביטל ניסיון פשיטת נשקיות בבנימין; ביטל מפקד גדוד חמאס",
+        "severity": "low",
+        "timestamp": "2026-08-22T17:07:33+00:00",
+        "entityIds": [
+          "ISR"
+        ],
+        "eventIds": [
+          "39zfqd7lgwq00",
+          "2cmn1r3ao45c0"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-39zfqd7lgwq00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62753",
+      "date": "2026-08-23T14:14:53Z",
+      "title": "IranStrike event",
+      "description": "IDF reports attempted weapon seizure from soldier in Rimona Square, Benjamin Brigade; assailant neutralized",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "39zfqd7lgwq00",
+        "timestamp": "2026-08-23T14:14:53+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "IDF reports attempted weapon seizure from soldier in Rimona Square, Benjamin Brigade; assailant neutralized",
+        "descriptionHe": "דובר צה\"ל: לפני זמן קצר התקבל דיווח על ניסיון חטיפת נשק מלוחם צה\"ל בכיכר רימונים שבחטיבת בנימין. הלוחם ירה לעבר המחבל והוא נוטרל. כוחות צה\"ל נוספים קפצו לנקודה.",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/62753"
+      }
+    },
+    {
+      "id": "iranstrike-232s6vhytgyo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129015",
+      "date": "2026-08-23T14:06:50Z",
+      "title": "IranStrike event",
+      "description": "Houthis shoot down Saudi Scan Eagle drone",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "232s6vhytgyo0",
+        "timestamp": "2026-08-23T14:06:50+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthis shoot down Saudi Scan Eagle drone",
+        "descriptionHe": "החות'ים הצליחו להפיל כטב\"ם סעודי מסוג Scan Eagle",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 0
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/129015"
+      }
+    },
     {
       "id": "iranstrike-7xidivq2ud40",
       "source": "IranStrike",
@@ -46913,95 +47020,6 @@
           }
         ],
         "sourceUrl": "https://t.me/CIG_telegram/79526"
-      }
-    },
-    {
-      "id": "iranstrike-2ghiydk57zk00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79525",
-      "date": "2026-07-13T01:06:04Z",
-      "title": "IranStrike event",
-      "description": "Initial reports of explosions in Jordan",
-      "category": "explosion",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Jordan",
-      "country": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2ghiydk57zk00",
-        "timestamp": "2026-07-13T01:06:04+00:00",
-        "location": "JOR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Initial reports of explosions in Jordan",
-        "descriptionHe": "דיווחים ראשוניים על פיצוצים בירדן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79525"
-      }
-    },
-    {
-      "id": "iranstrike-1x063ay8nnj40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79524",
-      "date": "2026-07-13T01:06:04Z",
-      "title": "IranStrike event",
-      "description": "Possible missile launches from Iran toward Israel",
-      "category": "missile",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
-      "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "1x063ay8nnj40",
-        "timestamp": "2026-07-13T01:06:04+00:00",
-        "location": "ISR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "report",
-        "severity": "high",
-        "description": "Possible missile launches from Iran toward Israel",
-        "descriptionHe": "שיגורי טילים אפשריים מאיראן",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79524"
       }
     }
   ],
