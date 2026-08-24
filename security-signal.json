@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-08-23 22:39 UTC",
+    "updated": "2026-08-24 01:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-08-17",
-    "period_end": "2026-08-23",
-    "total_events": 132,
-    "total_risk": 102.65,
-    "normalized_risk_score": 41.1,
+    "period_start": "2026-08-18",
+    "period_end": "2026-08-24",
+    "total_events": 127,
+    "total_risk": 89.73,
+    "normalized_risk_score": 35.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 27,
     "security": 2,
-    "political": 14,
-    "other": 89
+    "political": 11,
+    "other": 87
   },
   "source_counts": {
-    "news": 127,
-    "isw": 5
+    "news": 123,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 30.95
+      "risk": 26.58
     },
     {
       "name": "Israel",
-      "risk": 28.95
+      "risk": 26.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.95
+      "risk": 14.6
     },
     {
       "name": "West Bank",
-      "risk": 6.45
+      "risk": 5.5
     },
     {
       "name": "Yemen",
-      "risk": 4.55
+      "risk": 3.9
     }
   ],
   "top_events": [
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-08-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli airstrikes in Gaza kill two people, including 4-year-old boy, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQaFU5eGhHTHlWTGEwdF9hVzNLSFJMR2hZWTRFOGQ0aFNvVmFzaTFsRmRGa3JPZVhFcFFfeUs3YmRCYjBtNDZmYi15WF9xLUpjeDJXYThlaUFTNU5ISkMtTDl6MUo3N25rSmRWbXVpN1dhdzJ0QmpxZGFKRDMwcmlWaS1IOTVEM1NwY05Xdjd2ejZJcG13c2NjRmVrVHJZNEEwYTVmYW5fb0I3Zk01eGgzMjE0dHpDUjlrVFFzUVpKdlN4QjFoZVZ6dDBR"
+    },
+    {
+      "score": 2.7,
       "date": "2026-08-23",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORTJLYU12dTBCT1NUYVlSQ3BrcTVRWFd6NUVLdnVpcmRoZURBd1dkM0JRd1NjY19faVBBYkhrQlpKUnVqRkFCMXRYbk5Hd0N0S291X2NSQ0RFVWgycHhWRGVXMGVJdk44cWdVbmUyNDNfeE45YnFVekdTSW5aanlEQVpWS052aUE4QklTaUNSQ3VETjdCNWZlNUFULUUtY1doWVdJbHAxMmdPUdIBrwFBVV95cUxNY09CbUtqTjdiUWl6R01LdVBqQXBEYVJ5RFI4UkdGNmMxT3NxX3VKUnQzZElkendCWFdsODJRcW04bVhtb20wZ0xvVERzOHY4bDFuOTJMWVpwd3I4ZmlCV2xnSVFJUHRzcEJWY0pCSGRPd3E2NmowU3dOTV9RbVRFdUhNdDRkNE9SMVVxR3J5andGR0N5S09YMUQ1TC1KS1JOelMzaWxkS1Y0V3pJTWtz"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-08-22",
       "category": "military",
       "source_type": "news",
@@ -66,7 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUlteHpodFpvY0RlTjBQVWdHWmFhTTAtU0VzVlRuY3hYRTA3NEFBSHcwN3pIR1ROYnBWVmFxWDVPTmVRcXZSaUM0YURHZHBmUDg0ekNFTDJ3NTd0S2NiR3loeDlXTlUzNzI1TjlKai1uNzh5TWRPeHJzd1UzNmM4TGRYLW1ET3ZnQ3hmeWNTNWF5ZVVReUtqTGFLdEtqVXZJWEw4RXk2TjE4YkFO"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-08-22",
       "category": "military",
       "source_type": "news",
@@ -75,16 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOZVlWOVFMOUl2eU1oNk1NYUJxZ0J3NlBpTXFUUF9yM1dSZ3J6azVYR1BRWmM1TVVOSWpJVm1PMjRkaDJDTm9DS19YaFF5MGMzR0NwYUl0Y2pIR1pmbTl4a0w1MDctUV9mM2paWDVkRXZGbVk0Zzcwd3k5SlowX0FxUXZYVkhGVllBellyRHVWczZONTMwbU8wSzZvd0MyY3Z0TjVxcE1vOW5raUNJSVBzS25BbE5md9IBuwFBVV95cUxOeHlJbzN4Z1RwbWtmODgtUG1nTjVjS1k1M2c1d0hkQy1naWlWTkU0TkRCQ0h5N3VZcFpoUWJpNF93M1pndjFYWE1Wd21yRU00X2RDQUdmV0pjOHpwYWw1X19JVzNkUFVLQ3prSjc4TjczZ3lBdnluemVZUndCRHlHUm5URGNqVVdIanh1bl85YnhkS0lPOTUxTFhEMWFSYTV3SDdUY2VQX1NHc18yaFpQS3JvQXktRXVJNTUw"
     },
     {
-      "score": 2.7,
-      "date": "2026-08-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill two and injure others as Gaza attacks continue - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVTU1cS1HZ3dsWmEwMFhZR3ZiNkxiLTRnem5UbzQ5R1FYd1VxTHRGY3lLOUZyeG8yTHg4YkhCS2llVTFjUkZ0bDhIODVpdjlza1R3V0I5VzkyMnkybjdweEFCdmdEWkhrOXNjUDFZejU2VV9zU2t2NjNQcld0bDdfYlFvbEI2M3p1RHY2NXN4bVcwNUNQUTR1Zmk0bFhvQ19tQUl5UGxZak9xTmJs0gGyAUFVX3lxTFBqQ3JUaV9WRzEtRzhfVG8xc1dSaUlDc01YWVdpemlHYjBPdENZamtIZ0tJRW9hd0NEZ2tiUzNjNlM3Nk5KZS1NUG50a2tJZUhmNW5wbloxaDQ2eWN5eTNkZkhCX0tyN1RqSWd6M0ZNdF9MNDR1c1E4TXRSWkhFblpoeGJTSU9xeW5vblJLVFBiZDZVT1k0eGsyb2dQci12UnZDUi1YRUFnaVVWa3k2OG5BdHc"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-08-22",
       "category": "military",
       "source_type": "news",
@@ -94,6 +94,15 @@
     },
     {
       "score": 2.4,
+      "date": "2026-08-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill two and injure others as Gaza attacks continue - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVTU1cS1HZ3dsWmEwMFhZR3ZiNkxiLTRnem5UbzQ5R1FYd1VxTHRGY3lLOUZyeG8yTHg4YkhCS2llVTFjUkZ0bDhIODVpdjlza1R3V0I5VzkyMnkybjdweEFCdmdEWkhrOXNjUDFZejU2VV9zU2t2NjNQcld0bDdfYlFvbEI2M3p1RHY2NXN4bVcwNUNQUTR1Zmk0bFhvQ19tQUl5UGxZak9xTmJs0gGyAUFVX3lxTFBqQ3JUaV9WRzEtRzhfVG8xc1dSaUlDc01YWVdpemlHYjBPdENZamtIZ0tJRW9hd0NEZ2tiUzNjNlM3Nk5KZS1NUG50a2tJZUhmNW5wbloxaDQ2eWN5eTNkZkhCX0tyN1RqSWd6M0ZNdF9MNDR1c1E4TXRSWkhFblpoeGJTSU9xeW5vblJLVFBiZDZVT1k0eGsyb2dQci12UnZDUi1YRUFnaVVWa3k2OG5BdHc"
+    },
+    {
+      "score": 2.1,
       "date": "2026-08-21",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cvgl2pe09eno?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-08-21",
       "category": "military",
       "source_type": "news",
@@ -111,31 +120,22 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYmQtdEZQZFdleDdFQ1h3cktaeEpHb29tMUVCZmo2bzZpWEdfOFVlZ3ZQd1NvUmQ4a2pPaHRISzZIRndjLTF4dmNRcWp1ay0wSjNYeXBnUnJfbzMxSVhYWmRyN2xDdXFzS2JlakVDYmo5akJaOHlRQjV3eF9NVHB3R0R4UHJOYlBrZl82Z1Z0WldxYmdkcEhvQmNQbmFKMVZic3h1c0dtak5vbXV3MDNJcG1rMNIBuAFBVV95cUxNU0R4Sl9ZY0ZJWDVQMGM5bEhuNkp5bXVjWXVNTmowYXR3V0VPZnd4UVNGTGFaZU9vX2gycjJnSnB5TkQ0ZHI2MHRXTFRQZTFXUmNKTWJ6RjVBdi1wUTBKdnZhR0lDSU5pczJtbk1qQndSZTVoem9KQXJyYV9hWWdVRFE4WTVBNmlNcXJIYVYwU3FQRXdYNVNVZ1V0RlduYTVTQjNQaHh5VjRQa25keVhwSXJHLU1YWlh3"
     },
     {
-      "score": 2.1,
+      "score": 1.8,
+      "date": "2026-08-23",
+      "category": "security",
+      "source_type": "news",
+      "title": "Syria foreign minister sees Israel security talks resuming despite no trust - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWUpvdEk0SVFqbENrNjRzRkFFODFJb2ZkczFRWVU1OFBTWG5Sd3JDbHRnajBMYzZHNlhGR0lVNFdTQlZIMFJVOTZadXBGWDdianhfWXBjcUVTZ0ppbllKZnBfU05zeU5ONS10M2dFOHRpbWZEeFItR2hSNk8xblFlaHRWVTdpUzRPUWt4eTI2UzBTNHpZbHVpemlmTEdMbzY5aTFqWUNCclJ6aVpSeklsa2xDc19jb0dzOGh6ZTNRUVRZT25xNjVZMA"
+    },
+    {
+      "score": 1.8,
       "date": "2026-08-20",
       "category": "military",
       "source_type": "news",
       "title": "Israel and Turkey step up warnings over Syria after airbase bombing - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQLTlfMHNQWDJxLTRQUnk3S3BmSThwcFNFWTY4dHhTaVZlaENYcFliSkRTVFMzRVliRkgweUxUVThXN0ZfU2Q0Rl9WVXBCZkxBQXZPcUlkeVNKa2kwcFQzM3FVakJMRlQ2N1FBZ3hVUGNXb25ySko1UFVEQjZqU3dfekJUdVBYMFVkQ3RiSm1mMTZFUTFsNFhidHNxY0lsbnVCeTNJOUh0eEQ5dVRMM3VtajlWWlFxOFhfRTFjdXlTWjNtLUhi"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "US firm Powerus wins $22.3 million contract to protect Middle East energy infrastructure from drones - Reuters",
-      "location": "Middle East",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRlA0d3hFZ0lIUnNTWWs2TV96MnRaZEIzNnJUMkVNWVVrRHpEeVBNeU8wQWtkdGh1aDBiMmROSGpyUG92blVmSmpIX29pZC1IaGd4SHo2YkhGd09hcXNQMWhJcHNxSGsyV3d0dnhJd18tVzlYTTZCVG9fOUhKT1JudTR2bjBTYll3bTd0em45RFVVNjU1SjFOWE5iaVBUMFBXUzlabUEwWUxORXctanM4eEtTdzNVZXk0NEdLOQ"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNaG03UE5RQVR1RzZTc3d2REJhZVRDUWZRbkZtcnZnUUFWMS1UenhvQnZ3SHozRTA2TEZoRW91X3pRQm5DbkdsYm5fRlJfN0I0YmZ3T3BlQ2YwUUQtS0JhWW44a0FTNThMcnVSU2xleExYVWJZV2VkVlNqUktGSHRpTjd1LXZBQjF2anhaazRHbDdySkNBQVM0U0JoVGxZT3cyUnJGZm0ta1c1TlljUVljMVR5NGdBSWotc2NxeW1FZ1ZGdE1nVXJwRVRsV2s"
     }
   ]
 }
