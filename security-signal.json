@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 16:57 UTC",
+    "updated": "2026-08-24 19:02 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-18",
     "period_end": "2026-08-24",
-    "total_events": 131,
-    "total_risk": 99.53,
-    "normalized_risk_score": 39.8,
+    "total_events": 129,
+    "total_risk": 96.63,
+    "normalized_risk_score": 38.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
-    "security": 2,
+    "military": 23,
+    "security": 3,
     "political": 10,
     "other": 93
   },
   "source_counts": {
-    "news": 127,
+    "news": 125,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 29.38
+      "risk": 27.93
     },
     {
       "name": "Israel",
-      "risk": 27.4
+      "risk": 27.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.4
+      "risk": 17.45
+    },
+    {
+      "name": "Syria",
+      "risk": 6.05
     },
     {
       "name": "West Bank",
       "risk": 5.85
-    },
-    {
-      "name": "Yemen",
-      "risk": 4.2
     }
   ],
   "top_events": [
@@ -79,18 +79,9 @@
       "date": "2026-08-23",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli airstrikes in Gaza kill two people, including 4-year-old boy, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQaFU5eGhHTHlWTGEwdF9hVzNLSFJMR2hZWTRFOGQ0aFNvVmFzaTFsRmRGa3JPZVhFcFFfeUs3YmRCYjBtNDZmYi15WF9xLUpjeDJXYThlaUFTNU5ISkMtTDl6MUo3N25rSmRWbXVpN1dhdzJ0QmpxZGFKRDMwcmlWaS1IOTVEM1NwY05Xdjd2ejZJcG13c2NjRmVrVHJZNEEwYTVmYW5fb0I3Zk01eGgzMjE0dHpDUjlrVFFzUVpKdlN4QjFoZVZ6dDBR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-23",
-      "category": "military",
-      "source_type": "news",
       "title": "Israel bombs Syria as US envoy says base attack aimed at ‘baiting’ Turkiye - Al Jazeera",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORTJLYU12dTBCT1NUYVlSQ3BrcTVRWFd6NUVLdnVpcmRoZURBd1dkM0JRd1NjY19faVBBYkhrQlpKUnVqRkFCMXRYbk5Hd0N0S291X2NSQ0RFVWgycHhWRGVXMGVJdk44cWdVbmUyNDNfeE45YnFVekdTSW5aanlEQVpWS052aUE4QklTaUNSQ3VETjdCNWZlNUFULUUtY1doWVdJbHAxMmdPUQ"
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORTJLYU12dTBCT1NUYVlSQ3BrcTVRWFd6NUVLdnVpcmRoZURBd1dkM0JRd1NjY19faVBBYkhrQlpKUnVqRkFCMXRYbk5Hd0N0S291X2NSQ0RFVWgycHhWRGVXMGVJdk44cWdVbmUyNDNfeE45YnFVekdTSW5aanlEQVpWS052aUE4QklTaUNSQ3VETjdCNWZlNUFULUUtY1doWVdJbHAxMmdPUdIBrwFBVV95cUxNY09CbUtqTjdiUWl6R01LdVBqQXBEYVJ5RFI4UkdGNmMxT3NxX3VKUnQzZElkendCWFdsODJRcW04bVhtb20wZ0xvVERzOHY4bDFuOTJMWVpwd3I4ZmlCV2xnSVFJUHRzcEJWY0pCSGRPd3E2NmowU3dOTV9RbVRFdUhNdDRkNE9SMVVxR3J5andGR0N5S09YMUQ1TC1KS1JOelMzaWxkS1Y0V3pJTWtz"
     },
     {
       "score": 2.4,
@@ -136,6 +127,15 @@
       "title": "Israeli strikes kill two and injure others as Gaza attacks continue - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVTU1cS1HZ3dsWmEwMFhZR3ZiNkxiLTRnem5UbzQ5R1FYd1VxTHRGY3lLOUZyeG8yTHg4YkhCS2llVTFjUkZ0bDhIODVpdjlza1R3V0I5VzkyMnkybjdweEFCdmdEWkhrOXNjUDFZejU2VV9zU2t2NjNQcld0bDdfYlFvbEI2M3p1RHY2NXN4bVcwNUNQUTR1Zmk0bFhvQ19tQUl5UGxZak9xTmJs0gGyAUFVX3lxTFBqQ3JUaV9WRzEtRzhfVG8xc1dSaUlDc01YWVdpemlHYjBPdENZamtIZ0tJRW9hd0NEZ2tiUzNjNlM3Nk5KZS1NUG50a2tJZUhmNW5wbloxaDQ2eWN5eTNkZkhCX0tyN1RqSWd6M0ZNdF9MNDR1c1E4TXRSWkhFblpoeGJTSU9xeW5vblJLVFBiZDZVT1k0eGsyb2dQci12UnZDUi1YRUFnaVVWa3k2OG5BdHc"
+    },
+    {
+      "score": 2.1,
+      "date": "2026-08-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "UK, Canada and Australia condemn Israel for refusing criminal probe into aid worker killings in Gaza",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cvgl2pe09eno?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
