@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T11:12:14Z",
+  "generated_at": "2026-08-24T11:44:58Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,17 +54,17 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 1000,
+    "normalized_events": 1001,
     "map_visualizable_events": 204,
-    "non_mappable_events": 796,
-    "developments": 3
+    "non_mappable_events": 797,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1000,
+      "total_events": 1001,
       "earliest_event_date": "2026-07-13T02:03:51Z",
-      "latest_event_date": "2026-08-24T08:29:01Z",
+      "latest_event_date": "2026-08-24T11:36:12Z",
       "geocoded_events": 204,
       "geocoded_share": 20.4,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 54,
-        "previous": 71,
-        "delta": -17,
-        "percent_change": -23.9,
+        "current": 50,
+        "previous": 73,
+        "delta": -23,
+        "percent_change": -31.5,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 396,
-        "previous": 587,
-        "delta": -191,
-        "percent_change": -32.5,
+        "current": 394,
+        "previous": 590,
+        "delta": -196,
+        "percent_change": -33.2,
         "direction": "decrease"
       }
     },
@@ -258,13 +258,13 @@
       },
       {
         "date": "2026-08-24",
-        "count": 1
+        "count": 2
       }
     ],
     "category_counts": {
       "infrastructure": 266,
       "missile": 198,
-      "strike": 183,
+      "strike": 184,
       "drone": 120,
       "airstrike": 99,
       "explosion": 49,
@@ -275,7 +275,7 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 517,
+      "medium": 518,
       "high": 336,
       "low": 145,
       "critical": 2
@@ -283,7 +283,7 @@
     "attacker_counts": {
       "unknown": 583,
       "iran": 289,
-      "israel": 99,
+      "israel": 100,
       "usa": 29
     },
     "top_locations": [
@@ -301,7 +301,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 48
+        "count": 49
       },
       {
         "name": "Bandar Abbas",
@@ -367,7 +367,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 64
+        "count": 65
       },
       {
         "name": "Persian Gulf",
@@ -396,7 +396,7 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10265,
+    "totalCount": 10266,
     "spotlight": {
       "event": {
         "id": "23wdj9c3kdvk0",
@@ -421,9 +421,9 @@
       "pickedAt": "2026-08-24T09:45:50.748Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-08-24T11:09:05.830Z",
+    "lastUpdated": "2026-08-24T11:42:04.498Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 2,
     "ceasefire": false
   },
   "summary": {
@@ -966,20 +966,8 @@
     "vitals": {
       "internet": 90,
       "cellular": null,
-      "lastUpdate": "2026-08-24T11:03:21.133Z",
+      "lastUpdate": "2026-08-24T11:30:43.111Z",
       "internetHistory": [
-        {
-          "t": "2026-08-23T11:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-23T11:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-23T11:20:00.000Z",
-          "v": 91
-        },
         {
           "t": "2026-08-23T11:30:00.000Z",
           "v": 91
@@ -1543,22 +1531,30 @@
         {
           "t": "2026-08-24T10:50:00.000Z",
           "v": 90
+        },
+        {
+          "t": "2026-08-24T11:00:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-08-24T11:10:00.000Z",
+          "v": 90
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-24T11:03:21.133Z"
+    "lastUpdated": "2026-08-24T11:30:43.111Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f2a4c91",
+      "id": "iranstrike-a7f2c1e3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-23T19:48:45Z",
+      "date": "2026-08-24T11:36:12Z",
       "title": "IranStrike event",
-      "description": "IDF strikes Hezbollah positions in Lebanon; fires set in Hadatha",
+      "description": "IDF strikes southern Lebanon; targets include Mise el-Jabel, Houla, Kfarelmensouriye",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -1566,7 +1562,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes hezbollah positions in lebanon;",
+      "attacker_evidence": "idf strikes southern lebanon;",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -1579,30 +1575,31 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f2a4c91",
-        "text": "IDF strikes Hezbollah positions in Lebanon; fires set in Hadatha",
-        "textHe": "צה\"ל תקף עמדות חזבאללה בלבנון; שריפות בהדתה",
+        "id": "a7f2c1e3",
+        "text": "IDF strikes southern Lebanon; targets include Mise el-Jabel, Houla, Kfarelmensouriye",
+        "textHe": "צה\"ל תקף בדרום לבנון; מטרות כוללות מיסה אל-ג'בל, חולה, כפר אל-מנסוריה",
         "severity": "high",
-        "timestamp": "2026-08-23T19:48:45+00:00",
+        "timestamp": "2026-08-24T11:36:12+00:00",
         "entityIds": [
           "ISR",
           "LBN"
         ],
         "eventIds": [
+          "diwvhf1idi00",
           "2pd86hyl0uk00"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-c3d15e2f",
+      "id": "iranstrike-b4e8d2f5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-24T08:29:01Z",
       "title": "IranStrike event",
-      "description": "Houthi commander Siyad Mukhtar killed in Al-Jouf strikes",
+      "description": "Houthi commander Brigadier General Siyad Mukhtar killed in strikes on Al-Jouf",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1623,9 +1620,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c3d15e2f",
-        "text": "Houthi commander Siyad Mukhtar killed in Al-Jouf strikes",
-        "textHe": "מפקד חות'ים סיאד מוכתר נהרג בתקיפות אל-ג'וף",
+        "id": "b4e8d2f5",
+        "text": "Houthi commander Brigadier General Siyad Mukhtar killed in strikes on Al-Jouf",
+        "textHe": "מפקד חות'ים תגובר גנרל סיאד מختאר נהרג בתקיפות על אל-ג'וף",
         "severity": "high",
         "timestamp": "2026-08-24T08:29:01+00:00",
         "entityIds": [
@@ -1638,14 +1635,14 @@
       }
     },
     {
-      "id": "iranstrike-a8e6f541",
+      "id": "iranstrike-c6a9e4b2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-23T19:49:01Z",
       "title": "IranStrike event",
-      "description": "Iran directs weapons smuggling to Hezbollah via Syria; many ops undetected",
+      "description": "Israeli assessment: Iran-backed smuggling ops increase weapons flow to Hezbollah",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1654,8 +1651,8 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Syria",
-      "country": "Syria",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1666,24 +1663,114 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a8e6f541",
-        "text": "Iran directs weapons smuggling to Hezbollah via Syria; many ops undetected",
-        "textHe": "איראן מנחה הברחת נשקים לחזבאללה דרך סוריה",
+        "id": "c6a9e4b2",
+        "text": "Israeli assessment: Iran-backed smuggling ops increase weapons flow to Hezbollah",
+        "textHe": "הערכה ישראלית: עלייה בהברחת נשקים לחיזבאללה בתיווך איראני",
         "severity": "medium",
         "timestamp": "2026-08-23T19:49:01+00:00",
         "entityIds": [
+          "ISR",
           "IRN",
-          "SYR",
-          "LBN"
+          "LBN",
+          "SYR"
         ],
         "eventIds": [
           "1fq3y9oa0eww0"
         ],
         "sourceCount": 1
       }
+    },
+    {
+      "id": "iranstrike-d8b1f6a9",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-23T14:06:50Z",
+      "title": "IranStrike event",
+      "description": "Houthis shoot down Saudi Scan Eagle drone over operations area",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d8b1f6a9",
+        "text": "Houthis shoot down Saudi Scan Eagle drone over operations area",
+        "textHe": "חות'ים הורידו כלי טיס סקן איגל סעודי",
+        "severity": "medium",
+        "timestamp": "2026-08-23T14:06:50+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "232s6vhytgyo0"
+        ],
+        "sourceCount": 1
+      }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-diwvhf1idi00",
+      "source": "IranStrike",
+      "source_collection": "feed",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129075",
+      "date": "2026-08-24T11:36:12Z",
+      "title": "IranStrike event",
+      "description": "Israeli fighter jets strike targets in southern Lebanon between Mise el-Jabel and Houla, and in Kfarelmensouriye",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn israeli fighter jets strike targets in southern lebanon between mise el-jabel",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "diwvhf1idi00",
+        "timestamp": "2026-08-24T11:36:12+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli fighter jets strike targets in southern Lebanon between Mise el-Jabel and Houla, and in Kfarelmensouriye",
+        "descriptionHe": "מטוסי קרב של צה\"ל תקפו בדרום לבנון בין מיס אלג'בל לחולא וכן בכפר אלמנצורי",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129075"
+      }
+    },
     {
       "id": "iranstrike-23wdj9c3kdvk0",
       "source": "IranStrike",
