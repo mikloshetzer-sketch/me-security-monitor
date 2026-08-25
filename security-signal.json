@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-25 07:09 UTC",
+    "updated": "2026-08-25 09:02 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-08-19",
     "period_end": "2026-08-25",
-    "total_events": 126,
-    "total_risk": 97.56,
-    "normalized_risk_score": 39.0,
+    "total_events": 127,
+    "total_risk": 96.41,
+    "normalized_risk_score": 38.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 23,
-    "security": 6,
+    "military": 21,
+    "security": 7,
     "political": 9,
-    "other": 88
+    "other": 90
   },
   "source_counts": {
-    "news": 122,
+    "news": 123,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 24.31
+      "risk": 24.41
     },
     {
       "name": "Gaza Strip",
-      "risk": 23.35
+      "risk": 22.45
     },
     {
       "name": "Israel",
-      "risk": 20.4
+      "risk": 20.75
     },
     {
       "name": "Syria",
-      "risk": 10.7
+      "risk": 12.7
     },
     {
-      "name": "Yemen",
-      "risk": 7.15
+      "name": "West Bank",
+      "risk": 5.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes hit water plant, warehouse in Gaza, killing at least seven - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZmNKejRmS1p6Yl9RQUp4NTlOVmNQWGJuVUo3VmR3Q29BMTZvR3lnLTVsOFdSYl8wUklIeE1tZWQ4U1VnaFVoOE1OLTRaNVRVTDhiWUFha0luYm1hZmtxZ0ttWlFPaTNoRjhNUWhET2diY2J4UUFmNmZsMFR5dWIzZXh2QkNyUG1kcFNnSDFHMEZacjFLblk3UNIBngFBVV95cUxNSE5nQWVHSm5DeFJRbjhXVXVxR292bEgyUHg5cHJ2d2o3TzluUmQ2dWVzTkNZQW94azE5Y0dSaTFXeEZkMlJuWlJJRWVqUWphLXpqdzJaX04xanJTbEUtcExhN0Q4OEVaZ05CTWM1U1BqRHpHSG1Pc1VSS0d6UzV0UzNMeVotbE5yTHQxZGhtZUNwSVZERnhsVy1yQzRqQQ"
+    },
     {
       "score": 2.7,
       "date": "2026-08-24",
@@ -73,24 +82,6 @@
       "title": "Israel kills 3 in Gaza as Netanyahu threatens attacks over kite launches - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNSXdMX0hjZ2pJRmlhM2NPTnc0Mmp5RnduVjFVNzk0SXRIeHQ2Z0ZCNHlaUllkTHhPRU1UWEhQOFF6QTdnUW80X2pQdzRQdXo0MG5vN0RpTV9SVFE3Tm9SaUVWOHFKV181VXk0RkpUZnkyc0dnQ0FkeGl5X2RQd1JrNW9DVUxpSEM0TmpJaExvamw2RWpPZ00xTTJFc0JVc2RhVkpScXcwOUtvNFd4dWFPR2Z3Nm8xd9IBuwFBVV95cUxNYVRqX0hnd19ISTE3UHZoYUJsU2lHY3c4d3diY3RsUThrM09sZEw4bGYxcDcyemMtWElxb1dNcVQ5Y21Ud0hBeXB3U2YyYjFQbFRrcENFZVZGaU84Y1lneTBZanctX2tpclFveDd0dzZHYXd0Y2NBTUVJSG5OZ28tQnZqM00wamFac2ZZUHlmYTJiSTZqZFI2Z2NrVExuRHdQX3JfT0ZidGZPSjZrREs0MzctX3lyNFJ5Z1BF"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes hit water plant, warehouse in Gaza, killing at least 6 - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZmNKejRmS1p6Yl9RQUp4NTlOVmNQWGJuVUo3VmR3Q29BMTZvR3lnLTVsOFdSYl8wUklIeE1tZWQ4U1VnaFVoOE1OLTRaNVRVTDhiWUFha0luYm1hZmtxZ0ttWlFPaTNoRjhNUWhET2diY2J4UUFmNmZsMFR5dWIzZXh2QkNyUG1kcFNnSDFHMEZacjFLblk3UNIBngFBVV95cUxNSE5nQWVHSm5DeFJRbjhXVXVxR292bEgyUHg5cHJ2d2o3TzluUmQ2dWVzTkNZQW94azE5Y0dSaTFXeEZkMlJuWlJJRWVqUWphLXpqdzJaX04xanJTbEUtcExhN0Q4OEVaZ05CTWM1U1BqRHpHSG1Pc1VSS0d6UzV0UzNMeVotbE5yTHQxZGhtZUNwSVZERnhsVy1yQzRqQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen’s Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA"
     },
     {
       "score": 2.7,
@@ -136,6 +127,15 @@
       "title": "Israel strikes southern Syria; Damascus condemns attack - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUlteHpodFpvY0RlTjBQVWdHWmFhTTAtU0VzVlRuY3hYRTA3NEFBSHcwN3pIR1ROYnBWVmFxWDVPTmVRcXZSaUM0YURHZHBmUDg0ekNFTDJ3NTd0S2NiR3loeDlXTlUzNzI1TjlKai1uNzh5TWRPeHJzd1UzNmM4TGRYLW1ET3ZnQ3hmeWNTNWF5ZVVReUtqTGFLdEtqVXZJWEw4RXk2TjE4YkFO"
+    },
+    {
+      "score": 2.1,
+      "date": "2026-08-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Syria says Israeli strike near Damascus violation of international law",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/c2dkdegr2xeo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
