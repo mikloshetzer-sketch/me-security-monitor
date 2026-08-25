@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-25 15:15 UTC",
+    "updated": "2026-08-25 16:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-19",
     "period_end": "2026-08-25",
-    "total_events": 118,
-    "total_risk": 83.11,
-    "normalized_risk_score": 33.2,
+    "total_events": 127,
+    "total_risk": 87.06,
+    "normalized_risk_score": 34.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 13,
     "security": 7,
-    "political": 10,
-    "other": 88
+    "political": 11,
+    "other": 96
   },
   "source_counts": {
-    "news": 114,
+    "news": 123,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 25.01
+      "risk": 28.76
     },
     {
       "name": "Israel",
-      "risk": 18.55
+      "risk": 18.75
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.75
+      "risk": 17.65
     },
     {
       "name": "Syria",
       "risk": 9.6
     },
     {
-      "name": "Yemen",
-      "risk": 2.95
+      "name": "Tehran",
+      "risk": 3.15
     }
   ],
   "top_events": [
@@ -64,15 +64,6 @@
       "title": "Yemen's Houthis say they attacked ship off Saudi Arabia's Yanbu - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWjZIUXVnZ0tJcjFPZEJjRlZMVkRkYkcwaVRVOWQ2R0tVeGo4SWZiMHgtZEFKRU9XUkk3N3ZNUmJ2YmRIUDlodjBoRlQtVmdjMi1oVjhWYUtVQmlSalVtQWptNzhjZFZ1TlMydkZLUXFQVEVocmVyYkFYX0J4bTJLV1VNUlpmanA0RWR2ODZlTWFka1p6X2VNSk0tVEZCLXVRQzlCcHlWTmxBUmlPM2paV0h0Sm9RMFVmaWRXY01IdUs0QQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Video: Israel attacks desalination plant and mosque in Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOb09FWGticWhpZjhHbkk5SlVIT0hSV3NKWW55ajM5TS1vUGNqRnNtdktjSXRrb1BvaEJpVWZPcC1GdkQxZngzR2owOXhIYnVyUkZIWldtZXNYOURxalp0bVFGaDJUd0lZMEowVWJxX3VLQnBSNUliRkJnT181b2VudXRZaDBrSUVWX2o0bElOV2ExQTctcTlxMWxqMjVYWm4zNFlQLWpYc1RVck5PRWfSAbMBQVVfeXFMT2FESkNIVENKQzJMTURLdG1iQW9DaTYtZUFRX1JCYUpDVklXU1U5Tmh6N2hmenhYZjI5SUkxRjNfaVktOWNiZjItQVJ1U2tZYlVCdUxBZlh5OVlSV3dFR1U4Qzk4MV8wckpldXdXbG5zR3A3Ri1KdGVta1c0MUlid1BGMjJoWWwtNkR6WmRSUTlqRzNqLW01V2NQS096U0Ixd3pPWGdzbnNzeVZzVzU3djlWYWc"
     },
     {
       "score": 2.7,
@@ -136,6 +127,15 @@
       "title": "US removes Syria from list of state sponsors of terrorism",
       "location": "Syria",
       "url": "https://www.bbc.co.uk/news/articles/c33knmyl0y5o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.0,
+      "date": "2026-08-25",
+      "category": "security",
+      "source_type": "news",
+      "title": "Syrian president thanks nation for getting off US state terror list - Al Jazeera",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbDVnWno5Q19qSG9seFRSTmJ0bE42MTk4dnNudmQ0WW8yQkJJT3NjcnFUMHplS0ZwZmRIMnhPMzNOclFzSUlUTHdtN09PZzJwblFYQlBDOFo5UklvMUJFQTFpaHVpcGlRbHFHZ1l5UlN3MGtBU282M3ZwRmJLdUpiMVBqN3hWOG1tRFg3NHV0Qy1hRV9TVVA5OGt2Sm5ib1BmX0ZZNXh1ZmlDcE5yLWpzeGhHa04xaUFYRWfSAb8BQVVfeXFMUG5HY1RibnM0WW5HWEFBTlZIQndkTjBoaVhTN3EyZHJqZVpjdWZJUHBFY2xnQWxseW9kZTFmRjc0OWNDM0lNWVNlRU5NTlBDaXEwVVNzMDNOOExGdXoxQThxemt4NlJXb0FZckZ1ODhaamNuMTNuTHoxX1ByMF9TRVVNRlhKZk02QUhyUmlodW5mTFBkUVVBbm90SUJNeXVOR1JfQWFDQVB4VTZzYkNLZWJsZWtPR2NadUVDQkJlY1E"
     }
   ]
 }
