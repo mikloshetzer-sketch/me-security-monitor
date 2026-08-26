@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-26T09:01:06+00:00",
+  "generated_at": "2026-08-26T15:51:36+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,38 +46,38 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 66,
-      "map_visualizable_events": 24,
-      "total_map_points": 27,
+      "total_events": 68,
+      "map_visualizable_events": 25,
+      "total_map_points": 28,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-24T11:01:40Z"
+      "latest_event_date": "2026-08-26T14:05:35Z"
     },
     "region_counts": {
-      "Gaza Strip": 49,
-      "South Lebanon": 19
+      "Gaza Strip": 50,
+      "South Lebanon": 20
     },
     "activity_type_counts": {
-      "airstrike": 50,
+      "airstrike": 51,
       "ground_activity": 8,
       "drone_activity": 7,
+      "cross_border_fire": 4,
       "humanitarian_zone": 3,
       "evacuation_warning": 3,
-      "cross_border_fire": 3,
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 39,
+      "Hamas": 40,
+      "Hezbollah": 13,
       "Not explicitly stated": 12,
-      "Hezbollah": 12,
       "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
       "commander": 39,
       "unspecified": 14,
       "individual_operative": 14,
-      "military_structure": 7,
-      "armed_cell": 6,
+      "military_structure": 8,
+      "armed_cell": 7,
       "weapons_storage": 5,
       "weapons_production": 5,
       "tunnel": 4,
@@ -87,11 +87,11 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 52,
-      "eliminated": 37,
+      "struck": 53,
+      "eliminated": 38,
+      "located": 11,
       "reported": 10,
-      "located": 10,
-      "dismantled": 7
+      "dismantled": 9
     },
     "commander_type_counts": {
       "unspecified_commander": 16,
@@ -104,11 +104,11 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 59,
+      "ground": 61,
       "command": 39,
+      "rocket_missile": 7,
       "weapons_logistics": 6,
       "drone_uav": 6,
-      "rocket_missile": 6,
       "production": 6,
       "underground": 5,
       "unspecified": 3,
@@ -119,22 +119,151 @@
       "Northern Gaza Strip": 19,
       "Southern Gaza Strip": 16,
       "Central Gaza Strip": 9,
-      "Yellow Line area": 6,
-      "Security Zone – South Lebanon": 5
+      "Yellow Line area": 7,
+      "Security Zone – South Lebanon": 6
     },
     "top_locations": {
       "Khan Yunis": 9,
       "Nuseirat": 6,
       "Gaza City": 4,
       "Deir al-Balah": 3,
+      "Jabalia": 2,
       "Beit Lahia": 1,
       "Nabatieh": 1,
-      "Jabalia": 1,
       "Maghazi": 1,
       "Rafah": 1
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19118",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19118",
+      "date": "2026-08-26T14:05:35Z",
+      "title": "IDF cross-border fire statement",
+      "description": "IDF: More than 400 terror infrastructure sites dismantled and numerous weapons located: Golani Brigade activities in the Security Zone The Golani Brigade, under the command of the 36th Division, is operating in the Security Zone in southern Lebanon to remove threats to Israeli civilians. Over the past several weeks, the troops have dismantled more than 400 terror infrastructure sites and located numerous weapons, including anti-tank missiles, surface-to-air missiles, explosive devices, Kalashnikov rifles, and mortars. The IDF will not allow the Hezbollah terrorist organization to harm Israeli civilians or IDF soldiers, and will continue to operate to remove threats while remaining committed to the ceasefire agreement. Attached is footage of Golani Brigade troops operating in the Security Zone in southern Lebanon: https://bit.ly/46l7wgp Attached are photos of weapons located in the Security Zone in southern Lebanon: https://IDFANC.activetrail.biz/IDFANC170820261",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "cross_border_fire"
+      ],
+      "activity_type": "cross_border_fire",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "military_structure"
+      ],
+      "target_type": "military_structure",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "rocket_missile",
+        "ground"
+      ],
+      "threat_domain": "rocket_missile",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
+      "operation_results": [
+        "dismantled",
+        "located"
+      ],
+      "operation_result": "dismantled",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19118"
+    },
+    {
+      "id": "idf-idfofficial-19115",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19115",
+      "date": "2026-08-26T11:15:38Z",
+      "title": "IDF airstrike statement – Jabalia",
+      "description": "IDF: Hamas ambush position near a hospital and a school dismantled by IDF Yesterday (Tuesday), the IDF struck and dismantled a structure in the Jabalia area in the Gaza Strip that was used as an ambush position by terrorists from Hamas’ military wing, and was used for storing various types of weapons. Recently, Hamas terrorists planned to advance attacks against IDF troops and have attempted to rehabilitate the military capability of the terrorist organization from the same structure. Several terrorists were eliminated in the strike in order to remove the threat. The ambush position was approximately 50 meters from the Yellow Line and posed a threat to IDF troops operating in the area in accordance with the agreement. The structure was struck in order to remove the threat. The position was approximately 70 meters from Kamal Adwan Hospital and approximately 170 meters from a school. This is another example of Hamas’ systematic use of civilian and humanitarian infrastructure, in violation of the ceasefire agreement and international law. Prior to the strike, steps were taken to mitigate the risk to civilians, including the use of precise munitions and aerial surveillance. Security forces in the Southern Command are deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any immediate threat. Attached is a related graphic:",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "armed_cell"
+      ],
+      "target_type": "armed_cell",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [
+        "Yellow Line area"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck",
+        "dismantled"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Jabalia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.528,
+          "longitude": 34.4831,
+          "matched_alias": "jabalia"
+        }
+      ],
+      "location_count": 1,
+      "location": "Jabalia",
+      "country": "Palestinian Territories",
+      "latitude": 31.528,
+      "longitude": 34.4831,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19115"
+    },
     {
       "id": "idf-idfofficial-19105",
       "source": "IDF official Telegram",
@@ -4425,6 +4554,77 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19115-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19115",
+      "date": "2026-08-26T11:15:38Z",
+      "title": "IDF airstrike statement – Jabalia",
+      "description": "IDF: Hamas ambush position near a hospital and a school dismantled by IDF Yesterday (Tuesday), the IDF struck and dismantled a structure in the Jabalia area in the Gaza Strip that was used as an ambush position by terrorists from Hamas’ military wing, and was used for storing various types of weapons. Recently, Hamas terrorists planned to advance attacks against IDF troops and have attempted to rehabilitate the military capability of the terrorist organization from the same structure. Several terrorists were eliminated in the strike in order to remove the threat. The ambush position was approximately 50 meters from the Yellow Line and posed a threat to IDF troops operating in the area in accordance with the agreement. The structure was struck in order to remove the threat. The position was approximately 70 meters from Kamal Adwan Hospital and approximately 170 meters from a school. This is another example of Hamas’ systematic use of civilian and humanitarian infrastructure, in violation of the ceasefire agreement and international law. Prior to the strike, steps were taken to mitigate the risk to civilians, including the use of precise munitions and aerial surveillance. Security forces in the Southern Command are deployed in the area in accordance with the ceasefire agreement and will continue to operate to remove any immediate threat. Attached is a related graphic:",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "armed_cell"
+      ],
+      "target_type": "armed_cell",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [
+        "Yellow Line area"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck",
+        "dismantled"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Jabalia",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.528,
+          "longitude": 34.4831,
+          "matched_alias": "jabalia"
+        }
+      ],
+      "location_count": 1,
+      "location": "Jabalia",
+      "country": "Palestinian Territories",
+      "latitude": 31.528,
+      "longitude": 34.4831,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19115",
+      "parent_event_id": "idf-idfofficial-19115",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19105-location-1",
       "source": "IDF official Telegram",
