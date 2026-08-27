@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-27 09:51 UTC",
+    "updated": "2026-08-27 20:39 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-08-21",
     "period_end": "2026-08-27",
-    "total_events": 147,
-    "total_risk": 98.72,
-    "normalized_risk_score": 39.5,
+    "total_events": 142,
+    "total_risk": 103.52,
+    "normalized_risk_score": 41.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 15,
-    "security": 7,
+    "military": 14,
+    "security": 9,
     "political": 14,
-    "other": 111
+    "other": 105
   },
   "source_counts": {
-    "news": 143,
+    "news": 138,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 36.57
+      "risk": 34.12
     },
     {
       "name": "Gaza Strip",
-      "risk": 16.5
-    },
-    {
-      "name": "Israel",
-      "risk": 15.45
+      "risk": 18.5
     },
     {
       "name": "Syria",
-      "risk": 13.7
+      "risk": 15.55
     },
     {
-      "name": "Yemen",
-      "risk": 4.5
+      "name": "Israel",
+      "risk": 14.2
+    },
+    {
+      "name": "Jerusalem",
+      "risk": 6.3
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Board of Peace's Gaza envoy criticises Israeli strikes and Hamas actions",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cew92l07kwzo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-27",
+      "category": "military",
+      "source_type": "news",
+      "title": "Man who attacked nun on CCTV in Jerusalem acquitted on grounds of mental health",
+      "location": "Jerusalem",
+      "url": "https://www.bbc.co.uk/news/articles/cpwl54kddeko?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 3.0,
       "date": "2026-08-27",
@@ -57,22 +75,22 @@
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUHltVjdIdHBULVY3UW42VFNvMmJpanpkQnRyS0tDOExyMTFTTGJPeDh5SmYtMVk3T1NCV0kzMm14T21xWm9zYUZqS2UzbEhXaUlsVjNMeGFXYzJmNDE4LWtBQmhYNm9zMHg0SXEtVGFKWFNnblBjRGZ4N2tiR2FQSjZ2ZkpaS2l6NjcweUJGWGVLbnJ1V2FYWkZVUEdSeUdmMFBqRVVfNlFSWTZ5aHpyTHBR0gG3AUFVX3lxTE1jd1ZfZ1FtNnhiWGd6TlhaLWU4dXhGQXBobGVUeVlFVDRSOUFZX1dhVXRrQnhTV1hwUHJWVHYzZWlKVzMwN0pmOXI2SzI5cGlmRjJaSjl4SVFiQkNjaFowWU9rclFPWEFSZi1MdnRzQkd4cnFueGMyT1lSRDhyRUxKWlNsYmhXVkowNjkzM1B5U05EOWJxd3VpcWZNWlFoRzE0MUxRMjN5V0Q4RWFyckFRZ3h0dDJ3QQ"
     },
     {
-      "score": 2.7,
-      "date": "2026-08-26",
+      "score": 3.0,
+      "date": "2026-08-27",
       "category": "military",
       "source_type": "news",
-      "title": "Palestinian boy shot during Israeli raid on UNRWA centre - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOb2pTZHQyTHlsMlp6S1FZczc5ZmxhYUlFbXc5Z0Q5RnpGMmNKb1VQVlNvU2wyV3BqUlhuc2gzX1c2VnN0SnZYODZ1MzltVGxsX29jaGtrdEd4ZFI0WHlGMk8wV2tURndTbFFtWGY5VXMtV1k4d091WGZoNFRSTmEtXzdvYTBFY0xRQnBWc2YyRWI1dXdYaHVpdDd3TmRwZ3NQclpRTmoyVXZNb0nSAbABQVVfeXFMUG9VWVFFT0JaYllkOGVuQ2NwMXBOTGNoSWZ2cS1aWXhOMnU1NDZucW4zRjFOeG1uMXVxZ2FMdGU1eEhxcVRrLTI5bEQyNGFaR0hGUUNlQzlhUExDS3FGTXp2SWQ3ZUtxRHFqTlNHMHFOcElMeTdGUFZTSDVmU2JjWTEweF8xLUZaU3NlMVRJNEp1SnV6MzRnVTg5ZkNyMmJFeEwxcjlDalVMd0Y0MVhNNmE"
+      "title": "Three killed in strikes on Gaza as Israel renews threats over kite-flying - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSzdBSWVrVzB5TGRaMzFOVzdqcDBONDEyeVFxTldfUHJndGNOU1FabUd3eU93MVhBREpCcVRSNFlVM0twOWF3SGFFakFOS0hEREZmQ09MRDhJc25TSGtnRHdSSVpacTQwbkpoNTlqdWM2azUwNjNNU01JS2VuNjBDeHFHSDhfQ2VDMVpYVno1ZjRmU0F4WnZWcmg1ZnlmQk9UbFRfZDVmUmlId2lzb0tSSlpRRjDSAboBQVVfeXFMTVdVTG5Qa2RYdEQ3UXRkNVpLV05RUFM4bHhTbmp3RUF4cHNPRDFnYUNJOVJqcW1WSi1SMzVpSU02TDBiNm1ZbEllUTRYcm12eVUxYzRIVmpwX2pVVURBNy1fOEhaVGJpZ2o2MHFnZHNEUl9nNnRlbi1TUGRiNkZ1dERscVhrdjh2ckkwMGo5Y1ctbFRSU2Y5YmRyYnFRa196MFlGaWQ2TTlYSnlXRlduR1ZDbjkyakFKZ05n"
     },
     {
-      "score": 2.4,
-      "date": "2026-08-25",
+      "score": 3.0,
+      "date": "2026-08-27",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli attacks kill five in Gaza, including two children, medics say",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/ce8x1rdgp3lo?at_medium=RSS&at_campaign=rss"
+      "title": "Israeli strike kills ‘newlywed’ woman in south Lebanon, wounds others - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZHRzdnRlcXdPNmpObDFFZGh5Sm0yQ3NnNGs0Ykl1T1VlMnBUc0JhOWE3T1ZsbUhKQWh3b2xUelJVQkhqM1h3cTRsSVB4QlZuYnp0NjZCYWtLUGNQTEI0TkEzMS14VkY2T1RxdU5yRE5IYVByYTBmcjVkQkI1WkQ0QlZVeUlIUG5zc3RSeXV2MUM2cU1KTEo4dURqRWUtYllfV2RtQkVOVWM2NlHSAbABQVVfeXFMUERFTGE3VGRWUlE5ZzdsTkhLWHQwMXpWLVJ0WXo2dFRUU0Z5Z1Q0YjdUVGhFNklKYy0xcFlTQ3JKTDJmUjQ4aGc0YjRTbGYzTFVWaU9QMjFaVkx6MVE3NUkwalVZdXdVV0dNaWxsbUNmaXdlaGZ1U2ZsSGNPUGxBTkNVeWJWQ0Z3NEtzNGFJMTBBWGstYjc1WkE5OGtqc0t6RzdkallUWkJsY2tFcE1hV2M"
     },
     {
       "score": 2.4,
@@ -90,7 +108,7 @@
       "source_type": "news",
       "title": "Israeli forces raid UNRWA training centre in occupied East Jerusalem - Al Jazeera",
       "location": "Jerusalem",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdGdJcGhpZEZFT3JzemlkUHpORnh2RFNzRXhvX25oc1p3cDJGNXI0QlZ3ZThNX0Z3Q1JFMlZtNEstQUQxLXZoV3VYRk14XzQzYjRSX09UbEQxNWplTlE3Rnh5aXVxLWh3dkFJWkZSSWIyWUYtRUM2SFdTeTQ2aHUwZ2oxaEFGeXFQZ1dBNEN5dDVyQWZtdmhhLWcxSTFQbXZUUVJKTWNqR2FNaURjenc"
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdGdJcGhpZEZFT3JzemlkUHpORnh2RFNzRXhvX25oc1p3cDJGNXI0QlZ3ZThNX0Z3Q1JFMlZtNEstQUQxLXZoV3VYRk14XzQzYjRSX09UbEQxNWplTlE3Rnh5aXVxLWh3dkFJWkZSSWIyWUYtRUM2SFdTeTQ2aHUwZ2oxaEFGeXFQZ1dBNEN5dDVyQWZtdmhhLWcxSTFQbXZUUVJKTWNqR2FNaURjenfSAbMBQVVfeXFMTTlaaUhONG1kZ3MxaFRibmdWazlZeHlBbXZuMUZvR24zUzZwb0kzbkdkd1NHdEN5a095NDVULXpqamV0bzM1WkxuWl92eGd5dDBEWXBqdXpSN0g3YlN5ai04Y3NheV9iM3NyYXQ3LUVNOHZ1NzBsY1k1UmZkVWJvT0EyZExoZU1kSDdENnZINWliWjBWcm52cjNQaFBtTHF6TmJYd2xKVE1idFoyUHc5ckhSZDg"
     },
     {
       "score": 2.4,
@@ -118,24 +136,6 @@
       "title": "Palestine weekly: After Kushner departs, Israel escalates Gaza attacks - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTk5VMWZfS1dpakhQSWREdkwwSWo3elJQX3ZPS0xtNkk2d0VlemNYZWRJMHYyRjZUbk9CeWRucmlUaUMtcWh6Y0ZSblQ4WGRjbmkwNm4tZDNjWUxjVDNYNjlRNlQwMzZWeGpIWVRoOVFsNHBRXzdsdHdnX25UcEpaLUFQUkI1cnhobmpUWk9PMlA4d29QeWtEbzR5S3BUS3BPTnhSTGxTZ1VXNzYyaFHSAbMBQVVfeXFMTkFvTmtpY0hGRFBVbjZGWWROZUFvUjRlU1B6WGI2OFIzRmluUjBkMzVidnFDTUw1bzF1WjJlbGhjeHdsVkVOOGxzN1JlRG1kSVhVMERpQmt6UndGTnZ3ZTNGeDVWckVYaHp6V0MxMGtER2NhUkhhMTdlak9WQlprX3JsQ09XbkpWRHA0ckxrY0VzRDRJTVR5em1Xenh5eEJEcmJCWENfWW1Pdll1TjBkQVhiY1k"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they attacked ship off Saudi Arabia's Yanbu - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWjZIUXVnZ0tJcjFPZEJjRlZMVkRkYkcwaVRVOWQ2R0tVeGo4SWZiMHgtZEFKRU9XUkk3N3ZNUmJ2YmRIUDlodjBoRlQtVmdjMi1oVjhWYUtVQmlSalVtQWptNzhjZFZ1TlMydkZLUXFQVEVocmVyYkFYX0J4bTJLV1VNUlpmanA0RWR2ODZlTWFka1p6X2VNSk0tVEZCLXVRQzlCcHlWTmxBUmlPM2paV0h0Sm9RMFVmaWRXY01IdUs0QQ"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "UK briefs energy chiefs after Iran-linked cyber attack reports - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRy1UV0V0SjJTWmFRM0VUNXc2WHkyNjZEU3VVU01nWkNDODRBcEd6eFhMZlZZQVM0Unh6bFZzOE5HSXJHV0NxN1hhVF9RMTBOWEJ6OUN1cjRmZTBEQWpmQjlyWlQ1ZDlFVXFHLVh2b1NrcXFqNXF1R09JR2JFbDJjdi1keUdVN1BHRzhwWmMtUlBfMlZnQkpnZDZLNndkWXhZZ3dNOGhJUFRfLTJUMXdxYzBReWY"
     }
   ]
 }
