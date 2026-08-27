@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T04:01:36Z",
+  "generated_at": "2026-08-27T15:16:11Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -55,42 +55,42 @@
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
     "normalized_events": 1000,
-    "map_visualizable_events": 204,
-    "non_mappable_events": 796,
+    "map_visualizable_events": 207,
+    "non_mappable_events": 793,
     "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
       "total_events": 1000,
-      "earliest_event_date": "2026-07-13T03:26:46Z",
-      "latest_event_date": "2026-08-26T16:14:04Z",
-      "geocoded_events": 204,
-      "geocoded_share": 20.4,
+      "earliest_event_date": "2026-07-13T05:29:41Z",
+      "latest_event_date": "2026-08-27T13:40:42Z",
+      "geocoded_events": 207,
+      "geocoded_share": 20.7,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 34,
-        "previous": 80,
-        "delta": -46,
-        "percent_change": -57.5,
+        "current": 33,
+        "previous": 74,
+        "delta": -41,
+        "percent_change": -55.4,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 360,
-        "previous": 622,
-        "delta": -262,
-        "percent_change": -42.1,
+        "current": 326,
+        "previous": 629,
+        "delta": -303,
+        "percent_change": -48.2,
         "direction": "decrease"
       }
     },
     "daily_trend": [
       {
         "date": "2026-07-13",
-        "count": 34
+        "count": 25
       },
       {
         "date": "2026-07-14",
@@ -267,49 +267,53 @@
       {
         "date": "2026-08-26",
         "count": 1
+      },
+      {
+        "date": "2026-08-27",
+        "count": 9
       }
     ],
     "category_counts": {
-      "infrastructure": 264,
-      "missile": 201,
-      "strike": 186,
-      "drone": 119,
+      "infrastructure": 263,
+      "missile": 200,
+      "strike": 184,
+      "drone": 122,
       "airstrike": 101,
       "explosion": 45,
-      "movement": 41,
+      "movement": 42,
       "ground": 20,
       "defense": 10,
       "alert": 9,
       "political": 4
     },
     "severity_counts": {
-      "medium": 522,
-      "high": 329,
-      "low": 147,
+      "medium": 526,
+      "high": 324,
+      "low": 148,
       "critical": 2
     },
     "attacker_counts": {
       "unknown": 582,
-      "iran": 285,
-      "israel": 104,
+      "iran": 278,
+      "israel": 111,
       "usa": 29
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 270
+        "count": 272
       },
       {
         "name": "Iran",
-        "count": 265
+        "count": 259
       },
       {
         "name": "Jordan",
-        "count": 79
+        "count": 77
       },
       {
         "name": "Lebanon",
-        "count": 51
+        "count": 54
       },
       {
         "name": "Bandar Abbas",
@@ -340,12 +344,12 @@
         "count": 20
       },
       {
-        "name": "Aqaba",
-        "count": 18
+        "name": "Nabatieh",
+        "count": 19
       },
       {
-        "name": "Nabatieh",
-        "count": 17
+        "name": "Aqaba",
+        "count": 18
       },
       {
         "name": "Tehran",
@@ -359,23 +363,23 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 375
+        "count": 369
       },
       {
         "name": "Unknown",
-        "count": 270
+        "count": 272
       },
       {
         "name": "Jordan",
-        "count": 98
+        "count": 96
+      },
+      {
+        "name": "Lebanon",
+        "count": 73
       },
       {
         "name": "Iraq",
         "count": 72
-      },
-      {
-        "name": "Lebanon",
-        "count": 68
       },
       {
         "name": "Persian Gulf",
@@ -395,7 +399,7 @@
       },
       {
         "name": "Palestinian territories",
-        "count": 8
+        "count": 9
       },
       {
         "name": "Gaza Strip",
@@ -404,19 +408,41 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10289,
+    "totalCount": 10298,
     "spotlight": {
-      "event": null,
-      "headline": null,
-      "headlineHe": null,
-      "summary": null,
-      "summaryHe": null,
-      "state": "CALM",
-      "pickedAt": "2026-08-27T04:00:03.510Z"
+      "event": {
+        "id": "7zwi8ub9ahc0",
+        "timestamp": "2026-08-27T13:40:42+00:00",
+        "location": "LBN",
+        "origin": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Hezbollah fires 2 explosive drones at IDF forces in Ali Taher ridge area, southern Lebanon security zone; 1 drone shot down, contact lost with second drone, no IDF casualties",
+        "descriptionHe": "חיזבאללה שיגר שני רחפני נפץ לעבר כוחות צה\"ל בגבעת עלי טאהר בדרום לבנון; צה\"ל הפיל אחד מהם, אבד מגע עם השני, אין נפגעים",
+        "source": "idkunim_il",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/idkunim_il/62908"
+      },
+      "headline": "Hezbollah fires explosive drones at IDF forces in Lebanon",
+      "headlineHe": "חזבאללה שיגר מל\"טים נפיציים לכיוון כוחות צה\"ל בלבנון",
+      "summary": "The incident marks continued escalation in the Ali Taher ridge border area, with one drone intercepted and tracking lost on a second.",
+      "summaryHe": "התקרית מסמנת התגברות מתמשכת בשטח הגבול בגבעת עלי תאהר, עם מל\"ט אחד שנוטרל ואיבוד קשר עם השני.",
+      "pickedAt": "2026-08-27T15:01:45.253Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-27T04:00:03.466Z",
+    "lastUpdated": "2026-08-27T15:12:03.574Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -957,274 +983,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 92,
       "cellular": null,
-      "lastUpdate": "2026-08-27T04:01:33.267Z",
+      "lastUpdate": "2026-08-27T15:03:33.237Z",
       "internetHistory": [
-        {
-          "t": "2026-08-26T04:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T04:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T04:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T04:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T04:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T04:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T05:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T05:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T05:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T05:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T05:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T05:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T06:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T06:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T06:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T06:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T06:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T06:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T07:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T07:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-26T07:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T07:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T07:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T07:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T08:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T08:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T08:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T08:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T08:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T08:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T09:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T09:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T09:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T09:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T09:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T09:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T10:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T10:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T10:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T10:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T10:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T10:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T11:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T11:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T11:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T11:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T11:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T11:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T12:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T12:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T12:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T12:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T12:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T12:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T13:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T13:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T13:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T13:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T13:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T13:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T14:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T14:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-08-26T14:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T14:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T14:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-26T14:50:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-08-26T15:00:00.000Z",
           "v": 92
@@ -1536,32 +1298,296 @@
         {
           "t": "2026-08-27T03:50:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-08-27T04:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T04:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T04:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T04:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T04:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T04:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T05:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T05:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T05:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T05:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T05:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T05:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T06:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T06:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T06:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T06:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T06:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T06:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T07:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T07:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-27T07:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T07:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T07:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T07:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T08:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T08:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T08:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T08:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T08:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T08:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T09:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T09:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T09:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T09:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T09:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T09:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T10:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T10:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T10:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T10:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T10:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T10:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T11:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T11:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T11:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T11:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T11:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T11:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T12:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T12:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T12:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T12:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T12:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T12:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T13:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T13:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T13:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T13:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T13:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T13:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T14:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T14:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-08-27T14:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T14:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T14:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-27T14:50:00.000Z",
+          "v": 92
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-27T04:01:33.267Z"
+    "lastUpdated": "2026-08-27T15:03:33.237Z"
   },
   "developments": [
     {
-      "id": "iranstrike-2aj3iper",
+      "id": "iranstrike-a7f2c9e1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-25T22:16:21Z",
+      "date": "2026-08-27T13:40:42Z",
       "title": "IranStrike event",
-      "description": "Iran strikes U.S. intelligence sites in Iraq and Saudi Arabia; billions in damage reported",
+      "description": "IDF strikes Ali al-Taher ridge & villages; Hezbollah fires 4 drones, 2 intercepted",
       "category": "other",
       "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes u.s.",
-      "location": "Iraq",
-      "country": "Iraq",
+      "attacker_evidence": "idf strikes ali al-taher ridge & villages;",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1572,78 +1598,36 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2aj3iper",
-        "text": "Iran strikes U.S. intelligence sites in Iraq and Saudi Arabia; billions in damage reported",
-        "textHe": "איראן תקפה אתרי מודיעין אמריקאיים בעירק וערב הסעודית; נזק בעלות מיליארדים דווח",
+        "id": "a7f2c9e1",
+        "text": "IDF strikes Ali al-Taher ridge & villages; Hezbollah fires 4 drones, 2 intercepted",
+        "textHe": "צה\"ל תוקף את רכס עלי אל-תאהיר וכפרים; חזבאללה שיגר 4 כטבים, 2 יוחזקו",
         "severity": "high",
-        "timestamp": "2026-08-25T22:16:21+00:00",
-        "entityIds": [
-          "IRN",
-          "USA",
-          "IRQ",
-          "SAU"
-        ],
-        "eventIds": [
-          "2aj3iperzzr40"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-43i3819g",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-25T20:49:40Z",
-      "title": "IranStrike event",
-      "description": "IDF strikes multiple targets in southern Lebanon; Nabatiyeh, Tarbikh, Kafr Raman hit",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes multiple targets in southern lebanon;",
-      "location": "Nabatieh",
-      "country": "Lebanon",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "nabatiyeh",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "43i3819g",
-        "text": "IDF strikes multiple targets in southern Lebanon; Nabatiyeh, Tarbikh, Kafr Raman hit",
-        "textHe": "צה\"ל תקף מטרות מרובות בדרום לבנון; נביתיה, טרביך וכפר רמאן נפגעו",
-        "severity": "medium",
-        "timestamp": "2026-08-25T20:49:40+00:00",
+        "timestamp": "2026-08-27T13:40:42+00:00",
         "entityIds": [
           "ISR",
           "LBN"
         ],
         "eventIds": [
-          "43i3819g1p80"
+          "139vmf9635kw0",
+          "23fywcfile0w0",
+          "2al88q1c8ezo0",
+          "1tsbxj3b52rk0",
+          "7zwi8ub9ahc0"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-1qltg020",
+      "id": "iranstrike-b3e8d4a2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-25T18:49:02Z",
+      "date": "2026-08-27T12:29:27Z",
       "title": "IranStrike event",
-      "description": "Houthi drone and missile attacks target Saudi tanker and Yemeni military base",
+      "description": "Houthi drone attack on Saudi Yanbu oil terminal intercepted by Patriot system",
       "category": "other",
-      "severity": "medium",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -1662,31 +1646,74 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "1qltg020",
-        "text": "Houthi drone and missile attacks target Saudi tanker and Yemeni military base",
-        "textHe": "התקפות חותיים בדרונים וטילים כנגד טנקר סעודי ובסיס צבאי ימני",
-        "severity": "medium",
-        "timestamp": "2026-08-25T18:49:02+00:00",
+        "id": "b3e8d4a2",
+        "text": "Houthi drone attack on Saudi Yanbu oil terminal intercepted by Patriot system",
+        "textHe": "התקף כטבי חות'ים בנמל הנפט הסעודי ינבו הוטל בהצלחה על ידי מערכת פטריוט",
+        "severity": "high",
+        "timestamp": "2026-08-27T12:29:27+00:00",
         "entityIds": [
           "YEM",
           "SAU"
         ],
         "eventIds": [
-          "1v1647te0gdc0",
-          "1qltg020vty80"
+          "2i8vu71lbs200"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-136lurjt",
+      "id": "iranstrike-c6f1e5b3",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-27T08:10:51Z",
+      "title": "IranStrike event",
+      "description": "IDF eliminates 2 Hamas militants linked to Oct 7 attack in Khan Younis",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf eliminates 2 hamas militants linked to oct 7 attack in khan younis צה\"ל חיסל 2 פעילי חמאס הקשורים להת",
+      "location": "Khan Younis",
+      "country": "Palestinian territories",
+      "latitude": 31.3462,
+      "longitude": 34.3063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khan younis",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c6f1e5b3",
+        "text": "IDF eliminates 2 Hamas militants linked to Oct 7 attack in Khan Younis",
+        "textHe": "צה\"ל חיסל 2 פעילי חמאס הקשורים להתקפת 7 באוקטובר בחאן יונס",
+        "severity": "medium",
+        "timestamp": "2026-08-27T08:10:51+00:00",
+        "entityIds": [
+          "ISR",
+          "PSE"
+        ],
+        "eventIds": [
+          "qmbys2ym2ww0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d9g2h6c4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-26T16:14:04Z",
       "title": "IranStrike event",
-      "description": "Iran's strategic fuel reserves approaching depletion; supply disruptions possible within weeks",
+      "description": "Iran's strategic fuel reserves near depletion; weeks to potential supply crisis",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1707,9 +1734,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "136lurjt",
-        "text": "Iran's strategic fuel reserves approaching depletion; supply disruptions possible within weeks",
-        "textHe": "רזרבות דלק אסטרטגיות של איראן קרובות לקיום; הפרעות בהספקה אפשריות בשבועות הקרובים",
+        "id": "d9g2h6c4",
+        "text": "Iran's strategic fuel reserves near depletion; weeks to potential supply crisis",
+        "textHe": "רזרוות הדלק האסטרטגיות של איראן קרובות לסיום; שבועות עד למשבר אספקה",
         "severity": "medium",
         "timestamp": "2026-08-26T16:14:04+00:00",
         "entityIds": [
@@ -1723,6 +1750,424 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-7zwi8ub9ahc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62908",
+      "date": "2026-08-27T13:40:42Z",
+      "title": "IranStrike event",
+      "description": "Hezbollah fires 2 explosive drones at IDF forces in Ali Taher ridge area, southern Lebanon security zone; 1 drone shot down, contact lost with second drone, no IDF casualties",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn hezbollah fires 2 explosive drones at idf forces in ali taher ridge area, southern lebanon",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7zwi8ub9ahc0",
+        "timestamp": "2026-08-27T13:40:42+00:00",
+        "location": "LBN",
+        "origin": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Hezbollah fires 2 explosive drones at IDF forces in Ali Taher ridge area, southern Lebanon security zone; 1 drone shot down, contact lost with second drone, no IDF casualties",
+        "descriptionHe": "חיזבאללה שיגר שני רחפני נפץ לעבר כוחות צה\"ל בגבעת עלי טאהר בדרום לבנון; צה\"ל הפיל אחד מהם, אבד מגע עם השני, אין נפגעים",
+        "source": "idkunim_il",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/idkunim_il/62908"
+      }
+    },
+    {
+      "id": "iranstrike-2i8vu71lbs200",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82814",
+      "date": "2026-08-27T12:29:27Z",
+      "title": "IranStrike event",
+      "description": "Houthi drone attack on Saudi Yanbu oil terminal repulsed by Greek-operated Patriot air defense system",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2i8vu71lbs200",
+        "timestamp": "2026-08-27T12:29:27+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthi drone attack on Saudi Yanbu oil terminal repulsed by Greek-operated Patriot air defense system",
+        "descriptionHe": "התקפת מזל\"ט של החות'ים על מסוף הנפט הסעודי בינבו הודחתה על ידי מערכת פטריוט בתפעול יווני",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82814"
+      }
+    },
+    {
+      "id": "iranstrike-cowyn4nkxy80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129243",
+      "date": "2026-08-27T12:02:26Z",
+      "title": "IranStrike event",
+      "description": "IDF fighter jets strike village of Nabatieh al-Fawqa near Ali al-Tahir ridge",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf fighter jets strike village of nabatieh al-fawqa near ali al-tahir ri",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "cowyn4nkxy80",
+        "timestamp": "2026-08-27T12:02:26+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF fighter jets strike village of Nabatieh al-Fawqa near Ali al-Tahir ridge",
+        "descriptionHe": "מטוסי קרב של צה\"ל תקפו כפר נבטיה אלפוקא הסמוך לרכס עלי א-טאהר",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129243"
+      }
+    },
+    {
+      "id": "iranstrike-2al88q1c8ezo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129243",
+      "date": "2026-08-27T12:02:26Z",
+      "title": "IranStrike event",
+      "description": "IDF drones strike vehicle in Nabatieh al-Fawqa and additional target in village of Raman near Ali al-Tahir ridge",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf drones strike vehicle in nabatieh al-fawqa and additional targe",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2al88q1c8ezo0",
+        "timestamp": "2026-08-27T12:02:26+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF drones strike vehicle in Nabatieh al-Fawqa and additional target in village of Raman near Ali al-Tahir ridge",
+        "descriptionHe": "כטב\"מים של צה\"ל תקפו רכב בנבטיה אלפוקא ומטרה נוספת בכפר רמאן, סמוך לרכס עלי א-טאהר",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129243"
+      }
+    },
+    {
+      "id": "iranstrike-1tsbxj3b52rk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129234",
+      "date": "2026-08-27T11:14:06Z",
+      "title": "IranStrike event",
+      "description": "Hezbollah fires 2 explosive drones at IDF forces operating in Ali Taher ridge area, one drone shot down, contact lost with second",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn hezbollah fires 2 explosive drones at idf forces operating in ali taher ridge area, one dro",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1tsbxj3b52rk0",
+        "timestamp": "2026-08-27T11:14:06+00:00",
+        "location": "LBN",
+        "origin": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Hezbollah fires 2 explosive drones at IDF forces operating in Ali Taher ridge area, one drone shot down, contact lost with second",
+        "descriptionHe": "חיזבאללה שיגר שני רחפני נפץ לעבר כוחות צה\"ל בעמק עלי טאהר, אחד יורט, אבד מגע עם השני",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/129234"
+      }
+    },
+    {
+      "id": "iranstrike-139vmf9635kw0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129234",
+      "date": "2026-08-27T11:14:06Z",
+      "title": "IranStrike event",
+      "description": "Israeli fighter jets strike Ali al-Taher ridge in southern Lebanon; additional strikes on villages of Zarbine, Yater al-Mansouri, Zoutar, Mifdan",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn israeli fighter jets strike ali al-taher ridge in southern lebanon;",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "139vmf9635kw0",
+        "timestamp": "2026-08-27T11:14:06+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli fighter jets strike Ali al-Taher ridge in southern Lebanon; additional strikes on villages of Zarbine, Yater al-Mansouri, Zoutar, Mifdan",
+        "descriptionHe": "מטוסי קרב ישראלים תוקפים את רכס עלי א-טאהר בדרום לבנון; תקיפות נוספות בכפרים צרבין, יאטר אלמנצורי, זוטר, מיפדון",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129234"
+      }
+    },
+    {
+      "id": "iranstrike-2jmybrthxms00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82812",
+      "date": "2026-08-27T10:32:36Z",
+      "title": "IranStrike event",
+      "description": "USS George Washington carrier strike group arrives in CENTCOM area of responsibility; USS Theodore Roosevelt to deploy to Middle East in coming weeks to relieve USS George H.W. Bush",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "usa",
+      "attacker_label": "United States",
+      "attacker_color": "#2563eb",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "uss george washington carrier strike group arrives in centcom area of responsibility;",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2jmybrthxms00",
+        "timestamp": "2026-08-27T10:32:36+00:00",
+        "location": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "USS George Washington carrier strike group arrives in CENTCOM area of responsibility; USS Theodore Roosevelt to deploy to Middle East in coming weeks to relieve USS George H.W. Bush",
+        "descriptionHe": "קבוצת התקיפה של נושאת המטוסים ג'ורג' וושינגטון הגיעה לאזור האחריות של CENTCOM; USS תיאודור רוזוולט עתיד להיפרס למזרח התיכון בשבועות הקרובים כדי להחליף את USS ג'ורג' H.W. בוש",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82812"
+      }
+    },
+    {
+      "id": "iranstrike-qmbys2ym2ww0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129226",
+      "date": "2026-08-27T08:10:51Z",
+      "title": "IranStrike event",
+      "description": "IDF and Shin Bet eliminate two Hamas militants involved in October 7 attack; Hazem Musa, Nuchba operative, killed in Khan Younis strike",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr idf and shin bet eliminate two hamas militants involved in october 7 attack;",
+      "location": "Khan Younis",
+      "country": "Palestinian territories",
+      "latitude": 31.3462,
+      "longitude": 34.3063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khan younis",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "qmbys2ym2ww0",
+        "timestamp": "2026-08-27T08:10:51+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF and Shin Bet eliminate two Hamas militants involved in October 7 attack; Hazem Musa, Nuchba operative, killed in Khan Younis strike",
+        "descriptionHe": "צה\"ל והשב\"כ חיסלו שני מחבלי חמאס שפשטו למחנה רעים בטבח ה-7 באוקטובר; חזם מוסא, מחבל נוח'בה, חוסל בתקיפה בחאן יונס",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129226"
+      }
+    },
+    {
+      "id": "iranstrike-23fywcfile0w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129211",
+      "date": "2026-08-27T05:18:35Z",
+      "title": "IranStrike event",
+      "description": "Israeli fighter jets strike Ali al-Taher ridge in southern Lebanon and villages including Tarbine, Yater, Almansouri, Zoutar, Mifdon",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn israeli fighter jets strike ali al-taher ridge in southern lebanon and villag",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "23fywcfile0w0",
+        "timestamp": "2026-08-27T05:18:35+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli fighter jets strike Ali al-Taher ridge in southern Lebanon and villages including Tarbine, Yater, Almansouri, Zoutar, Mifdon",
+        "descriptionHe": "מטוסי קרב ישראליים תוקפים את רכס עלי א-טאהר בדרום לבנון וכפרים כולל צרבין, יאטר, אלמנצורי, זוטר, מיפדון",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129211"
+      }
+    },
     {
       "id": "iranstrike-136lurjtc8qo0",
       "source": "IranStrike",
@@ -46652,413 +47097,144 @@
         "source": "OSINTdefender",
         "sourceUrl": "https://t.me/OSINTdefender/19464"
       }
-    },
-    {
-      "id": "iranstrike-pci8kitxez40",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126422",
-      "date": "2026-07-13T05:18:01Z",
-      "title": "IranStrike event",
-      "description": "Iran claims responsibility for retaliatory strike on American targets in Kuwait",
-      "category": "strike",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "kwt iran claims responsibility for retaliatory strike on american targets in kuwait איראן טוענת לאחריות",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "pci8kitxez40",
-        "timestamp": "2026-07-13T05:18:01+00:00",
-        "location": "KWT",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Iran claims responsibility for retaliatory strike on American targets in Kuwait",
-        "descriptionHe": "איראן טוענת לאחריות על תקיפה תגובתית של יעדים אמריקאיים בכווית",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126422"
-      }
-    },
-    {
-      "id": "iranstrike-hk7z0r3u9mg0",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126422",
-      "date": "2026-07-13T05:18:01Z",
-      "title": "IranStrike event",
-      "description": "Iran claims responsibility for retaliatory strike on American targets in Bahrain",
-      "category": "strike",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "bhr iran claims responsibility for retaliatory strike on american targets in bahrain איראן טוענת לאחריו",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "hk7z0r3u9mg0",
-        "timestamp": "2026-07-13T05:18:01+00:00",
-        "location": "BHR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Iran claims responsibility for retaliatory strike on American targets in Bahrain",
-        "descriptionHe": "איראן טוענת לאחריות על תקיפה תגובתית של יעדים אמריקאיים בבחריין",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126422"
-      }
-    },
-    {
-      "id": "iranstrike-3vahrh69d4i00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126422",
-      "date": "2026-07-13T05:18:01Z",
-      "title": "IranStrike event",
-      "description": "Iran claims responsibility for retaliatory strike on American targets in Jordan",
-      "category": "strike",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "jor iran claims responsibility for retaliatory strike on american targets in jordan איראן טוענת לאחריות",
-      "location": "Jordan",
-      "country": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3vahrh69d4i00",
-        "timestamp": "2026-07-13T05:18:01+00:00",
-        "location": "JOR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Iran claims responsibility for retaliatory strike on American targets in Jordan",
-        "descriptionHe": "איראן טוענת לאחריות על תקיפה תגובתית של יעדים אמריקאיים בירדן",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126422"
-      }
-    },
-    {
-      "id": "iranstrike-3j24qwnd9b000",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126412",
-      "date": "2026-07-13T05:01:26Z",
-      "title": "IranStrike event",
-      "description": "Iran retaliatory strike targeting facilities in Jordan",
-      "category": "strike",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "jor iran retaliatory strike targeting facilities in jordan איראן משגרת תקיפת",
-      "location": "Jordan",
-      "country": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3j24qwnd9b000",
-        "timestamp": "2026-07-13T05:01:26+00:00",
-        "location": "JOR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Iran retaliatory strike targeting facilities in Jordan",
-        "descriptionHe": "איראן משגרת תקיפת תגובה לעבר מתקנים בירדן",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126412"
-      }
-    },
-    {
-      "id": "iranstrike-346ygiauvp400",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126412",
-      "date": "2026-07-13T05:01:26Z",
-      "title": "IranStrike event",
-      "description": "Iran retaliatory strike targeting facilities in Kuwait",
-      "category": "strike",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "kwt iran retaliatory strike targeting facilities in kuwait איראן משגרת תקיפת",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "346ygiauvp400",
-        "timestamp": "2026-07-13T05:01:26+00:00",
-        "location": "KWT",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Iran retaliatory strike targeting facilities in Kuwait",
-        "descriptionHe": "איראן משגרת תקיפת תגובה לעבר מתקנים בכווית",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126412"
-      }
-    },
-    {
-      "id": "iranstrike-2oxgvop2l8a00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126412",
-      "date": "2026-07-13T05:01:26Z",
-      "title": "IranStrike event",
-      "description": "U.S. CENTCOM strikes dozens of targets across Iran including air defense systems, coastal radar sites, missile capabilities and drone facilities, with first use of unmanned kamikaze vessels; strikes penetrate deep into Iranian territory including Khuzestan province energy infrastructure and span entire Iranian coastline",
-      "category": "missile",
-      "severity": "high",
-      "attacker": "usa",
-      "attacker_label": "United States",
-      "attacker_color": "#2563eb",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "centcom strikes dozens of targets across iran including air defen",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2oxgvop2l8a00",
-        "timestamp": "2026-07-13T05:01:26+00:00",
-        "location": "IRN",
-        "origin": "USA",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "U.S. CENTCOM strikes dozens of targets across Iran including air defense systems, coastal radar sites, missile capabilities and drone facilities, with first use of unmanned kamikaze vessels; strikes penetrate deep into Iranian territory including Khuzestan province energy infrastructure and span entire Iranian coastline",
-        "descriptionHe": "סנטקום תוקף עשרות יעדים בכל רחבי איראן כולל מערכות הגנה אווירית, אתרי רדאר חופיים, יכולות טילים וכלי כטב\"מים, בשימוש ראשון בכלים מתאבדים חסרי אנוש; התקיפות חודרות לעומק השטח האיראני כולל מחוז חוזסתן והמתקנים לייצור אנרגיה, ומתפרשות על פני כל החוף האיראני",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126412"
-      }
-    },
-    {
-      "id": "iranstrike-2j6nn0r33qg00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "abualiexpress",
-      "source_url": "https://t.me/abualiexpress/126412",
-      "date": "2026-07-13T05:01:26Z",
-      "title": "IranStrike event",
-      "description": "Iran retaliatory strike targeting facilities in Bahrain",
-      "category": "strike",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "bhr iran retaliatory strike targeting facilities in bahrain איראן משגרת תקיפת",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2j6nn0r33qg00",
-        "timestamp": "2026-07-13T05:01:26+00:00",
-        "location": "BHR",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Iran retaliatory strike targeting facilities in Bahrain",
-        "descriptionHe": "איראן משגרת תקיפת תגובה לעבר מתקנים בחריין",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/126412"
-      }
-    },
-    {
-      "id": "iranstrike-2njclao538600",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79556",
-      "date": "2026-07-13T03:32:57Z",
-      "title": "IranStrike event",
-      "description": "Iranian Army announces drone strike targeting U.S. military positions, air defense systems, shelters and logistical hangars in Kuwait",
-      "category": "drone",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "kwt iranian army announces drone strike targeting u.s.",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2njclao538600",
-        "timestamp": "2026-07-13T03:32:57+00:00",
-        "location": "KWT",
-        "origin": "IRN",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Iranian Army announces drone strike targeting U.S. military positions, air defense systems, shelters and logistical hangars in Kuwait",
-        "descriptionHe": "צבא אירן הודיע על התקפת מזל\"ט על עמדות צבא אמריקאי, מערכות הגנה אוויר, מקלטים ו-חנויות תומכות לוגיסטיות בקוויית",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79556"
-      }
-    },
-    {
-      "id": "iranstrike-3dsrb1bhrmg00",
-      "source": "IranStrike",
-      "source_collection": "events",
-      "source_name": "CIG_telegram",
-      "source_url": "https://t.me/CIG_telegram/79555",
-      "date": "2026-07-13T03:26:46Z",
-      "title": "IranStrike event",
-      "description": "Footage confirms smoke rising at Naval Support Activity Bahrain in Manama",
-      "category": "infrastructure",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3dsrb1bhrmg00",
-        "timestamp": "2026-07-13T03:26:46+00:00",
-        "location": "BHR",
-        "coordinates": [
-          0,
-          0
-        ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Footage confirms smoke rising at Naval Support Activity Bahrain in Manama",
-        "descriptionHe": "תיעוד מאשר עשן עולה בבסיס התמיכה הימי של הצי בחריין במנאמה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/79555"
-      }
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-cowyn4nkxy80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129243",
+      "date": "2026-08-27T12:02:26Z",
+      "title": "IranStrike event",
+      "description": "IDF fighter jets strike village of Nabatieh al-Fawqa near Ali al-Tahir ridge",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf fighter jets strike village of nabatieh al-fawqa near ali al-tahir ri",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "cowyn4nkxy80",
+        "timestamp": "2026-08-27T12:02:26+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF fighter jets strike village of Nabatieh al-Fawqa near Ali al-Tahir ridge",
+        "descriptionHe": "מטוסי קרב של צה\"ל תקפו כפר נבטיה אלפוקא הסמוך לרכס עלי א-טאהר",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129243"
+      }
+    },
+    {
+      "id": "iranstrike-2al88q1c8ezo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129243",
+      "date": "2026-08-27T12:02:26Z",
+      "title": "IranStrike event",
+      "description": "IDF drones strike vehicle in Nabatieh al-Fawqa and additional target in village of Raman near Ali al-Tahir ridge",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf drones strike vehicle in nabatieh al-fawqa and additional targe",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2al88q1c8ezo0",
+        "timestamp": "2026-08-27T12:02:26+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF drones strike vehicle in Nabatieh al-Fawqa and additional target in village of Raman near Ali al-Tahir ridge",
+        "descriptionHe": "כטב\"מים של צה\"ל תקפו רכב בנבטיה אלפוקא ומטרה נוספת בכפר רמאן, סמוך לרכס עלי א-טאהר",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129243"
+      }
+    },
+    {
+      "id": "iranstrike-qmbys2ym2ww0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129226",
+      "date": "2026-08-27T08:10:51Z",
+      "title": "IranStrike event",
+      "description": "IDF and Shin Bet eliminate two Hamas militants involved in October 7 attack; Hazem Musa, Nuchba operative, killed in Khan Younis strike",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr idf and shin bet eliminate two hamas militants involved in october 7 attack;",
+      "location": "Khan Younis",
+      "country": "Palestinian territories",
+      "latitude": 31.3462,
+      "longitude": 34.3063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khan younis",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "qmbys2ym2ww0",
+        "timestamp": "2026-08-27T08:10:51+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF and Shin Bet eliminate two Hamas militants involved in October 7 attack; Hazem Musa, Nuchba operative, killed in Khan Younis strike",
+        "descriptionHe": "צה\"ל והשב\"כ חיסלו שני מחבלי חמאס שפשטו למחנה רעים בטבח ה-7 באוקטובר; חזם מוסא, מחבל נוח'בה, חוסל בתקיפה בחאן יונס",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129226"
+      }
+    },
     {
       "id": "iranstrike-43i3819g1p80",
       "source": "IranStrike",
