@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-28 06:08 UTC",
+    "updated": "2026-08-28 18:44 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-08-22",
     "period_end": "2026-08-28",
-    "total_events": 144,
-    "total_risk": 100.1,
-    "normalized_risk_score": 40.0,
+    "total_events": 145,
+    "total_risk": 110.55,
+    "normalized_risk_score": 44.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 16,
-    "security": 10,
-    "political": 13,
-    "other": 105
+    "military": 18,
+    "security": 9,
+    "political": 15,
+    "other": 103
   },
   "source_counts": {
-    "news": 140,
+    "news": 141,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 35.25
+      "risk": 41.4
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.05
+      "risk": 18.8
     },
     {
       "name": "Israel",
-      "risk": 14.85
+      "risk": 15.2
     },
     {
       "name": "Syria",
-      "risk": 14.25
+      "risk": 14.05
     },
     {
-      "name": "Jerusalem",
-      "risk": 5.6
+      "name": "West Bank",
+      "risk": 6.4
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel kills Hamas operative in rare West Bank air strike, military says - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZlZhNVQwZ2dBSUdMTmN3b2ZuR1VlSlBOanV6NTVkNTBsdHdfZk1OYW95SVFnU0dIdDNlS0NGSkxwOWFCd05JQ28za2N3azJRM2p0UXlISHl3aERWa3VubVRlVGdSdjF3UFFyUlc3VW5yVmI5b3ItU3ZsY1l6TFYtVWxJUG50X2RiNHZ3bGNPMnVRemphRGd2dlJtYUEycGQwUFdxaWdZd056a2d4QldPVEZULVFFUGJQLW05bVFwSWlMLWF0YzVZWmRn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "BBC tracks one week of Israeli settler violence in occupied West Bank",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/videos/c3wjq1188g9o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill five people, including three from one family, in Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQckUtWlVuOWRUZ1N1T3JWbUFNWFl6MWlkY01hQUpTbWxHZGhmbDB4VTl5Uy1iT2wwZU5xZG9ocW90LWdIUzJpOUdrenluNnhFUVBZNVZObnY5enhLNHBtenl5bzBnMjJUQV9waU1IRGRFel9scTc0M0Jubi1GUjdXU1ZsQmM3SlpQeEdEbTdPUF9xWW8taVNuRWRtOEtfcVVSWkYxNlFEaEpVSllQZ2lMZXFzRdIBuAFBVV95cUxQUV9jMmtpc2VOS1M4UnpQdHBZLWktajVBM0RqR05rWjJHeEhFWjFtNUhmSkxRQkNKSmZTWDZwbXF4ZU8zTmRFaUpzakwxSmRmTV9CQ010OGdScFgxd3ZkTzJkelMtQzI1WFVxUXB2aTFjeXg1QV9nVUVYdlczV2QwamZUdlNKMHlyZEhfN3RVczhzc1VodGRzVnlJQUloQWtxeUNRelU0bnhEd0syYkhyNmdLemlacDk2"
+    },
     {
       "score": 2.7,
       "date": "2026-08-27",
@@ -102,40 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZHRzdnRlcXdPNmpObDFFZGh5Sm0yQ3NnNGs0Ykl1T1VlMnBUc0JhOWE3T1ZsbUhKQWh3b2xUelJVQkhqM1h3cTRsSVB4QlZuYnp0NjZCYWtLUGNQTEI0TkEzMS14VkY2T1RxdU5yRE5IYVByYTBmcjVkQkI1WkQ0QlZVeUlIUG5zc3RSeXV2MUM2cU1KTEo4dURqRWUtYllfV2RtQkVOVWM2NlHSAbABQVVfeXFMUERFTGE3VGRWUlE5ZzdsTkhLWHQwMXpWLVJ0WXo2dFRUU0Z5Z1Q0YjdUVGhFNklKYy0xcFlTQ3JKTDJmUjQ4aGc0YjRTbGYzTFVWaU9QMjFaVkx6MVE3NUkwalVZdXdVV0dNaWxsbUNmaXdlaGZ1U2ZsSGNPUGxBTkNVeWJWQ0Z3NEtzNGFJMTBBWGstYjc1WkE5OGtqc0t6RzdkallUWkJsY2tFcE1hV2M"
     },
     {
-      "score": 2.1,
-      "date": "2026-08-25",
+      "score": 2.7,
+      "date": "2026-08-27",
       "category": "military",
       "source_type": "news",
-      "title": "Sanctions or missiles? How Gulf will view Trump’s new Iran approach - Al Jazeera",
+      "title": "Six months after US strike on Iran school, parents still grieve - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNb0YyRHplOEplVWpxZUo0dVJJb25EMUhpcWpBQjRybDd4NV9mVzRHVURfMkdRNl9SYmpIUFdKR2ZNSm1od2N0RWItWGRWc2JKS1VCNzdvZ3pYRzhUZTFDRk1jV2Ffb2ljbHZhQjJQelRiQjlxdFJ5MUJRak9WQVZNQVRQNVROZ3RMWTNIbFdtR3oxb1NEa0RoQXlYY2VJM2FTc2E3Um1DdkZQUkRjcVVLNtIBtgFBVV95cUxOWnJtSXliRzRTRkFPTG52S2xjRDR0bnNYQ2VJUHhsNGdIUjhucnFuR3RveUF6b0FVQVJsTFJ6MElrNEdBMUoyT0tMNTVkODQzT25Sb0JLSVFtcjNOWWJ2czROQUFDcVQ5LUtmc0wzOXotM21XVlhVWkpXUDZjNkJVTkt3X3pfUGJzRTdhOFMyTktpTGpYMGlPaFh1eWkyblNxM2Nsc0R6eTdVcGNYa0pFUDJLbFdadw"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli forces raid UNRWA training centre in occupied East Jerusalem - Al Jazeera",
-      "location": "Jerusalem",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdGdJcGhpZEZFT3JzemlkUHpORnh2RFNzRXhvX25oc1p3cDJGNXI0QlZ3ZThNX0Z3Q1JFMlZtNEstQUQxLXZoV3VYRk14XzQzYjRSX09UbEQxNWplTlE3Rnh5aXVxLWh3dkFJWkZSSWIyWUYtRUM2SFdTeTQ2aHUwZ2oxaEFGeXFQZ1dBNEN5dDVyQWZtdmhhLWcxSTFQbXZUUVJKTWNqR2FNaURjenfSAbMBQVVfeXFMTTlaaUhONG1kZ3MxaFRibmdWazlZeHlBbXZuMUZvR24zUzZwb0kzbkdkd1NHdEN5a095NDVULXpqamV0bzM1WkxuWl92eGd5dDBEWXBqdXpSN0g3YlN5ai04Y3NheV9iM3NyYXQ3LUVNOHZ1NzBsY1k1UmZkVWJvT0EyZExoZU1kSDdENnZINWliWjBWcm52cjNQaFBtTHF6TmJYd2xKVE1idFoyUHc5ckhSZDg"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen’s Houthis report attack on Saudi oil tanker in Red Sea - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdkNmMGllenFfdWxNVTJYWTF5b3h1Y3lVSmlhSmEwUHZjUC1jRTVQRUZCZ1p2SDFaaWZSRTdVOHNta2JwaFpTSjZyUHgzVUJ4WDdHUjJYeGdXR3Vycm1sdnRjSmdUdmwxQjVuU0tLTURmWXU4S2RRWmlVc3FfNTBzajUwQ0tNX1Z1WWZ30gGQAUFVX3lxTE9nNGYwUkF5QTdrZmVZSnEzSUdXLUt0YURGSFRiTXNQcHZEUXlkemFzTFBxX3JXRzRwQmViNHJJZjdvR0dyNFdvd3piWlpmbVZhNzVaZ1BUTUVUckNmNVpYeW9SQVA4eGtIZHcxc0xiRXMyeGhaOFgwbC1TUG9kX1VaNWU1MTFwbUQ1dFZFVE0ydA"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes hit water plant, warehouse in Gaza, killing at least seven - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZmNKejRmS1p6Yl9RQUp4NTlOVmNQWGJuVUo3VmR3Q29BMTZvR3lnLTVsOFdSYl8wUklIeE1tZWQ4U1VnaFVoOE1OLTRaNVRVTDhiWUFha0luYm1hZmtxZ0ttWlFPaTNoRjhNUWhET2diY2J4UUFmNmZsMFR5dWIzZXh2QkNyUG1kcFNnSDFHMEZacjFLblk3UNIBngFBVV95cUxNSE5nQWVHSm5DeFJRbjhXVXVxR292bEgyUHg5cHJ2d2o3TzluUmQ2dWVzTkNZQW94azE5Y0dSaTFXeEZkMlJuWlJJRWVqUWphLXpqdzJaX04xanJTbEUtcExhN0Q4OEVaZ05CTWM1U1BqRHpHSG1Pc1VSS0d6UzV0UzNMeVotbE5yTHQxZGhtZUNwSVZERnhsVy1yQzRqQQ"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZHBObUhSemo1TUU2dWNJQ002dVJReFh0cXZZYXZ3RHhYUm5vZmowWlF5Q1QtM29TSjduRFZVbUJEZ1YyOWh2NW1iYUZGX1FxN1ptNERteFJHRzZOV3VsZXJaYUR2WG44NmdHeDM0U1JlM1NpZE96cUVySG50R1loaGNHdG5OeWNpSlBIZ0tYNmctRkhYSjdpUm9FYVRxSHNYLWZvdnpMbVYxTHlLaFpiNGdMZ9IBuAFBVV95cUxPRFJ6RjNVN3UzM3NSVTZrY3VTT2ZjcUY0QzkzUkM4V3JVc0R5NlFyLThDQW9taVVnOHNacmdEZjRNQk1pWXBaM3hSbDVKWnNaNndiaWVLWVlYU0owRVp1TThHcmtZa1VlY3hmSjhybHc0TzJFOWs0LTJIQWFtRHhtT1FCcjJzQm1SSUU5ZEszN1pUZW9GdUpWNWxsX3pDSTlrbDZRZmdENno5YnhnbVZGcml5LXBHNXhx"
     }
   ]
 }
