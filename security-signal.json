@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-29 16:45 UTC",
+    "updated": "2026-08-29 20:57 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-08-23",
     "period_end": "2026-08-29",
-    "total_events": 141,
-    "total_risk": 97.42,
-    "normalized_risk_score": 39.0,
+    "total_events": 136,
+    "total_risk": 104.17,
+    "normalized_risk_score": 41.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 16,
-    "security": 9,
+    "military": 18,
+    "security": 10,
     "political": 12,
-    "other": 104
+    "other": 96
   },
   "source_counts": {
-    "news": 136,
+    "news": 131,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 34.03
+      "risk": 32.58
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 15.0
     },
     {
       "name": "Israel",
       "risk": 14.7
     },
     {
-      "name": "Gaza Strip",
-      "risk": 13.5
+      "name": "West Bank",
+      "risk": 12.4
     },
     {
       "name": "Syria",
-      "risk": 10.0
-    },
-    {
-      "name": "West Bank",
-      "risk": 8.9
+      "risk": 9.65
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-08-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers stage new attack on home in West Bank's Qusra, witnesses say - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaDJ3eXpHdUxRbndBaEJmblBpeC13Vk5sMF9lSGJOb3EwSzhDYXBWZnBjYWxqRWgyaGpKNDNsZWxacjRMWF8tQjNvQmNORXNEeVI0TG9nOVBSa2hhY2FFdklhVmVSNGxTalM0bWdtczdPWnd0d0FEeGNTRXdhN0I0eXBVRUFFRHpTX21wQUtJU1FqVmYyRTN2ZmZiNHEzV19OOWVmN3NPcE9SVjZzT29CY2U2bjRXdTAwVXIwcHU3Qjg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks in Gaza kill four people, hit hospital supply warehouse - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVpTY1JqcHpjMGNsVGg0X0Q4bnBocFdKMlM3cmM2Z0hGa0tMdGxIcFZ5aEZKNll3SVRZT0g3UXRqb3c5WngybjNVTHpCLVJxTXpTOTF1SUQ3QXVnQVJIb0pjMDNOdWs5R2JwLXJCU2Z6VEhtU0k5MlcxSV9SbVktVk5VMV9ycmkyZDRDbHdVb3FZR1RUNF9aaHBfcTdoaFJSekROR3ZzeEI5SUxJQXVFSWNVU3nSAboBQVVfeXFMTS13emxudW9qLTRlNDZVOXlET1o2eWlDcjBNckF0SmFlWDNsOFJxaWVOUzF6c2RESlRkaFBrQ3p4Q0tOa3hqNWlpTjh5Wjhhc3p5ZWJFcVRRbzBXbUtySTZqTHRxX2UxS19KQ1N3UWJIT3BZenVBT1hjejBEX2xzSjc5VmxPNTlKQURNaXhZY0xPWDZYSUdFSV9WVzZDSjU1TEpHalVfdmt2RlBCLVZrWFdDX1hQRE9kMHln"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "UNRWA’s first and last vocational college in East Jerusalem is under attack - Al Jazeera",
+      "location": "Jerusalem",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUGxtMjdsa3pFcWh3RGZWRG40ZE9qaWxXN0VDRnBsQ1dyZ2Y2d09XbHdEbGlsOHM4clFGdElHek5NOU9qcjZ6bzN6amxuVU5pbl90bFpZRnpHZWNxdDJ6Mk1Oa1FrVVNPSVVyelc3UG5qZzlBbEZVM1BMWV9IcTFVTTV5WUFCa21tNEhieWtINlROdkNCemNRRl85Yk1ZN2otMjRfM2tpOHlLSGZ1UjVkbVE2bi1TeGh4S29Z0gHAAUFVX3lxTFBMd2FETzhuckhQdTA2Rm9NV1FYMmowM0VEV09QdWhBd2wzeVByLTY4cDFlUDZkenFwWTZfVFQ3T2JILV9nZDhudEJILXhPREN0ajNIeFlWNnhSb05MZ25GeXl4aXdvSm1VV2dWMDJzemF4Sk9FQV9EdzBVR0NheDFmR1hnZEFUY1R6SXNZVUxBYTVTQjhOOUxsUWktVV9zTmZORDdmZk0taHJWWHM0S21oR1o0WHBNX1RmTGdYZklOMg"
+    },
     {
       "score": 2.7,
       "date": "2026-08-28",
@@ -109,33 +136,6 @@
       "title": "Board of Peace's Gaza envoy criticises Israeli strikes and Hamas actions",
       "location": "Gaza Strip",
       "url": "https://www.bbc.co.uk/news/articles/cew92l07kwzo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Man who attacked nun on CCTV in Jerusalem acquitted on grounds of mental health",
-      "location": "Jerusalem",
-      "url": "https://www.bbc.co.uk/news/articles/cpwl54kddeko?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel continues attacks on Syria, Lebanon despite US push for diplomacy - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUHltVjdIdHBULVY3UW42VFNvMmJpanpkQnRyS0tDOExyMTFTTGJPeDh5SmYtMVk3T1NCV0kzMm14T21xWm9zYUZqS2UzbEhXaUlsVjNMeGFXYzJmNDE4LWtBQmhYNm9zMHg0SXEtVGFKWFNnblBjRGZ4N2tiR2FQSjZ2ZkpaS2l6NjcweUJGWGVLbnJ1V2FYWkZVUEdSeUdmMFBqRVVfNlFSWTZ5aHpyTHBR0gG3AUFVX3lxTE1jd1ZfZ1FtNnhiWGd6TlhaLWU4dXhGQXBobGVUeVlFVDRSOUFZX1dhVXRrQnhTV1hwUHJWVHYzZWlKVzMwN0pmOXI2SzI5cGlmRjJaSjl4SVFiQkNjaFowWU9rclFPWEFSZi1MdnRzQkd4cnFueGMyT1lSRDhyRUxKWlNsYmhXVkowNjkzM1B5U05EOWJxd3VpcWZNWlFoRzE0MUxRMjN5V0Q4RWFyckFRZ3h0dDJ3QQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three killed in strikes on Gaza as Israel renews threats over kite-flying - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSzdBSWVrVzB5TGRaMzFOVzdqcDBONDEyeVFxTldfUHJndGNOU1FabUd3eU93MVhBREpCcVRSNFlVM0twOWF3SGFFakFOS0hEREZmQ09MRDhJc25TSGtnRHdSSVpacTQwbkpoNTlqdWM2azUwNjNNU01JS2VuNjBDeHFHSDhfQ2VDMVpYVno1ZjRmU0F4WnZWcmg1ZnlmQk9UbFRfZDVmUmlId2lzb0tSSlpRRjDSAboBQVVfeXFMTVdVTG5Qa2RYdEQ3UXRkNVpLV05RUFM4bHhTbmp3RUF4cHNPRDFnYUNJOVJqcW1WSi1SMzVpSU02TDBiNm1ZbEllUTRYcm12eVUxYzRIVmpwX2pVVURBNy1fOEhaVGJpZ2o2MHFnZHNEUl9nNnRlbi1TUGRiNkZ1dERscVhrdjh2ckkwMGo5Y1ctbFRSU2Y5YmRyYnFRa196MFlGaWQ2TTlYSnlXRlduR1ZDbjkyakFKZ05n"
     }
   ]
 }
