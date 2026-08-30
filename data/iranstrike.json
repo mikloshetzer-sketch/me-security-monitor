@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T20:06:17Z",
+  "generated_at": "2026-08-30T22:45:31Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,37 +52,37 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 6,
-    "feed_event_records": 6,
-    "normalized_events": 6,
-    "map_visualizable_events": 1,
-    "non_mappable_events": 5,
-    "developments": 3
+    "events_endpoint_records": 19,
+    "feed_event_records": 18,
+    "normalized_events": 19,
+    "map_visualizable_events": 4,
+    "non_mappable_events": 15,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 6,
+      "total_events": 19,
       "earliest_event_date": "2026-08-29T16:53:56Z",
-      "latest_event_date": "2026-08-30T20:00:09Z",
-      "geocoded_events": 1,
-      "geocoded_share": 16.7,
+      "latest_event_date": "2026-08-30T22:44:17Z",
+      "geocoded_events": 4,
+      "geocoded_share": 21.1,
       "top_category": "missile",
-      "top_location": "Persian Gulf",
-      "top_country": "Persian Gulf"
+      "top_location": "Unknown",
+      "top_country": "Jordan"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 6,
+        "current": 19,
         "previous": 0,
-        "delta": 6,
+        "delta": 19,
         "percent_change": null,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 6,
+        "current": 19,
         "previous": 0,
-        "delta": 6,
+        "delta": 19,
         "percent_change": null,
         "direction": "increase"
       }
@@ -94,33 +94,58 @@
       },
       {
         "date": "2026-08-30",
-        "count": 4
+        "count": 17
       }
     ],
     "category_counts": {
-      "missile": 2,
-      "strike": 2,
+      "missile": 11,
+      "infrastructure": 3,
+      "strike": 3,
       "explosion": 1,
       "drone": 1
     },
     "severity_counts": {
-      "medium": 4,
-      "high": 1,
+      "high": 10,
+      "medium": 8,
       "low": 1
     },
     "attacker_counts": {
-      "unknown": 4,
-      "iran": 1,
+      "unknown": 13,
+      "iran": 5,
       "israel": 1
     },
     "top_locations": [
       {
+        "name": "Unknown",
+        "count": 4
+      },
+      {
+        "name": "Jordan",
+        "count": 4
+      },
+      {
         "name": "Persian Gulf",
+        "count": 3
+      },
+      {
+        "name": "Iran",
         "count": 2
       },
       {
-        "name": "Unknown",
-        "count": 2
+        "name": "Khorramabad",
+        "count": 1
+      },
+      {
+        "name": "Aqaba",
+        "count": 1
+      },
+      {
+        "name": "Tehran",
+        "count": 1
+      },
+      {
+        "name": "Red Sea",
+        "count": 1
       },
       {
         "name": "Gaza Strip",
@@ -133,12 +158,24 @@
     ],
     "top_countries": [
       {
-        "name": "Persian Gulf",
-        "count": 2
+        "name": "Jordan",
+        "count": 5
       },
       {
         "name": "Unknown",
-        "count": 2
+        "count": 4
+      },
+      {
+        "name": "Iran",
+        "count": 4
+      },
+      {
+        "name": "Persian Gulf",
+        "count": 3
+      },
+      {
+        "name": "Red Sea",
+        "count": 1
       },
       {
         "name": "Gaza Strip",
@@ -151,34 +188,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10313,
+    "totalCount": 10325,
     "spotlight": {
       "event": {
-        "id": "1ncitovkbgcg0",
-        "timestamp": "2026-08-30T19:39:39+00:00",
+        "id": "1s16w971wlb40",
+        "timestamp": "2026-08-30T22:04:05+00:00",
         "location": "IRN",
-        "origin": "USA",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "U.S. strikes against Larak Island, explosion of unknown origin reported",
-        "descriptionHe": "הפצצה אמריקאית נגד איי לרך, פיצוץ בעל מקור לא ידוע דווח",
+        "type": "report",
+        "severity": "high",
+        "description": "New ballistic missile launches reported from Khorramabad, targets unverified",
+        "descriptionHe": "שיגורי טילים בליסטיים חדשים דווחו מחורמآباد, יעדים לא מאומתים",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/82971"
+        "sourceUrl": "https://t.me/CIG_telegram/83002"
       },
-      "headline": "U.S. strikes Iranian island, explosion reported",
-      "headlineHe": "ארה\"ב תוקפת אי איראני, דיווח על פיצוץ",
-      "summary": "The strike on Larak Island marks an escalation in U.S.-Iran tensions in the Persian Gulf region amid ongoing regional instability.",
-      "summaryHe": "התקיפה באי לרך מסמנת הסלמה במתיחות בין ארה\"ב לאיראן באזור המפרץ הפרסי בתוך חוסר יציבות אזורי מתמשך.",
-      "pickedAt": "2026-08-30T19:45:50.446Z",
+      "headline": "Iran launches ballistic missiles from Khorramabad, targets unclear",
+      "headlineHe": "איראן משגרת טילים בליסטיים מח'ורמآباد, היעדים לא ברורים",
+      "summary": "The launch marks the latest Iranian strike in an escalating barrage targeting U.S. and regional allies across Jordan and the Gulf.",
+      "summaryHe": "השיגור מסמן את ההתקפה האחרונה של איראן בהתקפה הולכת וגדלה הממוקדת בעלויים אמריקאים ובעלים אזוריים בירדן ובמפרץ.",
+      "pickedAt": "2026-08-30T22:15:51.636Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-30T20:06:04.093Z",
+    "lastUpdated": "2026-08-30T22:39:03.383Z",
     "stale": false,
-    "viewerCount": 7,
+    "viewerCount": 21,
     "ceasefire": false
   },
   "summary": {
@@ -721,68 +758,8 @@
     "vitals": {
       "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-08-30T20:03:28.345Z",
+      "lastUpdate": "2026-08-30T22:31:42.349Z",
       "internetHistory": [
-        {
-          "t": "2026-08-29T20:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T20:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T20:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T20:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T20:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T20:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T21:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T21:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-29T21:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T21:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T21:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-08-29T21:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T22:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T22:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T22:20:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-08-29T22:30:00.000Z",
           "v": 93
@@ -1298,32 +1275,92 @@
         {
           "t": "2026-08-30T19:50:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-08-30T20:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T20:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T20:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T20:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T20:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T20:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T21:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T21:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T21:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T21:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T21:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T21:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T22:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T22:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T22:20:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-30T20:03:28.345Z"
+    "lastUpdated": "2026-08-30T22:31:42.349Z"
   },
   "developments": [
     {
-      "id": "iranstrike-4f7c2a1b",
+      "id": "iranstrike-8a3f2c1b",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-30T20:00:09Z",
+      "date": "2026-08-30T22:04:05Z",
       "title": "IranStrike event",
-      "description": "U.S. strikes IRGC launchers on Larak Island; 2 killed targeting Hormuz shipping",
+      "description": "Iran launches multi-wave ballistic/cruise missile attack on Jordan; impacts confirmed at Muwaffaq airbase",
       "category": "other",
-      "severity": "high",
+      "severity": "critical",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
+      "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "strikes irgc launchers on larak island;",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
+      "attacker_evidence": "iran launches multi-wave ballistic/cruise missile attack on jor",
+      "location": "Jordan",
+      "country": "Jordan",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1334,9 +1371,106 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4f7c2a1b",
-        "text": "U.S. strikes IRGC launchers on Larak Island; 2 killed targeting Hormuz shipping",
-        "textHe": "ארה\"ב תקפה משגרי IRGC באי לארק; 2 הרוגים בתקפה למטרות הולכי ים בהורמוז",
+        "id": "8a3f2c1b",
+        "text": "Iran launches multi-wave ballistic/cruise missile attack on Jordan; impacts confirmed at Muwaffaq airbase",
+        "textHe": "איראן משגרת התקפת טילים בגל מרובה לירדן; פגיעות מאומתות בבסיס מופוואק",
+        "severity": "critical",
+        "timestamp": "2026-08-30T22:04:05+00:00",
+        "entityIds": [
+          "IRN",
+          "JOR",
+          "USA"
+        ],
+        "eventIds": [
+          "1s16w971wlb40",
+          "15pfo58uzhq80",
+          "3trdpm8ohjs00",
+          "vczxczz2bls0",
+          "mn049xyu6dc0",
+          "1cfalqo8qq0w0",
+          "364l6o9rh5w00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-7e9d4a2f",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-30T21:46:23Z",
+      "title": "IranStrike event",
+      "description": "Iran fires cruise missiles at U.S. Navy vessels off Oman; threat to shipping in strategic waters",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran fires cruise missiles at u.s.",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7e9d4a2f",
+        "text": "Iran fires cruise missiles at U.S. Navy vessels off Oman; threat to shipping in strategic waters",
+        "textHe": "איראן משגרת טילי שיוט לספינות צי ארה\"ב בעומאן; איום על הספנות במימי אסטרטגיים",
+        "severity": "high",
+        "timestamp": "2026-08-30T21:46:23+00:00",
+        "entityIds": [
+          "IRN",
+          "USA",
+          "OMN"
+        ],
+        "eventIds": [
+          "2ie63nz1i2200",
+          "114pcwiskt9c0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-5c6b1d8e",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-30T20:00:09Z",
+      "title": "IranStrike event",
+      "description": "U.S. strikes Iranian IRGC rocket launchers on Larak Island; 2 killed, 2 wounded",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "strikes iranian irgc rocket launchers on larak island;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "5c6b1d8e",
+        "text": "U.S. strikes Iranian IRGC rocket launchers on Larak Island; 2 killed, 2 wounded",
+        "textHe": "ארה\"ב תוקפת משגרי טילים של הספה על האי לאראק; 2 הרוגים ו-2 פצועים",
         "severity": "high",
         "timestamp": "2026-08-30T20:00:09+00:00",
         "entityIds": [
@@ -1351,14 +1485,58 @@
       }
     },
     {
-      "id": "iranstrike-6e3d9f4c",
+      "id": "iranstrike-4a7c9b3d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-30T18:55:00Z",
+      "date": "2026-08-30T21:43:30Z",
       "title": "IranStrike event",
-      "description": "Tanker struck by projectile in Strait of Hormuz; incident near U.S. corridor",
+      "description": "IRGC claims Israeli strike on Kish Island caused casualties; pledges retaliation",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "4a7c9b3d",
+        "text": "IRGC claims Israeli strike on Kish Island caused casualties; pledges retaliation",
+        "textHe": "הספה טוענת שתקיפה ישראלית באי קיש גרמה לנפגעים; מבטיחה תגמול",
+        "severity": "high",
+        "timestamp": "2026-08-30T21:43:30+00:00",
+        "entityIds": [
+          "IRN",
+          "ISR"
+        ],
+        "eventIds": [
+          "290mb00v876s0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-2f5e8c0a",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-30T20:07:10Z",
+      "title": "IranStrike event",
+      "description": "Houthi attack ignites Saudi oil tanker off Yanbu; escalation in Red Sea shipping corridor",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -1367,6 +1545,557 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2f5e8c0a",
+        "text": "Houthi attack ignites Saudi oil tanker off Yanbu; escalation in Red Sea shipping corridor",
+        "textHe": "התקפת חות'ים הצתה טנקר נפט סעודי ליד ינבו; הסלמה במסלול הספנות בים האדום",
+        "severity": "medium",
+        "timestamp": "2026-08-30T20:07:10+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "1b2vbaprgc4g0"
+        ],
+        "sourceCount": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-1kgb2myooa5c0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83004",
+      "date": "2026-08-30T22:44:17Z",
+      "title": "IranStrike event",
+      "description": "Air traffic temporarily halted in Jeddah, Saudi Arabia",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1kgb2myooa5c0",
+        "timestamp": "2026-08-30T22:44:17+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Air traffic temporarily halted in Jeddah, Saudi Arabia",
+        "descriptionHe": "תעבורה אווירית הופסקה זמנית בג'דה, סעודיה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83004"
+      }
+    },
+    {
+      "id": "iranstrike-1s16w971wlb40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83002",
+      "date": "2026-08-30T22:04:05Z",
+      "title": "IranStrike event",
+      "description": "New ballistic missile launches reported from Khorramabad, targets unverified",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Khorramabad",
+      "country": "Iran",
+      "latitude": 33.4878,
+      "longitude": 48.3558,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khorramabad",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1s16w971wlb40",
+        "timestamp": "2026-08-30T22:04:05+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "New ballistic missile launches reported from Khorramabad, targets unverified",
+        "descriptionHe": "שיגורי טילים בליסטיים חדשים דווחו מחורמآباد, יעדים לא מאומתים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83002"
+      }
+    },
+    {
+      "id": "iranstrike-15pfo58uzhq80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83000",
+      "date": "2026-08-30T21:55:35Z",
+      "title": "IranStrike event",
+      "description": "Impacts confirmed at Muwaffaq al-Salti Airbase in Jordan, used by U.S. military",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "15pfo58uzhq80",
+        "timestamp": "2026-08-30T21:55:35+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Impacts confirmed at Muwaffaq al-Salti Airbase in Jordan, used by U.S. military",
+        "descriptionHe": "אישור על פגיעות בבסיס מוואפק אל-סלתי בירדן, המשמש את הצבא האמריקאי",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83000"
+      }
+    },
+    {
+      "id": "iranstrike-3trdpm8ohjs00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82997",
+      "date": "2026-08-30T21:50:12Z",
+      "title": "IranStrike event",
+      "description": "Iran targets Muwaffaq al-Salti airbase and King Hussein International Airport in Aqaba, southern Jordan",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iran targets muwaffaq al-salti airbase and king hussein intern",
+      "location": "Aqaba",
+      "country": "Jordan",
+      "latitude": 29.5321,
+      "longitude": 35.0063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "aqaba",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3trdpm8ohjs00",
+        "timestamp": "2026-08-30T21:50:12+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran targets Muwaffaq al-Salti airbase and King Hussein International Airport in Aqaba, southern Jordan",
+        "descriptionHe": "איראן תוקפת בסיס מופוקא אל-סלטי ושדה התעופה הבינלאומי קינג חוסיין בעקבה, דרום ירדן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82997"
+      }
+    },
+    {
+      "id": "iranstrike-2ie63nz1i2200",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82995",
+      "date": "2026-08-30T21:46:23Z",
+      "title": "IranStrike event",
+      "description": "Iranian cruise missiles reportedly targeting U.S. Navy ships off the coast of Oman",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2ie63nz1i2200",
+        "timestamp": "2026-08-30T21:46:23+00:00",
+        "location": "OMN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iranian cruise missiles reportedly targeting U.S. Navy ships off the coast of Oman",
+        "descriptionHe": "טילי שיוט איראניים תוקפים לכאורה ספינות צי ארה\"ב בחופי עומאן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82995"
+      }
+    },
+    {
+      "id": "iranstrike-vczxczz2bls0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82994",
+      "date": "2026-08-30T21:44:40Z",
+      "title": "IranStrike event",
+      "description": "Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iranian missile launches from east azerbaijan province targeting jordan, j",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "vczxczz2bls0",
+        "timestamp": "2026-08-30T21:44:40+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iranian missile launches from East Azerbaijan Province targeting Jordan, Jordanian air defenses activated",
+        "descriptionHe": "שיגור טילים איראני מחבל אזרבייג'ן המזרחי לעבר ירדן, הגנות אוויר ירדניות הופעלו",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82994"
+      }
+    },
+    {
+      "id": "iranstrike-290mb00v876s0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129406",
+      "date": "2026-08-30T21:43:30Z",
+      "title": "IranStrike event",
+      "description": "IRGC statement: Israeli attack on Kish Island resulted in casualties; Iran vows to respond and punish attacker",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "290mb00v876s0",
+        "timestamp": "2026-08-30T21:43:30+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "IRGC statement: Israeli attack on Kish Island resulted in casualties; Iran vows to respond and punish attacker",
+        "descriptionHe": "הצהרת משמרות המהפכה: התקיפה הישראלית על האי קיש הובילה להנפגעים; איראן מתחייבת להגיב ולהעניש את התוקפן",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129406"
+      }
+    },
+    {
+      "id": "iranstrike-mn049xyu6dc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82993",
+      "date": "2026-08-30T21:42:38Z",
+      "title": "IranStrike event",
+      "description": "Iranian missile launches from Zanjan targeting Jordan",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iranian missile launches from zanjan targeting jordan שיגור טילים איראני מ",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "mn049xyu6dc0",
+        "timestamp": "2026-08-30T21:42:38+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iranian missile launches from Zanjan targeting Jordan",
+        "descriptionHe": "שיגור טילים איראני מזנجאן לעבר ירדן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82993"
+      }
+    },
+    {
+      "id": "iranstrike-364l6o9rh5w00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82992",
+      "date": "2026-08-30T21:40:44Z",
+      "title": "IranStrike event",
+      "description": "Missile launch from Zanjan reported, Jordan assessed as likely target",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "364l6o9rh5w00",
+        "timestamp": "2026-08-30T21:40:44+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Missile launch from Zanjan reported, Jordan assessed as likely target",
+        "descriptionHe": "שיגור טיל מזנجן דווח, ירדן הוערכה כיעד סביר",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82992"
+      }
+    },
+    {
+      "id": "iranstrike-1cfalqo8qq0w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82992",
+      "date": "2026-08-30T21:40:44Z",
+      "title": "IranStrike event",
+      "description": "Two ballistic missile launches reported from Urmia, West Azerbaijan; targets unverified",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1cfalqo8qq0w0",
+        "timestamp": "2026-08-30T21:40:44+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Two ballistic missile launches reported from Urmia, West Azerbaijan; targets unverified",
+        "descriptionHe": "שני שיגורי טילים בליסטיים דווחו מאורמיה, אזרבייג'ן מערבי; יעדים לא מאומתים",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/82992"
+      }
+    },
+    {
+      "id": "iranstrike-qd8nv9td9vk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82989",
+      "date": "2026-08-30T21:38:37Z",
+      "title": "IranStrike event",
+      "description": "Reports of ballistic missile launches from Bidganeh, Tehran Province; targets unverified",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tehran",
+      "country": "Iran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tehran",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "qd8nv9td9vk0",
+        "timestamp": "2026-08-30T21:38:37+00:00",
+        "location": "ISR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Reports of ballistic missile launches from Bidganeh, Tehran Province; targets unverified",
+        "descriptionHe": "דיווחים על שיגורי טילים בליסטיים מביידגנه בחבל טהרן; היעדים לא מאומתים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82989"
+      }
+    },
+    {
+      "id": "iranstrike-8nxo31t4jkk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62994",
+      "date": "2026-08-30T21:25:07Z",
+      "title": "IranStrike event",
+      "description": "Iranian media reports missile launches targeting U.S. military vessels in the Strait of Hormuz",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr iranian media reports missile launches targeting u.s.",
       "location": "Persian Gulf",
       "country": "Persian Gulf",
       "latitude": null,
@@ -1379,30 +2108,32 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6e3d9f4c",
-        "text": "Tanker struck by projectile in Strait of Hormuz; incident near U.S. corridor",
-        "textHe": "טנקר נפגע מטיל במצר הורמוז; תקريب לטדיר משיטור אמריקאי",
+        "id": "8nxo31t4jkk0",
+        "timestamp": "2026-08-30T21:25:07+00:00",
+        "location": "ISR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-08-30T18:55:00+00:00",
-        "entityIds": [
-          "OMN"
-        ],
-        "eventIds": [
-          "114pcwiskt9c0"
-        ],
-        "sourceCount": 1
+        "description": "Iranian media reports missile launches targeting U.S. military vessels in the Strait of Hormuz",
+        "descriptionHe": "התקשורת באיראן מדווחת על שיגור טילים לעבר ספינות של צבא ארה\"ב במצר הורמוז",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/62994"
       }
     },
     {
-      "id": "iranstrike-7a1b5e8d",
+      "id": "iranstrike-1b2vbaprgc4g0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-08-30T07:13:38Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82975",
+      "date": "2026-08-30T20:07:10Z",
       "title": "IranStrike event",
-      "description": "IDF eliminates Nuhba commander in northern Gaza Strip",
-      "category": "other",
+      "description": "Houthi projectile strikes Saudi oil tanker off Yanbu coast in Red Sea, causing fire",
+      "category": "missile",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -1410,8 +2141,8 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Gaza Strip",
-      "country": "Gaza Strip",
+      "location": "Red Sea",
+      "country": "Red Sea",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1422,22 +2153,22 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7a1b5e8d",
-        "text": "IDF eliminates Nuhba commander in northern Gaza Strip",
-        "textHe": "צה\"ל ביצע חיסול מפקד נוחבה בגדה הצפונית של עזה",
+        "id": "1b2vbaprgc4g0",
+        "timestamp": "2026-08-30T20:07:10+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-08-30T07:13:38+00:00",
-        "entityIds": [
-          "ISR"
-        ],
-        "eventIds": [
-          "35fgeq0yru000"
-        ],
-        "sourceCount": 1
+        "description": "Houthi projectile strikes Saudi oil tanker off Yanbu coast in Red Sea, causing fire",
+        "descriptionHe": "קליע חות'י פוגע בטנקר נפט סעודי ליד חופי ינבו בים האדום, גורם לשריפה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82975"
       }
-    }
-  ],
-  "events": [
+    },
     {
       "id": "iranstrike-3bha8agnx6a00",
       "source": "IranStrike",
@@ -1709,6 +2440,141 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-1s16w971wlb40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83002",
+      "date": "2026-08-30T22:04:05Z",
+      "title": "IranStrike event",
+      "description": "New ballistic missile launches reported from Khorramabad, targets unverified",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Khorramabad",
+      "country": "Iran",
+      "latitude": 33.4878,
+      "longitude": 48.3558,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khorramabad",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1s16w971wlb40",
+        "timestamp": "2026-08-30T22:04:05+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "New ballistic missile launches reported from Khorramabad, targets unverified",
+        "descriptionHe": "שיגורי טילים בליסטיים חדשים דווחו מחורמآباد, יעדים לא מאומתים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83002"
+      }
+    },
+    {
+      "id": "iranstrike-3trdpm8ohjs00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82997",
+      "date": "2026-08-30T21:50:12Z",
+      "title": "IranStrike event",
+      "description": "Iran targets Muwaffaq al-Salti airbase and King Hussein International Airport in Aqaba, southern Jordan",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iran targets muwaffaq al-salti airbase and king hussein intern",
+      "location": "Aqaba",
+      "country": "Jordan",
+      "latitude": 29.5321,
+      "longitude": 35.0063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "aqaba",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3trdpm8ohjs00",
+        "timestamp": "2026-08-30T21:50:12+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran targets Muwaffaq al-Salti airbase and King Hussein International Airport in Aqaba, southern Jordan",
+        "descriptionHe": "איראן תוקפת בסיס מופוקא אל-סלטי ושדה התעופה הבינלאומי קינג חוסיין בעקבה, דרום ירדן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82997"
+      }
+    },
+    {
+      "id": "iranstrike-qd8nv9td9vk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82989",
+      "date": "2026-08-30T21:38:37Z",
+      "title": "IranStrike event",
+      "description": "Reports of ballistic missile launches from Bidganeh, Tehran Province; targets unverified",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tehran",
+      "country": "Iran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tehran",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "qd8nv9td9vk0",
+        "timestamp": "2026-08-30T21:38:37+00:00",
+        "location": "ISR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Reports of ballistic missile launches from Bidganeh, Tehran Province; targets unverified",
+        "descriptionHe": "דיווחים על שיגורי טילים בליסטיים מביידגנه בחבל טהרן; היעדים לא מאומתים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82989"
+      }
+    },
     {
       "id": "iranstrike-2wp4rhxhoug0",
       "source": "IranStrike",
