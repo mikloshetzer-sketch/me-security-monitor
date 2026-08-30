@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-30 08:20 UTC",
+    "updated": "2026-08-30 14:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-24",
     "period_end": "2026-08-30",
-    "total_events": 130,
-    "total_risk": 90.75,
-    "normalized_risk_score": 36.3,
+    "total_events": 134,
+    "total_risk": 99.9,
+    "normalized_risk_score": 40.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 18,
-    "security": 9,
-    "political": 12,
-    "other": 91
+    "military": 21,
+    "security": 8,
+    "political": 11,
+    "other": 94
   },
   "source_counts": {
-    "news": 125,
+    "news": 129,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.15
+      "risk": 32.2
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 15.5
+    },
+    {
+      "name": "Israel",
+      "risk": 14.0
     },
     {
       "name": "West Bank",
       "risk": 13.45
     },
     {
-      "name": "Israel",
-      "risk": 13.25
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 9.3
-    },
-    {
       "name": "Syria",
-      "risk": 7.95
+      "risk": 7.5
     }
   ],
   "top_events": [
@@ -52,7 +52,25 @@
       "date": "2026-08-30",
       "category": "military",
       "source_type": "news",
-      "title": "Mapping the Iran war’s strikes on Gulf energy – and what comes next for oil - Al Jazeera",
+      "title": "Israeli strike kills two people including a 3-year-old boy, Gaza medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdTBYQkFmZmRqbzlRSTg4V2ZjLUo4ZHFKN0JQYWpHUTVmeFJQUnYtY05OZEdWNEtESi04Mk0tQVA1UWdjNDJmSFA3T1ZVTnBpRFV0WmRmTG9jLVdUeDAyZHNmY1VZNzhLUGZNb1VHc2VqM3B0WWpKaXZGRzFQUWFqazlLcG9ZeUhSaEVfdjRCNTNneTR5eTBjTWc1Ml9lZ0xtNy1SeVMzeThuaDZxVVZHblE1QVRUZFlhVkNzNGV6Z0Z5NWxR"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Manhunt underway after woman killed, several injured at Swiss rave shooting - Reuters",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVExIWW1kRXlDMzJSRlNJRE1Id0pSTmJUUUxzc09oUmlxQVdhb3hHbWRZcTdkRFJPOFlCS1daejVwai1mWVBmTHRuMTlEU0tZTGp2UlRKWDFmTGYwYVNsTUZBMmxIdlEyQ2ZCcnJDSVBiMzBqLUo5bmt5MGhYeTFvd3pCSXNfdHhmUWVnaHRpZ3FLbGpZb3ZyUklmVVZkNXRxYWxPNlE1aw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Mapping Iran war’s strikes on Gulf energy and its impact on future of oil - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOalprVVJWeE5qUlBuYWFRMzA4YUdzckllZnJYZE5WLUFDOTBGTFJzcVNDd0Q5RFJPTUs3ZG9ldF96MkhsZ05XVTR0dHV3eTV2TFlVd3ZuendWRFJLRFNvdi1SOHFXMHJGSm9BSHVlTjd5Z0NmbkdFZVFFNjhwbFhpQ3dnVXI0cEd6UXl2TmZncWMyR3Ywd3FKNXBWeTRKUFJ2WnVmd185ei15WmloLXV0Vnpmb9IBuAFBVV95cUxNaEFGcGwxNzJ3RFEyTG04T1d6ZWl3cEpZWmF0dXljcGdOUWc2dm05RDFwYURjVU5aZkFaVnlvb3did2JuYWxtVjI3MDYzRFN6MlpRTm1SenJQeDdUcnB0aU45V2VlYk5SU3E2dEpwajRWajhqT19TaFZlSW5OVFF2ME5aRml6cHVVenY1MXBqVG45YTljLUNyMXBtVVM0eGthUXhQVk9YTEc4em1ITEYxMjZ4d193MFJ2"
     },
@@ -64,15 +82,6 @@
       "title": "Israeli settlers stage new attack on home in West Bank's Qusra, witnesses say - Reuters",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaDJ3eXpHdUxRbndBaEJmblBpeC13Vk5sMF9lSGJOb3EwSzhDYXBWZnBjYWxqRWgyaGpKNDNsZWxacjRMWF8tQjNvQmNORXNEeVI0TG9nOVBSa2hhY2FFdklhVmVSNGxTalM0bWdtczdPWnd0d0FEeGNTRXdhN0I0eXBVRUFFRHpTX21wQUtJU1FqVmYyRTN2ZmZiNHEzV19OOWVmN3NPcE9SVjZzT29CY2U2bjRXdTAwVXIwcHU3Qjg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks in Gaza kill four people, hit hospital supply warehouse - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVpTY1JqcHpjMGNsVGg0X0Q4bnBocFdKMlM3cmM2Z0hGa0tMdGxIcFZ5aEZKNll3SVRZT0g3UXRqb3c5WngybjNVTHpCLVJxTXpTOTF1SUQ3QXVnQVJIb0pjMDNOdWs5R2JwLXJCU2Z6VEhtU0k5MlcxSV9SbVktVk5VMV9ycmkyZDRDbHdVb3FZR1RUNF9aaHBfcTdoaFJSekROR3ZzeEI5SUxJQXVFSWNVU3nSAboBQVVfeXFMTS13emxudW9qLTRlNDZVOXlET1o2eWlDcjBNckF0SmFlWDNsOFJxaWVOUzF6c2RESlRkaFBrQ3p4Q0tOa3hqNWlpTjh5Wjhhc3p5ZWJFcVRRbzBXbUtySTZqTHRxX2UxS19KQ1N3UWJIT3BZenVBT1hjejBEX2xzSjc5VmxPNTlKQURNaXhZY0xPWDZYSUdFSV9WVzZDSjU1TEpHalVfdmt2RlBCLVZrWFdDX1hQRE9kMHln"
     },
     {
       "score": 2.7,
@@ -93,6 +102,24 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUGxtMjdsa3pFcWh3RGZWRG40ZE9qaWxXN0VDRnBsQ1dyZ2Y2d09XbHdEbGlsOHM4clFGdElHek5NOU9qcjZ6bzN6amxuVU5pbl90bFpZRnpHZWNxdDJ6Mk1Oa1FrVVNPSVVyelc3UG5qZzlBbEZVM1BMWV9IcTFVTTV5WUFCa21tNEhieWtINlROdkNCemNRRl85Yk1ZN2otMjRfM2tpOHlLSGZ1UjVkbVE2bi1TeGh4S29Z0gHAAUFVX3lxTFBMd2FETzhuckhQdTA2Rm9NV1FYMmowM0VEV09QdWhBd2wzeVByLTY4cDFlUDZkenFwWTZfVFQ3T2JILV9nZDhudEJILXhPREN0ajNIeFlWNnhSb05MZ25GeXl4aXdvSm1VV2dWMDJzemF4Sk9FQV9EdzBVR0NheDFmR1hnZEFUY1R6SXNZVUxBYTVTQjhOOUxsUWktVV9zTmZORDdmZk0taHJWWHM0S21oR1o0WHBNX1RmTGdYZklOMg"
     },
     {
+      "score": 2.7,
+      "date": "2026-08-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks in Gaza kill four people, hit hospital supply warehouse - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVpTY1JqcHpjMGNsVGg0X0Q4bnBocFdKMlM3cmM2Z0hGa0tMdGxIcFZ5aEZKNll3SVRZT0g3UXRqb3c5WngybjNVTHpCLVJxTXpTOTF1SUQ3QXVnQVJIb0pjMDNOdWs5R2JwLXJCU2Z6VEhtU0k5MlcxSV9SbVktVk5VMV9ycmkyZDRDbHdVb3FZR1RUNF9aaHBfcTdoaFJSekROR3ZzeEI5SUxJQXVFSWNVU3nSAboBQVVfeXFMTS13emxudW9qLTRlNDZVOXlET1o2eWlDcjBNckF0SmFlWDNsOFJxaWVOUzF6c2RESlRkaFBrQ3p4Q0tOa3hqNWlpTjh5Wjhhc3p5ZWJFcVRRbzBXbUtySTZqTHRxX2UxS19KQ1N3UWJIT3BZenVBT1hjejBEX2xzSjc5VmxPNTlKQURNaXhZY0xPWDZYSUdFSV9WVzZDSjU1TEpHalVfdmt2RlBCLVZrWFdDX1hQRE9kMHln"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gaza runs out of cancer medicines, as Israeli strikes continue - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOckxlSUYzZGlfYmpKSE1DemhlRjIyYkdhZ040NDZOUEhkQ2U4N1ktWUJ0dk05Z1NfWlBrSmdIREs4MTl4ZEhuLXp2VG5GWFBDWmNKN1dYby1YNDZPcTNLU1U4YWVGRDhwMHVLUW5PSzZOM0ZsSnpyYnlLLW9fckZRQnRiZVU3b3hsZjJwNllYd0Z5Z9IBlwFBVV95cUxOdXdjLW5uYmdqY1VQdTc1QVVMZUxBaDJkYjJ0TkxiMnZLOWRFM0ljOWt2eUpVZ2pKOTd6ZUVXRHZvNi02RHZ2WlYxZi1ta290TmVPMU0zRVRWMG1FZjNxbWFvM25uZWY3TU43bG9hRDhnWU1pQTBVZnQ5emdNRzhGODlMOUF2NThsbEE1VnRYMDF1NVJZRHlj"
+    },
+    {
       "score": 2.4,
       "date": "2026-08-28",
       "category": "military",
@@ -109,33 +136,6 @@
       "title": "BBC tracks one week of Israeli settler violence in occupied West Bank",
       "location": "West Bank",
       "url": "https://www.bbc.co.uk/news/videos/c3wjq1188g9o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "US plans to cut off military aid to key Middle East ally, BBC told",
-      "location": "Iraq",
-      "url": "https://www.bbc.co.uk/news/articles/cn74m8e5rleo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills three Palestinians in West Bank’s Jenin - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPOU5TcTU1cnY1R0V3X1ZoUGtBLUs1T2d3TDBlZGo5MlNlenV0ZWtsMHlIS2pVRTlyelA2dHhMR3NfMFF3NzdUaFl3dWQ2bW1RUHVoZE1MTzRpMVdVMUpDdjd6YmNvb1hScDVHZjd0b3BOWVpuUjdzM1l0b1RTUkxTZVRkeFRXN2lNUERVRHczSHMtMG5qYXpneUZpZUtrOF9PQlHSAacBQVVfeXFMUHBEeGZHWmh5SWhyd2g4WE9MYXd2NElUeHU2M2FIaG9kQ1BIY3dpRDRXZWlXRzB3cmN1N2M1anU5b3pPQmFCTGNJRnlQVTFJNUpRd1VXN202cnlxeTRfQTlRc1NZQTcwVDlXRzF4MWs0N3oyWXN4eVNabWx2N0ljVlRJUDNTX2d4MEtLeFZiOTVILTM3R1NjNXhqZzlaZ2hmSkU5ay1PS1k"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-08-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills three Palestinians in Jenin - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMVBYNVgtczlkcFVfTW53V2lrMjZraGpHZkdTdjFlUVM5X2VDWXNxNEp0d3Z0Y0JqYVF2SUdxWXRDcEVPVU9HVV9Kd3hJWGlubHRtOENhZTY2M2dTcktIWTc0STRLODdMX3dmcEpMR1AwT0ZIeUZhTXJ0a1RMVnhhUXhGVHRwMnpCbHV3bW5WTk9lVlVwbTAwTnJadTNPdF9M0gGmAUFVX3lxTE8tbGw4WGhZUTRhNGdIUlZmbFdqRlBQS2w3REtNa2FJNTJaWVc3MVJ6OG1wVE5LZGNfNXprUDYzMERqODdacFhxeGZ5dzgyUHdFd1NVSWtuSGhmRWg1bnR1NlZxM0V6dmQ0MFdDZkVSMktRWHhranF6MHc0RjlmWlEtdURhZHFpaXByZFl5dzduOC1OcHBvenFONHlFVHdkTC0yY2VPX2c"
     }
   ]
 }
