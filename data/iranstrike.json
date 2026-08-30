@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T17:46:32Z",
+  "generated_at": "2026-08-30T20:06:17Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,37 +52,37 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 3,
-    "feed_event_records": 3,
-    "normalized_events": 3,
+    "events_endpoint_records": 6,
+    "feed_event_records": 6,
+    "normalized_events": 6,
     "map_visualizable_events": 1,
-    "non_mappable_events": 2,
-    "developments": 1
+    "non_mappable_events": 5,
+    "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 3,
+      "total_events": 6,
       "earliest_event_date": "2026-08-29T16:53:56Z",
-      "latest_event_date": "2026-08-30T07:13:38Z",
+      "latest_event_date": "2026-08-30T20:00:09Z",
       "geocoded_events": 1,
-      "geocoded_share": 33.3,
-      "top_category": "strike",
-      "top_location": "Gaza Strip",
-      "top_country": "Gaza Strip"
+      "geocoded_share": 16.7,
+      "top_category": "missile",
+      "top_location": "Persian Gulf",
+      "top_country": "Persian Gulf"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 3,
+        "current": 6,
         "previous": 0,
-        "delta": 3,
+        "delta": 6,
         "percent_change": null,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 3,
+        "current": 6,
         "previous": 0,
-        "delta": 3,
+        "delta": 6,
         "percent_change": null,
         "direction": "increase"
       }
@@ -94,22 +94,34 @@
       },
       {
         "date": "2026-08-30",
-        "count": 1
+        "count": 4
       }
     ],
     "category_counts": {
+      "missile": 2,
       "strike": 2,
+      "explosion": 1,
       "drone": 1
     },
     "severity_counts": {
-      "medium": 2,
+      "medium": 4,
+      "high": 1,
       "low": 1
     },
     "attacker_counts": {
-      "unknown": 2,
+      "unknown": 4,
+      "iran": 1,
       "israel": 1
     },
     "top_locations": [
+      {
+        "name": "Persian Gulf",
+        "count": 2
+      },
+      {
+        "name": "Unknown",
+        "count": 2
+      },
       {
         "name": "Gaza Strip",
         "count": 1
@@ -117,13 +129,17 @@
       {
         "name": "Khan Younis",
         "count": 1
-      },
-      {
-        "name": "Unknown",
-        "count": 1
       }
     ],
     "top_countries": [
+      {
+        "name": "Persian Gulf",
+        "count": 2
+      },
+      {
+        "name": "Unknown",
+        "count": 2
+      },
       {
         "name": "Gaza Strip",
         "count": 1
@@ -131,42 +147,38 @@
       {
         "name": "Palestinian territories",
         "count": 1
-      },
-      {
-        "name": "Unknown",
-        "count": 1
       }
     ]
   },
   "feed_state": {
-    "totalCount": 10310,
+    "totalCount": 10313,
     "spotlight": {
       "event": {
-        "id": "35fgeq0yru000",
-        "timestamp": "2026-08-30T07:13:38+00:00",
-        "location": "ISR",
-        "origin": "ISR",
+        "id": "1ncitovkbgcg0",
+        "timestamp": "2026-08-30T19:39:39+00:00",
+        "location": "IRN",
+        "origin": "USA",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "medium",
-        "description": "IDF eliminates Nuhba commander who infiltrated Israel on October 7 in northern Gaza Strip",
-        "descriptionHe": "צה\"ל: מפקד נוח'בה שפשט לישראל ב-7 באוקטובר חוסל אתמול בצפון רצועת עזה",
-        "source": "idkunim_il",
-        "sourceUrl": "https://t.me/idkunim_il/62961"
+        "description": "U.S. strikes against Larak Island, explosion of unknown origin reported",
+        "descriptionHe": "הפצצה אמריקאית נגד איי לרך, פיצוץ בעל מקור לא ידוע דווח",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82971"
       },
-      "headline": "IDF Eliminates Nuhba Commander in Northern Gaza",
-      "headlineHe": "צה\"ל חיסל מפקד נוחבה בצפון גזה",
-      "summary": "The targeted commander had infiltrated Israeli territory during the October 7 attack and was tracked to the Gaza Strip.",
-      "summaryHe": "המפקד שחוסל הצליח להתחמק לאזור עזה לאחר התקפת ה-7 באוקטובר.",
-      "pickedAt": "2026-08-30T17:00:49.609Z",
-      "state": "TODAY"
+      "headline": "U.S. strikes Iranian island, explosion reported",
+      "headlineHe": "ארה\"ב תוקפת אי איראני, דיווח על פיצוץ",
+      "summary": "The strike on Larak Island marks an escalation in U.S.-Iran tensions in the Persian Gulf region amid ongoing regional instability.",
+      "summaryHe": "התקיפה באי לרך מסמנת הסלמה במתיחות בין ארה\"ב לאיראן באזור המפרץ הפרסי בתוך חוסר יציבות אזורי מתמשך.",
+      "pickedAt": "2026-08-30T19:45:50.446Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-30T17:45:03.408Z",
+    "lastUpdated": "2026-08-30T20:06:04.093Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 7,
     "ceasefire": false
   },
   "summary": {
@@ -709,68 +721,8 @@
     "vitals": {
       "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-08-30T17:30:42.778Z",
+      "lastUpdate": "2026-08-30T20:03:28.345Z",
       "internetHistory": [
-        {
-          "t": "2026-08-29T17:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T17:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T17:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T18:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T18:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T18:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T18:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T18:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T18:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T19:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T19:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T19:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T19:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T19:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T19:50:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-08-29T20:00:00.000Z",
           "v": 92
@@ -1282,30 +1234,272 @@
         {
           "t": "2026-08-30T17:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-08-30T17:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T17:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T17:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T17:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T18:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T18:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T18:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T18:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T18:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T18:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T19:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T19:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T19:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T19:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T19:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T19:50:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-30T17:30:42.778Z"
+    "lastUpdated": "2026-08-30T20:03:28.345Z"
   },
   "developments": [
     {
-      "id": "iranstrike-8a2f5c1e",
+      "id": "iranstrike-4f7c2a1b",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-30T20:00:09Z",
+      "title": "IranStrike event",
+      "description": "U.S. strikes IRGC launchers on Larak Island; 2 killed targeting Hormuz shipping",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "strikes irgc launchers on larak island;",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "4f7c2a1b",
+        "text": "U.S. strikes IRGC launchers on Larak Island; 2 killed targeting Hormuz shipping",
+        "textHe": "ארה\"ב תקפה משגרי IRGC באי לארק; 2 הרוגים בתקפה למטרות הולכי ים בהורמוז",
+        "severity": "high",
+        "timestamp": "2026-08-30T20:00:09+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "3bha8agnx6a00",
+          "1ncitovkbgcg0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-6e3d9f4c",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-08-30T18:55:00Z",
+      "title": "IranStrike event",
+      "description": "Tanker struck by projectile in Strait of Hormuz; incident near U.S. corridor",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "6e3d9f4c",
+        "text": "Tanker struck by projectile in Strait of Hormuz; incident near U.S. corridor",
+        "textHe": "טנקר נפגע מטיל במצר הורמוז; תקريب לטדיר משיטור אמריקאי",
+        "severity": "medium",
+        "timestamp": "2026-08-30T18:55:00+00:00",
+        "entityIds": [
+          "OMN"
+        ],
+        "eventIds": [
+          "114pcwiskt9c0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-7a1b5e8d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-08-30T07:13:38Z",
       "title": "IranStrike event",
-      "description": "IDF strikes eliminate Nuhba commander and Hamas militants across Gaza",
+      "description": "IDF eliminates Nuhba commander in northern Gaza Strip",
       "category": "other",
       "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Gaza Strip",
+      "country": "Gaza Strip",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7a1b5e8d",
+        "text": "IDF eliminates Nuhba commander in northern Gaza Strip",
+        "textHe": "צה\"ל ביצע חיסול מפקד נוחבה בגדה הצפונית של עזה",
+        "severity": "medium",
+        "timestamp": "2026-08-30T07:13:38+00:00",
+        "entityIds": [
+          "ISR"
+        ],
+        "eventIds": [
+          "35fgeq0yru000"
+        ],
+        "sourceCount": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-3bha8agnx6a00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129404",
+      "date": "2026-08-30T20:00:09Z",
+      "title": "IranStrike event",
+      "description": "U.S. strikes two IRGC rocket launchers on Larak Island in southern Iran prepared to fire sea mines toward Strait of Hormuz, 2 killed and 2 wounded reported",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes eliminate nuhba commander and hamas militants acr",
+      "attacker_evidence": "s on larak island in southern iran prepared to fire sea mines toward strait of hormuz, 2 killed and 2",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3bha8agnx6a00",
+        "timestamp": "2026-08-30T20:00:09+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "U.S. strikes two IRGC rocket launchers on Larak Island in southern Iran prepared to fire sea mines toward Strait of Hormuz, 2 killed and 2 wounded reported",
+        "descriptionHe": "תקיפה אמריקאית על שני משגרי רקטות של משמרות המהפכה באי לארכ בדרום איראן שהיו מוכנים לשיגור רקטות הנושאות מוקשים ימיים לעבר מצר הורמוז, 2 הרוגים ו-2 פצועים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129404"
+      }
+    },
+    {
+      "id": "iranstrike-1ncitovkbgcg0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82971",
+      "date": "2026-08-30T19:39:39Z",
+      "title": "IranStrike event",
+      "description": "U.S. strikes against Larak Island, explosion of unknown origin reported",
+      "category": "explosion",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
       "location": "",
       "country": "",
       "latitude": null,
@@ -1318,25 +1512,66 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "8a2f5c1e",
-        "text": "IDF strikes eliminate Nuhba commander and Hamas militants across Gaza",
-        "textHe": "צה\"ל חיסל מפקד נוחבה ולוחמי חמאס בעזה",
+        "id": "1ncitovkbgcg0",
+        "timestamp": "2026-08-30T19:39:39+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-08-30T07:13:38+00:00",
-        "entityIds": [
-          "ISR",
-          "YEM"
-        ],
-        "eventIds": [
-          "35fgeq0yru000",
-          "2wp4rhxhoug0",
-          "akb4nw453w80"
-        ],
-        "sourceCount": 2
+        "description": "U.S. strikes against Larak Island, explosion of unknown origin reported",
+        "descriptionHe": "הפצצה אמריקאית נגד איי לרך, פיצוץ בעל מקור לא ידוע דווח",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82971"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-114pcwiskt9c0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/82966",
+      "date": "2026-08-30T18:55:00Z",
+      "title": "IranStrike event",
+      "description": "UKMTO reports tanker struck by unknown projectile in Strait of Hormuz near Khasab, Oman while transiting U.S.-established shipping corridor, no casualties or environmental impact",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "114pcwiskt9c0",
+        "timestamp": "2026-08-30T18:55:00+00:00",
+        "location": "OMN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "UKMTO reports tanker struck by unknown projectile in Strait of Hormuz near Khasab, Oman while transiting U.S.-established shipping corridor, no casualties or environmental impact",
+        "descriptionHe": "UKMTO דיווחת על טנקר שנפגע ממטבח לא ידוע במצר הורמוז ליד חסב בעומאן בזמן שעבר דרך מסדרון הספנות שהוקם על ידי ארה\"ב, אין נפגעים או נזק סביבתי",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/82966"
+      }
+    },
     {
       "id": "iranstrike-35fgeq0yru000",
       "source": "IranStrike",
