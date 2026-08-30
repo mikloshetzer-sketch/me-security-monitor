@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T01:42:12Z",
+  "generated_at": "2026-08-30T07:27:23Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,37 +52,37 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 2,
-    "feed_event_records": 2,
-    "normalized_events": 2,
+    "events_endpoint_records": 3,
+    "feed_event_records": 3,
+    "normalized_events": 3,
     "map_visualizable_events": 1,
-    "non_mappable_events": 1,
+    "non_mappable_events": 2,
     "developments": 1
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2,
+      "total_events": 3,
       "earliest_event_date": "2026-08-29T16:53:56Z",
-      "latest_event_date": "2026-08-29T18:26:40Z",
+      "latest_event_date": "2026-08-30T07:13:38Z",
       "geocoded_events": 1,
-      "geocoded_share": 50.0,
-      "top_category": "drone",
-      "top_location": "Khan Younis",
-      "top_country": "Palestinian territories"
+      "geocoded_share": 33.3,
+      "top_category": "strike",
+      "top_location": "Gaza Strip",
+      "top_country": "Gaza Strip"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 2,
+        "current": 3,
         "previous": 0,
-        "delta": 2,
+        "delta": 3,
         "percent_change": null,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 2,
+        "current": 3,
         "previous": 0,
-        "delta": 2,
+        "delta": 3,
         "percent_change": null,
         "direction": "increase"
       }
@@ -91,21 +91,29 @@
       {
         "date": "2026-08-29",
         "count": 2
+      },
+      {
+        "date": "2026-08-30",
+        "count": 1
       }
     ],
     "category_counts": {
-      "drone": 1,
-      "strike": 1
+      "strike": 2,
+      "drone": 1
     },
     "severity_counts": {
-      "medium": 1,
+      "medium": 2,
       "low": 1
     },
     "attacker_counts": {
-      "israel": 1,
-      "unknown": 1
+      "unknown": 2,
+      "israel": 1
     },
     "top_locations": [
+      {
+        "name": "Gaza Strip",
+        "count": 1
+      },
       {
         "name": "Khan Younis",
         "count": 1
@@ -117,6 +125,10 @@
     ],
     "top_countries": [
       {
+        "name": "Gaza Strip",
+        "count": 1
+      },
+      {
         "name": "Palestinian territories",
         "count": 1
       },
@@ -127,12 +139,12 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10309,
+    "totalCount": 10310,
     "spotlight": {
       "event": {
-        "id": "2wp4rhxhoug0",
-        "timestamp": "2026-08-29T18:26:40+00:00",
-        "location": "YEM",
+        "id": "35fgeq0yru000",
+        "timestamp": "2026-08-30T07:13:38+00:00",
+        "location": "ISR",
         "origin": "ISR",
         "coordinates": [
           0,
@@ -140,21 +152,21 @@
         ],
         "type": "strike",
         "severity": "medium",
-        "description": "Israeli drone strike in Amel neighborhood, Khan Younis, southern Gaza kills Yasser Abu al-Khair",
-        "descriptionHe": "ערוצים עזתיים: הרוג בתקיפת כטב\"מ ישראלי לפני זמן קצר בשכונת אמל בח'אן יונס בדרום הרצועה. ההרוג הוא יאסר אבו אלח'יר",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/129345"
+        "description": "IDF eliminates Nuhba commander who infiltrated Israel on October 7 in northern Gaza Strip",
+        "descriptionHe": "צה\"ל: מפקד נוח'בה שפשט לישראל ב-7 באוקטובר חוסל אתמול בצפון רצועת עזה",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/62961"
       },
-      "headline": "Israeli drone strike kills Hamas leader in Khan Younis",
-      "headlineHe": "תקיפת כל טיס ישראלית הורגת מנהיג חמאס בחאן יונס",
-      "summary": "The strike targeted Yasser Abu al-Khair in the Amel neighborhood, marking a significant operation against Hamas command structure in southern Gaza.",
-      "summaryHe": "התקיפה כיוונה אל יאסר אבו אל-ח׳יר בשכונת אמל, מה שמהווה פעולה משמעותית נגד מבנה הפיקוד של חמאס בדרום עזה.",
-      "pickedAt": "2026-08-30T00:01:46.475Z",
-      "state": "TODAY"
+      "headline": "IDF eliminates October 7 Nuhba commander in northern Gaza",
+      "headlineHe": "צה\"ל חיסל מפקד נוחבה מ-7 באוקטובר בצפון עזה",
+      "summary": "The targeted killing represents a significant operation against a high-profile militant leader tied to the October 7 attacks.",
+      "summaryHe": "הלוויית היעד מייצגת מבצע משמעותי נגד מנהיג מיליטנטי בעל פרופיל גבוה הקשור להתקפות 7 באוקטובר.",
+      "pickedAt": "2026-08-30T07:15:50.133Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-08-30T01:42:06.078Z",
+    "lastUpdated": "2026-08-30T07:27:03.526Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 1,
     "ceasefire": false
   },
   "summary": {
@@ -695,154 +707,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 92,
       "cellular": null,
-      "lastUpdate": "2026-08-30T01:00:43.440Z",
+      "lastUpdate": "2026-08-30T07:00:43.441Z",
       "internetHistory": [
-        {
-          "t": "2026-08-29T01:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T01:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T01:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T01:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T01:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T01:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T02:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T02:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T02:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T02:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T02:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T02:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T03:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T03:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T03:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T03:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T03:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T03:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T04:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T04:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T04:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T04:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T04:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T04:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T05:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T05:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T05:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T05:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T05:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T05:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T06:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T06:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T06:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T06:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-08-29T06:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-08-29T06:50:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-08-29T07:00:00.000Z",
           "v": 92
@@ -1270,59 +1138,250 @@
         {
           "t": "2026-08-30T00:40:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-08-30T00:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T01:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T01:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T01:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T01:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T01:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T01:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T02:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T02:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T02:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T02:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T02:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T02:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T03:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T03:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T03:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T03:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T03:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T03:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T04:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T04:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T04:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T04:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T04:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T04:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-30T05:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T05:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T05:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T05:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T05:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T05:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-30T06:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T06:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T06:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-08-30T06:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-08-30T06:40:00.000Z",
+          "v": 92
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-08-30T01:00:43.440Z"
+    "lastUpdated": "2026-08-30T07:00:43.441Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c3e1",
+      "id": "iranstrike-8a2f5c1e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-08-29T18:26:40Z",
+      "date": "2026-08-30T07:13:38Z",
       "title": "IranStrike event",
-      "description": "IDF drone strike kills Hamas commander Yasser Abu al-Khair in Khan Younis",
+      "description": "IDF strikes eliminate Nuhba commander and Hamas militants across Gaza",
       "category": "other",
-      "severity": "high",
+      "severity": "medium",
       "attacker": "israel",
       "attacker_label": "Israel",
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf drone strike kills hamas commander yasser abu al-khair in khan",
-      "location": "Khan Younis",
-      "country": "Palestinian territories",
-      "latitude": 31.3462,
-      "longitude": 34.3063,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "khan younis",
-      "geocode_confidence": "high",
+      "attacker_evidence": "idf strikes eliminate nuhba commander and hamas militants acr",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c3e1",
-        "text": "IDF drone strike kills Hamas commander Yasser Abu al-Khair in Khan Younis",
-        "textHe": "רחפן צה\"ל תקף בחאן יונס והרג מפקד חמאס יאסר אבו אל-ח'ייר",
-        "severity": "high",
-        "timestamp": "2026-08-29T18:26:40+00:00",
+        "id": "8a2f5c1e",
+        "text": "IDF strikes eliminate Nuhba commander and Hamas militants across Gaza",
+        "textHe": "צה\"ל חיסל מפקד נוחבה ולוחמי חמאס בעזה",
+        "severity": "medium",
+        "timestamp": "2026-08-30T07:13:38+00:00",
         "entityIds": [
           "ISR",
-          "PSE"
+          "YEM"
         ],
         "eventIds": [
-          "2wp4rhxhoug0"
+          "35fgeq0yru000",
+          "2wp4rhxhoug0",
+          "akb4nw453w80"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-35fgeq0yru000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/62961",
+      "date": "2026-08-30T07:13:38Z",
+      "title": "IranStrike event",
+      "description": "IDF eliminates Nuhba commander who infiltrated Israel on October 7 in northern Gaza Strip",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Gaza Strip",
+      "country": "Gaza Strip",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "35fgeq0yru000",
+        "timestamp": "2026-08-30T07:13:38+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF eliminates Nuhba commander who infiltrated Israel on October 7 in northern Gaza Strip",
+        "descriptionHe": "צה\"ל: מפקד נוח'בה שפשט לישראל ב-7 באוקטובר חוסל אתמול בצפון רצועת עזה",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/62961"
+      }
+    },
     {
       "id": "iranstrike-2wp4rhxhoug0",
       "source": "IranStrike",
