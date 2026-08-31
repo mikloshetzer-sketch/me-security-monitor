@@ -1,54 +1,81 @@
 {
   "meta": {
-    "updated": "2026-08-30 22:46 UTC",
+    "updated": "2026-08-31 05:38 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-08-24",
-    "period_end": "2026-08-30",
-    "total_events": 129,
-    "total_risk": 103.4,
-    "normalized_risk_score": 41.4,
+    "period_start": "2026-08-25",
+    "period_end": "2026-08-31",
+    "total_events": 131,
+    "total_risk": 109.18,
+    "normalized_risk_score": 43.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 22,
-    "security": 6,
-    "political": 11,
-    "other": 90
+    "military": 29,
+    "security": 7,
+    "political": 9,
+    "other": 86
   },
   "source_counts": {
-    "news": 124,
-    "isw": 5
+    "news": 127,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 38.2
+      "risk": 49.23
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.2
-    },
-    {
-      "name": "Israel",
-      "risk": 14.3
+      "risk": 16.1
     },
     {
       "name": "West Bank",
-      "risk": 13.45
+      "risk": 11.85
+    },
+    {
+      "name": "Israel",
+      "risk": 11.75
     },
     {
       "name": "Syria",
-      "risk": 6.1
+      "risk": 6.3
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-08-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran’s army says it attacked UAE’s Al Minhad Air Base with drones, state TV reports - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZ09ObHphV0lHczYtdENzRzVQNFUtNUhLLU90dF92aTNaZU4yYm4zT1lScGhlekhEM1RVaGVVQUhQZEp2VUtLV19UelcwWnFUWkdkN0dhRUdtYkUtU3FIckVldDU5VnRnSkRaRkRGVkVyWHdBLTZzQUIzX1pMYUZSclpFSTZSOVBFZzlvSGpIWnlwNW84VDhZNm1LTjFDV2pZeG9WajktcllVb2VsVTdTTlhpUXFEVFg1NnJmZ2ZyQzRxakxUdTVzQ3BLOXBnSDA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-08-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attacks US bases in Jordan after US strikes Larak Island - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORTBBc2EzTGU1VklFeXVRdXFpRG9pdmFuRHFRcnBmS1o4RE56RVFJTExZVVFySV9wSEhEZV9kNXAyb2VmajRDWTZiaEhyZWRLMjFwbGRVVU1VYlI0S3c5WU5mZGhfUmF4UmRLN1Qzdkc1US1UUGQ0S01Jb0hJeV9jMnBtLXAxWXRiZTdnbXBMcVVXMkJjT3RtdTBB0gGfAUFVX3lxTE5TWTRMMk9tZmNrUWl1MTdYUE9Ick5xeEtsMWFkRnNWbEh4eGcxMTBubTJzeUJBa3RacFFsZ2cxN3Y0OWJ4dDh1NlNwczRSaWFoODlTOFl4dnlKOXE1dG96cHlGRHMzVTlSZUJxWlhPSEJCQ3FlYXBjaHJOZW42enVhckhfV2Rkc2NScXVkV0hDNzBsbzlHTWpCeFdOOS1RZw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-08-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran's IRGC says it launched attack on two US bases in Jordan - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOclJRRzlZV2lpOFlsSGdGcE1fUXVlel9CRndnX1NoM3lHcXkya2JMMWdrTEhUcnJyTHY0WDBqeFVoRzJmdEw5TlFXSGY1SVd1NXJERFdHS0IzQkhtRTdNTlJOMlp3RjgwYVVFYjY3NnV6d1c5cEt0UlVmaDJOdFBlT1ZRc0RpTVRVSkliRkU0SWZGYXZFa1JJdzNaOGxqVEFkX0FuV0l5WUNoaEFO"
+    },
+    {
+      "score": 2.7,
       "date": "2026-08-30",
       "category": "military",
       "source_type": "news",
@@ -57,7 +84,16 @@
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQTkpiVXljY0dfaG41QTlsRW1PXzVEMU9UUGRWYk41QzQ4UERCRnJ5TlVUSUloZXFTUF9ieVBhaGFxQi1iZ3NSOVRPODFnR3NQbnZxdWFJMnl6TmRwYnZqT3pOZFhWUEo5MzRVY2YtdEppVmNMSVQ2UVB0WW5zLThXNjIwdU9ZLUUyQVhWTENEQ3k0bGo2QUdNQVVHdWxSak91RkU5dGNlUFBOZjNqTDRuRGJRZHJHNWRuQTRiaDBSZFpjOTNGcGRV"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-08-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran is attacking US forces in Jordan, Fox News reports, citing a US source - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQT3Q5VzJ4c1pXc3pPc1VrUmdQOC1PQmxJaXhsTV9KS1hvVnJGTmt3NUZNUlp3UHRJeEg2QlA3aFRIdHE3VjRCODNSV0NvV2xQbFNyZ1hBYXdYSnNDcDc4TE1fYnYtQ3RxdnNrQXlJVWJCZHdDbm0yWlM4emozcDY0SDFjZGMyeVBGNlFibzhZNUpKQWg2M0ZwTTNCb2I1Um9WbmRhQUo1ajBhWm9tVTcyaDFYYUhMeDdoWVZLSnQtMA"
+    },
+    {
+      "score": 2.7,
       "date": "2026-08-30",
       "category": "military",
       "source_type": "news",
@@ -66,7 +102,16 @@
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUmw0UHV3Nm1jZS02RVF5ZVY0aWw2S0JlUXI0bUttclN5NkNzem9tMnc1akVuUGd5MXZMdkhMSWxTRGtZa2x1a1dad3psVDI3aTJJQnVHcENXU0k3Zm1kdWw0T0NYek00T1lxSktzSmdHTnd0Q0tEZTJyQ3FrNGZReHhaSi1EeFNtLXlrc1hFd3J3UE5LRjh5N3pWUHRQQmhGekd4Qm9fVnVvZVB1eUM1bGdGQUpqNzQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-08-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil jumps more than 2% after US attack on Iran's Larak island - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSGRJUGVDenVxZzdzdXZ4aTJudWV6LS1adkVVMmVUNnc1QnMyNVNsLThHcG44U2p6SWoxYm9LbjJnUGdkZDAzTENhSDR2OW90cWV2aDJNZWpKRllRNUhselE2djRhQlI3ejVmUUl6cFNnVDN1UmU4QXVadDNmQloya3daeWVHSmtGNDh4QWktSk1fenV3czlkbnhwNjJ3VzNXWEhZelFCRTIzaWpR"
+    },
+    {
+      "score": 2.7,
       "date": "2026-08-30",
       "category": "military",
       "source_type": "news",
@@ -75,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNdTBYQkFmZmRqbzlRSTg4V2ZjLUo4ZHFKN0JQYWpHUTVmeFJQUnYtY05OZEdWNEtESi04Mk0tQVA1UWdjNDJmSFA3T1ZVTnBpRFV0WmRmTG9jLVdUeDAyZHNmY1VZNzhLUGZNb1VHc2VqM3B0WWpKaXZGRzFQUWFqazlLcG9ZeUhSaEVfdjRCNTNneTR5eTBjTWc1Ml9lZ0xtNy1SeVMzeThuaDZxVVZHblE1QVRUZFlhVkNzNGV6Z0Z5NWxR"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-08-30",
       "category": "military",
       "source_type": "news",
@@ -84,58 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVExIWW1kRXlDMzJSRlNJRE1Id0pSTmJUUUxzc09oUmlxQVdhb3hHbWRZcTdkRFJPOFlCS1daejVwai1mWVBmTHRuMTlEU0tZTGp2UlRKWDFmTGYwYVNsTUZBMmxIdlEyQ2ZCcnJDSVBiMzBqLUo5bmt5MGhYeTFvd3pCSXNfdHhmUWVnaHRpZ3FLbGpZb3ZyUklmVVZkNXRxYWxPNlE1aw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-08-30",
       "category": "military",
       "source_type": "news",
       "title": "Mapping Iran war’s strikes on Gulf energy and its impact on future of oil - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOalprVVJWeE5qUlBuYWFRMzA4YUdzckllZnJYZE5WLUFDOTBGTFJzcVNDd0Q5RFJPTUs3ZG9ldF96MkhsZ05XVTR0dHV3eTV2TFlVd3ZuendWRFJLRFNvdi1SOHFXMHJGSm9BSHVlTjd5Z0NmbkdFZVFFNjhwbFhpQ3dnVXI0cEd6UXl2TmZncWMyR3Ywd3FKNXBWeTRKUFJ2WnVmd185ei15WmloLXV0Vnpmb9IBuAFBVV95cUxNaEFGcGwxNzJ3RFEyTG04T1d6ZWl3cEpZWmF0dXljcGdOUWc2dm05RDFwYURjVU5aZkFaVnlvb3did2JuYWxtVjI3MDYzRFN6MlpRTm1SenJQeDdUcnB0aU45V2VlYk5SU3E2dEpwajRWajhqT19TaFZlSW5OVFF2ME5aRml6cHVVenY1MXBqVG45YTljLUNyMXBtVVM0eGthUXhQVk9YTEc4em1ITEYxMjZ4d193MFJ2"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-08-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "US strikes Iran’s Larak Island in first attack in weeks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORTBBc2EzTGU1VklFeXVRdXFpRG9pdmFuRHFRcnBmS1o4RE56RVFJTExZVVFySV9wSEhEZV9kNXAyb2VmajRDWTZiaEhyZWRLMjFwbGRVVU1VYlI0S3c5WU5mZGhfUmF4UmRLN1Qzdkc1US1UUGQ0S01Jb0hJeV9jMnBtLXAxWXRiZTdnbXBMcVVXMkJjT3RtdTBB0gGfAUFVX3lxTE5TWTRMMk9tZmNrUWl1MTdYUE9Ick5xeEtsMWFkRnNWbEh4eGcxMTBubTJzeUJBa3RacFFsZ2cxN3Y0OWJ4dDh1NlNwczRSaWFoODlTOFl4dnlKOXE1dG96cHlGRHMzVTlSZUJxWlhPSEJCQ3FlYXBjaHJOZW42enVhckhfV2Rkc2NScXVkV0hDNzBsbzlHTWpCeFdOOS1RZw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers stage new attack on home in West Bank's Qusra, witnesses say - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaDJ3eXpHdUxRbndBaEJmblBpeC13Vk5sMF9lSGJOb3EwSzhDYXBWZnBjYWxqRWgyaGpKNDNsZWxacjRMWF8tQjNvQmNORXNEeVI0TG9nOVBSa2hhY2FFdklhVmVSNGxTalM0bWdtczdPWnd0d0FEeGNTRXdhN0I0eXBVRUFFRHpTX21wQUtJU1FqVmYyRTN2ZmZiNHEzV19OOWVmN3NPcE9SVjZzT29CY2U2bjRXdTAwVXIwcHU3Qjg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers attack international news team in occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRzhYTUgzTkZrNGxoOWFqV0hsSjV4WGVHTjZsc2NPdm9sVUxpNUtoRTJDVTk1emtocHludGpvN3lWdDA3LXFUVnI2UE03c0wxZ3AwWkdHUU1mZzJPVTloS1k1VzQ4MUlpNzhIRHlkdjA2SkZGUi1CWVNEWGlreDJjS0VCSWFubVlOZ3Faand1WDBVNTlMN2JMbjJXWm1yaUY4Mkd5aHhiajU2enpHNzZrQ1lVdjN2RDRELW9wSdIBwgFBVV95cUxPZW9ELXU3OWh5bk9CWDhDVGlMQzFIR081NXl0bU1JOWxyZlFjUEFmVWxGeV9TNWtYeTl2UUFCeVhJdEhkQ3U4U1ZGRmlUOEJOTU16TndMRVZKUS0yZjcyRllqdHZTVjhmdncxT2xrWk9fQlRTaTNqZEZ5OXlpQVNrVzNfRzB0ZXl2Yk5oQ2FpMExaYTNIYmp4TE9EdnAyZm5zU0UtcjBXVUtrU0VWdUVkemxJaVFlbDJSeHRQcVNRMFBpQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "UNRWA’s first and last vocational college in East Jerusalem is under attack - Al Jazeera",
-      "location": "Jerusalem",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUGxtMjdsa3pFcWh3RGZWRG40ZE9qaWxXN0VDRnBsQ1dyZ2Y2d09XbHdEbGlsOHM4clFGdElHek5NOU9qcjZ6bzN6amxuVU5pbl90bFpZRnpHZWNxdDJ6Mk1Oa1FrVVNPSVVyelc3UG5qZzlBbEZVM1BMWV9IcTFVTTV5WUFCa21tNEhieWtINlROdkNCemNRRl85Yk1ZN2otMjRfM2tpOHlLSGZ1UjVkbVE2bi1TeGh4S29Z0gHAAUFVX3lxTFBMd2FETzhuckhQdTA2Rm9NV1FYMmowM0VEV09QdWhBd2wzeVByLTY4cDFlUDZkenFwWTZfVFQ3T2JILV9nZDhudEJILXhPREN0ajNIeFlWNnhSb05MZ25GeXl4aXdvSm1VV2dWMDJzemF4Sk9FQV9EdzBVR0NheDFmR1hnZEFUY1R6SXNZVUxBYTVTQjhOOUxsUWktVV9zTmZORDdmZk0taHJWWHM0S21oR1o0WHBNX1RmTGdYZklOMg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks in Gaza kill four people, hit hospital supply warehouse - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdVpTY1JqcHpjMGNsVGg0X0Q4bnBocFdKMlM3cmM2Z0hGa0tMdGxIcFZ5aEZKNll3SVRZT0g3UXRqb3c5WngybjNVTHpCLVJxTXpTOTF1SUQ3QXVnQVJIb0pjMDNOdWs5R2JwLXJCU2Z6VEhtU0k5MlcxSV9SbVktVk5VMV9ycmkyZDRDbHdVb3FZR1RUNF9aaHBfcTdoaFJSekROR3ZzeEI5SUxJQXVFSWNVU3nSAboBQVVfeXFMTS13emxudW9qLTRlNDZVOXlET1o2eWlDcjBNckF0SmFlWDNsOFJxaWVOUzF6c2RESlRkaFBrQ3p4Q0tOa3hqNWlpTjh5Wjhhc3p5ZWJFcVRRbzBXbUtySTZqTHRxX2UxS19KQ1N3UWJIT3BZenVBT1hjejBEX2xzSjc5VmxPNTlKQURNaXhZY0xPWDZYSUdFSV9WVzZDSjU1TEpHalVfdmt2RlBCLVZrWFdDX1hQRE9kMHln"
     }
   ]
 }
