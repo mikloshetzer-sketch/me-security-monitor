@@ -1482,6 +1482,49 @@ def build_analytics(
 
 
 def main() -> int:
+    # Load the previously stored normalized event history before fetching new data.
+    # This prevents a shortened upstream API response from erasing historical events.
+    previous_events: List[Dict[str, Any]] = []
+
+    if OUTPUT_PATH.exists():
+        try:
+            previous_payload = json.loads(
+                OUTPUT_PATH.read_text(encoding="utf-8")
+            )
+        except Exception as exc:
+            raise RuntimeError(
+                f"Existing {OUTPUT_PATH} could not be read safely: {exc}"
+            ) from exc
+
+        stored_events = previous_payload.get("events", [])
+
+        if not isinstance(stored_events, list):
+            raise RuntimeError(
+                f"Existing {OUTPUT_PATH} has an invalid 'events' field; "
+                "refusing to overwrite historical data."
+            )
+
+        previous_events = [
+            event
+            for event in stored_events
+            if isinstance(event, dict)
+        ]
+
+        if len(previous_events) != len(stored_events):
+            raise RuntimeError(
+                f"Existing {OUTPUT_PATH} contains non-object event records; "
+                "refusing to overwrite historical data."
+            )
+
+        print(
+            f"Loaded {len(previous_events)} historical events "
+            f"from {OUTPUT_PATH}"
+        )
+    else:
+        print(
+            f"No existing {OUTPUT_PATH} found; starting a new event history."
+        )
+
     print("Fetching IranStrike endpoints...")
 
     payloads: Dict[str, Any] = {}
@@ -1505,18 +1548,25 @@ def main() -> int:
         ["developments", "updates", "spotlight"],
     )
 
-    normalized_events = [
+    fresh_normalized_events = [
         normalize_event(record, "events")
         for record in event_records
     ]
 
-    normalized_events.extend(
+    fresh_normalized_events.extend(
         normalize_event(record, "feed")
         for record in feed_events
     )
 
+    fresh_normalized_events = deduplicate(
+        fresh_normalized_events
+    )
+
+    # Fresh records come first intentionally. deduplicate() keeps the first
+    # occurrence of an ID, so a newly fetched version of an existing event
+    # can update the previously stored normalized record.
     normalized_events = deduplicate(
-        normalized_events
+        fresh_normalized_events + previous_events
     )
 
     normalized_events.sort(
@@ -1587,7 +1637,7 @@ def main() -> int:
         "summary": payloads["summary"],
         "vitals": payloads["vitals"],
         "developments": normalized_developments,
-        # Dashboard source: every normalized event.
+        # Dashboard source: every normalized event, including preserved history.
         "events": normalized_events,
         # Map source: only high-confidence, explicitly mappable events.
         "map_events": map_events,
@@ -1607,6 +1657,10 @@ def main() -> int:
         encoding="utf-8",
     )
 
+    print(
+        f"Fetched {len(fresh_normalized_events)} fresh normalized events; "
+        f"preserved {len(previous_events)} previously stored events."
+    )
     print(
         f"Wrote {len(normalized_events)} dashboard events and "
         f"{len(map_events)} map events to {OUTPUT_PATH}"
