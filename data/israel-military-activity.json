@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-08-31T08:37:39+00:00",
+  "generated_at": "2026-08-31T20:02:38+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 79,
-      "map_visualizable_events": 33,
-      "total_map_points": 36,
+      "total_events": 80,
+      "map_visualizable_events": 34,
+      "total_map_points": 37,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-08-30T10:46:07Z"
+      "latest_event_date": "2026-08-31T16:43:53Z"
     },
     "region_counts": {
-      "Gaza Strip": 59,
+      "Gaza Strip": 60,
       "South Lebanon": 22
     },
     "activity_type_counts": {
-      "airstrike": 61,
+      "airstrike": 62,
       "drone_activity": 9,
       "ground_activity": 8,
       "cross_border_fire": 4,
@@ -67,13 +67,13 @@
       "artillery": 1
     },
     "target_organization_counts": {
-      "Hamas": 49,
+      "Hamas": 50,
       "Hezbollah": 15,
       "Not explicitly stated": 12,
       "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
-      "commander": 45,
+      "commander": 46,
       "individual_operative": 17,
       "unspecified": 16,
       "military_structure": 8,
@@ -87,14 +87,14 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 63,
-      "eliminated": 46,
+      "struck": 64,
+      "eliminated": 47,
       "located": 12,
       "reported": 11,
       "dismantled": 10
     },
     "commander_type_counts": {
-      "unspecified_commander": 20,
+      "unspecified_commander": 21,
       "company_commander": 10,
       "nukhba_commander": 9,
       "cell_commander": 7,
@@ -104,8 +104,8 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 71,
-      "command": 45,
+      "ground": 72,
+      "command": 46,
       "drone_uav": 8,
       "rocket_missile": 7,
       "underground": 6,
@@ -125,8 +125,8 @@
     "top_locations": {
       "Khan Yunis": 13,
       "Nuseirat": 6,
+      "Gaza City": 5,
       "Deir al-Balah": 5,
-      "Gaza City": 4,
       "Jabalia": 3,
       "Nabatieh": 2,
       "Beit Lahia": 1,
@@ -135,6 +135,75 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19139",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19139",
+      "date": "2026-08-31T16:43:53Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: Managed the Supply of Weapons and Posed an Immediate Threat: The IDF Eliminated a Hamas Supply and Maintenance Commander Earlier today (Monday), the IDF struck in the Sabra area in Gaza City and eliminated Omar Mohammed Roshdy Saraj, a commander in the Gaza City supply and maintenance company in the Hamas terrorist organization. As part of his role, the terrorist managed the supply of weapons to Hamas terrorists in the Gaza City area. An operative in the military wing of the Hamas terrorist organization was also struck in the same strike. Recently, the terrorists advanced attacks against IDF troops and Israeli civilians and operated to rehabilitate the capabilities of the terrorist organization, in systematic violation of the ceasefire. The terrorists were struck in order to remove the threat they posed. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        }
+      ],
+      "location_count": 1,
+      "location": "Gaza City",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19139"
+    },
     {
       "id": "idf-idfofficial-19138",
       "source": "IDF official Telegram",
@@ -5291,6 +5360,77 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19139-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19139",
+      "date": "2026-08-31T16:43:53Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: Managed the Supply of Weapons and Posed an Immediate Threat: The IDF Eliminated a Hamas Supply and Maintenance Commander Earlier today (Monday), the IDF struck in the Sabra area in Gaza City and eliminated Omar Mohammed Roshdy Saraj, a commander in the Gaza City supply and maintenance company in the Hamas terrorist organization. As part of his role, the terrorist managed the supply of weapons to Hamas terrorists in the Gaza City area. An operative in the military wing of the Hamas terrorist organization was also struck in the same strike. Recently, the terrorists advanced attacks against IDF troops and Israeli civilians and operated to rehabilitate the capabilities of the terrorist organization, in systematic violation of the ceasefire. The terrorists were struck in order to remove the threat they posed. Prior to the strike, steps were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        }
+      ],
+      "location_count": 1,
+      "location": "Gaza City",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19139",
+      "parent_event_id": "idf-idfofficial-19139",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19138-location-1",
       "source": "IDF official Telegram",
