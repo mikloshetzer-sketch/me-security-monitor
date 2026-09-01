@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-01 11:41 UTC",
+    "updated": "2026-09-01 16:42 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-08-26",
     "period_end": "2026-09-01",
     "total_events": 127,
-    "total_risk": 129.91,
-    "normalized_risk_score": 52.0,
+    "total_risk": 133.76,
+    "normalized_risk_score": 53.5,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 38,
-    "security": 4,
-    "political": 10,
-    "other": 75
+    "security": 3,
+    "political": 8,
+    "other": 78
   },
   "source_counts": {
     "news": 123,
@@ -27,7 +27,7 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 65.91
+      "risk": 62.81
     },
     {
       "name": "Gaza Strip",
@@ -35,15 +35,15 @@
     },
     {
       "name": "Israel",
-      "risk": 14.75
+      "risk": 14.45
     },
     {
       "name": "West Bank",
-      "risk": 9.95
+      "risk": 8.15
     },
     {
       "name": "Jerusalem",
-      "risk": 4.25
+      "risk": 7.25
     }
   ],
   "top_events": [
@@ -52,16 +52,7 @@
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "Oil rises as renewed US-Iran strikes stoke supply fears - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNXzNva1pxcDRaVGJ0WkYwOFJ2Zm8wNFBiMmkxLUVIZVJZaUV4WlRGNVRZbk1JZHdpMUpXbXJ6VHZsVUtzS2haZ0M2bDd4d3RTa19vTHZTOWc3MFlGaW1jU3gwMG13cFhFY0hOR2tWSjM1cWQzd2pfUEZFRlpSRWdEcmJ3NHdlM3BydlNkQUgxY3lMYjBybFMwZ1Vxcjk2clc3cHZKdWxtMHlFWHBMNDREaEJoZlBIc2U5TGMyWF9GaEZhX0JlMlA4THpn"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill four in Gaza as military says it arrests Hamas militant - Reuters",
+      "title": "Israeli strikes kill five in Gaza as military says it arrests Hamas militant - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPS1dvY08wWUVmMGNwR3hXbVR4anpDeXoxcndHakhnUzRqNk9Ub3ZqcEhsUUdHTTM3dGxuODQ4bXpNRGkxQjhyTmR5QkVFR2FKVTVaOEhwUi1PTTVSal9xZjd2ME4yUjhleFFSMUFHc1RmNVBUSjBtNUhpRndqb25sVi1HaDBmYmpyR0xFY1lKTVgyd2pSdlBJMEYtb1lMTTVkU2Vya1FjSjR3ZjZnQmlEbnlHeW1ZSmc5eURPTHFNSndsVEk"
     },
@@ -70,7 +61,16 @@
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli fire kills three in Gaza City during reported raid, medics say",
+      "title": "Two tankers carrying Saudi oil attacked in Strait of Hormuz - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbTdiazZLdjJmZFUzaDZwUHpSV3R0b2lubVJLcXdtNmk1WEZjbU96MjJveEl4dl9FWjl3V3kwTVQtY0N5WnhINS1PSXoyNUNtYXpub0EwWVBCZklqaTJPTXN0QmxaTWJ3b284NWx4ckg4S3NONkl4WEVnSzdaaV94cUJ0YXI3UlZHV3RwZ1B2am8xMHc2VnV1TTBjcExjSEg1R2d0RWhuUkY"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel says senior Hamas member seized as strikes kill three during Gaza raid",
       "location": "Gaza Strip",
       "url": "https://www.bbc.co.uk/news/articles/c1wxex4vg35o?at_medium=RSS&at_campaign=rss"
     },
@@ -82,6 +82,33 @@
       "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "SCO slams attacks, sanctions on Iran: Key takeaways from Bishkek summit - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMnlmRVNqUm9ZWVM2TzI2R0RqdEVLS2pZNGVXMkhsdjlmRkNDUjZMQlZKOFpVWTM5MFQxeHZtWnczaWZPdDhWZXlnUzhvWlZnb1lqWjVBNlBXV0NtNVdob0hiLUoxbWtDRm55VjA1UGwtMFB0elVzTG9lZUVxd1JLZllpRE51bTc4NlNJLVpVaU1sZXdZeUxVVWJYM3NIYlRxemZIejhENUNOU3c1SnfSAbMBQVVfeXFMT0FDQWhpa0FGT0tGT3RQRmU4QjNVcWhwOXZDU20zNDlpb3VSTExCU1VzNi1oQkZfZktLY3p4ZzdVakhWdTJUQjh1VGVMdUtLWVlhSlhHN2Yya0ZzZ1JnOEI0WU5jYkpZalNXaXFmTUY2SFVkMDJNdklMNjFDTmV1SWZiWlBMemVnYmNDTXRBU3FfRjVuS0o5TlBsN295VnlPaHdabGkxMFU3UTdrZFFOanFiSjQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jerusalem schools strike after Israel enforces curriculum and bans teachers - Al Jazeera",
+      "location": "Jerusalem",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUnRiMzVOX0ZmLUZNMWVrS2ZjUEczWWxvZWhHQ3c3R1NKMGdZa0VfUVM5cWNRMkhFbE5SVTBFSXdBNDVlbW55MVMtdEZpQ1B6ZzRBSGpGV0pFbEppSlY3N1dUX3JYdDR6Q29mYUlhZS10NEhrSUZDZnVFVUdSTEZYbEJHVFFFNU5EQ1ZackxCaHMwZW1OcTU1VnFLRm5FVnpNaXR1ZExrTTRYTWphVTRCTTlvT2Q5QdIBuwFBVV95cUxNQnJZTEk4T3VkYzN5NkVuSHZzTEpVdVk3bmNtcU5sOGs0TEpzQlNWV2Vzb04wNTdWYzhFTW53eElQOEVuWHZtbTFiZ25veFhVLUszcHlBVEsyallRQ0hxWlNsZ0psck1lOHFwMGlsU1JlRDgzdXVwdXZEa3NsME9ETE5pTEp2WTdJQTJsSjM1c3hpdi1TbjRRRjMyTlpMcy1nNFpDZlZFOGRERkJvV21fY3ZIQl9oZ2tlWi1r"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "At least five killed as ammunition-laden vehicle explodes in Syria’s Idlib - Al Jazeera",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPenlDeTBSdGRhZnhuNTVXdDdMXzdseHMxTXRiX09QUGlQdnBpTm5QWlM1SUN4QldTWS1aUXVXNF91Qk1kX1pxMm9jdFc4Y19EckFDM1BGWHpjcFA1TjJJeXFfRkpudzFGdEVEOVVQS1NyNUtONFVSX3VnM1ZnemM1VElNVlU4emhfOE1lelpvUVpvbDczU0xQLXJ3LUthVksydlFzSHRSYkFlc0XSAbABQVVfeXFMTmlnZEhFSC03cU1GOURtTlNMa0w5Nmo4X0thR2FKTV9hczlsZmFFdXBfOFJ4TDJxdV9aSXNONzlZaTZIb2JQQVBZcUVKcEg2aVJldlFrZjdKVURxU2ZNdGVkRW4tRC1wZURtSkwwN3NZZl9yWENNRmxBWnJhaXJFT05TbTBHak9QTDRwQjRvWldfS1JuenkzZ3ZBck5LbkJYckxjd0V3eFVqRGpxUlJIVG4"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Yields rise, oil jumps; US and Iran resume military attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQa0dYVnlvTDVQRkF4YmQxMW9FUElDRmNweFlHclBUa1R5MmZsSHk5WEtnV3B5bFVFeFJhMGMtSWxsV0FqR0Jsc1ltUENJUEs4RWR0QlVnTFBBc2hIbzJmdl9hZVpOS2dGM2Q2ZFF1MmtLallPblc1ZGtJTFhzNTQzRGNhaw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran trade strikes for first time in weeks",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cx2z72x5z1po?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attacks Jordan, UAE after US bombs Larak Island: What’s the latest? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV292Z2dzblEzQnh6T3I3Tzl1RjlYSWFOX184blRSNHZOTk90Q2ZDUzRuaEVZekE3ZUFpa2NxRlowb1RBNUtSOS10Nk9CNndCUGZRMHBSR1BoQlpXVEo1aVdUZHM4Ym9rZ1YyeG5Nc2dVRjYxaVhsajMzUVhuUmUyT2V6UkhwQjNEcHltb0ZwVGpTd0VXSGhsdDdDZk5tel9wTUVUSHFnUFdOWWJjc2fSAbMBQVVfeXFMTVdzZV8za1RCTHhOU1VTZ0lvSVd3MHo3ZzRTV2ZuUjhDcHROMElJZV94bk9hMktUa3JRaXA3YkJEckd1Rkd4aFpTOUFmNXNMVjlfa3pUS3FIWWMzNXhpNk9QTVpSNk1lanprTUQ2S09VQnZOWnE5OFVsN3ItaUlqbGJUUUpLYmE4aTFpRWFUbTRxVDJlc1U1VlJfSkJUVW1DV2JnRDMtLVlEUVhLaFpOQkpEMEk"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli air strikes on Gaza kill at least five people - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTFN5NFpTMTFuS2NVbktRY3NoWThCRng4UjJDUTI4NXZxd1U3OUZVcU1pZTltcjFVbmd3a0p2bi1xOFhKeHQ5SmdRSXdRdHBLMC01REtLMUNlQTZ1N2kzMWljZDlsNHN5TGpnMmZsNFZvNVlrSmd2V1NjdXZQeUVPbFUtQUNfRlNuU05qR2lMenFiRTVrYTJabk5B0gGfAUFVX3lxTE1HTW9zWWVkOHFZQ3ZSbHJNRE9mU1Ric3g1MU9ieWM4QW5TSVpGVWhiU01XUGRtT0YzNS0wRlplSlgtMEJuQW5iNnFheEdPMEhmODNIVmM1TFpOWDNydXdnUTVxZkdjenh4dEdyR2RnOHFEMk5POU1uZ3ZvclRkdXo4Mm0yc01uLTRublhJOWRJdGZMQXpHTVlkeFNtdk56WQ"
     }
   ]
 }
