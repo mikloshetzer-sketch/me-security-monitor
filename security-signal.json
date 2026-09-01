@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-01 05:12 UTC",
+    "updated": "2026-09-01 11:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-08-26",
     "period_end": "2026-09-01",
-    "total_events": 126,
-    "total_risk": 120.16,
-    "normalized_risk_score": 48.1,
+    "total_events": 127,
+    "total_risk": 129.91,
+    "normalized_risk_score": 52.0,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 36,
-    "security": 3,
-    "political": 11,
-    "other": 76
+    "military": 38,
+    "security": 4,
+    "political": 10,
+    "other": 75
   },
   "source_counts": {
-    "news": 122,
+    "news": 123,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 61.16
-    },
-    {
-      "name": "Israel",
-      "risk": 15.7
+      "risk": 65.91
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.45
+      "risk": 21.45
+    },
+    {
+      "name": "Israel",
+      "risk": 14.75
     },
     {
       "name": "West Bank",
-      "risk": 12.2
+      "risk": 9.95
     },
     {
       "name": "Jerusalem",
@@ -48,6 +48,42 @@
   ],
   "top_events": [
     {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil rises as renewed US-Iran strikes stoke supply fears - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNXzNva1pxcDRaVGJ0WkYwOFJ2Zm8wNFBiMmkxLUVIZVJZaUV4WlRGNVRZbk1JZHdpMUpXbXJ6VHZsVUtzS2haZ0M2bDd4d3RTa19vTHZTOWc3MFlGaW1jU3gwMG13cFhFY0hOR2tWSjM1cWQzd2pfUEZFRlpSRWdEcmJ3NHdlM3BydlNkQUgxY3lMYjBybFMwZ1Vxcjk2clc3cHZKdWxtMHlFWHBMNDREaEJoZlBIc2U5TGMyWF9GaEZhX0JlMlA4THpn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill four in Gaza as military says it arrests Hamas militant - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPS1dvY08wWUVmMGNwR3hXbVR4anpDeXoxcndHakhnUzRqNk9Ub3ZqcEhsUUdHTTM3dGxuODQ4bXpNRGkxQjhyTmR5QkVFR2FKVTVaOEhwUi1PTTVSal9xZjd2ME4yUjhleFFSMUFHc1RmNVBUSjBtNUhpRndqb25sVi1HaDBmYmpyR0xFY1lKTVgyd2pSdlBJMEYtb1lMTTVkU2Vya1FjSjR3ZjZnQmlEbnlHeW1ZSmc5eURPTHFNSndsVEk"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli fire kills three in Gaza City during reported raid, medics say",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/c1wxex4vg35o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E"
+    },
+    {
       "score": 2.7,
       "date": "2026-08-31",
       "category": "military",
@@ -55,15 +91,6 @@
       "title": "UAE denies Al Minhad Air Base was targeted after Iran says it attacked base - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZ09ObHphV0lHczYtdENzRzVQNFUtNUhLLU90dF92aTNaZU4yYm4zT1lScGhlekhEM1RVaGVVQUhQZEp2VUtLV19UelcwWnFUWkdkN0dhRUdtYkUtU3FIckVldDU5VnRnSkRaRkRGVkVyWHdBLTZzQUIzX1pMYUZSclpFSTZSOVBFZzlvSGpIWnlwNW84VDhZNm1LTjFDV2pZeG9WajktcllVb2VsVTdTTlhpUXFEVFg1NnJmZ2ZyQzRxakxUdTVzQ3BLOXBnSDA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "US forces strike two Iranian launchers on Iran's Larak island, US official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQTkpiVXljY0dfaG41QTlsRW1PXzVEMU9UUGRWYk41QzQ4UERCRnJ5TlVUSUloZXFTUF9ieVBhaGFxQi1iZ3NSOVRPODFnR3NQbnZxdWFJMnl6TmRwYnZqT3pOZFhWUEo5MzRVY2YtdEppVmNMSVQ2UVB0WW5zLThXNjIwdU9ZLUUyQVhWTENEQ3k0bGo2QUdNQVVHdWxSak91RkU5dGNlUFBOZjNqTDRuRGJRZHJHNWRuQTRiaDBSZFpjOTNGcGRV"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Israeli air strikes on Gaza kill at least five people - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOTFN5NFpTMTFuS2NVbktRY3NoWThCRng4UjJDUTI4NXZxd1U3OUZVcU1pZTltcjFVbmd3a0p2bi1xOFhKeHQ5SmdRSXdRdHBLMC01REtLMUNlQTZ1N2kzMWljZDlsNHN5TGpnMmZsNFZvNVlrSmd2V1NjdXZQeUVPbFUtQUNfRlNuU05qR2lMenFiRTVrYTJabk5B0gGfAUFVX3lxTE1HTW9zWWVkOHFZQ3ZSbHJNRE9mU1Ric3g1MU9ieWM4QW5TSVpGVWhiU01XUGRtT0YzNS0wRlplSlgtMEJuQW5iNnFheEdPMEhmODNIVmM1TFpOWDNydXdnUTVxZkdjenh4dEdyR2RnOHFEMk5POU1uZ3ZvclRkdXo4Mm0yc01uLTRublhJOWRJdGZMQXpHTVlkeFNtdk56WQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE intercepts drone after US and Iran exchange attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOXRvZHIzWEk1dVV1ZC00WEplbFlScUNqYXBrWmJKcGtFRjZMVWl0X1p0alVuZE9sc1EydFFqbDVlUEVuM3o1dUZldE84N1dfOWZLaFlmX2tqNlU0VEZnVzJ5alE3d0JSVDBFd1ZrUzgyS0JhYjZpM0hlUDU0czRYYXFxR1dyYTY4UTRJZExhaEV2THZQT0VFSV9LamTSAaIBQVVfeXFMTUVtbGUwODRTQ0pzLUh6Vlc1R0Z2eHpVRGpTazBNakdKc3M2SWVhYVdpQ09ONGRNZWNQMFlwLWJZNVVzQVdQRFY2NkRiWDJtWENSMUZHSWZGN0s2c0sxdVNFUEp6cW5KRWNDckdxVV9wZkV0R2hYMTI4NHpSaHp6b0FfRTNpUGtTbjhNUE5oRUQ4UGJXYWdBQnMzTzcxQkdCUjFB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attacks US bases in Jordan after US strikes Larak Island - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORTBBc2EzTGU1VklFeXVRdXFpRG9pdmFuRHFRcnBmS1o4RE56RVFJTExZVVFySV9wSEhEZV9kNXAyb2VmajRDWTZiaEhyZWRLMjFwbGRVVU1VYlI0S3c5WU5mZGhfUmF4UmRLN1Qzdkc1US1UUGQ0S01Jb0hJeV9jMnBtLXAxWXRiZTdnbXBMcVVXMkJjT3RtdTBB0gGfAUFVX3lxTE5TWTRMMk9tZmNrUWl1MTdYUE9Ick5xeEtsMWFkRnNWbEh4eGcxMTBubTJzeUJBa3RacFFsZ2cxN3Y0OWJ4dDh1NlNwczRSaWFoODlTOFl4dnlKOXE1dG96cHlGRHMzVTlSZUJxWlhPSEJCQ3FlYXBjaHJOZW42enVhckhfV2Rkc2NScXVkV0hDNzBsbzlHTWpCeFdOOS1RZw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Can Iran use rockets to mine the Strait of Hormuz, as US claims? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOdVp4TUZwdzl1RkRLWjNXR19ad1FWRWZ6by1YMUxNck1XX3R0MDB5OUc0cDE0SmszaUdRS0VWaDJVaDEzXzlqQzl2WkNoODZJeWRTTXVBM3dmbmZSekFrNTZ4VUZ1X3FHSGV6WW9xaGNTTnViUGxGYWs3dnQ1bHV4U1lfYlptOHIyWERKNE1DS09EaFYwc0tpOUlJUVNzdEZQbXBYUzZn0gGrAUFVX3lxTE9CMkdLYTRQNkJadk55dXBSRnFGLVZDWHNQNm8wcF9mc1FONHZzUnVVbnVwYTRDRnRIejFMUEVKWkQ1SmhwbGptRC1HY3djYW1JQ1VRMTlseTJ4TnJyOVMxOFBFTUJ0VGVBVWdsajRMcXdxUFlDTVl4LTMxNmM5bkhzVzZfdlRpUUZjME96aF9wWUFLcHBFSEFNdnBqVFhaOUJXakx2ZUZVYkpmRQ"
     }
   ]
 }
