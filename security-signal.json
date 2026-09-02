@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-02 12:48 UTC",
+    "updated": "2026-09-02 17:56 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-27",
     "period_end": "2026-09-02",
-    "total_events": 149,
-    "total_risk": 165.49,
-    "normalized_risk_score": 66.2,
+    "total_events": 142,
+    "total_risk": 173.19,
+    "normalized_risk_score": 69.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 48,
-    "security": 3,
-    "political": 9,
-    "other": 89
+    "military": 51,
+    "security": 5,
+    "political": 7,
+    "other": 79
   },
   "source_counts": {
-    "news": 145,
+    "news": 138,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 82.39
+      "risk": 96.89
     },
     {
       "name": "Gaza Strip",
-      "risk": 18.75
+      "risk": 18.45
     },
     {
       "name": "Israel",
-      "risk": 15.05
-    },
-    {
-      "name": "West Bank",
-      "risk": 9.55
+      "risk": 14.45
     },
     {
       "name": "Tehran",
       "risk": 9.3
+    },
+    {
+      "name": "Egypt",
+      "risk": 6.15
     }
   ],
   "top_events": [
@@ -61,6 +61,15 @@
       "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
+      "title": "Wall St set to snap three-day streak of losses despite Middle East clashes - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUmZ3SUhHbXJYY2d1bWZHdjZ4MHIzLWdpTzFRWGdWU0pfZDhpV3ZoWVJnY194WF9PR0UxQjRES2NjOHBIbkpTcW9iY1l0Y05uYS1kd1Fha2lnYXNVS1VyZ0xlWGVPaF9Qamh6R2lLZDF5bDBLUFdaTU1RNmtoMVhhcEFCdWJvZWlxNUpYc2FuSG0zb2hFRW1IUW9OZWVOUFNwbWF3V1ZWS2xoaFQ5ZV9CdFpGVEo"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
       "title": "US military says it completed latest wave of strikes on Iran - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPekNsWEt4cEh2RVhBNk5nQXJSczQ2QjJlU2hONHpGLXRBSVg1bi1wdWljNXZOd0lvS0toX0ZiZmpaNUVpaG9QbmMtTHBkdzRBUXZMVjU0al9iQUFVQWRvZzFTek5MOGhyME9Ea3Y4a0ZiUVNOUXR1VDRZQi1Td09pT1ZpanoxQ1BKVVp2NWc5WlZPT3hVSDJ2aWZZMExHU1J4aUhKSjFEZ3JWdmo3"
@@ -70,9 +79,9 @@
       "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi shipping company Bahri says two sailors killed in incident in Hormuz - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdW5sTXJ3VXZwZE1vZ2RUZ19pNnFoX3ZHc2EyYUI0Y3V0Z09Wc21IMkNNVHlrTXR5eTdOZkNYeGJ3VHhBWlhxeVBjemxGQWZzS0EwN2MxWC1GOWMySnFEM2hkY0V4VVRIcjgxbEdQSHpLcVhIa3Y4QU1Jd3dSWWt3RlE4RnBWRlR6S0c1RWkwVHJ4UlcxWE5oX3hRSVJ3U1RtaHdDeUZaTHBfXzN5OGdfX3dlZGtTYXFySjZ4M1NqRQ"
+      "title": "Trump aides seek 'quiet' in Iran war but say attacks may intensify after November elections - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMDJDS3ZmaHY1S0hTTlJiUUVPQ081YTU5bWV3NmJJLTRTNDdNQUhKNWdFTXd4TzVVRkRiRXd6SV9xZ1hmbHVxMFVGOUhXMkJLTkdaN0VWa3g3aEZ1aWZDbnlNTkRoUk5zY2ltOW9PNVk1SlFJVU1mNzZFSE9GTGpGbmhwdW1sMFNuTFhwcTVmSlFUNUIwM3lOV3ZpQ0NCX3B2TmMwbXZB"
     },
     {
       "score": 3.0,
@@ -88,9 +97,36 @@
       "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
-      "title": "Iran attacks US bases in Middle East after reports US strike killed four at wedding party",
+      "title": "Saudi Arabia says Iran attacked vessel in Hormuz, killing two sailors - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdW5sTXJ3VXZwZE1vZ2RUZ19pNnFoX3ZHc2EyYUI0Y3V0Z09Wc21IMkNNVHlrTXR5eTdOZkNYeGJ3VHhBWlhxeVBjemxGQWZzS0EwN2MxWC1GOWMySnFEM2hkY0V4VVRIcjgxbEdQSHpLcVhIa3Y4QU1Jd3dSWWt3RlE4RnBWRlR6S0c1RWkwVHJ4UlcxWE5oX3hRSVJ3U1RtaHdDeUZaTHBfXzN5OGdfX3dlZGtTYXFySjZ4M1NqRQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil rises, as US-Iran strikes risk limiting already impaired supplies - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPLTRkVWlBVVJQeFBDbXB5UzFkd05qc05KVXhja1h2cC1aMUZxOTRGQTY4a0ZHeWpiSzl0UE50MjRTTjFVREhMUGJhd29Ka21tTTlISE9yd3pSSHFESEtVOTBzb2c0dEVFakx5eEJLamxsMUJxZ0NOSTBpNll2a2Z5eVBncmR6S3MtSW1ITE9hN01KbUljNlcwNlB3aw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cx2zxgg4mx9o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -100,42 +136,6 @@
       "title": "What we know about reported strike on Iran wedding celebrations",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/videos/c0lr1krdxxwo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bus crash on Egypt's Red Sea coast kills 22",
-      "location": "Jordan",
-      "url": "https://www.bbc.co.uk/news/articles/cn8mr1myy2ko?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "More than 900 killed in Gaza this year despite ceasefire, Hamas-run health ministry says",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/c7708dy33pdo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran claims attacks on Bahrain, Jordan, Iraq after US strikes kill 11 - Al Jazeera",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQY1VIcWhXU2JEN0F2MFR6UHNxbHQ4WG02cWVRVzVEaW5lS3lveTJaMUc4c2RIWEhOeEl3QUF3NnUtQzN2Q2VUQTczcmdGNmU5Y3I1XzJTSTRwU1RBQTFvSDBfSjlZMHRxMlM5TDhlcE1XNVlUclB5VUdNQlZmYWExbWlaUEZmWkFrQ2tyTy1pY9IBlAFBVV95cUxNbVdoa0dFUldPbnNjTlNaZUJGVHprRGpUOWNieWtoQ1QtQTBoZktQUnlMbkFpT2sycnAyV2VYYVo0dE51Q3VVWUxsUU5sRnhCcHIxVnB1US1haS1Xck9LVUZfV2JqM3NfWVVpa0hGdXh6OFNrd1J5b2hsWjJZTU54cDBlLTBnMXZjYURyeVltVGJINVB1"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says US bombed a wedding party in Sirik, killing five people - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNRC13M2ZtNXhZalFmdmdjMmU3WkpWMlc2Wmk2c1h6RFNVYlhVVzk1RkkyX3FDVzNla2FUdnJkejFrdGFUTE10UmljYmZySnM5eVpZUmlNMHA0akVUTkxoWnRMaXVZXzVnNThoVFo2WWtDWTNzVk9pM2pWczFwWVlmLXBDdExybEtHQlZuN3VQcHR2b0pMY0F4UFpRdzhsWHEzUmZkc9IBqgFBVV95cUxOaVR4ZkpvWDdySnFrZUpIdDhORFllb2Q0YkVPQ3h5a0tIZTVvdVJackZsa2J4ZXVwR3NYTVFNWUNyU214aF9MYmRTbnQxSzNzNUhsVGlUWk1qbXZYQnZWYkgtN0VtVHVvNXBrWWdpYm91bkZKOG9DYjFZckp2T1NkZjZ2bl9SQnAzdTlGRG5PdFNTMnlUdDM4TWJFMDlhMW80TE9BVGdrYUl0Zw"
     }
   ]
 }
