@@ -1,54 +1,72 @@
 {
   "meta": {
-    "updated": "2026-09-01 21:04 UTC",
+    "updated": "2026-09-02 00:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-08-26",
-    "period_end": "2026-09-01",
-    "total_events": 134,
-    "total_risk": 143.66,
-    "normalized_risk_score": 57.5,
+    "period_start": "2026-08-27",
+    "period_end": "2026-09-02",
+    "total_events": 132,
+    "total_risk": 126.29,
+    "normalized_risk_score": 50.5,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 39,
+    "military": 38,
     "security": 3,
-    "political": 8,
+    "political": 7,
     "other": 84
   },
   "source_counts": {
-    "news": 130,
+    "news": 128,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 73.21
+      "risk": 63.54
     },
     {
       "name": "Gaza Strip",
-      "risk": 18.25
+      "risk": 15.7
     },
     {
       "name": "Israel",
-      "risk": 17.95
+      "risk": 14.1
     },
     {
       "name": "West Bank",
-      "risk": 9.6
+      "risk": 8.3
     },
     {
-      "name": "Jerusalem",
-      "risk": 7.25
+      "name": "Tehran",
+      "risk": 6.3
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran retaliates after US strikes kills four at wedding party, state media reports",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "US launches new strikes on Iran as Tehran hits back in widening conflict - Reuters",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOYWVYQlZISm1jT2ZUaUZ4bDJ2ZE10ZEpaeXo5MnBPQTJYS0ZJNDFjNmdBNGlPQjdyRTIxMVJWeDYzTlFEZi1wVm55eUJTUjkxSjB2WnVVU3NLaEtjTWlMTFFXZlZuTDYyNzREc3hxWnpxRzdUV2MtRUdhei12TE9TQ0Rrc1hTMEN4alFnS1VFcVRzSEM1dmVxR2FYbzZXb1B2a254Y2FlVXlNMFBhQVlFRTAyNzdoaE1FN2Q5dFF0LS1PZDR3bm1PS2JR"
+    },
+    {
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
@@ -57,16 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPS1dvY08wWUVmMGNwR3hXbVR4anpDeXoxcndHakhnUzRqNk9Ub3ZqcEhsUUdHTTM3dGxuODQ4bXpNRGkxQjhyTmR5QkVFR2FKVTVaOEhwUi1PTTVSal9xZjd2ME4yUjhleFFSMUFHc1RmNVBUSjBtNUhpRndqb25sVi1HaDBmYmpyR0xFY1lKTVgyd2pSdlBJMEYtb1lMTTVkU2Vya1FjSjR3ZjZnQmlEbnlHeW1ZSmc5eURPTHFNSndsVEk"
     },
     {
-      "score": 3.0,
-      "date": "2026-09-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "US launches new barrage of strikes on Iran around Strait of Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOYWVYQlZISm1jT2ZUaUZ4bDJ2ZE10ZEpaeXo5MnBPQTJYS0ZJNDFjNmdBNGlPQjdyRTIxMVJWeDYzTlFEZi1wVm55eUJTUjkxSjB2WnVVU3NLaEtjTWlMTFFXZlZuTDYyNzREc3hxWnpxRzdUV2MtRUdhei12TE9TQ0Rrc1hTMEN4alFnS1VFcVRzSEM1dmVxR2FYbzZXb1B2a254Y2FlVXlNMFBhQVlFRTAyNzdoaE1FN2Q5dFF0LS1PZDR3bm1PS2JR"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
@@ -75,16 +84,16 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOY0NqcjhHVWZGRzVUcFlHeFhscDFUeEI0WldWckpua1luZUJ3ZHRGMV9JcWlYX0RsNnMtWkJwNmp1Y0dWTWk4ZFhXZExMbTBGLU1nd1h5dFZSNzgxVXhEN3BRb0xfMXFWLXczcVpFeXlhTGdGcG1fRjNGMEJzSnAwaWdHZ1NQRXA4aW51RmFJdEk0aHI0bTl1eHRkdm1GMS14WmxvOWd2ZU5lNHBVWTFScVJTVFBSTTIyMmtJ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "US launches more strikes on Iran as state media reports explosions",
+      "title": "Global bonds extend selloff, oil prices surge on renewed US-Iran strikes - Reuters",
       "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss"
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUzRjcDczTGxqaGRleWZNeUwtZnpOTjRjNWhmSEt2YkQtY1ZwaDdhZ2RxX0hCWEZZdXpPSmlWZW45ZVBHM2lsMU9XalYtNEl1cGxpWjVhVTR2cDU1ajlNMzRJb3FZaGZ4akprMWhPNmd4cmJFOFI1Q29iWlI0ZnFXNXljcw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
@@ -93,49 +102,40 @@
       "url": "https://www.bbc.co.uk/news/articles/c1wxex4vg35o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "Iran promises to respond to new wave of US strikes despite Trump’s threats - aljazeera.com",
+      "title": "Iran says it responded with missiles to US attack despite Trump’s threats - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQY1VIcWhXU2JEN0F2MFR6UHNxbHQ4WG02cWVRVzVEaW5lS3lveTJaMUc4c2RIWEhOeEl3QUF3NnUtQzN2Q2VUQTczcmdGNmU5Y3I1XzJTSTRwU1RBQTFvSDBfSjlZMHRxMlM5TDhlcE1XNVlUclB5VUdNQlZmYWExbWlaUEZmWkFrQ2tyTy1pY9IBlAFBVV95cUxNbVdoa0dFUldPbnNjTlNaZUJGVHprRGpUOWNieWtoQ1QtQTBoZktQUnlMbkFpT2sycnAyV2VYYVo0dE51Q3VVWUxsUU5sRnhCcHIxVnB1US1haS1Xck9LVUZfV2JqM3NfWVVpa0hGdXh6OFNrd1J5b2hsWjJZTU54cDBlLTBnMXZjYURyeVltVGJINVB1"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - aljazeera.com",
+      "title": "Oil prices jump as US, Iranian attacks stoke fears of escalation - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTzBVakF1VXpKSWdkbXZsNXJOYS0wRnV2bWstenBpNnhlNXBzTVVxVEFPUW5HeS14Rjh6UnM3b0RpWG5NWjdWdW5NdWNHdlJLV3psWHlhOVd2Y1FySF9MRlVmRGZab3RTcTd5Rmt2QkFONEVFWmJHVmZzMGxid2g0MjR0UzJXdmRZcVdEaGhlT1Z5RTAyT1VFVndXWU52ZGNlRENGaHNBVXF1YzTSAbABQVVfeXFMT2dkcDBqS3R3WmtGZmhqcl9RTzNSc0xObFNYam1fQTllaFdkamxnZnZ2OW11SXc3d1hNWER5WGxQclV4aDhYbnZxNE5tRGNWQllxQ3F0eXViSmZoTFNwamJTLXQ4cUxXS0tldkc1ODE0NGZMXzRFbFBfYkhSdFMtMnZfVkIySkRVMlBtLUxhaEpMZ2NxZUFRUEtMTFRlWDFjY25FaWtqMDNVT25hSWpJZ0E"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "SCO slams attacks, sanctions on Iran: Key takeaways from Bishkek summit - aljazeera.com",
+      "title": "SCO slams attacks, sanctions on Iran: Key takeaways from Bishkek summit - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMnlmRVNqUm9ZWVM2TzI2R0RqdEVLS2pZNGVXMkhsdjlmRkNDUjZMQlZKOFpVWTM5MFQxeHZtWnczaWZPdDhWZXlnUzhvWlZnb1lqWjVBNlBXV0NtNVdob0hiLUoxbWtDRm55VjA1UGwtMFB0elVzTG9lZUVxd1JLZllpRE51bTc4NlNJLVpVaU1sZXdZeUxVVWJYM3NIYlRxemZIejhENUNOU3c1SnfSAbMBQVVfeXFMT0FDQWhpa0FGT0tGT3RQRmU4QjNVcWhwOXZDU20zNDlpb3VSTExCU1VzNi1oQkZfZktLY3p4ZzdVakhWdTJUQjh1VGVMdUtLWVlhSlhHN2Yya0ZzZ1JnOEI0WU5jYkpZalNXaXFmTUY2SFVkMDJNdklMNjFDTmV1SWZiWlBMemVnYmNDTXRBU3FfRjVuS0o5TlBsN295VnlPaHdabGkxMFU3UTdrZFFOanFiSjQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-01",
       "category": "military",
       "source_type": "news",
-      "title": "Israel’s multiple wars see finance, defence ministries clash over spending - aljazeera.com",
+      "title": "Israel’s multiple wars see finance, defence ministries clash over spending - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeGtjRWFvSWtoU3djYXZhWnptbUpEc2NRWlRVZUNmNmIwMXhydFFFTV9MYWdGWXE3X1didTZVaXl4QVpjSkJCczlaUktRUjZmakdJLVVvekFuSUR6WUkwc2QxVXh3aThoMV9taGVaSmpXN2g2VkZUN0RkOHlxUjdnaU9ZenBhMV9ocnhtQ1JyYUs2Y182cUthTmVWQjNycWdzUmNxblVoal9CZlpqVmljT2lB0gG3AUFVX3lxTE1mM1hsQlNYV251N1IwMUdsWXZQbFRlMHN3REVzdElRcXRDU2NyUDRreUVMd3FzRzIzMEt6aGFjTkZFTE5iNlVZSm9rWU9IaHpnMVZvdmI1TGtsYVVScmxsTzhId0gwR0xzN3d2Q1pfaWJwN1lnX1FIWVpBOEJNbFVGeEJ0empLQ25hcmlNNTJRSkRwWmhBdVdmSUVHVUdRWVZaN1VJOWZfQjEtaGNQODJ2WHJLUi00VQ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jerusalem schools strike after Israel enforces curriculum and bans teachers - aljazeera.com",
-      "location": "Jerusalem",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUnRiMzVOX0ZmLUZNMWVrS2ZjUEczWWxvZWhHQ3c3R1NKMGdZa0VfUVM5cWNRMkhFbE5SVTBFSXdBNDVlbW55MVMtdEZpQ1B6ZzRBSGpGV0pFbEppSlY3N1dUX3JYdDR6Q29mYUlhZS10NEhrSUZDZnVFVUdSTEZYbEJHVFFFNU5EQ1ZackxCaHMwZW1OcTU1VnFLRm5FVnpNaXR1ZExrTTRYTWphVTRCTTlvT2Q5QdIBuwFBVV95cUxNQnJZTEk4T3VkYzN5NkVuSHZzTEpVdVk3bmNtcU5sOGs0TEpzQlNWV2Vzb04wNTdWYzhFTW53eElQOEVuWHZtbTFiZ25veFhVLUszcHlBVEsyallRQ0hxWlNsZ0psck1lOHFwMGlsU1JlRDgzdXVwdXZEa3NsME9ETE5pTEp2WTdJQTJsSjM1c3hpdi1TbjRRRjMyTlpMcy1nNFpDZlZFOGRERkJvV21fY3ZIQl9oZ2tlWi1r"
     }
   ]
 }
