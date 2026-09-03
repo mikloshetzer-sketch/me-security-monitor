@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T14:35:52Z",
+  "generated_at": "2026-09-03T18:05:38Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 122,
-    "feed_event_records": 122,
-    "normalized_events": 1122,
+    "events_endpoint_records": 126,
+    "feed_event_records": 126,
+    "normalized_events": 1126,
     "map_visualizable_events": 224,
-    "non_mappable_events": 898,
-    "developments": 4
+    "non_mappable_events": 902,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1122,
+      "total_events": 1126,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-03T13:53:17Z",
+      "latest_event_date": "2026-09-03T17:44:01Z",
       "geocoded_events": 224,
-      "geocoded_share": 20.0,
+      "geocoded_share": 19.9,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 107,
-        "previous": 23,
-        "delta": 84,
-        "percent_change": 365.2,
+        "current": 111,
+        "previous": 21,
+        "delta": 90,
+        "percent_change": 428.6,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 306,
-        "previous": 785,
-        "delta": -479,
-        "percent_change": -61.0,
+        "current": 310,
+        "previous": 791,
+        "delta": -481,
+        "percent_change": -60.8,
         "direction": "decrease"
       }
     },
@@ -806,30 +806,30 @@
       },
       {
         "date": "2026-09-03",
-        "count": 8
+        "count": 12
       }
     ],
     "category_counts": {
       "infrastructure": 282,
-      "missile": 246,
-      "strike": 206,
-      "drone": 143,
+      "missile": 247,
+      "strike": 207,
+      "drone": 144,
       "airstrike": 106,
       "explosion": 52,
       "movement": 43,
-      "ground": 20,
+      "ground": 21,
       "defense": 10,
       "alert": 10,
       "political": 4
     },
     "severity_counts": {
       "medium": 579,
-      "high": 377,
+      "high": 381,
       "low": 164,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 645,
+      "unknown": 649,
       "iran": 330,
       "israel": 117,
       "usa": 30
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 298
+        "count": 302
       },
       {
         "name": "Iran",
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 298
+        "count": 302
       },
       {
         "name": "Jordan",
@@ -944,34 +944,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10429,
+    "totalCount": 10433,
     "spotlight": {
       "event": {
-        "id": "36imtvoernc00",
-        "timestamp": "2026-09-03T13:53:17+00:00",
-        "location": "IRN",
-        "origin": "USA",
+        "id": "6434yeoei4g0",
+        "timestamp": "2026-09-03T17:44:01+00:00",
+        "location": "YEM",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "high",
-        "description": "10 Iranian Air Force and Navy personnel killed in U.S. strikes on Iran two days ago, IRGC commander vows retaliation",
-        "descriptionHe": "10 אנשי כוחות אירנים (חיל אוויר וחיל הים) נהרגו בתקיפות אמריקאיות על איראן, מפקד משמרות המהפכה מבטיח נקמה",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/129655"
+        "description": "Ansarullah fires 14 ballistic missiles at PLC positions in al-Khawkhah and Mocha; 2 missiles failed/malfunctioned",
+        "descriptionHe": "אנסאר אללה שיגרה 14 טילים בליסטיים לעבר עמדות המועצה הנשיאותית בחוחא ובמוכה; 2 טילים נכשלו",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 14
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/83249"
       },
-      "headline": "IRGC Commander Vows Retaliation After U.S. Strikes Kill Ten",
-      "headlineHe": "מפקד תומ\"ת מאיים על תגובה לאחר שהנחתות אמריקניות הרגו עשרה",
-      "summary": "Iran's Islamic Revolutionary Guard Corps leadership is escalating rhetoric following reported U.S. military strikes that resulted in multiple casualties among Iranian military personnel.",
-      "summaryHe": "מנהיגות הכוחות הקדושים של איראן מגביר את הטון לאחר הודעות על מתקפות צבא אמריקני שגרמו לאבדות בקרב הצבא האיראני.",
-      "pickedAt": "2026-09-03T14:00:51.369Z",
-      "state": "SPOTLIGHT"
+      "headline": "Houthis Fire 14 Ballistic Missiles at Yemen Coalition Positions",
+      "headlineHe": "החות'ים ירו 14 טילים בליסטיים לעבר עמדות קבוצת הקואליציה בתימן",
+      "summary": "Ansarullah launched a significant salvo targeting PLC-held positions in southwestern Yemen's key port areas, though two missiles malfunctioned during the attack.",
+      "summaryHe": "אנסארולה ירתה מטח משמעותי לעבר עמדות בשליטת PLC באזורי הנמלים החשובים בדרום-מערב תימן, אך שני טילים התקלקלו במהלך ההתקפה.",
+      "pickedAt": "2026-09-03T17:45:51.199Z",
+      "state": "BREAKING"
     },
-    "lastUpdated": "2026-09-03T14:33:03.458Z",
+    "lastUpdated": "2026-09-03T18:03:03.431Z",
     "stale": false,
-    "viewerCount": 7,
+    "viewerCount": 15,
     "ceasefire": false
   },
   "summary": {
@@ -1512,94 +1518,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 94,
+      "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-09-03T14:30:42.846Z",
+      "lastUpdate": "2026-09-03T18:00:42.929Z",
       "internetHistory": [
-        {
-          "t": "2026-09-02T14:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-02T14:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-02T14:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-02T15:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-02T15:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T15:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-02T15:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T15:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-02T15:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T16:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T16:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T16:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T16:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T16:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T16:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T17:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T17:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T17:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T17:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T17:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T17:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-09-02T18:00:00.000Z",
           "v": 93
@@ -2087,22 +2009,106 @@
         {
           "t": "2026-09-03T14:10:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-09-03T14:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T14:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T14:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T14:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-03T15:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T15:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T15:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T15:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T15:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T15:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T16:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T16:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T16:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T16:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T16:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T16:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T17:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-03T17:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T17:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T17:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T17:40:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-03T14:30:42.846Z"
+    "lastUpdated": "2026-09-03T18:00:42.929Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7a4c2e91",
+      "id": "iranstrike-a7f2c1e3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-03T05:30:01Z",
       "title": "IranStrike event",
-      "description": "Iran launches coordinated strikes on U.S./allied bases across Gulf; Kuwait, UAE, Iraq, Bahrain targeted",
+      "description": "Iran conducts widespread missile/drone strikes on U.S. and allied bases across region",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2110,58 +2116,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches coordinated strikes on u.s./allied bases across gulf;",
-      "location": "Iraq",
-      "country": "Iraq",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "7a4c2e91",
-        "text": "Iran launches coordinated strikes on U.S./allied bases across Gulf; Kuwait, UAE, Iraq, Bahrain targeted",
-        "textHe": "איראן משיקה תקיפות מתואמות על בסיסים אמריקניים בגולף; קווית, איחוד האמירויות, עיראק ובחריין במטרה",
-        "severity": "critical",
-        "timestamp": "2026-09-03T05:30:01+00:00",
-        "entityIds": [
-          "IRN",
-          "USA",
-          "KWT",
-          "ARE",
-          "IRQ"
-        ],
-        "eventIds": [
-          "2q9ad0gob8c00",
-          "3udt0f8zk3w00",
-          "2nss5r0soqo00",
-          "46aiet9bi3y0",
-          "2mijbobq92800"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-5b3d1c7e",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-03T13:53:17Z",
-      "title": "IranStrike event",
-      "description": "U.S. airstrikes kill 28+ Iranian personnel; IRGC vows large-scale retaliation for strikes",
-      "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc vows large-scale retaliation for strikes תקיפות אוויריות אמריקניות הרגו 28+ כוחות איראניים",
+      "attacker_evidence": "iran conducts widespread missile/drone strikes on u.s.",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2174,33 +2129,130 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5b3d1c7e",
-        "text": "U.S. airstrikes kill 28+ Iranian personnel; IRGC vows large-scale retaliation for strikes",
-        "textHe": "תקיפות אוויריות אמריקניות הרגו 28+ כוחות איראניים; הפרس הבטיח תגמול בהיקף גדול",
+        "id": "a7f2c1e3",
+        "text": "Iran conducts widespread missile/drone strikes on U.S. and allied bases across region",
+        "textHe": "איראן ערכה התקפות טילים וללא-טייס נרחבות על בסיסים אמריקניים וקואליציוניים",
+        "severity": "critical",
+        "timestamp": "2026-09-03T05:30:01+00:00",
+        "entityIds": [
+          "IRN",
+          "USA",
+          "KWT",
+          "ARE",
+          "IRQ",
+          "BHR"
+        ],
+        "eventIds": [
+          "2q9ad0gob8c00",
+          "3udt0f8zk3w00",
+          "2nss5r0soqo00",
+          "2mijbobq92800",
+          "46aiet9bi3y0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-b4e9d2f1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-03T13:53:17Z",
+      "title": "IranStrike event",
+      "description": "Iran sustains 10+ military personnel casualties from U.S. strikes; IRGC vows retaliation",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b4e9d2f1",
+        "text": "Iran sustains 10+ military personnel casualties from U.S. strikes; IRGC vows retaliation",
+        "textHe": "איראן ספגה הפסדים של למעלה מ-10 אנשי צבא בהתקפות אמריקניות; הסכנ\"א מובטח התגמול",
         "severity": "high",
         "timestamp": "2026-09-03T13:53:17+00:00",
         "entityIds": [
-          "USA",
-          "IRN"
+          "IRN",
+          "USA"
         ],
         "eventIds": [
           "36imtvoernc00",
           "1vdjuln4ops00",
-          "2dn8rffd678k",
-          "7s707k7x0n80"
+          "2dn8rffd678k"
         ],
-        "sourceCount": 3
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-4c6a9f2d",
+      "id": "iranstrike-c6a3b5d8",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-03T17:44:01Z",
+      "title": "IranStrike event",
+      "description": "Large-scale Yemen ground offensive escalates; Ansarullah fires 14 missiles at PLC targets",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c6a3b5d8",
+        "text": "Large-scale Yemen ground offensive escalates; Ansarullah fires 14 missiles at PLC targets",
+        "textHe": "הסלמה בקנה-מידה גדול כוחות בתימן; אנצאר-אללה כיוונה 14 טילים למטרות PLC",
+        "severity": "high",
+        "timestamp": "2026-09-03T17:44:01+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "6434yeoei4g0",
+          "2fp00rd9wow00",
+          "38q8p9jccw400",
+          "1cet0u9dvdwg0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d7c1e4f9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-03T10:45:24Z",
       "title": "IranStrike event",
-      "description": "Iranian missiles strike Prince Hassan Air Base in Jordan; interceptions reported amid escalation",
+      "description": "Iranian missiles strike Jordan's Prince Hassan Air Base; runways reportedly damaged",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2208,7 +2260,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian missiles strike prince hassan air base in jordan;",
+      "attacker_evidence": "iranian missiles strike jordan's prince hassan air base;",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2221,9 +2273,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4c6a9f2d",
-        "text": "Iranian missiles strike Prince Hassan Air Base in Jordan; interceptions reported amid escalation",
-        "textHe": "טילים איראניים תקפו בסיס אויר בירדן; מעוט התנגדות הדווח למטוסים והודעות על הסלמה",
+        "id": "d7c1e4f9",
+        "text": "Iranian missiles strike Jordan's Prince Hassan Air Base; runways reportedly damaged",
+        "textHe": "טילים איראניים פגעו בבסיס הנסיכה חסן בירדן; דוחות על נזק למסלולי הנחיתה",
         "severity": "high",
         "timestamp": "2026-09-03T10:45:24+00:00",
         "entityIds": [
@@ -2237,21 +2289,21 @@
       }
     },
     {
-      "id": "iranstrike-6e2b5a3f",
+      "id": "iranstrike-e8f2d6a4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-03T08:30:20Z",
       "title": "IranStrike event",
-      "description": "Iran threatens massive retaliation if Israel launches offensive on southern Lebanon positions",
+      "description": "Iran warns U.S. of retaliation if Israel attacks Iranian forces at Ali al-Taher ridge, Lebanon",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
       "attacker_evidence": "",
       "location": "Lebanon",
       "country": "Lebanon",
@@ -2265,13 +2317,14 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6e2b5a3f",
-        "text": "Iran threatens massive retaliation if Israel launches offensive on southern Lebanon positions",
-        "textHe": "איראן מאיימת על תגמול ענק אם ישראל תשיק התקפה בדרום לבנון",
+        "id": "e8f2d6a4",
+        "text": "Iran warns U.S. of retaliation if Israel attacks Iranian forces at Ali al-Taher ridge, Lebanon",
+        "textHe": "איראן הזהירה את ארה\"ב מהתגמול אם ישראל תתקוף כוחות איראניים בגבעת עלי אל-תאהר",
         "severity": "high",
         "timestamp": "2026-09-03T08:30:20+00:00",
         "entityIds": [
           "IRN",
+          "USA",
           "ISR",
           "LBN"
         ],
@@ -2283,6 +2336,192 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-6434yeoei4g0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83249",
+      "date": "2026-09-03T17:44:01Z",
+      "title": "IranStrike event",
+      "description": "Ansarullah fires 14 ballistic missiles at PLC positions in al-Khawkhah and Mocha; 2 missiles failed/malfunctioned",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "6434yeoei4g0",
+        "timestamp": "2026-09-03T17:44:01+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Ansarullah fires 14 ballistic missiles at PLC positions in al-Khawkhah and Mocha; 2 missiles failed/malfunctioned",
+        "descriptionHe": "אנסאר אללה שיגרה 14 טילים בליסטיים לעבר עמדות המועצה הנשיאותית בחוחא ובמוכה; 2 טילים נכשלו",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 14
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/83249"
+      }
+    },
+    {
+      "id": "iranstrike-38q8p9jccw400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83249",
+      "date": "2026-09-03T17:44:01Z",
+      "title": "IranStrike event",
+      "description": "Full-scale ground campaign escalates along southern Hays and western Ta'izz; both sides reinforce positions and attempt to advance around Shar'ab heights amid intense clashes",
+      "category": "ground",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "38q8p9jccw400",
+        "timestamp": "2026-09-03T17:44:01+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "high",
+        "description": "Full-scale ground campaign escalates along southern Hays and western Ta'izz; both sides reinforce positions and attempt to advance around Shar'ab heights amid intense clashes",
+        "descriptionHe": "קמפיין קרקעי בהיקף מלא מתגבר לאורך דרום חיס ומערב תעיז; שני הצדדים מחזקים עמדות ומנסים להתקדם סביב גבעות שרעב",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83249"
+      }
+    },
+    {
+      "id": "iranstrike-2fp00rd9wow00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83249",
+      "date": "2026-09-03T17:44:01Z",
+      "title": "IranStrike event",
+      "description": "PLC launches large-scale drone attacks on Ansarullah positions along al-Barah axis, Hays direction; Ansarullah retaliates with drone strikes, 3 intercepted",
+      "category": "drone",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2fp00rd9wow00",
+        "timestamp": "2026-09-03T17:44:01+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "PLC launches large-scale drone attacks on Ansarullah positions along al-Barah axis, Hays direction; Ansarullah retaliates with drone strikes, 3 intercepted",
+        "descriptionHe": "המועצה הנשיאותית משיקה התקפות מזל\"ט בהיקף גדול על עמדות אנסאר אללה; אנסאר אללה משיקה התקפת נגד, 3 מזל\"טים יורטו",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83249"
+      }
+    },
+    {
+      "id": "iranstrike-1cet0u9dvdwg0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83249",
+      "date": "2026-09-03T17:44:01Z",
+      "title": "IranStrike event",
+      "description": "Tihamah Brigades launch heavy artillery attacks on Ansarullah positions along Hays direction",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1cet0u9dvdwg0",
+        "timestamp": "2026-09-03T17:44:01+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Tihamah Brigades launch heavy artillery attacks on Ansarullah positions along Hays direction",
+        "descriptionHe": "חטיבות תיהמה משיקות התקפות ארטילריה כבדה על עמדות אנסאר אללה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83249"
+      }
+    },
     {
       "id": "iranstrike-36imtvoernc00",
       "source": "IranStrike",
