@@ -1938,6 +1938,251 @@
     }
   </style>
 
+
+  <style id="geo-risk-module-style">
+    /* 7-day geographic risk concentration — ME Security Monitor */
+    .geo-risk-panel {
+      overflow:hidden;
+      border-left:7px solid #2879b8;
+      background:
+        radial-gradient(circle at 96% 0%,rgba(40,121,184,.10),transparent 30%),
+        #fff;
+    }
+
+    .geo-risk-head {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      padding-bottom:13px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .geo-risk-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      min-height:30px;
+      padding:6px 10px;
+      border:1px solid rgba(40,121,184,.22);
+      border-radius:999px;
+      background:rgba(40,121,184,.08);
+      color:#17608f;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .geo-risk-badge::before {
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#2879b8;
+      box-shadow:0 0 0 4px rgba(40,121,184,.12);
+    }
+
+    .geo-risk-kpis {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:0;
+      margin:15px 0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:15px;
+      background:#f8fafc;
+    }
+
+    .geo-risk-kpi {
+      min-width:0;
+      padding:14px 12px;
+      border-right:1px solid var(--border);
+      text-align:center;
+    }
+
+    .geo-risk-kpi:last-child { border-right:0; }
+
+    .geo-risk-kpi strong {
+      display:block;
+      color:#16466a;
+      font-size:24px;
+      font-weight:950;
+      line-height:1.05;
+      overflow-wrap:anywhere;
+    }
+
+    .geo-risk-kpi span {
+      display:block;
+      margin-top:6px;
+      color:#65798b;
+      font-size:9px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .geo-risk-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .geo-risk-card {
+      min-width:0;
+      padding:16px;
+      border:1px solid #d8e3ea;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .geo-risk-card h3 {
+      margin:0;
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:17px;
+    }
+
+    .geo-risk-card-note {
+      margin:4px 0 14px;
+      color:#708294;
+      font-size:10px;
+      line-height:1.45;
+    }
+
+    .geo-risk-bars { display:grid; gap:10px; }
+
+    .geo-risk-row {
+      padding:10px 11px;
+      border:1px solid #dbe4eb;
+      border-radius:11px;
+      background:#f8fafc;
+    }
+
+    .geo-risk-row-head {
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:7px;
+    }
+
+    .geo-risk-rank-name {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+      color:#173850;
+      font-size:11px;
+      font-weight:850;
+    }
+
+    .geo-risk-rank-number {
+      display:grid;
+      place-items:center;
+      width:23px;
+      height:23px;
+      flex:0 0 auto;
+      border-radius:50%;
+      background:#eaf2f7;
+      color:#2879b8;
+      font-size:9px;
+      font-weight:950;
+    }
+
+    .geo-risk-value {
+      color:#16466a;
+      font-size:13px;
+      font-weight:950;
+      white-space:nowrap;
+    }
+
+    .geo-risk-track {
+      height:8px;
+      overflow:hidden;
+      border-radius:999px;
+      background:#e4edf3;
+    }
+
+    .geo-risk-track span {
+      display:block;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#078a80,#2879b8);
+    }
+
+    .geo-risk-insight {
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      padding:18px;
+      border:1px solid #d6e3eb;
+      border-top:5px solid #078a80;
+      border-radius:14px;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(7,138,128,.09),transparent 36%),
+        #f8fafc;
+    }
+
+    .geo-risk-insight-label {
+      color:#078a80;
+      font-size:9px;
+      font-weight:950;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+
+    .geo-risk-insight strong {
+      display:block;
+      margin-top:8px;
+      color:#173850;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:23px;
+      line-height:1.12;
+    }
+
+    .geo-risk-insight p {
+      margin:10px 0 0;
+      color:#536b7e;
+      font-size:11px;
+      line-height:1.6;
+    }
+
+    .geo-risk-method {
+      margin-top:auto;
+      padding-top:14px;
+      color:#708294;
+      font-size:9px;
+      line-height:1.5;
+    }
+
+    .geo-risk-method b { color:#40586c; }
+
+    .geo-risk-empty {
+      padding:18px;
+      border:1px dashed var(--border-strong);
+      border-radius:11px;
+      background:#f8fafc;
+      color:var(--muted);
+      font-size:11px;
+      text-align:center;
+    }
+
+    @media(max-width:1050px){
+      .geo-risk-grid{grid-template-columns:1fr;}
+    }
+
+    @media(max-width:760px){
+      .geo-risk-head{flex-direction:column;}
+      .geo-risk-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .geo-risk-kpi{border-bottom:1px solid var(--border);}
+      .geo-risk-kpi:nth-child(2n){border-right:0;}
+      .geo-risk-kpi:nth-last-child(-n+2){border-bottom:0;}
+    }
+  </style>
+
 </head>
 
 <body>
@@ -2313,6 +2558,53 @@
           <div id="developmentsPanel" class="development-list"></div>
         </section>
       </div>
+
+      <section id="geoRiskSection" class="panel geo-risk-panel" hidden>
+        <div class="geo-risk-head">
+          <div>
+            <div class="eyebrow">7-day geographic risk concentration</div>
+            <h2 style="margin-top:5px;">Földrajzi kockázati koncentráció</h2>
+            <div id="geoRiskPeriod" class="panel-note" style="margin-top:4px;text-align:left;">
+              A ME Security Monitor legutóbbi 7 napos összesített helyszíni kockázati képe
+            </div>
+          </div>
+          <div class="geo-risk-badge">ME Security Monitor signal</div>
+        </div>
+
+        <div id="geoRiskStatus" class="geo-risk-empty" style="margin-top:15px;">
+          A 7 napos földrajzi kockázati jelzés betöltése…
+        </div>
+
+        <div id="geoRiskContent" hidden>
+          <div class="geo-risk-kpis">
+            <div class="geo-risk-kpi"><strong id="geoRiskScore">—</strong><span>Normalizált risk score</span></div>
+            <div class="geo-risk-kpi"><strong id="geoRiskLevel">—</strong><span>Kockázati szint</span></div>
+            <div class="geo-risk-kpi"><strong id="geoRiskEvents">—</strong><span>7 napos eseményszám</span></div>
+            <div class="geo-risk-kpi"><strong id="geoRiskConfidence">—</strong><span>Konfidencia</span></div>
+          </div>
+
+          <div class="geo-risk-grid">
+            <div class="geo-risk-card">
+              <h3>Top locations / risk</h3>
+              <div class="geo-risk-card-note">
+                Az egyes helyszínekhez kapcsolódó események aggregált kockázati értéke. A sávhossz a legmagasabb értékhez viszonyított arányt mutatja.
+              </div>
+              <div id="geoRiskBars" class="geo-risk-bars"></div>
+            </div>
+
+            <div class="geo-risk-insight">
+              <div class="geo-risk-insight-label">Analytical signal</div>
+              <strong id="geoRiskLead">—</strong>
+              <p id="geoRiskInsightText">—</p>
+              <div class="geo-risk-method">
+                <b>Módszertan:</b> events-based OSINT signal; az érték nem eseményszám, hanem a helyszínhez kapcsolt események aggregált kockázati pontszáma.
+                Forrás: <b>security-signal.json</b>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 
@@ -4036,10 +4328,92 @@
     }
 
 
+    const GEO_RISK_URL = "security-signal.json";
+
+    function geoRiskFormat(value) {
+      const n = Number(value);
+      return Number.isFinite(n)
+        ? new Intl.NumberFormat("hu-HU", {maximumFractionDigits:2}).format(n)
+        : "—";
+    }
+
+    function geoRiskDate(value) {
+      if (!value) return "—";
+      const d = new Date(`${value}T00:00:00Z`);
+      if (Number.isNaN(d.getTime())) return String(value);
+      return new Intl.DateTimeFormat("hu-HU", {year:"numeric",month:"short",day:"2-digit",timeZone:"UTC"}).format(d);
+    }
+
+    function renderGeoRiskSignal(data) {
+      const summary = data?.summary || {};
+      const locations = Array.isArray(data?.top_locations) ? data.top_locations : [];
+      if (!locations.length) throw new Error("Nincs top_locations adat.");
+
+      const maxRisk = Math.max(...locations.map(x => Number(x?.risk) || 0), 1);
+      const top = locations[0] || {};
+      const second = locations[1] || {};
+      const topRisk = Number(top.risk) || 0;
+      const secondRisk = Number(second.risk) || 0;
+      const multiple = secondRisk > 0 ? topRisk / secondRisk : null;
+
+      $("geoRiskScore").textContent = geoRiskFormat(summary.normalized_risk_score);
+      $("geoRiskLevel").textContent = safe(summary.risk_level);
+      $("geoRiskEvents").textContent = String(summary.total_events ?? "—");
+      $("geoRiskConfidence").textContent = safe(summary.confidence);
+      $("geoRiskPeriod").textContent = `7 napos időablak: ${geoRiskDate(summary.period_start)} – ${geoRiskDate(summary.period_end)}`;
+
+      $("geoRiskBars").innerHTML = locations.slice(0, 7).map((item, index) => {
+        const risk = Number(item?.risk) || 0;
+        const width = Math.max(2, risk / maxRisk * 100);
+        return `
+          <div class="geo-risk-row">
+            <div class="geo-risk-row-head">
+              <div class="geo-risk-rank-name">
+                <span class="geo-risk-rank-number">${index + 1}</span>
+                <span>${escapeHtml(safe(item?.name, "Unknown"))}</span>
+              </div>
+              <div class="geo-risk-value">${geoRiskFormat(risk)}</div>
+            </div>
+            <div class="geo-risk-track"><span style="width:${width.toFixed(1)}%"></span></div>
+          </div>`;
+      }).join("");
+
+      $("geoRiskLead").textContent = top?.name
+        ? `${safe(top.name)} áll a kockázati rangsor élén.`
+        : "A földrajzi kockázat koncentrált.";
+
+      $("geoRiskInsightText").textContent = multiple
+        ? `A vezető helyszín aggregált kockázati értéke ${multiple.toFixed(1)}× magasabb a második helyezettnél. Ez erős földrajzi koncentrációt jelez a vizsgált 7 napos időablakban.`
+        : `A monitor a vizsgált 7 napban egyértelműen kiemelkedő földrajzi kockázati gócpontot azonosít.`;
+    }
+
+    async function loadGeoRiskSignal() {
+      const section = $("geoRiskSection");
+      const status = $("geoRiskStatus");
+      const content = $("geoRiskContent");
+      if (!section || !status || !content) return;
+
+      try {
+        const response = await fetch(GEO_RISK_URL, {cache:"no-store"});
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        renderGeoRiskSignal(data);
+        section.hidden = false;
+        status.hidden = true;
+        content.hidden = false;
+      } catch (error) {
+        console.info("Geographic risk signal module is unavailable:", error?.message || error);
+        section.hidden = true;
+      }
+    }
+
+
     loadData().catch(showError);
     loadManualHistory();
+    loadGeoRiskSignal();
   </script>
 </body>
 </html>
+
 
 
