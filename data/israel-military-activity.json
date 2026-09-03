@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-09-03T07:09:25+00:00",
+  "generated_at": "2026-09-03T12:48:55+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,19 +46,19 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 88,
+      "total_events": 89,
       "map_visualizable_events": 38,
       "total_map_points": 41,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-09-02T14:32:16Z"
+      "latest_event_date": "2026-09-03T08:08:01Z"
     },
     "region_counts": {
-      "Gaza Strip": 65,
+      "Gaza Strip": 66,
       "South Lebanon": 25
     },
     "activity_type_counts": {
-      "airstrike": 67,
+      "airstrike": 68,
       "drone_activity": 11,
       "ground_activity": 9,
       "cross_border_fire": 5,
@@ -69,13 +69,13 @@
     "target_organization_counts": {
       "Hamas": 53,
       "Hezbollah": 17,
-      "Not explicitly stated": 15,
+      "Not explicitly stated": 16,
       "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
       "commander": 49,
+      "individual_operative": 18,
       "unspecified": 18,
-      "individual_operative": 17,
       "military_structure": 11,
       "armed_cell": 7,
       "weapons_storage": 6,
@@ -88,9 +88,9 @@
       "targeted_vehicle": 1
     },
     "operation_result_counts": {
-      "struck": 69,
-      "eliminated": 48,
-      "located": 13,
+      "struck": 70,
+      "eliminated": 49,
+      "located": 14,
       "dismantled": 12,
       "reported": 11,
       "intercepted": 1
@@ -106,7 +106,7 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 78,
+      "ground": 79,
       "command": 48,
       "drone_uav": 9,
       "rocket_missile": 9,
@@ -118,10 +118,10 @@
       "naval": 1
     },
     "area_mention_counts": {
-      "Northern Gaza Strip": 24,
+      "Northern Gaza Strip": 25,
       "Southern Gaza Strip": 20,
+      "Yellow Line area": 10,
       "Central Gaza Strip": 10,
-      "Yellow Line area": 9,
       "Security Zone – South Lebanon": 9
     },
     "top_locations": {
@@ -137,6 +137,67 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19154",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19154",
+      "date": "2026-09-03T08:08:01Z",
+      "title": "IDF airstrike statement",
+      "description": "IDF: Earlier today (Thursday), IDF troops operating in the northern Gaza Strip identified a terrorist who crossed the Yellow Line and approached the troops in a manner that posed an immediate threat. Following the identification, the Israeli Air Force struck the terrorist and eliminated him, in order to remove the threat he posed. IDF troops under the Southern Command remain deployed in the area in accordance with the agreement and will continue to operate to remove any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Not explicitly stated"
+      ],
+      "target_organization": "Not explicitly stated",
+      "target_types": [
+        "individual_operative"
+      ],
+      "target_type": "individual_operative",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "ground"
+      ],
+      "threat_domain": "ground",
+      "area_mentions": [
+        "Northern Gaza Strip",
+        "Yellow Line area"
+      ],
+      "operation_results": [
+        "eliminated",
+        "struck",
+        "located"
+      ],
+      "operation_result": "eliminated",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19154"
+    },
     {
       "id": "idf-idfofficial-19151",
       "source": "IDF official Telegram",
