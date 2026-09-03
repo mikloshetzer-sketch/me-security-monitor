@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-03 12:50 UTC",
+    "updated": "2026-09-03 17:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-08-28",
     "period_end": "2026-09-03",
-    "total_events": 18,
-    "total_risk": 27.12,
-    "normalized_risk_score": 10.8,
-    "risk_level": "LOW",
-    "confidence": "LOW"
+    "total_events": 151,
+    "total_risk": 182.02,
+    "normalized_risk_score": 72.8,
+    "risk_level": "MEDIUM",
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 9,
-    "security": 1,
-    "political": 0,
-    "other": 8
+    "military": 56,
+    "security": 4,
+    "political": 8,
+    "other": 83
   },
   "source_counts": {
-    "news": 14,
+    "news": 147,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 12.42
-    },
-    {
-      "name": "West Bank",
-      "risk": 5.6
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 5.1
-    },
-    {
-      "name": "Jordan",
-      "risk": 2.7
+      "risk": 103.52
     },
     {
       "name": "Israel",
-      "risk": 1.3
+      "risk": 16.9
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 14.9
+    },
+    {
+      "name": "West Bank",
+      "risk": 11.4
+    },
+    {
+      "name": "Tehran",
+      "risk": 6.1
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTXNYTGpEYldjZ00zSFctdU5VT1A3blcyNnhmalVSNEMwNVBEa09RWFF1Zk9ibGY2cmdmRVdid2dDbUJwaHhzcFVpVHVxUUQ1NFZRb3F2MkRHREtLZHNoSF9tZUdseGdQZ0hFdFk5eDNTT0VyQzRXLUVZYi1OanRIc3g3SE1RQUlRNGQ3TXBCbi1JZHNycUhXcHJSMXFMb21YZVNtb2cwZGVYWGQ1bGlmQTJtNHZPSi1HZU96S1QwTldxV2NLYllz"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZmJEcTdhQU9kcW41Z2J6enVZU2NHQ253eVV1VDJKOXBSTTJfbGhfVi1wbTQ0U1gzRllLb2xUUV9LRGRZaWpvaUlSWWRwQTdBaXdNY2x1Z3pxU1U1WjJSdzdKWGR6a2FLSXN6dnBPQ3NhM1hwUkxOZlIyd0dDX0ZycjdVSlpEUFN5N1NQbWR2UW1oRHNBU3BTZENPbGotQVFOSmdfUUFJNERYbEZTVzU3WDlrUQ"
+    },
     {
       "score": 3.0,
       "date": "2026-09-03",
@@ -57,85 +75,67 @@
       "url": "https://www.bbc.co.uk/news/articles/cj6482r6yl4o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-09-02",
+      "score": 3.0,
+      "date": "2026-09-03",
       "category": "military",
       "source_type": "news",
-      "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians",
+      "title": "Trump threatens more strikes as death toll in Iran rises to 18 - Al Jazeera",
       "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss"
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ"
     },
     {
-      "score": 2.7,
-      "date": "2026-09-02",
+      "score": 3.0,
+      "date": "2026-09-03",
       "category": "military",
       "source_type": "news",
-      "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says",
+      "title": "Iran Red Crescent urges ICC probe into deadly US strike on wedding party - Al Jazeera",
       "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cx2zxgg4mx9o?at_medium=RSS&at_campaign=rss"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOenVFUkk5MkduZ3dqeWF3YUczT2NxVEY3U1VQRGlqRUhBajczUEFjYkpZZjZZTUtTeGEwV0EwdzdZRFpsTi04bGJidG5nbnBZMXQ0VTVYLTlfNG1FMFFxZ0xhRXFIalN1LVRqQ1ZKdjlTRjBReWszaXdsbGV0QTRNUUVJY0JCeHFxd1BVcGhkQUlKVlhKVHFsOWlybFdhaDFnYlAyM1hHTEEyendiLWJDQXJ30gG3AUFVX3lxTE5pT0VVWlRJY1YwV0VPMUNTNk0zNEZmSFJoODkxblJnUlNyQzZ3Rl9qX3lPQU5pLThabkRmcGk0QnNhVS1hUGJkM3ZIbGVmb25xZHlJbFNIYTAtSU5ycHRuR3dQejFhVHFFMzFuUEdDSVlZekNhQzRwX3JCWmVzSUdpYVgxb3VtZXVMRGxRYUNvZjFyYUZpcWtVRFVFREIzNDg1dGlhR1YyOHBpYUljbG9UUTE2T21Qdw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi fighters clash with Yemeni government forces in country’s southwest - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWnpsWW1GSE0xMm1VZVM2eGxIbnJERFU2LWxJVldOYzBlVlJ6dTJIUWVpM3ZTT21wd1VHMlAyRkd6aFdnM3g3a2JtR09EdktLSkRjdnJEZHd2em9xSGI2eGF1ZkgwV0oyMUd2RWpBRHM5YmdxOVcxNWk4cWVfX0ZBZ3YwVXE1X18zenk4WkNWdl80Ym5HRmp5TFVRTHlmRV9kVFhKbXhIV0pOdmdSMmIzWWE5RdIBuAFBVV95cUxNZVdJR21GdEtIOFZreDVmelNFZHV2SFZwcXk0X29EWWQ5d1kzTFdzb2FkZG12TlF1MGk2WEVybHdzYThQbVpkbWxMQV9xX2FwOFNxX1I5RC1FbXNnbk8tcFFIUnJnQUk5SkpybGI2LWxqUGprUVdKR0VJbG1tU1RqeURMZkhXTVZSaEJCbWJmdWNla3dUelBkZ2FCV1Fpd05rdURhOEgtTHdNRkNvMXlZM1V2N2huZkd1"
     },
     {
       "score": 2.7,
       "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
-      "title": "What we know about reported strike on Iran wedding celebrations",
+      "title": "US-Iran strikes raise fears of renewed war across the Middle East - Reuters",
       "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/videos/c0lr1krdxxwo?at_medium=RSS&at_campaign=rss"
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORjZ4d3JRTk1WcXR6eThpVm1wcVpzQV8wMm42eDB4bDJRMVhxelJpdmZTYXVPQ0JTUmtiNXFVWEZyb1NBTTZibmZJTkk4bjlRNGwtWTU1OF8zXzhENVZhWDN4TUwzekdfVG8xWUpmY3hmcHBDQk5TUzBLSERGbFJ0c05nekFpclo3cFdMcm93dHlEUXctVTY2MjJIMkkxSTRGWnc"
     },
     {
       "score": 2.7,
       "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
-      "title": "Bus crash on Egypt's Red Sea coast kills 22",
-      "location": "Jordan",
-      "url": "https://www.bbc.co.uk/news/articles/cn8mr1myy2ko?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "More than 900 killed in Gaza this year despite ceasefire, Hamas-run health ministry says",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/c7708dy33pdo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel says Hamas security chief captured as strikes kill four during Gaza raid",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/c1wxex4vg35o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-08-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "US and Iran trade strikes for first time in weeks",
+      "title": "Trump aides seek 'quiet' in Iran war but say attacks may intensify after November elections - Reuters",
       "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cx2z72x5z1po?at_medium=RSS&at_campaign=rss"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMDJDS3ZmaHY1S0hTTlJiUUVPQ081YTU5bWV3NmJJLTRTNDdNQUhKNWdFTXd4TzVVRkRiRXd6SV9xZ1hmbHVxMFVGOUhXMkJLTkdaN0VWa3g3aEZ1aWZDbnlNTkRoUk5zY2ltOW9PNVk1SlFJVU1mNzZFSE9GTGpGbmhwdW1sMFNuTFhwcTVmSlFUNUIwM3lOV3ZpQ0NCX3B2TmMwbXZB"
     },
     {
-      "score": 1.4,
-      "date": "2026-08-31",
-      "category": "security",
-      "source_type": "news",
-      "title": "UK raises case of British activist detained by settlers in West Bank with Israel",
-      "location": "West Bank",
-      "url": "https://www.bbc.co.uk/news/articles/c3d7xgge7vgo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.2,
-      "date": "2026-08-28",
+      "score": 2.7,
+      "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
-      "title": "BBC tracks one week of Israeli settler violence in occupied West Bank",
-      "location": "West Bank",
-      "url": "https://www.bbc.co.uk/news/videos/c3wjq1188g9o?at_medium=RSS&at_campaign=rss"
+      "title": "Saudi Arabia says Iran attacked vessel in Hormuz, killing two sailors - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdW5sTXJ3VXZwZE1vZ2RUZ19pNnFoX3ZHc2EyYUI0Y3V0Z09Wc21IMkNNVHlrTXR5eTdOZkNYeGJ3VHhBWlhxeVBjemxGQWZzS0EwN2MxWC1GOWMySnFEM2hkY0V4VVRIcjgxbEdQSHpLcVhIa3Y4QU1Jd3dSWWt3RlE4RnBWRlR6S0c1RWkwVHJ4UlcxWE5oX3hRSVJ3U1RtaHdDeUZaTHBfXzN5OGdfX3dlZGtTYXFySjZ4M1NqRQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "US military says it completed latest wave of strikes on Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPekNsWEt4cEh2RVhBNk5nQXJSczQ2QjJlU2hONHpGLXRBSVg1bi1wdWljNXZOd0lvS0toX0ZiZmpaNUVpaG9QbmMtTHBkdzRBUXZMVjU0al9iQUFVQWRvZzFTek5MOGhyME9Ea3Y4a0ZiUVNOUXR1VDRZQi1Td09pT1ZpanoxQ1BKVVp2NWc5WlZPT3hVSDJ2aWZZMExHU1J4aUhKSjFEZ3JWdmo3"
     }
   ]
 }
