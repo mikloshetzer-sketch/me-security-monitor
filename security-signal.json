@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-03 00:18 UTC",
+    "updated": "2026-09-03 07:11 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-08-28",
     "period_end": "2026-09-03",
-    "total_events": 135,
-    "total_risk": 149.84,
-    "normalized_risk_score": 59.9,
+    "total_events": 146,
+    "total_risk": 168.07,
+    "normalized_risk_score": 67.2,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 48,
+    "military": 53,
     "security": 5,
-    "political": 6,
-    "other": 76
+    "political": 8,
+    "other": 80
   },
   "source_counts": {
-    "news": 132,
-    "isw": 3
+    "news": 142,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 91.48
+      "risk": 102.67
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.65
+      "risk": 14.95
     },
     {
       "name": "Israel",
-      "risk": 11.3
+      "risk": 12.55
+    },
+    {
+      "name": "West Bank",
+      "risk": 8.4
     },
     {
       "name": "Tehran",
       "risk": 5.6
-    },
-    {
-      "name": "Egypt",
-      "risk": 5.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil edges down as investors weigh uncertainty over U.S.-Iran strikes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQVk5vakhhby03N0RCUHNMTU1jY1F4OGdsMmt2cThTLW5hU0VNM181YUVwYW1wSlJsbGoweDQtd3ROSTFfMDhUSGpWMHI5WG9qeTByTGJpVTRZaER0dGlwZ1BULXVRUzlPemRSOC1ranltaDQ0QjJ4OWMwWTRrNjJ6eDdkaExIMjFiVDJlbUxZcTU2Sk1DRE1uNTR5SkdPM0VJanktVUI1RkNpcXoxRkxBN1lkUDRnUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump threatens more strikes as death toll in Iran rises to 18 - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVG1PeWk5NTJCOFhHM2E3N28zM1M2d0NHTk1hTFB6VjNEZ09FamhlMEJpOExMSWtwb3NraThjT0twUzRPbFk4S00wRGd1WG9GbmFSN3Y0YmVWV25BWXRyUkxaM2dsZ1JuRWE0UlVDRmR0cHJGcmsxWlZ6OGlSSkYwRFJueWVNOUdoWTJKVzRQbmhndmN1WXd5eVBDdXUwRHZTaXl3ZtIBqgFBVV95cUxPRElVbDMtTFJER3dJWnJYemxQVU9qV2pMdlBUVzgtM1NldC1ZQkJXS3U2alBfVmhyZGVEZ2d6MmxrNFk0TXFPTzlTTmY0X2k2M0NqalkzSU5UMjh0NVpIVkdlOEN3ek44d1hkUlU4OWlhUUJaSjhyLXFKQVZ3RzJaR1RVZ2lMTkpEV3g5WUlNOWY3WGhrR1BFdC1NQVZFT1dkenpZaXRYVmxfQQ"
+    },
     {
       "score": 2.7,
       "date": "2026-09-02",
@@ -55,15 +73,6 @@
       "title": "US-Iran strikes raise fears of renewed war across the Middle East - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORjZ4d3JRTk1WcXR6eThpVm1wcVpzQV8wMm42eDB4bDJRMVhxelJpdmZTYXVPQ0JTUmtiNXFVWEZyb1NBTTZibmZJTkk4bjlRNGwtWTU1OF8zXzhENVZhWDN4TUwzekdfVG8xWUpmY3hmcHBDQk5TUzBLSERGbFJ0c05nekFpclo3cFdMcm93dHlEUXctVTY2MjJIMkkxSTRGWnc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump aides seek 'quiet' in Iran war but say attacks may intensify after November elections - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMDJDS3ZmaHY1S0hTTlJiUUVPQ081YTU5bWV3NmJJLTRTNDdNQUhKNWdFTXd4TzVVRkRiRXd6SV9xZ1hmbHVxMFVGOUhXMkJLTkdaN0VWa3g3aEZ1aWZDbnlNTkRoUk5zY2ltOW9PNVk1SlFJVU1mNzZFSE9GTGpGbmhwdW1sMFNuTFhwcTVmSlFUNUIwM3lOV3ZpQ0NCX3B2TmMwbXZB"
     },
     {
       "score": 2.7,
@@ -79,9 +88,9 @@
       "date": "2026-09-02",
       "category": "military",
       "source_type": "news",
-      "title": "Gulf shares slide after US and Iran exchange strikes - Reuters",
+      "title": "Trump aides seek 'quiet' in Iran war but say attacks may intensify after November elections - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbEt1N3pMR3ZhSTdjUUhLcTdBaXg5YW9Nam03d0lSc3RrbXd3dlZTYUZsUE9fU1ZwOWZ4d2UxWjFXZFYwX0tVbngwU3J1VVc0RUlTN2czNEdXNnhlRER5UFdfb3RtYV9HXzk4bHhHbVptTi1rOXlLWWRyNFJTQjdmSnNwS3l4TEIzODRGdTRna1hNSnpqV08tLXJUeHYzVVlXcGpF"
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMDJDS3ZmaHY1S0hTTlJiUUVPQ081YTU5bWV3NmJJLTRTNDdNQUhKNWdFTXd4TzVVRkRiRXd6SV9xZ1hmbHVxMFVGOUhXMkJLTkdaN0VWa3g3aEZ1aWZDbnlNTkRoUk5zY2ltOW9PNVk1SlFJVU1mNzZFSE9GTGpGbmhwdW1sMFNuTFhwcTVmSlFUNUIwM3lOV3ZpQ0NCX3B2TmMwbXZB"
     },
     {
       "score": 2.7,
@@ -91,6 +100,24 @@
       "title": "Saudi Arabia says Iran attacked vessel in Hormuz, killing two sailors - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdW5sTXJ3VXZwZE1vZ2RUZ19pNnFoX3ZHc2EyYUI0Y3V0Z09Wc21IMkNNVHlrTXR5eTdOZkNYeGJ3VHhBWlhxeVBjemxGQWZzS0EwN2MxWC1GOWMySnFEM2hkY0V4VVRIcjgxbEdQSHpLcVhIa3Y4QU1Jd3dSWWt3RlE4RnBWRlR6S0c1RWkwVHJ4UlcxWE5oX3hRSVJ3U1RtaHdDeUZaTHBfXzN5OGdfX3dlZGtTYXFySjZ4M1NqRQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gulf shares slide after US and Iran exchange strikes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbEt1N3pMR3ZhSTdjUUhLcTdBaXg5YW9Nam03d0lSc3RrbXd3dlZTYUZsUE9fU1ZwOWZ4d2UxWjFXZFYwX0tVbngwU3J1VVc0RUlTN2czNEdXNnhlRER5UFdfb3RtYV9HXzk4bHhHbVptTi1rOXlLWWRyNFJTQjdmSnNwS3l4TEIzODRGdTRna1hNSnpqV08tLXJUeHYzVVlXcGpF"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Two Palestinian teens killed in West Bank raid by Israeli settlers and army - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaE1UMTF0TzBvMXRDNldTN0dPczFXRFVQZEVGNjY4cmFxT2VOQ0V4R1p1LU5aY3R4YnFLSHVvS29aNmRiQWpGS1pjU09WdHFyUHZZYVU5eG4wYzZFdzVZNTdYeXdfTHlrWjZkOW5LVnQzOGx1NVJ4cGFLNlNaS2Y4S2hIeURRdVdXLUNkN3JxNUFZWkM1UExRZy01VDJkZ2NmdkhQTDcyVmJHcng1S2dQTm1wWklPbURwTHgzS0w4Zw"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Iran says US strike killed four at wedding in 'war crime' as US denies targeting civilians",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cj06q4ynpmjo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iranian attack on Saudi tanker killed two Filipino sailors, Saudi Arabia says",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cx2zxgg4mx9o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "What we know about reported strike on Iran wedding celebrations",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/videos/c0lr1krdxxwo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bus crash on Egypt's Red Sea coast kills 22",
-      "location": "Jordan",
-      "url": "https://www.bbc.co.uk/news/articles/cn8mr1myy2ko?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
