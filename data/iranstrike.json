@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T23:18:02Z",
+  "generated_at": "2026-09-04T01:23:03Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 128,
-    "feed_event_records": 128,
-    "normalized_events": 1128,
+    "events_endpoint_records": 129,
+    "feed_event_records": 129,
+    "normalized_events": 1129,
     "map_visualizable_events": 225,
-    "non_mappable_events": 903,
-    "developments": 5
+    "non_mappable_events": 904,
+    "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1128,
+      "total_events": 1129,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-03T18:56:42Z",
+      "latest_event_date": "2026-09-04T00:00:23Z",
       "geocoded_events": 225,
       "geocoded_share": 19.9,
       "top_category": "infrastructure",
@@ -73,25 +73,21 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 113,
+        "current": 114,
         "previous": 21,
-        "delta": 92,
-        "percent_change": 438.1,
+        "delta": 93,
+        "percent_change": 442.9,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 312,
-        "previous": 792,
-        "delta": -480,
+        "current": 313,
+        "previous": 794,
+        "delta": -481,
         "percent_change": -60.6,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-08",
-        "count": 0
-      },
       {
         "date": "2026-03-09",
         "count": 0
@@ -807,6 +803,10 @@
       {
         "date": "2026-09-03",
         "count": 14
+      },
+      {
+        "date": "2026-09-04",
+        "count": 1
       }
     ],
     "category_counts": {
@@ -815,7 +815,7 @@
       "strike": 209,
       "drone": 144,
       "airstrike": 106,
-      "explosion": 52,
+      "explosion": 53,
       "movement": 43,
       "ground": 21,
       "defense": 10,
@@ -823,13 +823,13 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 581,
+      "medium": 582,
       "high": 381,
       "low": 164,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 651,
+      "unknown": 652,
       "iran": 330,
       "israel": 117,
       "usa": 30
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 303
+        "count": 304
       },
       {
         "name": "Iran",
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 303
+        "count": 304
       },
       {
         "name": "Jordan",
@@ -944,40 +944,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10435,
+    "totalCount": 10436,
     "spotlight": {
       "event": {
-        "id": "6434yeoei4g0",
-        "timestamp": "2026-09-03T17:44:01+00:00",
+        "id": "ct12u4szs940",
+        "timestamp": "2026-09-04T00:00:23+00:00",
         "location": "YEM",
-        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Ansarullah fires 14 ballistic missiles at PLC positions in al-Khawkhah and Mocha; 2 missiles failed/malfunctioned",
-        "descriptionHe": "אנסאר אללה שיגרה 14 טילים בליסטיים לעבר עמדות המועצה הנשיאותית בחוחא ובמוכה; 2 טילים נכשלו",
+        "type": "report",
+        "severity": "medium",
+        "description": "Ongoing reports of explosion in Houthi-controlled city of Hodeidah",
+        "descriptionHe": "דיווחים מתמשכים על פיצוץ בעיר חודיידה הנשלטת על ידי החות'ים",
         "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "ballistic_missile",
-            "count": 14
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/83249"
+        "sourceUrl": "https://t.me/CIG_telegram/83285"
       },
-      "headline": "Ansarullah fires 14 ballistic missiles at Yemen coalition positions",
-      "headlineHe": "אנסארله ירתה 14 טילים בליסטיים לעבר עמדות הקואליציה בתימן",
-      "summary": "The barrage targeted PLC strongholds in al-Khawkhah and Mocha as fighting intensifies across multiple Yemen fronts with concurrent drone and artillery exchanges.",
-      "summaryHe": "הטילים כוונו לעמדות PLC בעל-חוח ומוכה תוך התעצמות הקרבות בכמה חזיתות בתימן עם חילופי טילים וטילי במתן בו-זמנית.",
-      "pickedAt": "2026-09-03T21:45:51.077Z",
-      "state": "TODAY"
+      "headline": "Explosion reported in Houthi-controlled Yemeni city of Hodeidah",
+      "headlineHe": "דיווחים על פיצוץ בעיר חות'ית בשליטת האומים ביemen",
+      "summary": "The report emerges amid intensifying regional tensions following recent Iranian strikes across the Gulf and ongoing Israeli operations against Hezbollah in Lebanon.",
+      "summaryHe": "הדיווח מגיע בתוך התגברות המתיחויות האזוריות בעקבות תקיפות איראניות אחרונות ברחבי המפרץ והפעולות הישראליות המתמשכות נגד חזבאללה בלבנון.",
+      "pickedAt": "2026-09-04T00:30:51.012Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-03T23:12:05.498Z",
+    "lastUpdated": "2026-09-04T01:18:05.606Z",
     "stale": false,
-    "viewerCount": 5,
+    "viewerCount": 2,
     "ceasefire": false
   },
   "summary": {
@@ -1518,58 +1511,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 94,
       "cellular": null,
-      "lastUpdate": "2026-09-03T23:01:37.752Z",
+      "lastUpdate": "2026-09-04T01:00:42.972Z",
       "internetHistory": [
-        {
-          "t": "2026-09-02T23:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T23:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T23:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T23:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-02T23:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-02T23:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T00:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T00:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T00:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T00:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T00:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T00:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-09-03T01:00:00.000Z",
           "v": 94
@@ -2097,22 +2042,66 @@
         {
           "t": "2026-09-03T22:50:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-09-03T23:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T23:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T23:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T23:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T23:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-03T23:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-04T00:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T00:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-04T00:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-04T00:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-04T00:40:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-03T23:01:37.752Z"
+    "lastUpdated": "2026-09-04T01:00:42.972Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7a2c9f1b",
+      "id": "iranstrike-8a2f1c94",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-03T05:30:01Z",
       "title": "IranStrike event",
-      "description": "Iran launches regional strike campaign on U.S./allied bases in Kuwait, UAE, Iraq, Bahrain",
+      "description": "Iran strikes Kuwait, UAE bases with missiles/drones; 13 personnel killed",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2120,9 +2109,9 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches regional strike campaign on u.s./allied bases in kuwait, uae, ira",
-      "location": "Iraq",
-      "country": "Iraq",
+      "attacker_evidence": "iran strikes kuwait, uae bases with missiles/drones;",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2133,83 +2122,35 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7a2c9f1b",
-        "text": "Iran launches regional strike campaign on U.S./allied bases in Kuwait, UAE, Iraq, Bahrain",
-        "textHe": "איראן משגרת מתקפת אזורית על בסיסי ארה\"ב ובעלי ברית בכווית, איחוד האמירויות, עיראק, בחריין",
+        "id": "8a2f1c94",
+        "text": "Iran strikes Kuwait, UAE bases with missiles/drones; 13 personnel killed",
+        "textHe": "איראן תקפה בסיסים בקוואיט ובאמ\"ת בטילים ודרונים; 13 הרוגים",
         "severity": "critical",
         "timestamp": "2026-09-03T05:30:01+00:00",
         "entityIds": [
           "IRN",
-          "USA",
           "KWT",
-          "ARE",
-          "IRQ",
-          "BHR"
+          "ARE"
         ],
         "eventIds": [
           "2q9ad0gob8c00",
-          "3udt0f8zk3w00",
           "2nss5r0soqo00",
-          "2mijbobq92800",
-          "46aiet9bi3y0"
+          "3udt0f8zk3w00",
+          "36imtvoernc00",
+          "1vdjuln4ops00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-5b3d4e8a",
+      "id": "iranstrike-7b4e3d52",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-03T18:56:42Z",
       "title": "IranStrike event",
-      "description": "IDF completes Ali Taher ridge clearing; Hezbollah tunnel network destroyed near Nabatieh",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Nabatieh",
-      "country": "Lebanon",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "nabatieh",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "5b3d4e8a",
-        "text": "IDF completes Ali Taher ridge clearing; Hezbollah tunnel network destroyed near Nabatieh",
-        "textHe": "צה\"ל השלים פינוי רכס עלי תאהר; רשת המנהרות של חזבאללה הושמדה ליד נבטיה",
-        "severity": "high",
-        "timestamp": "2026-09-03T18:56:42+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "1hfeliu9qhj40",
-          "3ktgbdlz86e00"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-6c1f2a4d",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-03T17:44:01Z",
-      "title": "IranStrike event",
-      "description": "Yemen: Full-scale escalation with Ansarullah 14 ballistic missiles vs PLC, intense ground clashes",
+      "description": "IDF clears Hezbollah positions on Ali Tahir ridge; tunnels destroyed",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2230,9 +2171,54 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6c1f2a4d",
-        "text": "Yemen: Full-scale escalation with Ansarullah 14 ballistic missiles vs PLC, intense ground clashes",
-        "textHe": "תימן: התגברות בקנה מידה מלא עם 14 טילי בליסטיקה של אנסאר אללה נגד PLC, קרבות קרקעיים עזים",
+        "id": "7b4e3d52",
+        "text": "IDF clears Hezbollah positions on Ali Tahir ridge; tunnels destroyed",
+        "textHe": "צה\"ל פנה מעמדות חזבאללה בגבעת עלי טהיר; מנהרות הושמדו",
+        "severity": "high",
+        "timestamp": "2026-09-03T18:56:42+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "1hfeliu9qhj40",
+          "3ktgbdlz86e00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-6c5d2f47",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-03T17:44:01Z",
+      "title": "IranStrike event",
+      "description": "Yemen: Ansarullah fires 14 ballistic missiles at PLC; intense fighting",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "6c5d2f47",
+        "text": "Yemen: Ansarullah fires 14 ballistic missiles at PLC; intense fighting",
+        "textHe": "תימן: אנסארללה שיגרה 14 טילים בליסטיים לעבר כוחות PLC; קרבות אינטנסיביים",
         "severity": "high",
         "timestamp": "2026-09-03T17:44:01+00:00",
         "entityIds": [
@@ -2246,26 +2232,28 @@
         ],
         "sourceCount": 1
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-8e5a1c6f",
+      "id": "iranstrike-ct12u4szs940",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-03T13:53:17Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83285",
+      "date": "2026-09-04T00:00:23Z",
       "title": "IranStrike event",
-      "description": "Iran reports 13-18 killed in U.S. strikes; IRGC vows retaliation after military operations",
-      "category": "other",
-      "severity": "high",
+      "description": "Ongoing reports of explosion in Houthi-controlled city of Hodeidah",
+      "category": "explosion",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2276,69 +2264,21 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "8e5a1c6f",
-        "text": "Iran reports 13-18 killed in U.S. strikes; IRGC vows retaliation after military operations",
-        "textHe": "איראן מדווחת על 13-18 הרוגים בתקיפות ארה\"ב; כוננות IRGC להשבת גמול אחרי פעולות צבאיות",
-        "severity": "high",
-        "timestamp": "2026-09-03T13:53:17+00:00",
-        "entityIds": [
-          "IRN",
-          "USA"
+        "id": "ct12u4szs940",
+        "timestamp": "2026-09-04T00:00:23+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "36imtvoernc00",
-          "1vdjuln4ops00",
-          "2dn8rffd678k"
-        ],
-        "sourceCount": 2
+        "type": "report",
+        "severity": "medium",
+        "description": "Ongoing reports of explosion in Houthi-controlled city of Hodeidah",
+        "descriptionHe": "דיווחים מתמשכים על פיצוץ בעיר חודיידה הנשלטת על ידי החות'ים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83285"
       }
     },
-    {
-      "id": "iranstrike-9a4b7c2e",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-03T10:45:24Z",
-      "title": "IranStrike event",
-      "description": "Iranian missiles strike Prince Hassan Air Base runway in Jordan despite air defense response",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian missiles strike prince hassan air base runway in jordan despite a",
-      "location": "Jordan",
-      "country": "Jordan",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "9a4b7c2e",
-        "text": "Iranian missiles strike Prince Hassan Air Base runway in Jordan despite air defense response",
-        "textHe": "טילים איראניים תקפו מסלול בסיס הנסיכה חסן בירדן למרות תגובת הגנה אווירית",
-        "severity": "medium",
-        "timestamp": "2026-09-03T10:45:24+00:00",
-        "entityIds": [
-          "IRN",
-          "JOR"
-        ],
-        "eventIds": [
-          "3enu7ye48o200"
-        ],
-        "sourceCount": 1
-      }
-    }
-  ],
-  "events": [
     {
       "id": "iranstrike-1hfeliu9qhj40",
       "source": "IranStrike",
