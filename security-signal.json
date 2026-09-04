@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-04 16:23 UTC",
+    "updated": "2026-09-04 20:47 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-29",
     "period_end": "2026-09-04",
-    "total_events": 71,
-    "total_risk": 88.75,
-    "normalized_risk_score": 35.5,
-    "risk_level": "LOW",
+    "total_events": 147,
+    "total_risk": 168.3,
+    "normalized_risk_score": 67.3,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 28,
-    "security": 1,
-    "political": 4,
-    "other": 38
+    "military": 52,
+    "security": 2,
+    "political": 8,
+    "other": 85
   },
   "source_counts": {
-    "news": 67,
+    "news": 143,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 54.1
-    },
-    {
-      "name": "West Bank",
-      "risk": 8.1
+      "risk": 95.55
     },
     {
       "name": "Israel",
-      "risk": 6.95
+      "risk": 18.25
+    },
+    {
+      "name": "West Bank",
+      "risk": 11.35
     },
     {
       "name": "Gaza Strip",
-      "risk": 4.95
+      "risk": 10.65
     },
     {
-      "name": "Tehran",
-      "risk": 4.9
+      "name": "Yemen",
+      "risk": 6.1
     }
   ],
   "top_events": [
@@ -66,13 +66,31 @@
       "url": "https://www.bbc.co.uk/news/videos/cn8evz26eyqo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-09-03",
+      "score": 3.0,
+      "date": "2026-09-04",
       "category": "military",
       "source_type": "news",
-      "title": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
+      "title": "Houthi attacks on Yemen’s Taiz escalate, triggering new displacement wave - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNVJ0SVRuZXJHOG0yRHktUmxwM2puUUJURXZhZXdLTkh4SENEVzBTMnlTRVJxb2xnOURsSy1sWThacjZVV3lGaUVabXg0RVlVeldWb21mWnZhNXViSTJIbEFVX0p6S2hpYVpVYlNQWDR1QVVJR19IeTdzRG02ZkVtUy1veWNhQUt3R0RsNlhsRTU4OUYweWlFblN4cy12dWFSMXFpWG5XWnEtWXdWWVJyQdIBtgFBVV95cUxQVzR5S3JxNU93VnZ6d1dWcU9IZVo5aUZ2VE9PWVVTWFFSUkpEYmJnckFOS2hNM2V0YkRxSGJuVEcwQzZ3Ni1MUmtkS1lOc29WbHdhQWMxdENZak55OWJnRmNfUkMzNVhiYllKdHFQb19VVHNBZk1mQ3E3MWVHTEV6TUJvUkctTk5hLTk2LVBSV0t6dWF1ZU5Bd09UVXBOOThEZDdXU09IdzBVOEFjNDlSUlgxLU5Udw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "October 7 attack shapes Israel’s elections and fuels political blame - Al Jazeera",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTXNYTGpEYldjZ00zSFctdU5VT1A3blcyNnhmalVSNEMwNVBEa09RWFF1Zk9ibGY2cmdmRVdid2dDbUJwaHhzcFVpVHVxUUQ1NFZRb3F2MkRHREtLZHNoSF9tZUdseGdQZ0hFdFk5eDNTT0VyQzRXLUVZYi1OanRIc3g3SE1RQUlRNGQ3TXBCbi1JZHNycUhXcHJSMXFMb21YZVNtb2cwZGVYWGQ1bGlmQTJtNHZPSi1HZU96S1QwTldxV2NLYllz"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWE1JbU9PN0gwbXNTeHotdk9KaG43SUhkUDVMSnE0bjNSbHdua0VRRWpDRTl2VzV6SFN0Z3FWWmd0ZFlNMGNQclJfcTdYVy1MSWdGcnZHUFkzUXE3cG1xQ2dvSi15Y2VyOERGTWx5ek83ODVyOWFjZEhLLVAtRm4yQ21yVnZjc0RPd2xCSHBFZU9XQVh6U3A5dEp1Tm1uaFdVZEJSdlVpckRZS2PSAbABQVVfeXFMTXl4NnFYVlJuWElYZk4xMlNnQnhIUUZhajRaR29WdGZFSFJYYWoxeWxUX3pYWFp4ZVFBaVMxOFZCMGIzcUttLVcwel9BUkJZYkZlcFFoNFA3OUtWal9EQk5TNDhmejZPMmtFSFRqNzd0U3Jjc05Vc21lanVHdGxYRkdoQkRfelB2cVRhcnctcjlHTVZZa1RDQy02MjVkelA5Q0V0RzlSeUVEZHlHeEhfVnE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "‘Things happen’: How Vance’s comment on Iran wedding strike fits US pattern - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNkJHV1hkXzJ0SFhVTEp1OUxfaXZ3UUl3elg2WEFMUE1PX3V3NUV6VDBKSm5aUG9QVjRkYVhfYUxLbk9pWi14R2VEcDU0NS1ZazhVR1FGcDFQNDJFMUkwUUR3WENPMXlxUDB0c2Nkb0NTWUxDLVQyMThXdFhQd2pqUGhuN3RzWm1BMVl0dVpXeEplZDhubV9ROUxDWFFEeVdTTTZ4YkxlSW5SWTJTSk9JYtIBtgFBVV95cUxQdGF5eWhmRFdwekhxSE41Z1V3ZUk0RVNsdjBvZlRnd2k4TzBzLVB4ZzB0NVY0enBETEtkMldXR1Nua1dLdjV2anFwLWozOEhjRi1RWUFYZ19kdmdEUk0teHZJR2dHTE9lY2xXM2ZIRlhla3NTMWh4VUtpdUt4Wkhka2RvY1ZnT1REUnVCa0E0VGZxZThMbDkwSnBUcFkxMms0bHpjaDFwQldxSGxnQ0FRem9mcFNpUQ"
     },
     {
       "score": 2.7,
@@ -82,6 +100,15 @@
       "title": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdWJyTEVVNzlNV2lCVktTZkk3dHZpYUFndlRkdTVXMzlnR0hEMXZYVnN5U3V5dC1JMEpWVDMwZng4YjhUc3pfOVpiNWNwdDRwbHY1TFhMLWZFZFh3YlF2SVEwYnJjNGkzTlpGR0hsRkwyMkQ4QVRSdmV4Ykxtd0xZamtOYkNNUV90TzhWdnF5ejhGRGhxSHgtcmp0SGdFVkhUa2owblM0QnN0aDRpeXlnRlBHUDdqZnE5TmRjd2FuR1dyVE5qY3VsNFJHWQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTXNYTGpEYldjZ00zSFctdU5VT1A3blcyNnhmalVSNEMwNVBEa09RWFF1Zk9ibGY2cmdmRVdid2dDbUJwaHhzcFVpVHVxUUQ1NFZRb3F2MkRHREtLZHNoSF9tZUdseGdQZ0hFdFk5eDNTT0VyQzRXLUVZYi1OanRIc3g3SE1RQUlRNGQ3TXBCbi1JZHNycUhXcHJSMXFMb21YZVNtb2cwZGVYWGQ1bGlmQTJtNHZPSi1HZU96S1QwTldxV2NLYllz"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZEFUR1NFM2NFdGJWWkFPekhHWDNYTUplQWo3VXhsSUV1OW1BRjJFNllNSEpZV1VELTc2Nk1nSURYd3VfcURvVWVtY1F1OVNWa1ZPQzN0azFhc21KajhTU0pDWTd5LWYwMnFEV2ZyM1FTYTFNVFRLSmNqUnBsam5XUkcxTG50ZEFHeks1VlFEdkloWUdHdGF3UWhrLWhfTnBSSWdJVGVJZEc5YlhVb0hwamg5elVkaFFxTjRIcHpB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQUEFXVU5xRXZGVUVkV3B2TUVQcTBseVZsSGd0blBwQktIaGlIc3R5TzMtNXFISkFTb1VOdlhWOXBmQ052RWFuT1pQaXJqQndNaXB3TmhLQTZPQXNQSFFXQ3JGY0NBdE1RY09razBPZFh2VnJiYmlBSld3akdLeHZxbVA5bWNqVWFycjFlUHFNd3VPdE4tYTFVaWxmdDBoOUlxUk80X0dkbkFqOV9SU3lxNkFsd0JGZnB5Qk9SV3JGWkxRWlhn"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "US investigating if missile hit Iran wedding, Vance says",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cy4zvk3z2k1o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Palestinian teens killed during settler attack on West Bank village",
-      "location": "West Bank",
-      "url": "https://www.bbc.co.uk/news/articles/cj6482r6yl4o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
