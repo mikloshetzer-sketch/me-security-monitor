@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-09-04T17:35:41+00:00",
+  "generated_at": "2026-09-04T22:20:45+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,20 +46,20 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 90,
+      "total_events": 91,
       "map_visualizable_events": 38,
       "total_map_points": 41,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-09-03T23:02:09Z"
+      "latest_event_date": "2026-09-04T20:09:22Z"
     },
     "region_counts": {
       "Gaza Strip": 67,
-      "South Lebanon": 25
+      "South Lebanon": 26
     },
     "activity_type_counts": {
       "airstrike": 69,
-      "drone_activity": 11,
+      "drone_activity": 12,
       "ground_activity": 9,
       "cross_border_fire": 5,
       "humanitarian_zone": 3,
@@ -68,13 +68,13 @@
     },
     "target_organization_counts": {
       "Hamas": 53,
+      "Hezbollah": 18,
       "Not explicitly stated": 17,
-      "Hezbollah": 17,
       "Palestinian Islamic Jihad": 9
     },
     "target_type_counts": {
       "commander": 49,
-      "unspecified": 19,
+      "unspecified": 20,
       "individual_operative": 18,
       "military_structure": 11,
       "armed_cell": 7,
@@ -93,7 +93,7 @@
       "located": 15,
       "dismantled": 12,
       "reported": 11,
-      "intercepted": 1
+      "intercepted": 2
     },
     "commander_type_counts": {
       "unspecified_commander": 24,
@@ -106,23 +106,23 @@
       "naval_commander": 1
     },
     "threat_domain_counts": {
-      "ground": 80,
+      "ground": 81,
       "command": 48,
-      "drone_uav": 9,
+      "drone_uav": 10,
       "rocket_missile": 9,
       "underground": 7,
       "weapons_logistics": 6,
       "production": 6,
       "unspecified": 4,
-      "air_defense": 2,
+      "air_defense": 3,
       "naval": 1
     },
     "area_mention_counts": {
       "Northern Gaza Strip": 26,
       "Southern Gaza Strip": 20,
       "Yellow Line area": 11,
-      "Central Gaza Strip": 10,
-      "Security Zone – South Lebanon": 9
+      "Security Zone – South Lebanon": 10,
+      "Central Gaza Strip": 10
     },
     "top_locations": {
       "Khan Yunis": 13,
@@ -137,6 +137,66 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19165",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19165",
+      "date": "2026-09-04T20:09:22Z",
+      "title": "IDF drone activity statement",
+      "description": "IDF: IDF soldiers intercepted a drone that Hezbollah terrorists launched towards them in the Security Zone: The IDF is now striking in response Earlier today (Friday), terrorists from the Hezbollah terrorist organization launched a drone towards IDF soldiers operating in the Security Zone in southern Lebanon. IDF soldiers opened fire and downed the drone. No IDF injuries were reported. This constitutes a blatant violation by the Hezbollah terrorist organization. In response, the IDF is now striking in southern Lebanon. IDF soldiers will continue to operate in the Security Zone in order to remove any threat towards Israeli civilians and IDF soldiers. The IDF is currently operating and will continue to act with determination against Hezbollah’s repeated attempts to harm IDF soldiers.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "drone_activity"
+      ],
+      "activity_type": "drone_activity",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "unspecified"
+      ],
+      "target_type": "unspecified",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "drone_uav",
+        "air_defense",
+        "ground"
+      ],
+      "threat_domain": "drone_uav",
+      "area_mentions": [
+        "Security Zone – South Lebanon"
+      ],
+      "operation_results": [
+        "intercepted"
+      ],
+      "operation_result": "intercepted",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "regional_only",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "medium",
+      "raw_post_id": "idfofficial/19165"
+    },
     {
       "id": "idf-idfofficial-19159",
       "source": "IDF official Telegram",
