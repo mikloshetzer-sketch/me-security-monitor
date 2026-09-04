@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T15:09:19Z",
+  "generated_at": "2026-09-04T18:25:36Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 129,
-    "feed_event_records": 129,
-    "normalized_events": 1129,
-    "map_visualizable_events": 225,
-    "non_mappable_events": 904,
+    "events_endpoint_records": 132,
+    "feed_event_records": 132,
+    "normalized_events": 1132,
+    "map_visualizable_events": 226,
+    "non_mappable_events": 906,
     "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1129,
+      "total_events": 1132,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-04T00:00:23Z",
-      "geocoded_events": 225,
-      "geocoded_share": 19.9,
+      "latest_event_date": "2026-09-04T17:00:00Z",
+      "geocoded_events": 226,
+      "geocoded_share": 20.0,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 114,
-        "previous": 21,
-        "delta": 93,
-        "percent_change": 442.9,
+        "current": 116,
+        "previous": 18,
+        "delta": 98,
+        "percent_change": 544.4,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 313,
-        "previous": 794,
-        "delta": -481,
-        "percent_change": -60.6,
+        "current": 303,
+        "previous": 803,
+        "delta": -500,
+        "percent_change": -62.3,
         "direction": "decrease"
       }
     },
@@ -806,14 +806,14 @@
       },
       {
         "date": "2026-09-04",
-        "count": 1
+        "count": 4
       }
     ],
     "category_counts": {
       "infrastructure": 282,
-      "missile": 247,
+      "missile": 249,
       "strike": 209,
-      "drone": 144,
+      "drone": 145,
       "airstrike": 106,
       "explosion": 53,
       "movement": 43,
@@ -823,15 +823,15 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 582,
-      "high": 381,
+      "medium": 584,
+      "high": 382,
       "low": 164,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 652,
-      "iran": 330,
-      "israel": 117,
+      "unknown": 653,
+      "iran": 331,
+      "israel": 118,
       "usa": 30
     },
     "top_locations": [
@@ -845,7 +845,7 @@
       },
       {
         "name": "Jordan",
-        "count": 96
+        "count": 97
       },
       {
         "name": "Lebanon",
@@ -857,7 +857,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 43
+        "count": 44
       },
       {
         "name": "Iraq",
@@ -880,12 +880,12 @@
         "count": 23
       },
       {
-        "name": "Aqaba",
+        "name": "Nabatieh",
         "count": 20
       },
       {
-        "name": "Nabatieh",
-        "count": 19
+        "name": "Aqaba",
+        "count": 20
       },
       {
         "name": "Tehran",
@@ -907,11 +907,11 @@
       },
       {
         "name": "Jordan",
-        "count": 117
+        "count": 118
       },
       {
         "name": "Lebanon",
-        "count": 79
+        "count": 80
       },
       {
         "name": "Iraq",
@@ -919,7 +919,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 43
+        "count": 44
       },
       {
         "name": "Israel",
@@ -944,33 +944,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10436,
+    "totalCount": 10439,
     "spotlight": {
       "event": {
-        "id": "ct12u4szs940",
-        "timestamp": "2026-09-04T00:00:23+00:00",
-        "location": "YEM",
+        "id": "5k7ydd89xr80",
+        "timestamp": "2026-09-04T17:00:00+00:00",
+        "location": "IRN",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "medium",
-        "description": "Ongoing reports of explosion in Houthi-controlled city of Hodeidah",
-        "descriptionHe": "דיווחים מתמשכים על פיצוץ בעיר חודיידה הנשלטת על ידי החות'ים",
+        "description": "IRGC Navy launches anti-ship cruise missile from Sirik toward Strait of Hormuz",
+        "descriptionHe": "צי משמרות המהפכה משגר טיל שיוט נגד ספינות מ-סיריק לעבר מצר הורמוז",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/83285"
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/83330"
       },
-      "headline": "Explosion Reported in Houthi-Controlled Yemeni City Hodeidah",
-      "headlineHe": "דיווחים על פיצוץ בעיר חודיידה בשליטת חותיים",
-      "summary": "The incident marks a significant strike in Yemen's ongoing conflict, occurring hours after large-scale ballistic missile and drone exchanges between Ansarullah and PLC-aligned forces.",
-      "summaryHe": "התקادם מסמן מכה משמעותית בסכסוך הישראלי בתימן, המתרחש שעות לאחר חילופי טילים בליסטיים וטילי רחפנים בין אנסאראללה וכוחות בעלי זיקה ל-PLC.",
-      "pickedAt": "2026-09-04T14:00:51.103Z",
-      "state": "TODAY"
+      "headline": "Iran launches anti-ship missile toward strategic Strait of Hormuz",
+      "headlineHe": "איראן משגרת טיל נגד ספינות לעבר המצר הקריטי",
+      "summary": "The IRGC Navy fired the weapon from Iran's southern coast, escalating regional maritime tensions in one of the world's most critical energy chokepoints.",
+      "summaryHe": "חיל הים של תנועת הספינות משגר את הנשק מהחוף הדרומי של איראן, וממעלה את המתחים הימיים האזוריים בדרך אחת הקריטיות ביותר בעולם לאספקת אנרגיה.",
+      "pickedAt": "2026-09-04T18:15:50.931Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-04T15:06:03.553Z",
+    "lastUpdated": "2026-09-04T18:24:03.458Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 12,
     "ceasefire": false
   },
   "summary": {
@@ -1511,82 +1518,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 94,
+      "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-09-04T15:00:42.905Z",
+      "lastUpdate": "2026-09-04T18:00:44.367Z",
       "internetHistory": [
-        {
-          "t": "2026-09-03T15:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-03T15:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T15:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T15:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T15:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T15:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T16:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T16:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T16:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T16:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T16:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-03T16:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T17:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-03T17:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-03T17:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-03T17:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-03T17:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-03T17:50:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-09-03T18:00:00.000Z",
           "v": 93
@@ -2086,22 +2021,94 @@
         {
           "t": "2026-09-04T14:40:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-09-04T14:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T15:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-04T15:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T15:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T15:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T15:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T15:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T16:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T16:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T16:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T16:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T16:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T16:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T17:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T17:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T17:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T17:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-04T17:40:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-04T15:00:42.905Z"
+    "lastUpdated": "2026-09-04T18:00:44.367Z"
   },
   "developments": [
     {
-      "id": "iranstrike-8a2f1c94",
+      "id": "iranstrike-7a2f8c1b",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-03T05:30:01Z",
+      "date": "2026-09-04T17:00:00Z",
       "title": "IranStrike event",
-      "description": "Iran strikes Kuwait, UAE bases with missiles/drones; 13 personnel killed",
+      "description": "Iran strikes U.S. bases in Jordan with ballistic missiles; IRGC fires anti-ship cruise missile toward Hormuz",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2109,9 +2116,9 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes kuwait, uae bases with missiles/drones;",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker_evidence": "iran strikes u.s.",
+      "location": "Jordan",
+      "country": "Jordan",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2122,80 +2129,78 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "8a2f1c94",
-        "text": "Iran strikes Kuwait, UAE bases with missiles/drones; 13 personnel killed",
-        "textHe": "איראן תקפה בסיסים בקוואיט ובאמ\"ת בטילים ודרונים; 13 הרוגים",
+        "id": "7a2f8c1b",
+        "text": "Iran strikes U.S. bases in Jordan with ballistic missiles; IRGC fires anti-ship cruise missile toward Hormuz",
+        "textHe": "איראן תוקפת בסיסים אמריקניים בירדן בטילים בליסטיים; חיל הספר הירני שוגר טיל שיוט נגד ספינות לעבר הורמוז",
         "severity": "critical",
-        "timestamp": "2026-09-03T05:30:01+00:00",
+        "timestamp": "2026-09-04T17:00:00+00:00",
         "entityIds": [
           "IRN",
-          "KWT",
-          "ARE"
+          "USA",
+          "JOR"
         ],
         "eventIds": [
-          "2q9ad0gob8c00",
-          "2nss5r0soqo00",
-          "3udt0f8zk3w00",
-          "36imtvoernc00",
-          "1vdjuln4ops00"
+          "1898rd797o2o0",
+          "5k7ydd89xr80"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-7b4e3d52",
+      "id": "iranstrike-9e3d5f4a",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-03T18:56:42Z",
+      "date": "2026-09-04T16:46:54Z",
       "title": "IranStrike event",
-      "description": "IDF clears Hezbollah positions on Ali Tahir ridge; tunnels destroyed",
+      "description": "IDF completes clearing of Ali al-Taher ridge; drone strike kills 2 in Nabatieh village",
       "category": "other",
-      "severity": "high",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7b4e3d52",
-        "text": "IDF clears Hezbollah positions on Ali Tahir ridge; tunnels destroyed",
-        "textHe": "צה\"ל פנה מעמדות חזבאללה בגבעת עלי טהיר; מנהרות הושמדו",
-        "severity": "high",
-        "timestamp": "2026-09-03T18:56:42+00:00",
+        "id": "9e3d5f4a",
+        "text": "IDF completes clearing of Ali al-Taher ridge; drone strike kills 2 in Nabatieh village",
+        "textHe": "צה\"ל השלים פינוי של רכס עלי אל-תהר; תקיפת רחפן הרגה 2 בכפר נבטיה",
+        "severity": "medium",
+        "timestamp": "2026-09-04T16:46:54+00:00",
         "entityIds": [
           "ISR",
           "LBN"
         ],
         "eventIds": [
+          "3ktgbdlz86e00",
           "1hfeliu9qhj40",
-          "3ktgbdlz86e00"
+          "1v4qksk2k9s00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-6c5d2f47",
+      "id": "iranstrike-6c1a9d7e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-03T17:44:01Z",
       "title": "IranStrike event",
-      "description": "Yemen: Ansarullah fires 14 ballistic missiles at PLC; intense fighting",
+      "description": "Yemen: Ansarullah fires 14 ballistic missiles; PLC and Tihamah Brigades launch major counteroffensive with drones and artillery",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2216,9 +2221,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6c5d2f47",
-        "text": "Yemen: Ansarullah fires 14 ballistic missiles at PLC; intense fighting",
-        "textHe": "תימן: אנסארללה שיגרה 14 טילים בליסטיים לעבר כוחות PLC; קרבות אינטנסיביים",
+        "id": "6c1a9d7e",
+        "text": "Yemen: Ansarullah fires 14 ballistic missiles; PLC and Tihamah Brigades launch major counteroffensive with drones and artillery",
+        "textHe": "תימן: אנסאראללה שוגר 14 טילים בליסטיים; ה-PLC וחטיבות תיהמה משיקות התקפה נגדית בטחנים וטילי שיוט",
         "severity": "high",
         "timestamp": "2026-09-03T17:44:01+00:00",
         "entityIds": [
@@ -2235,6 +2240,153 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-5k7ydd89xr80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83330",
+      "date": "2026-09-04T17:00:00Z",
+      "title": "IranStrike event",
+      "description": "IRGC Navy launches anti-ship cruise missile from Sirik toward Strait of Hormuz",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn irgc navy launches anti-ship cruise missile from sirik toward strait",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "5k7ydd89xr80",
+        "timestamp": "2026-09-04T17:00:00+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IRGC Navy launches anti-ship cruise missile from Sirik toward Strait of Hormuz",
+        "descriptionHe": "צי משמרות המהפכה משגר טיל שיוט נגד ספינות מ-סיריק לעבר מצר הורמוז",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/83330"
+      }
+    },
+    {
+      "id": "iranstrike-1898rd797o2o0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83328",
+      "date": "2026-09-04T16:59:42Z",
+      "title": "IranStrike event",
+      "description": "Iran carries out surprise ballistic missile strike against U.S. bases in Jordan",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1898rd797o2o0",
+        "timestamp": "2026-09-04T16:59:42+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran carries out surprise ballistic missile strike against U.S. bases in Jordan",
+        "descriptionHe": "איראן מבצעת התקפת טילים בליסטיים בפתע נגד בסיסים אמריקאיים בירדן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83328"
+      }
+    },
+    {
+      "id": "iranstrike-1v4qksk2k9s00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129721",
+      "date": "2026-09-04T16:46:54Z",
+      "title": "IranStrike event",
+      "description": "Israeli drone strike on motorcycle in Ramman village, Nabatieh district near Ali al-Taher ridge, 2 killed according to Lebanese sources",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn israeli drone strike on motorcycle in ramman village, nabatieh distric",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1v4qksk2k9s00",
+        "timestamp": "2026-09-04T16:46:54+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli drone strike on motorcycle in Ramman village, Nabatieh district near Ali al-Taher ridge, 2 killed according to Lebanese sources",
+        "descriptionHe": "תקיפת כטב\"ם ישראלי על אופנוע בכפר רמאן במחוז נבטיה, בסמוך לרכס עלי א-טאהר, שני הרוגים ע\"פ מקורות לבנוניים",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/129721"
+      }
+    },
     {
       "id": "iranstrike-ct12u4szs940",
       "source": "IranStrike",
@@ -53480,6 +53632,57 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-1v4qksk2k9s00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129721",
+      "date": "2026-09-04T16:46:54Z",
+      "title": "IranStrike event",
+      "description": "Israeli drone strike on motorcycle in Ramman village, Nabatieh district near Ali al-Taher ridge, 2 killed according to Lebanese sources",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn israeli drone strike on motorcycle in ramman village, nabatieh distric",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1v4qksk2k9s00",
+        "timestamp": "2026-09-04T16:46:54+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli drone strike on motorcycle in Ramman village, Nabatieh district near Ali al-Taher ridge, 2 killed according to Lebanese sources",
+        "descriptionHe": "תקיפת כטב\"ם ישראלי על אופנוע בכפר רמאן במחוז נבטיה, בסמוך לרכס עלי א-טאהר, שני הרוגים ע\"פ מקורות לבנוניים",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/129721"
+      }
+    },
     {
       "id": "iranstrike-3ktgbdlz86e00",
       "source": "IranStrike",
