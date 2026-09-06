@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-06 18:19 UTC",
+    "updated": "2026-09-06 22:10 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-08-31",
     "period_end": "2026-09-06",
-    "total_events": 143,
-    "total_risk": 156.35,
-    "normalized_risk_score": 62.5,
+    "total_events": 146,
+    "total_risk": 160.7,
+    "normalized_risk_score": 64.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 53,
-    "security": 2,
+    "security": 3,
     "political": 13,
-    "other": 75
+    "other": 77
   },
   "source_counts": {
-    "news": 138,
+    "news": 141,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 70.95
+      "risk": 73.6
     },
     {
       "name": "Israel",
       "risk": 26.5
     },
     {
+      "name": "Gaza Strip",
+      "risk": 17.05
+    },
+    {
       "name": "Yemen",
       "risk": 16.6
     },
     {
-      "name": "Gaza Strip",
-      "risk": 14.05
-    },
-    {
       "name": "West Bank",
-      "risk": 10.3
+      "risk": 8.95
     }
   ],
   "top_events": [
@@ -64,6 +64,15 @@
       "title": "Israeli strikes kill seven in southern Lebanon - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNi1QZjVMMzI3QlpNZ2pKMVNjZFNqU2RWb093aGtUS3ZmZWdBNHNjbXFMdVZZS2NkMnd3cWlQZlVqenBlRGpQdkFJSjNuMU5wVlNCa1pqNXVzV0NIRVFGc3Z6bGpMZXp3dzc1Y3dfM2xTNnZCSi0weHFlMUtaZG0yS2p6S2ZhWXRUeS0xYkFOOE5vLUlYaFJnMy1KdGh0ejFDbEpzOFRlaEs2ZG1ZY09hUW05WjhYYVBndHBtVjFIQ0szMVVOVzc4"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills a man and his daughter in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWXNmc1lpWkNYV0VUaVR4bDNpWTNMcTQ1VkFPYk5tZGFHbzk3Q3pOX0JtRW9Gc01kVnJ4RjRRVVl2aVpfSU1jN1JtelYxZUNIZV9Qb3M1U3J5Y0FMdkN6SV9sd3dPckdaWFFMWktOejFtUldxdUFDd0tMbjBzRzE5R0ZsQ1pPMG1ZNHJWTXQwNWVTT05PNmNFMElJbGVLenhLbEJ3"
     },
     {
       "score": 3.0,
@@ -115,27 +124,18 @@
       "date": "2026-09-05",
       "category": "military",
       "source_type": "news",
+      "title": "Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOQVZJdUE0TzFvS2xtSUJLOVUxZUVRZVRpMi1aUlNuSFZzX3h5TW4zSGJya0w3SjFlSno4QUlvdU90cHBBOS1xRllCZjR2aVRnUW16ZmQyN3M1SlRVSl9BYlk2Z2dvWGIzdEo3cXdTZjdWZkIzYXRNRzk3ZkM2cWMwN2ZWMVh1T09pNnRKVVAwRDhNSnJnSTFwVi1MZXdMNUNwOFJTU215REpkR1V0X1pVa09vNkVHeG9oX2lpVjdoTVl1ajI5MzU0dUN3"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-05",
+      "category": "military",
+      "source_type": "news",
       "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "At least four civilians killed in Houthi missile strike near Yemen’s Taiz - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYTI4N3VmemdBb1ZqR2ZxVk9VUDltcU9zM09UdVhxeVJqMkljbHZLS0UtZVhBclhwOHdDeGt0WjBXRHFPTU05aXhBcTMxRzBQS1pxUkFBSzFsR05aUndGSVNIY0pWWnh4YnpBRS1LRzF0cmM2Q3ZDejJpZnlzLWwtODlRVm9UcE9mNmk3RW15LWlfaG83end1WVZxSldLRTM0ZmZOQ9IBqgFBVV95cUxNeE40elppeDZvS3pSdUdmNGNldXJqU3B5RzRpVHB2eDlkUHNDR2dnQVVISE1kam0tR3hlbnZ3eXk0SEJpMUZIVXJUVGEwNncyMllKc2JPSHJKd3lyaDdMdWJ3U3JlTnU2RFo0YURUTUxwMHhxQkw3SjhaRlJlVFRROUJGcHoyZlJRbHJHSTdiNzBFOXVuTmNDYTlxNllvSWVBczkzbjJxZlZqdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Why is Trump threatening to strike Iran’s Pickaxe Mountain again, now? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZjRxTHlmNGgyN05QTE9GN2ZQb0M0RFgtVUNvREtfMTdLRWJaUkw3blotT2ZBczVqOGlxQXdmREx1YVdWQ3d2bENpajhlaE83SFhrVDJEeF9vbkd4aHFUcXZITjdNYUlLWGgzUzQwdFJ6TXUtWWJfbEJKUU4wQndsWGRMM0JpUTJkejNMTjQ0eHl6V0pXRlpEM2F6TC1HOFpCMjNPM2xldHNYcDTSAbABQVVfeXFMTUFvWUxfc20yMlhaZG1rUFFUYWVWZGRXNVV2azJ4NVV4cFJFZHhMNjVnVFNRcTVZaWZQdFpRSE5XOXJITUdZaVhnZUZvbUNMblRLTVdzakc1VDhzWkhjRVItcFc2b3Jsd21kdVVQVEx3bTNBWTBfNXV0UGx3b0hfTXVJSnB2RjlISW1HN2xCeWhYa0hRSWF0M2dsVjN4MWxmcDFraFVSc01yU1NNZ00tN3Y"
     }
   ]
 }
