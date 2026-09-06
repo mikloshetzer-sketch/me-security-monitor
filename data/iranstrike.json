@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T04:44:41Z",
+  "generated_at": "2026-09-06T08:57:34Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,46 +52,42 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 150,
-    "feed_event_records": 150,
-    "normalized_events": 1150,
+    "events_endpoint_records": 153,
+    "feed_event_records": 153,
+    "normalized_events": 1153,
     "map_visualizable_events": 231,
-    "non_mappable_events": 919,
-    "developments": 5
+    "non_mappable_events": 922,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1150,
+      "total_events": 1153,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-05T21:32:17Z",
+      "latest_event_date": "2026-09-06T08:10:33Z",
       "geocoded_events": 231,
-      "geocoded_share": 20.1,
+      "geocoded_share": 20.0,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 127,
-        "previous": 12,
-        "delta": 115,
-        "percent_change": 958.3,
+        "current": 110,
+        "previous": 13,
+        "delta": 97,
+        "percent_change": 746.2,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 308,
-        "previous": 819,
-        "delta": -511,
-        "percent_change": -62.4,
+        "current": 310,
+        "previous": 822,
+        "delta": -512,
+        "percent_change": -62.3,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-10",
-        "count": 0
-      },
       {
         "date": "2026-03-11",
         "count": 0
@@ -807,13 +803,17 @@
       {
         "date": "2026-09-05",
         "count": 14
+      },
+      {
+        "date": "2026-09-06",
+        "count": 3
       }
     ],
     "category_counts": {
-      "infrastructure": 287,
+      "infrastructure": 288,
       "missile": 252,
       "strike": 211,
-      "drone": 147,
+      "drone": 149,
       "airstrike": 108,
       "explosion": 55,
       "movement": 45,
@@ -823,21 +823,21 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 596,
-      "high": 386,
+      "medium": 597,
+      "high": 388,
       "low": 166,
       "critical": 2
     },
     "attacker_counts": {
       "unknown": 661,
       "iran": 335,
-      "israel": 123,
+      "israel": 126,
       "usa": 31
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 306
+        "count": 307
       },
       {
         "name": "Iran",
@@ -849,7 +849,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 65
+        "count": 67
       },
       {
         "name": "Bandar Abbas",
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 306
+        "count": 307
       },
       {
         "name": "Jordan",
@@ -911,7 +911,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 86
+        "count": 88
       },
       {
         "name": "Iraq",
@@ -944,34 +944,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10457,
+    "totalCount": 10460,
     "spotlight": {
       "event": {
-        "id": "3ebaysdo5yw00",
-        "timestamp": "2026-09-05T17:11:52+00:00",
-        "location": "USA",
-        "origin": "IRN",
+        "id": "2tevo7ewro800",
+        "timestamp": "2026-09-06T08:10:33+00:00",
+        "location": "LBN",
+        "origin": "ISR",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Iran launches anti-ship ballistic missiles (likely Khalije Fars) at USS George Washington carrier, no direct hits recorded but carrier forced to perform evasive maneuvers",
-        "descriptionHe": "איראן משגרת טילים בליסטיים נגד ספינות (כנראה טיל خليج فارس) לעבר נושאת המטוסים USS George Washington, ללא פגיעה ישירה אך הנושאת נאלצה לביצוע תמaneuvרים הימלטות",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/83358"
+        "description": "IDF fighter jets and UAV strike multiple targets in southern Lebanon including Kafr Raman, Nbaityeh al-Fawqa, Arabalin in response to Hezbollah drone launches; 4 killed, 20 wounded reported by Lebanese Health Ministry",
+        "descriptionHe": "מטוסי קרב של צה\"ל וכטב\"ם תקפו מטרות מרובות בדרום לבנון כולל כפר רמאן, נבטיה אלפוקא, ערבצאלים בתגובה לשיגורי רחפנים של חזבאללה; 4 הרוגים, 20 פצועים על פי משרד הבריאות הלבנוני",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129792"
       },
-      "headline": "Iran launches anti-ship missiles at U.S. carrier George Washington",
-      "headlineHe": "איראן שיגרה טילים נגד הנושא האמריקני ג'ורג' וושינגטון",
-      "summary": "The strike marks a significant escalation in direct Iranian military action against U.S. naval assets in the Persian Gulf, forcing evasive maneuvers but causing no confirmed damage.",
-      "summaryHe": "ההתקפה מסמנת הסלמה משמעותית בפעולה צבאית ישירה של איראן נגד נכסים ימיים אמריקניים במפרץ הפרסי, וכפתה תמרות הימנעות אך לא גרמה לנזק מאומת.",
-      "pickedAt": "2026-09-06T00:00:51.268Z",
-      "state": "TODAY"
+      "headline": "IDF jets strike southern Lebanon targets after Hezbollah drone launches",
+      "headlineHe": "כלי ההטלה של צה\"ל תוקפים מטרות בדרום לבנון לאחר שיגור כטנ\"ט של חזבאללה",
+      "summary": "The strikes killed at least four people and wounded twenty, marking an escalation in cross-border tensions between Israel and Hezbollah over the past 24 hours.",
+      "summaryHe": "התקפות הפילו לפחות ארבעה אנשים ופצעו עשרים, מה שמסמן עלייה בהתחממות הגבול בין ישראל לחזבאללה במהלך 24 השעות האחרונות.",
+      "pickedAt": "2026-09-06T08:15:50.871Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-06T04:42:03.481Z",
+    "lastUpdated": "2026-09-06T08:54:04.833Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1512,118 +1512,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 94,
+      "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-09-06T04:00:43.299Z",
+      "lastUpdate": "2026-09-06T08:30:43.058Z",
       "internetHistory": [
-        {
-          "t": "2026-09-05T04:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-05T04:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-05T04:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T04:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-05T04:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-05T04:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T05:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T05:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T05:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T05:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T05:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T05:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T06:00:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-09-05T06:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-05T06:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T06:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T06:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T06:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T07:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T07:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T07:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T07:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T07:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-05T07:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T08:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T08:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-05T08:20:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-09-05T08:30:00.000Z",
           "v": 94
@@ -2087,22 +1979,130 @@
         {
           "t": "2026-09-06T03:40:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-09-06T03:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T04:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T04:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T04:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T04:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T04:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-09-06T04:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-09-06T05:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T05:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T05:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T05:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T05:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T05:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T06:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T06:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T06:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T06:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T06:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T06:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T07:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T07:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-06T07:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T07:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T07:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-06T07:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-06T08:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-06T08:10:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-06T04:00:43.299Z"
+    "lastUpdated": "2026-09-06T08:30:43.058Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e3",
+      "id": "iranstrike-3ebaysdo5yw00",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-05T17:11:52Z",
       "title": "IranStrike event",
-      "description": "Iran launches anti-ship ballistic missiles at USS George Washington; carrier evades, no direct hits",
+      "description": "Iran fires anti-ship ballistic missiles at USS George Washington; carrier evades, no direct hits",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2110,7 +2110,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches anti-ship ballistic missiles at uss george washin",
+      "attacker_evidence": "iran fires anti-ship ballistic missiles at uss george washin",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2123,9 +2123,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e3",
-        "text": "Iran launches anti-ship ballistic missiles at USS George Washington; carrier evades, no direct hits",
-        "textHe": "איראן שיגרה טילים בליסטיים נגד אוניית נושאת USS George Washington; האוניה התחמקה, ללא פגיעות ישירות",
+        "id": "3ebaysdo5yw00",
+        "text": "Iran fires anti-ship ballistic missiles at USS George Washington; carrier evades, no direct hits",
+        "textHe": "איראן שיגרה טילים בליסטיים נגד ספינת נושאת USS George Washington; הספינה התחמקה, ללא קליעות ישירות",
         "severity": "high",
         "timestamp": "2026-09-05T17:11:52+00:00",
         "entityIds": [
@@ -2139,14 +2139,14 @@
       }
     },
     {
-      "id": "iranstrike-b3e9d4f6",
+      "id": "iranstrike-2n9ar65x92g00",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-05T13:54:22Z",
+      "date": "2026-09-05T17:11:52Z",
       "title": "IranStrike event",
-      "description": "U.S. strikes Iranian oil tankers near Kharg Island; multiple strikes reported with explosions",
+      "description": "U.S. strikes Iranian oil tankers near Kharg Island; multiple attacks on strategic export facility",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2167,32 +2167,79 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b3e9d4f6",
-        "text": "U.S. strikes Iranian oil tankers near Kharg Island; multiple strikes reported with explosions",
-        "textHe": "ארה״ב תקפה מכליות נפט איראניות ליד איי ח״זק; מספר תקיפות עם פיצוצים",
+        "id": "2n9ar65x92g00",
+        "text": "U.S. strikes Iranian oil tankers near Kharg Island; multiple attacks on strategic export facility",
+        "textHe": "ארה\"ב תקפה טנקרים איראניים ליד אי חرج; מספר התקפות על מתקן ייצוא אסטרטגי",
         "severity": "high",
-        "timestamp": "2026-09-05T13:54:22+00:00",
+        "timestamp": "2026-09-05T17:11:52+00:00",
         "entityIds": [
           "USA",
           "IRN"
         ],
         "eventIds": [
           "2n9ar65x92g00",
-          "2sv43rgctri00",
-          "m5hivmywyk0"
+          "10vbwno4ptpc",
+          "2sv43rgctri00"
         ],
-        "sourceCount": 2
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-c5d1a8b2",
+      "id": "iranstrike-2tevo7ewro800",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-05T21:32:17Z",
+      "date": "2026-09-06T08:10:33Z",
       "title": "IranStrike event",
-      "description": "Houthi forces advance in Ta'izz; capture strategic heights at Al-Kudha, ongoing battles at Hays",
+      "description": "IDF airstrikes across southern Lebanon kill 4, wound 20 in response to Hezbollah drone launch",
+      "category": "other",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf airstrikes across southern lebanon kill 4, wound 20 in respo",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2tevo7ewro800",
+        "text": "IDF airstrikes across southern Lebanon kill 4, wound 20 in response to Hezbollah drone launch",
+        "textHe": "תקיפות חיל האוויר בדרום לבנון הורגות 4, פוגעות ב-20 בתגובה להשקה של מל\"ט של חזבוללה",
+        "severity": "high",
+        "timestamp": "2026-09-06T08:10:33+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "2tevo7ewro800",
+          "3mq8nbcf5u200",
+          "2laiqzw269e00",
+          "1e7gdjmyylmo0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-26qglit9a8qo0",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-05T20:29:13Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces seize strategic heights at Al-Kudha, cut Taizz-coast supply route; battles escalate",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2213,84 +2260,40 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c5d1a8b2",
-        "text": "Houthi forces advance in Ta'izz; capture strategic heights at Al-Kudha, ongoing battles at Hays",
-        "textHe": "כוחות Houthi מתקדמים בתעז; תפסו גבהות אסטרטגיים בקודח, קרבות מתמשכים בהיס",
+        "id": "26qglit9a8qo0",
+        "text": "Houthi forces seize strategic heights at Al-Kudha, cut Taizz-coast supply route; battles escalate",
+        "textHe": "כוחות חות'י תופסים גבהים אסטרטגיים בכוזח, חותכים נתיב אספקה לעיר; קרבות הולכים וגברים",
         "severity": "medium",
-        "timestamp": "2026-09-05T21:32:17+00:00",
+        "timestamp": "2026-09-05T20:29:13+00:00",
         "entityIds": [
           "YEM"
         ],
         "eventIds": [
-          "xs2bts8mfuo0",
-          "26qglit9a8qo0"
+          "26qglit9a8qo0",
+          "xs2bts8mfuo0"
         ],
         "sourceCount": 1
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-d6f2e9a4",
+      "id": "iranstrike-2tevo7ewro800",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-05T21:20:40Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129792",
+      "date": "2026-09-06T08:10:33Z",
       "title": "IranStrike event",
-      "description": "U.S. Navy disables Iranian tankers; IRGC claims retaliatory strike on U.S. vessels (unconfirmed)",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc claims retaliatory strike on u.s.",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "d6f2e9a4",
-        "text": "U.S. Navy disables Iranian tankers; IRGC claims retaliatory strike on U.S. vessels (unconfirmed)",
-        "textHe": "הצי האמריקני השבית מכליות איראניות; הפירוש טוען על תקיפה כנגד כלים אמריקניים (לא מאומת)",
-        "severity": "medium",
-        "timestamp": "2026-09-05T21:20:40+00:00",
-        "entityIds": [
-          "USA",
-          "IRN"
-        ],
-        "eventIds": [
-          "10vbwno4ptpc",
-          "1tso0osjepc00",
-          "26cu0qpy5wjk0"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-e8c3f1b5",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-05T17:31:01Z",
-      "title": "IranStrike event",
-      "description": "Hezbollah drone intercepted over southern Lebanon; IDF retaliates with airstrikes deep into territory",
-      "category": "other",
-      "severity": "medium",
+      "description": "IDF fighter jets and UAV strike multiple targets in southern Lebanon including Kafr Raman, Nbaityeh al-Fawqa, Arabalin in response to Hezbollah drone launches; 4 killed, 20 wounded reported by Lebanese Health Ministry",
+      "category": "drone",
+      "severity": "high",
       "attacker": "israel",
       "attacker_label": "Israel",
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf retaliates with airstrikes deep into territory רחפן hezbollah יירט מעל דרום",
+      "attacker_evidence": "lbn idf fighter jets and uav strike multiple targets in southern lebanon including ka",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -2303,23 +2306,112 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e8c3f1b5",
-        "text": "Hezbollah drone intercepted over southern Lebanon; IDF retaliates with airstrikes deep into territory",
-        "textHe": "רחפן Hezbollah יירט מעל דרום לבנון; צה״ל משיב במ习ניות עמוקות בשטח",
-        "severity": "medium",
-        "timestamp": "2026-09-05T17:31:01+00:00",
-        "entityIds": [
-          "LBN",
-          "ISR"
+        "id": "2tevo7ewro800",
+        "timestamp": "2026-09-06T08:10:33+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "1e7gdjmyylmo0"
-        ],
-        "sourceCount": 1
+        "type": "strike",
+        "severity": "high",
+        "description": "IDF fighter jets and UAV strike multiple targets in southern Lebanon including Kafr Raman, Nbaityeh al-Fawqa, Arabalin in response to Hezbollah drone launches; 4 killed, 20 wounded reported by Lebanese Health Ministry",
+        "descriptionHe": "מטוסי קרב של צה\"ל וכטב\"ם תקפו מטרות מרובות בדרום לבנון כולל כפר רמאן, נבטיה אלפוקא, ערבצאלים בתגובה לשיגורי רחפנים של חזבאללה; 4 הרוגים, 20 פצועים על פי משרד הבריאות הלבנוני",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129792"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-2laiqzw269e00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129782",
+      "date": "2026-09-06T05:35:16Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes Ghandour hospital building in Nbaityeh al-Fouqa, completely destroys structure; building reportedly vacant for extended period",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf strikes ghandour hospital building in nbaityeh al-fouqa,",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2laiqzw269e00",
+        "timestamp": "2026-09-06T05:35:16+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF strikes Ghandour hospital building in Nbaityeh al-Fouqa, completely destroys structure; building reportedly vacant for extended period",
+        "descriptionHe": "צה\"ל תוקף מבנה בית החולים ע'נדור בנבטיה אלפוקא, משמיד אותו לחלוטין; המבנה דווח כריק לתקופה ממושכת",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129782"
+      }
+    },
+    {
+      "id": "iranstrike-3mq8nbcf5u200",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129777",
+      "date": "2026-09-06T05:14:01Z",
+      "title": "IranStrike event",
+      "description": "IDF fighter jets strike multiple targets in southern Lebanon including Kafr Raman, Nbaityeh al-Fouqa, Nbaityeh city, and Arbasalaim; Israeli drone strikes motorcycle in Nbaityeh al-Fouqa; 2 killed and multiple wounded reported",
+      "category": "drone",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf fighter jets strike multiple targets in southern lebanon including ka",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3mq8nbcf5u200",
+        "timestamp": "2026-09-06T05:14:01+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "IDF fighter jets strike multiple targets in southern Lebanon including Kafr Raman, Nbaityeh al-Fouqa, Nbaityeh city, and Arbasalaim; Israeli drone strikes motorcycle in Nbaityeh al-Fouqa; 2 killed and multiple wounded reported",
+        "descriptionHe": "מטוסי קרב של צה\"ל תוקפים מטרות מרובות בדרום לבנון כולל כפר רמאן, נבטיה אלפוקא, נבטיה (העיר), וערבצאלים; כטב\"ם ישראלי תוקף אופנוע בכפר נבטיה אלפוקא; 2 הרוגים ומספר פצועים דווחו",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129777"
+      }
+    },
     {
       "id": "iranstrike-xs2bts8mfuo0",
       "source": "IranStrike",
