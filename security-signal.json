@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-09-05 23:55 UTC",
+    "updated": "2026-09-06 04:42 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-08-30",
-    "period_end": "2026-09-05",
-    "total_events": 148,
-    "total_risk": 168.33,
-    "normalized_risk_score": 67.3,
+    "period_start": "2026-08-31",
+    "period_end": "2026-09-06",
+    "total_events": 142,
+    "total_risk": 147.66,
+    "normalized_risk_score": 59.1,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 55,
     "security": 2,
-    "political": 11,
-    "other": 80
+    "political": 12,
+    "other": 73
   },
   "source_counts": {
-    "news": 143,
-    "isw": 5
+    "news": 139,
+    "isw": 3
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 90.12
+      "risk": 77.71
     },
     {
       "name": "Israel",
-      "risk": 18.4
-    },
-    {
-      "name": "Yemen",
-      "risk": 14.15
+      "risk": 16.35
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.8
+      "risk": 13.0
+    },
+    {
+      "name": "Yemen",
+      "risk": 12.6
     },
     {
       "name": "West Bank",
-      "risk": 11.25
+      "risk": 9.85
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-09-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Netanyahu boasts about bombing Qatar, says Gaza funds used for aid - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOV2ZpdjdSdzJabXpCcmJpV2NtUzh5TGJVYnFMeWF0S0dEV0x6Tzgza1NLY2J4SWJOd0VhcHNNcHFuMklDQlRTMFROX0ZDVWcwNlRIYmp1X3NEN2V2MHFrTGRneEdDTGl3S2ZxVXhlNnQ2bHhyb0tjdHRtYWI4ZWhwSURYQVJlOHNISmhyYm1nbVpsWTZLZk9FY21zaHhVbUQzQXZMVC1VQmzSAa4BQVVfeXFMTnFVWTRRNWJTbW0yV2ZSdzZfQjFPUWdMY2JoRUxnVlJjMHU5UldTblpTZGplT3A4RUZWeG92VlYxY0FtdDBrVjhVNXlGRXFVYkNqU0ppWDE4bFNPXzZVR0hQV1FmeFBJS2dtUVdwUVhYb2VPY0hFMjFkWXVOVmxGWlBtem82ck9vaEd2V1EtUlR0NHVrQzFzak5YOExxOXlWTFJYSG5idE5taVUzbDFB"
+    },
+    {
+      "score": 2.7,
       "date": "2026-09-05",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,16 @@
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOYnduS0xfeWF0NWZJUEpneWJOWTU3ZXNmUEZrVUY2a0U2b0FPejBkR21SMGxfRjVhWENDdUJOMTJKVm9MbjBBTkVTeHRGZmRfVkhKNnlyR1dySzBPUXBEUm1CVlVsQkhCTnlhMXBPMFM0NEJ5QTE0aDNxLU5SbzRVX09fZ3NpbnIycXVzZG9XM0dnb1JaS3pvbnI3UDUxNG1VUVhTWWFfbGQ5T2NQR0N6WnRzbzhINGlVRmRPUHhKT0xGVmhWc1E"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-09-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "US and Iran trade retaliatory attacks on ships as conflict flares",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cj64rrne643o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
       "date": "2026-09-05",
       "category": "military",
       "source_type": "news",
@@ -66,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYTI4N3VmemdBb1ZqR2ZxVk9VUDltcU9zM09UdVhxeVJqMkljbHZLS0UtZVhBclhwOHdDeGt0WjBXRHFPTU05aXhBcTMxRzBQS1pxUkFBSzFsR05aUndGSVNIY0pWWnh4YnpBRS1LRzF0cmM2Q3ZDejJpZnlzLWwtODlRVm9UcE9mNmk3RW15LWlfaG83end1WVZxSldLRTM0ZmZOQ9IBqgFBVV95cUxNeE40elppeDZvS3pSdUdmNGNldXJqU3B5RzRpVHB2eDlkUHNDR2dnQVVISE1kam0tR3hlbnZ3eXk0SEJpMUZIVXJUVGEwNncyMllKc2JPSHJKd3lyaDdMdWJ3U3JlTnU2RFo0YURUTUxwMHhxQkw3SjhaRlJlVFRROUJGcHoyZlJRbHJHSTdiNzBFOXVuTmNDYTlxNllvSWVBczkzbjJxZlZqdw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-05",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZjRxTHlmNGgyN05QTE9GN2ZQb0M0RFgtVUNvREtfMTdLRWJaUkw3blotT2ZBczVqOGlxQXdmREx1YVdWQ3d2bENpajhlaE83SFhrVDJEeF9vbkd4aHFUcXZITjdNYUlLWGgzUzQwdFJ6TXUtWWJfbEJKUU4wQndsWGRMM0JpUTJkejNMTjQ0eHl6V0pXRlpEM2F6TC1HOFpCMjNPM2xldHNYcDTSAbABQVVfeXFMTUFvWUxfc20yMlhaZG1rUFFUYWVWZGRXNVV2azJ4NVV4cFJFZHhMNjVnVFNRcTVZaWZQdFpRSE5XOXJITUdZaVhnZUZvbUNMblRLTVdzakc1VDhzWkhjRVItcFc2b3Jsd21kdVVQVEx3bTNBWTBfNXV0UGx3b0hfTXVJSnB2RjlISW1HN2xCeWhYa0hRSWF0M2dsVjN4MWxmcDFraFVSc01yU1NNZ00tN3Y"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-05",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRV9BRl9DejN6ckpPUVZabTRRbkF1S08wekVya0Y4UFV0Q3MwMnE5aGhXWTM3Q0Jta3o5SzRhX1lxSGc1T0lESEFGUzc1Y0xCcEF6SzQ2cUl5WFJLTkxMN0JCZWFUWjNvSUxFNzVvRHNFSVdWczZKVGxVZ1p0cEdfSE1KeDNLSUc3aVFvNE9VbVVHWWw1X0w3WGFrT1ZPQ1JxNmt6MTVYN2dpVHVl0gGyAUFVX3lxTE1oU2hxQ2Q3b3lwV1dESUh0R0FCNmlTR3J2Zmc5aFU4RU9zWHVBUEVoMXhYNHVROTlfaTZFQkZIeTlHdmpvbW5xdk5qa0E0Qm1BbVZGV1J6QldzY0RHRFpBQjRCeEFhWFNBMms3UVI1ZWVGaHNueWszdmJ4d3oxTzdCaGx4d0V5R0VNQkJNVGFYYXRLekFwZnpNUmZYWEwxaDd1U1NtN1k5ZDFWaXcwNE1SZVE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-05",
       "category": "military",
       "source_type": "news",
@@ -93,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPelNKRUV4bXJwOXRZR19XYWZtc1VxcFo0ZXpsdEY5MGRLcm91YXNvOE1IX0tYNnZIck9Pb1BvOVhVWVN2LTVyM0lWTHMxaDkwMFlVLUtkcG5mNzRONHNROFhiMDE5YnJwcVBzX3VaaGlUMS1OOUNyWFVUTEdrR2FRWU5LT2JhMnBVZnBDQllkWlVjZk5BTkp1ZUhNWHZiblprM2RxejQ3Mlc5ZERxbFFZT2xmbDdFZ9IBuwFBVV95cUxOQTlJOV9EU0dNLXJXY3RaMnAzdUkwQlZmeExkREtmYTZiSnRkcTBfSXZGQUFHNUJlcXRQN3Uxbi13Z2c3Qm44WmlYczJiN2h2RDFnY2ZxMk5BeFFzS3ZKR2Z1d2taaFdDanlSSDF6a05NSmdBeEI4Z015VExaY09odnNCdC1zMWJXREgyeXhqbXc1RkR0U1pkRkpoZUlSeGFDYmZfbTNzcEgzWG5QaGVQSjNOLWhnUnVibFRv"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-04",
       "category": "military",
       "source_type": "news",
@@ -102,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOQVZJdUE0TzFvS2xtSUJLOVUxZUVRZVRpMi1aUlNuSFZzX3h5TW4zSGJya0w3SjFlSno4QUlvdU90cHBBOS1xRllCZjR2aVRnUW16ZmQyN3M1SlRVSl9BYlk2Z2dvWGIzdEo3cXdTZjdWZkIzYXRNRzk3ZkM2cWMwN2ZWMVh1T09pNnRKVVAwRDhNSnJnSTFwVi1MZXdMNUNwOFJTU215REpkR1V0X1pVa09vNkVHeG9oX2lpVjdoTVl1ajI5MzU0dUN3"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-04",
       "category": "military",
       "source_type": "news",
@@ -111,31 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdWJyTEVVNzlNV2lCVktTZkk3dHZpYUFndlRkdTVXMzlnR0hEMXZYVnN5U3V5dC1JMEpWVDMwZng4YjhUc3pfOVpiNWNwdDRwbHY1TFhMLWZFZFh3YlF2SVEwYnJjNGkzTlpGR0hsRkwyMkQ4QVRSdmV4Ykxtd0xZamtOYkNNUV90TzhWdnF5ejhGRGhxSHgtcmp0SGdFVkhUa2owblM0QnN0aDRpeXlnRlBHUDdqZnE5TmRjd2FuR1dyVE5qY3VsNFJHWQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-04",
       "category": "military",
       "source_type": "news",
       "title": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPS3hZQnZwRzktT3UxRlNtYk8wVi1LSmtMdmRlTHIyZ0k4cm00aGp3d1plVEs2YVl3b3JxcTJUWE85VzZhLWJ2SEQ0WHM2eGd3SWJCeDlNZkhRQlBQdU44WTZLS3pJNzJsVEJISGJLeFBhUHVHMzFmUldrMUIwbHdEQkt1elJVMWxfUTN2SVhQT1BRblp2clBaVk9EalNpTDBVRzN6R3lUNUFzdnpWNnJuWjM5cE5ISjhOaUgtQ2xjQUNPVjF1c0tWZA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel says it strikes southern Lebanon after Hezbollah drone launch - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQY2dOV1l1QTdWZWR1S3p6cVMzb01JV2dhV3d5OVRfTzZ1RXZOLXJ0Z2lEU2lLemhDVklwS0x0c2xPRWdzZG1sT2owUHZkVjF5dEFQU1FMVmwzSUFPbUJBLUkzd01DcnVXNVRsZVhKUk9DenpjMWZ1aFBTOThRMWdQWHJtdlM5VWYwT3MyNVJmazlzb3B6dHJzXzI5QnZqTzhROENzMUpKMXhnVDZob25fWkItbnhTUEZSM0Ezb0hYYw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "How could US-Iran conflict end? Three experts give their views",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cgjql614glvo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
