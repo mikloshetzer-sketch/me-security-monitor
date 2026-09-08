@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T06:32:58Z",
+  "generated_at": "2026-09-08T11:45:42Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,46 +52,42 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 181,
-    "feed_event_records": 181,
-    "normalized_events": 1181,
+    "events_endpoint_records": 183,
+    "feed_event_records": 183,
+    "normalized_events": 1183,
     "map_visualizable_events": 238,
-    "non_mappable_events": 943,
+    "non_mappable_events": 945,
     "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1181,
+      "total_events": 1183,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-07T23:39:18Z",
+      "latest_event_date": "2026-09-08T08:15:10Z",
       "geocoded_events": 238,
-      "geocoded_share": 20.2,
+      "geocoded_share": 20.1,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 99,
-        "previous": 38,
-        "delta": 61,
-        "percent_change": 160.5,
+        "current": 79,
+        "previous": 40,
+        "delta": 39,
+        "percent_change": 97.5,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 316,
-        "previous": 838,
-        "delta": -522,
-        "percent_change": -62.3,
+        "current": 317,
+        "previous": 843,
+        "delta": -526,
+        "percent_change": -62.4,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-12",
-        "count": 0
-      },
       {
         "date": "2026-03-13",
         "count": 0
@@ -807,11 +803,15 @@
       {
         "date": "2026-09-07",
         "count": 17
+      },
+      {
+        "date": "2026-09-08",
+        "count": 2
       }
     ],
     "category_counts": {
       "infrastructure": 297,
-      "missile": 260,
+      "missile": 262,
       "strike": 215,
       "drone": 152,
       "airstrike": 110,
@@ -824,12 +824,12 @@
     },
     "severity_counts": {
       "medium": 612,
-      "high": 396,
+      "high": 398,
       "low": 171,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 675,
+      "unknown": 677,
       "iran": 336,
       "israel": 139,
       "usa": 31
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 322
+        "count": 324
       },
       {
         "name": "Iran",
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 322
+        "count": 324
       },
       {
         "name": "Jordan",
@@ -944,33 +944,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10488,
+    "totalCount": 10490,
     "spotlight": {
       "event": {
-        "id": "1vv5zvrip00w0",
-        "timestamp": "2026-09-07T23:39:18+00:00",
+        "id": "1bbkyue149c00",
+        "timestamp": "2026-09-08T08:15:10+00:00",
         "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Initial reports of impacts at King Khalid Airbase in Khamis Mushait, Saudi Arabia",
-        "descriptionHe": "דיווחים ראשוניים על פגיעות בבסיס חיל האוויר קינג חליד בח'מיס מושיט, סעודיה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/83495"
+        "description": "Houthi forces conduct large-scale military operation striking Aramco facilities in Abha, Najran, Jizan and Khamis Mushait airbase with dozens of ballistic missiles and drones, claiming direct hits and heavy damage",
+        "descriptionHe": "כוחות החות'ים מבצעים מבצע צבאי נרחב תוקפים מתקני ארמקו בעבהא, נג'ראן, ג'יזאן וביסיס חיל האוויר בח'מיס משיט עם עשרות טילים בליסטיים וכטב\"מים, תוקפים כי הגרמו נזק כבד",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129914"
       },
-      "headline": "Saudi airbase struck in latest regional escalation",
-      "headlineHe": "בסיס אוויר סעודי נפגע בהסלמה אזורית",
-      "summary": "King Khalid Airbase in southwestern Saudi Arabia reports impacts in what marks the latest in a series of attacks on critical infrastructure across the region.",
-      "summaryHe": "בסיס קינג חאלד באזור דרום-מערב סעודיה מדווח על פגיעות בסדרה של התקפות על תשתית קריטית באזור.",
-      "pickedAt": "2026-09-08T05:45:50.509Z",
+      "headline": "Houthis Launch Massive Missile Barrage Against Saudi Aramco Facilities",
+      "headlineHe": "חות'ים משגרים הפצצה ענקית של טילים נגד מתקני ארמקו סעודיים",
+      "summary": "The large-scale operation marks an intensification of Houthi attacks on critical Saudi energy infrastructure, with claims of direct hits across multiple strategic locations including airbases.",
+      "summaryHe": "המבצע בהיקף גדול מסמן התגברות בהתקפות חות'ים על תשתיות אנרגיה קריטיות סעודיות, עם טענות לפגיעות ישירות במספר מיקומים אסטרטגיים כולל בסיסי אוויר.",
+      "pickedAt": "2026-09-08T10:30:51.205Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-09-08T06:24:03.443Z",
+    "lastUpdated": "2026-09-08T11:42:03.411Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1511,142 +1512,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 94,
+      "internet": 91,
       "cellular": null,
-      "lastUpdate": "2026-09-08T06:00:43.243Z",
+      "lastUpdate": "2026-09-08T11:30:42.686Z",
       "internetHistory": [
-        {
-          "t": "2026-09-07T06:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-09-07T06:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-07T06:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-07T06:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-07T06:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-07T06:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-07T07:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-07T07:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T07:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-07T07:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T07:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T07:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T08:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T08:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T08:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T08:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T08:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T08:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T09:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T09:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T09:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T09:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T09:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T09:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T10:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T10:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T10:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T10:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-07T10:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T10:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T11:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-07T11:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-07T11:20:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-09-07T11:30:00.000Z",
           "v": 92
@@ -2086,73 +1955,156 @@
         {
           "t": "2026-09-08T05:40:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-09-08T05:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T06:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T06:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T06:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T06:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T06:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T06:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T07:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T07:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T07:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T07:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T07:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T07:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-08T08:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T08:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-08T08:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T08:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T08:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T08:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T09:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T09:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T09:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T09:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T09:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T09:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T10:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T10:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T10:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-08T10:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-08T10:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-08T10:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-08T11:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-08T11:10:00.000Z",
+          "v": 91
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-08T06:00:43.243Z"
+    "lastUpdated": "2026-09-08T11:30:42.686Z"
   },
   "developments": [
     {
-      "id": "iranstrike-8c2f41a7",
+      "id": "iranstrike-a7f2c9e1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-07T14:59:00Z",
+      "date": "2026-09-08T08:15:10Z",
       "title": "IranStrike event",
-      "description": "Israeli airstrikes in southern Lebanon kill 27+ over 3 days; escalation across Nabatieh district",
+      "description": "Houthis launch sustained campaign against Saudi infrastructure; Aramco facilities, airbases struck",
       "category": "other",
       "severity": "critical",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "israeli airstrikes in southern lebanon kill 27+ over 3 days;",
-      "location": "Nabatieh",
-      "country": "Lebanon",
-      "latitude": 33.3772,
-      "longitude": 35.4838,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "nabatieh",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "8c2f41a7",
-        "text": "Israeli airstrikes in southern Lebanon kill 27+ over 3 days; escalation across Nabatieh district",
-        "textHe": "התקפות חיל האוויר בדרום לבנון הרגו 27+ בשלוש ימים; הסלמה בנבטייה",
-        "severity": "critical",
-        "timestamp": "2026-09-07T14:59:00+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "wbmozni3eio0",
-          "fl18iy6biao0",
-          "3aw5q2rilry00",
-          "2mloeaa1tv200",
-          "2r1srncm19i00",
-          "2n4u2p4ohcs00"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-9e4d7b2c",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-07T23:39:18Z",
-      "title": "IranStrike event",
-      "description": "Houthis strike Saudi Aramco refineries in Jizan & Jazan; Jizan hit confirmed by satellite imagery",
-      "category": "other",
-      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2171,40 +2123,88 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "9e4d7b2c",
-        "text": "Houthis strike Saudi Aramco refineries in Jizan & Jazan; Jizan hit confirmed by satellite imagery",
-        "textHe": "החותים תקפו חיות דלק סעודי בג'יזאן; אישור לוויין להכה בג'יזאן",
-        "severity": "high",
-        "timestamp": "2026-09-07T23:39:18+00:00",
+        "id": "a7f2c9e1",
+        "text": "Houthis launch sustained campaign against Saudi infrastructure; Aramco facilities, airbases struck",
+        "textHe": "החות'ים משיקים מסע מתמשך נגד התשתיות הסעודיות; מתקני ארמקו ובסיסים תקפים",
+        "severity": "critical",
+        "timestamp": "2026-09-08T08:15:10+00:00",
         "entityIds": [
           "YEM",
           "SAU"
         ],
         "eventIds": [
-          "32scfkzc2hw00",
+          "1bbkyue149c00",
+          "2qctphzi48a00",
+          "1vv5zvrip00w0",
           "3j0q79ayer800",
-          "1vv5zvrip00w0"
+          "32scfkzc2hw00"
         ],
-        "sourceCount": 1
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-a1f6c3d8",
+      "id": "iranstrike-b5e8d2f4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-07T12:59:00Z",
+      "title": "IranStrike event",
+      "description": "Israeli strikes in southern Lebanon kill 27+ over 3 days; escalating aerial campaign",
+      "category": "other",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "israeli strikes in southern lebanon kill 27+ over 3 days;",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b5e8d2f4",
+        "text": "Israeli strikes in southern Lebanon kill 27+ over 3 days; escalating aerial campaign",
+        "textHe": "תקיפות צהל בדרום לבנון הרגו 27+ בשלוש ימים; מסע אווירי הולך וגבר",
+        "severity": "high",
+        "timestamp": "2026-09-07T12:59:00+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "wbmozni3eio0",
+          "2mloeaa1tv200",
+          "2r1srncm19c0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-c3d1a8b7",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-07T09:35:09Z",
       "title": "IranStrike event",
-      "description": "IRGC strikes destroy U.S. barracks at Ali Al Salem Air Base, Kuwait; satellite confirms damage",
+      "description": "Iran claims destruction of U.S. personnel barracks at Kuwait airbase in September 2 attack",
       "category": "other",
       "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc strikes destroy u.s.",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2217,9 +2217,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a1f6c3d8",
-        "text": "IRGC strikes destroy U.S. barracks at Ali Al Salem Air Base, Kuwait; satellite confirms damage",
-        "textHe": "תקיפת משמר מהפכה הפרסית הרסה קזרמות בבסיס כווית; אישור לוויין",
+        "id": "c3d1a8b7",
+        "text": "Iran claims destruction of U.S. personnel barracks at Kuwait airbase in September 2 attack",
+        "textHe": "איראן טוענת להשמדת בקתות צבא אמריקני בבסיס קוויתי בתקפת 2 בספטמבר",
         "severity": "high",
         "timestamp": "2026-09-07T09:35:09+00:00",
         "entityIds": [
@@ -2234,15 +2234,62 @@
       }
     },
     {
-      "id": "iranstrike-b2e5f4a9",
+      "id": "iranstrike-d6c4e9a2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-07T16:23:46Z",
       "title": "IranStrike event",
-      "description": "Houthis conduct multi-target campaign: ballistic missiles strike PLC camps & Aramco logistics",
+      "description": "Houthis strike Saudi-backed forces in Yemen; ballistic missiles and artillery target Al-Wadi'ah",
       "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d6c4e9a2",
+        "text": "Houthis strike Saudi-backed forces in Yemen; ballistic missiles and artillery target Al-Wadi'ah",
+        "textHe": "החות'ים תוקפים כוחות תומכי סעודיה ביומן; טילים בליסטיים וארטילריה יעדו את אל-וואדי'ה",
+        "severity": "medium",
+        "timestamp": "2026-09-07T16:23:46+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "o4z378he6tc0",
+          "1b33s88d8a3k0",
+          "bdv9xkrfc1s0"
+        ],
+        "sourceCount": 2
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-1bbkyue149c00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129914",
+      "date": "2026-09-08T08:15:10Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces conduct large-scale military operation striking Aramco facilities in Abha, Najran, Jizan and Khamis Mushait airbase with dozens of ballistic missiles and drones, claiming direct hits and heavy damage",
+      "category": "missile",
       "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2262,25 +2309,67 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b2e5f4a9",
-        "text": "Houthis conduct multi-target campaign: ballistic missiles strike PLC camps & Aramco logistics",
-        "textHe": "החותים ביצעו מסע מלא: טילים בליסטיים תקפו מחנות ומרכזי לוגיסטיקה",
+        "id": "1bbkyue149c00",
+        "timestamp": "2026-09-08T08:15:10+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "high",
-        "timestamp": "2026-09-07T16:23:46+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "o4z378he6tc0",
-          "1b33s88d8a3k0",
-          "bdv9xkrfc1s0"
-        ],
-        "sourceCount": 2
+        "description": "Houthi forces conduct large-scale military operation striking Aramco facilities in Abha, Najran, Jizan and Khamis Mushait airbase with dozens of ballistic missiles and drones, claiming direct hits and heavy damage",
+        "descriptionHe": "כוחות החות'ים מבצעים מבצע צבאי נרחב תוקפים מתקני ארמקו בעבהא, נג'ראן, ג'יזאן וביסיס חיל האוויר בח'מיס משיט עם עשרות טילים בליסטיים וכטב\"מים, תוקפים כי הגרמו נזק כבד",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129914"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-2qctphzi48a00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129913",
+      "date": "2026-09-08T07:43:50Z",
+      "title": "IranStrike event",
+      "description": "Houthis launch significant attack on Saudi Arabia using ballistic missiles and drones targeting King Khalid Air Base in Khamis Mushait and other objectives",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2qctphzi48a00",
+        "timestamp": "2026-09-08T07:43:50+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthis launch significant attack on Saudi Arabia using ballistic missiles and drones targeting King Khalid Air Base in Khamis Mushait and other objectives",
+        "descriptionHe": "החות'ים משגרים התקפה משמעותית על סעודיה באמצעות טילים בליסטיים וכטב\"מים לעבר בסיס חיל האוויר המלך חאלד בחמיס משיט ויעדים נוספים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129913"
+      }
+    },
     {
       "id": "iranstrike-1vv5zvrip00w0",
       "source": "IranStrike",
