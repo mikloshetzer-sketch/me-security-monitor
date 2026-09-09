@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T04:51:54Z",
+  "generated_at": "2026-09-09T09:48:17Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 209,
-    "feed_event_records": 209,
-    "normalized_events": 1209,
+    "events_endpoint_records": 212,
+    "feed_event_records": 212,
+    "normalized_events": 1212,
     "map_visualizable_events": 241,
-    "non_mappable_events": 968,
-    "developments": 5
+    "non_mappable_events": 971,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1209,
+      "total_events": 1212,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-08T22:35:18Z",
+      "latest_event_date": "2026-09-09T05:33:33Z",
       "geocoded_events": 241,
       "geocoded_share": 19.9,
       "top_category": "infrastructure",
@@ -73,25 +73,21 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 81,
-        "previous": 66,
-        "delta": 15,
-        "percent_change": 22.7,
-        "direction": "increase"
+        "current": 80,
+        "previous": 88,
+        "delta": -8,
+        "percent_change": -9.1,
+        "direction": "stable"
       },
       "latest_30_days": {
-        "current": 327,
+        "current": 329,
         "previous": 854,
-        "delta": -527,
-        "percent_change": -61.7,
+        "delta": -525,
+        "percent_change": -61.5,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-13",
-        "count": 0
-      },
       {
         "date": "2026-03-14",
         "count": 0
@@ -807,12 +803,16 @@
       {
         "date": "2026-09-08",
         "count": 14
+      },
+      {
+        "date": "2026-09-09",
+        "count": 3
       }
     ],
     "category_counts": {
       "infrastructure": 299,
-      "missile": 271,
-      "strike": 217,
+      "missile": 272,
+      "strike": 219,
       "drone": 162,
       "airstrike": 112,
       "explosion": 56,
@@ -823,14 +823,14 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 631,
-      "high": 403,
+      "medium": 632,
+      "high": 405,
       "low": 173,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 697,
-      "iran": 341,
+      "unknown": 698,
+      "iran": 343,
       "israel": 140,
       "usa": 31
     },
@@ -841,11 +841,11 @@
       },
       {
         "name": "Iran",
-        "count": 299
+        "count": 301
       },
       {
         "name": "Jordan",
-        "count": 101
+        "count": 102
       },
       {
         "name": "Lebanon",
@@ -899,7 +899,7 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 424
+        "count": 426
       },
       {
         "name": "Unknown",
@@ -907,7 +907,7 @@
       },
       {
         "name": "Jordan",
-        "count": 122
+        "count": 123
       },
       {
         "name": "Lebanon",
@@ -944,11 +944,11 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10517,
+    "totalCount": 10520,
     "spotlight": {
       "event": {
-        "id": "1xfuzoy3pcsg0",
-        "timestamp": "2026-09-08T22:35:18+00:00",
+        "id": "27geoc4nztc00",
+        "timestamp": "2026-09-09T05:14:56+00:00",
         "location": "JOR",
         "origin": "IRN",
         "coordinates": [
@@ -957,27 +957,28 @@
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Iranian ballistic missile, likely Ghadr-type, launched at Jordan",
-        "descriptionHe": "טיל בליסטי איראני מסוג Ghadr משוער משוגר לעבר ירדן",
-        "source": "CIG_telegram",
+        "description": "Iran launches widespread missile attack on bases in Jordan hosting U.S. forces in retaliation for U.S. attack on Iranian tankers; 20 missiles fired, 18 intercepted, 2 impact",
+        "descriptionHe": "מתקפת טילים איראנית על ירדן - איראן שיגרה הלילה מתקפת טילים רחבה לעבר הבסיסים בירדן בהם שוהים כוחות אמריקאים בתגובה לתקיפת המיכליות האיראניות על ידי צבא ארה\"ב; 20 טילים שוגרו, 18 יורטו, 2 נוספים נפלו בשטח",
+        "source": "abualiexpress",
         "weapons": [
           {
             "type": "ballistic_missile",
-            "count": 1
+            "count": 20,
+            "intercepted": 18
           }
         ],
-        "sourceUrl": "https://t.me/CIG_telegram/83528"
+        "sourceUrl": "https://t.me/abualiexpress/129967"
       },
-      "headline": "Iranian ballistic missile strikes Jordan as regional tensions escalate",
-      "headlineHe": "טיל בליסטי איראני פוגע בירדן כשמתחים אזוריים מתגברים",
-      "summary": "The strike marks an escalation in direct Iranian attacks on U.S.-allied territory, following U.S. military responses against Iranian oil infrastructure.",
-      "summaryHe": "ההתקפה מסמנת הסלמה בהתקפות איראניות ישירות על שטח בעלות ברית אמריקאיות, בעקבות תגובות צבא אמריקאי נגד תשתית נפט איראנית.",
-      "pickedAt": "2026-09-09T00:00:50.883Z",
+      "headline": "Iran fires 20 missiles at U.S. bases in Jordan; two impact",
+      "headlineHe": "איראן יורה 20 טילים לעבר בסיסי ארה\"ב בירדן; שניים פוגעים",
+      "summary": "The barrage marks Iran's direct retaliation for U.S. destruction of Iranian oil tankers, with most missiles intercepted but two reaching their targets.",
+      "summaryHe": "ההפצצה מהווה תגובה ישירה של איראן להשמדת טנקרי הנפט האיראניים על ידי ארה\"ב, כאשר רוב הטילים יורטו אך שניים הגיעו ליעדיהם.",
+      "pickedAt": "2026-09-09T08:15:50.837Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-09-09T04:48:03.343Z",
+    "lastUpdated": "2026-09-09T09:48:05.598Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1518,130 +1519,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 94,
       "cellular": null,
-      "lastUpdate": "2026-09-09T04:30:43.053Z",
+      "lastUpdate": "2026-09-09T09:30:42.865Z",
       "internetHistory": [
-        {
-          "t": "2026-09-08T04:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T04:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T04:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T05:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T05:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T05:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T05:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T05:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T05:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T06:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T06:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T06:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T06:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T06:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T06:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T07:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T07:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T07:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T07:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T07:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T07:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T08:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T08:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-08T08:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T08:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T08:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T08:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T09:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T09:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T09:20:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-09-08T09:30:00.000Z",
           "v": 93
@@ -2093,22 +1974,142 @@
         {
           "t": "2026-09-09T04:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-09-09T04:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T04:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T04:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T04:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T05:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T05:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T05:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T05:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T05:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T05:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T06:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T06:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T06:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T06:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T06:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T06:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T07:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T07:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T07:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T07:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T07:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T07:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T08:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T08:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T08:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T08:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T08:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T08:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T09:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T09:10:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-09T04:30:43.053Z"
+    "lastUpdated": "2026-09-09T09:30:42.865Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c3e1",
+      "id": "iranstrike-a7f3c9e2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-08T22:35:18Z",
+      "date": "2026-09-09T05:14:56Z",
       "title": "IranStrike event",
-      "description": "Iran launches ballistic missiles with cluster warheads at U.S. bases in Jordan",
+      "description": "Iran fires 20 ballistic missiles at U.S. bases in Jordan; 18 intercepted, 2 impact",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2116,7 +2117,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches ballistic missiles with cluster warheads at u.s.",
+      "attacker_evidence": "iran fires 20 ballistic missiles at u.s.",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2129,33 +2130,81 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c3e1",
-        "text": "Iran launches ballistic missiles with cluster warheads at U.S. bases in Jordan",
-        "textHe": "איראן שיגרה טילים בליסטיים עם ראשי צבור לבסיסים אמריקאיים בירדן",
+        "id": "a7f3c9e2",
+        "text": "Iran fires 20 ballistic missiles at U.S. bases in Jordan; 18 intercepted, 2 impact",
+        "textHe": "איראן שיגרה 20 טילים בליסטיים לבסיסי ארה\"ב בירדן; 18 יורטו, 2 פגעו",
         "severity": "critical",
-        "timestamp": "2026-09-08T22:35:18+00:00",
+        "timestamp": "2026-09-09T05:14:56+00:00",
         "entityIds": [
           "IRN",
           "USA",
           "JOR"
         ],
         "eventIds": [
+          "27geoc4nztc00",
           "1xfuzoy3pcsg0",
           "12scv143bgq80",
           "o2dv26f0chs0"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-b8e4d9f2",
+      "id": "iranstrike-b6e4d1a3",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-09T05:33:33Z",
+      "title": "IranStrike event",
+      "description": "U.S. destroys 8 Iranian oil tankers linked to Quds Force in 3 days",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b6e4d1a3",
+        "text": "U.S. destroys 8 Iranian oil tankers linked to Quds Force in 3 days",
+        "textHe": "ארה\"ב השמידה 8 טנקרי נפט איראניים הקשורים לכוח קודס ב-3 ימים",
+        "severity": "high",
+        "timestamp": "2026-09-09T05:33:33+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "eaeg0erzag00",
+          "pbvdoj6qj000",
+          "3n88v0rhnke00",
+          "rwivley1m9s0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-c8h2f5b4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-08T08:15:10Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi oil & military targets with dozens of missiles and drones",
+      "description": "Houthis strike Saudi military targets; dozens of missiles/drones fired at bases",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2176,9 +2225,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b8e4d9f2",
-        "text": "Houthis strike Saudi oil & military targets with dozens of missiles and drones",
-        "textHe": "החותים תקפו מתקני נפט וצבאיים סעודיים בעשרות טילים ודרונים",
+        "id": "c8h2f5b4",
+        "text": "Houthis strike Saudi military targets; dozens of missiles/drones fired at bases",
+        "textHe": "החוותים תקפו מטרות צבאיות סעודיות; עשרות טילים ודרונים שוגרו לבסיסים",
         "severity": "high",
         "timestamp": "2026-09-08T08:15:10+00:00",
         "entityIds": [
@@ -2189,20 +2238,20 @@
           "1bbkyue149c00",
           "2qctphzi48a00"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c6a1b5d3",
+      "id": "iranstrike-d9i6g7c5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-08T18:16:51Z",
       "title": "IranStrike event",
-      "description": "IRGC claims capture of U.S. advanced UUV at Strait of Hormuz entrance",
+      "description": "Iran claims capture of advanced U.S. UUV in Strait of Hormuz",
       "category": "other",
-      "severity": "high",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2221,10 +2270,10 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c6a1b5d3",
-        "text": "IRGC claims capture of U.S. advanced UUV at Strait of Hormuz entrance",
-        "textHe": "משמר הנחמ טוען לתפיסת כלי תת-מימי מתקדם אמריקאי",
-        "severity": "high",
+        "id": "d9i6g7c5",
+        "text": "Iran claims capture of advanced U.S. UUV in Strait of Hormuz",
+        "textHe": "איראן טוענת כי תפסה כלי מימני ללא אדם מתקדם של ארה\"ב במצר הורמוז",
+        "severity": "medium",
         "timestamp": "2026-09-08T18:16:51+00:00",
         "entityIds": [
           "IRN",
@@ -2235,66 +2284,22 @@
           "2nr5s5duco800",
           "r5k9k1bumo00"
         ],
-        "sourceCount": 3
-      }
-    },
-    {
-      "id": "iranstrike-d4c2e7f5",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-08T22:18:11Z",
-      "title": "IranStrike event",
-      "description": "U.S. strikes Iranian oil tanker near Kharg Island; Iran retaliates with tanker destruction",
-      "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "strikes iranian oil tanker near kharg island;",
-      "location": "Kharg Island",
-      "country": "Iran",
-      "latitude": 29.2447,
-      "longitude": 50.3129,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "kharg island",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "d4c2e7f5",
-        "text": "U.S. strikes Iranian oil tanker near Kharg Island; Iran retaliates with tanker destruction",
-        "textHe": "ארה\"ב תקפה טנקר איראני ליד אי חרג; איראן השיבה בהשמדת טנקרים",
-        "severity": "high",
-        "timestamp": "2026-09-08T22:18:11+00:00",
-        "entityIds": [
-          "USA",
-          "IRN"
-        ],
-        "eventIds": [
-          "2cojzs4v007w0",
-          "rwivley1m9s0",
-          "pbvdoj6qj000"
-        ],
         "sourceCount": 2
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-e9a3f6b8",
+      "id": "iranstrike-eaeg0erzag00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-08T18:22:52Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129968",
+      "date": "2026-09-09T05:33:33Z",
       "title": "IranStrike event",
-      "description": "IRGC claims shoot-down of U.S. MQ-9 Reaper drone over Iranian airspace",
-      "category": "other",
-      "severity": "medium",
+      "description": "U.S. CENTCOM destroys 5 Iranian oil tankers used by Iran's Quds Force network; 8 tankers total destroyed in 3 days",
+      "category": "strike",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2313,23 +2318,119 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e9a3f6b8",
-        "text": "IRGC claims shoot-down of U.S. MQ-9 Reaper drone over Iranian airspace",
-        "textHe": "משמר הנחמ טוען להוצאה מכח של דרון MQ-9 אמריקאי",
-        "severity": "medium",
-        "timestamp": "2026-09-08T18:22:52+00:00",
-        "entityIds": [
-          "IRN",
-          "USA"
+        "id": "eaeg0erzag00",
+        "timestamp": "2026-09-09T05:33:33+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "3q5u7cvwg9e00"
-        ],
-        "sourceCount": 1
+        "type": "strike",
+        "severity": "high",
+        "description": "U.S. CENTCOM destroys 5 Iranian oil tankers used by Iran's Quds Force network; 8 tankers total destroyed in 3 days",
+        "descriptionHe": "פיקוד מרכז של ארה\"ב השמיד 5 מיכליות נפט איראניות ששימשו את רשת הצללים של איראן; 8 מיכליות הושמדו בסך הכל ב-3 ימים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129968"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-27geoc4nztc00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129967",
+      "date": "2026-09-09T05:14:56Z",
+      "title": "IranStrike event",
+      "description": "Iran launches widespread missile attack on bases in Jordan hosting U.S. forces in retaliation for U.S. attack on Iranian tankers; 20 missiles fired, 18 intercepted, 2 impact",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iran launches widespread missile attack on bases in jordan hosting u.s.",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "27geoc4nztc00",
+        "timestamp": "2026-09-09T05:14:56+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran launches widespread missile attack on bases in Jordan hosting U.S. forces in retaliation for U.S. attack on Iranian tankers; 20 missiles fired, 18 intercepted, 2 impact",
+        "descriptionHe": "מתקפת טילים איראנית על ירדן - איראן שיגרה הלילה מתקפת טילים רחבה לעבר הבסיסים בירדן בהם שוהים כוחות אמריקאים בתגובה לתקיפת המיכליות האיראניות על ידי צבא ארה\"ב; 20 טילים שוגרו, 18 יורטו, 2 נוספים נפלו בשטח",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 20,
+            "intercepted": 18
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/129967"
+      }
+    },
+    {
+      "id": "iranstrike-3n88v0rhnke00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/129960",
+      "date": "2026-09-09T05:10:26Z",
+      "title": "IranStrike event",
+      "description": "Iranian tanker attacked by U.S. forces near Jask Island in southern Iran",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn iranian tanker attacked by u.s.",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3n88v0rhnke00",
+        "timestamp": "2026-09-09T05:10:26+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Iranian tanker attacked by U.S. forces near Jask Island in southern Iran",
+        "descriptionHe": "מיכלית נפט איראנית הותקפה על ידי ארה\"ב ליד אי ג'אסק בדרום איראן",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/129960"
+      }
+    },
     {
       "id": "iranstrike-1xfuzoy3pcsg0",
       "source": "IranStrike",
