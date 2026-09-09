@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-09 00:17 UTC",
+    "updated": "2026-09-09 07:24 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,53 +8,89 @@
   "summary": {
     "period_start": "2026-09-03",
     "period_end": "2026-09-09",
-    "total_events": 135,
-    "total_risk": 135.65,
-    "normalized_risk_score": 54.3,
+    "total_events": 138,
+    "total_risk": 145.44,
+    "normalized_risk_score": 58.2,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 47,
+    "military": 48,
     "security": 1,
-    "political": 12,
-    "other": 75
+    "political": 11,
+    "other": 78
   },
   "source_counts": {
-    "news": 132,
-    "isw": 3
+    "news": 134,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 49.85
+      "risk": 47.64
     },
     {
       "name": "Israel",
-      "risk": 27.05
+      "risk": 27.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.7
+      "risk": 13.8
+    },
+    {
+      "name": "West Bank",
+      "risk": 13.2
     },
     {
       "name": "Yemen",
       "risk": 12.9
-    },
-    {
-      "name": "West Bank",
-      "risk": 12.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUzVwcURFOW5QT2VTVW5YdFV2a2NPRGh1YkFoaTV2VUE0MXhES2gwR1ptSldNN29OZUZOLUQ2NlFUZUNpYjRFV25nTTR5cW03ZEFmX1BzMzViNGI5VXhWMWhtZHU1SDNxQ1Iyc2lDcEZOYnVpU3JMUVE4Uk9IUkVyYUdjd2ppV01LbDZESEQzWDBaZHZyOEpCem9yRkw0YUhnTVpuSVlzc01jVWszdVJSWg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attacks US base in Jordan, ships near Hormuz after tankers sunk - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZ2FPaUNRYjRBWnd2cmxkT044cmZYbENZYnhTWXAzUGxadUpEZ3N3aHpVSEtodVVsWUt6djBaeFhjUm5JOGVrNEE1SXlaUkxoSzBVaUpaWjZTdkdXZzItRTFOaGtMZWVtbEhpdUFSUWgwczNXa2VqZ3ktdzVhajBmYllFNVJIaUxnMDBLazE4S0VSTzZSbVFxMDZSUVY4aHIxVmhkcUpZeF85TzZYV2tqWkE5bVNWM29qWlE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "US strikes Iranian oil tankers as Tehran targets American base in Jordan",
+      "location": "Tehran",
+      "url": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "US strikes 5 Iranian oil tankers; Tehran targets Jordan base, US warships - Al Jazeera",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSVZkSGpmVEVQUWxwTVJzMktrLWQ1R0RESXZqbktnZlo3SmJGM0prNEs3dVg0UUp3WWlzQVdZaUdONHQwOWFwVFU0R19hbm1zZGIyVVFqWkJ3S2c2dEpQQUJ4SHd4VE52UXBwa2pHSGZjWFd3U0xQeTFLQVIzZFBQdS11Y1VoY3NzVGlsTF9WYTduYVVZaUhlV05ob3c0RWFWY3M2Q19zSnlYdkpOTW13LUZrdFpKclnSAbwBQVVfeXFMT3pFYTcwbEJBMkxXWEEya3hZRFhRbzV0dTg4SkFIay1nWkthZFlEY3pFTUNVMnhuRnpTdTZkSzcwT0tmNjBncmpaNzk1akNsUldnWEZkVXNrejB6UEUtMXRpTXhQbHVQYkRiSDZxclQ0S1BUdVc0d1lUT0FmNGdfdzVLLU80czBXSHIwSXJCT3lqTXBCc29qaE9KZk5xM3JjSXBCSm1XX0JEd0VqNjNnY19DMHo3S2M0aWZQWU8"
+    },
     {
       "score": 2.7,
       "date": "2026-09-08",
       "category": "military",
       "source_type": "news",
-      "title": "War expands as Houthis attack Saudi cities and US strikes Iranian tankers - Reuters",
+      "title": "Iran says it captured US submarine drone in Strait of Hormuz - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNT2RnNWprQ01ScjN2Q05RSHRWdmRqVzh2U01LUVVPVmhiRDVYNER3anQxQlNWV24wS3RZR2ZqS1FxNnFKWFRqSmlYbnQwSFk1eU5Cbnh1SVpxbTZCWUwtelFqbFV6LTNLVHZZbGRaYTVucy1VT1JwNDZPM3gydkZRU2VCWHFoVnpTVU9ILXlfRHpKMnBsT3RJOUlkejRzT1FJa25YekFnMVl6dUJnbERxeXo1UnpOZTVaQ281aFJrbjFEWmN3T2c"
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPM0VkUnd5VzlEZVhBUy1ja1Q0dFZ6RE0yZHp2dGdobTZHajY0ZTZ6MXdkVWtKV2hYal9nY2dRRUlxU0RlZmxyQ3dmMXpKMFVVNlh2Q25LRVp3LXZHWmtrbzZGM3djQlVtVWdQb0U5RFNTOVA2U1BUMlFWcDZqblV2MGZLdEZPQllselJKcm44eld0STZhTDdsd2R1RG1HT1RrNm53VTZXNXVWWDla"
     },
     {
       "score": 2.7,
@@ -88,9 +124,9 @@
       "date": "2026-09-08",
       "category": "military",
       "source_type": "news",
-      "title": "Iran says it captured US submarine drone in Strait of Hormuz - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPM0VkUnd5VzlEZVhBUy1ja1Q0dFZ6RE0yZHp2dGdobTZHajY0ZTZ6MXdkVWtKV2hYal9nY2dRRUlxU0RlZmxyQ3dmMXpKMFVVNlh2Q25LRVp3LXZHWmtrbzZGM3djQlVtVWdQb0U5RFNTOVA2U1BUMlFWcDZqblV2MGZLdEZPQllselJKcm44eld0STZhTDdsd2R1RG1HT1RrNm53VTZXNXVWWDla"
+      "title": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSDNtVzFxN3MtVEs4UWxoWnA0ekJKVC1EWThJR1hiQ2FvN1d2LU40NXRDaUJGMGRLeF9KaHY1R3dTSmdTRHhHdG9uNTIzZXRRRWVoWW43d0dxM3ZoSTNMM2xEQlhlV011OWlpSHdxTDlmWjl4MW9VQ1ktN3hqU3lEU3dnVUV3XzQzWGZjU3ZBNnNBQVhOek9OeHZ1WnFZb2RacWhmVXdiSGM5Q3FwbmFtcGN6OTJpZF9kNk5YWGladzg"
     },
     {
       "score": 2.7,
@@ -100,42 +136,6 @@
       "title": "Most Gulf stocks edge up amid caution over US-Iran standoff, Saudi energy strikes - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWXJjYk1sOWxfdE16SHUtRFgxUTNsbENDQTlBMnlBekVYbTJvX0RpeTVQdUwwV1MwUEo4bEc3c1d3ZU1tWTJoWW55dHVlWjRfUThxNTJ3MmtBbWRKYm1DcDE1cjVDVWV2d2lGcVRORC1aaWxKUXh4cHJxX2pyRjM4SWhXS1dQZ0tRejVCUUpFSlNLN1pFNFdMQnJJV1dRLUs1ZGxNZ1RFLUsxSlpfV0lMZU5oX2hKU0wz"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia vows to respond after Houthis attack cities and energy facilities",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cp849n2nz01o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia says 73 wounded as Houthis attack civilian and energy sites - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNelpMMWdSSTBNZG5rSnpCMmk5MnVUNGNIR1lvVTQ0X20zUFFIYUdheDN0QzFoRm15VGdmNmlvUi1rUHRJWkRqMXdPTFJwQ3FzUTFPWlpPNGFtNjI5UGE0U1c3azQyanhLdTdvMTZXcGJSYXMzVWczU0pwUU5GLXcxOXZ3dGpuMUplbm9NRzZuV0ZuUGV2SnB5OERyRXVENHpXNWxtSFk1SFpEazFBdVVV0gG0AUFVX3lxTE81M3laVXFBWllCdmJvOFZhQ2J1TjlPVFpNRzdGa2xLNktBSUhJYjlHYU9CLWlaVFNCNmMwOXRZd2doTU9UWTdxV1hZQ2FQWVFSUlBzYVVVX3hWaFNCRXJSRHY0TWc2aFkxNk96TUhwTi1POGdQNlZvTkd4Z3IxeU8xWmpoNmdFVTd3QzUyR3hxUnRjYUFQeGZoQ3FOa0pUWlhhWEVCLTNGRVlJaVdnTFdzUGZ3Rg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQM292TDh2Uk9IeUlEeFNFY1UyeFM3OFZzd2w1S013bEtmVnhXYmdfT0ptV1ZfTlRTRXBLVzFZdmZ6T0d2cVdkZHAtbmhFTjlHUmJRQkRVZDhwMGJZZUM2MEpBS041SmhGcEhWZTlQemFBcjRaNkwyWkhhUlNFc1dNZEVyQ1R0YzFnRm5ZNHd3VU5NV01EeWZVZjJrUW5VWGF2X2R1U0xzSFEwbE9iY1E"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSDNtVzFxN3MtVEs4UWxoWnA0ekJKVC1EWThJR1hiQ2FvN1d2LU40NXRDaUJGMGRLeF9KaHY1R3dTSmdTRHhHdG9uNTIzZXRRRWVoWW43d0dxM3ZoSTNMM2xEQlhlV011OWlpSHdxTDlmWjl4MW9VQ1ktN3hqU3lEU3dnVUV3XzQzWGZjU3ZBNnNBQVhOek9OeHZ1WnFZb2RacWhmVXdiSGM5Q3FwbmFtcGN6OTJpZF9kNk5YWGladzg"
     }
   ]
 }
