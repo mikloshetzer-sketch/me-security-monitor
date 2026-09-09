@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-09 07:24 UTC",
+    "updated": "2026-09-09 12:59 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-03",
     "period_end": "2026-09-09",
-    "total_events": 138,
-    "total_risk": 145.44,
-    "normalized_risk_score": 58.2,
+    "total_events": 146,
+    "total_risk": 161.79,
+    "normalized_risk_score": 64.7,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 48,
+    "military": 53,
     "security": 1,
-    "political": 11,
-    "other": 78
+    "political": 10,
+    "other": 82
   },
   "source_counts": {
-    "news": 134,
+    "news": 142,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 47.64
+      "risk": 59.74
     },
     {
       "name": "Israel",
-      "risk": 27.1
+      "risk": 24.45
+    },
+    {
+      "name": "Yemen",
+      "risk": 16.45
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 14.2
     },
     {
       "name": "Gaza Strip",
       "risk": 13.8
-    },
-    {
-      "name": "West Bank",
-      "risk": 13.2
-    },
-    {
-      "name": "Yemen",
-      "risk": 12.9
     }
   ],
   "top_events": [
@@ -61,7 +61,7 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
-      "title": "Iran attacks US base in Jordan, ships near Hormuz after tankers sunk - Reuters",
+      "title": "Iran and US hit tankers in biggest wave of attacks on shipping since war began - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZ2FPaUNRYjRBWnd2cmxkT044cmZYbENZYnhTWXAzUGxadUpEZ3N3aHpVSEtodVVsWUt6djBaeFhjUm5JOGVrNEE1SXlaUkxoSzBVaUpaWjZTdkdXZzItRTFOaGtMZWVtbEhpdUFSUWgwczNXa2VqZ3ktdzVhajBmYllFNVJIaUxnMDBLazE4S0VSTzZSbVFxMDZSUVY4aHIxVmhkcUpZeF85TzZYV2tqWkE5bVNWM29qWlE"
     },
@@ -70,8 +70,26 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
-      "title": "US strikes Iranian oil tankers as Tehran targets American base in Jordan",
-      "location": "Tehran",
+      "title": "Saudi Arabia lifts alert in southern city a day after Houthi strikes - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVkFZWWVmRkxOZ0dqSFdYQnh1dkpQTkZBbFdyU2Rydm1aMUo5eDFhNGpTaURVcmZLN25rS0s0ZUlEd1hFdEJ1TXJjT01mVzYtS1I1X2duVjhXTTFseHZOVGNWLURySnN3M0d1aGpVdUZLUXBDT0NMUjlhYXRHdGo4ekY0Q2stN3VyY09XSFRFZTdka1BhMDJnTFR2NzB2eVVzSW9ENV8wYi1jcWZhdEl0VjQxd1l2VXFI"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil tanker hit in Iraqi waters, as vessels get caught in US-Iran attacks - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNckd4WVFmZEhoNEFkVzRzdE9JMVJ2QVUwMmk3MDRuUTA3NHc3N0xrY2VLZl9GY2Q2WU1ybzBodjhINEQwaV9GQmpKS3FSdXpSY3B3M0VUY3V6NUJvSU1zR1NPYmpLMUtvN3ZrYlZEVlZVNmhZTWZhdnhpM2dEaEZJZzBlbDN3cE42cXNsbDdnYmNkT3ROZTVzVjdBZUJ0NjRCYW4tQUdQQk5NNTV4NFIw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil hits $100 a barrel for first time since July after US and Houthi strikes",
+      "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss"
     },
     {
@@ -79,9 +97,27 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
-      "title": "US strikes 5 Iranian oil tankers; Tehran targets Jordan base, US warships - Al Jazeera",
-      "location": "Tehran",
+      "title": "US strikes five Iranian oil tankers, as Iran attacks 10 ships, Jordan base - Al Jazeera",
+      "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSVZkSGpmVEVQUWxwTVJzMktrLWQ1R0RESXZqbktnZlo3SmJGM0prNEs3dVg0UUp3WWlzQVdZaUdONHQwOWFwVFU0R19hbm1zZGIyVVFqWkJ3S2c2dEpQQUJ4SHd4VE52UXBwa2pHSGZjWFd3U0xQeTFLQVIzZFBQdS11Y1VoY3NzVGlsTF9WYTduYVVZaUhlV05ob3c0RWFWY3M2Q19zSnlYdkpOTW13LUZrdFpKclnSAbwBQVVfeXFMT3pFYTcwbEJBMkxXWEEya3hZRFhRbzV0dTg4SkFIay1nWkthZFlEY3pFTUNVMnhuRnpTdTZkSzcwT0tmNjBncmpaNzk1akNsUldnWEZkVXNrejB6UEUtMXRpTXhQbHVQYkRiSDZxclQ0S1BUdVc0d1lUT0FmNGdfdzVLLU80czBXSHIwSXJCT3lqTXBCc29qaE9KZk5xM3JjSXBCSm1XX0JEd0VqNjNnY19DMHo3S2M0aWZQWU8"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen’s Saudi-backed forces strike Houthis on western coast - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOa0lWbDNtU3BSZ0VtaGd5Rzd5SHVhVGQtWC1tTXkyZ0J1azZKY3dNbEc0U09xNVRLS0c3S2Q0Q19ERWFwSE5SSUwzN0hwLWhRNmtETWNZSmhmS0puMGtZMHFSeXg5ZUI1dGoyUDRyNTBkSURtcjR4VzBoQUIyV1Rmb3pXZkxQNURvVmJPR3Y5MFFmZzBTNjRaZlZTZGtQd2FZcTc5RFlxM0FralVR0gGyAUFVX3lxTFBUYUVFc20wS0dLS0xHUjJmSXFkWXhndHhIVnlmNDJYdjJpS3VycEc4cWtQS193SkZ4RjZLS3R2amdsMGpvVXlJT1F4VmRhUTFTXzEyTms3a0g0WVVwaXdfUURUanF0a3JkcUlSZzlzb2NTR2c1eUZyWTFqUDUyTHMzcUY2NnFKd3FmTUNURXNqbzJmUkRENnV1S0hfVEJ2d2ZHZzJpSDRlQW9TdnFqaWVzWHc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordanian air defences intercept Iranian missile barrage - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUUdMekdhc3IybnNueGdjNjF4My1lZjM1eldjcmxHbVJJRTZxMDVHd3hkQUk0ZEJBR3pqR3FwY1NEakN0NlBCT0lGUGdOdjZnTWRqaVhZcTgxQXUzcmVyamxXQnEybWd2WmFZdlBQeDBWSXYwVnVPeEhZb1hqWUY0V2FaV3FpZ1lQQks4LWtKQ3B2emNuX3JfQ1c5eEV0YzktR2NHWDFHWVlYQdIBrwFBVV95cUxNZlIxbTQwbjFCd09XSERad1duYmlyUU5ETmZQMFhVWFZRUlFweUVHUkNGNmNZZTBtU0g3d3VUS3dwRkNONkRsU09qMlBtTVVESEppZHdzR2t6WjdMVDFKOGUtbGdydkRadUpSaXVmc1l1M1RZempsT2syNEJOS1d4a1Fpb2szc21iVEZTeUhyVWdvVkszaHJVaVVCdDhRMzVmYS1fQlRmbjF0UHFDWW9F"
     },
     {
       "score": 2.7,
@@ -100,42 +136,6 @@
       "title": "Hormuz traffic slows after Iran threatens retaliation for US attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPLVZqbU1CYlBIcWpOcEhmWWNHbk1PaUxMa1REWVpsUnpHcEgySUVnWDZ5cFJJbG9tZ1IyV1A1UXFocFEzQkRZVmNNWVNkVlEzZWc4TExyVnNvdWJ2Tjg3a0swQUlKbXo3VzlncDNqZ2w2MUJVLVpJRVBFcXdlR3lpSW5CMVZneGtYcG51MWJZSkpLZmhpSzlrLUNoUXFXTlhQSm8xS25kdEhKM1VOa2pFdV85dnBRNENqWXc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks disrupt Saudi energy facilities, wound 73, authorities say - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbXB6MGlpMW50OElMY1FiZ2hXYlNmbmI0ZG8xT2RLc0FOWG9IazNMVDdfdTdILUJINFYweFF5VFFOQldXU3k2T0NSekpIOVhyT050UXR3TzRGTEk4TGlnLVhJQ2s2LWRmamNyRGwyT3ZyU1gwQVlSYU5hQ3hBUHo2bTBwckJNQXlqSTQySzhhUV9WR0laNjZJVEktLXpiMF93N3hrYmRRejBXRFlPVmNrTTJJZ0w1NlhITEE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil prices hit six-week high after Houthis attack Saudi sites - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNTBHazRJMEhoZks2V2o5M2loY0UtV3pnUjMweXB6cXZuVjQtYmhTWV9oSnF0cDhRZGVybzBuNk9fYWRJU1diemp5VDFxZWdHYy16a0ctWG9ob0JfMUZqRTIwRnoyeHhxckI4NFZCVmM1MGVRaDFPeWh0MVFKTXYyVURKSWdJZGJ5ZWZWYzdHanhyQTBNTGYyRWF6bXVWSDRZdXdYN0pWdURYU0p6Z1lkVzlRWlF4UEIyY1E"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSDNtVzFxN3MtVEs4UWxoWnA0ekJKVC1EWThJR1hiQ2FvN1d2LU40NXRDaUJGMGRLeF9KaHY1R3dTSmdTRHhHdG9uNTIzZXRRRWVoWW43d0dxM3ZoSTNMM2xEQlhlV011OWlpSHdxTDlmWjl4MW9VQ1ktN3hqU3lEU3dnVUV3XzQzWGZjU3ZBNnNBQVhOek9OeHZ1WnFZb2RacWhmVXdiSGM5Q3FwbmFtcGN6OTJpZF9kNk5YWGladzg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Most Gulf stocks edge up amid caution over US-Iran standoff, Saudi energy strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWXJjYk1sOWxfdE16SHUtRFgxUTNsbENDQTlBMnlBekVYbTJvX0RpeTVQdUwwV1MwUEo4bEc3c1d3ZU1tWTJoWW55dHVlWjRfUThxNTJ3MmtBbWRKYm1DcDE1cjVDVWV2d2lGcVRORC1aaWxKUXh4cHJxX2pyRjM4SWhXS1dQZ0tRejVCUUpFSlNLN1pFNFdMQnJJV1dRLUs1ZGxNZ1RFLUsxSlpfV0lMZU5oX2hKU0wz"
     }
   ]
 }
