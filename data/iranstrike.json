@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T20:57:37Z",
+  "generated_at": "2026-09-09T23:16:42Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,46 +52,42 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 228,
-    "feed_event_records": 228,
-    "normalized_events": 1228,
+    "events_endpoint_records": 232,
+    "feed_event_records": 232,
+    "normalized_events": 1232,
     "map_visualizable_events": 243,
-    "non_mappable_events": 985,
+    "non_mappable_events": 989,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1228,
+      "total_events": 1232,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-09T20:13:12Z",
+      "latest_event_date": "2026-09-10T00:26:52Z",
       "geocoded_events": 243,
-      "geocoded_share": 19.8,
+      "geocoded_share": 19.7,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 86,
-        "previous": 98,
-        "delta": -12,
-        "percent_change": -12.2,
+        "current": 89,
+        "previous": 102,
+        "delta": -13,
+        "percent_change": -12.7,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 336,
+        "current": 340,
         "previous": 859,
-        "delta": -523,
-        "percent_change": -60.9,
+        "delta": -519,
+        "percent_change": -60.4,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-14",
-        "count": 0
-      },
       {
         "date": "2026-03-15",
         "count": 0
@@ -806,30 +802,34 @@
       },
       {
         "date": "2026-09-09",
-        "count": 19
+        "count": 20
+      },
+      {
+        "date": "2026-09-10",
+        "count": 3
       }
     ],
     "category_counts": {
       "infrastructure": 301,
       "missile": 277,
       "strike": 221,
-      "drone": 165,
+      "drone": 168,
       "airstrike": 112,
       "explosion": 57,
-      "movement": 46,
+      "movement": 47,
       "ground": 23,
       "alert": 12,
       "defense": 10,
       "political": 4
     },
     "severity_counts": {
-      "medium": 643,
+      "medium": 645,
       "high": 408,
-      "low": 175,
+      "low": 177,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 709,
+      "unknown": 713,
       "iran": 346,
       "israel": 142,
       "usa": 31
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 345
+        "count": 349
       },
       {
         "name": "Iran",
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 345
+        "count": 349
       },
       {
         "name": "Jordan",
@@ -944,41 +944,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10536,
+    "totalCount": 10540,
     "spotlight": {
       "event": {
-        "id": "2y2wej829eo00",
-        "timestamp": "2026-09-09T18:17:35+00:00",
-        "location": "JOR",
-        "origin": "IRN",
+        "id": "al6y4ixpecc0",
+        "timestamp": "2026-09-10T00:26:52+00:00",
+        "location": "ISR",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
-        "severity": "high",
-        "description": "Iran launches 20 missiles at U.S. military bases in Jordan, Jordanian air defenses intercept all projectiles",
-        "descriptionHe": "איראן משגרת 20 טילים לעבר בסיסי צבא אמריקאיים בירדן, הגנות אוויר ירדניות יוצרות יירוט של כל קליעים",
-        "source": "OSINTdefender",
-        "weapons": [
-          {
-            "type": "ballistic_missile",
-            "count": 20,
-            "intercepted": 20
-          }
-        ],
-        "sourceUrl": "https://t.me/OSINTdefender/20187"
+        "severity": "low",
+        "description": "Hostile UAV alert: drone targeting confrontation line at HaGoshrim",
+        "descriptionHe": "התרעת מזל\"ט עוין: מזל\"ט לעבר קו הפרדה בהגושרים",
+        "source": "RocketAlert",
+        "sourceUrl": "https://t.me/RocketAlert/30761"
       },
-      "headline": "Iran Launches 20 Missiles at U.S. Bases in Jordan",
-      "headlineHe": "איראן שיגרה 20 טילים לעבר בסיסים אמריקנים בירדן",
-      "summary": "All projectiles were intercepted by Jordanian air defenses in what appears to be a major escalation of regional tensions following earlier U.S. military operations.",
-      "summaryHe": "כל הקליעים יורטו על ידי הגנת אויר ירדנית במה שנראה כהסלמה משמעותית של המתיחות האזורית לאחר פעולות צבאיות אמריקניות קודמות.",
-      "pickedAt": "2026-09-09T20:30:50.746Z",
-      "state": "TODAY"
+      "headline": "Drone Targets Israeli Confrontation Line Near Syrian Border",
+      "headlineHe": "רחפן מכוון לקו ההתעמתות הישראלי ליד הגבול הסורי",
+      "summary": "The alert marks the third hostile UAV incursion targeting northern Israeli positions along the confrontation line in under two minutes, suggesting a coordinated drone campaign.",
+      "summaryHe": "ההתרעה מסמנת את הפלישה השלישית של רחפן עויין למצבים בצפון ישראל לאורך קו ההתעמתות תוך פחות משתי דקות, מה שמצביע על מבצע רחפנים מתואם.",
+      "pickedAt": "2026-09-09T23:00:51.439Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-09T20:57:03.413Z",
+    "lastUpdated": "2026-09-09T23:15:03.478Z",
     "stale": false,
-    "viewerCount": 16,
+    "viewerCount": 6,
     "ceasefire": false
   },
   "summary": {
@@ -1519,70 +1511,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 94,
       "cellular": null,
-      "lastUpdate": "2026-09-09T20:30:43.190Z",
+      "lastUpdate": "2026-09-09T23:00:43.329Z",
       "internetHistory": [
-        {
-          "t": "2026-09-08T20:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T20:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T20:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T21:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T21:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T21:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T21:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T21:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T21:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T22:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-08T22:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T22:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T22:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T22:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-08T22:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-09-08T23:00:00.000Z",
           "v": 94
@@ -2094,30 +2026,90 @@
         {
           "t": "2026-09-09T20:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-09-09T20:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T20:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T20:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T20:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T21:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T21:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T21:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-09T21:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T21:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T21:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T22:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T22:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T22:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T22:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-09T22:40:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-09T20:30:43.190Z"
+    "lastUpdated": "2026-09-09T23:00:43.329Z"
   },
   "developments": [
     {
-      "id": "iranstrike-27geoc4nztc00",
+      "id": "iranstrike-27geoc4nz",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-09T20:13:12Z",
+      "date": "2026-09-09T18:17:35Z",
       "title": "IranStrike event",
-      "description": "Iran fires 20 ballistic missiles at U.S. bases in Jordan; 18-20 intercepted, minimal damage",
+      "description": "Iran-U.S. escalation: 20+ ballistic missiles fired at Jordan; most intercepted",
       "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran fires 20 ballistic missiles at u.s.",
+      "severity": "critical",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2130,11 +2122,11 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "27geoc4nztc00",
-        "text": "Iran fires 20 ballistic missiles at U.S. bases in Jordan; 18-20 intercepted, minimal damage",
-        "textHe": "איראן משגרת 20 טילים בליסטיים לבסיסי ארה\"ב בירדן; 18-20 יורטו, נזק מינימלי",
-        "severity": "high",
-        "timestamp": "2026-09-09T20:13:12+00:00",
+        "id": "27geoc4nz",
+        "text": "Iran-U.S. escalation: 20+ ballistic missiles fired at Jordan; most intercepted",
+        "textHe": "הסלמה איראן-ארה\"ב: יותר מ-20 טילים בליסטיים נורו לכיוון ירדן; רובם יורטו",
+        "severity": "critical",
+        "timestamp": "2026-09-09T18:17:35+00:00",
         "entityIds": [
           "IRN",
           "USA",
@@ -2143,24 +2135,20 @@
         "eventIds": [
           "2y2wej829eo00",
           "27geoc4nztc00",
-          "1xfuzoy3pcsg0",
-          "12scv143bgq80",
-          "o2dv26f0chs0",
-          "1uoq0xh3g5nk0",
-          "2qwmrs0gt2w00"
+          "1xfuzoy3pcsg0"
         ],
         "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-dgxy2m37axc0",
+      "id": "iranstrike-dgxy2m37ax",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-09T13:09:48Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi oil infrastructure: 3 tanks destroyed at Jazan refinery, airbase damage confirmed",
+      "description": "Houthis strike Saudi oil infrastructure; 3 tanks destroyed, airbase damaged",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2181,9 +2169,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "dgxy2m37axc0",
-        "text": "Houthis strike Saudi oil infrastructure: 3 tanks destroyed at Jazan refinery, airbase damage confirmed",
-        "textHe": "החותים תוקפים תשתיות נפט סעודיות: 3 טנקים הוחרמו בזיקוק ג'אזאן, נזק לבסיס אווירי אושר",
+        "id": "dgxy2m37ax",
+        "text": "Houthis strike Saudi oil infrastructure; 3 tanks destroyed, airbase damaged",
+        "textHe": "חות'ים תוקפים תשתיות נפט סעודיות; 3 מיכלים הרוסו, בסיס אוויר פגוע",
         "severity": "high",
         "timestamp": "2026-09-09T13:09:48+00:00",
         "entityIds": [
@@ -2192,22 +2180,23 @@
         ],
         "eventIds": [
           "dgxy2m37axc0",
-          "10m462f7g30w0"
+          "10m462f7g30w0",
+          "c8o6avr2u8w0"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-2bmv9bh09les0",
+      "id": "iranstrike-2bmv9bh09",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-09T19:56:58Z",
       "title": "IranStrike event",
-      "description": "Houthis conduct heavy strikes on PLC forces near Hays; ballistic missiles and drones force withdrawal",
+      "description": "Houthis strike PLC forces in Yemen; heavy missiles/drones, Saudi allies withdraw",
       "category": "other",
-      "severity": "medium",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2226,40 +2215,42 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2bmv9bh09les0",
-        "text": "Houthis conduct heavy strikes on PLC forces near Hays; ballistic missiles and drones force withdrawal",
-        "textHe": "החותים מנהלים תקיפות כבדות על כוחות PLC ליד הايس; טילים וכטבים אנושים אוילצו להיסוג",
-        "severity": "medium",
+        "id": "2bmv9bh09",
+        "text": "Houthis strike PLC forces in Yemen; heavy missiles/drones, Saudi allies withdraw",
+        "textHe": "חות'ים תוקפים כוחות PLC ביימן; טילים כבדים וכלים ללא טיל, בעלי ברית סעודיים נסוגו",
+        "severity": "high",
         "timestamp": "2026-09-09T19:56:58+00:00",
         "entityIds": [
-          "YEM"
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
           "2bmv9bh09les0",
-          "29gubaltf6sk0"
+          "29gubaltf6sk0",
+          "2r7c0l0lqes00"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-eaeg0erzag00",
+      "id": "iranstrike-al6y4ixpe",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-09T11:05:11Z",
+      "date": "2026-09-10T00:26:52Z",
       "title": "IranStrike event",
-      "description": "U.S. destroys 13 Iranian tankers in 3 days; escalation cycle with Iran missile retaliation",
+      "description": "Multiple Houthi drones target northern Israel positions; 3 alerts along Lebanon border",
       "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "multiple houthi drones target northern israel positions;",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2270,33 +2261,33 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "eaeg0erzag00",
-        "text": "U.S. destroys 13 Iranian tankers in 3 days; escalation cycle with Iran missile retaliation",
-        "textHe": "ארה\"ב משמידה 13 טנקרים איראניים בתוך 3 ימים; מחזור הסלמה עם תגובת טילים איראנית",
-        "severity": "high",
-        "timestamp": "2026-09-09T11:05:11+00:00",
+        "id": "al6y4ixpe",
+        "text": "Multiple Houthi drones target northern Israel positions; 3 alerts along Lebanon border",
+        "textHe": "מספר כלים חות'ים תוקפים עמדות בצפון ישראל; 3 התרעות לאורך הגבול לבנון",
+        "severity": "medium",
+        "timestamp": "2026-09-10T00:26:52+00:00",
         "entityIds": [
-          "USA",
-          "IRN"
+          "YEM",
+          "ISR",
+          "LBN"
         ],
         "eventIds": [
-          "eaeg0erzag00",
-          "2xq832166l400",
-          "pbvdoj6qj000",
-          "3n88v0rhnke00"
+          "al6y4ixpecc0",
+          "3jzb4gf8nco00",
+          "vvigxm7ca0w0"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-z44897at4jk0",
+      "id": "iranstrike-uz69ovlki",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-09T14:42:45Z",
       "title": "IranStrike event",
-      "description": "IDF strikes Lebanese villages; 33 strikes on Almansouri and 14 explosions at Al-Mansouri reported",
+      "description": "IDF strikes Lebanese villages; 14+ building impacts in Al-Mansouri area",
       "category": "other",
       "severity": "medium",
       "attacker": "israel",
@@ -2317,9 +2308,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "z44897at4jk0",
-        "text": "IDF strikes Lebanese villages; 33 strikes on Almansouri and 14 explosions at Al-Mansouri reported",
-        "textHe": "צה\"ל תוקף כפרים לבנוניים; 33 תקיפות במנסורי ו-14 פיצוצים בתיעוד",
+        "id": "uz69ovlki",
+        "text": "IDF strikes Lebanese villages; 14+ building impacts in Al-Mansouri area",
+        "textHe": "צה\"ל תוקף כפרים בלבנון; יותר מ-14 פגיעות בבנינים באזור אל-מנסורה",
         "severity": "medium",
         "timestamp": "2026-09-09T14:42:45+00:00",
         "entityIds": [
@@ -2335,6 +2326,194 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-al6y4ixpecc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "RocketAlert",
+      "source_url": "https://t.me/RocketAlert/30761",
+      "date": "2026-09-10T00:26:52Z",
+      "title": "IranStrike event",
+      "description": "Hostile UAV alert: drone targeting confrontation line at HaGoshrim",
+      "category": "drone",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "al6y4ixpecc0",
+        "timestamp": "2026-09-10T00:26:52+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "low",
+        "description": "Hostile UAV alert: drone targeting confrontation line at HaGoshrim",
+        "descriptionHe": "התרעת מזל\"ט עוין: מזל\"ט לעבר קו הפרדה בהגושרים",
+        "source": "RocketAlert",
+        "sourceUrl": "https://t.me/RocketAlert/30761"
+      }
+    },
+    {
+      "id": "iranstrike-3jzb4gf8nco00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "RocketAlert",
+      "source_url": "https://t.me/RocketAlert/30760",
+      "date": "2026-09-10T00:25:46Z",
+      "title": "IranStrike event",
+      "description": "Hostile UAV alert: drone targeting confrontation line at Ma'ayan Baruch, Kfar Yuval",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3jzb4gf8nco00",
+        "timestamp": "2026-09-10T00:25:46+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Hostile UAV alert: drone targeting confrontation line at Ma'ayan Baruch, Kfar Yuval",
+        "descriptionHe": "התרעת מזל\"ט עוין: כלי טיל חסר דיירים לעבר קו התגובה במעיין ברוך, כפר יובל",
+        "source": "RocketAlert",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/RocketAlert/30760"
+      }
+    },
+    {
+      "id": "iranstrike-vvigxm7ca0w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "RocketAlert",
+      "source_url": "https://t.me/RocketAlert/30758",
+      "date": "2026-09-10T00:24:55Z",
+      "title": "IranStrike event",
+      "description": "Hostile UAV alert: drone targeting confrontation line at Ghajar",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "vvigxm7ca0w0",
+        "timestamp": "2026-09-10T00:24:55+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Hostile UAV alert: drone targeting confrontation line at Ghajar",
+        "descriptionHe": "התרעת מזל\"ט עוין: כלי טיל חסר דיירים לעבר קו התגובה בגג'ר",
+        "source": "RocketAlert",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/RocketAlert/30758"
+      }
+    },
+    {
+      "id": "iranstrike-1d45qt0106zk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83589",
+      "date": "2026-09-09T22:15:33Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah forces confirmed in control of Hays Security Directorate building",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1d45qt0106zk0",
+        "timestamp": "2026-09-09T22:15:33+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Ansarallah forces confirmed in control of Hays Security Directorate building",
+        "descriptionHe": "כוחות אנסאר אללה אושרו בשליטה על בניין מנהל הביטחון בחיץ",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83589"
+      }
+    },
     {
       "id": "iranstrike-2qwmrs0gt2w00",
       "source": "IranStrike",
