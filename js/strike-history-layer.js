@@ -7,6 +7,7 @@ const DEFAULT_OPTIONS = Object.freeze({
   enabled: false,
   defaultDays: 7,
   defaultActor: "ALL",
+  defaultDatasetGroups: ["USA_IRAN"],
   maxVisible: 1000,
   paneName: "strikeHistoryPane",
   paneZIndex: 675
@@ -32,6 +33,7 @@ export function createStrikeHistoryLayer(map, options = {}) {
     filters: {
       days: normalizeDays(config.defaultDays),
       actor: normalizeActorFilter(config.defaultActor),
+      datasetGroups: normalizeDatasetGroups(config.defaultDatasetGroups),
       search: ""
     }
   };
@@ -108,6 +110,9 @@ export function createStrikeHistoryLayer(map, options = {}) {
       actor: next.actor === undefined
         ? state.filters.actor
         : normalizeActorFilter(next.actor),
+      datasetGroups: next.datasetGroups === undefined
+        ? state.filters.datasetGroups
+        : normalizeDatasetGroups(next.datasetGroups),
       search: next.search === undefined
         ? state.filters.search
         : String(next.search || "").trim().toLowerCase()
@@ -122,7 +127,7 @@ export function createStrikeHistoryLayer(map, options = {}) {
   }
 
   function filterEvents() {
-    const { days, actor, search } = state.filters;
+    const { days, actor, datasetGroups, search } = state.filters;
     let cutoff = null;
 
     if (days > 0 && state.latestDate) {
@@ -133,6 +138,7 @@ export function createStrikeHistoryLayer(map, options = {}) {
 
     return state.allEvents.filter((event) => {
       if (cutoff && event.dateObject < cutoff) return false;
+      if (!datasetGroups.length || !datasetGroups.includes(event.dataset_group)) return false;
       if (actor !== "ALL" && event.attacker !== actor) return false;
 
       if (search) {
@@ -166,9 +172,14 @@ export function createStrikeHistoryLayer(map, options = {}) {
   }
 
   function createMarker(event) {
-    const isUsa = event.attacker === "USA";
-    const fill = isUsa ? "#16a34a" : "#2563eb";
-    const ring = isUsa ? "#14532d" : "#1e3a8a";
+    const palette = {
+      USA: { fill: "#16a34a", ring: "#14532d" },
+      IRAN: { fill: "#2563eb", ring: "#1e3a8a" },
+      HOUTHI: { fill: "#f97316", ring: "#9a3412" }
+    };
+    const markerColors = palette[event.attacker] || { fill: "#64748b", ring: "#334155" };
+    const fill = markerColors.fill;
+    const ring = markerColors.ring;
     const opacity = event.confidence === "LOW" ? 0.72 : 1;
 
     const icon = L.divIcon({
@@ -285,7 +296,8 @@ function normalizeEvent(event, index) {
     source: "strikehistory",
     source_name: "Strike History",
     attacker,
-    actor: attacker === "USA" ? "United States" : "Iran",
+    actor: attacker === "USA" ? "United States" : attacker === "IRAN" ? "Iran" : "Houthis / Ansar Allah",
+    dataset_group: normalizeDatasetGroup(event.dataset_group, attacker),
     latitude,
     longitude,
     lat: latitude,
@@ -323,12 +335,25 @@ function normalizeActor(value) {
   const text = String(value || "").trim().toUpperCase();
   if (["USA", "US", "U.S.", "UNITED STATES"].includes(text)) return "USA";
   if (["IRAN", "IR", "IRN", "IRÁN"].includes(text)) return "IRAN";
+  if (["HOUTHI", "HOUTHIS", "ANSAR ALLAH", "ANSARALLAH", "HUSZI", "HUSZIK"].includes(text)) return "HOUTHI";
   return "";
 }
 
 function normalizeActorFilter(value) {
   const actor = normalizeActor(value);
   return actor || "ALL";
+}
+
+function normalizeDatasetGroup(value, attacker = "") {
+  const text = String(value || "").trim().toUpperCase().replaceAll("-", "_");
+  if (["USA_IRAN", "USAIRAN", "US_IRAN"].includes(text)) return "USA_IRAN";
+  if (["HOUTHI", "HOUTHIS", "ANSAR_ALLAH", "ANSARALLAH"].includes(text)) return "HOUTHI";
+  return attacker === "HOUTHI" ? "HOUTHI" : "USA_IRAN";
+}
+
+function normalizeDatasetGroups(value) {
+  const raw = Array.isArray(value) ? value : [value];
+  return [...new Set(raw.map(item => normalizeDatasetGroup(item, "")).filter(Boolean))];
 }
 
 function normalizeDays(value) {
