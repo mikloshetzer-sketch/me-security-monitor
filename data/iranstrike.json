@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T11:22:09Z",
+  "generated_at": "2026-09-10T15:11:50Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 243,
-    "feed_event_records": 243,
-    "normalized_events": 1243,
+    "events_endpoint_records": 257,
+    "feed_event_records": 250,
+    "normalized_events": 1257,
     "map_visualizable_events": 244,
-    "non_mappable_events": 999,
+    "non_mappable_events": 1013,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1243,
+      "total_events": 1257,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-10T07:42:10Z",
+      "latest_event_date": "2026-09-10T15:06:10Z",
       "geocoded_events": 244,
-      "geocoded_share": 19.6,
+      "geocoded_share": 19.4,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 100,
-        "previous": 105,
-        "delta": -5,
-        "percent_change": -4.8,
+        "current": 114,
+        "previous": 109,
+        "delta": 5,
+        "percent_change": 4.6,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 345,
-        "previous": 849,
-        "delta": -504,
-        "percent_change": -59.4,
+        "current": 356,
+        "previous": 846,
+        "delta": -490,
+        "percent_change": -57.9,
         "direction": "decrease"
       }
     },
@@ -806,30 +806,30 @@
       },
       {
         "date": "2026-09-10",
-        "count": 14
+        "count": 28
       }
     ],
     "category_counts": {
-      "infrastructure": 302,
+      "infrastructure": 306,
       "missile": 280,
-      "strike": 222,
+      "strike": 223,
       "drone": 170,
-      "airstrike": 113,
+      "airstrike": 114,
+      "movement": 57,
       "explosion": 57,
-      "movement": 49,
       "ground": 23,
       "alert": 13,
       "defense": 10,
       "political": 4
     },
     "severity_counts": {
-      "medium": 652,
-      "high": 411,
-      "low": 178,
+      "medium": 657,
+      "high": 417,
+      "low": 181,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 719,
+      "unknown": 733,
       "iran": 349,
       "israel": 144,
       "usa": 31
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 355
+        "count": 363
       },
       {
         "name": "Iran",
@@ -864,6 +864,10 @@
         "count": 35
       },
       {
+        "name": "Red Sea",
+        "count": 30
+      },
+      {
         "name": "Nabatieh",
         "count": 27
       },
@@ -873,10 +877,6 @@
       },
       {
         "name": "Israel",
-        "count": 24
-      },
-      {
-        "name": "Red Sea",
         "count": 24
       },
       {
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 355
+        "count": 363
       },
       {
         "name": "Jordan",
@@ -931,7 +931,7 @@
       },
       {
         "name": "Red Sea",
-        "count": 24
+        "count": 30
       },
       {
         "name": "Palestinian territories",
@@ -944,38 +944,31 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10551,
+    "totalCount": 10564,
     "spotlight": {
       "event": {
-        "id": "1aaijoug7d6o0",
-        "timestamp": "2026-09-10T07:42:10+00:00",
-        "location": "LBN",
-        "origin": "ISR",
+        "id": "l9agqlsj9zk0",
+        "timestamp": "2026-09-10T14:21:37+00:00",
+        "location": "SAU",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "IDF drone strikes house in Bani Hayyan village, southern Lebanon with explosive payload, detonation occurs shortly after drone departure",
-        "descriptionHe": "רחפן של צה\"ל מוריד \"משלוח\" של חומרי נפץ לתוך מבנה בכפר בני חיאן בדרום לבנון ותוך כחצי דקה מרגע שהרחפן מסתלק הבית מתפוצץ",
-        "source": "abualiexpress",
-        "weapons": [
-          {
-            "type": "drone",
-            "count": 1
-          }
-        ],
-        "sourceUrl": "https://t.me/abualiexpress/130034"
+        "type": "report",
+        "severity": "high",
+        "description": "Saudi Arabia reports oil output fell to 6.24 million barrels per day in August, lowest since 1990, due to Houthi disruptions; further decline expected following strikes on Jazan and Abha",
+        "descriptionHe": "סעודיה דיווחה על ירידת תפוקת נפט ל-6.24 מיליון חביות ביום באוגוסט, הנמוכה ביותר מאז 1990, בשל הפרעות הות'ים; צפוי ירידה נוספת בעקבות התקפות על ג'יזאן ואבה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83639"
       },
-      "headline": "IDF drone strikes house in southern Lebanon village",
-      "headlineHe": "כלי טייס צה\"ל תקף בית בכפר בדרום לבנון",
-      "summary": "The strike marks continued Israeli military operations targeting positions in Lebanese territory amid escalating regional tensions.",
-      "summaryHe": "התקיפה מסמנת המשך פעילויות צבאיות ישראליות במטרות בשטח לבנוני תוך תנאים של התגברות במתיחויות אזוריות.",
-      "pickedAt": "2026-09-10T11:15:50.493Z",
-      "state": "TODAY"
+      "headline": "Saudi Oil Output Hits 36-Year Low Amid Houthi Campaign",
+      "headlineHe": "ייצור הנפט הסעודי במינימום של 36 שנה עקב קמפיין החותים",
+      "summary": "Houthi attacks on Saudi oil infrastructure have reduced production to levels unseen since 1990, with forecasts of further declines following recent strikes on key facilities.",
+      "summaryHe": "התקפות החותים על תשתיות הנפט הסעודיות הפחיתו את הייצור לרמות שלא נראו מאז 1990, כשחיזויים מצביעים על ירידות נוספות בעקבות התקפות אחרונות על מתקנים חיוניים.",
+      "pickedAt": "2026-09-10T14:30:51.087Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-10T11:21:03.519Z",
+    "lastUpdated": "2026-09-10T15:06:19.734Z",
     "stale": false,
     "viewerCount": 2,
     "ceasefire": false
@@ -1518,106 +1511,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 90,
+      "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-09-10T11:00:43.371Z",
+      "lastUpdate": "2026-09-10T15:00:43.085Z",
       "internetHistory": [
-        {
-          "t": "2026-09-09T11:00:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T11:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T11:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T11:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-09T11:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T11:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T12:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-09T12:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T12:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T12:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T12:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-09T12:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T13:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T13:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T13:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T13:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T13:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T13:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T14:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T14:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T14:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T14:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T14:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T14:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-09-09T15:00:00.000Z",
           "v": 94
@@ -2093,22 +1990,118 @@
         {
           "t": "2026-09-10T10:40:00.000Z",
           "v": 90
+        },
+        {
+          "t": "2026-09-10T10:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T11:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T11:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T11:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T11:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T11:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T11:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T12:00:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T12:10:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T12:20:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-10T12:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T12:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T12:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T13:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T13:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T13:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T13:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T13:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T13:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T14:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T14:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T14:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T14:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-10T14:40:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-10T11:00:43.371Z"
+    "lastUpdated": "2026-09-10T15:00:43.085Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f3c2b1",
+      "id": "iranstrike-a7f2k9m1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-10T05:42:40Z",
       "title": "IranStrike event",
-      "description": "Iran ballistic missile attack on Jordan airbases damages 9 U.S. aircraft; 2 missiles strike targets",
+      "description": "Iran fires 20 ballistic missiles at Jordan; 2 strike U.S. airbase, damage 9 aircraft",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2116,7 +2109,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran ballistic missile attack on jordan airbases damages 9 u.s.",
+      "attacker_evidence": "iran fires 20 ballistic missiles at jordan;",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2129,9 +2122,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f3c2b1",
-        "text": "Iran ballistic missile attack on Jordan airbases damages 9 U.S. aircraft; 2 missiles strike targets",
-        "textHe": "התקף טילים בליסטיים איראני על בסיסי ההוא בירדן; 2 טילים פגעו במטרות, נזק ל-9 מטוסים",
+        "id": "a7f2k9m1",
+        "text": "Iran fires 20 ballistic missiles at Jordan; 2 strike U.S. airbase, damage 9 aircraft",
+        "textHe": "איראן שיגרה 20 טילים בליסטיים לירדן; 2 פגעו בבסיס אמריקאי, נזק ל-9 מטוסים",
         "severity": "critical",
         "timestamp": "2026-09-10T05:42:40+00:00",
         "entityIds": [
@@ -2144,18 +2137,66 @@
           "3s6gkkp1cte00",
           "1k5fc9a84t280"
         ],
-        "sourceCount": 2
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-b8e4d3c2",
+      "id": "iranstrike-b3e8r6p2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-10T12:59:36Z",
+      "date": "2026-09-10T14:46:17Z",
       "title": "IranStrike event",
-      "description": "Houthis destroy 3 oil tanks at Jazan refinery; damage confirmed at King Khalid Airbase",
+      "description": "Houthis capture Dhubab, Hanish Islands, advance 30km from Bab el-Mandeb Strait",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b3e8r6p2",
+        "text": "Houthis capture Dhubab, Hanish Islands, advance 30km from Bab el-Mandeb Strait",
+        "textHe": "החותיים כבשו את דובאב ואיים חניש, התקדמות 30 ק\"מ מתעלת בב אל-מנדב",
+        "severity": "high",
+        "timestamp": "2026-09-10T14:46:17+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "327mjkgw58u00",
+          "34o9acq5zhk00",
+          "1rvy7nih2mu80",
+          "1kzhup7m46zk0",
+          "2zoryuhd6ho00",
+          "3epxr9y4cig00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-c5m4n2x8",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-10T14:21:37Z",
+      "title": "IranStrike event",
+      "description": "Houthi strikes damage Saudi Aramco Abha plant; Saudi oil output hits 33-year low",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2176,34 +2217,79 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b8e4d3c2",
-        "text": "Houthis destroy 3 oil tanks at Jazan refinery; damage confirmed at King Khalid Airbase",
-        "textHe": "חות'ים הרסו 3 מכלי נפט בבסיס ג'אזאן; נזק מאושר בבסיס קינג חאלד",
+        "id": "c5m4n2x8",
+        "text": "Houthi strikes damage Saudi Aramco Abha plant; Saudi oil output hits 33-year low",
+        "textHe": "הפגזות חותיות פגעו במפעל אבהא של סעודי ארמקו; ייצור הנפט הסעודי בשפל 33 שנה",
         "severity": "high",
-        "timestamp": "2026-09-10T12:59:36+00:00",
+        "timestamp": "2026-09-10T14:21:37+00:00",
         "entityIds": [
           "YEM",
           "SAU"
         ],
         "eventIds": [
-          "dgxy2m37axc0",
-          "10m462f7g30w0",
+          "1fie29rxdqjk0",
+          "l9agqlsj9zk0",
           "2ygqzgov42a00"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c9f5e4d3",
+      "id": "iranstrike-d9w7k3q5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-10T15:03:11Z",
+      "title": "IranStrike event",
+      "description": "Saudi airstrikes target Dhubab as Houthis consolidate territorial gains in Yemen",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d9w7k3q5",
+        "text": "Saudi airstrikes target Dhubab as Houthis consolidate territorial gains in Yemen",
+        "textHe": "תקיפות סעודיות על דובאב בעקבות התגברות כיבוש חותי בתימן",
+        "severity": "medium",
+        "timestamp": "2026-09-10T15:03:11+00:00",
+        "entityIds": [
+          "SAU",
+          "YEM"
+        ],
+        "eventIds": [
+          "3qmaqak9cmg00",
+          "9nk67o0pj1o0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e1h6j8v4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-10T00:32:35Z",
       "title": "IranStrike event",
-      "description": "Multiple hostile UAV alerts over northern Israel; IDF aircraft intrusion alerts activated",
+      "description": "Multiple hostile drone alerts across northern Israel; interception status under review",
       "category": "other",
-      "severity": "high",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2222,16 +2308,17 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c9f5e4d3",
-        "text": "Multiple hostile UAV alerts over northern Israel; IDF aircraft intrusion alerts activated",
-        "textHe": "התרעות כלי טיס לא מאויישים מרובות בצפון ישראל; התרעות חדירת מטוסים של צה\"ל הופעלו",
-        "severity": "high",
+        "id": "e1h6j8v4",
+        "text": "Multiple hostile drone alerts across northern Israel; interception status under review",
+        "textHe": "התראות מזל\"טים עוינים בנחות הצפון; סטטוס יירוט בבדיקה",
+        "severity": "medium",
         "timestamp": "2026-09-10T00:32:35+00:00",
         "entityIds": [
           "ISR",
           "LBN"
         ],
         "eventIds": [
+          "1aaijoug7d6o0",
           "36btsp48c9o00",
           "al6y4ixpecc0",
           "3jzb4gf8nco00",
@@ -2239,63 +2326,19 @@
         ],
         "sourceCount": 2
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-d0g6f5e4",
+      "id": "iranstrike-385nz7wyyzg00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-10T07:42:10Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83644",
+      "date": "2026-09-10T15:06:10Z",
       "title": "IranStrike event",
-      "description": "IDF strikes Gaza and Lebanon; 4 Palestinians killed in Beit Lahia, multiple drone strikes reported",
-      "category": "other",
-      "severity": "high",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes gaza and lebanon;",
-      "location": "Lebanon",
-      "country": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "d0g6f5e4",
-        "text": "IDF strikes Gaza and Lebanon; 4 Palestinians killed in Beit Lahia, multiple drone strikes reported",
-        "textHe": "צה\"ל תקף עזה ולבנון; 4 פלסטינים נהרגו בבית לאהיא, מספר תקפי כלי טיס מדווחים",
-        "severity": "high",
-        "timestamp": "2026-09-10T07:42:10+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN",
-          "PSE"
-        ],
-        "eventIds": [
-          "1aaijoug7d6o0",
-          "3v5d5z3dg2000"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-e1h7g6f5",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-10T05:34:25Z",
-      "title": "IranStrike event",
-      "description": "Houthis launch major offensive in Yemen's Taiz; Saudi-led forces conduct counter-strikes",
-      "category": "other",
+      "description": "Houthi forces capture Mokha and multiple cities from PLC, seizing Saudi-supplied MRAP vehicles in rapid advance",
+      "category": "movement",
       "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2315,27 +2358,599 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e1h7g6f5",
-        "text": "Houthis launch major offensive in Yemen's Taiz; Saudi-led forces conduct counter-strikes",
-        "textHe": "חות'ים משקו התקפה גדולה בתעיז; כוחות בהנהגת סעודיה ערכו התקפים נגדיים",
+        "id": "385nz7wyyzg00",
+        "timestamp": "2026-09-10T15:06:10+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
         "severity": "high",
-        "timestamp": "2026-09-10T05:34:25+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "im2tmmqt9ns0",
-          "2bmv9bh09les0",
-          "29gubaltf6sk0",
-          "2r7c0l0lqes00",
-          "f4ijjtstzhk0"
-        ],
-        "sourceCount": 1
+        "description": "Houthi forces capture Mokha and multiple cities from PLC, seizing Saudi-supplied MRAP vehicles in rapid advance",
+        "descriptionHe": "כוחות החות'ים כובשים את מוכא וערים מרובות מ-PLC, תופסים כלי MRAP בעלי אספקה סעודית בקידום מהיר",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83644"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-3qmaqak9cmg00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83642",
+      "date": "2026-09-10T15:03:11Z",
+      "title": "IranStrike event",
+      "description": "Saudi airstrikes target Dhubab to prevent Houthi completion of city capture",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3qmaqak9cmg00",
+        "timestamp": "2026-09-10T15:03:11+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Saudi airstrikes target Dhubab to prevent Houthi completion of city capture",
+        "descriptionHe": "תקיפות אוויריות סעודיות על דובאב כדי למנוע מהחות'ים השלמת כיבוש העיר",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83642"
+      }
+    },
+    {
+      "id": "iranstrike-327mjkgw58u00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130053",
+      "date": "2026-09-10T14:46:17Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces capture Hanish Islands (Greater Hanish, Lesser Hanish) and Zaqar Island in Red Sea, strengthening control of maritime shipping routes",
+      "category": "movement",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "327mjkgw58u00",
+        "timestamp": "2026-09-10T14:46:17+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Houthi forces capture Hanish Islands (Greater Hanish, Lesser Hanish) and Zaqar Island in Red Sea, strengthening control of maritime shipping routes",
+        "descriptionHe": "החות'ים השתלטו על קבוצת האיים חניש הגדול, חניש הקטן והאי זקר בים האדום, מחזקים שליטה בנתיבי הספנות",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130053"
+      }
+    },
+    {
+      "id": "iranstrike-89lcq8nn6s80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83640",
+      "date": "2026-09-10T14:36:19Z",
+      "title": "IranStrike event",
+      "description": "Southern Giants Brigades (pro-Emirati faction) blocks Saudi-backed PLC forces from entering Aden, demands disarmament",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "89lcq8nn6s80",
+        "timestamp": "2026-09-10T14:36:19+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Southern Giants Brigades (pro-Emirati faction) blocks Saudi-backed PLC forces from entering Aden, demands disarmament",
+        "descriptionHe": "וחדות הגיבורים הדרומיים (כנף פרו-אמירתית) חוסמות כוחות תומכי סעודיה מ-PLC מכניסה לעדן, דורשות פירוז כלי נשק",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83640"
+      }
+    },
+    {
+      "id": "iranstrike-l9agqlsj9zk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83639",
+      "date": "2026-09-10T14:21:37Z",
+      "title": "IranStrike event",
+      "description": "Saudi Arabia reports oil output fell to 6.24 million barrels per day in August, lowest since 1990, due to Houthi disruptions; further decline expected following strikes on Jazan and Abha",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "l9agqlsj9zk0",
+        "timestamp": "2026-09-10T14:21:37+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Saudi Arabia reports oil output fell to 6.24 million barrels per day in August, lowest since 1990, due to Houthi disruptions; further decline expected following strikes on Jazan and Abha",
+        "descriptionHe": "סעודיה דיווחה על ירידת תפוקת נפט ל-6.24 מיליון חביות ביום באוגוסט, הנמוכה ביותר מאז 1990, בשל הפרעות הות'ים; צפוי ירידה נוספת בעקבות התקפות על ג'יזאן ואבה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83639"
+      }
+    },
+    {
+      "id": "iranstrike-fo8daaf8as00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83637",
+      "date": "2026-09-10T14:19:24Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces hold military march through newly captured city of Mocha in southwest Yemen",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "fo8daaf8as00",
+        "timestamp": "2026-09-10T14:19:24+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Houthi forces hold military march through newly captured city of Mocha in southwest Yemen",
+        "descriptionHe": "כוחות החות'ים ערכו מצעד צבאי בעיר מוכה שנכבשה לאחרונה בדרום-מערב תימן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83637"
+      }
+    },
+    {
+      "id": "iranstrike-34o9acq5zhk00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83629",
+      "date": "2026-09-10T14:08:35Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces capture Dhubab airstrip in western Yemen, continue offensive toward Bab el-Mandeb Strait with Perim Island as potential next strategic objective",
+      "category": "movement",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "34o9acq5zhk00",
+        "timestamp": "2026-09-10T14:08:35+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "high",
+        "description": "Houthi forces capture Dhubab airstrip in western Yemen, continue offensive toward Bab el-Mandeb Strait with Perim Island as potential next strategic objective",
+        "descriptionHe": "כוחות החות'ים כבשו את נתיב התעופה בדובאב במערב תימן, המשיכו בהתקפה לעבר מצר באב אלמנדב עם אי פרים כמטרה אסטרטגית פוטנציאלית הבאה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83629"
+      }
+    },
+    {
+      "id": "iranstrike-1rvy7nih2mu80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130051",
+      "date": "2026-09-10T14:06:20Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces advance southward along western Yemen coast toward Dhubab with unconfirmed reports of landing operations on Perim Island for strategic control of Bab el-Mandeb Strait",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1rvy7nih2mu80",
+        "timestamp": "2026-09-10T14:06:20+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "high",
+        "description": "Houthi forces advance southward along western Yemen coast toward Dhubab with unconfirmed reports of landing operations on Perim Island for strategic control of Bab el-Mandeb Strait",
+        "descriptionHe": "התקדמות כוחות החות'ים דרומה לאורך החוף המערבי של תימן לעבר דובאב עם דיווחים לא רשמיים על פעולות נחיתה באי פרים לשליטה אסטרטגית על באב אלמנדב",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130051"
+      }
+    },
+    {
+      "id": "iranstrike-1fie29rxdqjk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83626",
+      "date": "2026-09-10T14:02:25Z",
+      "title": "IranStrike event",
+      "description": "Houthi strikes damage Saudi Aramco's Abha bulk plant, burn scars visible on oil storage tanks with large smoke plumes",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1fie29rxdqjk0",
+        "timestamp": "2026-09-10T14:02:25+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthi strikes damage Saudi Aramco's Abha bulk plant, burn scars visible on oil storage tanks with large smoke plumes",
+        "descriptionHe": "תקיפות של החות'ים פוגעות במפעל Abha של סעודי אראמקו, שריפות גלויות על מיכלי אחסון נפט עם עמודי עשן גדולים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83626"
+      }
+    },
+    {
+      "id": "iranstrike-3nv0qtnqyb600",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83624",
+      "date": "2026-09-10T13:58:55Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces capture city of Dhubab in western Yemen",
+      "category": "movement",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3nv0qtnqyb600",
+        "timestamp": "2026-09-10T13:58:55+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Houthi forces capture city of Dhubab in western Yemen",
+        "descriptionHe": "כוחות החות'ים תופסים את עיר דובאב בערב הסעודית",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83624"
+      }
+    },
+    {
+      "id": "iranstrike-1kzhup7m46zk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83623",
+      "date": "2026-09-10T13:58:50Z",
+      "title": "IranStrike event",
+      "description": "Houthi amphibious operations capture all Hanish Islands and establish foothold on Mayun Island",
+      "category": "movement",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1kzhup7m46zk0",
+        "timestamp": "2026-09-10T13:58:50+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Houthi amphibious operations capture all Hanish Islands and establish foothold on Mayun Island",
+        "descriptionHe": "פעולות נחיתה של החות'ים תופסות את כל איי הנוש ומבססות חזותה במיזו",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83623"
+      }
+    },
+    {
+      "id": "iranstrike-2zoryuhd6ho00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83622",
+      "date": "2026-09-10T13:58:35Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces capture 17th Brigade at Al-Omari base and Zubayr airport runway, advance to 30km from Bab el-Mandeb Strait near Dhubab",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2zoryuhd6ho00",
+        "timestamp": "2026-09-10T13:58:35+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "high",
+        "description": "Houthi forces capture 17th Brigade at Al-Omari base and Zubayr airport runway, advance to 30km from Bab el-Mandeb Strait near Dhubab",
+        "descriptionHe": "כוחות החות'ים תופסים את חטיבה 17 בבסיס אל-עומרי ומסלול נמל התעופה זוביר, מתקדמים ל-30 ק\"מ ממיצר באב אל-מנדב ליד דובאב",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83622"
+      }
+    },
+    {
+      "id": "iranstrike-11nbsqiwwoow0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83620",
+      "date": "2026-09-10T13:52:31Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces advance southward toward Bab el-Mandeb Strait and port of Dhubab in western Yemen",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "11nbsqiwwoow0",
+        "timestamp": "2026-09-10T13:52:31+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Houthi forces advance southward toward Bab el-Mandeb Strait and port of Dhubab in western Yemen",
+        "descriptionHe": "כוחות החות'ים מתקדמים דרומה לעבר מצר באב אל-מנדב ונמל דובאב בדרום מערב יתן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83620"
+      }
+    },
+    {
+      "id": "iranstrike-3epxr9y4cig00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83616",
+      "date": "2026-09-10T12:07:47Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah captures strategic island of Al-Zuqar near Bab Al-Mandab in Red Sea",
+      "category": "movement",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3epxr9y4cig00",
+        "timestamp": "2026-09-10T12:07:47+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Ansarallah captures strategic island of Al-Zuqar near Bab Al-Mandab in Red Sea",
+        "descriptionHe": "אנסאר אללה כובשת את האי האסטרטגי אל-זוקר ליד באב אל-מנדב בים האדום",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83616"
+      }
+    },
     {
       "id": "iranstrike-1aaijoug7d6o0",
       "source": "IranStrike",
