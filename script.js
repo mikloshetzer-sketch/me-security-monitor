@@ -3859,6 +3859,7 @@ window.setInterval(() => {
         enabled: false,
         defaultDays: 7,
         defaultActor: "ALL",
+        defaultDatasetGroups: ["USA_IRAN"],
         maxVisible: 1000
       });
 
@@ -3870,6 +3871,10 @@ window.setInterval(() => {
       return {
         days: Number(document.getElementById("strikeHistoryDaysSelect")?.value || 7),
         actor: String(document.getElementById("strikeHistoryActorSelect")?.value || "ALL"),
+        datasetGroups: [
+          document.getElementById("strikeHistoryUsaIranCheckbox")?.checked ? "USA_IRAN" : null,
+          document.getElementById("strikeHistoryHouthiCheckbox")?.checked ? "HOUTHI" : null
+        ].filter(Boolean),
         search: String(document.getElementById("strikeHistorySearchInput")?.value || "").trim()
       };
     }
@@ -3883,6 +3888,7 @@ window.setInterval(() => {
       setTextIfExists("strikeHistoryVisibleCount", state?.visibleCount ?? 0);
       setTextIfExists("strikeHistoryUsaCount", visible.filter(event => event.attacker === "USA").length);
       setTextIfExists("strikeHistoryIranCount", visible.filter(event => event.attacker === "IRAN").length);
+      setTextIfExists("strikeHistoryHouthiCount", visible.filter(event => event.attacker === "HOUTHI").length);
       setTextIfExists("strikeHistoryLastUpdate", state?.generatedAt || state?.latestDate || "—");
 
       if (badge) {
@@ -4380,13 +4386,19 @@ window.setInterval(() => {
 
       <div class="strike-history-control-block" data-control-block="strike-history" style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10);">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;">
-          <div class="muted" style="font-weight:800;">USA–Iran Strike History</div>
+          <div class="muted" style="font-weight:800;">Strike History</div>
           <span id="strikeHistoryStatusBadge" class="badge-mini">Off</span>
         </div>
 
         <div class="row">
           <label><input id="strikeHistoryCheckbox" type="checkbox" /> Strike History layer</label>
           <span class="btn-mini" id="strikeHistoryRefreshBtn">Refresh</span>
+        </div>
+
+        <div class="muted" style="margin-top:8px;margin-bottom:5px;">Datasets</div>
+        <div class="row">
+          <label><input id="strikeHistoryUsaIranCheckbox" type="checkbox" checked /> USA–Iran attacks</label>
+          <label><input id="strikeHistoryHouthiCheckbox" type="checkbox" /> Houthi attacks</label>
         </div>
 
         <div class="muted" style="margin-top:8px;margin-bottom:5px;">Time window</div>
@@ -4403,6 +4415,7 @@ window.setInterval(() => {
           <option value="ALL" selected>All attackers</option>
           <option value="USA">USA</option>
           <option value="IRAN">Iran</option>
+          <option value="HOUTHI">Houthi / Ansar Allah</option>
         </select>
 
         <input id="strikeHistorySearchInput" class="search" type="search" placeholder="Search strike history..." style="margin-top:7px;" />
@@ -4412,6 +4425,7 @@ window.setInterval(() => {
           <div class="mini-item"><div class="name">Visible</div><div class="val" id="strikeHistoryVisibleCount">0</div></div>
           <div class="mini-item"><div class="name">USA</div><div class="val" id="strikeHistoryUsaCount">0</div></div>
           <div class="mini-item"><div class="name">Iran</div><div class="val" id="strikeHistoryIranCount">0</div></div>
+          <div class="mini-item"><div class="name">Houthi</div><div class="val" id="strikeHistoryHouthiCount">0</div></div>
         </div>
 
         <div class="row" style="margin-top:8px;">
@@ -4420,7 +4434,7 @@ window.setInterval(() => {
 
         <div class="muted" style="margin-top:8px;">Last update: <span id="strikeHistoryLastUpdate">—</span></div>
         <div class="muted" style="margin-top:8px;line-height:1.45;">
-          Independent historical USA–Iran strike dataset. Green markers: USA. Blue markers: Iran.
+          Independent historical strike datasets. Green: USA. Blue: Iran. Orange: Houthi / Ansar Allah.
         </div>
       </div>
 
@@ -4945,6 +4959,8 @@ window.setInterval(() => {
     const strikeHistoryRefreshBtn = document.getElementById("strikeHistoryRefreshBtn");
     const strikeHistoryDaysSelect = document.getElementById("strikeHistoryDaysSelect");
     const strikeHistoryActorSelect = document.getElementById("strikeHistoryActorSelect");
+    const strikeHistoryUsaIranCheckbox = document.getElementById("strikeHistoryUsaIranCheckbox");
+    const strikeHistoryHouthiCheckbox = document.getElementById("strikeHistoryHouthiCheckbox");
     const strikeHistorySearchInput = document.getElementById("strikeHistorySearchInput");
     const strikeHistoryFitBtn = document.getElementById("strikeHistoryFitBtn");
     const analystAnnotationsCheckbox = document.getElementById("analystAnnotationsCheckbox");
@@ -5117,7 +5133,7 @@ window.setInterval(() => {
       });
     }
 
-    [strikeHistoryDaysSelect, strikeHistoryActorSelect]
+    [strikeHistoryDaysSelect, strikeHistoryActorSelect, strikeHistoryUsaIranCheckbox, strikeHistoryHouthiCheckbox]
       .filter(Boolean)
       .forEach(element => {
         element.addEventListener("change", async () => {
