@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T01:10:50Z",
+  "generated_at": "2026-09-10T05:59:30Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 233,
-    "feed_event_records": 233,
-    "normalized_events": 1233,
-    "map_visualizable_events": 243,
-    "non_mappable_events": 990,
-    "developments": 5
+    "events_endpoint_records": 242,
+    "feed_event_records": 242,
+    "normalized_events": 1242,
+    "map_visualizable_events": 244,
+    "non_mappable_events": 998,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1233,
+      "total_events": 1242,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-10T00:32:35Z",
-      "geocoded_events": 243,
-      "geocoded_share": 19.7,
+      "latest_event_date": "2026-09-10T05:52:22Z",
+      "geocoded_events": 244,
+      "geocoded_share": 19.6,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 90,
-        "previous": 102,
-        "delta": -12,
-        "percent_change": -11.8,
+        "current": 99,
+        "previous": 105,
+        "delta": -6,
+        "percent_change": -5.7,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 341,
-        "previous": 859,
-        "delta": -518,
-        "percent_change": -60.3,
+        "current": 347,
+        "previous": 849,
+        "delta": -502,
+        "percent_change": -59.1,
         "direction": "decrease"
       }
     },
@@ -806,46 +806,46 @@
       },
       {
         "date": "2026-09-10",
-        "count": 4
+        "count": 13
       }
     ],
     "category_counts": {
-      "infrastructure": 301,
-      "missile": 277,
-      "strike": 221,
-      "drone": 168,
-      "airstrike": 112,
+      "infrastructure": 302,
+      "missile": 280,
+      "strike": 222,
+      "drone": 169,
+      "airstrike": 113,
       "explosion": 57,
-      "movement": 47,
+      "movement": 49,
       "ground": 23,
       "alert": 13,
       "defense": 10,
       "political": 4
     },
     "severity_counts": {
-      "medium": 646,
-      "high": 408,
-      "low": 177,
+      "medium": 651,
+      "high": 411,
+      "low": 178,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 714,
-      "iran": 346,
-      "israel": 142,
+      "unknown": 719,
+      "iran": 349,
+      "israel": 143,
       "usa": 31
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 350
+        "count": 355
       },
       {
         "name": "Iran",
-        "count": 303
+        "count": 304
       },
       {
         "name": "Jordan",
-        "count": 104
+        "count": 106
       },
       {
         "name": "Lebanon",
@@ -899,15 +899,15 @@
     "top_countries": [
       {
         "name": "Iran",
-        "count": 428
+        "count": 429
       },
       {
         "name": "Unknown",
-        "count": 350
+        "count": 355
       },
       {
         "name": "Jordan",
-        "count": 125
+        "count": 127
       },
       {
         "name": "Lebanon",
@@ -935,7 +935,7 @@
       },
       {
         "name": "Palestinian territories",
-        "count": 13
+        "count": 14
       },
       {
         "name": "Gaza Strip",
@@ -944,33 +944,41 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10541,
+    "totalCount": 10550,
     "spotlight": {
       "event": {
-        "id": "36btsp48c9o00",
-        "timestamp": "2026-09-10T00:32:35+00:00",
-        "location": "ISR",
+        "id": "l7cyihl6b1c0",
+        "timestamp": "2026-09-10T05:42:40+00:00",
+        "location": "JOR",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
-        "severity": "medium",
-        "description": "IDF Spokesperson: hostile aircraft intrusion alerts activated in multiple northern sectors, details under investigation",
-        "descriptionHe": "דובר צה\"ל: ראשוני: הופעלו התרעות על חדירת כלי טיס עוין במספר מרחבים בצפון הארץ, הפרטים בבדיקה",
-        "source": "idkunim_il",
-        "sourceUrl": "https://t.me/idkunim_il/63372"
+        "severity": "high",
+        "description": "Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
+        "descriptionHe": "איראן משגרת מתקפת טילים בליסטיים רחבה על בסיסים בירדן המארחים כוחות אמריקאים, 20 טילים שוגרו מהם 18 יורטו ו-2 נוספים נפלו בשטח",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 20,
+            "intercepted": 18
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/130026"
       },
-      "headline": "IDF activates hostile aircraft intrusion alerts across northern sectors",
-      "headlineHe": "צה\"ל מפעיל התראות על חדירת מטוסים עוינים בגזרות צפוניות",
-      "summary": "Multiple northern Israeli regions triggered air defense protocols as authorities investigate the nature and origin of the airborne threat.",
-      "summaryHe": "מספר אזורים בצפון ישראל הופעלו פרוטוקול הגנה אווירית כשרשויות חוקרות את טיבה ומקורה של האיום האווירי.",
-      "pickedAt": "2026-09-10T01:00:50.515Z",
-      "state": "SPOTLIGHT"
+      "headline": "Iran fires 20 ballistic missiles at U.S. bases in Jordan",
+      "headlineHe": "איראן משגרת 20 טילים בליסטיים לעברי בסיסים אמריקניים בירדן",
+      "summary": "Two missiles penetrated air defenses and struck ground targets at Al-Muwaffaq Salti airbase, damaging multiple U.S. aircraft including F-15 fighters and an A-10 Warthog.",
+      "summaryHe": "שני טילים חדרו הגנות אוויר והכו יעדים בקרקע בבסיס אל-מוואפק סלתי, וגרמו נזק למטוסי קרב ו-A-10 אמריקניים מרובים.",
+      "pickedAt": "2026-09-10T05:45:51.110Z",
+      "state": "BREAKING"
     },
-    "lastUpdated": "2026-09-10T01:09:03.439Z",
+    "lastUpdated": "2026-09-10T05:57:03.416Z",
     "stale": false,
-    "viewerCount": 9,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1511,118 +1519,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 94,
+      "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-09-10T01:00:43.176Z",
+      "lastUpdate": "2026-09-10T05:30:42.885Z",
       "internetHistory": [
-        {
-          "t": "2026-09-09T01:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T01:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T01:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-09T01:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T01:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T01:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T02:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T02:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T02:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T02:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T02:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T02:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T03:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T03:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T03:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T03:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T03:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T03:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T04:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T04:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T04:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T04:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T04:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T04:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T05:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T05:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-09T05:20:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-09-09T05:30:00.000Z",
           "v": 93
@@ -2086,30 +1986,138 @@
         {
           "t": "2026-09-10T00:40:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-09-10T00:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T01:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T01:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T01:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T01:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T01:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T01:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T02:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T02:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T02:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T02:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T02:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T02:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T03:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T03:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T03:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T03:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T03:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-10T03:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T04:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T04:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T04:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T04:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T04:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T04:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T05:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-10T05:10:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-10T01:00:43.176Z"
+    "lastUpdated": "2026-09-10T05:30:42.885Z"
   },
   "developments": [
     {
-      "id": "iranstrike-27geoc4nz",
+      "id": "iranstrike-a7f2c1e9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-09T18:17:35Z",
+      "date": "2026-09-10T05:42:40Z",
       "title": "IranStrike event",
-      "description": "Iran launches 20 ballistic missiles at U.S. bases in Jordan; 18-20 intercepted",
+      "description": "Iran launches 20 ballistic missiles at Jordan; 18 intercepted, 2 strike; 9 U.S. aircraft damaged",
       "category": "other",
-      "severity": "high",
+      "severity": "critical",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches 20 ballistic missiles at u.s.",
+      "attacker_evidence": "iran launches 20 ballistic missiles at jordan;",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2122,34 +2130,131 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "27geoc4nz",
-        "text": "Iran launches 20 ballistic missiles at U.S. bases in Jordan; 18-20 intercepted",
-        "textHe": "איראן שיגרה 20 טילים בליסטיים לבסיסים אמריקאיים בירדן; 18-20 יורטו",
-        "severity": "high",
-        "timestamp": "2026-09-09T18:17:35+00:00",
+        "id": "a7f2c1e9",
+        "text": "Iran launches 20 ballistic missiles at Jordan; 18 intercepted, 2 strike; 9 U.S. aircraft damaged",
+        "textHe": "איראן שיגרה 20 טילים בליסטיים לירדן; 18 יירטו, 2 פגעו; 9 מטוסים אמריקאים נפגעו",
+        "severity": "critical",
+        "timestamp": "2026-09-10T05:42:40+00:00",
         "entityIds": [
           "IRN",
-          "USA",
-          "JOR"
+          "JOR",
+          "USA"
         ],
         "eventIds": [
-          "2y2wej829eo00",
-          "27geoc4nztc00"
+          "l7cyihl6b1c0",
+          "3s6gkkp1cte00",
+          "1k5fc9a84t280"
+        ],
+        "sourceCount": 3
+      }
+    },
+    {
+      "id": "iranstrike-b3e8d2f4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-10T05:34:25Z",
+      "title": "IranStrike event",
+      "description": "Houthis intensify Yemen campaign: airbase strikes, Taiz advances, PLC command failures",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b3e8d2f4",
+        "text": "Houthis intensify Yemen campaign: airbase strikes, Taiz advances, PLC command failures",
+        "textHe": "החוסים מגבירים: התקפות על בסיסים, התקדמות בטייז, כשלים בפיקוד PLC",
+        "severity": "high",
+        "timestamp": "2026-09-10T05:34:25+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "im2tmmqt9ns0",
+          "2ygqzgov42a00",
+          "10m462f7g30w0",
+          "dgxy2m37axc0",
+          "2bmv9bh09les0",
+          "29gubaltf6sk0",
+          "2r7c0l0lqes00",
+          "2hv5m085i9a00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-3jzb4gf8",
+      "id": "iranstrike-c5g9h3a2",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-10T05:52:22Z",
+      "title": "IranStrike event",
+      "description": "IDF operations in Gaza and Lebanon: 4 Palestinians killed in Beit Lahia, drone strikes continue",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c5g9h3a2",
+        "text": "IDF operations in Gaza and Lebanon: 4 Palestinians killed in Beit Lahia, drone strikes continue",
+        "textHe": "פעולות צה״ל בעזה ובלבנון: 4 פלסטינים נהרגו בביית לאהיא, המשך התקפות דרונים",
+        "severity": "medium",
+        "timestamp": "2026-09-10T05:52:22+00:00",
+        "entityIds": [
+          "ISR"
+        ],
+        "eventIds": [
+          "3v5d5d3dg2000",
+          "z44897at4jk0",
+          "uzj69ovlki80"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-d6f1k4b7",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-10T00:32:35Z",
       "title": "IranStrike event",
-      "description": "Multiple hostile UAV alerts reported across northern Israel confrontation line",
+      "description": "UAV alerts in northern Israel; multiple hostile drones targeting confrontation lines",
       "category": "other",
-      "severity": "high",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2168,14 +2273,13 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "3jzb4gf8",
-        "text": "Multiple hostile UAV alerts reported across northern Israel confrontation line",
-        "textHe": "מספר התראות מל\"טים עוינים דווחו לאורך קו ההתגוננות בצפון ישראל",
-        "severity": "high",
+        "id": "d6f1k4b7",
+        "text": "UAV alerts in northern Israel; multiple hostile drones targeting confrontation lines",
+        "textHe": "התראות כל״ע בצפון ישראל; מספר רחפנים עוינים פוגעים בקווי הקיפול",
+        "severity": "medium",
         "timestamp": "2026-09-10T00:32:35+00:00",
         "entityIds": [
-          "ISR",
-          "LBN"
+          "ISR"
         ],
         "eventIds": [
           "36btsp48c9o00",
@@ -2185,115 +2289,71 @@
         ],
         "sourceCount": 2
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-dgxy2m37",
+      "id": "iranstrike-3v5d5z3dg2000",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-09T13:09:48Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130029",
+      "date": "2026-09-10T05:52:22Z",
       "title": "IranStrike event",
-      "description": "Houthis destroy 3 oil tanks at Jazan refinery; damage confirmed at King Khalid Airbase",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
+      "description": "IDF strikes building in Beit Lahia, northern Gaza Strip, killing 4 Palestinians; additional casualties reported from two separate drone strikes in western Khan Younis in past hour",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr idf strikes building in beit lahia, northern gaza strip, kill",
+      "location": "Khan Younis",
+      "country": "Palestinian territories",
+      "latitude": 31.3462,
+      "longitude": 34.3063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khan younis",
+      "geocode_confidence": "high",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "dgxy2m37",
-        "text": "Houthis destroy 3 oil tanks at Jazan refinery; damage confirmed at King Khalid Airbase",
-        "textHe": "חותיים הרסו 3 מיכלי נפט בחינטור ג'אזאן; נזק אושר בבסיס קינג חאליד",
-        "severity": "high",
-        "timestamp": "2026-09-09T13:09:48+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
+        "id": "3v5d5z3dg2000",
+        "timestamp": "2026-09-10T05:52:22+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "dgxy2m37axc0",
-          "10m462f7g30w0"
-        ],
-        "sourceCount": 2
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF strikes building in Beit Lahia, northern Gaza Strip, killing 4 Palestinians; additional casualties reported from two separate drone strikes in western Khan Younis in past hour",
+        "descriptionHe": "צה\"ל תוקף מבנה בבית לאהיא, צפון רצועת עזה, הורג 4 פלסטינים; נפגעים נוספים מדווחים משתי תקיפות מזל\"ט נפרדות במערב חאן יונס בשעה האחרונה",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130029"
       }
     },
     {
-      "id": "iranstrike-2bmv9bh0",
+      "id": "iranstrike-l7cyihl6b1c0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-09T19:56:58Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130026",
+      "date": "2026-09-10T05:42:40Z",
       "title": "IranStrike event",
-      "description": "Houthis conduct heavy strikes on PLC concentrations near Hays; forces withdraw",
-      "category": "other",
+      "description": "Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
+      "category": "missile",
       "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2bmv9bh0",
-        "text": "Houthis conduct heavy strikes on PLC concentrations near Hays; forces withdraw",
-        "textHe": "חותיים ערכו תקיפות כבדות על ריכוזי PLC ליד הייס; כוחות נסוגו",
-        "severity": "high",
-        "timestamp": "2026-09-09T19:56:58+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "2bmv9bh09les0",
-          "29gubaltf6sk0",
-          "2r7c0l0lqes00"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-eaeg0erz",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-09T11:05:11Z",
-      "title": "IranStrike event",
-      "description": "U.S. destroys 13 Iranian oil tankers in 3-day campaign targeting Quds Force",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iran launches widespread ballistic missile attack on jordanian",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2306,25 +2366,348 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "eaeg0erz",
-        "text": "U.S. destroys 13 Iranian oil tankers in 3-day campaign targeting Quds Force",
-        "textHe": "ארה\"ב הרסה 13 מכליות נפט איראניות בקמפיין בן 3 ימים נגד כוח קודס",
+        "id": "l7cyihl6b1c0",
+        "timestamp": "2026-09-10T05:42:40+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "high",
-        "timestamp": "2026-09-09T11:05:11+00:00",
-        "entityIds": [
-          "USA",
-          "IRN"
+        "description": "Iran launches widespread ballistic missile attack on Jordanian airbases hosting U.S. forces, 20 missiles fired with 18 intercepted and 2 striking ground targets",
+        "descriptionHe": "איראן משגרת מתקפת טילים בליסטיים רחבה על בסיסים בירדן המארחים כוחות אמריקאים, 20 טילים שוגרו מהם 18 יורטו ו-2 נוספים נפלו בשטח",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 20,
+            "intercepted": 18
+          }
         ],
-        "eventIds": [
-          "eaeg0erzag00",
-          "2xq832166l400",
-          "3n88v0rhnke00"
-        ],
-        "sourceCount": 1
+        "sourceUrl": "https://t.me/abualiexpress/130026"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-im2tmmqt9ns0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130021",
+      "date": "2026-09-10T05:34:25Z",
+      "title": "IranStrike event",
+      "description": "Houthis launch military campaign in southwestern Yemen attempting to seize additional territory in Taiz governorate, counter-offensive launched by Saudi-aligned forces to block advances",
+      "category": "movement",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "im2tmmqt9ns0",
+        "timestamp": "2026-09-10T05:34:25+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Houthis launch military campaign in southwestern Yemen attempting to seize additional territory in Taiz governorate, counter-offensive launched by Saudi-aligned forces to block advances",
+        "descriptionHe": "תימן: הסלמה בזירה החות'ית - החות'ים מנסים לכבוש שטחים חדשים. הכוחות שמנגד השיקו מתקפה במטרה לבלום את ההתקדמות החות'ית",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130021"
+      }
+    },
+    {
+      "id": "iranstrike-3s6gkkp1cte00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/63376",
+      "date": "2026-09-10T05:22:51Z",
+      "title": "IranStrike event",
+      "description": "Iranian attack on Al-Muwaffaq Salti airbase in Jordan damages 8 F-15 fighters and 1 A-10 aircraft",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iranian attack on al-muwaffaq salti airbase in jordan damages 8",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3s6gkkp1cte00",
+        "timestamp": "2026-09-10T05:22:51+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iranian attack on Al-Muwaffaq Salti airbase in Jordan damages 8 F-15 fighters and 1 A-10 aircraft",
+        "descriptionHe": "תקיפה איראנית על בסיס מוואפק סלטי בירדן גורמת נזק ל-8 מטוסי F-15 וטיסת A-10 אחת",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/63376"
+      }
+    },
+    {
+      "id": "iranstrike-9nk67o0pj1o0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83607",
+      "date": "2026-09-10T02:52:39Z",
+      "title": "IranStrike event",
+      "description": "Royal Saudi Air Force airstrikes against Hodeidah in Ansarallah-controlled western Yemen, explosions reported",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "9nk67o0pj1o0",
+        "timestamp": "2026-09-10T02:52:39+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Royal Saudi Air Force airstrikes against Hodeidah in Ansarallah-controlled western Yemen, explosions reported",
+        "descriptionHe": "תקיפות של חיל האוויר המלכותי הסעודי נגד חדיידה בחלק המערבי של תימן הנשלט על ידי אנסאר אללה, דיווחים על פיצוצים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83607"
+      }
+    },
+    {
+      "id": "iranstrike-i3agkullssw0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83604",
+      "date": "2026-09-10T02:37:57Z",
+      "title": "IranStrike event",
+      "description": "Presidential Leadership Council forces withdraw from Mocha, Yemen",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "i3agkullssw0",
+        "timestamp": "2026-09-10T02:37:57+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Presidential Leadership Council forces withdraw from Mocha, Yemen",
+        "descriptionHe": "כוחות מועצת ההנהגה הנשיאותית נסוגים מעיר מוכא, תימן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83604"
+      }
+    },
+    {
+      "id": "iranstrike-1k5fc9a84t280",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83601",
+      "date": "2026-09-10T01:51:14Z",
+      "title": "IranStrike event",
+      "description": "Iranian ballistic missile attack on Muwaffaq Salti AB in Jordan damages U.S. Air Force assets: one A-10C loses wing, eight F-15E Strike Eagles lightly damaged",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "jor iranian ballistic missile attack on muwaffaq salti ab in jordan damages u.s.",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1k5fc9a84t280",
+        "timestamp": "2026-09-10T01:51:14+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iranian ballistic missile attack on Muwaffaq Salti AB in Jordan damages U.S. Air Force assets: one A-10C loses wing, eight F-15E Strike Eagles lightly damaged",
+        "descriptionHe": "התקיפה הבליסטית האיראנית על בסיס מוואפק סלטי בירדן פוגעת בנכסי חיל האוויר האמריקאי: A-10C אחד מאבד כנף, שמונה F-15E Strike Eagles נפגעו קלות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83601"
+      }
+    },
+    {
+      "id": "iranstrike-2ygqzgov42a00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83600",
+      "date": "2026-09-10T01:50:55Z",
+      "title": "IranStrike event",
+      "description": "Houthi missile strikes King Khalid Airbase in Saudi Arabia with direct hit",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2ygqzgov42a00",
+        "timestamp": "2026-09-10T01:50:55+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthi missile strikes King Khalid Airbase in Saudi Arabia with direct hit",
+        "descriptionHe": "טיל חות'ים פוגע בבסיס חיל האוויר המלך חלד בערב הסעודית בפגיעה ישירה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/83600"
+      }
+    },
+    {
+      "id": "iranstrike-2hv5m085i9a00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83598",
+      "date": "2026-09-10T01:50:55Z",
+      "title": "IranStrike event",
+      "description": "Commander of Saudi-backed PLC forces on Taizz front resigns citing heavy battlefield losses, position losses, poor coordination and alleged betrayal",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2hv5m085i9a00",
+        "timestamp": "2026-09-10T01:50:55+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Commander of Saudi-backed PLC forces on Taizz front resigns citing heavy battlefield losses, position losses, poor coordination and alleged betrayal",
+        "descriptionHe": "מפקד כוחות PLC בגיבול סעודי בחזית תעיז מתפטר בשל הפסדים קשים בקרב, אובדן עמדות, תיאום גרוע וכפירה כביכול",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83598"
+      }
+    },
     {
       "id": "iranstrike-36btsp48c9o00",
       "source": "IranStrike",
@@ -58359,6 +58742,51 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-3v5d5z3dg2000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130029",
+      "date": "2026-09-10T05:52:22Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes building in Beit Lahia, northern Gaza Strip, killing 4 Palestinians; additional casualties reported from two separate drone strikes in western Khan Younis in past hour",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr idf strikes building in beit lahia, northern gaza strip, kill",
+      "location": "Khan Younis",
+      "country": "Palestinian territories",
+      "latitude": 31.3462,
+      "longitude": 34.3063,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "khan younis",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3v5d5z3dg2000",
+        "timestamp": "2026-09-10T05:52:22+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF strikes building in Beit Lahia, northern Gaza Strip, killing 4 Palestinians; additional casualties reported from two separate drone strikes in western Khan Younis in past hour",
+        "descriptionHe": "צה\"ל תוקף מבנה בבית לאהיא, צפון רצועת עזה, הורג 4 פלסטינים; נפגעים נוספים מדווחים משתי תקיפות מזל\"ט נפרדות במערב חאן יונס בשעה האחרונה",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130029"
+      }
+    },
     {
       "id": "iranstrike-egavlgtd44g0",
       "source": "IranStrike",
