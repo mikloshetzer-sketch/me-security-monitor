@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T19:58:35Z",
+  "generated_at": "2026-09-10T20:01:22Z",
   "dataset": "middle_east_strike_history",
   "dataset_version": 2,
   "source_files": [
@@ -11,15 +11,15 @@
     "HOUTHI"
   ],
   "summary": {
-    "event_count": 243,
+    "event_count": 244,
     "date_start": "2025-01-01",
-    "date_end": "2026-09-09",
+    "date_end": "2026-09-10",
     "datasets": {
-      "HOUTHI": 129,
+      "HOUTHI": 130,
       "USA_IRAN": 114
     },
     "attackers": {
-      "HOUTHI": 129,
+      "HOUTHI": 130,
       "IRAN": 64,
       "USA": 50
     },
@@ -48,6 +48,7 @@
       "Irán / Ománi-öböl": 1,
       "Irán / Perzsa-öböl": 1,
       "Izrael / Jordánia": 1,
+      "Jemen / Bab el-Mandeb": 1,
       "Kuvait és Bahrein": 1,
       "Nemzetközi vizek / Arab-tenger": 1,
       "Nemzetközi vizek / Ománi-öböl": 1,
@@ -106,6 +107,7 @@
       "Légvédelmi rakéta": 1,
       "Rakéta- vagy dróntámadás": 1,
       "Rakéta- és dróntámadás": 1,
+      "Szárazföldi offenzíva / kikötő elfoglalása": 1,
       "Tengeri / légi precíziós csapás": 1,
       "Tengeri blokád / katonai kényszerintézkedés": 1,
       "Tengeri kinetikus művelet / hajómegállítás": 1,
@@ -264,7 +266,8 @@
       "2026-09-02": 3,
       "2026-09-05": 6,
       "2026-09-08": 4,
-      "2026-09-09": 3
+      "2026-09-09": 3,
+      "2026-09-10": 1
     }
   },
   "events": [
@@ -7069,6 +7072,34 @@
       "methodology_note": "",
       "source_file": "huszi_tamadasok.xlsx",
       "source_row": 130,
+      "data_origin": "manual_excel",
+      "map_visualizable": true
+    },
+    {
+      "event_id": "ME-20260910-HU-8088E28B",
+      "dataset_group": "HOUTHI",
+      "date": "2026-09-10",
+      "attacker": "HOUTHI",
+      "attacker_label": "Houthis / Ansar Allah",
+      "target_country": "Jemen / Bab el-Mandeb",
+      "target_location": "Mocha (Mokha) kikötő",
+      "country": "Jemen / Bab el-Mandeb",
+      "location": "Mocha (Mokha) kikötő",
+      "latitude": 13.31085,
+      "longitude": 43.23072,
+      "lat": 13.31085,
+      "lon": 43.23072,
+      "description": "A huszi erők 2026. szeptember 10-én elfoglalták Mocha (Mokha) stratégiai vörös-tengeri kikötővárost. A művelet a Bab el-Mandeb szoros feletti befolyás növelését szolgálta; a huszik egyidejűleg a Hanish-szigetek térsége felé is előrenyomultak.",
+      "strike_type": "Szárazföldi offenzíva / kikötő elfoglalása",
+      "coordinate_note": "A koordináta a Port of Mokha nyilvános WGS84 referenciapontja; nem egyetlen becsapódási pont.",
+      "confidence": "HIGH",
+      "confidence_label_hu": "Magas",
+      "attacker_confidence": "high",
+      "source_name": "Reuters; AP",
+      "source_url": "https://www.reuters.com/world/middle-east/saudi-says-no-danger-after-khamis-mushait-alert-amid-clashes-with-houthis-2026-09-10/",
+      "methodology_note": "A források a kikötőváros elfoglalását és a Bab el-Mandeb irányába történő huszi előrenyomulást erősítik meg. Eseményként azért került be, mert fegyveres támadó művelet eredményeként stratégiai kikötő került huszi ellenőrzés alá.",
+      "source_file": "huszi_tamadasok.xlsx",
+      "source_row": 131,
       "data_origin": "manual_excel",
       "map_visualizable": true
     }
