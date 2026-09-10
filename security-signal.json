@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-10 00:16 UTC",
+    "updated": "2026-09-10 07:20 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-09-04",
     "period_end": "2026-09-10",
-    "total_events": 155,
-    "total_risk": 162.84,
-    "normalized_risk_score": 65.1,
+    "total_events": 160,
+    "total_risk": 183.52,
+    "normalized_risk_score": 73.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 53,
+    "military": 59,
     "security": 2,
-    "political": 14,
-    "other": 86
+    "political": 16,
+    "other": 83
   },
   "source_counts": {
-    "news": 152,
-    "isw": 3
+    "news": 156,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 61.43
+      "risk": 69.27
     },
     {
       "name": "Israel",
-      "risk": 25.1
+      "risk": 24.9
+    },
+    {
+      "name": "Yemen",
+      "risk": 16.6
     },
     {
       "name": "Saudi Arabia",
       "risk": 15.35
     },
     {
-      "name": "Yemen",
-      "risk": 13.6
-    },
-    {
       "name": "Gaza Strip",
-      "risk": 12.0
+      "risk": 11.8
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Multiple US military aircraft suffered damage in overnight strikes on Jordan air base, CBS says - Reuters",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYThzMWZWYWVaeVkzaGR4Z3AxbHpidm9CMTFNSTVKWmNvVGZoRkg5MjJRV1RvdW9wWWtWS3R6V1dNWmFQUEl1Y0Q4dWdYY19EMUk3RkE4aUlsYVRLbkxmemVJM1gxVzlSNGs5a24wbjg5dWxBZ2tRallJTTV0UExCUFZXWGxYZXhsZHA4clFtT2JPa3IxbHpnVnZnU2RMTnpsZDVLU0RMYW9RM0x6TlY5aUtXRU9tZzJRZ0hV"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Fighting escalates in Yemen; Houthi attacks trigger alerts in Saudi Arabia - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNbW5KRkNZS20weEZaRi1sZWIyR05GbGhIMThONlZqcU4ycHlIcHkzWkZnazFud0NCYXF5MHZlVF9sR2NQb3R0RVlYSHY5WUkxRVNNU2VZZ25LVnpUejdHY0VUVWtoTEFSTVdrdFhFS25JSjVELXdtNDA3X3VlVDdaNnQxLXllZTNmdkNrLUhiQi1pTndVX1hVT0lrMlI4eDhGT0M2V0RqVExSd1lDS3MxQzlLUlTSAboBQVVfeXFMTnRzUXZPZ3hRRl9LdkFPMzBGQ1pzOTAtckduNi1BTkhWWV9nQnFKRVlRenFja0NfbWlqTEpETnlIMEdCYzBLdWJzdkJZb3F3MkJuMHNhRXlLaFNkQThZeGd5bWFqQTBkTHFjZ3NTNXRHZjJNVWpRc2tZQVFIdmwzc2pSdWdCdEFKS1NybXV3dFgzam1xRVdFZHo0dUpZeUQ2Zm5VdE1pVWZOb1lhdGVUVkFOMjhIOXIzUmVn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack - Al Jazeera",
+      "location": "United Arab Emirates",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQnR2SmoxekRrbUl0OWN2MHZ5WEQ3ZHZ4bmd6Q3o2b2QtTk5ORUJQNFh3ZW5wVjFhTjk1S0FnVGVnREIwanBWdEprRHlMbS02RUlIbHN5LWlKUUFPbnRsZXh3SWQ5RnoxQkk5Vm90OVo5Y3BXWW1yME9tNVFwRlVKY2JuZ2RSTWI0VmJON0MxYzFaUDRpdUtReTNtdzQtMXhBX3Z1SGR0bWNaTGRPN1JUNjZuX3NWcFnSAbwBQVVfeXFMTjdYY3FPNjFoMFRQU0dzc205SmhNdFRfWmx6SmliS1hmbmtOQndpTS1NZkQ3c0dZWlZaUzFMYXBpWEdMcDBaZTZpMTdSSldzMzJBRkJLRkl6ZVk0aWNaRDRrdjdROTdqa29LdGthVkpBcFB3aEZ2amp4cm0zc3NnMUo5NHlNSmZSSVAyS29idDJ4NFY0UGRLMElIOEZoN0s5cUVMejR2WTlJakhrcHp3dzhidHkzZ0Q5bGhOa00"
+    },
     {
       "score": 2.7,
       "date": "2026-09-09",
@@ -79,27 +106,18 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
+      "title": "Iran likely to reverse-engineer captured US underwater drone - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSVJXWnFxd25USERSYUk0Nmt5N1RFUzMxbllBa2NqNkJGUVplYkFJVEJYRThSdkxCa3NhNDVLdV8wRGE5VGpGVlhhVzRKdUpOeHExUXRONFprbmtaTDZNaEhuZGZEdGhta3FrQ1FBZDAwSXQ0TV9wMWxGMExaT2FURVpsa0d5WjdwakhhT1ZOVDhzRGwwS0tUUmxxVUk3R2NrcGdlRGVDNjZCcS0xZTQ0cw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-09",
+      "category": "military",
+      "source_type": "news",
       "title": "Houthis attack southern Saudi cities for second day, Saudi-led coalition says - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVkFZWWVmRkxOZ0dqSFdYQnh1dkpQTkZBbFdyU2Rydm1aMUo5eDFhNGpTaURVcmZLN25rS0s0ZUlEd1hFdEJ1TXJjT01mVzYtS1I1X2duVjhXTTFseHZOVGNWLURySnN3M0d1aGpVdUZLUXBDT0NMUjlhYXRHdGo4ekY0Q2stN3VyY09XSFRFZTdka1BhMDJnTFR2NzB2eVVzSW9ENV8wYi1jcWZhdEl0VjQxd1l2VXFI"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "At least 14 killed in explosion at weapons depot in Syria's Idlib, state TV says - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYjc3cGhyUmRMMGN0WktZMUNsaF8wNy05RTBNY09sRUhxMnpTZ0thSl9Kam8ydlVnbUpWQjNMeWVDdUNIYVBjY0F4TTJyZUs4UlVxQ1BUUXhDalF2b0NYa2VBeTV3bUlMN1NISGlDN09VY2p5RFhUUUM0WWdBVDVRLTRtN3h6Rm5PZUdROVdvN281MmFTTm5pTllTVlFNcXZXMmZmUFZHUFlHbVI5"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Sunni Kurdish cleric killed in northwest Iran, Guards blame 'separatists' - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOOGw3bVNNSTFWakE1d05oRGdPdUFmVWt6N09pRGQyeTZkb3ZVb3J1aGVYWldqTzkzSmNJLWZqcWVmRHk4c0l1dTUzWWVvMnBobWRKSWdhZW1tY0FKLUZjVjl4cXJ2dW45NkJPZ1JDRHc2aGlQOTN6R0pfdHJ3a0d3d29YRlpEYjlLUXFTM0ZnblgwWWwxc3o2eXcyR29SRlRVaHhvMVlKNjloRkpCb21rNS1Nb1c3UlpDTTlvSUZB"
     },
     {
       "score": 2.7,
@@ -115,27 +133,9 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
-      "title": "Oil hits $100 a barrel for first time since July after US and Houthi strikes",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran referred to UN Security Council for nuclear non-compliance",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/ckgwj4kl5lno?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Brent crude surpasses $100 a barrel as Iran, US escalate attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQY1o4VE5UNk5MRWQ3UFJkakZFdDFuNUw3Z00yNkFrdW5Na0luMm9oaUlDRkItVkRkZExuWGEzR3p5d2pUVVB5aEU2bHdRWDhwUUxFM29kNmp1MXRtaGpqMVJXN3VzbXFaMzFWdG1pbkxfRG02RzN4bnl0cTloRGhOdTJLaDVzZWZvRU9BdldmN0VTbV9xTXA0N2s2ZWVxd9IBowFBVV95cUxQc09RTEM3dmF6TUw4eDU4SjNNdUV6eWpRVUFGUmFUV3ZsSzFYeVJiNnM5RUdteEdjSDMzbm5TWDZfX1JUX1ZIa0RvSjEzbW9SQ2JWSm11czhSRnEyckZoWnhNZFkxakJJeURWU2g5NUJuLXVFVDBtczRGWWZXVnB1aWZ4RG1pNGVVbHZpeUF6SkhuY19oMll4Z1Fsem40MWJ2aGFJ"
+      "title": "Oil tanker hit in Iraqi waters, as vessels get caught in US-Iran attacks - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNckd4WVFmZEhoNEFkVzRzdE9JMVJ2QVUwMmk3MDRuUTA3NHc3N0xrY2VLZl9GY2Q2WU1ybzBodjhINEQwaV9GQmpKS3FSdXpSY3B3M0VUY3V6NUJvSU1zR1NPYmpLMUtvN3ZrYlZEVlZVNmhZTWZhdnhpM2dEaEZJZzBlbDN3cE42cXNsbDdnYmNkT3ROZTVzVjdBZUJ0NjRCYW4tQUdQQk5NNTV4NFIw"
     }
   ]
 }
