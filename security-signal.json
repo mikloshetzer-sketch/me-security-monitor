@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-10 07:20 UTC",
+    "updated": "2026-09-10 12:56 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-09-04",
     "period_end": "2026-09-10",
-    "total_events": 160,
-    "total_risk": 183.52,
-    "normalized_risk_score": 73.4,
+    "total_events": 162,
+    "total_risk": 183.97,
+    "normalized_risk_score": 73.6,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 59,
+    "military": 57,
     "security": 2,
-    "political": 16,
-    "other": 83
+    "political": 13,
+    "other": 90
   },
   "source_counts": {
-    "news": 156,
+    "news": 158,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 69.27
+      "risk": 66.17
     },
     {
       "name": "Israel",
-      "risk": 24.9
-    },
-    {
-      "name": "Yemen",
-      "risk": 16.6
+      "risk": 21.7
     },
     {
       "name": "Saudi Arabia",
-      "risk": 15.35
+      "risk": 18.35
+    },
+    {
+      "name": "Yemen",
+      "risk": 18.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.8
+      "risk": 12.35
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Pakistan says no military response discussed under Mecca pact over Houthi attacks on Saudi Arabia - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRW1PVVFpV1gtVzExVGJtc3V2Vko1OS1aQlFsb0pRam82WER6dXQ5anVPSTRzTmVrSmNUSmFncENWYVZ5WU1CLTc0OVp4RGY4R0cyU29lZ0QxdzFCVWc2UVRwS0Fpbk5VcDQ3cC0wTW4yZktsdk55blg0VFRCZWg4S0RpVDFic0J0Ui1zbU83MG9ZS3RKX19QRkxfbE5sZ013dms1Y3UybVdJbVhuanc1V01QUlZhWHpQR0NPUGEwdU15Q0UyeGc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills parents and two children in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQS1BVbUJWZ3BnTEl4XzBYMjByVm0zb3dncFFidmQ4TWlrRVVOTkZYUGpzQllwVzQyUWZKUjBjQk12ZUxTM2FJTFRlb292d1JRZHZXMWREZ2Y4bVdMUGVXczRJa0NuYjZXQXd3dDJrajZFazAtcXNlQld6c0RjekV0N09RSU51Z3Fld1EwdFI5dm5tLU5aMERvTEVtcWlsOE5pS3BGQnRrZUt1U1FVSUZ1Xw"
+    },
     {
       "score": 3.0,
       "date": "2026-09-10",
@@ -61,7 +79,7 @@
       "date": "2026-09-10",
       "category": "military",
       "source_type": "news",
-      "title": "Fighting escalates in Yemen; Houthi attacks trigger alerts in Saudi Arabia - Al Jazeera",
+      "title": "Fighting escalates in Yemen; Houthi attacks trigger alerts in Saudi Arabia - aljazeera.com",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNbW5KRkNZS20weEZaRi1sZWIyR05GbGhIMThONlZqcU4ycHlIcHkzWkZnazFud0NCYXF5MHZlVF9sR2NQb3R0RVlYSHY5WUkxRVNNU2VZZ25LVnpUejdHY0VUVWtoTEFSTVdrdFhFS25JSjVELXdtNDA3X3VlVDdaNnQxLXllZTNmdkNrLUhiQi1pTndVX1hVT0lrMlI4eDhGT0M2V0RqVExSd1lDS3MxQzlLUlTSAboBQVVfeXFMTnRzUXZPZ3hRRl9LdkFPMzBGQ1pzOTAtckduNi1BTkhWWV9nQnFKRVlRenFja0NfbWlqTEpETnlIMEdCYzBLdWJzdkJZb3F3MkJuMHNhRXlLaFNkQThZeGd5bWFqQTBkTHFjZ3NTNXRHZjJNVWpRc2tZQVFIdmwzc2pSdWdCdEFKS1NybXV3dFgzam1xRVdFZHo0dUpZeUQ2Zm5VdE1pVWZOb1lhdGVUVkFOMjhIOXIzUmVn"
     },
@@ -70,7 +88,7 @@
       "date": "2026-09-10",
       "category": "military",
       "source_type": "news",
-      "title": "Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack - Al Jazeera",
+      "title": "Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack - aljazeera.com",
       "location": "United Arab Emirates",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQnR2SmoxekRrbUl0OWN2MHZ5WEQ3ZHZ4bmd6Q3o2b2QtTk5ORUJQNFh3ZW5wVjFhTjk1S0FnVGVnREIwanBWdEprRHlMbS02RUlIbHN5LWlKUUFPbnRsZXh3SWQ5RnoxQkk5Vm90OVo5Y3BXWW1yME9tNVFwRlVKY2JuZ2RSTWI0VmJON0MxYzFaUDRpdUtReTNtdzQtMXhBX3Z1SGR0bWNaTGRPN1JUNjZuX3NWcFnSAbwBQVVfeXFMTjdYY3FPNjFoMFRQU0dzc205SmhNdFRfWmx6SmliS1hmbmtOQndpTS1NZkQ3c0dZWlZaUzFMYXBpWEdMcDBaZTZpMTdSSldzMzJBRkJLRkl6ZVk0aWNaRDRrdjdROTdqa29LdGthVkpBcFB3aEZ2amp4cm0zc3NnMUo5NHlNSmZSSVAyS29idDJ4NFY0UGRLMElIOEZoN0s5cUVMejR2WTlJakhrcHp3dzhidHkzZ0Q5bGhOa00"
     },
@@ -97,9 +115,9 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
-      "title": "Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters",
-      "location": "Middle East",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUzVwcURFOW5QT2VTVW5YdFV2a2NPRGh1YkFoaTV2VUE0MXhES2gwR1ptSldNN29OZUZOLUQ2NlFUZUNpYjRFV25nTTR5cW03ZEFmX1BzMzViNGI5VXhWMWhtZHU1SDNxQ1Iyc2lDcEZOYnVpU3JMUVE4Uk9IUkVyYUdjd2ppV01LbDZESEQzWDBaZHZyOEpCem9yRkw0YUhnTVpuSVlzc01jVWszdVJSWg"
+      "title": "Houthis attack southern Saudi cities for second day, Saudi-led coalition says - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVkFZWWVmRkxOZ0dqSFdYQnh1dkpQTkZBbFdyU2Rydm1aMUo5eDFhNGpTaURVcmZLN25rS0s0ZUlEd1hFdEJ1TXJjT01mVzYtS1I1X2duVjhXTTFseHZOVGNWLURySnN3M0d1aGpVdUZLUXBDT0NMUjlhYXRHdGo4ekY0Q2stN3VyY09XSFRFZTdka1BhMDJnTFR2NzB2eVVzSW9ENV8wYi1jcWZhdEl0VjQxd1l2VXFI"
     },
     {
       "score": 2.7,
@@ -115,27 +133,9 @@
       "date": "2026-09-09",
       "category": "military",
       "source_type": "news",
-      "title": "Houthis attack southern Saudi cities for second day, Saudi-led coalition says - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVkFZWWVmRkxOZ0dqSFdYQnh1dkpQTkZBbFdyU2Rydm1aMUo5eDFhNGpTaURVcmZLN25rS0s0ZUlEd1hFdEJ1TXJjT01mVzYtS1I1X2duVjhXTTFseHZOVGNWLURySnN3M0d1aGpVdUZLUXBDT0NMUjlhYXRHdGo4ekY0Q2stN3VyY09XSFRFZTdka1BhMDJnTFR2NzB2eVVzSW9ENV8wYi1jcWZhdEl0VjQxd1l2VXFI"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Seafarer from oil products tanker killed in incident off Dubai, Peninsula says - Reuters",
-      "location": "Dubai",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOTB4Y20yd0JsSzNvYngzMDFKZDVHZmJmLTZudlFfMjAyZ3duV3BEa3RuWjFkUmNldUVrVjlHWS13NmJXdUJIZTNzVlRmRTdaYk95U0FNLS03bmIySlVMOXdUM3RhS1ZzbG50V04zaFRBclc3T3Q1WUZXa2hnNGJOSnB3WmhWbGJ4d016SHNHMGpLXzF4c0k5NDI3T2drYjNEOTVIZENQV1NBeDBSRVBwWjFzQm5nQ2JoZXE2NW1HMDA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil tanker hit in Iraqi waters, as vessels get caught in US-Iran attacks - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNckd4WVFmZEhoNEFkVzRzdE9JMVJ2QVUwMmk3MDRuUTA3NHc3N0xrY2VLZl9GY2Q2WU1ybzBodjhINEQwaV9GQmpKS3FSdXpSY3B3M0VUY3V6NUJvSU1zR1NPYmpLMUtvN3ZrYlZEVlZVNmhZTWZhdnhpM2dEaEZJZzBlbDN3cE42cXNsbDdnYmNkT3ROZTVzVjdBZUJ0NjRCYW4tQUdQQk5NNTV4NFIw"
+      "title": "Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUzVwcURFOW5QT2VTVW5YdFV2a2NPRGh1YkFoaTV2VUE0MXhES2gwR1ptSldNN29OZUZOLUQ2NlFUZUNpYjRFV25nTTR5cW03ZEFmX1BzMzViNGI5VXhWMWhtZHU1SDNxQ1Iyc2lDcEZOYnVpU3JMUVE4Uk9IUkVyYUdjd2ppV01LbDZESEQzWDBaZHZyOEpCem9yRkw0YUhnTVpuSVlzc01jVWszdVJSWg"
     }
   ]
 }
