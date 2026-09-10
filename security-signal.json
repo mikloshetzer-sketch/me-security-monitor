@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-10 12:56 UTC",
+    "updated": "2026-09-10 17:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-09-04",
     "period_end": "2026-09-10",
-    "total_events": 162,
-    "total_risk": 183.97,
-    "normalized_risk_score": 73.6,
+    "total_events": 159,
+    "total_risk": 171.22,
+    "normalized_risk_score": 68.5,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 57,
+    "military": 49,
     "security": 2,
-    "political": 13,
-    "other": 90
+    "political": 14,
+    "other": 94
   },
   "source_counts": {
-    "news": 158,
+    "news": 155,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 66.17
+      "risk": 62.57
     },
     {
       "name": "Israel",
-      "risk": 21.7
+      "risk": 19.45
+    },
+    {
+      "name": "Yemen",
+      "risk": 19.1
     },
     {
       "name": "Saudi Arabia",
       "risk": 18.35
     },
     {
-      "name": "Yemen",
-      "risk": 18.1
-    },
-    {
       "name": "Gaza Strip",
-      "risk": 12.35
+      "risk": 12.85
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attack on base in Jordan damaged American military aircraft, US official says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYThzMWZWYWVaeVkzaGR4Z3AxbHpidm9CMTFNSTVKWmNvVGZoRkg5MjJRV1RvdW9wWWtWS3R6V1dNWmFQUEl1Y0Q4dWdYY19EMUk3RkE4aUlsYVRLbkxmemVJM1gxVzlSNGs5a24wbjg5dWxBZ2tRallJTTV0UExCUFZXWGxYZXhsZHA4clFtT2JPa3IxbHpnVnZnU2RMTnpsZDVLU0RMYW9RM0x6TlY5aUtXRU9tZzJRZ0hV"
+    },
     {
       "score": 3.0,
       "date": "2026-09-10",
@@ -70,16 +79,16 @@
       "date": "2026-09-10",
       "category": "military",
       "source_type": "news",
-      "title": "Multiple US military aircraft suffered damage in overnight strikes on Jordan air base, CBS says - Reuters",
-      "location": "Jordan",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYThzMWZWYWVaeVkzaGR4Z3AxbHpidm9CMTFNSTVKWmNvVGZoRkg5MjJRV1RvdW9wWWtWS3R6V1dNWmFQUEl1Y0Q4dWdYY19EMUk3RkE4aUlsYVRLbkxmemVJM1gxVzlSNGs5a24wbjg5dWxBZ2tRallJTTV0UExCUFZXWGxYZXhsZHA4clFtT2JPa3IxbHpnVnZnU2RMTnpsZDVLU0RMYW9RM0x6TlY5aUtXRU9tZzJRZ0hV"
+      "title": "Israel's Netanyahu to sue newspaper over claim UAE warned him of 7 October attack",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/c1kxwm870g1o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
       "date": "2026-09-10",
       "category": "military",
       "source_type": "news",
-      "title": "Fighting escalates in Yemen; Houthi attacks trigger alerts in Saudi Arabia - aljazeera.com",
+      "title": "Fighting escalates in Yemen; Houthi attacks trigger alerts in Saudi Arabia - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNbW5KRkNZS20weEZaRi1sZWIyR05GbGhIMThONlZqcU4ycHlIcHkzWkZnazFud0NCYXF5MHZlVF9sR2NQb3R0RVlYSHY5WUkxRVNNU2VZZ25LVnpUejdHY0VUVWtoTEFSTVdrdFhFS25JSjVELXdtNDA3X3VlVDdaNnQxLXllZTNmdkNrLUhiQi1pTndVX1hVT0lrMlI4eDhGT0M2V0RqVExSd1lDS3MxQzlLUlTSAboBQVVfeXFMTnRzUXZPZ3hRRl9LdkFPMzBGQ1pzOTAtckduNi1BTkhWWV9nQnFKRVlRenFja0NfbWlqTEpETnlIMEdCYzBLdWJzdkJZb3F3MkJuMHNhRXlLaFNkQThZeGd5bWFqQTBkTHFjZ3NTNXRHZjJNVWpRc2tZQVFIdmwzc2pSdWdCdEFKS1NybXV3dFgzam1xRVdFZHo0dUpZeUQ2Zm5VdE1pVWZOb1lhdGVUVkFOMjhIOXIzUmVn"
     },
@@ -88,7 +97,7 @@
       "date": "2026-09-10",
       "category": "military",
       "source_type": "news",
-      "title": "Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack - aljazeera.com",
+      "title": "Netanyahu to sue Haaretz over claims UAE warned him before October 7 attack - Al Jazeera",
       "location": "United Arab Emirates",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQnR2SmoxekRrbUl0OWN2MHZ5WEQ3ZHZ4bmd6Q3o2b2QtTk5ORUJQNFh3ZW5wVjFhTjk1S0FnVGVnREIwanBWdEprRHlMbS02RUlIbHN5LWlKUUFPbnRsZXh3SWQ5RnoxQkk5Vm90OVo5Y3BXWW1yME9tNVFwRlVKY2JuZ2RSTWI0VmJON0MxYzFaUDRpdUtReTNtdzQtMXhBX3Z1SGR0bWNaTGRPN1JUNjZuX3NWcFnSAbwBQVVfeXFMTjdYY3FPNjFoMFRQU0dzc205SmhNdFRfWmx6SmliS1hmbmtOQndpTS1NZkQ3c0dZWlZaUzFMYXBpWEdMcDBaZTZpMTdSSldzMzJBRkJLRkl6ZVk0aWNaRDRrdjdROTdqa29LdGthVkpBcFB3aEZ2amp4cm0zc3NnMUo5NHlNSmZSSVAyS29idDJ4NFY0UGRLMElIOEZoN0s5cUVMejR2WTlJakhrcHp3dzhidHkzZ0Q5bGhOa00"
     },
@@ -118,15 +127,6 @@
       "title": "Houthis attack southern Saudi cities for second day, Saudi-led coalition says - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVkFZWWVmRkxOZ0dqSFdYQnh1dkpQTkZBbFdyU2Rydm1aMUo5eDFhNGpTaURVcmZLN25rS0s0ZUlEd1hFdEJ1TXJjT01mVzYtS1I1X2duVjhXTTFseHZOVGNWLURySnN3M0d1aGpVdUZLUXBDT0NMUjlhYXRHdGo4ekY0Q2stN3VyY09XSFRFZTdka1BhMDJnTFR2NzB2eVVzSW9ENV8wYi1jcWZhdEl0VjQxd1l2VXFI"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran likely to reverse-engineer captured US underwater drone - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSVJXWnFxd25USERSYUk0Nmt5N1RFUzMxbllBa2NqNkJGUVplYkFJVEJYRThSdkxCa3NhNDVLdV8wRGE5VGpGVlhhVzRKdUpOeHExUXRONFprbmtaTDZNaEhuZGZEdGhta3FrQ1FBZDAwSXQ0TV9wMWxGMExaT2FURVpsa0d5WjdwakhhT1ZOVDhzRGwwS0tUUmxxVUk3R2NrcGdlRGVDNjZCcS0xZTQ0cw"
     },
     {
       "score": 2.7,
