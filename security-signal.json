@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-11 16:31 UTC",
+    "updated": "2026-09-11 21:00 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-05",
     "period_end": "2026-09-11",
-    "total_events": 163,
-    "total_risk": 159.75,
-    "normalized_risk_score": 63.9,
+    "total_events": 153,
+    "total_risk": 149.01,
+    "normalized_risk_score": 59.6,
     "risk_level": "MEDIUM",
-    "confidence": "HIGH"
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 41,
+    "military": 37,
     "security": 4,
-    "political": 14,
-    "other": 104
+    "political": 13,
+    "other": 99
   },
   "source_counts": {
-    "news": 159,
-    "isw": 4
+    "news": 151,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 69.05
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 18.05
+      "risk": 62.45
     },
     {
       "name": "Yemen",
-      "risk": 17.8
+      "risk": 17.75
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 15.95
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.8
+      "risk": 14.0
     },
     {
       "name": "Israel",
-      "risk": 12.75
+      "risk": 12.6
     }
   ],
   "top_events": [
@@ -79,15 +79,6 @@
       "date": "2026-09-11",
       "category": "military",
       "source_type": "news",
-      "title": "EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQjRjUTJjbW9GMXo2aGNZTXVJTmxOQWhON20ycG5GTGxhcjlSZWJqOWFkSGdCZDVTTldYMnBSeHpYT09GTU5fS0ZVSTVLamF3cDFXc21KTzJaTE56cEdZc2JjNFk4WG53UTQ2OURwMTFrTUE5SHFjQS03M084UExUZlRTOWlURlpDVm1aRzBBc0QxeV9pQy1IUVlGN0xaVW5KMFc0Nm90VFhWNlk"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-09-11",
-      "category": "military",
-      "source_type": "news",
       "title": "Israel kills Hamas commander in Gaza strike, military and militants say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd0dtUWsxT3VGczFfNC1Yakk4VVMxTTVhZHEwVWlTOUhMMmtmOEhkWm1tTDJ1X2NzRkoteHFIWi1HZEU4MjU0b2ZGNFR5RERGSFozWlVYRnFpZ3EtM1QxTEt2NFg5SWpINEdQcC1yWmZ0LWhjZzZxdGdIOVl6X1FobG03SmlLN21ZNUZJdTNQbEVsRF9QSVpUS2VqUTdUOU54R1ZJ"
@@ -97,7 +88,7 @@
       "date": "2026-09-11",
       "category": "military",
       "source_type": "news",
-      "title": "Iran claims to have captured a US ‘sail drone’ near Hormuz Strait - aljazeera.com",
+      "title": "Iran claims to have captured a US ‘sail drone’ near Hormuz Strait - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaXo3b2htNWRLTmFlWVFEYm1tQXY5akQwY1VIc0VWX0xKY1IyRHZlYlJ0SFdnS1ZEN3FvRjZnMnRVUU1UNUNKSG5uWFRXU1REMzdmai1UV0FCOE5mMkc5UXlRbWpja0pJT0FzTEhiWHpDNTZneV9CUk1kdVJxSkliQzhyeTNTVDFvZkV5ODV6OFFITlNaLWpDLWxFeF9sbVRBMEcwUHE5Y0hsTi1KS09aajZaXzPSAboBQVVfeXFMTlJLZ0tIRWo2YzhvcXN5TEpjUlFlWjZCYVpaWjFQaHdNeVVNZl94UHlmVFJRcUZma012cWptclNhVjh5c1l4TFM4R3BRNVpXMW1zNzlCTXdfOEhzZ1hVcGx3M2J4ekZyRWdaNVJfX255M01HSkZDSm1jNXBCck1Mb2hLUTVxbGt1Q2Z2SDFzOC1tdk5saFpEWEFzTGpnR29HR1IwaVVDdmR5OGVOaE13RXNFMzR2Wm9PYmNR"
     },
@@ -109,15 +100,6 @@
       "title": "Iran is producing new missiles in limited quantities from existing components, WSJ reports - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUDdrdV8wQU9HWHFCWml2S1hnb3loOFZIVmhxeU11MUZWYzJzMnlhQjBCNnRRR0RJREJTUXBudzhDQWxVWXEtamxIV2ZMTFdIbkE3U0MtcUxfNjBiSDBWdkhQRlhwakdFTmwwY3JSbGlUUU1VU2wzUE9hVzFqdGtMZVV3S0p4ckNfQUZVWGdQa1luMl9hUnZKcnlWMUo5RjVaODJEbnhPTjhJT3BIU2t5MEVjVGMyOU9aZ19uMlVKSFVyUUZUcFE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attack on base in Jordan damaged American military aircraft, US official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYThzMWZWYWVaeVkzaGR4Z3AxbHpidm9CMTFNSTVKWmNvVGZoRkg5MjJRV1RvdW9wWWtWS3R6V1dNWmFQUEl1Y0Q4dWdYY19EMUk3RkE4aUlsYVRLbkxmemVJM1gxVzlSNGs5a24wbjg5dWxBZ2tRallJTTV0UExCUFZXWGxYZXhsZHA4clFtT2JPa3IxbHpnVnZnU2RMTnpsZDVLU0RMYW9RM0x6TlY5aUtXRU9tZzJRZ0hV"
     },
     {
       "score": 2.7,
@@ -136,6 +118,24 @@
       "title": "Israeli strike kills parents and two children in Gaza, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQS1BVbUJWZ3BnTEl4XzBYMjByVm0zb3dncFFidmQ4TWlrRVVOTkZYUGpzQllwVzQyUWZKUjBjQk12ZUxTM2FJTFRlb292d1JRZHZXMWREZ2Y4bVdMUGVXczRJa0NuYjZXQXd3dDJrajZFazAtcXNlQld6c0RjekV0N09RSU51Z3Fld1EwdFI5dm5tLU5aMERvTEVtcWlsOE5pS3BGQnRrZUt1U1FVSUZ1Xw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel's Netanyahu to sue newspaper over claim UAE warned him of 7 October attack",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/c1kxwm870g1o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Family of four killed in Israeli strike on northern Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc2Q3cWhCZkxxdmZJZmpvT2MzMW5pSk1GSVF5eDBVMFVjXzBiUE44anVTOWtkbEV2N0hGQVZsTVNjZmk0R3dZU2R3aEx4LXlQWlRDelVMQjVaTVdEcFRYTU92dUU0SllwVTZHcjJyZmhyY1I5akQxQUxhcWlSeDdGNnhnV3REV0pBVHNfYlNvSkF2RXVJOExuaFhvT3ZXSm5zVEpodnc1WDbSAa4BQVVfeXFMTlMwcTJ5T1pzbWRJVTI2SzBBcVpiNmRsTUw3bUFjd2EySm9CUWF4S2htNFZ4UlpJTGMzdVpSaWlCbXA5aTZ6ZDFsSi1fa2FZcWJiNDJqN3dYSzdUZDZ5ak1TbmFSckVyU0M4dE1hXzVna1VJY1pjMk9wb3MtNm83ekFiYVNKVElrNWNkUzNFVmllNUREVVEwYUllejREZldWVGUwcElzTWE5dFd1MFB3"
     }
   ]
 }
