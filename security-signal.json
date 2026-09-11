@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-11 11:24 UTC",
+    "updated": "2026-09-11 16:31 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-05",
     "period_end": "2026-09-11",
-    "total_events": 164,
-    "total_risk": 157.8,
-    "normalized_risk_score": 63.1,
+    "total_events": 163,
+    "total_risk": 159.75,
+    "normalized_risk_score": 63.9,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 43,
-    "security": 3,
+    "military": 41,
+    "security": 4,
     "political": 14,
     "other": 104
   },
   "source_counts": {
-    "news": 160,
+    "news": 159,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 63.4
+      "risk": 69.05
     },
     {
       "name": "Saudi Arabia",
-      "risk": 19.2
+      "risk": 18.05
     },
     {
       "name": "Yemen",
-      "risk": 17.3
-    },
-    {
-      "name": "Israel",
-      "risk": 15.85
+      "risk": 17.8
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.6
+      "risk": 14.8
+    },
+    {
+      "name": "Israel",
+      "risk": 12.75
     }
   ],
   "top_events": [
@@ -52,9 +52,18 @@
       "date": "2026-09-11",
       "category": "military",
       "source_type": "news",
-      "title": "Trump declines Saudi crown prince's call for US strikes on Houthis, Axios reports - Reuters",
+      "title": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMm5mMEFxdUdWVkQ3Q3J0WlJnN1J1Ti01OEZiMjlKMjRPT0JMRnF6OTJrbjA1TFJ4dzVveUoxX0NsbUNyMUtYX040QzNOSWlfcWhiMEc5WWZVUEtGS1VaRDF2b3NCTzNPLXRRN2JYSzZXYURPZTdWNDA4c1hoRW1mZ3B1SGFiXzltQldPUTlKSERIeXpIQk5RaDU3Z2otUXZXV2NZMGhCanNFcWJLZ3B4aXk4X0xTS0FsV0Vteg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi oil supply hits more than three-decade low after Houthi attacks, IEA says - Reuters",
       "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZnRRY3VzRTctZXFzVUl1VUg5NHlqeTFwdUR2NXJZcmNNTzdmSFBrbWJseno3d1hVUElZQ1ozUUYwVXJwX0paZmdFUk4tZGdyb0gzUzhRTzFiTXAxT3VMM0tLTTBiUHUtOXBTeUVmZzdyYWhtdWlHNmdLOGtMX3dUbTdwUTRadllYaVFhRFpZakpfWnJtNFFOLWdlY1JaY3U5YjQxMlhVcUktd3hHRms1MlFKWWY"
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPM3o1VnU0amR5MnduMjR2RW1ENURKWmRGUkNFd0tQdWpwdXlkTXZLdEJyZWZmQ1VCQm54a1lkS2NjLUt2WFNGckFnWEFMN3YtdFBvbElNbmlxbjBKejV2ZXI2QmRyV285S3RLY1lZTEFIMnlXSWpTc3pYa0FEcVlYZGltU3dmX3QyUlRyQjNUc18tMW9NeDlsMXljekJ5VkRnVGlhOXBRQmM5OWRCb2pSYVI1Y2s1RE5hd2p4RHFUbXlUVHJpeHZTaUhNM3U"
     },
     {
       "score": 3.0,
@@ -70,18 +79,27 @@
       "date": "2026-09-11",
       "category": "military",
       "source_type": "news",
-      "title": "Iran claims to have captured a US ‘sail drone’ near Hormuz Strait - Al Jazeera",
+      "title": "EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaXo3b2htNWRLTmFlWVFEYm1tQXY5akQwY1VIc0VWX0xKY1IyRHZlYlJ0SFdnS1ZEN3FvRjZnMnRVUU1UNUNKSG5uWFRXU1REMzdmai1UV0FCOE5mMkc5UXlRbWpja0pJT0FzTEhiWHpDNTZneV9CUk1kdVJxSkliQzhyeTNTVDFvZkV5ODV6OFFITlNaLWpDLWxFeF9sbVRBMEcwUHE5Y0hsTi1KS09aajZaXzPSAboBQVVfeXFMTlJLZ0tIRWo2YzhvcXN5TEpjUlFlWjZCYVpaWjFQaHdNeVVNZl94UHlmVFJRcUZma012cWptclNhVjh5c1l4TFM4R3BRNVpXMW1zNzlCTXdfOEhzZ1hVcGx3M2J4ekZyRWdaNVJfX255M01HSkZDSm1jNXBCck1Mb2hLUTVxbGt1Q2Z2SDFzOC1tdk5saFpEWEFzTGpnR29HR1IwaVVDdmR5OGVOaE13RXNFMzR2Wm9PYmNR"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQjRjUTJjbW9GMXo2aGNZTXVJTmxOQWhON20ycG5GTGxhcjlSZWJqOWFkSGdCZDVTTldYMnBSeHpYT09GTU5fS0ZVSTVLamF3cDFXc21KTzJaTE56cEdZc2JjNFk4WG53UTQ2OURwMTFrTUE5SHFjQS03M084UExUZlRTOWlURlpDVm1aRzBBc0QxeV9pQy1IUVlGN0xaVW5KMFc0Nm90VFhWNlk"
     },
     {
-      "score": 2.7,
-      "date": "2026-09-10",
+      "score": 3.0,
+      "date": "2026-09-11",
       "category": "military",
       "source_type": "news",
-      "title": "Pakistan says no military response discussed under Mecca pact over Houthi attacks on Saudi Arabia - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRW1PVVFpV1gtVzExVGJtc3V2Vko1OS1aQlFsb0pRam82WER6dXQ5anVPSTRzTmVrSmNUSmFncENWYVZ5WU1CLTc0OVp4RGY4R0cyU29lZ0QxdzFCVWc2UVRwS0Fpbk5VcDQ3cC0wTW4yZktsdk55blg0VFRCZWg4S0RpVDFic0J0Ui1zbU83MG9ZS3RKX19QRkxfbE5sZ013dms1Y3UybVdJbVhuanc1V01QUlZhWHpQR0NPUGEwdU15Q0UyeGc"
+      "title": "Israel kills Hamas commander in Gaza strike, military and militants say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd0dtUWsxT3VGczFfNC1Yakk4VVMxTTVhZHEwVWlTOUhMMmtmOEhkWm1tTDJ1X2NzRkoteHFIWi1HZEU4MjU0b2ZGNFR5RERGSFozWlVYRnFpZ3EtM1QxTEt2NFg5SWpINEdQcC1yWmZ0LWhjZzZxdGdIOVl6X1FobG03SmlLN21ZNUZJdTNQbEVsRF9QSVpUS2VqUTdUOU54R1ZJ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran claims to have captured a US ‘sail drone’ near Hormuz Strait - aljazeera.com",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaXo3b2htNWRLTmFlWVFEYm1tQXY5akQwY1VIc0VWX0xKY1IyRHZlYlJ0SFdnS1ZEN3FvRjZnMnRVUU1UNUNKSG5uWFRXU1REMzdmai1UV0FCOE5mMkc5UXlRbWpja0pJT0FzTEhiWHpDNTZneV9CUk1kdVJxSkliQzhyeTNTVDFvZkV5ODV6OFFITlNaLWpDLWxFeF9sbVRBMEcwUHE5Y0hsTi1KS09aajZaXzPSAboBQVVfeXFMTlJLZ0tIRWo2YzhvcXN5TEpjUlFlWjZCYVpaWjFQaHdNeVVNZl94UHlmVFJRcUZma012cWptclNhVjh5c1l4TFM4R3BRNVpXMW1zNzlCTXdfOEhzZ1hVcGx3M2J4ekZyRWdaNVJfX255M01HSkZDSm1jNXBCck1Mb2hLUTVxbGt1Q2Z2SDFzOC1tdk5saFpEWEFzTGpnR29HR1IwaVVDdmR5OGVOaE13RXNFMzR2Wm9PYmNR"
     },
     {
       "score": 2.7,
@@ -106,36 +124,18 @@
       "date": "2026-09-10",
       "category": "military",
       "source_type": "news",
+      "title": "Pakistan says no military response discussed under Mecca pact over Houthi attacks on Saudi Arabia - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRW1PVVFpV1gtVzExVGJtc3V2Vko1OS1aQlFsb0pRam82WER6dXQ5anVPSTRzTmVrSmNUSmFncENWYVZ5WU1CLTc0OVp4RGY4R0cyU29lZ0QxdzFCVWc2UVRwS0Fpbk5VcDQ3cC0wTW4yZktsdk55blg0VFRCZWg4S0RpVDFic0J0Ui1zbU83MG9ZS3RKX19QRkxfbE5sZ013dms1Y3UybVdJbVhuanc1V01QUlZhWHpQR0NPUGEwdU15Q0UyeGc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-10",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli strike kills parents and two children in Gaza, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQS1BVbUJWZ3BnTEl4XzBYMjByVm0zb3dncFFidmQ4TWlrRVVOTkZYUGpzQllwVzQyUWZKUjBjQk12ZUxTM2FJTFRlb292d1JRZHZXMWREZ2Y4bVdMUGVXczRJa0NuYjZXQXd3dDJrajZFazAtcXNlQld6c0RjekV0N09RSU51Z3Fld1EwdFI5dm5tLU5aMERvTEVtcWlsOE5pS3BGQnRrZUt1U1FVSUZ1Xw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel's Netanyahu to sue newspaper over claim UAE warned him of 7 October attack",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c1kxwm870g1o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Family of four killed in Israeli strike on northern Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc2Q3cWhCZkxxdmZJZmpvT2MzMW5pSk1GSVF5eDBVMFVjXzBiUE44anVTOWtkbEV2N0hGQVZsTVNjZmk0R3dZU2R3aEx4LXlQWlRDelVMQjVaTVdEcFRYTU92dUU0SllwVTZHcjJyZmhyY1I5akQxQUxhcWlSeDdGNnhnV3REV0pBVHNfYlNvSkF2RXVJOExuaFhvT3ZXSm5zVEpodnc1WDbSAa4BQVVfeXFMTlMwcTJ5T1pzbWRJVTI2SzBBcVpiNmRsTUw3bUFjd2EySm9CUWF4S2htNFZ4UlpJTGMzdVpSaWlCbXA5aTZ6ZDFsSi1fa2FZcWJiNDJqN3dYSzdUZDZ5ak1TbmFSckVyU0M4dE1hXzVna1VJY1pjMk9wb3MtNm83ekFiYVNKVElrNWNkUzNFVmllNUREVVEwYUllejREZldWVGUwcElzTWE5dFd1MFB3"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Fighting escalates in Yemen; Houthi attacks trigger alerts in Saudi Arabia - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNbW5KRkNZS20weEZaRi1sZWIyR05GbGhIMThONlZqcU4ycHlIcHkzWkZnazFud0NCYXF5MHZlVF9sR2NQb3R0RVlYSHY5WUkxRVNNU2VZZ25LVnpUejdHY0VUVWtoTEFSTVdrdFhFS25JSjVELXdtNDA3X3VlVDdaNnQxLXllZTNmdkNrLUhiQi1pTndVX1hVT0lrMlI4eDhGT0M2V0RqVExSd1lDS3MxQzlLUlTSAboBQVVfeXFMTnRzUXZPZ3hRRl9LdkFPMzBGQ1pzOTAtckduNi1BTkhWWV9nQnFKRVlRenFja0NfbWlqTEpETnlIMEdCYzBLdWJzdkJZb3F3MkJuMHNhRXlLaFNkQThZeGd5bWFqQTBkTHFjZ3NTNXRHZjJNVWpRc2tZQVFIdmwzc2pSdWdCdEFKS1NybXV3dFgzam1xRVdFZHo0dUpZeUQ2Zm5VdE1pVWZOb1lhdGVUVkFOMjhIOXIzUmVn"
     }
   ]
 }
