@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-09-10T22:34:24+00:00",
+  "generated_at": "2026-09-11T07:16:31+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -46,20 +46,20 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 103,
+      "total_events": 104,
       "map_visualizable_events": 41,
       "total_map_points": 44,
       "multi_location_events": 3,
       "earliest_event_date": "2026-07-09T13:24:37Z",
-      "latest_event_date": "2026-09-10T20:46:10Z"
+      "latest_event_date": "2026-09-11T07:01:13Z"
     },
     "region_counts": {
       "Gaza Strip": 72,
-      "South Lebanon": 33
+      "South Lebanon": 34
     },
     "activity_type_counts": {
       "airstrike": 77,
-      "drone_activity": 17,
+      "drone_activity": 18,
       "ground_activity": 10,
       "cross_border_fire": 7,
       "evacuation_warning": 4,
@@ -68,7 +68,7 @@
     },
     "target_organization_counts": {
       "Hamas": 58,
-      "Hezbollah": 25,
+      "Hezbollah": 26,
       "Not explicitly stated": 17,
       "Palestinian Islamic Jihad": 10
     },
@@ -79,7 +79,7 @@
       "military_structure": 16,
       "weapons_storage": 12,
       "armed_cell": 8,
-      "tunnel": 6,
+      "tunnel": 7,
       "command_center": 6,
       "weapons_production": 5,
       "rocket_launcher": 3,
@@ -91,7 +91,7 @@
       "struck": 80,
       "eliminated": 55,
       "located": 18,
-      "dismantled": 15,
+      "dismantled": 16,
       "reported": 12,
       "intercepted": 2
     },
@@ -108,10 +108,10 @@
     "threat_domain_counts": {
       "ground": 93,
       "command": 53,
-      "drone_uav": 15,
+      "drone_uav": 16,
       "rocket_missile": 11,
+      "underground": 10,
       "weapons_logistics": 10,
-      "underground": 9,
       "production": 6,
       "unspecified": 4,
       "air_defense": 3,
@@ -137,6 +137,63 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19203",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19203",
+      "date": "2026-09-11T07:01:13Z",
+      "title": "IDF drone activity statement",
+      "description": "IDF: Exclusive Footage From the Underground Routes Dismantled Beneath the Ali al-Taher Ridge Attached are the following: An illustration depicting the 36th Division’s operations on the Beaufort and Ali al-Taher Ridges in recent months: https://bit.ly/3UJYSpu Body camera footage from a Yahalom Unit soldier inside one of the underground routes: https://bit.ly/4AoMRWT A graphic depicting all of the underground routes beneath the Beaufort and Ali al-Taher Ridges: https://idfanc.activetrail.biz/09102026765 Drone footage from inside one of the underground routes: https://bit.ly/46cX5M2 Footage of the elimination of Hezbollah terrorists inside an underground tunnel shaft: https://bit.ly/4xlZkaX",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "South Lebanon"
+      ],
+      "region": "South Lebanon",
+      "activity_types": [
+        "drone_activity"
+      ],
+      "activity_type": "drone_activity",
+      "target_organizations": [
+        "Hezbollah"
+      ],
+      "target_organization": "Hezbollah",
+      "target_types": [
+        "tunnel"
+      ],
+      "target_type": "tunnel",
+      "commander_types": [],
+      "commander_type": "",
+      "threat_domains": [
+        "underground",
+        "drone_uav"
+      ],
+      "threat_domain": "underground",
+      "area_mentions": [],
+      "operation_results": [
+        "dismantled"
+      ],
+      "operation_result": "dismantled",
+      "locations": [],
+      "location_count": 0,
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_confidence": "none",
+      "geospatial_confidence": "none",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19203"
+    },
     {
       "id": "idf-idfofficial-19199",
       "source": "IDF official Telegram",
