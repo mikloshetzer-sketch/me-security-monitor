@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-12 00:20 UTC",
+    "updated": "2026-09-12 07:11 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-09-06",
     "period_end": "2026-09-12",
-    "total_events": 157,
-    "total_risk": 137.84,
-    "normalized_risk_score": 55.1,
+    "total_events": 164,
+    "total_risk": 146.73,
+    "normalized_risk_score": 58.7,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 38,
+    "military": 40,
     "security": 4,
-    "political": 12,
-    "other": 103
+    "political": 14,
+    "other": 106
   },
   "source_counts": {
-    "news": 153,
-    "isw": 4
+    "news": 159,
+    "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 56.54
+      "risk": 59.32
     },
     {
       "name": "Saudi Arabia",
-      "risk": 15.8
+      "risk": 17.5
     },
     {
       "name": "Yemen",
@@ -39,14 +39,32 @@
     },
     {
       "name": "Israel",
-      "risk": 12.6
+      "risk": 12.5
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.85
+      "risk": 11.4
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says East-West pipeline hit by drones launched from Iraq - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdHNsQUZkVHd5TE45cmc4cFN6NkJjd0xjbGNPY1d6YmY1bGgyWnVrTjlaNmNzUEl3MzFsSGs4WGdIM2JjSDk3NHR6RzdSV0ZmVzZmZ3BoVnBUc3JKYWoycHRkMTU0eDlmRHJSM1dSYUE3eWFrU0VBdURrMnFVNm95cXBJNlZXaVplcFdJX1lXRTJuM19fV1N5bHIza0VkdlBRM0FHRmdSNHVhOTFnT05J0gG0AUFVX3lxTE9DU3l0RkdjTnVMZmdYY1B0MExabUVfTnpkSmRNWkxBc3B3bzJNelEyUThkck9hSTlCT21lbGRaM09ZRXA1ZWFEUmxERHZTS2kyYTJtX0dlc2VHbzBPQTlQNTNfeFIyNmtLaWpoQ3NoekZLQ0VLT1ZtM25yczhZc3pfNlZzRjZFU2JKcnlVSlA5RGFsS1VhRDVKdlgyVGpHeDBXVnZpRFU0N2N0bklJUkJsdm5UUA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Satellite image shows critical Saudi pipeline damaged in drone attack - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNS3c4OXRFVU5YUm9hbnh4OGtSYXBaUUFyU1hDM2wxNy15Wi1RZFhvNWduOVBkb2JSdVNmdjl3OWtoeWx1LTFmbmJ0ZUNUWTdpU3VFQzZKQTdWM3hFanBsMEVnZ0JiZlNWdllLRW85SWl3Y0dTdk5YTzFuMTJGcG1ENTZvTDNIdlhaemsyVUdCWGNzSS1pZVFCZ2R0ZnRIelZ4eDZXQmRfTdIBrAFBVV95cUxNdHFTUllodmtnRmR4d2xycnIzWkJlYjZQVjJhV2NXaVRybElReVNYWmhZNGlLSEVfTzZhRzF0LS1lVmhKdjBHWEU0eS1oWDlEVHVWd3RZWFdiZTlVVm9Rdy1nTllQUUNkNTJyY284QmYzdFVJa3BiMzcxZ2dfejRWaFJDR1RyRW1mWWxtZTl6cVJjYkx1X0xGdjVYX05oeVFCdks4dHpQaC1uU2V3"
+    },
     {
       "score": 2.7,
       "date": "2026-09-11",
@@ -55,15 +73,6 @@
       "title": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMm5mMEFxdUdWVkQ3Q3J0WlJnN1J1Ti01OEZiMjlKMjRPT0JMRnF6OTJrbjA1TFJ4dzVveUoxX0NsbUNyMUtYX040QzNOSWlfcWhiMEc5WWZVUEtGS1VaRDF2b3NCTzNPLXRRN2JYSzZXYURPZTdWNDA4c1hoRW1mZ3B1SGFiXzltQldPUTlKSERIeXpIQk5RaDU3Z2otUXZXV2NZMGhCanNFcWJLZ3B4aXk4X0xTS0FsV0Vteg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi oil supply hits more than three-decade low after Houthi attacks, IEA says - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPM3o1VnU0amR5MnduMjR2RW1ENURKWmRGUkNFd0tQdWpwdXlkTXZLdEJyZWZmQ1VCQm54a1lkS2NjLUt2WFNGckFnWEFMN3YtdFBvbElNbmlxbjBKejV2ZXI2QmRyV285S3RLY1lZTEFIMnlXSWpTc3pYa0FEcVlYZGltU3dmX3QyUlRyQjNUc18tMW9NeDlsMXljekJ5VkRnVGlhOXBRQmM5OWRCb2pSYVI1Y2s1RE5hd2p4RHFUbXlUVHJpeHZTaUhNM3U"
     },
     {
       "score": 2.7,
@@ -79,9 +88,27 @@
       "date": "2026-09-11",
       "category": "military",
       "source_type": "news",
+      "title": "Saudi oil supply hits more than three-decade low after Houthi attacks, IEA says - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPM3o1VnU0amR5MnduMjR2RW1ENURKWmRGUkNFd0tQdWpwdXlkTXZLdEJyZWZmQ1VCQm54a1lkS2NjLUt2WFNGckFnWEFMN3YtdFBvbElNbmlxbjBKejV2ZXI2QmRyV285S3RLY1lZTEFIMnlXSWpTc3pYa0FEcVlYZGltU3dmX3QyUlRyQjNUc18tMW9NeDlsMXljekJ5VkRnVGlhOXBRQmM5OWRCb2pSYVI1Y2s1RE5hd2p4RHFUbXlUVHJpeHZTaUhNM3U"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-11",
+      "category": "military",
+      "source_type": "news",
       "title": "EXCLUSIVE: UAE revises AI data center plan after Iranian attacks, sources say - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaXdNOTVXY3kwZHluN2wtdk16OHYyYjR6aWxCZ3RFaDNveWtIMTZ3dzFwZExPZmpOX1YxbTJMdmdEeVZabF9NTjV3ei1KSWJXR2NKR2lnbWZjczZyQlBEU0x6c0dnWFplWFVteEJoQ0JTMGpFdnZqd2hXR2JpSF9ILU9WM2tGUTAtQWxuQnl4LXhZQWRnZXNEdFZlUFBDbXhxLTJVUVoyRkwtQm1KS3R5M05uaktvT0dWVzhV"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran attack on base in Jordan damaged American military aircraft, US official says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYThzMWZWYWVaeVkzaGR4Z3AxbHpidm9CMTFNSTVKWmNvVGZoRkg5MjJRV1RvdW9wWWtWS3R6V1dNWmFQUEl1Y0Q4dWdYY19EMUk3RkE4aUlsYVRLbkxmemVJM1gxVzlSNGs5a24wbjg5dWxBZ2tRallJTTV0UExCUFZXWGxYZXhsZHA4clFtT2JPa3IxbHpnVnZnU2RMTnpsZDVLU0RMYW9RM0x6TlY5aUtXRU9tZzJRZ0hV"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Iran claims to have captured a US ‘sail drone’ near Hormuz Strait - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaXo3b2htNWRLTmFlWVFEYm1tQXY5akQwY1VIc0VWX0xKY1IyRHZlYlJ0SFdnS1ZEN3FvRjZnMnRVUU1UNUNKSG5uWFRXU1REMzdmai1UV0FCOE5mMkc5UXlRbWpja0pJT0FzTEhiWHpDNTZneV9CUk1kdVJxSkliQzhyeTNTVDFvZkV5ODV6OFFITlNaLWpDLWxFeF9sbVRBMEcwUHE5Y0hsTi1KS09aajZaXzPSAboBQVVfeXFMTlJLZ0tIRWo2YzhvcXN5TEpjUlFlWjZCYVpaWjFQaHdNeVVNZl94UHlmVFJRcUZma012cWptclNhVjh5c1l4TFM4R3BRNVpXMW1zNzlCTXdfOEhzZ1hVcGx3M2J4ekZyRWdaNVJfX255M01HSkZDSm1jNXBCck1Mb2hLUTVxbGt1Q2Z2SDFzOC1tdk5saFpEWEFzTGpnR29HR1IwaVVDdmR5OGVOaE13RXNFMzR2Wm9PYmNR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia says East-West pipeline hit by drones launched from Iraq - Al Jazeera",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdHNsQUZkVHd5TE45cmc4cFN6NkJjd0xjbGNPY1d6YmY1bGgyWnVrTjlaNmNzUEl3MzFsSGs4WGdIM2JjSDk3NHR6RzdSV0ZmVzZmZ3BoVnBUc3JKYWoycHRkMTU0eDlmRHJSM1dSYUE3eWFrU0VBdURrMnFVNm95cXBJNlZXaVplcFdJX1lXRTJuM19fV1N5bHIza0VkdlBRM0FHRmdSNHVhOTFnT05J0gG0AUFVX3lxTE9DU3l0RkdjTnVMZmdYY1B0MExabUVfTnpkSmRNWkxBc3B3bzJNelEyUThkck9hSTlCT21lbGRaM09ZRXA1ZWFEUmxERHZTS2kyYTJtX0dlc2VHbzBPQTlQNTNfeFIyNmtLaWpoQ3NoekZLQ0VLT1ZtM25yczhZc3pfNlZzRjZFU2JKcnlVSlA5RGFsS1VhRDVKdlgyVGpHeDBXVnZpRFU0N2N0bklJUkJsdm5UUA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Pakistan says no military response discussed under Mecca pact over Houthi attacks on Saudi Arabia - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRW1PVVFpV1gtVzExVGJtc3V2Vko1OS1aQlFsb0pRam82WER6dXQ5anVPSTRzTmVrSmNUSmFncENWYVZ5WU1CLTc0OVp4RGY4R0cyU29lZ0QxdzFCVWc2UVRwS0Fpbk5VcDQ3cC0wTW4yZktsdk55blg0VFRCZWg4S0RpVDFic0J0Ui1zbU83MG9ZS3RKX19QRkxfbE5sZ013dms1Y3UybVdJbVhuanc1V01QUlZhWHpQR0NPUGEwdU15Q0UyeGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attack on base in Jordan damaged American military aircraft, US official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOYThzMWZWYWVaeVkzaGR4Z3AxbHpidm9CMTFNSTVKWmNvVGZoRkg5MjJRV1RvdW9wWWtWS3R6V1dNWmFQUEl1Y0Q4dWdYY19EMUk3RkE4aUlsYVRLbkxmemVJM1gxVzlSNGs5a24wbjg5dWxBZ2tRallJTTV0UExCUFZXWGxYZXhsZHA4clFtT2JPa3IxbHpnVnZnU2RMTnpsZDVLU0RMYW9RM0x6TlY5aUtXRU9tZzJRZ0hV"
     }
   ]
 }
