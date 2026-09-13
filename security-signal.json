@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-13 04:51 UTC",
+    "updated": "2026-09-13 11:56 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,16 +9,16 @@
     "period_start": "2026-09-07",
     "period_end": "2026-09-13",
     "total_events": 156,
-    "total_risk": 136.95,
-    "normalized_risk_score": 54.8,
+    "total_risk": 135.5,
+    "normalized_risk_score": 54.2,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 40,
+    "military": 38,
     "security": 5,
-    "political": 13,
-    "other": 98
+    "political": 12,
+    "other": 101
   },
   "source_counts": {
     "news": 151,
@@ -27,26 +27,44 @@
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 49.45
+      "risk": 46.95
     },
     {
       "name": "Saudi Arabia",
-      "risk": 17.65
+      "risk": 21.05
     },
     {
       "name": "Iraq",
-      "risk": 17.2
+      "risk": 16.9
     },
     {
       "name": "Yemen",
-      "risk": 11.55
+      "risk": 12.55
     },
     {
       "name": "Israel",
-      "risk": 10.45
+      "risk": 10.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Turkey detains 26 people after raids targeting LGBTQ+ groups - Reuters",
+      "location": "Turkey",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSmw3N3gxSDF1TmZtV1BQY2s3cVUxZGRjbW1FdlBMelhLbUYtblpJc3dDa2thTjNUUkJCdXFINm96VVl3dlh5QWFYVlp2cjVnUnowTVJYWmhlUGlOZEtYUzNBOUlpM3o2MUJPNDBySDh5VFBic2Mta3R1YTJKNFkyUFBMcXZOd1hVaXZDMTVHaGxVZW96WkJzem8wR3pSY3EwQzBVTEVhUi1waTlfQl9KQVVfYw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi shares drop after drone attacks target key oil pipeline - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOel9YQnZiN2dhLU1ROHQtdHR3WHlDN2gxakJzdUZIaTlBa19JNVM2RlNHcVdiRG5EQ1pQRmlRemQ5S2RLVUt6MGw5eU92YjYwWHNfQnk2c1k5bktpNGlhaGx0a0kwX0lzeVZTaHE5ekdneFlYbVhGOXgtMklVZzFWT1prTzFjYlpDWW1zQXltUEt4ZlRGOUlpQW9zclFYaVR3NnlLalAwZ2xZb3dYWUFxa2ttSWdrdw"
+    },
     {
       "score": 3.0,
       "date": "2026-09-13",
@@ -118,24 +136,6 @@
       "title": "Trump: Iran probably ‘behind’ Saudi oil pipeline attack - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSXhlZTE4Z2M1VTFMejZmSE15WGU5bGxCVUtoMTZ2X0VsZXhaWnhlTzJpV0NSd2liZUp5VVExY2VIcGVodE5JbE5vclk2YlNFWVhseWNEZ0JFMlVwajcwSkhyWTdwWXU5SGVHTG9WZFFkUXlNelM4UVZoSHdTSk1LSGNJOVA3V3Jhd0Ffc1M3MTQ3SE5tX0dWaGZ4TzRiRVZESjRrWlZn0gGrAUFVX3lxTFBNazkwX29zQkxhd2IxeXVDY2JqNUVDWFVqeTY1QlhzaDFTc09aMkdBTmR3dzlNN0c5M2lGZGozQXljVDExSF9lak5OMUZHb0JPazZ2dllFYUVUeVRvbFhEekRwa3VwRWtqV0hJbkl4WWhtWS03dE1BTERxWHNCZmdpS1k3T0NMeXJuM0JiOGZabER5SWhSbE5aXy1LVmZtQmwtSkFnS2xNMUpJbw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMm5mMEFxdUdWVkQ3Q3J0WlJnN1J1Ti01OEZiMjlKMjRPT0JMRnF6OTJrbjA1TFJ4dzVveUoxX0NsbUNyMUtYX040QzNOSWlfcWhiMEc5WWZVUEtGS1VaRDF2b3NCTzNPLXRRN2JYSzZXYURPZTdWNDA4c1hoRW1mZ3B1SGFiXzltQldPUTlKSERIeXpIQk5RaDU3Z2otUXZXV2NZMGhCanNFcWJLZ3B4aXk4X0xTS0FsV0Vteg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "EXCLUSIVE: UAE revises AI data center plan after Iranian attacks, sources say - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaXdNOTVXY3kwZHluN2wtdk16OHYyYjR6aWxCZ3RFaDNveWtIMTZ3dzFwZExPZmpOX1YxbTJMdmdEeVZabF9NTjV3ei1KSWJXR2NKR2lnbWZjczZyQlBEU0x6c0dnWFplWFVteEJoQ0JTMGpFdnZqd2hXR2JpSF9ILU9WM2tGUTAtQWxuQnl4LXhZQWRnZXNEdFZlUFBDbXhxLTJVUVoyRkwtQm1KS3R5M05uaktvT0dWVzhV"
     }
   ]
 }
