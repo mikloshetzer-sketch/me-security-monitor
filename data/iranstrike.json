@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T14:05:42Z",
+  "generated_at": "2026-09-14T19:23:35Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 332,
+    "events_endpoint_records": 338,
     "feed_event_records": 250,
-    "normalized_events": 1332,
+    "normalized_events": 1338,
     "map_visualizable_events": 245,
-    "non_mappable_events": 1087,
-    "developments": 5
+    "non_mappable_events": 1093,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1332,
+      "total_events": 1338,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-14T13:39:11Z",
+      "latest_event_date": "2026-09-14T18:07:57Z",
       "geocoded_events": 245,
-      "geocoded_share": 18.4,
+      "geocoded_share": 18.3,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 135,
-        "previous": 120,
-        "delta": 15,
-        "percent_change": 12.5,
-        "direction": "stable"
+        "current": 138,
+        "previous": 113,
+        "delta": 25,
+        "percent_change": 22.1,
+        "direction": "increase"
       },
       "latest_30_days": {
         "current": 384,
-        "previous": 707,
-        "delta": -323,
-        "percent_change": -45.7,
+        "previous": 705,
+        "delta": -321,
+        "percent_change": -45.5,
         "direction": "decrease"
       }
     },
@@ -806,16 +806,16 @@
       },
       {
         "date": "2026-09-14",
-        "count": 11
+        "count": 17
       }
     ],
     "category_counts": {
       "infrastructure": 325,
-      "missile": 297,
-      "strike": 231,
-      "drone": 177,
-      "airstrike": 116,
-      "movement": 69,
+      "missile": 298,
+      "strike": 233,
+      "drone": 178,
+      "airstrike": 117,
+      "movement": 70,
       "explosion": 59,
       "ground": 31,
       "alert": 13,
@@ -823,13 +823,13 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 695,
-      "high": 446,
+      "medium": 697,
+      "high": 450,
       "low": 189,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 797,
+      "unknown": 803,
       "iran": 355,
       "israel": 149,
       "usa": 31
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 411
+        "count": 415
       },
       {
         "name": "Iran",
@@ -849,7 +849,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 80
+        "count": 81
       },
       {
         "name": "Persian Gulf",
@@ -861,7 +861,7 @@
       },
       {
         "name": "Red Sea",
-        "count": 40
+        "count": 41
       },
       {
         "name": "Iraq",
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 411
+        "count": 415
       },
       {
         "name": "Jordan",
@@ -911,7 +911,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 107
+        "count": 108
       },
       {
         "name": "Iraq",
@@ -923,7 +923,7 @@
       },
       {
         "name": "Red Sea",
-        "count": 40
+        "count": 41
       },
       {
         "name": "Syria",
@@ -944,33 +944,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10640,
+    "totalCount": 10646,
     "spotlight": {
       "event": {
-        "id": "pid7f8qip1c0",
-        "timestamp": "2026-09-14T13:39:11+00:00",
+        "id": "2qot0sg0vv000",
+        "timestamp": "2026-09-14T18:07:57+00:00",
         "location": "SAU",
+        "origin": "IRQ",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "medium",
-        "description": "High resolution images of pumping station destroyed on Ras Tanura-Yanbu East-West pipeline in Saudi Arabia, attributed to Houthis or Iraqi militias",
-        "descriptionHe": "תמונות ברזולוציה גבוהה של תחנת שאיבה שהושמדה בצינור ים-אדום בין ראס תנורה לינבו בסעודיה, המיוחסת לחות'ים או מיליציות עיראקיות",
+        "type": "strike",
+        "severity": "high",
+        "description": "Iraqi drone attack damages Saudi East-West Pipeline and major pumping facility, expected out of service for 3-5 weeks",
+        "descriptionHe": "התקפת מזל\"ט עיראקית פוגעת בצינור הנפט מזרח-מערב של סעודיה ובמתקן שאיבה ראשי, צפוי להיות מחוץ לשירות למשך 3-5 שבועות",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/83888"
+        "sourceUrl": "https://t.me/CIG_telegram/83897"
       },
-      "headline": "Saudi Oil Pipeline Pumping Station Destroyed in Houthi Attack",
-      "headlineHe": "תחנת שאיבה בצינור הנפט הסעודי הושמדה בהתקפת חות'ים",
-      "summary": "High-resolution satellite imagery confirms destruction of critical infrastructure on the East-West pipeline, which supplies roughly 7 million barrels daily and is central to Saudi energy security.",
-      "summaryHe": "תמונות לווין בהפחתה גבוהה מאשרות הרסה של תשתית קריטית בצינור המזרח-מערב, המסופק כ-7 מיליון חביות יומיות ומהווה חלק מרכזי בביטחון האנרגיה הסעודי.",
-      "pickedAt": "2026-09-14T14:00:52.560Z",
+      "headline": "Iraqi drones damage Saudi oil pipeline, halt production for weeks",
+      "headlineHe": "רחפנים עיראקיים פוגעים בצינור נפט סעודי, עוצרים ייצור לשבועות",
+      "summary": "The strike on the East-West Pipeline's pumping facility represents a sustained disruption to global energy supplies, with cascading economic implications beyond immediate military impact.",
+      "summaryHe": "הפגיעה בתחנת ההשאיבה של צינור המזרח-מערב מהווה הפרעה מתמשכת לאספקות אנרגיה גלובליות, עם השלכות כלכליות שמתרחקות מהשפעה צבאית מיידית.",
+      "pickedAt": "2026-09-14T18:15:50.993Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-14T14:03:05.488Z",
+    "lastUpdated": "2026-09-14T19:21:03.591Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1511,142 +1512,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 94,
       "cellular": null,
-      "lastUpdate": "2026-09-14T13:30:42.717Z",
+      "lastUpdate": "2026-09-14T19:00:44.581Z",
       "internetHistory": [
-        {
-          "t": "2026-09-13T13:30:00.000Z",
-          "v": 87
-        },
-        {
-          "t": "2026-09-13T13:40:00.000Z",
-          "v": 87
-        },
-        {
-          "t": "2026-09-13T13:50:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T14:00:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T14:10:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T14:20:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T14:30:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T14:40:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T14:50:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T15:00:00.000Z",
-          "v": 89
-        },
-        {
-          "t": "2026-09-13T15:10:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T15:20:00.000Z",
-          "v": 89
-        },
-        {
-          "t": "2026-09-13T15:30:00.000Z",
-          "v": 89
-        },
-        {
-          "t": "2026-09-13T15:40:00.000Z",
-          "v": 88
-        },
-        {
-          "t": "2026-09-13T15:50:00.000Z",
-          "v": 89
-        },
-        {
-          "t": "2026-09-13T16:00:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-09-13T16:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T16:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T16:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T16:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T16:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T17:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T17:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T17:20:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T17:30:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T17:40:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T17:50:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T18:00:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T18:10:00.000Z",
-          "v": 91
-        },
-        {
-          "t": "2026-09-13T18:20:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-13T18:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-13T18:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-13T18:50:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-09-13T19:00:00.000Z",
           "v": 93
@@ -2086,22 +1955,154 @@
         {
           "t": "2026-09-14T13:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-09-14T13:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-14T13:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-14T13:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T13:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T14:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T14:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T14:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T14:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T14:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T14:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T15:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T15:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T15:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T15:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T15:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T15:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T16:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T16:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T16:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T16:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T16:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T16:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T17:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T17:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T17:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T17:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T17:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T17:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T18:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T18:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T18:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-09-14T18:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-14T18:40:00.000Z",
+          "v": 94
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-14T13:30:42.717Z"
+    "lastUpdated": "2026-09-14T19:00:44.581Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f3e2c1",
+      "id": "iranstrike-8a4f2c1e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-14T13:39:11Z",
+      "date": "2026-09-14T18:07:57Z",
       "title": "IranStrike event",
-      "description": "Houthis attack Saudi energy infrastructure; East-West pipeline damaged, 7M bpd disrupted",
+      "description": "Saudi oil infrastructure under sustained attack; East-West Pipeline disabled, 7M bbl/day disrupted",
       "category": "other",
       "severity": "critical",
       "attacker": "unknown",
@@ -2122,34 +2123,38 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f3e2c1",
-        "text": "Houthis attack Saudi energy infrastructure; East-West pipeline damaged, 7M bpd disrupted",
-        "textHe": "חות'ים תוקפים תשתיות אנרגיה סעודיות; צנור מזרח-מערב פגוע, 7 מיליון חביות ביום",
+        "id": "8a4f2c1e",
+        "text": "Saudi oil infrastructure under sustained attack; East-West Pipeline disabled, 7M bbl/day disrupted",
+        "textHe": "תשתית נפט סעודית תחת התקפה מתמשכת; צינור מזרח-מערב מושבת, 7 מיליון חביות ביום",
         "severity": "critical",
-        "timestamp": "2026-09-14T13:39:11+00:00",
+        "timestamp": "2026-09-14T18:07:57+00:00",
         "entityIds": [
+          "SAU",
           "YEM",
-          "SAU"
+          "IRQ"
         ],
         "eventIds": [
-          "pid7f8qip1c0",
+          "2qot0sg0vv000",
+          "1a15ywdpmr340",
           "2jhpk781gba00",
-          "3jt204rn1lw00",
           "23pnq6jnjqww0",
-          "ohfujcjv8ao0"
+          "ohfujcjv8ao0",
+          "trwmw4bp0280",
+          "pid7f8qip1c0",
+          "3jt204rn1lw00"
         ],
-        "sourceCount": 3
+        "sourceCount": 4
       }
     },
     {
-      "id": "iranstrike-b4e9d6a2",
+      "id": "iranstrike-b7d3e9f5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-14T12:31:13Z",
+      "date": "2026-09-14T17:24:24Z",
       "title": "IranStrike event",
-      "description": "Saudi Arabia launches DF-15 ballistic missiles at Yemen; strikes hit civilian areas in Marib",
+      "description": "Houthis claim massive attack on Khamis Mushait airbase; SAF responds with 54 airstrikes in 24hrs",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2170,30 +2175,77 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b4e9d6a2",
-        "text": "Saudi Arabia launches DF-15 ballistic missiles at Yemen; strikes hit civilian areas in Marib",
-        "textHe": "סעודיה משגרת טילים בליסטיים DF-15 לתימן; פגיעות בשטחים אזרחיים במאריב",
+        "id": "b7d3e9f5",
+        "text": "Houthis claim massive attack on Khamis Mushait airbase; SAF responds with 54 airstrikes in 24hrs",
+        "textHe": "החות'ים טוענים להתקפה ענקית על בסיס חמיס משיט; חיל אוויר סעודי משיב ב-54 התקפות",
         "severity": "high",
-        "timestamp": "2026-09-14T12:31:13+00:00",
+        "timestamp": "2026-09-14T17:24:24+00:00",
         "entityIds": [
           "SAU",
           "YEM"
         ],
         "eventIds": [
-          "2yk9xdsgjl400"
+          "2stpe6j9rwk00",
+          "2rczkx0l3aw00"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-c5f1a8b3",
+      "id": "iranstrike-c2b1a6d8",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-14T16:21:29Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes Hezbollah fortresses on Beaufort Ridge; Houthis seize Hanish Islands in Red Sea",
+      "category": "other",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes hezbollah fortresses on beaufort ridge;",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c2b1a6d8",
+        "text": "IDF strikes Hezbollah fortresses on Beaufort Ridge; Houthis seize Hanish Islands in Red Sea",
+        "textHe": "צה\"ל תוקף מבצרי חזבאללה בגבעת בופור; חות'ים תופסים איים חניש בים האדום",
+        "severity": "high",
+        "timestamp": "2026-09-14T16:21:29+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN",
+          "YEM"
+        ],
+        "eventIds": [
+          "qfggkt4qzy80",
+          "2nje8n9rze400"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-d5c8f2a7",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-14T12:41:09Z",
       "title": "IranStrike event",
-      "description": "Yemeni forces kill 10+ Saudi-backed personnel in Lahij/Taiz; Saudi airstrikes respond with 12+ sorties",
+      "description": "Yemeni forces gain ground in Taiz/Lahij; Saudi jets launch 12+ counterstrikes, DF-15s misfire",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2214,9 +2266,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c5f1a8b3",
-        "text": "Yemeni forces kill 10+ Saudi-backed personnel in Lahij/Taiz; Saudi airstrikes respond with 12+ sorties",
-        "textHe": "כוחות תימן הורגים 10+ כוחות בסיוע סעודי בלחיג/תעיז; התגובה בתקיפות אוויר סעודיות",
+        "id": "d5c8f2a7",
+        "text": "Yemeni forces gain ground in Taiz/Lahij; Saudi jets launch 12+ counterstrikes, DF-15s misfire",
+        "textHe": "כוחות תימניים מקדמים בטייז/להג; מטוסים סעודיים משגרים 12+ התקפות נגד, טילים סיניים מתקלקלים",
         "severity": "high",
         "timestamp": "2026-09-14T12:41:09+00:00",
         "entityIds": [
@@ -2225,21 +2277,160 @@
         ],
         "eventIds": [
           "kut3p081rxs0",
-          "3tnhnqiiolk00"
+          "3tnhnqiiolk00",
+          "2epsgok705us0",
+          "2yk9xdsgjl400"
         ],
         "sourceCount": 1
       }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-2qot0sg0vv000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83897",
+      "date": "2026-09-14T18:07:57Z",
+      "title": "IranStrike event",
+      "description": "Iraqi drone attack damages Saudi East-West Pipeline and major pumping facility, expected out of service for 3-5 weeks",
+      "category": "drone",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2qot0sg0vv000",
+        "timestamp": "2026-09-14T18:07:57+00:00",
+        "location": "SAU",
+        "origin": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iraqi drone attack damages Saudi East-West Pipeline and major pumping facility, expected out of service for 3-5 weeks",
+        "descriptionHe": "התקפת מזל\"ט עיראקית פוגעת בצינור הנפט מזרח-מערב של סעודיה ובמתקן שאיבה ראשי, צפוי להיות מחוץ לשירות למשך 3-5 שבועות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83897"
+      }
     },
     {
-      "id": "iranstrike-d6g2b9c4",
+      "id": "iranstrike-2rczkx0l3aw00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-14T12:41:09Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83896",
+      "date": "2026-09-14T17:24:24Z",
       "title": "IranStrike event",
-      "description": "Houthi/Yemeni forces seize strategic heights in western Taiz, controlling Bab al-Mandab approaches",
-      "category": "other",
+      "description": "Houthis report Saudi Arabia conducted 54 airstrikes over past 24 hours using F-15 and Typhoon jets from Khamis Mushait and Taif, targeting Taiz, Lahij, Al-Jawf, Marib, and Hajjah governorates",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2rczkx0l3aw00",
+        "timestamp": "2026-09-14T17:24:24+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Houthis report Saudi Arabia conducted 54 airstrikes over past 24 hours using F-15 and Typhoon jets from Khamis Mushait and Taif, targeting Taiz, Lahij, Al-Jawf, Marib, and Hajjah governorates",
+        "descriptionHe": "החות'ים דיווחו שערב הסעודית ביצעה 54 תקיפות אוויריות ב-24 השעות האחרונות באמצעות סילוני F-15 ו-Typhoon מבסיסי חמיס משיט וטائف, תוך כיוון לממשלויות תעיז, להג', אל-ג'וף, מאריב וחג'ה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83896"
+      }
+    },
+    {
+      "id": "iranstrike-2stpe6j9rwk00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20234",
+      "date": "2026-09-14T16:21:29Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim attack on Khamis Mushait military airbase in southern Saudi Arabia with dozens of missiles and drones, targeting aircraft hangars, radar systems, runways and ammunition depots",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2stpe6j9rwk00",
+        "timestamp": "2026-09-14T16:21:29+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthis claim attack on Khamis Mushait military airbase in southern Saudi Arabia with dozens of missiles and drones, targeting aircraft hangars, radar systems, runways and ammunition depots",
+        "descriptionHe": "החות'ים טוענים לתקיפת בסיס צבאי כאמיס משיט בדרום ערב הסעודית עם עשרות טילים ומזל\"טים, תוך כיוונון להנגרים של מטוסים, מערכות רדאר, מסלולים ומחסני תחמושת",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20234"
+      }
+    },
+    {
+      "id": "iranstrike-2nje8n9rze400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20233",
+      "date": "2026-09-14T16:18:18Z",
+      "title": "IranStrike event",
+      "description": "Houthis seize control of Greater and Lesser Hanish Islands in southern Red Sea north of Bab el-Mandeb Strait, consolidating presence along vital maritime route",
+      "category": "movement",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2259,39 +2450,41 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d6g2b9c4",
-        "text": "Houthi/Yemeni forces seize strategic heights in western Taiz, controlling Bab al-Mandab approaches",
-        "textHe": "כוחות חות'ים/תימן תופסים גבהות אסטרטגיות בתעיז המערבית, שולטים בגישות בב אל-מנדב",
+        "id": "2nje8n9rze400",
+        "timestamp": "2026-09-14T16:18:18+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
         "severity": "medium",
-        "timestamp": "2026-09-14T12:41:09+00:00",
-        "entityIds": [
-          "YEM"
-        ],
-        "eventIds": [
-          "2epsgok705us0"
-        ],
-        "sourceCount": 1
+        "description": "Houthis seize control of Greater and Lesser Hanish Islands in southern Red Sea north of Bab el-Mandeb Strait, consolidating presence along vital maritime route",
+        "descriptionHe": "החות'ים תופסים שליטה באיים האי הגדול והקטן בדרום ים האדום צפונית למיצר באב אל-מנדב, ומחזקים נוכחות לאורך נתיב הימי החיוני",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20233"
       }
     },
     {
-      "id": "iranstrike-e7h3c0d5",
+      "id": "iranstrike-qfggkt4qzy80",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-13T14:51:38Z",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/63467",
+      "date": "2026-09-14T14:58:25Z",
       "title": "IranStrike event",
-      "description": "U.S. strike kills one on Iranian merchant vessel near Qeshm Island",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "strike kills one on iranian merchant vessel near qeshm island תקיפת ארה\"ב הור",
-      "location": "Iran",
-      "country": "Iran",
+      "description": "IDF destroys major Hezbollah terror fortress on Beaufort Ridge and Ali Tahir Ridge in southern Lebanon",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2302,23 +2495,67 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e7h3c0d5",
-        "text": "U.S. strike kills one on Iranian merchant vessel near Qeshm Island",
-        "textHe": "תקיפת ארה\"ב הורגת אחד על כלי סוחר איראני ליד איי קשם",
-        "severity": "medium",
-        "timestamp": "2026-09-13T14:51:38+00:00",
-        "entityIds": [
-          "USA",
-          "IRN"
+        "id": "qfggkt4qzy80",
+        "timestamp": "2026-09-14T14:58:25+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "3g6i8m9rlou00"
-        ],
-        "sourceCount": 1
+        "type": "strike",
+        "severity": "high",
+        "description": "IDF destroys major Hezbollah terror fortress on Beaufort Ridge and Ali Tahir Ridge in southern Lebanon",
+        "descriptionHe": "צה\"ל השמיד את מבצר הטרור הגדול של חיזבאללה ברכס הבופור וברכס עלי טאהר בדרום לבנון",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/63467"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-1a15ywdpmr340",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/83892",
+      "date": "2026-09-14T14:34:53Z",
+      "title": "IranStrike event",
+      "description": "Houthi strike on Abha Bulk Aramco plant north of Abha City destroys 3 tanks, causes large-scale oil spill extending 2km downstream",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1a15ywdpmr340",
+        "timestamp": "2026-09-14T14:34:53+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthi strike on Abha Bulk Aramco plant north of Abha City destroys 3 tanks, causes large-scale oil spill extending 2km downstream",
+        "descriptionHe": "הפגיעה של החות'ים במתקן Abha Bulk Aramco בצפון עיר עבהא הרסה 3 טנקים, גורמת לדליפת נפט בהיקף גדול המשתרעת 2 ק\"מ במורד הנחל",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/83892"
+      }
+    },
     {
       "id": "iranstrike-pid7f8qip1c0",
       "source": "IranStrike",
