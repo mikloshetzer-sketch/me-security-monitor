@@ -1,54 +1,72 @@
 {
   "meta": {
-    "updated": "2026-09-14 23:09 UTC",
+    "updated": "2026-09-15 04:57 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-09-08",
-    "period_end": "2026-09-14",
-    "total_events": 139,
-    "total_risk": 119.43,
-    "normalized_risk_score": 47.8,
+    "period_start": "2026-09-09",
+    "period_end": "2026-09-15",
+    "total_events": 135,
+    "total_risk": 111.41,
+    "normalized_risk_score": 44.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 29,
-    "security": 4,
+    "military": 32,
+    "security": 3,
     "political": 17,
-    "other": 89
+    "other": 83
   },
   "source_counts": {
-    "news": 135,
+    "news": 131,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 36.28
+      "risk": 33.81
     },
     {
       "name": "Saudi Arabia",
-      "risk": 17.8
+      "risk": 21.55
     },
     {
       "name": "Yemen",
-      "risk": 15.2
+      "risk": 13.1
     },
     {
       "name": "Iraq",
-      "risk": 11.3
+      "risk": 11.4
     },
     {
       "name": "Israel",
-      "risk": 9.5
+      "risk": 7.9
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-09-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis strike Saudi targets anew as talks over Strait of Hormuz stall - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOYjU2YnlvRExQZkwtRGlRN2ljVC10RTVQRGI4NUhLSEladjEzeGltZlcxWXByODRyZDlyM3pvWGdSYVBIZXctNVZvQ2ZOX09PZ2ZsN0pWU216ZFUwUDRRS0RjQXV2QVpMWkVXRFJiZGRaVVZENkFMN3hmUlBSWWxWVENnWnFYVEFHMGVMeWYyX2V0b09TMU9Bb2M4ZmZDWTU2YVVpYUFFOUJCcmVTeHhtdEVla2hMbGR1UGc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices rise as Saudi pipeline outage, fresh attacks raise supply concerns - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVGZNVlpqdGZqMGlsa1lSR2IyWU0tbmd2R1ZkY2o5VDNlb0VsMEdhbWlZVzJBLXJ0WU9MTm13WnN2R0M0Slg4TzFkb1VSYVRxQXE5ejQ5eTNRbGcxdUVSNTFKYlk2WmxYbkdPMTJIUEZJRVdBUmFKVHVCamlsUzB2NFJLbkNGbkJFSjR3TTlhNF9vT2g4MXk0MjlzOHhVaWNGX3U3RGlUS0JzekpCb0VBbU8zMGdUbFpIaGlCVHlwcEtoR0U"
+    },
+    {
+      "score": 2.7,
       "date": "2026-09-14",
       "category": "military",
       "source_type": "news",
@@ -57,7 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUHNjWXRWend3NGxDNEU0NTRuN3JBRDhiUUNaakQxZDRaY0JoVmJwNGhqbFVhSVBTV1Y2VlN5VUwzUDBWcWFWUDBuNW1fcnRhWndjY1psQzRhYWROWnRSSmp4Y3VzdDRycTZObUNzTW1HRy1BRzZpenV2Q2dmdnRqNFJtVGd6TlZVMndaLTFhWG1BZzNHQWVLYUdjLXM4UElYRjNYZHpMLUhyWkNvbW9nU0dtWk7SAboBQVVfeXFMT01fb3U1Ym4xa1lJd3NpcGZ4NHF0QzM3ZktaUVRrLUx4U3E2WmFfYUlzQ0dMZlk4SjR6eEF0NTdzaFJac2RBV1N0ZWJ4LTkwRnZnR2I4dER5Tm1NM2VpZ2VNdW5yTFg2RVdBanpQclUwTHQ3Ym9UY1Qwdlc0TDBGano3NmptaGpqVWxtanNWdG1Zb1hvdllhYUZjRFo2bDVKSFNIaHJpU0xwTkxDMm1Hcjk4WXA4X25vT2x3"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
@@ -66,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUmxSZmUzZzdYUkJrQ2l3RzRTQklHdjFOWmVYZ2NDcmZmOW9UUVBoZkk0bC0wcHhveWNHNldiU2E0WV9PYkFtWGVaUUdMVUlieFBZMVRjVHFkTTZ6YjVWXzVLUlA2QXE2LURQczRJN010RGR1Y3Jkb0JpS1lhdF9fZVdJT0hMV3A5QXNNcllfalNoem0wS3VMNUlNQUgwbG9sUU1XN2R1aUpkaXZDekZ6bnlqN2RiN0t3X3d3"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcXNvWlpHUEh2bzNITUYtX04zUG1vclFCeDZ1NVdQTkNXUk5OTmRESElsUXUyQjNsYVU1d2tEMFlNRjB1VXVnenR4UHZzd3F3dEZWR2tWSVZMREFiZXF6NjR5SlB5VmdaNXpTWHQ3UF9POFRGanpoR0NxZUV3ZUU4alAycW9mcGdLak5lQ2NXdlpHQ3I3eDVRM3JDWmI3SGdYUjZsbnJSaUVySHk3UFl4Y3AxVGFZbmg5"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUGctZFpGTW5Zd0h2OFl3V0FMR3o0MHVxNW5uSmN6cHpfNWRYRS1Sd0dibnUwUDRCY3VHejJlbUdNVkx6VmN3WTJQVGYtRjRHX1dWQllyQWl3TzEyWWoxY0JRaU45U0RMUTd0SHBvYmRLZmN4bjl3VF82emtKY1JiQzlsN3NqLThWcDk0UEdmaTlHWjJWd0k1b1VtVmVVUFpSZnFhSEZPUk9oeFlTeU5ZcTJKUlJUZjd6d3d2QWJiYmR2UQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
@@ -93,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSmw3N3gxSDF1TmZtV1BQY2s3cVUxZGRjbW1FdlBMelhLbUYtblpJc3dDa2thTjNUUkJCdXFINm96VVl3dlh5QWFYVlp2cjVnUnowTVJYWmhlUGlOZEtYUzNBOUlpM3o2MUJPNDBySDh5VFBic2Mta3R1YTJKNFkyUFBMcXZOd1hVaXZDMTVHaGxVZW96WkJzem8wR3pSY3EwQzBVTEVhUi1waTlfQl9KQVVfYw"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
@@ -102,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOel9YQnZiN2dhLU1ROHQtdHR3WHlDN2gxakJzdUZIaTlBa19JNVM2RlNHcVdiRG5EQ1pQRmlRemQ5S2RLVUt6MGw5eU92YjYwWHNfQnk2c1k5bktpNGlhaGx0a0kwX0lzeVZTaHE5ekdneFlYbVhGOXgtMklVZzFWT1prTzFjYlpDWW1zQXltUEt4ZlRGOUlpQW9zclFYaVR3NnlLalAwZ2xZb3dYWUFxa2ttSWdrdw"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
@@ -111,31 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcnk4WU1KZUF2dXk1eUF5ZEdjQkdmSlJwWVBmdzNUdnI3MTNoaEZmV2ZscHN0VWo2c2JOcTFqZWZHOFVpTTdWbGFvSjdvN3lmRGtxVm1TOUNySTYwYWtTX3Iyemc0SWUwb1BvTlBhRWVoTzFZVlFqSkRtMTY5OHRNWW5MU0Y3ckp3S3YteU8xZ1BpNW9haWpZOTJEMUhsYXB2NVJn"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-13",
       "category": "military",
       "source_type": "news",
       "title": "US Envoy Jared Kushner says Doha attack left Israel ‘globally isolated’ - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPV2ZFUFdhRnNtMnotQ0NHYUkxWGNEaDc1TWc2UlYybW51eTNhLXhOZDY5N21zc0ZFSGVwWkRmbjZJU1k2RVJna2x2eHU0V1M4R29zcHo3Q0FwODNMWk5zby1TdDNyOHFoRmlRQUxkNFd6MWpnLVpkZU9nTTlZSENJSmtrQ1VuQU8tTHh0UjdzNmtDdmdj0gGaAUFVX3lxTE1WNHVxQzlVMEY0c3Mwc1lGNXUyZWZDX3l2OFJzR3BsT2h5N3hqbG1qVWJuVlpkejB2NS02NHljTVBCcjlUYURBM3lLaUM5bF8xazZUS2xHWnFWbXJiUkJxQU1OTDFJRlVSYzU5ajcxYkpEdWhqUXdneEtBOHQwWkxRaklJUFg0N2ROaFdCaFNjYWM5X2stTkJ4S1E"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump: Iran probably ‘behind’ Saudi oil pipeline attack - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSXhlZTE4Z2M1VTFMejZmSE15WGU5bGxCVUtoMTZ2X0VsZXhaWnhlTzJpV0NSd2liZUp5VVExY2VIcGVodE5JbE5vclk2YlNFWVhseWNEZ0JFMlVwajcwSkhyWTdwWXU5SGVHTG9WZFFkUXlNelM4UVZoSHdTSk1LSGNJOVA3V3Jhd0Ffc1M3MTQ3SE5tX0dWaGZ4TzRiRVZESjRrWlZn0gGrAUFVX3lxTFBNazkwX29zQkxhd2IxeXVDY2JqNUVDWFVqeTY1QlhzaDFTc09aMkdBTmR3dzlNN0c5M2lGZGozQXljVDExSF9lak5OMUZHb0JPazZ2dllFYUVUeVRvbFhEekRwa3VwRWtqV0hJbkl4WWhtWS03dE1BTERxWHNCZmdpS1k3T0NMeXJuM0JiOGZabER5SWhSbE5aXy1LVmZtQmwtSkFnS2xNMUpJbw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jerusalem Daily: Pregnant woman killed in Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQbkNKOUVESzFTTlRacExwOGtCNTFRajdOdGRaZkE5dzRldWk5Vm9vX3Y3V1o1RDlhaXpCSWF3TjVFU1UybUx0YXJvZC1qY1RzYWUwXzFCNjJMS2U5S2g3VnRVaDRvOVNja0hpbTVlOWxmdjY1MWxkZzBNblE3aWxpblVWSHhOazI3X1hrcWVWWjBLdWk4T1l4bmt0b0XSAaIBQVVfeXFMT0Fzd3dLZ2Fvdjk3MWRNcDBzSW1CQnRnS25PakJmUkJMVjFoRVNlanNGWUpqeWk0RUZHSGZTemxJQ3NncU8zbjhEV1hlb0hjZjZlX1dKOTlQOWZwa3J0S2xncVBzWlNCd2NFOERuMHFHaVA5OHRhZDJKajVaLWVfYk4tRmJwalFqdlNSeC0teEFLQTRIT24wUVo3bERHMFExU093"
     }
   ]
 }
