@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-15 04:57 UTC",
+    "updated": "2026-09-15 11:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-09-09",
     "period_end": "2026-09-15",
-    "total_events": 135,
-    "total_risk": 111.41,
-    "normalized_risk_score": 44.6,
+    "total_events": 133,
+    "total_risk": 110.71,
+    "normalized_risk_score": 44.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 32,
+    "military": 30,
     "security": 3,
     "political": 17,
     "other": 83
   },
   "source_counts": {
-    "news": 131,
+    "news": 129,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.81
+      "risk": 31.66
     },
     {
       "name": "Saudi Arabia",
-      "risk": 21.55
+      "risk": 17.7
     },
     {
       "name": "Yemen",
-      "risk": 13.1
+      "risk": 16.2
     },
     {
       "name": "Iraq",
-      "risk": 11.4
+      "risk": 9.6
     },
     {
-      "name": "Israel",
-      "risk": 7.9
+      "name": "Gaza Strip",
+      "risk": 8.15
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Hormuz traffic dwindles after Middle East attacks intensify - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUTFPRnZDMlUxdmU3RmpseHVGS2laWk4tZU0ySUhOSUdDMGlfQ3loQTBQZktUdW96ck0yNlctUWxVV2NYSHpDclc2YnI4cVFISWZXbjdlM1BDSC1vejJmR2Qtc0NjTTlxLVpxRmZXck5nQU9US1JUalB2cTNZd1Z4Y1Q1QkVQUkEySXNqZUxYV1VWLV8wbVJYTU85X3U0bmk3SXFnNm1uMDQ4TkYwMjV3a3ItZw"
+    },
     {
       "score": 3.0,
       "date": "2026-09-15",
@@ -61,9 +70,9 @@
       "date": "2026-09-15",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices rise as Saudi pipeline outage, fresh attacks raise supply concerns - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNVGZNVlpqdGZqMGlsa1lSR2IyWU0tbmd2R1ZkY2o5VDNlb0VsMEdhbWlZVzJBLXJ0WU9MTm13WnN2R0M0Slg4TzFkb1VSYVRxQXE5ejQ5eTNRbGcxdUVSNTFKYlk2WmxYbkdPMTJIUEZJRVdBUmFKVHVCamlsUzB2NFJLbkNGbkJFSjR3TTlhNF9vT2g4MXk0MjlzOHhVaWNGX3U3RGlUS0JzekpCb0VBbU8zMGdUbFpIaGlCVHlwcEtoR0U"
+      "title": "Houthis say air strikes hit Yemen after Saudi Arabia vows ‘firm’ response - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdC1ocFpNc3FkSkVheVZMQy1QdmtEbXhBS2JrNENyT3RPSk1KS2F3M1RCaUtxanZockZEZlZ4bS13cGhXckFXOS1EUC1YR2lXanp0WnJ2N0oybU54R2lZTTBkWDVVdFdoOVppNk1FX1lpZzE3MEpiQlR2LVBJaV83NGZBRG43V1JLeFl1ak9IM3RNdDhFNGZZTmw4SXpZRUVjeDdXMUpxcGFLaGxrR05IZmJqNGjSAboBQVVfeXFMTUcyLTU3b09ZREl1bHFJWllRSWRUb1lHTzBhOXltcE05Q3dXZ01fZWRNd2xGM3kyYXhnRy1FY09XSUtaSmpkMjRqMnc4X0FuZ2JxNFhPVUlFdW9iMzRfeTE3RjR3c1E4NUVwSnV0RFFCekNGc2NXVzJ6TDlHYjhXRHRGdjFDazhTMXQtNXFNNmc5amtkN2o0aVZwdmdnUTctTVh6YUNobzE0cTQtd0E5cld5ckZPalRncXZn"
     },
     {
       "score": 2.7,
@@ -109,15 +118,6 @@
       "title": "Turkey detains dozens after sweeping raids targeting LGBTQ+ groups - Reuters",
       "location": "Turkey",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSmw3N3gxSDF1TmZtV1BQY2s3cVUxZGRjbW1FdlBMelhLbUYtblpJc3dDa2thTjNUUkJCdXFINm96VVl3dlh5QWFYVlp2cjVnUnowTVJYWmhlUGlOZEtYUzNBOUlpM3o2MUJPNDBySDh5VFBic2Mta3R1YTJKNFkyUFBMcXZOd1hVaXZDMTVHaGxVZW96WkJzem8wR3pSY3EwQzBVTEVhUi1waTlfQl9KQVVfYw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi shares drop after pipeline attack, leading Gulf decline - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOel9YQnZiN2dhLU1ROHQtdHR3WHlDN2gxakJzdUZIaTlBa19JNVM2RlNHcVdiRG5EQ1pQRmlRemQ5S2RLVUt6MGw5eU92YjYwWHNfQnk2c1k5bktpNGlhaGx0a0kwX0lzeVZTaHE5ekdneFlYbVhGOXgtMklVZzFWT1prTzFjYlpDWW1zQXltUEt4ZlRGOUlpQW9zclFYaVR3NnlLalAwZ2xZb3dYWUFxa2ttSWdrdw"
     },
     {
       "score": 2.4,
