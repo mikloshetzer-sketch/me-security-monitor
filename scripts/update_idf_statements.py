@@ -30,6 +30,8 @@ Important:
 from __future__ import annotations
 
 import argparse
+import asyncio
+import os
 import hashlib
 import html
 import json
@@ -66,6 +68,7 @@ SOURCE_CLASSIFICATION = (
 
 REGION_GAZA = "Gaza Strip"
 REGION_LEBANON = "South Lebanon"
+REGION_SYRIA = "Syria"
 
 ACTIVITY_TYPES = {
     "airstrike",
@@ -422,6 +425,8 @@ REGION_PATTERNS: dict[str, tuple[str, ...]] = {
         "naqqoura",
         "litani",
     ),
+    REGION_SYRIA: ("syria","syrian","damascus","rif dimashq","quneitra","daraa","suwayda","sweida","latakia","tartus","tartous","hmeimim","khmeimim","homs","palmyra","aleppo","idlib","abu al-duhur","abu al-dhuhur","deir ez-zor","deir ezzor","hasakah","al-hasakah","raqqa","t4 airbase","t4 air base","tiyas","al-tanf","al tanf","golan"),
+
 }
 
 TYPE_PATTERNS: dict[str, tuple[str, ...]] = {
@@ -751,6 +756,28 @@ KNOWN_LOCATIONS: dict[str, dict[str, Any]] = {
         "latitude": 33.1011,
         "longitude": 35.4458,
     },
+    # Syria (curated locality centroids; not exact strike coordinates)
+    "damascus":{"name":"Damascus","region":REGION_SYRIA,"country":"Syria","latitude":33.5138,"longitude":36.2765},
+    "quneitra":{"name":"Quneitra","region":REGION_SYRIA,"country":"Syria","latitude":33.1259,"longitude":35.8246},
+    "daraa":{"name":"Daraa","region":REGION_SYRIA,"country":"Syria","latitude":32.6189,"longitude":36.1021},
+    "suwayda":{"name":"As-Suwayda","region":REGION_SYRIA,"country":"Syria","latitude":32.7090,"longitude":36.5695},
+    "sweida":{"name":"As-Suwayda","region":REGION_SYRIA,"country":"Syria","latitude":32.7090,"longitude":36.5695},
+    "latakia":{"name":"Latakia","region":REGION_SYRIA,"country":"Syria","latitude":35.5317,"longitude":35.7901},
+    "tartus":{"name":"Tartus","region":REGION_SYRIA,"country":"Syria","latitude":34.8890,"longitude":35.8866},
+    "tartous":{"name":"Tartus","region":REGION_SYRIA,"country":"Syria","latitude":34.8890,"longitude":35.8866},
+    "hmeimim":{"name":"Hmeimim Air Base","region":REGION_SYRIA,"country":"Syria","latitude":35.4011,"longitude":35.9487},
+    "khmeimim":{"name":"Hmeimim Air Base","region":REGION_SYRIA,"country":"Syria","latitude":35.4011,"longitude":35.9487},
+    "homs":{"name":"Homs","region":REGION_SYRIA,"country":"Syria","latitude":34.7324,"longitude":36.7137},
+    "palmyra":{"name":"Palmyra","region":REGION_SYRIA,"country":"Syria","latitude":34.5503,"longitude":38.2730},
+    "aleppo":{"name":"Aleppo","region":REGION_SYRIA,"country":"Syria","latitude":36.2021,"longitude":37.1343},
+    "idlib":{"name":"Idlib","region":REGION_SYRIA,"country":"Syria","latitude":35.9306,"longitude":36.6339},
+    "abu al-duhur":{"name":"Abu al-Duhur","region":REGION_SYRIA,"country":"Syria","latitude":35.7320,"longitude":37.1040},
+    "deir ez-zor":{"name":"Deir ez-Zor","region":REGION_SYRIA,"country":"Syria","latitude":35.3359,"longitude":40.1408},
+    "hasakah":{"name":"Al-Hasakah","region":REGION_SYRIA,"country":"Syria","latitude":36.5024,"longitude":40.7477},
+    "raqqa":{"name":"Raqqa","region":REGION_SYRIA,"country":"Syria","latitude":35.9500,"longitude":39.0167},
+    "tiyas":{"name":"Tiyas (T4) Air Base","region":REGION_SYRIA,"country":"Syria","latitude":34.5220,"longitude":37.6290},
+    "al-tanf":{"name":"Al-Tanf","region":REGION_SYRIA,"country":"Syria","latitude":33.5060,"longitude":38.6470},
+
 }
 
 
@@ -1487,6 +1514,34 @@ def build_analytics(
     }
 
 
+async def fetch_telegram_api_posts(since: str, max_posts: int = 0) -> list[dict[str, str]]:
+    try:
+        from telethon import TelegramClient
+        from telethon.sessions import StringSession
+    except ImportError as exc:
+        raise RuntimeError("Install Telethon first: pip install telethon") from exc
+    api_id_raw=os.environ.get("TELEGRAM_API_ID","").strip(); api_hash=os.environ.get("TELEGRAM_API_HASH","").strip(); session=os.environ.get("TELEGRAM_SESSION","").strip()
+    if not api_id_raw or not api_hash or not session: raise RuntimeError("Missing TELEGRAM_API_ID / TELEGRAM_API_HASH / TELEGRAM_SESSION")
+    try: api_id=int(api_id_raw)
+    except ValueError as exc: raise RuntimeError("TELEGRAM_API_ID must be numeric") from exc
+    since_dt=datetime.fromisoformat(since+"T00:00:00+00:00"); posts=[]
+    client=TelegramClient(StringSession(session),api_id,api_hash); await client.connect()
+    try:
+        if not await client.is_user_authorized(): raise RuntimeError("TELEGRAM_SESSION is invalid or expired")
+        entity=await client.get_entity("idfofficial")
+        async for message in client.iter_messages(entity):
+            dt=message.date
+            if dt is None: continue
+            if dt.tzinfo is None: dt=dt.replace(tzinfo=timezone.utc)
+            if dt < since_dt: break
+            body=clean_text(getattr(message,"message",""))
+            if not body: continue
+            posts.append({"post_id":f"idfofficial/{message.id}","source_url":f"https://t.me/idfofficial/{message.id}","date":dt.astimezone(timezone.utc).isoformat().replace("+00:00","Z"),"text":body})
+            if max_posts>0 and len(posts)>=max_posts: break
+    finally: await client.disconnect()
+    return posts
+
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -1531,6 +1586,9 @@ def parse_arguments() -> argparse.Namespace:
             "When supplied, no network request is made."
         ),
     )
+    parser.add_argument("--telegram-backfill", action="store_true", help="Backfill via Telegram API/StringSession.")
+    parser.add_argument("--since", default="2024-12-08", help="Oldest UTC date (YYYY-MM-DD).")
+    parser.add_argument("--backfill-max-posts", type=int, default=0, help="0 = unlimited until --since.")
     parser.add_argument(
         "--verbose",
         action="store_true",
@@ -1546,25 +1604,17 @@ def main() -> int:
         format="%(levelname)s: %(message)s",
     )
 
-    if args.input_html:
-        logging.info("Reading local HTML: %s", args.input_html)
-        page_html = args.input_html.read_text(encoding="utf-8")
+    if args.telegram_backfill:
+        logging.info("Telegram API backfill from %s", args.since)
+        posts=asyncio.run(fetch_telegram_api_posts(args.since,args.backfill_max_posts))
+        logging.info("Telegram API posts fetched: %d",len(posts))
     else:
-        logging.info(
-            "Fetching official IDF statements: %s",
-            args.source_url,
-        )
-        page_html = fetch_text(
-            args.source_url,
-            timeout=args.timeout,
-        )
-
-    parser = TelegramPreviewParser()
-    parser.feed(page_html)
-    parser.close()
-
-    posts = parser.posts[: max(1, args.max_posts)]
-    logging.info("Public Telegram posts parsed: %d", len(posts))
+        if args.input_html:
+            logging.info("Reading local HTML: %s",args.input_html); page_html=args.input_html.read_text(encoding="utf-8")
+        else:
+            logging.info("Fetching official IDF statements: %s",args.source_url); page_html=fetch_text(args.source_url,timeout=args.timeout)
+        parser=TelegramPreviewParser(); parser.feed(page_html); parser.close(); posts=parser.posts[:max(1,args.max_posts)]
+        logging.info("Public Telegram posts parsed: %d",len(posts))
 
     current_events = [
         event
@@ -1576,7 +1626,7 @@ def main() -> int:
     ]
 
     logging.info(
-        "Accepted Gaza/Lebanon operational statements: %d",
+        "Accepted Gaza/Lebanon/Syria operational statements: %d",
         len(current_events),
     )
 
@@ -1648,6 +1698,7 @@ def main() -> int:
             "scope": [
                 REGION_GAZA,
                 REGION_LEBANON,
+                REGION_SYRIA,
             ],
             "supported_activity_types": sorted(ACTIVITY_TYPES),
             "enrichment_fields": [
