@@ -10,9 +10,27 @@ on:
         type: boolean
 
       max_posts:
-        description: "Maximum number of public Telegram posts to inspect"
+        description: "Maximum number of public Telegram posts to inspect in normal mode"
         required: false
         default: "120"
+        type: string
+
+      backfill:
+        description: "Run Telegram API historical backfill"
+        required: false
+        default: false
+        type: boolean
+
+      backfill_since:
+        description: "Backfill IDF posts from this date (YYYY-MM-DD)"
+        required: false
+        default: "2024-12-08"
+        type: string
+
+      backfill_max_posts:
+        description: "Maximum Telegram API posts to inspect during backfill (0 = no explicit limit)"
+        required: false
+        default: "0"
         type: string
 
   schedule:
@@ -30,7 +48,12 @@ jobs:
   update-idf-statements:
     name: Build Israel Military Activity data
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+
+    env:
+      TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+      TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+      TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
 
     steps:
       - name: Checkout repository
@@ -42,6 +65,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Install Python dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install telethon
 
       - name: Locate IDF statements script
         id: locate_script
@@ -103,9 +133,13 @@ jobs:
 
           MAX_POSTS="120"
           VERBOSE_OPTION=""
+          BACKFILL_OPTION=""
+          BACKFILL_SINCE="2024-12-08"
+          BACKFILL_MAX_POSTS="0"
 
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             INPUT_MAX_POSTS="${{ inputs.max_posts }}"
+            INPUT_BACKFILL_MAX_POSTS="${{ inputs.backfill_max_posts }}"
 
             if [[ "${INPUT_MAX_POSTS}" =~ ^[0-9]+$ ]] && \
                [[ "${INPUT_MAX_POSTS}" -ge 1 ]] && \
@@ -118,16 +152,68 @@ jobs:
             if [[ "${{ inputs.verbose }}" == "true" ]]; then
               VERBOSE_OPTION="--verbose"
             fi
+
+            if [[ "${{ inputs.backfill }}" == "true" ]]; then
+              BACKFILL_OPTION="--telegram-backfill"
+              BACKFILL_SINCE="${{ inputs.backfill_since }}"
+
+              if [[ "${INPUT_BACKFILL_MAX_POSTS}" =~ ^[0-9]+$ ]]; then
+                BACKFILL_MAX_POSTS="${INPUT_BACKFILL_MAX_POSTS}"
+              else
+                echo "Invalid backfill_max_posts input. Using 0."
+                BACKFILL_MAX_POSTS="0"
+              fi
+            fi
           fi
 
           echo "max_posts=${MAX_POSTS}" >> "$GITHUB_OUTPUT"
           echo "verbose_option=${VERBOSE_OPTION}" >> "$GITHUB_OUTPUT"
+          echo "backfill_option=${BACKFILL_OPTION}" >> "$GITHUB_OUTPUT"
+          echo "backfill_since=${BACKFILL_SINCE}" >> "$GITHUB_OUTPUT"
+          echo "backfill_max_posts=${BACKFILL_MAX_POSTS}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify Telegram secrets for backfill
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.backfill == true }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${TELEGRAM_API_ID:-}" ]]; then
+            echo "ERROR: TELEGRAM_API_ID secret is missing."
+            exit 1
+          fi
+
+          if [[ -z "${TELEGRAM_API_HASH:-}" ]]; then
+            echo "ERROR: TELEGRAM_API_HASH secret is missing."
+            exit 1
+          fi
+
+          if [[ -z "${TELEGRAM_SESSION:-}" ]]; then
+            echo "ERROR: TELEGRAM_SESSION secret is missing."
+            exit 1
+          fi
+
+          echo "Telegram API secrets are available."
 
       - name: Run IDF statements processor
         id: build
         shell: bash
         run: |
           set +e
+
+          EXTRA_ARGS=()
+
+          if [[ -n "${{ steps.options.outputs.verbose_option }}" ]]; then
+            EXTRA_ARGS+=("${{ steps.options.outputs.verbose_option }}")
+          fi
+
+          if [[ -n "${{ steps.options.outputs.backfill_option }}" ]]; then
+            EXTRA_ARGS+=("--telegram-backfill")
+            EXTRA_ARGS+=("--since")
+            EXTRA_ARGS+=("${{ steps.options.outputs.backfill_since }}")
+            EXTRA_ARGS+=("--backfill-max-posts")
+            EXTRA_ARGS+=("${{ steps.options.outputs.backfill_max_posts }}")
+          fi
 
           python "${{ steps.locate_script.outputs.script_path }}" \
             --source-url "https://t.me/s/idfofficial" \
@@ -136,7 +222,7 @@ jobs:
             --timeout 30 \
             --max-posts "${{ steps.options.outputs.max_posts }}" \
             --retention-days 730 \
-            ${{ steps.options.outputs.verbose_option }}
+            "${EXTRA_ARGS[@]}"
 
           EXIT_CODE=$?
           set -e
@@ -147,7 +233,6 @@ jobs:
             echo "IDF statements data updated successfully."
           elif [[ "${EXIT_CODE}" -eq 2 ]]; then
             echo "No Telegram posts were parsed."
-            echo "The public Telegram page may be unavailable or its HTML layout may have changed."
             exit 2
           else
             echo "Processor failed with exit code ${EXIT_CODE}."
@@ -186,19 +271,21 @@ jobs:
           if not isinstance(history.get("events", []), list):
               raise SystemExit("history events must be a list")
 
+          allowed_activity_types = {
+              "airstrike",
+              "ground_activity",
+              "artillery",
+              "cross_border_fire",
+              "drone_activity",
+              "evacuation_warning",
+              "humanitarian_zone",
+          }
+
           for event in events:
               if not event.get("id"):
                   raise SystemExit("Event without id found")
 
-              if event.get("activity_type") not in {
-                  "airstrike",
-                  "ground_activity",
-                  "artillery",
-                  "cross_border_fire",
-                  "drone_activity",
-                  "evacuation_warning",
-                  "humanitarian_zone",
-              }:
+              if event.get("activity_type") not in allowed_activity_types:
                   raise SystemExit(
                       f"Unsupported activity type: "
                       f"{event.get('activity_type')}"
@@ -219,13 +306,20 @@ jobs:
               if not isinstance(longitude, (int, float)):
                   raise SystemExit("Invalid map event longitude")
 
+          region_counts = {}
+          for event in events:
+              for region in event.get("regions", []):
+                  region_counts[region] = (
+                      region_counts.get(region, 0) + 1
+                  )
+
           print("Generated at:", current.get("generated_at"))
           print("Total events:", len(events))
           print("Map events:", len(map_events))
-          print(
-              "Latest event:",
-              overview.get("latest_event_date"),
-          )
+          print("Latest event:", overview.get("latest_event_date"))
+          print("Region counts:", region_counts)
+          print("Syria events:", region_counts.get("Syria", 0))
+          print("History events:", len(history.get("events", [])))
           PY
 
       - name: Upload generated IDF data
