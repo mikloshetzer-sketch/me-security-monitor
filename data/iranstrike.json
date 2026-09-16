@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T11:37:36Z",
+  "generated_at": "2026-09-16T15:33:31Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 365,
+    "events_endpoint_records": 369,
     "feed_event_records": 250,
-    "normalized_events": 1365,
+    "normalized_events": 1369,
     "map_visualizable_events": 247,
-    "non_mappable_events": 1118,
-    "developments": 5
+    "non_mappable_events": 1122,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1365,
+      "total_events": 1369,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-16T11:27:08Z",
+      "latest_event_date": "2026-09-16T14:41:32Z",
       "geocoded_events": 247,
-      "geocoded_share": 18.1,
+      "geocoded_share": 18.0,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Iran"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 120,
-        "previous": 80,
-        "delta": 40,
-        "percent_change": 50.0,
+        "current": 113,
+        "previous": 82,
+        "delta": 31,
+        "percent_change": 37.8,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 394,
-        "previous": 637,
-        "delta": -243,
-        "percent_change": -38.1,
+        "current": 396,
+        "previous": 627,
+        "delta": -231,
+        "percent_change": -36.8,
         "direction": "decrease"
       }
     },
@@ -806,13 +806,13 @@
       },
       {
         "date": "2026-09-16",
-        "count": 3
+        "count": 7
       }
     ],
     "category_counts": {
-      "infrastructure": 330,
-      "missile": 310,
-      "strike": 236,
+      "infrastructure": 331,
+      "missile": 312,
+      "strike": 237,
       "drone": 179,
       "airstrike": 123,
       "movement": 70,
@@ -823,21 +823,21 @@
       "political": 4
     },
     "severity_counts": {
-      "medium": 714,
-      "high": 458,
+      "medium": 716,
+      "high": 460,
       "low": 191,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 824,
-      "iran": 357,
+      "unknown": 827,
+      "iran": 358,
       "israel": 153,
       "usa": 31
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 431
+        "count": 432
       },
       {
         "name": "Iran",
@@ -853,7 +853,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 51
+        "count": 52
       },
       {
         "name": "Bandar Abbas",
@@ -861,7 +861,7 @@
       },
       {
         "name": "Red Sea",
-        "count": 42
+        "count": 43
       },
       {
         "name": "Iraq",
@@ -876,11 +876,11 @@
         "count": 27
       },
       {
-        "name": "Syria",
-        "count": 24
+        "name": "Israel",
+        "count": 25
       },
       {
-        "name": "Israel",
+        "name": "Syria",
         "count": 24
       },
       {
@@ -903,7 +903,7 @@
       },
       {
         "name": "Unknown",
-        "count": 431
+        "count": 432
       },
       {
         "name": "Jordan",
@@ -919,11 +919,11 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 51
+        "count": 52
       },
       {
         "name": "Red Sea",
-        "count": 42
+        "count": 43
       },
       {
         "name": "Syria",
@@ -931,7 +931,7 @@
       },
       {
         "name": "Israel",
-        "count": 31
+        "count": 32
       },
       {
         "name": "Palestinian territories",
@@ -944,46 +944,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10675,
+    "totalCount": 10679,
     "spotlight": {
       "event": {
-        "id": "1mg8234ftmyo0",
-        "timestamp": "2026-09-16T11:27:08+00:00",
-        "location": "JOR",
-        "origin": "USA",
+        "id": "2soa9ymr65400",
+        "timestamp": "2026-09-16T14:23:05+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "intercept",
+        "type": "report",
         "severity": "high",
-        "description": "U.S. forces launch 60-70 Patriot PAC-3 and dozen THAAD interceptors from Muwaffaq Salti Airbase to defend against Iranian ballistic missile attack, some Iranian missiles score hits on U.S. bases in Jordan",
-        "descriptionHe": "כוחות ארה\"ב משגרים 60-70 יירוטי Patriot PAC-3 וכשתיים עשרה רקטות THAAD מבסיס מוואפק סלטי כדי להגן מפני התקפת טילים בליסטיים איראניים, כמה טילים איראניים פוגעים בבסיסי ארה\"ב בירדן",
-        "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "other",
-            "count": 70,
-            "intercepted": 70
-          },
-          {
-            "type": "other",
-            "count": 12,
-            "intercepted": 12
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/83993"
+        "description": "Houthis claim to have shot down Saudi F-15 fighter jet over Marib province",
+        "descriptionHe": "החות'ים בהודעה רשמית : הפלנו מטוס F-15  סעודי בשמי מחוז מארב",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130334"
       },
-      "headline": "Iranian missiles breach U.S. defenses, strike bases in Jordan",
-      "headlineHe": "טילים איראניים חודרים הגנה אמריקאית, פוגעים בבסיסים בירדן",
-      "summary": "U.S. air defenses intercepted most of an Iranian ballistic missile barrage from Muwaffaq Salti Airbase, but some Iranian ordnance penetrated to strike American positions, marking rare successful impact on U.S. infrastructure in the region.",
-      "summaryHe": "הגנות אוויר אמריקאיות יירטו את רובו של הסערה הטילים הבליסטיים האיראנית מבסיס מוואפק סלטי, אך כמה תחמושת איראנית חדרה והפגיעה בעמדות אמריקאיות, מה שמסמן התמוטטות נדירה בתשתית אמריקאית באזור.",
-      "pickedAt": "2026-09-16T11:30:52.658Z",
-      "state": "BREAKING"
+      "headline": "Houthis claim downing of Saudi F-15 fighter jet over Yemen",
+      "headlineHe": "חות'ים טוענים להפילת מטוס קרב F-15 סעודי על יד תימן",
+      "summary": "The claim, if confirmed, would mark a significant escalation in Houthi air defense capabilities against one of the region's most advanced fighter platforms.",
+      "summaryHe": "אם יאומת, התביעה תסמן הסלמה משמעותית ביכולות ההגנה האווירית של חות'ים נגד אחד מטיסות הקרב המתקדמות ביותר באזור.",
+      "pickedAt": "2026-09-16T15:15:50.947Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-16T11:33:03.727Z",
+    "lastUpdated": "2026-09-16T15:33:03.690Z",
     "stale": false,
-    "viewerCount": 4,
+    "viewerCount": 5,
     "ceasefire": false
   },
   "summary": {
@@ -1524,94 +1512,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 93,
+      "internet": 92,
       "cellular": null,
-      "lastUpdate": "2026-09-16T11:30:43.169Z",
+      "lastUpdate": "2026-09-16T15:00:43.090Z",
       "internetHistory": [
-        {
-          "t": "2026-09-15T11:30:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-15T11:40:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-15T11:50:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-15T12:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T12:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T12:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T12:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T12:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T12:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T13:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T13:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T13:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T13:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T13:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T13:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T14:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T14:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-15T14:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-15T14:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-15T14:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-09-15T14:50:00.000Z",
-          "v": 92
-        },
         {
           "t": "2026-09-15T15:00:00.000Z",
           "v": 92
@@ -2099,30 +2003,162 @@
         {
           "t": "2026-09-16T11:10:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-09-16T11:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T11:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T11:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-16T11:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-16T12:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-16T12:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T12:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T12:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T12:40:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-16T12:50:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-16T13:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T13:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T13:20:00.000Z",
+          "v": 90
+        },
+        {
+          "t": "2026-09-16T13:30:00.000Z",
+          "v": 91
+        },
+        {
+          "t": "2026-09-16T13:40:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T13:50:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T14:00:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T14:10:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T14:20:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T14:30:00.000Z",
+          "v": 92
+        },
+        {
+          "t": "2026-09-16T14:40:00.000Z",
+          "v": 92
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-16T11:30:43.169Z"
+    "lastUpdated": "2026-09-16T15:00:43.090Z"
   },
   "developments": [
     {
-      "id": "iranstrike-1mg8234f",
+      "id": "iranstrike-7f4a2b1c",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-16T11:27:08Z",
+      "date": "2026-09-16T14:23:05Z",
       "title": "IranStrike event",
-      "description": "Iranian ballistic missiles strike U.S. bases in Jordan; 82 interceptors fired",
+      "description": "Houthis strike Saudi oil infrastructure; F-15 shootdown claim amid escalation",
       "category": "other",
-      "severity": "critical",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7f4a2b1c",
+        "text": "Houthis strike Saudi oil infrastructure; F-15 shootdown claim amid escalation",
+        "textHe": "החות'ים תוקפים תשתיות נפט סעודיות; טענה בהשמדת F-15 בעיצומי התגברות",
+        "severity": "high",
+        "timestamp": "2026-09-16T14:23:05+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "3vxz32d7f8w00",
+          "2soa9ymr65400",
+          "3aoeylwaxho00",
+          "kokqr7iseeo0",
+          "3ooru7yyvy000"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-5e9c3d7a",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-16T14:11:04Z",
+      "title": "IranStrike event",
+      "description": "Iranian drones, missile strike U.S. vessel near Strait of Hormuz; U.S. responds with 82 interceptors in Jordan",
+      "category": "other",
+      "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian ballistic missiles strike u.s.",
+      "attacker_evidence": "iranian drones, missile strike u.s.",
       "location": "Jordan",
       "country": "Jordan",
       "latitude": null,
@@ -2135,170 +2171,33 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "1mg8234f",
-        "text": "Iranian ballistic missiles strike U.S. bases in Jordan; 82 interceptors fired",
-        "textHe": "טילים בליסטיים איראניים פוגעים בבסיסים אמריקאיים בירדן; 82 מיירטים שוגרו",
-        "severity": "critical",
-        "timestamp": "2026-09-16T11:27:08+00:00",
+        "id": "5e9c3d7a",
+        "text": "Iranian drones, missile strike U.S. vessel near Strait of Hormuz; U.S. responds with 82 interceptors in Jordan",
+        "textHe": "תקיפה איראנית: 4 מל\"טים וטיל על אוניית ארה\"ב; תגובה עם 82 יירוטים בירדן",
+        "severity": "high",
+        "timestamp": "2026-09-16T14:11:04+00:00",
         "entityIds": [
-          "USA",
           "IRN",
+          "USA",
+          "ARE",
           "JOR"
         ],
         "eventIds": [
+          "2r2end1ocqa00",
           "1mg8234ftmyo0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-2biyt5ku",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-15T19:14:51Z",
-      "title": "IranStrike event",
-      "description": "Houthis target Saudi infrastructure with rocket salvos; pipeline sustains damage",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2biyt5ku",
-        "text": "Houthis target Saudi infrastructure with rocket salvos; pipeline sustains damage",
-        "textHe": "החותיים תוקפים תשתיות סעודיות בטילים; פגיעות בצינור הנפט",
-        "severity": "high",
-        "timestamp": "2026-09-15T19:14:51+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "kokqr7iseeo0",
-          "3ooru7yyvy000",
-          "3aoeylwaxhi00",
-          "28r415fdjtno0",
-          "2biyt5kuc0g00"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-36fyctn0",
+      "id": "iranstrike-3a6f1e2d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-15T22:44:59Z",
       "title": "IranStrike event",
-      "description": "Saudi-led coalition intensifies airstrikes on Ansarallah positions in Yemen",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "36fyctn0",
-        "text": "Saudi-led coalition intensifies airstrikes on Ansarallah positions in Yemen",
-        "textHe": "הקואליציה בראשות סעודיה מעצימה תקיפות אוויריות על עמדות אנסאר אללה",
-        "severity": "high",
-        "timestamp": "2026-09-15T22:44:59+00:00",
-        "entityIds": [
-          "SAU",
-          "YEM"
-        ],
-        "eventIds": [
-          "36fyctnolec00",
-          "1o7dnwq9sqg00",
-          "26ehw5aw9v9c0",
-          "gvbs565yxwo0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-uc845kqq",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-16T06:11:06Z",
-      "title": "IranStrike event",
-      "description": "Saudi air defense intercepts Houthi drone over Mecca; second attack on holy city",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "uc845kqq",
-        "text": "Saudi air defense intercepts Houthi drone over Mecca; second attack on holy city",
-        "textHe": "הגנה אוויר סעודית מיירטת רחפן חותי מעל מכה; התקפה שנייה על העיר הקדושה",
-        "severity": "high",
-        "timestamp": "2026-09-16T06:11:06+00:00",
-        "entityIds": [
-          "SAU",
-          "YEM"
-        ],
-        "eventIds": [
-          "uc845kqqbgg0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-2x0siwww",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-16T05:40:00Z",
-      "title": "IranStrike event",
-      "description": "Houthis claim downing Saudi F-15 fighter jet over Marib province, Yemen",
+      "description": "Saudi airstrikes target southwestern Yemen; Ansarallah gains reported at Jabal Kahboob",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2319,23 +2218,262 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2x0siwww",
-        "text": "Houthis claim downing Saudi F-15 fighter jet over Marib province, Yemen",
-        "textHe": "החותיים טוענים להוריד מטוס קרב F-15 סעודי מעל מחוז מאריב",
+        "id": "3a6f1e2d",
+        "text": "Saudi airstrikes target southwestern Yemen; Ansarallah gains reported at Jabal Kahboob",
+        "textHe": "הטעות הסעודית בדרום-מערב תימן; הגבר אנסאראללה בהר קחבוב",
         "severity": "medium",
-        "timestamp": "2026-09-16T05:40:00+00:00",
+        "timestamp": "2026-09-15T22:44:59+00:00",
         "entityIds": [
-          "YEM",
-          "SAU"
+          "SAU",
+          "YEM"
         ],
         "eventIds": [
-          "2x0siwwdw0y00"
+          "36fyctnolec00",
+          "1o7dnwq9sqg00",
+          "26ehw5aw9v9c0",
+          "28tl9lbcmfwg0"
         ],
         "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-2c8b4f9e",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-16T14:41:32Z",
+      "title": "IranStrike event",
+      "description": "IDF eliminates Nuchba cell leader involved in October 7 hostage-taking; Saudi intercepts Houthi drone over Mecca",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2c8b4f9e",
+        "text": "IDF eliminates Nuchba cell leader involved in October 7 hostage-taking; Saudi intercepts Houthi drone over Mecca",
+        "textHe": "צה\"ל חיסל מנהיג תא נוכבה; סעודיה יירטה מל\"ט חות'י מעל מכה",
+        "severity": "medium",
+        "timestamp": "2026-09-16T14:41:32+00:00",
+        "entityIds": [
+          "ISR",
+          "SAU",
+          "YEM"
+        ],
+        "eventIds": [
+          "8au0innl2q40",
+          "uc845kqqbgg0"
+        ],
+        "sourceCount": 2
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-8au0innl2q40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/63547",
+      "date": "2026-09-16T14:41:32Z",
+      "title": "IranStrike event",
+      "description": "IDF eliminates Nuchba cell leader who infiltrated Israel and participated in hostage-taking of armor personnel on October 7",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Israel",
+      "country": "Israel",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "8au0innl2q40",
+        "timestamp": "2026-09-16T14:41:32+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF eliminates Nuchba cell leader who infiltrated Israel and participated in hostage-taking of armor personnel on October 7",
+        "descriptionHe": "צה\"ל חיסל ראש חוליית נוח'בה שפשט לשטח ישראל והשתתף בחטיפת לוחמי שריון ב-7 באוקטובר",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/63547"
+      }
+    },
+    {
+      "id": "iranstrike-2soa9ymr65400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/130334",
+      "date": "2026-09-16T14:23:05Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim to have shot down Saudi F-15 fighter jet over Marib province",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2soa9ymr65400",
+        "timestamp": "2026-09-16T14:23:05+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Houthis claim to have shot down Saudi F-15 fighter jet over Marib province",
+        "descriptionHe": "החות'ים בהודעה רשמית : הפלנו מטוס F-15  סעודי בשמי מחוז מארב",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/130334"
+      }
+    },
+    {
+      "id": "iranstrike-2r2end1ocqa00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84004",
+      "date": "2026-09-16T14:11:04Z",
+      "title": "IranStrike event",
+      "description": "Iranian attack with 4 drones and at least 1 missile strikes U.S.-contracted vessel near Strait of Hormuz, causing minor injuries including smoke inhalation",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "are iranian attack with 4 drones and at least 1 missile strikes u.s.",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2r2end1ocqa00",
+        "timestamp": "2026-09-16T14:11:04+00:00",
+        "location": "ARE",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Iranian attack with 4 drones and at least 1 missile strikes U.S.-contracted vessel near Strait of Hormuz, causing minor injuries including smoke inhalation",
+        "descriptionHe": "התקפה איראנית עם 4 מזל\"טים ולפחות טיל אחד פוגעת בספינה בחוזה אמריקאית ליד מצר הורמוז, גורמת לפציעות קלות כולל שאיפת עשן",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 4
+          },
+          {
+            "type": "cruise_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/84004"
+      }
+    },
+    {
+      "id": "iranstrike-3vxz32d7f8w00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84003",
+      "date": "2026-09-16T13:56:48Z",
+      "title": "IranStrike event",
+      "description": "Houthi missile and drone strikes on East-West Yanbu-Abqaiq crude oil pipeline pumping stations; strong heat signatures detected at Yanbu Red Sea oil export terminal",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3vxz32d7f8w00",
+        "timestamp": "2026-09-16T13:56:48+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthi missile and drone strikes on East-West Yanbu-Abqaiq crude oil pipeline pumping stations; strong heat signatures detected at Yanbu Red Sea oil export terminal",
+        "descriptionHe": "תקיפות טילים ומזל\"טים של החות'ים על תחנות שאיבה בקו צינור נפט יניבו-אבקאיק; חתימות חום חזקות זוהו בטרמינל ייצוא נפט בים האדום של יניבו",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/84003"
+      }
+    },
     {
       "id": "iranstrike-1mg8234ftmyo0",
       "source": "IranStrike",
