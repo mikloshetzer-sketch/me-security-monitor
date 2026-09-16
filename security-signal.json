@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-16 07:43 UTC",
+    "updated": "2026-09-16 13:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,54 +8,45 @@
   "summary": {
     "period_start": "2026-09-10",
     "period_end": "2026-09-16",
-    "total_events": 134,
-    "total_risk": 114.54,
-    "normalized_risk_score": 45.8,
-    "risk_level": "LOW",
+    "total_events": 143,
+    "total_risk": 126.49,
+    "normalized_risk_score": 50.6,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 30,
+    "military": 32,
     "security": 2,
-    "political": 16,
-    "other": 86
+    "political": 17,
+    "other": 92
   },
   "source_counts": {
-    "news": 130,
+    "news": 139,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 28.34
+      "risk": 28.89
     },
     {
       "name": "Saudi Arabia",
-      "risk": 26.65
+      "risk": 26.85
     },
     {
       "name": "Yemen",
-      "risk": 12.5
+      "risk": 16.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.55
+      "risk": 13.15
     },
     {
       "name": "Israel",
-      "risk": 9.75
+      "risk": 13.05
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-09-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi coalition says Houthi drone destroyed near Mecca - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNWlDb0szQnNKQUdZZUJXWVN1LW1XODNJeEpLc1F3RFhEZ2pwc085M2NvRWNhMEV4MFhVa1BNWVZUQ3FpTE5pc0EwdVNrcXFMS0tWMF9kVXJfdlZKSFNfQjhkNjAteWVMVHVXR0lnV2hNbkNJX2g3RlJxYmphZDFOZTNQWWpHa2VycGo3VnQ5anhucVpNTmxkZ0hjWC1mNVVxTVZQNV9EUlh6TVlC"
-    },
     {
       "score": 3.0,
       "date": "2026-09-16",
@@ -70,9 +61,36 @@
       "date": "2026-09-16",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition intercepts Houthi drone headed for Mecca - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOc3hnUDMtSVdfWld4TnBza2xjVGdDSkp5djhtdWFBYkZWRElFN3BJZV9yODcycm9icVpFcVc1M0tvTGlsMEVTRVRxcnNjS244RDFlUzFFWkRpcDNaRkxnWnVqb2V3cFVKR1VabTJhemJtQzhoaFpzZExZQ3lrT1VGN1FuTUxqUXU1Z1dqSEZxSnZjeEl2Wnl1QmdR0gGfAUFVX3lxTE9GcXhlZlZqdDg0WE15WFM1dnJZSEVxTFd6ZmNwMFR4cDJ4bEFoMzV1d0FpUnJWWXpicXRaTF8ySU8tai1kS1Q5bC11Q3RVY1NNczNlRlA4WlJNTUhrd2d3c3FjLWJ5bHBZeE1CNFB0cnRrN0cwVlVnM3laRHVoa1hiOTIyR3lCbTRJT1c4dFN6QVJ5ZkxTSzBCbU04ZUx5SQ"
+      "title": "Eight children among 21 killed after war-damaged Gaza building collapses, rescuers say",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cvp8d00j9gg5o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says it shot down Houthi drone south of Mecca",
+      "location": "Yemen",
+      "url": "https://www.bbc.co.uk/news/articles/cr89jqd1w45eo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Attacks on Saudi oil expose Iraqi PM’s struggle to control armed factions - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTW5Ud19MQ29Ed0w4V2xWOTlxcEhyOWwzQWRYMzBXakYzeDY3Q19kTlE3eF9aVGYxbm5YdHlEd19QOTg2V1hKWFNfLUlkamdmZWdxY2dXMmdWanNUam1LNDZ2S2tTY1ZMYjYtWlpWQm5zSVdQc1JVakFBOEszNTRQdXZ6NUh1YUU3R2pvT2FTN0N2MmVIZ0REbjVmQ0NkR0xJejcyRHlIYy01R0cyX0VQUi14bTN5ay1QTWhIbXBZZ9IBxAFBVV95cUxOZ3NydWszRF9CYmZUX25aSVQzZjdkcEVHcXl5U1hiLTlwLTBqV3ZOTVlDUW44dWE2WndDamZmTE5CUW9pdElpeVF5T3MzSlpCRndjUTJJQ3NtZXo3OUlDNkFaODBUUHdQelk3UHhCVzB5b0V0UEdTNUhVN1o1aXFHUExoSF9GVGtzTE10UTBoSkxxdnNxTVoxM3E3aEdfZG00a1RYektyQkhtUXlvT19GcndYYVZfdTdnYzVSeU1zclZFdnJ5"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "US set to approve 60,000 heavy bombs for Israel: What that means - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONzAtLXkyenNQVHhpS0czeUpCamQxNnQ0eTFqeExXTHdhSzZhTXZyLWtDSjByTmdON3ZTcXpqbGMzc2hoUVd6T2hWVlNNOFZjT1NpWFZXYXNndVpUdW9RZDRVMGM3cF9seGtMNEJnYUk0UmxfZlpkX29xTnFwR0x0dGlzV2c0cWdId3NBQzRHQmtCWDl0Q2dOSjRRWGQwQVVqSEFUdXRsM2RxZknSAbABQVVfeXFMTUVPMVBaUzdjX1NUci1xaVJmZUhLRExNd3ViSUhzZENMN1dyRjQ5d0dwOHhrMGFYRzRjOTJZaXBlSmh1cFZFWEhmTkhKMzdQd2NpQmdVVTAtSXBCeHFGNHl0NXVXODBrMDlrMnVtS1QxM2tUSWdLQ2lqM0Foc2VuRjhUZlFDLW5NUEtWYUJPLVlFZmNjOEdZb2pBeTNzMExGYXk3dmZ2NFEyeVRWOThqNzY"
     },
     {
       "score": 3.0,
@@ -82,6 +100,15 @@
       "title": "Trump administration plans $2.8bn sale of 2,000-pound bombs to Israel - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRUg1al92R3FRdkVJUzNyTV9PN0lHaGVaT2p2YXdrWjlkOWNoR2t0OUFnZ2lVX1daRE1aWVpHNHA2b3l3MG9xcmljNnlHYk5ES0F0N0Q5ZVNhV25jNzVia2lKOGRFcnNxcVNacTlVUmZiX0x6NFhKaHNNU2t1bjkteFY5cWEtaFdZMk9nVmpFeTlSUVNDYTFHSnlpanR0NDNBLTltRUpCQ05aMW8t0gGyAUFVX3lxTE55QVBmT0M5M182RThoa045M0FaRlRUbFZpUW43SnFGclJNUUFlSVdoZlhfYWp4UkpMRWNYdGpQOWRRY3FfRkswc2tuQ3p1THhoRUs4d2dyZjdxWUNiSDhXUVFwcHhPWHRVWlNVMmZ3UWh1ZkFxUUNXSGpIOVlXYjB5TU5qRm40ZHZ6dk5wMERsSWFsNFBuVDhtTWdZLVNoT2xRUzdPVkFXZVZtN2FpWkhLZ1E"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts Houthi drone headed for Mecca - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOc3hnUDMtSVdfWld4TnBza2xjVGdDSkp5djhtdWFBYkZWRElFN3BJZV9yODcycm9icVpFcVc1M0tvTGlsMEVTRVRxcnNjS244RDFlUzFFWkRpcDNaRkxnWnVqb2V3cFVKR1VabTJhemJtQzhoaFpzZExZQ3lrT1VGN1FuTUxqUXU1Z1dqSEZxSnZjeEl2Wnl1QmdR0gGfAUFVX3lxTE9GcXhlZlZqdDg0WE15WFM1dnJZSEVxTFd6ZmNwMFR4cDJ4bEFoMzV1d0FpUnJWWXpicXRaTF8ySU8tai1kS1Q5bC11Q3RVY1NNczNlRlA4WlJNTUhrd2d3c3FjLWJ5bHBZeE1CNFB0cnRrN0cwVlVnM3laRHVoa1hiOTIyR3lCbTRJT1c4dFN6QVJ5ZkxTSzBCbU04ZUx5SQ"
     },
     {
       "score": 2.7,
@@ -106,36 +133,9 @@
       "date": "2026-09-15",
       "category": "military",
       "source_type": "news",
-      "title": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcFYwcDlsVXJEZ0xaNDhtaGNtV1JHSTRyZ0RHckpiZVhYa1ozbHVkNHRUeS1wNVBqaWJJWE5xZ0Z1MlotSUlnX3JxcC1ZQi0xUDRnSUpabjJraWtzM3NCWk12UkJyVzBqRk12WGU3RnJUSzlWU2hzYzVLN3dzNE9FSlFYNjdDT29TdmNwTTV4THZFNEtUZEhxMlZ4TG0wTTFQbHB5X2d6NlNNRUU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-15",
-      "category": "military",
-      "source_type": "news",
       "title": "Israeli strikes in Gaza kill five people, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTXlxWTdXMVItY2dwS1FmU3dSUm40LXZ3LXpzVFB2NHQyRk45bllZTDhBOEVWV3FZRmE2UXVCR3B6S0Vkd2FFU2ozRlBSeGR3enhXUldPTnpoczVDQ3E3a1BIYzMyNnk2Tm14blZodU45aXYzaTJoaW1TcXUzVGp6alF5cFdMNzlxS0gxbGNWU3hqQmpKWHBaNHozSHRpZFRUMmdYemNxTzhNSEswcGpWLWxuMFFwZzFX"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Two sailors missing after tanker attacked in Strait of Hormuz, Oman says",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c3n07ydqdzlvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0xBM2hYamtNRV83VktFTTV3UXBqdFNHNmN5dHZ5NEdHSE1oZ0JaMHlQaUMzcnBUc0hPM0ozOFJ3MlBUZ1NQY0NBRUxVX1NqazNrUDN1LWRKQkJKWkxsSkhNYk1yc2FCMk5rcVprMDFEb3NCdG4zb1BSVlVodkVTczBDMU5fOEU3VWhzeTMzc1lfV1A3VUs5NUIyRnd5Zy1HN3hYQ2JWWVJtSEROdVY3TVYycktqeXZvSVHSAb8BQVVfeXFMTXZzNzQwLWcxNUd2QWdKbHhjQ2UxaHlTRVFVREpBUWFMVFdRM2NlOVVKVHN2YXhFWi0wTHlZLWpHQmh6aTBWSE5MaEFPeWlRMlpHN3luTmgtSkFVR1dQTk04ZkpIMGItWVpGNjBqbS1CQ192Qi1GcXlqeWczUnd6YUpkejJndUloRlRSVnctbGtTbFVnYnM2WUhlM3ZVbnByOWdnUGhmR0Ffd2RKVVFVSmV2ekxkY2RWc3RJb0U1Nms"
     }
   ]
 }
