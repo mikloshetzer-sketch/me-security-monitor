@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-16 00:23 UTC",
+    "updated": "2026-09-16 07:43 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,44 +9,80 @@
     "period_start": "2026-09-10",
     "period_end": "2026-09-16",
     "total_events": 134,
-    "total_risk": 102.1,
-    "normalized_risk_score": 40.8,
+    "total_risk": 114.54,
+    "normalized_risk_score": 45.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
-    "security": 4,
+    "military": 30,
+    "security": 2,
     "political": 16,
-    "other": 88
+    "other": 86
   },
   "source_counts": {
-    "news": 131,
-    "isw": 3
+    "news": 130,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 26.96
+      "risk": 28.34
     },
     {
       "name": "Saudi Arabia",
-      "risk": 16.95
+      "risk": 26.65
     },
     {
       "name": "Yemen",
-      "risk": 12.8
-    },
-    {
-      "name": "Gaza Strip",
       "risk": 12.5
     },
     {
-      "name": "Iraq",
-      "risk": 7.5
+      "name": "Gaza Strip",
+      "risk": 10.55
+    },
+    {
+      "name": "Israel",
+      "risk": 9.75
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi coalition says Houthi drone destroyed near Mecca - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNWlDb0szQnNKQUdZZUJXWVN1LW1XODNJeEpLc1F3RFhEZ2pwc085M2NvRWNhMEV4MFhVa1BNWVZUQ3FpTE5pc0EwdVNrcXFMS0tWMF9kVXJfdlZKSFNfQjhkNjAteWVMVHVXR0lnV2hNbkNJX2g3RlJxYmphZDFOZTNQWWpHa2VycGo3VnQ5anhucVpNTmxkZ0hjWC1mNVVxTVZQNV9EUlh6TVlC"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition says it destroys Houthi drone south of Mecca - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQc0RnLXFoalRsa1JfTnROMHoxOXNjRzNINFVfZDNDUjhycmVmak1OVjdaOTYzdW9HZGlSVTRnZFhoRWFTUFljV1BEUVpLRGVJcTZ4QVN2bmtqc1U4dlJGbVM0LWJvNnE2VkRFWk8wVWJyMUVPZDhaSmNWb2xVUThzbHozUVlweXFRMVJFbk9vWE1Jd3FGVFE5VTRTNmZNNU5oYlp0dDJ2ZEJ2dVNnM040elpUM0ZpQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts Houthi drone headed for Mecca - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOc3hnUDMtSVdfWld4TnBza2xjVGdDSkp5djhtdWFBYkZWRElFN3BJZV9yODcycm9icVpFcVc1M0tvTGlsMEVTRVRxcnNjS244RDFlUzFFWkRpcDNaRkxnWnVqb2V3cFVKR1VabTJhemJtQzhoaFpzZExZQ3lrT1VGN1FuTUxqUXU1Z1dqSEZxSnZjeEl2Wnl1QmdR0gGfAUFVX3lxTE9GcXhlZlZqdDg0WE15WFM1dnJZSEVxTFd6ZmNwMFR4cDJ4bEFoMzV1d0FpUnJWWXpicXRaTF8ySU8tai1kS1Q5bC11Q3RVY1NNczNlRlA4WlJNTUhrd2d3c3FjLWJ5bHBZeE1CNFB0cnRrN0cwVlVnM3laRHVoa1hiOTIyR3lCbTRJT1c4dFN6QVJ5ZkxTSzBCbU04ZUx5SQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump administration plans $2.8bn sale of 2,000-pound bombs to Israel - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRUg1al92R3FRdkVJUzNyTV9PN0lHaGVaT2p2YXdrWjlkOWNoR2t0OUFnZ2lVX1daRE1aWVpHNHA2b3l3MG9xcmljNnlHYk5ES0F0N0Q5ZVNhV25jNzVia2lKOGRFcnNxcVNacTlVUmZiX0x6NFhKaHNNU2t1bjkteFY5cWEtaFdZMk9nVmpFeTlSUVNDYTFHSnlpanR0NDNBLTltRUpCQ05aMW8t0gGyAUFVX3lxTE55QVBmT0M5M182RThoa045M0FaRlRUbFZpUW43SnFGclJNUUFlSVdoZlhfYWp4UkpMRWNYdGpQOWRRY3FfRkswc2tuQ3p1THhoRUs4d2dyZjdxWUNiSDhXUVFwcHhPWHRVWlNVMmZ3UWh1ZkFxUUNXSGpIOVlXYjB5TU5qRm40ZHZ6dk5wMERsSWFsNFBuVDhtTWdZLVNoT2xRUzdPVkFXZVZtN2FpWkhLZ1E"
+    },
     {
       "score": 2.7,
       "date": "2026-09-15",
@@ -61,9 +97,18 @@
       "date": "2026-09-15",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia reports wide-ranging security alerts after week of strikes - Reuters",
+      "title": "Saudi Arabia issues wide-ranging security alerts after week of strikes - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOYjU2YnlvRExQZkwtRGlRN2ljVC10RTVQRGI4NUhLSEladjEzeGltZlcxWXByODRyZDlyM3pvWGdSYVBIZXctNVZvQ2ZOX09PZ2ZsN0pWU216ZFUwUDRRS0RjQXV2QVpMWkVXRFJiZGRaVVZENkFMN3hmUlBSWWxWVENnWnFYVEFHMGVMeWYyX2V0b09TMU9Bb2M4ZmZDWTU2YVVpYUFFOUJCcmVTeHhtdEVla2hMbGR1UGc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcFYwcDlsVXJEZ0xaNDhtaGNtV1JHSTRyZ0RHckpiZVhYa1ozbHVkNHRUeS1wNVBqaWJJWE5xZ0Z1MlotSUlnX3JxcC1ZQi0xUDRnSUpabjJraWtzM3NCWk12UkJyVzBqRk12WGU3RnJUSzlWU2hzYzVLN3dzNE9FSlFYNjdDT29TdmNwTTV4THZFNEtUZEhxMlZ4TG0wTTFQbHB5X2d6NlNNRUU"
     },
     {
       "score": 2.7,
@@ -88,54 +133,9 @@
       "date": "2026-09-15",
       "category": "military",
       "source_type": "news",
-      "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - aljazeera.com",
+      "title": "Dozens of aircraft, hundreds of buildings: US loss to Iran attacks revealed - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0xBM2hYamtNRV83VktFTTV3UXBqdFNHNmN5dHZ5NEdHSE1oZ0JaMHlQaUMzcnBUc0hPM0ozOFJ3MlBUZ1NQY0NBRUxVX1NqazNrUDN1LWRKQkJKWkxsSkhNYk1yc2FCMk5rcVprMDFEb3NCdG4zb1BSVlVodkVTczBDMU5fOEU3VWhzeTMzc1lfV1A3VUs5NUIyRnd5Zy1HN3hYQ2JWWVJtSEROdVY3TVYycktqeXZvSVHSAb8BQVVfeXFMTXZzNzQwLWcxNUd2QWdKbHhjQ2UxaHlTRVFVREpBUWFMVFdRM2NlOVVKVHN2YXhFWi0wTHlZLWpHQmh6aTBWSE5MaEFPeWlRMlpHN3luTmgtSkFVR1dQTk04ZkpIMGItWVpGNjBqbS1CQ192Qi1GcXlqeWczUnd6YUpkejJndUloRlRSVnctbGtTbFVnYnM2WUhlM3ZVbnByOWdnUGhmR0Ffd2RKVVFVSmV2ekxkY2RWc3RJb0U1Nms"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia promises to respond to Houthi attacks ‘firmly’ - aljazeera.com",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdC1ocFpNc3FkSkVheVZMQy1QdmtEbXhBS2JrNENyT3RPSk1KS2F3M1RCaUtxanZockZEZlZ4bS13cGhXckFXOS1EUC1YR2lXanp0WnJ2N0oybU54R2lZTTBkWDVVdFdoOVppNk1FX1lpZzE3MEpiQlR2LVBJaV83NGZBRG43V1JLeFl1ak9IM3RNdDhFNGZZTmw4SXpZRUVjeDdXMUpxcGFLaGxrR05IZmJqNGjSAboBQVVfeXFMTUcyLTU3b09ZREl1bHFJWllRSWRUb1lHTzBhOXltcE05Q3dXZ01fZWRNd2xGM3kyYXhnRy1FY09XSUtaSmpkMjRqMnc4X0FuZ2JxNFhPVUlFdW9iMzRfeTE3RjR3c1E4NUVwSnV0RFFCekNGc2NXVzJ6TDlHYjhXRHRGdjFDazhTMXQtNXFNNmc5amtkN2o0aVZwdmdnUTctTVh6YUNobzE0cTQtd0E5cld5ckZPalRncXZn"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen forces advance in Taiz; Houthis take key islands, attack Saudi Arabia - aljazeera.com",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUHNjWXRWend3NGxDNEU0NTRuN3JBRDhiUUNaakQxZDRaY0JoVmJwNGhqbFVhSVBTV1Y2VlN5VUwzUDBWcWFWUDBuNW1fcnRhWndjY1psQzRhYWROWnRSSmp4Y3VzdDRycTZObUNzTW1HRy1BRzZpenV2Q2dmdnRqNFJtVGd6TlZVMndaLTFhWG1BZzNHQWVLYUdjLXM4UElYRjNYZHpMLUhyWkNvbW9nU0dtWk7SAboBQVVfeXFMT01fb3U1Ym4xa1lJd3NpcGZ4NHF0QzM3ZktaUVRrLUx4U3E2WmFfYUlzQ0dMZlk4SjR6eEF0NTdzaFJac2RBV1N0ZWJ4LTkwRnZnR2I4dER5Tm1NM2VpZ2VNdW5yTFg2RVdBanpQclUwTHQ3Ym9UY1Qwdlc0TDBGano3NmptaGpqVWxtanNWdG1Zb1hvdllhYUZjRFo2bDVKSFNIaHJpU0xwTkxDMm1Hcjk4WXA4X25vT2x3"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNUmxSZmUzZzdYUkJrQ2l3RzRTQklHdjFOWmVYZ2NDcmZmOW9UUVBoZkk0bC0wcHhveWNHNldiU2E0WV9PYkFtWGVaUUdMVUlieFBZMVRjVHFkTTZ6YjVWXzVLUlA2QXE2LURQczRJN010RGR1Y3Jkb0JpS1lhdF9fZVdJT0hMV3A5QXNNcllfalNoem0wS3VMNUlNQUgwbG9sUU1XN2R1aUpkaXZDekZ6bnlqN2RiN0t3X3d3"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil settles higher after Saudi strikes stoke supply worries - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcXNvWlpHUEh2bzNITUYtX04zUG1vclFCeDZ1NVdQTkNXUk5OTmRESElsUXUyQjNsYVU1d2tEMFlNRjB1VXVnenR4UHZzd3F3dEZWR2tWSVZMREFiZXF6NjR5SlB5VmdaNXpTWHQ3UF9POFRGanpoR0NxZUV3ZUU4alAycW9mcGdLak5lQ2NXdlpHQ3I3eDVRM3JDWmI3SGdYUjZsbnJSaUVySHk3UFl4Y3AxVGFZbmg5"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "New attacks in Hormuz and Saudi test nerves as war's spread worsens oil disruption - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUGctZFpGTW5Zd0h2OFl3V0FMR3o0MHVxNW5uSmN6cHpfNWRYRS1Sd0dibnUwUDRCY3VHejJlbUdNVkx6VmN3WTJQVGYtRjRHX1dWQllyQWl3TzEyWWoxY0JRaU45U0RMUTd0SHBvYmRLZmN4bjl3VF82emtKY1JiQzlsN3NqLThWcDk0UEdmaTlHWjJWd0k1b1VtVmVVUFpSZnFhSEZPUk9oeFlTeU5ZcTJKUlJUZjd6d3d2QWJiYmR2UQ"
     }
   ]
 }
