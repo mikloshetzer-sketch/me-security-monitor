@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-17 13:30 UTC",
+    "updated": "2026-09-17 18:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-09-11",
     "period_end": "2026-09-17",
-    "total_events": 138,
-    "total_risk": 119.57,
-    "normalized_risk_score": 47.8,
-    "risk_level": "LOW",
+    "total_events": 140,
+    "total_risk": 128.07,
+    "normalized_risk_score": 51.2,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
+    "military": 29,
     "security": 6,
-    "political": 16,
-    "other": 89
+    "political": 15,
+    "other": 90
   },
   "source_counts": {
-    "news": 134,
+    "news": 136,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 26.27
+      "risk": 32.72
     },
     {
       "name": "Saudi Arabia",
-      "risk": 21.85
+      "risk": 20.5
     },
     {
       "name": "Israel",
-      "risk": 17.05
-    },
-    {
-      "name": "Yemen",
-      "risk": 15.35
+      "risk": 17.5
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.0
+      "risk": 16.75
+    },
+    {
+      "name": "Yemen",
+      "risk": 15.4
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Rescue efforts end after 21 die in collapse of bomb-damaged building in Gaza; 45 saved from rubble - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQY1ZOS0s0cGxQSWFHTnFWQXppVjVCRTFidmNDWWFyX2RJSVBYUDY3eXRSS3E3Y2M4UmFlTUZ1aE5Od2U2dzlWcDFqQ0Z4bXgzU0FoMjk1QXlOM01kSldmY0xxX3FnMTRhakJXSV9sTjZZSDRCWW5oelpQXzVXdjBVWXltWjBFX1BKTzNyU3Zxb3JtenYwRGw5a1NQU2huWjBxeERTWDZHWkFwaGI2Ykl1SFpBN1ZUMHVWZlV1TVZXSEpPbW55Qlk2alJB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "UN experts say grounds to believe US committed war crimes in Iran strikes",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cm9w4n5nverdo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Ghalibaf’s maths missile at Trump decoded: Is Iran fixing US interest rates? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQWN2elRIUzBuak56SXF6WHRTTUR1TXZsUFJhcWFQc2hvYlBiRHVQQ2FfamRZTnB2ZlVuX1EyaEpVcGlmQy0yOHphSS1tbEp4ZGo5S0cteTJEbFRQMDd6dTZ5WUpTR1VmZnRKdzU0WDdhSEZqQzJjTFJ4Z1V3WU11SzRmakVOcGd3LTZURS15Z3UzOXk2MUxfRXJPcUhEc1dseDNBWFlxcERKc0pnM0ctR3Vob1LSAboBQVVfeXFMUGo0Sjc5OFBiYW5BRDVGNWZWQ1pzM1VkQUx6aVliQ08ydmtiUjZoZUZGVUN1dTdmU0I2SzhLWG5qWmFHVndaUWxKMkgxWTM4aHRmaTl0aXhOdHBhdWloUm5HSkxxVTc3MVFQQkFOTEE0ZnRqYm5hZ2NSR1ljcFNGaUpKRVZpOEJrbndibWdoNFVSVWllMFY5Yms5WWhmN1FQWHZUWC1fb3p3Y1RHbVRXdmdKM2FSTkt0YzJ3"
+    },
     {
       "score": 3.0,
       "date": "2026-09-17",
@@ -109,33 +136,6 @@
       "title": "Saudi Arabia says it shot down Houthi drone south of Mecca",
       "location": "Yemen",
       "url": "https://www.bbc.co.uk/news/articles/cr89jqd1w45eo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli ‘double-tap’ air strike responsible for killing schoolboy in Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQWXVLNnJRdjhaRjdjaDNvT1NFRGxxMUFZU2I5MlBlYTdrOTFhVUVYRW5mMVJwc2wyWTlGeldKQ2dYbF9sZjF1dlRMZS1ZQTdWcjB4dC16Rzc5VFF0V1pzSFNGS05JdjkxN05FcmxCMS1aQkFWS2FmNFloRi11SzF4OXF3MV9RSmdkamJZTTM1RG93MER2dXhIQ0YzS3NGdzdqZ042NElNeFk0aHdoSEZmLUhR0gG3AUFVX3lxTE12WXgwR1h1T1FBOHZMUDZINlp1am9ja0ZTbkE3SEY0TC0tZ0JUa3V5VC1CeGlWVFFDWm96Q0ZqTGVsMEdGUUdIZjlEQ1ltRk9uRDFCeGZHY0MxZGlfdUx1alhad3ZHOEdCVkNlM0xvdFJNYlZkdk51U28yV21PR2c5d1FVb0hQa0swR0MzUUVzREhGQWhmb3MzVF9mR3RSakRzREZnN1ZEallMWS1VZUVmZjJaVFh3MA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Attacks on Saudi oil expose Iraqi PM’s struggle to control armed factions - Al Jazeera",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTW5Ud19MQ29Ed0w4V2xWOTlxcEhyOWwzQWRYMzBXakYzeDY3Q19kTlE3eF9aVGYxbm5YdHlEd19QOTg2V1hKWFNfLUlkamdmZWdxY2dXMmdWanNUam1LNDZ2S2tTY1ZMYjYtWlpWQm5zSVdQc1JVakFBOEszNTRQdXZ6NUh1YUU3R2pvT2FTN0N2MmVIZ0REbjVmQ0NkR0xJejcyRHlIYy01R0cyX0VQUi14bTN5ay1QTWhIbXBZZ9IBxAFBVV95cUxOZ3NydWszRF9CYmZUX25aSVQzZjdkcEVHcXl5U1hiLTlwLTBqV3ZOTVlDUW44dWE2WndDamZmTE5CUW9pdElpeVF5T3MzSlpCRndjUTJJQ3NtZXo3OUlDNkFaODBUUHdQelk3UHhCVzB5b0V0UEdTNUhVN1o1aXFHUExoSF9GVGtzTE10UTBoSkxxdnNxTVoxM3E3aEdfZG00a1RYektyQkhtUXlvT19GcndYYVZfdTdnYzVSeU1zclZFdnJ5"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "US set to approve 60,000 heavy bombs for Israel: What that means - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONzAtLXkyenNQVHhpS0czeUpCamQxNnQ0eTFqeExXTHdhSzZhTXZyLWtDSjByTmdON3ZTcXpqbGMzc2hoUVd6T2hWVlNNOFZjT1NpWFZXYXNndVpUdW9RZDRVMGM3cF9seGtMNEJnYUk0UmxfZlpkX29xTnFwR0x0dGlzV2c0cWdId3NBQzRHQmtCWDl0Q2dOSjRRWGQwQVVqSEFUdXRsM2RxZknSAbABQVVfeXFMTUVPMVBaUzdjX1NUci1xaVJmZUhLRExNd3ViSUhzZENMN1dyRjQ5d0dwOHhrMGFYRzRjOTJZaXBlSmh1cFZFWEhmTkhKMzdQd2NpQmdVVTAtSXBCeHFGNHl0NXVXODBrMDlrMnVtS1QxM2tUSWdLQ2lqM0Foc2VuRjhUZlFDLW5NUEtWYUJPLVlFZmNjOEdZb2pBeTNzMExGYXk3dmZ2NFEyeVRWOThqNzY"
     }
   ]
 }
