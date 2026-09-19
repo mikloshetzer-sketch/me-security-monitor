@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-19 00:23 UTC",
+    "updated": "2026-09-19 07:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,51 +8,69 @@
   "summary": {
     "period_start": "2026-09-13",
     "period_end": "2026-09-19",
-    "total_events": 135,
-    "total_risk": 110.14,
-    "normalized_risk_score": 44.1,
+    "total_events": 143,
+    "total_risk": 117.77,
+    "normalized_risk_score": 47.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 28,
+    "military": 30,
     "security": 5,
-    "political": 13,
-    "other": 89
+    "political": 12,
+    "other": 96
   },
   "source_counts": {
-    "news": 131,
-    "isw": 4
+    "news": 138,
+    "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 31.64
+      "risk": 33.78
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 20.3
     },
     {
       "name": "Israel",
       "risk": 18.95
     },
     {
-      "name": "Saudi Arabia",
-      "risk": 16.5
-    },
-    {
       "name": "Yemen",
-      "risk": 15.7
+      "risk": 15.5
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.0
+      "risk": 9.45
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis accuse Saudi Arabia of launching 26 attacks in 24 hours - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTFmd2JEaEdqNldCSV93dnNvdWxhZmJPR0o3RzRhUlF0YzFBcXBud05abHN5dVE5VUhxbU1yemhOWEFQVlB5aUlmVk1sbjUtZ0x3S0YySFo4RVduTWlmcWtBdUE1YXZnZ2pEdXIwejJjWER4di1NdmpkWksxejZrclZvV3JUenp0RlBGYW4xSURwd0wxcGZjY1FndlpuM0tYcVZ4bjE2Z9IBrAFBVV95cUxQc3RJVDZJM19CNWYxVm1FOC0tRGtzLUpVY1I4bS1wTzdBcGtFcHJ1Mm9kUFU3TW12NnpWR3FLYmdvT1RjMld4Mjg2dUlHZDZUVzBudmx1ZHZxdFF2bnJKbm11WmpJWXBzZEdfUkxDTkhfRHQzWW1CdmdRRTZCd1BFXzZuV3pWaTc3X3JIaFc3RmNVQkYyaW4zWXA1ZWkyWHk2RFQyYUNKak54aVJI"
+    },
     {
       "score": 2.7,
       "date": "2026-09-18",
       "category": "military",
       "source_type": "news",
-      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
+      "title": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - reuters.com",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdUdfN2t1cTlMdHJXa1FQN0ZiU1M1dklpd2llNGtrTW1ndEEwSjZqc2VNcjY0VkFOQXFmLVUzNXFYUHdQTUU1Tm1leURSclhSajZPS29nZng3Sl83eUs2clpyMS1XbW0tNXpnbDdDc25SMVB6cHYtMWY2aFdYRzZsSEtPS1FBSHpQSGp6dFF6NV9mSkJBbXM4UnNWSDYyRzJjc0RtMkZod3l0Q0ZYSzljc3JPYmVFMlVZUGc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - reuters.com",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw"
     },
@@ -79,16 +97,7 @@
       "date": "2026-09-17",
       "category": "military",
       "source_type": "news",
-      "title": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdUdfN2t1cTlMdHJXa1FQN0ZiU1M1dklpd2llNGtrTW1ndEEwSjZqc2VNcjY0VkFOQXFmLVUzNXFYUHdQTUU1Tm1leURSclhSajZPS29nZng3Sl83eUs2clpyMS1XbW0tNXpnbDdDc25SMVB6cHYtMWY2aFdYRzZsSEtPS1FBSHpQSGp6dFF6NV9mSkJBbXM4UnNWSDYyRzJjc0RtMkZod3l0Q0ZYSzljc3JPYmVFMlVZUGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three pumping stations along Saudi East-West Pipeline were hit in recent attack, sources say - Reuters",
+      "title": "Three pumping stations along Saudi East-West Pipeline were hit in recent attack, sources say - reuters.com",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPX2JjV2RTdTR3SlFEbUFFRE5FLU1qOEJoSm5YMXR3OUJhYlJjdUVudmRYTlFyUkh4bVVSVFdwRnpoaWUySnV1clB2THo4R3pVaGpPcGdMNFBNUHpRVmk2RjBNdzRQQmhXYXotS0hjd2hzSV9JLVFON0g4bDBVczZEZ2hxSVYyQjJGdlEtWFRtbnhLN1pqMHBCTGltR0Q4RDdSQllwdy11blczeE9SYWlBTFAxNFpGVFRLZDFaSDVUSkxMcFJyTERV"
     },
@@ -97,7 +106,7 @@
       "date": "2026-09-17",
       "category": "military",
       "source_type": "news",
-      "title": "Rescue efforts end after 21 die in collapse of bomb-damaged building in Gaza; 45 saved from rubble - Reuters",
+      "title": "Rescue efforts end after 21 die in collapse of bomb-damaged building in Gaza; 45 saved from rubble - reuters.com",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQY1ZOS0s0cGxQSWFHTnFWQXppVjVCRTFidmNDWWFyX2RJSVBYUDY3eXRSS3E3Y2M4UmFlTUZ1aE5Od2U2dzlWcDFqQ0Z4bXgzU0FoMjk1QXlOM01kSldmY0xxX3FnMTRhakJXSV9sTjZZSDRCWW5oelpQXzVXdjBVWXltWjBFX1BKTzNyU3Zxb3JtenYwRGw5a1NQU2huWjBxeERTWDZHWkFwaGI2Ykl1SFpBN1ZUMHVWZlV1TVZXSEpPbW55Qlk2alJB"
     },
@@ -127,15 +136,6 @@
       "title": "Macron and Aoun discuss efforts to back Lebanon’s army, end Israeli attacks - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaHRaSlFQZzUzQ1VuZS0tLWJMYVUwOFFvTU1IdWFFQ0tyZGpGVDItUWdxX05hX3VLRXV1aUtnM2hLSDhBUEZCNy1Lb0dIYjItLXNlQUF2Y29HLVg5MFNTcUZoRlRPWVBLOEFseWFtU0JrM3RpeUVYODVhOEtvamVReE1xdjNFU3JEdnVmbi0zLUlEcGdLei0zS1BsajMxM3JkUVJzT2t4M2xOY1ZaQ1ltVG530gG3AUFVX3lxTE9WVm1hM1RVTm4yaW9QVzFIbUxidEhjdmpFZE4zNE1rMnRYTXBTR2hCZ3E4d2t2b3lFR2NScnY2TjcxNHp1N0ExNEN3TlR6VlZCMjJGQ2VjTzhQZmdpV2FfRnV3MHFYaFcySWV0N3hNRXE3bkxpdkxKTTZ1TjVYZDFuRkR3Vk1nOHRTblAySV9hUnpHaXlKd2NWTHVKdEZkSWIyeW8wUnpMUjM0cG1WYXBuODZidVpHMA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump administration plans $2.8bn sale of 2,000-pound bombs to Israel - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRUg1al92R3FRdkVJUzNyTV9PN0lHaGVaT2p2YXdrWjlkOWNoR2t0OUFnZ2lVX1daRE1aWVpHNHA2b3l3MG9xcmljNnlHYk5ES0F0N0Q5ZVNhV25jNzVia2lKOGRFcnNxcVNacTlVUmZiX0x6NFhKaHNNU2t1bjkteFY5cWEtaFdZMk9nVmpFeTlSUVNDYTFHSnlpanR0NDNBLTltRUpCQ05aMW8t0gGyAUFVX3lxTE55QVBmT0M5M182RThoa045M0FaRlRUbFZpUW43SnFGclJNUUFlSVdoZlhfYWp4UkpMRWNYdGpQOWRRY3FfRkswc2tuQ3p1THhoRUs4d2dyZjdxWUNiSDhXUVFwcHhPWHRVWlNVMmZ3UWh1ZkFxUUNXSGpIOVlXYjB5TU5qRm40ZHZ6dk5wMERsSWFsNFBuVDhtTWdZLVNoT2xRUzdPVkFXZVZtN2FpWkhLZ1E"
     }
   ]
 }
