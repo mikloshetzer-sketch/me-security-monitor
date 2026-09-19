@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-09-19T17:16:48+00:00",
+  "generated_at": "2026-09-19T22:19:24+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -47,20 +47,20 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 1364,
-      "map_visualizable_events": 299,
-      "total_map_points": 366,
+      "total_events": 1365,
+      "map_visualizable_events": 300,
+      "total_map_points": 367,
       "multi_location_events": 50,
       "earliest_event_date": "2024-12-08T13:03:03Z",
-      "latest_event_date": "2026-09-19T11:46:22Z"
+      "latest_event_date": "2026-09-19T17:18:04Z"
     },
     "region_counts": {
       "South Lebanon": 857,
-      "Gaza Strip": 478,
+      "Gaza Strip": 479,
       "Syria": 98
     },
     "activity_type_counts": {
-      "airstrike": 701,
+      "airstrike": 702,
       "drone_activity": 301,
       "ground_activity": 298,
       "cross_border_fire": 215,
@@ -71,13 +71,13 @@
     "target_organization_counts": {
       "Hezbollah": 631,
       "Not explicitly stated": 442,
-      "Hamas": 290,
+      "Hamas": 291,
       "Palestinian Islamic Jihad": 41
     },
     "target_type_counts": {
       "unspecified": 569,
       "military_structure": 367,
-      "commander": 237,
+      "commander": 238,
       "weapons_storage": 179,
       "armed_cell": 143,
       "command_center": 102,
@@ -91,8 +91,8 @@
       "targeted_vehicle": 5
     },
     "operation_result_counts": {
-      "struck": 816,
-      "eliminated": 500,
+      "struck": 817,
+      "eliminated": 501,
       "located": 477,
       "reported": 209,
       "dismantled": 190,
@@ -102,7 +102,7 @@
       "warning_issued": 2
     },
     "commander_type_counts": {
-      "unspecified_commander": 166,
+      "unspecified_commander": 167,
       "company_commander": 24,
       "nukhba_commander": 15,
       "senior_commander": 15,
@@ -112,9 +112,9 @@
       "production_commander": 2
     },
     "threat_domain_counts": {
-      "ground": 783,
+      "ground": 784,
       "rocket_missile": 414,
-      "command": 318,
+      "command": 319,
       "unspecified": 256,
       "air_defense": 211,
       "drone_uav": 195,
@@ -132,7 +132,7 @@
     },
     "top_locations": {
       "Gaza City": 90,
-      "Khan Yunis": 65,
+      "Khan Yunis": 66,
       "Rafah": 38,
       "Nabatieh": 28,
       "Tyre": 22,
@@ -154,6 +154,75 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19236",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19236",
+      "date": "2026-09-19T17:18:04Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF eliminated a Hamas commander who infiltrated Israeli territory during the October 7th Massacre Two days ago (Thursday), the IDF struck in the Khan Younis area and eliminated Muhammad Suleiman Byouk, a commander in the military wing of the Hamas terrorist organization. The terrorist infiltrated Israeli territory during the October 7th Massacre. Throughout the war, including recently, the terrorist operated to plant explosive devices across the Gaza Strip in order to harm IDF troops. The terrorist planned and advanced terror attacks against IDF troops and Israeli civilians and operated to rehabilitate Hamas and prepare the terrorist organization for continued operations, in systematic violation of the ceasefire. The terrorist was eliminated in order to remove the threat he posed. Prior to the strike, measures were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan younis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19236"
+    },
     {
       "id": "idf-idfofficial-19235",
       "source": "IDF official Telegram",
@@ -84304,6 +84373,77 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19236-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19236",
+      "date": "2026-09-19T17:18:04Z",
+      "title": "IDF airstrike statement – Khan Yunis",
+      "description": "IDF: The IDF eliminated a Hamas commander who infiltrated Israeli territory during the October 7th Massacre Two days ago (Thursday), the IDF struck in the Khan Younis area and eliminated Muhammad Suleiman Byouk, a commander in the military wing of the Hamas terrorist organization. The terrorist infiltrated Israeli territory during the October 7th Massacre. Throughout the war, including recently, the terrorist operated to plant explosive devices across the Gaza Strip in order to harm IDF troops. The terrorist planned and advanced terror attacks against IDF troops and Israeli civilians and operated to rehabilitate Hamas and prepare the terrorist organization for continued operations, in systematic violation of the ceasefire. The terrorist was eliminated in order to remove the threat he posed. Prior to the strike, measures were taken to mitigate harm to civilians, including the use of precise munitions and aerial surveillance.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "unspecified_commander"
+      ],
+      "commander_type": "unspecified_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Khan Yunis",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.3462,
+          "longitude": 34.303,
+          "matched_alias": "khan younis"
+        }
+      ],
+      "location_count": 1,
+      "location": "Khan Yunis",
+      "country": "Palestinian Territories",
+      "latitude": 31.3462,
+      "longitude": 34.303,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19236",
+      "parent_event_id": "idf-idfofficial-19236",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19234-location-1",
       "source": "IDF official Telegram",
