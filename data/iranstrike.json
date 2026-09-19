@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T23:22:01Z",
+  "generated_at": "2026-09-19T01:38:04Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 394,
+    "events_endpoint_records": 395,
     "feed_event_records": 250,
-    "normalized_events": 1394,
+    "normalized_events": 1395,
     "map_visualizable_events": 247,
-    "non_mappable_events": 1147,
+    "non_mappable_events": 1148,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1394,
+      "total_events": 1395,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-09-18T21:14:42Z",
+      "latest_event_date": "2026-09-19T00:22:30Z",
       "geocoded_events": 247,
       "geocoded_share": 17.7,
       "top_category": "infrastructure",
@@ -73,25 +73,21 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 67,
-        "previous": 142,
-        "delta": -75,
-        "percent_change": -52.8,
+        "current": 68,
+        "previous": 146,
+        "delta": -78,
+        "percent_change": -53.4,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 391,
-        "previous": 550,
-        "delta": -159,
-        "percent_change": -28.9,
+        "current": 392,
+        "previous": 534,
+        "delta": -142,
+        "percent_change": -26.6,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-23",
-        "count": 0
-      },
       {
         "date": "2026-03-24",
         "count": 0
@@ -807,11 +803,15 @@
       {
         "date": "2026-09-18",
         "count": 6
+      },
+      {
+        "date": "2026-09-19",
+        "count": 1
       }
     ],
     "category_counts": {
       "infrastructure": 335,
-      "missile": 320,
+      "missile": 321,
       "strike": 238,
       "drone": 186,
       "airstrike": 125,
@@ -824,12 +824,12 @@
     },
     "severity_counts": {
       "medium": 733,
-      "high": 465,
+      "high": 466,
       "low": 194,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 849,
+      "unknown": 850,
       "iran": 359,
       "israel": 155,
       "usa": 31
@@ -837,7 +837,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 451
+        "count": 452
       },
       {
         "name": "Iran",
@@ -899,7 +899,7 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 451
+        "count": 452
       },
       {
         "name": "Iran",
@@ -944,34 +944,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10704,
+    "totalCount": 10705,
     "spotlight": {
       "event": {
-        "id": "2bwyjnp585340",
-        "timestamp": "2026-09-18T21:14:42+00:00",
-        "location": "KWT",
-        "origin": "IRN",
+        "id": "3pngaparwuq00",
+        "timestamp": "2026-09-19T00:22:30+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Iranian missiles strike unnamed U.S. base in Kuwait, destroying air raid bunker, airfield, administrative buildings and troop accommodations",
-        "descriptionHe": "טילים איראניים פוגעים בבסיס ארה\"ב לא ידוע בכווית, הורסים בונקר הגנה מפני בפצפים, מנחת אוויר, בניינים ממלכתיים והוצאות כוחות",
+        "description": "Ansarallah launches 5 ballistic missiles targeting Riyadh and Prince Sultan Air Base in eastern Saudi Arabia",
+        "descriptionHe": "אנסאר אללה משגרת 5 טילים בליסטיים לעבר الرياض ובסיס הנסיכה סלטאן בדרום מזרח סעודיה",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/84139"
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 5
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/84149"
       },
-      "headline": "Iranian missiles strike U.S. base in Kuwait, destroy bunker",
-      "headlineHe": "טילים איראניים תוקפים בסיס אמריקאי בכווית, הורסים מקלט",
-      "summary": "The strike marks a direct Iranian attack on American military infrastructure in the Gulf region, with confirmed destruction of critical air defense and operational facilities.",
-      "summaryHe": "התקיפה מהווה התקפה ישירה של איראן על תשתיות צבאיות אמריקאיות באזור המפרץ, עם הרס מאושר של מתקנים קריטיים להגנה אווירית ולתפעול.",
-      "pickedAt": "2026-09-18T22:30:51.163Z",
-      "state": "TODAY"
+      "headline": "Ansarallah launches five ballistic missiles at Saudi Arabia",
+      "headlineHe": "אנסאראללה משגר חמש טילים בליסטיים לעבר סעודיה",
+      "summary": "The Iranian-backed Houthi group targeted Saudi Arabia's capital and a major air base in a significant escalation of regional tensions.",
+      "summaryHe": "קבוצת החותיים הנתמכת על ידי איראן תקפה את בירת סעודיה ובסיס אוויר מרכזי בהסלמה משמעותית של המתיחות באזור.",
+      "pickedAt": "2026-09-19T00:30:50.765Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-09-18T23:21:03.639Z",
+    "lastUpdated": "2026-09-19T01:30:03.715Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1514,68 +1520,8 @@
     "vitals": {
       "internet": 93,
       "cellular": null,
-      "lastUpdate": "2026-09-18T23:00:43.129Z",
+      "lastUpdate": "2026-09-19T01:30:42.871Z",
       "internetHistory": [
-        {
-          "t": "2026-09-17T23:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-17T23:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-17T23:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-17T23:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-17T23:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-17T23:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T00:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T00:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T00:20:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T00:30:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T00:40:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T00:50:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T01:00:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-09-18T01:10:00.000Z",
-          "v": 92
-        },
-        {
-          "t": "2026-09-18T01:20:00.000Z",
-          "v": 93
-        },
         {
           "t": "2026-09-18T01:30:00.000Z",
           "v": 93
@@ -2087,30 +2033,135 @@
         {
           "t": "2026-09-18T22:40:00.000Z",
           "v": 93
+        },
+        {
+          "t": "2026-09-18T22:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-18T23:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-18T23:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-18T23:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-18T23:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-18T23:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-18T23:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T00:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T00:10:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T00:20:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T00:30:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T00:40:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T00:50:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T01:00:00.000Z",
+          "v": 93
+        },
+        {
+          "t": "2026-09-19T01:10:00.000Z",
+          "v": 93
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-09-18T23:00:43.129Z"
+    "lastUpdated": "2026-09-19T01:30:42.871Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1b3",
+      "id": "iranstrike-a7f3c2e1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-19T00:22:30Z",
+      "title": "IranStrike event",
+      "description": "Houthi missiles strike Saudi oil pipeline, crude exports halted; 5 ballistic missiles target Riyadh",
+      "category": "other",
+      "severity": "critical",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a7f3c2e1",
+        "text": "Houthi missiles strike Saudi oil pipeline, crude exports halted; 5 ballistic missiles target Riyadh",
+        "textHe": "טילים של חות'ים תוקפים צינור נפט סעודי; 5 טילים בליסטיים על ריאד",
+        "severity": "critical",
+        "timestamp": "2026-09-19T00:22:30+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "3pngaparwuq00",
+          "1az9ox77ue800"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-b5e8d4a3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-18T21:14:42Z",
       "title": "IranStrike event",
-      "description": "Iranian missiles strike U.S. base in Kuwait; bunker, airfield, buildings destroyed",
+      "description": "Iran strikes U.S. base in Kuwait; bunkers, airfield, barracks destroyed",
       "category": "other",
-      "severity": "critical",
+      "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian missiles strike u.s.",
+      "attacker_evidence": "iran strikes u.s.",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2123,10 +2174,10 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1b3",
-        "text": "Iranian missiles strike U.S. base in Kuwait; bunker, airfield, buildings destroyed",
-        "textHe": "טילים איראניים תוקפים בסיס אמריקאי בכווית; חנייה, שדה תעופה ובניינים נהרסו",
-        "severity": "critical",
+        "id": "b5e8d4a3",
+        "text": "Iran strikes U.S. base in Kuwait; bunkers, airfield, barracks destroyed",
+        "textHe": "איראן תוקפת בסיס אמריקאי בקווית; הרס במקלטים, שדה תעופה",
+        "severity": "high",
         "timestamp": "2026-09-18T21:14:42+00:00",
         "entityIds": [
           "IRN",
@@ -2140,14 +2191,14 @@
       }
     },
     {
-      "id": "iranstrike-b8e4d2a6",
+      "id": "iranstrike-c9b1f6d2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-09-18T19:41:54Z",
       "title": "IranStrike event",
-      "description": "U.S. reports 22 military deaths in Iran conflict; exceeds Pentagon's public count",
+      "description": "U.S. confirms 22 military deaths in Iran conflict vs. public count of 14-18",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2168,9 +2219,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b8e4d2a6",
-        "text": "U.S. reports 22 military deaths in Iran conflict; exceeds Pentagon's public count",
-        "textHe": "ארה\"ב מדווחת על 22 הרוגים בסכסוך עם איראן; חורג מהספירה הרשמית",
+        "id": "c9b1f6d2",
+        "text": "U.S. confirms 22 military deaths in Iran conflict vs. public count of 14-18",
+        "textHe": "ארה\"ב מאשרת 22 הרוגים צבאיים בסכסוך עם איראן",
         "severity": "high",
         "timestamp": "2026-09-18T19:41:54+00:00",
         "entityIds": [
@@ -2184,15 +2235,104 @@
       }
     },
     {
-      "id": "iranstrike-c3f9e5d7",
+      "id": "iranstrike-d7c3e5f8",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-09-18T14:35:46Z",
+      "date": "2026-09-18T06:35:01Z",
       "title": "IranStrike event",
-      "description": "Houthis damage Saudi oil pipeline; crude shipments to Europe halted",
+      "description": "Satellite imagery shows Iran accelerating Parchin nuclear facility reconstruction",
       "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d7c3e5f8",
+        "text": "Satellite imagery shows Iran accelerating Parchin nuclear facility reconstruction",
+        "textHe": "תמונות לוויין חושפות תאוצה בשיקום מתקן גרעיני בפרצ'ין",
+        "severity": "high",
+        "timestamp": "2026-09-18T06:35:01+00:00",
+        "entityIds": [
+          "IRN"
+        ],
+        "eventIds": [
+          "3t4pu4r5h0y00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e2a4f7b9",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-09-18T16:16:54Z",
+      "title": "IranStrike event",
+      "description": "IDF reportedly sets fire to hospital building in southern Lebanon",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf reportedly sets fire to hospital building in southern lebanon דיווח: צ",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "e2a4f7b9",
+        "text": "IDF reportedly sets fire to hospital building in southern Lebanon",
+        "textHe": "דיווח: צה\"ל הציית בחנייה לבנונית בדרום לבנון",
+        "severity": "medium",
+        "timestamp": "2026-09-18T16:16:54+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "2011m84futeo0"
+        ],
+        "sourceCount": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-3pngaparwuq00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/84149",
+      "date": "2026-09-19T00:22:30Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah launches 5 ballistic missiles targeting Riyadh and Prince Sultan Air Base in eastern Saudi Arabia",
+      "category": "missile",
       "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2212,110 +2352,28 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c3f9e5d7",
-        "text": "Houthis damage Saudi oil pipeline; crude shipments to Europe halted",
-        "textHe": "חוסיים פוגעים בצינור הנפט הסעודי; ספינות שמן לאירופה נעצרו",
+        "id": "3pngaparwuq00",
+        "timestamp": "2026-09-19T00:22:30+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "high",
-        "timestamp": "2026-09-18T14:35:46+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
+        "description": "Ansarallah launches 5 ballistic missiles targeting Riyadh and Prince Sultan Air Base in eastern Saudi Arabia",
+        "descriptionHe": "אנסאר אללה משגרת 5 טילים בליסטיים לעבר الرياض ובסיס הנסיכה סלטאן בדרום מזרח סעודיה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 5
+          }
         ],
-        "eventIds": [
-          "1az9ox77ue800"
-        ],
-        "sourceCount": 1
+        "sourceUrl": "https://t.me/CIG_telegram/84149"
       }
     },
-    {
-      "id": "iranstrike-d6a1f4c2",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-18T06:35:01Z",
-      "title": "IranStrike event",
-      "description": "Iran accelerates Parchin nuclear facility reconstruction; concealment cover installed",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "d6a1f4c2",
-        "text": "Iran accelerates Parchin nuclear facility reconstruction; concealment cover installed",
-        "textHe": "איראן מאיצה שיקום מתקן גרעיני פרצ'ין; כיסוי הסתר הותקן",
-        "severity": "high",
-        "timestamp": "2026-09-18T06:35:01+00:00",
-        "entityIds": [
-          "IRN"
-        ],
-        "eventIds": [
-          "3t4pu4r5h0y00"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-e2b7g8h1",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-09-18T16:16:54Z",
-      "title": "IranStrike event",
-      "description": "IDF reportedly sets fire to hospital in southern Lebanon",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf reportedly sets fire to hospital in southern lebanon צה\"ל כנראה הצית ב",
-      "location": "Lebanon",
-      "country": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "e2b7g8h1",
-        "text": "IDF reportedly sets fire to hospital in southern Lebanon",
-        "textHe": "צה\"ל כנראה הצית בית חולים בדרום לבנון",
-        "severity": "medium",
-        "timestamp": "2026-09-18T16:16:54+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "2011m84futeo0"
-        ],
-        "sourceCount": 1
-      }
-    }
-  ],
-  "events": [
     {
       "id": "iranstrike-2bwyjnp585340",
       "source": "IranStrike",
