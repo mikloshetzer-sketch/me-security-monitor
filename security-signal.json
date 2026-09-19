@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-19 12:31 UTC",
+    "updated": "2026-09-19 17:18 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-09-13",
     "period_end": "2026-09-19",
-    "total_events": 144,
-    "total_risk": 121.47,
-    "normalized_risk_score": 48.6,
+    "total_events": 150,
+    "total_risk": 132.92,
+    "normalized_risk_score": 53.2,
     "risk_level": "MEDIUM",
-    "confidence": "MEDIUM"
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 30,
-    "security": 6,
+    "military": 33,
+    "security": 5,
     "political": 11,
-    "other": 97
+    "other": 101
   },
   "source_counts": {
-    "news": 139,
+    "news": 145,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.73
+      "risk": 34.83
     },
     {
       "name": "Israel",
-      "risk": 19.85
+      "risk": 20.75
     },
     {
       "name": "Saudi Arabia",
-      "risk": 19.7
-    },
-    {
-      "name": "Yemen",
-      "risk": 15.2
+      "risk": 19.75
     },
     {
       "name": "Gaza Strip",
-      "risk": 12.05
+      "risk": 18.85
+    },
+    {
+      "name": "Yemen",
+      "risk": 16.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Flames, smoke seen near Riyadh airport after Saudi warning of aerial attack threat - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYWNnM0NScnlDOXNDY25xQjhZVlRHUUtMOEV3YVZSOW5xekdVelcycGI1VHl3dWpqVGhNM2s1N05NamZxV0hoNVBFN204OHM5dVlQemMySkJGMlpCaURybUY4TVZfd0RDUUxzb3RTeWJVVEI4blFQZFhJekptSHRFUVdqb1pDai1VQ1hPS1JHWk92MEpZYWtESDduUmpwUEg4Nzc4bFp3VDQzM2JMTnRZXzgzbVBvUDk0clU4a3dHMlhuQk0"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill three people in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOemgwbjZHUGxzMHdPUWJTOFhfS1lfVXFyUEdEcDM4WXM1Z1VSb3ZIdHI4cmpveHUxM1ZFb2RsVnVMcXlaS3BNNmdzMnRGNXNaT1VZMkcyY19vUnBHT2pGSkhyVDRqQmpvS0Z4dndGN2VSVEtySkN4MmM2SUJOZFc0T1h5ZXhaQ2sxdUVheGxrd0oySE9HcjVOMTFwZE1lVEVvQm1ud2xB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Syria says blast at military site in Deir Az Zor killed 11 - Al Jazeera",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPandGTm01NFRDeWQ5eFVEb04wTHR4R1ZTekM2M2xVNVBPTTl5NGhLR2dsX0dKN18xTkNMaWw0eW83bUJyRnY5NUUtOFlKNDgwQlVTVmxIVXpCX1d3QlRHRnFLUmhua1hlUzhaenlNa2lGNi1NOHZQM1dndGgzLVg2TnBMTDBudFZqczlHZDA4WUliRFJHUUVGSGdLWUV5Z1Zs0gGmAUFVX3lxTE9RVmNXblJaMElpZjlYbE11enA2UkNLSldRcTZNMU5iNXZ4OEZFT19EX3dVWnFLTC1QUl9MVEVveDBFaTRHWXN1cXNPdGY0cnJZUVBXMzVNTGFoaW9yWEM5RFktdjZYMk5QLWxFd3pYeHZSV2hGT1dwV2RtMzk3cW5CT1pzbGI3ZEhFbk1qbnV0M3dzVUVSYUxTMG1fcko5UTFyYXdzSHc"
+    },
     {
       "score": 3.0,
       "date": "2026-09-19",
@@ -66,6 +93,15 @@
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTXVRYlBPSElMYXotV2ZBWEEwWTNBYTluVWZTLWNrdF9NbGNtSW9ramZhSEhCZEc3VDVWM3kyYkNpU0VyZzEtN19mZDAycENPLTMyT0wxaWthVkhoOS1LdUlzdDBhbnFaQ3l3bnBCTG1zcGJxLUhwZVFQeTVieDhmYXJDb0NiMmNtMmNKLVUySlB5eFB3ZktPX3JmMFB2MnVhNTFvQVludTJ4QdIBrwFBVV95cUxQUTlXVTJpQzZDVklSVUxvLWlYQmxHTXZVeU15S0FuMTU0YnhnX2RsTXlhbjdnUzJaOXE1U3BpSlNCVFZYclltTXZ1TkhOOXVfZXFTLWJtSV9TSnFSVF9VZnZDY2hpMXdUN2xvd1VvcWxfVlpDR3ljNktaVkM1XzVWaFFOdkxFTy1sQmpheEx1dHlReDVRSnlycFhYYlZsc2U2Vm9pTHpJcUZOQ09kczVV"
     },
     {
+      "score": 3.0,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Child among four Palestinians killed in Israeli attacks across Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOS0ZKb0U3c3RFV2FhaGQtQndQemtZZXBDX0pQZEw3aE9PUW5NMEEtNHpKanF4TTlWS3h3bm9iM3JSZU91alN4OXhSWVRaR0lvMzNyWHdQN1FSa0J6TmU4V2JYcUxRTE5vU3JpQzF5SzVKcU9RanFpeGtWcmk2eVUyWDJaNkQzT2p2aEo5ZnM1V3A2OVdNcVdWR1gyUHhzZ9IBowFBVV95cUxQS1k2S2xYOGFkbFM4UmtTdW5oN3ZQb3owdHowM1Q5bFZGd3lvdTYzNVVXc3RYbGI1dDZpVHBfSzBRNXJia3ZSbmh4OWxpSHBwUktvd0Jpal90WFVWR0dWSTYxU1dQTG45SUEyQUhVYUV4QWc5NmZMX0ZyRmZDX0VGQmhyYkZsVmU5dkoyZzhmakducmRCRnRueWtOakhzOVNwdkE0"
+    },
+    {
       "score": 2.7,
       "date": "2026-09-18",
       "category": "military",
@@ -73,6 +109,15 @@
       "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdUdfN2t1cTlMdHJXa1FQN0ZiU1M1dklpd2llNGtrTW1ndEEwSjZqc2VNcjY0VkFOQXFmLVUzNXFYUHdQTUU1Tm1leURSclhSajZPS29nZng3Sl83eUs2clpyMS1XbW0tNXpnbDdDc25SMVB6cHYtMWY2aFdYRzZsSEtPS1FBSHpQSGp6dFF6NV9mSkJBbXM4UnNWSDYyRzJjc0RtMkZod3l0Q0ZYSzljc3JPYmVFMlVZUGc"
     },
     {
       "score": 2.7,
@@ -91,51 +136,6 @@
       "title": "Lebanese artist turns Israeli missile debris into art - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTXk4UFlycERYbkU1ZF84elNyZUlSd2lHZnV1LW5SUXdIaTUzNkNCTjFFN2tnNHpOMDcwWG5ZU2lDaWR2M1Y4cXZSN2lwMVJ6NkZZaUdxRFlSVnF3NmdJS09qU2huUlB2cDRUOU56bzZMLWVBSzdPN2NEZTNhZzhURlJiUEE1TnBHcVNXb0t4ZXJKRURFcnBvNHZ4QnZZQzRwNEJURzgxd9IBrAFBVV95cUxPX0xRckJRZFlHeWU3blNTQVBad3R6WXdWTU1BUTh1T0FPZ09uenphYUVOMENwT0pQcmZsaWUtZHJDUEgtc2ctOURWM21HU3hzaC11MDZWNnNtX1FQWVJocGZ1MFM3WDJ3aVZYeFdGa01qR0VXcUhhNlRUQjZMZHRRaDN0M0R2UFVTei1qS082ZnVCcGtEWFRHVk5XRGx0NFdTaGsxVUt2Q0szdE1f"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdUdfN2t1cTlMdHJXa1FQN0ZiU1M1dklpd2llNGtrTW1ndEEwSjZqc2VNcjY0VkFOQXFmLVUzNXFYUHdQTUU1Tm1leURSclhSajZPS29nZng3Sl83eUs2clpyMS1XbW0tNXpnbDdDc25SMVB6cHYtMWY2aFdYRzZsSEtPS1FBSHpQSGp6dFF6NV9mSkJBbXM4UnNWSDYyRzJjc0RtMkZod3l0Q0ZYSzljc3JPYmVFMlVZUGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three pumping stations along Saudi East-West Pipeline were hit in recent attack, sources say - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPX2JjV2RTdTR3SlFEbUFFRE5FLU1qOEJoSm5YMXR3OUJhYlJjdUVudmRYTlFyUkh4bVVSVFdwRnpoaWUySnV1clB2THo4R3pVaGpPcGdMNFBNUHpRVmk2RjBNdzRQQmhXYXotS0hjd2hzSV9JLVFON0g4bDBVczZEZ2hxSVYyQjJGdlEtWFRtbnhLN1pqMHBCTGltR0Q4RDdSQllwdy11blczeE9SYWlBTFAxNFpGVFRLZDFaSDVUSkxMcFJyTERV"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Rescue efforts end after 21 die in collapse of bomb-damaged building in Gaza; 45 saved from rubble - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQY1ZOS0s0cGxQSWFHTnFWQXppVjVCRTFidmNDWWFyX2RJSVBYUDY3eXRSS3E3Y2M4UmFlTUZ1aE5Od2U2dzlWcDFqQ0Z4bXgzU0FoMjk1QXlOM01kSldmY0xxX3FnMTRhakJXSV9sTjZZSDRCWW5oelpQXzVXdjBVWXltWjBFX1BKTzNyU3Zxb3JtenYwRGw5a1NQU2huWjBxeERTWDZHWkFwaGI2Ykl1SFpBN1ZUMHVWZlV1TVZXSEpPbW55Qlk2alJB"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "UN experts say grounds to believe US committed war crimes in Iran strikes",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cm9w4n5nverdo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Ghalibaf’s maths missile at Trump decoded: Is Iran fixing US interest rates? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQWN2elRIUzBuak56SXF6WHRTTUR1TXZsUFJhcWFQc2hvYlBiRHVQQ2FfamRZTnB2ZlVuX1EyaEpVcGlmQy0yOHphSS1tbEp4ZGo5S0cteTJEbFRQMDd6dTZ5WUpTR1VmZnRKdzU0WDdhSEZqQzJjTFJ4Z1V3WU11SzRmakVOcGd3LTZURS15Z3UzOXk2MUxfRXJPcUhEc1dseDNBWFlxcERKc0pnM0ctR3Vob1LSAboBQVVfeXFMUGo0Sjc5OFBiYW5BRDVGNWZWQ1pzM1VkQUx6aVliQ08ydmtiUjZoZUZGVUN1dTdmU0I2SzhLWG5qWmFHVndaUWxKMkgxWTM4aHRmaTl0aXhOdHBhdWloUm5HSkxxVTc3MVFQQkFOTEE0ZnRqYm5hZ2NSR1ljcFNGaUpKRVZpOEJrbndibWdoNFVSVWllMFY5Yms5WWhmN1FQWHZUWC1fb3p3Y1RHbVRXdmdKM2FSTkt0YzJ3"
     }
   ]
 }
