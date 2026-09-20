@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-20 04:56 UTC",
+    "updated": "2026-09-20 11:27 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,44 +9,53 @@
     "period_start": "2026-09-14",
     "period_end": "2026-09-20",
     "total_events": 151,
-    "total_risk": 125.19,
-    "normalized_risk_score": 50.1,
+    "total_risk": 122.0,
+    "normalized_risk_score": 48.8,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 36,
+    "military": 33,
     "security": 5,
     "political": 11,
-    "other": 99
+    "other": 102
   },
   "source_counts": {
-    "news": 147,
-    "isw": 4
+    "news": 146,
+    "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 31.84
-    },
-    {
-      "name": "Israel",
-      "risk": 18.75
+      "risk": 31.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.35
+      "risk": 18.6
+    },
+    {
+      "name": "Israel",
+      "risk": 16.05
     },
     {
       "name": "Saudi Arabia",
-      "risk": 16.8
+      "risk": 15.2
     },
     {
       "name": "Yemen",
-      "risk": 13.75
+      "risk": 12.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition says defence intercepted Houthi missile fired at Riyadh - Al Jazeera",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaFRmYktSYmFGRVRhRF9lMVBha2RQR1B4dHI2TkRvT1cxOFh3TVB3UXNvVjNfa3UxRGRQSjNiQ1MtYVBqMW9VNXNsTnpRa2JaYlpDWi10U3NwazZDRjJLbVEzYVRzdVdrTnA3LWFVWjlPVTlXbDhSdkJZRUVvZk1MVTdUMk5qZm9rbV9sT3BfeGlFU3FrbG4yTWVxcm90OFRpNC1Pc2pqcHJTYXUwQWdIWV9rU2wtQdIBuwFBVV95cUxPaU9oejdNQ3B1R0FZRS1sQ1FpTmlkNHJ0RFZyOUh5QXNHbzdheGgxeDNOV0dxT3VmR1ZFRDJobTZZV1VXVndOc3Nmb096dlpqMG01RWUzcVhxWDZKX3BkT0dVT3YyYUlPUXpveUYyMEtIU3dSTlVvVEhkZFVUdWNUemlBTVc0OUxJLXh5RHlQSmt3dE8tcTZOSWFFYnl3ZUJIM0x4cTlsMkJwM3NKRkt4WjZ2TmpXVjFoVHRJ"
+    },
     {
       "score": 3.0,
       "date": "2026-09-20",
@@ -109,15 +118,6 @@
       "title": "Houthis accuse Saudi Arabia of launching 26 attacks in 24 hours - Al Jazeera",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTFmd2JEaEdqNldCSV93dnNvdWxhZmJPR0o3RzRhUlF0YzFBcXBud05abHN5dVE5VUhxbU1yemhOWEFQVlB5aUlmVk1sbjUtZ0x3S0YySFo4RVduTWlmcWtBdUE1YXZnZ2pEdXIwejJjWER4di1NdmpkWksxejZrclZvV3JUenp0RlBGYW4xSURwd0wxcGZjY1FndlpuM0tYcVZ4bjE2Z9IBrAFBVV95cUxQc3RJVDZJM19CNWYxVm1FOC0tRGtzLUpVY1I4bS1wTzdBcGtFcHJ1Mm9kUFU3TW12NnpWR3FLYmdvT1RjMld4Mjg2dUlHZDZUVzBudmx1ZHZxdFF2bnJKbm11WmpJWXBzZEdfUkxDTkhfRHQzWW1CdmdRRTZCd1BFXzZuV3pWaTc3X3JIaFc3RmNVQkYyaW4zWXA1ZWkyWHk2RFQyYUNKak54aVJI"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition says defences intercept Houthi missile fired at Riyadh - Al Jazeera",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaFRmYktSYmFGRVRhRF9lMVBha2RQR1B4dHI2TkRvT1cxOFh3TVB3UXNvVjNfa3UxRGRQSjNiQ1MtYVBqMW9VNXNsTnpRa2JaYlpDWi10U3NwazZDRjJLbVEzYVRzdVdrTnA3LWFVWjlPVTlXbDhSdkJZRUVvZk1MVTdUMk5qZm9rbV9sT3BfeGlFU3FrbG4yTWVxcm90OFRpNC1Pc2pqcHJTYXUwQWdIWV9rU2wtQdIBuwFBVV95cUxPaU9oejdNQ3B1R0FZRS1sQ1FpTmlkNHJ0RFZyOUh5QXNHbzdheGgxeDNOV0dxT3VmR1ZFRDJobTZZV1VXVndOc3Nmb096dlpqMG01RWUzcVhxWDZKX3BkT0dVT3YyYUlPUXpveUYyMEtIU3dSTlVvVEhkZFVUdWNUemlBTVc0OUxJLXh5RHlQSmt3dE8tcTZOSWFFYnl3ZUJIM0x4cTlsMkJwM3NKRkt4WjZ2TmpXVjFoVHRJ"
     },
     {
       "score": 2.7,

@@ -1,19 +1,19 @@
 # Daily OSINT Signal
 
-**Generated:** 2026-09-20T04:56:31.063304+00:00
+**Generated:** 2026-09-20T11:27:36.778742+00:00
 
 ## Summary (last 24h)
-- Events recorded: **2**
+- Events recorded: **8**
 - Dominant category: **other**
-- Highest activity location: **Iran**
+- Highest activity location: **Gaza Strip**
 
 ## X POST VERSION
 
 Middle East Security Monitor – Daily Signal
 
-Events (last 24h): 2
+Events (last 24h): 8
 Dominant category: other
-Highest activity location: Iran
+Highest activity location: Gaza Strip
 
 Trend: monitoring continues across the region.
 
