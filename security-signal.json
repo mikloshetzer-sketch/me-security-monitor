@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-09-19 20:43 UTC",
+    "updated": "2026-09-20 00:10 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-09-13",
-    "period_end": "2026-09-19",
-    "total_events": 150,
-    "total_risk": 133.77,
-    "normalized_risk_score": 53.5,
+    "period_start": "2026-09-14",
+    "period_end": "2026-09-20",
+    "total_events": 155,
+    "total_risk": 123.45,
+    "normalized_risk_score": 49.4,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 33,
+    "military": 35,
     "security": 5,
     "political": 11,
-    "other": 101
+    "other": 104
   },
   "source_counts": {
-    "news": 145,
+    "news": 150,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 35.43
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 19.45
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 19.3
-    },
-    {
-      "name": "Yemen",
-      "risk": 18.7
+      "risk": 31.9
     },
     {
       "name": "Israel",
-      "risk": 17.75
+      "risk": 19.05
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 17.05
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 16.8
+    },
+    {
+      "name": "Yemen",
+      "risk": 13.45
     }
   ],
   "top_events": [
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw"
+    },
+    {
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYWNnM0NScnlDOXNDY25xQjhZVlRHUUtMOEV3YVZSOW5xekdVelcycGI1VHl3dWpqVGhNM2s1N05NamZxV0hoNVBFN204OHM5dVlQemMySkJGMlpCaURybUY4TVZfd0RDUUxzb3RTeWJVVEI4blFQZFhJekptSHRFUVdqb1pDai1VQ1hPS1JHWk92MEpZYWtESDduUmpwUEg4Nzc4bFp3VDQzM2JMTnRZXzgzbVBvUDk0clU4a3dHMlhuQk0"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
@@ -66,16 +75,16 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOemgwbjZHUGxzMHdPUWJTOFhfS1lfVXFyUEdEcDM4WXM1Z1VSb3ZIdHI4cmpveHUxM1ZFb2RsVnVMcXlaS3BNNmdzMnRGNXNaT1VZMkcyY19vUnBHT2pGSkhyVDRqQmpvS0Z4dndGN2VSVEtySkN4MmM2SUJOZFc0T1h5ZXhaQ2sxdUVheGxrd0oySE9HcjVOMTFwZE1lVEVvQm1ud2xB"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
       "title": "Houthis say they targeted Saudi capital with ballistic missiles",
-      "location": "Yemen",
+      "location": "Riyadh",
       "url": "https://www.bbc.co.uk/news/articles/cwly5d9v7r43o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
@@ -84,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPandGTm01NFRDeWQ5eFVEb04wTHR4R1ZTekM2M2xVNVBPTTl5NGhLR2dsX0dKN18xTkNMaWw0eW83bUJyRnY5NUUtOFlKNDgwQlVTVmxIVXpCX1d3QlRHRnFLUmhua1hlUzhaenlNa2lGNi1NOHZQM1dndGgzLVg2TnBMTDBudFZqczlHZDA4WUliRFJHUUVGSGdLWUV5Z1Zs0gGmAUFVX3lxTE9RVmNXblJaMElpZjlYbE11enA2UkNLSldRcTZNMU5iNXZ4OEZFT19EX3dVWnFLTC1QUl9MVEVveDBFaTRHWXN1cXNPdGY0cnJZUVBXMzVNTGFoaW9yWEM5RFktdjZYMk5QLWxFd3pYeHZSV2hGT1dwV2RtMzk3cW5CT1pzbGI3ZEhFbk1qbnV0M3dzVUVSYUxTMG1fcko5UTFyYXdzSHc"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
@@ -93,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTFmd2JEaEdqNldCSV93dnNvdWxhZmJPR0o3RzRhUlF0YzFBcXBud05abHN5dVE5VUhxbU1yemhOWEFQVlB5aUlmVk1sbjUtZ0x3S0YySFo4RVduTWlmcWtBdUE1YXZnZ2pEdXIwejJjWER4di1NdmpkWksxejZrclZvV3JUenp0RlBGYW4xSURwd0wxcGZjY1FndlpuM0tYcVZ4bjE2Z9IBrAFBVV95cUxQc3RJVDZJM19CNWYxVm1FOC0tRGtzLUpVY1I4bS1wTzdBcGtFcHJ1Mm9kUFU3TW12NnpWR3FLYmdvT1RjMld4Mjg2dUlHZDZUVzBudmx1ZHZxdFF2bnJKbm11WmpJWXBzZEdfUkxDTkhfRHQzWW1CdmdRRTZCd1BFXzZuV3pWaTc3X3JIaFc3RmNVQkYyaW4zWXA1ZWkyWHk2RFQyYUNKak54aVJI"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOS0ZKb0U3c3RFV2FhaGQtQndQemtZZXBDX0pQZEw3aE9PUW5NMEEtNHpKanF4TTlWS3h3bm9iM3JSZU91alN4OXhSWVRaR0lvMzNyWHdQN1FSa0J6TmU4V2JYcUxRTE5vU3JpQzF5SzVKcU9RanFpeGtWcmk2eVUyWDJaNkQzT2p2aEo5ZnM1V3A2OVdNcVdWR1gyUHhzZ9IBowFBVV95cUxQS1k2S2xYOGFkbFM4UmtTdW5oN3ZQb3owdHowM1Q5bFZGd3lvdTYzNVVXc3RYbGI1dDZpVHBfSzBRNXJia3ZSbmh4OWxpSHBwUktvd0Jpal90WFVWR0dWSTYxU1dQTG45SUEyQUhVYUV4QWc5NmZMX0ZyRmZDX0VGQmhyYkZsVmU5dkoyZzhmakducmRCRnRueWtOakhzOVNwdkE0"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
@@ -112,30 +121,21 @@
     },
     {
       "score": 2.7,
-      "date": "2026-09-18",
+      "date": "2026-09-19",
       "category": "military",
       "source_type": "news",
-      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw"
+      "title": "Israel’s president pardons soldier who killed wounded Palestinian in 2016 - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQeTRwQmFGRDgzNjFvRHplY0FnNHdQcnNZcnUwVnhjZzhOZW9wZnlaQzMzeFgzUjE5T2ttQW5OTXR2NnRnRlRodnZ3OWVqYUJneldxZmZ5RWhSWnozcldTTEpDQzBiY0JZbmFVSW5aU003c1N0dnkyNUVVVDZjazV0YTE5QzlKbUlodlYxSEZnZFBURTlNcFBLS0RDYkVxejVWNG1aTC0yLXd0X3ZsQzNnSnc1VdIBuAFBVV95cUxQR2ZjRl9MbVM2eExDVlVVSUJnWDVIamhaTmpVMkhWVUpCQnRJYVZKWVJ3OGN1UWJTeTJBWm5Fbmp5M2prU1kwLURoeGZwOWwxSkNOenJBTS01QzZEQ2ZLNC1aRng0VmpDeGNhTk1vUE1VRFVPbzBodkx1d0xqTzAtZkZ3U0l0SzZjSWxTVElrMjhSMDI1Z1RwVzNZclBkWGgwOEo3MTR6elNJMDlpNktqR2NvZVMyNTlo"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-09-18",
       "category": "military",
       "source_type": "news",
       "title": "‘My children did not attack Iran’: 2bn South Asians suffer from distant war - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNaWFheEdlMXY2cmN4MS11NWxGSU5pODF5VklKWDR1TVB4T0Jnazh1LXh1YWN0VWFRamRNckRMZHBqNy1JWmhyVGNySWU3Z3lDazJhOTJWYm5FTG84ZHBSdEEwM0pYa3N5QjVrTW0zM1NtZGxfQWQ3SUwzX3I3RUZ3Y3E0X192NlhUZlR0V2lDZWdSdVhjYU9iRWtQeFdUckVUUzhqd19vV2Z0QTFBQmxTSGpOZ9IBuAFBVV95cUxQS3VYaWFubzhIMnM2T2NEUF80OV82OGhNUHNzMjAxVnlXb3BZam5uekF3bW84VTNTMHBKcnNzRnlSanJNNW5vakprOGJVczRNYnVEZl81YkNkZW5xY3Niemk3S3o4dk9mM1JLMDdxS1NrenNPVzd4eVJRRWVfTjlrSzl6ajBPc3VaTG1wLWxhNTh2ZTB1Y1VfclhoUnkxVDZRMmk3OFdZTmt1SmgxdUQ0ZzloZUNYQjFE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdUdfN2t1cTlMdHJXa1FQN0ZiU1M1dklpd2llNGtrTW1ndEEwSjZqc2VNcjY0VkFOQXFmLVUzNXFYUHdQTUU1Tm1leURSclhSajZPS29nZng3Sl83eUs2clpyMS1XbW0tNXpnbDdDc25SMVB6cHYtMWY2aFdYRzZsSEtPS1FBSHpQSGp6dFF6NV9mSkJBbXM4UnNWSDYyRzJjc0RtMkZod3l0Q0ZYSzljc3JPYmVFMlVZUGc"
     }
   ]
 }
