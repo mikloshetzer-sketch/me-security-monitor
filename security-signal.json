@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-20 18:50 UTC",
+    "updated": "2026-09-20 22:28 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-14",
     "period_end": "2026-09-20",
-    "total_events": 154,
-    "total_risk": 128.25,
-    "normalized_risk_score": 51.3,
+    "total_events": 153,
+    "total_risk": 127.84,
+    "normalized_risk_score": 51.1,
     "risk_level": "MEDIUM",
     "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 35,
+    "military": 33,
     "security": 5,
-    "political": 11,
-    "other": 103
+    "political": 9,
+    "other": 106
   },
   "source_counts": {
     "news": 149,
-    "isw": 5
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 34.05
-    },
-    {
-      "name": "Israel",
-      "risk": 20.2
+      "risk": 32.29
     },
     {
       "name": "Gaza Strip",
-      "risk": 19.8
+      "risk": 20.05
+    },
+    {
+      "name": "Israel",
+      "risk": 19.45
     },
     {
       "name": "Saudi Arabia",
-      "risk": 15.2
+      "risk": 14.9
     },
     {
-      "name": "Yemen",
-      "risk": 12.05
+      "name": "Riyadh",
+      "risk": 11.85
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Iran and US trade threats after Houthi attacks escalate regional conflict - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdWJkS01sRHBUcXZGZVVoTy1zVU04amJ0VUc3WnZ4UkVZd25TTTR6RGY1ZkV5OUtGZzFULVNDcEo4MzlZMmNkamt0VjR5VHg3YzRDaWhEOFAtZklDbFpGSXpCeE9BeGR3UWp3aFN1MVp2aUMyZE93ZnFUN0VTdzdkZGJnMDdrOFNtc1lhZC1UQlNDWFl3dGRWdjZwYkc2SHJGelBn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZnFXQ1lvNTg5TnJvazhfY3VXa0hrVms4RW1mdVBpR0k4QXZkempjX0h4Y2JIaGNvSm04YVJkTHRDTWpESVFDakhJMExiNGZSSktLcVFsM3VlM3ZibDQwVlE3czF4OEdLdXdnU0FPaUN1aHFLVWN3cW9uVHRTTDdDU1BNaUNMd3NQMlY5VGZPYzA5ODlMQi1rcWVDXzhFZHJWUF9tQjJqUUtzQW1yc0tYNw"
     },
     {
       "score": 3.0,
@@ -82,6 +91,15 @@
       "title": "Flames, smoke seen near Riyadh airport; Houthis claim attacks on Saudi capital - Reuters",
       "location": "Riyadh",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYWNnM0NScnlDOXNDY25xQjhZVlRHUUtMOEV3YVZSOW5xekdVelcycGI1VHl3dWpqVGhNM2s1N05NamZxV0hoNVBFN204OHM5dVlQemMySkJGMlpCaURybUY4TVZfd0RDUUxzb3RTeWJVVEI4blFQZFhJekptSHRFUVdqb1pDai1VQ1hPS1JHWk92MEpZYWtESDduUmpwUEg4Nzc4bFp3VDQzM2JMTnRZXzgzbVBvUDk0clU4a3dHMlhuQk0"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Houthis accuse Saudi Arabia of launching 26 attacks in 24 hours - Al Jazeera",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTFmd2JEaEdqNldCSV93dnNvdWxhZmJPR0o3RzRhUlF0YzFBcXBud05abHN5dVE5VUhxbU1yemhOWEFQVlB5aUlmVk1sbjUtZ0x3S0YySFo4RVduTWlmcWtBdUE1YXZnZ2pEdXIwejJjWER4di1NdmpkWksxejZrclZvV3JUenp0RlBGYW4xSURwd0wxcGZjY1FndlpuM0tYcVZ4bjE2Z9IBrAFBVV95cUxQc3RJVDZJM19CNWYxVm1FOC0tRGtzLUpVY1I4bS1wTzdBcGtFcHJ1Mm9kUFU3TW12NnpWR3FLYmdvT1RjMld4Mjg2dUlHZDZUVzBudmx1ZHZxdFF2bnJKbm11WmpJWXBzZEdfUkxDTkhfRHQzWW1CdmdRRTZCd1BFXzZuV3pWaTc3X3JIaFc3RmNVQkYyaW4zWXA1ZWkyWHk2RFQyYUNKak54aVJI"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike on motorcycle kills Palestinian in Gaza City, injures child - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTXVRYlBPSElMYXotV2ZBWEEwWTNBYTluVWZTLWNrdF9NbGNtSW9ramZhSEhCZEc3VDVWM3kyYkNpU0VyZzEtN19mZDAycENPLTMyT0wxaWthVkhoOS1LdUlzdDBhbnFaQ3l3bnBCTG1zcGJxLUhwZVFQeTVieDhmYXJDb0NiMmNtMmNKLVUySlB5eFB3ZktPX3JmMFB2MnVhNTFvQVludTJ4QdIBrwFBVV95cUxQUTlXVTJpQzZDVklSVUxvLWlYQmxHTXZVeU15S0FuMTU0YnhnX2RsTXlhbjdnUzJaOXE1U3BpSlNCVFZYclltTXZ1TkhOOXVfZXFTLWJtSV9TSnFSVF9VZnZDY2hpMXdUN2xvd1VvcWxfVlpDR3ljNktaVkM1XzVWaFFOdkxFTy1sQmpheEx1dHlReDVRSnlycFhYYlZsc2U2Vm9pTHpJcUZOQ09kczVV"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel’s president pardons soldier who killed wounded Palestinian in 2016 - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQeTRwQmFGRDgzNjFvRHplY0FnNHdQcnNZcnUwVnhjZzhOZW9wZnlaQzMzeFgzUjE5T2ttQW5OTXR2NnRnRlRodnZ3OWVqYUJneldxZmZ5RWhSWnozcldTTEpDQzBiY0JZbmFVSW5aU003c1N0dnkyNUVVVDZjazV0YTE5QzlKbUlodlYxSEZnZFBURTlNcFBLS0RDYkVxejVWNG1aTC0yLXd0X3ZsQzNnSnc1VdIBuAFBVV95cUxQR2ZjRl9MbVM2eExDVlVVSUJnWDVIamhaTmpVMkhWVUpCQnRJYVZKWVJ3OGN1UWJTeTJBWm5Fbmp5M2prU1kwLURoeGZwOWwxSkNOenJBTS01QzZEQ2ZLNC1aRng0VmpDeGNhTk1vUE1VRFVPbzBodkx1d0xqTzAtZkZ3U0l0SzZjSWxTVElrMjhSMDI1Z1RwVzNZclBkWGgwOEo3MTR6elNJMDlpNktqR2NvZVMyNTlo"
     }
   ]
 }
