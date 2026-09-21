@@ -1930,6 +1930,11 @@
     .manual-history-filter-btn{min-height:40px;padding:8px 11px;border:1px solid #cfc8e5;border-radius:10px;background:#fff;color:#4c1d95;font-size:10px;font-weight:900;cursor:pointer}
     .manual-history-filter-btn:hover,.manual-history-filter-btn.active{border-color:#7846e8;background:#7846e8;color:#fff}
     .manual-history-filter-status{grid-column:1/-1;color:#766b88;font-size:10px;line-height:1.45}
+    .manual-history-filter select{width:100%;min-height:40px;padding:8px 10px;border:1px solid #cfc8e5;border-radius:10px;outline:none;background:#fff;color:#34215f}
+    .manual-history-filter select:focus{border-color:#7846e8;box-shadow:0 0 0 3px rgba(120,70,232,.10)}
+    .manual-history-houthi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+    .manual-history-houthi-grid .manual-history-card{min-height:330px}
+    @media(max-width:1150px){.manual-history-houthi-grid{grid-template-columns:1fr}}
     @media(max-width:760px){.manual-history-filter{grid-template-columns:1fr 1fr}.manual-history-filter-actions,.manual-history-filter-status{grid-column:1/-1}}
     @media (max-width:560px) {
       .manual-history-kpis { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -2471,71 +2476,41 @@
           <div>
             <div class="eyebrow">Historical campaign intelligence</div>
             <h2 style="margin-top:5px;">Törésvonalak Historical Strike Database</h2>
-            <div class="panel-note" style="margin-top:4px;text-align:left;">
-              Manuálisan gyűjtött, ellenőrzött és egységesített támadási adatbázis
-            </div>
+            <div class="panel-note" style="margin-top:4px;text-align:left;">Manuálisan gyűjtött, ellenőrzött és egységesített támadási adatbázis</div>
           </div>
           <div class="manual-history-source-badge">Manually curated by Törésvonalak.blog</div>
         </div>
-
-        <div class="manual-history-method">
-          <strong>Adatforrás és módszertan:</strong>
-          ezt az adatállományt a Törésvonalak.blog szerkesztője manuálisan gyűjti nyílt forrásokból.
-          A rekordok dátumát, helyszínét, támadó félét, támadástípusát és célpontját közzététel előtt
-          egyedileg ellenőrizzük és egységesítjük. A modul elkülönül az automatikusan frissülő IranStrike-adatfolyamtól.
-        </div>
-
-        <div id="manualHistoryStatus" class="manual-history-empty" style="margin-top:14px;">
-          A manuálisan gondozott történeti adatbázis betöltése…
-        </div>
-
+        <div class="manual-history-method"><strong>Adatforrás és módszertan:</strong> ezt az adatállományt a Törésvonalak.blog szerkesztője manuálisan gyűjti nyílt forrásokból. A modul az USA–Irán és a HOUTHI eseményeket külön adatcsoportként is képes elemezni. A dátum-, helyszín-, támadó-, támadástípus- és célpontmezők egységesítve jelennek meg.</div>
+        <div id="manualHistoryStatus" class="manual-history-empty" style="margin-top:14px;">A manuálisan gondozott történeti adatbázis betöltése…</div>
         <div id="manualHistoryContent" hidden>
-          <div class="manual-history-filter" aria-label="Történeti adatbázis dátumszűrő">
+          <div class="manual-history-filter" aria-label="Történeti adatbázis szűrő">
+            <div class="manual-history-filter-field"><label for="mhDataset">Adatcsoport</label><select id="mhDataset"><option value="ALL">Összes adat</option><option value="USA_IRAN">USA–Irán</option><option value="HOUTHI">HOUTHI</option></select></div>
             <div class="manual-history-filter-field"><label for="mhStartDate">Kezdő dátum</label><input id="mhStartDate" type="date"></div>
             <div class="manual-history-filter-field"><label for="mhEndDate">Záró dátum</label><input id="mhEndDate" type="date"></div>
-            <div class="manual-history-filter-actions">
-              <button id="mh7Btn" class="manual-history-filter-btn" type="button">7 nap</button>
-              <button id="mh14Btn" class="manual-history-filter-btn" type="button">14 nap</button>
-              <button id="mh30Btn" class="manual-history-filter-btn" type="button">30 nap</button>
-              <button id="mhAllBtn" class="manual-history-filter-btn" type="button">Teljes időszak</button>
-            </div>
+            <div class="manual-history-filter-actions"><button id="mh7Btn" class="manual-history-filter-btn" type="button">7 nap</button><button id="mh14Btn" class="manual-history-filter-btn" type="button">14 nap</button><button id="mh30Btn" class="manual-history-filter-btn" type="button">30 nap</button><button id="mhAllBtn" class="manual-history-filter-btn" type="button">Teljes időszak</button></div>
             <div id="mhFilterStatus" class="manual-history-filter-status">Betöltés után az utolsó 7 nap jelenik meg.</div>
           </div>
-
           <div class="manual-history-kpis">
             <div class="manual-history-kpi"><strong id="mhTotal">—</strong><span>Rekord</span></div>
-            <div class="manual-history-kpi"><strong id="mhUsa">—</strong><span>USA-esemény</span></div>
-            <div class="manual-history-kpi"><strong id="mhIran">—</strong><span>Irán-esemény</span></div>
-            <div class="manual-history-kpi"><strong id="mhCountries">—</strong><span>Érintett ország</span></div>
+            <div class="manual-history-kpi"><strong id="mhPrimary">—</strong><span id="mhPrimaryLabel">USA-esemény</span></div>
+            <div class="manual-history-kpi"><strong id="mhSecondary">—</strong><span id="mhSecondaryLabel">Irán-esemény</span></div>
+            <div class="manual-history-kpi"><strong id="mhCountries">—</strong><span>Érintett célterület</span></div>
             <div class="manual-history-kpi"><strong id="mhGeo">—</strong><span>Koordinátával</span></div>
             <div class="manual-history-kpi"><strong id="mhRange">—</strong><span>Adatperiódus</span></div>
           </div>
-
           <div class="manual-history-grid">
-            <div class="manual-history-card">
-              <h3>Napi támadási intenzitás</h3>
-              <div class="manual-history-card-note">USA és Irán eseményei napi bontásban</div>
-              <div class="manual-history-chart"><canvas id="mhTimelineCanvas"></canvas></div>
-            </div>
-
-            <div class="manual-history-card">
-              <h3>Támadó fél szerinti megoszlás</h3>
-              <div class="manual-history-card-note">Manuálisan azonosított szereplők</div>
-              <div class="manual-history-chart"><canvas id="mhActorCanvas"></canvas></div>
-            </div>
+            <div class="manual-history-card"><h3 id="mhTimelineTitle">Napi támadási intenzitás</h3><div id="mhTimelineNote" class="manual-history-card-note">Események napi bontásban</div><div class="manual-history-chart"><canvas id="mhTimelineCanvas"></canvas></div></div>
+            <div class="manual-history-card"><h3>Támadó fél szerinti megoszlás</h3><div class="manual-history-card-note">Manuálisan azonosított szereplők</div><div class="manual-history-chart"><canvas id="mhActorCanvas"></canvas></div></div>
           </div>
-
           <div class="manual-history-grid" style="margin-top:14px;">
-            <div class="manual-history-card">
-              <h3>Támadás- és célponttípusok</h3>
-              <div class="manual-history-card-note">A rekordokban leggyakrabban előforduló kategóriák</div>
-              <div class="manual-history-chart"><canvas id="mhTypeCanvas"></canvas></div>
-            </div>
-
-            <div class="manual-history-card">
-              <h3>Földrajzi eloszlás</h3>
-              <div class="manual-history-card-note">Leggyakrabban érintett országok és területek</div>
-              <div id="mhCountryRanks" class="manual-history-ranks"></div>
+            <div class="manual-history-card"><h3>Támadás- és célponttípusok</h3><div class="manual-history-card-note">A rekordokban leggyakrabban előforduló kategóriák</div><div class="manual-history-chart"><canvas id="mhTypeCanvas"></canvas></div></div>
+            <div class="manual-history-card"><h3>Földrajzi eloszlás</h3><div class="manual-history-card-note">Leggyakrabban érintett országok és területek</div><div id="mhCountryRanks" class="manual-history-ranks"></div></div>
+          </div>
+          <div id="mhHouthiAnalytics" hidden>
+            <div class="manual-history-houthi-grid">
+              <div class="manual-history-card"><h3>Húszi műveleti események havi száma</h3><div class="manual-history-card-note">Havi aktivitás – a kiválasztott időszak HOUTHI rekordjai</div><div class="manual-history-chart"><canvas id="mhHouthiMonthlyCanvas"></canvas></div></div>
+              <div class="manual-history-card"><h3>A húszi műveletek fő célterületei</h3><div class="manual-history-card-note">Normalizált célterületek; a tengeri térségek külön kategóriaként jelennek meg</div><div id="mhHouthiTargets" class="manual-history-ranks"></div></div>
+              <div class="manual-history-card"><h3>Fő fegyver- és műveleti kategóriák</h3><div class="manual-history-card-note">A strike_type mező elemzési főcsoportokba rendezve</div><div class="manual-history-chart"><canvas id="mhHouthiWeaponsCanvas"></canvas></div></div>
             </div>
           </div>
         </div>
@@ -4127,205 +4102,36 @@
     const MANUAL_HISTORY_URL = "data/strike_history.json";
     let manualHistoryEvents = [];
 
-    function mhText(value, fallback = "Unknown") {
-      const text = String(value ?? "").trim();
-      return text || fallback;
-    }
-
-    function mhFirst(source, keys, fallback = "") {
-      for (const key of keys) {
-        const value = source?.[key];
-        if (value !== undefined && value !== null && String(value).trim() !== "") return value;
-      }
-      return fallback;
-    }
-
-    function mhNormalizeActor(value) {
-      const raw = String(value || "unknown").trim().toLowerCase();
-      if (/^(usa|us|u\.s\.|united states|american|u\.s\. forces)$/.test(raw)) return "USA";
-      if (/iran|iranian|irgc/.test(raw)) return "Iran";
-      if (/israel|israeli|idf|iaf/.test(raw)) return "Israel";
-      return raw && raw !== "unknown" ? mhText(value) : "Unknown";
-    }
-
-    function mhNormalizeRecord(record, index) {
-      const lat = Number(mhFirst(record,["latitude","lat"]));
-      const lon = Number(mhFirst(record,["longitude","lon","lng"]));
-      return {
-        id: mhFirst(record,["id","event_id"],`manual-${index+1}`),
-        date: mhFirst(record,["date","event_date","datetime","timestamp"]),
-        actor: mhNormalizeActor(mhFirst(record,["attacker","actor","side","responsible_actor"])),
-        country: mhText(mhFirst(record,["country","target_country","territory","area"])),
-        location: mhText(mhFirst(record,["location","place","site","target_location"])),
-        attackType: mhText(mhFirst(record,["attack_type","strike_type","weapon_type","type","method"])),
-        targetType: mhText(mhFirst(record,["target_type","target_category","category","target"])),
-        latitude: Number.isFinite(lat) ? lat : null,
-        longitude: Number.isFinite(lon) ? lon : null
-      };
-    }
-
-    function mhExtractRecords(data) {
-      if (Array.isArray(data)) return data;
-      for (const key of ["events","records","strikes","data","items"]) {
-        if (Array.isArray(data?.[key])) return data[key];
-      }
-      return [];
-    }
-
-    function mhCountBy(list, selector) {
-      const counts = new Map();
-      list.forEach(item => {
-        const key = mhText(selector(item));
-        counts.set(key,(counts.get(key)||0)+1);
-      });
-      return [...counts.entries()].sort((a,b)=>b[1]-a[1]);
-    }
-
-    function mhCanvasSetup(canvas) {
-      const box = canvas.getBoundingClientRect();
-      const ratio = Math.max(1,window.devicePixelRatio||1);
-      const width = Math.max(280,Math.round(box.width||canvas.parentElement?.clientWidth||600));
-      const height = Math.max(220,Math.round(box.height||canvas.parentElement?.clientHeight||270));
-      canvas.width = Math.round(width*ratio);
-      canvas.height = Math.round(height*ratio);
-      const ctx = canvas.getContext("2d");
-      ctx.setTransform(ratio,0,0,ratio,0,0);
-      ctx.clearRect(0,0,width,height);
-      return {ctx,width,height};
-    }
-
-    function mhDrawTimeline(list) {
-      const canvas = $("mhTimelineCanvas");
-      if (!canvas) return;
-      const {ctx,width,height}=mhCanvasSetup(canvas);
-      const byDate = new Map();
-      list.forEach(item=>{
-        const date=parseDate(item.date);
-        if (!date) return;
-        const key=date.toISOString().slice(0,10);
-        if (!byDate.has(key)) byDate.set(key,{USA:0,Iran:0,Other:0});
-        const bucket=byDate.get(key);
-        if (item.actor==="USA") bucket.USA++;
-        else if (item.actor==="Iran") bucket.Iran++;
-        else bucket.Other++;
-      });
-      const rows=[...byDate.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
-      if (!rows.length) {
-        ctx.fillStyle="#766b88"; ctx.font="12px Arial"; ctx.fillText("Nincs dátumozott rekord.",20,35); return;
-      }
-      const pad={l:42,r:14,t:18,b:42};
-      const chartW=width-pad.l-pad.r, chartH=height-pad.t-pad.b;
-      const max=Math.max(1,...rows.map(([,v])=>v.USA+v.Iran+v.Other));
-      ctx.strokeStyle="#ddd8e8"; ctx.lineWidth=1;
-      for(let i=0;i<=4;i++){
-        const y=pad.t+chartH*(i/4); ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(width-pad.r,y);ctx.stroke();
-        ctx.fillStyle="#7b7288";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(String(Math.round(max*(1-i/4))),pad.l-7,y+3);
-      }
-      const slot=chartW/rows.length, bar=Math.max(3,Math.min(24,slot*.62));
-      rows.forEach(([date,v],i)=>{
-        let y=pad.t+chartH; const x=pad.l+i*slot+(slot-bar)/2;
-        [[v.USA,"#2563eb"],[v.Iran,"#16a34a"],[v.Other,"#7846e8"]].forEach(([count,color])=>{
-          const h=(count/max)*chartH; y-=h; ctx.fillStyle=color;ctx.fillRect(x,y,bar,h);
-        });
-        if(rows.length<=18 || i%Math.ceil(rows.length/12)===0){
-          ctx.save();ctx.translate(x+bar/2,height-10);ctx.rotate(-.55);ctx.fillStyle="#6f667d";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(date.slice(5),0,0);ctx.restore();
-        }
-      });
-      ctx.textAlign="left";ctx.font="10px Arial";
-      [["USA","#2563eb"],["Iran","#16a34a"],["Other","#7846e8"]].forEach(([label,color],i)=>{
-        const x=pad.l+i*72;ctx.fillStyle=color;ctx.fillRect(x,4,10,10);ctx.fillStyle="#51465f";ctx.fillText(label,x+14,13);
-      });
-    }
-
-    function mhDrawActor(list) {
-      const canvas=$("mhActorCanvas"); if(!canvas) return;
-      const {ctx,width,height}=mhCanvasSetup(canvas);
-      const rows=mhCountBy(list,x=>x.actor);
-      const total=Math.max(1,list.length); const cx=width*.5,cy=height*.47,r=Math.min(width,height)*.31,inner=r*.58;
-      const palette={USA:"#2563eb",Iran:"#16a34a",Israel:"#dc2626",Unknown:"#64748b"};
-      let start=-Math.PI/2;
-      rows.forEach(([name,count],i)=>{const angle=count/total*Math.PI*2;ctx.beginPath();ctx.arc(cx,cy,r,start,start+angle);ctx.arc(cx,cy,inner,start+angle,start,true);ctx.closePath();ctx.fillStyle=palette[name]||["#7846e8","#d97706","#0f766e"][i%3];ctx.fill();start+=angle;});
-      ctx.fillStyle="#34215f";ctx.font="bold 26px Arial";ctx.textAlign="center";ctx.fillText(String(list.length),cx,cy+5);ctx.font="9px Arial";ctx.fillStyle="#766b88";ctx.fillText("REKORD",cx,cy+22);
-      ctx.textAlign="left";ctx.font="10px Arial";
-      rows.slice(0,5).forEach(([name,count],i)=>{const y=height-58+i*13;ctx.fillStyle=palette[name]||["#7846e8","#d97706","#0f766e"][i%3];ctx.fillRect(15,y-8,9,9);ctx.fillStyle="#51465f";ctx.fillText(`${name}: ${count} (${(count/total*100).toFixed(1)}%)`,30,y);});
-    }
-
-    function mhDrawTypes(list) {
-      const canvas=$("mhTypeCanvas"); if(!canvas) return;
-      const {ctx,width,height}=mhCanvasSetup(canvas);
-      const merged=[...mhCountBy(list,x=>x.attackType).slice(0,5).map(([n,c])=>[`Attack: ${n}`,c]),...mhCountBy(list,x=>x.targetType).slice(0,5).map(([n,c])=>[`Target: ${n}`,c])].sort((a,b)=>b[1]-a[1]).slice(0,8);
-      if(!merged.length){ctx.fillStyle="#766b88";ctx.font="12px Arial";ctx.fillText("Nincs kategorizált rekord.",20,35);return;}
-      const pad={l:145,r:24,t:14,b:16}, chartW=width-pad.l-pad.r, rowH=(height-pad.t-pad.b)/merged.length, max=Math.max(...merged.map(x=>x[1]),1);
-      merged.forEach(([name,count],i)=>{const y=pad.t+i*rowH+rowH*.22, h=rowH*.52;ctx.fillStyle="#ede9f6";ctx.fillRect(pad.l,y,chartW,h);ctx.fillStyle=name.startsWith("Attack:")?"#7846e8":"#0f766e";ctx.fillRect(pad.l,y,chartW*(count/max),h);ctx.fillStyle="#51465f";ctx.font="10px Arial";ctx.textAlign="right";ctx.fillText(name.replace(/^Attack: /,"A: ").replace(/^Target: /,"T: ").slice(0,22),pad.l-8,y+h*.72);ctx.textAlign="left";ctx.font="bold 10px Arial";ctx.fillText(String(count),pad.l+chartW*(count/max)+5,y+h*.72);});
-    }
-
-    function mhRenderCountries(list) {
-      const target=$("mhCountryRanks"); if(!target) return;
-      const rows=mhCountBy(list,x=>x.country).slice(0,10); const max=rows[0]?.[1]||1;
-      target.innerHTML=rows.length?rows.map(([name,count])=>`<div class="manual-history-rank"><div class="manual-history-rank-head"><strong>${escapeHtml(name)}</strong><span>${count}</span></div><div class="manual-history-track"><span style="width:${(count/max*100).toFixed(1)}%"></span></div></div>`).join(""):'<div class="manual-history-empty">Nincs országadat.</div>';
-    }
-
-    function mhDateOnly(value){const d=parseDate(value);return d?new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())):null;}
-    function mhIsoDate(d){return d?d.toISOString().slice(0,10):"";}
-    function mhDataBounds(){const d=manualHistoryEvents.map(x=>mhDateOnly(x.date)).filter(Boolean).sort((a,b)=>a-b);return{first:d[0]||null,last:d.at(-1)||null};}
-    function mhFilteredEvents(){
-      const sv=$("mhStartDate")?.value||"",ev=$("mhEndDate")?.value||"";
-      const s=sv?new Date(`${sv}T00:00:00Z`):null,e=ev?new Date(`${ev}T00:00:00Z`):null;
-      return manualHistoryEvents.filter(x=>{const d=mhDateOnly(x.date);return d&&(!s||d>=s)&&(!e||d<=e);});
-    }
+    function mhText(value, fallback = "Unknown") { const text=String(value??"").trim(); return text||fallback; }
+    function mhFirst(source, keys, fallback = "") { for(const key of keys){const value=source?.[key];if(value!==undefined&&value!==null&&String(value).trim()!=="")return value;}return fallback; }
+    function mhNormalizeActor(value){const raw=String(value||"unknown").trim().toLowerCase();if(/^(usa|us|u\.s\.|united states|american|u\.s\. forces)$/.test(raw))return"USA";if(/iran|iranian|irgc/.test(raw))return"Iran";if(/houthi|ansar allah|ansarallah|huszi|húszi/.test(raw))return"HOUTHI";if(/israel|israeli|idf|iaf/.test(raw))return"Israel";return raw&&raw!=="unknown"?mhText(value):"Unknown";}
+    function mhNormalizeDataset(value,actor){const raw=String(value||"").trim().toUpperCase().replace(/[\s-]+/g,"_");if(raw.includes("HOUTHI"))return"HOUTHI";if(raw.includes("USA")&&raw.includes("IRAN"))return"USA_IRAN";if(actor==="HOUTHI")return"HOUTHI";if(actor==="USA"||actor==="Iran")return"USA_IRAN";return raw||"OTHER";}
+    function mhNormalizeRecord(record,index){const lat=Number(mhFirst(record,["latitude","lat"])),lon=Number(mhFirst(record,["longitude","lon","lng"]));const actor=mhNormalizeActor(mhFirst(record,["attacker","actor","side","responsible_actor"]));return{id:mhFirst(record,["id","event_id"],`manual-${index+1}`),date:mhFirst(record,["date","event_date","datetime","timestamp"]),dataset:mhNormalizeDataset(mhFirst(record,["dataset","group","dataset_group","conflict"]),actor),actor,country:mhText(mhFirst(record,["target_country","country","territory","area"])),location:mhText(mhFirst(record,["location","place","site","target_location"])),attackType:mhText(mhFirst(record,["strike_type","attack_type","weapon_type","type","method"])),targetType:mhText(mhFirst(record,["target_type","target_category","category","target"])),latitude:Number.isFinite(lat)?lat:null,longitude:Number.isFinite(lon)?lon:null};}
+    function mhExtractRecords(data){if(Array.isArray(data))return data;for(const key of["events","records","strikes","data","items"]){if(Array.isArray(data?.[key]))return data[key];}return[];}
+    function mhCountBy(list,selector){const counts=new Map();list.forEach(item=>{const key=mhText(selector(item));counts.set(key,(counts.get(key)||0)+1);});return[...counts.entries()].sort((a,b)=>b[1]-a[1]);}
+    function mhCanvasSetup(canvas){const box=canvas.getBoundingClientRect(),ratio=Math.max(1,window.devicePixelRatio||1),width=Math.max(280,Math.round(box.width||canvas.parentElement?.clientWidth||600)),height=Math.max(220,Math.round(box.height||canvas.parentElement?.clientHeight||270));canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);const ctx=canvas.getContext("2d");ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,width,height);return{ctx,width,height};}
+    function mhDrawBars(canvasId,rows,opts={}){const canvas=$(canvasId);if(!canvas)return;const{ctx,width,height}=mhCanvasSetup(canvas);if(!rows.length){ctx.fillStyle="#766b88";ctx.font="12px Arial";ctx.fillText("Nincs megjeleníthető adat.",20,35);return;}const pad={l:Math.min(155,width*.42),r:32,t:14,b:16},chartW=width-pad.l-pad.r,rowH=(height-pad.t-pad.b)/rows.length,max=Math.max(...rows.map(x=>x[1]),1);rows.forEach(([name,count],i)=>{const y=pad.t+i*rowH+rowH*.22,h=rowH*.52;ctx.fillStyle="#ede9f6";ctx.fillRect(pad.l,y,chartW,h);ctx.fillStyle=opts.color||"#7846e8";ctx.fillRect(pad.l,y,chartW*(count/max),h);ctx.fillStyle="#51465f";ctx.font="10px Arial";ctx.textAlign="right";const label=String(name).length>24?String(name).slice(0,22)+"…":String(name);ctx.fillText(label,pad.l-8,y+h*.72);ctx.textAlign="left";ctx.font="bold 10px Arial";ctx.fillText(String(count),Math.min(width-22,pad.l+chartW*(count/max)+5),y+h*.72);});}
+    function mhDrawTimeline(list){const canvas=$("mhTimelineCanvas");if(!canvas)return;const{ctx,width,height}=mhCanvasSetup(canvas),byDate=new Map();list.forEach(item=>{const date=parseDate(item.date);if(!date)return;const key=date.toISOString().slice(0,10);if(!byDate.has(key))byDate.set(key,{USA:0,Iran:0,HOUTHI:0,Other:0});const b=byDate.get(key);if(item.actor==="USA")b.USA++;else if(item.actor==="Iran")b.Iran++;else if(item.actor==="HOUTHI")b.HOUTHI++;else b.Other++;});const rows=[...byDate.entries()].sort((a,b)=>a[0].localeCompare(b[0]));if(!rows.length){ctx.fillStyle="#766b88";ctx.font="12px Arial";ctx.fillText("Nincs dátumozott rekord.",20,35);return;}const pad={l:42,r:14,t:18,b:42},chartW=width-pad.l-pad.r,chartH=height-pad.t-pad.b,max=Math.max(1,...rows.map(([,v])=>v.USA+v.Iran+v.HOUTHI+v.Other));ctx.strokeStyle="#ddd8e8";for(let i=0;i<=4;i++){const y=pad.t+chartH*(i/4);ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(width-pad.r,y);ctx.stroke();ctx.fillStyle="#7b7288";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(String(Math.round(max*(1-i/4))),pad.l-7,y+3);}const slot=chartW/rows.length,bar=Math.max(2,Math.min(24,slot*.62));rows.forEach(([date,v],i)=>{let y=pad.t+chartH,x=pad.l+i*slot+(slot-bar)/2;[[v.USA,"#2563eb"],[v.Iran,"#16a34a"],[v.HOUTHI,"#d97706"],[v.Other,"#7846e8"]].forEach(([count,color])=>{const h=count/max*chartH;y-=h;ctx.fillStyle=color;ctx.fillRect(x,y,bar,h);});if(rows.length<=18||i%Math.ceil(rows.length/12)===0){ctx.save();ctx.translate(x+bar/2,height-10);ctx.rotate(-.55);ctx.fillStyle="#6f667d";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(date.slice(5),0,0);ctx.restore();}});}
+    function mhDrawActor(list){const rows=mhCountBy(list,x=>x.actor);mhDrawBars("mhActorCanvas",rows.slice(0,8),{color:"#2879b8"});}
+    function mhDrawTypes(list){const merged=[...mhCountBy(list,x=>x.attackType).slice(0,5).map(([n,c])=>[`A: ${n}`,c]),...mhCountBy(list,x=>x.targetType).slice(0,5).map(([n,c])=>[`T: ${n}`,c])].sort((a,b)=>b[1]-a[1]).slice(0,8);mhDrawBars("mhTypeCanvas",merged,{color:"#7846e8"});}
+    function mhRenderCountries(list){const target=$("mhCountryRanks");if(!target)return;mhRenderRankList(target,mhCountBy(list,x=>x.country).filter(([n])=>n!=="Unknown").slice(0,10));}
+    function mhRenderRankList(target,rows){const max=rows[0]?.[1]||1;target.innerHTML=rows.length?rows.map(([name,count])=>`<div class="manual-history-rank"><div class="manual-history-rank-head"><strong>${escapeHtml(name)}</strong><span>${count}</span></div><div class="manual-history-track"><span style="width:${(count/max*100).toFixed(1)}%"></span></div></div>`).join(""):'<div class="manual-history-empty">Nincs adat.</div>';}
+    function mhHouthiTargetArea(x){const s=`${x.country} ${x.location} ${x.targetType}`.toLowerCase();if(/israel|tel aviv|eilat|haifa|hadera|jerusalem|ben gurion/.test(s))return"Izrael";if(/saudi|riyadh|jizan|jazan|najran|abha|taif|yanbu|khamis mushait|sharurah|farasan/.test(s))return"Szaúd-Arábia";if(/bab el.mandeb|bab al.mandab|mokha|mocha|perim|mayyun|dhubab/.test(s))return"Báb el-Mandeb / jemeni nyugati part";if(/red sea/.test(s)&&/usa|u\.s\.|carrier|truman|navy/.test(s))return"Vörös-tenger / USA katonai jelenlét";if(/red sea|gulf of aden|commercial|merchant|tanker|vessel|ship/.test(s))return"Kereskedelmi hajózás / tengeri térség";if(/yemen/.test(s))return"Jemen";return x.country!=="Unknown"?x.country:"Egyéb";}
+    function mhHouthiWeaponGroup(x){const s=`${x.attackType} ${x.targetType}`.toLowerCase();if(/ground offensive|capture|territorial|settlement|island/.test(s))return"Szárazföldi / területi művelet";if(/usv|uncrewed surface|unmanned surface/.test(s))return"USV / tengeri drón";if(/anti.ship|anti ship/.test(s))return"Hajó elleni rakéta / fegyver";if(/air.defen|air defen|shootdown/.test(s))return"Légvédelmi művelet";const missile=/ballistic|cruise|missile/.test(s),uav=/uav|drone/.test(s);if(missile&&uav)return"Kombinált rakéta–UAV";if(/ballistic/.test(s))return"Ballisztikus rakéta";if(/cruise/.test(s))return"Cirkálórakéta";if(uav)return"UAV / drón";if(missile)return"Rakéta – egyéb/nem pontosított";return"Egyéb / nem pontosított";}
+    function mhDrawHouthiMonthly(list){const byMonth=new Map();list.forEach(x=>{const d=mhDateOnly(x.date);if(!d)return;const k=mhIsoDate(d).slice(0,7);byMonth.set(k,(byMonth.get(k)||0)+1);});const rows=[...byMonth.entries()].sort((a,b)=>a[0].localeCompare(b[0]));const canvas=$("mhHouthiMonthlyCanvas");if(!canvas)return;const{ctx,width,height}=mhCanvasSetup(canvas);if(!rows.length){ctx.fillStyle="#766b88";ctx.fillText("Nincs HOUTHI adat.",20,35);return;}const pad={l:38,r:12,t:20,b:48},cw=width-pad.l-pad.r,ch=height-pad.t-pad.b,max=Math.max(...rows.map(x=>x[1]),1),slot=cw/rows.length,bar=Math.max(4,Math.min(30,slot*.66));for(let i=0;i<=4;i++){const y=pad.t+ch*i/4;ctx.strokeStyle="#e3deed";ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(width-pad.r,y);ctx.stroke();ctx.fillStyle="#766b88";ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(String(Math.round(max*(1-i/4))),pad.l-6,y+3);}rows.forEach(([m,c],i)=>{const h=c/max*ch,x=pad.l+i*slot+(slot-bar)/2,y=pad.t+ch-h;ctx.fillStyle="#d97706";ctx.fillRect(x,y,bar,h);ctx.fillStyle="#51465f";ctx.font="bold 9px Arial";ctx.textAlign="center";ctx.fillText(String(c),x+bar/2,y-4);ctx.save();ctx.translate(x+bar/2,height-9);ctx.rotate(-.65);ctx.font="9px Arial";ctx.textAlign="right";ctx.fillText(m,0,0);ctx.restore();});}
+    function mhRenderHouthi(list){const h=list.filter(x=>x.dataset==="HOUTHI"||x.actor==="HOUTHI");mhDrawHouthiMonthly(h);mhRenderRankList($("mhHouthiTargets"),mhCountBy(h,mhHouthiTargetArea).slice(0,8));mhDrawBars("mhHouthiWeaponsCanvas",mhCountBy(h,mhHouthiWeaponGroup).slice(0,8),{color:"#d97706"});}
+    function mhDateOnly(value){const d=parseDate(value);return d?new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())):null;}function mhIsoDate(d){return d?d.toISOString().slice(0,10):"";}
+    function mhSelectedDataset(){return $("mhDataset")?.value||"ALL";}function mhDatasetEvents(){const ds=mhSelectedDataset();return ds==="ALL"?manualHistoryEvents:manualHistoryEvents.filter(x=>x.dataset===ds||(ds==="HOUTHI"&&x.actor==="HOUTHI"));}
+    function mhDataBounds(){const d=mhDatasetEvents().map(x=>mhDateOnly(x.date)).filter(Boolean).sort((a,b)=>a-b);return{first:d[0]||null,last:d.at(-1)||null};}
+    function mhFilteredEvents(){const base=mhDatasetEvents(),sv=$("mhStartDate")?.value||"",ev=$("mhEndDate")?.value||"",s=sv?new Date(`${sv}T00:00:00Z`):null,e=ev?new Date(`${ev}T00:00:00Z`):null;return base.filter(x=>{const d=mhDateOnly(x.date);return d&&(!s||d>=s)&&(!e||d<=e);});}
     function mhSetActiveQuickButton(id){["mh7Btn","mh14Btn","mh30Btn","mhAllBtn"].forEach(x=>$(x)?.classList.toggle("active",x===id));}
-    function mhSetQuickRange(days){
-      const b=mhDataBounds();if(!b.first||!b.last)return;
-      const e=new Date(b.last),s=new Date(b.last);s.setUTCDate(s.getUTCDate()-(days-1));if(s<b.first)s.setTime(b.first.getTime());
-      $("mhStartDate").value=mhIsoDate(s);$("mhEndDate").value=mhIsoDate(e);mhSetActiveQuickButton(`mh${days}Btn`);mhRender();
-    }
+    function mhSetQuickRange(days){const b=mhDataBounds();if(!b.first||!b.last)return;const e=new Date(b.last),s=new Date(b.last);s.setUTCDate(s.getUTCDate()-(days-1));if(s<b.first)s.setTime(b.first.getTime());$("mhStartDate").value=mhIsoDate(s);$("mhEndDate").value=mhIsoDate(e);mhSetActiveQuickButton(`mh${days}Btn`);mhRender();}
     function mhSetAllRange(){const b=mhDataBounds();if(!b.first||!b.last)return;$("mhStartDate").value=mhIsoDate(b.first);$("mhEndDate").value=mhIsoDate(b.last);mhSetActiveQuickButton("mhAllBtn");mhRender();}
-    function mhValidateRange(which){
-      const s=$("mhStartDate"),e=$("mhEndDate");if(!s||!e)return;
-      if(s.value&&e.value&&s.value>e.value){if(which==="start")e.value=s.value;else s.value=e.value;}
-      mhSetActiveQuickButton("");mhRender();
-    }
-    function mhInitDateFilter(){
-      const b=mhDataBounds();if(!b.first||!b.last)return;
-      const first=mhIsoDate(b.first),last=mhIsoDate(b.last);
-      ["mhStartDate","mhEndDate"].forEach(id=>{$(id).min=first;$(id).max=last;});
-      $("mh7Btn")?.addEventListener("click",()=>mhSetQuickRange(7));
-      $("mh14Btn")?.addEventListener("click",()=>mhSetQuickRange(14));
-      $("mh30Btn")?.addEventListener("click",()=>mhSetQuickRange(30));
-      $("mhAllBtn")?.addEventListener("click",mhSetAllRange);
-      $("mhStartDate")?.addEventListener("change",()=>mhValidateRange("start"));
-      $("mhEndDate")?.addEventListener("change",()=>mhValidateRange("end"));
-      mhSetQuickRange(7);
-    }
-    function mhRender(){
-      const list=mhFilteredEvents(),dates=list.map(x=>mhDateOnly(x.date)).filter(Boolean).sort((a,b)=>a-b);
-      const actors=mhCountBy(list,x=>x.actor),countries=mhCountBy(list,x=>x.country).filter(([name])=>name!=="Unknown");
-      const geo=list.filter(x=>Number.isFinite(x.latitude)&&Number.isFinite(x.longitude)).length;
-      $("mhTotal").textContent=String(list.length);$("mhUsa").textContent=String(actors.find(([n])=>n==="USA")?.[1]||0);$("mhIran").textContent=String(actors.find(([n])=>n==="Iran")?.[1]||0);
-      $("mhCountries").textContent=String(countries.length);$("mhGeo").textContent=`${geo} / ${list.length}`;$("mhRange").textContent=dates.length?`${mhIsoDate(dates[0])} – ${mhIsoDate(dates.at(-1))}`:"—";
-      if($("mhFilterStatus"))$("mhFilterStatus").textContent=`Aktív időszak: ${$("mhStartDate")?.value||"—"} – ${$("mhEndDate")?.value||"—"} · ${list.length} esemény a teljes ${manualHistoryEvents.length} rekordból.`;
-      mhDrawTimeline(list);mhDrawActor(list);mhDrawTypes(list);mhRenderCountries(list);
-    }
-
-    async function loadManualHistory() {
-      const section=$("manualHistorySection");
-      const status=$("manualHistoryStatus");
-      const content=$("manualHistoryContent");
-      if(!section||!status||!content) return;
-      try {
-        const response=await fetch(MANUAL_HISTORY_URL,{cache:"no-store"});
-        if(!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data=await response.json();
-        manualHistoryEvents=mhExtractRecords(data).map(mhNormalizeRecord).filter(x=>x.date||x.location!=="Unknown"||x.country!=="Unknown");
-        if(!manualHistoryEvents.length) throw new Error("A fájl nem tartalmaz feldolgozható rekordot.");
-        section.hidden=false; status.hidden=true; content.hidden=false;
-        requestAnimationFrame(mhInitDateFilter);
-      } catch(error) {
-        /* Intentional fail-safe: keep the module hidden and preserve all existing behavior. */
-        console.info("Manual historical database module is unavailable:",error?.message||error);
-        section.hidden=true;
-      }
-    }
+    function mhValidateRange(which){const s=$("mhStartDate"),e=$("mhEndDate");if(!s||!e)return;if(s.value&&e.value&&s.value>e.value){if(which==="start")e.value=s.value;else s.value=e.value;}mhSetActiveQuickButton("");mhRender();}
+    function mhRefreshBoundsAndRange(){const b=mhDataBounds();if(!b.first||!b.last)return;const first=mhIsoDate(b.first),last=mhIsoDate(b.last);["mhStartDate","mhEndDate"].forEach(id=>{$(id).min=first;$(id).max=last;});mhSetAllRange();}
+    function mhInitDateFilter(){const b=mhDataBounds();if(!b.first||!b.last)return;$("mhDataset")?.addEventListener("change",mhRefreshBoundsAndRange);$("mh7Btn")?.addEventListener("click",()=>mhSetQuickRange(7));$("mh14Btn")?.addEventListener("click",()=>mhSetQuickRange(14));$("mh30Btn")?.addEventListener("click",()=>mhSetQuickRange(30));$("mhAllBtn")?.addEventListener("click",mhSetAllRange);$("mhStartDate")?.addEventListener("change",()=>mhValidateRange("start"));$("mhEndDate")?.addEventListener("change",()=>mhValidateRange("end"));mhSetQuickRange(7);}
+    function mhRender(){const list=mhFilteredEvents(),dates=list.map(x=>mhDateOnly(x.date)).filter(Boolean).sort((a,b)=>a-b),actors=mhCountBy(list,x=>x.actor),countries=mhCountBy(list,x=>x.country).filter(([n])=>n!=="Unknown"),geo=list.filter(x=>Number.isFinite(x.latitude)&&Number.isFinite(x.longitude)).length,ds=mhSelectedDataset();$("mhTotal").textContent=String(list.length);if(ds==="HOUTHI"){$("mhPrimary").textContent=String(actors.find(([n])=>n==="HOUTHI")?.[1]||0);$("mhPrimaryLabel").textContent="HOUTHI-esemény";$("mhSecondary").textContent=String(mhCountBy(list,mhHouthiTargetArea)[0]?.[1]||0);$("mhSecondaryLabel").textContent="Legnagyobb célcsoport";$("mhTimelineTitle").textContent="Napi húszi műveleti intenzitás";$("mhTimelineNote").textContent="HOUTHI események napi bontásban";}else{$("mhPrimary").textContent=String(actors.find(([n])=>n==="USA")?.[1]||0);$("mhPrimaryLabel").textContent="USA-esemény";$("mhSecondary").textContent=String(actors.find(([n])=>n==="Iran")?.[1]||0);$("mhSecondaryLabel").textContent="Irán-esemény";$("mhTimelineTitle").textContent="Napi támadási intenzitás";$("mhTimelineNote").textContent="Események napi bontásban";}$("mhCountries").textContent=String(countries.length);$("mhGeo").textContent=`${geo} / ${list.length}`;$("mhRange").textContent=dates.length?`${mhIsoDate(dates[0])} – ${mhIsoDate(dates.at(-1))}`:"—";if($("mhFilterStatus"))$("mhFilterStatus").textContent=`Adatcsoport: ${ds==="ALL"?"Összes":ds} · Aktív időszak: ${$("mhStartDate")?.value||"—"} – ${$("mhEndDate")?.value||"—"} · ${list.length} esemény.`;$("mhHouthiAnalytics").hidden=ds!=="HOUTHI";mhDrawTimeline(list);mhDrawActor(list);mhDrawTypes(list);mhRenderCountries(list);if(ds==="HOUTHI")mhRenderHouthi(list);}
+    async function loadManualHistory(){const section=$("manualHistorySection"),status=$("manualHistoryStatus"),content=$("manualHistoryContent");if(!section||!status||!content)return;try{const response=await fetch(MANUAL_HISTORY_URL,{cache:"no-store"});if(!response.ok)throw new Error(`HTTP ${response.status}`);const data=await response.json();manualHistoryEvents=mhExtractRecords(data).map(mhNormalizeRecord).filter(x=>x.date||x.location!=="Unknown"||x.country!=="Unknown");if(!manualHistoryEvents.length)throw new Error("A fájl nem tartalmaz feldolgozható rekordot.");section.hidden=false;status.hidden=true;content.hidden=false;requestAnimationFrame(mhInitDateFilter);}catch(error){console.info("Manual historical database module is unavailable:",error?.message||error);section.hidden=true;}}
 
 
     const GEO_RISK_URL = "security-signal.json";
@@ -4414,6 +4220,10 @@
   </script>
 </body>
 </html>
+
+
+
+
 
 
 
