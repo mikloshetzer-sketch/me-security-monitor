@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-09-21T12:52:11.698919+00:00
+**Generated:** 2026-09-21T19:30:27.933999+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Yemen (3.1), prev 24h: 0.0, share: 36%.
+Top current hotspot (by risk): Yemen (3.7), prev 24h: 0.0, share: 28%.
 
 ## X POST VERSION
 
