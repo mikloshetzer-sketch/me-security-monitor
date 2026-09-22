@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-22 04:59 UTC",
+    "updated": "2026-09-22 11:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-09-16",
     "period_end": "2026-09-22",
-    "total_events": 133,
-    "total_risk": 93.96,
-    "normalized_risk_score": 37.6,
+    "total_events": 135,
+    "total_risk": 100.31,
+    "normalized_risk_score": 40.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
+    "military": 28,
     "security": 2,
-    "political": 12,
-    "other": 93
+    "political": 11,
+    "other": 94
   },
   "source_counts": {
-    "news": 129,
+    "news": 131,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 26.61
+      "risk": 26.81
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 13.2
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.8
+      "risk": 12.65
     },
     {
       "name": "Yemen",
-      "risk": 11.6
+      "risk": 12.1
     },
     {
       "name": "Israel",
-      "risk": 11.3
-    },
-    {
-      "name": "Riyadh",
-      "risk": 9.35
+      "risk": 11.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran must stop arming Houthis in Yemen, G7 says ahead of UN General Assembly",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cwm2qpmepmlzo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "UK to help refuel Saudi jets countering Houthi attacks",
+      "location": "Saudi Arabia",
+      "url": "https://www.bbc.co.uk/news/articles/cqlykpe4dk0yo?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 2.7,
       "date": "2026-09-21",
@@ -88,6 +106,15 @@
       "date": "2026-09-20",
       "category": "military",
       "source_type": "news",
+      "title": "Flames, smoke seen near Riyadh airport; Houthis claim attacks on Saudi capital - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYWNnM0NScnlDOXNDY25xQjhZVlRHUUtMOEV3YVZSOW5xekdVelcycGI1VHl3dWpqVGhNM2s1N05NamZxV0hoNVBFN204OHM5dVlQemMySkJGMlpCaURybUY4TVZfd0RDUUxzb3RTeWJVVEI4blFQZFhJekptSHRFUVdqb1pDai1VQ1hPS1JHWk92MEpZYWtESDduUmpwUEg4Nzc4bFp3VDQzM2JMTnRZXzgzbVBvUDk0clU4a3dHMlhuQk0"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-09-20",
+      "category": "military",
+      "source_type": "news",
       "title": "Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters",
       "location": "Riyadh",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZnFXQ1lvNTg5TnJvazhfY3VXa0hrVms4RW1mdVBpR0k4QXZkempjX0h4Y2JIaGNvSm04YVJkTHRDTWpESVFDakhJMExiNGZSSktLcVFsM3VlM3ZibDQwVlE3czF4OEdLdXdnU0FPaUN1aHFLVWN3cW9uVHRTTDdDU1BNaUNMd3NQMlY5VGZPYzA5ODlMQi1rcWVDXzhFZHJWUF9tQjJqUUtzQW1yc0tYNw"
@@ -109,33 +136,6 @@
       "title": "Israeli attacks kill four Palestinians including son of Gaza’s health chief - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOS0ZKb0U3c3RFV2FhaGQtQndQemtZZXBDX0pQZEw3aE9PUW5NMEEtNHpKanF4TTlWS3h3bm9iM3JSZU91alN4OXhSWVRaR0lvMzNyWHdQN1FSa0J6TmU4V2JYcUxRTE5vU3JpQzF5SzVKcU9RanFpeGtWcmk2eVUyWDJaNkQzT2p2aEo5ZnM1V3A2OVdNcVdWR1gyUHhzZ9IBowFBVV95cUxQS1k2S2xYOGFkbFM4UmtTdW5oN3ZQb3owdHowM1Q5bFZGd3lvdTYzNVVXc3RYbGI1dDZpVHBfSzBRNXJia3ZSbmh4OWxpSHBwUktvd0Jpal90WFVWR0dWSTYxU1dQTG45SUEyQUhVYUV4QWc5NmZMX0ZyRmZDX0VGQmhyYkZsVmU5dkoyZzhmakducmRCRnRueWtOakhzOVNwdkE0"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Flames, smoke seen near Riyadh airport; Houthis claim attacks on Saudi capital - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYWNnM0NScnlDOXNDY25xQjhZVlRHUUtMOEV3YVZSOW5xekdVelcycGI1VHl3dWpqVGhNM2s1N05NamZxV0hoNVBFN204OHM5dVlQemMySkJGMlpCaURybUY4TVZfd0RDUUxzb3RTeWJVVEI4blFQZFhJekptSHRFUVdqb1pDai1VQ1hPS1JHWk92MEpZYWtESDduUmpwUEg4Nzc4bFp3VDQzM2JMTnRZXzgzbVBvUDk0clU4a3dHMlhuQk0"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeDVrUGNRTzdTOG1wQ1ljY2w0Y002MjMxSVNvM2RrLTBhM3B1dEJVS1B6bnJWTjhydS1BUHpfTVFtbHh2QkdMdFU1ZVo3MDJtQ01kbldpa0lfWFM0QXFWbmVsN1RqcjcxMHczN3JGSHItelVZMzQtYklTN1kwVlJxLU5RVzAwc3BEQV9iVFI1N0xhRXluaGZxN0NrWkxFMDk5Q0pYZw"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill three people in Gaza, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOemgwbjZHUGxzMHdPUWJTOFhfS1lfVXFyUEdEcDM4WXM1Z1VSb3ZIdHI4cmpveHUxM1ZFb2RsVnVMcXlaS3BNNmdzMnRGNXNaT1VZMkcyY19vUnBHT2pGSkhyVDRqQmpvS0Z4dndGN2VSVEtySkN4MmM2SUJOZFc0T1h5ZXhaQ2sxdUVheGxrd0oySE9HcjVOMTFwZE1lVEVvQm1ud2xB"
     }
   ]
 }
