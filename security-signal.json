@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-23 13:40 UTC",
+    "updated": "2026-09-23 18:28 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-17",
     "period_end": "2026-09-23",
-    "total_events": 136,
-    "total_risk": 90.74,
-    "normalized_risk_score": 36.3,
+    "total_events": 145,
+    "total_risk": 97.34,
+    "normalized_risk_score": 38.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 17,
     "security": 2,
-    "political": 17,
-    "other": 100
+    "political": 20,
+    "other": 106
   },
   "source_counts": {
-    "news": 132,
+    "news": 141,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 30.54
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 10.25
+      "risk": 36.74
     },
     {
       "name": "Yemen",
-      "risk": 10.0
+      "risk": 11.0
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.5
+      "risk": 10.05
     },
     {
-      "name": "Riyadh",
-      "risk": 6.0
+      "name": "Saudi Arabia",
+      "risk": 7.7
+    },
+    {
+      "name": "Israel",
+      "risk": 7.0
     }
   ],
   "top_events": [
@@ -61,7 +61,16 @@
       "date": "2026-09-23",
       "category": "military",
       "source_type": "news",
-      "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks - aljazeera.com",
+      "title": "Syria’s al-Sharaa warns Israeli attacks endanger delicate post-war recovery - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQckxGSUFxVll4ZHlRc2pVSmRfN0RuUVBabmJsTnRyYjJwcmlaRkdyLXFER1lHWVExZ3pkdXdBRG0wenBJY0Z0WHc3bVdhNmc2SGpHU1lRX2JoNFdDTDNSWWRVY3dpck0yZ0s0RGdMdUJobFBlZHhpZXBBSGZXbHRSUTRJZGFRNE5SWTVnd2dVOWRZYjZlN0dlM3d3TFNReFpCcTZGN0xQRGt3b0tOeWd4OWRseGRjUdIBuwFBVV95cUxOcElqRWJtOGxiQldsWWRmMk8wejhwQXFWOEJJT1UtcWpQRUMtcXZRQ3FUd3VrN09LWHVaUVdQb04yNWNMVkdPcFlHNUtmMm9Zem1uMVNndEhfb1pEUDh2YlF6TlBFandJZGExV041dHVhbW14SzRrdS1wbEZ0YU1YVWo1M0hBcGlaU3pWR09mZUNYQ2tfUlozRnFUYVdYcHBEbDI1d0lTOFVvS1VEOHpfRTRINmVLT3JsMmxJ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr"
     },
@@ -97,16 +106,7 @@
       "date": "2026-09-21",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia ramps up Gulf oil exports after pipeline attack, data shows - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcThldmdWd2c5aHdfck8zYk1XMWtsa3kweWlXaTNQWEpnV2NIUHhiNTh2cHhoSndCV2Z2QkhwNl9DZEJObFJha2pXWG1JcUZpVXlZU1RqQ2diZUJ0YVV2alRBRmRCampGOGdQQnM4UVV2R2ZMQ2p6WC1QSk5iOGJEWDZ2YXdaSzlLeGtZYnNuVld5MGZESG1tenNaMFlFcExWeVhlZjJBTlJOeHNmVkhBYzFkejJkNno5VWEwU05hRHU4NGlqT1U5UXcxUzU"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran’s military says US preparing to resume strikes - aljazeera.com",
+      "title": "Iran’s military says US preparing to resume strikes - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQ2o4VlNDVWc4MFhvY3laajdhME4yZkZZVXM0TFlkV0ZVYzFReURGWFhCYXdZWTJQdEhFMDNocnRiUTl6Zk42YnZQdjc2ZjFnQnJTRG1Del95SnYwa1p6RElQMXYtTkpyN2NUeF93d2ppMm12c0NiQTlmVUhmUk1VZ3ZJcU5OTnBHR2FDMDlVTXA0YngxQ2fSAZsBQVVfeXFMUDRVWWpxUVFOVzctel93SGhwQ05TN3ZaX0cxazZXdDlacE1EQ0NMNmpoN3VDOWpyQ3hBSE9oUWlGb0t1ekVEVl8tbTExbG1XWjRvOWUyWndrVTBUbWk3SHhCT0tEVy0yR3N1UGwwSEpYX3BKZFlreXNpWE1kMXZUQUY4Sl91UmFJNnEwSjJUOE1Qd3R6TGZVRDVCb1U"
     },
@@ -115,7 +115,7 @@
       "date": "2026-09-21",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli forces arrest dozens of Palestinians in occupied West Bank raid - aljazeera.com",
+      "title": "Israeli forces arrest dozens of Palestinians in occupied West Bank raid - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORGZMT1ZaVGJDZmY5aEp0XzFFMmRRczYwM20yY0dtcVZubkF6ek1nVC1QZW1Ec0llZ25oR3E0VmNYWTBZWUJtXzdWYnhSbzlJejM5Q0gxMzNFNFcwZVNaNklkLTh0dUZSaV9NcENDNzlFTnFWMW1JamVmUG9Ic2taaUZGR1YzRWNwRUxRQ3NNUGQ5djVXdTcxVC1TajMwdnlicjkzOVAtb1UxaWlVUW0xUmJn0gG3AUFVX3lxTE9xMkZYVHlQUk1MeERhQUc5QlBBd28zVFdTSmsxbHZyV0FKRVVlYnlRdkNFX1lmVnJqaER5YlVoVFRSTm1ZcFhrLUljVjhOUlhzcFBLZndTaGNob1lxTy1pX1hnR293NDc0dlltdi16Mko1dXNFTDhITHVZVFlDM2hFOVkyNkJiczZDQy1xWm5JclRWSXhCUkFsX09iUG5ERndiaUczdDR1c0RzclFqak9SN2c0dVp2SQ"
     },
@@ -133,9 +133,9 @@
       "date": "2026-09-20",
       "category": "military",
       "source_type": "news",
-      "title": "Flames, smoke seen near Riyadh airport; Houthis claim attacks on Saudi capital - Reuters",
+      "title": "Saudi-led coalition says defence intercepted Houthi missile fired at Riyadh - Al Jazeera",
       "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYWNnM0NScnlDOXNDY25xQjhZVlRHUUtMOEV3YVZSOW5xekdVelcycGI1VHl3dWpqVGhNM2s1N05NamZxV0hoNVBFN204OHM5dVlQemMySkJGMlpCaURybUY4TVZfd0RDUUxzb3RTeWJVVEI4blFQZFhJekptSHRFUVdqb1pDai1VQ1hPS1JHWk92MEpZYWtESDduUmpwUEg4Nzc4bFp3VDQzM2JMTnRZXzgzbVBvUDk0clU4a3dHMlhuQk0"
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaFRmYktSYmFGRVRhRF9lMVBha2RQR1B4dHI2TkRvT1cxOFh3TVB3UXNvVjNfa3UxRGRQSjNiQ1MtYVBqMW9VNXNsTnpRa2JaYlpDWi10U3NwazZDRjJLbVEzYVRzdVdrTnA3LWFVWjlPVTlXbDhSdkJZRUVvZk1MVTdUMk5qZm9rbV9sT3BfeGlFU3FrbG4yTWVxcm90OFRpNC1Pc2pqcHJTYXUwQWdIWV9rU2wtQdIBuwFBVV95cUxPaU9oejdNQ3B1R0FZRS1sQ1FpTmlkNHJ0RFZyOUh5QXNHbzdheGgxeDNOV0dxT3VmR1ZFRDJobTZZV1VXVndOc3Nmb096dlpqMG01RWUzcVhxWDZKX3BkT0dVT3YyYUlPUXpveUYyMEtIU3dSTlVvVEhkZFVUdWNUemlBTVc0OUxJLXh5RHlQSmt3dE8tcTZOSWFFYnl3ZUJIM0x4cTlsMkJwM3NKRkt4WjZ2TmpXVjFoVHRJ"
     }
   ]
 }
