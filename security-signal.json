@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-24 11:48 UTC",
+    "updated": "2026-09-24 17:14 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,41 +9,41 @@
     "period_start": "2026-09-18",
     "period_end": "2026-09-24",
     "total_events": 142,
-    "total_risk": 94.51,
-    "normalized_risk_score": 37.8,
+    "total_risk": 100.77,
+    "normalized_risk_score": 40.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 14,
+    "military": 15,
     "security": 3,
     "political": 23,
-    "other": 102
+    "other": 101
   },
   "source_counts": {
-    "news": 139,
-    "isw": 3
+    "news": 138,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 32.91
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 12.4
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 9.1
+      "risk": 33.27
     },
     {
       "name": "Yemen",
-      "risk": 8.8
+      "risk": 13.8
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 10.7
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 10.05
     },
     {
       "name": "Israel",
-      "risk": 6.55
+      "risk": 7.2
     }
   ],
   "top_events": [
@@ -52,9 +52,36 @@
       "date": "2026-09-24",
       "category": "military",
       "source_type": "news",
+      "title": "Saudi Arabia thwarts Houthi ballistic missiles, Yemen's Saudi-led coalition says - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQLW1IRmRaem1xSHEwTjd1VldSMmNqZk55VmdmZkh4QnNhU21SM0ZtWGg4RDdxSkNOM1F6ZUJ4LUYybUlzcWx6S01zbzd5N3BRSWRTc0N6eExNa2RFQXVTYlM3RmtXOFlDUk1Yc2Q0LXNkTEFPQlpCNjgzZHNlbkZXWGtXT1NRNFZ3a2lvWWNxVkk1Rng0Q2ZtNUk4TzZ0YXpNdDFaRUZQa2lBVHpnV05pV1QtZVlJSjJpTFFPTA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
       "title": "Turkey's Erdogan tells Ukraine's Zelenskiy that Black Sea attacks are inexplicable - Reuters",
       "location": "Turkey",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNeEVzc2ZoVlNjY0pjRXFjRVZBOFVfdk1SRU5zUkpPUEplOVE2bWFaRHBCLVEwMHRtQXEyVXJ4d2toVWdZdzE0RTNGSzN5SFhta25VajFvc256U0F4SHNJbWIzcHhwV0lWSXc4ZEEwSHhyZWpZekk3eFlZdkhxVVpRUFhDQzN3LURmR1JyYjFfYzNrckU4bHpVekdrekVPdlNzOUQzellmWEZLWGx4bnpNWkNVV1VCdUJ6OE9FME53dFc0ajNkYmtVXzViYkVKWTA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices jump 4% as Houthis fire missiles at Saudi Arabia - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni forces say they repel Houthi attacks in Taiz as fighting rages - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeWt0ZEFvLVQ4XzZsLVZJcUlfR3A3Z2wtV29PUXJpa3NPaUh6M1prSjI3TG1vanFQNDZ4a2hOTW84WmhNZWlULS1mSGxmcF9sYWNKWjM4TUFtQi0yM05vQkJWVFRiV0hZZHNxWDdmY2J4d3I0NkJRcEVEaXpjZUZnVkp1RlVzMEt3WEt0UUF4U2NkMUNtYjRnTnZfOUphTC1fN3FHYWd1djVUQ3pwdkhRazZjNHTSAboBQVVfeXFMTzZ3OXFpengwUkRVMGJ1R0RtRUZmNVZ5d0w3alczYm94ci1oeHdVeGRNemdVTGR3VDV4RF80NzRXVC0zWXhBSWdxMTR5QUt3TnJEQjVZWktaSEZSN2RjLXV4cU9zTW14MnJsSU1kbG9pcjE5eFNPTWJQSUlUMC03bkU5SnRxY01pc1Z4QWJuaEQ2NWN2OUVNREg2YzZVaERTM1RzbzRQZmVBTTRwTDRuX0dnbTZmcGdaQXJ3"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "UK to help refuel Saudi jets countering Houthi attacks",
       "location": "Saudi Arabia",
       "url": "https://www.bbc.co.uk/news/articles/cqlykpe4dk0yo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis push for control of Yemen highlands as Trump is said to have called off strikes - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbHBmWjNkMFR2Skw0MWVFaENxamFwbXN0RGxRei1RenlFVk11R1loSlZtdm16SW5ITGFMalY1bkNBOUVONnVVdENtbDZSdzByT0l0NkJiZUlSSzBvRHBBNWxKd01ja09Eb1Nla205aW5oQkxGVGpiUjZQUTJVYy1EWGx6R2JPN2pGWXVUU29CQ1ZyQmpSMWlzQ1VYUzhidC1SZ3VSMFhyVndUYUZYTXItOGgyTktsQnV1QW1ETzN4NnI2eWhZMXhoZ1h4eEU"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia ramps up Gulf oil exports after pipeline attack, data shows - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcThldmdWd2c5aHdfck8zYk1XMWtsa3kweWlXaTNQWEpnV2NIUHhiNTh2cHhoSndCV2Z2QkhwNl9DZEJObFJha2pXWG1JcUZpVXlZU1RqQ2diZUJ0YVV2alRBRmRCampGOGdQQnM4UVV2R2ZMQ2p6WC1QSk5iOGJEWDZ2YXdaSzlLeGtZYnNuVld5MGZESG1tenNaMFlFcExWeVhlZjJBTlJOeHNmVkhBYzFkejJkNno5VWEwU05hRHU4NGlqT1U5UXcxUzU"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran’s military says US preparing to resume strikes - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQ2o4VlNDVWc4MFhvY3laajdhME4yZkZZVXM0TFlkV0ZVYzFReURGWFhCYXdZWTJQdEhFMDNocnRiUTl6Zk42YnZQdjc2ZjFnQnJTRG1Del95SnYwa1p6RElQMXYtTkpyN2NUeF93d2ppMm12c0NiQTlmVUhmUk1VZ3ZJcU5OTnBHR2FDMDlVTXA0YngxQ2fSAZsBQVVfeXFMUDRVWWpxUVFOVzctel93SGhwQ05TN3ZaX0cxazZXdDlacE1EQ0NMNmpoN3VDOWpyQ3hBSE9oUWlGb0t1ekVEVl8tbTExbG1XWjRvOWUyWndrVTBUbWk3SHhCT0tEVy0yR3N1UGwwSEpYX3BKZFlreXNpWE1kMXZUQUY4Sl91UmFJNnEwSjJUOE1Qd3R6TGZVRDVCb1U"
     }
   ]
 }

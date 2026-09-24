@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-09-24T11:48:57.365118+00:00
+**Generated:** 2026-09-24T17:14:58.291703+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Turkey (2.4), prev 24h: 0.4, share: 30%.
+Top current hotspot (by risk): Yemen (4.3), prev 24h: 1.4, share: 26%.
 
 ## X POST VERSION
 
