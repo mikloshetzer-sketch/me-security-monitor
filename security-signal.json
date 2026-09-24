@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-24 04:54 UTC",
+    "updated": "2026-09-24 11:48 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-09-18",
     "period_end": "2026-09-24",
-    "total_events": 139,
-    "total_risk": 87.62,
-    "normalized_risk_score": 35.0,
+    "total_events": 142,
+    "total_risk": 94.51,
+    "normalized_risk_score": 37.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 13,
+    "military": 14,
     "security": 3,
-    "political": 19,
-    "other": 104
+    "political": 23,
+    "other": 102
   },
   "source_counts": {
-    "news": 135,
-    "isw": 4
+    "news": 139,
+    "isw": 3
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 31.82
+      "risk": 32.91
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.95
-    },
-    {
-      "name": "Yemen",
-      "risk": 7.8
-    },
-    {
-      "name": "West Bank",
-      "risk": 7.65
+      "risk": 12.4
     },
     {
       "name": "Saudi Arabia",
-      "risk": 6.25
+      "risk": 9.1
+    },
+    {
+      "name": "Yemen",
+      "risk": 8.8
+    },
+    {
+      "name": "Israel",
+      "risk": 6.55
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Turkey's Erdogan tells Ukraine's Zelenskiy that Black Sea attacks are inexplicable - Reuters",
+      "location": "Turkey",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNeEVzc2ZoVlNjY0pjRXFjRVZBOFVfdk1SRU5zUkpPUEplOVE2bWFaRHBCLVEwMHRtQXEyVXJ4d2toVWdZdzE0RTNGSzN5SFhta25VajFvc256U0F4SHNJbWIzcHhwV0lWSXc4ZEEwSHhyZWpZekk3eFlZdkhxVVpRUFhDQzN3LURmR1JyYjFfYzNrckU4bHpVekdrekVPdlNzOUQzellmWEZLWGx4bnpNWkNVV1VCdUJ6OE9FME53dFc0ajNkYmtVXzViYkVKWTA"
+    },
     {
       "score": 2.7,
       "date": "2026-09-23",
@@ -115,27 +124,18 @@
       "date": "2026-09-21",
       "category": "military",
       "source_type": "news",
-      "title": "Iran’s military says US preparing to resume strikes - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQ2o4VlNDVWc4MFhvY3laajdhME4yZkZZVXM0TFlkV0ZVYzFReURGWFhCYXdZWTJQdEhFMDNocnRiUTl6Zk42YnZQdjc2ZjFnQnJTRG1Del95SnYwa1p6RElQMXYtTkpyN2NUeF93d2ppMm12c0NiQTlmVUhmUk1VZ3ZJcU5OTnBHR2FDMDlVTXA0YngxQ2fSAZsBQVVfeXFMUDRVWWpxUVFOVzctel93SGhwQ05TN3ZaX0cxazZXdDlacE1EQ0NMNmpoN3VDOWpyQ3hBSE9oUWlGb0t1ekVEVl8tbTExbG1XWjRvOWUyWndrVTBUbWk3SHhCT0tEVy0yR3N1UGwwSEpYX3BKZFlreXNpWE1kMXZUQUY4Sl91UmFJNnEwSjJUOE1Qd3R6TGZVRDVCb1U"
+      "title": "Saudi Arabia ramps up Gulf oil exports after pipeline attack, data shows - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcThldmdWd2c5aHdfck8zYk1XMWtsa3kweWlXaTNQWEpnV2NIUHhiNTh2cHhoSndCV2Z2QkhwNl9DZEJObFJha2pXWG1JcUZpVXlZU1RqQ2diZUJ0YVV2alRBRmRCampGOGdQQnM4UVV2R2ZMQ2p6WC1QSk5iOGJEWDZ2YXdaSzlLeGtZYnNuVld5MGZESG1tenNaMFlFcExWeVhlZjJBTlJOeHNmVkhBYzFkejJkNno5VWEwU05hRHU4NGlqT1U5UXcxUzU"
     },
     {
       "score": 2.1,
       "date": "2026-09-21",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli forces arrest dozens of Palestinians in occupied West Bank raid - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORGZMT1ZaVGJDZmY5aEp0XzFFMmRRczYwM20yY0dtcVZubkF6ek1nVC1QZW1Ec0llZ25oR3E0VmNYWTBZWUJtXzdWYnhSbzlJejM5Q0gxMzNFNFcwZVNaNklkLTh0dUZSaV9NcENDNzlFTnFWMW1JamVmUG9Ic2taaUZGR1YzRWNwRUxRQ3NNUGQ5djVXdTcxVC1TajMwdnlicjkzOVAtb1UxaWlVUW0xUmJn0gG3AUFVX3lxTE9xMkZYVHlQUk1MeERhQUc5QlBBd28zVFdTSmsxbHZyV0FKRVVlYnlRdkNFX1lmVnJqaER5YlVoVFRSTm1ZcFhrLUljVjhOUlhzcFBLZndTaGNob1lxTy1pX1hnR293NDc0dlltdi16Mko1dXNFTDhITHVZVFlDM2hFOVkyNkJiczZDQy1xWm5JclRWSXhCUkFsX09iUG5ERndiaUczdDR1c0RzclFqak9SN2c0dVp2SQ"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-09-23",
-      "category": "security",
-      "source_type": "news",
-      "title": "Iran’s Pezeshkian slams ‘terrorist’ US but extols diplomacy in UN speech - Al Jazeera",
+      "title": "Iran’s military says US preparing to resume strikes - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSkdYYlpEZlMydXUxbWJ1Q0E1LWtQSk1Md0RMMUxHY0JnZVFNc3VFd2Q3Tm1abjcwUTdTc2xlNTM3SXJobW1sU0htdGpqUG55cF9rOUtyQ3ZCRGJ2V0VCdW5KaERmaVhoYlVUY3hPVmdIbGRGb254VndXUmE2MUNVUnBsa1RLTU5VXzJhejd5OHVrNE03bkhEeTAwQ0dmdkNiTW5V0gGoAUFVX3lxTE9DbmUxVm1yTlJLVWJzekc2WGtmVjFPT0hya1I2WXZEUVRDdUx2WkVyMzdYWWdpRlFIaGFPMkVUeUZhZTY2YU1jdnpMWll1b2VUU3VRZGo3QUJWaE9rYTBGTlJibmFKcFFGSVNfMWRGRVRGMFUtdGk3elE4UHdtRVRMTVdUOFpKQTl0anctR2tLbmZaTXllN01ZdzdBVmRBRXE3NkhEYVJSNg"
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQ2o4VlNDVWc4MFhvY3laajdhME4yZkZZVXM0TFlkV0ZVYzFReURGWFhCYXdZWTJQdEhFMDNocnRiUTl6Zk42YnZQdjc2ZjFnQnJTRG1Del95SnYwa1p6RElQMXYtTkpyN2NUeF93d2ppMm12c0NiQTlmVUhmUk1VZ3ZJcU5OTnBHR2FDMDlVTXA0YngxQ2fSAZsBQVVfeXFMUDRVWWpxUVFOVzctel93SGhwQ05TN3ZaX0cxazZXdDlacE1EQ0NMNmpoN3VDOWpyQ3hBSE9oUWlGb0t1ekVEVl8tbTExbG1XWjRvOWUyWndrVTBUbWk3SHhCT0tEVy0yR3N1UGwwSEpYX3BKZFlreXNpWE1kMXZUQUY4Sl91UmFJNnEwSjJUOE1Qd3R6TGZVRDVCb1U"
     }
   ]
 }
