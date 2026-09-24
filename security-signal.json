@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-24 17:14 UTC",
+    "updated": "2026-09-24 21:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-18",
     "period_end": "2026-09-24",
-    "total_events": 142,
-    "total_risk": 100.77,
-    "normalized_risk_score": 40.3,
+    "total_events": 151,
+    "total_risk": 116.52,
+    "normalized_risk_score": 46.6,
     "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "confidence": "HIGH"
   },
   "category_counts": {
-    "military": 15,
+    "military": 19,
     "security": 3,
-    "political": 23,
-    "other": 101
+    "political": 24,
+    "other": 105
   },
   "source_counts": {
-    "news": 138,
+    "news": 147,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.27
-    },
-    {
-      "name": "Yemen",
-      "risk": 13.8
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 10.7
+      "risk": 40.07
     },
     {
       "name": "Saudi Arabia",
-      "risk": 10.05
+      "risk": 15.95
+    },
+    {
+      "name": "Yemen",
+      "risk": 13.6
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 11.4
     },
     {
       "name": "Israel",
-      "risk": 7.2
+      "risk": 8.6
     }
   ],
   "top_events": [
@@ -61,6 +61,33 @@
       "date": "2026-09-24",
       "category": "military",
       "source_type": "news",
+      "title": "Oil prices settle up about 3% as Houthi attack on Saudi Arabia lifts supply fears - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis say they attacked Riyadh and Aramco facilities in Yanbu - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMWlXS0IwYk9WRDdxeGk1MmxybUpOa2lqYWN5Zm8wckN4ZVJJQUlCNXBJUkpsdXdTT240ZDhHMmJOWEszcHJUZDZscy1ibVkyZjlEUm03c3ZXZHlEanBFcE5Wa3A3QjVabTdPRTgtcnd5bWRhcVB0M0hEbW5QTUN0R2R3clB2OV9YblRYREFsY0NLU3ItMTFqRlFoRDVyV00zWnVoTUNzQ1ZDXzV1aUVN"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-24",
+      "category": "military",
+      "source_type": "news",
       "title": "Turkey's Erdogan tells Ukraine's Zelenskiy that Black Sea attacks are inexplicable - Reuters",
       "location": "Turkey",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNeEVzc2ZoVlNjY0pjRXFjRVZBOFVfdk1SRU5zUkpPUEplOVE2bWFaRHBCLVEwMHRtQXEyVXJ4d2toVWdZdzE0RTNGSzN5SFhta25VajFvc256U0F4SHNJbWIzcHhwV0lWSXc4ZEEwSHhyZWpZekk3eFlZdkhxVVpRUFhDQzN3LURmR1JyYjFfYzNrckU4bHpVekdrekVPdlNzOUQzellmWEZLWGx4bnpNWkNVV1VCdUJ6OE9FME53dFc0ajNkYmtVXzViYkVKWTA"
@@ -70,9 +97,9 @@
       "date": "2026-09-24",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices jump 4% as Houthis fire missiles at Saudi Arabia - Reuters",
+      "title": "Saudi-led coalition says shot down 6 ballistic missiles launched by Houthis - Al Jazeera",
       "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1FxSEFPZkVpeHV0LS1WTURzc3lOWWM3d0dfTG1mQ0hBWmZiLWhia1FPbnUzdm5yMVhuZE1RenYyOTNqYmFqT2d5MzVtNE1IcHJCNGJ4aXU0US1Tc09OWnJINzRpQkFTWXdsczlhcE50N25wT052OUZhS21QOG9haGV4XzFTZnQ4NzNTWFlVbU1QcDRyZC0yejVxX1dabVZmWHMyMVM0dWE5RGpNWXZNVHBn"
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPYXBsVHBxNmVKcjlZbTVfR3hfVE1xclVoVlcyYjZKMm9talVQWTlOcFhhWHRjYVhKVHdCaXlMRFBwN0dqYVY4aDVLVE9McGxfWFJxMXBtejlNTnhZU2x3LUswbmVjZm1wSHhvVF9qaGVlaHhFdFplZ1dOYjIzQVJzZFlEd1dMWDI1U1FPMTlmclFQS0lDNmZ4R1ROM1k4VlpzY29lQ1NDeHZoQ09vOTJHbld5ek1NUWPSAbwBQVVfeXFMT25vSG53S2JsWnpLeE96WHVBWU54aEhPZlJqdXpYWmlpTHJXRG82a2Utak1WX2c5TWpoY0tyZEpQUTJSdkZMcE14dFpGdGZPUlFlSVZqS2ZkUlBScktjMDdZQ19GU29nSlBhMHVDdmFfVnNJY29ZQXFwRkxEaVVsakZUU3d1WXFmTmtHeW41ODE2UVBtbGxNNHJOa2dSanRNXzJSbTYtWlpfQTdzR3RfaTkxQjVXQnRxNXZoaDQ"
     },
     {
       "score": 3.0,
@@ -109,33 +136,6 @@
       "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Gaza flotilla activist on hunger strike in Tunisia jail ‘on verge of death’ - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTkV2eXMteUNQOXFLNnF0dU1VOXlXenJEc3VYMW95c1VWZ0RucmEwc1BDRTdMSkRMRHpvcFVIWWZFMnZlb3pvZVBuTW1oUHZkT0g3X1FhQmszQzQ0b2VPWk1PRU94bHlXS2hEZ2dQZ2VKNmxrLUtpVjN5RVBRLS1US2FRYnVCWHBfRUJrR2JLZzdOS211b1N0dmhUcVdDN3dnM2wzTVBnVGhuakFQdjdVVGlPZm7SAboBQVVfeXFMUFJPMFRBNk5ydlRDdV9rOXBjenVHUFFyLWJzTmpWUWVWOFFZWWZXRmM4anRtYXNkTm4xNllkSXZEM2FELThxZHlZMm82VE9uMWM4U19SN281TERubWg2dXZOY2VvVWJPQ01zN1Zkc1FfTkQ0SGVaaWV1Nk5QMTMyNXRNNE4weEVpNUVvSXBfck5HS1ZIZ1Y4bGh0MnVCNk9mZEFyQ1l3S1hORGYxcnpnS2ptV1dNMWI3U2R3"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran must stop arming Houthis in Yemen, G7 says ahead of UN General Assembly",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cwm2qpmepmlzo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "UK to help refuel Saudi jets countering Houthi attacks",
-      "location": "Saudi Arabia",
-      "url": "https://www.bbc.co.uk/news/articles/cqlykpe4dk0yo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
