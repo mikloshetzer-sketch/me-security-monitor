@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-25 00:34 UTC",
+    "updated": "2026-09-25 07:52 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-09-19",
     "period_end": "2026-09-25",
-    "total_events": 146,
-    "total_risk": 102.85,
-    "normalized_risk_score": 41.1,
+    "total_events": 149,
+    "total_risk": 113.5,
+    "normalized_risk_score": 45.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 19,
+    "military": 22,
     "security": 3,
-    "political": 25,
-    "other": 99
+    "political": 24,
+    "other": 100
   },
   "source_counts": {
-    "news": 142,
+    "news": 145,
     "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 35.2
+      "risk": 37.55
     },
     {
       "name": "Saudi Arabia",
-      "risk": 13.3
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 10.6
+      "risk": 16.9
     },
     {
       "name": "Yemen",
-      "risk": 9.75
+      "risk": 13.4
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 10.55
     },
     {
       "name": "Riyadh",
-      "risk": 8.1
+      "risk": 9.6
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil slides as US-Iran truce hopes outweigh Houthi attacks on Saudi Arabia - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQV3EzX3oydnQxRk5Ld1BKbk82ek14ZVdyLVpTdldjdEpqeDJfTVZ2Q0F1TnhvaWlhR1p0Z3hScDV0S2Z1UFR5OXhKSWk3NmtqTzd0SkJfa2RLRFpOOUlEcE5mR1d4Z21Td2FCQVZqNHV1eDloQkplT1NHaHhyTDlqOG5DYlFFdnRERThxNU0yX29LcTRyal9pMHQ4ZzNoU0VKZkdHN2hFYjhCZUpZZ3d2am11SDJYYVBiN0JxWVBtczNRYkh1"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Allies unite behind Saudi Arabia as Houthis step up attacks - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSktoVFV5TmFoZFFlNGJOdHNQbl9ZNWVfOFVvRTN2UXpLMlBhSnZ6ZVZLdFNlRU5CR3RjaHYxWDJRclcyb1lrVzh1WG83MWtmcjRyVnpRdTZIcTdtY01WRlFaVXZ5aWFBSXgzdk9LdzZNdmlQWHJlUmJuci1TSFI1bWRtYXJwYWdEYjBVMHJlVnpYbndpR1lQbllKNkphM0t1SmhXaXNYQmVncDFVOHFJ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices jump after Yemen’s Houthis claim attacks on Saudi facilities - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOaUFlanpwUG5kdGtER2U3TUl4ck9SRy1zdmx0aXc3U1JGUGZWaURnR2xvaENDOXRBNWNGaTZKWml5ajZycm4zR2R2ZGoyVEs2NkNyWHdCS2Z3NXlMc0JsV19zdllRWFF5NHB2MHVoeDh5MGMybkFDbVJoUjNnemZta19jeFY0LUppVXU2UndfVGtzV2J2b0NZOEpzbzFjUkRHRGg0THFoeVBfRWRsdlMzM29jeG3SAboBQVVfeXFMTVUxX1hWc0JudlVOdFZiVS1KV3V4bEdiNTFqamZKcW1nQmw4X3g3cGlkaUgzVS1XOGxIdjhEZ09fNTNMMVdRSTF5VnlWblhiOE1USXcxTHlYSUpKVUtfQXE4elBxd2V1ck1YZEVyTVVYMmRydWtiTXJtdUItWngyd1JkQTgweVM2aEVwdE9NVTlIZ2VOdFY3QUdCZFJqQmQ4U203ek9iY01SYjV6aTZfUld2Um54NV9naXlB"
+    },
     {
       "score": 2.7,
       "date": "2026-09-24",
@@ -109,33 +136,6 @@
       "title": "Yemeni forces say they repel Houthi attacks in Taiz as fighting rages - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeWt0ZEFvLVQ4XzZsLVZJcUlfR3A3Z2wtV29PUXJpa3NPaUh6M1prSjI3TG1vanFQNDZ4a2hOTW84WmhNZWlULS1mSGxmcF9sYWNKWjM4TUFtQi0yM05vQkJWVFRiV0hZZHNxWDdmY2J4d3I0NkJRcEVEaXpjZUZnVkp1RlVzMEt3WEt0UUF4U2NkMUNtYjRnTnZfOUphTC1fN3FHYWd1djVUQ3pwdkhRazZjNHTSAboBQVVfeXFMTzZ3OXFpengwUkRVMGJ1R0RtRUZmNVZ5d0w3alczYm94ci1oeHdVeGRNemdVTGR3VDV4RF80NzRXVC0zWXhBSWdxMTR5QUt3TnJEQjVZWktaSEZSN2RjLXV4cU9zTW14MnJsSU1kbG9pcjE5eFNPTWJQSUlUMC03bkU5SnRxY01pc1Z4QWJuaEQ2NWN2OUVNREg2YzZVaERTM1RzbzRQZmVBTTRwTDRuX0dnbTZmcGdaQXJ3"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOb0g4R195Ync3Q29PRndqVFVqTWh2SzlrQWQ5VzdoWm94UmduS0VlOC01VzRzTktNU2FoYU5yVkctbXJxMENSOFE0WjUyZ1pqTWRTc1JwNnlXbUFLQmhOV05hSm11VWZzSHl0NmVkSl9xNEtDamxKU215ZVBtaGFBTUxMb2h4bzJnU1gtbEJoeEgtSUpSdHFGWWxlMVBMZVBL"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli soldier wounded in car-ramming attack in occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNX1ZiaWNJUGJoQkhvanlSS2ZfRkt6MFN5NllGRk9iNHc4SzJ1ajBuU3dxVGg3SVJ6OEZNak9qdFp3bXFNVUdyb2paQTBlYlBBWXVLRmZDSlQ1QUEzYzRKRFJMQVdrM09NYTc1cFhRRHA1S0ZGRW13dlJXWnJSZUVGY2J4TWNuTUdnU096c3RzT1lhUHZuN29fRdIBngFBVV95cUxNTnZmbnRsYjFkU2J6d0MwWFRUQWRiUDFtYTBjZWh6S0pwdU9iLVZ1QjJ6ODB3OFRKdVRES3NZN3dvSmF3TnpPODVVM1BNS2Z5djZ5eUhyNlpKajVCbWpyNHZOS21ETDI4Tm03Qjl6QzJVdjJiTElOTFFXeVhZamUzZV9OZWlzbXNPb2FDZnMtWmxaMVppNGxCcVM3T1Vvdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "‘Annihilate’ vs ‘crushing’ attacks: Why Iran, US up rhetoric amid talks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOM00tdGJYVTZKd1NBNFBDTllXU21LZE02VkR0UnU3dkxNakphNkp0OXFuSFc0cmlTUC1XZktybmlHRU5TZ2xEczFjV1pvZHZheHpnTXJOR0VaY2pZRm81bG8zcDc3YzJUZzZrcGQta0RBQTRYcmtpem9ra0w3bmJoMjhpYkZCbG1CU3hnNFpWSGh5LVVRQ0ZBT1ZtQzd1NDUzZ3c2WHhCQlFJUdIBrwFBVV95cUxQcnNnN0doNUNIV3ZUMjVyRUQwZ3ZUdW9TQUo5VVpWb25UTnYyNkFCMkdscTNKSVdCTXNoVDhOVjlvWTBIanRxTlRpd0hYSURibU9QX1ZnU0NnQS0taVJQeXV5ZGsxREotS00tQXhLRXg5V04xa01VNUdwb3BIeFRHUTNmY3JzRGtBZS12Zm1Ha2lDazl0djc1cDVFSDY5YkIwN1J1VUxBX3ZtOFpxemJr"
     }
   ]
 }
