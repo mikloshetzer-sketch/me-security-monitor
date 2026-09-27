@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-27 08:13 UTC",
+    "updated": "2026-09-27 14:02 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,9 +8,9 @@
   "summary": {
     "period_start": "2026-09-21",
     "period_end": "2026-09-27",
-    "total_events": 143,
-    "total_risk": 92.13,
-    "normalized_risk_score": 36.9,
+    "total_events": 140,
+    "total_risk": 92.08,
+    "normalized_risk_score": 36.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
@@ -18,32 +18,32 @@
     "military": 15,
     "security": 6,
     "political": 24,
-    "other": 98
+    "other": 95
   },
   "source_counts": {
-    "news": 137,
+    "news": 134,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.24
+      "risk": 34.99
     },
     {
       "name": "Israel",
-      "risk": 13.1
-    },
-    {
-      "name": "Yemen",
-      "risk": 11.55
+      "risk": 12.95
     },
     {
       "name": "Saudi Arabia",
-      "risk": 11.1
+      "risk": 10.85
     },
     {
-      "name": "Gaza Strip",
-      "risk": 5.0
+      "name": "Yemen",
+      "risk": 10.75
+    },
+    {
+      "name": "Riyadh",
+      "risk": 4.5
     }
   ],
   "top_events": [
@@ -64,6 +64,15 @@
       "title": "Saudi FM accuses Iran of ‘flagrant attacks’ and condemns Houthis at UNGA - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-09-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says it intercepted Houthi missiles; group claims strikes on Riyadh, Aramco - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQLW1IRmRaem1xSHEwTjd1VldSMmNqZk55VmdmZkh4QnNhU21SM0ZtWGg4RDdxSkNOM1F6ZUJ4LUYybUlzcWx6S01zbzd5N3BRSWRTc0N6eExNa2RFQXVTYlM3RmtXOFlDUk1Yc2Q0LXNkTEFPQlpCNjgzZHNlbkZXWGtXT1NRNFZ3a2lvWWNxVkk1Rng0Q2ZtNUk4TzZ0YXpNdDFaRUZQa2lBVHpnV05pV1QtZVlJSjJpTFFPTA"
     },
     {
       "score": 2.4,
@@ -109,15 +118,6 @@
       "title": "At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM2FqSjI2ZndQbE1wOTJFTDVWcmtEdUdiTE9Db0NuOEw0ZkJrWFpkSzdLR25SS3JlWV9qNU0wWDFFUGZpTGFza2hfM1g4d2dxWWlMbVE3MWJDWWM1aXRnU1R6aDhwbmpfdFFiaW5ESUx4N0lfajNjUmZIWVVZRnc2c0hOTDZKc2gxdTdHb1NXS0RFUWJSTzRCUGxUeGotNTNQQWxjZkRJZUUtUTNSNDRqUTFRR0Y0dnZqblJyWV9R"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia says it intercepted Houthi missiles; group claims strikes on Riyadh, Aramco - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQLW1IRmRaem1xSHEwTjd1VldSMmNqZk55VmdmZkh4QnNhU21SM0ZtWGg4RDdxSkNOM1F6ZUJ4LUYybUlzcWx6S01zbzd5N3BRSWRTc0N6eExNa2RFQXVTYlM3RmtXOFlDUk1Yc2Q0LXNkTEFPQlpCNjgzZHNlbkZXWGtXT1NRNFZ3a2lvWWNxVkk1Rng0Q2ZtNUk4TzZ0YXpNdDFaRUZQa2lBVHpnV05pV1QtZVlJSjJpTFFPTA"
     },
     {
       "score": 2.1,
