@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-28 14:00 UTC",
+    "updated": "2026-09-28 20:36 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-22",
     "period_end": "2026-09-28",
-    "total_events": 136,
-    "total_risk": 96.7,
+    "total_events": 129,
+    "total_risk": 96.75,
     "normalized_risk_score": 38.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 17,
-    "security": 3,
-    "political": 31,
-    "other": 85
+    "military": 16,
+    "security": 4,
+    "political": 25,
+    "other": 84
   },
   "source_counts": {
-    "news": 135,
-    "isw": 1
+    "news": 129,
+    "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 36.2
-    },
-    {
-      "name": "Israel",
-      "risk": 16.7
+      "risk": 44.65
     },
     {
       "name": "Yemen",
-      "risk": 14.2
+      "risk": 14.0
+    },
+    {
+      "name": "Israel",
+      "risk": 11.45
     },
     {
       "name": "Saudi Arabia",
-      "risk": 9.4
+      "risk": 9.9
     },
     {
-      "name": "Middle East",
-      "risk": 4.6
+      "name": "Iraq",
+      "risk": 3.85
     }
   ],
   "top_events": [
@@ -55,6 +55,24 @@
       "title": "Five arrested on ‘terrorism’ charges in UK near base used to strike Iran - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSUVQdGdQNkExS2gtaXRtcVNzbVp0WXBCei1zZDZXMGpsOUJ3Z0N4eEdvelZUM1ZBRXl6VHpnZWdpWlBsT0lVemdGNy1TdmYzT1RDNVRoNE1PWDdjb3VrV3VaaTlweExWQ1VJdng2Q3B5dGlJQ3BJc21oaEd5ME5ZMWszRlRIOUU0MFU4VjB4YVJqRENy0gGaAUFVX3lxTE5ncmdzQmpQMllQc0lzTk1RUVpRWkoyNFVlaTNWT2p6WDFXWHpuS05zc2g4SU9BQmt1eUt4Q1RXRWxSNFNDbk1BVGFPUW1IUF9SNkc2WWwyQ2NzaFdDUGFDc0JRcUliYlU4aUZUY2V1R3c5X1YxTldyNTlfOUZlN3EwTjhwbHBkR2U0WjYxa1NzaUxjWC16Sk95eVE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran denies link to attack on airbase as UK minister warns of ‘proxies’ - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVFJPeVZBM2FpQzEyd3FVVnJoN1owbTJxeUhqWUtaTmZBbVhPSU5fdmRyaEtHNXVNbW9BeG14RFY2Z3RlZ2hrVTlaanBvUWFwWlV3SlMtZzQxVGxWYUdvbjJGeFk0QUllWlY1QjZmSnktaHBDZWVNV2JNeVgtNU83eXg3VXdqUWNVRVdqRzFCb0R6QkNzU2Qzb25PcDdlaS1KS0J4MlFyNG8tWG1qbmVz0gG0AUFVX3lxTE1pajZGTHBQTlUtZ0syVkw5VFhkcGR2dEJTME5yc1psdV9QcVlVcWptYjh2aElpQU1kRWVmbUtWSGwzSE9KUVhvYU5EYjVJVXBncnJFbGN4VzBNdmRoVXJhN19jMzB3MTZCZVVyWGI5c18xWlcwRGtjYXplNjBjRmJrRDlRMzNiYkowcXZhX0dDdjMwSFVlVFE0T1RDUTQxZG1Uay1QZEs2WDRsb2Q3YkdXM3k1Vw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB"
     },
     {
       "score": 2.7,
@@ -73,15 +91,6 @@
       "title": "Iran's army voices readiness for potential renewed US attack - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbVBhbkluN19hdE9jdGtYdDdlZXNYWGd3T25HUGREMlVVb2ZZWmlrYU0tYTJreW9YcjlMeUhwdXp2UlNPMTFtUXFOWVh6enk2TG45VEtKNEw1bnZKdTUyQnhNdmZ1VmhEYXhYZkFObl9KcHROa1h0S2QyVE83MnQwMnp5bjN2UTM4NmpKeUM5eFNTQzg4RXRCWFNpZEhmdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Irish defender Dunne named as goalkeeper for Israel clash as Bazunu pulls out - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOT2RtU1BMMGV3Ny1ic0FVeFFKRG1kczBWaXNncmtXV0hseXU2Y0lyVXlXbkQ3dE5aRmQtZFI2aEEwcXVnX1RRTkptSUhrcFdQTnZSVnV3UHRaQWJJQ3A3bS1wdDJtM21XdF9XU3FGTm9XWDM2WG50SWxLZE44cF9uQnBoQWhOUHU3bWh2LTY5Q21FdGptMTJ3c2NBcVNaUE5SX1dwRlNpMm1ZT2xHWmVSNENxTmxKb0Rx"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Miliband tells Iran minister UK will not tolerate 'hostile activity' on British soil",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cwp8476m06pyo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia allies line up support as Houthi attacks mount - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOU0JQNHBkcVluNkc0ZGM3RktERzltMnJIcHJydGpLdHlOUFEwWmhVYkQ2RXo4LXFlWmVvSlcwclV3N1ZWSlRmRFpwcTRyaDJBYjlEWmFJOGF0T0NqTnFacjd5cmRyVnNBNUk4U2xzQ2RhbWNnY3VlY1RUTTREX3JuSVZYQzBmQzJ5TW9QWnFnMnhOdmRleTRBUlpodlZvUF9JMVHSAacBQVVfeXFMT0RTUnMzT3NsXy1SRl90cmNtcS1WRVQyeUtMNjdwaXdSbTFSdVNBNVZiemtFckgwX1JLTm8xekpMZ2J4Sjg2MmlGTTJXYThYLVhROTBOVFBqZzlWWFE1b1ZTQnZhal80X2Z0ZmE5STBhMzdfVTRlTFk1djRlUC14OFJ6X005VjY1LTFNd1pIcWIyZXJYU0pvQW5wdEYwVjRvTTdmX2NZOE0"
     }
   ]
 }
