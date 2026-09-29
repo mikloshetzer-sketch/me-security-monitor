@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-29 02:00 UTC",
+    "updated": "2026-09-29 08:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-09-23",
     "period_end": "2026-09-29",
-    "total_events": 126,
-    "total_risk": 81.6,
-    "normalized_risk_score": 32.6,
+    "total_events": 128,
+    "total_risk": 92.85,
+    "normalized_risk_score": 37.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 13,
+    "military": 16,
     "security": 4,
-    "political": 25,
-    "other": 84
+    "political": 28,
+    "other": 80
   },
   "source_counts": {
-    "news": 126,
+    "news": 128,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 33.9
+      "risk": 38.25
     },
     {
       "name": "Yemen",
-      "risk": 12.05
+      "risk": 11.8
     },
     {
       "name": "Israel",
-      "risk": 11.6
+      "risk": 11.15
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 8.4
     },
     {
       "name": "Saudi Arabia",
-      "risk": 7.55
-    },
-    {
-      "name": "Middle East",
-      "risk": 4.7
+      "risk": 8.15
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel kills senior Hamas commander in Gaza strike - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNNlNQRWEzNEg3UzNvTHdIM1B1TEFCd1hQWUZwS2Z3UGRNaXJVQXlyU2lUWmhOV2xaWDgtVTloQWl6ay0yTW80emxfQ255TnN0NjBYQzlUR2xYVTFJSlZ0ZUdkMDV2bjJFclg3RWFmSEJDUGxXYWd6YXdpY1VmUlBxanVwemhHSFJLTld1UU5iNzBUd2ZwQzBtZVlxY1RVVFZ5NnRPTUhOcHljc1Fj"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYlRBNDRYRkZHZ2Q4N0FoaC1Hd1pfVHBvemM3QkhtUG9JQnpvSkdwbVVfazdPZFN3SkprcGlPdnducXQwc2NQTlhzODZldTFDU0NPcng0dzBqWEI1QzBoM25SQ1dVb3ZjOGRaOExkOFdreG9WYVJCbzduVjFPN3NuaF9qbGVRV1pEaG5xdzdvMjVKWExfbV9ZVmMtbEpZMFktN0VFb21YaEJqV3VfU3pmc2U0dGlwMmc0RFQ2MW9CdHRlb2c"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-09-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill at least two people in Gaza, officials say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSWZnVzM3TkwzMkZIaTM5ZVczRlJxUmU0a2VKdVRnOGxrUlFfR1E2Nzl6VDExTG51bEJkbzQ3UnZYYUtsLVRkdm5KM0N2RDRpbzhOMnB1em5qdHM0LU9lNXB0SFBTS0VOZUZJUlZIMWFlTkxqSUhMU08zbFZzS0FzbTg1ZlZwbUx4RTFCMTVSZTE5QnpfNEJHWUt2M01NWXRPT05hRVdxbzZVdnY2YktZ"
+    },
     {
       "score": 2.7,
       "date": "2026-09-28",
@@ -109,33 +136,6 @@
       "title": "Saudi coalition says it intercepts Houthi missiles, drones - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdndqUFdtd2J6b19yZlhhZjlOZXVBYkNvYjVtTjQzYUxlRTVldkZHbjdQdDQtMGI0ZFEwSEY2MTc1OHNTcWJHUXJCbFJjSlpFb0o3blUxMTRBQWZncEVZaEZiMEdJbU9ZOGZIbUFxQzB3SGduZFZ2ZGFDYWNoZEtqVTd0QXRVZUc2UHRXMnpjUi1XM0d0a3dXcDg3ZFRqd2xsWHdzVXlhOXhMMDlQeHlpcEFXWjNncEZWbnBxZ0NaLXI"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi FM accuses Iran of ‘flagrant attacks’ and condemns Houthis at UNGA - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMVd3S3Q5YjB3NVUxQlo4bFVxTFpXVnVyRjZLS25yZXM4c3BLMmlVbmdjZm9LX0UzOHV1OU0xXy1qcEJIS2VxbmN5dk5rbnp0a3JWWFZvM3RVeHdDQl9iZ1RKWjVPdW05MnpfNGVHRHFmdk4wcWdoMk9RRnJyVm1NeVNtMVRxeGM4NUprVkNpQlRrRV9GZk1lcmdRVVdWNnVzR2ZCVHE5dGV2d3ZnQlJDSFF2dUU3dkpGY3lISXZn0gHDAUFVX3lxTE1PMWtfbUpZaThoVnptdDRhcDJYUWxLZVFMaXBjbEdtaEhmUUFVczJfRF9wcHM0VVFRazFKVkIzZlBUTW14NTNwb1U2UVBFdjZXaFpRempjQXUtaE03ZDByTEkwa1BFYnh5LW85WGJtQ1N5RGZpeU5RbmtxbG4tZElfS3RVdUhuSF9uRENZRXA5bmQzQndYb2RENEN0UjltamxjWkRvV1pndlMwYjZHQjVlaFFxWFVmcG5odnlSbEFrNkQybw"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-09-28",
-      "category": "security",
-      "source_type": "news",
-      "title": "Iran rejects suggestion it is linked to UK airbase arrests - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRUdZZDhWYThZSjI3WV93NFpQdU5NcXJqVjZtWWJvRGNwNHBYQmpLYXRDY1RQb0loN2tfb0NXcGYwVG04X0hnVEdUMGJPczZndUNVQXlfMkFKb0NWeXdRV3NuU3daQ2JVa19MaUhxZmtmem9vUGl0MlJxNE42Q0Y2eGdISGdwanMxcmEzNHkwVzFGd1E2ZTZTZ0lBVVI4SjUybWI3MklIbmlKajRGcGc"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-09-28",
-      "category": "security",
-      "source_type": "news",
-      "title": "Iran court upholds lashes sentence for singer who performed without hijab",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/crn45ed1kqqgo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
