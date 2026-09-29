@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-29 08:33 UTC",
+    "updated": "2026-09-29 16:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-23",
     "period_end": "2026-09-29",
-    "total_events": 128,
-    "total_risk": 92.85,
-    "normalized_risk_score": 37.1,
+    "total_events": 130,
+    "total_risk": 107.15,
+    "normalized_risk_score": 42.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 16,
+    "military": 19,
     "security": 4,
-    "political": 28,
-    "other": 80
+    "political": 30,
+    "other": 77
   },
   "source_counts": {
-    "news": 128,
+    "news": 130,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 38.25
-    },
-    {
-      "name": "Yemen",
-      "risk": 11.8
+      "risk": 39.55
     },
     {
       "name": "Israel",
-      "risk": 11.15
+      "risk": 14.0
+    },
+    {
+      "name": "Yemen",
+      "risk": 12.5
     },
     {
       "name": "Gaza Strip",
-      "risk": 8.4
+      "risk": 11.65
     },
     {
-      "name": "Saudi Arabia",
-      "risk": 8.15
+      "name": "West Bank",
+      "risk": 8.5
     }
   ],
   "top_events": [
@@ -52,9 +52,45 @@
       "date": "2026-09-29",
       "category": "military",
       "source_type": "news",
+      "title": "Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNaGhLcllsckhTZ1ZsYzVwdzc1V2p5UWhmZFpSa2xJbVhmNTJXckNxVTE2ckkzcGl0N25US0JaTjFId1hMZHFSelBoUWx0Y0VvNEZlVWstOWp1b2F0Wm5fOEZVNW1GRkIwbHYyaE1QSmRkSnpuNVo2UkJ5SHZpT094a0xkcmFKaE5GLU53U3hPTlVqWjFoNjRMUWY5cWRyN0pxa3BhUGU3My0tNEN4bTE1MTVVZXVKQTNTTG1FYl9oNE1MLVBUUkVCSHRIcS0"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-29",
+      "category": "military",
+      "source_type": "news",
       "title": "Israel kills senior Hamas commander in Gaza strike - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNNlNQRWEzNEg3UzNvTHdIM1B1TEFCd1hQWUZwS2Z3UGRNaXJVQXlyU2lUWmhOV2xaWDgtVTloQWl6ay0yTW80emxfQ255TnN0NjBYQzlUR2xYVTFJSlZ0ZUdkMDV2bjJFclg3RWFmSEJDUGxXYWd6YXdpY1VmUlBxanVwemhHSFJLTld1UU5iNzBUd2ZwQzBtZVlxY1RVVFZ5NnRPTUhOcHljc1Fj"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMmdKU3oyaktydTkxalgxVnVxZExQYnEzVzBUeUxtaDFGdE1SazhYMkdnS28wNTJXWWlLdkt1T3hJUmZURHRqZFdLNG4taEFLaWVCZUdxQ25Cb2c0U3FNX3M5THB1Nm40MXJvMkpsY29BUzg1WThIM3MyUldyY1Z6SHctYnczdTl6ZkYzeXdwYmNqQWZodmlrdGFBZFAzZnU0RjIzdklLSDlueDh6Q3k1NFZwNTJtX3VGNDRnT19JRE4xZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers attack West Bank village and block Palestinian family's return home",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/articles/cvlylj41egxgo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli forces kill Hamas commander Izz al-Din al-Beik in Gaza attack - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOT3ducG56dUVLNWoweWhabTc2MVdLUXFNd0U3MFMzVHdvaDBqd1RQdlMxRmVhTWR3MDBaSXdVZkFJMHhGYnBoaXJxeTZmNmdselc2Y0J0NE5kOWRUM3RHQmlnbWJkNTJkMlJKUmkzWEx5X21IU3FpcXAzMEpKTXpaNE1UQVBhWmhwM3F6a29JVVl0bE42RFdUeUp5d3B6d09rQkduRk9QbnpURGdYeEln0gG0AUFVX3lxTE1vWHRHQUQ2Zm1mQXhra0Vudk1LRVFaajNXYWU3bEVfaDNFZzdzX1JKSi1jSmNUbUMxVDBYZGhROEUtR1FMb0NrVXZUNEd1eTA3UmlXaERYaUZvdEUxZTNwX2hCUFkwc0JwOTEzeDY5TlBfeVNuZEpvV2ZfUnB4UUxIT093S0diNC1jUERuZnBKQVhpRnhHalctYzlGVkhISW8yblQ1VWtjODhtbm5hWjhNaWpGSw"
     },
     {
       "score": 2.7,
@@ -79,18 +115,18 @@
       "date": "2026-09-28",
       "category": "military",
       "source_type": "news",
-      "title": "Five arrested on ‘terrorism’ charges in UK near base used to strike Iran - Al Jazeera",
+      "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSUVQdGdQNkExS2gtaXRtcVNzbVp0WXBCei1zZDZXMGpsOUJ3Z0N4eEdvelZUM1ZBRXl6VHpnZWdpWlBsT0lVemdGNy1TdmYzT1RDNVRoNE1PWDdjb3VrV3VaaTlweExWQ1VJdng2Q3B5dGlJQ3BJc21oaEd5ME5ZMWszRlRIOUU0MFU4VjB4YVJqRENy0gGaAUFVX3lxTE5ncmdzQmpQMllQc0lzTk1RUVpRWkoyNFVlaTNWT2p6WDFXWHpuS05zc2g4SU9BQmt1eUt4Q1RXRWxSNFNDbk1BVGFPUW1IUF9SNkc2WWwyQ2NzaFdDUGFDc0JRcUliYlU4aUZUY2V1R3c5X1YxTldyNTlfOUZlN3EwTjhwbHBkR2U0WjYxa1NzaUxjWC16Sk95eVE"
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB"
     },
     {
       "score": 2.7,
       "date": "2026-09-28",
       "category": "military",
       "source_type": "news",
-      "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
+      "title": "Five arrested on ‘terrorism’ charges in UK near base used to strike Iran - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB"
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSUVQdGdQNkExS2gtaXRtcVNzbVp0WXBCei1zZDZXMGpsOUJ3Z0N4eEdvelZUM1ZBRXl6VHpnZWdpWlBsT0lVemdGNy1TdmYzT1RDNVRoNE1PWDdjb3VrV3VaaTlweExWQ1VJdng2Q3B5dGlJQ3BJc21oaEd5ME5ZMWszRlRIOUU0MFU4VjB4YVJqRENy0gGaAUFVX3lxTE5ncmdzQmpQMllQc0lzTk1RUVpRWkoyNFVlaTNWT2p6WDFXWHpuS05zc2g4SU9BQmt1eUt4Q1RXRWxSNFNDbk1BVGFPUW1IUF9SNkc2WWwyQ2NzaFdDUGFDc0JRcUliYlU4aUZUY2V1R3c5X1YxTldyNTlfOUZlN3EwTjhwbHBkR2U0WjYxa1NzaUxjWC16Sk95eVE"
     },
     {
       "score": 2.4,
@@ -100,42 +136,6 @@
       "title": "Seven people killed in strike on market in Yemen, Houthi-run health ministry says - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPQjI3MkxLdHM5cEZjNElqWk1FbnN6bnFnN2Rzdm0teV9IM3lBYnVkNUJuci0xS281b0dlTVJwalJpOEZmNGc0RmJLeUhreUV0QWtybE9YZU8waUNsM1BybjdUR1hSQ0lNWmpPZktPQ2k5VksyZ0dhd3p0QTVDOWhrUGgxQzhIU3A0Y0tiaUpWS0JoZlZqUnJZbXBpOUwxeWxESG1pR1RtYW9aSmhHTE1XN21POGIxa05xcHJ2SDQ3RkxQbGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran's army voices readiness for potential renewed US attack - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbVBhbkluN19hdE9jdGtYdDdlZXNYWGd3T25HUGREMlVVb2ZZWmlrYU0tYTJreW9YcjlMeUhwdXp2UlNPMTFtUXFOWVh6enk2TG45VEtKNEw1bnZKdTUyQnhNdmZ1VmhEYXhYZkFObl9KcHROa1h0S2QyVE83MnQwMnp5bjN2UTM4NmpKeUM5eFNTQzg4RXRCWFNpZEhmdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen government forces widen attacks against Houthis: What we know - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONGVIbjJTVHlFbzBZdEp6ano2SzlFaFBxTXM0YnhrNThlN2dubVFwSmU3RlBHbjVCU056bWxTVVYxTnNZbnFlbFRveUdnM3BMTjMzbEdfVWhKd2ZUalhKTVhpV2RWN2dyY3R6ckdhcmszUGdzYlZRWVJLaVdjUzRENlEyZHdlRzlQZmtseE9oNmtNUlUyZWM2ZDVaX2FvUXBUM2JaNzEta2ZZVTjSAbABQVVfeXFMTmtZQ0p2ajhMWXZxOEFaRFU0b2U2aFZQWGZ4U181ZUJGbDNBcG1rWXlEd0FxdDN0ZTh0S3hnTXctOEk1SkhHaU1qZ0ZYa3drZGtoNUUza2tORGsyY2NaMGJwTG14eHFZZDZHOWJETHlCby1Id1ppRk85aUtkZ0pNNmlOZU1kSVltY3pWNnNzbEtRN2NBaUgwQUhuV0NUdGxCek5qYkpFVjlvcFVmOWI0UlI"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Massive Attack singer arrested over pro-Palestine protest in UK - Al Jazeera",
-      "location": "Middle East",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPV1FHQThqdTNmZGhjVElXZy1tb3hVQi1iUHZReUs1Qmo0VS1BQ1RMZWtRTFJ3LXFXRlJRTTc5SjJCZFBnZUx6ZEpVS1YzWUV5Vl9JTV9uRnNOalhUMVJZcE9NemZrVE9fQ3BVN2JZUkgwQmx2cTg3ZFkzYlByM1hkS1gtVnZha252cTZ4SU4zNmsxZVJyOHZUZnlZbFFMWEUtc25Da0J2eVQzMEl0Q242enVKd3PSAboBQVVfeXFMUHNYcXBTTzE2SzZiZDVFYmRKY0o2TDFTQjBYc0cyM0pfNnd3SE5iU2Z4eGxNY2Mxcl9ZMGNqSGVTdjFkX2EwMUtOZHhHc1pvdk5JUy03bkMtMl9FU0RndmY5QUFRMDlpRnhVR2lfR0VTZ2VxemRvMWladlp1akVJNHduMHROUzZaY0lTSFUtbjdTYllsYnFraWM3ZVRDRm9jZERoSGRuR0M0US0wT3VVOXJCNXgtVmFFYUR3"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-09-26",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi coalition says it intercepts Houthi missiles, drones - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdndqUFdtd2J6b19yZlhhZjlOZXVBYkNvYjVtTjQzYUxlRTVldkZHbjdQdDQtMGI0ZFEwSEY2MTc1OHNTcWJHUXJCbFJjSlpFb0o3blUxMTRBQWZncEVZaEZiMEdJbU9ZOGZIbUFxQzB3SGduZFZ2ZGFDYWNoZEtqVTd0QXRVZUc2UHRXMnpjUi1XM0d0a3dXcDg3ZFRqd2xsWHdzVXlhOXhMMDlQeHlpcEFXWjNncEZWbnBxZ0NaLXI"
     }
   ]
 }
