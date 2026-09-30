@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-30 12:37 UTC",
+    "updated": "2026-09-30 19:23 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-24",
     "period_end": "2026-09-30",
-    "total_events": 132,
-    "total_risk": 111.65,
-    "normalized_risk_score": 44.7,
-    "risk_level": "LOW",
+    "total_events": 146,
+    "total_risk": 129.34,
+    "normalized_risk_score": 51.7,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 7,
+    "military": 23,
+    "security": 9,
     "political": 30,
-    "other": 74
+    "other": 84
   },
   "source_counts": {
-    "news": 132,
-    "isw": 0
+    "news": 140,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 38.4
+      "risk": 42.44
     },
     {
       "name": "Israel",
-      "risk": 16.9
+      "risk": 22.4
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.5
+      "risk": 16.95
     },
     {
       "name": "Yemen",
-      "risk": 12.85
+      "risk": 13.35
     },
     {
       "name": "Iraq",
-      "risk": 10.05
+      "risk": 11.5
     }
   ],
   "top_events": [
@@ -52,9 +52,27 @@
       "date": "2026-09-30",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli officials say diverted flydubai incident may be attempted 'terror attack' - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWnpLNmZJUXN6UzQ0RlhKSFhxT2xYMWZ1R1VwYVdZX3ZuZWFTYUZyV1VYTVhralA5Y0ROVjlNVl9XOGpTSWhEcGM3UE01WVA3clNKcm5KdDZ2dUY1U3FyODdsWkkzSWs2VW5NZUJWQXFYQ0dxamNudlljZl92REs3SnFXSEUzTEswdjh4NnRia2VWZGd2TGE2SmZ6VDBQTXpiRDM0SDZSZ29ubUZUd3Zsa0E4LTBoRmxpSDRjd0JkcmhYbkNV"
+      "title": "EU aviation agency issues Saudi airspace advisory after Houthi attacks - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQWJfYXZITmYzSU9mUTRTTlBVdm5fWm5IUHE0dWxwY28wR2tqbUI4eGdNTU0tRDJvR2Y4SDFLWlUxUUY4dkdEdzlOcGoyWTcyN3Z0eXc3bzRkQWlEMUZyZE80cXpnZjg0VDZvZXNsRElURDdDTDROOFNEZTAydWRpQkJiX2hfNGQ0UmU1Y2Q2NF92REtqNVExeDFEZVotNmxLZXdRUVlXRzRsTFk2UWJ5REMxZXROSnRnUXI3UHNBQnVFdw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill seven people in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPamZFVnF3ODVXUkV4Q3ViOWR5aEpob1QzOVJWSTdQQ0otU2p0MkVTaWdJRXVfTU1hUng1eGZ3dkJqVk1JVjZlV0E0WVVUdGV4NzFZNF9OQ1FaRlFHdmJNRUJVNk84UUJNcDN5Nm41UzhhM21qV1NPaDgzMndCQVI1bG42OVBBWU5QWnJLUklLTHR3bmpGUEstano1Q1lwOVl1RDZZcg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "UK links Iran to suspected plot outside airbase used by US bombers - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPLXZwczdvclVqQk9CUG8tcG81SUlpdmZLcVUtcmxUWW1xLXFQU09BX3FhZ2NkRnlOMUNZaUJiOW4yT09PLVR4TGUxQW9yT2xuOTU5VzY3dVVoeXNhLVRpWTVIU01obUpZd1hKZElLMks0OGRydDRyMFZYTjZ6cWdnbElqbFpLQW5abGx2ZHZlck1ta0ZSNmxn"
     },
     {
       "score": 3.0,
@@ -70,9 +88,18 @@
       "date": "2026-09-30",
       "category": "military",
       "source_type": "news",
-      "title": "Israel’s Lapid accuses Netanyahu of ‘fear-mongering’ over attack warning - Al Jazeera",
+      "title": "Israel’s Lapid accuses Netanyahu of ‘fear-mongering’ over attack warning - aljazeera.com",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObk1rV0k1cDhWYTRxUDlNUlZsXzIwcTdObkd6TFBFQUhDeGU2TVJKZDlqMmQ1NkYxNDRkd2cwaERNNDdJZHBJa3VILWdtbjVyTTJkVkc1cmpRVWJGN2FLV1QyengxdktFWVNrOXNjY2VRZEhEaE1LTHlHeWxNVjFzNW1KNk5xaHBnTzF4cUoxaHZmWDhtQjFtaFdRRHI3WElqSVF5V1hmSHl5ODVJeXdN0gG0AUFVX3lxTFB6M2RORENnMExoRzlFeWhnS1puVGFpeFJvSjFvcFlzcnVUU05ackNIWVo5d1ZwaGo0Zlk2WTdBcVpuSWY4LWhndElLU1k2RDdPX0lQWURQUnpkSGVfQ2lodHE1a3I5bHpxSThFdHBPYXRXNzBUeThFcTF6VmpOVFhPWFF4QmdXcndqOTlhcEItZFdQUG5XWkt6SmdfNVh0aXdGWGtmYmtFYTJoUjRyQ3VqUE5ENw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Flydubai flight to Israel diverted after attack on pilot - aljazeera.com",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQelFpWlA2YTd3TEJ1TnNqT25HWnBHRjRHbUR3YnpvMjlEZzA2cG5LaVpQcEQ3WVJ3Nnh3UkR0MGxrUW1ZTGJNNmFiTk1QVmphbHRXWTRkaGMwaG91UGlfWDV6bXhjWDllcEdkaV9JRTJKUlpYMlZwRHZsazREYkhlSjNFSlFtR0ZUdlZEeFRQbDI5cnVhZUFEbW83QkxqOFVGcjlVNkNVWUR6VG_SAbABQVVfeXFMTmlNeTRnMjk0NU5vWnA3TlBtVEFxV2dvdmJ0ay1fMmNETWpmSW91Z295eWpSS0Q3NjF6VGJQZmd0VDBXdVRRODdXX2RMYnRHQmkyb0tvbWhYTFl6b2tveFBLWlp0UDZDNWkzdV92ZEthVWZMeHRoMkloM2FmUnlOR1VIcUktZUNvLUFaNjJfZzA0QlZycEVaX0lUN25TWE8zTUJubXd1c3FhRjB4YmVVeW8"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Israeli settlers attack West Bank village and block Palestinian family's return home",
       "location": "West Bank",
       "url": "https://www.bbc.co.uk/news/articles/cvlylj41egxgo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli forces kill Hamas commander Izz al-Din al-Beik in Gaza attack - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOT3ducG56dUVLNWoweWhabTc2MVdLUXFNd0U3MFMzVHdvaDBqd1RQdlMxRmVhTWR3MDBaSXdVZkFJMHhGYnBoaXJxeTZmNmdselc2Y0J0NE5kOWRUM3RHQmlnbWJkNTJkMlJKUmkzWEx5X21IU3FpcXAzMEpKTXpaNE1UQVBhWmhwM3F6a29JVVl0bE42RFdUeUp5d3B6d09rQkduRk9QbnpURGdYeEln0gG0AUFVX3lxTE1vWHRHQUQ2Zm1mQXhra0Vudk1LRVFaajNXYWU3bEVfaDNFZzdzX1JKSi1jSmNUbUMxVDBYZGhROEUtR1FMb0NrVXZUNEd1eTA3UmlXaERYaUZvdEUxZTNwX2hCUFkwc0JwOTEzeDY5TlBfeVNuZEpvV2ZfUnB4UUxIT093S0diNC1jUERuZnBKQVhpRnhHalctYzlGVkhISW8yblQ1VWtjODhtbm5hWjhNaWpGSw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-09-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Are Houthis using new modified cruise missiles in Yemen’s war? - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa3h6NTdxaWU0WU1NWE1YTk5GUGtaTWtWOWM5UUFEYi1FenZwUmxablJtUzJjQVphR180WUp0OFJPcnFHb0dRREhWX1VqbU1LQW9xQ0haRzRWVm11MFprNTU3My16Z196d3c0c2dCMlFYZmV0Zy04NTBILVF1Y1ZVVHU1TlZpY1ZyRUdHQzFvdl9rSnV2SnM2R0lWRlhCTWRjWXoxMHcxMmLSAa4BQVVfeXFMT0dCWC1DeUlfclZIX0tYOUlOWWhVZ0w4Vm5nODJUTkJsMmxOSHQ2ZFlXZTR1WWlNUW85NFRGcXM2YzJYemx2ekVuOTFnTjFVUkpid1lLcVFoVTFJMzNMd044MTdELXlkazdrS21fU0pEaXFCXzEwRklMeWMtYkk1ZURxN1FTTnRVX1hjMGtnWmRzWjZnVUhNOGhIRGxmaFBmaDZsMjBTS3cySzJNWW13"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYlRBNDRYRkZHZ2Q4N0FoaC1Hd1pfVHBvemM3QkhtUG9JQnpvSkdwbVVfazdPZFN3SkprcGlPdnducXQwc2NQTlhzODZldTFDU0NPcng0dzBqWEI1QzBoM25SQ1dVb3ZjOGRaOExkOFdreG9WYVJCbzduVjFPN3NuaF9qbGVRV1pEaG5xdzdvMjVKWExfbV9ZVmMtbEpZMFktN0VFb21YaEJqV3VfU3pmc2U0dGlwMmc0RFQ2MW9CdHRlb2c"
     }
   ]
 }
