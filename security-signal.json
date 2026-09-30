@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-30 05:35 UTC",
+    "updated": "2026-09-30 12:37 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-09-24",
     "period_end": "2026-09-30",
-    "total_events": 131,
-    "total_risk": 100.45,
-    "normalized_risk_score": 40.2,
+    "total_events": 132,
+    "total_risk": 111.65,
+    "normalized_risk_score": 44.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 19,
-    "security": 5,
+    "military": 21,
+    "security": 7,
     "political": 30,
-    "other": 77
+    "other": 74
   },
   "source_counts": {
-    "news": 131,
+    "news": 132,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 37.0
+      "risk": 38.4
+    },
+    {
+      "name": "Israel",
+      "risk": 16.9
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 13.5
     },
     {
       "name": "Yemen",
       "risk": 12.85
     },
     {
-      "name": "Israel",
-      "risk": 11.0
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 10.8
-    },
-    {
-      "name": "West Bank",
-      "risk": 7.6
+      "name": "Iraq",
+      "risk": 10.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-09-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli officials say diverted flydubai incident may be attempted 'terror attack' - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWnpLNmZJUXN6UzQ0RlhKSFhxT2xYMWZ1R1VwYVdZX3ZuZWFTYUZyV1VYTVhralA5Y0ROVjlNVl9XOGpTSWhEcGM3UE01WVA3clNKcm5KdDZ2dUY1U3FyODdsWkkzSWs2VW5NZUJWQXFYQ0dxamNudlljZl92REs3SnFXSEUzTEswdjh4NnRia2VWZGd2TGE2SmZ6VDBQTXpiRDM0SDZSZ29ubUZUd3Zsa0E4LTBoRmxpSDRjd0JkcmhYbkNV"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Girl has multiple surgeries to control infections after strike in Gaza",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/videos/c8n5d0e0n6wdo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-09-30",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel’s Lapid accuses Netanyahu of ‘fear-mongering’ over attack warning - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObk1rV0k1cDhWYTRxUDlNUlZsXzIwcTdObkd6TFBFQUhDeGU2TVJKZDlqMmQ1NkYxNDRkd2cwaERNNDdJZHBJa3VILWdtbjVyTTJkVkc1cmpRVWJGN2FLV1QyengxdktFWVNrOXNjY2VRZEhEaE1LTHlHeWxNVjFzNW1KNk5xaHBnTzF4cUoxaHZmWDhtQjFtaFdRRHI3WElqSVF5V1hmSHl5ODVJeXdN0gG0AUFVX3lxTFB6M2RORENnMExoRzlFeWhnS1puVGFpeFJvSjFvcFlzcnVUU05ackNIWVo5d1ZwaGo0Zlk2WTdBcVpuSWY4LWhndElLU1k2RDdPX0lQWURQUnpkSGVfQ2lodHE1a3I5bHpxSThFdHBPYXRXNzBUeThFcTF6VmpOVFhPWFF4QmdXcndqOTlhcEItZFdQUG5XWkt6SmdfNVh0aXdGWGtmYmtFYTJoUjRyQ3VqUE5ENw"
+    },
     {
       "score": 2.7,
       "date": "2026-09-29",
@@ -88,18 +115,18 @@
       "date": "2026-09-29",
       "category": "military",
       "source_type": "news",
-      "title": "Are Houthis using new modified cruise missiles in Yemen’s war? - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa3h6NTdxaWU0WU1NWE1YTk5GUGtaTWtWOWM5UUFEYi1FenZwUmxablJtUzJjQVphR180WUp0OFJPcnFHb0dRREhWX1VqbU1LQW9xQ0haRzRWVm11MFprNTU3My16Z196d3c0c2dCMlFYZmV0Zy04NTBILVF1Y1ZVVHU1TlZpY1ZyRUdHQzFvdl9rSnV2SnM2R0lWRlhCTWRjWXoxMHcxMmLSAa4BQVVfeXFMT0dCWC1DeUlfclZIX0tYOUlOWWhVZ0w4Vm5nODJUTkJsMmxOSHQ2ZFlXZTR1WWlNUW85NFRGcXM2YzJYemx2ekVuOTFnTjFVUkpid1lLcVFoVTFJMzNMd044MTdELXlkazdrS21fU0pEaXFCXzEwRklMeWMtYkk1ZURxN1FTTnRVX1hjMGtnWmRzWjZnVUhNOGhIRGxmaFBmaDZsMjBTS3cySzJNWW13"
+      "title": "Israeli forces kill Hamas commander Izz al-Din al-Beik in Gaza attack - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOT3ducG56dUVLNWoweWhabTc2MVdLUXFNd0U3MFMzVHdvaDBqd1RQdlMxRmVhTWR3MDBaSXdVZkFJMHhGYnBoaXJxeTZmNmdselc2Y0J0NE5kOWRUM3RHQmlnbWJkNTJkMlJKUmkzWEx5X21IU3FpcXAzMEpKTXpaNE1UQVBhWmhwM3F6a29JVVl0bE42RFdUeUp5d3B6d09rQkduRk9QbnpURGdYeEln0gG0AUFVX3lxTE1vWHRHQUQ2Zm1mQXhra0Vudk1LRVFaajNXYWU3bEVfaDNFZzdzX1JKSi1jSmNUbUMxVDBYZGhROEUtR1FMb0NrVXZUNEd1eTA3UmlXaERYaUZvdEUxZTNwX2hCUFkwc0JwOTEzeDY5TlBfeVNuZEpvV2ZfUnB4UUxIT093S0diNC1jUERuZnBKQVhpRnhHalctYzlGVkhISW8yblQ1VWtjODhtbm5hWjhNaWpGSw"
     },
     {
       "score": 2.7,
       "date": "2026-09-29",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli forces kill Hamas commander Izz al-Din al-Beik in Gaza attack - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOT3ducG56dUVLNWoweWhabTc2MVdLUXFNd0U3MFMzVHdvaDBqd1RQdlMxRmVhTWR3MDBaSXdVZkFJMHhGYnBoaXJxeTZmNmdselc2Y0J0NE5kOWRUM3RHQmlnbWJkNTJkMlJKUmkzWEx5X21IU3FpcXAzMEpKTXpaNE1UQVBhWmhwM3F6a29JVVl0bE42RFdUeUp5d3B6d09rQkduRk9QbnpURGdYeEln0gG0AUFVX3lxTE1vWHRHQUQ2Zm1mQXhra0Vudk1LRVFaajNXYWU3bEVfaDNFZzdzX1JKSi1jSmNUbUMxVDBYZGhROEUtR1FMb0NrVXZUNEd1eTA3UmlXaERYaUZvdEUxZTNwX2hCUFkwc0JwOTEzeDY5TlBfeVNuZEpvV2ZfUnB4UUxIT093S0diNC1jUERuZnBKQVhpRnhHalctYzlGVkhISW8yblQ1VWtjODhtbm5hWjhNaWpGSw"
+      "title": "Are Houthis using new modified cruise missiles in Yemen’s war? - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa3h6NTdxaWU0WU1NWE1YTk5GUGtaTWtWOWM5UUFEYi1FenZwUmxablJtUzJjQVphR180WUp0OFJPcnFHb0dRREhWX1VqbU1LQW9xQ0haRzRWVm11MFprNTU3My16Z196d3c0c2dCMlFYZmV0Zy04NTBILVF1Y1ZVVHU1TlZpY1ZyRUdHQzFvdl9rSnV2SnM2R0lWRlhCTWRjWXoxMHcxMmLSAa4BQVVfeXFMT0dCWC1DeUlfclZIX0tYOUlOWWhVZ0w4Vm5nODJUTkJsMmxOSHQ2ZFlXZTR1WWlNUW85NFRGcXM2YzJYemx2ekVuOTFnTjFVUkpid1lLcVFoVTFJMzNMd044MTdELXlkazdrS21fU0pEaXFCXzEwRklMeWMtYkk1ZURxN1FTTnRVX1hjMGtnWmRzWjZnVUhNOGhIRGxmaFBmaDZsMjBTS3cySzJNWW13"
     },
     {
       "score": 2.4,
@@ -109,33 +136,6 @@
       "title": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYlRBNDRYRkZHZ2Q4N0FoaC1Hd1pfVHBvemM3QkhtUG9JQnpvSkdwbVVfazdPZFN3SkprcGlPdnducXQwc2NQTlhzODZldTFDU0NPcng0dzBqWEI1QzBoM25SQ1dVb3ZjOGRaOExkOFdreG9WYVJCbzduVjFPN3NuaF9qbGVRV1pEaG5xdzdvMjVKWExfbV9ZVmMtbEpZMFktN0VFb21YaEJqV3VfU3pmc2U0dGlwMmc0RFQ2MW9CdHRlb2c"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill at least two people in Gaza, officials say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSWZnVzM3TkwzMkZIaTM5ZVczRlJxUmU0a2VKdVRnOGxrUlFfR1E2Nzl6VDExTG51bEJkbzQ3UnZYYUtsLVRkdm5KM0N2RDRpbzhOMnB1em5qdHM0LU9lNXB0SFBTS0VOZUZJUlZIMWFlTkxqSUhMU08zbFZzS0FzbTg1ZlZwbUx4RTFCMTVSZTE5QnpfNEJHWUt2M01NWXRPT05hRVdxbzZVdnY2YktZ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran touts Hormuz attacks as oil flows increase despite tensions - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcHFndWVQUVpiSnAwM0EtTUdVSVZvSERZZnZkQUswTVRETVpIdWJtU1VrRFpzdUxWNUplbUI3Z2F6UEFZdk43NWN4R1llRVJOMjNDV1oxNTF3dTJOOUdEQVVDT0JLdVpwa1J2UU9mMm5iczcwaEpubnR1WEIzdnBUWE9xVlJtdlIwZTc2YXpGWW5RU1RWdnUxa1B4ODB1RFNUd2lXdlZVazbSAa4BQVVfeXFMT3hIUnlIQUNRSU9pbnFSNTh4cnc0LXRiV3M2OE9VeFNab2FneWpIMUVoaTJvd1dpYnhfUkRRODJRcDNmcmZrRHpFcVhKWHlzTUYtdk0yaGc4YWxOQzVRQlhDOUJXLXdmQjNiMkhyaWZMM0lKZzY0QlRWeGlsMUFtQUt3T0lPNk42bmxnNFhjNWRmc3NUYTI0VGs2N2RjanVvNVZUek5uV0Y1c2dOdDhB"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-09-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Five arrested on ‘terrorism’ charges in UK near base used to strike Iran - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSUVQdGdQNkExS2gtaXRtcVNzbVp0WXBCei1zZDZXMGpsOUJ3Z0N4eEdvelZUM1ZBRXl6VHpnZWdpWlBsT0lVemdGNy1TdmYzT1RDNVRoNE1PWDdjb3VrV3VaaTlweExWQ1VJdng2Q3B5dGlJQ3BJc21oaEd5ME5ZMWszRlRIOUU0MFU4VjB4YVJqRENy0gGaAUFVX3lxTE5ncmdzQmpQMllQc0lzTk1RUVpRWkoyNFVlaTNWT2p6WDFXWHpuS05zc2g4SU9BQmt1eUt4Q1RXRWxSNFNDbk1BVGFPUW1IUF9SNkc2WWwyQ2NzaFdDUGFDc0JRcUliYlU4aUZUY2V1R3c5X1YxTldyNTlfOUZlN3EwTjhwbHBkR2U0WjYxa1NzaUxjWC16Sk95eVE"
     }
   ]
 }
