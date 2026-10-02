@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-02 12:39 UTC",
+    "updated": "2026-10-02 19:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-09-26",
     "period_end": "2026-10-02",
-    "total_events": 134,
-    "total_risk": 137.94,
-    "normalized_risk_score": 55.2,
+    "total_events": 130,
+    "total_risk": 130.89,
+    "normalized_risk_score": 52.4,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 30,
+    "military": 27,
     "security": 15,
-    "political": 18,
+    "political": 17,
     "other": 71
   },
   "source_counts": {
-    "news": 128,
+    "news": 124,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 37.75
+      "risk": 36.05
     },
     {
       "name": "Iran",
-      "risk": 36.18
+      "risk": 33.54
     },
     {
       "name": "Gaza Strip",
-      "risk": 13.85
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 11.0
+      "risk": 13.5
     },
     {
       "name": "Dubai",
-      "risk": 9.7
+      "risk": 10.1
+    },
+    {
+      "name": "Iraq",
+      "risk": 8.85
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQTk2ZFJ4YklNcjZMNEJ3aWlPSG9HZlZ5RzF1Q3o1RW16emhJWUQ3VVFkV3luT3FjSG9EaFVpR1VpYjRnMElVWFR0SFJ2Y1FRT0lNVHV6bHExMmJlbGI2U2FKMkRDakE5clVydmdkUkRXY3plNE16ZHVMZEhGNWtwQ25Nd2lQRndnM1lPTnJOSkx2ODNjeUloUGhaemlLMTR5NGY4ZmZnWnBpVG45RGwzcGVjcTU4SjNaRjdVd0ZSdlI"
+    },
     {
       "score": 3.0,
       "date": "2026-10-02",
@@ -88,24 +97,6 @@
       "date": "2026-10-01",
       "category": "military",
       "source_type": "news",
-      "title": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQTk2ZFJ4YklNcjZMNEJ3aWlPSG9HZlZ5RzF1Q3o1RW16emhJWUQ3VVFkV3luT3FjSG9EaFVpR1VpYjRnMElVWFR0SFJ2Y1FRT0lNVHV6bHExMmJlbGI2U2FKMkRDakE5clVydmdkUkRXY3plNE16ZHVMZEhGNWtwQ25Nd2lQRndnM1lPTnJOSkx2ODNjeUloUGhaemlLMTR5NGY4ZmZnWnBpVG45RGwzcGVjcTU4SjNaRjdVd0ZSdlI"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition says Houthis attacked power station for Prophet's Mosque in Medina - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZnZXZzBwRDQtUGJYZWxuelowY3BQM2prQm43eC0yOTVELWRadi1GRmJWcXAtOU9RXzlrX3ctd3ZmckFmVEtNLXhtQzRhRDNSWkJyc1djUGJ0NFhPUTZPbDR6OVd4QTBlUDh6bEhqUlZEanMzUlRpOVdKeUtyVnRVaHJPT0ZCQy1jcEZwc05aZ0dPY2l3VF9fVmJCZ3BHNGIxUXppQUNlMGlGV1I1SUhPMXYyMHo"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-01",
-      "category": "military",
-      "source_type": "news",
       "title": "Netanyahu says Flydubai attacker had 'Islamist radical indoctrination'",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/crje8edqyej9o?at_medium=RSS&at_campaign=rss"
@@ -133,9 +124,18 @@
       "date": "2026-10-01",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition says power station attacked in Medina, blames Houthis - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNjZNTVNkQV80ZkpaSG03OV9reW10bTZDaFdGbldBMkJhQlRBV1p4RjM3LVk5cWowVjJPUTRNdjcyOGVFUThUUnNmQnducGtJcDlFQlFKUWJERTFmZktYZWs0MzBnRGlWbU9DRE9MTGxpa1RlaUhhODVDV0wyVk1fcmg5bTU0NHhCZ0l4NHBQa09xOElzZFhBcDEwZG54UVAyUXZ0a0w2RE8zYWJSUTlxV3htRdIBuAFBVV95cUxPcU1jOUF2TUZkaldaYlhFNjhtX0ZPeXZKM0VtbUUtMFlHYkpWeThaLUltUVZKc0JKZGhBTzdUTndGVXFnS3VKUTJ1Z0Z5cmczZlZvLU5oN3hiUGZkNF9iMVFxN2VGMmZjNlk1UlZNZDUzc1JSYzdYWGg5Sy03dnk3ZVAyVkFwWV93ZXJ6RG1zcXlfdURJOFVBdjNZWGE1dGE4YjVrY2VOdVpaXzZNMHVGc2E2eWptdU5f"
+      "title": "How was the Flydubai co-pilot who attacked his captain cleared to fly? - Al Jazeera",
+      "location": "Dubai",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaW9FWG1Zd1pzLTVzREdjbTVFckg5VTdUaDJEcV9UeU5ZX0stVzN3Z1oybm9ZVThuQ2p1YXdibFNKUDRaTmJXWG5xNmlPbVJfWEViYUhyV2NPeDd0aG1QYTdNdDhyX0ExbEFldktnc0VMS3JxdkJYeWdNdHA0ODhyUGxHZWpXaHNrQ2VGaWpGT3hhZ1pTRlVHV0NRdjMwSEZuWnMxaVhKYjYyQWgw0gGyAUFVX3lxTE9uVjVNM0xkcHp0QS15Mm1lbVNtSFdGVjJNYWMwYkgya0NQREN1WDlaS181d2JFREdGdXd4ZjRoV1F0aUpfOUszSkZ1VG5lVTRiUjk0TGw0cFEzTzhCRUVnbDcyQ3Zna1F6UjB5VjFjZ2g2ZVhVcm9ld3dJdURISUt3MnFpdTY0MWZoWHktQVBWbUx0aVRfMDZ2ZTBoRHFuYXJmU2lORC13R3YxSWhZc1M4TVE"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-10-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Palestinians bury remains of 105 people killed in Israeli attack on Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONjV0cGFZUWkzQkw0bkVteTJtTnMzZDQwZTZucXgzeE5odFJ3clE1SnY5cUFJOTNsOW5FS3RrSDZxMUV6VHdFMGlXcThVaFBmRDZXdW5RRmNsU0h1d3UzUEpjTGEycmV5U016eEJ5WUxCVDZaMzluSVlSZTh5aDV1d0dINGhiQ3h5X3d3REFDeVpuWWNoVDNicTFDWkVDZnk4by1uQ1dmZlgxRnRHWlk0MS1YZEoyc2_SAbwBQVVfeXFMT1pCdzhnWDJpeFlnbWZkZ1M1Y1Rxc2N0YmlEb2wwZGd0RUN1X2p2ZmhBdlBKUTJzVFNHbHZ0b3lORHp2SU9vY19nUlBMc205S2VNeEd5QzVDcFJXWmNRQVBLSlFHZDdGNlkydmlzTzVsRmNMU0UwQ180QUdUMnFKNF9sM0djdGYzdnMxRTNzSnlRQjNlak1hUEtGQzAwVlAxU25ZbGd6OV9VWExjaWRQMDZ4MmQ1RldKYzFNV0U"
     }
   ]
 }
