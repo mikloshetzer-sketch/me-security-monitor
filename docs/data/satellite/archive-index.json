@@ -1,5 +1,5683 @@
 [
   {
+    "id": "mocha_2026-10-01_2026-10-03T204336Z",
+    "generated_at": "2026-10-03T20:43:37Z",
+    "timestamp": "2026-10-01T07:46:16.093000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "4.0.1",
+    "location_name": "Mocha",
+    "location_slug": "mocha",
+    "requested_date": "2026-10-03",
+    "comparison_days": 30,
+    "search_tolerance_days": 15,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 40,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 13.319,
+      "lon": 43.249,
+      "radius_km": 25.0,
+      "bbox": [
+        43.018215,
+        13.094422,
+        43.479785,
+        13.543578
+      ]
+    },
+    "bbox": [
+      43.018215,
+      13.094422,
+      43.479785,
+      13.543578
+    ],
+    "image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-09-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-09-01",
+      "acquisition_datetime": "2026-09-01T07:46:13.644000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 0.55,
+      "catalog_feature_id": "S2B_MSIL2A_20260901T072609_N0512_R049_T38PKV_20260901T095350.SAFE",
+      "catalog_candidate_count": 39,
+      "image_url": "data/satellite/sentinel2/history/mocha/2026-09-01_before_2026-10-03T204336Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-10-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-10-01",
+      "acquisition_datetime": "2026-10-01T07:46:16.093000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 0.27,
+      "catalog_feature_id": "S2B_MSIL2A_20261001T072719_N0513_R049_T38PKV_20261001T094402.SAFE",
+      "catalog_candidate_count": 20,
+      "image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "2.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 47.88,
+      "level": "HIGH",
+      "confidence_percent": 96.76,
+      "comparability": "HIGH",
+      "comparability_score": 96.76,
+      "ssim": 0.833699,
+      "changed_pixel_percent": 7.5916,
+      "changed_area_km2_estimate": 149.0613,
+      "significant_regions": 58,
+      "region_records_returned": 25,
+      "regions_truncated": true,
+      "regions": [
+        {
+          "id": "R01",
+          "rank": 1,
+          "area_pixels": 55684.0,
+          "area_percent": 5.31044,
+          "area_km2_estimate": 104.27025,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 402.3,
+            "y": 168.52
+          },
+          "centroid": {
+            "lat": 13.469588,
+            "lon": 43.19973
+          },
+          "bbox_pixel": {
+            "x": 283,
+            "y": 0,
+            "width": 242,
+            "height": 456
+          },
+          "bbox_geo": [
+            43.145902,
+            13.343368,
+            43.255091,
+            13.543578
+          ],
+          "mean_change_intensity": 0.440005,
+          "max_change_intensity": 0.693198,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R02",
+          "rank": 2,
+          "area_pixels": 6072.5,
+          "area_percent": 0.57912,
+          "area_km2_estimate": 11.37097,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 573.36,
+            "y": 840.38
+          },
+          "centroid": {
+            "lat": 13.174604,
+            "lon": 43.27691
+          },
+          "bbox_pixel": {
+            "x": 476,
+            "y": 596,
+            "width": 223,
+            "height": 428
+          },
+          "bbox_geo": [
+            43.232983,
+            13.093983,
+            43.333599,
+            13.2819
+          ],
+          "mean_change_intensity": 0.484243,
+          "max_change_intensity": 0.780941,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R03",
+          "rank": 3,
+          "area_pixels": 2808.0,
+          "area_percent": 0.26779,
+          "area_km2_estimate": 5.25808,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 487.32,
+            "y": 445.93
+          },
+          "centroid": {
+            "lat": 13.347791,
+            "lon": 43.238089
+          },
+          "bbox_pixel": {
+            "x": 448,
+            "y": 332,
+            "width": 63,
+            "height": 199
+          },
+          "bbox_geo": [
+            43.220349,
+            13.310438,
+            43.248774,
+            13.397811
+          ],
+          "mean_change_intensity": 0.497622,
+          "max_change_intensity": 0.715373,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R04",
+          "rank": 4,
+          "area_pixels": 913.5,
+          "area_percent": 0.08712,
+          "area_km2_estimate": 1.71056,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 439.15,
+            "y": 772.41
+          },
+          "centroid": {
+            "lat": 13.204446,
+            "lon": 43.216357
+          },
+          "bbox_pixel": {
+            "x": 404,
+            "y": 716,
+            "width": 59,
+            "height": 116
+          },
+          "bbox_geo": [
+            43.200497,
+            13.178282,
+            43.227117,
+            13.229213
+          ],
+          "mean_change_intensity": 0.441994,
+          "max_change_intensity": 0.597979,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R05",
+          "rank": 5,
+          "area_pixels": 512.5,
+          "area_percent": 0.04888,
+          "area_km2_estimate": 0.95967,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 420.45,
+            "y": 573.8
+          },
+          "centroid": {
+            "lat": 13.291645,
+            "lon": 43.207917
+          },
+          "bbox_pixel": {
+            "x": 410,
+            "y": 547,
+            "width": 24,
+            "height": 60
+          },
+          "bbox_geo": [
+            43.203204,
+            13.27707,
+            43.214033,
+            13.303413
+          ],
+          "mean_change_intensity": 0.444867,
+          "max_change_intensity": 0.676627,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R06",
+          "rank": 6,
+          "area_pixels": 427.0,
+          "area_percent": 0.04072,
+          "area_km2_estimate": 0.79957,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 444.97,
+            "y": 867.39
+          },
+          "centroid": {
+            "lat": 13.162743,
+            "lon": 43.218981
+          },
+          "bbox_pixel": {
+            "x": 423,
+            "y": 848,
+            "width": 41,
+            "height": 45
+          },
+          "bbox_geo": [
+            43.209069,
+            13.151499,
+            43.227568,
+            13.171257
+          ],
+          "mean_change_intensity": 0.435289,
+          "max_change_intensity": 0.584071,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R07",
+          "rank": 7,
+          "area_pixels": 404.0,
+          "area_percent": 0.03853,
+          "area_km2_estimate": 0.7565,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 661.39,
+            "y": 506.65
+          },
+          "centroid": {
+            "lat": 13.321129,
+            "lon": 43.316631
+          },
+          "bbox_pixel": {
+            "x": 653,
+            "y": 482,
+            "width": 21,
+            "height": 47
+          },
+          "bbox_geo": [
+            43.312844,
+            13.311316,
+            43.322319,
+            13.331952
+          ],
+          "mean_change_intensity": 0.530381,
+          "max_change_intensity": 0.745176,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R08",
+          "rank": 8,
+          "area_pixels": 333.5,
+          "area_percent": 0.03181,
+          "area_km2_estimate": 0.62449,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 439.57,
+            "y": 472.97
+          },
+          "centroid": {
+            "lat": 13.335917,
+            "lon": 43.216547
+          },
+          "bbox_pixel": {
+            "x": 425,
+            "y": 454,
+            "width": 27,
+            "height": 57
+          },
+          "bbox_geo": [
+            43.209972,
+            13.31922,
+            43.222154,
+            13.344246
+          ],
+          "mean_change_intensity": 0.442481,
+          "max_change_intensity": 0.651294,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R09",
+          "rank": 9,
+          "area_pixels": 328.5,
+          "area_percent": 0.03133,
+          "area_km2_estimate": 0.61513,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 961.96,
+            "y": 424.96
+          },
+          "centroid": {
+            "lat": 13.356998,
+            "lon": 43.452244
+          },
+          "bbox_pixel": {
+            "x": 943,
+            "y": 415,
+            "width": 33,
+            "height": 25
+          },
+          "bbox_geo": [
+            43.44369,
+            13.350393,
+            43.458579,
+            13.361369
+          ],
+          "mean_change_intensity": 0.574796,
+          "max_change_intensity": 0.77349,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R10",
+          "rank": 10,
+          "area_pixels": 324.5,
+          "area_percent": 0.03095,
+          "area_km2_estimate": 0.60764,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 449.14,
+            "y": 843.2
+          },
+          "centroid": {
+            "lat": 13.173364,
+            "lon": 43.220866
+          },
+          "bbox_pixel": {
+            "x": 434,
+            "y": 828,
+            "width": 32,
+            "height": 33
+          },
+          "bbox_geo": [
+            43.214033,
+            13.165549,
+            43.228471,
+            13.180038
+          ],
+          "mean_change_intensity": 0.43674,
+          "max_change_intensity": 0.637789,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R11",
+          "rank": 11,
+          "area_pixels": 321.5,
+          "area_percent": 0.03066,
+          "area_km2_estimate": 0.60202,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 522.2,
+            "y": 33.18
+          },
+          "centroid": {
+            "lat": 13.529009,
+            "lon": 43.253829
+          },
+          "bbox_pixel": {
+            "x": 515,
+            "y": 6,
+            "width": 16,
+            "height": 53
+          },
+          "bbox_geo": [
+            43.250579,
+            13.517674,
+            43.257798,
+            13.540944
+          ],
+          "mean_change_intensity": 0.466811,
+          "max_change_intensity": 0.675137,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R12",
+          "rank": 12,
+          "area_pixels": 300.0,
+          "area_percent": 0.02861,
+          "area_km2_estimate": 0.56176,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 269.68,
+            "y": 140.37
+          },
+          "centroid": {
+            "lat": 13.481947,
+            "lon": 43.139891
+          },
+          "bbox_pixel": {
+            "x": 260,
+            "y": 128,
+            "width": 20,
+            "height": 26
+          },
+          "bbox_geo": [
+            43.135525,
+            13.475963,
+            43.144549,
+            13.487379
+          ],
+          "mean_change_intensity": 0.482662,
+          "max_change_intensity": 0.62531,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R13",
+          "rank": 13,
+          "area_pixels": 277.5,
+          "area_percent": 0.02646,
+          "area_km2_estimate": 0.51963,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 423.84,
+            "y": 450.26
+          },
+          "centroid": {
+            "lat": 13.345889,
+            "lon": 43.209447
+          },
+          "bbox_pixel": {
+            "x": 405,
+            "y": 430,
+            "width": 35,
+            "height": 41
+          },
+          "bbox_geo": [
+            43.200948,
+            13.336782,
+            43.21674,
+            13.354783
+          ],
+          "mean_change_intensity": 0.424166,
+          "max_change_intensity": 0.567066,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R14",
+          "rank": 14,
+          "area_pixels": 274.0,
+          "area_percent": 0.02613,
+          "area_km2_estimate": 0.51307,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 685.54,
+            "y": 522.92
+          },
+          "centroid": {
+            "lat": 13.313984,
+            "lon": 43.327524
+          },
+          "bbox_pixel": {
+            "x": 676,
+            "y": 510,
+            "width": 21,
+            "height": 24
+          },
+          "bbox_geo": [
+            43.323221,
+            13.309121,
+            43.332696,
+            13.319659
+          ],
+          "mean_change_intensity": 0.609144,
+          "max_change_intensity": 0.834588,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R15",
+          "rank": 15,
+          "area_pixels": 240.0,
+          "area_percent": 0.02289,
+          "area_km2_estimate": 0.44941,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 405.89,
+            "y": 446.67
+          },
+          "centroid": {
+            "lat": 13.347465,
+            "lon": 43.20135
+          },
+          "bbox_pixel": {
+            "x": 387,
+            "y": 424,
+            "width": 38,
+            "height": 39
+          },
+          "bbox_geo": [
+            43.192827,
+            13.340294,
+            43.209972,
+            13.357418
+          ],
+          "mean_change_intensity": 0.42679,
+          "max_change_intensity": 0.623256,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R16",
+          "rank": 16,
+          "area_pixels": 231.5,
+          "area_percent": 0.02208,
+          "area_km2_estimate": 0.43349,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 439.28,
+            "y": 1006.02
+          },
+          "centroid": {
+            "lat": 13.101878,
+            "lon": 43.216416
+          },
+          "bbox_pixel": {
+            "x": 428,
+            "y": 995,
+            "width": 21,
+            "height": 29
+          },
+          "bbox_geo": [
+            43.211325,
+            13.093983,
+            43.2208,
+            13.106716
+          ],
+          "mean_change_intensity": 0.431097,
+          "max_change_intensity": 0.542249,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R17",
+          "rank": 17,
+          "area_pixels": 225.0,
+          "area_percent": 0.02146,
+          "area_km2_estimate": 0.42132,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 477.29,
+            "y": 668.35
+          },
+          "centroid": {
+            "lat": 13.250132,
+            "lon": 43.233564
+          },
+          "bbox_pixel": {
+            "x": 469,
+            "y": 652,
+            "width": 18,
+            "height": 32
+          },
+          "bbox_geo": [
+            43.229824,
+            13.243263,
+            43.237946,
+            13.257312
+          ],
+          "mean_change_intensity": 0.470371,
+          "max_change_intensity": 0.639373,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R18",
+          "rank": 18,
+          "area_pixels": 224.5,
+          "area_percent": 0.02141,
+          "area_km2_estimate": 0.42038,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 487.94,
+            "y": 861.97
+          },
+          "centroid": {
+            "lat": 13.165123,
+            "lon": 43.238369
+          },
+          "bbox_pixel": {
+            "x": 467,
+            "y": 853,
+            "width": 39,
+            "height": 23
+          },
+          "bbox_geo": [
+            43.228922,
+            13.158963,
+            43.246518,
+            13.169062
+          ],
+          "mean_change_intensity": 0.445796,
+          "max_change_intensity": 0.629579,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R19",
+          "rank": 19,
+          "area_pixels": 220.0,
+          "area_percent": 0.02098,
+          "area_km2_estimate": 0.41196,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 439.51,
+            "y": 971.95
+          },
+          "centroid": {
+            "lat": 13.116836,
+            "lon": 43.216519
+          },
+          "bbox_pixel": {
+            "x": 429,
+            "y": 951,
+            "width": 24,
+            "height": 43
+          },
+          "bbox_geo": [
+            43.211777,
+            13.107155,
+            43.222605,
+            13.126034
+          ],
+          "mean_change_intensity": 0.403043,
+          "max_change_intensity": 0.523813,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R20",
+          "rank": 20,
+          "area_pixels": 212.0,
+          "area_percent": 0.02022,
+          "area_km2_estimate": 0.39698,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 387.39,
+            "y": 967.05
+          },
+          "centroid": {
+            "lat": 13.118986,
+            "lon": 43.193
+          },
+          "bbox_pixel": {
+            "x": 374,
+            "y": 943,
+            "width": 25,
+            "height": 52
+          },
+          "bbox_geo": [
+            43.186961,
+            13.106716,
+            43.198241,
+            13.129547
+          ],
+          "mean_change_intensity": 0.414826,
+          "max_change_intensity": 0.518171,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R21",
+          "rank": 21,
+          "area_pixels": 204.0,
+          "area_percent": 0.01945,
+          "area_km2_estimate": 0.382,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 956.46,
+            "y": 99.47
+          },
+          "centroid": {
+            "lat": 13.499905,
+            "lon": 43.44976
+          },
+          "bbox_pixel": {
+            "x": 942,
+            "y": 94,
+            "width": 29,
+            "height": 13
+          },
+          "bbox_geo": [
+            43.443238,
+            13.496599,
+            43.456323,
+            13.502307
+          ],
+          "mean_change_intensity": 0.600477,
+          "max_change_intensity": 0.827137,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R22",
+          "rank": 22,
+          "area_pixels": 190.5,
+          "area_percent": 0.01817,
+          "area_km2_estimate": 0.35672,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 419.81,
+            "y": 768.32
+          },
+          "centroid": {
+            "lat": 13.206241,
+            "lon": 43.20763
+          },
+          "bbox_pixel": {
+            "x": 401,
+            "y": 759,
+            "width": 31,
+            "height": 29
+          },
+          "bbox_geo": [
+            43.199143,
+            13.197601,
+            43.21313,
+            13.210333
+          ],
+          "mean_change_intensity": 0.41936,
+          "max_change_intensity": 0.50259,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R23",
+          "rank": 23,
+          "area_pixels": 180.5,
+          "area_percent": 0.01721,
+          "area_km2_estimate": 0.33799,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 160.84,
+            "y": 8.99
+          },
+          "centroid": {
+            "lat": 13.53963,
+            "lon": 43.090785
+          },
+          "bbox_pixel": {
+            "x": 147,
+            "y": 0,
+            "width": 26,
+            "height": 19
+          },
+          "bbox_geo": [
+            43.08454,
+            13.535236,
+            43.096271,
+            13.543578
+          ],
+          "mean_change_intensity": 0.437587,
+          "max_change_intensity": 0.558013,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R24",
+          "rank": 24,
+          "area_pixels": 170.0,
+          "area_percent": 0.01621,
+          "area_km2_estimate": 0.31833,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 401.27,
+            "y": 1013.49
+          },
+          "centroid": {
+            "lat": 13.098597,
+            "lon": 43.199264
+          },
+          "bbox_pixel": {
+            "x": 395,
+            "y": 999,
+            "width": 13,
+            "height": 25
+          },
+          "bbox_geo": [
+            43.196436,
+            13.093983,
+            43.202302,
+            13.104959
+          ],
+          "mean_change_intensity": 0.434172,
+          "max_change_intensity": 0.548529,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R25",
+          "rank": 25,
+          "area_pixels": 162.0,
+          "area_percent": 0.01545,
+          "area_km2_estimate": 0.30335,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 983.97,
+            "y": 199.02
+          },
+          "centroid": {
+            "lat": 13.456196,
+            "lon": 43.462173
+          },
+          "bbox_pixel": {
+            "x": 976,
+            "y": 192,
+            "width": 18,
+            "height": 18
+          },
+          "bbox_geo": [
+            43.458579,
+            13.451376,
+            43.4667,
+            13.459279
+          ],
+          "mean_change_intensity": 0.535149,
+          "max_change_intensity": 0.707922,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        }
+      ],
+      "largest_region_percent": 5.3104,
+      "largest_region_km2_estimate": 104.2702,
+      "valid_pixel_percent": 100.0,
+      "difference_threshold": 0.353349,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/mocha/2026-10-01_change_2026-10-03T204336Z.png",
+      "assessment": "A képpár jelentős vizuális változást jelez; a változási térkép részletes elemzése indokolt. A jelentősnek minősített pixelek aránya 7.59%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.483,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification.",
+        "Numbered regions are visual-change candidates, not automatically classified objects or events."
+      ],
+      "firms_correlation": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-03",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          }
+        ],
+        "aoi_hotspot_count": 0,
+        "regions_with_correlation": 0,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike_correlation": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-01T07:46:13.644000Z",
+        "window_end": "2026-10-01T07:46:16.093000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 45,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "source_correlations": {
+      "firms": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-03",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          }
+        ],
+        "aoi_hotspot_count": 0,
+        "regions_with_correlation": 0,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-01T07:46:13.644000Z",
+        "window_end": "2026-10-01T07:46:16.093000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 45,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-10-03",
+      "requested_before_date": "2026-09-03",
+      "comparison_days": 30,
+      "search_tolerance_days": 15,
+      "before_image_url": "data/satellite/sentinel2/history/mocha/2026-09-01_before_2026-10-03T204336Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/mocha/2026-10-01_change_2026-10-03T204336Z.png",
+      "before_thumbnail_url": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_before_thumb.webp",
+      "after_thumbnail_url": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_after_thumb.webp",
+      "change_thumbnail_url": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_change_thumb.webp"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/mocha/2026-09-01_before_2026-10-03T204336Z.png",
+      "after_image": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
+      "change_map": "data/satellite/sentinel2/history/mocha/2026-10-01_change_2026-10-03T204336Z.png",
+      "before_thumbnail": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_before_thumb.webp",
+      "after_thumbnail": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_after_thumb.webp",
+      "change_thumbnail": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_change_thumb.webp",
+      "acquisition_date": "2026-10-01",
+      "cloud_cover_percent": 0.27,
+      "bounds": {
+        "west": 43.018215,
+        "south": 13.094422,
+        "east": 43.479785,
+        "north": 13.543578
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
+    "id": "marib_2026-10-03_2026-10-03T204324Z",
+    "generated_at": "2026-10-03T20:43:26Z",
+    "timestamp": "2026-10-03T07:35:43.621000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "4.0.1",
+    "location_name": "Marib",
+    "location_slug": "marib",
+    "requested_date": "2026-10-03",
+    "comparison_days": 30,
+    "search_tolerance_days": 15,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 40,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 15.4625,
+      "lon": 45.3258,
+      "radius_km": 25.0,
+      "bbox": [
+        45.092788,
+        15.237922,
+        45.558812,
+        15.687078
+      ]
+    },
+    "bbox": [
+      45.092788,
+      15.237922,
+      45.558812,
+      15.687078
+    ],
+    "image_url": "data/satellite/sentinel2/history/marib/2026-10-03_after_2026-10-03T204324Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-09-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-09-03",
+      "acquisition_datetime": "2026-09-03T07:35:39.971000Z",
+      "date_offset_days": 0,
+      "cloud_cover_percent": 24.98,
+      "catalog_feature_id": "S2C_MSIL2A_20260903T071621_N0512_R006_T38PNB_20260903T105016.SAFE",
+      "catalog_candidate_count": 19,
+      "image_url": "data/satellite/sentinel2/history/marib/2026-09-03_before_2026-10-03T204324Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-10-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-10-03",
+      "acquisition_datetime": "2026-10-03T07:35:43.621000Z",
+      "date_offset_days": 0,
+      "cloud_cover_percent": 3.55,
+      "catalog_feature_id": "S2C_MSIL2A_20261003T071731_N0513_R006_T38PNB_20261003T104905.SAFE",
+      "catalog_candidate_count": 10,
+      "image_url": "data/satellite/sentinel2/history/marib/2026-10-03_after_2026-10-03T204324Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "2.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 97.57,
+      "level": "VERY_HIGH",
+      "confidence_percent": 93.05,
+      "comparability": "HIGH",
+      "comparability_score": 93.05,
+      "ssim": 0.559952,
+      "changed_pixel_percent": 40.7502,
+      "changed_area_km2_estimate": 800.1286,
+      "significant_regions": 70,
+      "region_records_returned": 25,
+      "regions_truncated": true,
+      "regions": [
+        {
+          "id": "R01",
+          "rank": 1,
+          "area_pixels": 320392.5,
+          "area_percent": 30.55501,
+          "area_km2_estimate": 599.94622,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 606.38,
+            "y": 735.84
+          },
+          "centroid": {
+            "lat": 15.364002,
+            "lon": 45.369023
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 282,
+            "width": 1024,
+            "height": 742
+          },
+          "bbox_geo": [
+            45.092788,
+            15.237483,
+            45.559268,
+            15.563264
+          ],
+          "mean_change_intensity": 0.573662,
+          "max_change_intensity": 0.959765,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R02",
+          "rank": 2,
+          "area_pixels": 44438.5,
+          "area_percent": 4.23799,
+          "area_km2_estimate": 83.21265,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 155.47,
+            "y": 630.39
+          },
+          "centroid": {
+            "lat": 15.410302,
+            "lon": 45.16361
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 483,
+            "width": 369,
+            "height": 331
+          },
+          "bbox_geo": [
+            45.092788,
+            15.329685,
+            45.260885,
+            15.475013
+          ],
+          "mean_change_intensity": 0.604213,
+          "max_change_intensity": 0.965169,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R03",
+          "rank": 3,
+          "area_pixels": 26866.0,
+          "area_percent": 2.56214,
+          "area_km2_estimate": 50.30753,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 108.3,
+            "y": 449.7
+          },
+          "centroid": {
+            "lat": 15.489636,
+            "lon": 45.142125
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 347,
+            "width": 294,
+            "height": 237
+          },
+          "bbox_geo": [
+            45.092788,
+            15.430668,
+            45.226719,
+            15.534725
+          ],
+          "mean_change_intensity": 0.593779,
+          "max_change_intensity": 0.977647,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R04",
+          "rank": 4,
+          "area_pixels": 4233.5,
+          "area_percent": 0.40374,
+          "area_km2_estimate": 7.92738,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 879.71,
+            "y": 833.09
+          },
+          "centroid": {
+            "lat": 15.321303,
+            "lon": 45.493536
+          },
+          "bbox_pixel": {
+            "x": 827,
+            "y": 747,
+            "width": 123,
+            "height": 171
+          },
+          "bbox_geo": [
+            45.469525,
+            15.284023,
+            45.525557,
+            15.359102
+          ],
+          "mean_change_intensity": 0.505404,
+          "max_change_intensity": 0.754118,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R05",
+          "rank": 5,
+          "area_pixels": 3853.0,
+          "area_percent": 0.36745,
+          "area_km2_estimate": 7.21488,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 343.36,
+            "y": 359.96
+          },
+          "centroid": {
+            "lat": 15.529036,
+            "lon": 45.249206
+          },
+          "bbox_pixel": {
+            "x": 310,
+            "y": 291,
+            "width": 69,
+            "height": 124
+          },
+          "bbox_geo": [
+            45.234007,
+            15.504869,
+            45.26544,
+            15.559312
+          ],
+          "mean_change_intensity": 0.61711,
+          "max_change_intensity": 0.901145,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R06",
+          "rank": 6,
+          "area_pixels": 1176.0,
+          "area_percent": 0.11215,
+          "area_km2_estimate": 2.2021,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 808.97,
+            "y": 843.86
+          },
+          "centroid": {
+            "lat": 15.316577,
+            "lon": 45.461311
+          },
+          "bbox_pixel": {
+            "x": 762,
+            "y": 813,
+            "width": 80,
+            "height": 57
+          },
+          "bbox_geo": [
+            45.439914,
+            15.305098,
+            45.476358,
+            15.330124
+          ],
+          "mean_change_intensity": 0.565359,
+          "max_change_intensity": 0.748157,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R07",
+          "rank": 7,
+          "area_pixels": 741.0,
+          "area_percent": 0.07067,
+          "area_km2_estimate": 1.38755,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 543.71,
+            "y": 389.2
+          },
+          "centroid": {
+            "lat": 15.516196,
+            "lon": 45.340473
+          },
+          "bbox_pixel": {
+            "x": 519,
+            "y": 365,
+            "width": 45,
+            "height": 55
+          },
+          "bbox_geo": [
+            45.329217,
+            15.502674,
+            45.349716,
+            15.526822
+          ],
+          "mean_change_intensity": 0.588979,
+          "max_change_intensity": 0.815216,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R08",
+          "rank": 8,
+          "area_pixels": 693.5,
+          "area_percent": 0.06614,
+          "area_km2_estimate": 1.2986,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 501.41,
+            "y": 431.01
+          },
+          "centroid": {
+            "lat": 15.497838,
+            "lon": 45.321205
+          },
+          "bbox_pixel": {
+            "x": 471,
+            "y": 418,
+            "width": 64,
+            "height": 25
+          },
+          "bbox_geo": [
+            45.30735,
+            15.492575,
+            45.336505,
+            15.503552
+          ],
+          "mean_change_intensity": 0.579714,
+          "max_change_intensity": 0.81534,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R09",
+          "rank": 9,
+          "area_pixels": 583.0,
+          "area_percent": 0.0556,
+          "area_km2_estimate": 1.09169,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 305.95,
+            "y": 679.91
+          },
+          "centroid": {
+            "lat": 15.388559,
+            "lon": 45.232162
+          },
+          "bbox_pixel": {
+            "x": 276,
+            "y": 666,
+            "width": 56,
+            "height": 28
+          },
+          "bbox_geo": [
+            45.218519,
+            15.382372,
+            45.244029,
+            15.394666
+          ],
+          "mean_change_intensity": 0.491746,
+          "max_change_intensity": 0.569195,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R10",
+          "rank": 10,
+          "area_pixels": 532.5,
+          "area_percent": 0.05078,
+          "area_km2_estimate": 0.99712,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 805.88,
+            "y": 911.63
+          },
+          "centroid": {
+            "lat": 15.286822,
+            "lon": 45.459902
+          },
+          "bbox_pixel": {
+            "x": 790,
+            "y": 880,
+            "width": 34,
+            "height": 51
+          },
+          "bbox_geo": [
+            45.45267,
+            15.278315,
+            45.468158,
+            15.300707
+          ],
+          "mean_change_intensity": 0.55902,
+          "max_change_intensity": 0.758588,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R11",
+          "rank": 11,
+          "area_pixels": 493.5,
+          "area_percent": 0.04706,
+          "area_km2_estimate": 0.9241,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 264.53,
+            "y": 490.94
+          },
+          "centroid": {
+            "lat": 15.471529,
+            "lon": 45.213294
+          },
+          "bbox_pixel": {
+            "x": 248,
+            "y": 465,
+            "width": 33,
+            "height": 49
+          },
+          "bbox_geo": [
+            45.205764,
+            15.461402,
+            45.220797,
+            15.482916
+          ],
+          "mean_change_intensity": 0.576844,
+          "max_change_intensity": 0.815216,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R12",
+          "rank": 12,
+          "area_pixels": 478.0,
+          "area_percent": 0.04559,
+          "area_km2_estimate": 0.89507,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 385.32,
+            "y": 398.26
+          },
+          "centroid": {
+            "lat": 15.512217,
+            "lon": 45.268317
+          },
+          "bbox_pixel": {
+            "x": 369,
+            "y": 380,
+            "width": 41,
+            "height": 45
+          },
+          "bbox_geo": [
+            45.260885,
+            15.500478,
+            45.279562,
+            15.520236
+          ],
+          "mean_change_intensity": 0.613307,
+          "max_change_intensity": 0.900157,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R13",
+          "rank": 13,
+          "area_pixels": 458.5,
+          "area_percent": 0.04373,
+          "area_km2_estimate": 0.85856,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 260.23,
+            "y": 373.57
+          },
+          "centroid": {
+            "lat": 15.523058,
+            "lon": 45.211336
+          },
+          "bbox_pixel": {
+            "x": 247,
+            "y": 351,
+            "width": 32,
+            "height": 45
+          },
+          "bbox_geo": [
+            45.205308,
+            15.513211,
+            45.219885,
+            15.532969
+          ],
+          "mean_change_intensity": 0.598176,
+          "max_change_intensity": 0.901647,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R14",
+          "rank": 14,
+          "area_pixels": 453.5,
+          "area_percent": 0.04325,
+          "area_km2_estimate": 0.84919,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 386.67,
+            "y": 314.33
+          },
+          "centroid": {
+            "lat": 15.54907,
+            "lon": 45.268934
+          },
+          "bbox_pixel": {
+            "x": 371,
+            "y": 300,
+            "width": 34,
+            "height": 36
+          },
+          "bbox_geo": [
+            45.261796,
+            15.539555,
+            45.277284,
+            15.555361
+          ],
+          "mean_change_intensity": 0.56199,
+          "max_change_intensity": 0.755608,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R15",
+          "rank": 15,
+          "area_pixels": 430.5,
+          "area_percent": 0.04106,
+          "area_km2_estimate": 0.80613,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 481.33,
+            "y": 323.5
+          },
+          "centroid": {
+            "lat": 15.545042,
+            "lon": 45.312056
+          },
+          "bbox_pixel": {
+            "x": 463,
+            "y": 312,
+            "width": 41,
+            "height": 29
+          },
+          "bbox_geo": [
+            45.303706,
+            15.537359,
+            45.322383,
+            15.550092
+          ],
+          "mean_change_intensity": 0.565946,
+          "max_change_intensity": 0.755899,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R16",
+          "rank": 16,
+          "area_pixels": 427.5,
+          "area_percent": 0.04077,
+          "area_km2_estimate": 0.80051,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 388.06,
+            "y": 353.12
+          },
+          "centroid": {
+            "lat": 15.532037,
+            "lon": 45.269569
+          },
+          "bbox_pixel": {
+            "x": 375,
+            "y": 335,
+            "width": 32,
+            "height": 41
+          },
+          "bbox_geo": [
+            45.263618,
+            15.521992,
+            45.278195,
+            15.539994
+          ],
+          "mean_change_intensity": 0.606596,
+          "max_change_intensity": 0.856941,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R17",
+          "rank": 17,
+          "area_pixels": 426.0,
+          "area_percent": 0.04063,
+          "area_km2_estimate": 0.7977,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 305.7,
+            "y": 290.2
+          },
+          "centroid": {
+            "lat": 15.559665,
+            "lon": 45.232047
+          },
+          "bbox_pixel": {
+            "x": 291,
+            "y": 275,
+            "width": 30,
+            "height": 31
+          },
+          "bbox_geo": [
+            45.225352,
+            15.552726,
+            45.239018,
+            15.566337
+          ],
+          "mean_change_intensity": 0.6178,
+          "max_change_intensity": 0.783922,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R18",
+          "rank": 18,
+          "area_pixels": 416.0,
+          "area_percent": 0.03967,
+          "area_km2_estimate": 0.77897,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 439.18,
+            "y": 390.3
+          },
+          "centroid": {
+            "lat": 15.515714,
+            "lon": 45.292857
+          },
+          "bbox_pixel": {
+            "x": 419,
+            "y": 373,
+            "width": 40,
+            "height": 40
+          },
+          "bbox_geo": [
+            45.283662,
+            15.505747,
+            45.301884,
+            15.523309
+          ],
+          "mean_change_intensity": 0.603184,
+          "max_change_intensity": 0.806275,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R19",
+          "rank": 19,
+          "area_pixels": 397.0,
+          "area_percent": 0.03786,
+          "area_km2_estimate": 0.7434,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 231.89,
+            "y": 371.62
+          },
+          "centroid": {
+            "lat": 15.523914,
+            "lon": 45.198427
+          },
+          "bbox_pixel": {
+            "x": 223,
+            "y": 350,
+            "width": 19,
+            "height": 38
+          },
+          "bbox_geo": [
+            45.194375,
+            15.516724,
+            45.20303,
+            15.533408
+          ],
+          "mean_change_intensity": 0.636799,
+          "max_change_intensity": 0.843529,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R20",
+          "rank": 20,
+          "area_pixels": 365.5,
+          "area_percent": 0.03486,
+          "area_km2_estimate": 0.68441,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 122.59,
+            "y": 704.85
+          },
+          "centroid": {
+            "lat": 15.377607,
+            "lon": 45.148636
+          },
+          "bbox_pixel": {
+            "x": 113,
+            "y": 683,
+            "width": 26,
+            "height": 41
+          },
+          "bbox_geo": [
+            45.144265,
+            15.3692,
+            45.156109,
+            15.387202
+          ],
+          "mean_change_intensity": 0.577739,
+          "max_change_intensity": 0.834588,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R21",
+          "rank": 21,
+          "area_pixels": 325.5,
+          "area_percent": 0.03104,
+          "area_km2_estimate": 0.60951,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 418.79,
+            "y": 373.06
+          },
+          "centroid": {
+            "lat": 15.523283,
+            "lon": 45.283567
+          },
+          "bbox_pixel": {
+            "x": 406,
+            "y": 364,
+            "width": 28,
+            "height": 21
+          },
+          "bbox_geo": [
+            45.27774,
+            15.518041,
+            45.290495,
+            15.527261
+          ],
+          "mean_change_intensity": 0.59858,
+          "max_change_intensity": 0.806275,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R22",
+          "rank": 22,
+          "area_pixels": 301.0,
+          "area_percent": 0.02871,
+          "area_km2_estimate": 0.56363,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 101.73,
+            "y": 848.87
+          },
+          "centroid": {
+            "lat": 15.314374,
+            "lon": 45.139132
+          },
+          "bbox_pixel": {
+            "x": 87,
+            "y": 829,
+            "width": 37,
+            "height": 47
+          },
+          "bbox_geo": [
+            45.132421,
+            15.302463,
+            45.149276,
+            15.323099
+          ],
+          "mean_change_intensity": 0.544618,
+          "max_change_intensity": 0.734745,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R23",
+          "rank": 23,
+          "area_pixels": 299.0,
+          "area_percent": 0.02851,
+          "area_km2_estimate": 0.55989,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 670.28,
+            "y": 387.09
+          },
+          "centroid": {
+            "lat": 15.517125,
+            "lon": 45.398133
+          },
+          "bbox_pixel": {
+            "x": 656,
+            "y": 374,
+            "width": 27,
+            "height": 29
+          },
+          "bbox_geo": [
+            45.391626,
+            15.510138,
+            45.403926,
+            15.52287
+          ],
+          "mean_change_intensity": 0.549674,
+          "max_change_intensity": 0.761535,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R24",
+          "rank": 24,
+          "area_pixels": 295.0,
+          "area_percent": 0.02813,
+          "area_km2_estimate": 0.5524,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 406.54,
+            "y": 541.63
+          },
+          "centroid": {
+            "lat": 15.449272,
+            "lon": 45.277985
+          },
+          "bbox_pixel": {
+            "x": 398,
+            "y": 530,
+            "width": 18,
+            "height": 24
+          },
+          "bbox_geo": [
+            45.274095,
+            15.44384,
+            45.282295,
+            15.454377
+          ],
+          "mean_change_intensity": 0.674381,
+          "max_change_intensity": 0.883765,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R25",
+          "rank": 25,
+          "area_pixels": 264.0,
+          "area_percent": 0.02518,
+          "area_km2_estimate": 0.49435,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 440.86,
+            "y": 313.61
+          },
+          "centroid": {
+            "lat": 15.549385,
+            "lon": 45.293619
+          },
+          "bbox_pixel": {
+            "x": 429,
+            "y": 303,
+            "width": 23,
+            "height": 28
+          },
+          "bbox_geo": [
+            45.288217,
+            15.54175,
+            45.298695,
+            15.554044
+          ],
+          "mean_change_intensity": 0.541284,
+          "max_change_intensity": 0.748157,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        }
+      ],
+      "largest_region_percent": 30.555,
+      "largest_region_km2_estimate": 599.9462,
+      "valid_pixel_percent": 100.0,
+      "difference_threshold": 0.42,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/marib/2026-10-03_change_2026-10-03T204324Z.png",
+      "assessment": "A képpár nagyon nagy kiterjedésű vizuális eltérést jelez. Először ki kell zárni a légköri és radiometriai eltéréseket. A jelentősnek minősített pixelek aránya 40.75%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.501,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification.",
+        "Numbered regions are visual-change candidates, not automatically classified objects or events."
+      ],
+      "firms_correlation": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-05",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          }
+        ],
+        "aoi_hotspot_count": 0,
+        "regions_with_correlation": 0,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike_correlation": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-03T07:35:39.971000Z",
+        "window_end": "2026-10-03T07:35:43.621000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 31,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "source_correlations": {
+      "firms": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-05",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          }
+        ],
+        "aoi_hotspot_count": 0,
+        "regions_with_correlation": 0,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-03T07:35:39.971000Z",
+        "window_end": "2026-10-03T07:35:43.621000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 31,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-10-03",
+      "requested_before_date": "2026-09-03",
+      "comparison_days": 30,
+      "search_tolerance_days": 15,
+      "before_image_url": "data/satellite/sentinel2/history/marib/2026-09-03_before_2026-10-03T204324Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/marib/2026-10-03_after_2026-10-03T204324Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/marib/2026-10-03_change_2026-10-03T204324Z.png",
+      "before_thumbnail_url": "data/satellite/sentinel2/history/marib/2026-10-03T204324Z_before_thumb.webp",
+      "after_thumbnail_url": "data/satellite/sentinel2/history/marib/2026-10-03T204324Z_after_thumb.webp",
+      "change_thumbnail_url": "data/satellite/sentinel2/history/marib/2026-10-03T204324Z_change_thumb.webp"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/marib/2026-10-03_after_2026-10-03T204324Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/marib/2026-09-03_before_2026-10-03T204324Z.png",
+      "after_image": "data/satellite/sentinel2/history/marib/2026-10-03_after_2026-10-03T204324Z.png",
+      "change_map": "data/satellite/sentinel2/history/marib/2026-10-03_change_2026-10-03T204324Z.png",
+      "before_thumbnail": "data/satellite/sentinel2/history/marib/2026-10-03T204324Z_before_thumb.webp",
+      "after_thumbnail": "data/satellite/sentinel2/history/marib/2026-10-03T204324Z_after_thumb.webp",
+      "change_thumbnail": "data/satellite/sentinel2/history/marib/2026-10-03T204324Z_change_thumb.webp",
+      "acquisition_date": "2026-10-03",
+      "cloud_cover_percent": 3.55,
+      "bounds": {
+        "west": 45.092788,
+        "south": 15.237922,
+        "east": 45.558812,
+        "north": 15.687078
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
+    "id": "hodeidah_2026-10-01_2026-10-03T204313Z",
+    "generated_at": "2026-10-03T20:43:15Z",
+    "timestamp": "2026-10-01T07:45:48.716000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "4.0.1",
+    "location_name": "Hodeidah",
+    "location_slug": "hodeidah",
+    "requested_date": "2026-10-03",
+    "comparison_days": 30,
+    "search_tolerance_days": 15,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 40,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 14.7978,
+      "lon": 42.9545,
+      "radius_km": 25.0,
+      "bbox": [
+        42.722218,
+        14.573222,
+        43.186782,
+        15.022378
+      ]
+    },
+    "bbox": [
+      42.722218,
+      14.573222,
+      43.186782,
+      15.022378
+    ],
+    "image_url": "data/satellite/sentinel2/history/hodeidah/2026-10-01_after_2026-10-03T204313Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-09-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-09-01",
+      "acquisition_datetime": "2026-09-01T07:45:46.246000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 3.97,
+      "catalog_feature_id": "S2B_MSIL2A_20260901T072609_N0512_R049_T37PHS_20260901T095350.SAFE",
+      "catalog_candidate_count": 29,
+      "image_url": "data/satellite/sentinel2/history/hodeidah/2026-09-01_before_2026-10-03T204313Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-10-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-10-01",
+      "acquisition_datetime": "2026-10-01T07:45:48.716000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 7.09,
+      "catalog_feature_id": "S2B_MSIL2A_20261001T072719_N0513_R049_T37PHS_20261001T094402.SAFE",
+      "catalog_candidate_count": 15,
+      "image_url": "data/satellite/sentinel2/history/hodeidah/2026-10-01_after_2026-10-03T204313Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "2.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 98.5,
+      "level": "VERY_HIGH",
+      "confidence_percent": 95.72,
+      "comparability": "HIGH",
+      "comparability_score": 95.72,
+      "ssim": 0.533406,
+      "changed_pixel_percent": 40.7506,
+      "changed_area_km2_estimate": 800.1361,
+      "significant_regions": 195,
+      "region_records_returned": 25,
+      "regions_truncated": true,
+      "regions": [
+        {
+          "id": "R01",
+          "rank": 1,
+          "area_pixels": 300145.5,
+          "area_percent": 28.62411,
+          "area_km2_estimate": 562.033,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 842.53,
+            "y": 481.47
+          },
+          "centroid": {
+            "lat": 14.810985,
+            "lon": 43.104829
+          },
+          "bbox_pixel": {
+            "x": 498,
+            "y": 0,
+            "width": 526,
+            "height": 1024
+          },
+          "bbox_geo": [
+            42.948369,
+            14.572783,
+            43.187236,
+            15.022378
+          ],
+          "mean_change_intensity": 0.605118,
+          "max_change_intensity": 0.979137,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R02",
+          "rank": 2,
+          "area_pixels": 22718.5,
+          "area_percent": 2.1666,
+          "area_km2_estimate": 42.54119,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 96.32,
+            "y": 66.65
+          },
+          "centroid": {
+            "lat": 14.993114,
+            "lon": 42.765957
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 0,
+            "width": 255,
+            "height": 242
+          },
+          "bbox_geo": [
+            42.722218,
+            14.916126,
+            42.838018,
+            15.022378
+          ],
+          "mean_change_intensity": 0.723181,
+          "max_change_intensity": 0.980627,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R03",
+          "rank": 3,
+          "area_pixels": 4049.5,
+          "area_percent": 0.38619,
+          "area_km2_estimate": 7.58283,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 198.82,
+            "y": 789.1
+          },
+          "centroid": {
+            "lat": 14.675919,
+            "lon": 42.812505
+          },
+          "bbox_pixel": {
+            "x": 147,
+            "y": 734,
+            "width": 102,
+            "height": 109
+          },
+          "bbox_geo": [
+            42.788974,
+            14.652252,
+            42.835294,
+            14.70011
+          ],
+          "mean_change_intensity": 0.625288,
+          "max_change_intensity": 0.943415,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R04",
+          "rank": 4,
+          "area_pixels": 3972.0,
+          "area_percent": 0.3788,
+          "area_km2_estimate": 7.43771,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 438.12,
+            "y": 301.04
+          },
+          "centroid": {
+            "lat": 14.890204,
+            "lon": 42.921178
+          },
+          "bbox_pixel": {
+            "x": 410,
+            "y": 236,
+            "width": 62,
+            "height": 140
+          },
+          "bbox_geo": [
+            42.908407,
+            14.857292,
+            42.936562,
+            14.91876
+          ],
+          "mean_change_intensity": 0.653098,
+          "max_change_intensity": 0.932941,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R05",
+          "rank": 5,
+          "area_pixels": 3276.5,
+          "area_percent": 0.31247,
+          "area_km2_estimate": 6.13536,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 577.59,
+            "y": 87.85
+          },
+          "centroid": {
+            "lat": 14.983805,
+            "lon": 42.984511
+          },
+          "bbox_pixel": {
+            "x": 515,
+            "y": 42,
+            "width": 102,
+            "height": 95
+          },
+          "bbox_geo": [
+            42.956089,
+            14.962227,
+            43.00241,
+            15.003938
+          ],
+          "mean_change_intensity": 0.613488,
+          "max_change_intensity": 0.891216,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R06",
+          "rank": 6,
+          "area_pixels": 2923.5,
+          "area_percent": 0.27881,
+          "area_km2_estimate": 5.47436,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 607.28,
+            "y": 15.74
+          },
+          "centroid": {
+            "lat": 15.015468,
+            "lon": 42.997997
+          },
+          "bbox_pixel": {
+            "x": 543,
+            "y": 0,
+            "width": 136,
+            "height": 38
+          },
+          "bbox_geo": [
+            42.968805,
+            15.005694,
+            43.030565,
+            15.022378
+          ],
+          "mean_change_intensity": 0.646319,
+          "max_change_intensity": 0.956784,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R07",
+          "rank": 7,
+          "area_pixels": 2626.5,
+          "area_percent": 0.25048,
+          "area_km2_estimate": 4.91821,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 382.52,
+            "y": 282.87
+          },
+          "centroid": {
+            "lat": 14.89818,
+            "lon": 42.895928
+          },
+          "bbox_pixel": {
+            "x": 342,
+            "y": 239,
+            "width": 69,
+            "height": 94
+          },
+          "bbox_geo": [
+            42.877527,
+            14.876172,
+            42.908861,
+            14.917443
+          ],
+          "mean_change_intensity": 0.602764,
+          "max_change_intensity": 0.907608,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R08",
+          "rank": 8,
+          "area_pixels": 2290.0,
+          "area_percent": 0.21839,
+          "area_km2_estimate": 4.28811,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 361.95,
+            "y": 174.3
+          },
+          "centroid": {
+            "lat": 14.94585,
+            "lon": 42.886585
+          },
+          "bbox_pixel": {
+            "x": 338,
+            "y": 137,
+            "width": 52,
+            "height": 89
+          },
+          "bbox_geo": [
+            42.87571,
+            14.923151,
+            42.899325,
+            14.962227
+          ],
+          "mean_change_intensity": 0.69031,
+          "max_change_intensity": 0.943593,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R09",
+          "rank": 9,
+          "area_pixels": 2043.5,
+          "area_percent": 0.19488,
+          "area_km2_estimate": 3.82653,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 291.11,
+            "y": 398.36
+          },
+          "centroid": {
+            "lat": 14.847476,
+            "lon": 42.854417
+          },
+          "bbox_pixel": {
+            "x": 264,
+            "y": 363,
+            "width": 65,
+            "height": 79
+          },
+          "bbox_geo": [
+            42.842105,
+            14.828315,
+            42.871623,
+            14.863
+          ],
+          "mean_change_intensity": 0.652067,
+          "max_change_intensity": 0.941882,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R10",
+          "rank": 10,
+          "area_pixels": 1967.5,
+          "area_percent": 0.18764,
+          "area_km2_estimate": 3.68421,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 181.06,
+            "y": 109.56
+          },
+          "centroid": {
+            "lat": 14.974277,
+            "lon": 42.80444
+          },
+          "bbox_pixel": {
+            "x": 142,
+            "y": 62,
+            "width": 70,
+            "height": 88
+          },
+          "bbox_geo": [
+            42.786703,
+            14.956519,
+            42.818491,
+            14.995156
+          ],
+          "mean_change_intensity": 0.596183,
+          "max_change_intensity": 0.911861,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R11",
+          "rank": 11,
+          "area_pixels": 1876.0,
+          "area_percent": 0.17891,
+          "area_km2_estimate": 3.51288,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 90.47,
+            "y": 188.09
+          },
+          "centroid": {
+            "lat": 14.939797,
+            "lon": 42.763303
+          },
+          "bbox_pixel": {
+            "x": 56,
+            "y": 135,
+            "width": 71,
+            "height": 99
+          },
+          "bbox_geo": [
+            42.747649,
+            14.919639,
+            42.779891,
+            14.963105
+          ],
+          "mean_change_intensity": 0.599076,
+          "max_change_intensity": 0.92698,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R12",
+          "rank": 12,
+          "area_pixels": 1784.0,
+          "area_percent": 0.17014,
+          "area_km2_estimate": 3.3406,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 550.4,
+            "y": 418.91
+          },
+          "centroid": {
+            "lat": 14.838452,
+            "lon": 42.972165
+          },
+          "bbox_pixel": {
+            "x": 513,
+            "y": 390,
+            "width": 65,
+            "height": 56
+          },
+          "bbox_geo": [
+            42.955181,
+            14.826558,
+            42.984699,
+            14.851146
+          ],
+          "mean_change_intensity": 0.632037,
+          "max_change_intensity": 0.87207,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R13",
+          "rank": 13,
+          "area_pixels": 1774.5,
+          "area_percent": 0.16923,
+          "area_km2_estimate": 3.32281,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 98.89,
+            "y": 309.34
+          },
+          "centroid": {
+            "lat": 14.886561,
+            "lon": 42.767126
+          },
+          "bbox_pixel": {
+            "x": 80,
+            "y": 264,
+            "width": 39,
+            "height": 84
+          },
+          "bbox_geo": [
+            42.758548,
+            14.869586,
+            42.776258,
+            14.906467
+          ],
+          "mean_change_intensity": 0.616226,
+          "max_change_intensity": 0.906846,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R14",
+          "rank": 14,
+          "area_pixels": 1773.0,
+          "area_percent": 0.16909,
+          "area_km2_estimate": 3.32,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 546.57,
+            "y": 156.8
+          },
+          "centroid": {
+            "lat": 14.953533,
+            "lon": 42.970426
+          },
+          "bbox_pixel": {
+            "x": 522,
+            "y": 116,
+            "width": 52,
+            "height": 75
+          },
+          "bbox_geo": [
+            42.959268,
+            14.938518,
+            42.982882,
+            14.971447
+          ],
+          "mean_change_intensity": 0.615818,
+          "max_change_intensity": 0.843529,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R15",
+          "rank": 15,
+          "area_pixels": 1670.0,
+          "area_percent": 0.15926,
+          "area_km2_estimate": 3.12713,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 530.2,
+            "y": 38.81
+          },
+          "centroid": {
+            "lat": 15.005338,
+            "lon": 42.962992
+          },
+          "bbox_pixel": {
+            "x": 501,
+            "y": 7,
+            "width": 55,
+            "height": 66
+          },
+          "bbox_geo": [
+            42.949732,
+            14.990327,
+            42.974708,
+            15.019305
+          ],
+          "mean_change_intensity": 0.638193,
+          "max_change_intensity": 0.909098,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R16",
+          "rank": 16,
+          "area_pixels": 1645.5,
+          "area_percent": 0.15693,
+          "area_km2_estimate": 3.08126,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 246.15,
+            "y": 959.4
+          },
+          "centroid": {
+            "lat": 14.601148,
+            "lon": 42.834001
+          },
+          "bbox_pixel": {
+            "x": 221,
+            "y": 913,
+            "width": 53,
+            "height": 85
+          },
+          "bbox_geo": [
+            42.822578,
+            14.584198,
+            42.846647,
+            14.621518
+          ],
+          "mean_change_intensity": 0.624852,
+          "max_change_intensity": 0.952314,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R17",
+          "rank": 17,
+          "area_pixels": 1222.5,
+          "area_percent": 0.11659,
+          "area_km2_estimate": 2.28917,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 255.67,
+            "y": 233.36
+          },
+          "centroid": {
+            "lat": 14.919918,
+            "lon": 42.838323
+          },
+          "bbox_pixel": {
+            "x": 241,
+            "y": 195,
+            "width": 31,
+            "height": 70
+          },
+          "bbox_geo": [
+            42.831661,
+            14.906028,
+            42.845738,
+            14.936762
+          ],
+          "mean_change_intensity": 0.631337,
+          "max_change_intensity": 0.921553,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R18",
+          "rank": 18,
+          "area_pixels": 1209.5,
+          "area_percent": 0.11535,
+          "area_km2_estimate": 2.26483,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 175.52,
+            "y": 277.27
+          },
+          "centroid": {
+            "lat": 14.90064,
+            "lon": 42.801926
+          },
+          "bbox_pixel": {
+            "x": 160,
+            "y": 250,
+            "width": 35,
+            "height": 59
+          },
+          "bbox_geo": [
+            42.794877,
+            14.886709,
+            42.810771,
+            14.912614
+          ],
+          "mean_change_intensity": 0.657869,
+          "max_change_intensity": 0.935922,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R19",
+          "rank": 19,
+          "area_pixels": 1182.5,
+          "area_percent": 0.11277,
+          "area_km2_estimate": 2.21427,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 130.18,
+            "y": 884.93
+          },
+          "centroid": {
+            "lat": 14.633841,
+            "lon": 42.781337
+          },
+          "bbox_pixel": {
+            "x": 108,
+            "y": 858,
+            "width": 44,
+            "height": 62
+          },
+          "bbox_geo": [
+            42.771263,
+            14.618445,
+            42.791244,
+            14.645667
+          ],
+          "mean_change_intensity": 0.595516,
+          "max_change_intensity": 0.937369,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R20",
+          "rank": 20,
+          "area_pixels": 1182.5,
+          "area_percent": 0.11277,
+          "area_km2_estimate": 2.21427,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 270.99,
+            "y": 170.01
+          },
+          "centroid": {
+            "lat": 14.947734,
+            "lon": 42.84528
+          },
+          "bbox_pixel": {
+            "x": 247,
+            "y": 137,
+            "width": 44,
+            "height": 70
+          },
+          "bbox_geo": [
+            42.834385,
+            14.931493,
+            42.854367,
+            14.962227
+          ],
+          "mean_change_intensity": 0.618422,
+          "max_change_intensity": 0.913144,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R21",
+          "rank": 21,
+          "area_pixels": 1161.0,
+          "area_percent": 0.11072,
+          "area_km2_estimate": 2.17401,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 206.1,
+            "y": 849.22
+          },
+          "centroid": {
+            "lat": 14.64952,
+            "lon": 42.815812
+          },
+          "bbox_pixel": {
+            "x": 179,
+            "y": 824,
+            "width": 49,
+            "height": 47
+          },
+          "bbox_geo": [
+            42.803505,
+            14.639959,
+            42.825757,
+            14.660594
+          ],
+          "mean_change_intensity": 0.647545,
+          "max_change_intensity": 0.934945,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R22",
+          "rank": 22,
+          "area_pixels": 1109.5,
+          "area_percent": 0.10581,
+          "area_km2_estimate": 2.07758,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 108.12,
+            "y": 523.73
+          },
+          "centroid": {
+            "lat": 14.79243,
+            "lon": 42.77132
+          },
+          "bbox_pixel": {
+            "x": 92,
+            "y": 487,
+            "width": 34,
+            "height": 75
+          },
+          "bbox_geo": [
+            42.763997,
+            14.775628,
+            42.779437,
+            14.808557
+          ],
+          "mean_change_intensity": 0.608441,
+          "max_change_intensity": 0.912271,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R23",
+          "rank": 23,
+          "area_pixels": 1100.5,
+          "area_percent": 0.10495,
+          "area_km2_estimate": 2.06072,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 200.87,
+            "y": 221.51
+          },
+          "centroid": {
+            "lat": 14.92512,
+            "lon": 42.813437
+          },
+          "bbox_pixel": {
+            "x": 166,
+            "y": 203,
+            "width": 66,
+            "height": 34
+          },
+          "bbox_geo": [
+            42.797602,
+            14.918321,
+            42.827574,
+            14.933249
+          ],
+          "mean_change_intensity": 0.648284,
+          "max_change_intensity": 0.950961,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R24",
+          "rank": 24,
+          "area_pixels": 1053.0,
+          "area_percent": 0.10042,
+          "area_km2_estimate": 1.97178,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 55.29,
+            "y": 931.71
+          },
+          "centroid": {
+            "lat": 14.613304,
+            "lon": 42.747326
+          },
+          "bbox_pixel": {
+            "x": 28,
+            "y": 908,
+            "width": 65,
+            "height": 43
+          },
+          "bbox_geo": [
+            42.734933,
+            14.604834,
+            42.764451,
+            14.623714
+          ],
+          "mean_change_intensity": 0.601414,
+          "max_change_intensity": 0.93277,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R25",
+          "rank": 25,
+          "area_pixels": 1011.5,
+          "area_percent": 0.09646,
+          "area_km2_estimate": 1.89407,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 285.33,
+            "y": 920.55
+          },
+          "centroid": {
+            "lat": 14.618202,
+            "lon": 42.851794
+          },
+          "bbox_pixel": {
+            "x": 264,
+            "y": 897,
+            "width": 42,
+            "height": 49
+          },
+          "bbox_geo": [
+            42.842105,
+            14.607029,
+            42.861178,
+            14.628543
+          ],
+          "mean_change_intensity": 0.596692,
+          "max_change_intensity": 0.929398,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        }
+      ],
+      "largest_region_percent": 28.6241,
+      "largest_region_km2_estimate": 562.033,
+      "valid_pixel_percent": 100.0,
+      "difference_threshold": 0.42,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/hodeidah/2026-10-01_change_2026-10-03T204313Z.png",
+      "assessment": "A képpár nagyon nagy kiterjedésű vizuális eltérést jelez. Először ki kell zárni a légköri és radiometriai eltéréseket. A jelentősnek minősített pixelek aránya 40.75%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.527,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification.",
+        "Numbered regions are visual-change candidates, not automatically classified objects or events."
+      ],
+      "firms_correlation": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-03",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          }
+        ],
+        "aoi_hotspot_count": 0,
+        "regions_with_correlation": 0,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike_correlation": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-01T07:45:46.246000Z",
+        "window_end": "2026-10-01T07:45:48.716000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 45,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "source_correlations": {
+      "firms": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-03",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          }
+        ],
+        "aoi_hotspot_count": 0,
+        "regions_with_correlation": 0,
+        "inside_region_hotspot_matches": 0,
+        "nearby_hotspot_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-01T07:45:46.246000Z",
+        "window_end": "2026-10-01T07:45:48.716000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 45,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-10-03",
+      "requested_before_date": "2026-09-03",
+      "comparison_days": 30,
+      "search_tolerance_days": 15,
+      "before_image_url": "data/satellite/sentinel2/history/hodeidah/2026-09-01_before_2026-10-03T204313Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/hodeidah/2026-10-01_after_2026-10-03T204313Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/hodeidah/2026-10-01_change_2026-10-03T204313Z.png",
+      "before_thumbnail_url": "data/satellite/sentinel2/history/hodeidah/2026-10-03T204313Z_before_thumb.webp",
+      "after_thumbnail_url": "data/satellite/sentinel2/history/hodeidah/2026-10-03T204313Z_after_thumb.webp",
+      "change_thumbnail_url": "data/satellite/sentinel2/history/hodeidah/2026-10-03T204313Z_change_thumb.webp"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/hodeidah/2026-10-01_after_2026-10-03T204313Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/hodeidah/2026-09-01_before_2026-10-03T204313Z.png",
+      "after_image": "data/satellite/sentinel2/history/hodeidah/2026-10-01_after_2026-10-03T204313Z.png",
+      "change_map": "data/satellite/sentinel2/history/hodeidah/2026-10-01_change_2026-10-03T204313Z.png",
+      "before_thumbnail": "data/satellite/sentinel2/history/hodeidah/2026-10-03T204313Z_before_thumb.webp",
+      "after_thumbnail": "data/satellite/sentinel2/history/hodeidah/2026-10-03T204313Z_after_thumb.webp",
+      "change_thumbnail": "data/satellite/sentinel2/history/hodeidah/2026-10-03T204313Z_change_thumb.webp",
+      "acquisition_date": "2026-10-01",
+      "cloud_cover_percent": 7.09,
+      "bounds": {
+        "west": 42.722218,
+        "south": 14.573222,
+        "east": 43.186782,
+        "north": 15.022378
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
+    "id": "sanaa_2026-10-01_2026-10-03T204303Z",
+    "generated_at": "2026-10-03T20:43:04Z",
+    "timestamp": "2026-10-01T07:45:43.676000Z",
+    "provider": "sentinel2",
+    "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
+    "product": "Sentinel-2 L2A True Color",
+    "workflow_version": "4.0.1",
+    "location_name": "Sanaa",
+    "location_slug": "sanaa",
+    "requested_date": "2026-10-03",
+    "comparison_days": 30,
+    "search_tolerance_days": 15,
+    "image_size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "max_cloud_coverage_requested": 40,
+    "target_area": {
+      "mode": "coordinate_radius",
+      "lat": 15.3694,
+      "lon": 44.191,
+      "radius_km": 25.0,
+      "bbox": [
+        43.958093,
+        15.144822,
+        44.423907,
+        15.593978
+      ]
+    },
+    "bbox": [
+      43.958093,
+      15.144822,
+      44.423907,
+      15.593978
+    ],
+    "image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
+    "before": {
+      "role": "before",
+      "requested_date": "2026-09-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-09-01",
+      "acquisition_datetime": "2026-09-01T07:45:41.224000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 3.59,
+      "catalog_feature_id": "S2B_MSIL2A_20260901T072609_N0512_R049_T38PLB_20260901T095350.SAFE",
+      "catalog_candidate_count": 34,
+      "image_url": "data/satellite/sentinel2/history/sanaa/2026-09-01_before_2026-10-03T204303Z.png"
+    },
+    "after": {
+      "role": "after",
+      "requested_date": "2026-10-03",
+      "search_tolerance_days": 15,
+      "acquisition_date": "2026-10-01",
+      "acquisition_datetime": "2026-10-01T07:45:43.676000Z",
+      "date_offset_days": -2,
+      "cloud_cover_percent": 17.94,
+      "catalog_feature_id": "S2B_MSIL2A_20261001T072719_N0513_R049_T38PLB_20261001T094402.SAFE",
+      "catalog_candidate_count": 17,
+      "image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png"
+    },
+    "change_detection": {
+      "status": "completed",
+      "engine": "ME Satellite Visual Change Detector",
+      "engine_version": "2.0.0",
+      "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
+      "interpretation": "automatic_visual_change_indication",
+      "score": 97.03,
+      "level": "VERY_HIGH",
+      "confidence_percent": 91.51,
+      "comparability": "HIGH",
+      "comparability_score": 91.51,
+      "ssim": 0.473479,
+      "changed_pixel_percent": 50.8959,
+      "changed_area_km2_estimate": 999.3378,
+      "significant_regions": 75,
+      "region_records_returned": 25,
+      "regions_truncated": true,
+      "regions": [
+        {
+          "id": "R01",
+          "rank": 1,
+          "area_pixels": 228410.5,
+          "area_percent": 21.98942,
+          "area_km2_estimate": 431.76129,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 245.63,
+            "y": 417.99
+          },
+          "centroid": {
+            "lat": 15.410456,
+            "lon": 44.06994
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 0,
+            "width": 607,
+            "height": 766
+          },
+          "bbox_geo": [
+            43.958093,
+            15.25766,
+            44.234485,
+            15.593978
+          ],
+          "mean_change_intensity": 0.646014,
+          "max_change_intensity": 0.994039,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "INSIDE",
+            "inside_hotspot_count": 1,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": 11.891,
+            "hotspots": [
+              {
+                "latitude": 15.49418,
+                "longitude": 44.13897,
+                "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 0.61,
+                "daynight": "N",
+                "distance_km": 11.891,
+                "inside_region_bbox": true
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R02",
+          "rank": 2,
+          "area_pixels": 227965.0,
+          "area_percent": 21.94653,
+          "area_km2_estimate": 430.91916,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 826.8,
+            "y": 671.36
+          },
+          "centroid": {
+            "lat": 15.299213,
+            "lon": 44.334571
+          },
+          "bbox_pixel": {
+            "x": 419,
+            "y": 122,
+            "width": 605,
+            "height": 902
+          },
+          "bbox_geo": [
+            44.148881,
+            15.144383,
+            44.424362,
+            15.540413
+          ],
+          "mean_change_intensity": 0.685202,
+          "max_change_intensity": 0.991059,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R03",
+          "rank": 3,
+          "area_pixels": 16873.5,
+          "area_percent": 1.62444,
+          "area_km2_estimate": 31.89575,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 491.23,
+            "y": 39.46
+          },
+          "centroid": {
+            "lat": 15.576652,
+            "lon": 44.181771
+          },
+          "bbox_pixel": {
+            "x": 360,
+            "y": 0,
+            "width": 287,
+            "height": 119
+          },
+          "bbox_geo": [
+            44.122016,
+            15.54173,
+            44.252699,
+            15.593978
+          ],
+          "mean_change_intensity": 0.695562,
+          "max_change_intensity": 0.991894,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R04",
+          "rank": 4,
+          "area_pixels": 12970.0,
+          "area_percent": 1.24864,
+          "area_km2_estimate": 24.51702,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 64.86,
+            "y": 725.06
+          },
+          "centroid": {
+            "lat": 15.275633,
+            "lon": 43.987625
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 613,
+            "width": 151,
+            "height": 221
+          },
+          "bbox_geo": [
+            43.958093,
+            15.227804,
+            44.02685,
+            15.324836
+          ],
+          "mean_change_intensity": 0.649059,
+          "max_change_intensity": 0.977647,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R05",
+          "rank": 5,
+          "area_pixels": 4717.5,
+          "area_percent": 0.45416,
+          "area_km2_estimate": 8.91743,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 49.46,
+            "y": 996.62
+          },
+          "centroid": {
+            "lat": 15.156406,
+            "lon": 43.980614
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 956,
+            "width": 109,
+            "height": 68
+          },
+          "bbox_geo": [
+            43.958093,
+            15.144383,
+            44.007725,
+            15.174239
+          ],
+          "mean_change_intensity": 0.608771,
+          "max_change_intensity": 0.92549,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R06",
+          "rank": 6,
+          "area_pixels": 2506.5,
+          "area_percent": 0.2413,
+          "area_km2_estimate": 4.738,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 37.52,
+            "y": 894.64
+          },
+          "centroid": {
+            "lat": 15.201178,
+            "lon": 43.975178
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 867,
+            "width": 79,
+            "height": 58
+          },
+          "bbox_geo": [
+            43.958093,
+            15.18785,
+            43.994065,
+            15.213315
+          ],
+          "mean_change_intensity": 0.64577,
+          "max_change_intensity": 0.898518,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R07",
+          "rank": 7,
+          "area_pixels": 1607.0,
+          "area_percent": 0.15471,
+          "area_km2_estimate": 3.03769,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 225.88,
+            "y": 1008.74
+          },
+          "centroid": {
+            "lat": 15.151084,
+            "lon": 44.060944
+          },
+          "bbox_pixel": {
+            "x": 189,
+            "y": 989,
+            "width": 78,
+            "height": 35
+          },
+          "bbox_geo": [
+            44.044152,
+            15.144383,
+            44.079669,
+            15.15975
+          ],
+          "mean_change_intensity": 0.618778,
+          "max_change_intensity": 0.891216,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R08",
+          "rank": 8,
+          "area_pixels": 1606.5,
+          "area_percent": 0.15466,
+          "area_km2_estimate": 3.03675,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 11.31,
+            "y": 791.53
+          },
+          "centroid": {
+            "lat": 15.246449,
+            "lon": 43.963244
+          },
+          "bbox_pixel": {
+            "x": 0,
+            "y": 746,
+            "width": 37,
+            "height": 84
+          },
+          "bbox_geo": [
+            43.958093,
+            15.22956,
+            43.974941,
+            15.266441
+          ],
+          "mean_change_intensity": 0.638918,
+          "max_change_intensity": 0.912178,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R09",
+          "rank": 9,
+          "area_pixels": 1591.5,
+          "area_percent": 0.15322,
+          "area_km2_estimate": 3.00839,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 491.15,
+            "y": 1009.2
+          },
+          "centroid": {
+            "lat": 15.150882,
+            "lon": 44.181732
+          },
+          "bbox_pixel": {
+            "x": 459,
+            "y": 991,
+            "width": 66,
+            "height": 33
+          },
+          "bbox_geo": [
+            44.167095,
+            15.144383,
+            44.197147,
+            15.158872
+          ],
+          "mean_change_intensity": 0.690613,
+          "max_change_intensity": 0.944863,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R10",
+          "rank": 10,
+          "area_pixels": 1134.5,
+          "area_percent": 0.10922,
+          "area_km2_estimate": 2.14453,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 216.9,
+            "y": 817.5
+          },
+          "centroid": {
+            "lat": 15.23505,
+            "lon": 44.056856
+          },
+          "bbox_pixel": {
+            "x": 183,
+            "y": 799,
+            "width": 76,
+            "height": 39
+          },
+          "bbox_geo": [
+            44.04142,
+            15.226048,
+            44.076026,
+            15.243171
+          ],
+          "mean_change_intensity": 0.618903,
+          "max_change_intensity": 0.843529,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R11",
+          "rank": 11,
+          "area_pixels": 996.5,
+          "area_percent": 0.09593,
+          "area_km2_estimate": 1.88367,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 471.3,
+            "y": 186.16
+          },
+          "centroid": {
+            "lat": 15.512241,
+            "lon": 44.172697
+          },
+          "bbox_pixel": {
+            "x": 441,
+            "y": 165,
+            "width": 57,
+            "height": 45
+          },
+          "bbox_geo": [
+            44.158898,
+            15.501776,
+            44.184853,
+            15.521533
+          ],
+          "mean_change_intensity": 0.647326,
+          "max_change_intensity": 0.880784,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 1,
+            "nearest_distance_km": 4.134,
+            "hotspots": [
+              {
+                "latitude": 15.49418,
+                "longitude": 44.13897,
+                "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 0.61,
+                "daynight": "N",
+                "distance_km": 4.134,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R12",
+          "rank": 12,
+          "area_pixels": 944.5,
+          "area_percent": 0.09093,
+          "area_km2_estimate": 1.78538,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 554.47,
+            "y": 961.27
+          },
+          "centroid": {
+            "lat": 15.171927,
+            "lon": 44.210566
+          },
+          "bbox_pixel": {
+            "x": 526,
+            "y": 936,
+            "width": 54,
+            "height": 58
+          },
+          "bbox_geo": [
+            44.197602,
+            15.157555,
+            44.222191,
+            15.18302
+          ],
+          "mean_change_intensity": 0.600853,
+          "max_change_intensity": 0.871843,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R13",
+          "rank": 13,
+          "area_pixels": 936.0,
+          "area_percent": 0.09011,
+          "area_km2_estimate": 1.76931,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 1009.14,
+            "y": 19.26
+          },
+          "centroid": {
+            "lat": 15.585521,
+            "lon": 44.417595
+          },
+          "bbox_pixel": {
+            "x": 986,
+            "y": 0,
+            "width": 38,
+            "height": 46
+          },
+          "bbox_geo": [
+            44.407059,
+            15.573781,
+            44.424362,
+            15.593978
+          ],
+          "mean_change_intensity": 0.632737,
+          "max_change_intensity": 0.84949,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R14",
+          "rank": 14,
+          "area_pixels": 868.5,
+          "area_percent": 0.08361,
+          "area_km2_estimate": 1.64171,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 941.98,
+            "y": 9.16
+          },
+          "centroid": {
+            "lat": 15.589956,
+            "lon": 44.387014
+          },
+          "bbox_pixel": {
+            "x": 907,
+            "y": 0,
+            "width": 66,
+            "height": 28
+          },
+          "bbox_geo": [
+            44.371087,
+            15.581684,
+            44.40114,
+            15.593978
+          ],
+          "mean_change_intensity": 0.627618,
+          "max_change_intensity": 0.871843,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R15",
+          "rank": 15,
+          "area_pixels": 858.0,
+          "area_percent": 0.0826,
+          "area_km2_estimate": 1.62187,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 938.26,
+            "y": 741.89
+          },
+          "centroid": {
+            "lat": 15.268244,
+            "lon": 44.385323
+          },
+          "bbox_pixel": {
+            "x": 922,
+            "y": 715,
+            "width": 33,
+            "height": 54
+          },
+          "bbox_geo": [
+            44.377918,
+            15.256343,
+            44.392944,
+            15.280052
+          ],
+          "mean_change_intensity": 0.672197,
+          "max_change_intensity": 0.920317,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R16",
+          "rank": 16,
+          "area_pixels": 725.5,
+          "area_percent": 0.06984,
+          "area_km2_estimate": 1.3714,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 124.82,
+            "y": 934.28
+          },
+          "centroid": {
+            "lat": 15.183777,
+            "lon": 44.014928
+          },
+          "bbox_pixel": {
+            "x": 97,
+            "y": 914,
+            "width": 52,
+            "height": 38
+          },
+          "bbox_geo": [
+            44.002261,
+            15.175995,
+            44.025939,
+            15.192679
+          ],
+          "mean_change_intensity": 0.590926,
+          "max_change_intensity": 0.848,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R17",
+          "rank": 17,
+          "area_pixels": 633.5,
+          "area_percent": 0.06099,
+          "area_km2_estimate": 1.1975,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 403.6,
+            "y": 211.51
+          },
+          "centroid": {
+            "lat": 15.501114,
+            "lon": 44.141868
+          },
+          "bbox_pixel": {
+            "x": 385,
+            "y": 197,
+            "width": 44,
+            "height": 35
+          },
+          "bbox_geo": [
+            44.133399,
+            15.492117,
+            44.153434,
+            15.507484
+          ],
+          "mean_change_intensity": 0.612332,
+          "max_change_intensity": 0.859922,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "INSIDE",
+            "inside_hotspot_count": 1,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": 0.831,
+            "hotspots": [
+              {
+                "latitude": 15.49418,
+                "longitude": 44.13897,
+                "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 0.61,
+                "daynight": "N",
+                "distance_km": 0.831,
+                "inside_region_bbox": true
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R18",
+          "rank": 18,
+          "area_pixels": 627.5,
+          "area_percent": 0.06041,
+          "area_km2_estimate": 1.18615,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 485.09,
+            "y": 152.69
+          },
+          "centroid": {
+            "lat": 15.526939,
+            "lon": 44.178973
+          },
+          "bbox_pixel": {
+            "x": 459,
+            "y": 126,
+            "width": 50,
+            "height": 51
+          },
+          "bbox_geo": [
+            44.167095,
+            15.516265,
+            44.189862,
+            15.538657
+          ],
+          "mean_change_intensity": 0.609217,
+          "max_change_intensity": 0.879294,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 1,
+            "nearest_distance_km": 5.625,
+            "hotspots": [
+              {
+                "latitude": 15.49418,
+                "longitude": 44.13897,
+                "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 0.61,
+                "daynight": "N",
+                "distance_km": 5.625,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R19",
+          "rank": 19,
+          "area_pixels": 574.5,
+          "area_percent": 0.05531,
+          "area_km2_estimate": 1.08597,
+          "relative_size": "LARGE",
+          "centroid_pixel": {
+            "x": 605.36,
+            "y": 954.73
+          },
+          "centroid": {
+            "lat": 15.174795,
+            "lon": 44.233737
+          },
+          "bbox_pixel": {
+            "x": 580,
+            "y": 935,
+            "width": 50,
+            "height": 34
+          },
+          "bbox_geo": [
+            44.222191,
+            15.168531,
+            44.244958,
+            15.183459
+          ],
+          "mean_change_intensity": 0.586297,
+          "max_change_intensity": 0.789181,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R20",
+          "rank": 20,
+          "area_pixels": 414.5,
+          "area_percent": 0.0399,
+          "area_km2_estimate": 0.78352,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 563.04,
+            "y": 534.57
+          },
+          "centroid": {
+            "lat": 15.359269,
+            "lon": 44.214468
+          },
+          "bbox_pixel": {
+            "x": 551,
+            "y": 520,
+            "width": 27,
+            "height": 33
+          },
+          "bbox_geo": [
+            44.208986,
+            15.351179,
+            44.22128,
+            15.365668
+          ],
+          "mean_change_intensity": 0.562104,
+          "max_change_intensity": 0.809255,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R21",
+          "rank": 21,
+          "area_pixels": 380.0,
+          "area_percent": 0.03658,
+          "area_km2_estimate": 0.71831,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 1018.75,
+            "y": 485.21
+          },
+          "centroid": {
+            "lat": 15.380944,
+            "lon": 44.421971
+          },
+          "bbox_pixel": {
+            "x": 1012,
+            "y": 458,
+            "width": 12,
+            "height": 58
+          },
+          "bbox_geo": [
+            44.418898,
+            15.367424,
+            44.424362,
+            15.39289
+          ],
+          "mean_change_intensity": 0.636791,
+          "max_change_intensity": 0.831608,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R22",
+          "rank": 22,
+          "area_pixels": 375.5,
+          "area_percent": 0.03615,
+          "area_km2_estimate": 0.7098,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 542.81,
+            "y": 197.04
+          },
+          "centroid": {
+            "lat": 15.507465,
+            "lon": 44.205256
+          },
+          "bbox_pixel": {
+            "x": 524,
+            "y": 186,
+            "width": 40,
+            "height": 20
+          },
+          "bbox_geo": [
+            44.196692,
+            15.503532,
+            44.214905,
+            15.512313
+          ],
+          "mean_change_intensity": 0.625081,
+          "max_change_intensity": 0.822667,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NEARBY",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 1,
+            "nearest_distance_km": 7.255,
+            "hotspots": [
+              {
+                "latitude": 15.49418,
+                "longitude": 44.13897,
+                "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+                "source": "VIIRS_NOAA21_NRT",
+                "satellite": "N21",
+                "instrument": "VIIRS",
+                "confidence": "n",
+                "frp": 0.61,
+                "daynight": "N",
+                "distance_km": 7.255,
+                "inside_region_bbox": false
+              }
+            ],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R23",
+          "rank": 23,
+          "area_pixels": 333.0,
+          "area_percent": 0.03206,
+          "area_km2_estimate": 0.62947,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 961.53,
+            "y": 691.91
+          },
+          "centroid": {
+            "lat": 15.290188,
+            "lon": 44.395918
+          },
+          "bbox_pixel": {
+            "x": 951,
+            "y": 680,
+            "width": 23,
+            "height": 24
+          },
+          "bbox_geo": [
+            44.391122,
+            15.284881,
+            44.401595,
+            15.295419
+          ],
+          "mean_change_intensity": 0.670312,
+          "max_change_intensity": 0.900157,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R24",
+          "rank": 24,
+          "area_pixels": 292.0,
+          "area_percent": 0.02811,
+          "area_km2_estimate": 0.55196,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 973.71,
+            "y": 985.34
+          },
+          "centroid": {
+            "lat": 15.161358,
+            "lon": 44.401465
+          },
+          "bbox_pixel": {
+            "x": 961,
+            "y": 973,
+            "width": 25,
+            "height": 23
+          },
+          "bbox_geo": [
+            44.395676,
+            15.156677,
+            44.407059,
+            15.166775
+          ],
+          "mean_change_intensity": 0.622204,
+          "max_change_intensity": 0.827137,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        },
+        {
+          "id": "R25",
+          "rank": 25,
+          "area_pixels": 282.5,
+          "area_percent": 0.0272,
+          "area_km2_estimate": 0.53401,
+          "relative_size": "MEDIUM",
+          "centroid_pixel": {
+            "x": 674.55,
+            "y": 547.99
+          },
+          "centroid": {
+            "lat": 15.353377,
+            "lon": 44.265243
+          },
+          "bbox_pixel": {
+            "x": 664,
+            "y": 536,
+            "width": 21,
+            "height": 23
+          },
+          "bbox_geo": [
+            44.26044,
+            15.348545,
+            44.270002,
+            15.358643
+          ],
+          "mean_change_intensity": 0.654288,
+          "max_change_intensity": 0.856941,
+          "interpretation": "visual_change_candidate_requires_analyst_review",
+          "firms_correlation": {
+            "classification": "NONE",
+            "inside_hotspot_count": 0,
+            "nearby_hotspot_count": 0,
+            "nearest_distance_km": null,
+            "hotspots": [],
+            "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
+          },
+          "iranstrike_correlation": {
+            "classification": "NONE",
+            "inside_event_count": 0,
+            "nearby_event_count": 0,
+            "nearest_distance_km": null,
+            "events": [],
+            "note": "IranStrike events provide spatial-temporal correlation only. They do not independently prove the cause of a visual change."
+          }
+        }
+      ],
+      "largest_region_percent": 21.9894,
+      "largest_region_km2_estimate": 431.7613,
+      "valid_pixel_percent": 99.0609,
+      "difference_threshold": 0.42,
+      "minimum_region_pixels": 83,
+      "change_map_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_change_2026-10-03T204303Z.png",
+      "assessment": "A képpár nagyon nagy kiterjedésű vizuális eltérést jelez. Először ki kell zárni a légköri és radiometriai eltéréseket. A jelentősnek minősített pixelek aránya 50.90%. Az összehasonlíthatóság: HIGH.",
+      "warnings": [
+        "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
+      ],
+      "processing_time_seconds": 0.532,
+      "limitations": [
+        "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
+        "Small objects and limited structural damage cannot be reliably resolved.",
+        "The change score is a screening indicator and requires analyst verification.",
+        "Numbered regions are visual-change candidates, not automatically classified objects or events."
+      ],
+      "firms_correlation": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-03",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 1
+          }
+        ],
+        "aoi_hotspot_count": 1,
+        "regions_with_correlation": 5,
+        "inside_region_hotspot_matches": 2,
+        "nearby_hotspot_matches": 3,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike_correlation": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-01T07:45:41.224000Z",
+        "window_end": "2026-10-01T07:45:43.676000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 45,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "source_correlations": {
+      "firms": {
+        "status": "completed",
+        "provider": "NASA LANCE FIRMS",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-03",
+        "sources": [
+          {
+            "source": "VIIRS_SNPP_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA20_NRT",
+            "status": "completed",
+            "hotspot_count": 0
+          },
+          {
+            "source": "VIIRS_NOAA21_NRT",
+            "status": "completed",
+            "hotspot_count": 1
+          }
+        ],
+        "aoi_hotspot_count": 1,
+        "regions_with_correlation": 5,
+        "inside_region_hotspot_matches": 2,
+        "nearby_hotspot_matches": 3,
+        "nearby_threshold_km": 10.0,
+        "errors": [],
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      },
+      "iranstrike": {
+        "status": "completed",
+        "provider": "IranStrike normalized event dataset",
+        "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
+        "window_start": "2026-09-01T07:45:41.224000Z",
+        "window_end": "2026-10-01T07:45:43.676000Z",
+        "source_event_count": 258,
+        "events_in_time_window": 45,
+        "aoi_event_count": 0,
+        "aoi_events": [],
+        "regions_with_correlation": 0,
+        "inside_region_event_matches": 0,
+        "nearby_event_matches": 0,
+        "nearby_threshold_km": 10.0,
+        "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
+      }
+    },
+    "comparison": {
+      "mode": "before_after",
+      "requested_after_date": "2026-10-03",
+      "requested_before_date": "2026-09-03",
+      "comparison_days": 30,
+      "search_tolerance_days": 15,
+      "before_image_url": "data/satellite/sentinel2/history/sanaa/2026-09-01_before_2026-10-03T204303Z.png",
+      "after_image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
+      "change_map_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_change_2026-10-03T204303Z.png",
+      "before_thumbnail_url": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_before_thumb.webp",
+      "after_thumbnail_url": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_after_thumb.webp",
+      "change_thumbnail_url": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_change_thumb.webp"
+    },
+    "imagery": {
+      "image_available": true,
+      "image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
+      "latest_image": "data/satellite/sentinel2/latest.png",
+      "before_image": "data/satellite/sentinel2/history/sanaa/2026-09-01_before_2026-10-03T204303Z.png",
+      "after_image": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
+      "change_map": "data/satellite/sentinel2/history/sanaa/2026-10-01_change_2026-10-03T204303Z.png",
+      "before_thumbnail": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_before_thumb.webp",
+      "after_thumbnail": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_after_thumb.webp",
+      "change_thumbnail": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_change_thumb.webp",
+      "acquisition_date": "2026-10-01",
+      "cloud_cover_percent": 17.94,
+      "bounds": {
+        "west": 43.958093,
+        "south": 15.144822,
+        "east": 44.423907,
+        "north": 15.593978
+      },
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  {
     "id": "bandar-abbas_2026-07-31_2026-08-07T042840Z",
     "generated_at": "2026-08-07T04:28:47Z",
     "timestamp": "2026-07-31T07:02:09.226000Z",

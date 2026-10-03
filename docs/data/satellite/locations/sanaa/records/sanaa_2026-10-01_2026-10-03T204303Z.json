@@ -1,13 +1,13 @@
 {
-  "id": "mocha_2026-10-01_2026-10-03T204336Z",
-  "generated_at": "2026-10-03T20:43:37Z",
-  "timestamp": "2026-10-01T07:46:16.093000Z",
+  "id": "sanaa_2026-10-01_2026-10-03T204303Z",
+  "generated_at": "2026-10-03T20:43:04Z",
+  "timestamp": "2026-10-01T07:45:43.676000Z",
   "provider": "sentinel2",
   "source": "Sentinel Hub / Copernicus Data Space Ecosystem",
   "product": "Sentinel-2 L2A True Color",
   "workflow_version": "4.0.1",
-  "location_name": "Mocha",
-  "location_slug": "mocha",
+  "location_name": "Sanaa",
+  "location_slug": "sanaa",
   "requested_date": "2026-10-03",
   "comparison_days": 30,
   "search_tolerance_days": 15,
@@ -18,46 +18,46 @@
   "max_cloud_coverage_requested": 40,
   "target_area": {
     "mode": "coordinate_radius",
-    "lat": 13.319,
-    "lon": 43.249,
+    "lat": 15.3694,
+    "lon": 44.191,
     "radius_km": 25.0,
     "bbox": [
-      43.018215,
-      13.094422,
-      43.479785,
-      13.543578
+      43.958093,
+      15.144822,
+      44.423907,
+      15.593978
     ]
   },
   "bbox": [
-    43.018215,
-    13.094422,
-    43.479785,
-    13.543578
+    43.958093,
+    15.144822,
+    44.423907,
+    15.593978
   ],
-  "image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
+  "image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
   "before": {
     "role": "before",
     "requested_date": "2026-09-03",
     "search_tolerance_days": 15,
     "acquisition_date": "2026-09-01",
-    "acquisition_datetime": "2026-09-01T07:46:13.644000Z",
+    "acquisition_datetime": "2026-09-01T07:45:41.224000Z",
     "date_offset_days": -2,
-    "cloud_cover_percent": 0.55,
-    "catalog_feature_id": "S2B_MSIL2A_20260901T072609_N0512_R049_T38PKV_20260901T095350.SAFE",
-    "catalog_candidate_count": 39,
-    "image_url": "data/satellite/sentinel2/history/mocha/2026-09-01_before_2026-10-03T204336Z.png"
+    "cloud_cover_percent": 3.59,
+    "catalog_feature_id": "S2B_MSIL2A_20260901T072609_N0512_R049_T38PLB_20260901T095350.SAFE",
+    "catalog_candidate_count": 34,
+    "image_url": "data/satellite/sentinel2/history/sanaa/2026-09-01_before_2026-10-03T204303Z.png"
   },
   "after": {
     "role": "after",
     "requested_date": "2026-10-03",
     "search_tolerance_days": 15,
     "acquisition_date": "2026-10-01",
-    "acquisition_datetime": "2026-10-01T07:46:16.093000Z",
+    "acquisition_datetime": "2026-10-01T07:45:43.676000Z",
     "date_offset_days": -2,
-    "cloud_cover_percent": 0.27,
-    "catalog_feature_id": "S2B_MSIL2A_20261001T072719_N0513_R049_T38PKV_20261001T094402.SAFE",
-    "catalog_candidate_count": 20,
-    "image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png"
+    "cloud_cover_percent": 17.94,
+    "catalog_feature_id": "S2B_MSIL2A_20261001T072719_N0513_R049_T38PLB_20261001T094402.SAFE",
+    "catalog_candidate_count": 17,
+    "image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png"
   },
   "change_detection": {
     "status": "completed",
@@ -65,54 +65,68 @@
     "engine_version": "2.0.0",
     "method": "CLAHE + radiometric normalization + SSIM + absolute difference + morphology",
     "interpretation": "automatic_visual_change_indication",
-    "score": 47.88,
-    "level": "HIGH",
-    "confidence_percent": 96.76,
+    "score": 97.03,
+    "level": "VERY_HIGH",
+    "confidence_percent": 91.51,
     "comparability": "HIGH",
-    "comparability_score": 96.76,
-    "ssim": 0.833699,
-    "changed_pixel_percent": 7.5916,
-    "changed_area_km2_estimate": 149.0613,
-    "significant_regions": 58,
+    "comparability_score": 91.51,
+    "ssim": 0.473479,
+    "changed_pixel_percent": 50.8959,
+    "changed_area_km2_estimate": 999.3378,
+    "significant_regions": 75,
     "region_records_returned": 25,
     "regions_truncated": true,
     "regions": [
       {
         "id": "R01",
         "rank": 1,
-        "area_pixels": 55684.0,
-        "area_percent": 5.31044,
-        "area_km2_estimate": 104.27025,
+        "area_pixels": 228410.5,
+        "area_percent": 21.98942,
+        "area_km2_estimate": 431.76129,
         "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 402.3,
-          "y": 168.52
+          "x": 245.63,
+          "y": 417.99
         },
         "centroid": {
-          "lat": 13.469588,
-          "lon": 43.19973
+          "lat": 15.410456,
+          "lon": 44.06994
         },
         "bbox_pixel": {
-          "x": 283,
+          "x": 0,
           "y": 0,
-          "width": 242,
-          "height": 456
+          "width": 607,
+          "height": 766
         },
         "bbox_geo": [
-          43.145902,
-          13.343368,
-          43.255091,
-          13.543578
+          43.958093,
+          15.25766,
+          44.234485,
+          15.593978
         ],
-        "mean_change_intensity": 0.440005,
-        "max_change_intensity": 0.693198,
+        "mean_change_intensity": 0.646014,
+        "max_change_intensity": 0.994039,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
-          "classification": "NONE",
-          "inside_hotspot_count": 0,
+          "classification": "INSIDE",
+          "inside_hotspot_count": 1,
           "nearby_hotspot_count": 0,
-          "nearest_distance_km": null,
-          "hotspots": [],
+          "nearest_distance_km": 11.891,
+          "hotspots": [
+            {
+              "latitude": 15.49418,
+              "longitude": 44.13897,
+              "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 0.61,
+              "daynight": "N",
+              "distance_km": 11.891,
+              "inside_region_bbox": true
+            }
+          ],
           "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
         },
         "iranstrike_correlation": {
@@ -127,32 +141,32 @@
       {
         "id": "R02",
         "rank": 2,
-        "area_pixels": 6072.5,
-        "area_percent": 0.57912,
-        "area_km2_estimate": 11.37097,
+        "area_pixels": 227965.0,
+        "area_percent": 21.94653,
+        "area_km2_estimate": 430.91916,
         "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 573.36,
-          "y": 840.38
+          "x": 826.8,
+          "y": 671.36
         },
         "centroid": {
-          "lat": 13.174604,
-          "lon": 43.27691
+          "lat": 15.299213,
+          "lon": 44.334571
         },
         "bbox_pixel": {
-          "x": 476,
-          "y": 596,
-          "width": 223,
-          "height": 428
+          "x": 419,
+          "y": 122,
+          "width": 605,
+          "height": 902
         },
         "bbox_geo": [
-          43.232983,
-          13.093983,
-          43.333599,
-          13.2819
+          44.148881,
+          15.144383,
+          44.424362,
+          15.540413
         ],
-        "mean_change_intensity": 0.484243,
-        "max_change_intensity": 0.780941,
+        "mean_change_intensity": 0.685202,
+        "max_change_intensity": 0.991059,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -174,32 +188,32 @@
       {
         "id": "R03",
         "rank": 3,
-        "area_pixels": 2808.0,
-        "area_percent": 0.26779,
-        "area_km2_estimate": 5.25808,
+        "area_pixels": 16873.5,
+        "area_percent": 1.62444,
+        "area_km2_estimate": 31.89575,
         "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 487.32,
-          "y": 445.93
+          "x": 491.23,
+          "y": 39.46
         },
         "centroid": {
-          "lat": 13.347791,
-          "lon": 43.238089
+          "lat": 15.576652,
+          "lon": 44.181771
         },
         "bbox_pixel": {
-          "x": 448,
-          "y": 332,
-          "width": 63,
-          "height": 199
+          "x": 360,
+          "y": 0,
+          "width": 287,
+          "height": 119
         },
         "bbox_geo": [
-          43.220349,
-          13.310438,
-          43.248774,
-          13.397811
+          44.122016,
+          15.54173,
+          44.252699,
+          15.593978
         ],
-        "mean_change_intensity": 0.497622,
-        "max_change_intensity": 0.715373,
+        "mean_change_intensity": 0.695562,
+        "max_change_intensity": 0.991894,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -221,32 +235,32 @@
       {
         "id": "R04",
         "rank": 4,
-        "area_pixels": 913.5,
-        "area_percent": 0.08712,
-        "area_km2_estimate": 1.71056,
+        "area_pixels": 12970.0,
+        "area_percent": 1.24864,
+        "area_km2_estimate": 24.51702,
         "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 439.15,
-          "y": 772.41
+          "x": 64.86,
+          "y": 725.06
         },
         "centroid": {
-          "lat": 13.204446,
-          "lon": 43.216357
+          "lat": 15.275633,
+          "lon": 43.987625
         },
         "bbox_pixel": {
-          "x": 404,
-          "y": 716,
-          "width": 59,
-          "height": 116
+          "x": 0,
+          "y": 613,
+          "width": 151,
+          "height": 221
         },
         "bbox_geo": [
-          43.200497,
-          13.178282,
-          43.227117,
-          13.229213
+          43.958093,
+          15.227804,
+          44.02685,
+          15.324836
         ],
-        "mean_change_intensity": 0.441994,
-        "max_change_intensity": 0.597979,
+        "mean_change_intensity": 0.649059,
+        "max_change_intensity": 0.977647,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -268,32 +282,32 @@
       {
         "id": "R05",
         "rank": 5,
-        "area_pixels": 512.5,
-        "area_percent": 0.04888,
-        "area_km2_estimate": 0.95967,
-        "relative_size": "MEDIUM",
+        "area_pixels": 4717.5,
+        "area_percent": 0.45416,
+        "area_km2_estimate": 8.91743,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 420.45,
-          "y": 573.8
+          "x": 49.46,
+          "y": 996.62
         },
         "centroid": {
-          "lat": 13.291645,
-          "lon": 43.207917
+          "lat": 15.156406,
+          "lon": 43.980614
         },
         "bbox_pixel": {
-          "x": 410,
-          "y": 547,
-          "width": 24,
-          "height": 60
+          "x": 0,
+          "y": 956,
+          "width": 109,
+          "height": 68
         },
         "bbox_geo": [
-          43.203204,
-          13.27707,
-          43.214033,
-          13.303413
+          43.958093,
+          15.144383,
+          44.007725,
+          15.174239
         ],
-        "mean_change_intensity": 0.444867,
-        "max_change_intensity": 0.676627,
+        "mean_change_intensity": 0.608771,
+        "max_change_intensity": 0.92549,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -315,32 +329,32 @@
       {
         "id": "R06",
         "rank": 6,
-        "area_pixels": 427.0,
-        "area_percent": 0.04072,
-        "area_km2_estimate": 0.79957,
-        "relative_size": "MEDIUM",
+        "area_pixels": 2506.5,
+        "area_percent": 0.2413,
+        "area_km2_estimate": 4.738,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 444.97,
-          "y": 867.39
+          "x": 37.52,
+          "y": 894.64
         },
         "centroid": {
-          "lat": 13.162743,
-          "lon": 43.218981
+          "lat": 15.201178,
+          "lon": 43.975178
         },
         "bbox_pixel": {
-          "x": 423,
-          "y": 848,
-          "width": 41,
-          "height": 45
+          "x": 0,
+          "y": 867,
+          "width": 79,
+          "height": 58
         },
         "bbox_geo": [
-          43.209069,
-          13.151499,
-          43.227568,
-          13.171257
+          43.958093,
+          15.18785,
+          43.994065,
+          15.213315
         ],
-        "mean_change_intensity": 0.435289,
-        "max_change_intensity": 0.584071,
+        "mean_change_intensity": 0.64577,
+        "max_change_intensity": 0.898518,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -362,32 +376,32 @@
       {
         "id": "R07",
         "rank": 7,
-        "area_pixels": 404.0,
-        "area_percent": 0.03853,
-        "area_km2_estimate": 0.7565,
-        "relative_size": "MEDIUM",
+        "area_pixels": 1607.0,
+        "area_percent": 0.15471,
+        "area_km2_estimate": 3.03769,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 661.39,
-          "y": 506.65
+          "x": 225.88,
+          "y": 1008.74
         },
         "centroid": {
-          "lat": 13.321129,
-          "lon": 43.316631
+          "lat": 15.151084,
+          "lon": 44.060944
         },
         "bbox_pixel": {
-          "x": 653,
-          "y": 482,
-          "width": 21,
-          "height": 47
+          "x": 189,
+          "y": 989,
+          "width": 78,
+          "height": 35
         },
         "bbox_geo": [
-          43.312844,
-          13.311316,
-          43.322319,
-          13.331952
+          44.044152,
+          15.144383,
+          44.079669,
+          15.15975
         ],
-        "mean_change_intensity": 0.530381,
-        "max_change_intensity": 0.745176,
+        "mean_change_intensity": 0.618778,
+        "max_change_intensity": 0.891216,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -409,32 +423,32 @@
       {
         "id": "R08",
         "rank": 8,
-        "area_pixels": 333.5,
-        "area_percent": 0.03181,
-        "area_km2_estimate": 0.62449,
-        "relative_size": "MEDIUM",
+        "area_pixels": 1606.5,
+        "area_percent": 0.15466,
+        "area_km2_estimate": 3.03675,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 439.57,
-          "y": 472.97
+          "x": 11.31,
+          "y": 791.53
         },
         "centroid": {
-          "lat": 13.335917,
-          "lon": 43.216547
+          "lat": 15.246449,
+          "lon": 43.963244
         },
         "bbox_pixel": {
-          "x": 425,
-          "y": 454,
-          "width": 27,
-          "height": 57
+          "x": 0,
+          "y": 746,
+          "width": 37,
+          "height": 84
         },
         "bbox_geo": [
-          43.209972,
-          13.31922,
-          43.222154,
-          13.344246
+          43.958093,
+          15.22956,
+          43.974941,
+          15.266441
         ],
-        "mean_change_intensity": 0.442481,
-        "max_change_intensity": 0.651294,
+        "mean_change_intensity": 0.638918,
+        "max_change_intensity": 0.912178,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -456,32 +470,32 @@
       {
         "id": "R09",
         "rank": 9,
-        "area_pixels": 328.5,
-        "area_percent": 0.03133,
-        "area_km2_estimate": 0.61513,
-        "relative_size": "MEDIUM",
+        "area_pixels": 1591.5,
+        "area_percent": 0.15322,
+        "area_km2_estimate": 3.00839,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 961.96,
-          "y": 424.96
+          "x": 491.15,
+          "y": 1009.2
         },
         "centroid": {
-          "lat": 13.356998,
-          "lon": 43.452244
+          "lat": 15.150882,
+          "lon": 44.181732
         },
         "bbox_pixel": {
-          "x": 943,
-          "y": 415,
-          "width": 33,
-          "height": 25
+          "x": 459,
+          "y": 991,
+          "width": 66,
+          "height": 33
         },
         "bbox_geo": [
-          43.44369,
-          13.350393,
-          43.458579,
-          13.361369
+          44.167095,
+          15.144383,
+          44.197147,
+          15.158872
         ],
-        "mean_change_intensity": 0.574796,
-        "max_change_intensity": 0.77349,
+        "mean_change_intensity": 0.690613,
+        "max_change_intensity": 0.944863,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -503,32 +517,32 @@
       {
         "id": "R10",
         "rank": 10,
-        "area_pixels": 324.5,
-        "area_percent": 0.03095,
-        "area_km2_estimate": 0.60764,
-        "relative_size": "MEDIUM",
+        "area_pixels": 1134.5,
+        "area_percent": 0.10922,
+        "area_km2_estimate": 2.14453,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 449.14,
-          "y": 843.2
+          "x": 216.9,
+          "y": 817.5
         },
         "centroid": {
-          "lat": 13.173364,
-          "lon": 43.220866
+          "lat": 15.23505,
+          "lon": 44.056856
         },
         "bbox_pixel": {
-          "x": 434,
-          "y": 828,
-          "width": 32,
-          "height": 33
+          "x": 183,
+          "y": 799,
+          "width": 76,
+          "height": 39
         },
         "bbox_geo": [
-          43.214033,
-          13.165549,
-          43.228471,
-          13.180038
+          44.04142,
+          15.226048,
+          44.076026,
+          15.243171
         ],
-        "mean_change_intensity": 0.43674,
-        "max_change_intensity": 0.637789,
+        "mean_change_intensity": 0.618903,
+        "max_change_intensity": 0.843529,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -550,39 +564,53 @@
       {
         "id": "R11",
         "rank": 11,
-        "area_pixels": 321.5,
-        "area_percent": 0.03066,
-        "area_km2_estimate": 0.60202,
-        "relative_size": "MEDIUM",
+        "area_pixels": 996.5,
+        "area_percent": 0.09593,
+        "area_km2_estimate": 1.88367,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 522.2,
-          "y": 33.18
+          "x": 471.3,
+          "y": 186.16
         },
         "centroid": {
-          "lat": 13.529009,
-          "lon": 43.253829
+          "lat": 15.512241,
+          "lon": 44.172697
         },
         "bbox_pixel": {
-          "x": 515,
-          "y": 6,
-          "width": 16,
-          "height": 53
+          "x": 441,
+          "y": 165,
+          "width": 57,
+          "height": 45
         },
         "bbox_geo": [
-          43.250579,
-          13.517674,
-          43.257798,
-          13.540944
+          44.158898,
+          15.501776,
+          44.184853,
+          15.521533
         ],
-        "mean_change_intensity": 0.466811,
-        "max_change_intensity": 0.675137,
+        "mean_change_intensity": 0.647326,
+        "max_change_intensity": 0.880784,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
-          "classification": "NONE",
+          "classification": "NEARBY",
           "inside_hotspot_count": 0,
-          "nearby_hotspot_count": 0,
-          "nearest_distance_km": null,
-          "hotspots": [],
+          "nearby_hotspot_count": 1,
+          "nearest_distance_km": 4.134,
+          "hotspots": [
+            {
+              "latitude": 15.49418,
+              "longitude": 44.13897,
+              "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 0.61,
+              "daynight": "N",
+              "distance_km": 4.134,
+              "inside_region_bbox": false
+            }
+          ],
           "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
         },
         "iranstrike_correlation": {
@@ -597,32 +625,32 @@
       {
         "id": "R12",
         "rank": 12,
-        "area_pixels": 300.0,
-        "area_percent": 0.02861,
-        "area_km2_estimate": 0.56176,
-        "relative_size": "MEDIUM",
+        "area_pixels": 944.5,
+        "area_percent": 0.09093,
+        "area_km2_estimate": 1.78538,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 269.68,
-          "y": 140.37
+          "x": 554.47,
+          "y": 961.27
         },
         "centroid": {
-          "lat": 13.481947,
-          "lon": 43.139891
+          "lat": 15.171927,
+          "lon": 44.210566
         },
         "bbox_pixel": {
-          "x": 260,
-          "y": 128,
-          "width": 20,
-          "height": 26
+          "x": 526,
+          "y": 936,
+          "width": 54,
+          "height": 58
         },
         "bbox_geo": [
-          43.135525,
-          13.475963,
-          43.144549,
-          13.487379
+          44.197602,
+          15.157555,
+          44.222191,
+          15.18302
         ],
-        "mean_change_intensity": 0.482662,
-        "max_change_intensity": 0.62531,
+        "mean_change_intensity": 0.600853,
+        "max_change_intensity": 0.871843,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -644,32 +672,32 @@
       {
         "id": "R13",
         "rank": 13,
-        "area_pixels": 277.5,
-        "area_percent": 0.02646,
-        "area_km2_estimate": 0.51963,
-        "relative_size": "MEDIUM",
+        "area_pixels": 936.0,
+        "area_percent": 0.09011,
+        "area_km2_estimate": 1.76931,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 423.84,
-          "y": 450.26
+          "x": 1009.14,
+          "y": 19.26
         },
         "centroid": {
-          "lat": 13.345889,
-          "lon": 43.209447
+          "lat": 15.585521,
+          "lon": 44.417595
         },
         "bbox_pixel": {
-          "x": 405,
-          "y": 430,
-          "width": 35,
-          "height": 41
+          "x": 986,
+          "y": 0,
+          "width": 38,
+          "height": 46
         },
         "bbox_geo": [
-          43.200948,
-          13.336782,
-          43.21674,
-          13.354783
+          44.407059,
+          15.573781,
+          44.424362,
+          15.593978
         ],
-        "mean_change_intensity": 0.424166,
-        "max_change_intensity": 0.567066,
+        "mean_change_intensity": 0.632737,
+        "max_change_intensity": 0.84949,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -691,32 +719,32 @@
       {
         "id": "R14",
         "rank": 14,
-        "area_pixels": 274.0,
-        "area_percent": 0.02613,
-        "area_km2_estimate": 0.51307,
-        "relative_size": "MEDIUM",
+        "area_pixels": 868.5,
+        "area_percent": 0.08361,
+        "area_km2_estimate": 1.64171,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 685.54,
-          "y": 522.92
+          "x": 941.98,
+          "y": 9.16
         },
         "centroid": {
-          "lat": 13.313984,
-          "lon": 43.327524
+          "lat": 15.589956,
+          "lon": 44.387014
         },
         "bbox_pixel": {
-          "x": 676,
-          "y": 510,
-          "width": 21,
-          "height": 24
+          "x": 907,
+          "y": 0,
+          "width": 66,
+          "height": 28
         },
         "bbox_geo": [
-          43.323221,
-          13.309121,
-          43.332696,
-          13.319659
+          44.371087,
+          15.581684,
+          44.40114,
+          15.593978
         ],
-        "mean_change_intensity": 0.609144,
-        "max_change_intensity": 0.834588,
+        "mean_change_intensity": 0.627618,
+        "max_change_intensity": 0.871843,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -738,32 +766,32 @@
       {
         "id": "R15",
         "rank": 15,
-        "area_pixels": 240.0,
-        "area_percent": 0.02289,
-        "area_km2_estimate": 0.44941,
-        "relative_size": "MEDIUM",
+        "area_pixels": 858.0,
+        "area_percent": 0.0826,
+        "area_km2_estimate": 1.62187,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 405.89,
-          "y": 446.67
+          "x": 938.26,
+          "y": 741.89
         },
         "centroid": {
-          "lat": 13.347465,
-          "lon": 43.20135
+          "lat": 15.268244,
+          "lon": 44.385323
         },
         "bbox_pixel": {
-          "x": 387,
-          "y": 424,
-          "width": 38,
-          "height": 39
+          "x": 922,
+          "y": 715,
+          "width": 33,
+          "height": 54
         },
         "bbox_geo": [
-          43.192827,
-          13.340294,
-          43.209972,
-          13.357418
+          44.377918,
+          15.256343,
+          44.392944,
+          15.280052
         ],
-        "mean_change_intensity": 0.42679,
-        "max_change_intensity": 0.623256,
+        "mean_change_intensity": 0.672197,
+        "max_change_intensity": 0.920317,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -785,32 +813,32 @@
       {
         "id": "R16",
         "rank": 16,
-        "area_pixels": 231.5,
-        "area_percent": 0.02208,
-        "area_km2_estimate": 0.43349,
-        "relative_size": "MEDIUM",
+        "area_pixels": 725.5,
+        "area_percent": 0.06984,
+        "area_km2_estimate": 1.3714,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 439.28,
-          "y": 1006.02
+          "x": 124.82,
+          "y": 934.28
         },
         "centroid": {
-          "lat": 13.101878,
-          "lon": 43.216416
+          "lat": 15.183777,
+          "lon": 44.014928
         },
         "bbox_pixel": {
-          "x": 428,
-          "y": 995,
-          "width": 21,
-          "height": 29
+          "x": 97,
+          "y": 914,
+          "width": 52,
+          "height": 38
         },
         "bbox_geo": [
-          43.211325,
-          13.093983,
-          43.2208,
-          13.106716
+          44.002261,
+          15.175995,
+          44.025939,
+          15.192679
         ],
-        "mean_change_intensity": 0.431097,
-        "max_change_intensity": 0.542249,
+        "mean_change_intensity": 0.590926,
+        "max_change_intensity": 0.848,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -832,39 +860,53 @@
       {
         "id": "R17",
         "rank": 17,
-        "area_pixels": 225.0,
-        "area_percent": 0.02146,
-        "area_km2_estimate": 0.42132,
-        "relative_size": "MEDIUM",
+        "area_pixels": 633.5,
+        "area_percent": 0.06099,
+        "area_km2_estimate": 1.1975,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 477.29,
-          "y": 668.35
+          "x": 403.6,
+          "y": 211.51
         },
         "centroid": {
-          "lat": 13.250132,
-          "lon": 43.233564
+          "lat": 15.501114,
+          "lon": 44.141868
         },
         "bbox_pixel": {
-          "x": 469,
-          "y": 652,
-          "width": 18,
-          "height": 32
+          "x": 385,
+          "y": 197,
+          "width": 44,
+          "height": 35
         },
         "bbox_geo": [
-          43.229824,
-          13.243263,
-          43.237946,
-          13.257312
+          44.133399,
+          15.492117,
+          44.153434,
+          15.507484
         ],
-        "mean_change_intensity": 0.470371,
-        "max_change_intensity": 0.639373,
+        "mean_change_intensity": 0.612332,
+        "max_change_intensity": 0.859922,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
-          "classification": "NONE",
-          "inside_hotspot_count": 0,
+          "classification": "INSIDE",
+          "inside_hotspot_count": 1,
           "nearby_hotspot_count": 0,
-          "nearest_distance_km": null,
-          "hotspots": [],
+          "nearest_distance_km": 0.831,
+          "hotspots": [
+            {
+              "latitude": 15.49418,
+              "longitude": 44.13897,
+              "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 0.61,
+              "daynight": "N",
+              "distance_km": 0.831,
+              "inside_region_bbox": true
+            }
+          ],
           "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
         },
         "iranstrike_correlation": {
@@ -879,39 +921,53 @@
       {
         "id": "R18",
         "rank": 18,
-        "area_pixels": 224.5,
-        "area_percent": 0.02141,
-        "area_km2_estimate": 0.42038,
-        "relative_size": "MEDIUM",
+        "area_pixels": 627.5,
+        "area_percent": 0.06041,
+        "area_km2_estimate": 1.18615,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 487.94,
-          "y": 861.97
+          "x": 485.09,
+          "y": 152.69
         },
         "centroid": {
-          "lat": 13.165123,
-          "lon": 43.238369
+          "lat": 15.526939,
+          "lon": 44.178973
         },
         "bbox_pixel": {
-          "x": 467,
-          "y": 853,
-          "width": 39,
-          "height": 23
+          "x": 459,
+          "y": 126,
+          "width": 50,
+          "height": 51
         },
         "bbox_geo": [
-          43.228922,
-          13.158963,
-          43.246518,
-          13.169062
+          44.167095,
+          15.516265,
+          44.189862,
+          15.538657
         ],
-        "mean_change_intensity": 0.445796,
-        "max_change_intensity": 0.629579,
+        "mean_change_intensity": 0.609217,
+        "max_change_intensity": 0.879294,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
-          "classification": "NONE",
+          "classification": "NEARBY",
           "inside_hotspot_count": 0,
-          "nearby_hotspot_count": 0,
-          "nearest_distance_km": null,
-          "hotspots": [],
+          "nearby_hotspot_count": 1,
+          "nearest_distance_km": 5.625,
+          "hotspots": [
+            {
+              "latitude": 15.49418,
+              "longitude": 44.13897,
+              "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 0.61,
+              "daynight": "N",
+              "distance_km": 5.625,
+              "inside_region_bbox": false
+            }
+          ],
           "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
         },
         "iranstrike_correlation": {
@@ -926,32 +982,32 @@
       {
         "id": "R19",
         "rank": 19,
-        "area_pixels": 220.0,
-        "area_percent": 0.02098,
-        "area_km2_estimate": 0.41196,
-        "relative_size": "MEDIUM",
+        "area_pixels": 574.5,
+        "area_percent": 0.05531,
+        "area_km2_estimate": 1.08597,
+        "relative_size": "LARGE",
         "centroid_pixel": {
-          "x": 439.51,
-          "y": 971.95
+          "x": 605.36,
+          "y": 954.73
         },
         "centroid": {
-          "lat": 13.116836,
-          "lon": 43.216519
+          "lat": 15.174795,
+          "lon": 44.233737
         },
         "bbox_pixel": {
-          "x": 429,
-          "y": 951,
-          "width": 24,
-          "height": 43
+          "x": 580,
+          "y": 935,
+          "width": 50,
+          "height": 34
         },
         "bbox_geo": [
-          43.211777,
-          13.107155,
-          43.222605,
-          13.126034
+          44.222191,
+          15.168531,
+          44.244958,
+          15.183459
         ],
-        "mean_change_intensity": 0.403043,
-        "max_change_intensity": 0.523813,
+        "mean_change_intensity": 0.586297,
+        "max_change_intensity": 0.789181,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -973,32 +1029,32 @@
       {
         "id": "R20",
         "rank": 20,
-        "area_pixels": 212.0,
-        "area_percent": 0.02022,
-        "area_km2_estimate": 0.39698,
+        "area_pixels": 414.5,
+        "area_percent": 0.0399,
+        "area_km2_estimate": 0.78352,
         "relative_size": "MEDIUM",
         "centroid_pixel": {
-          "x": 387.39,
-          "y": 967.05
+          "x": 563.04,
+          "y": 534.57
         },
         "centroid": {
-          "lat": 13.118986,
-          "lon": 43.193
+          "lat": 15.359269,
+          "lon": 44.214468
         },
         "bbox_pixel": {
-          "x": 374,
-          "y": 943,
-          "width": 25,
-          "height": 52
+          "x": 551,
+          "y": 520,
+          "width": 27,
+          "height": 33
         },
         "bbox_geo": [
-          43.186961,
-          13.106716,
-          43.198241,
-          13.129547
+          44.208986,
+          15.351179,
+          44.22128,
+          15.365668
         ],
-        "mean_change_intensity": 0.414826,
-        "max_change_intensity": 0.518171,
+        "mean_change_intensity": 0.562104,
+        "max_change_intensity": 0.809255,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -1020,32 +1076,32 @@
       {
         "id": "R21",
         "rank": 21,
-        "area_pixels": 204.0,
-        "area_percent": 0.01945,
-        "area_km2_estimate": 0.382,
+        "area_pixels": 380.0,
+        "area_percent": 0.03658,
+        "area_km2_estimate": 0.71831,
         "relative_size": "MEDIUM",
         "centroid_pixel": {
-          "x": 956.46,
-          "y": 99.47
+          "x": 1018.75,
+          "y": 485.21
         },
         "centroid": {
-          "lat": 13.499905,
-          "lon": 43.44976
+          "lat": 15.380944,
+          "lon": 44.421971
         },
         "bbox_pixel": {
-          "x": 942,
-          "y": 94,
-          "width": 29,
-          "height": 13
+          "x": 1012,
+          "y": 458,
+          "width": 12,
+          "height": 58
         },
         "bbox_geo": [
-          43.443238,
-          13.496599,
-          43.456323,
-          13.502307
+          44.418898,
+          15.367424,
+          44.424362,
+          15.39289
         ],
-        "mean_change_intensity": 0.600477,
-        "max_change_intensity": 0.827137,
+        "mean_change_intensity": 0.636791,
+        "max_change_intensity": 0.831608,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -1067,39 +1123,53 @@
       {
         "id": "R22",
         "rank": 22,
-        "area_pixels": 190.5,
-        "area_percent": 0.01817,
-        "area_km2_estimate": 0.35672,
+        "area_pixels": 375.5,
+        "area_percent": 0.03615,
+        "area_km2_estimate": 0.7098,
         "relative_size": "MEDIUM",
         "centroid_pixel": {
-          "x": 419.81,
-          "y": 768.32
+          "x": 542.81,
+          "y": 197.04
         },
         "centroid": {
-          "lat": 13.206241,
-          "lon": 43.20763
+          "lat": 15.507465,
+          "lon": 44.205256
         },
         "bbox_pixel": {
-          "x": 401,
-          "y": 759,
-          "width": 31,
-          "height": 29
+          "x": 524,
+          "y": 186,
+          "width": 40,
+          "height": 20
         },
         "bbox_geo": [
-          43.199143,
-          13.197601,
-          43.21313,
-          13.210333
+          44.196692,
+          15.503532,
+          44.214905,
+          15.512313
         ],
-        "mean_change_intensity": 0.41936,
-        "max_change_intensity": 0.50259,
+        "mean_change_intensity": 0.625081,
+        "max_change_intensity": 0.822667,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
-          "classification": "NONE",
+          "classification": "NEARBY",
           "inside_hotspot_count": 0,
-          "nearby_hotspot_count": 0,
-          "nearest_distance_km": null,
-          "hotspots": [],
+          "nearby_hotspot_count": 1,
+          "nearest_distance_km": 7.255,
+          "hotspots": [
+            {
+              "latitude": 15.49418,
+              "longitude": 44.13897,
+              "acquisition_datetime_utc": "2026-09-30T22:25:00Z",
+              "source": "VIIRS_NOAA21_NRT",
+              "satellite": "N21",
+              "instrument": "VIIRS",
+              "confidence": "n",
+              "frp": 0.61,
+              "daynight": "N",
+              "distance_km": 7.255,
+              "inside_region_bbox": false
+            }
+          ],
           "note": "A FIRMS hőpont térbeli-időbeli korrelációt jelez, de önmagában nem bizonyít támadást vagy káreseményt."
         },
         "iranstrike_correlation": {
@@ -1114,32 +1184,32 @@
       {
         "id": "R23",
         "rank": 23,
-        "area_pixels": 180.5,
-        "area_percent": 0.01721,
-        "area_km2_estimate": 0.33799,
+        "area_pixels": 333.0,
+        "area_percent": 0.03206,
+        "area_km2_estimate": 0.62947,
         "relative_size": "MEDIUM",
         "centroid_pixel": {
-          "x": 160.84,
-          "y": 8.99
+          "x": 961.53,
+          "y": 691.91
         },
         "centroid": {
-          "lat": 13.53963,
-          "lon": 43.090785
+          "lat": 15.290188,
+          "lon": 44.395918
         },
         "bbox_pixel": {
-          "x": 147,
-          "y": 0,
-          "width": 26,
-          "height": 19
+          "x": 951,
+          "y": 680,
+          "width": 23,
+          "height": 24
         },
         "bbox_geo": [
-          43.08454,
-          13.535236,
-          43.096271,
-          13.543578
+          44.391122,
+          15.284881,
+          44.401595,
+          15.295419
         ],
-        "mean_change_intensity": 0.437587,
-        "max_change_intensity": 0.558013,
+        "mean_change_intensity": 0.670312,
+        "max_change_intensity": 0.900157,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -1161,32 +1231,32 @@
       {
         "id": "R24",
         "rank": 24,
-        "area_pixels": 170.0,
-        "area_percent": 0.01621,
-        "area_km2_estimate": 0.31833,
+        "area_pixels": 292.0,
+        "area_percent": 0.02811,
+        "area_km2_estimate": 0.55196,
         "relative_size": "MEDIUM",
         "centroid_pixel": {
-          "x": 401.27,
-          "y": 1013.49
+          "x": 973.71,
+          "y": 985.34
         },
         "centroid": {
-          "lat": 13.098597,
-          "lon": 43.199264
+          "lat": 15.161358,
+          "lon": 44.401465
         },
         "bbox_pixel": {
-          "x": 395,
-          "y": 999,
-          "width": 13,
-          "height": 25
+          "x": 961,
+          "y": 973,
+          "width": 25,
+          "height": 23
         },
         "bbox_geo": [
-          43.196436,
-          13.093983,
-          43.202302,
-          13.104959
+          44.395676,
+          15.156677,
+          44.407059,
+          15.166775
         ],
-        "mean_change_intensity": 0.434172,
-        "max_change_intensity": 0.548529,
+        "mean_change_intensity": 0.622204,
+        "max_change_intensity": 0.827137,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -1208,32 +1278,32 @@
       {
         "id": "R25",
         "rank": 25,
-        "area_pixels": 162.0,
-        "area_percent": 0.01545,
-        "area_km2_estimate": 0.30335,
+        "area_pixels": 282.5,
+        "area_percent": 0.0272,
+        "area_km2_estimate": 0.53401,
         "relative_size": "MEDIUM",
         "centroid_pixel": {
-          "x": 983.97,
-          "y": 199.02
+          "x": 674.55,
+          "y": 547.99
         },
         "centroid": {
-          "lat": 13.456196,
-          "lon": 43.462173
+          "lat": 15.353377,
+          "lon": 44.265243
         },
         "bbox_pixel": {
-          "x": 976,
-          "y": 192,
-          "width": 18,
-          "height": 18
+          "x": 664,
+          "y": 536,
+          "width": 21,
+          "height": 23
         },
         "bbox_geo": [
-          43.458579,
-          13.451376,
-          43.4667,
-          13.459279
+          44.26044,
+          15.348545,
+          44.270002,
+          15.358643
         ],
-        "mean_change_intensity": 0.535149,
-        "max_change_intensity": 0.707922,
+        "mean_change_intensity": 0.654288,
+        "max_change_intensity": 0.856941,
         "interpretation": "visual_change_candidate_requires_analyst_review",
         "firms_correlation": {
           "classification": "NONE",
@@ -1253,17 +1323,17 @@
         }
       }
     ],
-    "largest_region_percent": 5.3104,
-    "largest_region_km2_estimate": 104.2702,
-    "valid_pixel_percent": 100.0,
-    "difference_threshold": 0.353349,
+    "largest_region_percent": 21.9894,
+    "largest_region_km2_estimate": 431.7613,
+    "valid_pixel_percent": 99.0609,
+    "difference_threshold": 0.42,
     "minimum_region_pixels": 83,
-    "change_map_url": "data/satellite/sentinel2/history/mocha/2026-10-01_change_2026-10-03T204336Z.png",
-    "assessment": "A képpár jelentős vizuális változást jelez; a változási térkép részletes elemzése indokolt. A jelentősnek minősített pixelek aránya 7.59%. Az összehasonlíthatóság: HIGH.",
+    "change_map_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_change_2026-10-03T204303Z.png",
+    "assessment": "A képpár nagyon nagy kiterjedésű vizuális eltérést jelez. Először ki kell zárni a légköri és radiometriai eltéréseket. A jelentősnek minősített pixelek aránya 50.90%. Az összehasonlíthatóság: HIGH.",
     "warnings": [
       "A rendszer vizuális eltérést jelez, nem azonosítja automatikusan a változás okát."
     ],
-    "processing_time_seconds": 0.483,
+    "processing_time_seconds": 0.532,
     "limitations": [
       "Sentinel-2 RGB visual product with approximately 10 m ground sampling distance.",
       "Small objects and limited structural damage cannot be reliably resolved.",
@@ -1289,13 +1359,13 @@
         {
           "source": "VIIRS_NOAA21_NRT",
           "status": "completed",
-          "hotspot_count": 0
+          "hotspot_count": 1
         }
       ],
-      "aoi_hotspot_count": 0,
-      "regions_with_correlation": 0,
-      "inside_region_hotspot_matches": 0,
-      "nearby_hotspot_matches": 0,
+      "aoi_hotspot_count": 1,
+      "regions_with_correlation": 5,
+      "inside_region_hotspot_matches": 2,
+      "nearby_hotspot_matches": 3,
       "nearby_threshold_km": 10.0,
       "errors": [],
       "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
@@ -1304,8 +1374,8 @@
       "status": "completed",
       "provider": "IranStrike normalized event dataset",
       "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
-      "window_start": "2026-09-01T07:46:13.644000Z",
-      "window_end": "2026-10-01T07:46:16.093000Z",
+      "window_start": "2026-09-01T07:45:41.224000Z",
+      "window_end": "2026-10-01T07:45:43.676000Z",
       "source_event_count": 258,
       "events_in_time_window": 45,
       "aoi_event_count": 0,
@@ -1337,13 +1407,13 @@
         {
           "source": "VIIRS_NOAA21_NRT",
           "status": "completed",
-          "hotspot_count": 0
+          "hotspot_count": 1
         }
       ],
-      "aoi_hotspot_count": 0,
-      "regions_with_correlation": 0,
-      "inside_region_hotspot_matches": 0,
-      "nearby_hotspot_matches": 0,
+      "aoi_hotspot_count": 1,
+      "regions_with_correlation": 5,
+      "inside_region_hotspot_matches": 2,
+      "nearby_hotspot_matches": 3,
       "nearby_threshold_km": 10.0,
       "errors": [],
       "interpretation": "spatiotemporal_screening_indicator_requires_analyst_review"
@@ -1352,8 +1422,8 @@
       "status": "completed",
       "provider": "IranStrike normalized event dataset",
       "data_path": "/home/runner/work/me-security-monitor/me-security-monitor/data/iranstrike.json",
-      "window_start": "2026-09-01T07:46:13.644000Z",
-      "window_end": "2026-10-01T07:46:16.093000Z",
+      "window_start": "2026-09-01T07:45:41.224000Z",
+      "window_end": "2026-10-01T07:45:43.676000Z",
       "source_event_count": 258,
       "events_in_time_window": 45,
       "aoi_event_count": 0,
@@ -1371,30 +1441,30 @@
     "requested_before_date": "2026-09-03",
     "comparison_days": 30,
     "search_tolerance_days": 15,
-    "before_image_url": "data/satellite/sentinel2/history/mocha/2026-09-01_before_2026-10-03T204336Z.png",
-    "after_image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
-    "change_map_url": "data/satellite/sentinel2/history/mocha/2026-10-01_change_2026-10-03T204336Z.png",
-    "before_thumbnail_url": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_before_thumb.webp",
-    "after_thumbnail_url": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_after_thumb.webp",
-    "change_thumbnail_url": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_change_thumb.webp"
+    "before_image_url": "data/satellite/sentinel2/history/sanaa/2026-09-01_before_2026-10-03T204303Z.png",
+    "after_image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
+    "change_map_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_change_2026-10-03T204303Z.png",
+    "before_thumbnail_url": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_before_thumb.webp",
+    "after_thumbnail_url": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_after_thumb.webp",
+    "change_thumbnail_url": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_change_thumb.webp"
   },
   "imagery": {
     "image_available": true,
-    "image_url": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
+    "image_url": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
     "latest_image": "data/satellite/sentinel2/latest.png",
-    "before_image": "data/satellite/sentinel2/history/mocha/2026-09-01_before_2026-10-03T204336Z.png",
-    "after_image": "data/satellite/sentinel2/history/mocha/2026-10-01_after_2026-10-03T204336Z.png",
-    "change_map": "data/satellite/sentinel2/history/mocha/2026-10-01_change_2026-10-03T204336Z.png",
-    "before_thumbnail": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_before_thumb.webp",
-    "after_thumbnail": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_after_thumb.webp",
-    "change_thumbnail": "data/satellite/sentinel2/history/mocha/2026-10-03T204336Z_change_thumb.webp",
+    "before_image": "data/satellite/sentinel2/history/sanaa/2026-09-01_before_2026-10-03T204303Z.png",
+    "after_image": "data/satellite/sentinel2/history/sanaa/2026-10-01_after_2026-10-03T204303Z.png",
+    "change_map": "data/satellite/sentinel2/history/sanaa/2026-10-01_change_2026-10-03T204303Z.png",
+    "before_thumbnail": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_before_thumb.webp",
+    "after_thumbnail": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_after_thumb.webp",
+    "change_thumbnail": "data/satellite/sentinel2/history/sanaa/2026-10-03T204303Z_change_thumb.webp",
     "acquisition_date": "2026-10-01",
-    "cloud_cover_percent": 0.27,
+    "cloud_cover_percent": 17.94,
     "bounds": {
-      "west": 43.018215,
-      "south": 13.094422,
-      "east": 43.479785,
-      "north": 13.543578
+      "west": 43.958093,
+      "south": 15.144822,
+      "east": 44.423907,
+      "north": 15.593978
     },
     "width": 1024,
     "height": 1024
