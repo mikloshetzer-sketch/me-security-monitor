@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-03 16:19 UTC",
+    "updated": "2026-10-03 21:18 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-09-27",
     "period_end": "2026-10-03",
-    "total_events": 147,
-    "total_risk": 137.33,
-    "normalized_risk_score": 54.9,
+    "total_events": 149,
+    "total_risk": 144.43,
+    "normalized_risk_score": 57.8,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 32,
+    "military": 33,
     "security": 14,
-    "political": 18,
-    "other": 83
+    "political": 21,
+    "other": 81
   },
   "source_counts": {
-    "news": 141,
-    "isw": 6
+    "news": 142,
+    "isw": 7
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 31.4
+      "risk": 34.05
     },
     {
       "name": "Iran",
-      "risk": 29.69
+      "risk": 29.99
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.6
+      "risk": 24.3
+    },
+    {
+      "name": "Yemen",
+      "risk": 12.15
     },
     {
       "name": "Dubai",
       "risk": 12.1
-    },
-    {
-      "name": "Iraq",
-      "risk": 9.9
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Flydubai co-pilot attacked pilot with axe in attempted 'terrorist attack', UAE says - Reuters",
       "location": "Dubai",
       "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNNHh1NEZDMzE4aE53SVNjWXVIUmRYc3Ayb2R5SzRwNWhiYXkxRnF0UWg5YVhKNFhfYzVDYk84ZGFmbVdwUVhrdURrR0lCRDdDeDJJVG5PY0xNTTZRbURjWDBybFBsdUV4N1Ywei1lMkhib2FKQXV4TVY2eFNVLU9BSGsyXzJLejZCekRSYnBwaXlZLWo2Qm9xOXdyOEJxYlgzY3oyVnMtSkhGaUZWRWdLakVWYlZyZ2dvbm5YNkRLcG9jLU1iN2c3U2gxOTVzZ3g5NkJvY2dJQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they attacked Aramco facility in Riyadh with missiles, drones - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUmVOVEVCTVdITFV4aHd1aWM4aC1lZzBQTUIxcG9zSkU0ZXJKbHVRdTRWTUVsRWVsRmZHYlI2ZW01dnp3NlQ4WEV3Wnp0YXpVV2VCQ2RmeVBQQ3BUN0E3S1ZrRkw0ODdkVVJsSnFWWVM5YWVZZExacUlwdGRrc3h1LVJkNHNWY1dZS1F2UE1aR1JHYzNkX0ktS0RIQW4zX3RJUWV4eVBqVFd6X0t1"
     },
     {
       "score": 3.0,
@@ -79,18 +88,18 @@
       "date": "2026-10-03",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen’s army claims over 1,500 Houthi casualties, attacks Sanaa - Al Jazeera",
-      "location": "Sana'a",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNS2JvMzdKWGlzOXIzVTV3Y2E0ajEza2kzSE5icF9wWGJrTC1Sc051Y3JYNEVQZlo5YmVIZS0zcnZ6b3Y5Q0E4dTQ1SFJ6YTQwOWdoYmlUSDNBTjd6Z3RrQ195Sk12akk0UHludWJMZk12ZWgzUUphOVdrRU50bVpnMjh4VEJpN2xkWThvdlJvWHZtd3JSZmN5d0tUZ2RCRWpRak4xSdIBqgFBVV95cUxQMXRObHY1T2JOSWZQMFZ5STlNMHZyYzc3MmFhQV9RaDRWLVdJTy1KLXNLckY4cXVqSm5QWnJqcHdWaWxBckZzU2JKNHRBV0ZzS3VPZklOUTVUNkg4UlU4c0pCTWtLcDhwbHl4c3ZfWWlWU3R4blZaTFVnZ0hOZElILXYyRzZldGpjY3NCZDZXU2VuVWJGN0pmd05tWm1jUTd6WTBMeW5Xb0c0UQ"
+      "title": "Israeli air attack on Gaza City apartment kills at least five - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQSGpPWHZhNW9TMDk2OUxsRlFnbi1ycDRyeW9mSmN0dHduSnp2c2FZckF5cFRlMTdXX0c1QmUtc2VVOFhibmg5UnJHLXBKdnlSZmtOTWV5T19hODloTGppM2EtYUEzdzkwbkVEY3gyZTcxTzFvMllYOUwzVEJ6NWFidGNqMlpsWnhWUnMweXdQeDlMUnVYOEdRSlg2MTZoNFJpSzdobtIBqgFBVV95cUxPbFExTEIzRWk0V09YdHAyaUdjYjFaNnFZbXRNazJvUFhDNUpQNGNGRmpPT3p0X2dmUWhhUU1lZ1JFRjBtWGJiZ2xUazBaYkhkMGltdXFpWXpxb2FWcV9nZzg1TEFzeC1KOXdOQmNtLTZ4Q0tzakZGelpXOERYOTVBOGJXeFNoR08zWlZoNmxSZGtpSHRhY3ZSNWpWMHYtTG9ZZ3VQYmVVVk5CQQ"
     },
     {
       "score": 3.0,
       "date": "2026-10-03",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli air attack on Gaza City apartment kills at least five - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQSGpPWHZhNW9TMDk2OUxsRlFnbi1ycDRyeW9mSmN0dHduSnp2c2FZckF5cFRlMTdXX0c1QmUtc2VVOFhibmg5UnJHLXBKdnlSZmtOTWV5T19hODloTGppM2EtYUEzdzkwbkVEY3gyZTcxTzFvMllYOUwzVEJ6NWFidGNqMlpsWnhWUnMweXdQeDlMUnVYOEdRSlg2MTZoNFJpSzdobtIBqgFBVV95cUxPbFExTEIzRWk0V09YdHAyaUdjYjFaNnFZbXRNazJvUFhDNUpQNGNGRmpPT3p0X2dmUWhhUU1lZ1JFRjBtWGJiZ2xUazBaYkhkMGltdXFpWXpxb2FWcV9nZzg1TEFzeC1KOXdOQmNtLTZ4Q0tzakZGelpXOERYOTVBOGJXeFNoR08zWlZoNmxSZGtpSHRhY3ZSNWpWMHYtTG9ZZ3VQYmVVVk5CQQ"
+      "title": "Yemen’s army says targets Houthis in hundreds of strikes, killing 700 - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNS2JvMzdKWGlzOXIzVTV3Y2E0ajEza2kzSE5icF9wWGJrTC1Sc051Y3JYNEVQZlo5YmVIZS0zcnZ6b3Y5Q0E4dTQ1SFJ6YTQwOWdoYmlUSDNBTjd6Z3RrQ195Sk12akk0UHludWJMZk12ZWgzUUphOVdrRU50bVpnMjh4VEJpN2xkWThvdlJvWHZtd3JSZmN5d0tUZ2RCRWpRak4xSdIBqgFBVV95cUxQMXRObHY1T2JOSWZQMFZ5STlNMHZyYzc3MmFhQV9RaDRWLVdJTy1KLXNLckY4cXVqSm5QWnJqcHdWaWxBckZzU2JKNHRBV0ZzS3VPZklOUTVUNkg4UlU4c0pCTWtLcDhwbHl4c3ZfWWlWU3R4blZaTFVnZ0hOZElILXYyRzZldGpjY3NCZDZXU2VuVWJGN0pmd05tWm1jUTd6WTBMeW5Xb0c0UQ"
     },
     {
       "score": 2.7,
@@ -100,6 +109,15 @@
       "title": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQTk2ZFJ4YklNcjZMNEJ3aWlPSG9HZlZ5RzF1Q3o1RW16emhJWUQ3VVFkV3luT3FjSG9EaFVpR1VpYjRnMElVWFR0SFJ2Y1FRT0lNVHV6bHExMmJlbGI2U2FKMkRDakE5clVydmdkUkRXY3plNE16ZHVMZEhGNWtwQ25Nd2lQRndnM1lPTnJOSkx2ODNjeUloUGhaemlLMTR5NGY4ZmZnWnBpVG45RGwzcGVjcTU4SjNaRjdVd0ZSdlI"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-10-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills five in Gaza, including four women, health officials say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaTRBdWs0UERVMW05RGtXdHdNWGJKajVmSkFZQVdpamVzQ0VqMkNqdjBmWHp6ZGUtZkozbXpnbEREeXBSeDZ6dXJJWC05UXc4UDBGTk1iOWZ6Y0hUR0NBWDZETkxCNGJOTURYUGhpRG9TVzRJTndvX3hieVczbzZHLU9aN21CV2J5cXYxLU4xVHVvcEIyTVVTbmlYem1QRGszQ1Ztbg"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Yemen carried out 20 strikes on Houthi targets in Taiz province, spokesperson says - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORk4tSFZmYTc1TmM0Nk9rT0QzQjBkdUJyWlFTTllHN3ZsSU5QZWd3eW42bjB4dHo4MzZoQm9yOFRBaE1fVF9nTFlxTWswMWRlZV9PZXFRZm13aUdpR1UtX2FZVzdTb21IcHFFbzBxdzlRY015TkE5bWlmNTdncGprWWZkRUMzWVR1Y3VfbnBCUlRuMTlvZ2NLTlpUaEFmUU9Ra1VoNDVKYVhJaVZQV3NCUVMzQlpjWEJlb2NzRkRySUNLUmxXQUN4Rg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills five in Gaza, including four women, health officials say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaTRBdWs0UERVMW05RGtXdHdNWGJKajVmSkFZQVdpamVzQ0VqMkNqdjBmWHp6ZGUtZkozbXpnbEREeXBSeDZ6dXJJWC05UXc4UDBGTk1iOWZ6Y0hUR0NBWDZETkxCNGJOTURYUGhpRG9TVzRJTndvX3hieVczbzZHLU9aN21CV2J5cXYxLU4xVHVvcEIyTVVTbmlYem1QRGszQ1Ztbg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Who is the 'hero' Indian pilot who was stabbed on Israel-bound flight?",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/cje3r3z7g0zzo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
