@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-10-02 23:48 UTC",
+    "updated": "2026-10-03 05:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-09-26",
-    "period_end": "2026-10-02",
-    "total_events": 135,
-    "total_risk": 131.29,
-    "normalized_risk_score": 52.5,
+    "period_start": "2026-09-27",
+    "period_end": "2026-10-03",
+    "total_events": 137,
+    "total_risk": 123.03,
+    "normalized_risk_score": 49.2,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 26,
-    "security": 14,
+    "military": 28,
+    "security": 15,
     "political": 21,
-    "other": 74
+    "other": 73
   },
   "source_counts": {
-    "news": 129,
+    "news": 131,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 36.45
+      "risk": 29.85
     },
     {
       "name": "Iran",
-      "risk": 30.79
+      "risk": 28.09
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.7
+      "risk": 18.25
     },
     {
       "name": "Dubai",
-      "risk": 10.65
+      "risk": 9.5
     },
     {
       "name": "Iraq",
-      "risk": 9.65
+      "risk": 9.1
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-10-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli air attack on Gaza City apartment kills at least five - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQSGpPWHZhNW9TMDk2OUxsRlFnbi1ycDRyeW9mSmN0dHduSnp2c2FZckF5cFRlMTdXX0c1QmUtc2VVOFhibmg5UnJHLXBKdnlSZmtOTWV5T19hODloTGppM2EtYUEzdzkwbkVEY3gyZTcxTzFvMllYOUwzVEJ6NWFidGNqMlpsWnhWUnMweXdQeDlMUnVYOEdRSlg2MTZoNFJpSzdobtIBqgFBVV95cUxPbFExTEIzRWk0V09YdHAyaUdjYjFaNnFZbXRNazJvUFhDNUpQNGNGRmpPT3p0X2dmUWhhUU1lZ1JFRjBtWGJiZ2xUazBaYkhkMGltdXFpWXpxb2FWcV9nZzg1TEFzeC1KOXdOQmNtLTZ4Q0tzakZGelpXOERYOTVBOGJXeFNoR08zWlZoNmxSZGtpSHRhY3ZSNWpWMHYtTG9ZZ3VQYmVVVk5CQQ"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-02",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQTk2ZFJ4YklNcjZMNEJ3aWlPSG9HZlZ5RzF1Q3o1RW16emhJWUQ3VVFkV3luT3FjSG9EaFVpR1VpYjRnMElVWFR0SFJ2Y1FRT0lNVHV6bHExMmJlbGI2U2FKMkRDakE5clVydmdkUkRXY3plNE16ZHVMZEhGNWtwQ25Nd2lQRndnM1lPTnJOSkx2ODNjeUloUGhaemlLMTR5NGY4ZmZnWnBpVG45RGwzcGVjcTU4SjNaRjdVd0ZSdlI"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-02",
       "category": "military",
       "source_type": "news",
@@ -66,7 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOckx3VkNRTklaT01xMTdlQW5sXzBSZ0lPNWNBcWpZZmJCWnNCOWxnRWRjLVhnbmZEU28zZ2hNVkExbzNpeUpyazBtT1FQNWswRGRiYUxqY3BEQzVuX2RSZ3pIa1ZyTFQ1NjJaNFlQdnpTMDJVUjNKOUdxVkdHcTVpSm5tVVp6THRWOV80bEt2ZzMtY0hFeTA5Y0xNR2k0eElNT3Z6cVlJRmsxbmZt"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-02",
       "category": "military",
       "source_type": "news",
@@ -75,7 +84,16 @@
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORk4tSFZmYTc1TmM0Nk9rT0QzQjBkdUJyWlFTTllHN3ZsSU5QZWd3eW42bjB4dHo4MzZoQm9yOFRBaE1fVF9nTFlxTWswMWRlZV9PZXFRZm13aUdpR1UtX2FZVzdTb21IcHFFbzBxdzlRY015TkE5bWlmNTdncGprWWZkRUMzWVR1Y3VfbnBCUlRuMTlvZ2NLTlpUaEFmUU9Ra1VoNDVKYVhJaVZQV3NCUVMzQlpjWEJlb2NzRkRySUNLUmxXQUN4Rg"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-10-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills five in Gaza, health officials say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaTRBdWs0UERVMW05RGtXdHdNWGJKajVmSkFZQVdpamVzQ0VqMkNqdjBmWHp6ZGUtZkozbXpnbEREeXBSeDZ6dXJJWC05UXc4UDBGTk1iOWZ6Y0hUR0NBWDZETkxCNGJOTURYUGhpRG9TVzRJTndvX3hieVczbzZHLU9aN21CV2J5cXYxLU4xVHVvcEIyTVVTbmlYem1QRGszQ1Ztbg"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-02",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cje3r3z7g0zzo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-02",
       "category": "military",
       "source_type": "news",
@@ -93,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOW5iR0hHVTF1YlRfNGY5QmtUYWg4NkxJTUJrVm5CaE13c1UxNE44NE1RWEJEcjlRT2NzOVRqWjlvM1FZTkgwY2ZtZUhSUnBSaDJIMWhaaTVQV2pHMU9RTzRQbm5HNFVqZy1xVFpPaUZvMTE2UGJfV3hPclFTLWVoc3RROEZXeDFLaUhUQm1ZUjc3M2xPXzh0dVpBY3F0ZHpjRGlKZmM5NXNDMGF3MUVScNIBtgFBVV95cUxNYmZOSDlwUTRuMG52elZlcWliZmlnSFlXSGdRSmJxb0JLS2l4amxseTVRNjVYZlhqbVN4X1R3amQ1LVRxbl9MVVBWMTdoR1NqdTl3eDlNTG5CbjBVZ2ppbTNmdTVDemFuWFlINkJDdEpyU0pvaHlQWVU2ZWNKMzd3VnozdEY3aVhBRHpOUnluNWxfVG05cUU3dnJYWnhwdDNERXFwbVF3QXlheWt6ZGR1VGlBM0ZtUQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-01",
       "category": "military",
       "source_type": "news",
@@ -102,7 +120,7 @@
       "url": "https://www.bbc.co.uk/news/articles/crje8edqyej9o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-01",
       "category": "military",
       "source_type": "news",
@@ -111,31 +129,13 @@
       "url": "https://www.bbc.co.uk/news/articles/cqgmrm7xd8wyo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-01",
       "category": "military",
       "source_type": "news",
       "title": "Flydubai passenger describes hugging his children as plane nosedived during attack",
       "location": "Dubai",
       "url": "https://www.bbc.co.uk/news/articles/c6d949ydnw3po?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "How was the Flydubai co-pilot who attacked his captain cleared to fly? - Al Jazeera",
-      "location": "Dubai",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaW9FWG1Zd1pzLTVzREdjbTVFckg5VTdUaDJEcV9UeU5ZX0stVzN3Z1oybm9ZVThuQ2p1YXdibFNKUDRaTmJXWG5xNmlPbVJfWEViYUhyV2NPeDd0aG1QYTdNdDhyX0ExbEFldktnc0VMS3JxdkJYeWdNdHA0ODhyUGxHZWpXaHNrQ2VGaWpGT3hhZ1pTRlVHV0NRdjMwSEZuWnMxaVhKYjYyQWgw0gGyAUFVX3lxTE9uVjVNM0xkcHp0QS15Mm1lbVNtSFdGVjJNYWMwYkgya0NQREN1WDlaS181d2JFREdGdXd4ZjRoV1F0aUpfOUszSkZ1VG5lVTRiUjk0TGw0cFEzTzhCRUVnbDcyQ3Zna1F6UjB5VjFjZ2g2ZVhVcm9ld3dJdURISUt3MnFpdTY0MWZoWHktQVBWbUx0aVRfMDZ2ZTBoRHFuYXJmU2lORC13R3YxSWhZc1M4TVE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Flydubai attack gives Netanyahu new security message ahead of Israel vote - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNMUhRM184SXZ6ZGphc3lwOWpkQVYzSHh0VUNqSkgzSTBZYS1rYktDTE5uUnIzYjFQamlfdXZtTGxqRGJsUWc4a19lbnNfOWJRV2g0dmlNeG9lcG80M1JZMHJsQTRYRy1ES25nY3h5LUp1SzYzV1RIREFCRExjbTN5Yjlxc3F3SlZUV0VOUzd6QjNkWERPdi04THpNNGVPMGJLdVlLa0VYY3RfdmRJd2cwTjhLTFjSAboBQVVfeXFMUHJTREY2TmdEUk5XeFVreUV5V0tyZE0xcVFkRnBiemEwQll3Q2puMTFtbG50QWtrM281TzFpZ3J4TThpRVR4bG13TTBqc0tMQzZCWXF5RDUtQUlVZ2FWV1FTUmw5MFppdGQyMmVIcTFGT1ZUbjY5bnB5UTNZbkI2ZElrT2pFM3h0LVQ4anRGZ0w3Ml8takRMZUVJYnBxWXJOWEd4X28wYXI3NWM0RUVYd2tsYk9lcjRZMnNB"
     }
   ]
 }
