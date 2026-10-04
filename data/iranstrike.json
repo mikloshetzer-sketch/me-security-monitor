@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T14:24:32Z",
+  "generated_at": "2026-10-04T18:23:38Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,39 +52,39 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 527,
+    "events_endpoint_records": 532,
     "feed_event_records": 250,
-    "normalized_events": 1527,
+    "normalized_events": 1532,
     "map_visualizable_events": 258,
-    "non_mappable_events": 1269,
-    "developments": 4
+    "non_mappable_events": 1274,
+    "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1527,
+      "total_events": 1532,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-04T12:35:45Z",
+      "latest_event_date": "2026-10-04T16:40:27Z",
       "geocoded_events": 258,
-      "geocoded_share": 16.9,
+      "geocoded_share": 16.8,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Unknown"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 50,
-        "previous": 27,
-        "delta": 23,
-        "percent_change": 85.2,
+        "current": 54,
+        "previous": 28,
+        "delta": 26,
+        "percent_change": 92.9,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 354,
-        "previous": 313,
-        "delta": 41,
-        "percent_change": 13.1,
-        "direction": "stable"
+        "current": 357,
+        "previous": 309,
+        "delta": 48,
+        "percent_change": 15.5,
+        "direction": "increase"
       }
     },
     "daily_trend": [
@@ -806,16 +806,16 @@
       },
       {
         "date": "2026-10-04",
-        "count": 1
+        "count": 6
       }
     ],
     "category_counts": {
-      "infrastructure": 384,
-      "missile": 345,
-      "strike": 257,
+      "infrastructure": 385,
+      "missile": 347,
+      "strike": 258,
       "drone": 200,
       "airstrike": 133,
-      "movement": 81,
+      "movement": 82,
       "explosion": 61,
       "ground": 38,
       "alert": 13,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 794,
-      "high": 496,
-      "low": 235,
+      "medium": 796,
+      "high": 498,
+      "low": 236,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 954,
+      "unknown": 959,
       "iran": 367,
       "israel": 175,
       "usa": 31
@@ -838,7 +838,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 535
+        "count": 540
       },
       {
         "name": "Iran",
@@ -900,7 +900,7 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 535
+        "count": 540
       },
       {
         "name": "Iran",
@@ -945,34 +945,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10842,
+    "totalCount": 10847,
     "spotlight": {
       "event": {
-        "id": "2hdx2uuhip600",
-        "timestamp": "2026-10-04T12:35:45+00:00",
-        "location": "YEM",
+        "id": "3lupp3xw94800",
+        "timestamp": "2026-10-04T16:40:27+00:00",
+        "location": "SAU",
         "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "movement",
-        "severity": "medium",
-        "description": "Houthis advance and seize control of main supply corridor (Taiz-Aden road) from Saudi-backed forces, threatening Aden's sustainability",
-        "descriptionHe": "התקדמות החות'ים בתימן אל מול הכוחות הנתמכים ע\"י סעודיה: החות'ים השתלטו על חלק מציר האספקה העיקרי - כביש תעז - עדן וכעת הם שולטים בתנועה על הציר",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/131322"
+        "type": "strike",
+        "severity": "high",
+        "description": "Ansarallah ballistic missiles strike ARAMCO refinery in Riyadh",
+        "descriptionHe": "טילים של אנסאר אללה פוגעים בחומר הגלם של ארמקו בריאד",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/85027"
       },
-      "headline": "Houthis Seize Key Supply Corridor Threatening Aden Stability",
-      "headlineHe": "החות'ים תופסים מסדרון אספקה קריטי המאיים על יציבות עדן",
-      "summary": "The capture of the Taiz-Aden road represents a strategic shift in Yemen's conflict, giving the Iran-backed movement control over vital logistics routes to the southern port city.",
-      "summaryHe": "התפיסה של כביש תאיז-עדן מהווה תזוזה אסטרטגית בסכסוך יְמֶן, המעניקה לתנועה הנתמכת על ידי איראן שליטה בנתיבי לוגיסטיקה חיוניים לעיר הנמל הדרומית.",
-      "pickedAt": "2026-10-04T13:00:30.470Z",
+      "headline": "Ansarallah ballistic missile strikes Saudi ARAMCO refinery in Riyadh",
+      "headlineHe": "טיל בליסטי של אנסאר אללה פוגע במתקן זיקוק ARAMCO בריאד",
+      "summary": "The strike marks an escalation in cross-border attacks as Yemen's Houthi-aligned forces target critical Saudi energy infrastructure during renewed regional tensions.",
+      "summaryHe": "ההתקפה מסמנת הסלמה בהתקפות חוצות גבולות כאשר כוחות הפליטים היותיים הקשורות לחות'ים תוקפות תשתיות אנרגיה קריטיות בסעודיה בתקופת מתיחות אזורית מחודשת.",
+      "pickedAt": "2026-10-04T18:00:28.456Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-10-04T14:18:17.420Z",
+    "lastUpdated": "2026-10-04T18:18:17.503Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1515,104 +1521,8 @@
     "vitals": {
       "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-10-04T14:00:14.057Z",
+      "lastUpdate": "2026-10-04T18:00:15.178Z",
       "internetHistory": [
-        {
-          "t": "2026-10-03T14:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T14:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T14:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T14:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T14:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T14:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T15:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T15:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T15:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T15:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T15:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-03T16:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T16:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T16:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T16:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T16:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T16:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T17:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T17:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T17:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T17:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T17:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-03T17:50:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-10-03T18:00:00.000Z",
           "v": 96
@@ -2088,22 +1998,118 @@
         {
           "t": "2026-10-04T13:40:00.000Z",
           "v": 97
+        },
+        {
+          "t": "2026-10-04T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T14:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T15:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T15:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T15:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T15:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T16:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T16:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T16:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T16:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T16:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T16:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T17:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T17:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T17:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-04T17:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-04T17:40:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-04T14:00:14.057Z"
+    "lastUpdated": "2026-10-04T18:00:15.178Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c5e1",
+      "id": "iranstrike-a7f2c1e9",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-03T15:15:47Z",
+      "date": "2026-10-04T16:40:27Z",
       "title": "IranStrike event",
-      "description": "Houthi missiles strike Aramco refinery in Riyadh; large fire reported",
+      "description": "Houthis strike Saudi Aramco refinery in Riyadh; Riyadh responds with 50 airstrikes on Sanaa",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2124,79 +2130,32 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c5e1",
-        "text": "Houthi missiles strike Aramco refinery in Riyadh; large fire reported",
-        "textHe": "טילים של חות'ים פוגעים בחידוק ארמקו בריאד; דיווחים על שריפה גדולה",
+        "id": "a7f2c1e9",
+        "text": "Houthis strike Saudi Aramco refinery in Riyadh; Riyadh responds with 50 airstrikes on Sanaa",
+        "textHe": "חות'ים תקפו את בחזקת ארמקו בריאד; ריאד הגיבה ב-50 תקפי אוויר על סנאה",
         "severity": "high",
-        "timestamp": "2026-10-03T15:15:47+00:00",
+        "timestamp": "2026-10-04T16:40:27+00:00",
         "entityIds": [
-          "SAU",
-          "YEM"
+          "YEM",
+          "SAU"
         ],
         "eventIds": [
-          "26wegeb9gexw0",
-          "3dg3xqo5yb800",
-          "3cws0t7klze00",
-          "2rdijdnj5r800",
-          "ezoi7z67xkw0"
+          "3lupp3xw94800",
+          "2fzgpf5pxy680",
+          "10scf5vllxy80"
         ],
-        "sourceCount": 4
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-b9e4f2d6",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-10-03T21:26:49Z",
-      "title": "IranStrike event",
-      "description": "Saudi airstrikes on Sanaa; 26+ strikes reported in response to Aramco attack",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "b9e4f2d6",
-        "text": "Saudi airstrikes on Sanaa; 26+ strikes reported in response to Aramco attack",
-        "textHe": "תקיפות אוויריות סעודיות בצנעא; דיווח על 26+ תקיפות בתגובה להתקפה על ארמקו",
-        "severity": "high",
-        "timestamp": "2026-10-03T21:26:49+00:00",
-        "entityIds": [
-          "SAU",
-          "YEM"
-        ],
-        "eventIds": [
-          "jjjpr9edkow0",
-          "20wrzbl7v3400"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-c3d8b1a9",
+      "id": "iranstrike-b4e8d2f1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-03T16:56:38Z",
       "title": "IranStrike event",
-      "description": "Saudi military prepares 100K+ troop offensive to retake Bab al-Mandeb Strait",
+      "description": "Saudi Arabia mobilizing 100k+ troops for Bab al-Mandeb offensive; Houthis seize Taiz-Aden corridor",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2217,9 +2176,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c3d8b1a9",
-        "text": "Saudi military prepares 100K+ troop offensive to retake Bab al-Mandeb Strait",
-        "textHe": "צבא סעודי מכין התקפת 100K+ חיילים לשחזור שליטה במיצר באב אל-מנדב",
+        "id": "b4e8d2f1",
+        "text": "Saudi Arabia mobilizing 100k+ troops for Bab al-Mandeb offensive; Houthis seize Taiz-Aden corridor",
+        "textHe": "סעודיה מגייסת 100+ קרא לקומנדט בב אל-מנדב; חות'ים שלטו בקורידור תעז-עדן",
         "severity": "high",
         "timestamp": "2026-10-03T16:56:38+00:00",
         "entityIds": [
@@ -2227,30 +2186,31 @@
           "YEM"
         ],
         "eventIds": [
-          "2o6lw6twdgy00"
+          "2o6lw6twdgy00",
+          "2hdx2uuhip600"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-d4e7a6c2",
+      "id": "iranstrike-c6a9e3b2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-03T17:52:40Z",
+      "date": "2026-10-04T15:38:50Z",
       "title": "IranStrike event",
-      "description": "Iranian strikes damaged Saudi RE-3A spy plane at Prince Sultan Air Base (June)",
+      "description": "Yemen President Alimi announces full military operation to eject Houthis from control",
       "category": "other",
       "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian strikes damaged saudi re-3a spy plane at prince sultan ai",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2261,23 +2221,251 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d4e7a6c2",
-        "text": "Iranian strikes damaged Saudi RE-3A spy plane at Prince Sultan Air Base (June)",
-        "textHe": "תקיפות איראניות פגעו בנחתת סיור RE-3A סעודית בבסיס הנסיך סולטאן (יוני)",
+        "id": "c6a9e3b2",
+        "text": "Yemen President Alimi announces full military operation to eject Houthis from control",
+        "textHe": "נשיא תימן אל-עלימי הכריז על מבצע צבאי מלא להדיח חות'ים משלטון",
         "severity": "medium",
-        "timestamp": "2026-10-03T17:52:40+00:00",
+        "timestamp": "2026-10-04T15:38:50+00:00",
         "entityIds": [
-          "SAU",
-          "IRN"
+          "YEM"
         ],
         "eventIds": [
-          "2ks7g70adqq00"
+          "35nyj4qme3200"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3lupp3xw94800",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85027",
+      "date": "2026-10-04T16:40:27Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah ballistic missiles strike ARAMCO refinery in Riyadh",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3lupp3xw94800",
+        "timestamp": "2026-10-04T16:40:27+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Ansarallah ballistic missiles strike ARAMCO refinery in Riyadh",
+        "descriptionHe": "טילים של אנסאר אללה פוגעים בחומר הגלם של ארמקו בריאד",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/85027"
+      }
+    },
+    {
+      "id": "iranstrike-10scf5vllxy80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85025",
+      "date": "2026-10-04T16:37:58Z",
+      "title": "IranStrike event",
+      "description": "Yemeni ballistic missiles target Saudi Arabia, smoke reported rising from East-West Pipeline or nearby facility",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "10scf5vllxy80",
+        "timestamp": "2026-10-04T16:37:58+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Yemeni ballistic missiles target Saudi Arabia, smoke reported rising from East-West Pipeline or nearby facility",
+        "descriptionHe": "טילים בליסטיים תימנים תוקפים את סעודיה, עשן דווח עולה מצינור חלופין או מתקן קרוב",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85025"
+      }
+    },
+    {
+      "id": "iranstrike-35nyj4qme3200",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/64065",
+      "date": "2026-10-04T15:38:50Z",
+      "title": "IranStrike event",
+      "description": "Yemen's President Rashad al-Alimi announces start of full military operation across all fronts to liberate Yemen from Houthi control",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "35nyj4qme3200",
+        "timestamp": "2026-10-04T15:38:50+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Yemen's President Rashad al-Alimi announces start of full military operation across all fronts to liberate Yemen from Houthi control",
+        "descriptionHe": "נשיא תימן, רשאד אל-עלימי, מודיע על תחילת פעולה צבאית מלאה בכל החזיתות לשחרור תימן משליטת החות'ים",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/64065"
+      }
+    },
+    {
+      "id": "iranstrike-1jyq7hzc15vk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85016",
+      "date": "2026-10-04T15:10:57Z",
+      "title": "IranStrike event",
+      "description": "USS George H.W. Bush departs CENTCOM area of operations, leaving only USS George Washington in Middle East; USS Roosevelt deploying from San Diego, arrives November",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1jyq7hzc15vk0",
+        "timestamp": "2026-10-04T15:10:57+00:00",
+        "location": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "USS George H.W. Bush departs CENTCOM area of operations, leaving only USS George Washington in Middle East; USS Roosevelt deploying from San Diego, arrives November",
+        "descriptionHe": "נושאת המטוסים USS George H.W. Bush עוזבת את אזור הפעולות של CENTCOM, משאירה רק את USS George Washington במזרח התיכון; USS Roosevelt בדרך מסן דייגו, תגיע בנובמבר",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85016"
+      }
+    },
+    {
+      "id": "iranstrike-2fzgpf5pxy680",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131325",
+      "date": "2026-10-04T14:26:44Z",
+      "title": "IranStrike event",
+      "description": "Houthi military spokesman claims responsibility for strikes on Aramco facilities in Riyadh and Kharij region; claims Saudi Arabia conducted 50 strikes in past 12 hours including on Sanaa",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2fzgpf5pxy680",
+        "timestamp": "2026-10-04T14:26:44+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthi military spokesman claims responsibility for strikes on Aramco facilities in Riyadh and Kharij region; claims Saudi Arabia conducted 50 strikes in past 12 hours including on Sanaa",
+        "descriptionHe": "דובר צבאי של החות'ים טוען אחריות על תקיפות במתקני אראמכו בריאד ובאזור ח'ריצ; טוען שסעודיה ביצעה 50 תקיפות ב-12 השעות האחרונות כולל על צנעא",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131325"
+      }
+    },
     {
       "id": "iranstrike-2hdx2uuhip600",
       "source": "IranStrike",
