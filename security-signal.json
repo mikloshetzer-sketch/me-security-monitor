@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-04 00:40 UTC",
+    "updated": "2026-10-04 08:29 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-09-28",
     "period_end": "2026-10-04",
-    "total_events": 144,
-    "total_risk": 128.63,
-    "normalized_risk_score": 51.5,
+    "total_events": 133,
+    "total_risk": 124.63,
+    "normalized_risk_score": 49.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 35,
-    "security": 14,
-    "political": 18,
-    "other": 77
+    "military": 31,
+    "security": 15,
+    "political": 13,
+    "other": 74
   },
   "source_counts": {
-    "news": 138,
+    "news": 127,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 30.0
+      "risk": 33.1
     },
     {
       "name": "Iran",
-      "risk": 24.69
+      "risk": 19.34
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.25
-    },
-    {
-      "name": "Yemen",
-      "risk": 11.9
+      "risk": 18.35
     },
     {
       "name": "Dubai",
-      "risk": 10.7
+      "risk": 15.5
+    },
+    {
+      "name": "Yemen",
+      "risk": 14.4
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "Flydubai co-pilot attacked captain with axe, UAE official says",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/c61wv7lgex13o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis claim strike on Aramco site as Yemen fighting intensifies - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmY5RE5ILWt6MWtRZTJBS2VXVzdQdERuNHZFbk9PVHVuZFNfTVhjdm1yTWdUSTR0Q0xlNTN2eGhOUkE2WThVcXdDZ1pEcDAtQWJWWUFQbUM2RE9pbmtCa2lfM2t2RUxxVF9kUkJxd0htRjA0aXprc0NEQWZlNHVQTWpPVDdPNDVmZ25sNXFISGhaa0MxdEJzNEQxekE1ZVRoZWFkVEZsOElNR1g1amRXRFdkZm85RnPSAbwBQVVfeXFMUHdUakUzMklBc1VSRGZwMXN1X2M1NVg3b1dmUFZ5aXUtX2tmbW84UHNSckw2TlBmS1pXdmx1VE4tclZ6cGpSSFU1WTZRRmg3c3V2N3lYME1BRmUwa0RHZS1rd1BINkowa0xrMHNReUxXdmZyRzduTkN0TTlpVWV4c0p2Um5uWHRlNG14b0MwNF8zd2JTMHppaHlnN0tHMWJJTlhKMTltOE5MN0ktQVdoNGhRekg1RmhoVVBrdGM"
+    },
     {
       "score": 3.0,
       "date": "2026-10-04",
@@ -70,15 +88,6 @@
       "date": "2026-10-03",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen's armed forces say it is conducting strikes against Houthis in Sanaa - Reuters",
-      "location": "Sana'a",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVXZ1UGJyZDUzU3V0U2lkeVlVR3Y4TlNnV2Y5XzdIc0JHdmF5WXBCejJESDNsZU9nN0lKTnJWYTFpZWE1Rnl0bUhfRmZvQ0dYa3J0aXlHVjJycHZkV3ZlT1dIcnpiR1kzMDc2ek9GYmlYd0h3MEtCdDZxNmZkSnJyX3NNMVZTZDBzdDhaOTVLSjRjZ1lBUmw4S0ZDUXozWEhsdnBMWlZsNVFqdnVVbXRjbzVyRVBZVlJ5emN0Xy1XX0FOdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-03",
-      "category": "military",
-      "source_type": "news",
       "title": "Flydubai co-pilot attacked pilot with axe in attempted 'terrorist attack', UAE says - Reuters",
       "location": "Dubai",
       "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNNHh1NEZDMzE4aE53SVNjWXVIUmRYc3Ayb2R5SzRwNWhiYXkxRnF0UWg5YVhKNFhfYzVDYk84ZGFmbVdwUVhrdURrR0lCRDdDeDJJVG5PY0xNTTZRbURjWDBybFBsdUV4N1Ywei1lMkhib2FKQXV4TVY2eFNVLU9BSGsyXzJLejZCekRSYnBwaXlZLWo2Qm9xOXdyOEJxYlgzY3oyVnMtSkhGaUZWRWdLakVWYlZyZ2dvbm5YNkRLcG9jLU1iN2c3U2gxOTVzZ3g5NkJvY2dJQQ"
@@ -91,15 +100,6 @@
       "title": "Yemen's Houthis say they attacked Aramco facility in Riyadh with missiles, drones - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUmVOVEVCTVdITFV4aHd1aWM4aC1lZzBQTUIxcG9zSkU0ZXJKbHVRdTRWTUVsRWVsRmZHYlI2ZW01dnp3NlQ4WEV3Wnp0YXpVV2VCQ2RmeVBQQ3BUN0E3S1ZrRkw0ODdkVVJsSnFWWVM5YWVZZExacUlwdGRrc3h1LVJkNHNWY1dZS1F2UE1aR1JHYzNkX0ktS0RIQW4zX3RJUWV4eVBqVFd6X0t1"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Flydubai co-pilot attacked captain with axe, UAE official says",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c61wv7lgex13o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.7,
