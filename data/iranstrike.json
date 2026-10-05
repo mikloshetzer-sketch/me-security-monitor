@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T07:05:00Z",
+  "generated_at": "2026-10-05T16:02:37Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 534,
+    "events_endpoint_records": 547,
     "feed_event_records": 250,
-    "normalized_events": 1534,
+    "normalized_events": 1547,
     "map_visualizable_events": 258,
-    "non_mappable_events": 1276,
-    "developments": 3
+    "non_mappable_events": 1289,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1534,
+      "total_events": 1547,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-05T06:29:45Z",
+      "latest_event_date": "2026-10-05T15:21:48Z",
       "geocoded_events": 258,
-      "geocoded_share": 16.8,
+      "geocoded_share": 16.7,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Unknown"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 53,
+        "current": 65,
         "previous": 25,
-        "delta": 28,
-        "percent_change": 112.0,
+        "delta": 40,
+        "percent_change": 160.0,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 348,
-        "previous": 309,
-        "delta": 39,
-        "percent_change": 12.6,
+        "current": 353,
+        "previous": 308,
+        "delta": 45,
+        "percent_change": 14.6,
         "direction": "stable"
       }
     },
@@ -806,39 +806,39 @@
       },
       {
         "date": "2026-10-05",
-        "count": 1
+        "count": 14
       }
     ],
     "category_counts": {
-      "infrastructure": 385,
+      "infrastructure": 389,
       "missile": 347,
-      "strike": 259,
+      "strike": 262,
       "drone": 200,
-      "airstrike": 133,
-      "movement": 83,
+      "airstrike": 135,
+      "movement": 85,
       "explosion": 61,
-      "ground": 38,
+      "ground": 40,
       "alert": 13,
       "defense": 10,
       "political": 4,
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 797,
-      "high": 498,
-      "low": 237,
+      "medium": 803,
+      "high": 499,
+      "low": 243,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 961,
+      "unknown": 971,
       "iran": 367,
-      "israel": 175,
+      "israel": 178,
       "usa": 31
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 541
+        "count": 549
       },
       {
         "name": "Iran",
@@ -857,12 +857,12 @@
         "count": 60
       },
       {
-        "name": "Bandar Abbas",
-        "count": 48
+        "name": "Red Sea",
+        "count": 49
       },
       {
-        "name": "Red Sea",
-        "count": 47
+        "name": "Bandar Abbas",
+        "count": 48
       },
       {
         "name": "Iraq",
@@ -874,15 +874,15 @@
       },
       {
         "name": "Israel",
+        "count": 28
+      },
+      {
+        "name": "Syria",
         "count": 27
       },
       {
         "name": "Erbil",
         "count": 27
-      },
-      {
-        "name": "Syria",
-        "count": 25
       },
       {
         "name": "Aqaba",
@@ -900,7 +900,7 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 541
+        "count": 549
       },
       {
         "name": "Iran",
@@ -924,15 +924,15 @@
       },
       {
         "name": "Red Sea",
-        "count": 47
+        "count": 49
       },
       {
         "name": "Syria",
-        "count": 37
+        "count": 39
       },
       {
         "name": "Israel",
-        "count": 37
+        "count": 38
       },
       {
         "name": "Palestinian territories",
@@ -945,40 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10849,
+    "totalCount": 10862,
     "spotlight": {
       "event": {
-        "id": "3lupp3xw94800",
-        "timestamp": "2026-10-04T16:40:27+00:00",
-        "location": "SAU",
-        "origin": "YEM",
+        "id": "1l6yeyfeszkw0",
+        "timestamp": "2026-10-05T10:33:44+00:00",
+        "location": "YEM",
+        "origin": "SAU",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Ansarallah ballistic missiles strike ARAMCO refinery in Riyadh",
-        "descriptionHe": "טילים של אנסאר אללה פוגעים בחומר הגלם של ארמקו בריאד",
-        "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "ballistic_missile",
-            "count": 1
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/85027"
+        "description": "Saudi Air Force conducts major operation with 100 combat aircraft striking 324 Houthi targets in Yemen as part of \"Dawn of Yemen\" campaign",
+        "descriptionHe": "חיל האוויר הסעודי מנהל מבצע גדול עם 100 מטוסי קרב תוקפים 324 מטרות של החות'ים בתימן במסגרת מבצע \"השחר של תימן\"",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131377"
       },
-      "headline": "Houthi missiles strike Saudi Aramco refinery in Riyadh",
-      "headlineHe": "טילים של החות'ים תקפו חממת ערמקו בריאד",
-      "summary": "The attack marks an escalation in Houthi capabilities targeting critical Saudi energy infrastructure, following intensified regional military operations.",
-      "summaryHe": "ההתקפה מסמנת הסלמה ביכולות החות'ים לתקיפת תשתיות אנרגיה קריטיות בסעודיה, לאחר התגברות הפעולות הצבאיות האזוריות.",
-      "pickedAt": "2026-10-05T06:45:25.478Z",
+      "headline": "Saudi Air Force launches massive 324-target strike on Houthi positions",
+      "headlineHe": "חיל האוויר הסעודי משיק התקפה ענקית על 324 מטרות של חוסי",
+      "summary": "The \"Dawn of Yemen\" operation marks the largest single air campaign in the recent Saudi-Houthi conflict, with 100 combat aircraft deployed in coordinated strikes across Yemen.",
+      "summaryHe": "מבצע \"שחר תימן\" מהווה את הקמפיין האווירי הגדול ביותר בסכסוך סעודי-חוסי בעת האחרונה, כשהעסקה 100 מטוסי קרב בהתקפות מתואמות ברחבי תימן.",
+      "pickedAt": "2026-10-05T15:45:26.378Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-10-05T07:00:17.933Z",
+    "lastUpdated": "2026-10-05T15:57:17.477Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 2,
     "ceasefire": false
   },
   "summary": {
@@ -1519,214 +1513,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 95,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-10-05T07:00:15.052Z",
+      "lastUpdate": "2026-10-05T15:30:14.127Z",
       "internetHistory": [
-        {
-          "t": "2026-10-04T07:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T07:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T07:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T07:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T08:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T08:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T10:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T10:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T11:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T11:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T11:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T12:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T12:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T14:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-04T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-04T15:20:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-10-04T15:30:00.000Z",
           "v": 96
@@ -2094,22 +1884,226 @@
         {
           "t": "2026-10-05T06:40:00.000Z",
           "v": 95
+        },
+        {
+          "t": "2026-10-05T06:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-05T07:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T07:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-05T07:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-05T07:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-05T07:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T07:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T08:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T08:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T08:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T08:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T08:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T08:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T09:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T09:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T09:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T10:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T10:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T10:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T10:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T11:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T11:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T12:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T13:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T13:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-05T14:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T14:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T15:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-05T15:10:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-05T07:00:15.052Z"
+    "lastUpdated": "2026-10-05T15:30:14.127Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2e9c1",
+      "id": "iranstrike-a7f2c5e1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-04T16:40:27Z",
+      "date": "2026-10-05T10:33:44Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi ARAMCO refinery in Riyadh; claim ops across all fronts",
+      "description": "Saudi Air Force strikes 324 Houthi targets; Ansarallah fires ballistic missiles at ARAMCO refinery",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2130,33 +2124,576 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2e9c1",
-        "text": "Houthis strike Saudi ARAMCO refinery in Riyadh; claim ops across all fronts",
-        "textHe": "חות'ים תקפו חקלאות אנרגיה בריאד; טוענים לתפילויות בכל החזיתות",
+        "id": "a7f2c5e1",
+        "text": "Saudi Air Force strikes 324 Houthi targets; Ansarallah fires ballistic missiles at ARAMCO refinery",
+        "textHe": "חיל האוויר הסעודי תקף 324 מטרות חות'י; אנסאראללה ירתה טילים בליסטיים לעבר חידוק ARAMCO",
         "severity": "high",
-        "timestamp": "2026-10-04T16:40:27+00:00",
+        "timestamp": "2026-10-05T10:33:44+00:00",
         "entityIds": [
-          "YEM",
-          "SAU"
+          "SAU",
+          "YEM"
         ],
         "eventIds": [
+          "1l6yeyfeszkw0",
+          "v0m3tpeey000",
+          "pa271qtya3k0",
           "3lupp3xw94800",
-          "2fzgpf5pxy680",
           "10scf5vllxy80"
         ],
-        "sourceCount": 3
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-b3c6d4e2",
+      "id": "iranstrike-b8e4d9f2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-04T20:20:42Z",
+      "date": "2026-10-05T15:21:48Z",
       "title": "IranStrike event",
-      "description": "Ansarallah/Yemeni forces advance in Taiz; capture Al-Turbah, seize supply routes",
+      "description": "Ansarallah reverses PLC advances in Yemen, recaptures Murad and Bab Al-Mandab; ground offensive continues",
       "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b8e4d9f2",
+        "text": "Ansarallah reverses PLC advances in Yemen, recaptures Murad and Bab Al-Mandab; ground offensive continues",
+        "textHe": "אנסאראללה הפכה את התקדמות ה-PLC בתימן, כבשה חזרה את מוראד ובאב אל-מנדב; התקפה קרקעית נמשכת",
+        "severity": "high",
+        "timestamp": "2026-10-05T15:21:48+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "cnp3y0a72g80",
+          "26rt51xmws680",
+          "30r6elgz22600",
+          "2krme7jegz200"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-c6a3f1b4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-05T15:18:47Z",
+      "title": "IranStrike event",
+      "description": "U.S. authorizes Israeli Air Force strikes in Iraq against pro-Iranian militias, removes operational restrictions",
+      "category": "other",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "authorizes israeli air force strikes in iraq against pro-iranian militias, removes ope",
+      "location": "Iraq",
+      "country": "Iraq",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c6a3f1b4",
+        "text": "U.S. authorizes Israeli Air Force strikes in Iraq against pro-Iranian militias, removes operational restrictions",
+        "textHe": "ארה\"ב אישרה תקיפות של חיל האוויר הישראלי בעיראק נגד מיליציות פרו-איראניות",
+        "severity": "high",
+        "timestamp": "2026-10-05T15:18:47+00:00",
+        "entityIds": [
+          "ISR",
+          "IRQ",
+          "USA"
+        ],
+        "eventIds": [
+          "mzv7hgxyedc0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d2c7e8f5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-05T09:48:30Z",
+      "title": "IranStrike event",
+      "description": "IDF kills 1 Palestinian, wounds 2 in thwarted ramming attack near Hebron; southern Syria security incidents",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf kills 1 palestinian, wounds 2 in thwarted ramming attack near hebron;",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d2c7e8f5",
+        "text": "IDF kills 1 Palestinian, wounds 2 in thwarted ramming attack near Hebron; southern Syria security incidents",
+        "textHe": "צה\"ל הרג 1 פלסטיני, פצע 2 בתקיפת דריסה שנכשלה ליד חברון",
+        "severity": "medium",
+        "timestamp": "2026-10-05T09:48:30+00:00",
+        "entityIds": [
+          "ISR"
+        ],
+        "eventIds": [
+          "3jnjo8po2ys00",
+          "26mj528j1yqo0",
+          "8w20z6m2dzk0",
+          "3jf52h4u53s00"
+        ],
+        "sourceCount": 2
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-cnp3y0a72g80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85077",
+      "date": "2026-10-05T15:21:48Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah recaptures Murad and Bab Al-Mandab, reversing PLC advances; abandoned Saudi vehicles observed",
+      "category": "movement",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "cnp3y0a72g80",
+        "timestamp": "2026-10-05T15:21:48+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Ansarallah recaptures Murad and Bab Al-Mandab, reversing PLC advances; abandoned Saudi vehicles observed",
+        "descriptionHe": "אנצרללה תופסת מחדש את מורד וקצה מנדב, משכללת קידומים של PLC; כלים סעודיים נטושים נצפו",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85077"
+      }
+    },
+    {
+      "id": "iranstrike-mzv7hgxyedc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/64096",
+      "date": "2026-10-05T15:18:47Z",
+      "title": "IranStrike event",
+      "description": "Report: U.S. grants Israel clearance removing operational restrictions on Israeli Air Force in Iraqi airspace, authorizing strikes against pro-Iranian militias",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "g operational restrictions on israeli air force in iraqi airspace, authorizing strikes against pro-iranian militias דיווח בישראל היום: א",
+      "location": "Israel",
+      "country": "Israel",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "mzv7hgxyedc0",
+        "timestamp": "2026-10-05T15:18:47+00:00",
+        "location": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Report: U.S. grants Israel clearance removing operational restrictions on Israeli Air Force in Iraqi airspace, authorizing strikes against pro-Iranian militias",
+        "descriptionHe": "דיווח בישראל היום: ארה\"ב העניקה לישראל אור ירוק שמסיר את המגבלות המבצעיות על חיל האוויר בשמי עיראק. לפי הגורמים, אישור זה מתיר לישראל לתקוף את המיליציות הפרו-איראניות במרחב",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/64096"
+      }
+    },
+    {
+      "id": "iranstrike-26mj528j1yqo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/64094",
+      "date": "2026-10-05T14:50:50Z",
+      "title": "IranStrike event",
+      "description": "IDF forces fire on two suspects on motorcycle approaching IDF position in southern Syria security zone, both detained, no IDF casualties",
+      "category": "strike",
+      "severity": "low",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "syr idf forces fire on two suspects on motorcycle approaching idf pos",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "26mj528j1yqo0",
+        "timestamp": "2026-10-05T14:50:50+00:00",
+        "location": "SYR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "low",
+        "description": "IDF forces fire on two suspects on motorcycle approaching IDF position in southern Syria security zone, both detained, no IDF casualties",
+        "descriptionHe": "כוחות צה\"ל ירו לעבר שני חשודים על אופנוע המתקרבים למוצב צה\"לי בתוך רצועת הביטחון בדרום סוריה, שני החשודים עוכבו, אין נפגעים לכוחותינו",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/64094"
+      }
+    },
+    {
+      "id": "iranstrike-8w20z6m2dzk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/64092",
+      "date": "2026-10-05T14:10:29Z",
+      "title": "IranStrike event",
+      "description": "IDF forces detain two suspects on motorcycle approaching IDF position in southern Syria security zone after warning shots fired, no casualties reported",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "8w20z6m2dzk0",
+        "timestamp": "2026-10-05T14:10:29+00:00",
+        "location": "SYR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "IDF forces detain two suspects on motorcycle approaching IDF position in southern Syria security zone after warning shots fired, no casualties reported",
+        "descriptionHe": "כוחות צה\"ל עצרו שני חשודים על אופנוע שניסו להתקרב למוצב צה\"ל בדרום סוריה לאחר ירי הוזהרות, ללא נפגעים",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/64092"
+      }
+    },
+    {
+      "id": "iranstrike-ulx33xuyzkg0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131394",
+      "date": "2026-10-05T13:59:01Z",
+      "title": "IranStrike event",
+      "description": "Houthi-Saudi conflict: Saudi-backed forces claim to have captured Dhubab area controlling Bab el-Mandeb strait, Houthis deny, video evidence unverified",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Red Sea",
+      "country": "Red Sea",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "ulx33xuyzkg0",
+        "timestamp": "2026-10-05T13:59:01+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Houthi-Saudi conflict: Saudi-backed forces claim to have captured Dhubab area controlling Bab el-Mandeb strait, Houthis deny, video evidence unverified",
+        "descriptionHe": "סכסוך חות'ים-סעודיה: כוחות בתמיכת סעודיה טוענים השתלטו על אזור ד'ו באב השולט על באב אלמנדב, החות'ים שוללים, עדויות וידיאו לא מאומתות",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131394"
+      }
+    },
+    {
+      "id": "iranstrike-1a9imur3wpy80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131391",
+      "date": "2026-10-05T13:51:33Z",
+      "title": "IranStrike event",
+      "description": "U.S. deploys 200 military advisors to Saudi Arabia to assist in campaign against Houthis",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1a9imur3wpy80",
+        "timestamp": "2026-10-05T13:51:33+00:00",
+        "location": "SAU",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "U.S. deploys 200 military advisors to Saudi Arabia to assist in campaign against Houthis",
+        "descriptionHe": "ארה\"ב משדרת 200 יועצים צבאיים לסעודיה כדי לסייע במערכה נגד החות'ים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131391"
+      }
+    },
+    {
+      "id": "iranstrike-2krme7jegz200",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85075",
+      "date": "2026-10-05T13:02:08Z",
+      "title": "IranStrike event",
+      "description": "Yemeni army and Ansarallah forces advance into Al-Turbah town on Taiz front, clashes continuing near Sharjab",
+      "category": "ground",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2krme7jegz200",
+        "timestamp": "2026-10-05T13:02:08+00:00",
+        "location": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Yemeni army and Ansarallah forces advance into Al-Turbah town on Taiz front, clashes continuing near Sharjab",
+        "descriptionHe": "צבא יימן וכוחות אנסאר אללה חדרו לעיר אל-טורבה בחזית תעיז, קרבות מתמשכים ליד שרג'ב",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85075"
+      }
+    },
+    {
+      "id": "iranstrike-1e2l9ha6iiw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131387",
+      "date": "2026-10-05T13:01:36Z",
+      "title": "IranStrike event",
+      "description": "IDF spokesperson: Israeli forces deployed near Kfar Ramon following report of vehicle arson and two militants, one armed with knife neutralized by civilian",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1e2l9ha6iiw00",
+        "timestamp": "2026-10-05T13:01:36+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "IDF spokesperson: Israeli forces deployed near Kfar Ramon following report of vehicle arson and two militants, one armed with knife neutralized by civilian",
+        "descriptionHe": "דובר צה\"ל: כוחות צה\"ל הוקפצו לכפר רמון בעקבות דיווח על הצתת רכב ושני מחבלים, אחד חמוש בסכין נוטרל על ידי אזרח",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131387"
+      }
+    },
+    {
+      "id": "iranstrike-30r6elgz22600",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85073",
+      "date": "2026-10-05T11:11:18Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah troops capture Al-Mawasit town in Taizz Governorate, 8 km north of Al-Turbah",
+      "category": "ground",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "30r6elgz22600",
+        "timestamp": "2026-10-05T11:11:18+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Ansarallah troops capture Al-Mawasit town in Taizz Governorate, 8 km north of Al-Turbah",
+        "descriptionHe": "כוחות אנסאר אללה תופסים את העיר אל-מוואסית בגובernorטוריון תעיז, 8 ק\"מ צפונית ל-אל-טוברה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85073"
+      }
+    },
+    {
+      "id": "iranstrike-pa271qtya3k0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85071",
+      "date": "2026-10-05T10:47:55Z",
+      "title": "IranStrike event",
+      "description": "Saudi airstrikes target Houthi positions in Ma'rib direction, central Yemen amid ongoing clashes",
+      "category": "airstrike",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2176,40 +2713,41 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b3c6d4e2",
-        "text": "Ansarallah/Yemeni forces advance in Taiz; capture Al-Turbah, seize supply routes",
-        "textHe": "כוחות אנסאר אלה וצבא תימן צעדו בתעץ; כבשו את אל-טורבה",
+        "id": "pa271qtya3k0",
+        "timestamp": "2026-10-05T10:47:55+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-10-04T20:20:42+00:00",
-        "entityIds": [
-          "YEM"
-        ],
-        "eventIds": [
-          "26rt51xmws680",
-          "2hdx2uuhip600"
-        ],
-        "sourceCount": 2
+        "description": "Saudi airstrikes target Houthi positions in Ma'rib direction, central Yemen amid ongoing clashes",
+        "descriptionHe": "תקיפות אוויריות סעודיות במטרות חות'ים בכיוון מאריב, תימן המרכזית בעת התנגשויות מתמשכות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85071"
       }
     },
     {
-      "id": "iranstrike-c8e1f5a9",
+      "id": "iranstrike-v0m3tpeey000",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-10-05T06:29:45Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131377",
+      "date": "2026-10-05T10:33:44Z",
       "title": "IranStrike event",
-      "description": "IDF eliminates infiltrator at Syria position; no Israeli casualties reported",
-      "category": "other",
-      "severity": "low",
+      "description": "Saudi airstrikes reported in Sana'a city targeting Houthi positions",
+      "category": "airstrike",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Syria",
-      "country": "Syria",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2220,23 +2758,112 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c8e1f5a9",
-        "text": "IDF eliminates infiltrator at Syria position; no Israeli casualties reported",
-        "textHe": "צה\"ל חיסל חודר בעמדה בסוריה; אין נפגעים ישראלים",
-        "severity": "low",
-        "timestamp": "2026-10-05T06:29:45+00:00",
-        "entityIds": [
-          "ISR",
-          "SYR"
+        "id": "v0m3tpeey000",
+        "timestamp": "2026-10-05T10:33:44+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "3jf52h4u53s00"
-        ],
-        "sourceCount": 1
+        "type": "strike",
+        "severity": "medium",
+        "description": "Saudi airstrikes reported in Sana'a city targeting Houthi positions",
+        "descriptionHe": "תקיפות אוויריות סעודיות מדווחות בעיר צנעא על מטרות של החות'ים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131377"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-1l6yeyfeszkw0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131377",
+      "date": "2026-10-05T10:33:44Z",
+      "title": "IranStrike event",
+      "description": "Saudi Air Force conducts major operation with 100 combat aircraft striking 324 Houthi targets in Yemen as part of \"Dawn of Yemen\" campaign",
+      "category": "strike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1l6yeyfeszkw0",
+        "timestamp": "2026-10-05T10:33:44+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Saudi Air Force conducts major operation with 100 combat aircraft striking 324 Houthi targets in Yemen as part of \"Dawn of Yemen\" campaign",
+        "descriptionHe": "חיל האוויר הסעודי מנהל מבצע גדול עם 100 מטוסי קרב תוקפים 324 מטרות של החות'ים בתימן במסגרת מבצע \"השחר של תימן\"",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131377"
+      }
+    },
+    {
+      "id": "iranstrike-3jnjo8po2ys00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131374",
+      "date": "2026-10-05T09:48:30Z",
+      "title": "IranStrike event",
+      "description": "IDF forces fire on vehicle after thwarted ramming attack near Hebron, 1 Palestinian killed and 2 wounded",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "isr idf forces fire on vehicle after thwarted ramming attack near heb",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3jnjo8po2ys00",
+        "timestamp": "2026-10-05T09:48:30+00:00",
+        "location": "ISR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF forces fire on vehicle after thwarted ramming attack near Hebron, 1 Palestinian killed and 2 wounded",
+        "descriptionHe": "כוחות צה\"ל ירו על רכב לאחר ניסיון דריסה שנסכל ליד חברון, פלסטיני אחד נהרג ו-2 נפצעו",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131374"
+      }
+    },
     {
       "id": "iranstrike-3jf52h4u53s00",
       "source": "IranStrike",
