@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-06 06:24 UTC",
+    "updated": "2026-10-06 15:14 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,51 +8,87 @@
   "summary": {
     "period_start": "2026-09-30",
     "period_end": "2026-10-06",
-    "total_events": 134,
-    "total_risk": 122.93,
-    "normalized_risk_score": 49.2,
+    "total_events": 131,
+    "total_risk": 124.8,
+    "normalized_risk_score": 49.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 33,
-    "security": 13,
-    "political": 16,
-    "other": 72
+    "military": 30,
+    "security": 12,
+    "political": 14,
+    "other": 75
   },
   "source_counts": {
-    "news": 128,
-    "isw": 6
+    "news": 131,
+    "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 20.74
+      "risk": 22.05
     },
     {
       "name": "Israel",
-      "risk": 19.5
-    },
-    {
-      "name": "Dubai",
-      "risk": 19.3
+      "risk": 20.55
     },
     {
       "name": "Yemen",
-      "risk": 18.9
+      "risk": 19.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.65
+      "risk": 14.35
+    },
+    {
+      "name": "Dubai",
+      "risk": 13.25
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill two people in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPT0lvZ0RuYTQyWHRxYWd5X0phbDJGb0JWOXFkczJfMktSMlhmcGx2OGNVS2dWb0ZNZ1B2Rk1HRW5CczZQY2FtUGVxSm53TV9XTnFoRUl5R0Q3M3ZPVmh4OVYtZ19oM252RmRaYlBOZlFYZmhWZlRzemdCUGxtSmRaMWxFdVRpeVdtdlZKTzMwVDBuZjRFY3VVTVN5SWp5dFFrOERV"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says three wounded in attacks on airports near Yemen border - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWHVKeVJtVklCdVVISmNIb3NVbk9kV1dRYmtMX1dxRTlWWThPNmRzTkIzUlF2WGdVYWxST3JqU3p0akJDUU9jWm84clpuSkEyMG94ZmpoNzN4MkFaa3BjcnRxWnpGSlZBdFlUZ1R2YVFpM1dWdVJqeHAwaWNnRjhzNWx1SWNDb1R1c2pILWdrQ3U4TEZiN2pYdG5HN0s1dTRDMnBKTndzVjVFa2FQSlJqVkVXSdIBuAFBVV95cUxOYW9TMV9wZEVndkZNZlhUSEtmdGYxbktLalVSY3RPOE9tVlM3U041VndUR1VRTTNla2FpYlZvbDdzRjUtM0QxNnpOWmpQdl9LbkhMZG5iM0pBOENqR2Z2eTI4dVRIWC1lV1Z0OWVxZTBLdzB5Wk1oR241bGpKenFoVDdVQmlBSUZhTXNkX09wUmJ2MW5VMG85b1dPdU1ncXN0TWoybzh0bHR2RzdwODZLdEJSb3Z1dkt4"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says three people wounded in attacks on southern airports - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeUR2N0t5WlpTWk9kYkljOWdERTlyUlo3RFcyS0dWQmFxUXpMZVBUcm95aDByRWhHbkpNWlhQN3R2RTNHa0hiYXgwRk9NWUN4UGRiNVJvZ1NMcWhkWDV2ZlFNZWtSN1kwN3pvQlhzSXpDRHNKMVRudlROa09jS1A0Y0dnUU9DMV9xNk84ZUFwWHhoOUw3b1VCTzJtVEdZVl9PVWZxUUFEQVRrNDY1cElWSDBIc9IBuAFBVV95cUxOS2JNb1hvM2hkdXIwZ0hyWnJkQk01blV5U0d6LW52MTVwbXBrdFZoeE55enZCaGJmQmdLWmVCdnlfVXBkSm1hWlVsQndOOHlqLVdoVEJfUnQ1aDdXSldDdVlqZWRRVmVuV2ZGa0lBbF9CVV9fUFNBbWdCS2I4bHA2ZTAyQ2dZNDhWYzJfU2w3WU9zbFByelRzMl81UlVBQUs5cVZodEdRTnJrUVl6a0huYkU4RlZkWUdQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump jokes about letting Iran bomb Los Angeles and San Diego - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeEFIU1VqdlptTUNXQlpKRWgyeE1QNmdJSmN0WEx0SGVtR0xHSXdHY3RJNTR5Tnp4WmlIY3VneUxMQUdmMG9DSVJTWlpyWW5KcDB3MUpob3JOWFJOREJQaDFPWkxtbmUwM3YzbXU1aTdvZUdsUk1wdVpQQkF2MDhKRE9HQUJSN0xJcXB1ZFlYSVJ0ZnJsZUVBQjBzMFladlBFT3BKQmdQelU3bHJ3VU9fOHFn0gG3AUFVX3lxTE9fb2QzRmlpYUdRQ1B3dGhGQnBOMDdQVFY3cHZQTG5yaERyOVdSYUIxRDdjTDNoMGZRNzhTay1zR19ZblZHcGxDZktNWS1wZEVfODFrb1JERE50a2JfZU9vaTJtUzhLS3RHN21SUnE0RW9HVXBtMW1HbXpGVUdPaFZNUUVhRDhlbkM1bFdMbkdaRzNVNUszRzRJR1BsWlhROHFrdG9XUmg4LWJIOTU5QTd0UUFlWFd5MA"
+    },
     {
       "score": 2.7,
       "date": "2026-10-05",
       "category": "military",
       "source_type": "news",
-      "title": "Middle East oil exports top pre-war levels for part of September but tanker attacks increase - reuters.com",
+      "title": "Middle East oil exports top pre-war levels for part of September but tanker attacks increase - Reuters",
       "location": "Middle East",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDlnRmFJc1NCRTRsSVNmNTRtMnh2dmJiNWdMbnF2YVZRU0g1WXpERld1Qm0xbW5MQzNnTUhYTjFCUWVadVlWbmdwZjJSTUdSUkpGU2FrMzRmRW80RWRDcGpidUNVUHd1aVloWkFKZFRVNllUMEhVczNJNjNSZkR2VmZrU1hIbGRzZmZpeTF1TUNsMFp4ZFVuVE16RjlnYVBmUGhtRG94Z0VOTk13b2Y4ZUhpTElPSTctdlJQTmdCWnNnamhrVkE"
     },
@@ -61,7 +97,7 @@
       "date": "2026-10-05",
       "category": "military",
       "source_type": "news",
-      "title": "Co-pilot planned flydubai attack before joining airline, two Israeli officials say - reuters.com",
+      "title": "Co-pilot planned flydubai attack before joining airline, two Israeli officials say - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVzZzNy0yYzNKSGZpaEdpT0gxWkNPV05MN01vaDBlYzNUemFCSkFvdHRUOFVMMjVWNzJjbkNzdl9ZalpzZGpja2N0UmpwdUdSZzFmdldFcHN3UmFKTEpGWmNmWHBndi1qRGI5eEIzYXZlOFN1LWR4M0tXaG5ZTkJfMGdYUE9qV2lPVDFDdHRSV3BIeWtrMXEwdkJVSnV0Wk1vanlYWTV6Qm9sYlpBX2xHVGtuZ3QtR0hCX21KQW5DNW9IVUh5a2RnTVZhUWp3dw"
     },
@@ -70,18 +106,9 @@
       "date": "2026-10-05",
       "category": "military",
       "source_type": "news",
-      "title": "Islamic State attack kills Iraqi policeman near Kirkuk - reuters.com",
+      "title": "Islamic State attack kills Iraqi policeman near Kirkuk - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxON2hESmNqLXJGeG5ad18xcS05SzF0XzFkUDI1Nld3aTlpazVsMnY1U0lmWW4xeWlwaGl5SVptd3lzQzF1V25uYmNRTE5OVzNZRmVSVFBaR2JOUnJCWlRkR1JpdkJESDFKc0tOR0M0ckRfdUxIZHpZY0NOYmhZVE5zcjhxbEpFRnhRNUNiLUx5R3RFT3BlMWRYYlJtdmRNZHh1bEVtcmxXclVpcU15"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "US pulls bombers from UK base: Is Iran manoeuvring Trump’s war plans? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTGJJZVJNaVRXVmJHdWlWUG9Hd3YxS0FoNFZKdUtqTGgwWGJJRzB5aW1BZ24ydG5PSndKQU5KX0tMT3lXQ3Q5MGw3Q0Vvc1pHUll1WnlYMGk3Z3ZxeGtWaDFIcW1EVFFYU2lxd3d4TjNUX3ZGd2JBVkpTM2ZweFoxeW9NcDdXbDR5cnJvdHJWU2RCaHhKbFZ4aTBXVWpKYVpjXzdzWWViV0xKdU9IZC1QZUloQ2FoMXF30gG-AUFVX3lxTE9OVGdoUi1COFlnTS01eE1vVXhoNWF0WlJ4YlB1ekpvWHRObmQ3QmlPcU8wUV9ScGM3NGRMNjF3Y09Bd1JOaEVtaFI4cU1FdGZsbGZOOENJS1h2VDFaNnJmdU9wTEVreGlQd1VwZkQzTUJMRzlXSW9oYmFqeGNra0Z3Ti00SWVHeVhOejdnU0FLX3dsNE03LXNQMFpIUHZjWUZKSmdlcG91V1FvZm1DUE9vUWlNLWtSMjNEQU45RXc"
     },
     {
       "score": 2.7,
@@ -91,15 +118,6 @@
       "title": "Houthis claim strike on Aramco site as Yemen fighting intensifies - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmY5RE5ILWt6MWtRZTJBS2VXVzdQdERuNHZFbk9PVHVuZFNfTVhjdm1yTWdUSTR0Q0xlNTN2eGhOUkE2WThVcXdDZ1pEcDAtQWJWWUFQbUM2RE9pbmtCa2lfM2t2RUxxVF9kUkJxd0htRjA0aXprc0NEQWZlNHVQTWpPVDdPNDVmZ25sNXFISGhaa0MxdEJzNEQxekE1ZVRoZWFkVEZsOElNR1g1amRXRFdkZm85RnPSAbwBQVVfeXFMUHdUakUzMklBc1VSRGZwMXN1X2M1NVg3b1dmUFZ5aXUtX2tmbW84UHNSckw2TlBmS1pXdmx1VE4tclZ6cGpSSFU1WTZRRmg3c3V2N3lYME1BRmUwa0RHZS1rd1BINkowa0xrMHNReUxXdmZyRzduTkN0TTlpVWV4c0p2Um5uWHRlNG14b0MwNF8zd2JTMHppaHlnN0tHMWJJTlhKMTltOE5MN0ktQVdoNGhRekg1RmhoVVBrdGM"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they attacked Aramco facility in Riyadh with missiles, drones - reuters.com",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUmVOVEVCTVdITFV4aHd1aWM4aC1lZzBQTUIxcG9zSkU0ZXJKbHVRdTRWTUVsRWVsRmZHYlI2ZW01dnp3NlQ4WEV3Wnp0YXpVV2VCQ2RmeVBQQ3BUN0E3S1ZrRkw0ODdkVVJsSnFWWVM5YWVZZExacUlwdGRrc3h1LVJkNHNWY1dZS1F2UE1aR1JHYzNkX0ktS0RIQW4zX3RJUWV4eVBqVFd6X0t1"
     },
     {
       "score": 2.4,
@@ -118,24 +136,6 @@
       "title": "Flydubai co-pilot attacked captain with axe, UAE official says",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/articles/c61wv7lgex13o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "US withdraws B-1 bomber aircraft from UK’s Fairford base amid Iran fears - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQ25McEI1U1lNek91bXVycXhoZ1RvSl9qVkNHOXk4Q0xJeWphblRFb3VFVXBmVDBiQWQzT19RMUJBNGEwbTBiQV9qTG1hQ3NYc0pPZkRxMS1pOUd6WU9mRzd4cFpQc1VvTENlSmlCbE0zRHRVNU9LS1p3NDhrb3RGU3hNVXJGT3NRdHNJa21GSkZ3cVZndG1vU1JNSm41STljZ0FqdURxVnIzUjM2THhGMnlB0gG3AUFVX3lxTFA2MFdWOGhzdllSemkzX093WG1rOGIyU0JKQ0t3U2FqcWdpYzdISGktU2VxaUJ4cXhrWEJoaGl0MU5wbFZHSDNQVnBxOG9uSzYxMHFlZFM4dHB0eHp6eDJ2akpoMmdBY1phaUVMUklJcl9rNnBoQzdwa2RCeWFEQzZ1QVNYVUtLcDA2a2ZiR3ZxamNTYmNZazVnS2sxYlI0Z2p4OWZCMXVkc2JQYkJpX01ZTEFjTmNFaw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "What are the five questions being asked regarding the Flydubai attack? - Al Jazeera",
-      "location": "Dubai",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNS3VvdlBIYm5zQndIeEVja0JYR29VWHZRR1J0aFNEaVF3Q192cTNLX2tyeHNxSV9fZWx5djRuM01UVUNndEozdTkyZDhWUFdONi16MWJPS0NpMXFEMVhUMU5MNWZONjMtVXNsMnBGTmdqU1pJSGVsb0YxQjFZaXBERnJOLUJWY1k3QlNDN1dMY0cxWkZwQjY3Yl9kYTZoMDF1R1dsaGM5N0VQWjR6YkVv0gG0AUFVX3lxTE1CYVdHV1MxT2JXRmw1VFVFbUthLVZLTVlPZkxXbDRrWG1OVlFvcGs0QWdTVmdGQkJRY0xsS1pOcjR6MXlKUGZCaFJoZFdXUDZTNEd0X1ZkQnB0TmoxdVNRc2tUT2FNaEZrdXRna1Y2Z0poYmF2UTNqWm0zTGthbUZGVDIzUTEyOWtZMjd2WG9tLXYtSGxGN2dXNWZjdGhJV2NlU3NxZnhETVdub0ZPZWJ0RlhmZw"
     }
   ]
 }
