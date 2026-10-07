@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-07 01:34 UTC",
+    "updated": "2026-10-07 08:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,81 @@
   "summary": {
     "period_start": "2026-10-01",
     "period_end": "2026-10-07",
-    "total_events": 128,
-    "total_risk": 108.35,
-    "normalized_risk_score": 43.3,
-    "risk_level": "LOW",
+    "total_events": 134,
+    "total_risk": 122.5,
+    "normalized_risk_score": 49.0,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
-    "security": 11,
-    "political": 12,
-    "other": 78
+    "military": 30,
+    "security": 10,
+    "political": 13,
+    "other": 81
   },
   "source_counts": {
-    "news": 128,
+    "news": 134,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Yemen",
-      "risk": 22.35
+      "risk": 29.75
     },
     {
       "name": "Iran",
-      "risk": 18.75
-    },
-    {
-      "name": "Israel",
-      "risk": 13.65
+      "risk": 19.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.35
+      "risk": 15.1
+    },
+    {
+      "name": "Israel",
+      "risk": 12.45
     },
     {
       "name": "Dubai",
-      "risk": 11.3
+      "risk": 10.1
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis attack Aden airport as fighting intensifies in Yemen - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNjcwdDdFSmxISzN2RWdiODU1ZjlXODFLZGRiVmxTeW94dnI1T1VsNnhlU1NJMTZXajJoVlE0VnpzVDlmMmJQUjYzN21Tamk5YWZhazdRSzd5MTJndURBTjNQTC0yd2I2ZDhIazZlNUJUYjAyZHVwZFRCMER1OGZLS2pZRmRQTjlrSlVyLUd3N1dnUUxrM2NBSERSd3VmYkJBNnpzT1I4RmhwMWhHbHQyN1ZOWkxCclZBV3c"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israelis mark three years since Hamas attack that set off Gaza assault - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPVEc3R0oyN1N1QkF0Q09Zb1hfWURTdDRRSnFvaVNlQU42cXJCNEhNNXdLOW11NTRsVi1VVlJKV0NSTm1CMVg3c3RMQ3pHcEV3VGpCNGF1UHBobHVhYkFQY0pNS2NvMXBQMWxSTEVhQTF6a01jRzBpXzFKajQ2NWxIZm5BdGQ4azhfYnBwVnh1enVzc04xeElNSTZFMHcyNmlfUElEM2s3RVFRXzFScUcyNUlfbFVrSjA5LVNjMlhQZzVBUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oman evacuates injured crew from attacked tanker in Strait of Hormuz - Al Jazeera",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZWtvNFJvczBTblE5eGRWUzBIUTlINnREWXQ2TWVXR3dzQ05uLUdVZ2JEUDRSZjFhc3FzYlF6cU5LVWR3OWN4X3ZKRGM0ZUdSNjQ1UnBFQzdGYmowQ3laQlc5aEZpV0pIeTFMTlppQUVmejFXb0M1akxpSTVvcGJaQTNSRTNGUmZNWl9Yd2FCVTB2TDRMdlB6U0g3Tk41TW5sOGJwbFZTb2hHZGNqR3fSAbMBQVVfeXFMT2FKTm9vN2pFbG1rLUZPdnVZNFloUVNuU0ZxZFJPZzBPMjA4T3lWVEJEX3QzZXd3RjVlY09SUXBVX0JMRndvNl82VkpnOWhDVzAyWjktSzhuc003bi01MXBEWTFqZjBXamlNTXpXRGZDOHlPSnNpbUdCVzlfRVFWTTg4bVl0TDg3Rzg2czZTdldZRWVnc2NqY1NqZnlBSC1tNm94ZUFRWDVOUVk5c291dkhKS2s"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Two Houthi missiles target Yemen’s Aden International Airport - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZDlTeERxY0p3enNyeG5jekVYMnMzOUlVcU8xRm9rdTVuYjdXeWFuWWNaT1kzSFc5WHVfdWxkNU9DZzY4azJ5aGtnWm1CRWdMcVZRYXFoX0o3UzBzc3hMYTVuUXdJLVJvUFRwdGxuQ25pVWlmdlFGR01RWXNRU1FGSlpsQ3o1anA4V2UzYW0xejJaZDdscTI2SGh6a2pWMnVXTGQwc29WZkdELWsxbXlUOdIBtgFBVV95cUxPaEd2OFFPMDc4NUdQcEoxWnZKMEtmRnVBakZ0VkFrT3pwRVJDZUxHSXIyQnpvd3RUMUhXZ0ljekpfTmppSWlmdHdvX0xVWF9pS1lhTUVIWWkyNE9XcWwyQUJBMVdFdE5mM1JuZXhlVlo2dVdGcjE4WWZ4N0p1cVUzY21CbktWYTlDSGE4RGlOaElCc2VGc2hYVFJlS3ZlV1p1cEVHMDJ4WU9CX3FUREw3Tk5kbUpvUQ"
+    },
     {
       "score": 2.7,
       "date": "2026-10-06",
@@ -100,42 +136,6 @@
       "title": "Middle East oil exports top pre-war levels for part of September but tanker attacks increase - Reuters",
       "location": "Middle East",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDlnRmFJc1NCRTRsSVNmNTRtMnh2dmJiNWdMbnF2YVZRU0g1WXpERld1Qm0xbW5MQzNnTUhYTjFCUWVadVlWbmdwZjJSTUdSUkpGU2FrMzRmRW80RWRDcGpidUNVUHd1aVloWkFKZFRVNllUMEhVczNJNjNSZkR2VmZrU1hIbGRzZmZpeTF1TUNsMFp4ZFVuVE16RjlnYVBmUGhtRG94Z0VOTk13b2Y4ZUhpTElPSTctdlJQTmdCWnNnamhrVkE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Co-pilot planned flydubai attack before joining airline, two Israeli officials say - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVzZzNy0yYzNKSGZpaEdpT0gxWkNPV05MN01vaDBlYzNUemFCSkFvdHRUOFVMMjVWNzJjbkNzdl9ZalpzZGpja2N0UmpwdUdSZzFmdldFcHN3UmFKTEpGWmNmWHBndi1qRGI5eEIzYXZlOFN1LWR4M0tXaG5ZTkJfMGdYUE9qV2lPVDFDdHRSV3BIeWtrMXEwdkJVSnV0Wk1vanlYWTV6Qm9sYlpBX2xHVGtuZ3QtR0hCX21KQW5DNW9IVUh5a2RnTVZhUWp3dw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Islamic State attack kills Iraqi policeman near Kirkuk - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxON2hESmNqLXJGeG5ad18xcS05SzF0XzFkUDI1Nld3aTlpazVsMnY1U0lmWW4xeWlwaGl5SVptd3lzQzF1V25uYmNRTE5OVzNZRmVSVFBaR2JOUnJCWlRkR1JpdkJESDFKc0tOR0M0ckRfdUxIZHpZY0NOYmhZVE5zcjhxbEpFRnhRNUNiLUx5R3RFT3BlMWRYYlJtdmRNZHh1bEVtcmxXclVpcU15"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis claim strike on Aramco site as Yemen fighting intensifies - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONmY5RE5ILWt6MWtRZTJBS2VXVzdQdERuNHZFbk9PVHVuZFNfTVhjdm1yTWdUSTR0Q0xlNTN2eGhOUkE2WThVcXdDZ1pEcDAtQWJWWUFQbUM2RE9pbmtCa2lfM2t2RUxxVF9kUkJxd0htRjA0aXprc0NEQWZlNHVQTWpPVDdPNDVmZ25sNXFISGhaa0MxdEJzNEQxekE1ZVRoZWFkVEZsOElNR1g1amRXRFdkZm85RnPSAbwBQVVfeXFMUHdUakUzMklBc1VSRGZwMXN1X2M1NVg3b1dmUFZ5aXUtX2tmbW84UHNSckw2TlBmS1pXdmx1VE4tclZ6cGpSSFU1WTZRRmg3c3V2N3lYME1BRmUwa0RHZS1rd1BINkowa0xrMHNReUxXdmZyRzduTkN0TTlpVWV4c0p2Um5uWHRlNG14b0MwNF8zd2JTMHppaHlnN0tHMWJJTlhKMTltOE5MN0ktQVdoNGhRekg1RmhoVVBrdGM"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-10-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's government announces all-out war to reclaim land from Houthis",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/cx8dzj9vpp01o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
