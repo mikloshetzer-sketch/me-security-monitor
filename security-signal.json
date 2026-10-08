@@ -1,54 +1,90 @@
 {
   "meta": {
-    "updated": "2026-10-07 23:08 UTC",
+    "updated": "2026-10-08 06:08 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-10-01",
-    "period_end": "2026-10-07",
-    "total_events": 141,
-    "total_risk": 143.8,
-    "normalized_risk_score": 57.5,
+    "period_start": "2026-10-02",
+    "period_end": "2026-10-08",
+    "total_events": 139,
+    "total_risk": 129.8,
+    "normalized_risk_score": 51.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 35,
+    "military": 34,
     "security": 6,
-    "political": 13,
+    "political": 12,
     "other": 87
   },
   "source_counts": {
-    "news": 141,
+    "news": 139,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Yemen",
-      "risk": 33.3
+      "risk": 28.55
     },
     {
       "name": "Israel",
-      "risk": 24.45
+      "risk": 18.85
     },
     {
       "name": "Iran",
-      "risk": 24.4
+      "risk": 18.15
     },
     {
       "name": "Gaza Strip",
-      "risk": 15.55
+      "risk": 17.3
     },
     {
-      "name": "Dubai",
-      "risk": 10.1
+      "name": "Middle East",
+      "risk": 8.75
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZlloTmR5SkZfME9kcjlVcENtQzFrdmc2cnJfTWthWWJYcFIwZFFGNUs5Y2Y2TkR0MjE2STZ3WXktSXJRRmRiXzZYTnQ4clNNZlNQempZRzFPTERYUXpFM1d0SUJoUzFyN3FLRTg0d3UtckZWbWpWM01DNVJIUEdBTTkyd0dFaDgwX0llWXBtMXV1dVROdXUwVUF6VG9Ca3BReDdJTzNhT0d3RjcwUVF5TS12N1ZWNzJXdlRz"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPREc3b1M4OVVFbEtXWE45ZWpjeDNiNGpGVnZIdEJQSUU2R2dmdzF4V3hFZ1RMSlgyX0Fmc295aXo3bGtsbHpYSlM5MUVjLXJsM1ZISFV4NVFQN04wY0M4ZFRud3pzVUd2ZjN4S1dRSzNkenVacC1naWFmdUMtRUVYUlQ3MWY4dHRyOHRkTThCcUYxV0NFOU9qNE5fUW92RmlfYmk3Z0ZqWDlfc2VmNVhHS0tPX2k2Ql94SHlCeThTUzJBUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "'Every day there is killing': Gazans face Israeli strikes despite ceasefire as peace deal stalls",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cmx2qlz7qrd4o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three people killed in Houthi attacks on Saudi Arabia airports, officials say",
+      "location": "Saudi Arabia",
+      "url": "https://www.bbc.co.uk/news/articles/cwn8d5rx22rdo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-07",
       "category": "military",
       "source_type": "news",
@@ -57,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMzlOYkh2NkF3OTFOQ0g5RFdjT0VSZXU4Y0U1cDREQnltUF9XM2VBVlk1bER5cTNTS00yaWctcDdnTjI3TG1jeWVxV3JIT2ctb1JVLVg4Nm13aENfNmlQSVQ2dHZLS2dabVYyYXQydWFEQ25SQVY1UkFORHd6djNHUHFkVEpwa3d6WkRiMy15SFRwV3l4anZiSXQ2YmR2bmxWZFhYTFE1YVNBRnc1ZG0tbHJDT1RacGJ6VmRhV3RnQ3g5UmZvdE5xZ3RB"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-07",
       "category": "military",
       "source_type": "news",
@@ -66,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNjcwdDdFSmxISzN2RWdiODU1ZjlXODFLZGRiVmxTeW94dnI1T1VsNnhlU1NJMTZXajJoVlE0VnpzVDlmMmJQUjYzN21Tamk5YWZhazdRSzd5MTJndURBTjNQTC0yd2I2ZDhIazZlNUJUYjAyZHVwZFRCMER1OGZLS2pZRmRQTjlrSlVyLUd3N1dnUUxrM2NBSERSd3VmYkJBNnpzT1I4RmhwMWhHbHQyN1ZOWkxCclZBV3c"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-07",
       "category": "military",
       "source_type": "news",
@@ -75,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWXJvVEFSWDJYb0lIbEJSYnRMbEFVS01QNE5ua1dhR0V2bDFKcUFPNDZ3UEEwdXR0dlZUQUFScmhDbHptblZnTVNJei1NUWoxeE1oQkZ4bXROQWhwb2pzUnFmeU1BN0hEVXJnTmxLRDVhREFwVzg5c2pjNEIwTDZBeE5Oc0tqaWNmOXZOdjVMbXRCckpJQ3BFS19GM2ZXeXI2Zmt2RzROaW94VVZNalBEQ3VxZDIya2ZxQmY2akdHTHl1a3RoYVhCal9B"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-07",
       "category": "military",
       "source_type": "news",
@@ -84,16 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPamVwY1BTVUJKQmdkWDFBXzA2aFBOVlJYUGVqTHB1cXFYY2ZQdFJ4NHVIT25iQXYwaFVSYTkwVWJnc18xVXBNeHNjQXVxU2pPalpGTWVaM1h2MnRlRGlXZnBTOTItUi03OGxMRlROUnRFQnBGZ0RZNnExUm9VMi1vdzdvY3ExaGtuTjBtb0REbVM"
     },
     {
-      "score": 3.0,
-      "date": "2026-10-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israel marks three years since October 7 attacks - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRF8ybVF2X0o5QU9ORk93VWhJOE5SdVRwWmJkY01EUGQ0V3A0bDlhNDNsUTQ1bTRfRVVVbmlUWW1KVXZTWmhOSEQ0ZTZnZU5vOExjcU00NllJWHpvb2k3VVVmeHlKYm1GUHV2SS0ySWtTR2dfZHhxSzI5MURhVUZFRmthS0hyWk1WelV0S0lDRGoybjdZNkpRbQ"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-07",
       "category": "military",
       "source_type": "news",
@@ -102,40 +129,13 @@
       "url": "https://www.bbc.co.uk/news/articles/c5zjx7xx3487o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-07",
       "category": "military",
       "source_type": "news",
       "title": "Candles lit in memory of those killed in October 7 attacks",
       "location": "Israel",
       "url": "https://www.bbc.co.uk/news/videos/cme8r9ke1n9yo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-10-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "The situation in Gaza three years on",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/videos/c6pwgrgd9zpzo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-10-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen’s Houthis attack Aden airport; Saudi forces down missile near Riyadh - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZmRtTXZ6RjFnR1kwTmxRZ2FjNm1tOWVYS3RVUFpjdkVJYzJiWU90b1NreGZraWtFXzR5UXZHOHNhTFJnWmpacWxfRGkzRV90eU4zVmFXdFRJRjU5b0FVUjg3NTFRYldJYVFNOUpYaThQa1dudVJkVzhXcVNIVEc0N0F2REJyRjloUXR3d3dkams1NjdIaTJNX1dSWmQ4SWJGdFNnMXhsZ1RzejRQT09teGRYVdIBuAFBVV95cUxPV0pwUmZyOGQ4Z0JTQTFocWZHbm8yc2M1YXFvU0x3MmtZQWpYT1ZxV01SSm1zNWp2Y1hfeHdfdV90VmM3dEpDVE1FVkNMRlNjSGZMWEQ0VTBaOExBTWh3bzlrM29Rb3hfTnY4UlR5R3FWQmQ0LUVWUDN1aFlXZ3RLWHpfY0IwdTFSSk1Mdi1hSmtGRU5waXJya3M1bkd6eXhaTTdjeGhpT0pDb1hjYjYycmZ1RV9YNzFJ"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-10-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oman evacuates injured crew from attacked tanker in Strait of Hormuz - Al Jazeera",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZWtvNFJvczBTblE5eGRWUzBIUTlINnREWXQ2TWVXR3dzQ05uLUdVZ2JEUDRSZjFhc3FzYlF6cU5LVWR3OWN4X3ZKRGM0ZUdSNjQ1UnBFQzdGYmowQ3laQlc5aEZpV0pIeTFMTlppQUVmejFXb0M1akxpSTVvcGJaQTNSRTNGUmZNWl9Yd2FCVTB2TDRMdlB6U0g3Tk41TW5sOGJwbFZTb2hHZGNqR3fSAbMBQVVfeXFMT2FKTm9vN2pFbG1rLUZPdnVZNFloUVNuU0ZxZFJPZzBPMjA4T3lWVEJEX3QzZXd3RjVlY09SUXBVX0JMRndvNl82VkpnOWhDVzAyWjktSzhuc003bi01MXBEWTFqZjBXamlNTXpXRGZDOHlPSnNpbUdCVzlfRVFWTTg4bVl0TDg3Rzg2czZTdldZRWVnc2NqY1NqZnlBSC1tNm94ZUFRWDVOUVk5c291dkhKS2s"
     }
   ]
 }
