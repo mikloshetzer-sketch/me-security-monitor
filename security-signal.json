@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-08 06:08 UTC",
+    "updated": "2026-10-08 13:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-02",
     "period_end": "2026-10-08",
-    "total_events": 139,
-    "total_risk": 129.8,
-    "normalized_risk_score": 51.9,
+    "total_events": 138,
+    "total_risk": 136.55,
+    "normalized_risk_score": 54.6,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
+    "military": 35,
     "security": 6,
-    "political": 12,
+    "political": 10,
     "other": 87
   },
   "source_counts": {
-    "news": 139,
+    "news": 138,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Yemen",
-      "risk": 28.55
-    },
-    {
-      "name": "Israel",
-      "risk": 18.85
+      "risk": 29.55
     },
     {
       "name": "Iran",
-      "risk": 18.15
+      "risk": 21.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 17.3
+      "risk": 17.5
+    },
+    {
+      "name": "Israel",
+      "risk": 17.1
     },
     {
       "name": "Middle East",
-      "risk": 8.75
+      "risk": 8.95
     }
   ],
   "top_events": [
@@ -52,7 +52,7 @@
       "date": "2026-10-08",
       "category": "military",
       "source_type": "news",
-      "title": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+      "title": "Oil jumps as Middle East supply concerns persist amid shipping attacks - Reuters",
       "location": "Middle East",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZlloTmR5SkZfME9kcjlVcENtQzFrdmc2cnJfTWthWWJYcFIwZFFGNUs5Y2Y2TkR0MjE2STZ3WXktSXJRRmRiXzZYTnQ4clNNZlNQempZRzFPTERYUXpFM1d0SUJoUzFyN3FLRTg0d3UtckZWbWpWM01DNVJIUEdBTTkyd0dFaDgwX0llWXBtMXV1dVROdXUwVUF6VG9Ca3BReDdJTzNhT0d3RjcwUVF5TS12N1ZWNzJXdlRz"
     },
@@ -64,6 +64,15 @@
       "title": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPREc3b1M4OVVFbEtXWE45ZWpjeDNiNGpGVnZIdEJQSUU2R2dmdzF4V3hFZ1RMSlgyX0Fmc295aXo3bGtsbHpYSlM5MUVjLXJsM1ZISFV4NVFQN04wY0M4ZFRud3pzVUd2ZjN4S1dRSzNkenVacC1naWFmdUMtRUVYUlQ3MWY4dHRyOHRkTThCcUYxV0NFOU9qNE5fUW92RmlfYmk3Z0ZqWDlfc2VmNVhHS0tPX2k2Ql94SHlCeThTUzJBUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Drones, explosions and soldiers in bulldozers: surrounded by Israelis in Lebanon's 'model town' - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTVpzVVAtSEdoLWNrSnFvbzFkTGZQQnUtZHV4b3M1cEhLV3NTc0tUamVQWWM4SGNMenVwM3EwNFlDaTFXTFY0Z3hqZUxLOElzZ043VkF6UUlfZDlwbzdUc3oyOFdrMkdsTXdPRldGWlpHUk4ydXR1TTdRY0Y1bU1pZU1KR1lLZENHT05FcVY1aFpNTUZia204VnVxUmpCbEN1N28yUXk0bXZtMG9lelZNc2JOc0NnSlJwWWhXQzU4aUV1RHpzdmoxTkNSOUtZazg"
     },
     {
       "score": 3.0,
@@ -82,6 +91,15 @@
       "title": "Three people killed in Houthi attacks on Saudi Arabia airports, officials say",
       "location": "Saudi Arabia",
       "url": "https://www.bbc.co.uk/news/articles/cwn8d5rx22rdo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three killed, 36 injured in Houthi attacks on Saudi airports, Riyadh says - Al Jazeera",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWGE5MllDaks0WF9pdmNsMUZpYngxMGtCUjdaVXVyVWRSeHlCYm5tRlRFNExWcGd2Tkh4U3FLM053LWR3T1pmQ05pSnBKRG1mQ1p4WGs3NzhDbURuMFJfOWJnbW1STzBpUHlpMDRnZVZIUUEtNXFCMzlkY0RIWFU3dXAxdEZWSWlxakdOOWhFLWFwVWZtNUFKMFRLcnFhRWlEUFdiT1NBbXlqRHU4N0dNbEx30gG3AUFVX3lxTE1OMXhCclFmR1VCN3ZzSEZnYXcyaU91cGJJbDl4ZUtEazVuQUVfLVE1ZHNueW0zckszaHRjTmo0b2l1bEJzMnNsYnA0b0hBYUhINm5TTUg0ZWhoeE5zbU5vWDhtTVlmMHMzak1yQ1hIQUYwMUZtRDNDMi1QcF9FVkRGZVUtNGdmdUFrd3hNc1VyckhCVC1OLW1LVWlGNnZ6MVlQenIzU0hDM0pmTlREMXFtYWNPV256TQ"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPamVwY1BTVUJKQmdkWDFBXzA2aFBOVlJYUGVqTHB1cXFYY2ZQdFJ4NHVIT25iQXYwaFVSYTkwVWJnc18xVXBNeHNjQXVxU2pPalpGTWVaM1h2MnRlRGlXZnBTOTItUi03OGxMRlROUnRFQnBGZ0RZNnExUm9VMi1vdzdvY3ExaGtuTjBtb0REbVM"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israelis demand accountability over 7 October failures three years after attacks",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c5zjx7xx3487o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Candles lit in memory of those killed in October 7 attacks",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/videos/cme8r9ke1n9yo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
