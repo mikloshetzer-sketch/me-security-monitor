@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-09 09:07 UTC",
+    "updated": "2026-10-09 17:01 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-10-03",
     "period_end": "2026-10-09",
-    "total_events": 156,
-    "total_risk": 148.65,
-    "normalized_risk_score": 59.5,
+    "total_events": 154,
+    "total_risk": 155.81,
+    "normalized_risk_score": 62.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 40,
-    "security": 6,
-    "political": 10,
-    "other": 100
+    "security": 4,
+    "political": 11,
+    "other": 99
   },
   "source_counts": {
-    "news": 156,
-    "isw": 0
+    "news": 152,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 25.6
+      "risk": 34.6
     },
     {
       "name": "Yemen",
-      "risk": 23.1
+      "risk": 21.3
     },
     {
       "name": "Gaza Strip",
-      "risk": 21.55
-    },
-    {
-      "name": "Israel",
-      "risk": 16.2
+      "risk": 19.15
     },
     {
       "name": "Riyadh",
-      "risk": 13.05
+      "risk": 17.55
+    },
+    {
+      "name": "Israel",
+      "risk": 16.15
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi strikes on Riyadh airport killed three Saudis as war escalates - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMEFCQWZhWGJXa25ZeDBOZlE3b3RWQldSSUM5MmRDd1JqdFNvbl83R19nc014ek1YTW1iQlBqbW1paUlManF3UzlNT21BTl81cG5NNGQ5MWhWOWZOMnpQamN6TmxrUFVLVXRCaTl2T0JYclhVc3dvLUpNeG5wY3JSci02OHVtWmRpemp2UExRUGRoTnpyN3lKUGlRQ3FHdS1pZDNvNVM0bWE2djAzNzNvNTg4RVdXVEhw"
+    },
     {
       "score": 3.0,
       "date": "2026-10-09",
@@ -57,13 +66,49 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHNYa055VWx5WldTdndPaXJnREN3Q1BDX1hzTVE4cEdwNmM0bU9YbE1oc0Ryb2VOenROdjd3NDlaRy1hOGU1MnlxVE9nWk45Znh5Rm1iVXE3TGpjY2ZXRGhmWV9QbkhGeURIRXBDRTdLWElZeG9mRldGbE9wSnV4V1QyU0xFUFlKUXFna3RFYlpVc2JHS2RXOS1GNEkxQmZiWFZxU01VNk0yZ25ieF9ydWN4Ry1nVk54bFhR"
     },
     {
+      "score": 3.0,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "EU aviation body widens Saudi airspace warning after Houthi strikes - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three Saudi nationals killed in Houthi attacks on Riyadh airport",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cmz7xe37g5wro?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says US will not strike Iran before midterm elections - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdndZSjg5cWh4WHJhWXI0R19HVGdGRXFKQ2Y0YTZEVV9wM0d2THlSQ1BLd0Fub05mQ0dCNkwxbUxSN1N2N0g4RUt2SUNzdS14R2RGT09wdjRhaWI0bU9BbXhGdTViUG5NOERIUVk0YVBFY3FDWW9BT1J0NGRWOXU3VXptcUhMNm9hZDhpbHotYkxud05sTVJ2a0JQVlY4WTNNaFHSAacBQVVfeXFMUDBKY2VRMFhITEQyRTFPZGh2Y3Y0QWM1cnhPTG1MUzZyeVVubVdLdUhybTZsUUNMaE9tOWxwUkpWOGxCaTlSR1JSV21MenFqTGxKOGRSMS1xeTM2VV9Vcnp0S1VESVlGQUwwTW5QQ0lGMEkzWFc0YVFDalM2bHpuTWVUV3c5eVFUM1lmYU1FWlBBQUNfeDI2TUdUcktRVXk5MEJWeDJMMEE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia reopens Riyadh airport after Houthi attack kills three - Al Jazeera",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaEs0b2JJSTY4WW14cmV3aC1STjd5QzhRNTE0MC10RmRyRkljdmdKcFlNQWtpSWtIVmczWk11czRkQzhRS3MybWpDeWdMQmQ3d25fczh1Y19oSmY3Y3NDTDVvSkZGOHVEajJPbkd0X2RxR3hhMWFJcmxmM0hCcHZZUU1seHNMcHE1azhRYkVQY2tlN3ptM0hSQVg5SUlUci0zWUZua3pTZXJjVW9x0gGyAUFVX3lxTE03WmdZZThkRU9KRFlCWTBxaDd3c3FEVW9pdUxRX3BTSWhvdGM4LVlGZXI3VnFJOXZyUmkxanlYaDhfbE1JZjVsSzNWYzVjUVFlMGdQWWxZblctd0UxU0JxdFRJRTk1b2lRRDBNdGJZaC10MmlPU2FwYkJEZ1pLcHpuQ2o3ZmdYTVdXRF9na2s4dHNKQkdfQzJEcXZ4TENZR3VZYmVabURFMU1MVDJWTF9sQXc"
+    },
+    {
       "score": 2.7,
       "date": "2026-10-08",
       "category": "military",
       "source_type": "news",
-      "title": "Drones, explosions and soldiers in bulldozers: surrounded by Israelis in Lebanon's 'model town' - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTVpzVVAtSEdoLWNrSnFvbzFkTGZQQnUtZHV4b3M1cEhLV3NTc0tUamVQWWM4SGNMenVwM3EwNFlDaTFXTFY0Z3hqZUxLOElzZ043VkF6UUlfZDlwbzdUc3oyOFdrMkdsTXdPRldGWlpHUk4ydXR1TTdRY0Y1bU1pZU1KR1lLZENHT05FcVY1aFpNTUZia204VnVxUmpCbEN1N28yUXk0bXZtMG9lelZNc2JOc0NnSlJwWWhXQzU4aUV1RHpzdmoxTkNSOUtZazg"
+      "title": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMzlOYkh2NkF3OTFOQ0g5RFdjT0VSZXU4Y0U1cDREQnltUF9XM2VBVlk1bER5cTNTS00yaWctcDdnTjI3TG1jeWVxV3JIT2ctb1JVLVg4Nm13aENfNmlQSVQ2dHZLS2dabVYyYXQydWFEQ25SQVY1UkFORHd6djNHUHFkVEpwa3d6WkRiMy15SFRwV3l4anZiSXQ2YmR2bmxWZFhYTFE1YVNBRnc1ZG0tbHJDT1RacGJ6VmRhV3RnQ3g5UmZvdE5xZ3RB"
     },
     {
       "score": 2.7,
@@ -79,63 +124,18 @@
       "date": "2026-10-08",
       "category": "military",
       "source_type": "news",
+      "title": "Drones, explosions and soldiers in bulldozers: surrounded by Israelis in Lebanon's 'model town' - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTVpzVVAtSEdoLWNrSnFvbzFkTGZQQnUtZHV4b3M1cEhLV3NTc0tUamVQWWM4SGNMenVwM3EwNFlDaTFXTFY0Z3hqZUxLOElzZ043VkF6UUlfZDlwbzdUc3oyOFdrMkdsTXdPRldGWlpHUk4ydXR1TTdRY0Y1bU1pZU1KR1lLZENHT05FcVY1aFpNTUZia204VnVxUmpCbEN1N28yUXk0bXZtMG9lelZNc2JOc0NnSlJwWWhXQzU4aUV1RHpzdmoxTkNSOUtZazg"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
       "title": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPREc3b1M4OVVFbEtXWE45ZWpjeDNiNGpGVnZIdEJQSUU2R2dmdzF4V3hFZ1RMSlgyX0Fmc295aXo3bGtsbHpYSlM5MUVjLXJsM1ZISFV4NVFQN04wY0M4ZFRud3pzVUd2ZjN4S1dRSzNkenVacC1naWFmdUMtRUVYUlQ3MWY4dHRyOHRkTThCcUYxV0NFOU9qNE5fUW92RmlfYmk3Z0ZqWDlfc2VmNVhHS0tPX2k2Ql94SHlCeThTUzJBUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU2tXTF9qRnZpZjVabUdpX3Q5UVBCR18tb2JrR3dJUVVacUhyUURRQ05uZ2dKOVBMbHJLQmRmejB3TjhPSGpxUnFZOEdJNFJ0Q2k1aXNVQTZNVFYwV21YdUhmd2g0MnZqZm9ycGVfM21VLURfY1ZzOENSTUpxVTcxRmdpeS1ka1JhUU4tczc5RGpycmx5NWt6NjRJLThhc0VlRFRTS0p0X0N5bHFwbl9PaDQyZ25xdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says US will not attack Iran before midterm elections in November - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMmV2ZUhoRklKSzBPaFkzWHVFdkwxVDlVVU8tdDV2NXc4NEkxTjZSTVhoaklIeTlJX3BCUTFkRUREY1VDVGpTY1lhZEQ4OHgyRG81S0RLa0JJVEZHTWpiUFJVRy0xZmVSWEpVbDZsVFBSRzZ4bmw2RnhtMXlBelJ1Vi1GUnVuZ3htemdTdExuTktpQ2dKdzhFRmRMd0MwMlYtd3JPb1J0NVlKcVNtWUlNNHRoNVFWaFBWUHNTdg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters",
-      "location": "Turkey",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNeGpIUmFkT3JCSlBYSGViLUs1SXV1aGN2aE14MWRVQjc2UjlqVjFCS0EwNGx2R004WTFnRUEtaVlDTWZfU2htczhYWDl4OGd4TFNDSkdWR0c0NGZRX2s1NnRrWFhfZktvS3Fpcl9wSndkUk44VTVLaWdXZTE3dnd5MVFBczNHSmtHU3RPekUxaGtHWU1PRHdLS0xlU0kxeUdMZUMyeGJNYjhkUlpidmI3eV9SbmtMWmdITk5CZzZlOA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Airline chiefs say can't fully guard against rogue pilots after flydubai attack - Reuters",
-      "location": "Dubai",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONllXMUhvQVpOVC1tNnlXYmcwSnh1a2w2TFhQdzhZaW9jeWoxRkZtNlR2eFhybEJ3NkZ2VHRQbmVod09iMmc3dmtTdmpOMmlMTnE1MmNYOE93enJyYV9OVzE3LWxhUHBWT0s1TGdwM1VVcVZtenVLUTFQRF9pWFZJTUFqYmFSZVpScDBZRnllZW1aVlI0QnFUTjBaLXoyV20xRDR0UTB3YkFmdTQzOGk2UmpkVkt0aG8tSHA2UmtvQVhjak0xQThwemJ0QUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Shell partially restarts Pearl gas-to-liquids plant in Qatar - Reuters",
-      "location": "Qatar",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPajAxTjhOWkJsU0pfU1l4amFnZnZWZFZsWUdJaEVpRlhraG0wVlN3bk5NMnZQNlZaWGhTWmM3YVhqdzlJYy1yeGRZZ3paU2Npc2RsN01Bc2tkTjdhQzZqRVZHcDFBVlNHdjAzT2ZIOW5ENnU1b3h4NEdKQ1NISU5xMUVzdTFSZUdCSDNqTzVmUEVxaEd2czE2bDZJcjZRUjFwTEQybGRpV1NJdUJxR3c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQS3RjWlUtbVhIS3V2UlRkMFZOT3pESFlCZGVKcVp5N1lwX1JCTGRrXzI3dXdHT3diVGZUWENHREJ3MW5zQUpRamZpbkV0dTdoNDhRUzl6OW5FT2JZSjZHaHY2T2ltMm1fNTZVNHhuQzdZTmJVRHhSbE1vYnNpZTR4SGJONWhxVWxoYmxBLW1SRkpBNlROdHBxN3VjMUtpcHFaVzgzQ1ZvcmIyVllXcjBhSTY3TlhuLXpQRExkZmYtd29TOEppUkYwOA"
     }
   ]
 }
