@@ -1,10 +1,12 @@
 # Hotspot Alert
 
-**Generated:** 2026-10-09T00:24:42.943457+00:00
+**Generated:** 2026-10-09T09:07:45.721983+00:00
 
-No alert: no events detected in the last 24 hours.
+No hotspot alert: no location met the spike thresholds in the last 24 hours.
+
+Top current hotspot (by risk): Riyadh (2.5), prev 24h: 8.1, share: 46%.
 
 ## X POST VERSION
 
-No hotspot alert in the last 24 hours.
+No hotspot alert in the last 24 hours (no spike thresholds met).
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor

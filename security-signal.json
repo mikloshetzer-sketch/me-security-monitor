@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-09 00:24 UTC",
+    "updated": "2026-10-09 09:07 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-03",
     "period_end": "2026-10-09",
-    "total_events": 152,
-    "total_risk": 142.6,
-    "normalized_risk_score": 57.0,
+    "total_events": 156,
+    "total_risk": 148.65,
+    "normalized_risk_score": 59.5,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 40,
     "security": 6,
-    "political": 7,
-    "other": 99
+    "political": 10,
+    "other": 100
   },
   "source_counts": {
-    "news": 152,
+    "news": 156,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 24.45
+      "risk": 25.6
     },
     {
       "name": "Yemen",
-      "risk": 24.3
+      "risk": 23.1
     },
     {
       "name": "Gaza Strip",
-      "risk": 20.4
+      "risk": 21.55
     },
     {
       "name": "Israel",
-      "risk": 16.45
+      "risk": 16.2
     },
     {
       "name": "Riyadh",
-      "risk": 10.05
+      "risk": 13.05
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHNYa055VWx5WldTdndPaXJnREN3Q1BDX1hzTVE4cEdwNmM0bU9YbE1oc0Ryb2VOenROdjd3NDlaRy1hOGU1MnlxVE9nWk45Znh5Rm1iVXE3TGpjY2ZXRGhmWV9QbkhGeURIRXBDRTdLWElZeG9mRldGbE9wSnV4V1QyU0xFUFlKUXFna3RFYlpVc2JHS2RXOS1GNEkxQmZiWFZxU01VNk0yZ25ieF9ydWN4Ry1nVk54bFhR"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Drones, explosions and soldiers in bulldozers: surrounded by Israelis in Lebanon's 'model town' - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTVpzVVAtSEdoLWNrSnFvbzFkTGZQQnUtZHV4b3M1cEhLV3NTc0tUamVQWWM4SGNMenVwM3EwNFlDaTFXTFY0Z3hqZUxLOElzZ043VkF6UUlfZDlwbzdUc3oyOFdrMkdsTXdPRldGWlpHUk4ydXR1TTdRY0Y1bU1pZU1KR1lLZENHT05FcVY1aFpNTUZia204VnVxUmpCbEN1N28yUXk0bXZtMG9lelZNc2JOc0NnSlJwWWhXQzU4aUV1RHpzdmoxTkNSOUtZazg"
+    },
     {
       "score": 2.7,
       "date": "2026-10-08",
@@ -70,9 +88,18 @@
       "date": "2026-10-08",
       "category": "military",
       "source_type": "news",
-      "title": "Drones, explosions and soldiers in bulldozers: surrounded by Israelis in Lebanon's 'model town' - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTVpzVVAtSEdoLWNrSnFvbzFkTGZQQnUtZHV4b3M1cEhLV3NTc0tUamVQWWM4SGNMenVwM3EwNFlDaTFXTFY0Z3hqZUxLOElzZ043VkF6UUlfZDlwbzdUc3oyOFdrMkdsTXdPRldGWlpHUk4ydXR1TTdRY0Y1bU1pZU1KR1lLZENHT05FcVY1aFpNTUZia204VnVxUmpCbEN1N28yUXk0bXZtMG9lelZNc2JOc0NnSlJwWWhXQzU4aUV1RHpzdmoxTkNSOUtZazg"
+      "title": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU2tXTF9qRnZpZjVabUdpX3Q5UVBCR18tb2JrR3dJUVVacUhyUURRQ05uZ2dKOVBMbHJLQmRmejB3TjhPSGpxUnFZOEdJNFJ0Q2k1aXNVQTZNVFYwV21YdUhmd2g0MnZqZm9ycGVfM21VLURfY1ZzOENSTUpxVTcxRmdpeS1ka1JhUU4tczc5RGpycmx5NWt6NjRJLThhc0VlRFRTS0p0X0N5bHFwbl9PaDQyZ25xdw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-10-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says US will not attack Iran before midterm elections in November - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMmV2ZUhoRklKSzBPaFkzWHVFdkwxVDlVVU8tdDV2NXc4NEkxTjZSTVhoaklIeTlJX3BCUTFkRUREY1VDVGpTY1lhZEQ4OHgyRG81S0RLa0JJVEZHTWpiUFJVRy0xZmVSWEpVbDZsVFBSRzZ4bmw2RnhtMXlBelJ1Vi1GUnVuZ3htemdTdExuTktpQ2dKdzhFRmRMd0MwMlYtd3JPb1J0NVlKcVNtWUlNNHRoNVFWaFBWUHNTdg"
     },
     {
       "score": 2.7,
@@ -97,33 +124,6 @@
       "date": "2026-10-08",
       "category": "military",
       "source_type": "news",
-      "title": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOU2tXTF9qRnZpZjVabUdpX3Q5UVBCR18tb2JrR3dJUVVacUhyUURRQ05uZ2dKOVBMbHJLQmRmejB3TjhPSGpxUnFZOEdJNFJ0Q2k1aXNVQTZNVFYwV21YdUhmd2g0MnZqZm9ycGVfM21VLURfY1ZzOENSTUpxVTcxRmdpeS1ka1JhUU4tczc5RGpycmx5NWt6NjRJLThhc0VlRFRTS0p0X0N5bHFwbl9PaDQyZ25xdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQS3RjWlUtbVhIS3V2UlRkMFZOT3pESFlCZGVKcVp5N1lwX1JCTGRrXzI3dXdHT3diVGZUWENHREJ3MW5zQUpRamZpbkV0dTdoNDhRUzl6OW5FT2JZSjZHaHY2T2ltMm1fNTZVNHhuQzdZTmJVRHhSbE1vYnNpZTR4SGJONWhxVWxoYmxBLW1SRkpBNlROdHBxN3VjMUtpcHFaVzgzQ1ZvcmIyVllXcjBhSTY3TlhuLXpQRExkZmYtd29TOEppUkYwOA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says US will not attack Iran before midterm elections in November - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMmV2ZUhoRklKSzBPaFkzWHVFdkwxVDlVVU8tdDV2NXc4NEkxTjZSTVhoaklIeTlJX3BCUTFkRUREY1VDVGpTY1lhZEQ4OHgyRG81S0RLa0JJVEZHTWpiUFJVRy0xZmVSWEpVbDZsVFBSRzZ4bmw2RnhtMXlBelJ1Vi1GUnVuZ3htemdTdExuTktpQ2dKdzhFRmRMd0MwMlYtd3JPb1J0NVlKcVNtWUlNNHRoNVFWaFBWUHNTdg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
       "title": "Shell partially restarts Pearl gas-to-liquids plant in Qatar - Reuters",
       "location": "Qatar",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPajAxTjhOWkJsU0pfU1l4amFnZnZWZFZsWUdJaEVpRlhraG0wVlN3bk5NMnZQNlZaWGhTWmM3YVhqdzlJYy1yeGRZZ3paU2Npc2RsN01Bc2tkTjdhQzZqRVZHcDFBVlNHdjAzT2ZIOW5ENnU1b3h4NEdKQ1NISU5xMUVzdTFSZUdCSDNqTzVmUEVxaEd2czE2bDZJcjZRUjFwTEQybGRpV1NJdUJxR3c"
@@ -133,9 +133,9 @@
       "date": "2026-10-08",
       "category": "military",
       "source_type": "news",
-      "title": "'Every day there is killing': Gazans face Israeli strikes despite ceasefire as peace deal stalls",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cmx2qlz7qrd4o?at_medium=RSS&at_campaign=rss"
+      "title": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQS3RjWlUtbVhIS3V2UlRkMFZOT3pESFlCZGVKcVp5N1lwX1JCTGRrXzI3dXdHT3diVGZUWENHREJ3MW5zQUpRamZpbkV0dTdoNDhRUzl6OW5FT2JZSjZHaHY2T2ltMm1fNTZVNHhuQzdZTmJVRHhSbE1vYnNpZTR4SGJONWhxVWxoYmxBLW1SRkpBNlROdHBxN3VjMUtpcHFaVzgzQ1ZvcmIyVllXcjBhSTY3TlhuLXpQRExkZmYtd29TOEppUkYwOA"
     }
   ]
 }
