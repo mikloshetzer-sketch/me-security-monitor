@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T06:11:37Z",
+  "generated_at": "2026-10-09T13:20:06Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,38 +52,38 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 593,
+    "events_endpoint_records": 542,
     "feed_event_records": 250,
-    "normalized_events": 1593,
+    "normalized_events": 1598,
     "map_visualizable_events": 259,
-    "non_mappable_events": 1334,
+    "non_mappable_events": 1339,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1593,
+      "total_events": 1598,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-09T02:21:29Z",
+      "latest_event_date": "2026-10-09T10:36:06Z",
       "geocoded_events": 259,
-      "geocoded_share": 16.3,
+      "geocoded_share": 16.2,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Unknown"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 63,
-        "previous": 46,
-        "delta": 17,
-        "percent_change": 37.0,
+        "current": 66,
+        "previous": 45,
+        "delta": 21,
+        "percent_change": 46.7,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 322,
-        "previous": 335,
-        "delta": -13,
-        "percent_change": -3.9,
+        "current": 320,
+        "previous": 336,
+        "delta": -16,
+        "percent_change": -4.8,
         "direction": "stable"
       }
     },
@@ -806,16 +806,16 @@
       },
       {
         "date": "2026-10-09",
-        "count": 1
+        "count": 6
       }
     ],
     "category_counts": {
       "infrastructure": 399,
-      "missile": 364,
+      "missile": 368,
       "strike": 265,
       "drone": 208,
       "airstrike": 136,
-      "movement": 88,
+      "movement": 89,
       "explosion": 62,
       "ground": 43,
       "alert": 13,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 831,
-      "high": 513,
-      "low": 247,
+      "medium": 833,
+      "high": 515,
+      "low": 248,
       "critical": 2
     },
     "attacker_counts": {
-      "unknown": 1009,
+      "unknown": 1014,
       "iran": 369,
       "israel": 183,
       "usa": 32
@@ -838,11 +838,11 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 586
+        "count": 590
       },
       {
         "name": "Iran",
-        "count": 325
+        "count": 326
       },
       {
         "name": "Jordan",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 586
+        "count": 590
       },
       {
         "name": "Iran",
-        "count": 450
+        "count": 451
       },
       {
         "name": "Jordan",
@@ -945,32 +945,38 @@
     ]
   },
   "feed_state": {
-    "totalCount": 10911,
+    "totalCount": 10916,
     "spotlight": {
       "event": {
-        "id": "29b1x7big97o0",
-        "timestamp": "2026-10-09T02:21:29+00:00",
-        "location": "YEM",
+        "id": "5wed55eta70",
+        "timestamp": "2026-10-09T08:47:49+00:00",
+        "location": "SAU",
         "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
-        "type": "movement",
-        "severity": "medium",
-        "description": "Ansarallah advances in southern Taiz, captures Al-Salu, Al-Mawasit, Same', and Al-Ma'afir districts; reaches Jabal Habashi summit and tightens encirclement of Taiz City",
-        "descriptionHe": "אנסאר אללה מתקדמת בדרום תעיז, תופסת את מחוזות אל-סלו, אל-מוואסיט, סאמע' ואל-מעאפיר; מגיעה לפסגת ג'בל חביישי וממשיכה להידוק את הכיתור על עיר תעיז",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/85249"
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthis claim cruise missile strike on King Khalid airport in Riyadh; Saudi aviation authority reports 3 killed in Houthi attack on airport and a passenger aircraft damaged on the ground",
+        "descriptionHe": "החות'ים לוקחים אחריות לתקיפה בנמל התעופה המלך ח'אלד בריאד באמצעות שני טילי שיוט; רשות התעופה הסעודית מדווחת על 3 הרוגים ופגיעה במטוס נוסעים על הקרקע",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/131617"
       },
-      "headline": "Houthis Advance in Yemen, Capture Four Districts Near Taiz",
-      "headlineHe": "חוות\"ה מתקדמות בתימן, תופסות ארבע מחוזות ליד תעיז",
-      "summary": "Ansarallah's territorial gains represent a significant shift in the Yemen conflict's southern theater, with the militia consolidating control around a key population center.",
-      "summaryHe": "התקדמות הטריטוריאלית של אנסאר אללה מייצגת שינוי משמעותי בחזית דרומית של הסכסוך בתימן, כשהמיליציה חיזקה שליטה סביב מרכז אוכלוסייה חשוב.",
-      "pickedAt": "2026-10-09T04:45:26.726Z",
+      "headline": "Houthis Strike Riyadh Airport; 3 Killed, Aircraft Damaged",
+      "headlineHe": "חות'ים תקפו שדה תעופה בריאד; 3 הרוגים וכלי טיס פגוע",
+      "summary": "Saudi aviation authority confirmed casualties and aircraft damage from cruise missile attack, marking a significant escalation in Houthi operations against Saudi infrastructure.",
+      "summaryHe": "רשויות התעופה הסעודיות אישרו הנפגעים והנזק לכלי טיס מהתקפת טילים, המהווה הסלמה משמעותית בפעולות החות'ים נגד התשתיות הסעודיות.",
+      "pickedAt": "2026-10-09T13:00:26.044Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-10-09T06:09:18.124Z",
+    "lastUpdated": "2026-10-09T13:12:17.367Z",
     "stale": false,
     "viewerCount": 2,
     "ceasefire": false
@@ -1513,178 +1519,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 94,
+      "internet": 95,
       "cellular": null,
-      "lastUpdate": "2026-10-09T06:00:13.972Z",
+      "lastUpdate": "2026-10-09T13:00:13.892Z",
       "internetHistory": [
-        {
-          "t": "2026-10-08T06:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-08T06:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-08T06:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T06:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T06:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T06:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T07:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T07:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T07:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T07:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T08:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-08T08:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T10:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T10:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T11:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-08T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-08T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-08T12:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T12:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T12:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-08T12:50:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-10-08T13:00:00.000Z",
           "v": 96
@@ -2088,22 +1926,190 @@
         {
           "t": "2026-10-09T05:40:00.000Z",
           "v": 94
+        },
+        {
+          "t": "2026-10-09T05:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-10-09T06:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-10-09T06:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T06:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T06:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-10-09T06:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-10-09T06:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T07:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T07:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T07:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T07:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T07:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T07:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T08:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T08:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T08:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T08:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T08:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T08:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T09:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T09:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T09:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T09:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T09:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T09:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T10:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T10:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T10:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T10:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T11:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T11:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T11:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T11:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T12:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T12:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T12:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-09T12:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-10-09T12:40:00.000Z",
+          "v": 95
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-09T06:00:13.972Z"
+    "lastUpdated": "2026-10-09T13:00:13.892Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a4f2c1e9",
+      "id": "iranstrike-a7c3f21e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-08T17:18:59Z",
+      "date": "2026-10-09T08:47:49Z",
       "title": "IranStrike event",
-      "description": "Houthis strike Saudi airports & Abqaiq refinery; 5 missiles/drones target Riyadh, Najran",
+      "description": "Houthis strike Saudi airports & oil infrastructure; 3 killed at Riyadh, flights disrupted",
       "category": "other",
       "severity": "critical",
       "attacker": "unknown",
@@ -2124,34 +2130,38 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a4f2c1e9",
-        "text": "Houthis strike Saudi airports & Abqaiq refinery; 5 missiles/drones target Riyadh, Najran",
-        "textHe": "חות'ים תקפו שדות תעופה ובחיר סעודיים; 5 טילים לכיוון ריאד ונג'ראן",
+        "id": "a7c3f21e",
+        "text": "Houthis strike Saudi airports & oil infrastructure; 3 killed at Riyadh, flights disrupted",
+        "textHe": "חות'ים תקפו שדות תעופה ותשתיות נפט סעודיות; 3 הרוגים בריאד, טיסות בוטלו",
         "severity": "critical",
-        "timestamp": "2026-10-08T17:18:59+00:00",
+        "timestamp": "2026-10-09T08:47:49+00:00",
         "entityIds": [
           "YEM",
           "SAU"
         ],
         "eventIds": [
-          "1lki8klxtg8w0",
+          "5wed55eta70",
+          "1widstzzu7340",
+          "iyxkcca6yw80",
           "12kdmdhk2wmo0",
           "jzmvyd5j41o0",
+          "1lki8klxtg8w0",
           "6gyk40lh2ts0",
-          "yth2u5usq5c0"
+          "yth2u5usq5c0",
+          "2tte9d6s6nc00"
         ],
         "sourceCount": 5
       }
     },
     {
-      "id": "iranstrike-b8e3d2f7",
+      "id": "iranstrike-b9e2d84f",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-08T20:58:36Z",
       "title": "IranStrike event",
-      "description": "Pentagon plans 3-day strike campaign against Iran; 3 carrier groups positioned",
+      "description": "Pentagon plans 3-day strikes on Iran; 3 carrier groups positioned in Middle East",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2159,7 +2169,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "pentagon plans 3-day strike campaign against iran;",
+      "attacker_evidence": "pentagon plans 3-day strikes on iran;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2172,9 +2182,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b8e3d2f7",
-        "text": "Pentagon plans 3-day strike campaign against Iran; 3 carrier groups positioned",
-        "textHe": "הפנטגון מתכנן מסע תקיפה של 3 ימים נגד איראן; 3 קבוצות נושאות מיצבות",
+        "id": "b9e2d84f",
+        "text": "Pentagon plans 3-day strikes on Iran; 3 carrier groups positioned in Middle East",
+        "textHe": "פנטגון מתכנן מתקפות 3 ימים על איראן; 3 קבוצות נושאות מטוסים בעמדה",
         "severity": "high",
         "timestamp": "2026-10-08T20:58:36+00:00",
         "entityIds": [
@@ -2188,14 +2198,14 @@
       }
     },
     {
-      "id": "iranstrike-c6b1f9a3",
+      "id": "iranstrike-c1f5a93d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-08T18:13:36Z",
       "title": "IranStrike event",
-      "description": "IDF reports 100,000 targets struck across 6 nations in 3 years; combat deaths continue",
+      "description": "IDF reports 100K targets struck across 6 countries; one officer killed in Lebanon ops",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -2203,56 +2213,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf reports 100,000 targets struck across 6 nations in 3 years;",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "c6b1f9a3",
-        "text": "IDF reports 100,000 targets struck across 6 nations in 3 years; combat deaths continue",
-        "textHe": "צה\"ל דיווח על 100,000 מטרות שהופגעו ב-6 מדינות; נשים הכי נפגעות",
-        "severity": "high",
-        "timestamp": "2026-10-08T18:13:36+00:00",
-        "entityIds": [
-          "ISR",
-          "PSE",
-          "LBN",
-          "SYR",
-          "IRN",
-          "YEM"
-        ],
-        "eventIds": [
-          "3dtasc79ouo00",
-          "2eg0f9mqe61w0"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-d7c4e5b2",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-10-08T12:18:52Z",
-      "title": "IranStrike event",
-      "description": "IDF strikes southern Lebanon villages; military operations ongoing in border region",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes southern lebanon villages;",
+      "attacker_evidence": "idf reports 100k targets struck across 6 countries;",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -2265,31 +2226,79 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d7c4e5b2",
-        "text": "IDF strikes southern Lebanon villages; military operations ongoing in border region",
-        "textHe": "צה\"ל תקף כפרים בדרום לבנון; פעולות צבאיות בהמשך בעורף הגבול",
-        "severity": "medium",
-        "timestamp": "2026-10-08T12:18:52+00:00",
+        "id": "c1f5a93d",
+        "text": "IDF reports 100K targets struck across 6 countries; one officer killed in Lebanon ops",
+        "textHe": "צה\"ל דיווח על 100K מטרות בתקיפות ברחבי 6 מדינות; קצין אחד נהרג בלבנון",
+        "severity": "high",
+        "timestamp": "2026-10-08T18:13:36+00:00",
         "entityIds": [
           "ISR",
-          "LBN"
+          "LBN",
+          "GAZ",
+          "SYR",
+          "IRN",
+          "YEM"
         ],
         "eventIds": [
-          "3kjjbf9j1cm00",
-          "xlttevf1m3k0"
+          "3dtasc79ouo00",
+          "2eg0f9mqe61w0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-e9a6d3c8",
+      "id": "iranstrike-d6a2c45b",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-09T07:01:01Z",
+      "title": "IranStrike event",
+      "description": "Houthis declare air embargo over Saudi Arabia; threaten international airlines",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d6a2c45b",
+        "text": "Houthis declare air embargo over Saudi Arabia; threaten international airlines",
+        "textHe": "חות'ים הכריזו על חסם אוויר על סעודיה; איימו על חברות תעופה בינלאומיות",
+        "severity": "high",
+        "timestamp": "2026-10-09T07:01:01+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "mylvqy75qgg0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e4b8f62c",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-09T02:21:29Z",
       "title": "IranStrike event",
-      "description": "Houthis advance in Taiz; captures 4 districts, tightens encirclement of city",
+      "description": "Ansarallah advances in Taiz; captures 4 districts, tightens city encirclement",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2310,9 +2319,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e9a6d3c8",
-        "text": "Houthis advance in Taiz; captures 4 districts, tightens encirclement of city",
-        "textHe": "חות'ים התקדמו בתעיז; כיבשו 4 מחוזות והדקו את הכיתור על העיר",
+        "id": "e4b8f62c",
+        "text": "Ansarallah advances in Taiz; captures 4 districts, tightens city encirclement",
+        "textHe": "אנסאר אללה התקדמה בתעיז; כבשה 4 מחוזות, הידקה הקיפאון עיר",
         "severity": "medium",
         "timestamp": "2026-10-09T02:21:29+00:00",
         "entityIds": [
@@ -2326,6 +2335,249 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-ivsfx3ik99s0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85251",
+      "date": "2026-10-09T10:36:06Z",
+      "title": "IranStrike event",
+      "description": "Increased number of C-17 cargo flights from EUCOM to CENTCOM amid renewed U.S. threats to resume war on Iran",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "ivsfx3ik99s0",
+        "timestamp": "2026-10-09T10:36:06+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Increased number of C-17 cargo flights from EUCOM to CENTCOM amid renewed U.S. threats to resume war on Iran",
+        "descriptionHe": "עלייה במספר טיסות המטען של C-17 מ-EUCOM ל-CENTCOM על רקע איומים אמריקאיים מחודשים לחדש את המלחמה באיראן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85251"
+      }
+    },
+    {
+      "id": "iranstrike-iyxkcca6yw80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131617",
+      "date": "2026-10-09T08:47:49Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim ballistic missile strike on Najran airport in Saudi Arabia",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "iyxkcca6yw80",
+        "timestamp": "2026-10-09T08:47:49+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthis claim ballistic missile strike on Najran airport in Saudi Arabia",
+        "descriptionHe": "החות'ים לוקחים אחריות לתקיפה בנמל התעופה נג'ראן בסעודיה באמצעות טיל בליסטי",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/131617"
+      }
+    },
+    {
+      "id": "iranstrike-5wed55eta70",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131617",
+      "date": "2026-10-09T08:47:49Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim cruise missile strike on King Khalid airport in Riyadh; Saudi aviation authority reports 3 killed in Houthi attack on airport and a passenger aircraft damaged on the ground",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "5wed55eta70",
+        "timestamp": "2026-10-09T08:47:49+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthis claim cruise missile strike on King Khalid airport in Riyadh; Saudi aviation authority reports 3 killed in Houthi attack on airport and a passenger aircraft damaged on the ground",
+        "descriptionHe": "החות'ים לוקחים אחריות לתקיפה בנמל התעופה המלך ח'אלד בריאד באמצעות שני טילי שיוט; רשות התעופה הסעודית מדווחת על 3 הרוגים ופגיעה במטוס נוסעים על הקרקע",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/131617"
+      }
+    },
+    {
+      "id": "iranstrike-1widstzzu7340",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131617",
+      "date": "2026-10-09T08:47:49Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim ballistic missile strike on Khamis Mushait air base in Saudi Arabia",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1widstzzu7340",
+        "timestamp": "2026-10-09T08:47:49+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthis claim ballistic missile strike on Khamis Mushait air base in Saudi Arabia",
+        "descriptionHe": "החות'ים לוקחים אחריות לתקיפה בבסיס האווירי בחמיס מושיט בסעודיה באמצעות טיל בליסטי",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/131617"
+      }
+    },
+    {
+      "id": "iranstrike-mylvqy75qgg0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/131609",
+      "date": "2026-10-09T07:01:01Z",
+      "title": "IranStrike event",
+      "description": "Houthis declare air embargo over Saudi Arabia, warn international airlines against flying in Saudi airspace, citing missile and drone operations",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "mylvqy75qgg0",
+        "timestamp": "2026-10-09T07:01:01+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Houthis declare air embargo over Saudi Arabia, warn international airlines against flying in Saudi airspace, citing missile and drone operations",
+        "descriptionHe": "החות'ים מכריזים על מצור אווירי מעל סעודיה, מזהירים חברות תעופה בינלאומיות מפני טיסה בשמי סעודיה, תוך ציון פעילויות טילים ומזל\"טים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/131609"
+      }
+    },
     {
       "id": "iranstrike-29b1x7big97o0",
       "source": "IranStrike",
