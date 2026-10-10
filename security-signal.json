@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-10-09 22:41 UTC",
+    "updated": "2026-10-10 05:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-10-03",
-    "period_end": "2026-10-09",
-    "total_events": 158,
-    "total_risk": 163.91,
-    "normalized_risk_score": 65.6,
+    "period_start": "2026-10-04",
+    "period_end": "2026-10-10",
+    "total_events": 146,
+    "total_risk": 142.3,
+    "normalized_risk_score": 56.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 42,
-    "security": 5,
-    "political": 11,
-    "other": 100
+    "military": 43,
+    "security": 4,
+    "political": 9,
+    "other": 90
   },
   "source_counts": {
-    "news": 156,
+    "news": 144,
     "isw": 2
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 35.51
-    },
-    {
-      "name": "Yemen",
-      "risk": 21.3
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 20.2
+      "risk": 27.96
     },
     {
       "name": "Israel",
-      "risk": 19.15
+      "risk": 19.0
+    },
+    {
+      "name": "Yemen",
+      "risk": 18.75
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 15.8
     },
     {
       "name": "Riyadh",
-      "risk": 17.55
+      "risk": 15.7
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-10-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli drone attack wounds six in Lebanon near Syria border - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZDlneDFDVlJhbkRIb3NoZ3NjbWtkSmkwWV94Z21oM0cyc1d2NXJBRFEweE1vbGJqQ19DUzM0MUhucV9lY19CNmY4T2hlb2VXNFVqcS1CWC1HRUY1aXF3Q3lBN3c0dDRuTXBKSWlzMjhhUWRsRV9LaFVhTzZraTFTYzBoREJ4WGZmOG1PeVNyUkY5UzctZkJfWk9jWi1Da3VadlZHUNIBqgFBVV95cUxNeVR3QzNzVW1YcTlxOFJINW1qc0FUWUotaE93Z29fYTdzV1hJckJ6eGxwUjEzOXkwNE9UY0Jlc1UzNmhVY3VLX2VhOEs3YVc2U0tsLXJjbFY1NWc1bUxicUhKOWQ1bExXWEdhcmdqTUcwakpXMnRGZFd2cWs0VWRFOWIwNWJ4NVRNRy01aUp6Wl9tM2ZoT0F5b0VzLS02SzdVTXNVa0JZUzJXQQ"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMEFCQWZhWGJXa25ZeDBOZlE3b3RWQldSSUM5MmRDd1JqdFNvbl83R19nc014ek1YTW1iQlBqbW1paUlManF3UzlNT21BTl81cG5NNGQ5MWhWOWZOMnpQamN6TmxrUFVLVXRCaTl2T0JYclhVc3dvLUpNeG5wY3JSci02OHVtWmRpemp2UExRUGRoTnpyN3lKUGlRQ3FHdS1pZDNvNVM0bWE2djAzNzNvNTg4RVdXVEhw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -66,16 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE"
     },
     {
-      "score": 3.0,
-      "date": "2026-10-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHNYa055VWx5WldTdndPaXJnREN3Q1BDX1hzTVE4cEdwNmM0bU9YbE1oc0Ryb2VOenROdjd3NDlaRy1hOGU1MnlxVE9nWk45Znh5Rm1iVXE3TGpjY2ZXRGhmWV9QbkhGeURIRXBDRTdLWElZeG9mRldGbE9wSnV4V1QyU0xFUFlKUXFna3RFYlpVc2JHS2RXOS1GNEkxQmZiWFZxU01VNk0yZ25ieF9ydWN4Ry1nVk54bFhR"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -84,7 +84,16 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZTJVb2U2eWdVMjdYVEVwMWt0NzJaQTA0aDNCMVB3YVc3N1VIMUszdjl0OUFFNVhCRHNSUEk3MzVsY1pnX2pIU1hfME5sRm5QUThjSEdJd3VHeGtuQzMzTGc4X0VESC1McU1vUXo3QTJGV2MwWGpFMXpacXF3dndjcWNORXU3bWNXaUtwWjRLbHJDNjBBQ3BIQldySU5LWXNjU0hxQkd4aWp2ZjAtYzNyQ0J0MHpLZjFKM19VSjM4QlJkZ2c"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-10-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHNYa055VWx5WldTdndPaXJnREN3Q1BDX1hzTVE4cEdwNmM0bU9YbE1oc0Ryb2VOenROdjd3NDlaRy1hOGU1MnlxVE9nWk45Znh5Rm1iVXE3TGpjY2ZXRGhmWV9QbkhGeURIRXBDRTdLWElZeG9mRldGbE9wSnV4V1QyU0xFUFlKUXFna3RFYlpVc2JHS2RXOS1GNEkxQmZiWFZxU01VNk0yZ25ieF9ydWN4Ry1nVk54bFhR"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -93,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPc2ZOeThZcXRzc1pOMExEQWVYWVlHOVc4Wkc3RFhGdjE3U21zSmE1akZGSkVUd1g0QmFrQlAtRjVJUlJVMFRienpnbHdTa21ZMHJraHNpVk1oczFLMWd6SjQycHItZWpSYjhCcmRxYUgtRFF0RElDWG9falJvVTV0a0dkaVFNZnpLZ0hGdlFxY2FTaUdZZDh6SnU1bndQMXgzYVdmLXRVem5nLU13UUt6Mi1jd1JuVzFKd3RrWHdBb3lFZzJjbW5Nek9YZXJ2dw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cmz7xe37g5wro?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -111,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdndZSjg5cWh4WHJhWXI0R19HVGdGRXFKQ2Y0YTZEVV9wM0d2THlSQ1BLd0Fub05mQ0dCNkwxbUxSN1N2N0g4RUt2SUNzdS14R2RGT09wdjRhaWI0bU9BbXhGdTViUG5NOERIUVk0YVBFY3FDWW9BT1J0NGRWOXU3VXptcUhMNm9hZDhpbHotYkxud05sTVJ2a0JQVlY4WTNNaFHSAacBQVVfeXFMUDBKY2VRMFhITEQyRTFPZGh2Y3Y0QWM1cnhPTG1MUzZyeVVubVdLdUhybTZsUUNMaE9tOWxwUkpWOGxCaTlSR1JSV21MenFqTGxKOGRSMS1xeTM2VV9Vcnp0S1VESVlGQUwwTW5QQ0lGMEkzWFc0YVFDalM2bHpuTWVUV3c5eVFUM1lmYU1FWlBBQUNfeDI2TUdUcktRVXk5MEJWeDJMMEE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -120,22 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPaEs0b2JJSTY4WW14cmV3aC1STjd5QzhRNTE0MC10RmRyRkljdmdKcFlNQWtpSWtIVmczWk11czRkQzhRS3MybWpDeWdMQmQ3d25fczh1Y19oSmY3Y3NDTDVvSkZGOHVEajJPbkd0X2RxR3hhMWFJcmxmM0hCcHZZUU1seHNMcHE1azhRYkVQY2tlN3ptM0hSQVg5SUlUci0zWUZua3pTZXJjVW9x0gGyAUFVX3lxTE03WmdZZThkRU9KRFlCWTBxaDd3c3FEVW9pdUxRX3BTSWhvdGM4LVlGZXI3VnFJOXZyUmkxanlYaDhfbE1JZjVsSzNWYzVjUVFlMGdQWWxZblctd0UxU0JxdFRJRTk1b2lRRDBNdGJZaC10MmlPU2FwYkJEZ1pLcHpuQ2o3ZmdYTVdXRF9na2s4dHNKQkdfQzJEcXZ4TENZR3VZYmVabURFMU1MVDJWTF9sQXc"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
       "title": "Flydubai co-pilot plotted ‘suicide’ attack on Israel, UAE says - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZG1kVFZKanE0bnZSTU5DZzF4dzVNR3hRS215YmI0cUR2UG5EbFJ1eTgzanhvWWkwMFpGTEs2OFZHLU1OcGhWYVpjZk1MQkpROW42U09jRXhhai0yR3gzeVpfOTZQOElVeGt1YTNyZHdvSDhzLXJQZFBSOUVqS0I0bm1tV3FUYU51bDNjeE9DdHQ2QXFteVMyUXlJTU83UGRlWnfSAacBQVVfeXFMTktzUDJsOGhqWndIU3dlamVyeUNOQnJ0LWtRd004UDEta0tmV20yZnBrQ1RNTENXdTZQS1BxbWRRZTY4TlRpRjJocS1GZ0lSV0pjVjlBNFJnUndERXh6SDBLMTZfdEZPS1ZZWHQta09KQlVyMmIyRi1LMXdzdlFWa0FlSlFpSFZGY0s3aXNDbjlJUUVBSGd2X1owTGtiemxwVndxaDZwbUU"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVXd3SHFQR3NWbldRVWo1OVQtajAyZVYtRzNYcmFzZTR3X2pMaDEzTXJKX3R4aUNPNW9fOEhUalZkVnR3LWtKRWM3VDVqelA0M1QtRlFNOE45ZG16VFVIN0JrbHFQSDFFd0N1OEM5Z3FMS0tnVDJvaEZXSjhSYUVsVWJGWXpBdTdVSjZrVVBEc3JCUzFDQXM4Y2ZjYUpHTWlIb2VtUGFlOWs2djlQYUFZLUZ1X0hSZFJ0"
     }
   ]
 }
