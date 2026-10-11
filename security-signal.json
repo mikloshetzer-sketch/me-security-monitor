@@ -1,63 +1,81 @@
 {
   "meta": {
-    "updated": "2026-10-10 23:35 UTC",
+    "updated": "2026-10-11 05:50 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-10-04",
-    "period_end": "2026-10-10",
-    "total_events": 149,
-    "total_risk": 157.81,
-    "normalized_risk_score": 63.1,
+    "period_start": "2026-10-05",
+    "period_end": "2026-10-11",
+    "total_events": 137,
+    "total_risk": 130.91,
+    "normalized_risk_score": 52.4,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 46,
-    "security": 3,
-    "political": 12,
-    "other": 88
+    "military": 42,
+    "security": 2,
+    "political": 13,
+    "other": 80
   },
   "source_counts": {
-    "news": 146,
+    "news": 134,
     "isw": 3
   },
   "top_locations": [
     {
-      "name": "Iran",
-      "risk": 25.61
-    },
-    {
       "name": "Gaza Strip",
-      "risk": 25.2
+      "risk": 21.45
     },
     {
       "name": "Yemen",
-      "risk": 21.15
-    },
-    {
-      "name": "Israel",
       "risk": 20.5
     },
     {
+      "name": "Iran",
+      "risk": 18.51
+    },
+    {
+      "name": "Israel",
+      "risk": 16.5
+    },
+    {
       "name": "Riyadh",
-      "risk": 15.4
+      "risk": 14.45
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-10-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Twelve killed and 300 injured in attack on airport in Saudi capital Riyadh",
+      "location": "Yemen",
+      "url": "https://www.bbc.co.uk/news/articles/cw33x4y8k82no?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says 12 killed, 300 wounded in Houthi attack on Riyadh airport - Al Jazeera",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdGcxd2Q2QXhUSGFCZ3NmdUotNFR2bkxvZ0t5dUN3ZGFoWnEyeVVMaXU3YmxST3daXzhOeVpCcDRIbXJhYlJ2MUdsOEhNYVcwcThEZlQyZUFGQWFpeklPYlY2T0FZb3hQY0liUkRfZ3hpT3pOUTRkb2hhSUhkdmJSTmtrSURzZEhMdllIa1pqNm9mUDhCT3hnM1k5cDQ4bjh0OVBaNk9YMHpJd9IBrwFBVV95cUxOeEY5RWlrVmxYUFllYXkyMk5QeUZQZGZ6OGNGZ2dvVlo5cXB3STlBbnMxWmFpQUJYQ200VFZoaVdmM0lTRFpKTWRWMXRQUDhuc1lSdjduZHhSSXRLQjZNalhjNXdiYjhwd2xhbzlqbUF3RnN4bmV2U1hFdHJKYTZlWkllancybkk4Y0Rkc2tSZ0dPZlFiZzAyT0EzX29wMEJ0WnRGR3JUdU80aWU2TU00"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-10",
       "category": "military",
       "source_type": "news",
-      "title": "Houthi attack on Saudi airport kills 12, over 300 wounded, authorities say - Reuters",
+      "title": "Houthi strike on Saudi airport kills 12, worst attack on kingdom in a decade - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbV9hVGtMSXpTVDJ3c05vRW9SQ2lRLTg3cUlOeWxDc2w4amF5V2N2Ul9YazdxcHJGNDRwd3hlQi15a2ZGWWZoZnc1dlA5UkY3cU9PclVCNkh6SVkzQ25waEVRRlN2TVdES3lKV1VuVXN6QnJycWxtdkNOdUIwMTdTRE9fbko3Umt5d0huNVY1dW9ZcFpLSF9yczRGRHJfSWZhM1AtTkVzbVR4TlRUdzhIb19JN3o"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-10",
       "category": "military",
       "source_type": "news",
@@ -66,16 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcUhRYkpDR0ViRnlSNjNpcl94N3RPOGdvUHBlaVU0MXU3V2EtX1QwV2NFbGZTX3FtUnlYLTdmNmFIMlgwaHM0a1Z2MjB2UUV2cUNadGRHa1ZwTDJPakJ3d3VONVVwZS1WNnNmLVlkOW0yMXc5VDYxY1F3czY0QlFGSnpremd5UG1IcUlXMEhwNFBSLU9rQ3daalo5b1RvVW5ZajV6Wg"
     },
     {
-      "score": 3.0,
-      "date": "2026-10-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Twelve killed in attack on airport in Saudi capital Riyadh",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/cw33x4y8k82no?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-10",
       "category": "military",
       "source_type": "news",
@@ -84,7 +93,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cw3dj5n538jpo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-10",
       "category": "military",
       "source_type": "news",
@@ -93,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZDlneDFDVlJhbkRIb3NoZ3NjbWtkSmkwWV94Z21oM0cyc1d2NXJBRFEweE1vbGJqQ19DUzM0MUhucV9lY19CNmY4T2hlb2VXNFVqcS1CWC1HRUY1aXF3Q3lBN3c0dDRuTXBKSWlzMjhhUWRsRV9LaFVhTzZraTFTYzBoREJ4WGZmOG1PeVNyUkY5UzctZkJfWk9jWi1Da3VadlZHUNIBqgFBVV95cUxNeVR3QzNzVW1YcTlxOFJINW1qc0FUWUotaE93Z29fYTdzV1hJckJ6eGxwUjEzOXkwNE9UY0Jlc1UzNmhVY3VLX2VhOEs3YVc2U0tsLXJjbFY1NWc1bUxicUhKOWQ1bExXWEdhcmdqTUcwakpXMnRGZFd2cWs0VWRFOWIwNWJ4NVRNRy01aUp6Wl9tM2ZoT0F5b0VzLS02SzdVTXNVa0JZUzJXQQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-10",
       "category": "military",
       "source_type": "news",
@@ -102,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNEt6WkNIVUVCQV9laGswamVmRE1YcTNWUFF2Z25vaXVyTGtPb3diN1JCN1F4ZHlYZUZKYWxEY0otRDlMMElUTlRYRUNRTmp3R0swX2kxTXA1QVlqb2t1TE55SUVsZElZeVFmdldHNjZEa3RjMUJHYkhQRDdkVjcwcTI5OTJaYW85VGNWUkhsX1kxZ3ltVHfSAZsBQVVfeXFMTWFpM015RWV4R0xjR0hVdjhSZ0tLOEpuY2c1SEZHQ1ZiUTlBUDFFQjF4aWVXRzZXTXZUVHBBZ21JR0dOaC1tdjh2STlpR0pXNWhJV1dkWGxnWWtKRFNsTGYyeUtmeUNTZlF2UUY2WmpEa0lTeUhEdGpHdmJ6ZEJoWmYtZ2xRMy1ZeUlJVHZMTTdOdTNBUXJXQWhhYWs"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -111,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMEFCQWZhWGJXa25ZeDBOZlE3b3RWQldSSUM5MmRDd1JqdFNvbl83R19nc014ek1YTW1iQlBqbW1paUlManF3UzlNT21BTl81cG5NNGQ5MWhWOWZOMnpQamN6TmxrUFVLVXRCaTl2T0JYclhVc3dvLUpNeG5wY3JSci02OHVtWmRpemp2UExRUGRoTnpyN3lKUGlRQ3FHdS1pZDNvNVM0bWE2djAzNzNvNTg4RVdXVEhw"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
@@ -120,22 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZTJVb2U2eWdVMjdYVEVwMWt0NzJaQTA0aDNCMVB3YVc3N1VIMUszdjl0OUFFNVhCRHNSUEk3MzVsY1pnX2pIU1hfME5sRm5QUThjSEdJd3VHeGtuQzMzTGc4X0VESC1McU1vUXo3QTJGV2MwWGpFMXpacXF3dndjcWNORXU3bWNXaUtwWjRLbHJDNjBBQ3BIQldySU5LWXNjU0hxQkd4aWp2ZjAtYzNyQ0J0MHpLZjFKM19VSjM4QlJkZ2c"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-09",
       "category": "military",
       "source_type": "news",
       "title": "EU aviation body widens Saudi airspace warning after Houthi strikes - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHNYa055VWx5WldTdndPaXJnREN3Q1BDX1hzTVE4cEdwNmM0bU9YbE1oc0Ryb2VOenROdjd3NDlaRy1hOGU1MnlxVE9nWk45Znh5Rm1iVXE3TGpjY2ZXRGhmWV9QbkhGeURIRXBDRTdLWElZeG9mRldGbE9wSnV4V1QyU0xFUFlKUXFna3RFYlpVc2JHS2RXOS1GNEkxQmZiWFZxU01VNk0yZ25ieF9ydWN4Ry1nVk54bFhR"
     }
   ]
 }
