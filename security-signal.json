@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-11 05:50 UTC",
+    "updated": "2026-10-11 12:53 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-05",
     "period_end": "2026-10-11",
-    "total_events": 137,
-    "total_risk": 130.91,
-    "normalized_risk_score": 52.4,
+    "total_events": 144,
+    "total_risk": 147.31,
+    "normalized_risk_score": 58.9,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 42,
-    "security": 2,
-    "political": 13,
-    "other": 80
+    "military": 47,
+    "security": 1,
+    "political": 15,
+    "other": 81
   },
   "source_counts": {
-    "news": 134,
+    "news": 141,
     "isw": 3
   },
   "top_locations": [
     {
-      "name": "Gaza Strip",
-      "risk": 21.45
+      "name": "Yemen",
+      "risk": 27.5
     },
     {
-      "name": "Yemen",
-      "risk": 20.5
+      "name": "Gaza Strip",
+      "risk": 24.85
     },
     {
       "name": "Iran",
-      "risk": 18.51
-    },
-    {
-      "name": "Israel",
-      "risk": 16.5
+      "risk": 22.56
     },
     {
       "name": "Riyadh",
-      "risk": 14.45
+      "risk": 19.85
+    },
+    {
+      "name": "Israel",
+      "risk": 16.9
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis renew warning over Saudi airports after deadly Riyadh attack - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSEo0VkFTZkY2VzMzeFV0OVRVbWN4aHFzaXFjV0FBN05uaEFONHhQVTN2a3JJM09NdFBzY1R3MnRrUFZOeFZfUDItOUd1NkxiT3dfOWduTHJKTlBzSGsyN3VCYTNkWG1ZTWlZMUpzbDdrc1dOZUs3VDRwa0lHN21tNnFNdFhQYUxoNmdfN1Zyb3FMRm04RzRVei0zY3FKN0FoY2JYTGFodjYtemdITVpKVXk3NlR2QXFIMU9YMnUtX004QW1GZ0UzZA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi stocks slide after attack on Riyadh airport - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOOEliNzFKYlR3T0NNakk4TWxXWGJ0UlJfQ0JLdFVIRnlESENoRW4zdjNSWW02UjFJOFozRmlZdVZ2ZlFaOTFSdEc5RGd6QWVVaFFMNi1QRTdMSVg2dFQxaHROcjhjbnI4ekhnZUZVbXlmYVBQaDZ3TG1pcFQ5RnFaVXpfYUxWRG1acC1mYnR6d3ZtdXpxbTBBUFJkcU9ock1wbXc"
+    },
     {
       "score": 3.0,
       "date": "2026-10-11",
@@ -64,6 +82,24 @@
       "title": "Saudi Arabia says 12 killed, 300 wounded in Houthi attack on Riyadh airport - Al Jazeera",
       "location": "Riyadh",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdGcxd2Q2QXhUSGFCZ3NmdUotNFR2bkxvZ0t5dUN3ZGFoWnEyeVVMaXU3YmxST3daXzhOeVpCcDRIbXJhYlJ2MUdsOEhNYVcwcThEZlQyZUFGQWFpeklPYlY2T0FZb3hQY0liUkRfZ3hpT3pOUTRkb2hhSUhkdmJSTmtrSURzZEhMdllIa1pqNm9mUDhCT3hnM1k5cDQ4bjh0OVBaNk9YMHpJd9IBrwFBVV95cUxOeEY5RWlrVmxYUFllYXkyMk5QeUZQZGZ6OGNGZ2dvVlo5cXB3STlBbnMxWmFpQUJYQ200VFZoaVdmM0lTRFpKTWRWMXRQUDhuc1lSdjduZHhSSXRLQjZNalhjNXdiYjhwd2xhbzlqbUF3RnN4bmV2U1hFdHJKYTZlWkllancybkk4Y0Rkc2tSZ0dPZlFiZzAyT0EzX29wMEJ0WnRGR3JUdU80aWU2TU00"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen fighting expands as Houthis attack Saudi airport: What to know - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPMDVTS1ZGSF8wX1ZNRk8wdUFmVFd5SmkyNWlkZmktVFRNNUxqSWxwUF8tT01GN2d0RzNtWmxSY0Y5aHJ1YlBWWHB3cjh4OXRjczc0UlNtWlJFc3JpUzlPMkZTS0laSDVOakFxZTVpNVZ0U19JUi03RTVvWVZGVlY0U0JUcDlPODJMZ1paTW9VUUp2M3VaSUFKVl91TENySDVHYXQ0RVQ0SlBEWUlTOUHSAbMBQVVfeXFMTVRZSG13RHl2RzVyQWtTSE9pb09YdldWYXcwSXBBOXRDeERqRGdwQXZFd2NfS2tjY0NxbDJwbTgybXFHeldfOHBaeVo5RGNRVnBsOXRya3JTTHc4T0RYS09BdGIydkFpMHlKX056NDhLc2w3a1o0ZHJzQkdRamtfMmZyQjB4MWktOEZqVXRfRXhfNWVwQVdwSUozemRzemkwR2puUmxBRFVDSHZBQXFZeUVIRDA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "US bombs cargo vessel in Gulf of Oman ‘trying to run Iran blockade’ - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUUk2UURLSzN3ZHZva05KbEktc1JBeXZnbHhjWWl5bm9LOGJGRnJ5MzUxSWkzbjVEZFd2YmUyVWc3NGd1czdLMWxkblFLNmpMdXJqWHota21BWEpoQVQxRGRFRzByS2tjaVJyVzMzWjdMY1NudmIwaHZIWFF2QnpDTWNuOWxFeTdBT3BLcWt0bDJtbWhjTlc2dEpoNEdfZlNhUEpPLU5GVE5YVkFIeEp3YVBZeGNVNzhf0gG-AUFVX3lxTE5pRGxvWktjYWdfcVpZbzNQZDlNdUdMdTlrZE9HMldvQVRUV0hfZjIzUHBua2Jydzgxck4zSVZJTnJJbEVHZlhqSzFLTXR1bnRabWsxY0VSQWZfUkRWM0dXa0tLbTdUY0RqSEdOUy1QTjFaaEp6UFVKQkYxM3QzVWRhRHdRek44dExIdURvYWlrOXZHb0VJREI4OWVpSnhJQ1NBaTI1ZlNSNnVCZ05adVpDczEyZm5CRTVJc1YxNGc"
     },
     {
       "score": 2.7,
@@ -100,42 +136,6 @@
       "title": "Israeli drone attack wounds six in Lebanon near Syria border - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZDlneDFDVlJhbkRIb3NoZ3NjbWtkSmkwWV94Z21oM0cyc1d2NXJBRFEweE1vbGJqQ19DUzM0MUhucV9lY19CNmY4T2hlb2VXNFVqcS1CWC1HRUY1aXF3Q3lBN3c0dDRuTXBKSWlzMjhhUWRsRV9LaFVhTzZraTFTYzBoREJ4WGZmOG1PeVNyUkY5UzctZkJfWk9jWi1Da3VadlZHUNIBqgFBVV95cUxNeVR3QzNzVW1YcTlxOFJINW1qc0FUWUotaE93Z29fYTdzV1hJckJ6eGxwUjEzOXkwNE9UY0Jlc1UzNmhVY3VLX2VhOEs3YVc2U0tsLXJjbFY1NWc1bUxicUhKOWQ1bExXWEdhcmdqTUcwakpXMnRGZFd2cWs0VWRFOWIwNWJ4NVRNRy01aUp6Wl9tM2ZoT0F5b0VzLS02SzdVTXNVa0JZUzJXQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Child among eight killed by Israel on Gaza ‘ceasefire’ anniversary - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNEt6WkNIVUVCQV9laGswamVmRE1YcTNWUFF2Z25vaXVyTGtPb3diN1JCN1F4ZHlYZUZKYWxEY0otRDlMMElUTlRYRUNRTmp3R0swX2kxTXA1QVlqb2t1TE55SUVsZElZeVFmdldHNjZEa3RjMUJHYkhQRDdkVjcwcTI5OTJaYW85VGNWUkhsX1kxZ3ltVHfSAZsBQVVfeXFMTWFpM015RWV4R0xjR0hVdjhSZ0tLOEpuY2c1SEZHQ1ZiUTlBUDFFQjF4aWVXRzZXTXZUVHBBZ21JR0dOaC1tdjh2STlpR0pXNWhJV1dkWGxnWWtKRFNsTGYyeUtmeUNTZlF2UUY2WmpEa0lTeUhEdGpHdmJ6ZEJoWmYtZ2xRMy1ZeUlJVHZMTTdOdTNBUXJXQWhhYWs"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi strikes on Riyadh airport killed three Saudis as war escalates - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQMEFCQWZhWGJXa25ZeDBOZlE3b3RWQldSSUM5MmRDd1JqdFNvbl83R19nc014ek1YTW1iQlBqbW1paUlManF3UzlNT21BTl81cG5NNGQ5MWhWOWZOMnpQamN6TmxrUFVLVXRCaTl2T0JYclhVc3dvLUpNeG5wY3JSci02OHVtWmRpemp2UExRUGRoTnpyN3lKUGlRQ3FHdS1pZDNvNVM0bWE2djAzNzNvNTg4RVdXVEhw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "UAE says Omani flydubai co-pilot planned suicide attack on Tel Aviv flight - Reuters",
-      "location": "Dubai",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZTJVb2U2eWdVMjdYVEVwMWt0NzJaQTA0aDNCMVB3YVc3N1VIMUszdjl0OUFFNVhCRHNSUEk3MzVsY1pnX2pIU1hfME5sRm5QUThjSEdJd3VHeGtuQzMzTGc4X0VESC1McU1vUXo3QTJGV2MwWGpFMXpacXF3dndjcWNORXU3bWNXaUtwWjRLbHJDNjBBQ3BIQldySU5LWXNjU0hxQkd4aWp2ZjAtYzNyQ0J0MHpLZjFKM19VSjM4QlJkZ2c"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "EU aviation body widens Saudi airspace warning after Houthi strikes - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObUF1S2Y0LTFHM0JDbXRLY05aMmVvUDJqOU1ZNjEtLVlDdFVMelgyTlN0d3BvY0lrLVJkZEc4VGI0eEMtWTVnbDBGQnNVSGx1bklCQkxiNEs3RzFlWklGSWtoMFpyLV9zb2N6Y1VlVjQ2b2pqMy1ld0IyZ2RQMGt3YmFRaWQyUFBrYnVua2VyWGdyQW4wU0xGWm91d2prUlRLSHZrZXNwZjl0MVBuQV9ZeFZmZi15Nmh1VGFvV25xeVJfYkNGWkE"
     }
   ]
 }
