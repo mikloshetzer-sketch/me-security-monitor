@@ -1,9 +1,9 @@
 # Daily OSINT Signal
 
-**Generated:** 2026-10-12T06:01:27.110081+00:00
+**Generated:** 2026-10-12T15:29:44.582698+00:00
 
 ## Summary (last 24h)
-- Events recorded: **1**
+- Events recorded: **19**
 - Dominant category: **military**
 - Highest activity location: **Riyadh**
 
@@ -11,7 +11,7 @@
 
 Middle East Security Monitor – Daily Signal
 
-Events (last 24h): 1
+Events (last 24h): 19
 Dominant category: military
 Highest activity location: Riyadh
 

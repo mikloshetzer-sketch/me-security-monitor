@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-10-12T06:01:27.232531+00:00
+**Generated:** 2026-10-12T15:29:44.690486+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Riyadh (2.7), prev 24h: 10.8, share: 100%.
+Top current hotspot (by risk): Riyadh (11.1), prev 24h: 11.1, share: 44%.
 
 ## X POST VERSION
 
