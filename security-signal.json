@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-13 06:49 UTC",
+    "updated": "2026-10-13 16:01 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-10-07",
     "period_end": "2026-10-13",
-    "total_events": 134,
-    "total_risk": 168.4,
-    "normalized_risk_score": 67.4,
+    "total_events": 125,
+    "total_risk": 166.9,
+    "normalized_risk_score": 66.8,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 59,
+    "military": 56,
     "security": 1,
-    "political": 15,
-    "other": 59
+    "political": 13,
+    "other": 55
   },
   "source_counts": {
-    "news": 134,
+    "news": 125,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Riyadh",
-      "risk": 43.5
+      "risk": 38.4
     },
     {
       "name": "Saudi Arabia",
-      "risk": 30.85
+      "risk": 32.5
     },
     {
       "name": "Iran",
-      "risk": 27.65
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 17.55
+      "risk": 30.0
     },
     {
       "name": "Yemen",
-      "risk": 15.45
+      "risk": 18.7
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 12.25
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil eases as traders monitor Russian diesel deal, Saudi attacks - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa2sxWTVlekZ2bXloVXNiOUltMm5iODVOMW9NTUo4Q016ZU02OFQ5TU9relFTcUZSaW8xV0c2YmNVbE5jWW5uQjhKeXNKaWxBcE92SU1fQUU0R2RVamdNUzRhTER3NzEzMFUtRVd3bzVnZ1g0ZmtRek95VHdYbVNNMmNacmlDd3dLTThmaGF2VVJDYTc4c1hQeUZfX0ZGQzZjTXlpLU52U3JuUGpjOHJjWndoS19LandSX0dtMmdUMzNKZw"
+    },
     {
       "score": 3.0,
       "date": "2026-10-13",
@@ -79,27 +88,36 @@
       "date": "2026-10-13",
       "category": "military",
       "source_type": "news",
+      "title": "Deadly Houthi attacks in Yemen’s Taiz as government forces advance in Marib - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNjlvaG9ONzlEdHhxa0hLQXYyZU53bVFRT0NOa3pVNGl5Y3lyaFpDc2FaeUJ5TXV4VHE4ZmJSY2R0c0RkMTIwNGFRNTk2UnRaX01waHNtS2JoLXpWbElWelFZTkxYS0wwSlU2VmhNQkp6Z1BORkp5SE1YUXM3UGlOTXZTYmRDaWFUZzNlMVpLUE5Va29UWTA1R1RDdlYzQlF1MC1iRlUtTHg5bFFHckhxTUVsczhsU0HSAbwBQVVfeXFMT204cjkxRVJDZTBvZjRZbXJDTVRxZUZmVGFZRTZ1MHZoQ1d3Q3oxRmdwQk4wZDR4OTB6T050RXdsR1k3NnVOcTdPMGVCdlI3b1VrYTVTMXZEbEZfUFBoRVFlNy05S2d2UGhoV2xGUjVCOE9CRi1iZVI5cjcwUllldXM5NzlQeVQ5bllUb2tMWllBZ3h3YndvcTNWQVJ3X3F6eURPNWJaVGMyUGQ4ZlpTaDZfdWd2MlFDaE9Rd2k"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni government launches air strikes on Houthi positions - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMjNvX3RYTjRpancyejg3V3RQdVlYeFhuZ2ZJMVlaa3M1MThTQWxGQnVLc0FKN1pLSmxzZktOaGtEdlN4dE9yd3BaNHdUWGR4SFNnMU5VVGdqZ1A0dGtpa3UzWGQ1RmJxdE9YbjFvLTNHWFhiejR5LU90bTE3M2xBckRjZnU3SmIzdDVkaHF3dl9KbFJ6TkdETUg0ZnFJaEw0SHfSAacBQVVfeXFMT2tGTDlhUVV5NEpydEtReEFrNDlpTHFfWHc2WWJNeHdFQzVrbzRac2c3Z2xfVHI3eG9iSGhENS1zcWpEeTdpamZNeTFiQVZFZWpTZDAwc2lGTFA5SzM5d1ZvNHZoaG01bk9PYmZoS1hFU0MxY3ZrNkxmSXYxRmNTQkRfdFJIUzJGODNJeTRmb1F0RUFSd1VSZS1vOVhqeXg2a1J2Q0NMTUE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-13",
+      "category": "military",
+      "source_type": "news",
       "title": "Houthi missile attack targets Saudi capital Riyadh for third day in a row - Al Jazeera",
       "location": "Riyadh",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOanVwNWhNU0N5c0tUNUlMQk84TEVXSlJNZnplNjE1VEhrbDFaZnVPeFN0VURnMXBuWENaR3Y2ODdnY3dIc0xmaHpnUjVXM0dTcFZxcndxamo2VE1VbWsycklpNmVoUGg2MWhzV0I0MzlGVUUzdEVmUWg5bWN4TEk3VzdhaW9JcVR2LU42cm9zeTJ6elVaRmlUU0VHYjVzRHBFVXNtaFdiMTJSS0pHMVAzVVBNaHRhd9IBuwFBVV95cUxPNlVqVV9MaVV3c2VNWG51TWhwQ1k1Y1NxVmlULTdtUmsyRmk5QWFFdGV3Z2RVMEZaQ1RlZzEzYjBKWVBCVmNjcW0yMkotMXk4ekctZ3hrZm5vWXFFYmR0dUpZdHhiRlJyT09nNVRoN2lISWhtemExdHNmajVfZmRSRllma01nRTEzWjdWQml1cTB2OXVPWVI3WHJzVU92VEdYcHFhTlB4QW91WXRaWl9lbmNHQ1k0bVR3Q2xr"
     },
     {
-      "score": 2.7,
-      "date": "2026-10-12",
+      "score": 3.0,
+      "date": "2026-10-13",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia faces new missile and drone fire after major attacks on airports - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbjQ4VHZvYkdYQm9yVEk1YjFFMmpzdkZlZURhdnpYUlNHTl9KMDZrbVFMSXB6WGRlU2ZIb2NnZm9yMjYwb2hYTnh0YnBrc2RkWWs0MzdxX01TUzllWERDajRXZHhxVXFIVmJhX0ljT0NWVHZMejdIdFhmWlZaOUFPQkVLUXZiN2hGVG1velpDX3FvTzY0VVhiQlpCQ1hoejRmSjhBZlVnYlNUcUlQOF9PeWVlMS0xT1RzS2Rlb1FUQlBwQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOX0c4YlJSYUNrT1pqLTA2TmFjdDZUdmh2Z3pXbG9vWF9mdS0tZFZ6M2tYTVUzRjZVTzhodnh4WU0waXV1bjZENURjUVhmRVZPN251V2laQmNMZ3JoNmIzZE5hWU82YkxIWTdvd2xNczBkNnEta0xGdzlmaGlFNkZ5M1lxcGZUNW5pRnMxV1pPT0NxMXZmOWpEUmpBNXRUcksyZWQ5Sm9pM1QweFFWdmZYVkdid0s1dUJSanNN"
+      "title": "Palestinians dream of returning home after Israel raids West Bank camps - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTmU3NGtjMks4azVCc19fNDR6bFJpVUhGOUw0ekpUZDJHY09JVUNycEV6a3hyMzFjMTlRc3pRMzhqY3FKd0MwSFFuam9taW9VanM5RGoyakxBSVFEVXlkTjB2THVLYllBWVBjbm5zS05yNXVxUldtb1U0X2NhNGNzX2ZzNW81cGQ1MnhqUm1NOXV4THRDWFNQdUpEVzZ2RmRGSVgxd2V5ekVMbHZPTWtrQkdQcXhoazIt0gG-AUFVX3lxTE9EVnphaVY4WlV1ZXludF9oNElUSE5BaXI3MjQxYXBuVDlYSmNVRWNUQlFuWVJGNFpSQ3dKM3ZhUDFYZ1VDdF9mWUZER1gyOTdSM3k2M05zMFotMDVqSENDM01Bb2lTSG5UcENLdDBRWGc4Uy1iOEpWeThyOXh6XzNWT194aEVMWmcyS0VEckFrZmsySFB4alV1U0g0cUxmNFBoZ2xrblFBZ0lTcFdWWGpuSDJLNmJUNFVNZFM3Rmc"
     },
     {
       "score": 2.7,
@@ -115,27 +133,9 @@
       "date": "2026-10-12",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters",
+      "title": "Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters",
       "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOdFZXdXoyS25SWEFjcG8tR1NrRmhxcUEtMjZHV3BESHFtb0FPSE1ldjVGdERDRjZScHhJbzIteGhOVUtDcUdZMDdKVUI0c0lpSF9nUmlKVC1WMDdqWGlaMWZfU1JJeHhsOVRaWkpmMFJLNXBPZFBnLXJ6MGxmOWRRcWp4QksyMzdSSjRXdl9lMGZROUFFdUZNRUYydFhZbWU2MkIwNFNoX05qY2o1WWtBTkpvbExXRHozaFVmR1FOMGpSWllyb1p3RW1B"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Top oil executives dropped from event schedule after Riyadh attacks - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxObWQtMDRPN05hVWltQzRWWGdZLUVfT3lnZXNrVDBteWp6NWJfZEFBaEgzZEVVaGRUaXJuTVhSTXNBV29fcUFvZVcxV19yRnU1Sk9zM3p5MWcwYkNsaDI0bV9DeW9tc3NQamVDb3ZZeFpGb0hPRGk1N1gyMW9QU3VidVlZMVhZZlF0RWdMZy1KcFJIbDlDXzN6c0xHajFhWHVmckI0SVZuU3lFZTVKc3hWNEZ6eTZrYkk"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills two people in Gaza, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWnk3NWdrNmROSHBOblhraGQ2MHhaREtiN0x1N2J6b0VxR0F2S2ZjNUlTTGRyejdJU1JPSkZTa0t4X0dHODltMVZiT182ajR0TmkxTmVqUUlsX1ZKbF9ZQVBEWS1vSGlNM213bnlBT3RvM3RqUkxiay1KNGFEbmhzSk5ySmI1alFrbVMzUHVOTVJzb2s0bDZSSE1DR0RGRGxa"
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOX0c4YlJSYUNrT1pqLTA2TmFjdDZUdmh2Z3pXbG9vWF9mdS0tZFZ6M2tYTVUzRjZVTzhodnh4WU0waXV1bjZENURjUVhmRVZPN251V2laQmNMZ3JoNmIzZE5hWU82YkxIWTdvd2xNczBkNnEta0xGdzlmaGlFNkZ5M1lxcGZUNW5pRnMxV1pPT0NxMXZmOWpEUmpBNXRUcksyZWQ5Sm9pM1QweFFWdmZYVkdid0s1dUJSanNN"
     }
   ]
 }
