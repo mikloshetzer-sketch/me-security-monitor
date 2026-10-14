@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T11:55:42Z",
+  "generated_at": "2026-10-14T17:12:49Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 632,
+    "events_endpoint_records": 635,
     "feed_event_records": 250,
-    "normalized_events": 1688,
+    "normalized_events": 1691,
     "map_visualizable_events": 259,
-    "non_mappable_events": 1429,
+    "non_mappable_events": 1432,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1688,
+      "total_events": 1691,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-14T10:52:49Z",
+      "latest_event_date": "2026-10-14T14:01:48Z",
       "geocoded_events": 259,
       "geocoded_share": 15.3,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 107,
+        "current": 105,
         "previous": 64,
-        "delta": 43,
-        "percent_change": 67.2,
+        "delta": 41,
+        "percent_change": 64.1,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 303,
-        "previous": 395,
-        "delta": -92,
-        "percent_change": -23.3,
+        "current": 306,
+        "previous": 401,
+        "delta": -95,
+        "percent_change": -23.7,
         "direction": "decrease"
       }
     },
@@ -806,12 +806,12 @@
       },
       {
         "date": "2026-10-14",
-        "count": 6
+        "count": 9
       }
     ],
     "category_counts": {
-      "infrastructure": 446,
-      "missile": 389,
+      "infrastructure": 448,
+      "missile": 390,
       "strike": 270,
       "drone": 209,
       "airstrike": 138,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 878,
-      "high": 548,
+      "medium": 880,
+      "high": 549,
       "low": 256,
       "critical": 6
     },
     "attacker_counts": {
-      "unknown": 1092,
+      "unknown": 1095,
       "iran": 373,
       "israel": 191,
       "usa": 32
@@ -838,7 +838,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 652
+        "count": 655
       },
       {
         "name": "Iran",
@@ -900,7 +900,7 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 652
+        "count": 655
       },
       {
         "name": "Iran",
@@ -945,34 +945,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11006,
+    "totalCount": 11009,
     "spotlight": {
       "event": {
-        "id": "yv0skvlw0kg0",
-        "timestamp": "2026-10-14T10:52:42+00:00",
-        "location": "OMN",
-        "origin": "IRN",
+        "id": "3qd8nifd0q000",
+        "timestamp": "2026-10-14T13:51:26+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
         "severity": "high",
-        "description": "Iran hits tankers GFS PRIDE and ALFONSO in the Strait of Hormuz; GFS PRIDE sank in Omani waters after evacuation. UKMTO separately reports 2 tankers struck by unknown projectiles, one inbound and one outbound, with no casualties and minor damage",
-        "descriptionHe": "איראן פגעה במכליות GFS PRIDE ו-ALFONSO במיצר הורמוז; GFS PRIDE שקעה במים העומאניים לאחר פינוי הצוות. UKMTO דיווחה בנפרד על 2 מכליות שנפגעו מכלי פגז לא ידוע, אחת נכנסת ואחת יוצאת, ללא נפגעים ונזק קל",
+        "description": "Houthi (Ansarallah) ballistic missile strikes ARAMCO headquarters in Dhahran; Reuters reports extensive damage",
+        "descriptionHe": "טיל בליסטי של החות'ים (אנסאר אללה) פגע במטה ארמקו בדהראן; רויטרס מדווח על נזק נרחב",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/85488"
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/85496"
       },
-      "headline": "Iran strikes two tankers in Strait of Hormuz; one vessel sinks",
-      "headlineHe": "איראן תוקפת שתי נכליות בתעלת הורמוז; כלי אחד טבע",
-      "summary": "The attack on commercial shipping marks an escalation of Iranian maritime operations in a critical global trade chokepoint amid regional tensions.",
-      "summaryHe": "התקיפה על אוניות מסחריות מסמנת הסלמה של פעולות ימיות של איראן בנקודת סחר קריטית עולמית במהלך מתיחות אזוריות.",
-      "pickedAt": "2026-10-14T11:00:26.486Z",
-      "state": "SPOTLIGHT"
+      "headline": "Houthi Ballistic Missile Strikes Saudi ARAMCO Headquarters",
+      "headlineHe": "טילי בליסטיים של חותיים תוקפים את מטה אראמקו בסעודיה",
+      "summary": "The strike on ARAMCO's Dhahran headquarters represents a significant escalation in Houthi precision-targeting capabilities against critical Saudi infrastructure and energy assets.",
+      "summaryHe": "התקיפה על מטה אראמקו בדהראן מהווה הסלמה משמעותית ביכולות התיכנון המדויק של חותיים לתקיפת תשתיות קריטיות וטהור אנרגיה בסעודיה.",
+      "pickedAt": "2026-10-14T16:00:25.992Z",
+      "state": "TODAY"
     },
-    "lastUpdated": "2026-10-14T11:54:17.870Z",
+    "lastUpdated": "2026-10-14T17:12:18.797Z",
     "stale": false,
-    "viewerCount": 7,
+    "viewerCount": 6,
     "ceasefire": false
   },
   "summary": {
@@ -1513,142 +1519,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-10-14T11:30:14.115Z",
+      "lastUpdate": "2026-10-14T17:00:14.173Z",
       "internetHistory": [
-        {
-          "t": "2026-10-13T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-13T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T16:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T16:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T16:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-13T16:50:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-10-13T17:00:00.000Z",
           "v": 97
@@ -2088,22 +1962,200 @@
         {
           "t": "2026-10-14T11:10:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-10-14T11:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T13:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T13:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T15:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T15:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T15:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-14T15:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T16:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T16:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-14T16:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T16:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-14T16:40:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-14T11:30:14.115Z"
+    "lastUpdated": "2026-10-14T17:00:14.173Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2e1c3",
+      "id": "iranstrike-7f2a1c9e",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-14T14:01:48Z",
+      "title": "IranStrike event",
+      "description": "Houthis strike Saudi ARAMCO HQ in Dhahran; fire confirmed; multiple targets threatened",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7f2a1c9e",
+        "text": "Houthis strike Saudi ARAMCO HQ in Dhahran; fire confirmed; multiple targets threatened",
+        "textHe": "חות'ים תקפו בראש הממשלה של ארמקו בדהרן; אש אושרה; מטרות מרובות איימו",
+        "severity": "high",
+        "timestamp": "2026-10-14T14:01:48+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "3qd8nifd0q000",
+          "1f6dh7g210f40",
+          "2gzkllggw5e00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-6a4e2d5b",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-14T10:52:42Z",
       "title": "IranStrike event",
-      "description": "Iran strikes 2 tankers in Strait of Hormuz; GFS PRIDE sank after evacuation",
+      "description": "Iran strikes 2 tankers in Strait of Hormuz; GFS PRIDE sank; maritime tensions escalate",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2124,9 +2176,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2e1c3",
-        "text": "Iran strikes 2 tankers in Strait of Hormuz; GFS PRIDE sank after evacuation",
-        "textHe": "איראן תקפה 2 טנקרים במצר הורמוז; GFS PRIDE טבע לאחר פינוי",
+        "id": "6a4e2d5b",
+        "text": "Iran strikes 2 tankers in Strait of Hormuz; GFS PRIDE sank; maritime tensions escalate",
+        "textHe": "איראן תקפה 2 טנקרים בעמק הורמוז; GFS PRIDE שקע; המתיחות הימית גברה",
         "severity": "high",
         "timestamp": "2026-10-14T10:52:42+00:00",
         "entityIds": [
@@ -2140,104 +2192,14 @@
       }
     },
     {
-      "id": "iranstrike-b4c9d8e2",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-10-14T08:51:14Z",
-      "title": "IranStrike event",
-      "description": "Houthis strike Aramco HQ in Dammam, fire reported; part of threatened campaign",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "b4c9d8e2",
-        "text": "Houthis strike Aramco HQ in Dammam, fire reported; part of threatened campaign",
-        "textHe": "החותים תקפו בנק ראשי של ארמקו בדמאם, דיווח על שריפה",
-        "severity": "high",
-        "timestamp": "2026-10-14T08:51:14+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "1f6dh7g210f40",
-          "2gzkllggw5e00"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-c6b1a9f5",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-10-13T21:18:38Z",
-      "title": "IranStrike event",
-      "description": "Netanyahu discussed joint Israel-US attack on Iran with Trump; timing linked to elections",
-      "category": "other",
-      "severity": "high",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "netanyahu discussed joint israel-us attack on iran with trump;",
-      "location": "Israel",
-      "country": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "c6b1a9f5",
-        "text": "Netanyahu discussed joint Israel-US attack on Iran with Trump; timing linked to elections",
-        "textHe": "נתניהו דיווח עם טראמפ על תקיפה משותפת בירשאל-ארה\"ב בעלאיראן",
-        "severity": "high",
-        "timestamp": "2026-10-13T21:18:38+00:00",
-        "entityIds": [
-          "ISR",
-          "USA",
-          "IRN"
-        ],
-        "eventIds": [
-          "1h84xniwacrk0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-d3e7b2a1",
+      "id": "iranstrike-9c3f8a2e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-13T19:41:24Z",
       "title": "IranStrike event",
-      "description": "Houthis sustain barrage on Riyadh; ballistic missiles and drones hit airport with casualties",
+      "description": "Houthis launch sustained missile barrage at Riyadh; air defenses failed; casualties reported",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2258,9 +2220,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d3e7b2a1",
-        "text": "Houthis sustain barrage on Riyadh; ballistic missiles and drones hit airport with casualties",
-        "textHe": "החותים המשיכו הפצצה על הרياض; טילים בליסטיים ודרונים פגעו בשדה תעופה",
+        "id": "9c3f8a2e",
+        "text": "Houthis launch sustained missile barrage at Riyadh; air defenses failed; casualties reported",
+        "textHe": "חות'ים שיגרו המטה טילים בריאד; הגנות אוויר כשלו; נפגעים דווחו",
         "severity": "high",
         "timestamp": "2026-10-13T19:41:24+00:00",
         "entityIds": [
@@ -2275,24 +2237,24 @@
       }
     },
     {
-      "id": "iranstrike-e5f8c4d9",
+      "id": "iranstrike-5d7b4f1c",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-13T18:16:24Z",
+      "date": "2026-10-13T21:18:38Z",
       "title": "IranStrike event",
-      "description": "Iranian officials threaten regional force expansion and attacks on US personnel if US resumes strikes",
+      "description": "Netanyahu discusses possible joint U.S.-Israel strike on Iran; strategic escalation risk",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
       "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "location": "Israel",
+      "country": "Israel",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2303,23 +2265,210 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e5f8c4d9",
-        "text": "Iranian officials threaten regional force expansion and attacks on US personnel if US resumes strikes",
-        "textHe": "פקידים איראנים איימו על הרחבת תהליך אזורי ותקיפות על כוחות ארה\"ב",
+        "id": "5d7b4f1c",
+        "text": "Netanyahu discusses possible joint U.S.-Israel strike on Iran; strategic escalation risk",
+        "textHe": "נתניהו דן בתקיפה משותפת אפשרית בחזית איראן; סיכון הסלמה אסטרטגי",
         "severity": "high",
-        "timestamp": "2026-10-13T18:16:24+00:00",
+        "timestamp": "2026-10-13T21:18:38+00:00",
         "entityIds": [
-          "IRN",
-          "USA"
+          "ISR",
+          "USA",
+          "IRN"
         ],
         "eventIds": [
-          "1z49ezwhspk00"
+          "1h84xniwacrk0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-8b6c3a9d",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-14T14:01:48Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah encircles Ta'izz, launches offensive; multiple ground advances in Yemen",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "8b6c3a9d",
+        "text": "Ansarallah encircles Ta'izz, launches offensive; multiple ground advances in Yemen",
+        "textHe": "אנסאראללה הקיפה את תעיז, שיגרה התקפה; התקדמות קרקע מרובה בתימן",
+        "severity": "medium",
+        "timestamp": "2026-10-14T14:01:48+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "1t36hbcz52sg0",
+          "24s40aay5oqo0",
+          "2ksrajc5srs00",
+          "3lfoja1hk6g00"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-1t36hbcz52sg0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85497",
+      "date": "2026-10-14T14:01:48Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah reportedly encircles Ta'izz, creating two siege pockets, and launches an offensive to drive PLC forces from highlands near Al-Wazi'iyah; PLC reportedly advances toward Mansoura and holds Dhubab airport (channel claims, unconfirmed)",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1t36hbcz52sg0",
+        "timestamp": "2026-10-14T14:01:48+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Ansarallah reportedly encircles Ta'izz, creating two siege pockets, and launches an offensive to drive PLC forces from highlands near Al-Wazi'iyah; PLC reportedly advances toward Mansoura and holds Dhubab airport (channel claims, unconfirmed)",
+        "descriptionHe": "על פי הדיווח, אנסרוללה מקיפה את תעז ויוצרת שני כיסי מצור, ופותחת במתקפה לסילוק כוחות המועצה הנשיאותית מהרמות הסמוכות לוואזיעה; המועצה מתקדמת לעבר מנסורה ומחזיקה בשדה התעופה דהובאב (טענות הערוץ, לא מאומתות)",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85497"
+      }
+    },
+    {
+      "id": "iranstrike-3qd8nifd0q000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85496",
+      "date": "2026-10-14T13:51:26Z",
+      "title": "IranStrike event",
+      "description": "Houthi (Ansarallah) ballistic missile strikes ARAMCO headquarters in Dhahran; Reuters reports extensive damage",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3qd8nifd0q000",
+        "timestamp": "2026-10-14T13:51:26+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Houthi (Ansarallah) ballistic missile strikes ARAMCO headquarters in Dhahran; Reuters reports extensive damage",
+        "descriptionHe": "טיל בליסטי של החות'ים (אנסאר אללה) פגע במטה ארמקו בדהראן; רויטרס מדווח על נזק נרחב",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/85496"
+      }
+    },
+    {
+      "id": "iranstrike-2cwvmm929j6s0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85493",
+      "date": "2026-10-14T13:46:14Z",
+      "title": "IranStrike event",
+      "description": "Channel claims the UK has rejoined the war in Yemen on Saudi Arabia's side, citing a British aerial refueler reportedly operating near the Saudi-Yemeni border; unconfirmed",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2cwvmm929j6s0",
+        "timestamp": "2026-10-14T13:46:14+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Channel claims the UK has rejoined the war in Yemen on Saudi Arabia's side, citing a British aerial refueler reportedly operating near the Saudi-Yemeni border; unconfirmed",
+        "descriptionHe": "ערוץ טוען שבריטניה חזרה למלחמה בתימן לצד סעודיה, בהסתמך על מטוס תדלוק אווירי בריטי שנצפה לכאורה ליד הגבול הסעודי-תימני; לא מאומת",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85493"
+      }
+    },
     {
       "id": "iranstrike-kewt2lntfts0",
       "source": "IranStrike",
