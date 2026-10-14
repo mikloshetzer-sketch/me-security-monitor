@@ -1,68 +1,68 @@
 # Middle East Security Monitor — Weekly Brief
 
-**Period:** 2026-10-01 → 2026-10-07 (last 7 days)
+**Period:** 2026-10-08 → 2026-10-14 (last 7 days)
 
 ## Executive Summary
-During the reporting period (2026-10-01–2026-10-07), the monitor recorded **134 events** across the region and calculated a cumulative **risk index of 122.5** (MEDIUM volatility). Military incidents remained prominent (**30**), while overall activity was concentrated in the top risk locations led by **Yemen** and **Iran**.
+During the reporting period (2026-10-08–2026-10-14), the monitor recorded **131 events** across the region and calculated a cumulative **risk index of 164.0** (MEDIUM volatility). Military incidents remained prominent (**57**), while overall activity was concentrated in the top risk locations led by **Riyadh** and **Iran**.
 
 ## Key Developments
-- High-weight reporting referenced developments tied to Yemen.
-- High-weight reporting referenced developments tied to Gaza Strip.
-- Energy-security sensitivity indicated around the Strait of Hormuz in reporting.
-- International reactions were referenced in reporting.
 - High-weight reporting referenced developments tied to Iran.
+- High-weight reporting referenced developments tied to Sana'a.
+- High-weight reporting referenced developments tied to Yemen.
+- High-weight reporting referenced developments tied to Riyadh.
+- High-weight reporting referenced developments tied to Saudi Arabia.
 
 ## Strategic Assessment
-Risk distribution was **broadly distributed**, with the top two locations accounting for ~**41%** of the window risk. This pattern suggests the weekly security picture was driven by a small number of core theatres, while secondary locations contributed marginally to overall volatility.
+Risk distribution was **broadly distributed**, with the top two locations accounting for ~**37%** of the window risk. This pattern suggests the weekly security picture was driven by a small number of core theatres, while secondary locations contributed marginally to overall volatility.
 
 **Outlook:** Short-term escalation risk remains **MEDIUM** based on this week’s aggregated risk and incident mix. Priority monitoring should focus on the leading hotspots and any indicators of spillover into adjacent theatres.
 **Confidence:** MEDIUM (based on event volume and source mix within this window).
 
 ## Summary stats
-- **Total events:** 134
-- **By category:** military 30, security 10, political 13, other 81
-- **By source:** news 134, ISW 0
+- **Total events:** 131
+- **By category:** military 57, security 2, political 13, other 59
+- **By source:** news 131, ISW 0
 
 ## Risk Index
-- **Total window risk:** **122.5**
+- **Total window risk:** **164.0**
 - **Top locations (risk):**
-  - Yemen — 29.7
-  - Iran — 19.9
-  - Gaza Strip — 15.1
-  - Israel — 12.5
-  - Dubai — 10.1
+  - Riyadh — 30.3
+  - Iran — 29.9
+  - Saudi Arabia — 29.7
+  - Yemen — 24.0
+  - Gaza Strip — 10.9
 
 ## Top events (weighted)
-- **3.0** · 2026-10-07 · military · news · Yemen — [Houthis attack Aden airport as fighting intensifies in Yemen - Reuters](https://news.google.com/rss/articles/CBMiugFBVV95cUxNNjcwdDdFSmxISzN2RWdiODU1ZjlXODFLZGRiVmxTeW94dnI1T1VsNnhlU1NJMTZXajJoVlE0VnpzVDlmMmJQUjYzN21Tamk5YWZhazdRSzd5MTJndURBTjNQTC0yd2I2ZDhIazZlNUJUYjAyZHVwZFRCMER1OGZLS2pZRmRQTjlrSlVyLUd3N1dnUUxrM2NBSERSd3VmYkJBNnpzT1I4RmhwMWhHbHQyN1ZOWkxCclZBV3c)
-- **3.0** · 2026-10-07 · military · news · Gaza Strip — [Israelis mark three years since Hamas attack that set off Gaza assault - Reuters](https://news.google.com/rss/articles/CBMiwgFBVV95cUxPVEc3R0oyN1N1QkF0Q09Zb1hfWURTdDRRSnFvaVNlQU42cXJCNEhNNXdLOW11NTRsVi1VVlJKV0NSTm1CMVg3c3RMQ3pHcEV3VGpCNGF1UHBobHVhYkFQY0pNS2NvMXBQMWxSTEVhQTF6a01jRzBpXzFKajQ2NWxIZm5BdGQ4azhfYnBwVnh1enVzc04xeElNSTZFMHcyNmlfUElEM2s3RVFRXzFScUcyNUlfbFVrSjA5LVNjMlhQZzVBUQ)
-- **3.0** · 2026-10-07 · military · news · Oman — [Oman evacuates injured crew from attacked tanker in Strait of Hormuz - Al Jazeera](https://news.google.com/rss/articles/CBMirgFBVV95cUxOZWtvNFJvczBTblE5eGRWUzBIUTlINnREWXQ2TWVXR3dzQ05uLUdVZ2JEUDRSZjFhc3FzYlF6cU5LVWR3OWN4X3ZKRGM0ZUdSNjQ1UnBFQzdGYmowQ3laQlc5aEZpV0pIeTFMTlppQUVmejFXb0M1akxpSTVvcGJaQTNSRTNGUmZNWl9Yd2FCVTB2TDRMdlB6U0g3Tk41TW5sOGJwbFZTb2hHZGNqR3fSAbMBQVVfeXFMT2FKTm9vN2pFbG1rLUZPdnVZNFloUVNuU0ZxZFJPZzBPMjA4T3lWVEJEX3QzZXd3RjVlY09SUXBVX0JMRndvNl82VkpnOWhDVzAyWjktSzhuc003bi01MXBEWTFqZjBXamlNTXpXRGZDOHlPSnNpbUdCVzlfRVFWTTg4bVl0TDg3Rzg2czZTdldZRWVnc2NqY1NqZnlBSC1tNm94ZUFRWDVOUVk5c291dkhKS2s)
-- **3.0** · 2026-10-07 · military · news · Yemen — [Two Houthi missiles target Yemen’s Aden International Airport - Al Jazeera](https://news.google.com/rss/articles/CBMisAFBVV95cUxQZDlTeERxY0p3enNyeG5jekVYMnMzOUlVcU8xRm9rdTVuYjdXeWFuWWNaT1kzSFc5WHVfdWxkNU9DZzY4azJ5aGtnWm1CRWdMcVZRYXFoX0o3UzBzc3hMYTVuUXdJLVJvUFRwdGxuQ25pVWlmdlFGR01RWXNRU1FGSlpsQ3o1anA4V2UzYW0xejJaZDdscTI2SGh6a2pWMnVXTGQwc29WZkdELWsxbXlUOdIBtgFBVV95cUxPaEd2OFFPMDc4NUdQcEoxWnZKMEtmRnVBakZ0VkFrT3pwRVJDZUxHSXIyQnpvd3RUMUhXZ0ljekpfTmppSWlmdHdvX0xVWF9pS1lhTUVIWWkyNE9XcWwyQUJBMVdFdE5mM1JuZXhlVlo2dVdGcjE4WWZ4N0p1cVUzY21CbktWYTlDSGE4RGlOaElCc2VGc2hYVFJlS3ZlV1p1cEVHMDJ4WU9CX3FUREw3Tk5kbUpvUQ)
-- **2.7** · 2026-10-06 · military · news · Gaza Strip — [Israeli strikes kill two people in Gaza, medics say - Reuters](https://news.google.com/rss/articles/CBMiowFBVV95cUxPT0lvZ0RuYTQyWHRxYWd5X0phbDJGb0JWOXFkczJfMktSMlhmcGx2OGNVS2dWb0ZNZ1B2Rk1HRW5CczZQY2FtUGVxSm53TV9XTnFoRUl5R0Q3M3ZPVmh4OVYtZ19oM252RmRaYlBOZlFYZmhWZlRzemdCUGxtSmRaMWxFdVRpeVdtdlZKTzMwVDBuZjRFY3VVTVN5SWp5dFFrOERV)
-- **2.7** · 2026-10-06 · military · news · Yemen — [Saudi Arabia says three wounded in attacks on airports near Yemen border - Al Jazeera](https://news.google.com/rss/articles/CBMiswFBVV95cUxQWHVKeVJtVklCdVVISmNIb3NVbk9kV1dRYmtMX1dxRTlWWThPNmRzTkIzUlF2WGdVYWxST3JqU3p0akJDUU9jWm84clpuSkEyMG94ZmpoNzN4MkFaa3BjcnRxWnpGSlZBdFlUZ1R2YVFpM1dWdVJqeHAwaWNnRjhzNWx1SWNDb1R1c2pILWdrQ3U4TEZiN2pYdG5HN0s1dTRDMnBKTndzVjVFa2FQSlJqVkVXSdIBuAFBVV95cUxOYW9TMV9wZEVndkZNZlhUSEtmdGYxbktLalVSY3RPOE9tVlM3U041VndUR1VRTTNla2FpYlZvbDdzRjUtM0QxNnpOWmpQdl9LbkhMZG5iM0pBOENqR2Z2eTI4dVRIWC1lV1Z0OWVxZTBLdzB5Wk1oR241bGpKenFoVDdVQmlBSUZhTXNkX09wUmJ2MW5VMG85b1dPdU1ncXN0TWoybzh0bHR2RzdwODZLdEJSb3Z1dkt4)
-- **2.7** · 2026-10-06 · military · news · Saudi Arabia — [Saudi Arabia says three people wounded in attacks on southern airports - Al Jazeera](https://news.google.com/rss/articles/CBMiswFBVV95cUxNeUR2N0t5WlpTWk9kYkljOWdERTlyUlo3RFcyS0dWQmFxUXpMZVBUcm95aDByRWhHbkpNWlhQN3R2RTNHa0hiYXgwRk9NWUN4UGRiNVJvZ1NMcWhkWDV2ZlFNZWtSN1kwN3pvQlhzSXpDRHNKMVRudlROa09jS1A0Y0dnUU9DMV9xNk84ZUFwWHhoOUw3b1VCTzJtVEdZVl9PVWZxUUFEQVRrNDY1cElWSDBIc9IBuAFBVV95cUxOS2JNb1hvM2hkdXIwZ0hyWnJkQk01blV5U0d6LW52MTVwbXBrdFZoeE55enZCaGJmQmdLWmVCdnlfVXBkSm1hWlVsQndOOHlqLVdoVEJfUnQ1aDdXSldDdVlqZWRRVmVuV2ZGa0lBbF9CVV9fUFNBbWdCS2I4bHA2ZTAyQ2dZNDhWYzJfU2w3WU9zbFByelRzMl81UlVBQUs5cVZodEdRTnJrUVl6a0huYkU4RlZkWUdQ)
-- **2.7** · 2026-10-06 · military · news · Yemen — [Yemen’s government is on the attack against the Houthis. What has changed? - Al Jazeera](https://news.google.com/rss/articles/CBMivAFBVV95cUxQaThtX2toODBiR0cwUE9HbWJLZWJ4RUp2b1BMM2lDTElvaDBGMXVOUHhHb2JJM2U3QTliQkd2azZrNllrR192aEN2SHZzMGNKNno3ZExhZkJ6dUR1VkJ5UWJiSzRjUXFMb2VNSkVhbFc0SVFGUmZnVDVkMEVEY1F6d29rVmRQZm9HRWc5U0dfa1VnUTFLLS1hRjdQVVF0TDJ1MUw3cVJzUGxzNDhMcHUwbXNyLVROdGc1MlZhNdIBwgFBVV95cUxNMkxlblBfbTNVQnRfOUZVWWpubklValNYVGxULVBLeHJwMjI2clplNWNKSWhQRjFmYk5jZkdNQXdsa2J0RFM1dE5LNk9DSzdBbVZzSWJJWF9WWkhRLV9iNW02WHdWVFptN3kzZllWdkw3cEwxZW9sSDlqU2JjU09jaGw3TFBSUU9OUlpNY040LXU3a3ZCRzBFaGNLbVdmTmJoemlJclhKSXI3MVYwVkNVMmIxdnpYSGd2alktRTk3MWxtUQ)
-- **2.7** · 2026-10-06 · military · news · Iran — [Trump jokes about letting Iran bomb Los Angeles and San Diego - Al Jazeera](https://news.google.com/rss/articles/CBMisgFBVV95cUxPeEFIU1VqdlptTUNXQlpKRWgyeE1QNmdJSmN0WEx0SGVtR0xHSXdHY3RJNTR5Tnp4WmlIY3VneUxMQUdmMG9DSVJTWlpyWW5KcDB3MUpob3JOWFJOREJQaDFPWkxtbmUwM3YzbXU1aTdvZUdsUk1wdVpQQkF2MDhKRE9HQUJSN0xJcXB1ZFlYSVJ0ZnJsZUVBQjBzMFladlBFT3BKQmdQelU3bHJ3VU9fOHFn0gG3AUFVX3lxTE9fb2QzRmlpYUdRQ1B3dGhGQnBOMDdQVFY3cHZQTG5yaERyOVdSYUIxRDdjTDNoMGZRNzhTay1zR19ZblZHcGxDZktNWS1wZEVfODFrb1JERE50a2JfZU9vaTJtUzhLS3RHN21SUnE0RW9HVXBtMW1HbXpGVUdPaFZNUUVhRDhlbkM1bFdMbkdaRzNVNUszRzRJR1BsWlhROHFrdG9XUmg4LWJIOTU5QTd0UUFlWFd5MA)
-- **2.4** · 2026-10-05 · military · news · Middle East — [Middle East oil exports top pre-war levels for part of September but tanker attacks increase - Reuters](https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDlnRmFJc1NCRTRsSVNmNTRtMnh2dmJiNWdMbnF2YVZRU0g1WXpERld1Qm0xbW5MQzNnTUhYTjFCUWVadVlWbmdwZjJSTUdSUkpGU2FrMzRmRW80RWRDcGpidUNVUHd1aVloWkFKZFRVNllUMEhVczNJNjNSZkR2VmZrU1hIbGRzZmZpeTF1TUNsMFp4ZFVuVE16RjlnYVBmUGhtRG94Z0VOTk13b2Y4ZUhpTElPSTctdlJQTmdCWnNnamhrVkE)
+- **3.0** · 2026-10-14 · military · news · Iran — [Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters](https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ)
+- **3.0** · 2026-10-14 · military · news · Sana'a — [Missiles intercepted near Riyadh after Saudi coalition hits Yemen fuel depot](https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss)
+- **3.0** · 2026-10-14 · military · news · Sana'a — [Houthis strike Aramco hours after Saudi-led coalition hits Sanaa oil site - Al Jazeera](https://news.google.com/rss/articles/CBMipgFBVV95cUxQdmRBdUZFd2VfLThKOWQ3elR2ZWJzVzFrdDhMMkU2TGlFbnhiR0ZkeVVYOUhhZnNDTFNndHd3azRFZ0lqbG50Z0hlS2tVbkxhRmptNWhVRHJ3aER0WTc4ZXRPSTluRWpjdnVhOEF4bncxU3h6ZTkxSF9OQkduWWxnZTNtOURzQXM5OWRvNWNBUXBEYzlEM0VjR3N0WF9WWDdZU00yd0hR0gGrAUFVX3lxTE9xYjVUdUk4dUhhTmNFYnFCbl9TamRndElPREdPaFM3ZW0zc0NGYjd2aWRlVU1SUGxaS3NsZEY3UDBTaVJaMHZ5YnM2ZmVHNUhmTk9md0xIVzl6WFZTam13bm1iSHpEenFoUkJIcnU4dTBNSnY3NkFLZkhZajdWT2JQRUNCYlh5bWRfTGZJcS1BdEY0VUlCdzlWT1ZnUGQ1Tl9ocEdiUWZOX2Q4RQ)
+- **2.7** · 2026-10-13 · military · news · Yemen — [Oil prices settle mixed, focus on US-Russia diesel deal, Saudi Yemen attacks - Reuters](https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa2sxWTVlekZ2bXloVXNiOUltMm5iODVOMW9NTUo4Q016ZU02OFQ5TU9relFTcUZSaW8xV0c2YmNVbE5jWW5uQjhKeXNKaWxBcE92SU1fQUU0R2RVamdNUzRhTER3NzEzMFUtRVd3bzVnZ1g0ZmtRek95VHdYbVNNMmNacmlDd3dLTThmaGF2VVJDYTc4c1hQeUZfX0ZGQzZjTXlpLU52U3JuUGpjOHJjWndoS19LandSX0dtMmdUMzNKZw)
+- **2.7** · 2026-10-13 · military · news · Yemen — [In Yemen's Taiz, shelling worsens and prices spiral - Reuters](https://news.google.com/rss/articles/CBMinAFBVV95cUxNN2FlSHhCeHdBNFJVdTB4TndzdEgweWtZcktCbmVrOTRpOGNzRXVlLUplRUFqX0QzU1dCcjJQX3hHdVVFeHdHOWVjM0o1VG5FcXdwSGE2Y0pFRmpBb19lbml2T3FqY0x4VEs0NThJdFJRZVAteGlvRjhkRE1JUm0xdEZZaTE0akRfbjhQb1d4RHluWHRHeVdyZWg4MnY)
+- **2.7** · 2026-10-13 · military · news · Riyadh — [Qatar Airways suspends Riyadh, Dammam flights as airport attacks disrupt air travel - Reuters](https://news.google.com/rss/articles/CBMizgFBVV95cUxON3hKM0tyUDRYZ0ptS1I1ZGpDMzdHLU9zbER2LTNSb1QzcHk2SkR3VzY4VHBpQXIxR2hRcjk3d19pbTVqLWkzQTRtVkQ4R0lWV25rSFpzVGQwdkhMTGxaSDdDMVR5RUhEQ3FXS1RfY01heEl1ek5hSHFkNlBkOU83cnN1VkFVQjhUMlJuTUpqYnVxQV9zVkpBMGc3SkhadUhqMXJOM3lqVTdSRFBvbzdITWlSSVB3RW9HWkZnVEM5Skx4aWhNVjlfZWZOS3ROdw)
+- **2.7** · 2026-10-13 · military · news · Saudi Arabia — [EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters](https://news.google.com/rss/articles/CBMiywFBVV95cUxPUnMtSVRHNldwaFdHWWx4NlBQbHZLYjZvUVdHMWExSHFfVzNXLU9wQi1wblgwOE9jZlFaUjlzbDlxb2tFV085eUYwM2dyVkpkVHBVTjIzM2wtRlhUcjBmQ1I0YVNnUU53MEJTOGlWOE5SZ2xkdWRrVmlIZHNacjlfZWRJak51OWQ0OXFLWGlnWVpnd1haY3FRRXhfcGMtR3dlTVJTQ1FuOGxUaHZFY2NkcHVBMzFlcUV1WG5CTTVmM0F3dTlqam1qT2VvWQ)
+- **2.7** · 2026-10-13 · military · news · Saudi Arabia — [Saudi Aramco administrative building attacked, limited fire reported - Reuters](https://news.google.com/rss/articles/CBMiygFBVV95cUxPUHZtMnk3dUVFWmVkT2FmZVRqNWNrUUc5YkNkWVJMOEhWMmo1dnc2S3FlUlExbjFscTdlY3NQcExPejdxUlF1clZ5S1BKQ1JLdjhzaFdXT2l1YVBmN2VVSkFOSlJNNmlTR2w5d082MDR2b3RkY1VrTTlwWFhuclBteVRaTmtMRUczY0VPaWxBeVV1RE9vUE9kRFZaUlZEX0NnOXZqVnNtNlJIcFU3cnE2VVFTNzhfNVZ0TzZiQWFtSUJCdXJXYU5rU0JB)
+- **2.7** · 2026-10-13 · military · news · Riyadh — [Saudi minister vows 'serious response' to Houthi attacks on airports](https://www.bbc.co.uk/news/articles/cjly0zqq27e4o?at_medium=RSS&at_campaign=rss)
+- **2.7** · 2026-10-13 · military · news · Iran — [Who are the Houthis and what do they want?](https://www.bbc.co.uk/news/articles/cqy7z228kee3o?at_medium=RSS&at_campaign=rss)
 
 ## X THREAD VERSION (copy/paste)
 
 **Post 1**
 Middle East Security Monitor — Weekly OSINT Brief
-01 Oct–07 Oct 2026
+08 Oct–14 Oct 2026
 
-The monitor recorded 134 events and a cumulative risk index of 122.5 (MEDIUM). Incident mix was dominated by other activity (30 military events).
+The monitor recorded 131 events and a cumulative risk index of 164.0 (MEDIUM). Incident mix was dominated by other activity (57 military events).
 
 **Post 2**
 Geographic risk remained concentrated in the leading hotspots.
 
-Top risk locations: Yemen (29.7) and Iran (19.9). Secondary locations contributed materially less to overall weekly volatility.
+Top risk locations: Riyadh (30.3) and Iran (29.9). Secondary locations contributed materially less to overall weekly volatility.
 
 **Post 3**
 Key developments reflected sustained escalation dynamics in top-weighted reporting:
 
+• High-weight reporting referenced developments tied to Iran.
+• High-weight reporting referenced developments tied to Sana'a.
 • High-weight reporting referenced developments tied to Yemen.
-• High-weight reporting referenced developments tied to Gaza Strip.
-• Energy-security sensitivity indicated around the Strait of Hormuz in reporting.
 
 **Post 4**
 Strategic signal:
