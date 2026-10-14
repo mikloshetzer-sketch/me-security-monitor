@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-14 01:14 UTC",
+    "updated": "2026-10-14 07:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-08",
     "period_end": "2026-10-14",
-    "total_events": 128,
-    "total_risk": 160.7,
-    "normalized_risk_score": 64.3,
+    "total_events": 131,
+    "total_risk": 164.0,
+    "normalized_risk_score": 65.6,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 58,
+    "military": 57,
     "security": 2,
     "political": 13,
-    "other": 55
+    "other": 59
   },
   "source_counts": {
-    "news": 128,
+    "news": 131,
     "isw": 0
   },
   "top_locations": [
-    {
-      "name": "Iran",
-      "risk": 32.7
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 30.55
-    },
     {
       "name": "Riyadh",
       "risk": 30.3
     },
     {
+      "name": "Iran",
+      "risk": 29.9
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 29.7
+    },
+    {
       "name": "Yemen",
-      "risk": 21.55
+      "risk": 24.05
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.1
+      "risk": 10.9
     }
   ],
   "top_events": [
@@ -55,6 +55,15 @@
       "title": "Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOXl4Z2E1ajJabkV2V0d3VVN4TE4xZVdXU0xjY1FwX2QwNzVpSEZ2UUdWY2d2N0w0TEZCXzRFR2oyZ3l4MlZkMER3cDZtOFRMc2p4VzRSWE1OZGdJaHBvRlZieVJ3Unc4bXEyRHFvalF4MEkwTmduUEFtV0lBX3NZS2Q0M2hoSkozeWFNMS02MnF5QmNveXNFNklHVktxYy1RM1BRcHlSVm92aWYzRnJpNTJvVWYtemNjbklpM3Jna2t0bUIweUV6VQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "Missiles intercepted near Riyadh after Saudi coalition hits Yemen fuel depot",
+      "location": "Sana'a",
+      "url": "https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -97,15 +106,6 @@
       "date": "2026-10-13",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Aramco administrative building attacked, limited fire reported - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUHZtMnk3dUVFWmVkT2FmZVRqNWNrUUc5YkNkWVJMOEhWMmo1dnc2S3FlUlExbjFscTdlY3NQcExPejdxUlF1clZ5S1BKQ1JLdjhzaFdXT2l1YVBmN2VVSkFOSlJNNmlTR2w5d082MDR2b3RkY1VrTTlwWFhuclBteVRaTmtMRUczY0VPaWxBeVV1RE9vUE9kRFZaUlZEX0NnOXZqVnNtNlJIcFU3cnE2VVFTNzhfNVZ0TzZiQWFtSUJCdXJXYU5rU0JB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-13",
-      "category": "military",
-      "source_type": "news",
       "title": "EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPUnMtSVRHNldwaFdHWWx4NlBQbHZLYjZvUVdHMWExSHFfVzNXLU9wQi1wblgwOE9jZlFaUjlzbDlxb2tFV085eUYwM2dyVkpkVHBVTjIzM2wtRlhUcjBmQ1I0YVNnUU53MEJTOGlWOE5SZ2xkdWRrVmlIZHNacjlfZWRJak51OWQ0OXFLWGlnWVpnd1haY3FRRXhfcGMtR3dlTVJTQ1FuOGxUaHZFY2NkcHVBMzFlcUV1WG5CTTVmM0F3dTlqam1qT2VvWQ"
@@ -115,9 +115,9 @@
       "date": "2026-10-13",
       "category": "military",
       "source_type": "news",
-      "title": "Missiles intercepted near Riyadh after Saudi coalition hits Yemen fuel depot",
-      "location": "Sana'a",
-      "url": "https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss"
+      "title": "Saudi Aramco administrative building attacked, limited fire reported - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUHZtMnk3dUVFWmVkT2FmZVRqNWNrUUc5YkNkWVJMOEhWMmo1dnc2S3FlUlExbjFscTdlY3NQcExPejdxUlF1clZ5S1BKQ1JLdjhzaFdXT2l1YVBmN2VVSkFOSlJNNmlTR2w5d082MDR2b3RkY1VrTTlwWFhuclBteVRaTmtMRUczY0VPaWxBeVV1RE9vUE9kRFZaUlZEX0NnOXZqVnNtNlJIcFU3cnE2VVFTNzhfNVZ0TzZiQWFtSUJCdXJXYU5rU0JB"
     },
     {
       "score": 2.7,
