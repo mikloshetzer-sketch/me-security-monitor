@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-15 04:42 UTC",
+    "updated": "2026-10-15 11:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-10-09",
     "period_end": "2026-10-15",
-    "total_events": 125,
-    "total_risk": 159.45,
-    "normalized_risk_score": 63.8,
+    "total_events": 129,
+    "total_risk": 165.85,
+    "normalized_risk_score": 66.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 58,
-    "security": 2,
-    "political": 8,
-    "other": 57
+    "military": 56,
+    "security": 4,
+    "political": 7,
+    "other": 62
   },
   "source_counts": {
-    "news": 125,
+    "news": 129,
     "isw": 0
   },
   "top_locations": [
     {
-      "name": "Saudi Arabia",
-      "risk": 35.75
-    },
-    {
       "name": "Iran",
-      "risk": 35.3
+      "risk": 37.65
     },
     {
-      "name": "Yemen",
-      "risk": 27.15
+      "name": "Saudi Arabia",
+      "risk": 37.0
     },
     {
       "name": "Riyadh",
-      "risk": 26.85
+      "risk": 24.75
+    },
+    {
+      "name": "Yemen",
+      "risk": 23.15
     },
     {
       "name": "Israel",
-      "risk": 10.45
+      "risk": 14.85
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran’s precision strikes picked apart Gulf infrastructure, blunting US war plans - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONmZVZ0RfSms3U0s1SVE3N3ZMeWxLaVhtTjczazRmNU40UkpCUldVbWZJVUtJVkt3cHdLOEpoTl9qY0lFXzdKWUtydmYzVi1MeDExbXB6eHc3NjAyTi1CT2lveE5WVUNPeHV5SndkU3BmRUNiS1JCQUI2bDYyZjd6RjltYUhzeFVmUDFPSU93NWo"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Gulf stocks fall after Houthis threaten more Saudi attacks - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRno4UkRJYXkzMldxaU9XbzNpLWtsNVd4SmUtelluWEFxOHNCTjdpSmVJVzBac0h1TDF6TE8wY2FZNHBHaF9XTjZ0WTByY29yOTR4SDVKaG02YWItZkNVdXlQWWF6bWROd0ZSRDM5SDRSSEs2M0dBZHRVekJTVHhpYnMzemVCa3RQY3dmZ3g5UFBUZ2ZySWRjT0g0M2FuZElsaVkzUk1KSHB4ODRTdjBkbzJR"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Sports-FIFA postpones FIFAe Finals in Saudi Arabia following attacks - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbXBtWkJRSlV6SGoxVUpRVHZsSWMwTldtZURhUWlldTFtSGlLSmFJYzJjaHBqOHZ6SEJMQlByYW5SeGlPa2F2YTNfLXRwNWZTdnVpUWJQVHBZbmhyUkNLYlNaVlIxb3poOEdZRkc1LWJnRG1CWTljM3QyMjhXU0pJMzhSd3plaThOdTFkNTU5Q09JOVoxT2ozNVNDdEU3UFVEUDM4aEVPeXh2RXFVUkx5OGtuQ3RPdw"
+    },
     {
       "score": 2.7,
       "date": "2026-10-14",
@@ -109,33 +136,6 @@
       "title": "Oil prices gain on attacks in Saudi Arabia, Iran's new tactics to target tankers - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxON0hPaGRDOW9haXRKcUJ3WVU5dVdwSjB2ZzNMZTVWd0lRYV9ZUjRNRTI4VjVXeERGeW1XVU1GanZidjZneXhKeFh1dWM0OUJ6ZGltVXFXdHJNVk52MDN5M3NvRnhUUWN6aEFiSldFUWxfeHNPYmQ2R21JMGlhaUNaWEFNckc0T0ItSFpYcHA3MmM4UUdnTVd0VFg0NWhtbm91MllPWllha0pqdVBjZlRldDgxaG5PclVud0xtNQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNV3VzaTd1VDVxNXczQ2FRa2FsXzdOV0Y5ZlFoaUthcVJhUnlFMHROUUMtWWZzUGZNWFd5WVNZbnJyZ3A4azRaUzNabVQ1U2ZMMmNYTzM1R2ZoeDF5dVQ0Q3FldDNEMW5lVC1oaVQ3Rmdaei01eS1GaFVla0prYUVZeEtJZlBZV2hoUm8yVTJNR3RYSXlhZTBPVWswNmdTWE5nclRiSldzUE91cXNZbzRGZzVOSFpMX294VWs3UlFpV2Q1Z09xTnl4Rw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi missile hits Aramco building after Saudi-led coalition strike on Yemen fuel depot",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/crx2d60y1py3o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "At least two security officials killed near Iran’s critical Chabahar port - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeXRZcjJGM2JSeWxZdnhJb243eEJTemRkQWlRVm9SVFJlMlhRZXRBdUZZaVQ1aVlIaDBadGZ1dmI4WFBqUVNkVnVIekdCR2pTTXV5N21kVURvYmp6WHBraDNoeGhnVTl1TUQ1T3c5Yl9Id0lJS3p2TVRXTURPWnB3R3NTR2E3YjlKa0RHdGMtZkdsQ3oyOGZQcE9xNThBSjBxTFdoT0d1VXA1VTllR192WVFtcmTSAboBQVVfeXFMUDlBS3VmU2ZYcGVkUF9VZU1jRkRibmJXZzlyZEU5aFZ5ZWJ4bmRlRzBqNUFGSFV5dkY3OTlPSTUtamx5dDBlTnRVYzdXcTgzbm9qMFozUVNSTnN4X01hX0hxNUZFR055X0o2eEh3MjcwQWdUSFRlLVVmYUduTktGeDBaOHFHNEx2STJ2VXlHbTRXMGRIM0wzWVNZVk8tSmg1NXdlZHh0VGkwdXdoZnJ3VlR3ZFlLdnN5akxB"
     }
   ]
 }
