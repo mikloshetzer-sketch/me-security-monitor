@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-15 11:32 UTC",
+    "updated": "2026-10-15 17:03 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-09",
     "period_end": "2026-10-15",
-    "total_events": 129,
-    "total_risk": 165.85,
-    "normalized_risk_score": 66.3,
+    "total_events": 130,
+    "total_risk": 164.1,
+    "normalized_risk_score": 65.6,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 56,
+    "military": 53,
     "security": 4,
     "political": 7,
-    "other": 62
+    "other": 66
   },
   "source_counts": {
-    "news": 129,
+    "news": 130,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 37.65
+      "risk": 38.95
     },
     {
       "name": "Saudi Arabia",
-      "risk": 37.0
-    },
-    {
-      "name": "Riyadh",
-      "risk": 24.75
+      "risk": 33.9
     },
     {
       "name": "Yemen",
-      "risk": 23.15
+      "risk": 29.5
+    },
+    {
+      "name": "Riyadh",
+      "risk": 18.15
     },
     {
       "name": "Israel",
-      "risk": 14.85
+      "risk": 12.35
     }
   ],
   "top_events": [
@@ -61,18 +61,45 @@
       "date": "2026-10-15",
       "category": "military",
       "source_type": "news",
-      "title": "Gulf stocks fall after Houthis threaten more Saudi attacks - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRno4UkRJYXkzMldxaU9XbzNpLWtsNVd4SmUtelluWEFxOHNCTjdpSmVJVzBac0h1TDF6TE8wY2FZNHBHaF9XTjZ0WTByY29yOTR4SDVKaG02YWItZkNVdXlQWWF6bWROd0ZSRDM5SDRSSEs2M0dBZHRVekJTVHhpYnMzemVCa3RQY3dmZ3g5UFBUZ2ZySWRjT0g0M2FuZElsaVkzUk1KSHB4ODRTdjBkbzJR"
+      "title": "Houthis attack presidential palace complex in Yemen's Aden, PM unharmed, officials say - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPenN5Nk5reEJ3bHZicV9oSUR2N04zWUlyczJ1REFSbjFmZ0RPNEl1QzBKUUZjMnFrbzFvbE9YWjRCbVl1clRtNXFPZm9UanlhVmxUS09qYXhOYjJyeVRNRzZtdkVfeU5DalRNT1V4Q0E2MDU0Zno2ZWl5VERHd1BsZS0ya2lWQ0EtTngxbzVGdHNhc1RkZnhGRGxiSllsZzJqUjliamhmWmt3cVBfM1lzbS1vcmRPVHZkYVNhYTRB"
     },
     {
       "score": 3.0,
       "date": "2026-10-15",
       "category": "military",
       "source_type": "news",
-      "title": "Sports-FIFA postpones FIFAe Finals in Saudi Arabia following attacks - Reuters",
+      "title": "Saudi-led coalition says Houthis attempted to attack dozens of Saudi facilities - Reuters",
       "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbXBtWkJRSlV6SGoxVUpRVHZsSWMwTldtZURhUWlldTFtSGlLSmFJYzJjaHBqOHZ6SEJMQlByYW5SeGlPa2F2YTNfLXRwNWZTdnVpUWJQVHBZbmhyUkNLYlNaVlIxb3poOEdZRkc1LWJnRG1CWTljM3QyMjhXU0pJMzhSd3plaThOdTFkNTU5Q09JOVoxT2ozNVNDdEU3UFVEUDM4aEVPeXh2RXFVUkx5OGtuQ3RPdw"
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQODZXb0UtbHJiTHdmLTZhUENYcXNNeVptZDFGV1pUUEpuS3A0RzROVlBWSGw2V2tvdjNabmlnX1llVmh1Tno5TW5jUjhLWm5BY3VOREdYTnd5Q2RpdmdyVnVzR0lFTlp4SDV4a3JzNWo0US1xdER1eUkybkRtOHlBT2U4RE43NFI2dGVnb29fSmdPVmVPaDY3NG5fNXRabFR5dkJBU0pwNDFZSkN0NkxaU2lEd2c1Mk9HbUNUYTROV3BJUnh3TEE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Hezbollah says it owned confiscated explosives, meant to attack Israel - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQUNqWTJxemdBVVByYW9Cc0N3NlU2UW9zczJReDZOeWdKMENNbUZjQmF1bE9IQ1VEOXNrcXpQU192ZUhHTVZ0cDN1N3IzS2lxY0ZTOXdGY3RvWlVObFZ2RjAyVF93ZUNCWVJKSlBpNDVINmxBNGRORXRYZUt1blF2RzFLV2VjZWJZMUg4X2tGMjd5VlpOVExvbFIxN1ExS1lMMnJXUXJPOWhfcnVXZEl2aUpDeHNqcnFSeUJ3NQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi missile attack on Yemeni presidential palace kills two, minister says",
+      "location": "Yemen",
+      "url": "https://www.bbc.co.uk/news/articles/cm62y6lp73zdo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Asian Cup in Saudi Arabia could be postponed by a year amid Houthi attacks - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNE5ZcUNpenJxRFkzN0NTdlhVbU92b0NpNWQ4ekh5Uld3dFZkdUlWTTlWMUh3R01XcE02N2g5b3FqSng4MXBtNGpsVWVzQzFZWlFyTE56UG9hVlpDZmZLbzc5SVhmQ24yQV8zbWZmcG1hMXdzNm9rdU81OHFSdUVQQ05CR1VzV0JpSWl6OFZGVzRmOTNoRzBEQmZKZWNHUHRQdmNhUzd6S1lTazE2eTh5OFdXMEJsc0lmVmfSAb8BQVVfeXFMTVVWdkJFbTRGUDdZdV9QeV9nLXloLUJDeG9LNk4tc1l4TU1lVGJieEVFdHBhS0U4NlBZYkY2em5BR1FNMEJISEdwMnpRT0R0VWpDb0h2T0ZwdXZyRFkzbDdua0NrNmhCOVJHdW4zTnp3QmJvWHExaWxiUTJVRl9uOWNDcGw0dUxrTDNzNGg5UURxYmp4RC1uWFlnV1FEZXRaN2ZPTUdTLVlGdzRMLUFSUWtYbkQxbjROT3ZsWEZienc"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Iran executes monarchist convicted of armed attacks during war, judiciary news outlet says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcVpwLVEyTnpiOC1HOGZUTVRVaFRnbGFIQWlnZzJHSF81ZUNPWV9fd09LYk1DbEdmYnp5aXdKUmZnLUlSV3o0RGZsSUstMjBJWGxhUEFubTJhbVhfUF9IaTlPeWoyLWFmb3dYeVpMX3hzYmVwRjBXekdyMnVGTEtnN2FNaG9NdDdyYzc5c0RTS3JWZlYxaXhQYkNCMWl5VGg3LTl1T3ZSMDl6NnZRWlVsNUU3cUdkbkk0WmNWY3lWSGNVdWxBQUlr"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Pilgrims caught up in Houthi strikes on Saudi Arabia - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTWUzYUQwXzFUVGJsY2RZTUhiY055eFFGRGtYMDR0TkU0TkRLaWZaQ1VLdnhNbTFkOTBFOW1ZVEJTWWEwWDFBZHBPZTgyY19MZURTTVExR1hvRWtub2hZUGtTNWs2Z3JLMFZYVWhvZ0FrQmxSRWVrYkxyc1VzWWk3RUZGajF5OFRxZHJWZTBvdWJ2VFRhM0IyZkZwRXBHd2F1SUE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Gulf markets mixed; Saudi stocks hardest hit on Aramco attack - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNLXZwM3pfUE0yMVJsTzRjTkJmWFIwclNIamJ1Y2xFdmxWV2lpVHZWRDNqdkVLVGRvSV9rWEZXX0Q3cndEWXJNNnFWeVlYWkhzbFRjV19CSlV5M2phQVJSa2pWdXNob0RsSURPb0k2bVh2ZXJnMEJPeUdXYnhDV2FNLVN4QVdLVXpIWjJCTU5BYkVaMTlkQWlzeDI5bW9CU09sRUtsNlNtbjV6UklveDU4ZmNHcGQxT1VLb3BJ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-14",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil prices gain on attacks in Saudi Arabia, Iran's new tactics to target tankers - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxON0hPaGRDOW9haXRKcUJ3WVU5dVdwSjB2ZzNMZTVWd0lRYV9ZUjRNRTI4VjVXeERGeW1XVU1GanZidjZneXhKeFh1dWM0OUJ6ZGltVXFXdHJNVk52MDN5M3NvRnhUUWN6aEFiSldFUWxfeHNPYmQ2R21JMGlhaUNaWEFNckc0T0ItSFpYcHA3MmM4UUdnTVd0VFg0NWhtbm91MllPWllha0pqdVBjZlRldDgxaG5PclVud0xtNQ"
     }
   ]
 }
