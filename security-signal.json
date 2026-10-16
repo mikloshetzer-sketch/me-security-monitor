@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-16 13:17 UTC",
+    "updated": "2026-10-16 18:05 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-10",
     "period_end": "2026-10-16",
-    "total_events": 147,
-    "total_risk": 171.4,
-    "normalized_risk_score": 68.6,
+    "total_events": 149,
+    "total_risk": 176.05,
+    "normalized_risk_score": 70.4,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 55,
+    "military": 54,
     "security": 6,
     "political": 12,
-    "other": 74
+    "other": 77
   },
   "source_counts": {
-    "news": 147,
+    "news": 149,
     "isw": 0
   },
   "top_locations": [
     {
-      "name": "Yemen",
-      "risk": 35.5
+      "name": "Iran",
+      "risk": 40.55
     },
     {
-      "name": "Iran",
-      "risk": 33.7
+      "name": "Yemen",
+      "risk": 35.75
     },
     {
       "name": "Saudi Arabia",
-      "risk": 23.3
+      "risk": 20.8
     },
     {
-      "name": "Riyadh",
-      "risk": 17.2
+      "name": "West Bank",
+      "risk": 13.5
     },
     {
       "name": "Israel",
-      "risk": 15.2
+      "risk": 12.95
     }
   ],
   "top_events": [
@@ -61,9 +61,36 @@
       "date": "2026-10-16",
       "category": "military",
       "source_type": "news",
-      "title": "Asian Tour postpone Saudi International after Riyadh attacks - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYXVTNUVpMVVuX0R4S3dEYm15QjZ6MXBkdU5FN2xNTWFuVTNiZlB6QmljejgxWi1qaDRocVJjV3NRQUY3MDQ4OVpUbmxZYWtmSE1JTnhkWWZ1eG9MQVl4Qk5wMWZIa2F3c3ZmNUc5WVdZMFJaVnVYT1JPbDhMQ1ZUdDllX0NMWERiWmh6MWdacG1jdFNackp6QUF3OS1zQlBpMzZNM0VHS1NOLWM3"
+      "title": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPTWRtOEIzSmZRLXc0aEx6YkF3cGY5a2RwX1pzYmdQZnhqcmkzQUFkbndObFlvZEZybDNwU0lYT1I3U0pUdG9tZzNQTldkRktZajhWaXY2Vjh1NFQtU3BSbE10T2tXREh0dUVVWFQ0TVVsMmcyWDVUS21mQ21FVHVLaTF6M1dCX0NCZndtUy1fd3dXMzZPVDc1WXh3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Romania resumes search for seven missing sailors from drone-hit ship - Reuters",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNSlZhRnVFYUtGUGRnTHJ5c0d3V2R0SlFoUXVKd0t2RHEybzBubG9iRHlzWmVxU1FnRHV1RHlxSDZram9rUDR5ZEk2TU1yVnNCcVhRWXFLR2d3UVFOSWptUGItUEtwVFhSN25hOXZFOEFLVTFWNi13Mlo3a281SjJQQ0lXU0tXRGJsTGJxY2VCaTdQVm83b0FsNXlvM1dBcjFPM2RB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Palestinians and US journalist injured by Israeli settlers in West Bank harvest attack",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/articles/c65ynk7212vqo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-16",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump rules out using a nuclear bomb on Iran: Why that matters - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcEVJeVVzcTNFVC1FOUYtQWMtY0NiSVBxdmFYeHRUM0gwcFN4ZVhiQ1FNRV9SekM3TG1CaGMzQXU0MzhKd0htR2lvWjhGSWdCOTBXbU4wSWtLT2t6Q05MbmtneGNXSW5qRWxjVWpWYXUwemNuN1FzWXo5ZVNiYlh4ejNDT0c4clU1RVAyVjFvd0tzQlQxblhXSDBVcnRGNmg4R01pR2ln0gGrAUFVX3lxTE9Jdng1akZhN2pvQ01wS08zdGVYRzgzRGhIWVZBNmlNTWIybnlRdm5HZ0JVVlp3UE1qd1B4bEgxS3h1REVUUUtwRGt3d1pDeVBxQWdodkJJV1VHTUwwMkdTV3B3ZzlSTUlEVWxPSlFwS2kzRjRiU3Jnd3BGQ0w4TEgtekR6bkFLUmxsYU5lcG5CVU9DZHJxREF3QkRZejRtTlN5TE45MmVIQVlrZw"
     },
     {
       "score": 3.0,
@@ -97,15 +124,6 @@
       "date": "2026-10-15",
       "category": "military",
       "source_type": "news",
-      "title": "Houthis attack presidential palace complex in Yemen's Aden, PM unharmed, officials say - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPenN5Nk5reEJ3bHZicV9oSUR2N04zWUlyczJ1REFSbjFmZ0RPNEl1QzBKUUZjMnFrbzFvbE9YWjRCbVl1clRtNXFPZm9UanlhVmxUS09qYXhOYjJyeVRNRzZtdkVfeU5DalRNT1V4Q0E2MDU0Zno2ZWl5VERHd1BsZS0ya2lWQ0EtTngxbzVGdHNhc1RkZnhGRGxiSllsZzJqUjliamhmWmt3cVBfM1lzbS1vcmRPVHZkYVNhYTRB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-15",
-      "category": "military",
-      "source_type": "news",
       "title": "How are Yemen’s Houthis attacking Saudi Arabia so effectively? - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZWFHTEc0MTZnaUdvM3VtaW8zVFgyc2tmemRfV2l0N3VhaDVCc2hCb3N5UEtJZE84Qi1fTWFadXZfNm1WS092aW1heFM1YVlVQnp3aTd2dHQ4T2stMWVoTTJNMmRtcnNxbGdxMG9kNTV2QTFkeXFfcjhTVUxhTkVVNHBxTTBrSlA2QkpHcHVqUFNQNXp5UmlJb1JzQXBZZFlhSUNfTzRyS19zYXZNczJPUWhETDc"
@@ -115,27 +133,9 @@
       "date": "2026-10-15",
       "category": "military",
       "source_type": "news",
-      "title": "Hezbollah says it owned confiscated explosives, meant to attack Israel - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQUNqWTJxemdBVVByYW9Cc0N3NlU2UW9zczJReDZOeWdKMENNbUZjQmF1bE9IQ1VEOXNrcXpQU192ZUhHTVZ0cDN1N3IzS2lxY0ZTOXdGY3RvWlVObFZ2RjAyVF93ZUNCWVJKSlBpNDVINmxBNGRORXRYZUt1blF2RzFLV2VjZWJZMUg4X2tGMjd5VlpOVExvbFIxN1ExS1lMMnJXUXJPOWhfcnVXZEl2aUpDeHNqcnFSeUJ3NQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Seven sailors missing after drones hit two ships near Romania - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWTNEdUVjS3dseHk5amh0VGlyX180YWx6MEZobS1ySVhHSnFzbVYtSFFRTUtqRU12M3pGTnRPOEIyOTg0VnRiUkoyRkJxMmJiYlpZamFOLTVYVXJXbmhCa2J0a1BxbmlaUDF4X1hsNW5rOWVpaEtzTUo5dGZSclVwWUpBSHdOdXZFa2h6TWp6b1piY1VqN18wVlY0dFFNOUtLcFlJcA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi missile attack on Yemeni presidential palace kills five, minister says",
+      "title": "Houthis attack presidential palace complex in Yemen's Aden, PM unharmed, officials say - Reuters",
       "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/cm62y6lp73zdo?at_medium=RSS&at_campaign=rss"
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPenN5Nk5reEJ3bHZicV9oSUR2N04zWUlyczJ1REFSbjFmZ0RPNEl1QzBKUUZjMnFrbzFvbE9YWjRCbVl1clRtNXFPZm9UanlhVmxUS09qYXhOYjJyeVRNRzZtdkVfeU5DalRNT1V4Q0E2MDU0Zno2ZWl5VERHd1BsZS0ya2lWQ0EtTngxbzVGdHNhc1RkZnhGRGxiSllsZzJqUjliamhmWmt3cVBfM1lzbS1vcmRPVHZkYVNhYTRB"
     }
   ]
 }
