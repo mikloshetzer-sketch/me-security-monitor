@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-10-16T07:12:24.470991+00:00
+**Generated:** 2026-10-16T13:17:13.716512+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): West Bank (0.9), prev 24h: 0.0, share: 40%.
+Top current hotspot (by risk): West Bank (3.9), prev 24h: 0.0, share: 34%.
 
 ## X POST VERSION
 
