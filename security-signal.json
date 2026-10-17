@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-17 18:32 UTC",
+    "updated": "2026-10-17 22:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,20 +8,20 @@
   "summary": {
     "period_start": "2026-10-11",
     "period_end": "2026-10-17",
-    "total_events": 145,
-    "total_risk": 149.35,
-    "normalized_risk_score": 59.7,
+    "total_events": 147,
+    "total_risk": 158.1,
+    "normalized_risk_score": 63.2,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 47,
+    "military": 50,
     "security": 4,
-    "political": 16,
+    "political": 15,
     "other": 78
   },
   "source_counts": {
-    "news": 145,
+    "news": 147,
     "isw": 0
   },
   "top_locations": [
@@ -31,22 +31,49 @@
     },
     {
       "name": "Yemen",
-      "risk": 30.6
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 20.25
-    },
-    {
-      "name": "Israel",
-      "risk": 15.75
+      "risk": 30.2
     },
     {
       "name": "West Bank",
-      "risk": 12.05
+      "risk": 22.65
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 20.75
+    },
+    {
+      "name": "Israel",
+      "risk": 13.45
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers attack Palestinians, European diplomats in West Bank, Belgium says - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWXplRm9KdGNaY1RUZFA0UUFLbUxVWmx3TlBnRXRCQU5BUjBBRXNDcm9TSEQ2SUthUlpYMl92X052ZGdjMzFZLUd6amZ3UHdFNG5ic0k5LURwUDFOaDZQNE1CYWFlN1JRWDhlcFRWVVZTU0tzN0l5OHVaZXh0dkVFOFFwYkQ5WTIycElqQk5ZeHh3OTZVQWpVWHNkMDFDWk1ndEc5OHUtR2EzbV9iQVZHaWx4REljaTYxSFhsSkdDRkw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "European diplomats attacked by Israeli settlers in West Bank",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/articles/c962ydpmjm3zo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers attack European diplomats during West Bank olive harvest - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZVlrUDBYQ1lXY0JvbHNXZURHR2NDTGtDRWZVM3huYXRNcTBoRUNSQTcteTRpenJ5VjMxb19TUkl6QVlLODlLRURDbEZmV0JpQTFDbUUzVXFYRTNpUmRvNHpLSjB3QlRPMmdSRFZWRDlzTnZnSm4wOTFoRWFTRmgyQU1hajNxTGZtWTdDVFdUeGRkV1laR1l3ZmJpMGZXaDZCak1vbzBzWmhPV0nSAbABQVVfeXFMTXkyS29qczlWX1hQc0NNd0wtdkpoZE5vSTdGX3VaejRKdUZldzRaamhRYzZaTnp6MXV6QVhVcjRJbDQ5UzJhM0xOVFp1U05aSkpDM3lEUW1rczExT3o0VjYzSWFpYkxVa0l5MlVLX3E1eG1QeGlRbDMxNElGdXJuNGoxSHZZRVpOVFhhQXYtOEIxTFJhWUhRYkk1a2s4dmFCN0NlaGZoVlVWV0dtY0RMMm4"
+    },
     {
       "score": 2.7,
       "date": "2026-10-16",
@@ -109,33 +136,6 @@
       "title": "Yemen’s government says Houthis fired two missiles at Aden airport - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaVhUUGZEdkhGc191dGhfWFNwZlNvaDBMeE9mTnJEUFZucFY1YjloR2RIeHBuekg5ZzUwNXFpeklQcVJvM0M0bkxIbGtGS1M3SW1sb0dUSlQ3aTNHd014YmtEZmRkSDVhX1Q3WjdNLThhejktNEgtYkJnaXp1RzhBZ0lqRDg3aXhUZEY3S1FSeGFWazIwQWZueTlXUmRBa3pXWjltVHRRMTlMYknSAbABQVVfeXFMT1NGdURoYUY4RmhTZ0tReWl2UUw4ZFl2Vkx0QzB1bmlHdEUxZ2x4UFhUVTQzUUROLWQxSWd1TmJzVEVsYTBWbjFUeFg4WmlucU5ZeG5EXzcxNVFKODRzdFpPMXViU1RQa29ObDZSTEVUdENVY0pBVmNUUWVkSTE3M1p0UTl6Qm5LU3hxZlpZOTBUQnpCaF9SaFZJbU02TXpSdWxoaVV0NjZNSkMxWGxiRkc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "What is the ‘Mother of All Bombs’ US could use in Iran? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQnpfOHpvZ1VIWHJWQTg0bjRuRXRRMnN5UlBGUE9XaFU2S09EV3dRMFJCbHZDd0hEMnRrUUt2UFhvczBlZDctMTgxSDllOHJNbWlRRXhnZjJfV2xucEh4cy03WGY3YlktZXRTRlRzejdNd0RzQVJKeXduSTVXa2ZXVmxWaXBlUmxTaGdhSUtUWDZVNWFJTS0wdGFn0gGfAUFVX3lxTE1jX2dUMEplUm1OaHppTGpOR1BJX0ZidUVwYmt6RGdLLWtMMEJ6RHJ5NTBYd0RXVE5EX0tiUXlTUGVLdl9LYWVuZFktY2hsektwbzh0eU14WVVGcUVfSTdkbXhPR0I4MGUzUmk3N2FuOElxaGxFN1g2cjBBNjJMbXloTnJHazZSRGprVjYtMzFkb2lTUUxXQzNqcTI1c0tqdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "How Iran's precision strikes picked apart Gulf infrastructure - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONmZVZ0RfSms3U0s1SVE3N3ZMeWxLaVhtTjczazRmNU40UkpCUldVbWZJVUtJVkt3cHdLOEpoTl9qY0lFXzdKWUtydmYzVi1MeDExbXB6eHc3NjAyTi1CT2lveE5WVUNPeHV5SndkU3BmRUNiS1JCQUI2bDYyZjd6RjltYUhzeFVmUDFPSU93NWo"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "How are Yemen’s Houthis attacking Saudi Arabia so effectively? - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZWFHTEc0MTZnaUdvM3VtaW8zVFgyc2tmemRfV2l0N3VhaDVCc2hCb3N5UEtJZE84Qi1fTWFadXZfNm1WS092aW1heFM1YVlVQnp3aTd2dHQ4T2stMWVoTTJNMmRtcnNxbGdxMG9kNTV2QTFkeXFfcjhTVUxhTkVVNHBxTTBrSlA2QkpHcHVqUFNQNXp5UmlJb1JzQXBZZFlhSUNfTzRyS19zYXZNczJPUWhETDc"
     }
   ]
 }
