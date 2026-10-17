@@ -1,12 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-10-16T21:11:50.156596+00:00
+**Generated:** 2026-10-17T00:30:54.440622+00:00
 
-No hotspot alert: no location met the spike thresholds in the last 24 hours.
-
-Top current hotspot (by risk): West Bank (7.4), prev 24h: 0.0, share: 40%.
+No alert: no events detected in the last 24 hours.
 
 ## X POST VERSION
 
-No hotspot alert in the last 24 hours (no spike thresholds met).
+No hotspot alert in the last 24 hours.
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor
