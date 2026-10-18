@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-18 18:39 UTC",
+    "updated": "2026-10-18 22:27 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-12",
     "period_end": "2026-10-18",
-    "total_events": 152,
-    "total_risk": 151.4,
-    "normalized_risk_score": 60.6,
+    "total_events": 156,
+    "total_risk": 156.9,
+    "normalized_risk_score": 62.8,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 48,
+    "military": 49,
     "security": 4,
-    "political": 17,
-    "other": 83
+    "political": 19,
+    "other": 84
   },
   "source_counts": {
-    "news": 152,
+    "news": 156,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 28.25
-    },
-    {
-      "name": "Yemen",
-      "risk": 26.55
+      "risk": 28.75
     },
     {
       "name": "West Bank",
-      "risk": 25.3
+      "risk": 28.3
+    },
+    {
+      "name": "Yemen",
+      "risk": 25.05
     },
     {
       "name": "Israel",
-      "risk": 20.3
+      "risk": 21.3
     },
     {
       "name": "Saudi Arabia",
-      "risk": 14.45
+      "risk": 15.65
     }
   ],
   "top_events": [
@@ -97,6 +97,15 @@
       "date": "2026-10-18",
       "category": "military",
       "source_type": "news",
+      "title": "EU condemns Israeli settler attack on diplomats in occupied West Bank - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORU9sQ2pNRDZZX2lzbXZxUjZMTjc4T01hUmtNY2xkbkRXZUgwblkzT2pIazF2Wm1oWHliZ2hXcnl0enZIdVdubGZxQ0JpLUFJRmxkQlV0R2FpWVVqOWM2MF95cTF1eE1leS1iRzNzR1BSdVFONm9PajRodjNmQkpaNzk2QjlFZDc2Nm1tbnRHcFo0aXVHMHdNZ0RwcXZrS3h5Vi1OcDl2YlRGM2tyM3RyNtIBtgFBVV95cUxOMndFVUhQWTNBM2JCMUUxazNES19BZHZ3T18zTTdiaHZwRzlMaVZ2OXZ3SFRfSUp3cjFJdEtDak5Rd2VMUDVaV0dvY0lWWUJzTS0xbTlQbVNLWkhHSnJSMGdkWnJjdHdxRmlQeTlwU2N2VlR2c21VZkZEQ3RaT1NUcG9XSVV6NWdzU2M3aWlJMlFxcVpEem1pdGFtMFYyNXFFVGM1V21LQmZ6aWNWbHhNOURZdU1sZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-18",
+      "category": "military",
+      "source_type": "news",
       "title": "A timeline of West Bank attacks on Palestinians and foreign officials - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOc2x2czI0Zmx3azlfd09jVXN3Mzk2NmJNQ0VTNVdiUWZPOGhGaVc0UkhQbW4xMlBjSkNMaTFQSFJ0amU4aV9Fb1E3c1hrQzBoRWY3THBpUkVScG40OWpkZ2lMOGlaNmpraHBaMlUzbWFxSU1RdlNBbWpKV3k5c2lyYXBLUUlZMnBNQmRUN3RTM2xTVlBUMVFLaGNscWVvVDJBdFptV3plZ3BoS19NbS1ZSNIBtgFBVV95cUxPYVNEN2I3SEVSbGtpRGo3R3VXNUJlVThoR2VlMmdDeGJkbDd3VDVGcjVPVU9LM3lLSC1VMTdyTnpTUmRFYXc5YUM2T3Y0VW03SEVLMkxjZTRRdkRQSXZCSi10OTRUM2xDcjZRMjRhU3NlX085Ulg1VW1ZaTZQSFZwdnlScVNCdUkxTEVkdk94ZHFKMEd4Wmg3cGVPbEpLNmVZZnFZeWRtTDBRcXQ5NjNnb0plUEpMQQ"
@@ -124,18 +133,9 @@
       "date": "2026-10-17",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition intercepts drones as Egypt weighs sending help - Al Jazeera",
+      "title": "Egypt’s el-Sisi vows to defend Saudi Arabia from Houthi attacks - Al Jazeera",
       "location": "Egypt",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObzE5OEQ1YmtRaTQzMEN4ZC16UVlZOXRXTm9kZm93dldxWmxwUkMwYVJPMkx4YktUcm15d2ZzbHJVbFNaZUZ5RDl3V1lxVzY2eDA0OHFhT2RINHhNMU9GRFNiQ1RRUmo0akRHOEhieFZiZkYxOEEtSkFWUkMwQ3UxdWF0VVFSanNMY3M1RDVBSzk0ZE5lRVd0R2U1TE9HOTEtRmxEOEduRlowLUpv0gGyAUFVX3lxTFBsajZwTGFfQ0YyU0hzT2drU2xPM1haeGl5V1JOamM5TXFDeGQ0VmlCQnBNWDNkanNELVBBZWJTREhPSVRUd0tJM1d3T1pKRzlvZTk0VVdQTHlJdVJUdWhndUFrbnFvcXJoaWwwVVNDM3kwWEtBdWN5Smt0b1dtZ3lFYkFIbTE2Z0Yzb0FXRVNSVUlhWHRJRENRT21EMnVjN3N0c3IxTjBHT2dqemFJZ1VIeVE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jerusalem Daily: Israeli settlers attack farmers and journalists - Al Jazeera",
-      "location": "Jerusalem",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRm90blQzdXk3V0xBRjkxMV8zVmlMdHFoZWRDWG5rc0tmZldjU1c4YlIyb0JuVGV5WDVJTlN0SjludElZZ1lNa1gyb3QyWE90RFd1cUNINzZTOG9UYzNNaG1MRzh4bE1tR293VXp0Sl9oeWNlbFQ4cHNnQjNWZVdLb1JYdnYwRWUzazhsaDMyenhOWnhsQUlFXzZoLUpNTm9lTWxWWjhHbk5UajhaT1NV0gG0AUFVX3lxTE5QcTJ0TklTWXUwS3VDS2JDNjRDSVpIVlBkVm9FdUw1TEswMUlRTG9sX09oN2ZPTDVJWTl2NmJJb0pyY1IycEgzbGc2STk1anJoRHFkSFptV0VFT0V2Z2tiMEl3WUx0Q3lpQnBjODRkTjRnOG5JRlNWQTRRNlZKVGtYQkE1SDJ3RzdyMVN5a0xxOHRicDdWak5zSFZ2UGJZcHpHeW91a1BVb1RnTEpncGZFRlJ2cA"
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPYWhZdlRadk94dzNBTEFIVGV2b2dHU0I4eVlzRzFMdzRmYVcyZjd6eS1RaHFjRTVMMFgxZHRxNWlQT3k0NE9qTkxXalBmMUFkVy0wNmFPQTR3Z25fcGRkTVl2YURkaWxtWURvb3RtRDViQWpVTVBJMTJQNnh5UkkzSUlibkQtSDJE0gGOAUFVX3lxTE85clpGcjNjZDNsSVRXd1FFM004amU2Vll1QjVUTGFBaWM2dHRvNkJ6dGx5RDl6bmpTeDRqVHZXRkVoanh2MGM1dlZEWmxpQVVhLWt2X05QNjJ2X3VsWWRWcldxWE82OXpoaUVEeUZUNHpEQm8xN2FMWWxURDU4cTltYmY4Yzk2aVJ1Mk4yNHc"
     }
   ]
 }
