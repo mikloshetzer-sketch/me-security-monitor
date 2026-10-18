@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-18 04:36 UTC",
+    "updated": "2026-10-18 11:08 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-12",
     "period_end": "2026-10-18",
-    "total_events": 148,
-    "total_risk": 137.85,
-    "normalized_risk_score": 55.1,
+    "total_events": 154,
+    "total_risk": 154.1,
+    "normalized_risk_score": 61.6,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 48,
-    "security": 4,
-    "political": 15,
-    "other": 81
+    "military": 52,
+    "security": 5,
+    "political": 18,
+    "other": 79
   },
   "source_counts": {
-    "news": 148,
+    "news": 154,
     "isw": 0
   },
   "top_locations": [
     {
-      "name": "Yemen",
-      "risk": 27.45
+      "name": "Iran",
+      "risk": 30.75
     },
     {
-      "name": "Iran",
-      "risk": 25.15
+      "name": "Yemen",
+      "risk": 27.75
     },
     {
       "name": "West Bank",
-      "risk": 20.9
+      "risk": 23.9
     },
     {
       "name": "Israel",
-      "risk": 16.6
+      "risk": 17.6
     },
     {
       "name": "Saudi Arabia",
-      "risk": 14.7
+      "risk": 16.75
     }
   ],
   "top_events": [
@@ -52,9 +52,36 @@
       "date": "2026-10-18",
       "category": "military",
       "source_type": "news",
+      "title": "Saudi-led forces try to break Houthi siege of Taiz with airstrikes - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTkp6amhHMk5rdjhLTWxhaXdRanpXQnBPZmtkOFIxU2MteXFTSzdCRFlUdUFHZUk1Y0VUeHg0dGRVaUdQb05VQkxsY183Y3ExVTE1al9MZGkzYzdHQnVpV0hkLU1pSnJOVW0xWlF3TU5tdzAtTkRrLV9ORm9pZVpESUZ1RmZBTnVIMVFxcUxYV2lSc19CaEduNmVJcS1STnBNNk1OUEh2S2RLNEhFRWVJTXBHSnlDQ3RBUkHSAb8BQVVfeXFMTldCMFJTcU5MRVV4WTFpd05IX2RRTFBpNDdtRC1FV1ZjcU9tc1dmeVZNNVczamM1OTJ4cEpaYzVIYXdIVzVZT2ZhWXh5Nk41MEd2YVcyTUlBbUtVcEREeUEwaUgtbXVhZ2ZNY2ExUWNsUlpmeHNuY2dKN3RRWGYtRDBVX0tMbUphbTV6djlDVVNYNVAwWVc1alBmSDdDWmQzRmpMOFFjLUExZk80c1lFbEVrUlhqeklWZEhlTGVDYnM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-18",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli settlers attack European diplomats during West Bank olive harvest - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZVlrUDBYQ1lXY0JvbHNXZURHR2NDTGtDRWZVM3huYXRNcTBoRUNSQTcteTRpenJ5VjMxb19TUkl6QVlLODlLRURDbEZmV0JpQTFDbUUzVXFYRTNpUmRvNHpLSjB3QlRPMmdSRFZWRDlzTnZnSm4wOTFoRWFTRmgyQU1hajNxTGZtWTdDVFdUeGRkV1laR1l3ZmJpMGZXaDZCak1vbzBzWmhPV0nSAbABQVVfeXFMTXkyS29qczlWX1hQc0NNd0wtdkpoZE5vSTdGX3VaejRKdUZldzRaamhRYzZaTnp6MXV6QVhVcjRJbDQ5UzJhM0xOVFp1U05aSkpDM3lEUW1rczExT3o0VjYzSWFpYkxVa0l5MlVLX3E1eG1QeGlRbDMxNElGdXJuNGoxSHZZRVpOVFhhQXYtOEIxTFJhWUhRYkk1a2s4dmFCN0NlaGZoVlVWV0dtY0RMMm4"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "US ambassador urges Israel to prosecute attackers of American journalist - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRGt3d1FmTjFmYnlpV0xPQ0JsMDROd3doR3AzZTFGSkVZTUpoWnBkNVVEM1FhQXdDNXZnd1BvRkVZSE04R2kxWG1FSkZBYnM1dTMyM2RMQk4yTFFrYXdHWTJJZTdhNnRMTWlSOFkyTnpTdDR1STVWOFE3bG8xcUo0NzRpTS10cVVBdk5yTE9jRXJCTl9zNmJzZlVmVWNGZm03VkhycGhTWkc1NEJsOFZndDk2Y2Zwa1HSAbwBQVVfeXFMTXBYcnJMR2JJMmNITW8zMm16RWVjbzhoVGRTNEFYSWhaLUkyVFpXUExBSk9ud0UwUVFrd2p4U3FDTWd3LVk3cW1ESGNXSEJSek9HbG1IUzc4dmx4anhtcHRQMkdtZ0cyaVlvSFE0WF9iSEZrM0JMVjBNd3ZZS2p0cFNGTGFjV2lGRWlIS2ltMGJudFd1eTl4TGlOVmtfdTQwNmw1eFh2TW9ZcHJwTkQ5clFwNjB3eVlHTEFPelg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-18",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers attack European diplomats in the occupied West Bank - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZWx4S05qQkt5VWg1eWJOQ0ZvTjl0QmRKS0lnSDh3LVpOYTFXYWdESGpDNDJremRqTDZuTVQzVmFfanBVbTlPbTVTNlJ4NDc0Y2I4U09GaVpXMUFJUDZRY3ZEcHNObjI3RHYxRmlEVWpvb1Frei1Vdjl1TTZaRE5XLUJXc1lWWk90Tng0MTltUENpZVpxWmprTlRZQVZqWHJ0OFFzaUI4b1RVUVBwam5HM3RWa3lZeFd6bGZYRtIBwgFBVV95cUxOaGp4Y1JHZ1lHMWV3N01leEkycTlWVnhiUHBsLXBZZXN4ZHp3UUlfcXI3TUxGSnpKZ3REYWRqSWs5Tk5PdEdBanhTLU90WlBpRG0wOUVLYzY4UFExQXkyTjJlSUxWR0FFb2lja0JDMkhMWDhwMVdvVUVTRFdLdlQxVGpZN19OWl9TWEFmMG53UEphZ0NfTjVmZndONklOckF4dHhZbV8yWEZtUzEtd2R0aVY2eXVybmdyemNIZHNfc2Zmdw"
     },
     {
       "score": 2.7,
@@ -88,18 +115,18 @@
       "date": "2026-10-17",
       "category": "military",
       "source_type": "news",
-      "title": "US ambassador urges Israel to prosecute attackers of American journalist - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRGt3d1FmTjFmYnlpV0xPQ0JsMDROd3doR3AzZTFGSkVZTUpoWnBkNVVEM1FhQXdDNXZnd1BvRkVZSE04R2kxWG1FSkZBYnM1dTMyM2RMQk4yTFFrYXdHWTJJZTdhNnRMTWlSOFkyTnpTdDR1STVWOFE3bG8xcUo0NzRpTS10cVVBdk5yTE9jRXJCTl9zNmJzZlVmVWNGZm03VkhycGhTWkc1NEJsOFZndDk2Y2Zwa1HSAbwBQVVfeXFMTXBYcnJMR2JJMmNITW8zMm16RWVjbzhoVGRTNEFYSWhaLUkyVFpXUExBSk9ud0UwUVFrd2p4U3FDTWd3LVk3cW1ESGNXSEJSek9HbG1IUzc4dmx4anhtcHRQMkdtZ0cyaVlvSFE0WF9iSEZrM0JMVjBNd3ZZS2p0cFNGTGFjV2lGRWlIS2ltMGJudFd1eTl4TGlOVmtfdTQwNmw1eFh2TW9ZcHJwTkQ5clFwNjB3eVlHTEFPelg"
+      "title": "Saudi-led coalition intercepts drones as Egypt weighs sending help - Al Jazeera",
+      "location": "Egypt",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObzE5OEQ1YmtRaTQzMEN4ZC16UVlZOXRXTm9kZm93dldxWmxwUkMwYVJPMkx4YktUcm15d2ZzbHJVbFNaZUZ5RDl3V1lxVzY2eDA0OHFhT2RINHhNMU9GRFNiQ1RRUmo0akRHOEhieFZiZkYxOEEtSkFWUkMwQ3UxdWF0VVFSanNMY3M1RDVBSzk0ZE5lRVd0R2U1TE9HOTEtRmxEOEduRlowLUpv0gGyAUFVX3lxTFBsajZwTGFfQ0YyU0hzT2drU2xPM1haeGl5V1JOamM5TXFDeGQ0VmlCQnBNWDNkanNELVBBZWJTREhPSVRUd0tJM1d3T1pKRzlvZTk0VVdQTHlJdVJUdWhndUFrbnFvcXJoaWwwVVNDM3kwWEtBdWN5Smt0b1dtZ3lFYkFIbTE2Z0Yzb0FXRVNSVUlhWHRJRENRT21EMnVjN3N0c3IxTjBHT2dqemFJZ1VIeVE"
     },
     {
       "score": 2.7,
       "date": "2026-10-17",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition intercepts drones as Egypt weighs sending help - Al Jazeera",
-      "location": "Egypt",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObzE5OEQ1YmtRaTQzMEN4ZC16UVlZOXRXTm9kZm93dldxWmxwUkMwYVJPMkx4YktUcm15d2ZzbHJVbFNaZUZ5RDl3V1lxVzY2eDA0OHFhT2RINHhNMU9GRFNiQ1RRUmo0akRHOEhieFZiZkYxOEEtSkFWUkMwQ3UxdWF0VVFSanNMY3M1RDVBSzk0ZE5lRVd0R2U1TE9HOTEtRmxEOEduRlowLUpv0gGyAUFVX3lxTFBsajZwTGFfQ0YyU0hzT2drU2xPM1haeGl5V1JOamM5TXFDeGQ0VmlCQnBNWDNkanNELVBBZWJTREhPSVRUd0tJM1d3T1pKRzlvZTk0VVdQTHlJdVJUdWhndUFrbnFvcXJoaWwwVVNDM3kwWEtBdWN5Smt0b1dtZ3lFYkFIbTE2Z0Yzb0FXRVNSVUlhWHRJRENRT21EMnVjN3N0c3IxTjBHT2dqemFJZ1VIeVE"
+      "title": "Jerusalem Daily: Israeli settlers attack farmers and journalists - Al Jazeera",
+      "location": "Jerusalem",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRm90blQzdXk3V0xBRjkxMV8zVmlMdHFoZWRDWG5rc0tmZldjU1c4YlIyb0JuVGV5WDVJTlN0SjludElZZ1lNa1gyb3QyWE90RFd1cUNINzZTOG9UYzNNaG1MRzh4bE1tR293VXp0Sl9oeWNlbFQ4cHNnQjNWZVdLb1JYdnYwRWUzazhsaDMyenhOWnhsQUlFXzZoLUpNTm9lTWxWWjhHbk5UajhaT1NV0gG0AUFVX3lxTE5QcTJ0TklTWXUwS3VDS2JDNjRDSVpIVlBkVm9FdUw1TEswMUlRTG9sX09oN2ZPTDVJWTl2NmJJb0pyY1IycEgzbGc2STk1anJoRHFkSFptV0VFT0V2Z2tiMEl3WUx0Q3lpQnBjODRkTjRnOG5JRlNWQTRRNlZKVGtYQkE1SDJ3RzdyMVN5a0xxOHRicDdWak5zSFZ2UGJZcHpHeW91a1BVb1RnTEpncGZFRlJ2cA"
     },
     {
       "score": 2.4,
@@ -109,33 +136,6 @@
       "title": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPelJ6OUp1VFpwTmJ0Qm85TzRUS2ppU0swVFMydlJuTDZiS1Q1V2R6M1N4bmpfeTZ0aWNqd29XbGdDMm9IVllmLTZUazAxQWFzX3lsVlJBbHI4TVRfQVFrZlk5MkNqVzVCMU5XYkFwM3Fyb0pkbDk0bGo5N1dwQWJMMEo5aEhIeXpaS1J5TkRLVFZTem93Rl9rM2trUHZlaDQwSzVIQTB4UG1xelRQSU5wZ2I4X1N1V0VPUElsWHBIYVZvckhpYk9RZVhZaw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPQkU1bHk0ei02ZkZRZndPemRvNGZFQnM5ODdrR2EyTU9WRjBUN3MwcGdtLXY2NnZnWld0UkM2MjBUMDUzWVV6ak1vcGNSV05KMllWVWotQS1TdGNLQnVFOERMRElid09YaVB2bUhGLXE4TlFJelBfRFg3QS1vOVBSLXVJWTV3R01CQ3FSZzVZMHlub3V1ZjFtYlJYNGwwRDRFeUxTeWFzNlJjS1dwSGo1a0xOaXRMc0tiWnlrbVBtMA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPczd6aXNWNkdjZTNxV0V1MXhjQm5YTUtZT2JEUXY4dm81UFNlMVprd01ZdDI0VDI2ZEducHJha09yTkRIaWZMLVpmanQ0dVRBWm56cVBxLWFCOEZkekdCU0ZISkhWeEFxTWRDaGtmR3NPRjc1MVkyQnVhdjZRSzZxWm9OODE2RmxSY19CclZ1WThuWTZrOG15SUtmSlZJd0tfZkwtcmVsQlltc0VNZnMtMWdB"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-16",
-      "category": "military",
-      "source_type": "news",
-      "title": "Palestinians and US journalist injured by Israeli settlers in West Bank harvest attack",
-      "location": "West Bank",
-      "url": "https://www.bbc.co.uk/news/articles/c65ynk7212vqo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
