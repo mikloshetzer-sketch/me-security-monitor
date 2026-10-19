@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-19 13:20 UTC",
+    "updated": "2026-10-19 19:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -9,44 +9,62 @@
     "period_start": "2026-10-13",
     "period_end": "2026-10-19",
     "total_events": 143,
-    "total_risk": 134.1,
-    "normalized_risk_score": 53.6,
+    "total_risk": 153.13,
+    "normalized_risk_score": 61.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 42,
-    "security": 4,
-    "political": 18,
-    "other": 79
+    "military": 46,
+    "security": 6,
+    "political": 16,
+    "other": 75
   },
   "source_counts": {
-    "news": 143,
-    "isw": 0
+    "news": 137,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "West Bank",
-      "risk": 25.45
-    },
-    {
-      "name": "Israel",
-      "risk": 22.8
+      "risk": 30.85
     },
     {
       "name": "Iran",
-      "risk": 21.25
+      "risk": 24.64
+    },
+    {
+      "name": "Israel",
+      "risk": 24.3
     },
     {
       "name": "Yemen",
-      "risk": 20.6
+      "risk": 22.25
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.8
+      "risk": 14.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPaXJvV3ktdmE4WU9ZNjVBcDRBYW9yNXJVYVI3MV83aWtIV0pYN0lGNzM4UlNRZDdpRGs1bGsxR18wcjY5STVhU1Q1VEZJUmRKWFZPUnoxSlpFaThtMzhjRlVIZGl2VVVYYTlYM181N0Jyb0h4ZWRrM2FVZFZsSFRBT1haU0QtdEp5QlZ6dVg2VVpyX2RsaDEzbnN2Q1NvSFc5WW5jT2VmVQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli police arrest suspects over settler attacks on US journalist, European diplomats - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUGdXdTZVUC0xd3NJMzJWdlpNS0tySGdmcUlvdl9wWXhIUUdMT3E3WFZPZWFEam1PWDdFUDRRd0trNGduLUZzRWVzWXBoVWt5QkpFMk5lMzhUZU9yNllmbUxlUEZwdk5raGhEUnlyTDBTVldKWkxXSWNndHY4U01Kd3BqM3lEMU85LUZydXF2YUdMOEc5MHh5ajlfb0lNSzh1MXE0TnBEMHNIOXVzX3ZZWGRrRnNrc3Utd2VmTnh4LVIxQ2x3UElRa2hQbm8"
+    },
     {
       "score": 3.0,
       "date": "2026-10-19",
@@ -75,13 +93,31 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ19xM0UxTl9TNGVlbUhHYlFlZjdJbzd0V1FmZWVGTnpfdDJvWTdHckw4Y1lhVFNoUW1HSmdUeXVPN3dibkE1WjJYLVR6cUQ2YlBibnpoc2ZrbmtJblZjM0Z4QU1LeTJVT0JjWHhUakk1T3A4WVdiUjlfUmNiYTBVSU16ZThLMFpvTzdoUTRyUUxJeERKdHBhZzBKZWlUcTVGcGdfYm5MQVA5MlJVYXFreXZ4bnXSAboBQVVfeXFMUDUzbFhadE5rWXkwMEkwajRvX0lnWUlIczFQMUMzSFpLbnFEM3pEb0xoQXZ2eklOS2UyN19Hc2Jzb2pTWWdFY1BJUnk1bXR3UzRhR3hZckNHVTM2UTlLSmlQaXZ0M0R6dl9wU1lfVUdjSXd6WS1rXzc0QmZyZ1gzNTd0dEQ4WFI0ZWo3Y1RiSmxYUk9qN2xfTUJmRUl3cm0zQzFBUV82NDJPSU1BV05sNllMaklGMmxRUUl3"
     },
     {
+      "score": 3.0,
+      "date": "2026-10-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi attack on Yemen army camp in Shabwa kills at least 53: reports - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQURxelJpODVFeDRIVWZNaEk5cFZlYXpMdUxxa2owdTRGbmV4SHI2a2JHaDluMzRTNFdobDdNeUN3ZHFuR1hfQ1lmSU1aWXFJc0hVaklCaWw1cEJjUno5Uk1Dc3FCcktyZV9rX3J4Rkd0UDZtMXV5NGhacDRHTTdoZGRkRGJNcG1QajFvYXk0Mkt3MS1UeDN5eW03U05COXVzOWFPbncyZFV2UkZVb1RMadIBtgFBVV95cUxQb1pVOUxXRU1SdmVLRmRkVE5qRDJ1dzdoM3JfZFlZSmxKa2d3a28yTXVReGFyWEtqNVN3ZmRIX1ZseWpsNzRscDVLZWFiellubjJsOW9iM1ZyT0FkUF9MUWljckF4WFdrSmhwd3pBWG15dGl4cXJyV2ZBY2RveFdkS01xT1hkc3JHMXFzNXFfVy1MUk9vNk1ocEVKTGFnMjROcVlMVmF1X3NYcVU4Rkd3TDNsTG1Ldw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli police arrest 10 after settler attacks on journalist, diplomats - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbk1sUWxYbFljUV9wa0d2bE45SDY0MXA5aGVIcmVMZkt3a2JEalpwdlhSeXpWTW9wYkpaRy0tQ1F2Zk54M2l0bm80Y3BJU0RseElBWGV1bUt5N3ZfQTdIMXl6Wmk1bmlpbkVncGVPbkVBV1lTajdoMG14RzlJZE1PYUlsMnliY3F2Q294Z3paODJjVE1nUVpJSGxHNVktN21qSEdMbEZOa2xHVG5XZndhMVF30gG3AUFVX3lxTE5pWWJrVWlRN2pOOFZfZmJGUjcydHdlT3NwQjBYak1fS3YyMXctQ0VDVHVMbjhHLURjTkphUEs3bTV0WkF5cWVyaDZ4dUlwbkVYSnNoSEZmbFljOEE1bVlNLUt1OUhBTk1oeTl2MjJES2FaTXJodkk0QTM3MTVjWkE4TF8yWDNUeEEwTGxhUFh0LUozNmR6WVM5NEt0dHdpRWwxb1ZaYU1LejhGNEZNaV81WEFVUFZoOA"
+    },
+    {
       "score": 2.7,
       "date": "2026-10-18",
       "category": "military",
       "source_type": "news",
-      "title": "Romanian F-16 fighter jets shoot down two drones over Romanian territorial waters - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTWdfVTBONW9jTm9ldm94TWotRVpYMXhVaVktUTl4RDZUN1ByWWh4d3JiMTlwTHNpNG93LW5Jc3RCZ1lod2FfMktBZE9QYThCdWRBOHF3OVNrT2hOa3hlOWpVc1Zsb1JjLVphWFd3TUF6YTJDMDNObWFEb2JHbmpsYVN6YVZReWppS2NsZTlzakNyMEJlcVNmcWtMVmp1X2lqZTcwSDM4dThEb1FfX1BxNWJYU0YxWHc"
+      "title": "Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMmVLc19hd0VSYXIydVNTWENKZ2J5WVNvVDRQUjRfTUJXWGhjOGxGZkFHVm9SNnZzeU9TWUhrYnJTRU1sVFRnX1BwZVd3NHB5a0NLdThkbDRldlg2eHdhTll2b3RnQTJ4U3dHVGczM25FdjJHRGQ5WGJDV2Qxd1hzLV9EcjNWaUQ4cXEzbWVHRzNuS1dGVVNBSmdXWGR6THN1dXhvSUdFS0dMMTJZTnBBZEFfZ2JoYVVFSWNMZw"
     },
     {
       "score": 2.7,
@@ -100,42 +136,6 @@
       "title": "JERUSALEM DAILY: Settlers attack EU diplomats - Al Jazeera",
       "location": "Jerusalem",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMzVqc2xXOURuZDBsTURzbk5zNlVoc0QtOWlNajF2WnlYSXl2MjJZaXU2a2JGeWllZExlRW1KS3c5RHBfbmVmMndNS0Z6U05aYTBWcFVjTE1HbDJ0VGVEZGNIWU8tbTFIOXdhODZteHZiOVBwdzJMdjRKZDh6TWFPdDdlOWNlNktVNUNxdHNfNkJfLXhoSmppdXlGRi1ISUJ6czdPNHJR0gGrAUFVX3lxTE5hWmpFWjg3bHVyYTh6djlLVHdEMUMydDBtdGNlRGY5WndDOE54S1ZGaHBuMXNLb3RFZWs3TGR2S3RDYUhLODNmLWx0bGF0ZXUzOFh5dVVwUWlzMW13b004ZzBzb0N2Q2w5bHpITlJjeXIyakVXS2R3cVpIR0pSNUlvQk5BWHJQcGVYaFlDb05EdDhHTE1oa0pNNjZHTmpUZlhzdEhrTXV3X19kWQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "GCC condemns Houthi attacks on Saudi Arabia as Yemen fighting intensifies - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRHJ3dEdCUGlGZm5HdVp3X0czYnJoMm5UMk5seFBHYTBqSlNfb3IxWXg3a1c4UmRGVDdxLWdWQ2tFLUdiWGF6S1A4NXNHWUg0czBhQWNHYkZEZUVNTV90Y3lWTjJwSnBkdGF6Wk1mTzd3andpbG5NQlpHcDVvLU4zM3E4MHhIa1h5ZlZpR3FhQUVLQjRnUFVKM1E0VWRpVGU3SDhGNmszc1ZBS25xTkdOUDNKUnVnQdIBuwFBVV95cUxNTHFsSHVrVWoxZXpaUGdYUm44UV9ad252MjhWcTJ0djNhUVNJN2tIeHZlcGgybEVsQnFWX3A4RVBkOGNOOVNMWDFJRWxwQlh4R3pneFlPT3JvU0Z6UXUyNXB3dkIycVNZY1ZJbGJRRURFbXE5TGZjVy1oWU1nTHplU0U1b25DbklqSDNSMTNGdHZ2eTdjN3FvakxmSzNDMlliN29VSE43a2ZCUG8xdVpIdEdpY0NIUElYU180"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers attack European diplomats during West Bank olive harvest - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZVlrUDBYQ1lXY0JvbHNXZURHR2NDTGtDRWZVM3huYXRNcTBoRUNSQTcteTRpenJ5VjMxb19TUkl6QVlLODlLRURDbEZmV0JpQTFDbUUzVXFYRTNpUmRvNHpLSjB3QlRPMmdSRFZWRDlzTnZnSm4wOTFoRWFTRmgyQU1hajNxTGZtWTdDVFdUeGRkV1laR1l3ZmJpMGZXaDZCak1vbzBzWmhPV0nSAbABQVVfeXFMTXkyS29qczlWX1hQc0NNd0wtdkpoZE5vSTdGX3VaejRKdUZldzRaamhRYzZaTnp6MXV6QVhVcjRJbDQ5UzJhM0xOVFp1U05aSkpDM3lEUW1rczExT3o0VjYzSWFpYkxVa0l5MlVLX3E1eG1QeGlRbDMxNElGdXJuNGoxSHZZRVpOVFhhQXYtOEIxTFJhWUhRYkk1a2s4dmFCN0NlaGZoVlVWV0dtY0RMMm4"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers attack European diplomats in the occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZWx4S05qQkt5VWg1eWJOQ0ZvTjl0QmRKS0lnSDh3LVpOYTFXYWdESGpDNDJremRqTDZuTVQzVmFfanBVbTlPbTVTNlJ4NDc0Y2I4U09GaVpXMUFJUDZRY3ZEcHNObjI3RHYxRmlEVWpvb1Frei1Vdjl1TTZaRE5XLUJXc1lWWk90Tng0MTltUENpZVpxWmprTlRZQVZqWHJ0OFFzaUI4b1RVUVBwam5HM3RWa3lZeFd6bGZYRtIBwgFBVV95cUxOaGp4Y1JHZ1lHMWV3N01leEkycTlWVnhiUHBsLXBZZXN4ZHp3UUlfcXI3TUxGSnpKZ3REYWRqSWs5Tk5PdEdBanhTLU90WlBpRG0wOUVLYzY4UFExQXkyTjJlSUxWR0FFb2lja0JDMkhMWDhwMVdvVUVTRFdLdlQxVGpZN19OWl9TWEFmMG53UEphZ0NfTjVmZndONklOckF4dHhZbV8yWEZtUzEtd2R0aVY2eXVybmdyemNIZHNfc2Zmdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "EU condemns Israeli settler attack on diplomats in occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORU9sQ2pNRDZZX2lzbXZxUjZMTjc4T01hUmtNY2xkbkRXZUgwblkzT2pIazF2Wm1oWHliZ2hXcnl0enZIdVdubGZxQ0JpLUFJRmxkQlV0R2FpWVVqOWM2MF95cTF1eE1leS1iRzNzR1BSdVFONm9PajRodjNmQkpaNzk2QjlFZDc2Nm1tbnRHcFo0aXVHMHdNZ0RwcXZrS3h5Vi1OcDl2YlRGM2tyM3RyNtIBtgFBVV95cUxOMndFVUhQWTNBM2JCMUUxazNES19BZHZ3T18zTTdiaHZwRzlMaVZ2OXZ3SFRfSUp3cjFJdEtDak5Rd2VMUDVaV0dvY0lWWUJzTS0xbTlQbVNLWkhHSnJSMGdkWnJjdHdxRmlQeTlwU2N2VlR2c21VZkZEQ3RaT1NUcG9XSVV6NWdzU2M3aWlJMlFxcVpEem1pdGFtMFYyNXFFVGM1V21LQmZ6aWNWbHhNOURZdU1sZw"
     }
   ]
 }
