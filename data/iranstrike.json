@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T11:17:11Z",
+  "generated_at": "2026-10-19T17:34:19Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 687,
+    "events_endpoint_records": 690,
     "feed_event_records": 250,
-    "normalized_events": 1743,
+    "normalized_events": 1746,
     "map_visualizable_events": 263,
-    "non_mappable_events": 1480,
+    "non_mappable_events": 1483,
     "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1743,
+      "total_events": 1746,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-19T08:57:35Z",
+      "latest_event_date": "2026-10-19T17:06:17Z",
       "geocoded_events": 263,
       "geocoded_share": 15.1,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 73,
-        "previous": 76,
-        "delta": -3,
-        "percent_change": -3.9,
+        "current": 71,
+        "previous": 82,
+        "delta": -11,
+        "percent_change": -13.4,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 294,
-        "previous": 404,
-        "delta": -110,
-        "percent_change": -27.2,
+        "current": 287,
+        "previous": 408,
+        "delta": -121,
+        "percent_change": -29.7,
         "direction": "decrease"
       }
     },
@@ -806,15 +806,15 @@
       },
       {
         "date": "2026-10-19",
-        "count": 3
+        "count": 6
       }
     ],
     "category_counts": {
       "infrastructure": 469,
-      "missile": 400,
+      "missile": 402,
       "strike": 272,
       "drone": 211,
-      "airstrike": 139,
+      "airstrike": 140,
       "movement": 96,
       "explosion": 65,
       "ground": 57,
@@ -824,29 +824,29 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 910,
-      "high": 560,
+      "medium": 912,
+      "high": 561,
       "low": 265,
       "critical": 8
     },
     "attacker_counts": {
-      "unknown": 1139,
+      "unknown": 1141,
       "iran": 378,
-      "israel": 193,
+      "israel": 194,
       "usa": 33
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 682
+        "count": 683
       },
       {
         "name": "Iran",
-        "count": 348
+        "count": 349
       },
       {
         "name": "Lebanon",
-        "count": 114
+        "count": 115
       },
       {
         "name": "Jordan",
@@ -900,15 +900,15 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 682
+        "count": 683
       },
       {
         "name": "Iran",
-        "count": 473
+        "count": 474
       },
       {
         "name": "Lebanon",
-        "count": 145
+        "count": 146
       },
       {
         "name": "Jordan",
@@ -945,33 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11061,
+    "totalCount": 11064,
     "spotlight": {
       "event": {
-        "id": "1s83x0nn4m800",
-        "timestamp": "2026-10-19T05:30:46+00:00",
-        "location": "ARE",
+        "id": "2izz7s8k1ug00",
+        "timestamp": "2026-10-19T17:06:17+00:00",
+        "location": "SAU",
+        "origin": "YEM",
         "coordinates": [
           0,
           0
         ],
         "type": "report",
-        "severity": "medium",
-        "description": "US embassies and missions in 11 Middle East countries issued overnight warnings to citizens over threats from the Houthis and Iran, starting with the US Embassy in Abu Dhabi",
-        "descriptionHe": "השגרירויות והנציגיות של ארה״ב ב-11 מדינות במזרח התיכון פרסמו הלילה אזהרות לאזרחיהן על רקע איומים מצד החות׳ים ואיראן, החל משגרירות ארה״ב באבו דאבי",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/132151"
+        "severity": "high",
+        "description": "Ansarallah claims 6 operations against Saudi Arabia with ballistic missiles, cruise missiles and UAVs targeting Shaybah field, Aramco Yanbu, Riyadh King Khalid airport, radar sites, Abha airport, King Khalid AB and a naval camp",
+        "descriptionHe": "אנסאראללה טוען לביצוע 6 מבצעים נגד סעודיה בטילים בליסטיים, טילי שיוט ומזל\"טים, נגד שדה שייבה, מתקני ארמקו בינבו, שדה התעופה המלך חאלד בריאד, אתרי מכ\"ם, שדה התעופה בעבה, בסיס המלך חאלד בחמיס מושייט ומחנה של חיל הים הסעודי",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85744"
       },
-      "headline": "US Embassies Warn of Houthi, Iranian Threats Across Middle East",
-      "headlineHe": "שגרירויות ארה\"ב מזהירות מאיומים של חות׳יים ואיראנים ברחבי המזרח התיכון",
-      "summary": "The coordinated warnings across 11 nations suggest intelligence assessments of imminent escalation risks following recent regional tensions.",
-      "summaryHe": "התראות מתואמות על פני 11 מדינות מעידות על הערכות מודיעיניות של סיכונים להסלמה קרובה בעקבות מתיחויות אזוריות אחרונות.",
-      "pickedAt": "2026-10-19T09:00:26.071Z",
-      "state": "TODAY"
+      "headline": "Ansarallah launches massive coordinated attack on Saudi Arabia",
+      "headlineHe": "אנסאר אללה משיקה התקפה מתואמת ענקית על ערב הסעודית",
+      "summary": "The Yemen-based militant group claimed six simultaneous operations targeting critical Saudi infrastructure including oil facilities, airports, and military installations across the kingdom.",
+      "summaryHe": "הקבוצה הלוחמת מיימן טענה לשש פעולות בו-זמניות נגד תשתיות קריטיות בערב הסעודית כולל מתקנות נפט, שדות תעופה והתקנות צבאיות ברחבי הממלכה.",
+      "pickedAt": "2026-10-19T17:15:25.878Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-10-19T11:12:17.441Z",
+    "lastUpdated": "2026-10-19T17:30:17.491Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1514,152 +1515,8 @@
     "vitals": {
       "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-10-19T11:00:18.412Z",
+      "lastUpdate": "2026-10-19T17:00:13.896Z",
       "internetHistory": [
-        {
-          "t": "2026-10-18T11:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T11:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T13:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-18T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T16:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T16:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T16:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-10-18T16:50:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-10-18T17:00:00.000Z",
           "v": 97
@@ -2087,11 +1944,155 @@
         {
           "t": "2026-10-19T10:40:00.000Z",
           "v": 97
+        },
+        {
+          "t": "2026-10-19T10:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T11:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T11:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T11:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T13:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T13:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T15:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T15:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T15:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T15:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T16:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T16:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T16:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T16:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-19T16:40:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-19T11:00:18.412Z"
+    "lastUpdated": "2026-10-19T17:00:13.896Z"
   },
   "developments": [
     {
@@ -2275,6 +2276,147 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-2obif3vwbrw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85743",
+      "date": "2026-10-19T17:06:17Z",
+      "title": "IranStrike event",
+      "description": "Wave of Israeli Air Force airstrikes across southern Lebanon over the past 30 minutes hitting Wadi al-Hajir, Kfar Tibnit, Baraachit and outskirts of Haddatha",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn wave of israeli air force airstrikes across southern lebanon over the past 30 minutes",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2obif3vwbrw00",
+        "timestamp": "2026-10-19T17:06:17+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Wave of Israeli Air Force airstrikes across southern Lebanon over the past 30 minutes hitting Wadi al-Hajir, Kfar Tibnit, Baraachit and outskirts of Haddatha",
+        "descriptionHe": "גל תקיפות של חיל האוויר הישראלי בדרום לבנון במהלך 30 הדקות האחרונות, באזורים וואדי אל-חג'יר, כפר תבנית, ברעשית וסביבות חדתה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85743"
+      }
+    },
+    {
+      "id": "iranstrike-2izz7s8k1ug00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85744",
+      "date": "2026-10-19T17:06:17Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah claims 6 operations against Saudi Arabia with ballistic missiles, cruise missiles and UAVs targeting Shaybah field, Aramco Yanbu, Riyadh King Khalid airport, radar sites, Abha airport, King Khalid AB and a naval camp",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2izz7s8k1ug00",
+        "timestamp": "2026-10-19T17:06:17+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Ansarallah claims 6 operations against Saudi Arabia with ballistic missiles, cruise missiles and UAVs targeting Shaybah field, Aramco Yanbu, Riyadh King Khalid airport, radar sites, Abha airport, King Khalid AB and a naval camp",
+        "descriptionHe": "אנסאראללה טוען לביצוע 6 מבצעים נגד סעודיה בטילים בליסטיים, טילי שיוט ומזל\"טים, נגד שדה שייבה, מתקני ארמקו בינבו, שדה התעופה המלך חאלד בריאד, אתרי מכ\"ם, שדה התעופה בעבה, בסיס המלך חאלד בחמיס מושייט ומחנה של חיל הים הסעודי",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/85744"
+      }
+    },
+    {
+      "id": "iranstrike-2fgzeddqkydc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/85742",
+      "date": "2026-10-19T17:06:17Z",
+      "title": "IranStrike event",
+      "description": "Iran Navy spokesman says 2 projectiles, likely launched by U.S. forces, struck a 35mm cannon at Konorak Naval Base, injuring 2 navy personnel",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2fgzeddqkydc0",
+        "timestamp": "2026-10-19T17:06:17+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Iran Navy spokesman says 2 projectiles, likely launched by U.S. forces, struck a 35mm cannon at Konorak Naval Base, injuring 2 navy personnel",
+        "descriptionHe": "דובר חיל הים האיראני מסר ש-2 פגזים, ככל הנראה שנורו על ידי כוחות אמריקאים, פגעו בתותח 35 מ\"מ בבסיס הימי קונורק ופצעו 2 מחייליו",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "other",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/85742"
+      }
+    },
     {
       "id": "iranstrike-39dsh1d28j800",
       "source": "IranStrike",
