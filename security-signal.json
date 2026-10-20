@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-20 11:40 UTC",
+    "updated": "2026-10-20 17:10 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-14",
     "period_end": "2026-10-20",
-    "total_events": 123,
-    "total_risk": 134.0,
-    "normalized_risk_score": 53.6,
+    "total_events": 120,
+    "total_risk": 132.55,
+    "normalized_risk_score": 53.0,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 39,
-    "security": 7,
-    "political": 23,
-    "other": 54
+    "military": 35,
+    "security": 6,
+    "political": 26,
+    "other": 53
   },
   "source_counts": {
-    "news": 123,
+    "news": 120,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 29.9
-    },
-    {
-      "name": "West Bank",
-      "risk": 20.55
-    },
-    {
-      "name": "Yemen",
-      "risk": 18.4
-    },
-    {
-      "name": "Iran",
-      "risk": 18.15
+      "risk": 27.4
     },
     {
       "name": "Saudi Arabia",
-      "risk": 18.0
+      "risk": 22.15
+    },
+    {
+      "name": "Yemen",
+      "risk": 21.7
+    },
+    {
+      "name": "West Bank",
+      "risk": 15.8
+    },
+    {
+      "name": "Iran",
+      "risk": 14.7
     }
   ],
   "top_events": [
@@ -52,18 +52,54 @@
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
-      "title": "Brent hits five-month high as attacks on ships, Saudi sites fuel supply worries - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZlA3RXBMd0lXRU1feWpodXpZQ2tnUERkUHFQSlFGX2hCMjdrOVdhRVd2eVk3dmhLYklUdVM1WGtoXzc0cUt2OG44WjBYVFVZazFvQWo1UmJWRlliNzJHWlZBU1hScTU1RU9sVEdDVllsSWE4UXh5b0ZHX0VlU01fNDc3ckpxRkw3ZGdaM0xxMW1qOEhWck1XYUlSVkJWeVZyZWRRSkpqdTFQSmZhejlBRmkxZUJmMGtPVWx6Ym82SnNTcElaWGc"
+      "title": "Death toll from Houthi attack on Yemen training camp rises to 73 - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNczREeXpXbTRhWHcyRTNlVkNaRTc4YjAzZWtxWnRXQV9BUUx3cUZ4S1B6Y2FaNW0xbk1XTURjeXI4LXhjWnFDVjJydll6ZXFmWVRjNDViT1lJZVMtaEpXa3NfLUlybDE0MU1YLTR4UEoyZGd6bTZEZjNUWHZPYXN5cXRlN3lyVjRCTjdqRUZBNld2UGFrTDNJaFpTbzhNQ2Q4MWlBWTlsanp1T1E"
     },
     {
       "score": 3.0,
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
-      "title": "Most Gulf bourses retreat after Houthis claim attacks on Saudi energy, airport sites - Reuters",
+      "title": "Most Gulf bourses in red after Houthis claim attacks on Saudi energy, airport sites - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcXpWQlZUSjN2cnJReUppaUEyRldXVWpqOVNvVFpMZ0xMc09WanRpdEhEeE9iZmpMUnIyWmlGeVdNVTczOWIxYUd5VnZ2Mk80VGFheGlPVTdyM1NWS1pCdmhHekh1ZlhKbHdfNnRObnQyNVhycjFtdGQ5RmgydVhHRkthWDlBYWhkQnlsOUlsV0wzNzg2bGZqWGNVcURLMVBpNFZRaWZ6b2NBaGNCMGpuLWFndTRqd21mZzNUSVJ0Q3gzUFlnWGdLN0xQUUdOcHM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "UK to deploy jets to defend Saudi Arabia from Houthi attacks",
+      "location": "Saudi Arabia",
+      "url": "https://www.bbc.co.uk/news/articles/ckr5yqe1r1llo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi missile strike on Yemen camp kills 73 security recruits, local authorities say",
+      "location": "Yemen",
+      "url": "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "UK to deploy Typhoon jets to help defend Saudi Arabia from Houthi attacks - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUW44eVNLWEJDZ0RWZlFHRU12X1hjMG5mc19fblh1Y2thMW1BYVNVSTdvQW1GUkVLVGRJQ3g2M0FJcVUwTUdyejZiTHlEZlU4emlUVTdhUDN3bFdWV2MxcEpXSXZxdVdMRmlJbHB6Y00wNHVLelp5ZVZkZGF1N3gwdTUxbkVmLVpVdUR1VThBQ2V6SlVrVEpBMWIxQXY3emZVQzVnSHNQMVdLUk5rTGNja0gxNmPSAboBQVVfeXFMTnpQbk02YTFsR3U2MGRtcmgwUmQ4cHFHZE1DTktSQXE1UV8tNWhPWExwaHYtWkprLTNrTXU4YmtEaFJMekM4emFsVUUyUjhRT0Q0QzRuaC1NWHVpNmpfNGRpQzJRQkRmTzRhUExjaDJNSlRVcG9Rb2dmTnRSdVAweVJQOW9nMVlNRk50Q1YtWkU2aFVRXzZJUGJqZmdMWVNnSXJNU0p3Q3VETjNCS0RQOWtlOVE1T1huU3h3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks kill at least four Palestinians in Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNN2JKMGN3UXpYNVdOQTkzUW1sOTN2R2ZkVnV2NlNiSVBla2dWQk1yQUNYNzluc3VvajhsYVBSb3E1VHFzQW1QNGJJNkxRVWJzUUVjUTZ6c0YwX01GTTd0d2RoVmlaMVdVajhPYmpXQkk5QnhUYWtsZGpoRG54QWNJNXZnWnFYcjYxcS1oMF9IZkVaWnFkeEE5Q2N6ZktFT18zTTk1TDc1d9IBrAFBVV95cUxPYTk1aTVHWUVmZFI5R1lYR1VuekVVbTRBZHU3Sk1HQ3FCOGRkNVU3SkRsZDFPQ2RIb1JZR0U4Znl1QkFRVVJSMk5UV2MwN1JUYjlLcmNwRUNiTVkyenNVNDlkbEtTOG5mXzhIS1VTOTFRVjh4WjItY0xOUXMwU2NPWWJiVHFaamdjMkxVWUp3ZFdIQ0ZSVndsOE1hZVF3Vl9GTmFMYkVOLUhsQUJr"
     },
     {
       "score": 3.0,
@@ -97,45 +133,9 @@
       "date": "2026-10-19",
       "category": "military",
       "source_type": "news",
-      "title": "Houthi missile strike on Yemen camp kills 50 security recruits, local authorities say",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-19",
-      "category": "military",
-      "source_type": "news",
       "title": "Israeli police arrest 10 over settler attacks on journalist and diplomats in West Bank",
       "location": "West Bank",
       "url": "https://www.bbc.co.uk/news/articles/cqn7323p0dxyo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bomb threat forces Israel to Austria flight into emergency landing",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/c680zdmn100lo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump backs Netanyahu: Is the US planning a new Iran attack with Israel? - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa1Zud0l3Tmd1WENUNlFUTXM3QjVudnRWdnVrTHk2enF0eTZsWmtyR1RsMFRmUHhHTzYyN2NRdVlNamlMUFhlNkNsUmI5TkQ3V1hhMV9ISVlPaUtxYkYybkJfYzljcFZsUWtjT2oxOTdPelJ4UmZMeVNDX0U2QVRLZ2tIdXo1NjBFMTFSVGZDOHN5Z1RMVGdUc3BzSi1oRE5FMTdSaGNBdjJyMUYwYjFKdWh30gG3AUFVX3lxTE9vR1ZvNVZoeWNMbnYtRWhPalliR3NjZ2NsbGNWckR6bURQN0JLYkxqQUtRZ2lJOGVtMnZ4T29yeEFBczlFQWVQR2xwb0lnTFdZelVOaUxKTVBEbTYwUzN0ZnJoekZQZUVmOXJYdFE0VEMwdVQ2MWxJZ1FQbDEyUy16ZTlhSXhfMGhKSnVoZS16bW5rcjJvb2RJTFRHcHdxUHltUkZSMHkzQ2tReklsNE1UT1N2NHNBOA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Flight from Israel makes emergency landing in Bulgaria after bomb threat - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ19xM0UxTl9TNGVlbUhHYlFlZjdJbzd0V1FmZWVGTnpfdDJvWTdHckw4Y1lhVFNoUW1HSmdUeXVPN3dibkE1WjJYLVR6cUQ2YlBibnpoc2ZrbmtJblZjM0Z4QU1LeTJVT0JjWHhUakk1T3A4WVdiUjlfUmNiYTBVSU16ZThLMFpvTzdoUTRyUUxJeERKdHBhZzBKZWlUcTVGcGdfYm5MQVA5MlJVYXFreXZ4bnXSAboBQVVfeXFMUDUzbFhadE5rWXkwMEkwajRvX0lnWUlIczFQMUMzSFpLbnFEM3pEb0xoQXZ2eklOS2UyN19Hc2Jzb2pTWWdFY1BJUnk1bXR3UzRhR3hZckNHVTM2UTlLSmlQaXZ0M0R6dl9wU1lfVUdjSXd6WS1rXzc0QmZyZ1gzNTd0dEQ4WFI0ZWo3Y1RiSmxYUk9qN2xfTUJmRUl3cm0zQzFBUV82NDJPSU1BV05sNllMaklGMmxRUUl3"
     }
   ]
 }
