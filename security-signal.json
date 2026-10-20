@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-20 04:53 UTC",
+    "updated": "2026-10-20 11:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-14",
     "period_end": "2026-10-20",
-    "total_events": 127,
-    "total_risk": 138.1,
-    "normalized_risk_score": 55.2,
+    "total_events": 123,
+    "total_risk": 134.0,
+    "normalized_risk_score": 53.6,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 45,
-    "security": 6,
-    "political": 20,
-    "other": 56
+    "military": 39,
+    "security": 7,
+    "political": 23,
+    "other": 54
   },
   "source_counts": {
-    "news": 127,
+    "news": 123,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 30.0
+      "risk": 29.9
     },
     {
       "name": "West Bank",
-      "risk": 26.9
+      "risk": 20.55
     },
     {
       "name": "Yemen",
-      "risk": 18.6
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 16.4
+      "risk": 18.4
     },
     {
       "name": "Iran",
-      "risk": 15.45
+      "risk": 18.15
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 18.0
     }
   ],
   "top_events": [
@@ -52,9 +52,27 @@
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia cancels 2026 ‘Davos in the Desert’ amid Houthi attacks - Al Jazeera",
+      "title": "Brent hits five-month high as attacks on ships, Saudi sites fuel supply worries - Reuters",
       "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSERidkZWOW05bnl5OC1CNnBmVV9mY09BbXUwLVp1V1pJLWY2eHpQZXZ1WUZzd0Q2VDZoeUVZR2FCa2ZPWldqV0tiVGltbzY0QzdPcjVWYUpKeHVxQTFBMXJVYTdyb1hKTjd1eEwzU3I4am5ZUXd5UjhRcGg2VmN3VEVCR21ybHd3TzEwRWZkWGpHYzZmT2luUE5SYm5VOFJrMnlTT2NTMWFLVzDSAbABQVVfeXFMTkJvX3pndGMtWDZMZEJJdDRJNm45RzJleTljcE9aX1RjZDV5UlpSSzdVN1p0Z2VBTFJKY1dTal9hdXN3RW55RmxmTGFoTEQ3UEZUb2c0SjZBZENIMWhOczU4WkxMeW81OGNnNzNERktWNUpaTEpLcGk5cnVucjNjTGtvTnlwRlQwQ25NVEVvd0xNc1paNjZURFZTZjNnU2RET3M3emZ6a0VxaTBfclJKTm8"
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPZlA3RXBMd0lXRU1feWpodXpZQ2tnUERkUHFQSlFGX2hCMjdrOVdhRVd2eVk3dmhLYklUdVM1WGtoXzc0cUt2OG44WjBYVFVZazFvQWo1UmJWRlliNzJHWlZBU1hScTU1RU9sVEdDVllsSWE4UXh5b0ZHX0VlU01fNDc3ckpxRkw3ZGdaM0xxMW1qOEhWck1XYUlSVkJWeVZyZWRRSkpqdTFQSmZhejlBRmkxZUJmMGtPVWx6Ym82SnNTcElaWGc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Most Gulf bourses retreat after Houthis claim attacks on Saudi energy, airport sites - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcXpWQlZUSjN2cnJReUppaUEyRldXVWpqOVNvVFpMZ0xMc09WanRpdEhEeE9iZmpMUnIyWmlGeVdNVTczOWIxYUd5VnZ2Mk80VGFheGlPVTdyM1NWS1pCdmhHekh1ZlhKbHdfNnRObnQyNVhycjFtdGQ5RmgydVhHRkthWDlBYWhkQnlsOUlsV0wzNzg2bGZqWGNVcURLMVBpNFZRaWZ6b2NBaGNCMGpuLWFndTRqd21mZzNUSVJ0Q3gzUFlnWGdLN0xQUUdOcHM"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Palestine weekly: Israeli settlers attack journalist and diplomats - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRHRBSDB6NUJ3ODVHWjdGMVdhLTNWdXE2cjMxams3ZDFPRFRhZzdGVVFHRm9YTUp2eldEaFJ5NmRuZTZTdXdZNXRuWU5OcFZOWWNkQXlXX0RXRURidnM5MU50cG9ELVRjZUJnaUxwVDhHNndvelZnVE9JdFdieVBrYWJraUtYUWVZMHFyQmtTSk9TM3d2TTNrTDdhYV9aZ3pRdzFsdTdVY0dGeUXSAbABQVVfeXFMTzVpNk8tbjBkNHpDQWw5QURINzJjUTgzRDB4dUVCbGkyOWhQd1pTc2xtdE5NQWpZaGRmZjRiY01qV2NMX2hBWk5TS2VROEJaUExidkJVaXRncTQ3aFkyQ2N1RFY2czJ4cllxVkk4ZTdsUGVtYXlHa3ljb3hOVWR6SXFyelo4RFA3THVBS2luc0ZWWWJ5TzViekVzLWhLM242R09vUzI2YVhOVWRfTm1kS0Y"
     },
     {
       "score": 2.7,
@@ -79,9 +97,9 @@
       "date": "2026-10-19",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli police arrest suspects over settler attacks on US journalist, European diplomats - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUGdXdTZVUC0xd3NJMzJWdlpNS0tySGdmcUlvdl9wWXhIUUdMT3E3WFZPZWFEam1PWDdFUDRRd0trNGduLUZzRWVzWXBoVWt5QkpFMk5lMzhUZU9yNllmbUxlUEZwdk5raGhEUnlyTDBTVldKWkxXSWNndHY4U01Kd3BqM3lEMU85LUZydXF2YUdMOEc5MHh5ajlfb0lNSzh1MXE0TnBEMHNIOXVzX3ZZWGRrRnNrc3Utd2VmTnh4LVIxQ2x3UElRa2hQbm8"
+      "title": "Houthi missile strike on Yemen camp kills 50 security recruits, local authorities say",
+      "location": "Yemen",
+      "url": "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Flight from Israel makes emergency landing in Bulgaria after bomb threat - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ19xM0UxTl9TNGVlbUhHYlFlZjdJbzd0V1FmZWVGTnpfdDJvWTdHckw4Y1lhVFNoUW1HSmdUeXVPN3dibkE1WjJYLVR6cUQ2YlBibnpoc2ZrbmtJblZjM0Z4QU1LeTJVT0JjWHhUakk1T3A4WVdiUjlfUmNiYTBVSU16ZThLMFpvTzdoUTRyUUxJeERKdHBhZzBKZWlUcTVGcGdfYm5MQVA5MlJVYXFreXZ4bnXSAboBQVVfeXFMUDUzbFhadE5rWXkwMEkwajRvX0lnWUlIczFQMUMzSFpLbnFEM3pEb0xoQXZ2eklOS2UyN19Hc2Jzb2pTWWdFY1BJUnk1bXR3UzRhR3hZckNHVTM2UTlLSmlQaXZ0M0R6dl9wU1lfVUdjSXd6WS1rXzc0QmZyZ1gzNTd0dEQ4WFI0ZWo3Y1RiSmxYUk9qN2xfTUJmRUl3cm0zQzFBUV82NDJPSU1BV05sNllMaklGMmxRUUl3"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attack on Yemen army camp in Shabwa kills at least 53: reports - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQURxelJpODVFeDRIVWZNaEk5cFZlYXpMdUxxa2owdTRGbmV4SHI2a2JHaDluMzRTNFdobDdNeUN3ZHFuR1hfQ1lmSU1aWXFJc0hVaklCaWw1cEJjUno5Uk1Dc3FCcktyZV9rX3J4Rkd0UDZtMXV5NGhacDRHTTdoZGRkRGJNcG1QajFvYXk0Mkt3MS1UeDN5eW03U05COXVzOWFPbncyZFV2UkZVb1RMadIBtgFBVV95cUxQb1pVOUxXRU1SdmVLRmRkVE5qRDJ1dzdoM3JfZFlZSmxKa2d3a28yTXVReGFyWEtqNVN3ZmRIX1ZseWpsNzRscDVLZWFiellubjJsOW9iM1ZyT0FkUF9MUWljckF4WFdrSmhwd3pBWG15dGl4cXJyV2ZBY2RveFdkS01xT1hkc3JHMXFzNXFfVy1MUk9vNk1ocEVKTGFnMjROcVlMVmF1X3NYcVU4Rkd3TDNsTG1Ldw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli police arrest 10 after settler attacks on journalist, diplomats - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbk1sUWxYbFljUV9wa0d2bE45SDY0MXA5aGVIcmVMZkt3a2JEalpwdlhSeXpWTW9wYkpaRy0tQ1F2Zk54M2l0bm80Y3BJU0RseElBWGV1bUt5N3ZfQTdIMXl6Wmk1bmlpbkVncGVPbkVBV1lTajdoMG14RzlJZE1PYUlsMnliY3F2Q294Z3paODJjVE1nUVpJSGxHNVktN21qSEdMbEZOa2xHVG5XZndhMVF30gG3AUFVX3lxTE5pWWJrVWlRN2pOOFZfZmJGUjcydHdlT3NwQjBYak1fS3YyMXctQ0VDVHVMbjhHLURjTkphUEs3bTV0WkF5cWVyaDZ4dUlwbkVYSnNoSEZmbFljOEE1bVlNLUt1OUhBTk1oeTl2MjJES2FaTXJodkk0QTM3MTVjWkE4TF8yWDNUeEEwTGxhUFh0LUozNmR6WVM5NEt0dHdpRWwxb1ZaYU1LejhGNEZNaV81WEFVUFZoOA"
     }
   ]
 }
