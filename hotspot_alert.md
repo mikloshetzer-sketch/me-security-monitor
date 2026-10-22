@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-10-22T04:50:53.798116+00:00
+**Generated:** 2026-10-22T11:55:58.979854+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Saudi Arabia (2.8), prev 24h: 7.8, share: 100%.
+Top current hotspot (by risk): Saudi Arabia (9.6), prev 24h: 4.8, share: 56%.
 
 ## X POST VERSION
 
