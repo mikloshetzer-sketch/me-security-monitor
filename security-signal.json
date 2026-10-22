@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-10-21 23:22 UTC",
+    "updated": "2026-10-22 04:50 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-10-15",
-    "period_end": "2026-10-21",
-    "total_events": 96,
-    "total_risk": 99.6,
-    "normalized_risk_score": 39.8,
+    "period_start": "2026-10-16",
+    "period_end": "2026-10-22",
+    "total_events": 92,
+    "total_risk": 86.7,
+    "normalized_risk_score": 34.7,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 4,
-    "political": 26,
-    "other": 45
+    "military": 20,
+    "security": 3,
+    "political": 23,
+    "other": 46
   },
   "source_counts": {
-    "news": 96,
+    "news": 92,
     "isw": 0
   },
   "top_locations": [
     {
-      "name": "Yemen",
-      "risk": 21.4
+      "name": "Saudi Arabia",
+      "risk": 21.9
     },
     {
-      "name": "Saudi Arabia",
-      "risk": 18.85
+      "name": "Yemen",
+      "risk": 16.15
     },
     {
       "name": "Israel",
-      "risk": 15.35
+      "risk": 14.8
     },
     {
       "name": "Iran",
-      "risk": 11.45
+      "risk": 7.75
     },
     {
       "name": "West Bank",
-      "risk": 7.0
+      "risk": 5.5
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-10-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "One killed, eight injured in attack on Saudi Arabia’s King Fahd airport - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMktOQVdUcmhmWlhhcHVNQ1laMzRELXBuXzhLMHFqNHdLdEE5TVdmbDR0eXJlT3ZwVjgtQi1KVXNWWm9ReHhsNjhER0phWmxadWdDZDRfWk1xdGNOSWNkUDRSSW1fMC1RNkhCbUJxRTlZTUFoUkYtUGt1Z0tkalVHVWFXSks0N3llZ1g1ZXJWUXpDN2l3MjJFVzlhZVVROWwybnlYMkZWVkdkYkFxTHlGaUQ2Z9IBuAFBVV95cUxObmo4ZHczZ2Fza2VqLS1NUHoxem5hcHVTUXloZnBSeHo5Tk9LUUoxMVpRVGNLYURhanlfb09qcnhRMmtkT3N6bEpObHZwaTJhY0xCWW5oMjI0YWpRNUFnX1VaTkFmb3c4YTUzamdzZUxMVWZ2Yk9oVk1sYmZ1TkdJMXpjQUxFcGFEa0lpVHF4SGdWa0Y0eG9rUG1MeHVKY3VLM2hkUHpPZWJsR0haMUQ5UDhOVmRNcFFE"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-21",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxONDg0WFNBeGFxeHpUVUsya2RYd0k3XzF6bXU3eGpZVnh2T25MWHVsQzVrbE9PNEdaWnpfN1dmRmtxajMtbl8yZ29EWUxYaXAxcnkxcFN1NEVDLVE3bUtkR0NwZDVPN2haVXFERXRUeHRnQ2QyVDhVdjBNa2FIUFVDOWFicGJOQVVWR0JFMnZSM0NLV09nZHk5UzA2LTgtbmFEVnlYZDI1Uk9ic1hyLTZ0Z2NKbWI5QWgtWWE3ZzV4eE11bmpCcGstTFAzQnVGUQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-21",
       "category": "military",
       "source_type": "news",
@@ -66,7 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQc2ZjQXV3eDBJb0ZSQVR6eGFkazItZW9IbnhpQVJESVNVekFRZzJNSFhSRFZjMlRLMmQ0TDFBMHlBQkJ0dlBUY1dVSEQ5Z204MVZ2ODJpQ2xuaVpNb2N3WGdVUExETTdTbXdnMGNYZmVUN1Y2ajZmRUc3ZmZvMFJpT2ozdW85bng5QnRhQVBtUjhocVZwVmt2Q3RIdDdRSU9RcXA1T2JlUmNvVk5vMVk0c21WcDhTbWhIdGdyWnh3"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-10-21",
       "category": "military",
       "source_type": "news",
@@ -75,7 +84,16 @@
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaTVZLWNRalc0ZzFmaXlERE8ySDhISTVTVjV0c0o2ZzU1UThTS2RMd0RRaVlsdmlNcFZfR3BiRHAwejM0dGFaUVA2V2JtVW4zMFZUVm1JMnViVGI1M2ZQa2VySHo2M3pJemxlRmJBanJSOTgwZko5VjFoeEFpTndNRHF4TGZNT25MMmRTMDRDdENwa3ZsZ1ZkY2NGOUo4a04wNmMxNk5OUE5nSXQ1TWxuZTNsQWF6U1JuX0FHcw"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-10-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi civil aviation says one killed, eight injured in attack on King Fahd airport - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSGNWYThfTTlBMk0yXzZJMVdvRkp2NDRwOEItSlJxRjN3NE5nVmRMbFkybld2UUFLWHFzel8zTEVMMUt4T3A3QUxMN0dObTR6WHMwOHUwYmh2RGJYX1hIOFBSb1ppQ0VIUW0xdTFzTHB2NENTTElkMTRqOHBVWGFoejRhb3dhclZtS09kNkZra055RUlyVm82M1ZpNmhHZWctLUtfelg5blVrbW5aVHhpSzBvVmsyNVZm"
+    },
+    {
+      "score": 2.7,
       "date": "2026-10-21",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQUF4X21UdVc5X1hxWEhodUNuZnpFV3Q5SUppNHZxNG10UWNhTlVtSmhhdEFtOUN2ZS1VN253cUhqTGlDSlh6WllhU2VKU0ZITE5iWkwyMDBWazNxVU93YlloOVplVFlia3JRYmZrX3BuOVAwdTNfQmprQlhZUXhmRXl2RnV2RG10T3E1M19SYVRhVm9mbXhvVjIwbXRFTGFFdVZWbjB6SlNQOU1fZEHSAbMBQVVfeXFMTlpLaHNqS0d0bV9HdmNNZkhPUU45OHBqU1JMV1hLcDhwM01xUnY2S1JHSDRSS1JUTWdfWUxuY3hxUDdKUnA3Y0tNUy1tS1Iyc2JkdDRCQUpTbzJVMUEtZk5aUlpRUi1PdmNNSmhHb1JxVmRwWDNMblc0cUJmb1J3bnQ5X0ZOR092ZF9IZk9WMzVxendBNFpWVDVBUnBEalQzc2xiSWhZeGMxY0lVMDM4SEVIdDQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
@@ -93,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNczREeXpXbTRhWHcyRTNlVkNaRTc4YjAzZWtxWnRXQV9BUUx3cUZ4S1B6Y2FaNW0xbk1XTURjeXI4LXhjWnFDVjJydll6ZXFmWVRjNDViT1lJZVMtaEpXa3NfLUlybDE0MU1YLTR4UEoyZGd6bTZEZjNUWHZPYXN5cXRlN3lyVjRCTjdqRUZBNld2UGFrTDNJaFpTbzhNQ2Q4MWlBWTlsanp1T1E"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
@@ -102,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcXpWQlZUSjN2cnJReUppaUEyRldXVWpqOVNvVFpMZ0xMc09WanRpdEhEeE9iZmpMUnIyWmlGeVdNVTczOWIxYUd5VnZ2Mk80VGFheGlPVTdyM1NWS1pCdmhHekh1ZlhKbHdfNnRObnQyNVhycjFtdGQ5RmgydVhHRkthWDlBYWhkQnlsOUlsV0wzNzg2bGZqWGNVcURLMVBpNFZRaWZ6b2NBaGNCMGpuLWFndTRqd21mZzNUSVJ0Q3gzUFlnWGdLN0xQUUdOcHM"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
@@ -111,31 +129,13 @@
       "url": "https://www.bbc.co.uk/news/articles/ckr5yqe1r1llo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-20",
       "category": "military",
       "source_type": "news",
       "title": "Houthi missile strike on Yemen camp kills 73 security recruits, local authorities say",
       "location": "Yemen",
       "url": "https://www.bbc.co.uk/news/articles/cv0ld6lrr2zeo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "UK to deploy Typhoon jets to help defend Saudi Arabia from Houthi attacks - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUW44eVNLWEJDZ0RWZlFHRU12X1hjMG5mc19fblh1Y2thMW1BYVNVSTdvQW1GUkVLVGRJQ3g2M0FJcVUwTUdyejZiTHlEZlU4emlUVTdhUDN3bFdWV2MxcEpXSXZxdVdMRmlJbHB6Y00wNHVLelp5ZVZkZGF1N3gwdTUxbkVmLVpVdUR1VThBQ2V6SlVrVEpBMWIxQXY3emZVQzVnSHNQMVdLUk5rTGNja0gxNmPSAboBQVVfeXFMTnpQbk02YTFsR3U2MGRtcmgwUmQ4cHFHZE1DTktSQXE1UV8tNWhPWExwaHYtWkprLTNrTXU4YmtEaFJMekM4emFsVUUyUjhRT0Q0QzRuaC1NWHVpNmpfNGRpQzJRQkRmTzRhUExjaDJNSlRVcG9Rb2dmTnRSdVAweVJQOW9nMVlNRk50Q1YtWkU2aFVRXzZJUGJqZmdMWVNnSXJNU0p3Q3VETjNCS0RQOWtlOVE1T1huU3h3"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks kill at least four Palestinians in Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNN2JKMGN3UXpYNVdOQTkzUW1sOTN2R2ZkVnV2NlNiSVBla2dWQk1yQUNYNzluc3VvajhsYVBSb3E1VHFzQW1QNGJJNkxRVWJzUUVjUTZ6c0YwX01GTTd0d2RoVmlaMVdVajhPYmpXQkk5QnhUYWtsZGpoRG54QWNJNXZnWnFYcjYxcS1oMF9IZkVaWnFkeEE5Q2N6ZktFT18zTTk1TDc1d9IBrAFBVV95cUxPYTk1aTVHWUVmZFI5R1lYR1VuekVVbTRBZHU3Sk1HQ3FCOGRkNVU3SkRsZDFPQ2RIb1JZR0U4Znl1QkFRVVJSMk5UV2MwN1JUYjlLcmNwRUNiTVkyenNVNDlkbEtTOG5mXzhIS1VTOTFRVjh4WjItY0xOUXMwU2NPWWJiVHFaamdjMkxVWUp3ZFdIQ0ZSVndsOE1hZVF3Vl9GTmFMYkVOLUhsQUJr"
     }
   ]
 }
