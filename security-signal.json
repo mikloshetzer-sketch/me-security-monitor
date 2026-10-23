@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-23 13:28 UTC",
+    "updated": "2026-10-23 18:24 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-17",
     "period_end": "2026-10-23",
-    "total_events": 106,
-    "total_risk": 108.46,
-    "normalized_risk_score": 43.4,
+    "total_events": 96,
+    "total_risk": 109.65,
+    "normalized_risk_score": 43.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
+    "military": 29,
     "security": 2,
-    "political": 22,
-    "other": 55
+    "political": 15,
+    "other": 50
   },
   "source_counts": {
-    "news": 101,
-    "isw": 5
+    "news": 96,
+    "isw": 0
   },
   "top_locations": [
     {
       "name": "Saudi Arabia",
-      "risk": 24.7
+      "risk": 27.0
     },
     {
       "name": "Yemen",
-      "risk": 20.75
+      "risk": 21.05
     },
     {
       "name": "Israel",
-      "risk": 17.45
+      "risk": 14.95
     },
     {
       "name": "Iran",
-      "risk": 11.06
+      "risk": 12.35
     },
     {
-      "name": "Oman",
-      "risk": 6.5
+      "name": "Jordan",
+      "risk": 9.0
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Brent crude hits more than five-month high on Houthi-Saudi attacks, UAE oil spill - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPR2dZUC10TmJYRUk2RmM5WWpxaUx2XzBPZ0ZTV3hIR3BkaGFvZ3B2T1hhd0xEcXZOWk5LdXhLLUF5QU9XdTRQdnRyTk9jcmVNMEZvZlZBRW8xcG1TVW1fTkY2UnFrcXlVWlUwbDhRYk9pcW1fdEdzMVNRR2ZhYVl2T0RZa09uZTktZGFWRVRWSEpGeFhYVXVPR09zNDVaTVdiNDdRRHg3VFNyZWNNWVBmdkxGMWFOa05yN2NBRnRVZjF3eF9i"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Seven killed as gunmen open fire at church in Jordan, authorities say - Reuters",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNd2lOTkU3cVRlN2NTOWxzMWZYZnZUSjBZeWV6VHprNk44Q0pWLXdaMjF6QU1iS1JjV2RLdkFkM2NyVUtTOXpDdHg3SThHN2tFZFozTGZIdlVaVzBqUFV2STZCMXcwbjMycDNTNWppUDdSTVZBaWxqTTR4dk5kWkFrTDM2TzVkYi1oNTNwTjluU2NmTmY5cHkxbEhhWGR4VUt5QTJub2hkalo1WExtNVc2MEoybC1YWkQxbnNoZ3l6QzB6c1lOdGJhZTdB"
+    },
     {
       "score": 3.0,
       "date": "2026-10-23",
@@ -61,18 +79,45 @@
       "date": "2026-10-23",
       "category": "military",
       "source_type": "news",
-      "title": "Romania blames Russia for drone that sinks cargo ship; 1 killed, 3 missing - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPOF9iZ3FoTHAycU5fWGxKNWNiYnpvRXlwUWJ2ZVFtQU9IUmF4UWJTU1AwTEFRT21vNWRDNzRjWTgtY0F6Vkp0RkdxeG9xM1A0X1RRX19Eb0RqVG9tbTBNeWFRaXZ2SzEtUUFEc2VjZlZPaUxtR3JGTUNEN3VRdWtRMEdTM21OSTVSQWNJN3FaOWpBNHdld3IyZS1sbVA1a2wxLVJXRm01ejhKWXZzQU5B"
+      "title": "Saudi Aramco tells staff to evacuate Dhahran as clashes with Yemen's Houthis continue - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSGNWYThfTTlBMk0yXzZJMVdvRkp2NDRwOEItSlJxRjN3NE5nVmRMbFkybld2UUFLWHFzel8zTEVMMUt4T3A3QUxMN0dObTR6WHMwOHUwYmh2RGJYX1hIOFBSb1ppQ0VIUW0xdTFzTHB2NENTTElkMTRqOHBVWGFoejRhb3dhclZtS09kNkZra055RUlyVm82M1ZpNmhHZWctLUtfelg5blVrbW5aVHhpSzBvVmsyNVZm"
     },
     {
       "score": 3.0,
       "date": "2026-10-23",
       "category": "military",
       "source_type": "news",
-      "title": "Two Israeli soldiers killed in attack by suspected Palestinian gunmen in West Bank",
+      "title": "Seven shot dead by gunmen at church funeral in Jordan, officials say",
+      "location": "Jordan",
+      "url": "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli forces begin demolishing Palestinian buildings in Hebron after two Israeli soldiers shot dead",
       "location": "West Bank",
       "url": "https://www.bbc.co.uk/news/articles/cq4g1p974wxko?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "European, Middle East ministers urge US-Iran diplomacy, not new attacks - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVFNoMkR5TkRGT0RhUlluYlN0Z2lFSzBhNEJwTmpZQWQ2NVZfUUwwM3EwRlEzNlMtNkFTNUYydURqN3FwT3BjNW5WeTI3TUZ5THlUZ1JTNjJ3dFZmTFg0b2VFTHJCQXRLWXpSWktESDZOenVoQ0JjenByQnFDTkZ3QlBXT0NsQWlLTWZwbHRwT3RtVWdkanVmT25ETUJHUE1DLUpQZXMtb0NKQkc5SXlfbNIBtgFBVV95cUxNblN0R1plS1ZrNlA1SElueG44NkNwZmZELVdZMTZObDgzaUJNSFBPbG15UFlleTNRZDY2Y3BTMWlGeUJOYWlIeklfX0RvQWpoT3VITENVNEROcTkwNnFYTV94RjJ6Vzg3N004SDRocGc3Mm9DRnRlVlVJYlQ2U3JXRnJaZmFYRWxILXlPbVktUlUtNFJGRVpkT3RkY1hka1V3LWo3MTItdG01Yk90ODVtT0pZdlBLUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "At least seven killed after gunmen open fire at church in Jordan - Al Jazeera",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWDJEUlpqMVFqM21NUFNVNzdrTHlkNlJIT2FwbExlZm5FR01ZWEpFdGRFMWltUDRPSHlseFpSanVYc0EtU3ZZcjJoR3dfMnJuN0drRkx4UlZzQ1RtOUFsd2h1NWtZQmdiYmNCU256VzFTakYydExHOGRoTGg5ZzBCcDM5NVA1LUtkcHNuV1JCcDB4WXM4ZnBqY3V6Y0x3NkF6ak9KbVpqVzFHQdIBrwFBVV95cUxNbm5hVF9hZnBmYnBCS2haUGJ6akNiOVdnSEl0ekdmYUlTbnZZOEpHakE3ZWhvTnNXRHM4R0JHQUVIUkJPdmJsY0NSckdxclZiRGtaVS1tdXQtTkNCUExKdXZTandkWUNzTjdTak5iNmwyQmp1aXJQRENpbGtIUmxQaVpvbTRMX2FTamZNeG9fR2xZXzV2cUFwbVJPWXRYLTdfR3JzRUNSRlZ0RllWZXdB"
     },
     {
       "score": 2.7,
@@ -91,51 +136,6 @@
       "title": "Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUVhDZXVHTEtXNnJyeEx0a1ZvUS1iU3lGNV9Ia2dNTmljcm5PaVNvYUZ6ZkJsUGtoTjF6NDktS0FYeEstZEhOVkxvWUZmNU9VV05IUElNbTlHZk1iZGFNUVdzNXBXX01MVW03LXhnRTNVbzZRYlBKdExpeU5ZbHk3aldOVktTT2NRQmJ3Yjd4OEM4Q21JZU5GejMzRUhBbmxBamtBVmEzRGQtb1VnZ0E5dXJ5RUlfa1M2bHJvLTdWcDBjeWl0aFhSVzVn"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQS1ESU5ra242UzdCbkxuVkNzUkV2NWZVTGlRcDZnSzJBeE5KTkFyMEZvaTd0ZEl4LWduc0lmbGZkRnV6REF1dV9VUkRESHpVM3lLUkt0SmtfQzJDLXdnZ0l6akwwOWZpS1lza2tSbHczcnlpU2JPSXo5eHNrY0c4aWNpWjNJSlFYa2M2UEhDNnVsUnQySGF6MVJSY1FPam1LSlliSkJUTzFKck9tZ2J6S2xlUnVSam1TTllJbUxQWmtTcjQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Romania to speed up development of Black Sea capabilities after cargo ship attacks - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOVEpVUkJmY19SeGNHWkhoMXBGMFcxVVFxbEM3cEJhLXZxSGtObndmVGFFUUVra0Nyc2tvNWRBOVhKMG9nQXVTa1Z6TlRsWGhYY2Y3XzNPd2dRVUs4VkVWX1l6Nmc2VmhjYXBta3FxSkM0dmtFMkNJTXA0RFFHN0NnVXlXT1JOVTJiLWZXSEdfUVk2TWV6cmpMQnVzb29vRXJuQTBmSXFWSWpWdzZqNjlrX0JlOXV2UkFBRUE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Two killed in Houthi attack on airport in eastern Saudi Arabia, authorities say",
-      "location": "Saudi Arabia",
-      "url": "https://www.bbc.co.uk/news/articles/cqwy71ww156ro?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "US orders some diplomats to leave Saudi Arabia as Houthi attacks escalate",
-      "location": "Saudi Arabia",
-      "url": "https://www.bbc.co.uk/news/articles/c6x2vpk93770o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-22",
-      "category": "military",
-      "source_type": "news",
-      "title": "Attack on Saudi Arabia’s King Fahd airport kills two people - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMktOQVdUcmhmWlhhcHVNQ1laMzRELXBuXzhLMHFqNHdLdEE5TVdmbDR0eXJlT3ZwVjgtQi1KVXNWWm9ReHhsNjhER0phWmxadWdDZDRfWk1xdGNOSWNkUDRSSW1fMC1RNkhCbUJxRTlZTUFoUkYtUGt1Z0tkalVHVWFXSks0N3llZ1g1ZXJWUXpDN2l3MjJFVzlhZVVROWwybnlYMkZWVkdkYkFxTHlGaUQ2Z9IBuAFBVV95cUxObmo4ZHczZ2Fza2VqLS1NUHoxem5hcHVTUXloZnBSeHo5Tk9LUUoxMVpRVGNLYURhanlfb09qcnhRMmtkT3N6bEpObHZwaTJhY0xCWW5oMjI0YWpRNUFnX1VaTkFmb3c4YTUzamdzZUxMVWZ2Yk9oVk1sYmZ1TkdJMXpjQUxFcGFEa0lpVHF4SGdWa0Y0eG9rUG1MeHVKY3VLM2hkUHpPZWJsR0haMUQ5UDhOVmRNcFFE"
     }
   ]
 }
