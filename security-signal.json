@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-24 15:59 UTC",
+    "updated": "2026-10-24 18:49 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-10-18",
     "period_end": "2026-10-24",
-    "total_events": 113,
-    "total_risk": 120.93,
-    "normalized_risk_score": 48.4,
+    "total_events": 111,
+    "total_risk": 125.84,
+    "normalized_risk_score": 50.3,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
+    "military": 35,
     "security": 2,
-    "political": 16,
-    "other": 61
+    "political": 17,
+    "other": 57
   },
   "source_counts": {
-    "news": 107,
+    "news": 105,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Saudi Arabia",
-      "risk": 25.65
-    },
-    {
-      "name": "Yemen",
-      "risk": 19.1
+      "risk": 23.85
     },
     {
       "name": "Iran",
-      "risk": 16.69
+      "risk": 21.63
+    },
+    {
+      "name": "Yemen",
+      "risk": 18.1
     },
     {
       "name": "Israel",
-      "risk": 15.6
+      "risk": 17.6
     },
     {
       "name": "Jordan",
-      "risk": 13.8
+      "risk": 17.3
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis say they attacked Saudi oil sites; strikes reported in Aden - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU1JpTkpxd3RUSFgwb29mWkRuSmg5UFd5d1RMQkZMdE5tV3F4cEN6SXFOODhTQUZTbTZucHJGVnpxMWpGZVFuSXJzZ045Q0o1Uzh5NFNvVENFX1M2dFQ0NzRGYjUtWk9TYjBWcldGNS1hY21yS2IyOXBsX29hcFg5N2ZENUlIV2oyTE1OT3hJQUFaS1pjTHV3VnZUTkRWbVFnd0JqYV9iZmVwUW4xcGNVOUdUZmgtaWpkVGdsVzJ1SXR1U1hyWG5uWg"
+    },
     {
       "score": 3.0,
       "date": "2026-10-24",
@@ -61,9 +70,9 @@
       "date": "2026-10-24",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition says it intercepted Houthi ballistic missiles targeting Saudi cities - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU1JpTkpxd3RUSFgwb29mWkRuSmg5UFd5d1RMQkZMdE5tV3F4cEN6SXFOODhTQUZTbTZucHJGVnpxMWpGZVFuSXJzZ045Q0o1Uzh5NFNvVENFX1M2dFQ0NzRGYjUtWk9TYjBWcldGNS1hY21yS2IyOXBsX29hcFg5N2ZENUlIV2oyTE1OT3hJQUFaS1pjTHV3VnZUTkRWbVFnd0JqYV9iZmVwUW4xcGNVOUdUZmgtaWpkVGdsVzJ1SXR1U1hyWG5uWg"
+      "title": "Is Iran planning attacks on Americans; why is the US on alert? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNLW1VRmdINS01R1dERWVkVzVMbEotdHBvbHZVSGhYV3EwSm1fdjIybjhWQjVwUTh5dmRwS19yRFRwSEpOMnpvQlZmNWtHX2FKd3JVdC01SU9GV0FJVnJSUFpfUndUSk9XampPNV9iZ1Qwc3hUcnlGb2JiSi1QU185YVdGNl9oV0JibXVwd2JObFlBbjRYZGJjVXNBRnQycS1POGt0eNIBqgFBVV95cUxNdmdPeEQzVDhtUDJVRVRLTUYzQ0xCZjFWZGU2ZlNjWDNlVlhTRzJqSm1mZmphWEdZTjlWRTVVUUFRWFVOdm5TRUt2eDRDWUNRdHpVVjlEV2dWTl9oVC1ULW1Sdk1QMUNDcS1aeklWNGZWcVJBX01YUjBKYmNXWnJrYUNUX1ljRXZKM3ZTaWxtcDhlcERILW82bjdZWHJtRUthVWwyN0ZFakRzdw"
     },
     {
       "score": 3.0,
@@ -88,9 +97,27 @@
       "date": "2026-10-24",
       "category": "military",
       "source_type": "news",
+      "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-24",
+      "category": "military",
+      "source_type": "news",
       "title": "Syrians protest Israel’s incursions near occupied Golan Heights - Al Jazeera",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPV21wWkloZk0xalN3Z3JMbVhSb1pHNERmcDBLcGt5czNIcXJHeF9CSzNnVnFtSXE1QVYxUS1lV0JmUl96dmJQbGdKM1lELUJnTjd6RWtCQ0I0Y05oTEFqN05NWEpscENUZTRONDB3S281eUxtcURWS2FTUXJHOTN5dDY3bzJVTWdWN0Mw0gGQAUFVX3lxTFBSZkJmRF9WX1dIUWFBZ2NTclo5eElYaVRCWEtJUnVpLVZJOEdJQWpIdUZRb2NXOEtpUk5iWXRkYmo4eWF2QTN4NzZYY1NJSmIwWVVOMlJubC1tbHZIeHJUUTFDT2lSaUpGc2xhbHRPbEZrU3hRSUFuMllZUHZiTkJDWlB0SnYxRjUyZ0o1ZVdBeg"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordan’s King Abdullah orders firm response after deadly church attack - Al Jazeera",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQcHdDYk1ZcXVjMGFnay15UVVJdndSdUM4ZlFWdXdPR0VnVThuQWdVR3VxUXptbnJQNzF5WkM0VUpkc2NyZGVKa0Q1MmFmWDAxVGIweGlIaHBTMkh4WFVOUUwwX1JMcDNSSjVGRWZlNFdkdEVaRWRTYUVyX1hLQ19ZczUydzN6bkpVSDY2eVJ5T19fQVFfVmctMV83c0trWUY2NkhSQjBzcXZ4SmpHSmxRc9IBtgFBVV95cUxPUUItTlpaVlVmb0ZCTnJUWXpfNjd0WEdpN0xnY01OVHRJTU1ETmttRzBhZEdMQkxuQzVtTjFISm5DQkRfSzFvX0V6Nm1JaXZJTUVMaEV1RVVTM1BReGt0NGtGclBqSjRnazNuR24zVW1CZFBPZHM2NHBzZEFETDFDRzFRMnJTb3MxaXp5SzNvTE1fRGs2ZVdmMDE4RXpGNjNGdTMwZjFoU1NfdkNGWW5MaEI1VjNCQQ"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "EXCLUSIVE: Saudi missile plant expansion may produce more powerful missiles, study says - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUTNudHNub01PQk1mQ1pIc3I0d2N5TGJPTG5lSlkwSWZKc05VMHpaNGtRTmpmd1pDblNPYjZGbEw3d05QeThxdjNJWDhYX09KMDdPeTlOeWxhX0txVTVrVzRvdWwzMEFfN01jYUNoN1dEVkRQMjlrUENUNVcxMkNuZDlyTnVQMlBkNmhJRzRjRkRESDVJZmdWYzJFMUtzUzBMdFpXVWNoM0hzOTBaajZhRDJtQ0U5ZFlzMkdaZ3BZa2ZPN0RwUHR6cQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Aramco tells staff to evacuate Dhahran as clashes with Yemen's Houthis continue - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSGNWYThfTTlBMk0yXzZJMVdvRkp2NDRwOEItSlJxRjN3NE5nVmRMbFkybld2UUFLWHFzel8zTEVMMUt4T3A3QUxMN0dObTR6WHMwOHUwYmh2RGJYX1hIOFBSb1ppQ0VIUW0xdTFzTHB2NENTTElkMTRqOHBVWGFoejRhb3dhclZtS09kNkZra055RUlyVm82M1ZpNmhHZWctLUtfelg5blVrbW5aVHhpSzBvVmsyNVZm"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Turkey says renewed attack on Iran would expand conflict, diplomacy only way - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNMXkzbk1uOGZSVDB3cUp6M2VmZjlpOHBBVnVkOHlRNUhvQmxmTG9pcWhSckhyaHg0c21DTUdTMGw4bkZIbk9YYWZvOV9EQ1lZM1g1YVpqUXJuVWlwVkh4SkFmRFRES3dNUnIyTmRPOFFoSXZKcXlRUmQwUGlZWndITG1nYnBYRU5POU5XTWp4aHF0aUxxdms5endGVGpNb0hhNGQ4MzNldWhLZkJUNEFzdzBaUG9jNHREWUpvOWd2dC05ellnRUE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Seven shot dead by gunmen at church funeral in Jordan, officials say",
-      "location": "Jordan",
-      "url": "https://www.bbc.co.uk/news/articles/ck87zlpzny15o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
