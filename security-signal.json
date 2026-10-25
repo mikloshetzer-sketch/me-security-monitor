@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-25 04:44 UTC",
+    "updated": "2026-10-25 11:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-19",
     "period_end": "2026-10-25",
-    "total_events": 110,
-    "total_risk": 113.63,
-    "normalized_risk_score": 45.5,
+    "total_events": 111,
+    "total_risk": 115.78,
+    "normalized_risk_score": 46.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 36,
+    "military": 35,
     "security": 2,
-    "political": 15,
+    "political": 17,
     "other": 57
   },
   "source_counts": {
-    "news": 104,
+    "news": 105,
     "isw": 6
   },
   "top_locations": [
     {
-      "name": "Saudi Arabia",
-      "risk": 20.85
-    },
-    {
       "name": "Iran",
-      "risk": 20.49
+      "risk": 23.49
     },
     {
-      "name": "Jordan",
-      "risk": 18.15
+      "name": "Saudi Arabia",
+      "risk": 18.75
     },
     {
       "name": "Yemen",
-      "risk": 16.95
+      "risk": 18.2
     },
     {
       "name": "Israel",
-      "risk": 14.95
+      "risk": 17.25
+    },
+    {
+      "name": "Jordan",
+      "risk": 15.45
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iranian army says it shot down US drone over Bandar Abbas, Tasnim reports - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNjlxWUNjczg2SHFQamFEZDV0SVhZaHA5bFdqaVQzT1oxSjd0b2ZQQjd6MldHeEhKcUstbGJEa1QxMmFBMFhad2VnREVIa2xoT0tPWlFXVW5lcXVEYjMwdUd5NTRIYm0zTFpabXUxY2pCakRGM3JnWE1iNHc3MmtlbWduRno3ZWVGVWVpa2JtRjF4VDh5TEFHN21hUV9sQUhxOWpJMVVPNlhFMDd5SkJMekZkTFdtQzlnYnBQNkd2MG1TNzZy"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis launch attacks on Saudi Arabia and Yemen’s Aden - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNejJVeno4cmRWUWhlWHZNR2NoWF8xZ19jNnVXTS12b01LRFhpbFdpMUZCTXdJSVk3WFFhSy11dHZlekhOaUxxZTNOR1VObXdtZkQtRVpRZGhQbElmV2dJbzNWSzJpTHlrV0drQ0EtZ2hXVXJmTUZZUklOQlV4NmdoMHV4OUp5MGtXVzdTb19WZzVWTVFaNzNma1J1cWTSAaIBQVVfeXFMTTVxZm9xZlhCcDJhb0p2cV9GeHl2eWFHM28xak5sT2J3cFBiNW5hdk1WamVxdXBiQzd2UmIxcnd0VTNNU3U2MUNZVW1xTmIwMGRsTndWZnZENlR4WlpvZXJUQ2N2LU9LMWRpSURFX091Wkxfd2xFMFM0Yl9uV0xNQTg1cEpZUjE3TG13c1lKU2NIVlFmT2J6b2I4QzNLTDBMVEtR"
+    },
     {
       "score": 2.7,
       "date": "2026-10-24",
@@ -55,6 +73,15 @@
       "title": "Houthis say they targeted Saudi oil sites; attacks reported in Aden - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU1JpTkpxd3RUSFgwb29mWkRuSmg5UFd5d1RMQkZMdE5tV3F4cEN6SXFOODhTQUZTbTZucHJGVnpxMWpGZVFuSXJzZ045Q0o1Uzh5NFNvVENFX1M2dFQ0NzRGYjUtWk9TYjBWcldGNS1hY21yS2IyOXBsX29hcFg5N2ZENUlIV2oyTE1OT3hJQUFaS1pjTHV3VnZUTkRWbVFnd0JqYV9iZmVwUW4xcGNVOUdUZmgtaWpkVGdsVzJ1SXR1U1hyWG5uWg"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-10-24",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia intercepts drones and missiles as fighting with Yemen's Houthis continues - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT0JBTVByRUdVWnYzNWpyRUlfbGRFR2RnQzZpbTgzR05tX1AzU2VkVC10RUswYWthSGtJa2FZamVSa2E2ckdSeG5FN3VGTFU5SVJfbjY4NEZjR2tQSWJfZmxtbTJvUU5YSEpKWHRQQWpHMGRfR29xeFhkR1BwcHA5NlA3MnJmRnloYzF6Q0tBZG92ZDgzWmRubVNpNi1CajBmdXdNZmNTYnkzLWFnMldvaQ"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Israel raids towns, arrests dozens of Palestinians in occupied West Bank - Al Jazeera",
       "location": "West Bank",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGkwaU1WMmIteDUzNW9JNHlLSTBIY3ZGYVZTbnRxUTRyU1FHZnZVTlZOdEpFS2FEeENaLWlvYklmX0NGSmZFaGdkZFZ6SVhLMGxHbHFVQkt5LTlneDJBRWsyeWI3dkRmY3ZYZ0ZETzhpckpfQk0teHlYSklKRExIT2JwU0F0djZ6S18yRHhjV2hDSENXbktNRnRnMDVGOFN4RWlRMXFsbnN3TzRDNmNlOTNOd9IBuAFBVV95cUxQRDBLckJ3U1dSandrMmVWN3JQVFEwWXFsa0JRLUxpV3hEeUVFb1pXbHhIRjJQVzFTZTB3NnJmOUZocUU3N24wMTFYYWVSYU4tdVJmT1MwQ25LcFdpU3U0V05LQk00SzExRlVPTEdQY3h4RXBQRTZXdU5wUHY2dE1fYUZDdG1iR2lMTkt5SFVFU3FnQlV0dHhXX0x6bVpMbThGc29JM3lmci1KNk96YTNDenBDVHhLY202"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis launch attacks on Saudi Arabia and Yemen’s Aden - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNejJVeno4cmRWUWhlWHZNR2NoWF8xZ19jNnVXTS12b01LRFhpbFdpMUZCTXdJSVk3WFFhSy11dHZlekhOaUxxZTNOR1VObXdtZkQtRVpRZGhQbElmV2dJbzNWSzJpTHlrV0drQ0EtZ2hXVXJmTUZZUklOQlV4NmdoMHV4OUp5MGtXVzdTb19WZzVWTVFaNzNma1J1cWTSAaIBQVVfeXFMTTVxZm9xZlhCcDJhb0p2cV9GeHl2eWFHM28xak5sT2J3cFBiNW5hdk1WamVxdXBiQzd2UmIxcnd0VTNNU3U2MUNZVW1xTmIwMGRsTndWZnZENlR4WlpvZXJUQ2N2LU9LMWRpSURFX091Wkxfd2xFMFM0Yl9uV0xNQTg1cEpZUjE3TG13c1lKU2NIVlFmT2J6b2I4QzNLTDBMVEtR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran blames US for deal failure, urges new try amid fear of new attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ05XMkJCM0VsWlpad3c3TDI0OTBlWEl4SnJrdlNfRmFyRXdTOGpEZUk2YWlUMFZHZ25qOTctZ282NXo1bXN6SXZGUFZTNTZwN2JBbVJtNjZzY1lmYkQzU3l6Y3N0U2ZERmJ4eHUwc3kxX3otMUFiUm12RWY2MVJWTUs4Sk54V3lOZURVOUYzQ2hWZzBQU3lhYTBQd0NCOGNFUUJ1QUdEREhXaTBLQkpDRTlB0gG3AUFVX3lxTE81TzJSMTVEOHE5ZWVybzFEVXRiWFJiYWo1VkJsVTJjbEp4WVE0eFFwSFp3VjhmVWpuSHRKVy1rdjFndzdQTG4xd0w1ejN0anp6T1U0a25Delkxc2Z5N0R6elBjMDVYVDU4SWlyQW5xQUFBcUtQVGtHRjM4TWk4eC0zUFUtd3VTdnd4ZnhBdUUwejUwdFE4eG1RSHlnRGNmNG9VXy1fNVRDUkFiNkVPc2djMFRfM2NsZw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Syrians protest Israel’s incursions near occupied Golan Heights - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPV21wWkloZk0xalN3Z3JMbVhSb1pHNERmcDBLcGt5czNIcXJHeF9CSzNnVnFtSXE1QVYxUS1lV0JmUl96dmJQbGdKM1lELUJnTjd6RWtCQ0I0Y05oTEFqN05NWEpscENUZTRONDB3S281eUxtcURWS2FTUXJHOTN5dDY3bzJVTWdWN0Mw0gGQAUFVX3lxTFBSZkJmRF9WX1dIUWFBZ2NTclo5eElYaVRCWEtJUnVpLVZJOEdJQWpIdUZRb2NXOEtpUk5iWXRkYmo4eWF2QTN4NzZYY1NJSmIwWVVOMlJubC1tbHZIeHJUUTFDT2lSaUpGc2xhbHRPbEZrU3hRSUFuMllZUHZiTkJDWlB0SnYxRjUyZ0o1ZVdBeg"
     }
   ]
 }
