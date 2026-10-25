@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-25 11:33 UTC",
+    "updated": "2026-10-25 16:24 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-19",
     "period_end": "2026-10-25",
-    "total_events": 111,
-    "total_risk": 115.78,
-    "normalized_risk_score": 46.3,
-    "risk_level": "LOW",
+    "total_events": 113,
+    "total_risk": 121.43,
+    "normalized_risk_score": 48.6,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 35,
-    "security": 2,
-    "political": 17,
-    "other": 57
+    "military": 37,
+    "security": 1,
+    "political": 16,
+    "other": 59
   },
   "source_counts": {
-    "news": 105,
+    "news": 107,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 23.49
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 18.75
-    },
-    {
-      "name": "Yemen",
-      "risk": 18.2
-    },
-    {
-      "name": "Israel",
-      "risk": 17.25
+      "risk": 26.49
     },
     {
       "name": "Jordan",
-      "risk": 15.45
+      "risk": 21.15
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 18.65
+    },
+    {
+      "name": "Israel",
+      "risk": 16.55
+    },
+    {
+      "name": "Yemen",
+      "risk": 16.0
     }
   ],
   "top_events": [
@@ -55,6 +55,24 @@
       "title": "Iranian army says it shot down US drone over Bandar Abbas, Tasnim reports - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNjlxWUNjczg2SHFQamFEZDV0SVhZaHA5bFdqaVQzT1oxSjd0b2ZQQjd6MldHeEhKcUstbGJEa1QxMmFBMFhad2VnREVIa2xoT0tPWlFXVW5lcXVEYjMwdUd5NTRIYm0zTFpabXUxY2pCakRGM3JnWE1iNHc3MmtlbWduRno3ZWVGVWVpa2JtRjF4VDh5TEFHN21hUV9sQUhxOWpJMVVPNlhFMDd5SkJMekZkTFdtQzlnYnBQNkd2MG1TNzZy"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordan church attack survivor says her cousin died before her eyes - Reuters",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVTFxbDBEOEdFZFEwX29PZzd0QTNuYm11VXE5ekQ1bUgtQjVGeU1lbHdjVG9BR21DcENBLU5BeWFCeERYd2Y4bWp4OHFEclBuWlRUQ3ltUkduNFlQOXNwSTV6ZHJ4Qi02ZGQyakE1a0lfNldTM2RBQ3dVbEJHcWpSWE96b3FKUWstUjh6aExqcTdPMmdhMkRpbEhjcEtpak5YMmFfOThiTmh4ZGd5Z2lGMk1Ucjh0U2lDQjlRZQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "CENTCOM reportedly has plans for Iran strikes: Will Trump approve them? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPd29BdjhJS29PZ0IwcElEZmdpZW4xRlhlYnIyQWhXR1VaZ2FCQlBFTW9kWjRETG0zalRDOWZ3dC1fc0cxc09HTmQ2UjhnUldtZXlNV0xEbjBQc0FFTTJ3S0hZOXFqbGhjVDYydEVXNFF2WTk3aHhKRVAwVnlOUENTVUlLOWpVZlN2M09CRjJVcUZfVlRHOEpHS2hSUUxLZW51OXZnZDk0YnBTamkyZlhpSNIBtgFBVV95cUxPQWc2WnhrU0s2LVRqd01IeHlnNG5RUllfQWVKVmlIeHMzQmp0UmQ3Vlo2VlAtTGMweHd3ZlZwWDZnTHhveUdmS1QyV00xLW9Jb2Q1MEN5ZzU3ZUZobUUzMzJXUjlMb240aDNNcDg0dU9Ibnk0bDhNcGVDQkZRS3pfTzNWTkFFcTFEUUFLamhaYzVVNVRPenJzQ3JEbTVxcjdtWVZsSXBsZEpzNWdyeGR0ZlllTE1UQQ"
     },
     {
       "score": 3.0,
@@ -73,15 +91,6 @@
       "title": "Houthis say they targeted Saudi oil sites; attacks reported in Aden - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU1JpTkpxd3RUSFgwb29mWkRuSmg5UFd5d1RMQkZMdE5tV3F4cEN6SXFOODhTQUZTbTZucHJGVnpxMWpGZVFuSXJzZ045Q0o1Uzh5NFNvVENFX1M2dFQ0NzRGYjUtWk9TYjBWcldGNS1hY21yS2IyOXBsX29hcFg5N2ZENUlIV2oyTE1OT3hJQUFaS1pjTHV3VnZUTkRWbVFnd0JqYV9iZmVwUW4xcGNVOUdUZmgtaWpkVGdsVzJ1SXR1U1hyWG5uWg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia intercepts drones and missiles as fighting with Yemen's Houthis continues - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT0JBTVByRUdVWnYzNWpyRUlfbGRFR2RnQzZpbTgzR05tX1AzU2VkVC10RUswYWthSGtJa2FZamVSa2E2ckdSeG5FN3VGTFU5SVJfbjY4NEZjR2tQSWJfZmxtbTJvUU5YSEpKWHRQQWpHMGRfR29xeFhkR1BwcHA5NlA3MnJmRnloYzF6Q0tBZG92ZDgzWmRubVNpNi1CajBmdXdNZmNTYnkzLWFnMldvaQ"
     },
     {
       "score": 2.7,
@@ -115,15 +124,6 @@
       "date": "2026-10-24",
       "category": "military",
       "source_type": "news",
-      "title": "European, Middle East ministers urge US-Iran diplomacy, not new attacks - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVFNoMkR5TkRGT0RhUlluYlN0Z2lFSzBhNEJwTmpZQWQ2NVZfUUwwM3EwRlEzNlMtNkFTNUYydURqN3FwT3BjNW5WeTI3TUZ5THlUZ1JTNjJ3dFZmTFg0b2VFTHJCQXRLWXpSWktESDZOenVoQ0JjenByQnFDTkZ3QlBXT0NsQWlLTWZwbHRwT3RtVWdkanVmT25ETUJHUE1DLUpQZXMtb0NKQkc5SXlfbNIBtgFBVV95cUxNblN0R1plS1ZrNlA1SElueG44NkNwZmZELVdZMTZObDgzaUJNSFBPbG15UFlleTNRZDY2Y3BTMWlGeUJOYWlIeklfX0RvQWpoT3VITENVNEROcTkwNnFYTV94RjJ6Vzg3N004SDRocGc3Mm9DRnRlVlVJYlQ2U3JXRnJaZmFYRWxILXlPbVktUlUtNFJGRVpkT3RkY1hka1V3LWo3MTItdG01Yk90ODVtT0pZdlBLUQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-24",
-      "category": "military",
-      "source_type": "news",
       "title": "Iran says won’t allow US warships to get close as Trump ponders new attacks - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPbnhYekZtTGYtNUxRY1l0SkNlclVxV1JhVHJ2QUNzRFhRQW96Z0FWbXBSakNhblFEYk9kNHBibExfT0xFVFhLbUEzLWZpR0VNVC0tT2NlTTRIWmlaRThSTXN5OEF6d1ZiSEhGak11ck5zclJpYkRPODdJdFNqLXJTWjZiemlRSnZuOUV1MWY3eDZYMTBjaThzRDJaU3VVQnFqbFQ3bEt2enJEeHNUcm1nZTBnT1lXNXfSAbwBQVVfeXFMTzcyR081VVdqUVNRX05XQ0NxRFFPdm81M0NEV0hPcm9FYlZmTEJ4bTBPQUtjSjZvOEx3aGFWdGNDbHkyZzdoVDlVZzZyU1NrNkt4YkhBZGxZcm1vZ0tlWTB0T3lZbDdaX3dnSkZVdUpqc19KZnpWS3Vlc2tiN1JEQUNWZEVZYmV0ZWVyYXFENDU4a2FqU3ZWZGR5dFFreHl4VzVZellsU2hwQVcyZzBBTjl6SG9WQUpBNmprOXA"
@@ -133,9 +133,9 @@
       "date": "2026-10-24",
       "category": "military",
       "source_type": "news",
-      "title": "Israel raids towns, arrests dozens of Palestinians in occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGkwaU1WMmIteDUzNW9JNHlLSTBIY3ZGYVZTbnRxUTRyU1FHZnZVTlZOdEpFS2FEeENaLWlvYklmX0NGSmZFaGdkZFZ6SVhLMGxHbHFVQkt5LTlneDJBRWsyeWI3dkRmY3ZYZ0ZETzhpckpfQk0teHlYSklKRExIT2JwU0F0djZ6S18yRHhjV2hDSENXbktNRnRnMDVGOFN4RWlRMXFsbnN3TzRDNmNlOTNOd9IBuAFBVV95cUxQRDBLckJ3U1dSandrMmVWN3JQVFEwWXFsa0JRLUxpV3hEeUVFb1pXbHhIRjJQVzFTZTB3NnJmOUZocUU3N24wMTFYYWVSYU4tdVJmT1MwQ25LcFdpU3U0V05LQk00SzExRlVPTEdQY3h4RXBQRTZXdU5wUHY2dE1fYUZDdG1iR2lMTkt5SFVFU3FnQlV0dHhXX0x6bVpMbThGc29JM3lmci1KNk96YTNDenBDVHhLY202"
+      "title": "European, Middle East ministers urge US-Iran diplomacy, not new attacks - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVFNoMkR5TkRGT0RhUlluYlN0Z2lFSzBhNEJwTmpZQWQ2NVZfUUwwM3EwRlEzNlMtNkFTNUYydURqN3FwT3BjNW5WeTI3TUZ5THlUZ1JTNjJ3dFZmTFg0b2VFTHJCQXRLWXpSWktESDZOenVoQ0JjenByQnFDTkZ3QlBXT0NsQWlLTWZwbHRwT3RtVWdkanVmT25ETUJHUE1DLUpQZXMtb0NKQkc5SXlfbNIBtgFBVV95cUxNblN0R1plS1ZrNlA1SElueG44NkNwZmZELVdZMTZObDgzaUJNSFBPbG15UFlleTNRZDY2Y3BTMWlGeUJOYWlIeklfX0RvQWpoT3VITENVNEROcTkwNnFYTV94RjJ6Vzg3N004SDRocGc3Mm9DRnRlVlVJYlQ2U3JXRnJaZmFYRWxILXlPbVktUlUtNFJGRVpkT3RkY1hka1V3LWo3MTItdG01Yk90ODVtT0pZdlBLUQ"
     }
   ]
 }
