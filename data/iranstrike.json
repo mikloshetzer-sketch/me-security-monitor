@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T10:10:14Z",
+  "generated_at": "2026-10-25T14:23:24Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,46 +52,42 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 755,
+    "events_endpoint_records": 760,
     "feed_event_records": 250,
-    "normalized_events": 1811,
-    "map_visualizable_events": 267,
-    "non_mappable_events": 1544,
-    "developments": 2
+    "normalized_events": 1816,
+    "map_visualizable_events": 270,
+    "non_mappable_events": 1546,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1811,
+      "total_events": 1816,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-24T23:00:11Z",
-      "geocoded_events": 267,
-      "geocoded_share": 14.7,
+      "latest_event_date": "2026-10-25T13:12:12Z",
+      "geocoded_events": 270,
+      "geocoded_share": 14.9,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Unknown"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 71,
-        "previous": 92,
-        "delta": -21,
-        "percent_change": -22.8,
-        "direction": "decrease"
+        "current": 73,
+        "previous": 81,
+        "delta": -8,
+        "percent_change": -9.9,
+        "direction": "stable"
       },
       "latest_30_days": {
-        "current": 333,
-        "previous": 426,
-        "delta": -93,
-        "percent_change": -21.8,
+        "current": 336,
+        "previous": 428,
+        "delta": -92,
+        "percent_change": -21.5,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-04-28",
-        "count": 0
-      },
       {
         "date": "2026-04-29",
         "count": 0
@@ -807,14 +803,18 @@
       {
         "date": "2026-10-24",
         "count": 4
+      },
+      {
+        "date": "2026-10-25",
+        "count": 5
       }
     ],
     "category_counts": {
-      "infrastructure": 501,
-      "missile": 412,
+      "infrastructure": 502,
+      "missile": 413,
       "strike": 275,
       "drone": 214,
-      "airstrike": 142,
+      "airstrike": 145,
       "movement": 103,
       "explosion": 66,
       "ground": 62,
@@ -824,15 +824,15 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 938,
+      "medium": 942,
       "high": 577,
-      "low": 286,
+      "low": 287,
       "critical": 10
     },
     "attacker_counts": {
-      "unknown": 1190,
+      "unknown": 1194,
       "iran": 386,
-      "israel": 200,
+      "israel": 201,
       "usa": 35
     },
     "top_locations": [
@@ -854,7 +854,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 72
+        "count": 73
       },
       {
         "name": "Red Sea",
@@ -870,7 +870,7 @@
       },
       {
         "name": "Israel",
-        "count": 37
+        "count": 38
       },
       {
         "name": "Nabatieh",
@@ -890,7 +890,7 @@
       },
       {
         "name": "Tehran",
-        "count": 18
+        "count": 19
       },
       {
         "name": "Kharg Island",
@@ -904,7 +904,7 @@
       },
       {
         "name": "Iran",
-        "count": 489
+        "count": 491
       },
       {
         "name": "Lebanon",
@@ -916,11 +916,11 @@
       },
       {
         "name": "Iraq",
-        "count": 87
+        "count": 88
       },
       {
         "name": "Persian Gulf",
-        "count": 72
+        "count": 73
       },
       {
         "name": "Red Sea",
@@ -928,7 +928,7 @@
       },
       {
         "name": "Israel",
-        "count": 50
+        "count": 51
       },
       {
         "name": "Syria",
@@ -945,34 +945,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11129,
+    "totalCount": 11134,
     "spotlight": {
       "event": {
-        "id": "3nbn3d1jkr400",
-        "timestamp": "2026-10-24T11:23:16+00:00",
-        "location": "SAU",
-        "origin": "YEM",
+        "id": "1pmo7x0xwkdc",
+        "timestamp": "2026-10-25T13:12:12+00:00",
+        "location": "IRQ",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Houthi (Ansarullah) missile attack targets Riyadh, Najran and Wadi ad-Duwasir in Saudi Arabia; explosions heard in Riyadh and two interceptions reported",
-        "descriptionHe": "מתקפת טילים של החות'ים (אנצ'ארוללה) על ריאד, נג'ראן וואדי א-דואסר בסעודיה; נשמעו פיצוצים בריאד ונרשמו שני יירוטים",
+        "type": "report",
+        "severity": "medium",
+        "description": "Iraqi authorities investigating suspected Israeli airstrikes on two weapons depots near Baghdad that stored Chinese-made air defense systems transferred from Iran to militias; attribution unconfirmed",
+        "descriptionHe": "רשויות עיראק חוקרות תקיפות אוויר חשודות של ישראל על שני מחסני נשק ליד בגדד שאחסנו מערכות הגנה אווירית סיניות שהועברו מאיראן למיליציות; השיוך לא אושר",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/86002"
+        "sourceUrl": "https://t.me/CIG_telegram/86059"
       },
-      "headline": "Houthis Launch Major Missile Barrage Across Saudi Arabia",
-      "headlineHe": "החות'ים שיגרו הbombardה טילית ענקית על כל סעודיה",
-      "summary": "The Iranian-backed Houthi movement targeted multiple Saudi cities including the capital Riyadh, with at least two missiles intercepted but explosions confirmed on the ground.",
-      "summaryHe": "הקבוצה הנתמכת בידי איראן תקפה מספר ערים סעודיות כולל בירת המדינה, כשלפחות שני טילים יורטו אך התרחשו פיצוצים בקרקע.",
-      "pickedAt": "2026-10-25T09:15:25.755Z",
-      "state": "TODAY"
+      "headline": "Iraqi authorities investigate suspected Israeli airstrikes on Baghdad weapons depots",
+      "headlineHe": "רשויות עיראקיות חוקרות תקיפות ישראליות חשודות על מחסני נשקים בבגדד",
+      "summary": "Two facilities allegedly storing Iranian-supplied Chinese air defense systems were targeted in strikes that remain unattributed, marking potential escalation of Israeli operations against Iranian military buildup in Iraq.",
+      "summaryHe": "שתי מתקנים שכללו כביכול מערכות הגנה אווירית סיניות בספקת איראנית היו מטרה בתקיפות שעדיין לא מיוחסות, מסמנות עלייה פוטנציאלית בפעילויות ישראליות נגד התרחיש הצבאי האיראני בעיראק",
+      "pickedAt": "2026-10-25T13:45:26.000Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-10-25T10:09:17.499Z",
+    "lastUpdated": "2026-10-25T14:18:17.424Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1513,94 +1512,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-10-25T10:00:13.816Z",
+      "lastUpdate": "2026-10-25T13:30:13.878Z",
       "internetHistory": [
-        {
-          "t": "2026-10-24T10:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-24T10:10:00.000Z",
-          "v": 93
-        },
-        {
-          "t": "2026-10-24T10:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-24T10:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-24T10:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-24T10:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-24T11:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-24T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T11:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-24T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T11:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T11:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T12:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T12:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T12:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T12:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T12:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T13:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T13:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-24T13:20:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-10-24T13:30:00.000Z",
           "v": 96
@@ -2088,32 +2003,116 @@
         {
           "t": "2026-10-25T09:40:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-10-25T09:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T10:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T10:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T10:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T10:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T11:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T11:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T11:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T11:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T12:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T12:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T12:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T12:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T12:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-10-25T13:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-25T13:10:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-25T10:00:13.816Z"
+    "lastUpdated": "2026-10-25T13:30:13.878Z"
   },
   "developments": [
     {
-      "id": "iranstrike-3nbn3d1jkr400",
+      "id": "iranstrike-8a4f2c91",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-24T11:23:16Z",
+      "date": "2026-10-25T13:12:12Z",
       "title": "IranStrike event",
-      "description": "Houthi missiles target Riyadh, Najran; two interceptions reported",
+      "description": "Suspected Israeli airstrikes target Iranian air defense systems in Iraq",
       "category": "other",
       "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "suspected israeli airstrikes target iranian air defense systems in iraq תקיפות",
+      "location": "Iraq",
+      "country": "Iraq",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2124,38 +2123,173 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "3nbn3d1jkr400",
-        "text": "Houthi missiles target Riyadh, Najran; two interceptions reported",
-        "textHe": "טילי חות'ים תוקפים את ריאד ונג'ראן; דווח על שתי הפגעות",
+        "id": "8a4f2c91",
+        "text": "Suspected Israeli airstrikes target Iranian air defense systems in Iraq",
+        "textHe": "תקיפות חשודות של צה\"ל למערכות הגנה אווירית איראניות בעיראק",
         "severity": "high",
-        "timestamp": "2026-10-24T11:23:16+00:00",
+        "timestamp": "2026-10-25T13:12:12+00:00",
         "entityIds": [
-          "YEM",
-          "SAU"
+          "ISR",
+          "IRQ",
+          "IRN"
         ],
         "eventIds": [
-          "3nbn3d1jkr400"
+          "1pmo7x0xwkdc",
+          "1g2g8wlar9wg0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-7b3e5d42",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-25T13:02:54Z",
+      "title": "IranStrike event",
+      "description": "Iran fires anti-ship missile toward Strait of Hormuz; air base shelters activated",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran fires anti-ship missile toward strait of hormuz;",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7b3e5d42",
+        "text": "Iran fires anti-ship missile toward Strait of Hormuz; air base shelters activated",
+        "textHe": "איראן שיגרה טיל נגד ספינות לעבר מצר הורמוז; פתיחת מקלטים בבסיס אווירי",
+        "severity": "high",
+        "timestamp": "2026-10-25T13:02:54+00:00",
+        "entityIds": [
+          "IRN"
+        ],
+        "eventIds": [
+          "3gebodipmri00",
+          "vw35zzia98w0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-1g2g8wlar9wg0",
+      "id": "iranstrike-6c2d1e53",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-24T23:00:11Z",
+      "date": "2026-10-25T13:02:53Z",
       "title": "IranStrike event",
-      "description": "Iraq suspects IDF struck Iranian air defense systems in Baghdad area",
+      "description": "Unverified reports of explosions at radar installation in Tabriz, Iran",
       "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tabriz",
+      "country": "Iran",
+      "latitude": 38.08,
+      "longitude": 46.2919,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tabriz",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "6c2d1e53",
+        "text": "Unverified reports of explosions at radar installation in Tabriz, Iran",
+        "textHe": "דיווחים לא מאומתים על פיצוצים בתחנת מכ\"ם בתברז, איראן",
+        "severity": "medium",
+        "timestamp": "2026-10-25T13:02:53+00:00",
+        "entityIds": [
+          "IRN"
+        ],
+        "eventIds": [
+          "2kgyts8x1ie00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-5a1f3b64",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-25T12:29:37Z",
+      "title": "IranStrike event",
+      "description": "Iranian hacker group claims breach of Israeli confidential court archives",
+      "category": "other",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "5a1f3b64",
+        "text": "Iranian hacker group claims breach of Israeli confidential court archives",
+        "textHe": "קבוצת האקרים איראנית טוענת להשגת גישה לארכיונים סודיים בישראל",
+        "severity": "low",
+        "timestamp": "2026-10-25T12:29:37+00:00",
+        "entityIds": [
+          "ISR",
+          "IRN"
+        ],
+        "eventIds": [
+          "3ch2aevnd1s00"
+        ],
+        "sourceCount": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-1pmo7x0xwkdc",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86059",
+      "date": "2026-10-25T13:12:12Z",
+      "title": "IranStrike event",
+      "description": "Iraqi authorities investigating suspected Israeli airstrikes on two weapons depots near Baghdad that stored Chinese-made air defense systems transferred from Iran to militias; attribution unconfirmed",
+      "category": "airstrike",
       "severity": "medium",
       "attacker": "israel",
       "attacker_label": "Israel",
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iraq suspects idf struck iranian air defense systems in baghdad area עיראק",
+      "attacker_evidence": "ities investigating suspected israeli airstrikes on two weapons depots near baghdad that stored ch",
       "location": "Baghdad",
       "country": "Iraq",
       "latitude": 33.3152,
@@ -2168,24 +2302,205 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "1g2g8wlar9wg0",
-        "text": "Iraq suspects IDF struck Iranian air defense systems in Baghdad area",
-        "textHe": "עיראק חושדת כי צה\"ל תקף מערכות הגנה אוויר איראניות בבגדאד",
+        "id": "1pmo7x0xwkdc",
+        "timestamp": "2026-10-25T13:12:12+00:00",
+        "location": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
         "severity": "medium",
-        "timestamp": "2026-10-24T23:00:11+00:00",
-        "entityIds": [
-          "ISR",
-          "IRQ",
-          "IRN"
-        ],
-        "eventIds": [
-          "1g2g8wlar9wg0"
-        ],
-        "sourceCount": 1
+        "description": "Iraqi authorities investigating suspected Israeli airstrikes on two weapons depots near Baghdad that stored Chinese-made air defense systems transferred from Iran to militias; attribution unconfirmed",
+        "descriptionHe": "רשויות עיראק חוקרות תקיפות אוויר חשודות של ישראל על שני מחסני נשק ליד בגדד שאחסנו מערכות הגנה אווירית סיניות שהועברו מאיראן למיליציות; השיוך לא אושר",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86059"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-3gebodipmri00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86058",
+      "date": "2026-10-25T13:02:54Z",
+      "title": "IranStrike event",
+      "description": "Anti-ship missile launched from Sirik toward the Strait of Hormuz",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3gebodipmri00",
+        "timestamp": "2026-10-25T13:02:54+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Anti-ship missile launched from Sirik toward the Strait of Hormuz",
+        "descriptionHe": "שיגור טיל נגד ספינות מסירik לעבר מצר הורמוז",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "other",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/86058"
+      }
+    },
+    {
+      "id": "iranstrike-vw35zzia98w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86057",
+      "date": "2026-10-25T13:02:53Z",
+      "title": "IranStrike event",
+      "description": "Reports that air raid shelters at the IRIAF 1st Air Base in Tehran have been opened",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tehran",
+      "country": "Iran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tehran",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "vw35zzia98w0",
+        "timestamp": "2026-10-25T13:02:53+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Reports that air raid shelters at the IRIAF 1st Air Base in Tehran have been opened",
+        "descriptionHe": "דיווחים לפיהם נפתחו מקלטי הפצצה בבסיס האוויר הראשון של חיל האוויר האיראני בטהראן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86057"
+      }
+    },
+    {
+      "id": "iranstrike-2kgyts8x1ie00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86054",
+      "date": "2026-10-25T13:02:53Z",
+      "title": "IranStrike event",
+      "description": "Unverified reports of two explosions at a radar installation in Tabriz, cause unclear, eyewitnesses describe airstrike-like blasts",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tabriz",
+      "country": "Iran",
+      "latitude": 38.08,
+      "longitude": 46.2919,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tabriz",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2kgyts8x1ie00",
+        "timestamp": "2026-10-25T13:02:53+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Unverified reports of two explosions at a radar installation in Tabriz, cause unclear, eyewitnesses describe airstrike-like blasts",
+        "descriptionHe": "דיווחים לא מאומתים על שני פיצוצים במתקן מכ״ם בטבריז, הסיבה לא ברורה, עדים מתארים פיצוצים דמויי תקיפה אווירית",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86054"
+      }
+    },
+    {
+      "id": "iranstrike-3ch2aevnd1s00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/64780",
+      "date": "2026-10-25T12:29:37Z",
+      "title": "IranStrike event",
+      "description": "Iranian hacker group Handala claims breach of Melem's Etype service, alleging access to confidential court and police recording archives in Israel (unverified)",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Israel",
+      "country": "Israel",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3ch2aevnd1s00",
+        "timestamp": "2026-10-25T12:29:37+00:00",
+        "location": "ISR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "Iranian hacker group Handala claims breach of Melem's Etype service, alleging access to confidential court and police recording archives in Israel (unverified)",
+        "descriptionHe": "קבוצת ההאקרים האיראנית חנדלה טוענת כי פרצה לשירות Etype של מלם והשיגה גישה לארכיוני הקלטות חסויים של בתי המשפט והמשטרה בישראל (טענה שלא אומתה)",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/64780"
+      }
+    },
     {
       "id": "iranstrike-1g2g8wlar9wg0",
       "source": "IranStrike",
@@ -84303,6 +84618,138 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-1pmo7x0xwkdc",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86059",
+      "date": "2026-10-25T13:12:12Z",
+      "title": "IranStrike event",
+      "description": "Iraqi authorities investigating suspected Israeli airstrikes on two weapons depots near Baghdad that stored Chinese-made air defense systems transferred from Iran to militias; attribution unconfirmed",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "ities investigating suspected israeli airstrikes on two weapons depots near baghdad that stored ch",
+      "location": "Baghdad",
+      "country": "Iraq",
+      "latitude": 33.3152,
+      "longitude": 44.3661,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "baghdad",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1pmo7x0xwkdc",
+        "timestamp": "2026-10-25T13:12:12+00:00",
+        "location": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Iraqi authorities investigating suspected Israeli airstrikes on two weapons depots near Baghdad that stored Chinese-made air defense systems transferred from Iran to militias; attribution unconfirmed",
+        "descriptionHe": "רשויות עיראק חוקרות תקיפות אוויר חשודות של ישראל על שני מחסני נשק ליד בגדד שאחסנו מערכות הגנה אווירית סיניות שהועברו מאיראן למיליציות; השיוך לא אושר",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86059"
+      }
+    },
+    {
+      "id": "iranstrike-vw35zzia98w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86057",
+      "date": "2026-10-25T13:02:53Z",
+      "title": "IranStrike event",
+      "description": "Reports that air raid shelters at the IRIAF 1st Air Base in Tehran have been opened",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tehran",
+      "country": "Iran",
+      "latitude": 35.6892,
+      "longitude": 51.389,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tehran",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "vw35zzia98w0",
+        "timestamp": "2026-10-25T13:02:53+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Reports that air raid shelters at the IRIAF 1st Air Base in Tehran have been opened",
+        "descriptionHe": "דיווחים לפיהם נפתחו מקלטי הפצצה בבסיס האוויר הראשון של חיל האוויר האיראני בטהראן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86057"
+      }
+    },
+    {
+      "id": "iranstrike-2kgyts8x1ie00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86054",
+      "date": "2026-10-25T13:02:53Z",
+      "title": "IranStrike event",
+      "description": "Unverified reports of two explosions at a radar installation in Tabriz, cause unclear, eyewitnesses describe airstrike-like blasts",
+      "category": "airstrike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Tabriz",
+      "country": "Iran",
+      "latitude": 38.08,
+      "longitude": 46.2919,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "tabriz",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2kgyts8x1ie00",
+        "timestamp": "2026-10-25T13:02:53+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Unverified reports of two explosions at a radar installation in Tabriz, cause unclear, eyewitnesses describe airstrike-like blasts",
+        "descriptionHe": "דיווחים לא מאומתים על שני פיצוצים במתקן מכ״ם בטבריז, הסיבה לא ברורה, עדים מתארים פיצוצים דמויי תקיפה אווירית",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86054"
+      }
+    },
     {
       "id": "iranstrike-1g2g8wlar9wg0",
       "source": "IranStrike",
