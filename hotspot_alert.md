@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-10-27T01:30:37.791930+00:00
+**Generated:** 2026-10-27T07:54:45.619433+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Syria (2.9), prev 24h: 2.9, share: 100%.
+Top current hotspot (by risk): Syria (5.2), prev 24h: 5.2, share: 33%.
 
 ## X POST VERSION
 
