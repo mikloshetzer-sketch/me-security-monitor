@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-28 16:41 UTC",
+    "updated": "2026-10-28 22:37 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-22",
     "period_end": "2026-10-28",
-    "total_events": 119,
-    "total_risk": 136.35,
-    "normalized_risk_score": 54.5,
+    "total_events": 130,
+    "total_risk": 145.35,
+    "normalized_risk_score": 58.1,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 30,
     "security": 8,
-    "political": 35,
-    "other": 46
+    "political": 40,
+    "other": 52
   },
   "source_counts": {
-    "news": 119,
-    "isw": 0
+    "news": 128,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 29.6
+      "risk": 37.15
     },
     {
       "name": "Iran",
-      "risk": 22.8
+      "risk": 22.55
     },
     {
       "name": "Saudi Arabia",
-      "risk": 16.65
+      "risk": 17.65
     },
     {
       "name": "Syria",
-      "risk": 16.45
+      "risk": 13.75
     },
     {
-      "name": "Jordan",
-      "risk": 12.0
+      "name": "Yemen",
+      "risk": 12.8
     }
   ],
   "top_events": [
@@ -61,9 +61,27 @@
       "date": "2026-10-28",
       "category": "military",
       "source_type": "news",
+      "title": "Oil prices rise on Yemen fighting, Saudi refinery attack - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYUhHblNqOGNPczlpdUR2NDFMWjZxX2FZYjVTTzREX2R4YU5jRzF2ckN1MG9sSnIxWG9hbDJ0TjV4YTZXRjdqSUc3aF9OcTJuUVlJZkZrdUd0V0RMUU1qUWxiNDdmdXhCTmJUczZWOFRUWTRKdzJQLUJYNXZBODhnTjJfOXMyNU01OGVreWM5TkNyamNjbzV5UzAxX3ZOdWcwcUE5SFZHSkEyUjZ1M1dUQ3ByRDdxbC13ZzRQR0xfcTZ0bjh6dnNPalJZRWI"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-28",
+      "category": "military",
+      "source_type": "news",
       "title": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
       "location": "Turkey",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTmI1bDFoNk1OMkN2bGpWazh3MmpIVHdTcnktNFFlT2FnQ1o2WXRhYkRqeVF3WGxTTHhNdFAwaFJ0d0dsaTdOaG0xazNmalBQLURoNW83VkptS2ZHUHR5MGQ3ODBHLUxKM3IwWXZBMERiOG1hVk1fRUlQdld5S0hneGZXS2hzckJsWEl4MXo1c1R1NnZ1WXhBZ2JyMFNfQTZvcnJIN295OWlJXzRSeWdVM3JLY0FWakNkTHBFSlJFYmhiVjlt"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-28",
+      "category": "military",
+      "source_type": "news",
+      "title": "Policeman kills knife attacker outside Israeli embassy in Serbia - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZ09lVDktVzU0MWp0RUxkY2V2SWhzNjVpMDMzdG1hZjVHTUJFUTFfWWlRRXFtZGJtTW0td25oeHhsTVRTbXZyNG0wTURZeEhQSndxeDFxdnlPd3k0ZGdqSTVOcjNJT1ZEdmdoREFLUFVQSWVMR2tyWGFxSk9NVEhCVWVub1k3UWQ3UWlQYm9WNnhqRFJGbXBkVUJLcnllN1g1YUF5YWxB"
     },
     {
       "score": 3.0,
@@ -79,15 +97,6 @@
       "date": "2026-10-27",
       "category": "military",
       "source_type": "news",
-      "title": "Drone intercepted near Baghdad's Green Zone, military statement says - Reuters",
-      "location": "Baghdad",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVTNIVUxCMHNxOGdwWHVlWDlyVlRGbmx6cnZTOWNnd1BsZ2F4V1NPNDdwQjJrUTJwTUdmX0tUYW5hcGhmbWRjSW03RlVDb3hYUk1BcHQyTV9Lc2VuWEcxNlBrYzZsTnhOeV94LTlNY0lTV2cyNUFlVE5TTHhPN3RfMVliTGFfRkZxaFNyU1JRVzI0Y0FEaDBuTFViTVoyeURjdjFxcmROWXhVak9mMnN6alNibEhtbFBiTktFRQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-27",
-      "category": "military",
-      "source_type": "news",
       "title": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
       "location": "Syria",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOUTlkRXhpdTRCZ2g4U0hDdDlkZlBWVDFkTTg2WWhBUXktS3c4akJZck9XbHdmdkpsazJiSVdjUmcxdFdZRmhITzEwRU9vS0pUNkFWSThqZlhYMUVWVnV3ZHRtRVlvdDdrSWhQSGQ0Zy1HOXhNbDEydkRscGV1eG04Q1A4a0VlajhCLTJpVTJYMVhzVzgzb0VTLUpURGl4c0VvanhreWVJcm1RUFNzRnFUMjliUlVZOURxOHlFWmVMNWNPTWsyT1p5a2trNA"
@@ -97,18 +106,18 @@
       "date": "2026-10-27",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition says it intercepted Houthi missiles, drones attacking kingdom - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbkE2MkVyd2dKcU5mTWp1VmY5c0pENUN0WjhPTHJDTXZQRENZU2JQa09JbWJaTUpicnN0RkFuTllzRHE0bUtOSjdrSDBiZ3FMYVVhdjVtVFRZLXJoRmRmNldVWXg0SjUxVFppSjQyYXhVajhydnFRRS0yRmNEcW9XWjJZWWpUYjBUR1NCSWFFa3AzNFhDWDVYeVU2VHdQd2ZMcHM1NDhLM3RrTnY5MVlPU0szSWN4ZUlVRmN1OERpcFM3UTBtNGxUNXBVNzltalU"
+      "title": "Drone intercepted near Baghdad's Green Zone, military statement says - Reuters",
+      "location": "Baghdad",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVTNIVUxCMHNxOGdwWHVlWDlyVlRGbmx6cnZTOWNnd1BsZ2F4V1NPNDdwQjJrUTJwTUdmX0tUYW5hcGhmbWRjSW03RlVDb3hYUk1BcHQyTV9Lc2VuWEcxNlBrYzZsTnhOeV94LTlNY0lTV2cyNUFlVE5TTHhPN3RfMVliTGFfRkZxaFNyU1JRVzI0Y0FEaDBuTFViTVoyeURjdjFxcmROWXhVak9mMnN6alNibEhtbFBiTktFRQ"
     },
     {
       "score": 2.7,
       "date": "2026-10-27",
       "category": "military",
       "source_type": "news",
-      "title": "Jordan says it killed more than 20 Islamic State militants in airstrikes on Syria - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPNk5DZjNTRS1VT1FKalFOVFMtNlNnNzJtSHdtUE8xTVJ1WDZ6S3RYZm1lczdsMEZJSm04WUlXU3F2azVQTFN0RHRtY0hGZTN2ZFBHbFBHRVkwWk1qUnNXZFlqNkFteTBvUWhWVFBGMHBJMjNsd3ByWUx3OVF1N2VHTnMtWmpoOEVsNTVHWkF6YjdISU5QdzVvUTVidy1SVVNqWmlMSUp0cGppcnYyeThFVWlFVlNaWTg3cjdEdk1ZalVrQzhTaUxQemFYVzRkc0E"
+      "title": "Saudi-led coalition says it intercepted Houthi missiles, drones attacking kingdom - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbkE2MkVyd2dKcU5mTWp1VmY5c0pENUN0WjhPTHJDTXZQRENZU2JQa09JbWJaTUpicnN0RkFuTllzRHE0bUtOSjdrSDBiZ3FMYVVhdjVtVFRZLXJoRmRmNldVWXg0SjUxVFppSjQyYXhVajhydnFRRS0yRmNEcW9XWjJZWWpUYjBUR1NCSWFFa3AzNFhDWDVYeVU2VHdQd2ZMcHM1NDhLM3RrTnY5MVlPU0szSWN4ZUlVRmN1OERpcFM3UTBtNGxUNXBVNzltalU"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "Jordan carries out deadly strike in Syria in retaliation for church attack",
       "location": "Syria",
       "url": "https://www.bbc.co.uk/news/articles/cq8ezg6dy6xlo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition says it downed Houthi missiles, drones aimed at kingdom - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaXlqZ2hqcnVxVFQ5c1dTTEZYVWdybnItSno1SHNHRnVNUmNvU3phanJwODI3U1FoZEpFYkllQmtYSVhEUUtGU1RhR1dvaXNKMHJMOFIyaS1aWk5xdWo0TTl0OXJHY0JHbjRuazNOaVJsMFVER1llQjdMU2poMUZmU3VzR3JzUDRtSVkzM2VzTVpmQk3SAZgBQVVfeXFMTzcyYWktUzV0Nk5zNzRWck1Ub3pXald0MDJldUdNVVgyUUxjMTJ2eXZVa1J0VW9QbFlJVktNekNudVRER2diN09fY2w4YS1VNGFQb2pMZ0JybFI0SUthU3ZPTXV3RTBMaEduVlFiSDNBVHhWSDZpRGNlc2RiT2FiVWRxVFd1dmlfNWpxdzlCVXRST1ZkRk5xN2Y"
     }
   ]
 }
