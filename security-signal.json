@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-29 13:04 UTC",
+    "updated": "2026-10-29 19:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-23",
     "period_end": "2026-10-29",
-    "total_events": 122,
-    "total_risk": 118.17,
-    "normalized_risk_score": 47.3,
-    "risk_level": "LOW",
+    "total_events": 124,
+    "total_risk": 120.7,
+    "normalized_risk_score": 48.3,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 24,
     "security": 7,
     "political": 41,
-    "other": 50
+    "other": 52
   },
   "source_counts": {
-    "news": 119,
-    "isw": 3
+    "news": 122,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 35.75
+      "risk": 36.9
     },
     {
       "name": "Iran",
-      "risk": 17.57
-    },
-    {
-      "name": "Syria",
-      "risk": 12.15
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 10.95
+      "risk": 19.3
     },
     {
       "name": "Yemen",
-      "risk": 8.9
+      "risk": 11.2
+    },
+    {
+      "name": "Syria",
+      "risk": 10.05
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 8.85
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdTdkdmZXbFBHWno1WERBemlBX0tpX0lLaDlVUExXWGh6ZjlWSzBZYWYwc3RZTG1vb0ptREw5Nk8tcDFLVGJ0UmU0MzBEVW9hRnFHRWZiOU5SakNDQjEwYUp0aVFZcjc2clhraFNSZ09iLW5Md3V6MkpaSXZBcnoxdUJOVVZBLTJoQThnc0RvZkVEdFZ6WEJlakNwQXlFak5peWhfQ2h6dFdoV2traHgtZU1FN253Z0l0LU9V"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-29",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers savagely attack journalists in occupied West Bank - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSWRaTlBhcWpJOE9kT2N5aTF5NXM3NXRJbG9zMVcxRW9HOVRqcUFsLXBQMVpvUGJXbHc0Wm5rZlo4MTFzRWhWRUZyWnZNOVh3QTNQaEV0RWpnWnhlVVBKWThGY1FUOVRENzJHejdsbVIxNUFzaExhTlo5cTQ3QVNSdkJFVUpMalF1MHc1X045ejYweHk2THV6blpWTEtGanZQTG44dDFNTEpibnNua2VPMWtRazVOTXRkQkHSAb8BQVVfeXFMUEl0U0FqSU9tRFZjV2cwLTh4dm8xQzRGYTV3ejZVQjhLSDFBbFV0OFJhMFRsd3c2bUxjUWZVOG5JSWpNLS1lRzU5Y0w2M3dvMElmLURVSnJlVkZabTJjNWZ6NHF4MEtDamNldHVfTEU4Ull4OTk0LXJ2QW5VLS03ZWFQNUZVUVhtYWJvS0NxalpiUlVjZGlHRGFKRlhDSUoxWE1fRWdKMmdQVWg1ZDVNdFJGLTVkZm9XNENHazM5T0k"
+    },
     {
       "score": 2.7,
       "date": "2026-10-28",
@@ -118,24 +136,6 @@
       "title": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMU9tRHdmbzQ2ZHlsQzBDVmpqUEhlTk9meXgzN1VMOWlUMnlKOU1ibFRMQ1VQNDNjTkloUG9lb054S2JXZ2YwMS1MMXM4b1pwczl2clNyTHM5RGZVdnd6bzJXTVl4bW4yZ0pGTEV2aEV4dlR2cDNkc0lvNjVMN2ZScklvRDE3S1VyS0FoaC02Z3BqTHJPeTJrekxhM0dONmN0VzdXTmE5QjNfM0pIZ1Q2SHMtSkZzbFNqSThaN2RybDFBdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jordan carries out deadly strike in Syria in retaliation for church attack",
-      "location": "Syria",
-      "url": "https://www.bbc.co.uk/news/articles/cq8ezg6dy6xlo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-27",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition says it downed Houthi missiles, drones aimed at kingdom - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaXlqZ2hqcnVxVFQ5c1dTTEZYVWdybnItSno1SHNHRnVNUmNvU3phanJwODI3U1FoZEpFYkllQmtYSVhEUUtGU1RhR1dvaXNKMHJMOFIyaS1aWk5xdWo0TTl0OXJHY0JHbjRuazNOaVJsMFVER1llQjdMU2poMUZmU3VzR3JzUDRtSVkzM2VzTVpmQk3SAZgBQVVfeXFMTzcyYWktUzV0Nk5zNzRWck1Ub3pXald0MDJldUdNVVgyUUxjMTJ2eXZVa1J0VW9QbFlJVktNekNudVRER2diN09fY2w4YS1VNGFQb2pMZ0JybFI0SUthU3ZPTXV3RTBMaEduVlFiSDNBVHhWSDZpRGNlc2RiT2FiVWRxVFd1dmlfNWpxdzlCVXRST1ZkRk5xN2Y"
     }
   ]
 }
