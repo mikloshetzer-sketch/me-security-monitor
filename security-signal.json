@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-30 05:53 UTC",
+    "updated": "2026-10-30 12:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,117 +8,45 @@
   "summary": {
     "period_start": "2026-10-24",
     "period_end": "2026-10-30",
-    "total_events": 121,
-    "total_risk": 107.78,
-    "normalized_risk_score": 43.1,
+    "total_events": 19,
+    "total_risk": 17.38,
+    "normalized_risk_score": 7.0,
     "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "confidence": "LOW"
   },
   "category_counts": {
-    "military": 22,
-    "security": 6,
-    "political": 41,
-    "other": 52
+    "military": 3,
+    "security": 2,
+    "political": 11,
+    "other": 3
   },
   "source_counts": {
-    "news": 115,
-    "isw": 6
+    "news": 17,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 39.45
-    },
-    {
-      "name": "Iran",
-      "risk": 14.43
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 10.15
-    },
-    {
-      "name": "Yemen",
-      "risk": 8.5
+      "risk": 9.5
     },
     {
       "name": "Syria",
-      "risk": 6.85
+      "risk": 3.1
+    },
+    {
+      "name": "Jordan",
+      "risk": 1.8
+    },
+    {
+      "name": "Egypt",
+      "risk": 1.4
+    },
+    {
+      "name": "Iran",
+      "risk": 0.89
     }
   ],
   "top_events": [
-    {
-      "score": 3.0,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi forces claim six attacks on Saudi airports, oil facilities - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTEhERlpWem04ZnozTFJCeEcwbmNLVkN6eUtjUFgtdDJnNU1iVFVWWExvTU9WQ09EQ3g0SmJYZ011OWh4TTlUd2pKLURkQUljS3VDNzNmcktLMEZYZTRydklucHl3RF9PeDF1VW5QTlFCbEs0U2ZfbEtqdlpVczB5VTBiUFM0VnZ3Mkl6dVdoZWRvanJCS3VmUW9Ma2hwQ18zbFA3T2lmMU5Hd9IBrwFBVV95cUxNNDBlaUpwVUU2NTFwc0ZhYXdwUmxTa2JjdklXNUVudHZDa25DV29LMUZWa2hRRTBtWml6QTA3Y2ZPNEJOMHo3c2RVSDdYbkNLTzBLbWJXczlBZEY4bWQ3dlZ4amtOOGVtUm90MFpXZWQ2cXZSdk1RNnU0R1BQNWtGRG5YUW5ibVBUa2hPSHA0eEVYVGRNS2Nta3V3bE1mTU4zNllDOEV1N2J6MWd2ODlv"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdTdkdmZXbFBHWno1WERBemlBX0tpX0lLaDlVUExXWGh6ZjlWSzBZYWYwc3RZTG1vb0ptREw5Nk8tcDFLVGJ0UmU0MzBEVW9hRnFHRWZiOU5SakNDQjEwYUp0aVFZcjc2clhraFNSZ09iLW5Md3V6MkpaSXZBcnoxdUJOVVZBLTJoQThnc0RvZkVEdFZ6WEJlakNwQXlFak5peWhfQ2h6dFdoV2traHgtZU1FN253Z0l0LU9V"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Egyptian man who fire-bombed pro-Israel rally in Colorado pleads guilty to federal hate crimes - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUW04WnB6UjFyRTM0Uzl2LWxrVmx5TFR6dWMxVWhuZFdwNmNGZWdLRmlnSkZRLW1RcTI5UWh4RFVjbmJTRlRTVDlsS1pNWkpZQ3RUZjRTV21tN2doQW9OU1VUTUdhWWRHcjNMMW9MUVFaN2ZzOUtVb2p2ZkdyTE9hcl9wR2JBZHBzVXF4WnJSYk1BMXVhdjVNYnVjM3o4Z0plZGZJeG04TkotMk9kU3k1TWM5WHFoUEE2UEtfaU1GUjNBdC1HS2xIXw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Netanyahu attacks Palestinian-Israeli parties as he falls short of majority - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQN3JuWERpRXZEMUlKM0NlYjlzS2FTX3pMdk54Q1VpZmY0N1ZLY2UzMzNRemsxMzNEMm9wWlVpbWRSLS1TOFE0QkU5Z3VPVGNDUFlmMDhWWW5PaVM2YzhZbWpGN1h4dkFONmFINVhxeFJZeEhScVJtVWRQU05rWEZNOVpCai1qVzV3RmRDQUdZR0dwYzdvLUZaSkVhUURvUEp6YmhmZGNXRGdyOXQ2OGhkTkN5TlMzTTBpcEJYZm1ENF9PU2czVHfSAcsBQVVfeXFMT2VzbFVXWWdOckp6eXl4bktxSC1sYUtaa0VyNHVZVUJvMXlVWWtrYm1QWm1Pa01NLTBQMmtQbzR4aFUwQnhFUnc5R2pPYVhodEw1ZkE2Nm9CV3dhWHd0UFFPRGFSa0Y2N0pJVGoxOEtXeXRQNWJDeHNueldQOW9HbTFwZ0xMcjVmTWI1Ym5JUHFoSUF2WDJhcjVUVnk4Q0p3emxfMkhNTktnd3F0VVpGSkE0S2tUbHJSVEVxNEpGUnoxT1Jhenc1X1BtaE0"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers savagely attack journalists in occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSWRaTlBhcWpJOE9kT2N5aTF5NXM3NXRJbG9zMVcxRW9HOVRqcUFsLXBQMVpvUGJXbHc0Wm5rZlo4MTFzRWhWRUZyWnZNOVh3QTNQaEV0RWpnWnhlVVBKWThGY1FUOVRENzJHejdsbVIxNUFzaExhTlo5cTQ3QVNSdkJFVUpMalF1MHc1X045ejYweHk2THV6blpWTEtGanZQTG44dDFNTEpibnNua2VPMWtRazVOTXRkQkHSAb8BQVVfeXFMUEl0U0FqSU9tRFZjV2cwLTh4dm8xQzRGYTV3ejZVQjhLSDFBbFV0OFJhMFRsd3c2bUxjUWZVOG5JSWpNLS1lRzU5Y0w2M3dvMElmLURVSnJlVkZabTJjNWZ6NHF4MEtDamNldHVfTEU4Ull4OTk0LXJ2QW5VLS03ZWFQNUZVUVhtYWJvS0NxalpiUlVjZGlHRGFKRlhDSUoxWE1fRWdKMmdQVWg1ZDVNdFJGLTVkZm9XNENHazM5T0k"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQWktallhRGk5Y3p6WmxxWktmYm5sVm5fUlRlWmE3S0t4ZE05QzNxRGFFanQ3c3pTSHpjZ1IzcDY2RUlSSlhaTjFENVExUzJ2Q0UxOGxieGlWZDVadnVsd3N0M0dBWjIxYUcwUGNfQlNVQW0wQjYyUFVubDgwY2JZV3BKa3JHRExXNW00T3lRWDVxLUJwRWVLay1HUjVVcU5wTU5xWlY5dGFxSFE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil prices rise on Yemen fighting, Saudi refinery attack - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYUhHblNqOGNPczlpdUR2NDFMWjZxX2FZYjVTTzREX2R4YU5jRzF2ckN1MG9sSnIxWG9hbDJ0TjV4YTZXRjdqSUc3aF9OcTJuUVlJZkZrdUd0V0RMUU1qUWxiNDdmdXhCTmJUczZWOFRUWTRKdzJQLUJYNXZBODhnTjJfOXMyNU01OGVreWM5TkNyamNjbzV5UzAxX3ZOdWcwcUE5SFZHSkEyUjZ1M1dUQ3ByRDdxbC13ZzRQR0xfcTZ0bjh6dnNPalJZRWI"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-28",
-      "category": "military",
-      "source_type": "news",
-      "title": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
-      "location": "Turkey",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTmI1bDFoNk1OMkN2bGpWazh3MmpIVHdTcnktNFFlT2FnQ1o2WXRhYkRqeVF3WGxTTHhNdFAwaFJ0d0dsaTdOaG0xazNmalBQLURoNW83VkptS2ZHUHR5MGQ3ODBHLUxKM3IwWXZBMERiOG1hVk1fRUlQdld5S0hneGZXS2hzckJsWEl4MXo1c1R1NnZ1WXhBZ2JyMFNfQTZvcnJIN295OWlJXzRSeWdVM3JLY0FWakNkTHBFSlJFYmhiVjlt"
-    },
     {
       "score": 2.4,
       "date": "2026-10-28",
@@ -129,13 +57,85 @@
       "url": "https://www.bbc.co.uk/news/articles/ck5ynj4eeyj2o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.4,
-      "date": "2026-10-28",
+      "score": 2.1,
+      "date": "2026-10-27",
       "category": "military",
       "source_type": "news",
-      "title": "Netanyahu, Eisenkot camps clash over Israel election projections - Al Jazeera",
+      "title": "Jordan carries out deadly strike in Syria in retaliation for church attack",
+      "location": "Syria",
+      "url": "https://www.bbc.co.uk/news/articles/cq8ezg6dy6xlo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 1.8,
+      "date": "2026-10-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordan arrests three men suspected of deadly church attack after shootout",
+      "location": "Jordan",
+      "url": "https://www.bbc.co.uk/news/articles/cm4g17qq8wz4o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 1.4,
+      "date": "2026-10-27",
+      "category": "security",
+      "source_type": "news",
+      "title": "Egypt court fines journalist Lina Attalah and orders news site's closure",
+      "location": "Egypt",
+      "url": "https://www.bbc.co.uk/news/articles/cw8rz14k1jvxo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 1.0,
+      "date": "2026-10-30",
+      "category": "political",
+      "source_type": "news",
+      "title": "Syrians struggle with soaring prices as crisis challenges post-Assad recovery",
+      "location": "Syria",
+      "url": "https://www.bbc.co.uk/news/articles/cmn4egvez1yzo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 1.0,
+      "date": "2026-10-25",
+      "category": "security",
+      "source_type": "news",
+      "title": "Why Israel's election is one of the most important in its history",
       "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNHhwNGpGcVFWWTdpYnBpeHc0OFJ2ZHBzWVotTWxzdHV2R21aQVN2Y2ZaNnBzckRtWEVORUxfc2xKRWVONU50MHdFTjM2REZuSW1UM2tqS0hGcUZLdUdMOHZuaDFRM2ZPNS1QNzhKVzNRdEdQMGliWVJPYjRPLXdWY0VrVjh4ZnJoQmFiQW9WZ1lfLWxxbFQ5c0hnQWkzaDJ5OFBjTWhkcFZiQdIBrwFBVV95cUxOaVN2Z3RweHNLSXpTRy14ckU4M0IyWmxKaHlQVFZSRGotaHhZbmN5dXAtb0NiS3JPaHAzR28zdFF6RkJpNU0yZHpYMGZRWUpJbXdsTlNJZDl1d1NPNS1QZU9Sb2hXYmpCZDRkUjZlcTBLTXZacVZocDlvekpYOERnYkRCaFBNMU1TbWpQQTNYS2I4OW9NU1NrM245bHp2ZFdQeGhWMG5UdHpWcnNrSFdr"
+      "url": "https://www.bbc.co.uk/news/videos/c64g1wje3jjwo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.9,
+      "date": "2026-10-29",
+      "category": "political",
+      "source_type": "news",
+      "title": "Israeli opposition accuses Netanyahu of trying to 'delegitimise' election",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/ckdd8qdl9e0eo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.9,
+      "date": "2026-10-29",
+      "category": "political",
+      "source_type": "news",
+      "title": "How could Israel break election deadlock? Here are four scenarios",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/cm62y46d97wwo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.8,
+      "date": "2026-10-28",
+      "category": "political",
+      "source_type": "news",
+      "title": "Israel's election deadlock is a sign of the country's deep divisions",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/cqz0ve94ygpjo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.8,
+      "date": "2026-10-28",
+      "category": "political",
+      "source_type": "news",
+      "title": "Israel's election result is messy - here's why",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/videos/c893zeknlvnno?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
