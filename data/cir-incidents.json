@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:04:29Z",
+  "generated_at": "2026-10-30T22:26:20Z",
   "status": "ok",
   "source": {
     "name": "Centre for Information Resilience",
@@ -14,20 +14,20 @@
     "analytical_note": "Rolling analytics use the latest event date in the dataset as the reference date."
   },
   "statistics": {
-    "arcgis_record_count": 2355,
-    "normalized_event_count": 2355,
+    "arcgis_record_count": 2384,
+    "normalized_event_count": 2384,
     "skipped_feature_count": 0,
     "category_counts": {
-      "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1166,
-      "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 577,
-      "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 557,
+      "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1178,
+      "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 586,
+      "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 565,
       "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 55
     },
     "location_counts": {
-      "OPT - Gaza Strip": 1086,
-      "OPT - West Bank": 563,
-      "Lebanon - Southern Border": 270,
-      "Lebanon": 254,
+      "OPT - Gaza Strip": 1097,
+      "OPT - West Bank": 576,
+      "Lebanon - Southern Border": 274,
+      "Lebanon": 255,
       "Israel": 103,
       "OPT - East Jerusalem": 52,
       "Israel - Northern Border": 27
@@ -37,177 +37,187 @@
     "status": "ok",
     "reference_basis": "All rolling periods are calculated relative to the latest event date in the CIR dataset, not the current date.",
     "overview": {
-      "total_incidents": 2355,
+      "total_incidents": 2384,
       "earliest_event_date": "2023-10-07",
-      "latest_event_date": "2026-09-15",
-      "coverage_days": 1075,
+      "latest_event_date": "2026-10-23",
+      "coverage_days": 1113,
       "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
       "top_location": "Gaza City",
-      "casualty_related_count": 2355,
-      "ceasefire_monitoring_count": 146,
+      "casualty_related_count": 2384,
+      "ceasefire_monitoring_count": 161,
       "category_counts": {
-        "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1166,
-        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 577,
-        "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 557,
+        "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1178,
+        "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 586,
+        "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 565,
         "<span style='color:#ff00ff; font-size:1.5em;'>●</span> Aid Obstruction": 55
       }
     },
     "periods": {
       "latest_day": {
-        "start_date": "2026-09-15",
-        "end_date": "2026-09-15",
+        "start_date": "2026-10-23",
+        "end_date": "2026-10-23",
         "days": 1,
         "incident_count": 1,
         "casualty_related_count": 1,
-        "ceasefire_monitoring_count": 1,
+        "ceasefire_monitoring_count": 0,
         "top_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
-        "top_location": "Tayr Harfa",
+        "top_location": "Hebron",
         "category_counts": {
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1
         },
         "top_locations": [
           {
-            "name": "Tayr Harfa",
+            "name": "Hebron",
             "count": 1
           }
         ],
         "top_zones": [
           {
-            "name": "Lebanon - Southern Border",
+            "name": "OPT - West Bank",
             "count": 1
           }
         ]
       },
       "latest_7_days": {
-        "start_date": "2026-09-09",
-        "end_date": "2026-09-15",
+        "start_date": "2026-10-17",
+        "end_date": "2026-10-23",
         "days": 7,
-        "incident_count": 10,
-        "casualty_related_count": 10,
-        "ceasefire_monitoring_count": 6,
-        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
-        "top_location": "Bani Haiyyan",
+        "incident_count": 3,
+        "casualty_related_count": 3,
+        "ceasefire_monitoring_count": 0,
+        "top_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+        "top_location": "Hebron",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 6,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 4
-        },
-        "top_locations": [
-          {
-            "name": "Bani Haiyyan",
-            "count": 3
-          },
-          {
-            "name": "Jenin",
-            "count": 3
-          },
-          {
-            "name": "Tayr Harfa",
-            "count": 1
-          },
-          {
-            "name": "Wadi Daouq",
-            "count": 1
-          },
-          {
-            "name": "Sheikh Ajlin",
-            "count": 1
-          },
-          {
-            "name": "Mansouri",
-            "count": 1
-          }
-        ],
-        "top_zones": [
-          {
-            "name": "Lebanon - Southern Border",
-            "count": 5
-          },
-          {
-            "name": "OPT - West Bank",
-            "count": 4
-          },
-          {
-            "name": "OPT - Gaza Strip",
-            "count": 1
-          }
-        ]
-      },
-      "previous_7_days": {
-        "start_date": "2026-09-02",
-        "end_date": "2026-09-08",
-        "days": 7,
-        "incident_count": 9,
-        "casualty_related_count": 9,
-        "ceasefire_monitoring_count": 7,
-        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
-        "top_location": "Bani Haiyyan",
-        "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 5,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
         },
         "top_locations": [
           {
-            "name": "Bani Haiyyan",
-            "count": 2
-          },
-          {
-            "name": "Nabatieh",
-            "count": 2
-          },
-          {
-            "name": "Arab Salim",
+            "name": "Hebron",
             "count": 1
           },
           {
-            "name": "Gaza City",
+            "name": "Turmus Ayya",
             "count": 1
           },
           {
-            "name": "Arraba",
-            "count": 1
-          },
-          {
-            "name": "Jenin",
-            "count": 1
-          },
-          {
-            "name": "Chaqra",
+            "name": "Taybeh",
             "count": 1
           }
         ],
         "top_zones": [
           {
-            "name": "Lebanon - Southern Border",
+            "name": "OPT - West Bank",
             "count": 3
-          },
+          }
+        ]
+      },
+      "previous_7_days": {
+        "start_date": "2026-10-10",
+        "end_date": "2026-10-16",
+        "days": 7,
+        "incident_count": 3,
+        "casualty_related_count": 3,
+        "ceasefire_monitoring_count": 0,
+        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+        "top_location": "Abu Falah",
+        "category_counts": {
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 3
+        },
+        "top_locations": [
           {
-            "name": "Lebanon",
+            "name": "Abu Falah",
             "count": 3
-          },
+          }
+        ],
+        "top_zones": [
           {
             "name": "OPT - West Bank",
-            "count": 2
-          },
-          {
-            "name": "OPT - Gaza Strip",
-            "count": 1
+            "count": 3
           }
         ]
       },
       "latest_30_days": {
-        "start_date": "2026-08-17",
-        "end_date": "2026-09-15",
+        "start_date": "2026-09-24",
+        "end_date": "2026-10-23",
         "days": 30,
-        "incident_count": 28,
-        "casualty_related_count": 28,
-        "ceasefire_monitoring_count": 18,
+        "incident_count": 15,
+        "casualty_related_count": 15,
+        "ceasefire_monitoring_count": 5,
+        "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+        "top_location": "Abu Falah",
+        "category_counts": {
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 7,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 5,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3
+        },
+        "top_locations": [
+          {
+            "name": "Abu Falah",
+            "count": 3
+          },
+          {
+            "name": "Gaza City",
+            "count": 3
+          },
+          {
+            "name": "Nablus",
+            "count": 2
+          },
+          {
+            "name": "Hebron",
+            "count": 1
+          },
+          {
+            "name": "Turmus Ayya",
+            "count": 1
+          },
+          {
+            "name": "Taybeh",
+            "count": 1
+          },
+          {
+            "name": "Al-Mughayyir",
+            "count": 1
+          },
+          {
+            "name": "Qalandiya",
+            "count": 1
+          },
+          {
+            "name": "Khan Younis",
+            "count": 1
+          },
+          {
+            "name": "Al-Zawayda",
+            "count": 1
+          }
+        ],
+        "top_zones": [
+          {
+            "name": "OPT - West Bank",
+            "count": 10
+          },
+          {
+            "name": "OPT - Gaza Strip",
+            "count": 5
+          }
+        ]
+      },
+      "previous_30_days": {
+        "start_date": "2026-08-25",
+        "end_date": "2026-09-23",
+        "days": 30,
+        "incident_count": 35,
+        "casualty_related_count": 35,
+        "ceasefire_monitoring_count": 23,
         "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
         "top_location": "Bani Haiyyan",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 16,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 8,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 4
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 20,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 12,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 3
         },
         "top_locations": [
           {
@@ -220,18 +230,42 @@
           },
           {
             "name": "Gaza City",
-            "count": 3
-          },
-          {
-            "name": "Qusra",
-            "count": 3
+            "count": 4
           },
           {
             "name": "Nabatieh",
             "count": 2
           },
           {
+            "name": "Qusra",
+            "count": 2
+          },
+          {
+            "name": "Zawtar al-Sharqiyah",
+            "count": 1
+          },
+          {
+            "name": "Meiss al-Jabal",
+            "count": 1
+          },
+          {
+            "name": "Khirbet al-Fakhit",
+            "count": 1
+          },
+          {
+            "name": "Jabalia",
+            "count": 1
+          },
+          {
             "name": "Tayr Harfa",
+            "count": 1
+          },
+          {
+            "name": "Ali-al Taher Hill",
+            "count": 1
+          },
+          {
+            "name": "Al-Mazra'a al-Qibliya",
             "count": 1
           },
           {
@@ -245,139 +279,20 @@
           {
             "name": "Mansouri",
             "count": 1
-          },
-          {
-            "name": "Arab Salim",
-            "count": 1
-          },
-          {
-            "name": "Arraba",
-            "count": 1
-          },
-          {
-            "name": "Chaqra",
-            "count": 1
-          },
-          {
-            "name": "Bazariya",
-            "count": 1
-          },
-          {
-            "name": "Houla",
-            "count": 1
-          },
-          {
-            "name": "Beit Lahia",
-            "count": 1
           }
         ],
         "top_zones": [
           {
             "name": "Lebanon - Southern Border",
-            "count": 10
+            "count": 13
           },
           {
             "name": "OPT - West Bank",
-            "count": 10
+            "count": 12
           },
           {
             "name": "OPT - Gaza Strip",
-            "count": 5
-          },
-          {
-            "name": "Lebanon",
-            "count": 3
-          }
-        ]
-      },
-      "previous_30_days": {
-        "start_date": "2026-07-18",
-        "end_date": "2026-08-16",
-        "days": 30,
-        "incident_count": 39,
-        "casualty_related_count": 39,
-        "ceasefire_monitoring_count": 23,
-        "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
-        "top_location": "Gaza City",
-        "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 24,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 11,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 4
-        },
-        "top_locations": [
-          {
-            "name": "Gaza City",
-            "count": 3
-          },
-          {
-            "name": "Qusra",
-            "count": 3
-          },
-          {
-            "name": "Chaqra",
-            "count": 3
-          },
-          {
-            "name": "Bani Haiyyan",
-            "count": 2
-          },
-          {
-            "name": "Jenin",
-            "count": 2
-          },
-          {
-            "name": "Qalandiya",
-            "count": 2
-          },
-          {
-            "name": "Deir al-Balah",
-            "count": 2
-          },
-          {
-            "name": "Arraba",
-            "count": 2
-          },
-          {
-            "name": "Deir Al-Zahrani",
-            "count": 1
-          },
-          {
-            "name": "Qizan al-Najjar",
-            "count": 1
-          },
-          {
-            "name": "Nabatieh",
-            "count": 1
-          },
-          {
-            "name": "Mazraat Byout El Saiyad",
-            "count": 1
-          },
-          {
-            "name": "Al-Mansouri",
-            "count": 1
-          },
-          {
-            "name": "Tebnine",
-            "count": 1
-          },
-          {
-            "name": "Srebbine",
-            "count": 1
-          }
-        ],
-        "top_zones": [
-          {
-            "name": "OPT - West Bank",
-            "count": 16
-          },
-          {
-            "name": "Lebanon - Southern Border",
-            "count": 11
-          },
-          {
-            "name": "OPT - Gaza Strip",
-            "count": 8
+            "count": 6
           },
           {
             "name": "Lebanon",
@@ -386,23 +301,23 @@
         ]
       },
       "latest_90_days": {
-        "start_date": "2026-06-18",
-        "end_date": "2026-09-15",
+        "start_date": "2026-07-26",
+        "end_date": "2026-10-23",
         "days": 90,
-        "incident_count": 78,
-        "casualty_related_count": 78,
-        "ceasefire_monitoring_count": 46,
+        "incident_count": 87,
+        "casualty_related_count": 87,
+        "ceasefire_monitoring_count": 51,
         "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
         "top_location": "Gaza City",
         "category_counts": {
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 43,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 21,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 14
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 48,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 24,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 15
         },
         "top_locations": [
           {
             "name": "Gaza City",
-            "count": 10
+            "count": 13
           },
           {
             "name": "Bani Haiyyan",
@@ -417,8 +332,12 @@
             "count": 6
           },
           {
-            "name": "Chaqra",
-            "count": 4
+            "name": "Abu Falah",
+            "count": 3
+          },
+          {
+            "name": "Qalandiya",
+            "count": 3
           },
           {
             "name": "Nabatieh",
@@ -429,225 +348,69 @@
             "count": 3
           },
           {
-            "name": "Qalandiya",
+            "name": "Chaqra",
             "count": 3
-          },
-          {
-            "name": "Deir al-Balah",
-            "count": 2
-          },
-          {
-            "name": "Deir Jarir",
-            "count": 2
           },
           {
             "name": "Nablus",
             "count": 2
           },
           {
-            "name": "Tayr Harfa",
+            "name": "Al-Mughayyir",
+            "count": 2
+          },
+          {
+            "name": "Khan Younis",
+            "count": 2
+          },
+          {
+            "name": "Zawtar al-Sharqiyah",
+            "count": 2
+          },
+          {
+            "name": "Hebron",
             "count": 1
           },
           {
-            "name": "Wadi Daouq",
-            "count": 1
-          },
-          {
-            "name": "Sheikh Ajlin",
-            "count": 1
-          },
-          {
-            "name": "Mansouri",
+            "name": "Turmus Ayya",
             "count": 1
           }
         ],
         "top_zones": [
           {
             "name": "OPT - West Bank",
-            "count": 31
+            "count": 36
           },
           {
             "name": "Lebanon - Southern Border",
-            "count": 21
+            "count": 23
           },
           {
             "name": "OPT - Gaza Strip",
-            "count": 18
+            "count": 21
           },
           {
             "name": "Lebanon",
-            "count": 8
+            "count": 7
           }
         ]
       },
       "comparison_7_days": {
-        "current_count": 10,
-        "previous_count": 9,
-        "absolute_change": 1,
-        "percent_change": 11.1,
+        "current_count": 3,
+        "previous_count": 3,
+        "absolute_change": 0,
+        "percent_change": 0.0,
         "direction": "stable"
       },
       "comparison_30_days": {
-        "current_count": 28,
-        "previous_count": 39,
-        "absolute_change": -11,
-        "percent_change": -28.2,
+        "current_count": 15,
+        "previous_count": 35,
+        "absolute_change": -20,
+        "percent_change": -57.1,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-03-20",
-        "count": 1
-      },
-      {
-        "date": "2026-03-21",
-        "count": 0
-      },
-      {
-        "date": "2026-03-22",
-        "count": 4
-      },
-      {
-        "date": "2026-03-23",
-        "count": 0
-      },
-      {
-        "date": "2026-03-24",
-        "count": 1
-      },
-      {
-        "date": "2026-03-25",
-        "count": 3
-      },
-      {
-        "date": "2026-03-26",
-        "count": 1
-      },
-      {
-        "date": "2026-03-27",
-        "count": 0
-      },
-      {
-        "date": "2026-03-28",
-        "count": 0
-      },
-      {
-        "date": "2026-03-29",
-        "count": 0
-      },
-      {
-        "date": "2026-03-30",
-        "count": 3
-      },
-      {
-        "date": "2026-03-31",
-        "count": 1
-      },
-      {
-        "date": "2026-04-01",
-        "count": 2
-      },
-      {
-        "date": "2026-04-02",
-        "count": 0
-      },
-      {
-        "date": "2026-04-03",
-        "count": 1
-      },
-      {
-        "date": "2026-04-04",
-        "count": 2
-      },
-      {
-        "date": "2026-04-05",
-        "count": 2
-      },
-      {
-        "date": "2026-04-06",
-        "count": 2
-      },
-      {
-        "date": "2026-04-07",
-        "count": 0
-      },
-      {
-        "date": "2026-04-08",
-        "count": 4
-      },
-      {
-        "date": "2026-04-09",
-        "count": 1
-      },
-      {
-        "date": "2026-04-10",
-        "count": 2
-      },
-      {
-        "date": "2026-04-11",
-        "count": 0
-      },
-      {
-        "date": "2026-04-12",
-        "count": 1
-      },
-      {
-        "date": "2026-04-13",
-        "count": 1
-      },
-      {
-        "date": "2026-04-14",
-        "count": 6
-      },
-      {
-        "date": "2026-04-15",
-        "count": 0
-      },
-      {
-        "date": "2026-04-16",
-        "count": 3
-      },
-      {
-        "date": "2026-04-17",
-        "count": 1
-      },
-      {
-        "date": "2026-04-18",
-        "count": 1
-      },
-      {
-        "date": "2026-04-19",
-        "count": 2
-      },
-      {
-        "date": "2026-04-20",
-        "count": 1
-      },
-      {
-        "date": "2026-04-21",
-        "count": 1
-      },
-      {
-        "date": "2026-04-22",
-        "count": 1
-      },
-      {
-        "date": "2026-04-23",
-        "count": 1
-      },
-      {
-        "date": "2026-04-24",
-        "count": 1
-      },
-      {
-        "date": "2026-04-25",
-        "count": 1
-      },
-      {
-        "date": "2026-04-26",
-        "count": 0
-      },
       {
         "date": "2026-04-27",
         "count": 0
@@ -662,7 +425,7 @@
       },
       {
         "date": "2026-04-30",
-        "count": 0
+        "count": 1
       },
       {
         "date": "2026-05-01",
@@ -1022,7 +785,7 @@
       },
       {
         "date": "2026-07-29",
-        "count": 0
+        "count": 1
       },
       {
         "date": "2026-07-30",
@@ -1078,7 +841,7 @@
       },
       {
         "date": "2026-08-12",
-        "count": 4
+        "count": 5
       },
       {
         "date": "2026-08-13",
@@ -1138,7 +901,7 @@
       },
       {
         "date": "2026-08-27",
-        "count": 1
+        "count": 2
       },
       {
         "date": "2026-08-28",
@@ -1158,7 +921,7 @@
       },
       {
         "date": "2026-09-01",
-        "count": 1
+        "count": 3
       },
       {
         "date": "2026-09-02",
@@ -1170,7 +933,7 @@
       },
       {
         "date": "2026-09-04",
-        "count": 1
+        "count": 2
       },
       {
         "date": "2026-09-05",
@@ -1190,11 +953,11 @@
       },
       {
         "date": "2026-09-09",
-        "count": 5
+        "count": 6
       },
       {
         "date": "2026-09-10",
-        "count": 4
+        "count": 6
       },
       {
         "date": "2026-09-11",
@@ -1214,30 +977,162 @@
       },
       {
         "date": "2026-09-15",
+        "count": 2
+      },
+      {
+        "date": "2026-09-16",
+        "count": 0
+      },
+      {
+        "date": "2026-09-17",
+        "count": 0
+      },
+      {
+        "date": "2026-09-18",
+        "count": 2
+      },
+      {
+        "date": "2026-09-19",
+        "count": 0
+      },
+      {
+        "date": "2026-09-20",
+        "count": 0
+      },
+      {
+        "date": "2026-09-21",
+        "count": 0
+      },
+      {
+        "date": "2026-09-22",
+        "count": 1
+      },
+      {
+        "date": "2026-09-23",
+        "count": 0
+      },
+      {
+        "date": "2026-09-24",
+        "count": 3
+      },
+      {
+        "date": "2026-09-25",
+        "count": 0
+      },
+      {
+        "date": "2026-09-26",
+        "count": 0
+      },
+      {
+        "date": "2026-09-27",
+        "count": 2
+      },
+      {
+        "date": "2026-09-28",
+        "count": 0
+      },
+      {
+        "date": "2026-09-29",
+        "count": 1
+      },
+      {
+        "date": "2026-09-30",
+        "count": 1
+      },
+      {
+        "date": "2026-10-01",
+        "count": 0
+      },
+      {
+        "date": "2026-10-02",
+        "count": 0
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0
+      },
+      {
+        "date": "2026-10-04",
+        "count": 0
+      },
+      {
+        "date": "2026-10-05",
+        "count": 0
+      },
+      {
+        "date": "2026-10-06",
+        "count": 0
+      },
+      {
+        "date": "2026-10-07",
+        "count": 2
+      },
+      {
+        "date": "2026-10-08",
+        "count": 0
+      },
+      {
+        "date": "2026-10-09",
+        "count": 0
+      },
+      {
+        "date": "2026-10-10",
+        "count": 0
+      },
+      {
+        "date": "2026-10-11",
+        "count": 0
+      },
+      {
+        "date": "2026-10-12",
+        "count": 0
+      },
+      {
+        "date": "2026-10-13",
+        "count": 0
+      },
+      {
+        "date": "2026-10-14",
+        "count": 0
+      },
+      {
+        "date": "2026-10-15",
+        "count": 0
+      },
+      {
+        "date": "2026-10-16",
+        "count": 3
+      },
+      {
+        "date": "2026-10-17",
+        "count": 1
+      },
+      {
+        "date": "2026-10-18",
+        "count": 0
+      },
+      {
+        "date": "2026-10-19",
+        "count": 1
+      },
+      {
+        "date": "2026-10-20",
+        "count": 0
+      },
+      {
+        "date": "2026-10-21",
+        "count": 0
+      },
+      {
+        "date": "2026-10-22",
+        "count": 0
+      },
+      {
+        "date": "2026-10-23",
         "count": 1
       }
     ],
     "weekly_trend": [
-      {
-        "week_start": "2024-09-23",
-        "count": 39
-      },
-      {
-        "week_start": "2024-09-30",
-        "count": 14
-      },
-      {
-        "week_start": "2024-10-07",
-        "count": 11
-      },
-      {
-        "week_start": "2024-10-14",
-        "count": 19
-      },
-      {
-        "week_start": "2024-10-21",
-        "count": 19
-      },
       {
         "week_start": "2024-10-28",
         "count": 23
@@ -1552,7 +1447,7 @@
       },
       {
         "week_start": "2026-04-27",
-        "count": 1
+        "count": 2
       },
       {
         "week_start": "2026-05-04",
@@ -1604,7 +1499,7 @@
       },
       {
         "week_start": "2026-07-27",
-        "count": 10
+        "count": 11
       },
       {
         "week_start": "2026-08-03",
@@ -1612,7 +1507,7 @@
       },
       {
         "week_start": "2026-08-10",
-        "count": 12
+        "count": 13
       },
       {
         "week_start": "2026-08-17",
@@ -1620,258 +1515,50 @@
       },
       {
         "week_start": "2026-08-24",
-        "count": 5
+        "count": 6
       },
       {
         "week_start": "2026-08-31",
-        "count": 8
-      },
-      {
-        "week_start": "2026-09-07",
         "count": 11
       },
       {
+        "week_start": "2026-09-07",
+        "count": 14
+      },
+      {
         "week_start": "2026-09-14",
-        "count": 1
+        "count": 4
+      },
+      {
+        "week_start": "2026-09-21",
+        "count": 6
+      },
+      {
+        "week_start": "2026-09-28",
+        "count": 2
+      },
+      {
+        "week_start": "2026-10-05",
+        "count": 2
+      },
+      {
+        "week_start": "2026-10-12",
+        "count": 4
+      },
+      {
+        "week_start": "2026-10-19",
+        "count": 2
       }
     ],
     "category_trend": {
-      "start_date": "2026-06-18",
-      "end_date": "2026-09-15",
+      "start_date": "2026-07-26",
+      "end_date": "2026-10-23",
       "categories": [
         "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
         "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
         "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
       ],
       "series": [
-        {
-          "date": "2026-06-18",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-19",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-20",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-21",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-22",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-23",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-24",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-25",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-26",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-27",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-28",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-29",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-06-30",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-01",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-02",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-03",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-04",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-05",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-06",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-07",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-08",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-09",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-10",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-11",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-12",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-13",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-14",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-15",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-16",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-17",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-18",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-19",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-20",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-21",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
-        },
-        {
-          "date": "2026-07-22",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-23",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-24",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
-        {
-          "date": "2026-07-25",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
-        },
         {
           "date": "2026-07-26",
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
@@ -1894,7 +1581,7 @@
           "date": "2026-07-29",
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
         },
         {
           "date": "2026-07-30",
@@ -1976,7 +1663,7 @@
         },
         {
           "date": "2026-08-12",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
         },
@@ -2066,7 +1753,7 @@
         },
         {
           "date": "2026-08-27",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
         },
@@ -2096,8 +1783,8 @@
         },
         {
           "date": "2026-09-01",
-          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
         },
         {
@@ -2116,7 +1803,7 @@
           "date": "2026-09-04",
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
-          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
         },
         {
           "date": "2026-09-05",
@@ -2145,13 +1832,13 @@
         {
           "date": "2026-09-09",
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 3,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
         },
         {
           "date": "2026-09-10",
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 3,
-          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 3,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
         },
         {
@@ -2180,6 +1867,234 @@
         },
         {
           "date": "2026-09-15",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-16",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-17",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-18",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-19",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-20",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-21",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-22",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-23",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-24",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 2,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-09-25",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-26",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-27",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 2
+        },
+        {
+          "date": "2026-09-28",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-29",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-09-30",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-01",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-02",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-03",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-04",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-05",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-06",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-07",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 2,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-08",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-09",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-10",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-11",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-12",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-13",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-14",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-15",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-16",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 3
+        },
+        {
+          "date": "2026-10-17",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 1
+        },
+        {
+          "date": "2026-10-18",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-19",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 1,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-20",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-21",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-22",
+          "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
+          "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 0,
+          "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
+        },
+        {
+          "date": "2026-10-23",
           "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage": 0,
           "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other": 1,
           "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence": 0
@@ -2190,11 +2105,11 @@
       "top_locations": [
         {
           "name": "Gaza City",
-          "count": 322
+          "count": 329
         },
         {
           "name": "Khan Younis",
-          "count": 146
+          "count": 148
         },
         {
           "name": "Rafah",
@@ -2202,7 +2117,7 @@
         },
         {
           "name": "Jabalia",
-          "count": 95
+          "count": 96
         },
         {
           "name": "Jenin",
@@ -2225,12 +2140,12 @@
           "count": 70
         },
         {
-          "name": "Tulkarm",
-          "count": 34
+          "name": "Nablus",
+          "count": 35
         },
         {
-          "name": "Nablus",
-          "count": 33
+          "name": "Tulkarm",
+          "count": 34
         },
         {
           "name": "Nour Shams",
@@ -2238,7 +2153,7 @@
         },
         {
           "name": "Hebron",
-          "count": 20
+          "count": 21
         },
         {
           "name": "Al-Maghazi",
@@ -2252,19 +2167,19 @@
       "top_zones": [
         {
           "name": "OPT - Gaza Strip",
-          "count": 1086
+          "count": 1097
         },
         {
           "name": "OPT - West Bank",
-          "count": 563
+          "count": 576
         },
         {
           "name": "Lebanon - Southern Border",
-          "count": 270
+          "count": 274
         },
         {
           "name": "Lebanon",
-          "count": 254
+          "count": 255
         },
         {
           "name": "Israel",
@@ -2288,17 +2203,17 @@
           "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
         },
         {
+          "latitude": 31.52,
+          "longitude": 34.44,
+          "count": 50,
+          "top_location": "Gaza City",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
           "latitude": 31.54,
           "longitude": 34.5,
           "count": 50,
           "top_location": "Beit Lahia",
-          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
-        },
-        {
-          "latitude": 31.52,
-          "longitude": 34.44,
-          "count": 48,
-          "top_location": "Gaza City",
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
         {
@@ -2318,7 +2233,7 @@
         {
           "latitude": 31.52,
           "longitude": 34.45,
-          "count": 28,
+          "count": 29,
           "top_location": "Gaza City",
           "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
         },
@@ -2337,6 +2252,13 @@
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
         {
+          "latitude": 31.35,
+          "longitude": 34.3,
+          "count": 23,
+          "top_location": "Khan Younis",
+          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+        },
+        {
           "latitude": 31.52,
           "longitude": 34.46,
           "count": 23,
@@ -2351,17 +2273,17 @@
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
         {
-          "latitude": 31.35,
-          "longitude": 34.3,
-          "count": 22,
-          "top_location": "Khan Younis",
-          "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
-        },
-        {
           "latitude": 31.5,
           "longitude": 34.46,
           "count": 21,
           "top_location": "Gaza City",
+          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
+        },
+        {
+          "latitude": 32.22,
+          "longitude": 35.26,
+          "count": 20,
+          "top_location": "Nablus",
           "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
         },
         {
@@ -2372,16 +2294,9 @@
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         },
         {
-          "latitude": 32.22,
-          "longitude": 35.26,
-          "count": 18,
-          "top_location": "Nablus",
-          "top_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
-        },
-        {
           "latitude": 31.53,
           "longitude": 34.45,
-          "count": 16,
+          "count": 17,
           "top_location": "Gaza City",
           "top_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
         }
@@ -2391,13 +2306,13 @@
       "language": "en",
       "method": "rule_based",
       "headline": "CIR activity trend: stable",
-      "summary": "Verified incident activity remained broadly stable in the latest seven-day period. The dataset records 10 incidents, compared with 9 in the preceding seven days (+11.1%). Across the latest 30-day analytical window, <span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage was the most frequently recorded category. Recorded activity was most concentrated around Bani Haiyyan during the same period. The 30-day window contains 28 incidents with a casualty-related signal and 18 incidents marked for ceasefire monitoring. The latest event in the source dataset is dated 2026-09-15. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity.",
+      "summary": "Verified incident activity remained broadly stable in the latest seven-day period. The dataset records 3 incidents, compared with 3 in the preceding seven days (0.0%). Across the latest 30-day analytical window, <span style='color:#ffff00; font-size:1.5em;'>●</span> Violence was the most frequently recorded category. Recorded activity was most concentrated around Abu Falah during the same period. The 30-day window contains 15 incidents with a casualty-related signal and 5 incidents marked for ceasefire monitoring. The latest event in the source dataset is dated 2026-10-23. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity.",
       "paragraphs": [
-        "Verified incident activity remained broadly stable in the latest seven-day period. The dataset records 10 incidents, compared with 9 in the preceding seven days (+11.1%).",
-        "Across the latest 30-day analytical window, <span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage was the most frequently recorded category.",
-        "Recorded activity was most concentrated around Bani Haiyyan during the same period.",
-        "The 30-day window contains 28 incidents with a casualty-related signal and 18 incidents marked for ceasefire monitoring.",
-        "The latest event in the source dataset is dated 2026-09-15. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity."
+        "Verified incident activity remained broadly stable in the latest seven-day period. The dataset records 3 incidents, compared with 3 in the preceding seven days (0.0%).",
+        "Across the latest 30-day analytical window, <span style='color:#ffff00; font-size:1.5em;'>●</span> Violence was the most frequently recorded category.",
+        "Recorded activity was most concentrated around Abu Falah during the same period.",
+        "The 30-day window contains 15 incidents with a casualty-related signal and 5 incidents marked for ceasefire monitoring.",
+        "The latest event in the source dataset is dated 2026-10-23. This assessment describes the CIR dataset and should not be interpreted as a complete or real-time record of all conflict activity."
       ],
       "key_findings": [
         {
@@ -2406,33 +2321,33 @@
         },
         {
           "label": "Seven-day change",
-          "value": "+11.1%"
+          "value": "0.0%"
         },
         {
           "label": "Top 30-day category",
-          "value": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage"
+          "value": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence"
         },
         {
           "label": "Top 30-day location",
-          "value": "Bani Haiyyan"
+          "value": "Abu Falah"
         },
         {
           "label": "Casualty-related incidents",
-          "value": 28
+          "value": 15
         },
         {
           "label": "Ceasefire monitoring incidents",
-          "value": 18
+          "value": 5
         }
       ],
       "top_hotspots": [
         {
           "name": "Gaza City",
-          "count": 322
+          "count": 329
         },
         {
           "name": "Khan Younis",
-          "count": 146
+          "count": 148
         },
         {
           "name": "Rafah",
@@ -2440,7 +2355,7 @@
         },
         {
           "name": "Jabalia",
-          "count": 95
+          "count": 96
         },
         {
           "name": "Jenin",
@@ -2450,6 +2365,525 @@
     }
   },
   "events": [
+    {
+      "id": "IPIN4166",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-23T00:00:00Z",
+      "incident_date_text": "2026-10-23",
+      "location": "Hebron",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.5597, 35.0805000000",
+      "latitude": 31.5597,
+      "longitude": 35.0805,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "3 – Moderate",
+      "description": "CCTV footage shows two armed individuals raising their weapons approximately 150 metres east of the Farsh al-Hawa checkpoint.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/tamerqdh/status/2114406910430474248",
+        "https://x.com/Aljarmaqnetnews/status/2113548267531468930",
+        "https://x.com/cameliaii32/status/2113586867081814468",
+        "https://x.com/JoeTruzman/status/2113494917049979325",
+        "https://www.gettyimages.co.uk/detail/news-photo/graphic-content-israeli-army-soldiers-gather-by-the-bodies-news-photo/2301037708?phrase=hebron&adppopup=true"
+      ],
+      "object_id": 4445
+    },
+    {
+      "id": "IPIN4153",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-19T00:00:00Z",
+      "incident_date_text": "2026-10-19",
+      "location": "Turmus Ayya",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.0301000000, 35.2997",
+      "latitude": 32.0301,
+      "longitude": 35.2997,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to residential buildings",
+      "category": "Damage to residential buildings involving casualties or significant impact",
+      "violence": "3 – Moderate",
+      "description": "Footage shows a residential building with fire ablaze inside, a vehicle on fire and one adult casualty.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/thenewregion/status/2112150883731709996?s=20",
+        "https://x.com/AlArabiya/status/2112094938728980757"
+      ],
+      "object_id": 4444
+    },
+    {
+      "id": "IPIN4151",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-17T00:00:00Z",
+      "incident_date_text": "2026-10-17",
+      "location": "Taybeh",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.9504000000, 35.2886",
+      "latitude": 31.9504,
+      "longitude": 35.2886,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "2 – Mild",
+      "description": "Footage shows a plain-clothed individual, who CIR identified as the Mayor of the French commune Aulnoye-Aymeries, Bernard Baudoux, seated on the ground leaning against a vehicle beside a road in the western outskirts of Taybeh.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FBFB7D; font-size:1.5em;'>●</span> Mild",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://www.theguardian.com/world/video/2026/oct/18/french-mayor-attacked-by-israeli-settlers-in-occupied-west-bank-video",
+        "https://x.com/tamerqdh/status/2111448965367418907"
+      ],
+      "object_id": 4443
+    },
+    {
+      "id": "IPIN4150",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-16T00:00:00Z",
+      "incident_date_text": "2026-10-16",
+      "location": "Abu Falah",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.0178000000, 35.3078000000",
+      "latitude": 32.0178,
+      "longitude": 35.3078,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "2 – Mild",
+      "description": "Footage shows an adult casualty lying on a road surrounded by emergency service workers and armed soldiers in a residential area (video four).",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FBFB7D; font-size:1.5em;'>●</span> Mild",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/infinite_jaz/status/2111033298201825672?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2111033298201825672%7Ctwgr%5E39b44bd6dcf6d93180b779d92d3d3357d4eb8faf%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.timesofisrael.com%2Fwapo-photojournalist-has-surgery-on-hand-after-being-beaten-by-settlers-in-west-bank%2F"
+      ],
+      "object_id": 4442
+    },
+    {
+      "id": "IPIN4149",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-16T00:00:00Z",
+      "incident_date_text": "2026-10-16",
+      "location": "Abu Falah",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.0204000000, 35.3113",
+      "latitude": 32.0204,
+      "longitude": 35.3113,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Other forms of violence",
+      "category": "Violence by Israeli settlers",
+      "violence": "2 – Mild",
+      "description": "Footage shows an individual wearing a press vest being pushed to the ground and kicked by a group of plain clothed individuals in hoods and face masks in a residential and agricultural area.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FBFB7D; font-size:1.5em;'>●</span> Mild",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/infinite_jaz/status/2111033298201825672?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2111033298201825672%7Ctwgr%5E39b44bd6dcf6d93180b779d92d3d3357d4eb8faf%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.timesofisrael.com%2Fwapo-photojournalist-has-surgery-on-hand-after-being-beaten-by-settlers-in-west-bank%2F",
+        "https://x.com/qudsn/status/2111056336515404235"
+      ],
+      "object_id": 4441
+    },
+    {
+      "id": "IPIN4148",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-16T00:00:00Z",
+      "incident_date_text": "2026-10-16",
+      "location": "Abu Falah",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.0190000000, 35.3106000000",
+      "latitude": 32.019,
+      "longitude": 35.3106,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Other forms of violence",
+      "category": "Violence by Israeli settlers",
+      "violence": "1 – None",
+      "description": "Footage shows a large group of plain-clothed individuals wearing face coverings and hoods throwing stones, while fire and smoke were seen rising from the ground, in a residential and agricultural area.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/ITGGlobal/status/2111016701966102531",
+        "https://x.com/EyeonPalestine/status/2110999476806537566"
+      ],
+      "object_id": 4440
+    },
+    {
+      "id": "IPIN4121",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-07T00:00:00Z",
+      "incident_date_text": "2026-10-07",
+      "location": "Nablus",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.2211, 35.2604000000",
+      "latitude": 32.2211,
+      "longitude": 35.2604,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Content shows rubble and damaged metal fencing scattered on a pedestrian island in the middle of a road opposite the Martyrs' Square roundabout.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://www.gettyimages.co.uk/detail/news-photo/palestinian-walks-past-a-memorial-destroyed-by-the-israeli-news-photo/2298440009?phrase=nablus",
+        "https://www.gettyimages.co.uk/detail/news-photo/memorials-erected-in-memory-of-slain-palestinians-in-two-news-photo/2298431940?phrase=west%20bank"
+      ],
+      "object_id": 4438
+    },
+    {
+      "id": "IPIN4120",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-10-07T00:00:00Z",
+      "incident_date_text": "2026-10-07",
+      "location": "Nablus",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.2212, 35.261",
+      "latitude": 32.2212,
+      "longitude": 35.261,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Content shows rubble and debris scattered on a pedestrian island in the middle of a road opposite the Martyrs' Square roundabout.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://www.gettyimages.co.uk/detail/news-photo/the-aftermath-of-the-destruction-of-a-memorial-by-the-news-photo/2298439904?phrase=nablus",
+        "https://www.gettyimages.co.uk/detail/news-photo/memorials-erected-in-memory-of-slain-palestinians-in-two-news-photo/2298431542?phrase=west%20bank"
+      ],
+      "object_id": 4437
+    },
+    {
+      "id": "IPIN4110",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-30T00:00:00Z",
+      "incident_date_text": "2026-09-30",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5090000000, 34.4266",
+      "latitude": 31.509,
+      "longitude": 34.4266,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "5 – Graphic",
+      "description": "Content shows a damaged vehicle and cart, and at least seven adult casualties on al-Quds Street.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://english.wafa.ps/Pages/Details/175351",
+        "https://safa.ps/g/9563",
+        "https://www.anadoluimages.com/p/israeli-attacks-kill-6-palestinians-injure-18-others-in-gaza-despite-ceasefire/32324561",
+        "https://t.me/hamza20300/413790",
+        "https://www.instagram.com/p/Dd6EXWgKxaO/?e=c14ecf5a-8d9f-4f36-8563-4c32fd6d5146&g=5",
+        "https://www.instagram.com/p/Dd6Dtp_tkSo/?e=eff678e3-ff20-487a-89e7-0ed0532a589a&g=5"
+      ],
+      "object_id": 4435
+    },
+    {
+      "id": "IPIN4107",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-29T00:00:00Z",
+      "incident_date_text": "2026-09-29",
+      "location": "Al-Mughayyir",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.0251000000, 35.3441",
+      "latitude": 32.0251,
+      "longitude": 35.3441,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows two vehicles on fire adjacent to multiple residential buildings.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [],
+      "object_id": 4432
+    },
+    {
+      "id": "IPIN4118",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-27T00:00:00Z",
+      "incident_date_text": "2026-09-27",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5325, 34.4453",
+      "latitude": 31.5325,
+      "longitude": 34.4453,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "4 – Severe",
+      "description": "Footage shows at least two adult casualties in al-Shati refugee camp.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FF5500; font-size:1.5em;'>●</span> Severe",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://x.com/AlwtanTv/status/2104113460497817966",
+        "https://www.instagram.com/p/DdyK4Clq5Kc/"
+      ],
+      "object_id": 4436
+    },
+    {
+      "id": "IPIN4108",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-27T00:00:00Z",
+      "incident_date_text": "2026-09-27",
+      "location": "Qalandiya",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.8625, 35.2277",
+      "latitude": 31.8625,
+      "longitude": 35.2277,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "2 – Mild",
+      "description": "Content  shows one plain clothed individual on the ground with at least five Israeli Police officers standing beside them at the Qalandiya checkpoint.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FBFB7D; font-size:1.5em;'>●</span> Mild",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/tamerqdh/status/2104074704692928781"
+      ],
+      "object_id": 4433
+    },
+    {
+      "id": "IPIN4098",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-24T00:00:00Z",
+      "incident_date_text": "2026-09-24",
+      "location": "Khan Younis",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.3478, 34.3046000000",
+      "latitude": 31.3478,
+      "longitude": 34.3046,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "5 – Graphic",
+      "description": "Footage shows at least one adult casualty on Jamal Abd al-Nasser Street.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://x.com/QudsNen/status/2103077130053796200",
+        "https://t.me/hamza20300/413251"
+      ],
+      "object_id": 4430
+    },
+    {
+      "id": "IPIN4097",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-24T00:00:00Z",
+      "incident_date_text": "2026-09-24",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.4987, 34.4107000000",
+      "latitude": 31.4987,
+      "longitude": 34.4107,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "5 – Graphic",
+      "description": "Footage shows a destroyed car engulfed in flames and at least two casualties of an unknown age on al-Rashid Coastal road.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/Ddq_wi1ondb/?hl=en",
+        "https://www.anadoluimages.com/p/israeli-drone-targets-moving-vehicle-on-al-rasheed-street-in-gaza-city/32300266",
+        "https://www.anadoluimages.com/p/israeli-drone-targets-moving-vehicle-on-al-rasheed-street-in-gaza-city/32300257",
+        "https://www.anadoluimages.com/p/israeli-drone-strike-hits-civilian-car-in-gaza-city/32300120",
+        "https://www.instagram.com/p/DdrABgrNwnb/?e=fe5c1f98-a2cc-42be-a1bc-2705d7fcc6bd&g=5"
+      ],
+      "object_id": 4429
+    },
+    {
+      "id": "IPIN4096",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-24T00:00:00Z",
+      "incident_date_text": "2026-09-24",
+      "location": "Al-Zawayda",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.4325, 34.3483",
+      "latitude": 31.4325,
+      "longitude": 34.3483,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "5 – Graphic",
+      "description": "Content shows a destroyed vehicle and at least one adult casualty.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/DdqocGONd-Z/?e=1ff6a297-70e1-4553-a5a6-55aa973d8b4a&g=5",
+        "https://www.facebook.com/azizkhalil00/posts/pfbid0VD3aKm67XGJgZ2SvRofN4Z3cZbyP6aBpmhoXbXrR739y77EQ6PmA3gEM7bXtkKpMl"
+      ],
+      "object_id": 4428
+    },
+    {
+      "id": "IPIN4093",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-22T00:00:00Z",
+      "incident_date_text": "2026-09-22",
+      "location": "Zawtar al-Sharqiyah",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.3206000000, 35.4673",
+      "latitude": 33.3206,
+      "longitude": 35.4673,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to residential buildings",
+      "category": "Damage to residential buildings involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows smoke billowing out of a residential building.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/QudsNen/status/2102346237169041656"
+      ],
+      "object_id": 4426
+    },
+    {
+      "id": "IPIN4123",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-18T00:00:00Z",
+      "incident_date_text": "2026-09-18",
+      "location": "Meiss al-Jabal",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.1867, 35.5214",
+      "latitude": 33.1867,
+      "longitude": 35.5214,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to health facilities",
+      "category": "Damage to health facilities involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows an active fire and plumes of grey smoke rising from a small building on the eastern grounds of Meiss al-Jabal Government Hospital.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://fb.watch/v/dCEiHUbHL/",
+        "https://www.facebook.com/reel/1628025032268615",
+        "https://x.com/RaniaKhalek/status/2040479207076089862/photo/1",
+        "https://x.com/trackingisrael/status/2042042644713353482?s=20"
+      ],
+      "object_id": 4439
+    },
+    {
+      "id": "IPIN4109",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-18T00:00:00Z",
+      "incident_date_text": "2026-09-18",
+      "location": "Khirbet al-Fakhit",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.3779, 35.1678",
+      "latitude": 31.3779,
+      "longitude": 35.1678,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to residential buildings",
+      "category": "Damage to residential buildings involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows at least one wheel loader demolishing multiple residential buildings in Khirbet al-Fakhit.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/warfareanalysis/status/2089766618234601504"
+      ],
+      "object_id": 4434
+    },
+    {
+      "id": "IPIN4089",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-15T00:00:00Z",
+      "incident_date_text": "2026-09-15",
+      "location": "Jabalia",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5371, 34.4788",
+      "latitude": 31.5371,
+      "longitude": 34.4788,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "4 – Severe",
+      "description": "Content shows a damaged vehicle and at least one adult casualty on al-Saftawi Street.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FF5500; font-size:1.5em;'>●</span> Severe",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.anadoluimages.com/p/one-killed-in-israeli-strike-targeting-civilian-vehicle-in-gaza/32259107",
+        "https://www.instagram.com/p/DdSM4-HDeXO/?e=7da4b052-ea68-4510-bd9d-336fdeff3288&g=5",
+        "https://www.anadoluimages.com/p/one-killed-in-israeli-strike-targeting-civilian-vehicle-in-gaza/32259105"
+      ],
+      "object_id": 4425
+    },
     {
       "id": "IPIN4081",
       "source": "CIR",
@@ -2554,6 +2988,56 @@
         "https://x.com/joumanakhoury_/status/2097956750154424805?s=20"
       ],
       "object_id": 4408
+    },
+    {
+      "id": "IPIN4066",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-10T00:00:00Z",
+      "incident_date_text": "2026-09-10",
+      "location": "Ali-al Taher Hill",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.3624, 35.5181",
+      "latitude": 33.3624,
+      "longitude": 35.5181,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Aerial footage shows a significantly large controlled explosion on Ali al-Taher Hill.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://t.me/idf_telegram/25112"
+      ],
+      "object_id": 4424
+    },
+    {
+      "id": "IPIN4064",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-10T00:00:00Z",
+      "incident_date_text": "2026-09-10",
+      "location": "Al-Mazra'a al-Qibliya",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "31.9425, 35.152",
+      "latitude": 31.9425,
+      "longitude": 35.152,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows an excavator upturning land.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [],
+      "object_id": 4423
     },
     {
       "id": "IPIN4063",
@@ -2709,6 +3193,34 @@
         "https://x.com/bintjbeilnews/status/2097590622253158427?s=20"
       ],
       "object_id": 4401
+    },
+    {
+      "id": "IPIN4056",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-09T00:00:00Z",
+      "incident_date_text": "2026-09-09",
+      "location": "Zebdine",
+      "location_zone": "Lebanon",
+      "coordinates_text": "33.3791, 35.4567",
+      "latitude": 33.3791,
+      "longitude": 35.4567,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Content shows a motorcycle ablaze on a main road.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [
+        "https://x.com/Ahmadhamieh313/status/2097641797145055579?s=20",
+        "https://x.com/fouadkhreiss/status/2097644088598147305?s=20",
+        "https://x.com/Ahmadhamieh313/status/2097641173489774907?s=20"
+      ],
+      "object_id": 4422
     },
     {
       "id": "IPIN4077",
@@ -2870,6 +3382,30 @@
       "object_id": 4412
     },
     {
+      "id": "IPIN4095",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-04T00:00:00Z",
+      "incident_date_text": "2026-09-04",
+      "location": "Al-Mughayyir",
+      "location_zone": "OPT - West Bank",
+      "coordinates_text": "32.0178000000, 35.3391",
+      "latitude": 32.0178,
+      "longitude": 35.3391,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "1 – None",
+      "description": "Footage shows tear gas appearing to be fired in the direction of vehicles along Route 5049.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "",
+      "links": [],
+      "object_id": 4427
+    },
+    {
       "id": "IPIN4054",
       "source": "CIR",
       "source_name": "Centre for Information Resilience",
@@ -2977,6 +3513,61 @@
       "object_id": 4396
     },
     {
+      "id": "IPIN4028",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-01T00:00:00Z",
+      "incident_date_text": "2026-09-01",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5185, 34.44",
+      "latitude": 31.5185,
+      "longitude": 34.44,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "3 – Moderate",
+      "description": "Footage shows a destroyed vehicle and at least two casualties after audible explosions on Victor Hugo Street.",
+      "casualties": "Yes",
+      "minor_casualties": "Yes",
+      "graphic_warning": "<span style='color:#FFAA00; font-size:1.5em;'>●</span> Moderate",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.anadoluimages.com/p/4-palestinians-killed-in-fresh-israeli-attacks-in-gaza-despite-ceasefire/32206859"
+      ],
+      "object_id": 4421
+    },
+    {
+      "id": "IPIN4027",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-09-01T00:00:00Z",
+      "incident_date_text": "2026-09-01",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5179, 34.4381",
+      "latitude": 31.5179,
+      "longitude": 34.4381,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "4 – Severe",
+      "description": "Footage shows an armed individual firing from the rear of a van and at least four casualties in the south Rimal neighbourhood,.",
+      "casualties": "Yes",
+      "minor_casualties": "Yes",
+      "graphic_warning": "<span style='color:#FF5500; font-size:1.5em;'>●</span> Severe",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/DcvyvI3u0na/",
+        "https://www.instagram.com/p/DcvuC4moh1i/?e=e1103adb-d06c-48ef-955a-f9626d3a0c6c&g=5",
+        "https://www.instagram.com/p/DcvO9oCM4WI/?e=180c3759-2a10-431c-9323-8a1aba064a4d&g=5",
+        "https://www.instagram.com/p/DcvsXUHoHoz/?hl=en"
+      ],
+      "object_id": 4420
+    },
+    {
       "id": "IPIN4025",
       "source": "CIR",
       "source_name": "Centre for Information Resilience",
@@ -3051,6 +3642,32 @@
         "https://x.com/cbonneauimages/status/2093741001458274590?s=20"
       ],
       "object_id": 4391
+    },
+    {
+      "id": "IPIN4016",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-08-27T00:00:00Z",
+      "incident_date_text": "2026-08-27",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5123, 34.4457",
+      "latitude": 31.5123,
+      "longitude": 34.4457,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to vehicles",
+      "category": "Damage to vehicles involving casualties or significant impact",
+      "violence": "5 – Graphic",
+      "description": "Footage shows damaged temporary shelters and one casualty of an unknown age on Gamal Abdel Nasser Street.",
+      "casualties": "Yes",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/Dci_b5-MZma/"
+      ],
+      "object_id": 4419
     },
     {
       "id": "IPIN4011",
@@ -3412,6 +4029,30 @@
       "ceasefire_monitoring": "",
       "links": [],
       "object_id": 4381
+    },
+    {
+      "id": "IPIN3966",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-08-12T00:00:00Z",
+      "incident_date_text": "2026-08-12",
+      "location": "Zawtar al-Sharqiyah",
+      "location_zone": "Lebanon - Southern Border",
+      "coordinates_text": "33.3258, 35.476",
+      "latitude": 33.3258,
+      "longitude": 35.476,
+      "main_category": "<span style='color:#8c1af5; font-size:1.5em;'>●</span> Damage",
+      "sub_category": "Damage to education facilities",
+      "category": "Damage to education facilities involving casualties or significant impact",
+      "violence": "1 – None",
+      "description": "Footage shows a large pile of rubble and smoke rising from the site of Sheikh Naim Mahdi school. Analysis of low-resolution satellite imagery shows the buildings were destroyed between 7 August 2026 and 12 August 2026.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#C3FF89; font-size:1.5em;'>●</span> None",
+      "ceasefire_monitoring": "Lebanon Apr 2026 ceasefire",
+      "links": [],
+      "object_id": 4417
     },
     {
       "id": "IPIN4101",
@@ -3836,6 +4477,33 @@
         "https://x.com/ShehabAgency/status/2082740116443808005"
       ],
       "object_id": 4350
+    },
+    {
+      "id": "IPIN4106",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-07-29T00:00:00Z",
+      "incident_date_text": "2026-07-29",
+      "location": "Gaza City",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.5207000000, 34.4456",
+      "latitude": 31.5207,
+      "longitude": 34.4456,
+      "main_category": "<span style='color:#ffff00; font-size:1.5em;'>●</span> Violence",
+      "sub_category": "Use of force & degrading treatment",
+      "category": "Use of force against unarmed persons or degrading treatment",
+      "violence": "5 – Graphic",
+      "description": "Footage shows at least three casualties on Ahmed Abd al-Azez Street.",
+      "casualties": "Yes",
+      "minor_casualties": "Yes",
+      "graphic_warning": "<span style='color:#AA0000; font-size:1.5em;'>●</span> Graphic",
+      "ceasefire_monitoring": "Gaza Oct 25 ceasefire",
+      "links": [
+        "https://www.instagram.com/p/DbYdoJrtvax/",
+        "https://www.instagram.com/p/DbYcNoCIFHW/"
+      ],
+      "object_id": 4431
     },
     {
       "id": "IPIN3920",
@@ -5030,6 +5698,32 @@
       "ceasefire_monitoring": "",
       "links": [],
       "object_id": 4319
+    },
+    {
+      "id": "IPIN3975",
+      "source": "CIR",
+      "source_name": "Centre for Information Resilience",
+      "source_layer": "Indigo_Incidents_Layer",
+      "date": "2026-04-30T00:00:00Z",
+      "incident_date_text": "2026-04-30",
+      "location": "Khan Younis",
+      "location_zone": "OPT - Gaza Strip",
+      "coordinates_text": "31.3264, 34.2895",
+      "latitude": 31.3264,
+      "longitude": 34.2895,
+      "main_category": "<span style='color:#00ffff; font-size:1.5em;'>●</span> Other",
+      "sub_category": "Other incidents",
+      "category": "Other incidents causing casualties or significant impact",
+      "violence": "2 – Mild",
+      "description": "Footage shows what appears to be an off-camera explosion, with debris flying into the air followed by a cloud of dust and smoke floating into view.",
+      "casualties": "No",
+      "minor_casualties": "No",
+      "graphic_warning": "<span style='color:#FBFB7D; font-size:1.5em;'>●</span> Mild",
+      "ceasefire_monitoring": "",
+      "links": [
+        "https://x.com/ME_Observer_/status/2049861327997325402"
+      ],
+      "object_id": 4418
     },
     {
       "id": "IPIN3841",
