@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-10-31 12:34 UTC",
+    "updated": "2026-10-31 18:35 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-10-25",
     "period_end": "2026-10-31",
-    "total_events": 111,
-    "total_risk": 97.43,
-    "normalized_risk_score": 39.0,
+    "total_events": 110,
+    "total_risk": 103.34,
+    "normalized_risk_score": 41.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 20,
+    "military": 21,
     "security": 5,
-    "political": 35,
-    "other": 51
+    "political": 36,
+    "other": 48
   },
   "source_counts": {
-    "news": 105,
-    "isw": 6
+    "news": 108,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 32.7
+      "risk": 31.7
     },
     {
       "name": "Iran",
-      "risk": 12.39
+      "risk": 17.89
     },
     {
       "name": "Saudi Arabia",
-      "risk": 12.15
+      "risk": 13.35
     },
     {
       "name": "Yemen",
-      "risk": 9.15
+      "risk": 9.65
     },
     {
       "name": "Syria",
-      "risk": 4.95
+      "risk": 4.65
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-10-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iranian envoys meet Qatari mediators as threat looms of US strikes after midterms - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOODBHZGo0TEhURWc2Rm9nLUJjaF9Hb09YLUpnU3JlTWJ0OHJKd3p0dFZEYWdpYUNPVlNJdFJoYXhGOVdOX29rdHhjQ2F0c2E2VjJRQndHcEtSY1JIdEFzTkJJd3RKX2lKYWxRMnRQYjZvVnpxNnJQTlBmUFY5TWMzZTJ4akRuS1pKNExQY2lCQTAzRVlWOG4wYnZRVV9tRWJQdDJKQ0owZVdZUS1ZQmZYbTlMR0xxbF9uZ3ZvWkRNNDJtX0JNclZhLQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iranian official says US attacked fishing boats off Qeshm Island, state media reports - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONll1eGZDNWJMVXFsdzlXTEs4WnlXRGJONjZ4eUQ1eGlaWGs5bVB0SnR6cUlhd1U0ZHl1bUxpM0ItUUl3cEdxdEhjTHBfZHZIc3ZQY2xMM2g1eGNkbVNfanFmVFY4R0JUeFVtb0pyb3JzSllCTG05S19HdkVzVXFTVlRaaDZidS01UVJ5SVpvUC00SlNpNUxOZXIyTnFaMGVNMmJoOWpCZ1RKRWxqam9UbG9Yb1pYWERLTkR0OG0xOE9Vc0c1U0lvbGNQZzI"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-10-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Are Houthis using Russian satellites as Saudi Arabia fends off strikes? - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2JnM09TN0huWnRSdGZZMmtwLW51Q1lCM3lBWU1fMUl1YlR2Y203ckZKekRZREM5akNOMmpYTEo1VzFzQkItQmRxb0RxMHZnWGdpekdxNnZCdTVwR196NDJIekRjX00tYjlHVDlwcjVaRVh4ZjNJYTA4UTh0RWc5ZGM4QUtaQW1vVl81YUFpOHQ2dFBCUjFwaHR1c1h5VS0tTC0wRE1kNUXSAa4BQVVfeXFMTTNRV2V3eWthVkMtZTMzdHRIc2hBZ0wwRW1pNDk1MVRMQjg4NGZiSnFGLTJWZ21DWmJaT3A5OWR6aUYwQnlIMTNFUnZTd0Zma3JvSHp6RF9IcFo0cFZlT285RzZLc2NXZzIwVVFJenNWUFhrY3dvUDZReW9iRGFsazcyMGRQOEhnN0kzZTNvb3RfWmR6cGhxbVE0cE1EOGRpdnFOb1d4bWdHSHdURHVR"
+    },
     {
       "score": 2.7,
       "date": "2026-10-30",
@@ -109,33 +136,6 @@
       "title": "What can a global strike of dockworkers achieve for Gaza? - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNG1BYzB1Q0VNUWQwNUpMRjJhYzNPMzZvck41c0ZYRXpKZldYUVZJZVJKNjk4NGlFY19fdGlsOTdXcUY5dHhHTjhBRHFmT2o2SFYzdVAzMi1hblZHTjh5Q0Q1RzdYTTczMTh2a0FLcjYzeHhGbVVuNXVhS09URzNmSGVNV0Ixak5UVXlGTkZRaWMxUUd3Zm42Vk9TWDBKRWlZUk9UadIBqgFBVV95cUxPd2Mydm1jUXJyUFFTQkpVWnNDWl82QTJzV1FVUDRqX2dyaWhTeWtwZ1BsdXhGRFVJSXZ5RzhEY2hXSUdKalFHbU9lakowbG9kRFZPQ212QzN5d3hHaHQ2eFBYT0pNanVKckFmOVluLW5VRVhtd2hxNmk2YThjenB3UWpLVHJoaFZxT0ZLc0stVUdtRnJkcTYzYTRKMmkxVGFhZk5OdkdMRlY4Zw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdTdkdmZXbFBHWno1WERBemlBX0tpX0lLaDlVUExXWGh6ZjlWSzBZYWYwc3RZTG1vb0ptREw5Nk8tcDFLVGJ0UmU0MzBEVW9hRnFHRWZiOU5SakNDQjEwYUp0aVFZcjc2clhraFNSZ09iLW5Md3V6MkpaSXZBcnoxdUJOVVZBLTJoQThnc0RvZkVEdFZ6WEJlakNwQXlFak5peWhfQ2h6dFdoV2traHgtZU1FN253Z0l0LU9V"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Egyptian man who fire-bombed pro-Israel rally in Colorado pleads guilty to federal hate crimes - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUW04WnB6UjFyRTM0Uzl2LWxrVmx5TFR6dWMxVWhuZFdwNmNGZWdLRmlnSkZRLW1RcTI5UWh4RFVjbmJTRlRTVDlsS1pNWkpZQ3RUZjRTV21tN2doQW9OU1VUTUdhWWRHcjNMMW9MUVFaN2ZzOUtVb2p2ZkdyTE9hcl9wR2JBZHBzVXF4WnJSYk1BMXVhdjVNYnVjM3o4Z0plZGZJeG04TkotMk9kU3k1TWM5WHFoUEE2UEtfaU1GUjNBdC1HS2xIXw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-29",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli settlers savagely attack journalists in occupied West Bank - Al Jazeera",
-      "location": "West Bank",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSWRaTlBhcWpJOE9kT2N5aTF5NXM3NXRJbG9zMVcxRW9HOVRqcUFsLXBQMVpvUGJXbHc0Wm5rZlo4MTFzRWhWRUZyWnZNOVh3QTNQaEV0RWpnWnhlVVBKWThGY1FUOVRENzJHejdsbVIxNUFzaExhTlo5cTQ3QVNSdkJFVUpMalF1MHc1X045ejYweHk2THV6blpWTEtGanZQTG44dDFNTEpibnNua2VPMWtRazVOTXRkQkHSAb8BQVVfeXFMUEl0U0FqSU9tRFZjV2cwLTh4dm8xQzRGYTV3ejZVQjhLSDFBbFV0OFJhMFRsd3c2bUxjUWZVOG5JSWpNLS1lRzU5Y0w2M3dvMElmLURVSnJlVkZabTJjNWZ6NHF4MEtDamNldHVfTEU4Ull4OTk0LXJ2QW5VLS03ZWFQNUZVUVhtYWJvS0NxalpiUlVjZGlHRGFKRlhDSUoxWE1fRWdKMmdQVWg1ZDVNdFJGLTVkZm9XNENHazM5T0k"
     }
   ]
 }
