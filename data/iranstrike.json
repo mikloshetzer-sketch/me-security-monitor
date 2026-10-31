@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T08:54:49Z",
+  "generated_at": "2026-10-31T15:20:45Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 809,
+    "events_endpoint_records": 811,
     "feed_event_records": 250,
-    "normalized_events": 1865,
+    "normalized_events": 1867,
     "map_visualizable_events": 271,
-    "non_mappable_events": 1594,
-    "developments": 2
+    "non_mappable_events": 1596,
+    "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1865,
+      "total_events": 1867,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-31T00:03:58Z",
+      "latest_event_date": "2026-10-31T13:14:01Z",
       "geocoded_events": 271,
       "geocoded_share": 14.5,
       "top_category": "infrastructure",
@@ -73,18 +73,18 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 54,
-        "previous": 74,
-        "delta": -20,
-        "percent_change": -27.0,
+        "current": 51,
+        "previous": 77,
+        "delta": -26,
+        "percent_change": -33.8,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 339,
-        "previous": 401,
-        "delta": -62,
-        "percent_change": -15.5,
-        "direction": "decrease"
+        "current": 340,
+        "previous": 366,
+        "delta": -26,
+        "percent_change": -7.1,
+        "direction": "stable"
       }
     },
     "daily_trend": [
@@ -806,14 +806,14 @@
       },
       {
         "date": "2026-10-31",
-        "count": 1
+        "count": 3
       }
     ],
     "category_counts": {
-      "infrastructure": 525,
+      "infrastructure": 526,
       "missile": 422,
       "strike": 275,
-      "drone": 216,
+      "drone": 217,
       "airstrike": 147,
       "movement": 106,
       "explosion": 73,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 965,
+      "medium": 967,
       "high": 592,
       "low": 297,
       "critical": 11
     },
     "attacker_counts": {
-      "unknown": 1233,
+      "unknown": 1235,
       "iran": 391,
       "israel": 204,
       "usa": 37
@@ -842,7 +842,7 @@
       },
       {
         "name": "Iran",
-        "count": 380
+        "count": 381
       },
       {
         "name": "Jordan",
@@ -850,7 +850,7 @@
       },
       {
         "name": "Lebanon",
-        "count": 118
+        "count": 119
       },
       {
         "name": "Persian Gulf",
@@ -904,11 +904,11 @@
       },
       {
         "name": "Iran",
-        "count": 509
+        "count": 510
       },
       {
         "name": "Lebanon",
-        "count": 149
+        "count": 150
       },
       {
         "name": "Jordan",
@@ -945,34 +945,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11183,
+    "totalCount": 11185,
     "spotlight": {
       "event": {
-        "id": "2pmkhx54pnq00",
-        "timestamp": "2026-10-31T00:03:58+00:00",
-        "location": "IRN",
-        "origin": "USA",
+        "id": "7k6hh9f7xec",
+        "timestamp": "2026-10-31T13:14:01+00:00",
+        "location": "LBN",
+        "origin": "ISR",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "high",
-        "description": "MS NOW, citing three Gulf officials, reports U.S. briefed Gulf allies to prepare for a short, intense round of strikes on Iran as soon as November 4; Gulf states may push back on use of U.S. bases",
-        "descriptionHe": "MS NOW, בציטוט שלושה גורמים מהמפרץ, מדווח כי ארה״ב עדכנה בעלי ברית במפרץ להתכונן לסבב תקיפות קצר ואינטנסיבי נגד איראן החל מ-4 בנובמבר; מדינות המפרץ עשויות להתנגד לשימוש בבסיסים אמריקאיים",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/86374"
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli kamikaze drone explodes over a building in Mayfadoun village, southern Lebanon; per Lebanese sources the target was broadcast and internet antennas",
+        "descriptionHe": "רחפן נפץ ישראלי התפוצץ מעל מבנה בכפר מיפדון שבדרום לבנון; לפי מקורות לבנוניים המטרה היא אנטנות שידור ואינטרנט",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/132873"
       },
-      "headline": "U.S. Prepares Imminent Strike Campaign Against Iran",
-      "headlineHe": "ארה\"ב מתכוננת לקמפיין תקיפות קרוב נגד איראן",
-      "summary": "U.S. officials are said to have warned Gulf partners of a potential military response to Iranian actions, with timing possibly as early as November 4.",
-      "summaryHe": "פקידים אמריקאים כביכול הזהירו שותפים בחליג מפני תגובה צבאית אפשרית לפעולות איראניות, עם אפשרות של תקיפות בתאריך מוקדם כמו ה-4 בנובמבר.",
-      "pickedAt": "2026-10-31T02:15:25.942Z",
+      "headline": "Israeli drone targets broadcast antennas in southern Lebanon",
+      "headlineHe": "כלי טיס ישראלי חובט באנטנות שידור בדרום לבנון",
+      "summary": "The strike on infrastructure in Mayfadoun follows weeks of escalating cross-border operations between Israel and Hezbollah-affiliated targets.",
+      "summaryHe": "התקיפה על התשתיות במיפדון באה בעקבות שבועות של הסלמה בפעולות חוצות גבול בין ישראל ויעדים הקשורים לחזבאללה.",
+      "pickedAt": "2026-10-31T13:30:25.284Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-10-31T08:51:17.388Z",
+    "lastUpdated": "2026-10-31T15:18:17.390Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1515,164 +1521,8 @@
     "vitals": {
       "internet": 96,
       "cellular": null,
-      "lastUpdate": "2026-10-31T08:30:14.502Z",
+      "lastUpdate": "2026-10-31T15:00:14.647Z",
       "internetHistory": [
-        {
-          "t": "2026-10-30T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T08:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T08:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T09:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T10:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T10:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T11:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T11:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T11:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T12:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T12:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T12:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T12:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T12:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T13:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T13:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T13:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T13:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T13:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T13:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T14:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-30T14:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T14:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T14:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T14:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-30T14:50:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-10-30T15:00:00.000Z",
           "v": 96
@@ -2088,30 +1938,90 @@
         {
           "t": "2026-10-31T08:10:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-10-31T08:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T08:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T08:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T08:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T09:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T09:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T09:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T10:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T10:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-10-31T10:40:00.000Z",
+          "v": 96
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-10-31T08:30:14.502Z"
+    "lastUpdated": "2026-10-31T15:00:14.647Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2b1c3",
+      "id": "iranstrike-2pmkhx54pnq00",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-31T00:03:58Z",
       "title": "IranStrike event",
-      "description": "U.S. briefed Gulf allies on imminent strikes against Iran; ops planned for early November",
+      "description": "US reportedly briefing Gulf allies on imminent Iran strikes planned for early November",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
+      "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iefed gulf allies on imminent strikes against iran;",
+      "attacker_evidence": "efing gulf allies on imminent iran strikes planned for early november ארה\"ב דיווחת לבעלות הב",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2124,9 +2034,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2b1c3",
-        "text": "U.S. briefed Gulf allies on imminent strikes against Iran; ops planned for early November",
-        "textHe": "ארה״ב הביאה בפני בעלי בריתה בתוך המפרץ על תקיפות קרובות לאירן; המבצע מתוכנן לתחילת נובמבר",
+        "id": "2pmkhx54pnq00",
+        "text": "US reportedly briefing Gulf allies on imminent Iran strikes planned for early November",
+        "textHe": "ארה\"ב דיווחת לבעלות הברית בתוך המפרץ על מתקפות תכננות על איראן בתחילת נובמבר",
         "severity": "high",
         "timestamp": "2026-10-31T00:03:58+00:00",
         "entityIds": [
@@ -2140,24 +2050,24 @@
       }
     },
     {
-      "id": "iranstrike-c5d8e2f9",
+      "id": "iranstrike-7k6hh9f7xec",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-30T11:50:18Z",
+      "date": "2026-10-31T13:14:01Z",
       "title": "IranStrike event",
-      "description": "IDF military Hummer stolen from Julis base; possible infiltration threat under investigation",
+      "description": "Israeli drone strikes broadcast antennas in southern Lebanon village",
       "category": "other",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "israeli drone strikes broadcast antennas in southern lebanon village כל",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2168,22 +2078,163 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c5d8e2f9",
-        "text": "IDF military Hummer stolen from Julis base; possible infiltration threat under investigation",
-        "textHe": "המר צבאי נגנב מבסיס ג׳וליס; חשש להתגנבות או התקפה על מחנות צה״ל",
-        "severity": "low",
-        "timestamp": "2026-10-30T11:50:18+00:00",
+        "id": "7k6hh9f7xec",
+        "text": "Israeli drone strikes broadcast antennas in southern Lebanon village",
+        "textHe": "כלי טיס ישראלי תקף אנטנות שידור בכפר דרומי לבנוני",
+        "severity": "medium",
+        "timestamp": "2026-10-31T13:14:01+00:00",
         "entityIds": [
-          "ISR"
+          "ISR",
+          "LBN"
         ],
         "eventIds": [
-          "33sliu5awk000"
+          "7k6hh9f7xec"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-2i5wt88lz4800",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-10-31T09:53:01Z",
+      "title": "IranStrike event",
+      "description": "IRGC reports US attack on fishing boats off Qeshm Island; 1 injured, 2 missing",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irgc reports us attack on fishing boats off qeshm island;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2i5wt88lz4800",
+        "text": "IRGC reports US attack on fishing boats off Qeshm Island; 1 injured, 2 missing",
+        "textHe": "פקד הספיר: מתקפת ארה\"ב על סירות דיג ליד קשם; פצוע ו-2 נעדרים",
+        "severity": "medium",
+        "timestamp": "2026-10-31T09:53:01+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "2i5wt88lz4800"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-7k6hh9f7xec",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/132873",
+      "date": "2026-10-31T13:14:01Z",
+      "title": "IranStrike event",
+      "description": "Israeli kamikaze drone explodes over a building in Mayfadoun village, southern Lebanon; per Lebanese sources the target was broadcast and internet antennas",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7k6hh9f7xec",
+        "timestamp": "2026-10-31T13:14:01+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli kamikaze drone explodes over a building in Mayfadoun village, southern Lebanon; per Lebanese sources the target was broadcast and internet antennas",
+        "descriptionHe": "רחפן נפץ ישראלי התפוצץ מעל מבנה בכפר מיפדון שבדרום לבנון; לפי מקורות לבנוניים המטרה היא אנטנות שידור ואינטרנט",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/132873"
+      }
+    },
+    {
+      "id": "iranstrike-2i5wt88lz4800",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/132865",
+      "date": "2026-10-31T09:53:01Z",
+      "title": "IranStrike event",
+      "description": "Tasnim (IRGC-affiliated) reports US forces attacked two fishing boats near Qeshm Island, 1 injured and 2 missing; claim not independently verified",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2i5wt88lz4800",
+        "timestamp": "2026-10-31T09:53:01+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Tasnim (IRGC-affiliated) reports US forces attacked two fishing boats near Qeshm Island, 1 injured and 2 missing; claim not independently verified",
+        "descriptionHe": "סוכנות טסנים (המזוהה עם משמרות המהפכה) מדווחת כי כוחות אמריקאים תקפו שתי סירות דיג באזור האי קשם, אדם אחד נפצע ושניים נעדרים; הטענה לא אומתה באופן עצמאי",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/132865"
+      }
+    },
     {
       "id": "iranstrike-2pmkhx54pnq00",
       "source": "IranStrike",
