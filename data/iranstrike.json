@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T02:14:51Z",
+  "generated_at": "2026-11-01T09:21:22Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 811,
+    "events_endpoint_records": 813,
     "feed_event_records": 250,
-    "normalized_events": 1867,
+    "normalized_events": 1869,
     "map_visualizable_events": 271,
-    "non_mappable_events": 1596,
+    "non_mappable_events": 1598,
     "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1867,
+      "total_events": 1869,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-10-31T13:14:01Z",
+      "latest_event_date": "2026-11-01T07:43:27Z",
       "geocoded_events": 271,
       "geocoded_share": 14.5,
       "top_category": "infrastructure",
@@ -74,24 +74,20 @@
     "comparisons": {
       "latest_7_days": {
         "current": 51,
-        "previous": 77,
-        "delta": -26,
-        "percent_change": -33.8,
+        "previous": 69,
+        "delta": -18,
+        "percent_change": -26.1,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 340,
-        "previous": 366,
-        "delta": -26,
-        "percent_change": -7.1,
+        "current": 336,
+        "previous": 365,
+        "delta": -29,
+        "percent_change": -7.9,
         "direction": "stable"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-05-05",
-        "count": 0
-      },
       {
         "date": "2026-05-06",
         "count": 0
@@ -807,10 +803,14 @@
       {
         "date": "2026-10-31",
         "count": 3
+      },
+      {
+        "date": "2026-11-01",
+        "count": 2
       }
     ],
     "category_counts": {
-      "infrastructure": 526,
+      "infrastructure": 528,
       "missile": 422,
       "strike": 275,
       "drone": 217,
@@ -825,13 +825,13 @@
     },
     "severity_counts": {
       "medium": 967,
-      "high": 592,
+      "high": 594,
       "low": 297,
       "critical": 11
     },
     "attacker_counts": {
       "unknown": 1235,
-      "iran": 391,
+      "iran": 393,
       "israel": 204,
       "usa": 37
     },
@@ -842,7 +842,7 @@
       },
       {
         "name": "Iran",
-        "count": 381
+        "count": 383
       },
       {
         "name": "Jordan",
@@ -904,7 +904,7 @@
       },
       {
         "name": "Iran",
-        "count": 510
+        "count": 512
       },
       {
         "name": "Lebanon",
@@ -945,40 +945,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11185,
+    "totalCount": 11187,
     "spotlight": {
       "event": {
-        "id": "7k6hh9f7xec",
-        "timestamp": "2026-10-31T13:14:01+00:00",
-        "location": "LBN",
-        "origin": "ISR",
+        "id": "18i16hbwd1uo0",
+        "timestamp": "2026-11-01T07:43:27+00:00",
+        "location": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Israeli kamikaze drone explodes over a building in Mayfadoun village, southern Lebanon; per Lebanese sources the target was broadcast and internet antennas",
-        "descriptionHe": "רחפן נפץ ישראלי התפוצץ מעל מבנה בכפר מיפדון שבדרום לבנון; לפי מקורות לבנוניים המטרה היא אנטנות שידור ואינטרנט",
-        "source": "abualiexpress",
-        "weapons": [
-          {
-            "type": "drone",
-            "count": 1
-          }
-        ],
-        "sourceUrl": "https://t.me/abualiexpress/132873"
+        "type": "report",
+        "severity": "high",
+        "description": "Reported Trump-Netanyahu phone call discussing possible resumption of military strikes on Iran; no strikes confirmed",
+        "descriptionHe": "דווח על שיחת טלפון בין טראמפ לנתניהו שבה נדונה האפשרות לחידוש תקיפות צבאיות באיראן; אין אישור לתקיפות",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20644"
       },
-      "headline": "Israeli drone strikes Lebanese broadcast antennas in southern village",
-      "headlineHe": "רחפן ישראלי תקף אנטנות שידור בעיירה בדרום לבנון",
-      "summary": "The strike targeted communications infrastructure in Mayfadoun as cross-border tensions persist between Israel and Hezbollah-affiliated positions.",
-      "summaryHe": "התקיפה כוונה לתשתיות תקשורת במיקום הסמוך לחזית ההשפעה של חזבאללה בדרום לבנון.",
-      "pickedAt": "2026-11-01T00:15:25.021Z",
-      "state": "TODAY"
+      "headline": "Trump and Netanyahu discuss resuming major strikes on Iran",
+      "headlineHe": "טראמפ ונתניהו דנו בחידוש תקיפות גדולות בעל איראן",
+      "summary": "The call suggests potential escalation in US-Israel military coordination against Iranian targets following recent exchanges of fire in the region.",
+      "summaryHe": "השיחה מצביעה על הסלמה אפשרית בתיאום צבאי בין ארה\"ב וישראל נגד מטרות איראניות בעקבות חילופי אש אחרונים בעיר.",
+      "pickedAt": "2026-11-01T09:00:25.644Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-01T02:12:17.543Z",
+    "lastUpdated": "2026-11-01T09:21:17.382Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1519,190 +1512,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 95,
+      "internet": 96,
       "cellular": null,
-      "lastUpdate": "2026-11-01T01:30:17.295Z",
+      "lastUpdate": "2026-11-01T09:00:16.477Z",
       "internetHistory": [
-        {
-          "t": "2026-10-31T01:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T01:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T01:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T02:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T02:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T02:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T02:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T02:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T02:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T03:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T03:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T03:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T03:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T03:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T03:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T04:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T04:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-10-31T04:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T04:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T04:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T04:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T05:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T05:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T05:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T05:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T05:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T05:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T06:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T06:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T06:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T06:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T06:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T06:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T07:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T07:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T07:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-10-31T07:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T08:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-10-31T08:50:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-10-31T09:00:00.000Z",
           "v": 96
@@ -1998,30 +1811,210 @@
         {
           "t": "2026-11-01T01:10:00.000Z",
           "v": 95
+        },
+        {
+          "t": "2026-11-01T01:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T01:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T01:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T01:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T02:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T02:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T02:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T02:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-01T02:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-01T02:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T03:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T03:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T03:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T03:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-01T03:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T03:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T04:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T04:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T04:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T04:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T04:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T04:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T05:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T05:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T05:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T05:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T05:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T05:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T06:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-01T06:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T06:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T06:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T06:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T06:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T07:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T07:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T07:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T07:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T07:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T07:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T08:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T08:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T08:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T08:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-01T08:40:00.000Z",
+          "v": 96
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-01T01:30:17.295Z"
+    "lastUpdated": "2026-11-01T09:00:16.477Z"
   },
   "developments": [
     {
-      "id": "iranstrike-2pmkhx54pnq00",
+      "id": "iranstrike-a7f3c2e1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-10-31T00:03:58Z",
+      "date": "2026-11-01T07:43:27Z",
       "title": "IranStrike event",
-      "description": "US reportedly briefing Gulf allies on imminent Iran strikes planned for early November",
+      "description": "Trump-Netanyahu discuss possible US strikes on Iran; military options under review",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
+      "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "efing gulf allies on imminent iran strikes planned for early november ארה\"ב דיווחת לבעלות הב",
+      "attacker_evidence": "netanyahu discuss possible us strikes on iran;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2034,23 +2027,25 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2pmkhx54pnq00",
-        "text": "US reportedly briefing Gulf allies on imminent Iran strikes planned for early November",
-        "textHe": "ארה\"ב דיווחת לבעלות הברית בתוך המפרץ על מתקפות תכננות על איראן בתחילת נובמבר",
+        "id": "a7f3c2e1",
+        "text": "Trump-Netanyahu discuss possible US strikes on Iran; military options under review",
+        "textHe": "טראמפ ונתניהו דנו בשביתות אמריקניות אפשריות על איראן; אפשרויות צבאיות בבחינה",
         "severity": "high",
-        "timestamp": "2026-10-31T00:03:58+00:00",
+        "timestamp": "2026-11-01T07:43:27+00:00",
         "entityIds": [
           "USA",
+          "ISR",
           "IRN"
         ],
         "eventIds": [
-          "2pmkhx54pnq00"
+          "18i16hbwd1uo0",
+          "20ix9ityp0000"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-7k6hh9f7xec",
+      "id": "iranstrike-b4e9d5f2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
@@ -2065,7 +2060,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "israeli drone strikes broadcast antennas in southern lebanon village כל",
+      "attacker_evidence": "israeli drone strikes broadcast antennas in southern lebanon village מל",
       "location": "Lebanon",
       "country": "Lebanon",
       "latitude": null,
@@ -2078,9 +2073,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7k6hh9f7xec",
+        "id": "b4e9d5f2",
         "text": "Israeli drone strikes broadcast antennas in southern Lebanon village",
-        "textHe": "כלי טיס ישראלי תקף אנטנות שידור בכפר דרומי לבנוני",
+        "textHe": "מל\"ט ישראלי תקף אנטנות שידור בכפר דרומלבנוני",
         "severity": "medium",
         "timestamp": "2026-10-31T13:14:01+00:00",
         "entityIds": [
@@ -2094,22 +2089,22 @@
       }
     },
     {
-      "id": "iranstrike-2i5wt88lz4800",
+      "id": "iranstrike-c6b1a8f3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-10-31T09:53:01Z",
       "title": "IranStrike event",
-      "description": "IRGC reports US attack on fishing boats off Qeshm Island; 1 injured, 2 missing",
+      "description": "Tasnim claims US forces attacked Iranian fishing boats near Qeshm Island; unverified",
       "category": "other",
       "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
+      "attacker": "usa",
+      "attacker_label": "United States",
+      "attacker_color": "#2563eb",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc reports us attack on fishing boats off qeshm island;",
+      "attacker_evidence": "tasnim claims us forces attacked iranian fishing boats near qeshm island;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2122,9 +2117,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2i5wt88lz4800",
-        "text": "IRGC reports US attack on fishing boats off Qeshm Island; 1 injured, 2 missing",
-        "textHe": "פקד הספיר: מתקפת ארה\"ב על סירות דיג ליד קשם; פצוע ו-2 נעדרים",
+        "id": "c6b1a8f3",
+        "text": "Tasnim claims US forces attacked Iranian fishing boats near Qeshm Island; unverified",
+        "textHe": "Tasnim טוענת: כוחות אמריקניים תקפו סירות דיג איראניות ליד קיש; לא מאומת",
         "severity": "medium",
         "timestamp": "2026-10-31T09:53:01+00:00",
         "entityIds": [
@@ -2139,6 +2134,95 @@
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-18i16hbwd1uo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20644",
+      "date": "2026-11-01T07:43:27Z",
+      "title": "IranStrike event",
+      "description": "Reported Trump-Netanyahu phone call discussing possible resumption of military strikes on Iran; no strikes confirmed",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "ssible resumption of military strikes on iran;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "18i16hbwd1uo0",
+        "timestamp": "2026-11-01T07:43:27+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Reported Trump-Netanyahu phone call discussing possible resumption of military strikes on Iran; no strikes confirmed",
+        "descriptionHe": "דווח על שיחת טלפון בין טראמפ לנתניהו שבה נדונה האפשרות לחידוש תקיפות צבאיות באיראן; אין אישור לתקיפות",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20644"
+      }
+    },
+    {
+      "id": "iranstrike-20ix9ityp0000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65218",
+      "date": "2026-11-01T06:38:56Z",
+      "title": "IranStrike event",
+      "description": "WSJ reports Netanyahu and Trump spoke by phone amid US preparations to resume strikes on Iran; Trump briefed by senior military officials on options for renewed major combat operations",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "mid us preparations to resume strikes on iran;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "20ix9ityp0000",
+        "timestamp": "2026-11-01T06:38:56+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "WSJ reports Netanyahu and Trump spoke by phone amid US preparations to resume strikes on Iran; Trump briefed by senior military officials on options for renewed major combat operations",
+        "descriptionHe": "לפי ה\"וול סטריט ג'ורנל\", נתניהו וטראמפ שוחחו בטלפון על רקע הכנות ארה\"ב לחידוש התקיפות באיראן, לאחר שטראמפ תודרך על ידי בכירי הצבא על אפשרויות לחידוש לחימה משמעותית",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65218"
+      }
+    },
     {
       "id": "iranstrike-7k6hh9f7xec",
       "source": "IranStrike",
