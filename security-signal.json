@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-01 13:28 UTC",
+    "updated": "2026-11-01 18:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,30 @@
   "summary": {
     "period_start": "2026-10-26",
     "period_end": "2026-11-01",
-    "total_events": 101,
-    "total_risk": 84.46,
-    "normalized_risk_score": 33.8,
+    "total_events": 98,
+    "total_risk": 89.41,
+    "normalized_risk_score": 35.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 19,
-    "security": 4,
+    "military": 21,
+    "security": 3,
     "political": 27,
-    "other": 51
+    "other": 47
   },
   "source_counts": {
-    "news": 99,
+    "news": 96,
     "isw": 2
   },
   "top_locations": [
     {
       "name": "Israel",
-      "risk": 22.55
+      "risk": 21.05
     },
     {
       "name": "Iran",
-      "risk": 15.67
+      "risk": 15.32
     },
     {
       "name": "Saudi Arabia",
@@ -42,11 +42,29 @@
       "risk": 10.15
     },
     {
-      "name": "Syria",
-      "risk": 4.05
+      "name": "Gaza Strip",
+      "risk": 9.8
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill eight people in Gaza - medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPd2E3NlZWbHB1MUtZdG5sLXBXci1sVnQtMWxWYk1CM1EzTUtfMXJiWDZYRlIzN09BWlBuaUVXOThueVFEdF9nMXdVaUpobUNCSXM3dUZWQVZjN2MwZ19pQUN6cDUtbnE2Rm1PX3BwYmhTWWo4TGRqbG0xSmhKQVhWYTlVNkFpTFdsUFhmcDlVaFI5cWZRYk1jcFRoU3RIZUV2QTRBdm5B"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-01",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes in Gaza kill eight including child, hospitals say",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cmqln14rrzxvo?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 2.7,
       "date": "2026-10-31",
@@ -118,24 +136,6 @@
       "title": "Saudi Arabia reports interception of Houthi drone targeting Mecca - Al Jazeera",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV3NIQ2tYTXA2UkVQUUh3UGxESzR2R1JnSVhjQjAtQ01PTm5mckJQcjZuSDA1Q3pmeWlnVUhlbThSaEhKRk9uWWdqUW1qRWlzajhDbHhIbU12NmJPNzA1WXNnWllQMkduX01GUXNvNlV2UEUxckZhek5NLWJNR1VEYjB2eXN6TGhLdjRBdU9XVUZHNnNTa1JDU2FyN3dOUmEzbEFaRmNPLXRhakXSAbABQVVfeXFMUFBWdEVMYlpIblRxQ3lVOWFPRnVTa1FwQ1pPTXFuZmV6ODEzNmd1Y0VFNVF4MHVhWU1kRWl6dHl0N2xWNXR5VmRrVmpRelZHeWZtRGZzcWlsUUhnd28yMXlpcFc2dnJQVHJoSkh4bzNwQ3FZeXBybW5EdHl5WjB6ajlkVUhxQVdJMzJwa0hEZkJrMDM5Ty1zQmU3cEZ2S08wWjFLeGdRZHBvblAxVWE0Vmc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "‘Need a Plan B’: Yemenis in Aden prepare for another war as missiles fall - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNanJCUjZhRks2bGFTc0ZOM2RHN3p4RHNKZUtvV1NXbklHbTdneXV0REQ3alR2ZmYzZzVuWldBOXFLYTBTSEJCRE9FbHRuSUtXWGRpSW95dENra19UVFd5ajJrT1RVWmgzeTZsbTNUZzlNQmJMZjhOWXpsSWxCQUxXS3A4OEtmSHJFR0ZfcU9mcUM1R203bUQtXzR2M0lOekV1MDAtZHNNS1pwa0JLekhnYVpR0gG3AUFVX3lxTE5IWXFSbWVBZDRxdmJkOXBfODRqd2Q3dWcxYk9KZkR6UWJUMU43OFNuaF9NU3l2MHlQR1BLR2s4akRtdllsSms3SGRIMXIyRHcwZDZIRklsZnlFb01wX1pDY1pwSW54Q0tpX29VbmpiY3hxby1FeXBfaV84YXU1VUJkUEdNUm5keTVXbDBmdkRMWkMwZE9YTWdDRGZET2VrQUt5TDFiTnFLRmhaMUQ0YkE1Y3RFTm5qTQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "What can a global strike of dockworkers achieve for Gaza? - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNG1BYzB1Q0VNUWQwNUpMRjJhYzNPMzZvck41c0ZYRXpKZldYUVZJZVJKNjk4NGlFY19fdGlsOTdXcUY5dHhHTjhBRHFmT2o2SFYzdVAzMi1hblZHTjh5Q0Q1RzdYTTczMTh2a0FLcjYzeHhGbVVuNXVhS09URzNmSGVNV0Ixak5UVXlGTkZRaWMxUUd3Zm42Vk9TWDBKRWlZUk9UadIBqgFBVV95cUxPd2Mydm1jUXJyUFFTQkpVWnNDWl82QTJzV1FVUDRqX2dyaWhTeWtwZ1BsdXhGRFVJSXZ5RzhEY2hXSUdKalFHbU9lakowbG9kRFZPQ212QzN5d3hHaHQ2eFBYT0pNanVKckFmOVluLW5VRVhtd2hxNmk2YThjenB3UWpLVHJoaFZxT0ZLc0stVUdtRnJkcTYzYTRKMmkxVGFhZk5OdkdMRlY4Zw"
     }
   ]
 }
