@@ -1,54 +1,63 @@
 {
   "meta": {
-    "updated": "2026-11-01 23:38 UTC",
+    "updated": "2026-11-02 06:08 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-10-26",
-    "period_end": "2026-11-01",
-    "total_events": 99,
-    "total_risk": 87.41,
-    "normalized_risk_score": 35.0,
+    "period_start": "2026-10-27",
+    "period_end": "2026-11-02",
+    "total_events": 98,
+    "total_risk": 81.57,
+    "normalized_risk_score": 32.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 20,
+    "military": 21,
     "security": 3,
-    "political": 26,
-    "other": 50
+    "political": 27,
+    "other": 47
   },
   "source_counts": {
-    "news": 96,
+    "news": 95,
     "isw": 3
   },
   "top_locations": [
     {
-      "name": "Israel",
-      "risk": 21.55
-    },
-    {
       "name": "Iran",
-      "risk": 16.42
+      "risk": 18.67
     },
     {
-      "name": "Yemen",
-      "risk": 10.15
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 8.9
+      "name": "Israel",
+      "risk": 17.75
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.8
+      "risk": 10.45
+    },
+    {
+      "name": "Yemen",
+      "risk": 8.85
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 7.9
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran killed her teenage daughter - now she is facing up to the regime",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c3qjn8117kwjo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
       "date": "2026-11-01",
       "category": "military",
       "source_type": "news",
@@ -57,7 +66,7 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPd2E3NlZWbHB1MUtZdG5sLXBXci1sVnQtMWxWYk1CM1EzTUtfMXJiWDZYRlIzN09BWlBuaUVXOThueVFEdF9nMXdVaUpobUNCSXM3dUZWQVZjN2MwZ19pQUN6cDUtbnE2Rm1PX3BwYmhTWWo4TGRqbG0xSmhKQVhWYTlVNkFpTFdsUFhmcDlVaFI5cWZRYk1jcFRoU3RIZUV2QTRBdm5B"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-01",
       "category": "military",
       "source_type": "news",
@@ -66,7 +75,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cmqln14rrzxvo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-31",
       "category": "military",
       "source_type": "news",
@@ -75,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOODBHZGo0TEhURWc2Rm9nLUJjaF9Hb09YLUpnU3JlTWJ0OHJKd3p0dFZEYWdpYUNPVlNJdFJoYXhGOVdOX29rdHhjQ2F0c2E2VjJRQndHcEtSY1JIdEFzTkJJd3RKX2lKYWxRMnRQYjZvVnpxNnJQTlBmUFY5TWMzZTJ4akRuS1pKNExQY2lCQTAzRVlWOG4wYnZRVV9tRWJQdDJKQ0owZVdZUS1ZQmZYbTlMR0xxbF9uZ3ZvWkRNNDJtX0JNclZhLQ"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-10-31",
       "category": "military",
       "source_type": "news",
@@ -85,6 +94,15 @@
     },
     {
       "score": 2.4,
+      "date": "2026-10-31",
+      "category": "military",
+      "source_type": "news",
+      "title": "Are Houthis using Russian satellites as Saudi Arabia fends off strikes? - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2JnM09TN0huWnRSdGZZMmtwLW51Q1lCM3lBWU1fMUl1YlR2Y203ckZKekRZREM5akNOMmpYTEo1VzFzQkItQmRxb0RxMHZnWGdpekdxNnZCdTVwR196NDJIekRjX00tYjlHVDlwcjVaRVh4ZjNJYTA4UTh0RWc5ZGM4QUtaQW1vVl81YUFpOHQ2dFBCUjFwaHR1c1h5VS0tTC0wRE1kNUXSAa4BQVVfeXFMTTNRV2V3eWthVkMtZTMzdHRIc2hBZ0wwRW1pNDk1MVRMQjg4NGZiSnFGLTJWZ21DWmJaT3A5OWR6aUYwQnlIMTNFUnZTd0Zma3JvSHp6RF9IcFo0cFZlT285RzZLc2NXZzIwVVFJenNWUFhrY3dvUDZReW9iRGFsazcyMGRQOEhnN0kzZTNvb3RfWmR6cGhxbVE0cE1EOGRpdnFOb1d4bWdHSHdURHVR"
+    },
+    {
+      "score": 2.1,
       "date": "2026-10-30",
       "category": "military",
       "source_type": "news",
@@ -93,7 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdTZlcVd4TG9tTWJjN0dRNEZ4enV5NHc1bGpzWnZjSjVwcGhuM3M3V2pERWNoNW9QLVFzTE9uVXhJb1lBOWFmMEhCRVZNeFdZX0ZFR21LcnlTLTRwemdlTzZ2OHlidndqVEJKaXJEMDRuVEo1V0xMVlpwWVF3LWVOTmJuOHAyTG9RTFhhUW9mcXVRR0N2dXJxQVRqdVVQQnZqdHFRdVdiZ1dvVzFrWWhHai1JSFhsdzhVcjlCU05IVXg"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-10-30",
       "category": "military",
       "source_type": "news",
@@ -102,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPanlQaWczZ25iem9Yem9mcmYzRGxNbU1pcmZXVkpFUU5YYk5tWUJMNm1MdWdmUkxaMXQzdHJ3RHY2c1pWMVU4eXhfT3VMcUgzNUpHTUhSUWJvUXdQeDl3UklYUzFLSnNrcHRkd01ldEZSNDBuVjViSUtDTFJVcElQVFl2OGltV1FnX1hZMTFNRkxTTG9NZU9QaVJlZ0tWMXU1Vk1wS3E5TEtvVXF4OGotNWZRVjVwUWtqYjdrbVNsQVlxMTg3NkR4Y1ZqWEM"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-10-30",
       "category": "military",
       "source_type": "news",
@@ -111,31 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTGN2bDJnRlZBUFNOTlVyNkF2Y3BydmxnS002TXB5MHZ6WnVmN1JlajliLXpmQ2hnMk9iejQ5MFZrdDNKU19nRWg2LWpST3ZYVHB4ckZ1Y0JhaFJNU1RaSlpOWGVjZkdreHB4YllHOTdhQzJ3NzJzcEY5LUo1Y1gtTzU2U0x0ejJ0ckFTTHcwbXJCVXdUZnEwNzBDd09uQk9XVG1lVl81MVloZi0yQVJOWS1NQdIBuAFBVV95cUxPUzd5NDgxT3R6MW9xenM1TFFrdlBPandwQkRNaVd2ODFmcF9EeXBCeXpwUERFOHl5WUtfNTVzZFo3eUpDaFFHbEJ3bmRpNFd5SDd6bnBDNGV0UWtxNUI2YzNTNWpObHktMVFPc0pkMGlISVJxb0Vfc0d5UDZZWXVtbXNKYmxBdVQxeUhzT2hraXQ2TzIydWgxWS1qazFEU1RWUzdySWNpbXRGeFZxWE1qZWNqZUh0Sk5y"
     },
     {
-      "score": 2.4,
+      "score": 2.1,
       "date": "2026-10-30",
       "category": "military",
       "source_type": "news",
       "title": "Saudi Arabia reports interception of Houthi drone targeting Mecca - Al Jazeera",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV3NIQ2tYTXA2UkVQUUh3UGxESzR2R1JnSVhjQjAtQ01PTm5mckJQcjZuSDA1Q3pmeWlnVUhlbThSaEhKRk9uWWdqUW1qRWlzajhDbHhIbU12NmJPNzA1WXNnWllQMkduX01GUXNvNlV2UEUxckZhek5NLWJNR1VEYjB2eXN6TGhLdjRBdU9XVUZHNnNTa1JDU2FyN3dOUmEzbEFaRmNPLXRhakXSAbABQVVfeXFMUFBWdEVMYlpIblRxQ3lVOWFPRnVTa1FwQ1pPTXFuZmV6ODEzNmd1Y0VFNVF4MHVhWU1kRWl6dHl0N2xWNXR5VmRrVmpRelZHeWZtRGZzcWlsUUhnd28yMXlpcFc2dnJQVHJoSkh4bzNwQ3FZeXBybW5EdHl5WjB6ajlkVUhxQVdJMzJwa0hEZkJrMDM5Ty1zQmU3cEZ2S08wWjFLeGdRZHBvblAxVWE0Vmc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi forces claim six attacks on Saudi airports, oil facilities - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTEhERlpWem04ZnozTFJCeEcwbmNLVkN6eUtjUFgtdDJnNU1iVFVWWExvTU9WQ09EQ3g0SmJYZ011OWh4TTlUd2pKLURkQUljS3VDNzNmcktLMEZYZTRydklucHl3RF9PeDF1VW5QTlFCbEs0U2ZfbEtqdlpVczB5VTBiUFM0VnZ3Mkl6dVdoZWRvanJCS3VmUW9Ma2hwQ18zbFA3T2lmMU5Hd9IBrwFBVV95cUxNNDBlaUpwVUU2NTFwc0ZhYXdwUmxTa2JjdklXNUVudHZDa25DV29LMUZWa2hRRTBtWml6QTA3Y2ZPNEJOMHo3c2RVSDdYbkNLTzBLbWJXczlBZEY4bWQ3dlZ4amtOOGVtUm90MFpXZWQ2cXZSdk1RNnU0R1BQNWtGRG5YUW5ibVBUa2hPSHA0eEVYVGRNS2Nta3V3bE1mTU4zNllDOEV1N2J6MWd2ODlv"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "‘Need a Plan B’: Yemenis in Aden prepare for another war as missiles fall - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNanJCUjZhRks2bGFTc0ZOM2RHN3p4RHNKZUtvV1NXbklHbTdneXV0REQ3alR2ZmYzZzVuWldBOXFLYTBTSEJCRE9FbHRuSUtXWGRpSW95dENra19UVFd5ajJrT1RVWmgzeTZsbTNUZzlNQmJMZjhOWXpsSWxCQUxXS3A4OEtmSHJFR0ZfcU9mcUM1R203bUQtXzR2M0lOekV1MDAtZHNNS1pwa0JLekhnYVpR0gG3AUFVX3lxTE5IWXFSbWVBZDRxdmJkOXBfODRqd2Q3dWcxYk9KZkR6UWJUMU43OFNuaF9NU3l2MHlQR1BLR2s4akRtdllsSms3SGRIMXIyRHcwZDZIRklsZnlFb01wX1pDY1pwSW54Q0tpX29VbmpiY3hxby1FeXBfaV84YXU1VUJkUEdNUm5keTVXbDBmdkRMWkMwZE9YTWdDRGZET2VrQUt5TDFiTnFLRmhaMUQ0YkE1Y3RFTm5qTQ"
     }
   ]
 }
