@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-02 15:58 UTC",
+    "updated": "2026-11-02 23:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,34 @@
   "summary": {
     "period_start": "2026-10-27",
     "period_end": "2026-11-02",
-    "total_events": 96,
-    "total_risk": 85.08,
-    "normalized_risk_score": 34.0,
+    "total_events": 90,
+    "total_risk": 88.01,
+    "normalized_risk_score": 35.2,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 19,
+    "military": 20,
     "security": 3,
-    "political": 30,
-    "other": 44
+    "political": 24,
+    "other": 43
   },
   "source_counts": {
-    "news": 94,
-    "isw": 2
+    "news": 87,
+    "isw": 3
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 19.19
-    },
-    {
-      "name": "Israel",
-      "risk": 18.45
+      "risk": 25.77
     },
     {
       "name": "Yemen",
-      "risk": 13.35
+      "risk": 15.05
+    },
+    {
+      "name": "Israel",
+      "risk": 13.3
     },
     {
       "name": "Gaza Strip",
@@ -47,6 +47,24 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump raises doubts about renewed attacks on Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQndTRnlIMnd2YXYxWE0ySGhhU2lzZldZWGdGNlhUejVqLUxyTkJ3dzVnNWNZaGszckxhWVh3eDdtb1VmWHlpSkdyS1lES2VoYnhfdnVraHV4UE9ScDV3UHo2UVFmb1lHblVhaDdxM0I2QkxNc2x5Q3RybjNEVFRJQXdTbk05N2lxemd5cU1jWHh0aXVvM05rVmJiQm5uY2VmNGc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxORzNEMlp2dXhWWEdwUkhIUUNNenRfR21MM3hCZjRBSnc5cTFpVVBqclhIMVMtMGI2aDMzTklBSU9paVZ3Q1FSMHU3T0J6RmxpR2VlUmx1YVZIZzZkSmFycXVUSWNwOTMycnhyMDd0MjNSY2VrVHRxUWcxYndmN2MwWVhlR1YyZ0VqM1VtR0dGT2FuSmtWYlVhSnU3Q3ZrWEpXd3lJX2tFWGllRGoyYnJSQkREWklvRzNiWDZiUXhFZEZzWXNRdUVzT2hR"
+    },
     {
       "score": 3.0,
       "date": "2026-11-02",
@@ -73,15 +91,6 @@
       "title": "Saudi-led coalition intercepts a missile as fighting rages in Yemen’s al-Jawf - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcDdybGI4VjV5MVJtOTMwR21NUVVYZnNDLUVSVW1va2VBOVpmeTZrR3lBUnVjb1ViN2xoeEFvMXhJanlLel9XWHY4Njl1MHpKX1U3c0h3S1VuTVRMTlhuYWtwZ1JjaTFVWk1Da2lqd09fTVdMNWF5X0kyXzVtZHhmU2ZBMlZlajFjSkZieFhmd092ckw5Ty1WZEtYd0VOa2U0dXVycVlhaFFNckd1RUVmaVV3T1RQMFpL0gG-AUFVX3lxTE1ReEZ6dGplTGlsSGk2V3lNZ3hMTEo1X00yYmwzc0RkUDVTcHByRUtCT3U5LTB0dUVCazY3UVhNaGtkdDRaVXRVaFFFdWt2R3VtM2lzbTJpZTJFMlRiOEo3N3hUY3BCNENxOWI0ZzR1TlhqRGZpQW42SUw0bjZ1amlxNDB1M0w5STVMRFBUaXIyZkp5VF9XaW94eXh1dGtudU1QSHA0R2dMWE0tYnRrZjRoM3BzXzBNNDAzR0V1aFE"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-11-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "How would Tehran respond if the US and Israel bomb Iran again? - Al Jazeera",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdWpHWUZHZ1N3ZHppaFdQSUtWcHVIVGxRVUYzeERWNk1mTG1WRExjeVJQNW9kOENBd3UtNWtWTUdJZW5VZUV1VXUtckg4OXJ4R1BvcnRwdjdHQmpqQ2t3OElBVkNaR3VLakJCN2oyTWNlaXBfSm5ELTZmRnlFSlBOTVZNZlJ6aUlzem5SOFJLY1dTaTQyQU9rU1Z1WV_SAaIBQVVfeXFMTmdGYTllZVRpWXY5MnlmNy03Yk9zcEw1N1J3ekV1bEtMNW5zaGU3T1Y5OFdRR3FUYzJkUi0wZjk3TVZ2NVdocV9LZW5BSktWWGYwYTE3TzI2am9rWklnYWNIbnBhMVV5dVZHVlJHOVhmblB5WXRHcDMzdl9CUlZzSGEyOU5ubldUMWpfVUlPS2Jpc3JSemtCbHlkY3gzajFpVnZB"
     },
     {
       "score": 3.0,
@@ -127,15 +136,6 @@
       "title": "Iranian official says US attacked fishing boats off Qeshm Island, state media reports - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONll1eGZDNWJMVXFsdzlXTEs4WnlXRGJONjZ4eUQ1eGlaWGs5bVB0SnR6cUlhd1U0ZHl1bUxpM0ItUUl3cEdxdEhjTHBfZHZIc3ZQY2xMM2g1eGNkbVNfanFmVFY4R0JUeFVtb0pyb3JzSllCTG05S19HdkVzVXFTVlRaaDZidS01UVJ5SVpvUC00SlNpNUxOZXIyTnFaMGVNMmJoOWpCZ1RKRWxqam9UbG9Yb1pYWERLTkR0OG0xOE9Vc0c1U0lvbGNQZzI"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition says it downs drone over oil-rich Eastern Region - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdTZlcVd4TG9tTWJjN0dRNEZ4enV5NHc1bGpzWnZjSjVwcGhuM3M3V2pERWNoNW9QLVFzTE9uVXhJb1lBOWFmMEhCRVZNeFdZX0ZFR21LcnlTLTRwemdlTzZ2OHlidndqVEJKaXJEMDRuVEo1V0xMVlpwWVF3LWVOTmJuOHAyTG9RTFhhUW9mcXVRR0N2dXJxQVRqdVVQQnZqdHFRdVdiZ1dvVzFrWWhHai1JSFhsdzhVcjlCU05IVXg"
     }
   ]
 }
