@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-11-02T06:08:01.518987+00:00
+**Generated:** 2026-11-02T15:58:32.381486+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Iran (2.7), prev 24h: 2.7, share: 60%.
+Top current hotspot (by risk): Iran (3.7), prev 24h: 2.2, share: 22%.
 
 ## X POST VERSION
 

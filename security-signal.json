@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-02 06:08 UTC",
+    "updated": "2026-11-02 15:58 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-27",
     "period_end": "2026-11-02",
-    "total_events": 98,
-    "total_risk": 81.57,
-    "normalized_risk_score": 32.6,
+    "total_events": 96,
+    "total_risk": 85.08,
+    "normalized_risk_score": 34.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
+    "military": 19,
     "security": 3,
-    "political": 27,
-    "other": 47
+    "political": 30,
+    "other": 44
   },
   "source_counts": {
-    "news": 95,
-    "isw": 3
+    "news": 94,
+    "isw": 2
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 18.67
+      "risk": 19.19
     },
     {
       "name": "Israel",
-      "risk": 17.75
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 10.45
+      "risk": 18.45
     },
     {
       "name": "Yemen",
-      "risk": 8.85
+      "risk": 13.35
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.9
+      "risk": 8.8
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 8.2
     }
   ],
   "top_events": [
@@ -52,9 +52,45 @@
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
+      "title": "Israeli strikes kill four people in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNY19KZDAxQzZjOUlldUhfSTJfRlBVUXVhVXprMkw3UXBfX2ZTWDBCa1ExcVpCSXU5NHhiUDloQk9XX2JRXzBtTzM0XzlsTHI1Z3FMODJISDRoSTYyTmFyNTBHaHFvUGxzRlljU0NPRHprVjZiNFBRSWtXeGhueFlGX1NGRG9fTjBwS3hlZVdlNDM1ejlEWmt3TDRhSTBPbTFDSlZQMHJR"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran killed her teenage daughter - now she is facing up to the regime",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/c3qjn8117kwjo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts a missile as fighting rages in Yemen’s al-Jawf - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcDdybGI4VjV5MVJtOTMwR21NUVVYZnNDLUVSVW1va2VBOVpmeTZrR3lBUnVjb1ViN2xoeEFvMXhJanlLel9XWHY4Njl1MHpKX1U3c0h3S1VuTVRMTlhuYWtwZ1JjaTFVWk1Da2lqd09fTVdMNWF5X0kyXzVtZHhmU2ZBMlZlajFjSkZieFhmd092ckw5Ty1WZEtYd0VOa2U0dXVycVlhaFFNckd1RUVmaVV3T1RQMFpL0gG-AUFVX3lxTE1ReEZ6dGplTGlsSGk2V3lNZ3hMTEo1X00yYmwzc0RkUDVTcHByRUtCT3U5LTB0dUVCazY3UVhNaGtkdDRaVXRVaFFFdWt2R3VtM2lzbTJpZTJFMlRiOEo3N3hUY3BCNENxOWI0ZzR1TlhqRGZpQW42SUw0bjZ1amlxNDB1M0w5STVMRFBUaXIyZkp5VF9XaW94eXh1dGtudU1QSHA0R2dMWE0tYnRrZjRoM3BzXzBNNDAzR0V1aFE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "How would Tehran respond if the US and Israel bomb Iran again? - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdWpHWUZHZ1N3ZHppaFdQSUtWcHVIVGxRVUYzeERWNk1mTG1WRExjeVJQNW9kOENBd3UtNWtWTUdJZW5VZUV1VXUtckg4OXJ4R1BvcnRwdjdHQmpqQ2t3OElBVkNaR3VLakJCN2oyTWNlaXBfSm5ELTZmRnlFSlBOTVZNZlJ6aUlzem5SOFJLY1dTaTQyQU9rU1Z1WV_SAaIBQVVfeXFMTmdGYTllZVRpWXY5MnlmNy03Yk9zcEw1N1J3ekV1bEtMNW5zaGU3T1Y5OFdRR3FUYzJkUi0wZjk3TVZ2NVdocV9LZW5BSktWWGYwYTE3TzI2am9rWklnYWNIbnBhMVV5dVZHVlJHOVhmblB5WXRHcDMzdl9CUlZzSGEyOU5ubldUMWpfVUlPS2Jpc3JSemtCbHlkY3gzajFpVnZB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-02",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordan’s King Abdullah promises to confront ‘terrorists’ after Karak attack - Al Jazeera",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV2ZQRzMyRWx3WU5ZR1lHb3dFRlpkMUZVclB1UFNUVklFVXQteWNaUDhwQTBMY0c1MXFkWHp0UTlmQld0RWZRZTdMcU1EU1BUVGlaejA5T01zSV91MzVlOGNHTFVCNHhBeUpQZ3M2V1Y3eE95MGwwNGlkOEZuUGhDa1JzWEthZzdvcG5FUmRHaDBNZ2dSZ2VJUGFoTl9NNUEzcWZOYkZiR0tuazljd1NjcnRuTdIBuAFBVV95cUxNcDFSWXROclljcXQ5WWVwNzZYMEdtSGVEUmUtYlY2dmxscnBVVFp0aHBiV3ltSlpJcU4xS2xhZXFjTlZYdlI3VVJSSzByX0ktbW1pcVNvNlBwaEkzY3hUS3BoMkpIMnliNWZFd29Xc0tGQkRMZmRURlBJRTJnWFVqOXhSVFQwak41SERUaUhzVXd3TVlJeFpCbXUxY0dPa09ZcWVFNVhRSXdSVWc0R3Q2QXNMYVVwTEE0"
     },
     {
       "score": 2.7,
@@ -93,15 +129,6 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONll1eGZDNWJMVXFsdzlXTEs4WnlXRGJONjZ4eUQ1eGlaWGs5bVB0SnR6cUlhd1U0ZHl1bUxpM0ItUUl3cEdxdEhjTHBfZHZIc3ZQY2xMM2g1eGNkbVNfanFmVFY4R0JUeFVtb0pyb3JzSllCTG05S19HdkVzVXFTVlRaaDZidS01UVJ5SVpvUC00SlNpNUxOZXIyTnFaMGVNMmJoOWpCZ1RKRWxqam9UbG9Yb1pYWERLTkR0OG0xOE9Vc0c1U0lvbGNQZzI"
     },
     {
-      "score": 2.4,
-      "date": "2026-10-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Are Houthis using Russian satellites as Saudi Arabia fends off strikes? - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOR2JnM09TN0huWnRSdGZZMmtwLW51Q1lCM3lBWU1fMUl1YlR2Y203ckZKekRZREM5akNOMmpYTEo1VzFzQkItQmRxb0RxMHZnWGdpekdxNnZCdTVwR196NDJIekRjX00tYjlHVDlwcjVaRVh4ZjNJYTA4UTh0RWc5ZGM4QUtaQW1vVl81YUFpOHQ2dFBCUjFwaHR1c1h5VS0tTC0wRE1kNUXSAa4BQVVfeXFMTTNRV2V3eWthVkMtZTMzdHRIc2hBZ0wwRW1pNDk1MVRMQjg4NGZiSnFGLTJWZ21DWmJaT3A5OWR6aUYwQnlIMTNFUnZTd0Zma3JvSHp6RF9IcFo0cFZlT285RzZLc2NXZzIwVVFJenNWUFhrY3dvUDZReW9iRGFsazcyMGRQOEhnN0kzZTNvb3RfWmR6cGhxbVE0cE1EOGRpdnFOb1d4bWdHSHdURHVR"
-    },
-    {
       "score": 2.1,
       "date": "2026-10-30",
       "category": "military",
@@ -109,33 +136,6 @@
       "title": "Saudi-led coalition says it downs drone over oil-rich Eastern Region - Reuters",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdTZlcVd4TG9tTWJjN0dRNEZ4enV5NHc1bGpzWnZjSjVwcGhuM3M3V2pERWNoNW9QLVFzTE9uVXhJb1lBOWFmMEhCRVZNeFdZX0ZFR21LcnlTLTRwemdlTzZ2OHlidndqVEJKaXJEMDRuVEo1V0xMVlpwWVF3LWVOTmJuOHAyTG9RTFhhUW9mcXVRR0N2dXJxQVRqdVVQQnZqdHFRdVdiZ1dvVzFrWWhHai1JSFhsdzhVcjlCU05IVXg"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis deny launching drone after coalition reports interception in Mecca region - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPanlQaWczZ25iem9Yem9mcmYzRGxNbU1pcmZXVkpFUU5YYk5tWUJMNm1MdWdmUkxaMXQzdHJ3RHY2c1pWMVU4eXhfT3VMcUgzNUpHTUhSUWJvUXdQeDl3UklYUzFLSnNrcHRkd01ldEZSNDBuVjViSUtDTFJVcElQVFl2OGltV1FnX1hZMTFNRkxTTG9NZU9QaVJlZ0tWMXU1Vk1wS3E5TEtvVXF4OGotNWZRVjVwUWtqYjdrbVNsQVlxMTg3NkR4Y1ZqWEM"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "US weighs new Iran strikes as Vance reaches out: Is war or a deal closer? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTGN2bDJnRlZBUFNOTlVyNkF2Y3BydmxnS002TXB5MHZ6WnVmN1JlajliLXpmQ2hnMk9iejQ5MFZrdDNKU19nRWg2LWpST3ZYVHB4ckZ1Y0JhaFJNU1RaSlpOWGVjZkdreHB4YllHOTdhQzJ3NzJzcEY5LUo1Y1gtTzU2U0x0ejJ0ckFTTHcwbXJCVXdUZnEwNzBDd09uQk9XVG1lVl81MVloZi0yQVJOWS1NQdIBuAFBVV95cUxPUzd5NDgxT3R6MW9xenM1TFFrdlBPandwQkRNaVd2ODFmcF9EeXBCeXpwUERFOHl5WUtfNTVzZFo3eUpDaFFHbEJ3bmRpNFd5SDd6bnBDNGV0UWtxNUI2YzNTNWpObHktMVFPc0pkMGlISVJxb0Vfc0d5UDZZWXVtbXNKYmxBdVQxeUhzT2hraXQ2TzIydWgxWS1qazFEU1RWUzdySWNpbXRGeFZxWE1qZWNqZUh0Sk5y"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-10-30",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia reports interception of Houthi drone targeting Mecca - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV3NIQ2tYTXA2UkVQUUh3UGxESzR2R1JnSVhjQjAtQ01PTm5mckJQcjZuSDA1Q3pmeWlnVUhlbThSaEhKRk9uWWdqUW1qRWlzajhDbHhIbU12NmJPNzA1WXNnWllQMkduX01GUXNvNlV2UEUxckZhek5NLWJNR1VEYjB2eXN6TGhLdjRBdU9XVUZHNnNTa1JDU2FyN3dOUmEzbEFaRmNPLXRhakXSAbABQVVfeXFMUFBWdEVMYlpIblRxQ3lVOWFPRnVTa1FwQ1pPTXFuZmV6ODEzNmd1Y0VFNVF4MHVhWU1kRWl6dHl0N2xWNXR5VmRrVmpRelZHeWZtRGZzcWlsUUhnd28yMXlpcFc2dnJQVHJoSkh4bzNwQ3FZeXBybW5EdHl5WjB6ajlkVUhxQVdJMzJwa0hEZkJrMDM5Ty1zQmU3cEZ2S08wWjFLeGdRZHBvblAxVWE0Vmc"
     }
   ]
 }
