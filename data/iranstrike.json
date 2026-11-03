@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T06:50:29Z",
+  "generated_at": "2026-11-03T15:10:38Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 825,
+    "events_endpoint_records": 830,
     "feed_event_records": 250,
-    "normalized_events": 1881,
+    "normalized_events": 1886,
     "map_visualizable_events": 271,
-    "non_mappable_events": 1610,
-    "developments": 4
+    "non_mappable_events": 1615,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1881,
+      "total_events": 1886,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-03T06:34:01Z",
+      "latest_event_date": "2026-11-03T13:36:06Z",
       "geocoded_events": 271,
       "geocoded_share": 14.4,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 40,
+        "current": 44,
         "previous": 69,
-        "delta": -29,
-        "percent_change": -42.0,
+        "delta": -25,
+        "percent_change": -36.2,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 331,
-        "previous": 363,
-        "delta": -32,
-        "percent_change": -8.8,
+        "current": 329,
+        "previous": 360,
+        "delta": -31,
+        "percent_change": -8.6,
         "direction": "stable"
       }
     },
@@ -806,16 +806,16 @@
       },
       {
         "date": "2026-11-03",
-        "count": 2
+        "count": 7
       }
     ],
     "category_counts": {
-      "infrastructure": 534,
+      "infrastructure": 536,
       "missile": 424,
-      "strike": 275,
-      "drone": 217,
+      "strike": 276,
+      "drone": 218,
       "airstrike": 147,
-      "movement": 108,
+      "movement": 109,
       "explosion": 73,
       "ground": 65,
       "alert": 21,
@@ -824,25 +824,25 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 977,
+      "medium": 981,
       "high": 594,
       "low": 299,
-      "critical": 11
+      "critical": 12
     },
     "attacker_counts": {
-      "unknown": 1245,
-      "iran": 394,
+      "unknown": 1248,
+      "iran": 396,
       "israel": 205,
       "usa": 37
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 729
+        "count": 730
       },
       {
         "name": "Iran",
-        "count": 386
+        "count": 389
       },
       {
         "name": "Jordan",
@@ -854,7 +854,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 78
+        "count": 79
       },
       {
         "name": "Red Sea",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 729
+        "count": 730
       },
       {
         "name": "Iran",
-        "count": 515
+        "count": 518
       },
       {
         "name": "Lebanon",
@@ -920,7 +920,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 78
+        "count": 79
       },
       {
         "name": "Red Sea",
@@ -945,41 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11199,
+    "totalCount": 11204,
     "spotlight": {
       "event": {
-        "id": "2ahnnwi6s4nw0",
-        "timestamp": "2026-11-03T02:05:51+00:00",
+        "id": "2bleet67i2zo0",
+        "timestamp": "2026-11-03T13:36:06+00:00",
         "location": "IRN",
         "origin": "USA",
         "coordinates": [
           0,
           0
         ],
-        "type": "intercept",
+        "type": "strike",
         "severity": "medium",
-        "description": "IRGC publishes footage claiming surface-to-air missile interception of a U.S. Air Force MQ-9A Reaper UCAV earlier today",
-        "descriptionHe": "משמרות המהפכה פרסמו צילומים הטוענים ליירוט מזל\"ט MQ-9A Reaper של חיל האוויר האמריקאי בטיל קרקע-אוויר מוקדם יותר היום",
-        "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "drone",
-            "count": 1,
-            "intercepted": 1
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/86462"
+        "description": "Trump says US struck an air defense system on Kish Island in southern Iran overnight, after monitoring its construction for two months",
+        "descriptionHe": "הנשיא טראמפ: ארה\"ב תקפה אמש מערכת הגנה אווירית באי קשם בדרום איראן, לאחר שעקבה אחר הקמתה במשך חודשיים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133026"
       },
-      "headline": "Iran Claims Downing of U.S. Military Drone Over Iranian Airspace",
-      "headlineHe": "איראן טוענת להפילת כלי טיס צבאי אמריקני מעל שטחה",
-      "summary": "The IRGC released video evidence purporting to show the interception of an American MQ-9A Reaper, marking an escalation in direct confrontation between U.S. and Iranian forces.",
-      "summaryHe": "חיל הקודס פרסם חומר וידיאו הטוען להיות עדות להפסקת כלי הטיס האמריקני, מהווה התגברות בעימות ישיר בין ארה״ב ולאיראן.",
-      "pickedAt": "2026-11-03T03:30:27.726Z",
-      "state": "TODAY"
+      "headline": "Trump confirms US struck Iranian air defense system overnight",
+      "headlineHe": "טראמפ אישר: ארה\"ב תקפה מערכת הגנה אווירית איראנית",
+      "summary": "The strike targeted a system on Kish Island that US officials monitored during its two-month construction phase, marking an escalation in direct US-Iran military operations.",
+      "summaryHe": "התקיפה כוונה למערכת בחוף קיש שרשויות ארה\"ב עקבו אחר בנייתה למשך שני חודשים, מסמנת התגברות בפעולות צבאיות ישירות בין ארה\"ב לאיראן.",
+      "pickedAt": "2026-11-03T15:00:26.023Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-03T06:45:17.392Z",
+    "lastUpdated": "2026-11-03T15:06:17.532Z",
     "stale": false,
-    "viewerCount": 3,
+    "viewerCount": 5,
     "ceasefire": false
   },
   "summary": {
@@ -1520,214 +1513,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 95,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-11-03T06:30:28.182Z",
+      "lastUpdate": "2026-11-03T15:00:35.817Z",
       "internetHistory": [
-        {
-          "t": "2026-11-02T06:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T06:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-02T06:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T07:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T07:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T07:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T07:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T08:40:00.000Z",
-          "v": 90
-        },
-        {
-          "t": "2026-11-02T08:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-02T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T10:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T10:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T10:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T10:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T11:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T11:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-02T14:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-02T14:50:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-11-02T15:00:00.000Z",
           "v": 96
@@ -2095,30 +1884,234 @@
         {
           "t": "2026-11-03T06:10:00.000Z",
           "v": 95
+        },
+        {
+          "t": "2026-11-03T06:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T06:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T06:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T06:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T07:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T07:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T07:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T07:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T07:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T07:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T08:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T08:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T08:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T08:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T08:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T08:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T09:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T09:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T09:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-03T10:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T10:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T10:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T10:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T11:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T11:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T11:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-03T12:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T12:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T12:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T12:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-03T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-03T13:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T13:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T13:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T13:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T13:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T13:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T14:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T14:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T14:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-03T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-03T14:40:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-03T06:30:28.182Z"
+    "lastUpdated": "2026-11-03T15:00:35.817Z"
   },
   "developments": [
     {
-      "id": "iranstrike-4a7c2e9f",
+      "id": "iranstrike-a7f3k2m1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-03T06:34:01Z",
+      "date": "2026-11-03T13:36:06Z",
       "title": "IranStrike event",
-      "description": "US strikes Iranian targets on Qeshm Island after IRGC downed MQ-9 Reaper drone",
+      "description": "US strikes Iranian air defense on Kish Island; IRGC claims drone intercepts",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
+      "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "us strikes iranian targets on qeshm island after irgc downed mq-9 reaper dro",
+      "attacker_evidence": "us strikes iranian air defense on kish island;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2131,32 +2124,395 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4a7c2e9f",
-        "text": "US strikes Iranian targets on Qeshm Island after IRGC downed MQ-9 Reaper drone",
-        "textHe": "ארה\"ב תקפה מטרות איראניות באי קשם לאחר הפלת כלי טיס ללא דיווח IRGC",
+        "id": "a7f3k2m1",
+        "text": "US strikes Iranian air defense on Kish Island; IRGC claims drone intercepts",
+        "textHe": "ארה\"ב תקפה הגנת אויר איראנית בקיש; כוחות איראנים טוענים ליירוט רחפנים",
         "severity": "high",
-        "timestamp": "2026-11-03T06:34:01+00:00",
+        "timestamp": "2026-11-03T13:36:06+00:00",
         "entityIds": [
           "USA",
           "IRN"
         ],
         "eventIds": [
-          "367tj11k42o0",
-          "2ahnnwi6s4nw0"
+          "2bleet67i2zo0",
+          "36pokl49zfk00",
+          "2ahnnwi6s4nw0",
+          "367tj11k42o0"
+        ],
+        "sourceCount": 3
+      }
+    },
+    {
+      "id": "iranstrike-b4c9n6p2",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-03T08:14:18Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces advance 80 km toward Aden; capture highlands in Lahij",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b4c9n6p2",
+        "text": "Houthi forces advance 80 km toward Aden; capture highlands in Lahij",
+        "textHe": "כוחות חוثיים התקדמו 80 ק\"מ לעבר עדן; כיבוש גבעות בלחיג'",
+        "severity": "high",
+        "timestamp": "2026-11-03T08:14:18+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "2zsn9g8mpj400",
+          "2dswa8diwrgg0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-5b8d3f1a",
+      "id": "iranstrike-c5d1j8q3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-02T21:57:48Z",
+      "date": "2026-11-03T10:16:49Z",
       "title": "IranStrike event",
-      "description": "Houthis launch offensive in southwestern Yemen; claim Al-Maqaterah highlands capture",
+      "description": "IRGC reports three tankers hit naval mines, burning in Strait of Hormuz",
       "category": "other",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irgc reports three tankers hit naval mines, burning in strait of hormuz כוחות אי",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c5d1j8q3",
+        "text": "IRGC reports three tankers hit naval mines, burning in Strait of Hormuz",
+        "textHe": "כוחות איראנים מדווחים על שלוש מכליות פוגעות במוקשים בתעלת הורמוז",
+        "severity": "medium",
+        "timestamp": "2026-11-03T10:16:49+00:00",
+        "entityIds": [
+          "IRN"
+        ],
+        "eventIds": [
+          "ty4b4gfua1s0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d6e2h9r4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-02T18:24:34Z",
+      "title": "IranStrike event",
+      "description": "Trump warns massive armada heading toward Iran over nuclear dispute",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d6e2h9r4",
+        "text": "Trump warns massive armada heading toward Iran over nuclear dispute",
+        "textHe": "טראמפ מזהיר על שיירה ענקית לעבר איראן על חילוקי דעות גרעיניים",
+        "severity": "medium",
+        "timestamp": "2026-11-02T18:24:34+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "nok400j3z4g0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e7f3i0s5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-02T14:51:25Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes building in southern Lebanon; roof-knock warning issued",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes building in southern lebanon;",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "e7f3i0s5",
+        "text": "IDF strikes building in southern Lebanon; roof-knock warning issued",
+        "textHe": "צה\"ל תקף בנין בדרום לבנון; הוצאה להעברה לפני ההתקפה",
+        "severity": "medium",
+        "timestamp": "2026-11-02T14:51:25+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "3lt5r0hj9u200"
+        ],
+        "sourceCount": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-2bleet67i2zo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133026",
+      "date": "2026-11-03T13:36:06Z",
+      "title": "IranStrike event",
+      "description": "Trump says US struck an air defense system on Kish Island in southern Iran overnight, after monitoring its construction for two months",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2bleet67i2zo0",
+        "timestamp": "2026-11-03T13:36:06+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Trump says US struck an air defense system on Kish Island in southern Iran overnight, after monitoring its construction for two months",
+        "descriptionHe": "הנשיא טראמפ: ארה\"ב תקפה אמש מערכת הגנה אווירית באי קשם בדרום איראן, לאחר שעקבה אחר הקמתה במשך חודשיים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133026"
+      }
+    },
+    {
+      "id": "iranstrike-36pokl49zfk00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133022",
+      "date": "2026-11-03T12:24:41Z",
+      "title": "IranStrike event",
+      "description": "IRGC claims to have shot down two American Lucas suicide drones; claim unverified",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "36pokl49zfk00",
+        "timestamp": "2026-11-03T12:24:41+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "IRGC claims to have shot down two American Lucas suicide drones; claim unverified",
+        "descriptionHe": "משמרות המהפכה טוענות כי הפילו שני מל\"טים מתאבדים אמריקאיים מסוג לוקאס; הטענה טרם אומתה",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/133022"
+      }
+    },
+    {
+      "id": "iranstrike-b2gu1na2mkc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86485",
+      "date": "2026-11-03T11:22:03Z",
+      "title": "IranStrike event",
+      "description": "Tucker Carlson claims Trump could order a nuclear attack on Iran's Pickaxe Mountain research site at Netanyahu's urging, citing claims that Iran has restarted uranium enrichment there (unverified, hypothetical)",
+      "category": "infrastructure",
+      "severity": "critical",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "s trump could order a nuclear attack on iran's pickaxe mountain research site at netanyahu's u",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b2gu1na2mkc0",
+        "timestamp": "2026-11-03T11:22:03+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "critical",
+        "description": "Tucker Carlson claims Trump could order a nuclear attack on Iran's Pickaxe Mountain research site at Netanyahu's urging, citing claims that Iran has restarted uranium enrichment there (unverified, hypothetical)",
+        "descriptionHe": "טאקר קרלסון טוען שטראמפ עשוי להורות על תקיפה גרעינית באתר המחקר הגרעיני הר הגרזן שבאיראן, לבקשת בנימין נתניהו, בטענה שאיראן חידשה העשרת אורניום שם (לא מאומת, היפותטי)",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86485"
+      }
+    },
+    {
+      "id": "iranstrike-ty4b4gfua1s0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86482",
+      "date": "2026-11-03T10:16:49Z",
+      "title": "IranStrike event",
+      "description": "IRGC Navy claims three oil tankers struck naval mines and caught fire overnight in the Strait of Hormuz while using unauthorized routes; vessels reportedly abandoned and still burning",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn irgc navy claims three oil tankers struck naval mines and caught fire overnight in the stra",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "ty4b4gfua1s0",
+        "timestamp": "2026-11-03T10:16:49+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "IRGC Navy claims three oil tankers struck naval mines and caught fire overnight in the Strait of Hormuz while using unauthorized routes; vessels reportedly abandoned and still burning",
+        "descriptionHe": "חיל הים של משמרות המהפכה טוען ששלוש מכליות נפט פגעו במוקשים ימיים ונדלקו הלילה במיצר הורמוז לאחר שעברו במסלולים לא מורשים; לפי הדיווח, הספינות ננטשו ועדיין בוערות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86482"
+      }
+    },
+    {
+      "id": "iranstrike-2zsn9g8mpj400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20655",
+      "date": "2026-11-03T08:14:18Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces advance to within 80 km of Aden, the temporary capital of Yemen's internationally recognized government, marking a significant escalation",
+      "category": "movement",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2176,110 +2532,22 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5b8d3f1a",
-        "text": "Houthis launch offensive in southwestern Yemen; claim Al-Maqaterah highlands capture",
-        "textHe": "חות'ים משקו התקפה בדרום מערב תימן; טוענים לתפיסת הגבעות אל-מקטרה",
+        "id": "2zsn9g8mpj400",
+        "timestamp": "2026-11-03T08:14:18+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
         "severity": "medium",
-        "timestamp": "2026-11-02T21:57:48+00:00",
-        "entityIds": [
-          "YEM"
-        ],
-        "eventIds": [
-          "2dswa8diwrgg0"
-        ],
-        "sourceCount": 1
+        "description": "Houthi forces advance to within 80 km of Aden, the temporary capital of Yemen's internationally recognized government, marking a significant escalation",
+        "descriptionHe": "כוחות החות'ים התקדמו לטווח של 80 ק\"מ מעדן, הבירה הזמנית של ממשלת תימן המוכרת בינלאומית, בהסלמה משמעותית",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20655"
       }
     },
-    {
-      "id": "iranstrike-6c9e4g2b",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-02T18:24:34Z",
-      "title": "IranStrike event",
-      "description": "Trump announces \"massive armada\" heading to Iran amid nuclear deal warnings",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "6c9e4g2b",
-        "text": "Trump announces \"massive armada\" heading to Iran amid nuclear deal warnings",
-        "textHe": "טראמפ הודיע על \"שיירה ענקית\" פונה לאיראן עם אזהרות הסכם גרעיני",
-        "severity": "medium",
-        "timestamp": "2026-11-02T18:24:34+00:00",
-        "entityIds": [
-          "USA",
-          "IRN"
-        ],
-        "eventIds": [
-          "nok400j3z4g0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-7d0f5h3c",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-02T14:51:25Z",
-      "title": "IranStrike event",
-      "description": "IDF strike on southern Lebanon building; roof-knock warning preceded impact",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strike on southern lebanon building;",
-      "location": "Lebanon",
-      "country": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "7d0f5h3c",
-        "text": "IDF strike on southern Lebanon building; roof-knock warning preceded impact",
-        "textHe": "תקיפת צה\"ל בבניין בדרום לבנון; אזהרת הקש על הגג הקדימה הפגיעה",
-        "severity": "medium",
-        "timestamp": "2026-11-02T14:51:25+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN"
-        ],
-        "eventIds": [
-          "3lt5r0hj9u200"
-        ],
-        "sourceCount": 1
-      }
-    }
-  ],
-  "events": [
     {
       "id": "iranstrike-367tj11k42o0",
       "source": "IranStrike",
