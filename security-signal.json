@@ -1,54 +1,81 @@
 {
   "meta": {
-    "updated": "2026-11-02 23:32 UTC",
+    "updated": "2026-11-03 06:51 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-10-27",
-    "period_end": "2026-11-02",
-    "total_events": 90,
-    "total_risk": 88.01,
-    "normalized_risk_score": 35.2,
+    "period_start": "2026-10-28",
+    "period_end": "2026-11-03",
+    "total_events": 83,
+    "total_risk": 84.05,
+    "normalized_risk_score": 33.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 20,
+    "military": 21,
     "security": 3,
-    "political": 24,
-    "other": 43
+    "political": 23,
+    "other": 36
   },
   "source_counts": {
-    "news": 87,
-    "isw": 3
+    "news": 78,
+    "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 25.77
+      "risk": 30.05
     },
     {
       "name": "Yemen",
-      "risk": 15.05
-    },
-    {
-      "name": "Israel",
-      "risk": 13.3
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 8.8
+      "risk": 13.05
     },
     {
       "name": "Saudi Arabia",
-      "risk": 8.2
+      "risk": 9.15
+    },
+    {
+      "name": "Israel",
+      "risk": 9.1
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 7.5
     }
   ],
   "top_events": [
     {
       "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUW9iaUN1YmNnZlZ0a05YVklpS2I1dFp2UHR0VzNRaXRubGN6ZWczLWNqdlhaTENzcUtZYjQ4OG5Ca19nVmZjZTVEYlNGTTU4QXpZYVVXOXhnMTIzYXJBeWY5ZXdTREpkN1ZCNmNzd0d4eThoOTZmVUtFSEQ1NHg0b2VQU08xaHh5R01MUWhNN0NlY0l3d1gwVDRNM0RUTnZPMjR5TENVRVpETWIxenJ3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTFpzbEJURFlBbkE1RzNfclduVWpDY29HaWY3dnZJNUFuTHFsckZXSU5iTGJHdUFzQkVmeVhvdk9IME9Hdkxwc0NQZzg4dFFzckltYVlzcGdWY2xhYmJWMWlMVmFyNml3YmFoSDBZMGdPZWlpU25IM3UtMW5iR3d1dGZrMGF4SzQ2MklEeG5lWU1iRUZjVDd5Nnhjc0dQamdDdEtUc3NMcFZDMTQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Explosions hit Iran’s Qeshm Island as US media report US strikes in Hormuz - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQazFFTTMzNUJ2SzhZblQxcGowTm9WbTNqa2lSYUJLckNuRkRvZmEyaVJrSlhsNkRQN1ZUbGFjZ0lFUVFtak5jOFppMFVGVHh0UUlOVFdKeWNHR2d4Tjh1ZXkyZ25iUVNJSFI0amw3cjdVOUEtMElHRnZ1UURVSDFRcTk1enNOSEk4RmE2ZUw1RVVXTXNVQmg1Rm1LMEk3UUJjRHF3bWtLUHl1UXhpVFJya1dYMkfSAboBQVVfeXFMUG52WkRoZDlGSHAxZ3BwOGhOUEp1SWJuTVNxZHJnSzBmaWEwSk55NUJqV0Y1cWplUkJtdV9OUjl6TUFqeXF2Um00RElDaVg2R2lHbjN1b2s1RFBvX3lDS1dMQlZrVVVlTk0ydno0OWZXU3M1eUlLa2dUMHMxRGRQNlBuWW9FeUdyb3c2Z2s1dXdjd2V6ajVLRGxyNDNzYWVod1p3X1prOWMzNDJqLWpDckN0S3NlbjI5QkFR"
+    },
+    {
+      "score": 2.7,
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
@@ -57,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQndTRnlIMnd2YXYxWE0ySGhhU2lzZldZWGdGNlhUejVqLUxyTkJ3dzVnNWNZaGszckxhWVh3eDdtb1VmWHlpSkdyS1lES2VoYnhfdnVraHV4UE9ScDV3UHo2UVFmb1lHblVhaDdxM0I2QkxNc2x5Q3RybjNEVFRJQXdTbk05N2lxemd5cU1jWHh0aXVvM05rVmJiQm5uY2VmNGc"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
@@ -66,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxORzNEMlp2dXhWWEdwUkhIUUNNenRfR21MM3hCZjRBSnc5cTFpVVBqclhIMVMtMGI2aDMzTklBSU9paVZ3Q1FSMHU3T0J6RmxpR2VlUmx1YVZIZzZkSmFycXVUSWNwOTMycnhyMDd0MjNSY2VrVHRxUWcxYndmN2MwWVhlR1YyZ0VqM1VtR0dGT2FuSmtWYlVhSnU3Q3ZrWEpXd3lJX2tFWGllRGoyYnJSQkREWklvRzNiWDZiUXhFZEZzWXNRdUVzT2hR"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
@@ -75,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNY19KZDAxQzZjOUlldUhfSTJfRlBVUXVhVXprMkw3UXBfX2ZTWDBCa1ExcVpCSXU5NHhiUDloQk9XX2JRXzBtTzM0XzlsTHI1Z3FMODJISDRoSTYyTmFyNTBHaHFvUGxzRlljU0NPRHprVjZiNFBRSWtXeGhueFlGX1NGRG9fTjBwS3hlZVdlNDM1ejlEWmt3TDRhSTBPbTFDSlZQMHJR"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
@@ -84,7 +111,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c3qjn8117kwjo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
@@ -93,7 +120,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcDdybGI4VjV5MVJtOTMwR21NUVVYZnNDLUVSVW1va2VBOVpmeTZrR3lBUnVjb1ViN2xoeEFvMXhJanlLel9XWHY4Njl1MHpKX1U3c0h3S1VuTVRMTlhuYWtwZ1JjaTFVWk1Da2lqd09fTVdMNWF5X0kyXzVtZHhmU2ZBMlZlajFjSkZieFhmd092ckw5Ty1WZEtYd0VOa2U0dXVycVlhaFFNckd1RUVmaVV3T1RQMFpL0gG-AUFVX3lxTE1ReEZ6dGplTGlsSGk2V3lNZ3hMTEo1X00yYmwzc0RkUDVTcHByRUtCT3U5LTB0dUVCazY3UVhNaGtkdDRaVXRVaFFFdWt2R3VtM2lzbTJpZTJFMlRiOEo3N3hUY3BCNENxOWI0ZzR1TlhqRGZpQW42SUw0bjZ1amlxNDB1M0w5STVMRFBUaXIyZkp5VF9XaW94eXh1dGtudU1QSHA0R2dMWE0tYnRrZjRoM3BzXzBNNDAzR0V1aFE"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-02",
       "category": "military",
       "source_type": "news",
@@ -102,40 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV2ZQRzMyRWx3WU5ZR1lHb3dFRlpkMUZVclB1UFNUVklFVXQteWNaUDhwQTBMY0c1MXFkWHp0UTlmQld0RWZRZTdMcU1EU1BUVGlaejA5T01zSV91MzVlOGNHTFVCNHhBeUpQZ3M2V1Y3eE95MGwwNGlkOEZuUGhDa1JzWEthZzdvcG5FUmRHaDBNZ2dSZ2VJUGFoTl9NNUEzcWZOYkZiR0tuazljd1NjcnRuTdIBuAFBVV95cUxNcDFSWXROclljcXQ5WWVwNzZYMEdtSGVEUmUtYlY2dmxscnBVVFp0aHBiV3ltSlpJcU4xS2xhZXFjTlZYdlI3VVJSSzByX0ktbW1pcVNvNlBwaEkzY3hUS3BoMkpIMnliNWZFd29Xc0tGQkRMZmRURlBJRTJnWFVqOXhSVFQwak41SERUaUhzVXd3TVlJeFpCbXUxY0dPa09ZcWVFNVhRSXdSVWc0R3Q2QXNMYVVwTEE0"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-11-01",
       "category": "military",
       "source_type": "news",
       "title": "Israeli strikes kill eight people in Gaza - medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPd2E3NlZWbHB1MUtZdG5sLXBXci1sVnQtMWxWYk1CM1EzTUtfMXJiWDZYRlIzN09BWlBuaUVXOThueVFEdF9nMXdVaUpobUNCSXM3dUZWQVZjN2MwZ19pQUN6cDUtbnE2Rm1PX3BwYmhTWWo4TGRqbG0xSmhKQVhWYTlVNkFpTFdsUFhmcDlVaFI5cWZRYk1jcFRoU3RIZUV2QTRBdm5B"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes in Gaza kill eight including child, hospitals say",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cmqln14rrzxvo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iranian envoys meet Qatari mediators as threat looms of US strikes after midterms - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOODBHZGo0TEhURWc2Rm9nLUJjaF9Hb09YLUpnU3JlTWJ0OHJKd3p0dFZEYWdpYUNPVlNJdFJoYXhGOVdOX29rdHhjQ2F0c2E2VjJRQndHcEtSY1JIdEFzTkJJd3RKX2lKYWxRMnRQYjZvVnpxNnJQTlBmUFY5TWMzZTJ4akRuS1pKNExQY2lCQTAzRVlWOG4wYnZRVV9tRWJQdDJKQ0owZVdZUS1ZQmZYbTlMR0xxbF9uZ3ZvWkRNNDJtX0JNclZhLQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-10-31",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iranian official says US attacked fishing boats off Qeshm Island, state media reports - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONll1eGZDNWJMVXFsdzlXTEs4WnlXRGJONjZ4eUQ1eGlaWGs5bVB0SnR6cUlhd1U0ZHl1bUxpM0ItUUl3cEdxdEhjTHBfZHZIc3ZQY2xMM2g1eGNkbVNfanFmVFY4R0JUeFVtb0pyb3JzSllCTG05S19HdkVzVXFTVlRaaDZidS01UVJ5SVpvUC00SlNpNUxOZXIyTnFaMGVNMmJoOWpCZ1RKRWxqam9UbG9Yb1pYWERLTkR0OG0xOE9Vc0c1U0lvbGNQZzI"
     }
   ]
 }
