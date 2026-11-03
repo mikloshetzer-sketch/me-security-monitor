@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-03 06:51 UTC",
+    "updated": "2026-11-03 16:17 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-28",
     "period_end": "2026-11-03",
-    "total_events": 83,
-    "total_risk": 84.05,
-    "normalized_risk_score": 33.6,
+    "total_events": 90,
+    "total_risk": 96.35,
+    "normalized_risk_score": 38.5,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 21,
-    "security": 3,
-    "political": 23,
-    "other": 36
+    "security": 4,
+    "political": 24,
+    "other": 41
   },
   "source_counts": {
-    "news": 78,
+    "news": 85,
     "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 30.05
-    },
-    {
-      "name": "Yemen",
-      "risk": 13.05
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 9.15
+      "risk": 35.35
     },
     {
       "name": "Israel",
-      "risk": 9.1
+      "risk": 16.35
+    },
+    {
+      "name": "Yemen",
+      "risk": 9.95
     },
     {
       "name": "Gaza Strip",
       "risk": 7.5
+    },
+    {
+      "name": "Syria",
+      "risk": 4.65
     }
   ],
   "top_events": [
@@ -61,9 +61,45 @@
       "date": "2026-11-03",
       "category": "military",
       "source_type": "news",
-      "title": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+      "title": "Oil rises as Iran says war deal remains distant, US strikes Qeshm - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTFpzbEJURFlBbkE1RzNfclduVWpDY29HaWY3dnZJNUFuTHFsckZXSU5iTGJHdUFzQkVmeVhvdk9IME9Hdkxwc0NQZzg4dFFzckltYVlzcGdWY2xhYmJWMWlMVmFyNml3YmFoSDBZMGdPZWlpU25IM3UtMW5iR3d1dGZrMGF4SzQ2MklEeG5lWU1iRUZjVDd5Nnhjc0dQamdDdEtUc3NMcFZDMTQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQa0hXS05BXzBXMWN6UkowWERwWUVYaUhnMzFIYUtvTC14WDJfUjIyWXpfVnV1UGRLT0pqYTVyaXNJSTZ5djYtZ0xpWmtmWG1LODZqUWRBOUNQbjlvLVFxVjF3RGprQmNmdmJLdDdSY2UtTncwUjRVcnR2RXZ2enZzTDQ5QklpOUU4Y0c2MVVmaVdTOW16amNkcVg1WGhEVWFNMkk3dU5wemF2ZVBGZEdDcWU3c3c"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPS2NuSE5mVy01YUNOTlhhdTA0UEo5ZEVKeFZJeVE2NDhKZzlVUFFKNjhSY3loRU5HTlhmS05jcmdfQWdXbmExTDBjTUhoek16elpLc3lJYkxoRzU2dU85WC1XYllVeXoxRndsYno4bU9XR1FtczVZa1dzQ3BTa2VVbW1CRFBZX3FDa015TGZYNDFSTHllYjA4d1hVeG5uM3JxS0hHWnFLZUhpSkdWNXdaWmFaSTIzWUU"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says US will stop providing aid to Israel after year-end",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/cmx2dlx86n9yo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-03",
+      "category": "military",
+      "source_type": "news",
+      "title": "US strikes Iranian island ahead of midterm elections",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cx240mrm3g8vo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 3.0,
@@ -100,42 +136,6 @@
       "title": "Israeli strikes kill four people in Gaza, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNY19KZDAxQzZjOUlldUhfSTJfRlBVUXVhVXprMkw3UXBfX2ZTWDBCa1ExcVpCSXU5NHhiUDloQk9XX2JRXzBtTzM0XzlsTHI1Z3FMODJISDRoSTYyTmFyNTBHaHFvUGxzRlljU0NPRHprVjZiNFBRSWtXeGhueFlGX1NGRG9fTjBwS3hlZVdlNDM1ejlEWmt3TDRhSTBPbTFDSlZQMHJR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran killed her teenage daughter - now she is facing up to the regime",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c3qjn8117kwjo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition intercepts a missile as fighting rages in Yemen’s al-Jawf - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcDdybGI4VjV5MVJtOTMwR21NUVVYZnNDLUVSVW1va2VBOVpmeTZrR3lBUnVjb1ViN2xoeEFvMXhJanlLel9XWHY4Njl1MHpKX1U3c0h3S1VuTVRMTlhuYWtwZ1JjaTFVWk1Da2lqd09fTVdMNWF5X0kyXzVtZHhmU2ZBMlZlajFjSkZieFhmd092ckw5Ty1WZEtYd0VOa2U0dXVycVlhaFFNckd1RUVmaVV3T1RQMFpL0gG-AUFVX3lxTE1ReEZ6dGplTGlsSGk2V3lNZ3hMTEo1X00yYmwzc0RkUDVTcHByRUtCT3U5LTB0dUVCazY3UVhNaGtkdDRaVXRVaFFFdWt2R3VtM2lzbTJpZTJFMlRiOEo3N3hUY3BCNENxOWI0ZzR1TlhqRGZpQW42SUw0bjZ1amlxNDB1M0w5STVMRFBUaXIyZkp5VF9XaW94eXh1dGtudU1QSHA0R2dMWE0tYnRrZjRoM3BzXzBNNDAzR0V1aFE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-02",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jordan’s King Abdullah promises to confront ‘terrorists’ after Karak attack - Al Jazeera",
-      "location": "Jordan",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV2ZQRzMyRWx3WU5ZR1lHb3dFRlpkMUZVclB1UFNUVklFVXQteWNaUDhwQTBMY0c1MXFkWHp0UTlmQld0RWZRZTdMcU1EU1BUVGlaejA5T01zSV91MzVlOGNHTFVCNHhBeUpQZ3M2V1Y3eE95MGwwNGlkOEZuUGhDa1JzWEthZzdvcG5FUmRHaDBNZ2dSZ2VJUGFoTl9NNUEzcWZOYkZiR0tuazljd1NjcnRuTdIBuAFBVV95cUxNcDFSWXROclljcXQ5WWVwNzZYMEdtSGVEUmUtYlY2dmxscnBVVFp0aHBiV3ltSlpJcU4xS2xhZXFjTlZYdlI3VVJSSzByX0ktbW1pcVNvNlBwaEkzY3hUS3BoMkpIMnliNWZFd29Xc0tGQkRMZmRURlBJRTJnWFVqOXhSVFQwak41SERUaUhzVXd3TVlJeFpCbXUxY0dPa09ZcWVFNVhRSXdSVWc0R3Q2QXNMYVVwTEE0"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-01",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill eight people in Gaza - medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPd2E3NlZWbHB1MUtZdG5sLXBXci1sVnQtMWxWYk1CM1EzTUtfMXJiWDZYRlIzN09BWlBuaUVXOThueVFEdF9nMXdVaUpobUNCSXM3dUZWQVZjN2MwZ19pQUN6cDUtbnE2Rm1PX3BwYmhTWWo4TGRqbG0xSmhKQVhWYTlVNkFpTFdsUFhmcDlVaFI5cWZRYk1jcFRoU3RIZUV2QTRBdm5B"
     }
   ]
 }
