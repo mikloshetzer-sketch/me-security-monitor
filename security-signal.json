@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-05 06:57 UTC",
+    "updated": "2026-11-05 16:30 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-30",
     "period_end": "2026-11-05",
-    "total_events": 100,
-    "total_risk": 91.85,
-    "normalized_risk_score": 36.7,
+    "total_events": 105,
+    "total_risk": 95.98,
+    "normalized_risk_score": 38.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 21,
-    "security": 3,
+    "security": 2,
     "political": 22,
-    "other": 54
+    "other": 60
   },
   "source_counts": {
     "news": 99,
-    "isw": 1
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 40.2
+      "risk": 41.84
     },
     {
       "name": "Israel",
-      "risk": 16.55
+      "risk": 17.7
     },
     {
       "name": "Yemen",
-      "risk": 7.35
+      "risk": 7.9
     },
     {
       "name": "Syria",
       "risk": 4.65
     },
     {
-      "name": "Saudi Arabia",
-      "risk": 4.3
+      "name": "Gaza Strip",
+      "risk": 3.9
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordanian officer killed in Amman stabbing, suspect arrested, security agency says - Reuters",
+      "location": "Amman",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVl90eTZDMU1FUm9NaF91OThBSDhrc09wdVZUVXliYzZiUGJIOW84Sk15ZTM3QWx4cVpzZTQ3Mkprd1kwWjNEOVRQdnBJRGF6TkE5ZlN6Q3dDYTNfY1U4VFpMcnliMXB3TFdDYkk4UWJkWmRYSm5EMGlvUVAxdVdVeDVPVFdCUUtCYlY2NTFnZS1UQUsxZ05NSzRZa3RWLXhHWnIzd2JmU1BwOTg3THE0Y3dpOEprZGx0S1diX1I1ZjBITzRZVEE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Security ⁠officer killed in stabbing attack in Jordan’s capital - Al Jazeera",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOai13MzZqNFNrNTRwSGdPVnpESzctM2dRN1c3UVY3bndZOGhzWXFTR045SDRkQ000UDhSODBVZWNQRElQU0ZubnZJalZiZHpXVUpBNGJrdVJLNEVtaG1abkRGdHAwcTBJeldOWDJXSlBFbGJTZkFHR29vYzh5WlRaZGwyUTQ4QXBkbjQtckZYY0dEN1Y0NFlaa1Y2bGszT05zMEtGVzFuSTZHOU9NcVRVS9IBtgFBVV95cUxQbVEzMTdQSjcxLWVBYVgwYTRyQXAyQjBJYzZlWXRId2hxbDZVdVp4NWtjNmxUZWpmXzMtUUdiVXNpUVBnWUpzZXppcDJCaDR4SzI4V2xrY1JqOWVLVW1rV2pJSlRVTmxGRUNHQ1NvMzRROTQ5TGNCS2MweWFPVURYYVJ6bzM1c2d4bFJ1WEk3TThQTVFfR1VrbGctM1JLWUc4SXk0S3owd01YUEphdW9hRDRLQS1sdw"
+    },
     {
       "score": 2.7,
       "date": "2026-11-04",
@@ -61,9 +79,9 @@
       "date": "2026-11-04",
       "category": "military",
       "source_type": "news",
-      "title": "Turkey's parliament set to ratify defence pact with Saudi Arabia, Pakistan as Houthi attacks mount - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORDg5Y29OampmTGVlcU05M3BFOUVIOGhxY0pwcHBtb2owY29CQTVvZ3FkQUVwblFaRHkwTWpfSjRhTk1FOHB5czhNYkx4THRja1I0ZlRsMFVTWFI1WWFWY3ZLTk5fTGJOZEN5bVlCaTFXN2ZIZnEtZUFmaHNzOU05dUpLaHBKSUJMRGJ2ZC1kMHRWYUlZNE4zRXp5THp3TU41V3plWFh3Q2ZrSGMwb3N2dFl6cWo3VXdBTHFYWHp1WUhRZlBTR2dqSWY0OA"
+      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g"
     },
     {
       "score": 2.7,
@@ -84,6 +102,15 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdF9kYVI3SGNySm5CRUp6OWpWc1F3TzZYN09vMnJHTmFFTnJoOUpacUdHbnJ5Ty1WSmZab21Ea0Y0R2w3MERTcjd6ajBqN1FkQ3JCaGl4XzRxU091eFROMm9yUnBzODV0Zm8xMTh3WkxBMFpUVXV6YlB2d1R0bm9SMElIdktra1FJWTdabURGN1B3UzM1TWRqT1JkME5VcndzWExPbjBn0gGrAUFVX3lxTE0tSXQyTjAyWHRXMUl5dVJ0c0ZMSFdDSTFKNGtTU3pqMlUwd3ZMMmROb0NnbS01THhRYkloXzNQOGE4Uzc3RTdHekFIS3BJYUppYTA2b2NrcWVucmZBTkNaR1VrTGRfM3FueUNzMzNSSGlZZU8xQ0pzYTFyQWpULWhtU09zalFRY0xkSkh5N1hJWi1YS0Z3cjkxOTlURzlidGlEU2htVHZBa0Nfaw"
     },
     {
+      "score": 2.7,
+      "date": "2026-11-04",
+      "category": "military",
+      "source_type": "news",
+      "title": "EU urges action as Germany, Romania and UK report supermarket cyberattacks - Al Jazeera",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRC1DQWVUUFdlVGozYUdORVpwMHJNaXdDSlJKaUxlYVBpUm9UbGZCNjZQS1FKRV9haWNNTVdfQXBnUjFUelZJeERuc2hnNWVhM19pRkJZSkEtTHBsQ1VwdVpXQi0tMHc4UG5uZ0NuVWttRFp6eUE5S3ZFRFFsMTdGZmw3REhDMXNDVEs5emExUlBzX2d0ZkV6bWN1VTFOczd6M0ZDSFNRcVlWRzgzVzdBaFFiX0XSAboBQVVfeXFMUHNzS3g4cjFmenhPWHY1dzhBWWM5U3pCLWRMdEI1MFhzYms5aDFkT05tMUZwZm9DRTluSWtDUHByWjVRM2R5eUZKWE16X01wT0VURkgtNDBpTlUxM1VzWU5peWh2ZVZPVER5MXAzV0FHRU03NEQzYWd6VTg5WUJHSkZ3RzM0OHlQa21ESW01MUhBaFlOWlBGMV83dXZ3QzQtNkQtUGFYSWdnNWU5elhSNXdrNzBXU05ZbWpR"
+    },
+    {
       "score": 2.4,
       "date": "2026-11-03",
       "category": "military",
@@ -91,15 +118,6 @@
       "title": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUW9iaUN1YmNnZlZ0a05YVklpS2I1dFp2UHR0VzNRaXRubGN6ZWczLWNqdlhaTENzcUtZYjQ4OG5Ca19nVmZjZTVEYlNGTTU4QXpZYVVXOXhnMTIzYXJBeWY5ZXdTREpkN1ZCNmNzd0d4eThoOTZmVUtFSEQ1NHg0b2VQU08xaHh5R01MUWhNN0NlY0l3d1gwVDRNM0RUTnZPMjR5TENVRVpETWIxenJ3"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g"
     },
     {
       "score": 2.4,
@@ -118,24 +136,6 @@
       "title": "Trump raises doubts about renewed attacks on Iran - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQndTRnlIMnd2YXYxWE0ySGhhU2lzZldZWGdGNlhUejVqLUxyTkJ3dzVnNWNZaGszckxhWVh3eDdtb1VmWHlpSkdyS1lES2VoYnhfdnVraHV4UE9ScDV3UHo2UVFmb1lHblVhaDdxM0I2QkxNc2x5Q3RybjNEVFRJQXdTbk05N2lxemd5cU1jWHh0aXVvM05rVmJiQm5uY2VmNGc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQa0hXS05BXzBXMWN6UkowWERwWUVYaUhnMzFIYUtvTC14WDJfUjIyWXpfVnV1UGRLT0pqYTVyaXNJSTZ5djYtZ0xpWmtmWG1LODZqUWRBOUNQbjlvLVFxVjF3RGprQmNmdmJLdDdSY2UtTncwUjRVcnR2RXZ2enZzTDQ5QklpOUU4Y0c2MVVmaVdTOW16amNkcVg1WGhEVWFNMkk3dU5wemF2ZVBGZEdDcWU3c3c"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "COMMENTARY: On AI and Iran, Trump risks bombing himself in the foot - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNRmtQdFh0bkk2aXhMdk5pZTFnWkxib1RjTmlZMnFva0pNUFprSExfMHB0VW95QnI1aUZQR3p2b093Vmo4cFI1NzJKZl9XWEFCUmp1QkE3Z20xdEFiMWZOVk5kT3JUUG92bkpEZ1ZrZm9ZV3RXMFRrQ2h1T0hCOFVyZnhiMkk3a3lrVXg4Y29NOGdWX0ZEWFBvMTk4NzRfOWRKYmFZNWNBTjUzQWw0a2RCMXlKY3BuMTBOejVvcEZ6TkFzY2s"
     }
   ]
 }
