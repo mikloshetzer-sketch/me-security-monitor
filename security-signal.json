@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-05 16:30 UTC",
+    "updated": "2026-11-05 23:40 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-10-30",
     "period_end": "2026-11-05",
-    "total_events": 105,
-    "total_risk": 95.98,
-    "normalized_risk_score": 38.4,
+    "total_events": 109,
+    "total_risk": 108.29,
+    "normalized_risk_score": 43.3,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 2,
-    "political": 22,
-    "other": 60
+    "military": 23,
+    "security": 4,
+    "political": 25,
+    "other": 57
   },
   "source_counts": {
-    "news": 99,
+    "news": 103,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 41.84
+      "risk": 47.19
     },
     {
       "name": "Israel",
-      "risk": 17.7
+      "risk": 18.7
     },
     {
       "name": "Yemen",
-      "risk": 7.9
+      "risk": 8.4
     },
     {
-      "name": "Syria",
-      "risk": 4.65
+      "name": "Middle East",
+      "risk": 4.9
     },
     {
       "name": "Gaza Strip",
-      "risk": 3.9
+      "risk": 4.8
     }
   ],
   "top_events": [
@@ -52,9 +52,36 @@
       "date": "2026-11-05",
       "category": "military",
       "source_type": "news",
+      "title": "Saudi Arabia warns of potential danger in Yanbu oil hub as Houthi attacks continue - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQR1J2UXI1T2psd21CTE9jNjdvWmZpaktQTVh0Vzg1VGNzZndWZVNab0JhcFNkMEZSRlF1R0d1Vm9EVmZVMDhfUThrOG84Q2VQaTZocklZaEV4end3cjBUYWFTTWxWZFc4WjBLV1MtOFQ3c0d1bHRvODdrQTFTT01MLVFvTlA1eXI3T3JnMzlXNmpXcGNsWE1KQ3hQRDZCRG8xZjBZMTJSRHZqMmNuVkFWZTVXLXRqdkoxaUlvQUVmcVoxTW9FdFE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-05",
+      "category": "military",
+      "source_type": "news",
       "title": "Jordanian officer killed in Amman stabbing, suspect arrested, security agency says - Reuters",
       "location": "Amman",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVl90eTZDMU1FUm9NaF91OThBSDhrc09wdVZUVXliYzZiUGJIOW84Sk15ZTM3QWx4cVpzZTQ3Mkprd1kwWjNEOVRQdnBJRGF6TkE5ZlN6Q3dDYTNfY1U4VFpMcnliMXB3TFdDYkk4UWJkWmRYSm5EMGlvUVAxdVdVeDVPVFdCUUtCYlY2NTFnZS1UQUsxZ05NSzRZa3RWLXhHWnIzd2JmU1BwOTg3THE0Y3dpOEprZGx0S1diX1I1ZjBITzRZVEE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran says tankers struck in Hormuz amid fears of new US attack - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNSndUR0pGRi1MMEthNENuNFlReHRUcGJUVjdxMm9mbEp0bnVncHFlX0ZyMTVXUkR0Ql9CR2lLRElpcnRvQU5mUVFuT2oyakMxaEdGeHZqMnd5dTJyN3hhaFoyX1Z6NS03eUpMTmlCSFd2NktOeU43b0hhRXFKY0tqWHhKYW9FRzNibFFTVHdjSGFTVDhzMnZwak1MMGhTY1N0X3hCZkV30gGrAUFVX3lxTE5jd3JPYU1KcGFXeEJsc0VoM1FsaklHcnVnMkkwTmpZbkNNM2owMDlIOFViMmxWaTlwSzFSX0lqd2FCTWhNejlPeWE1QWxpcFEtbHZ5eklHbXJhTW0yWWlwQ05PeU04OVFLamJvcjBvUHI4ZW9INDFILXVGUHZFQmUwd3hVeW1NUFVmdVZTMGJMSUJfeEtFZS16bTI1SkhKZ3pIVzZaWWd0VG13aw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Four people, including a child, killed in Israeli attacks on Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNTkd5N1NSdUpxbmd6RnRucHFPNXlUbUxBRTBUTHVSbFIydV9DZDBrUVM3c2M1TE9UcGVoMm1YQlJUZ3JhM3dMcElSRFh2cklYcG5WcGxfdzZOTEh6Mk8yNmRmT3RheGZKaUtWdlNTQVN1S2hPdEd0UFF1UVRaLUZLaXRTMThVdDBPTi1fZ1lfcTdUd3lDSnZpbWNvVUZrbTV3eThkbG9UQdIBrAFBVV95cUxPc0M4ZksyLXpuSUE5ai1TREd6MW1GUGJHajJhRmZMbWdUUEhTQnVQNnhadklLU0t1LW9temxpUEtkUWo2R3Ixd1NKY2JQeDJhbDd4T0N1MnNSYzBYbkdKXzM5Mk82YVVlVWplZnNtVC0xUXdTSGxHNEpXNEs3YXlidkxsZC1nVUQyTi0wOFQ2RFo2MFZpUWp1MUJZcE1RWHZVcm82ZmFBWGRlSV8z"
     },
     {
       "score": 3.0,
@@ -73,15 +100,6 @@
       "title": "Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTDVKUWNwVE9IVVdLZ2xLVW9qWGxrUW5GZ3FtRjZ6LTgzQWNfT0dXM3FzT3dsY05aNE4wWFRXLVVUckV6SUd5RUR3djlaeDlBVWlIVXhLTTRYY2ZmOUgwdFAxd0MzcXIwLXJvazlfc2kwSXpyQ1NMM1dOSkwxRnNUVlZBeW5CSFBWVlQwM3NSZENiWXFXXzJfTkVxSzVIUnl2VVFaME5hNkpfLXFiSnZsMVZHd0ZrVEJzN2oxRXVDX192WHFua2lna3lrUEg"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUW9iaUN1YmNnZlZ0a05YVklpS2I1dFp2UHR0VzNRaXRubGN6ZWczLWNqdlhaTENzcUtZYjQ4OG5Ca19nVmZjZTVEYlNGTTU4QXpZYVVXOXhnMTIzYXJBeWY5ZXdTREpkN1ZCNmNzd0d4eThoOTZmVUtFSEQ1NHg0b2VQU08xaHh5R01MUWhNN0NlY0l3d1gwVDRNM0RUTnZPMjR5TENVRVpETWIxenJ3"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bomb threat prompts checks on Israel-bound cruise ship in Greek port - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRFdCbjRHZUlIMUdodTRhamFrS0VINnpSYjFVTXlrSDJhdUFiQkhGS25ROWN1SXpjWE9uUTZxU1RxRkRMenlmSGREU2NTU3N0TExuUG9Da25qVzlhb25UelRFbUdCeUthd25Rc3gzamhQdHo3VUhiOFJ3c1pIcWx6dGFwMmRIRklGdjVVVXVmeHE0eDFRSTNLMllPR3NXck44WFJtSmlrTVZqNlMwajg3amhpU05GSk0"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-03",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump raises doubts about renewed attacks on Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQndTRnlIMnd2YXYxWE0ySGhhU2lzZldZWGdGNlhUejVqLUxyTkJ3dzVnNWNZaGszckxhWVh3eDdtb1VmWHlpSkdyS1lES2VoYnhfdnVraHV4UE9ScDV3UHo2UVFmb1lHblVhaDdxM0I2QkxNc2x5Q3RybjNEVFRJQXdTbk05N2lxemd5cU1jWHh0aXVvM05rVmJiQm5uY2VmNGc"
     }
   ]
 }
