@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T18:30:13Z",
+  "generated_at": "2026-11-06T23:31:39Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 848,
+    "events_endpoint_records": 854,
     "feed_event_records": 250,
-    "normalized_events": 1904,
+    "normalized_events": 1910,
     "map_visualizable_events": 271,
-    "non_mappable_events": 1633,
-    "developments": 4
+    "non_mappable_events": 1639,
+    "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1904,
+      "total_events": 1910,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-06T17:09:16Z",
+      "latest_event_date": "2026-11-06T23:03:29Z",
       "geocoded_events": 271,
       "geocoded_share": 14.2,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 37,
-        "previous": 54,
-        "delta": -17,
-        "percent_change": -31.5,
+        "current": 43,
+        "previous": 53,
+        "delta": -10,
+        "percent_change": -18.9,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 314,
-        "previous": 352,
-        "delta": -38,
-        "percent_change": -10.8,
+        "current": 315,
+        "previous": 344,
+        "delta": -29,
+        "percent_change": -8.4,
         "direction": "stable"
       }
     },
@@ -806,14 +806,14 @@
       },
       {
         "date": "2026-11-06",
-        "count": 4
+        "count": 10
       }
     ],
     "category_counts": {
-      "infrastructure": 549,
-      "missile": 425,
+      "infrastructure": 550,
+      "missile": 428,
       "strike": 276,
-      "drone": 220,
+      "drone": 222,
       "airstrike": 148,
       "movement": 110,
       "explosion": 73,
@@ -824,25 +824,25 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 984,
+      "medium": 988,
       "high": 600,
-      "low": 307,
+      "low": 309,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1261,
-      "iran": 398,
+      "unknown": 1266,
+      "iran": 399,
       "israel": 206,
       "usa": 39
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 735
+        "count": 737
       },
       {
         "name": "Iran",
-        "count": 396
+        "count": 399
       },
       {
         "name": "Jordan",
@@ -874,7 +874,7 @@
       },
       {
         "name": "Syria",
-        "count": 33
+        "count": 34
       },
       {
         "name": "Nabatieh",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 735
+        "count": 737
       },
       {
         "name": "Iran",
-        "count": 525
+        "count": 528
       },
       {
         "name": "Lebanon",
@@ -932,7 +932,7 @@
       },
       {
         "name": "Syria",
-        "count": 46
+        "count": 47
       },
       {
         "name": "Palestinian territories",
@@ -945,34 +945,41 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11222,
+    "totalCount": 11228,
     "spotlight": {
       "event": {
-        "id": "mryh95xbgw00",
-        "timestamp": "2026-11-06T13:14:41+00:00",
-        "location": "YEM",
-        "origin": "SAU",
+        "id": "1yvt31rgdezk0",
+        "timestamp": "2026-11-06T23:03:29+00:00",
+        "location": "IRN",
+        "origin": "USA",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "high",
-        "description": "Royal Saudi Air Force airstrike hits a market in Al-Wazi'yah District, Taiz Governorate; at least 40 dead and wounded civilians reported by Houthi-run Al-Masirah",
-        "descriptionHe": "תקיפה אווירית של חיל האוויר המלכותי הסעודי פוגעת בשוק במחוז אל-וזעיה שבמחוז תעז; לפי אל-מסירה המונחית על ידי החות'ים, לפחות 40 הרוגים ופצועים אזרחיים",
+        "type": "intercept",
+        "severity": "medium",
+        "description": "IRGC claims shootdown of USAF MQ-9A Reaper drone above Qeshm Island, per IRIB statement",
+        "descriptionHe": "משמרות המהפכה טוענים כי הפילו רחפן MQ-9A Reaper של חיל האוויר האמריקאי מעל אי קשם, לפי הודעת IRIB",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/86796"
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/86833"
       },
-      "headline": "Saudi airstrike kills dozens in Yemen market strike",
-      "headlineHe": "תקיפה סעודית הורגת עשרות בשוק בתימן",
-      "summary": "The strike on a civilian market in Taiz marks a significant escalation in Saudi-led coalition operations against Houthi-controlled areas, with casualty figures sourced from Houthi media outlets.",
-      "summaryHe": "התקיפה על שוק אזרחי בתעיץ מסמנת הסלמה משמעותית בפעולות קואליציה בראשות סעודיה נגד אזורים בשליטת חות'ים, עם נתוני הקסוםים שמקורם בתקשורת הקשורה לחות'ים.",
-      "pickedAt": "2026-11-06T18:00:27.187Z",
-      "state": "TODAY"
+      "headline": "Iran Claims Downing of U.S. Military Reaper Drone",
+      "headlineHe": "איראן טוענת להפלת מטוס ללא אדם אמריקאי",
+      "summary": "The incident marks an escalation in aerial tensions over the strategic Qeshm Island in the Persian Gulf, following reports of unconfirmed U.S. retaliatory strikes on Iranian port facilities.",
+      "summaryHe": "התקريט משמעות הסלמה במתח האווירי מעל האי הקטגוריה קשם בחזה פרסי, בעקבות דיווחים על תקיפות שלא אושרו של הממשלה האמריקנית על מתקנים בנמלים איראנים.",
+      "pickedAt": "2026-11-06T23:15:25.943Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-06T18:27:17.377Z",
+    "lastUpdated": "2026-11-06T23:30:17.535Z",
     "stale": false,
-    "viewerCount": 6,
+    "viewerCount": 11,
     "ceasefire": false
   },
   "summary": {
@@ -1515,128 +1522,8 @@
     "vitals": {
       "internet": 96,
       "cellular": null,
-      "lastUpdate": "2026-11-06T18:00:13.756Z",
+      "lastUpdate": "2026-11-06T23:00:14.368Z",
       "internetHistory": [
-        {
-          "t": "2026-11-05T18:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T18:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T18:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T18:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T18:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T18:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T19:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T19:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T19:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T19:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T19:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T19:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T20:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T20:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T20:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T20:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T20:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T20:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T21:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T21:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T21:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T21:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T21:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T21:50:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T22:00:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T22:10:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T22:20:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T22:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T22:40:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-05T22:50:00.000Z",
-          "v": 94
-        },
         {
           "t": "2026-11-05T23:00:00.000Z",
           "v": 94
@@ -2088,22 +1975,142 @@
         {
           "t": "2026-11-06T17:40:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-11-06T17:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T18:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T18:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T18:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T18:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T18:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T18:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T19:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T19:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T19:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T19:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T19:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T19:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T20:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T20:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T20:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T20:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T20:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T20:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T21:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T21:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T21:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T21:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T21:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T21:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T22:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T22:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T22:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T22:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T22:40:00.000Z",
+          "v": 96
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-06T18:00:13.756Z"
+    "lastUpdated": "2026-11-06T23:00:14.368Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f2a4c91",
+      "id": "iranstrike-a7f2k9m1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-06T13:14:41Z",
       "title": "IranStrike event",
-      "description": "Saudi airstrike kills 40+ civilians in Taiz market; Houthi-run media reports",
+      "description": "Saudi airstrike kills 40+ civilians in Yemen market; escalation amid Houthi conflict",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2124,9 +2131,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f2a4c91",
-        "text": "Saudi airstrike kills 40+ civilians in Taiz market; Houthi-run media reports",
-        "textHe": "תקיפת אוויר סעודית הרגה 40+ אזרחים בשוק בתעיז; דיווח מדיה הותי",
+        "id": "a7f2k9m1",
+        "text": "Saudi airstrike kills 40+ civilians in Yemen market; escalation amid Houthi conflict",
+        "textHe": "תקיפת חיל האוויר הסעודי הורגת 40+ אזרחים בשוק בתימן; הסלמה בסכסוך עם חות'ים",
         "severity": "high",
         "timestamp": "2026-11-06T13:14:41+00:00",
         "entityIds": [
@@ -2140,14 +2147,14 @@
       }
     },
     {
-      "id": "iranstrike-6e3d8b42",
+      "id": "iranstrike-b3e8k2p5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-06T15:21:39Z",
+      "date": "2026-11-06T23:03:29Z",
       "title": "IranStrike event",
-      "description": "Iran downs U.S. MQ-1 drone over Qeshm Island; second intercept claimed",
+      "description": "Iran shoots down 2 US drones over Qeshm Island; unconfirmed US Tomahawk strikes follow",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2168,74 +2175,35 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6e3d8b42",
-        "text": "Iran downs U.S. MQ-1 drone over Qeshm Island; second intercept claimed",
-        "textHe": "איראן הפילה רחפן MQ-1 אמריקאי מעל איי קשם; יירוט שני לטענה",
+        "id": "b3e8k2p5",
+        "text": "Iran shoots down 2 US drones over Qeshm Island; unconfirmed US Tomahawk strikes follow",
+        "textHe": "איראן הוריקה 2 כלי טיס אמריקאים מעל האי קשם; תגובת טומהוק אמריקאית לא מאומתת",
         "severity": "high",
-        "timestamp": "2026-11-06T15:21:39+00:00",
+        "timestamp": "2026-11-06T23:03:29+00:00",
         "entityIds": [
           "IRN",
           "USA"
         ],
         "eventIds": [
-          "1gjw55oax5a80"
+          "1yvt31rgdezk0",
+          "39wwskvo7xc00",
+          "1gjw55oax5a80",
+          "15lh0zj07vgg0",
+          "199xkpm48zz40",
+          "rdqwcs3ctq80"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-5d1c6f73",
+      "id": "iranstrike-c6d1n8q7",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-05T18:25:45Z",
+      "date": "2026-11-06T19:17:54Z",
       "title": "IranStrike event",
-      "description": "Russia reportedly to supply Iran 90 helicopter-mounted missile launchers",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "5d1c6f73",
-        "text": "Russia reportedly to supply Iran 90 helicopter-mounted missile launchers",
-        "textHe": "רוסיה לכאורה תספק לאיראן 90 משגרים מטילים על בסיס הליקופטר",
-        "severity": "medium",
-        "timestamp": "2026-11-05T18:25:45+00:00",
-        "entityIds": [
-          "IRN",
-          "RUS"
-        ],
-        "eventIds": [
-          "tytx53h7py80"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-4c2e9a15",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-06T17:09:16Z",
-      "title": "IranStrike event",
-      "description": "Unconfirmed: Syria sent military advisers to Saudi Arabia amid Houthi conflict",
+      "description": "Syria deploys military advisers to Saudi Arabia amid Yemen conflict intensification",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2256,23 +2224,306 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "4c2e9a15",
-        "text": "Unconfirmed: Syria sent military advisers to Saudi Arabia amid Houthi conflict",
-        "textHe": "לא מאומת: סוריה שלחה יועצים צבאיים לסעודיה במהלך סכסוך הותי",
+        "id": "c6d1n8q7",
+        "text": "Syria deploys military advisers to Saudi Arabia amid Yemen conflict intensification",
+        "textHe": "סוריה שולחת יועצים צבאיים לסעודיה במהלך הסלמה בתימן",
         "severity": "medium",
-        "timestamp": "2026-11-06T17:09:16+00:00",
+        "timestamp": "2026-11-06T19:17:54+00:00",
         "entityIds": [
           "SYR",
           "SAU"
         ],
         "eventIds": [
+          "2hm48m57z8u00",
           "3k4dai777du00"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-1yvt31rgdezk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86833",
+      "date": "2026-11-06T23:03:29Z",
+      "title": "IranStrike event",
+      "description": "IRGC claims shootdown of USAF MQ-9A Reaper drone above Qeshm Island, per IRIB statement",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1yvt31rgdezk0",
+        "timestamp": "2026-11-06T23:03:29+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "intercept",
+        "severity": "medium",
+        "description": "IRGC claims shootdown of USAF MQ-9A Reaper drone above Qeshm Island, per IRIB statement",
+        "descriptionHe": "משמרות המהפכה טוענים כי הפילו רחפן MQ-9A Reaper של חיל האוויר האמריקאי מעל אי קשם, לפי הודעת IRIB",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/86833"
+      }
+    },
+    {
+      "id": "iranstrike-rdqwcs3ctq80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86830",
+      "date": "2026-11-06T23:00:28Z",
+      "title": "IranStrike event",
+      "description": "Footage shows Iranian surface-to-air missiles launched at a U.S. fighter jet that violated Qeshm Island airspace",
+      "category": "missile",
+      "severity": "low",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn footage shows iranian surface-to-air missiles launched at a u.s.",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "rdqwcs3ctq80",
+        "timestamp": "2026-11-06T23:00:28+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "defense",
+        "severity": "low",
+        "description": "Footage shows Iranian surface-to-air missiles launched at a U.S. fighter jet that violated Qeshm Island airspace",
+        "descriptionHe": "צילומים מראים שיגור טילי קרקע-אוויר איראניים לעבר מטוס קרב אמריקאי שחדר למרחב האווירי של האי קשם",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86830"
+      }
+    },
+    {
+      "id": "iranstrike-15lh0zj07vgg0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86830",
+      "date": "2026-11-06T23:00:28Z",
+      "title": "IranStrike event",
+      "description": "Unconfirmed: some sources report two U.S. Tomahawk cruise missiles struck Souza Port on Qeshm in response",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "15lh0zj07vgg0",
+        "timestamp": "2026-11-06T23:00:28+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Unconfirmed: some sources report two U.S. Tomahawk cruise missiles struck Souza Port on Qeshm in response",
+        "descriptionHe": "לא מאומת: לפי מקורות מסוימים, שני טילי שיוט אמריקאיים מסוג טומהוק פגעו בנמל סוזה שבקשם בתגובה",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "cruise_missile",
+            "count": 2
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/86830"
+      }
+    },
+    {
+      "id": "iranstrike-39wwskvo7xc00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86824",
+      "date": "2026-11-06T21:50:26Z",
+      "title": "IranStrike event",
+      "description": "Unverified report: Iranian Persezan-359 SHORAD system near Qeshm Island reportedly shot down a USAF MQ-9A Reaper drone",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "39wwskvo7xc00",
+        "timestamp": "2026-11-06T21:50:26+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Unverified report: Iranian Persezan-359 SHORAD system near Qeshm Island reportedly shot down a USAF MQ-9A Reaper drone",
+        "descriptionHe": "דיווח שטרם אומת: מערכת SHORAD איראנית מסוג פרסזן-359 ליד האי קשם הפילה לפי הדיווחים רחפן MQ-9A Reaper של חיל האוויר האמריקאי",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86824"
+      }
+    },
+    {
+      "id": "iranstrike-199xkpm48zz40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86825",
+      "date": "2026-11-06T21:50:26Z",
+      "title": "IranStrike event",
+      "description": "Unverified local reports of a U.S. strike on the Port of Souza, Qeshm Island, possibly retaliating for the MQ-9 shootdown; locals also reported missile launches from the port before the alleged strike",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "199xkpm48zz40",
+        "timestamp": "2026-11-06T21:50:26+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Unverified local reports of a U.S. strike on the Port of Souza, Qeshm Island, possibly retaliating for the MQ-9 shootdown; locals also reported missile launches from the port before the alleged strike",
+        "descriptionHe": "דיווחים מקומיים שלא אומתו על תקיפה אמריקאית בנמל סוזה שבאי קשם, אולי כתגובה להפלת ה-MQ-9; מקומיים דיווחו גם על שיגורי טילים מהנמל לפני התקיפה המיוחסת",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86825"
+      }
+    },
+    {
+      "id": "iranstrike-2hm48m57z8u00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133199",
+      "date": "2026-11-06T19:17:54Z",
+      "title": "IranStrike event",
+      "description": "Reuters reportedly says Syria sent dozens of military experts to Saudi Arabia to advise and train Saudi forces",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2hm48m57z8u00",
+        "timestamp": "2026-11-06T19:17:54+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "Reuters reportedly says Syria sent dozens of military experts to Saudi Arabia to advise and train Saudi forces",
+        "descriptionHe": "לפי רויטרס, סוריה שלחה לסעודיה עשרות \"מומחים צבאיים\" לטובת ייעוץ והכשרה של כוחות הצבא הסעודי",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133199"
+      }
+    },
     {
       "id": "iranstrike-3k4dai777du00",
       "source": "IranStrike",
