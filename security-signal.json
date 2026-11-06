@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-06 06:50 UTC",
+    "updated": "2026-11-06 15:57 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,63 @@
   "summary": {
     "period_start": "2026-10-31",
     "period_end": "2026-11-06",
-    "total_events": 101,
-    "total_risk": 92.23,
-    "normalized_risk_score": 36.9,
+    "total_events": 97,
+    "total_risk": 91.98,
+    "normalized_risk_score": 36.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 23,
+    "military": 22,
     "security": 2,
-    "political": 22,
-    "other": 54
+    "political": 20,
+    "other": 53
   },
   "source_counts": {
-    "news": 95,
+    "news": 91,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 41.29
+      "risk": 47.38
     },
     {
       "name": "Israel",
-      "risk": 16.35
+      "risk": 15.95
     },
     {
       "name": "Yemen",
-      "risk": 7.3
+      "risk": 4.8
     },
     {
       "name": "Gaza Strip",
       "risk": 4.2
     },
     {
-      "name": "Syria",
-      "risk": 3.75
+      "name": "Iraq",
+      "risk": 2.9
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Rocket launcher deal illustrates deepening Russia-Iran relations - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdWVqajZxZDRIQXFLdUc3XzRCOElUT1pBUkJEOV9meHRkd0d6elpGd3JIQkhoUldubFpndUxINWx2ZmgycFA2VHFvdHNBY3J6bGNheGYtZ2JiVUk1UW5tTDhDek1UTGtXeGNuMWtYWkhmSWx4ZGhZcVU2OGV2a2o4WDhqdUVMYzU0NncxQUJXVEF2M1Q0NWdDOGZodktXcEs1ekVFMVd0SkjSAa4BQVVfeXFMT2p6WHdMM3E1TDhKYXJTTDUxQlc4OGQ2QmR1OVNodVdpdVVaZWJ2NEVrUEphdnZRbGZUN1JIUTI5Nm5fUHoyU0U1YThUand3ams2dVBScjNkc1U1cnIxWEFtRVUzcm5vNDk4eFdPczJoWWhEY0UwYzl4emtNT1g2SVF2M1NveGZ2ZnVpVHRMWXdTTDdVY1FNMXNFOGtEXzhZNFJlYlVnQmw2QTdPYl9R"
+    },
     {
       "score": 2.7,
       "date": "2026-11-05",
@@ -97,15 +115,6 @@
       "date": "2026-11-04",
       "category": "military",
       "source_type": "news",
-      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-04",
-      "category": "military",
-      "source_type": "news",
       "title": "Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTDVKUWNwVE9IVVdLZ2xLVW9qWGxrUW5GZ3FtRjZ6LTgzQWNfT0dXM3FzT3dsY05aNE4wWFRXLVVUckV6SUd5RUR3djlaeDlBVWlIVXhLTTRYY2ZmOUgwdFAxd0MzcXIwLXJvazlfc2kwSXpyQ1NMM1dOSkwxRnNUVlZBeW5CSFBWVlQwM3NSZENiWXFXXzJfTkVxSzVIUnl2VVFaME5hNkpfLXFiSnZsMVZHd0ZrVEJzN2oxRXVDX192WHFua2lna3lrUEg"
@@ -115,27 +124,18 @@
       "date": "2026-11-04",
       "category": "military",
       "source_type": "news",
+      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g"
+    },
+    {
+      "score": 2.4,
+      "date": "2026-11-04",
+      "category": "military",
+      "source_type": "news",
       "title": "Iran says US reply to Hormuz plan ‘unconvincing’; Trump confirms strikes - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxON1ZqTGJfa3lWVVdvUzRRRUc3TlVVYUNFMHhkWlREdDZsYUFzSmdJVjBhcU9PaEptVWRxRm9QMnRGcmpkYkNHVXgydHhJYTd6X0d5dF9JMG1vc1dVOWtBWWxBUTB3VjhkZlAyUEt4cGhPUlJIRzR2cFhkdFVoOEc4SkRkM1FRQ0FpblBPZHh5S3JKMl9zbUhjeUlVazhmdkJ5QjRaUXJ6eV8taGNpV3lv0gG0AUFVX3lxTE1qMndoTmRKR0xGNDZnMVJYWmdselZrTXdiXzFKVjgwQW9OZ242eHJDWFlMa2x5MU1mbGVGdFIwV2V5Q2V2OVpfYmtfd0RLUnhmN01vTjZMdHgzVnVaMlZfelBSajJHOWVJOXZ0UTlQZEMwR0RsalU2bThPekFSRDExWG9KUUVMdFlVSFRPNTgteTdyNGxZMmhCMU9aUjU1SnNaTWJETmdSTlFyeHUwQmRUOGpRMw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iranian leaders welcome US midterm results, but Trump may still attack - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNdF9kYVI3SGNySm5CRUp6OWpWc1F3TzZYN09vMnJHTmFFTnJoOUpacUdHbnJ5Ty1WSmZab21Ea0Y0R2w3MERTcjd6ajBqN1FkQ3JCaGl4XzRxU091eFROMm9yUnBzODV0Zm8xMTh3WkxBMFpUVXV6YlB2d1R0bm9SMElIdktra1FJWTdabURGN1B3UzM1TWRqT1JkME5VcndzWExPbjBn0gGrAUFVX3lxTE0tSXQyTjAyWHRXMUl5dVJ0c0ZMSFdDSTFKNGtTU3pqMlUwd3ZMMmROb0NnbS01THhRYkloXzNQOGE4Uzc3RTdHekFIS3BJYUppYTA2b2NrcWVucmZBTkNaR1VrTGRfM3FueUNzMzNSSGlZZU8xQ0pzYTFyQWpULWhtU09zalFRY0xkSkh5N1hJWi1YS0Z3cjkxOTlURzlidGlEU2htVHZBa0Nfaw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "EU urges action as Germany, Romania and UK report supermarket cyberattacks - Al Jazeera",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRC1DQWVUUFdlVGozYUdORVpwMHJNaXdDSlJKaUxlYVBpUm9UbGZCNjZQS1FKRV9haWNNTVdfQXBnUjFUelZJeERuc2hnNWVhM19pRkJZSkEtTHBsQ1VwdVpXQi0tMHc4UG5uZ0NuVWttRFp6eUE5S3ZFRFFsMTdGZmw3REhDMXNDVEs5emExUlBzX2d0ZkV6bWN1VTFOczd6M0ZDSFNRcVlWRzgzVzdBaFFiX0XSAboBQVVfeXFMUHNzS3g4cjFmenhPWHY1dzhBWWM5U3pCLWRMdEI1MFhzYms5aDFkT05tMUZwZm9DRTluSWtDUHByWjVRM2R5eUZKWE16X01wT0VURkgtNDBpTlUxM1VzWU5peWh2ZVZPVER5MXAzV0FHRU03NEQzYWd6VTg5WUJHSkZ3RzM0OHlQa21ESW01MUhBaFlOWlBGMV83dXZ3QzQtNkQtUGFYSWdnNWU5elhSNXdrNzBXU05ZbWpR"
     }
   ]
 }
