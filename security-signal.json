@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-06 15:57 UTC",
+    "updated": "2026-11-06 21:31 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-10-31",
     "period_end": "2026-11-06",
-    "total_events": 97,
-    "total_risk": 91.98,
-    "normalized_risk_score": 36.8,
+    "total_events": 99,
+    "total_risk": 95.28,
+    "normalized_risk_score": 38.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 22,
-    "security": 2,
-    "political": 20,
-    "other": 53
+    "security": 3,
+    "political": 17,
+    "other": 57
   },
   "source_counts": {
-    "news": 91,
+    "news": 93,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 47.38
+      "risk": 45.68
     },
     {
       "name": "Israel",
-      "risk": 15.95
+      "risk": 12.5
     },
     {
-      "name": "Yemen",
-      "risk": 4.8
+      "name": "Syria",
+      "risk": 6.75
+    },
+    {
+      "name": "Amman",
+      "risk": 5.4
     },
     {
       "name": "Gaza Strip",
       "risk": 4.2
-    },
-    {
-      "name": "Iraq",
-      "risk": 2.9
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObFFuV2xuOUtpNDJEVlB0Q0NMYV9BQkNZTzkzRkNVWHBrVGI2TC0xeUk0LTVzdWJrclByYzR3OS1PV2VJaExTT0hud2hzSENNUnlZb0J5cE5yclAtcmljYnlRcFFTOXRuOFVYbUlnbmh3cU5qQTNQSWJ3SEJ1UENMTWFUOXVBZ2xVckpNWjcwOG5meGVBWFBZRlRyZ1Q4ZkNweDlsREhMRWFwX0NrSDctbVoyZDhfdUdzOFAyVmFReUFDNkVBcmc"
+    },
     {
       "score": 3.0,
       "date": "2026-11-06",
@@ -70,18 +79,18 @@
       "date": "2026-11-05",
       "category": "military",
       "source_type": "news",
-      "title": "Jordanian officer killed in Amman stabbing, suspect arrested, security agency says - Reuters",
-      "location": "Amman",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVl90eTZDMU1FUm9NaF91OThBSDhrc09wdVZUVXliYzZiUGJIOW84Sk15ZTM3QWx4cVpzZTQ3Mkprd1kwWjNEOVRQdnBJRGF6TkE5ZlN6Q3dDYTNfY1U4VFpMcnliMXB3TFdDYkk4UWJkWmRYSm5EMGlvUVAxdVdVeDVPVFdCUUtCYlY2NTFnZS1UQUsxZ05NSzRZa3RWLXhHWnIzd2JmU1BwOTg3THE0Y3dpOEprZGx0S1diX1I1ZjBITzRZVEE"
+      "title": "Saudi Arabia warns of potential danger in Yanbu oil hub as Houthi attacks continue - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQR1J2UXI1T2psd21CTE9jNjdvWmZpaktQTVh0Vzg1VGNzZndWZVNab0JhcFNkMEZSRlF1R0d1Vm9EVmZVMDhfUThrOG84Q2VQaTZocklZaEV4end3cjBUYWFTTWxWZFc4WjBLV1MtOFQ3c0d1bHRvODdrQTFTT01MLVFvTlA1eXI3T3JnMzlXNmpXcGNsWE1KQ3hQRDZCRG8xZjBZMTJSRHZqMmNuVkFWZTVXLXRqdkoxaUlvQUVmcVoxTW9FdFE"
     },
     {
       "score": 2.7,
       "date": "2026-11-05",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia warns of potential danger in Yanbu oil hub as Houthi attacks continue - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQR1J2UXI1T2psd21CTE9jNjdvWmZpaktQTVh0Vzg1VGNzZndWZVNab0JhcFNkMEZSRlF1R0d1Vm9EVmZVMDhfUThrOG84Q2VQaTZocklZaEV4end3cjBUYWFTTWxWZFc4WjBLV1MtOFQ3c0d1bHRvODdrQTFTT01MLVFvTlA1eXI3T3JnMzlXNmpXcGNsWE1KQ3hQRDZCRG8xZjBZMTJSRHZqMmNuVkFWZTVXLXRqdkoxaUlvQUVmcVoxTW9FdFE"
+      "title": "Jordanian officer killed in Amman stabbing, suspect arrested, security agency says - Reuters",
+      "location": "Amman",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVl90eTZDMU1FUm9NaF91OThBSDhrc09wdVZUVXliYzZiUGJIOW84Sk15ZTM3QWx4cVpzZTQ3Mkprd1kwWjNEOVRQdnBJRGF6TkE5ZlN6Q3dDYTNfY1U4VFpMcnliMXB3TFdDYkk4UWJkWmRYSm5EMGlvUVAxdVdVeDVPVFdCUUtCYlY2NTFnZS1UQUsxZ05NSzRZa3RWLXhHWnIzd2JmU1BwOTg3THE0Y3dpOEprZGx0S1diX1I1ZjBITzRZVEE"
     },
     {
       "score": 2.7,
@@ -111,6 +120,15 @@
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOai13MzZqNFNrNTRwSGdPVnpESzctM2dRN1c3UVY3bndZOGhzWXFTR045SDRkQ000UDhSODBVZWNQRElQU0ZubnZJalZiZHpXVUpBNGJrdVJLNEVtaG1abkRGdHAwcTBJeldOWDJXSlBFbGJTZkFHR29vYzh5WlRaZGwyUTQ4QXBkbjQtckZYY0dEN1Y0NFlaa1Y2bGszT05zMEtGVzFuSTZHOU9NcVRVS9IBtgFBVV95cUxQbVEzMTdQSjcxLWVBYVgwYTRyQXAyQjBJYzZlWXRId2hxbDZVdVp4NWtjNmxUZWpmXzMtUUdiVXNpUVBnWUpzZXppcDJCaDR4SzI4V2xrY1JqOWVLVW1rV2pJSlRVTmxGRUNHQ1NvMzRROTQ5TGNCS2MweWFPVURYYVJ6bzM1c2d4bFJ1WEk3TThQTVFfR1VrbGctM1JLWUc4SXk0S3owd01YUEphdW9hRDRLQS1sdw"
     },
     {
+      "score": 2.7,
+      "date": "2026-11-05",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordanian officer killed in stabbing attack in Amman - Al Jazeera",
+      "location": "Amman",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQnAwZ2l5d2V4YU1DcVhyMU05cTNJUW9xa3ZFajIwdVFWM055OUNiWUt5aHhqSWsyai05UWRJYWtla1hhUDg2NnB3SDhnX2xabTQ2a0JrbXdvN3dZM1N3SjJmbktFUVp4dmM5MW56UFZ1MzRsbXhVNGVuYmVBb3JKVmtHUERISEpSSWY4MUtyWWlmN0h5ank1UjM4bW91TkZid2ZGd1ln0gGrAUFVX3lxTFBoNlZlZ1JMcHVxR01LbHdmYjE1eXp2UTktckFIeDM5eEsxRmJZdEIzQlE1OVN3UFNROXp0czRMM2trYUxPbnJ2ZTU0bk4xaWI4dXNYc1k1M3hJZ055QzZLZzZpX2RnUVRTV2dJS3JnRTJ4aFNGMGV6eVU1Wnc3UkZXd2lCWWl2OWplRmNVQ1FwMHJjT0NGVVFpbG1TSXNjVEpzTTFKeE52Z1RoQQ"
+    },
+    {
       "score": 2.4,
       "date": "2026-11-04",
       "category": "military",
@@ -118,24 +136,6 @@
       "title": "Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTDVKUWNwVE9IVVdLZ2xLVW9qWGxrUW5GZ3FtRjZ6LTgzQWNfT0dXM3FzT3dsY05aNE4wWFRXLVVUckV6SUd5RUR3djlaeDlBVWlIVXhLTTRYY2ZmOUgwdFAxd0MzcXIwLXJvazlfc2kwSXpyQ1NMM1dOSkwxRnNUVlZBeW5CSFBWVlQwM3NSZENiWXFXXzJfTkVxSzVIUnl2VVFaME5hNkpfLXFiSnZsMVZHd0ZrVEJzN2oxRXVDX192WHFua2lna3lrUEg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPalRYN3p3UkoxcmdQWFZuQ2xvU1FaZG0yX25XcTJreldvQmIyeDRCdWVKNVliZ1hHaTNweHpmRXpOWUZSVHRLMVdDVmJTOFdOTHRhOGFFS29HYlU1akVQdTFIdGNydjF2WWM3LXZVLUpOam5WeWxFaW0xMWUtRWhhMXdROWlXVFFuZnExdU5RVjlsRE0yMTBxUDh2bkVkeEk0QkwwU1Jxem50WU9yU3hmUHhvSEJyZ251OWM0cEM3dmJ0TzhaNzZrb1FHc3g"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-04",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says US reply to Hormuz plan ‘unconvincing’; Trump confirms strikes - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxON1ZqTGJfa3lWVVdvUzRRRUc3TlVVYUNFMHhkWlREdDZsYUFzSmdJVjBhcU9PaEptVWRxRm9QMnRGcmpkYkNHVXgydHhJYTd6X0d5dF9JMG1vc1dVOWtBWWxBUTB3VjhkZlAyUEt4cGhPUlJIRzR2cFhkdFVoOEc4SkRkM1FRQ0FpblBPZHh5S3JKMl9zbUhjeUlVazhmdkJ5QjRaUXJ6eV8taGNpV3lv0gG0AUFVX3lxTE1qMndoTmRKR0xGNDZnMVJYWmdselZrTXdiXzFKVjgwQW9OZ242eHJDWFlMa2x5MU1mbGVGdFIwV2V5Q2V2OVpfYmtfd0RLUnhmN01vTjZMdHgzVnVaMlZfelBSajJHOWVJOXZ0UTlQZEMwR0RsalU2bThPekFSRDExWG9KUUVMdFlVSFRPNTgteTdyNGxZMmhCMU9aUjU1SnNaTWJETmdSTlFyeHUwQmRUOGpRMw"
     }
   ]
 }
