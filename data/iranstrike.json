@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T11:32:48Z",
+  "generated_at": "2026-11-06T18:30:13Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,46 +52,42 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 844,
+    "events_endpoint_records": 848,
     "feed_event_records": 250,
-    "normalized_events": 1900,
+    "normalized_events": 1904,
     "map_visualizable_events": 271,
-    "non_mappable_events": 1629,
-    "developments": 3
+    "non_mappable_events": 1633,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1900,
+      "total_events": 1904,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-05T18:25:45Z",
+      "latest_event_date": "2026-11-06T17:09:16Z",
       "geocoded_events": 271,
-      "geocoded_share": 14.3,
+      "geocoded_share": 14.2,
       "top_category": "infrastructure",
       "top_location": "Unknown",
       "top_country": "Unknown"
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 36,
-        "previous": 45,
-        "delta": -9,
-        "percent_change": -20.0,
+        "current": 37,
+        "previous": 54,
+        "delta": -17,
+        "percent_change": -31.5,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 319,
-        "previous": 354,
-        "delta": -35,
-        "percent_change": -9.9,
+        "current": 314,
+        "previous": 352,
+        "delta": -38,
+        "percent_change": -10.8,
         "direction": "stable"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-05-10",
-        "count": 0
-      },
       {
         "date": "2026-05-11",
         "count": 0
@@ -807,14 +803,18 @@
       {
         "date": "2026-11-05",
         "count": 3
+      },
+      {
+        "date": "2026-11-06",
+        "count": 4
       }
     ],
     "category_counts": {
-      "infrastructure": 547,
+      "infrastructure": 549,
       "missile": 425,
       "strike": 276,
-      "drone": 219,
-      "airstrike": 147,
+      "drone": 220,
+      "airstrike": 148,
       "movement": 110,
       "explosion": 73,
       "ground": 65,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 982,
-      "high": 599,
-      "low": 306,
+      "medium": 984,
+      "high": 600,
+      "low": 307,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1257,
+      "unknown": 1261,
       "iran": 398,
       "israel": 206,
       "usa": 39
@@ -838,11 +838,11 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 733
+        "count": 735
       },
       {
         "name": "Iran",
-        "count": 395
+        "count": 396
       },
       {
         "name": "Jordan",
@@ -874,7 +874,7 @@
       },
       {
         "name": "Syria",
-        "count": 32
+        "count": 33
       },
       {
         "name": "Nabatieh",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 733
+        "count": 735
       },
       {
         "name": "Iran",
-        "count": 524
+        "count": 525
       },
       {
         "name": "Lebanon",
@@ -932,7 +932,7 @@
       },
       {
         "name": "Syria",
-        "count": 45
+        "count": 46
       },
       {
         "name": "Palestinian territories",
@@ -945,34 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11218,
+    "totalCount": 11222,
     "spotlight": {
       "event": {
-        "id": "21yodsgn64xs0",
-        "timestamp": "2026-11-05T16:04:59+00:00",
-        "location": "IRN",
-        "origin": "USA",
+        "id": "mryh95xbgw00",
+        "timestamp": "2026-11-06T13:14:41+00:00",
+        "location": "YEM",
+        "origin": "SAU",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "high",
-        "description": "Four European officials say US has enough forces in place to strike Iran at short notice, possibly this week; Iran updating target lists",
-        "descriptionHe": "ארבעה גורמים אירופיים מסרו כי לארה\"ב יש כוחות מספיקים במקום לתקוף את איראן בהתראה קצרה, ייתכן שבשבוע הזה; איראן מעדכנת את רשימות היעדים שלה",
+        "description": "Royal Saudi Air Force airstrike hits a market in Al-Wazi'yah District, Taiz Governorate; at least 40 dead and wounded civilians reported by Houthi-run Al-Masirah",
+        "descriptionHe": "תקיפה אווירית של חיל האוויר המלכותי הסעודי פוגעת בשוק במחוז אל-וזעיה שבמחוז תעז; לפי אל-מסירה המונחית על ידי החות'ים, לפחות 40 הרוגים ופצועים אזרחיים",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/86751"
+        "sourceUrl": "https://t.me/CIG_telegram/86796"
       },
-      "headline": "US Positioned for Imminent Iran Strike This Week",
-      "headlineHe": "ארה\"ב מוכנה לתקיפה דחופה בעלויות בשבוע הקרוב",
-      "summary": "European officials confirm rapid-deployment readiness while Iran's military apparatus appears to be hardening defenses in anticipation of potential US action.",
-      "summaryHe": "פקידים אירופים מאשרים כשירות פריסה מהירה בזמן שהמערך הצבאי האיראני מתחזק הגנות אפשריות לפני פעולה אמריקאית.",
-      "pickedAt": "2026-11-06T03:45:25.602Z",
+      "headline": "Saudi airstrike kills dozens in Yemen market strike",
+      "headlineHe": "תקיפה סעודית הורגת עשרות בשוק בתימן",
+      "summary": "The strike on a civilian market in Taiz marks a significant escalation in Saudi-led coalition operations against Houthi-controlled areas, with casualty figures sourced from Houthi media outlets.",
+      "summaryHe": "התקיפה על שוק אזרחי בתעיץ מסמנת הסלמה משמעותית בפעולות קואליציה בראשות סעודיה נגד אזורים בשליטת חות'ים, עם נתוני הקסוםים שמקורם בתקשורת הקשורה לחות'ים.",
+      "pickedAt": "2026-11-06T18:00:27.187Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-11-06T11:30:17.450Z",
+    "lastUpdated": "2026-11-06T18:27:17.377Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 6,
     "ceasefire": false
   },
   "summary": {
@@ -1513,166 +1513,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 95,
+      "internet": 96,
       "cellular": null,
-      "lastUpdate": "2026-11-06T11:30:14.170Z",
+      "lastUpdate": "2026-11-06T18:00:13.756Z",
       "internetHistory": [
-        {
-          "t": "2026-11-05T11:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T11:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T11:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T12:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T12:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T12:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T12:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T12:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T12:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T13:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T13:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T13:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T13:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T13:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-05T13:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T14:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T14:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-05T14:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T14:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T14:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T14:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T15:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T15:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T15:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T15:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T15:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T15:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T16:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T16:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T16:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T16:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T16:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T16:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T17:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T17:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T17:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T17:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T17:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-05T17:50:00.000Z",
-          "v": 95
-        },
         {
           "t": "2026-11-05T18:00:00.000Z",
           "v": 95
@@ -2088,66 +1932,266 @@
         {
           "t": "2026-11-06T11:10:00.000Z",
           "v": 95
+        },
+        {
+          "t": "2026-11-06T11:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T11:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T11:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T11:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T12:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T12:10:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T12:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T12:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T12:40:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T12:50:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T13:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T13:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T13:20:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T13:30:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T13:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T13:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T14:00:00.000Z",
+          "v": 94
+        },
+        {
+          "t": "2026-11-06T14:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T14:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T14:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T14:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T14:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T15:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T15:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-06T15:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T15:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T15:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T15:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T16:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T16:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T16:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T16:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T16:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T16:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T17:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T17:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T17:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T17:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-06T17:40:00.000Z",
+          "v": 96
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-06T11:30:14.170Z"
+    "lastUpdated": "2026-11-06T18:00:13.756Z"
   },
   "developments": [
     {
-      "id": "iranstrike-9f4a2c1e",
+      "id": "iranstrike-7f2a4c91",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-05T16:04:59Z",
+      "date": "2026-11-06T13:14:41Z",
       "title": "IranStrike event",
-      "description": "US positioned to strike Iran this week; Tehran updating defensive target lists",
+      "description": "Saudi airstrike kills 40+ civilians in Taiz market; Houthi-run media reports",
       "category": "other",
       "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "us positioned to strike iran this week;",
-      "location": "Tehran",
-      "country": "Iran",
-      "latitude": 35.6892,
-      "longitude": 51.389,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "tehran",
-      "geocode_confidence": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "9f4a2c1e",
-        "text": "US positioned to strike Iran this week; Tehran updating defensive target lists",
-        "textHe": "ארה\"ב מוכנה להתקפה על איראן השבוע; טהران משדרגת רשימות יעדים",
+        "id": "7f2a4c91",
+        "text": "Saudi airstrike kills 40+ civilians in Taiz market; Houthi-run media reports",
+        "textHe": "תקיפת אוויר סעודית הרגה 40+ אזרחים בשוק בתעיז; דיווח מדיה הותי",
         "severity": "high",
-        "timestamp": "2026-11-05T16:04:59+00:00",
+        "timestamp": "2026-11-06T13:14:41+00:00",
         "entityIds": [
-          "USA",
-          "IRN"
+          "SAU",
+          "YEM"
         ],
         "eventIds": [
-          "21yodsgn64xs0"
+          "mryh95xbgw00"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-a7d3f5b2",
+      "id": "iranstrike-6e3d8b42",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-06T15:21:39Z",
+      "title": "IranStrike event",
+      "description": "Iran downs U.S. MQ-1 drone over Qeshm Island; second intercept claimed",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "6e3d8b42",
+        "text": "Iran downs U.S. MQ-1 drone over Qeshm Island; second intercept claimed",
+        "textHe": "איראן הפילה רחפן MQ-1 אמריקאי מעל איי קשם; יירוט שני לטענה",
+        "severity": "high",
+        "timestamp": "2026-11-06T15:21:39+00:00",
+        "entityIds": [
+          "IRN",
+          "USA"
+        ],
+        "eventIds": [
+          "1gjw55oax5a80"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-5d1c6f73",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-05T18:25:45Z",
       "title": "IranStrike event",
-      "description": "Russia to supply Iran 90 helicopter-mounted precision missile launchers for Mi-28s",
+      "description": "Russia reportedly to supply Iran 90 helicopter-mounted missile launchers",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2168,14 +2212,14 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7d3f5b2",
-        "text": "Russia to supply Iran 90 helicopter-mounted precision missile launchers for Mi-28s",
-        "textHe": "רוסיה תספק לאיראן 90 משגרי טילים מדויקים לטלי Mi-28",
+        "id": "5d1c6f73",
+        "text": "Russia reportedly to supply Iran 90 helicopter-mounted missile launchers",
+        "textHe": "רוסיה לכאורה תספק לאיראן 90 משגרים מטילים על בסיס הליקופטר",
         "severity": "medium",
         "timestamp": "2026-11-05T18:25:45+00:00",
         "entityIds": [
-          "RUS",
-          "IRN"
+          "IRN",
+          "RUS"
         ],
         "eventIds": [
           "tytx53h7py80"
@@ -2184,24 +2228,24 @@
       }
     },
     {
-      "id": "iranstrike-b8e1c6d4",
+      "id": "iranstrike-4c2e9a15",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-05T03:44:21Z",
+      "date": "2026-11-06T17:09:16Z",
       "title": "IranStrike event",
-      "description": "Israel, US planning joint military infrastructure for permanent US aircraft deployment",
+      "description": "Unconfirmed: Syria sent military advisers to Saudi Arabia amid Houthi conflict",
       "category": "other",
-      "severity": "low",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
+      "location": "Syria",
+      "country": "Syria",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2212,23 +2256,208 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b8e1c6d4",
-        "text": "Israel, US planning joint military infrastructure for permanent US aircraft deployment",
-        "textHe": "ישראל וארה\"ב מתכננות תשתיות צבאיות משותפות לפריסה קבע של מטוסים אמריקניים",
-        "severity": "low",
-        "timestamp": "2026-11-05T03:44:21+00:00",
+        "id": "4c2e9a15",
+        "text": "Unconfirmed: Syria sent military advisers to Saudi Arabia amid Houthi conflict",
+        "textHe": "לא מאומת: סוריה שלחה יועצים צבאיים לסעודיה במהלך סכסוך הותי",
+        "severity": "medium",
+        "timestamp": "2026-11-06T17:09:16+00:00",
         "entityIds": [
-          "ISR",
-          "USA"
+          "SYR",
+          "SAU"
         ],
         "eventIds": [
-          "6b6gh33xg1g0"
+          "3k4dai777du00"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3k4dai777du00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86814",
+      "date": "2026-11-06T17:09:16Z",
+      "title": "IranStrike event",
+      "description": "Unconfirmed reports that Syria sent military advisers and trainers to Saudi Arabia amid Saudi conflict with Ansarallah; Saudi and Syrian officials deny the link to Ansarallah",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3k4dai777du00",
+        "timestamp": "2026-11-06T17:09:16+00:00",
+        "location": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Unconfirmed reports that Syria sent military advisers and trainers to Saudi Arabia amid Saudi conflict with Ansarallah; Saudi and Syrian officials deny the link to Ansarallah",
+        "descriptionHe": "דיווחים לא מאומתים לפיהם סוריה שלחה יועצים צבאיים ומאמנים לסעודיה על רקע העימות הסעודי עם אנסאר אללה; גורמים סעודיים וסוריים מכחישים קשר לאנסאר אללה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86814"
+      }
+    },
+    {
+      "id": "iranstrike-1gjw55oax5a80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86806",
+      "date": "2026-11-06T15:21:39Z",
+      "title": "IranStrike event",
+      "description": "IRGC shoots down another U.S. MQ-1 Grey Eagle drone over Qeshm Island",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1gjw55oax5a80",
+        "timestamp": "2026-11-06T15:21:39+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "intercept",
+        "severity": "medium",
+        "description": "IRGC shoots down another U.S. MQ-1 Grey Eagle drone over Qeshm Island",
+        "descriptionHe": "משמרות המהפכה הפילו מזל\"ט אמריקאי נוסף מסוג MQ-1 Grey Eagle מעל האי קשם",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/86806"
+      }
+    },
+    {
+      "id": "iranstrike-n88ij6rq4vk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86799",
+      "date": "2026-11-06T15:10:57Z",
+      "title": "IranStrike event",
+      "description": "Unverified claim of about 81 suspicious cargo flights in Oct 2026 from UAE airbases Al Ain and Al Reef, including about 23 Boeing 747 freighters, linked to a UAE-Ethiopia airlift",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "n88ij6rq4vk0",
+        "timestamp": "2026-11-06T15:10:57+00:00",
+        "location": "ARE",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "Unverified claim of about 81 suspicious cargo flights in Oct 2026 from UAE airbases Al Ain and Al Reef, including about 23 Boeing 747 freighters, linked to a UAE-Ethiopia airlift",
+        "descriptionHe": "טענה לא מאומתת על כ-81 טיסות מטען חשודות באוקטובר 2026 מבסיסי האוויר של איחוד האמירויות באל עין ואל ריף, כולל כ-23 טיסות מטען מסוג בואינג 747 מאל עין, במסגרת גשר אווירי לאתיופיה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86799"
+      }
+    },
+    {
+      "id": "iranstrike-mryh95xbgw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/86796",
+      "date": "2026-11-06T13:14:41Z",
+      "title": "IranStrike event",
+      "description": "Royal Saudi Air Force airstrike hits a market in Al-Wazi'yah District, Taiz Governorate; at least 40 dead and wounded civilians reported by Houthi-run Al-Masirah",
+      "category": "airstrike",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "mryh95xbgw00",
+        "timestamp": "2026-11-06T13:14:41+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Royal Saudi Air Force airstrike hits a market in Al-Wazi'yah District, Taiz Governorate; at least 40 dead and wounded civilians reported by Houthi-run Al-Masirah",
+        "descriptionHe": "תקיפה אווירית של חיל האוויר המלכותי הסעודי פוגעת בשוק במחוז אל-וזעיה שבמחוז תעז; לפי אל-מסירה המונחית על ידי החות'ים, לפחות 40 הרוגים ופצועים אזרחיים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/86796"
+      }
+    },
     {
       "id": "iranstrike-tytx53h7py80",
       "source": "IranStrike",
