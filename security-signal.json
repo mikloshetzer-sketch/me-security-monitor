@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-07 08:49 UTC",
+    "updated": "2026-11-07 16:28 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-11-01",
     "period_end": "2026-11-07",
-    "total_events": 93,
-    "total_risk": 86.05,
-    "normalized_risk_score": 34.4,
+    "total_events": 100,
+    "total_risk": 99.06,
+    "normalized_risk_score": 39.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 22,
+    "military": 25,
     "security": 3,
-    "political": 17,
-    "other": 51
+    "political": 19,
+    "other": 53
   },
   "source_counts": {
-    "news": 92,
-    "isw": 1
+    "news": 97,
+    "isw": 3
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 44.45
+      "risk": 50.07
     },
     {
       "name": "Israel",
-      "risk": 11.95
+      "risk": 12.6
     },
     {
       "name": "Yemen",
-      "risk": 5.55
+      "risk": 9.0
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 7.1
     },
     {
       "name": "Amman",
       "risk": 4.8
-    },
-    {
-      "name": "Syria",
-      "risk": 4.15
     }
   ],
   "top_events": [
@@ -52,9 +52,45 @@
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
+      "title": "Iran executes Baluch militant over armed attack on police station - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOa0ZJZklBbmNsclpBQXZHR1B5ZlVGN01JR19CX1VDbXZ3M3FxODlXdXZLZzJScTM2SjR4dTA4eklLb3RfT2pvV0wzNFBTTjFVcVFvRG9VekIxVXlVbXhpXzFWcEt1QnM0WTFkV2oycHA5QzFhOWxWWlh1Sl9oVUJTTGNhcGZ4QjlfVGIwWWRSYjBXMHZfRGMyQmY0OXV5U0dSQWpwUU5pLVl6dUpFdTF4Q2Z6akFpSlF4"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Will Trump strike nuclear sites again as Iran engages ‘cognitive warfare’? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORWd2ZHNRRjNUZE56eU5kdTU3cl9ja2dwemEtRWYyaG9GcEVBU2RBS3N5a3g1dFY4blY4a1d0eEtQa0VwdTFtNGVZRGhkWW9fZURoZFlnS0dZUXBndnJMME5EUjloYmthMDlOcnltMUNVblF2eHRXNU53RWdLNEZuRWtZYzF3M0d6QlllRjBMMnJaUU5SdVJ0YVVWUXM3V0hKeVg0YXV4ONIBrAFBVV95cUxPSXZRVmV6bnNJWlA5Zm5mcHZNMEdFNjBGbXdGYWJsYnllQUxFM0pQZ2N6OTdpYUZ5NUFtSHhjaG15YTF3VVg4TFM2MTFZVE1nOGN1dngxOFZfOExmajNUMXFJYVRwR3VISFRiMWFBVWlHOE9pSjJtdkJZTHlHMGFFN0xkOVVRRVotTjgzOVBFVGhBbGxETTRVN2JXNHV2OXRYVjlSQ3ROdFRTeFFF"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
       "title": "Trump confirms new US strikes on Iran’s Qeshm island - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNmpOc3NISlNqd2RIa3JOMjU1TUxPQ1loWXFoN2ZycXNmZ1QyU3hBVG9TWVhHcDNuWlZ2MGE1eVdLRGw5b2tCOTdseGZ6RHQ0RDB6UzZQVWpMSENnTmRSZFhWaGpBRWgyZXJEalpsc0xIbnpHQi1mQmJya1BXTlE4MTdnd056SkZlc1BXTnE2YktwRmhrR1kw0gGcAUFVX3lxTFBQamY0WVlzbUcwRjcyeXRQVFhPZWc0cTZmZWw5WEZxQmhwRkk0TnZlNDhwMFBLb2RZVWNKcGRjTENOV2NKeDlDbHkzUWs0SnBFS3ZkRkpwOXl5VWUza3RELUtQZm1HbTkzMlZCUjJMdHRoN1dHb1FTTTZxZlF1TzFKSXlnU1VWbnBSSjFJUzBqWWVPOUFHYmJua2pabA"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Buildings damaged in Israeli bombings risk collapse as rain inundates Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTE9XUk9fSVhmbTRTSWROMVM2XzdKZjJqU0RJVHZWbzVrVkRZc1U4RVIzSFhXdkhrTlNJbzBlUWtqYllPcmQyTm9UTVpGN3BtQ2dXUWUzTGlBdTRSZm9mb3g2ZFFSN1VaaVV6bmdOYUtjNS1SWmpqcmxyNnVlSmpwRVdZTFlaZGNiUnpZV2lackFpcUNJQmxXSVhrb1NOVmFlc29lTjN5VG1Qc21IXzdYcmFCQ2pIM0FHTTUyZdIBwgFBVV95cUxNcFdmam52WWxnQS1vU3JfXzB4R1VxaUhhSVpURk5oOTA4bGhtbUNYQkFfUUsyWnpoRkNHZHYwOTRFSFhjS3A0Y0F1dWlLNThuVzBHVEtVbnlISnNZVFBTemwySUE2YmVqaEhTcnZvajV6cXBJWElsZXd4ZkhPcXdOTGVaQVM1RXRZTFNBRDA3a3I5bUVZcVNBVHh1TmZCNVVuc05yYllBX1M5VERSSGlPZWRsZm5GS0I1NzhtTVZ6REdrQQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Dozens killed as humanitarian crisis mounts in Yemen: What next for war? - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbmlWWnMtTzdiUHpoSW8yUnpONHhJYVB5MGZDeUZsZENScV8ySzlUTlZOT2xUMWtuQWRqZ09RY0J0cHNxUlFlZUpsdVZkX1BhTndacWg5WFhxVTZkaVhCNDRJQlZFWmY5THd6bkRUWWMyWnQ0azJfZ2ROY3VRbWVvTk5ZZ1VlZHppcnRrZlVLR1VRTDQwNWUwOU5xcDZRNDc5YzQ0WDBmeXNoTk9iaXpqaNIBtgFBVV95cUxNYTFGRDdJbDZ4dF84UWp3MWdSMFlzYTI4NGF5cHdBSkpXRXhxOVh1WlJqTzI5ZXd3VWZXY285bnVMU2JTR20tcTlqdzRVbmNQc0JBRDJFRFk0WTBXZ3R4U3F3eWRnMFp2RExYZmpGVkRJMmtuNVpkOUlYb0x3M0RvWkdxa09ELU4zZ0dQNlFmbE9XX1l3bTBJLXI1RnpMZkF6dE8yd09jRHJNbTRvWkxCSjlxLVVWZw"
     },
     {
       "score": 3.0,
@@ -100,42 +136,6 @@
       "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Rocket launcher deal illustrates deepening Russia-Iran relations - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdWVqajZxZDRIQXFLdUc3XzRCOElUT1pBUkJEOV9meHRkd0d6elpGd3JIQkhoUldubFpndUxINWx2ZmgycFA2VHFvdHNBY3J6bGNheGYtZ2JiVUk1UW5tTDhDek1UTGtXeGNuMWtYWkhmSWx4ZGhZcVU2OGV2a2o4WDhqdUVMYzU0NncxQUJXVEF2M1Q0NWdDOGZodktXcEs1ekVFMVd0SkjSAa4BQVVfeXFMT2p6WHdMM3E1TDhKYXJTTDUxQlc4OGQ2QmR1OVNodVdpdVVaZWJ2NEVrUEphdnZRbGZUN1JIUTI5Nm5fUHoyU0U1YThUand3ams2dVBScjNkc1U1cnIxWEFtRVUzcm5vNDk4eFdPczJoWWhEY0UwYzl4emtNT1g2SVF2M1NveGZ2ZnVpVHRMWXdTTDdVY1FNMXNFOGtEXzhZNFJlYlVnQmw2QTdPYl9R"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia warns of potential danger in Yanbu oil hub as Houthi attacks continue - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQR1J2UXI1T2psd21CTE9jNjdvWmZpaktQTVh0Vzg1VGNzZndWZVNab0JhcFNkMEZSRlF1R0d1Vm9EVmZVMDhfUThrOG84Q2VQaTZocklZaEV4end3cjBUYWFTTWxWZFc4WjBLV1MtOFQ3c0d1bHRvODdrQTFTT01MLVFvTlA1eXI3T3JnMzlXNmpXcGNsWE1KQ3hQRDZCRG8xZjBZMTJSRHZqMmNuVkFWZTVXLXRqdkoxaUlvQUVmcVoxTW9FdFE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jordanian officer killed in Amman stabbing, suspect arrested, security agency says - Reuters",
-      "location": "Amman",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVl90eTZDMU1FUm9NaF91OThBSDhrc09wdVZUVXliYzZiUGJIOW84Sk15ZTM3QWx4cVpzZTQ3Mkprd1kwWjNEOVRQdnBJRGF6TkE5ZlN6Q3dDYTNfY1U4VFpMcnliMXB3TFdDYkk4UWJkWmRYSm5EMGlvUVAxdVdVeDVPVFdCUUtCYlY2NTFnZS1UQUsxZ05NSzRZa3RWLXhHWnIzd2JmU1BwOTg3THE0Y3dpOEprZGx0S1diX1I1ZjBITzRZVEE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-05",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran says tankers struck in Hormuz amid fears of new US attack - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNSndUR0pGRi1MMEthNENuNFlReHRUcGJUVjdxMm9mbEp0bnVncHFlX0ZyMTVXUkR0Ql9CR2lLRElpcnRvQU5mUVFuT2oyakMxaEdGeHZqMnd5dTJyN3hhaFoyX1Z6NS03eUpMTmlCSFd2NktOeU43b0hhRXFKY0tqWHhKYW9FRzNibFFTVHdjSGFTVDhzMnZwak1MMGhTY1N0X3hCZkV30gGrAUFVX3lxTE5jd3JPYU1KcGFXeEJsc0VoM1FsaklHcnVnMkkwTmpZbkNNM2owMDlIOFViMmxWaTlwSzFSX0lqd2FCTWhNejlPeWE1QWxpcFEtbHZ5eklHbXJhTW0yWWlwQ05PeU04OVFLamJvcjBvUHI4ZW9INDFILXVGUHZFQmUwd3hVeW1NUFVmdVZTMGJMSUJfeEtFZS16bTI1SkhKZ3pIVzZaWWd0VG13aw"
     }
   ]
 }
