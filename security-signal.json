@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-08 01:28 UTC",
+    "updated": "2026-11-08 09:01 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-11-02",
     "period_end": "2026-11-08",
-    "total_events": 96,
-    "total_risk": 89.96,
-    "normalized_risk_score": 36.0,
+    "total_events": 98,
+    "total_risk": 97.23,
+    "normalized_risk_score": 38.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 25,
-    "security": 2,
-    "political": 20,
-    "other": 49
+    "military": 27,
+    "security": 1,
+    "political": 17,
+    "other": 53
   },
   "source_counts": {
-    "news": 93,
-    "isw": 3
+    "news": 92,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 41.86
+      "risk": 40.78
     },
     {
       "name": "Israel",
-      "risk": 13.35
+      "risk": 13.25
     },
     {
       "name": "Yemen",
-      "risk": 10.25
+      "risk": 12.95
     },
     {
       "name": "Gaza Strip",
-      "risk": 5.25
+      "risk": 6.6
     },
     {
       "name": "Amman",
@@ -47,6 +47,24 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts two Houthi missiles fired towards Riyadh - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMEd1Mi1tMEV0cUFGYkd2V01lQ1NkczNNYzZXTlpTOXByR3BaSk82N21DOEpTeEtNMlJ1bFJ3S2pLTVZBOUp5cDFwOUpGakNxMTR1a2RyaHJBcDNOZUJqR1dDZllfejBPWGZ3UVYyT2s3Uk9XaFE3LW1qQkxtNHhlcmFRcGk0bDlWeHZyQmNNOEJyT1lWeVZlTEJlZ0xpRHF6UUs0RnRTWExlbEJ4eDc4YTY4d0VfM2x3dllKUGhZa1Z4QQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthis say at least 33 killed in Saudi air strike",
+      "location": "Yemen",
+      "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 2.7,
       "date": "2026-11-07",
@@ -79,6 +97,15 @@
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
+      "title": "US offers $20m reward for information about Iran's nuclear programme",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
       "title": "Will Trump strike nuclear sites again as Iran engages ‘cognitive warfare’? - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORWd2ZHNRRjNUZE56eU5kdTU3cl9ja2dwemEtRWYyaG9GcEVBU2RBS3N5a3g1dFY4blY4a1d0eEtQa0VwdTFtNGVZRGhkWW9fZURoZFlnS0dZUXBndnJMME5EUjloYmthMDlOcnltMUNVblF2eHRXNU53RWdLNEZuRWtZYzF3M0d6QlllRjBMMnJaUU5SdVJ0YVVWUXM3V0hKeVg0YXV4ONIBrAFBVV95cUxPSXZRVmV6bnNJWlA5Zm5mcHZNMEdFNjBGbXdGYWJsYnllQUxFM0pQZ2N6OTdpYUZ5NUFtSHhjaG15YTF3VVg4TFM2MTFZVE1nOGN1dngxOFZfOExmajNUMXFJYVRwR3VISFRiMWFBVWlHOE9pSjJtdkJZTHlHMGFFN0xkOVVRRVotTjgzOVBFVGhBbGxETTRVN2JXNHV2OXRYVjlSQ3ROdFRTeFFF"
@@ -97,15 +124,6 @@
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
-      "title": "Buildings damaged in Israeli bombings risk collapse as rain inundates Gaza - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTE9XUk9fSVhmbTRTSWROMVM2XzdKZjJqU0RJVHZWbzVrVkRZc1U4RVIzSFhXdkhrTlNJbzBlUWtqYllPcmQyTm9UTVpGN3BtQ2dXUWUzTGlBdTRSZm9mb3g2ZFFSN1VaaVV6bmdOYUtjNS1SWmpqcmxyNnVlSmpwRVdZTFlaZGNiUnpZV2lackFpcUNJQmxXSVhrb1NOVmFlc29lTjN5VG1Qc21IXzdYcmFCQ2pIM0FHTTUyZdIBwgFBVV95cUxNcFdmam52WWxnQS1vU3JfXzB4R1VxaUhhSVpURk5oOTA4bGhtbUNYQkFfUUsyWnpoRkNHZHYwOTRFSFhjS3A0Y0F1dWlLNThuVzBHVEtVbnlISnNZVFBTemwySUE2YmVqaEhTcnZvajV6cXBJWElsZXd4ZkhPcXdOTGVaQVM1RXRZTFNBRDA3a3I5bUVZcVNBVHh1TmZCNVVuc05yYllBX1M5VERSSGlPZWRsZm5GS0I1NzhtTVZ6REdrQQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
       "title": "Dozens killed as humanitarian crisis mounts in Yemen: What next for war? - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbmlWWnMtTzdiUHpoSW8yUnpONHhJYVB5MGZDeUZsZENScV8ySzlUTlZOT2xUMWtuQWRqZ09RY0J0cHNxUlFlZUpsdVZkX1BhTndacWg5WFhxVTZkaVhCNDRJQlZFWmY5THd6bkRUWWMyWnQ0azJfZ2ROY3VRbWVvTk5ZZ1VlZHppcnRrZlVLR1VRTDQwNWUwOU5xcDZRNDc5YzQ0WDBmeXNoTk9iaXpqaNIBtgFBVV95cUxNYTFGRDdJbDZ4dF84UWp3MWdSMFlzYTI4NGF5cHdBSkpXRXhxOVh1WlJqTzI5ZXd3VWZXY285bnVMU2JTR20tcTlqdzRVbmNQc0JBRDJFRFk0WTBXZ3R4U3F3eWRnMFp2RExYZmpGVkRJMmtuNVpkOUlYb0x3M0RvWkdxa09ELU4zZ0dQNlFmbE9XX1l3bTBJLXI1RnpMZkF6dE8yd09jRHJNbTRvWkxCSjlxLVVWZw"
@@ -115,27 +133,9 @@
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
-      "title": "Yemeni gov’t forces report advances as Houthis say deadly strikes hit Sanaa - Al Jazeera",
-      "location": "Sana'a",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQ0NjcVBHZUU5QUc2UWo0b1h4UDlaZWQzT2d6OWR0TTdVVjhLTHdMU1pfQ2NFX3JGdzNnVjRyY0t1YVBqbWg5TGlIenBxNFctSFhfMUtHY1VmU2VMU0ttTXQxUF9Wc1VMWHJWX3pWYk55dXdTaU9BQVIxck9rN2Rkcmx1Qi10UnE0LU9ZY2RodkxrUHRCLVBVeE5RYXF3RWFYZ0toZDlXUG9DbTZSQWhvc1ZvbmtRd9IBuwFBVV95cUxNSFhjb0M1b3NzRTZqaXVfeXpxRDE3Skx3eUF2TTBYa2MybVloeERWeEdLaVhmbW1tanFLQXZRT1VQd0RwYjZzTU9RTXNTZWUtQVMtYjZTYUlMZ1VVTFB3WllRRHJYUjk1bW1LYmw5TU1tTzI1UlRHWUE0NlE5QmdSUWRjSXFuMDllTDF5eG5DWXdKUWRaUFQ1OUtvck5DZEw5LVdBZWJ0UlpkRlJWVDZ0anFvOWhTLUVId29r"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemeni gov’t forces, Houthis trade blame for deadly strikes on Taiz market - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWUFFT1gtN2l4YndNOENnbWhZbE84UWpJM0dsWU1CNzJQbjRFTWZIZFh0b01wb0QxUTVleklRZWVJaEgxcExlVWhDWFFVMEVIaFZhVHF4S3RQOFZTRnNQWXRHRGY4VTZLZkc1Z3hFQVkxTHN6S0hheURfZFJaTjRKdjRlclpwQnU4cDhSNXJCR1RuOVl0N3k5Vlc1Qkt3dGhNY1FMNFhYaXlHRmFsZ0hva0hjRdIBuAFBVV95cUxNUWFDV1ZCNEtVOHVHWXVQbVctNEhueXlfazF3cHk5UnBIWWhLU01wN1UtZTNwcllVdWw5NGpFY2tzcEJDMXIyRXktYVJkcjc1NlV0MndQYnB1a3dHd3Ixc0VqeHNCLXQzc1dUaGpycklSdjNDZ2RfNEs3U1l2Z29NMGVUVFk5cFNRdWhtdjZSa0Zva29tZE5Od3FuOHFVdWVfWnRnZTlIUVFzUlVZcEk5ZnJCUGhtdjNB"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObFFuV2xuOUtpNDJEVlB0Q0NMYV9BQkNZTzkzRkNVWHBrVGI2TC0xeUk0LTVzdWJrclByYzR3OS1PV2VJaExTT0hud2hzSENNUnlZb0J5cE5yclAtcmljYnlRcFFTOXRuOFVYbUlnbmh3cU5qQTNQSWJ3SEJ1UENMTWFUOXVBZ2xVckpNWjcwOG5meGVBWFBZRlRyZ1Q4ZkNweDlsREhMRWFwX0NrSDctbVoyZDhfdUdzOFAyVmFReUFDNkVBcmc"
+      "title": "Buildings damaged in Israeli bombings risk collapse as rain inundates Gaza - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTE9XUk9fSVhmbTRTSWROMVM2XzdKZjJqU0RJVHZWbzVrVkRZc1U4RVIzSFhXdkhrTlNJbzBlUWtqYllPcmQyTm9UTVpGN3BtQ2dXUWUzTGlBdTRSZm9mb3g2ZFFSN1VaaVV6bmdOYUtjNS1SWmpqcmxyNnVlSmpwRVdZTFlaZGNiUnpZV2lackFpcUNJQmxXSVhrb1NOVmFlc29lTjN5VG1Qc21IXzdYcmFCQ2pIM0FHTTUyZdIBwgFBVV95cUxNcFdmam52WWxnQS1vU3JfXzB4R1VxaUhhSVpURk5oOTA4bGhtbUNYQkFfUUsyWnpoRkNHZHYwOTRFSFhjS3A0Y0F1dWlLNThuVzBHVEtVbnlISnNZVFBTemwySUE2YmVqaEhTcnZvajV6cXBJWElsZXd4ZkhPcXdOTGVaQVM1RXRZTFNBRDA3a3I5bUVZcVNBVHh1TmZCNVVuc05yYllBX1M5VERSSGlPZWRsZm5GS0I1NzhtTVZ6REdrQQ"
     }
   ]
 }
