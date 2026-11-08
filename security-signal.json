@@ -1,54 +1,72 @@
 {
   "meta": {
-    "updated": "2026-11-07 21:53 UTC",
+    "updated": "2026-11-08 01:28 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-11-01",
-    "period_end": "2026-11-07",
-    "total_events": 100,
-    "total_risk": 100.73,
-    "normalized_risk_score": 40.3,
+    "period_start": "2026-11-02",
+    "period_end": "2026-11-08",
+    "total_events": 96,
+    "total_risk": 89.96,
+    "normalized_risk_score": 36.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 25,
     "security": 2,
-    "political": 19,
-    "other": 54
+    "political": 20,
+    "other": 49
   },
   "source_counts": {
     "news": 93,
-    "isw": 7
+    "isw": 3
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 49.69
+      "risk": 41.86
     },
     {
       "name": "Israel",
-      "risk": 13.85
+      "risk": 13.35
     },
     {
       "name": "Yemen",
-      "risk": 8.7
+      "risk": 10.25
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.1
+      "risk": 5.25
     },
     {
       "name": "Amman",
-      "risk": 4.8
+      "risk": 4.2
     }
   ],
   "top_events": [
     {
-      "score": 3.0,
+      "score": 2.7,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi-run health ministry says airstrikes kill 33 near Yemen capital - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPck9CUTVBTUgyQVJnZUxobTVpZGxIdTBmaGNmOWpHVWt4NUF4SHYyTWlUS1g2QmZ5RUd0YmJHVVpPQUVqa1lzVlJ1SU9HUUpDdzh0SVNFRW9KanJEZDJycDA5cVhxV0NKWnA5TUEtS2tkcDF4MTNjTUstalQwLXg3TVJXb3d1VlpaTUN6N1BFWHFfUk1FNm42QWdBSndJNDdQQUdNNlZKUVlLTUN6RmQ0aXluNHNUQUxYTW9vV0ZfUEFHX2tjXzBwZkpZeXA"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Crude gains on worries about renewed US attacks on Iran - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOR0loTjAtWUlkbnpIR2huZE8zWWkxZHZIZlprNlQ5Z3BSaGUxcnE1ZDdqbXFuOHFpQVdrbzEyNnRUSGR4ZDh3SEpqQkpqX2NZa0JlZjEyZlp3RElJMFlhVDRLLTZ3MzRuV2NuTXR3SjhQejExMVR4eE10YThVcmJYaTdNYmt1SjJfeG10NlJRRFB1SFNQUlRSanFrYzBFUjlZNjBGMjhxSi1MZG1sd19kWGU0Ykt5bmR4by1B"
+    },
+    {
+      "score": 2.7,
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
@@ -57,7 +75,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOa0ZJZklBbmNsclpBQXZHR1B5ZlVGN01JR19CX1VDbXZ3M3FxODlXdXZLZzJScTM2SjR4dTA4eklLb3RfT2pvV0wzNFBTTjFVcVFvRG9VekIxVXlVbXhpXzFWcEt1QnM0WTFkV2oycHA5QzFhOWxWWlh1Sl9oVUJTTGNhcGZ4QjlfVGIwWWRSYjBXMHZfRGMyQmY0OXV5U0dSQWpwUU5pLVl6dUpFdTF4Q2Z6akFpSlF4"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
@@ -66,7 +84,7 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORWd2ZHNRRjNUZE56eU5kdTU3cl9ja2dwemEtRWYyaG9GcEVBU2RBS3N5a3g1dFY4blY4a1d0eEtQa0VwdTFtNGVZRGhkWW9fZURoZFlnS0dZUXBndnJMME5EUjloYmthMDlOcnltMUNVblF2eHRXNU53RWdLNEZuRWtZYzF3M0d6QlllRjBMMnJaUU5SdVJ0YVVWUXM3V0hKeVg0YXV4ONIBrAFBVV95cUxPSXZRVmV6bnNJWlA5Zm5mcHZNMEdFNjBGbXdGYWJsYnllQUxFM0pQZ2N6OTdpYUZ5NUFtSHhjaG15YTF3VVg4TFM2MTFZVE1nOGN1dngxOFZfOExmajNUMXFJYVRwR3VISFRiMWFBVWlHOE9pSjJtdkJZTHlHMGFFN0xkOVVRRVotTjgzOVBFVGhBbGxETTRVN2JXNHV2OXRYVjlSQ3ROdFRTeFFF"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
@@ -75,7 +93,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNmpOc3NISlNqd2RIa3JOMjU1TUxPQ1loWXFoN2ZycXNmZ1QyU3hBVG9TWVhHcDNuWlZ2MGE1eVdLRGw5b2tCOTdseGZ6RHQ0RDB6UzZQVWpMSENnTmRSZFhWaGpBRWgyZXJEalpsc0xIbnpHQi1mQmJya1BXTlE4MTdnd056SkZlc1BXTnE2YktwRmhrR1kw0gGcAUFVX3lxTFBQamY0WVlzbUcwRjcyeXRQVFhPZWc0cTZmZWw5WEZxQmhwRkk0TnZlNDhwMFBLb2RZVWNKcGRjTENOV2NKeDlDbHkzUWs0SnBFS3ZkRkpwOXl5VWUza3RELUtQZm1HbTkzMlZCUjJMdHRoN1dHb1FTTTZxZlF1TzFKSXlnU1VWbnBSSjFJUzBqWWVPOUFHYmJua2pabA"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
@@ -84,7 +102,7 @@
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNTE9XUk9fSVhmbTRTSWROMVM2XzdKZjJqU0RJVHZWbzVrVkRZc1U4RVIzSFhXdkhrTlNJbzBlUWtqYllPcmQyTm9UTVpGN3BtQ2dXUWUzTGlBdTRSZm9mb3g2ZFFSN1VaaVV6bmdOYUtjNS1SWmpqcmxyNnVlSmpwRVdZTFlaZGNiUnpZV2lackFpcUNJQmxXSVhrb1NOVmFlc29lTjN5VG1Qc21IXzdYcmFCQ2pIM0FHTTUyZdIBwgFBVV95cUxNcFdmam52WWxnQS1vU3JfXzB4R1VxaUhhSVpURk5oOTA4bGhtbUNYQkFfUUsyWnpoRkNHZHYwOTRFSFhjS3A0Y0F1dWlLNThuVzBHVEtVbnlISnNZVFBTemwySUE2YmVqaEhTcnZvajV6cXBJWElsZXd4ZkhPcXdOTGVaQVM1RXRZTFNBRDA3a3I5bUVZcVNBVHh1TmZCNVVuc05yYllBX1M5VERSSGlPZWRsZm5GS0I1NzhtTVZ6REdrQQ"
     },
     {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
@@ -93,16 +111,7 @@
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbmlWWnMtTzdiUHpoSW8yUnpONHhJYVB5MGZDeUZsZENScV8ySzlUTlZOT2xUMWtuQWRqZ09RY0J0cHNxUlFlZUpsdVZkX1BhTndacWg5WFhxVTZkaVhCNDRJQlZFWmY5THd6bkRUWWMyWnQ0azJfZ2ROY3VRbWVvTk5ZZ1VlZHppcnRrZlVLR1VRTDQwNWUwOU5xcDZRNDc5YzQ0WDBmeXNoTk9iaXpqaNIBtgFBVV95cUxNYTFGRDdJbDZ4dF84UWp3MWdSMFlzYTI4NGF5cHdBSkpXRXhxOVh1WlJqTzI5ZXd3VWZXY285bnVMU2JTR20tcTlqdzRVbmNQc0JBRDJFRFk0WTBXZ3R4U3F3eWRnMFp2RExYZmpGVkRJMmtuNVpkOUlYb0x3M0RvWkdxa09ELU4zZ0dQNlFmbE9XX1l3bTBJLXI1RnpMZkF6dE8yd09jRHJNbTRvWkxCSjlxLVVWZw"
     },
     {
-      "score": 3.0,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemeni gov’t forces, Houthis trade blame for deadly strikes on Taiz market - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWUFFT1gtN2l4YndNOENnbWhZbE84UWpJM0dsWU1CNzJQbjRFTWZIZFh0b01wb0QxUTVleklRZWVJaEgxcExlVWhDWFFVMEVIaFZhVHF4S3RQOFZTRnNQWXRHRGY4VTZLZkc1Z3hFQVkxTHN6S0hheURfZFJaTjRKdjRlclpwQnU4cDhSNXJCR1RuOVl0N3k5Vlc1Qkt3dGhNY1FMNFhYaXlHRmFsZ0hva0hjRdIBuAFBVV95cUxNUWFDV1ZCNEtVOHVHWXVQbVctNEhueXlfazF3cHk5UnBIWWhLU01wN1UtZTNwcllVdWw5NGpFY2tzcEJDMXIyRXktYVJkcjc1NlV0MndQYnB1a3dHd3Ixc0VqeHNCLXQzc1dUaGpycklSdjNDZ2RfNEs3U1l2Z29NMGVUVFk5cFNRdWhtdjZSa0Zva29tZE5Od3FuOHFVdWVfWnRnZTlIUVFzUlVZcEk5ZnJCUGhtdjNB"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
@@ -112,30 +121,21 @@
     },
     {
       "score": 2.7,
+      "date": "2026-11-07",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni gov’t forces, Houthis trade blame for deadly strikes on Taiz market - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWUFFT1gtN2l4YndNOENnbWhZbE84UWpJM0dsWU1CNzJQbjRFTWZIZFh0b01wb0QxUTVleklRZWVJaEgxcExlVWhDWFFVMEVIaFZhVHF4S3RQOFZTRnNQWXRHRGY4VTZLZkc1Z3hFQVkxTHN6S0hheURfZFJaTjRKdjRlclpwQnU4cDhSNXJCR1RuOVl0N3k5Vlc1Qkt3dGhNY1FMNFhYaXlHRmFsZ0hva0hjRdIBuAFBVV95cUxNUWFDV1ZCNEtVOHVHWXVQbVctNEhueXlfazF3cHk5UnBIWWhLU01wN1UtZTNwcllVdWw5NGpFY2tzcEJDMXIyRXktYVJkcjc1NlV0MndQYnB1a3dHd3Ixc0VqeHNCLXQzc1dUaGpycklSdjNDZ2RfNEs3U1l2Z29NMGVUVFk5cFNRdWhtdjZSa0Zva29tZE5Od3FuOHFVdWVfWnRnZTlIUVFzUlVZcEk5ZnJCUGhtdjNB"
+    },
+    {
+      "score": 2.4,
       "date": "2026-11-06",
       "category": "military",
       "source_type": "news",
       "title": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
       "location": "Syria",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObFFuV2xuOUtpNDJEVlB0Q0NMYV9BQkNZTzkzRkNVWHBrVGI2TC0xeUk0LTVzdWJrclByYzR3OS1PV2VJaExTT0hud2hzSENNUnlZb0J5cE5yclAtcmljYnlRcFFTOXRuOFVYbUlnbmh3cU5qQTNQSWJ3SEJ1UENMTWFUOXVBZ2xVckpNWjcwOG5meGVBWFBZRlRyZ1Q4ZkNweDlsREhMRWFwX0NrSDctbVoyZDhfdUdzOFAyVmFReUFDNkVBcmc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSVljNk9VX0xKSElKQjgwMVhnLVpzdmZMTE9YMW5Eb0FpdFpkb0tkczBNZkh1eWFyLU5VanpKU3VGd21EUk52bGc3ZDN4UVd2UFhHM3VReWVUa2kxTVQ3TlJ5UkRFbmdYQzAxTVF0bldhS1BIYjhIOWx4RVU3UnZiMkRORW5nUHJERUQzeTdoSE1kRzlmYVduLVhUbzkzMVFNX1pqb0I2YXZpT1FJRW00alBCWXQydmc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Crude gains on worries about renewed US attacks on Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOR0loTjAtWUlkbnpIR2huZE8zWWkxZHZIZlprNlQ5Z3BSaGUxcnE1ZDdqbXFuOHFpQVdrbzEyNnRUSGR4ZDh3SEpqQkpqX2NZa0JlZjEyZlp3RElJMFlhVDRLLTZ3MzRuV2NuTXR3SjhQejExMVR4eE10YThVcmJYaTdNYmt1SjJfeG10NlJRRFB1SFNQUlRSanFrYzBFUjlZNjBGMjhxSi1MZG1sd19kWGU0Ykt5bmR4by1B"
     }
   ]
 }
