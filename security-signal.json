@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-08 16:41 UTC",
+    "updated": "2026-11-08 22:08 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-11-02",
     "period_end": "2026-11-08",
-    "total_events": 110,
-    "total_risk": 111.48,
-    "normalized_risk_score": 44.6,
+    "total_events": 106,
+    "total_risk": 113.96,
+    "normalized_risk_score": 45.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
+    "military": 32,
     "security": 1,
     "political": 17,
-    "other": 61
+    "other": 56
   },
   "source_counts": {
-    "news": 104,
-    "isw": 6
+    "news": 103,
+    "isw": 3
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 46.88
+      "risk": 47.96
     },
     {
       "name": "Yemen",
@@ -39,11 +39,11 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.1
+      "risk": 9.6
     },
     {
-      "name": "Amman",
-      "risk": 4.2
+      "name": "Syria",
+      "risk": 3.55
     }
   ],
   "top_events": [
@@ -52,7 +52,16 @@
       "date": "2026-11-08",
       "category": "military",
       "source_type": "news",
-      "title": "Iran suggests blasts are not US attacks as both sides report ships hit - Reuters",
+      "title": "Trump says he is unlikely to order Iran attack if talks progress, CNN reports - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbV96cm81eEtLUU91T0xKaWxycHdBV3c4VGNZb2dCbzA0M2M0V2ZPZXp2R1NRcmJ1Wl9TLUxZZWtQRDRtazg2dHVzRWlIdGpmWVRJTUl3cU95cUNheHJtMFJFU2lKM2c2cndGc2ZTbmFqZUpaT0hWRFRyZ1VPYzFFbXlSZUVCR1NuLWFqM0dFaUo2UHI4dWFKZlRoUHEwZ2UwNF95T0NzUGNHME15MFQtMWpMeXZaWDhGQnNkZDNRYnQyTjlQcUE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says he is highly unlikely to order Iran strikes if talks progress - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONWFPcDhpSjcwTEozRGRNdHFnWWpzb1pCYXIzdnVOUWhJQ3JvaGVTcjItLWNwNktieTVDcTk0WlpKbDRiMHB3Tkl0R19Mb1NUckllcVYwenlvNUV2QTBLcjlNdGtZdFI2NEJxbnhVbmZieXg2SnNTUXNPTFZVZjFnX2o3Q3lBbC1kRzlWcnNNU3VXdFNYNW5YTTJ4SFdBaDVfai1CRU50cm1VMHBkeWd4Zkc0Q2UxTlBJcmZ6TnJR"
     },
@@ -73,6 +82,15 @@
       "title": "Houthis say at least 33 killed in Saudi air strike",
       "location": "Yemen",
       "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Four children among five killed in Gaza floods - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVm8wZmVIRmx2ZW93ZzExbTdpa1lKME9kYi1WUk5aS0hGVC1oUlhhUFRyUTBYdXhocHVjMHVmWmFnVmFsNFIwZjFPb2JqNUZTdDJHaDBxdmY2SVpBTm94UkpPeU1ITlJQVERKQzRNakFiNldfNHUyT2J5bVdUYkNQM1pOajBtSDRCMnRrN3dyMkxLdnlFR3pqN1hZQdIBoAFBVV95cUxOc0VrRXZIbDNnSUxLQV9rR2F0b2p6LVp5U2plMVFRb1lHdi16d3dRX01rX0h5Zm9EMHppR1htbEdXZzA5Q05sak9VeUxROWVUbHVuanNvWUJtcDdVOGhwSDgzRklGWXRlNVNmeGhZT3M1RXlJdUZVWkRLdkp5MS1SYjA2aTVnakFwY2lkQXdoa1ltdVE5cjJEemhHYmhzcG02"
     },
     {
       "score": 3.0,
@@ -118,24 +136,6 @@
       "title": "US offers $20m reward for information about Iran's nuclear programme",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump confirms new US strikes on Iran’s Qeshm island - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNmpOc3NISlNqd2RIa3JOMjU1TUxPQ1loWXFoN2ZycXNmZ1QyU3hBVG9TWVhHcDNuWlZ2MGE1eVdLRGw5b2tCOTdseGZ6RHQ0RDB6UzZQVWpMSENnTmRSZFhWaGpBRWgyZXJEalpsc0xIbnpHQi1mQmJya1BXTlE4MTdnd056SkZlc1BXTnE2YktwRmhrR1kw0gGcAUFVX3lxTFBQamY0WVlzbUcwRjcyeXRQVFhPZWc0cTZmZWw5WEZxQmhwRkk0TnZlNDhwMFBLb2RZVWNKcGRjTENOV2NKeDlDbHkzUWs0SnBFS3ZkRkpwOXl5VWUza3RELUtQZm1HbTkzMlZCUjJMdHRoN1dHb1FTTTZxZlF1TzFKSXlnU1VWbnBSSjFJUzBqWWVPOUFHYmJua2pabA"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Will Trump strike nuclear sites again as Iran engages ‘cognitive warfare’? - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORWd2ZHNRRjNUZE56eU5kdTU3cl9ja2dwemEtRWYyaG9GcEVBU2RBS3N5a3g1dFY4blY4a1d0eEtQa0VwdTFtNGVZRGhkWW9fZURoZFlnS0dZUXBndnJMME5EUjloYmthMDlOcnltMUNVblF2eHRXNU53RWdLNEZuRWtZYzF3M0d6QlllRjBMMnJaUU5SdVJ0YVVWUXM3V0hKeVg0YXV4ONIBrAFBVV95cUxPSXZRVmV6bnNJWlA5Zm5mcHZNMEdFNjBGbXdGYWJsYnllQUxFM0pQZ2N6OTdpYUZ5NUFtSHhjaG15YTF3VVg4TFM2MTFZVE1nOGN1dngxOFZfOExmajNUMXFJYVRwR3VISFRiMWFBVWlHOE9pSjJtdkJZTHlHMGFFN0xkOVVRRVotTjgzOVBFVGhBbGxETTRVN2JXNHV2OXRYVjlSQ3ROdFRTeFFF"
     }
   ]
 }
