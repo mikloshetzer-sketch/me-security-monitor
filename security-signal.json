@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-09 01:45 UTC",
+    "updated": "2026-11-09 09:50 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-11-03",
     "period_end": "2026-11-09",
-    "total_events": 109,
-    "total_risk": 104.53,
-    "normalized_risk_score": 41.8,
+    "total_events": 112,
+    "total_risk": 113.73,
+    "normalized_risk_score": 45.5,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
-    "security": 3,
-    "political": 17,
-    "other": 58
+    "military": 34,
+    "security": 2,
+    "political": 20,
+    "other": 56
   },
   "source_counts": {
-    "news": 103,
+    "news": 106,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 44.48
+      "risk": 47.03
     },
     {
       "name": "Yemen",
-      "risk": 13.9
+      "risk": 13.6
     },
     {
       "name": "Israel",
-      "risk": 12.5
+      "risk": 11.85
     },
     {
       "name": "Gaza Strip",
-      "risk": 8.9
+      "risk": 11.5
     },
     {
-      "name": "Oman",
-      "risk": 4.0
+      "name": "Iraq",
+      "risk": 5.0
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Five killed in Gaza after sand embankment collapses onto tents, first responders say",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cqd090ee8px5o?at_medium=RSS&at_campaign=rss"
+    },
     {
       "score": 2.7,
       "date": "2026-11-08",
@@ -79,9 +88,18 @@
       "date": "2026-11-08",
       "category": "military",
       "source_type": "news",
-      "title": "Oil falls on open as Trump says fresh Iran attacks 'unlikely' - Reuters",
+      "title": "Oil falls as Trump signals restraint on Iran despite fresh shipping attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWnV4VENDNkFNVllVVEpoVTJLcC13SlhHREstWFZZQ252QTRiU3dKeW5EYWYxVUJjNnQzVzh1M1FsWjNGTmRKMVFEYjhxT3M2VmF4aVpERWwwczh6dV9OTG5NcFJCMFVZZ0toWEEyMnRRTnBZUm9iQVVzblIzcmJMOTR4V29sUDFVME1jcFQ5VVhoMHVUM0YzWHM2bmE1b3VCV0s0R2JmUUQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-08",
+      "category": "military",
+      "source_type": "news",
+      "title": "Aramco Tower hit in heart of Saudi capital as Houthis launch fresh strikes",
+      "location": "Saudi Arabia",
+      "url": "https://www.bbc.co.uk/news/articles/c6ly3mjx958eo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "Houthi-run health ministry says airstrikes kill 33 near Yemen capital - Reuters",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPck9CUTVBTUgyQVJnZUxobTVpZGxIdTBmaGNmOWpHVWt4NUF4SHYyTWlUS1g2QmZ5RUd0YmJHVVpPQUVqa1lzVlJ1SU9HUUpDdzh0SVNFRW9KanJEZDJycDA5cVhxV0NKWnA5TUEtS2tkcDF4MTNjTUstalQwLXg3TVJXb3d1VlpaTUN6N1BFWHFfUk1FNm42QWdBSndJNDdQQUdNNlZKUVlLTUN6RmQ0aXluNHNUQUxYTW9vV0ZfUEFHX2tjXzBwZkpZeXA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Crude gains on worries about renewed US attacks on Iran - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOR0loTjAtWUlkbnpIR2huZE8zWWkxZHZIZlprNlQ5Z3BSaGUxcnE1ZDdqbXFuOHFpQVdrbzEyNnRUSGR4ZDh3SEpqQkpqX2NZa0JlZjEyZlp3RElJMFlhVDRLLTZ3MzRuV2NuTXR3SjhQejExMVR4eE10YThVcmJYaTdNYmt1SjJfeG10NlJRRFB1SFNQUlRSanFrYzBFUjlZNjBGMjhxSi1MZG1sd19kWGU0Ykt5bmR4by1B"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran executes Baluch militant over armed attack on police station - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOa0ZJZklBbmNsclpBQXZHR1B5ZlVGN01JR19CX1VDbXZ3M3FxODlXdXZLZzJScTM2SjR4dTA4eklLb3RfT2pvV0wzNFBTTjFVcVFvRG9VekIxVXlVbXhpXzFWcEt1QnM0WTFkV2oycHA5QzFhOWxWWlh1Sl9oVUJTTGNhcGZ4QjlfVGIwWWRSYjBXMHZfRGMyQmY0OXV5U0dSQWpwUU5pLVl6dUpFdTF4Q2Z6akFpSlF4"
     }
   ]
 }
