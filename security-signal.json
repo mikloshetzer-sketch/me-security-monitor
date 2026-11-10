@@ -1,72 +1,54 @@
 {
   "meta": {
-    "updated": "2026-11-09 20:46 UTC",
+    "updated": "2026-11-10 04:08 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
   },
   "summary": {
-    "period_start": "2026-11-03",
-    "period_end": "2026-11-09",
-    "total_events": 113,
-    "total_risk": 117.08,
-    "normalized_risk_score": 46.8,
+    "period_start": "2026-11-04",
+    "period_end": "2026-11-10",
+    "total_events": 20,
+    "total_risk": 17.38,
+    "normalized_risk_score": 7.0,
     "risk_level": "LOW",
-    "confidence": "MEDIUM"
+    "confidence": "LOW"
   },
   "category_counts": {
-    "military": 31,
-    "security": 2,
-    "political": 21,
-    "other": 59
+    "military": 5,
+    "security": 0,
+    "political": 3,
+    "other": 12
   },
   "source_counts": {
-    "news": 107,
-    "isw": 6
+    "news": 16,
+    "isw": 4
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 48.23
-    },
-    {
-      "name": "Yemen",
-      "risk": 13.0
-    },
-    {
-      "name": "Israel",
-      "risk": 11.8
+      "risk": 6.98
     },
     {
       "name": "Gaza Strip",
-      "risk": 10.15
+      "risk": 3.4
     },
     {
-      "name": "Iraq",
-      "risk": 6.2
+      "name": "Saudi Arabia",
+      "risk": 2.4
+    },
+    {
+      "name": "Yemen",
+      "risk": 2.4
+    },
+    {
+      "name": "Israel",
+      "risk": 1.4
     }
   ],
   "top_events": [
     {
-      "score": 3.0,
-      "date": "2026-11-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia says danger passed in Riyadh after alert, day after Houthi attack - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRFo2NjBsd2ZzTWNuTGtJOWZvbGVUanhLN0p2V1owR092a3o2emVkZllMWjc3YkF5aTJubFhzU3d2Z0FDT09FVWRyanJjdHVydVBkTkxDVmNjaERnYmljaDRZcUJGRTZUdDkxNFhhT3dXaW9RUS1McGc1eXZGT29yVm8wVWpNU25CenRqb3RJQmJIS3RickZfRnhBeEJFclppT3B2SVl4eXJMLXR3V0pTdjFpWHNLQWZpSFViMTVSM01WaE1QNXg0"
-    },
-    {
-      "score": 3.0,
-      "date": "2026-11-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Syria, Jordan seek to mend ties after deadly airstrikes, sign cooperation deals - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdkdRX3ZKb0hFX0EtM25yamlZYWJ3dVh4UlZJelZWMmpSOVlSR3dzdVg1TEFoNmJoZFM4Q2dDeUtkQ1RCYWs1cFNsRlctRl9XeEF2VzM0N29BRzBMMlVhUVBEQmdHV0hwand0N0xGQ2JKZE0tR0NYaS1yRzBqN1JxcDg1ckxhRm96SThIeGVYcUlOY1ZLWVl3UG9senBxOGtOdk11TlMwT2haVEdoa1hvYXIwZjhZZXJCZkVmYUtfay1oS3lnOFJR"
-    },
-    {
-      "score": 3.0,
+      "score": 2.7,
       "date": "2026-11-09",
       "category": "military",
       "source_type": "news",
@@ -75,43 +57,7 @@
       "url": "https://www.bbc.co.uk/news/articles/cqd090ee8px5o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-11-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says he is highly unlikely to order Iran strikes if talks progress - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxONWFPcDhpSjcwTEozRGRNdHFnWWpzb1pCYXIzdnVOUWhJQ3JvaGVTcjItLWNwNktieTVDcTk0WlpKbDRiMHB3Tkl0R19Mb1NUckllcVYwenlvNUV2QTBLcjlNdGtZdFI2NEJxbnhVbmZieXg2SnNTUXNPTFZVZjFnX2o3Q3lBbC1kRzlWcnNNU3VXdFNYNW5YTTJ4SFdBaDVfai1CRU50cm1VMHBkeWd4Zkc0Q2UxTlBJcmZ6TnJR"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says he is unlikely to order Iran attack if talks progress, CNN reports - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbV96cm81eEtLUU91T0xKaWxycHdBV3c4VGNZb2dCbzA0M2M0V2ZPZXp2R1NRcmJ1Wl9TLUxZZWtQRDRtazg2dHVzRWlIdGpmWVRJTUl3cU95cUNheHJtMFJFU2lKM2c2cndGc2ZTbmFqZUpaT0hWRFRyZ1VPYzFFbXlSZUVCR1NuLWFqM0dFaUo2UHI4dWFKZlRoUHEwZ2UwNF95T0NzUGNHME15MFQtMWpMeXZaWDhGQnNkZDNRYnQyTjlQcUE"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attack damages Aramco building in Riyadh's financial district - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMEd1Mi1tMEV0cUFGYkd2V01lQ1NkczNNYzZXTlpTOXByR3BaSk82N21DOEpTeEtNMlJ1bFJ3S2pLTVZBOUp5cDFwOUpGakNxMTR1a2RyaHJBcDNOZUJqR1dDZllfejBPWGZ3UVYyT2s3Uk9XaFE3LW1qQkxtNHhlcmFRcGk0bDlWeHZyQmNNOEJyT1lWeVZlTEJlZ0xpRHF6UUs0RnRTWExlbEJ4eDc4YTY4d0VfM2x3dllKUGhZa1Z4QQ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iraq's Khor Mor gas field halted after drone attack, operator says - Reuters",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSjc4dFNBUmN3UHp3Uk5FLUhNOElWeTVLRDNzSHZsSTAyUWZ4elN0eHdYUVJ5MDZBb0Y3MDNaNzlWbTRHMnctUFY5dGdNWWtKUnZTdHRPeXl1UUhlUE9mdTU0d2ZWTk9Hak9HaHVXaVBJQ3BoVXdfZnFxelF2aUc1MEV1U0JFQ1lDQ0s3RXhtRnk2dmoxZ2h4a3FRazE4Y3VpbGlDYW1zdE1DcDYxU3R4aE9zOWxkdTNuRVFxMzRlTDEtMDNHRmpr"
-    },
-    {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-11-08",
       "category": "military",
       "source_type": "news",
@@ -120,7 +66,7 @@
       "url": "https://www.bbc.co.uk/news/articles/c6ly3mjx958eo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
+      "score": 2.4,
       "date": "2026-11-08",
       "category": "military",
       "source_type": "news",
@@ -129,13 +75,67 @@
       "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.7,
-      "date": "2026-11-08",
+      "score": 2.1,
+      "date": "2026-11-07",
       "category": "military",
       "source_type": "news",
-      "title": "Four children among five killed in Gaza floods - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVm8wZmVIRmx2ZW93ZzExbTdpa1lKME9kYi1WUk5aS0hGVC1oUlhhUFRyUTBYdXhocHVjMHVmWmFnVmFsNFIwZjFPb2JqNUZTdDJHaDBxdmY2SVpBTm94UkpPeU1ITlJQVERKQzRNakFiNldfNHUyT2J5bVdUYkNQM1pOajBtSDRCMnRrN3dyMkxLdnlFR3pqN1hZQdIBoAFBVV95cUxOc0VrRXZIbDNnSUxLQV9rR2F0b2p6LVp5U2plMVFRb1lHdi16d3dRX01rX0h5Zm9EMHppR1htbEdXZzA5Q05sak9VeUxROWVUbHVuanNvWUJtcDdVOGhwSDgzRklGWXRlNVNmeGhZT3M1RXlJdUZVWkRLdkp5MS1SYjA2aTVnakFwY2lkQXdoa1ltdVE5cjJEemhHYmhzcG02"
+      "title": "US offers $20m reward for information about Iran's nuclear programme",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 1.8,
+      "date": "2026-11-06",
+      "category": "military",
+      "source_type": "news",
+      "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.8,
+      "date": "2026-11-08",
+      "category": "political",
+      "source_type": "news",
+      "title": "Iran executes three men for 'armed unrest' after January protests",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/ckly0ex633ydo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.7,
+      "date": "2026-11-07",
+      "category": "political",
+      "source_type": "news",
+      "title": "Israel's president tasks opposition leader Eisenkot with forming government",
+      "location": "Israel",
+      "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.45,
+      "date": "2026-11-09",
+      "category": "other",
+      "source_type": "news",
+      "title": "France accuses Iran of supermarket fridge hacking",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 0.45,
+      "date": "2026-11-07",
+      "category": "other",
+      "source_type": "isw",
+      "title": "Iran Update, November 7, 2026",
+      "location": "Iran",
+      "url": "https://understandingwar.org/research/middle-east/iran-update-november-7-2026/"
+    },
+    {
+      "score": 0.4,
+      "date": "2026-11-08",
+      "category": "other",
+      "source_type": "news",
+      "title": "Seven dead and more than 100 injured after trains collide in Egypt",
+      "location": "Egypt",
+      "url": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
