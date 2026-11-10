@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-10 04:08 UTC",
+    "updated": "2026-11-10 12:41 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,108 @@
   "summary": {
     "period_start": "2026-11-04",
     "period_end": "2026-11-10",
-    "total_events": 20,
-    "total_risk": 17.38,
-    "normalized_risk_score": 7.0,
+    "total_events": 107,
+    "total_risk": 112.9,
+    "normalized_risk_score": 45.2,
     "risk_level": "LOW",
-    "confidence": "LOW"
+    "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 5,
-    "security": 0,
-    "political": 3,
-    "other": 12
+    "military": 32,
+    "security": 2,
+    "political": 17,
+    "other": 56
   },
   "source_counts": {
-    "news": 16,
-    "isw": 4
+    "news": 102,
+    "isw": 5
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 6.98
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 3.4
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 2.4
+      "risk": 44.95
     },
     {
       "name": "Yemen",
-      "risk": 2.4
+      "risk": 11.7
     },
     {
       "name": "Israel",
-      "risk": 1.4
+      "risk": 9.35
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 9.0
+    },
+    {
+      "name": "Riyadh",
+      "risk": 8.1
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition reports Houthi missile, drone interceptions; Saba reports Saudi strikes on Sanaa - Reuters",
+      "location": "Sana'a",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPeEFMZHZXSnB4Q1RWMGxYRGJrYUFLdXBsc2ZGcmowbDhlNGVjMWxtOWt6bno5WWZnd2F2NVNncnJKdFM1bm1QU2RGQmNNOFBXampZcHpYLU1mdGxIRFJ4Z0drcHcyNHYtTmhVWEVlY0FldWp1d3ZoWlpoZXljR2w1b1lvb2pSR3owY2tnbUF2MDFYQXZlNUxsUUM1TGdaQ1lJZ3ZSUzl6cVp2czBFeTA3akRSS19vMTR3LW1qcGZGUExhbEJQTlpzSFdfNGc2dw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says more US attacks on Iran 'highly unlikely'",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-10",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia downs missiles fired at Riyadh after Houthi attack on pipeline - Al Jazeera",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaGxFOUdxQ2o5dlYtdVRVY242bW5XLW4wQlhsWk92c3QxM1RneTJqTENuYkFza01ORTRrMTNaT0tqZTFIcHVkc2ZkVGxnWXJXX01lSkpXWkNvbFExSFo4cjZwQ21CQXU2bGU1YWRzOF9uRjBkc1I3TFZxU2lGSk4zeThZZVdtRWpKNU5PRzJUTFdPXzFscExmSDBiYlRLLUFBZkh2RkxPMWJoWEljcnZNY1JYUUxMUGFF0gG-AUFVX3lxTE91Tml0Z0VtT3U5OXlDQzBWTGp2WHdKb0dZVzBoU05aOEh1eXhYQXZZYVVNNUQyUlhicy14dm1KR3JkUWh0aHZNa3hOdENYZTdOd2JmbHluRmM0M2NJSHllNzF0Um1qUElNc0h2Rm83Q2RHaXhpMW1WdWhRYWxCZDRWVlRhOUVvZ1pUNlFPend1Mk5DMUZQX0dNOVhmWnUxeEhEblVqOG0ySFNCV0hxeTcxblMyeWtaQTBHSTBSUHc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump tells Reuters that Qatar, Saudi Arabia want peaceful Iran deal, US ready for strikes if needed - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOZ2o4T2dDT1ZqQmlqM0JxZEViaHZzWjRPeGtRd2N5MEZweXhTWXV1b0RybWgxNzZrMUJmOXFDMGMtTGE1RzJCMHBNdkctTVZpWXhBUUcxYUhnOTRqOEpQZUpPWjdsZHgtTWc4cWYxYnRtZEgzb191X2tlOUVVYXh4SFpnejMxYXRidEhFalZMeDlSSlhmUm5IR0Nyd2hybHhWVjVrcXA1ODVaYWo1ODhFSEhNMFZxdmdaN3VLTEc0dE1MZ21pVGxFMFh0TQ"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says he will hold off on fresh Iran strikes for now - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOX0pwQmJtMVdmZDY2NVhWalgxSHZ0d0NvUzJ4cldzTHFQUmdHSERzZENUOXljYldMbFpRa3J5d0VhbkNtZGJVM1paVkFWZ1ZHZTFOQlNkNm5xZ2tkc0FYQkxvQkU3RHc5cm9lcjFXSzdCNlE5QjNXNnRoZktjUHhGRTRGOXZYbWZtUXlTaFBXN096VFZrTDBQQll5ZDJaZDlPdUlueEtHaGMyQ1ZnWHdxQll3UWI3WHdYZmc"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi Arabia says danger passed in Riyadh after alert, day after Houthi attack - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRFo2NjBsd2ZzTWNuTGtJOWZvbGVUanhLN0p2V1owR092a3o2emVkZllMWjc3YkF5aTJubFhzU3d2Z0FDT09FVWRyanJjdHVydVBkTkxDVmNjaERnYmljaDRZcUJGRTZUdDkxNFhhT3dXaW9RUS1McGc1eXZGT29yVm8wVWpNU25CenRqb3RJQmJIS3RickZfRnhBeEJFclppT3B2SVl4eXJMLXR3V0pTdjFpWHNLQWZpSFViMTVSM01WaE1QNXg0"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-09",
+      "category": "military",
+      "source_type": "news",
+      "title": "Syria, Jordan seek to mend ties after deadly airstrikes, sign cooperation deals - Reuters",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdkdRX3ZKb0hFX0EtM25yamlZYWJ3dVh4UlZJelZWMmpSOVlSR3dzdVg1TEFoNmJoZFM4Q2dDeUtkQ1RCYWs1cFNsRlctRl9XeEF2VzM0N29BRzBMMlVhUVBEQmdHV0hwand0N0xGQ2JKZE0tR0NYaS1yRzBqN1JxcDg1ckxhRm96SThIeGVYcUlOY1ZLWVl3UG9senBxOGtOdk11TlMwT2haVEdoa1hvYXIwZjhZZXJCZkVmYUtfay1oS3lnOFJR"
+    },
     {
       "score": 2.7,
       "date": "2026-11-09",
@@ -57,85 +120,22 @@
       "url": "https://www.bbc.co.uk/news/articles/cqd090ee8px5o?at_medium=RSS&at_campaign=rss"
     },
     {
-      "score": 2.4,
-      "date": "2026-11-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Aramco Tower hit in heart of Saudi capital as Houthis launch fresh strikes",
-      "location": "Saudi Arabia",
-      "url": "https://www.bbc.co.uk/news/articles/c6ly3mjx958eo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-08",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthis say at least 33 killed in Saudi air strike",
-      "location": "Yemen",
-      "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-11-07",
-      "category": "military",
-      "source_type": "news",
-      "title": "US offers $20m reward for information about Iran's nuclear programme",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 1.8,
-      "date": "2026-11-06",
-      "category": "military",
-      "source_type": "news",
-      "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.8,
-      "date": "2026-11-08",
-      "category": "political",
-      "source_type": "news",
-      "title": "Iran executes three men for 'armed unrest' after January protests",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/ckly0ex633ydo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.7,
-      "date": "2026-11-07",
-      "category": "political",
-      "source_type": "news",
-      "title": "Israel's president tasks opposition leader Eisenkot with forming government",
-      "location": "Israel",
-      "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 0.45,
+      "score": 2.7,
       "date": "2026-11-09",
-      "category": "other",
+      "category": "military",
       "source_type": "news",
-      "title": "France accuses Iran of supermarket fridge hacking",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cmg474vk6dyqo?at_medium=RSS&at_campaign=rss"
+      "title": "Yemen government forces claim new advances as Houthi border attacks resume - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeVNKaFZURVMzMWl4YlVaTnktNDZFQmJoNzBUa1lwNTZieFVKcG9GRGZrYjZ3SXU1UTE4X0tTOW5RSjhRZkptNEFoR253OVVIN181elAwMEdySFJDeXdNVHBlcmJOU3NXd1FUV1Y1cVdFN01FSS1uVWFCbGEyVHNLakJCN0xWTUpCSWlIbGthMVVCeEFpR1lSTUMyZEg0TG1icnVDVGNQb2U4U2RYWDYyQ1pyMksyUdIBuwFBVV95cUxPdEg0NkotVjROR2t3dEJoY2pUV296ZV9raS1FSUE1aXBIbHI2SFFqbG0tenNuUlplemptNlczSW05NkNLVXV0MTBLanlLVDlKOVAzd2pRcXQ2Z1Z6a0pUdXlOVkFTd3lNOURpR3MxbTNnUlkwdDJiYlZrSmUzLW5yS25yeTNPRlpXMXMyQVU0OVF5SThGZWZHQnR3bkFXRHJuOThCQjVqT2JLYkZnTGdTRlZnVkhaUjRYUWRF"
     },
     {
-      "score": 0.45,
-      "date": "2026-11-07",
-      "category": "other",
-      "source_type": "isw",
-      "title": "Iran Update, November 7, 2026",
-      "location": "Iran",
-      "url": "https://understandingwar.org/research/middle-east/iran-update-november-7-2026/"
-    },
-    {
-      "score": 0.4,
-      "date": "2026-11-08",
-      "category": "other",
+      "score": 2.7,
+      "date": "2026-11-09",
+      "category": "military",
       "source_type": "news",
-      "title": "Seven dead and more than 100 injured after trains collide in Egypt",
-      "location": "Egypt",
-      "url": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss"
+      "title": "Iran’s authorities harden domestic security controls amid US strike threats - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNejM4M1haR2lZMnBiOEpTSTJOazlhRHNRQ0N1Wk1GZGJlYzJpZGd5b1JBLXV6ZXVRMEhtZXJzdHVtSlBfNVMzdzNVTlF5cEVUNGwxbnB3VVBGMG9kMlpIM3g3ZDFvWVJKU084NnBndnpYdVFFMDY5eTBad3RrR1BoOHlwc0lyNnNMODJPbDR0SDhoVXRxUWdaRU9TUkd6T2hfRldBQTJPV3dJVEJCME9YVWtsM0Z6d9IBuwFBVV95cUxOcDI0VFBIaVBFVnVCa1UtV0IyZmVnWkhPNkM5T1p5dy1UMU9rMkRzMk96ZE1NLWlkS0pmNkJnVnNGQUFUNTBaQjJtSWZlYzhEamMxbzk2a29OSHdNWTREUDh3S3RJR3JvWHh1V1ktVFRxUWswSXBZUkV2UGtMbmtXeDR5UDBiM2hkai1kbzVvT056YjB2OUM4NmVzOVBURFJrUFNJT1NfT09ZZUpBSzVjMFh3NUFNWHNyQ3hV"
     }
   ]
 }
