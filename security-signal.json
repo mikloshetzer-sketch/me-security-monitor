@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-11 09:28 UTC",
+    "updated": "2026-11-11 17:55 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-11-05",
     "period_end": "2026-11-11",
-    "total_events": 121,
-    "total_risk": 130.23,
-    "normalized_risk_score": 52.1,
+    "total_events": 125,
+    "total_risk": 130.99,
+    "normalized_risk_score": 52.4,
     "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 37,
-    "security": 4,
-    "political": 15,
-    "other": 65
+    "military": 34,
+    "security": 5,
+    "political": 14,
+    "other": 72
   },
   "source_counts": {
-    "news": 115,
+    "news": 119,
     "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 58.63
+      "risk": 60.18
     },
     {
       "name": "Riyadh",
       "risk": 12.6
     },
     {
-      "name": "Yemen",
-      "risk": 11.35
+      "name": "Gaza Strip",
+      "risk": 11.25
     },
     {
       "name": "Israel",
-      "risk": 10.8
+      "risk": 10.65
     },
     {
-      "name": "Gaza Strip",
-      "risk": 7.25
+      "name": "Yemen",
+      "risk": 10.05
     }
   ],
   "top_events": [
@@ -52,9 +52,18 @@
       "date": "2026-11-11",
       "category": "military",
       "source_type": "news",
-      "title": "Oil rebounds as Hormuz shipping attacks blunt hopes for Iran truce - Reuters",
+      "title": "COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUDdYdlFvTWpsUDJOZkVpN1RNYmM1RlIwZUxzSGhrazVnMTJ1el9lT2lpc08yc2VrUjdyR0tSWjJIRVRMdXh2cmJDam5yY2d1QURuUFdvQkh1ZWJDdHFXbmZCejViSHhTYnl6YU1uMmEtS1NIcFU1dmhPQVZpN2R5Ykc1OVBrUXVhemRVa01TblQ5THN6eDBlOXl3Nm5qTEtKRjNDeVVraW1hRjUwZjQyclBwd1hCTlZvNkdaVVdlUDc"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYXNuaEJXU0pFb0oxRlkzenJYREJId21QY2pxclZ3bnBDWEFwZXFhZkJCLTJEUWJELTRKeExPZDdYWmZUY25UZnNJYXZ5NGNUYXpUSHkwZUJyYU9wWmp0aWVHTUQ1ZFVlQ3dOZnE3azBSNm9KZVRMWnJEWXExR3VrektGaXU2RlNySG5GX01LbHR2M2xxMF92RzcwZWV0REJ6T3ZIV0dvQkM0c1pQU1hzQlVB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill three people including two brothers in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeU5nVjhkZzFmTC1MU1M4RlhrSTQxUHBrWV9tdlhoLVRTZTdmYXAxbmgtd1RHQmNaQS02S0xFNlZBUGU0VEVqWm9nZmpNbVNvQXZWa3VUaG8xWTdsY0FCSlRzT0VteDEtRWdGMDN3dDdPX1dTQldUOWFxZGI0V1ltUmtETl9jYl9NanIyblppQWhNWTdpMXR0ZURUMFhUYXJ4bzExUXYzLW9yeVpJMGZjMVVsanNNYjZWeDlob2RIUVZ0b0VF"
     },
     {
       "score": 3.0,
@@ -97,6 +106,15 @@
       "date": "2026-11-10",
       "category": "military",
       "source_type": "news",
+      "title": "Gulf stocks close higher as Trump dials back Iran strike talk - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSVhYVkx5WEEtWEJFanhNSTZMMVdIQ0NHcjR2dTNNZXJwWXFDMUg0THpNV1BEdnl4dlhXaHRSdy1oUjgwekg3c01kTGVvWFhRYnhhbWRRelFHbFdzZms2TmYxWlJQRHBRRUFIYzMzallCTl9zT3hGSmRCY0hZMzJpRVVhY1dJWV8tX2ttQzZCa0Rod0dNRWtIVVpoVncwZWNJbW90eEpBeldyd2s"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-10",
+      "category": "military",
+      "source_type": "news",
       "title": "Saudi official inspects Aramco Riyadh office after Houthi attack - Reuters",
       "location": "Riyadh",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQ3VOTzlJaFROd09yclJ3alhQdEFVRWtON284LTh5Ry05QmxqYVg1RDVVLUhRQWJtZHZuSlEtdHZwTzl6SERCYmFnMWlURWg0REh1WnNrXzBRMFVXYnVGY1RMV2RqTjg4VHN0VlhCX3FDZTZFUlZ2YXFVQ3NhamkzN1kwRVZHUjdQZERGRTl0aHZFQ3lUOWNqVUlCN2RiNXFpTkRRUTBJVWFmZUhxQUZ5Zmk5a09ZdDltUFE"
@@ -115,27 +133,9 @@
       "date": "2026-11-10",
       "category": "military",
       "source_type": "news",
-      "title": "Gulf stocks close higher as Trump dials back Iran strike talk - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSVhYVkx5WEEtWEJFanhNSTZMMVdIQ0NHcjR2dTNNZXJwWXFDMUg0THpNV1BEdnl4dlhXaHRSdy1oUjgwekg3c01kTGVvWFhRYnhhbWRRelFHbFdzZms2TmYxWlJQRHBRRUFIYzMzallCTl9zT3hGSmRCY0hZMzJpRVVhY1dJWV8tX2ttQzZCa0Rod0dNRWtIVVpoVncwZWNJbW90eEpBeldyd2s"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-10",
-      "category": "military",
-      "source_type": "news",
       "title": "Iran-backed militant helped plot attack on UK's Fairford base from US jail, Justice Department says - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQejFyZFdOS1NzaFBIQjJ6NjdqRkhzbkFVeXZFR0dUWnlqRnNxNGpIc1hGRWZUbEpTSmgzb2NMRURmRUFIeWtGX1BvNGdKY3Z6UG5VRDV6RVN4bTJXSG5ZeVIxQl9aYmJFWWFEOEtpejJtZi01QzBtYzRGd3V1MHNEMG54UU84dF80eUVyUFhqUVpvMHJheUduVldabUk3M2pxalpOWG93MXB1LTVyVEpyUWp0WnVIQkFxaml1V1Fhdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump says more US attacks on Iran 'highly unlikely'",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
