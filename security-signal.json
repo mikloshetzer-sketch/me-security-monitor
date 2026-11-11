@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-11 01:57 UTC",
+    "updated": "2026-11-11 09:28 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-11-05",
     "period_end": "2026-11-11",
-    "total_events": 111,
-    "total_risk": 112.88,
-    "normalized_risk_score": 45.2,
-    "risk_level": "LOW",
+    "total_events": 121,
+    "total_risk": 130.23,
+    "normalized_risk_score": 52.1,
+    "risk_level": "MEDIUM",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
-    "security": 3,
-    "political": 14,
-    "other": 60
+    "military": 37,
+    "security": 4,
+    "political": 15,
+    "other": 65
   },
   "source_counts": {
-    "news": 107,
-    "isw": 4
+    "news": 115,
+    "isw": 6
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 47.33
+      "risk": 58.63
     },
     {
       "name": "Riyadh",
@@ -35,18 +35,45 @@
     },
     {
       "name": "Yemen",
-      "risk": 10.15
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 9.35
+      "risk": 11.35
     },
     {
       "name": "Israel",
-      "risk": 8.5
+      "risk": 10.8
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 7.25
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil rebounds as Hormuz shipping attacks blunt hopes for Iran truce - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNUDdYdlFvTWpsUDJOZkVpN1RNYmM1RlIwZUxzSGhrazVnMTJ1el9lT2lpc08yc2VrUjdyR0tSWjJIRVRMdXh2cmJDam5yY2d1QURuUFdvQkh1ZWJDdHFXbmZCejViSHhTYnl6YU1uMmEtS1NIcFU1dmhPQVZpN2R5Ykc1OVBrUXVhemRVa01TblQ5THN6eDBlOXl3Nm5qTEtKRjNDeVVraW1hRjUwZjQyclBwd1hCTlZvNkdaVVdlUDc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Three Iran-backed suspects plotted attacks including RAF Fairford incident, US says",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/c3rryrryk59zo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemeni forces, Houthis exchange attacks, claim to inflict heavy losses - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbnJlaDBPVHFnakdjcW9wclBST3dmUFdIX2lRY3F4eWwtX3pmNWtQbVZFOURieHdsUTdxLXJIY20zYVp2eFNXNk00NnhxZ21DMmRnWTJualhnWml6SUxKYWlza0NiZmVkdUF0Mjl3VGtRUHZ1WlVrMm1XMm90Wk11UDA4aDFNbDFpdUFNMll2Q3pVUWpYdEVBY1Jnc0FSR1BhcW13X1lZZEtCWmRYM1Fz0gG0AUFVX3lxTFBkLVo4clNIWUgxSlBVR1E0YjJEYU9KdWRCa1pTSENmNl96SEtRWFJKVmc3ZERyYkY2b084eWxibE5tcUhQdkNSOWk4Yk92WWJiZjRvZ2sxTU5wdTRmWDJCWkdFaEFmX0hqMURBZEVGTzFPaURCR3kxZ1h0T21fMkJodXF2RUZMektmdEVDaTJRNmMwbmg3MzE3UFZ1N1hHWkpDT3RPeDdySE1qZ19rVExRTk55VQ"
+    },
     {
       "score": 2.7,
       "date": "2026-11-10",
@@ -88,15 +115,6 @@
       "date": "2026-11-10",
       "category": "military",
       "source_type": "news",
-      "title": "Iran-backed militant helped plot attack on UK's Fairford base from US jail, Justice Department says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQejFyZFdOS1NzaFBIQjJ6NjdqRkhzbkFVeXZFR0dUWnlqRnNxNGpIc1hGRWZUbEpTSmgzb2NMRURmRUFIeWtGX1BvNGdKY3Z6UG5VRDV6RVN4bTJXSG5ZeVIxQl9aYmJFWWFEOEtpejJtZi01QzBtYzRGd3V1MHNEMG54UU84dF80eUVyUFhqUVpvMHJheUduVldabUk3M2pxalpOWG93MXB1LTVyVEpyUWp0WnVIQkFxaml1V1Fhdw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-10",
-      "category": "military",
-      "source_type": "news",
       "title": "Gulf stocks close higher as Trump dials back Iran strike talk - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSVhYVkx5WEEtWEJFanhNSTZMMVdIQ0NHcjR2dTNNZXJwWXFDMUg0THpNV1BEdnl4dlhXaHRSdy1oUjgwekg3c01kTGVvWFhRYnhhbWRRelFHbFdzZms2TmYxWlJQRHBRRUFIYzMzallCTl9zT3hGSmRCY0hZMzJpRVVhY1dJWV8tX2ttQzZCa0Rod0dNRWtIVVpoVncwZWNJbW90eEpBeldyd2s"
@@ -106,36 +124,18 @@
       "date": "2026-11-10",
       "category": "military",
       "source_type": "news",
+      "title": "Iran-backed militant helped plot attack on UK's Fairford base from US jail, Justice Department says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQejFyZFdOS1NzaFBIQjJ6NjdqRkhzbkFVeXZFR0dUWnlqRnNxNGpIc1hGRWZUbEpTSmgzb2NMRURmRUFIeWtGX1BvNGdKY3Z6UG5VRDV6RVN4bTJXSG5ZeVIxQl9aYmJFWWFEOEtpejJtZi01QzBtYzRGd3V1MHNEMG54UU84dF80eUVyUFhqUVpvMHJheUduVldabUk3M2pxalpOWG93MXB1LTVyVEpyUWp0WnVIQkFxaml1V1Fhdw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-10",
+      "category": "military",
+      "source_type": "news",
       "title": "Trump says more US attacks on Iran 'highly unlikely'",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/cq5yny4nl2d3o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia downs missiles fired at Riyadh after Houthi attack on pipeline - Al Jazeera",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaGxFOUdxQ2o5dlYtdVRVY242bW5XLW4wQlhsWk92c3QxM1RneTJqTENuYkFza01ORTRrMTNaT0tqZTFIcHVkc2ZkVGxnWXJXX01lSkpXWkNvbFExSFo4cjZwQ21CQXU2bGU1YWRzOF9uRjBkc1I3TFZxU2lGSk4zeThZZVdtRWpKNU5PRzJUTFdPXzFscExmSDBiYlRLLUFBZkh2RkxPMWJoWEljcnZNY1JYUUxMUGFF0gG-AUFVX3lxTE91Tml0Z0VtT3U5OXlDQzBWTGp2WHdKb0dZVzBoU05aOEh1eXhYQXZZYVVNNUQyUlhicy14dm1KR3JkUWh0aHZNa3hOdENYZTdOd2JmbHluRmM0M2NJSHllNzF0Um1qUElNc0h2Rm83Q2RHaXhpMW1WdWhRYWxCZDRWVlRhOUVvZ1pUNlFPend1Mk5DMUZQX0dNOVhmWnUxeEhEblVqOG0ySFNCV0hxeTcxblMyeWtaQTBHSTBSUHc"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran lifts 2,000km limit on its ballistic missiles: What that means - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNV1JBQXh0T1UybDBQUDF1ak5UajRqVWdaUjVHY2F0YWtWYlAwLUdFNm16alI4d2dTWG9jNHhBNzVZZUxDemVzSzZKMUNqN2dnM2JVYy1uQm5FQ2dZVkNMM2dINEhFN2hCeWhFaHpaOHgyTVhBd2hvMHI3Z2JIaFh4bnBfajlzVXNKbFpxZWN2SUFYTjFQcWtnZ216OE9mOHgxN2taSGhhWjZzd1nSAbABQVVfeXFMTVRPdWIwbnlsVHJ4aHBmOTNyWFNTbzhmajNIZXFSaUZlQWNneXQ1ZUczTXlMM3NHYXRNaXg3c2E1UEVxNjJwVm9LU2o5TnNTV2pISE9EVC1WU0w5OFdwUTJBRjJXaERTOEQ2SDFVYnhtTDhvUVV0NlBraXFwM1JXeUNNTFhaRTNRTVdKTnVFUWtYVkROelVIZ3U5R2hSSm5WQUVYTFBFSUNYdHJzY3kwZnY"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-09",
-      "category": "military",
-      "source_type": "news",
-      "title": "Trump tells Reuters that Qatar, Saudi Arabia want peaceful Iran deal, US ready for strikes if needed - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOZ2o4T2dDT1ZqQmlqM0JxZEViaHZzWjRPeGtRd2N5MEZweXhTWXV1b0RybWgxNzZrMUJmOXFDMGMtTGE1RzJCMHBNdkctTVZpWXhBUUcxYUhnOTRqOEpQZUpPWjdsZHgtTWc4cWYxYnRtZEgzb191X2tlOUVVYXh4SFpnejMxYXRidEhFalZMeDlSSlhmUm5IR0Nyd2hybHhWVjVrcXA1ODVaYWo1ODhFSEhNMFZxdmdaN3VLTEc0dE1MZ21pVGxFMFh0TQ"
     }
   ]
 }
