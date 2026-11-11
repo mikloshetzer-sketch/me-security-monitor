@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T11:00:08Z",
+  "generated_at": "2026-11-11T18:42:37Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 903,
+    "events_endpoint_records": 906,
     "feed_event_records": 250,
-    "normalized_events": 1959,
+    "normalized_events": 1962,
     "map_visualizable_events": 276,
-    "non_mappable_events": 1683,
-    "developments": 2
+    "non_mappable_events": 1686,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1959,
+      "total_events": 1962,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-11T09:32:12Z",
+      "latest_event_date": "2026-11-11T17:58:28Z",
       "geocoded_events": 276,
       "geocoded_share": 14.1,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 60,
-        "previous": 53,
-        "delta": 7,
-        "percent_change": 13.2,
-        "direction": "stable"
+        "current": 62,
+        "previous": 45,
+        "delta": 17,
+        "percent_change": 37.8,
+        "direction": "increase"
       },
       "latest_30_days": {
-        "current": 288,
-        "previous": 294,
-        "delta": -6,
-        "percent_change": -2.0,
+        "current": 286,
+        "previous": 302,
+        "delta": -16,
+        "percent_change": -5.3,
         "direction": "stable"
       }
     },
@@ -806,47 +806,47 @@
       },
       {
         "date": "2026-11-11",
-        "count": 2
+        "count": 5
       }
     ],
     "category_counts": {
       "infrastructure": 571,
       "missile": 435,
-      "strike": 278,
-      "drone": 226,
+      "strike": 279,
+      "drone": 227,
       "airstrike": 149,
       "movement": 118,
       "explosion": 74,
-      "ground": 69,
+      "ground": 70,
       "alert": 21,
       "defense": 12,
       "political": 5,
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1014,
+      "medium": 1017,
       "high": 606,
       "low": 326,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1309,
+      "unknown": 1311,
       "iran": 404,
-      "israel": 206,
+      "israel": 207,
       "usa": 40
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 757
+        "count": 758
       },
       {
         "name": "Iran",
-        "count": 412
+        "count": 413
       },
       {
         "name": "Lebanon",
-        "count": 122
+        "count": 123
       },
       {
         "name": "Jordan",
@@ -900,15 +900,15 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 757
+        "count": 758
       },
       {
         "name": "Iran",
-        "count": 543
+        "count": 544
       },
       {
         "name": "Lebanon",
-        "count": 153
+        "count": 154
       },
       {
         "name": "Jordan",
@@ -945,34 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11277,
+    "totalCount": 11280,
     "spotlight": {
       "event": {
-        "id": "u9j2h0osuy80",
-        "timestamp": "2026-11-10T14:52:42+00:00",
-        "location": "SAU",
-        "origin": "YEM",
+        "id": "346q4izd71600",
+        "timestamp": "2026-11-11T17:58:28+00:00",
+        "location": "LBN",
+        "origin": "ISR",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "high",
-        "description": "Houthis claim three attacks inside Saudi Arabia: King Khalid Airport and East-West pipeline pumping stations in Riyadh, Aramco Abqaiq facility, and Riyadh financial district; satellite imagery suggests damage at Pumping Station 8 and a pipeline fire was reported as quickly extinguished",
-        "descriptionHe": "החות'ים טוענים לשלוש תקיפות בתוך סעודיה: נמל התעופה קינג חאלד ותחנות שאיבה לאורך צינור הנפט מזרח-מערב בריאד, מתקן ארמקו באבקיק ומרכז המסחר הפיננסי בריאד; צילומי לוויין מעידים על נזק אפשרי בתחנת שאיבה 8 ונדווח על שריפה בצנרת שכובתה במהירות",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/86989"
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF strikes in the southern Lebanon villages of Al-Mansuri and Hadatha during a speech by Hezbollah Secretary-General Naim Qassem",
+        "descriptionHe": "צה\"ל תוקף בכפרים אלמנצורי וחדאת'א בדרום לבנון בזמן נאום של נעים קאסם, מזכ\"ל חזבאללה",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133500"
       },
-      "headline": "Houthis claim coordinated attacks across Saudi Arabia",
-      "headlineHe": "הותיים טוענים להתקפות מתואמות ברחבי סעודיה",
-      "summary": "The Iranian-backed militant group targeted critical infrastructure including airports, oil facilities, and pipelines in multiple locations, with satellite imagery confirming damage at a major pumping station.",
-      "summaryHe": "הקבוצה המסונדרת לאיראן תקפה תשתיות קריטיות כולל שדות תעופה, מתקני נפט וצינורות בהיקפי אתרים מרובים, כאשר תמונות לוויין אישרו נזקים בתחנת שאיבה גדולה.",
-      "pickedAt": "2026-11-11T10:45:25.207Z",
-      "state": "TODAY"
+      "headline": "IDF strikes Lebanon villages during Hezbollah leader speech",
+      "headlineHe": "צה\"ל תוקף כפרים בדרום לבנון במהלך נאום של מנהיג חזבולה",
+      "summary": "The strikes targeted Al-Mansuri and Hadatha in what appears to be a coordinated operation timed with Naim Qassem's address to supporters.",
+      "summaryHe": "התקיפות כיוונו לעבר אל-מנסורי והדתה במהלך הנאום של נאים קאסם לתומכיו.",
+      "pickedAt": "2026-11-11T18:00:25.092Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-11T10:51:18.847Z",
+    "lastUpdated": "2026-11-11T18:39:17.903Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 0,
     "ceasefire": false
   },
   "summary": {
@@ -1515,200 +1515,8 @@
     "vitals": {
       "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-11-11T10:30:13.797Z",
+      "lastUpdate": "2026-11-11T18:30:13.966Z",
       "internetHistory": [
-        {
-          "t": "2026-11-10T10:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T10:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T10:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T11:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T11:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T13:00:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T13:20:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T14:50:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T15:00:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T15:10:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T16:10:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T16:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T16:40:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T16:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T17:00:00.000Z",
-          "v": 98
-        },
-        {
-          "t": "2026-11-10T17:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T17:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T17:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T17:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T17:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T18:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T18:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-10T18:20:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-11-10T18:30:00.000Z",
           "v": 97
@@ -2088,22 +1896,258 @@
         {
           "t": "2026-11-11T10:10:00.000Z",
           "v": 97
+        },
+        {
+          "t": "2026-11-11T10:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T10:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T10:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T10:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T11:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T11:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T11:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T13:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T13:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T15:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T15:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T15:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T15:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T16:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T16:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T16:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T16:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T16:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T16:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T17:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T17:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T17:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T17:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T17:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T17:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T18:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-11T18:10:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-11T10:30:13.797Z"
+    "lastUpdated": "2026-11-11T18:30:13.966Z"
   },
   "developments": [
     {
-      "id": "iranstrike-9a4c2e7f",
+      "id": "iranstrike-a7f3c2e1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-11T17:58:28Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes southern Lebanon during Hezbollah leader speech",
+      "category": "other",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes southern lebanon during hezbollah leader speech צ",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a7f3c2e1",
+        "text": "IDF strikes southern Lebanon during Hezbollah leader speech",
+        "textHe": "צה\"ל תקף בדרום לבנון במהלך נאום מנהיג חזבאללה",
+        "severity": "high",
+        "timestamp": "2026-11-11T17:58:28+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "346q4izd71600"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-b9e4d5a2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-10T22:42:23Z",
       "title": "IranStrike event",
-      "description": "Houthis conduct multi-site attacks on Saudi Arabia; Aramco offices, airports, pipelines targeted",
+      "description": "Houthis target Aramco offices in Riyadh; multiple attacks on Saudi capital",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2124,9 +2168,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "9a4c2e7f",
-        "text": "Houthis conduct multi-site attacks on Saudi Arabia; Aramco offices, airports, pipelines targeted",
-        "textHe": "חות'ים ביצעו התקפות רב-אתריות בערב הסעודית; משרדי ארמקו, שדות תעופה וצינורות גז במטרה",
+        "id": "b9e4d5a2",
+        "text": "Houthis target Aramco offices in Riyadh; multiple attacks on Saudi capital",
+        "textHe": "החות'ים תקפו משרדי ערמקו בריאד; התקפות מרובות על בירת סעודיה",
         "severity": "high",
         "timestamp": "2026-11-10T22:42:23+00:00",
         "entityIds": [
@@ -2134,21 +2178,63 @@
           "SAU"
         ],
         "eventIds": [
-          "u9j2h0osuy80",
           "2egwt86mxckk0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-b6f1d3c2",
+      "id": "iranstrike-c6b1f9d3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-11T06:42:01Z",
+      "date": "2026-11-11T16:31:49Z",
       "title": "IranStrike event",
-      "description": "U.S. Treasury Secretary relocates to military base citing Iranian assassination threat intelligence",
+      "description": "Houthis claim territorial gains in Yemen; clashes ongoing in Lahij",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c6b1f9d3",
+        "text": "Houthis claim territorial gains in Yemen; clashes ongoing in Lahij",
+        "textHe": "החות'ים טוענים להשגת שטחים ביemen; קרבות מתמשכים בלחג",
+        "severity": "medium",
+        "timestamp": "2026-11-11T16:31:49+00:00",
+        "entityIds": [
+          "YEM"
+        ],
+        "eventIds": [
+          "20105k3w0icg"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d4e7a8b5",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-11T15:06:01Z",
+      "title": "IranStrike event",
+      "description": "Iran claims seizure of U.S. drones and submarines; unverified",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2169,23 +2255,158 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b6f1d3c2",
-        "text": "U.S. Treasury Secretary relocates to military base citing Iranian assassination threat intelligence",
-        "textHe": "שר האוצר האמריקני עבר לבסיס צבאי בעקבות אזהרה על ניסיון התנקשות איראני",
+        "id": "d4e7a8b5",
+        "text": "Iran claims seizure of U.S. drones and submarines; unverified",
+        "textHe": "איראן טוענת ללכידת כלים אוטונומיים אמריקאיים; לא מאומת",
         "severity": "medium",
-        "timestamp": "2026-11-11T06:42:01+00:00",
+        "timestamp": "2026-11-11T15:06:01+00:00",
         "entityIds": [
           "IRN",
           "USA"
         ],
         "eventIds": [
-          "2fnt3kqzh50k0"
+          "3lxxov5a21q00"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-346q4izd71600",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133500",
+      "date": "2026-11-11T17:58:28Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes in the southern Lebanon villages of Al-Mansuri and Hadatha during a speech by Hezbollah Secretary-General Naim Qassem",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf strikes in the southern lebanon villages of al-mansuri an",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "346q4izd71600",
+        "timestamp": "2026-11-11T17:58:28+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF strikes in the southern Lebanon villages of Al-Mansuri and Hadatha during a speech by Hezbollah Secretary-General Naim Qassem",
+        "descriptionHe": "צה\"ל תוקף בכפרים אלמנצורי וחדאת'א בדרום לבנון בזמן נאום של נעים קאסם, מזכ\"ל חזבאללה",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133500"
+      }
+    },
+    {
+      "id": "iranstrike-20105k3w0icg",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87047",
+      "date": "2026-11-11T16:31:49Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim control of Al Fassayah in Lahij governorate amid heavy clashes; Jabal Khaboub partially retaken by Southern forces, situation further west reportedly unfavorable to them",
+      "category": "ground",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "20105k3w0icg",
+        "timestamp": "2026-11-11T16:31:49+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Houthis claim control of Al Fassayah in Lahij governorate amid heavy clashes; Jabal Khaboub partially retaken by Southern forces, situation further west reportedly unfavorable to them",
+        "descriptionHe": "החות'ים טוענים לשליטה באל-פסאיה במחוז לחג', תוך קרבות כבדים; הכוחות הדרומיים השתלטו חלקית מחדש על ג'בל ח'ובוב, והמצב ממערב לו לא נוח להם לפי הדיווחים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87047"
+      }
+    },
+    {
+      "id": "iranstrike-3lxxov5a21q00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133487",
+      "date": "2026-11-11T15:06:01Z",
+      "title": "IranStrike event",
+      "description": "Iranian SNSC secretary Rezaei claims Iran seized seven US unmanned aerial vehicles and two advanced autonomous submarines, unverified",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3lxxov5a21q00",
+        "timestamp": "2026-11-11T15:06:01+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Iranian SNSC secretary Rezaei claims Iran seized seven US unmanned aerial vehicles and two advanced autonomous submarines, unverified",
+        "descriptionHe": "מזכיר המועצה העליונה לביטחון לאומי של איראן, רזאעי, טוען כי איראן השתלטה על שבעה כלי טיס בלתי מאוישים אמריקאיים ועל שתי צוללות אוטונומיות מתקדמות, טענה שלא אומתה",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133487"
+      }
+    },
     {
       "id": "iranstrike-67k89z68ka0",
       "source": "IranStrike",
