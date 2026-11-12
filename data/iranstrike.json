@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T17:06:09Z",
+  "generated_at": "2026-11-12T22:44:37Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,20 +52,20 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 918,
+    "events_endpoint_records": 927,
     "feed_event_records": 250,
-    "normalized_events": 1974,
-    "map_visualizable_events": 277,
-    "non_mappable_events": 1697,
+    "normalized_events": 1983,
+    "map_visualizable_events": 278,
+    "non_mappable_events": 1705,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 1974,
+      "total_events": 1983,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-12T16:59:26Z",
-      "geocoded_events": 277,
+      "latest_event_date": "2026-11-12T22:00:45Z",
+      "geocoded_events": 278,
       "geocoded_share": 14.0,
       "top_category": "infrastructure",
       "top_location": "Unknown",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 70,
-        "previous": 35,
-        "delta": 35,
-        "percent_change": 100.0,
+        "current": 75,
+        "previous": 36,
+        "delta": 39,
+        "percent_change": 108.3,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 280,
-        "previous": 302,
-        "delta": -22,
-        "percent_change": -7.3,
+        "current": 288,
+        "previous": 305,
+        "delta": -17,
+        "percent_change": -5.6,
         "direction": "stable"
       }
     },
@@ -806,43 +806,43 @@
       },
       {
         "date": "2026-11-12",
-        "count": 9
+        "count": 18
       }
     ],
     "category_counts": {
-      "infrastructure": 576,
-      "missile": 436,
+      "infrastructure": 582,
+      "missile": 437,
       "strike": 281,
       "drone": 228,
       "airstrike": 149,
-      "movement": 119,
+      "movement": 120,
       "explosion": 74,
-      "ground": 72,
+      "ground": 73,
       "alert": 21,
       "defense": 12,
       "political": 5,
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1024,
-      "high": 609,
-      "low": 328,
+      "medium": 1027,
+      "high": 611,
+      "low": 332,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1322,
-      "iran": 404,
+      "unknown": 1328,
+      "iran": 407,
       "israel": 208,
       "usa": 40
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 767
+        "count": 771
       },
       {
         "name": "Iran",
-        "count": 414
+        "count": 418
       },
       {
         "name": "Lebanon",
@@ -862,7 +862,7 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 49
+        "count": 50
       },
       {
         "name": "Iraq",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 767
+        "count": 771
       },
       {
         "name": "Iran",
-        "count": 545
+        "count": 550
       },
       {
         "name": "Lebanon",
@@ -945,34 +945,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11292,
+    "totalCount": 11301,
     "spotlight": {
       "event": {
-        "id": "1us8gjxapxr40",
-        "timestamp": "2026-11-12T11:18:35+00:00",
+        "id": "ztk31mz0a8w0",
+        "timestamp": "2026-11-12T16:56:47+00:00",
         "location": "IRN",
-        "origin": "ISR",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "high",
-        "description": "KAN reports Netanyahu's security cabinet ordered the military to accelerate preparations for a possible Israeli attack on Iran, which could reopen the war; the IDF Chief of Staff reportedly opposes it without signed orders and U.S. backing",
-        "descriptionHe": "כאן דיווחה כי הקבינet הביטחוני של נתניהו הורה לצבא להאיץ הכנות לתקיפה אפשרית באיראן, שעלולה לפתוח מחדש את המלחמה; לפי הדיווח, הרמטכ\"ל מתנגד ללא פקודות חתומות ותמיכה אמריקאית",
+        "description": "Large-scale Iranian missile attack launched from Bandar Abbas area toward the Strait of Hormuz, over 10 missiles fired (approx. 45 minutes before report)",
+        "descriptionHe": "תקיפת טילים בקנה מידה גדול משטח בנדר עבאס לעבר מצר הורמוז, יותר מ-10 טילים שוגרו (כ-45 דקות לפני הדיווח)",
         "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/87086"
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 10
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87109"
       },
-      "headline": "Netanyahu Orders Military to Prepare Possible Iran Strike",
-      "headlineHe": "נתניהו הורה לצבא להכין תקיפה אפשרית על איראן",
-      "summary": "Israel's security cabinet is accelerating war preparations that could reignite regional conflict, though the IDF Chief of Staff has expressed reservations without explicit U.S. approval.",
-      "summaryHe": "קבינט הביטחון של ישראל מאיץ הכנות למלחמה שעלולות להדליק מחדש סכסוך אזורי, אך רמטכ\"ל צה\"ל הביע שמורות ללא אישור ברור מארה\"ב.",
-      "pickedAt": "2026-11-12T16:45:25.818Z",
+      "headline": "Iran launches 10+ missiles toward Strait of Hormuz",
+      "headlineHe": "איראן משגרת 10+ טילים לעבר היקר הורמוז",
+      "summary": "The barrage from Bandar Abbas represents a significant escalation in regional tensions as Iran responds to mounting international pressure and threats of military action.",
+      "summaryHe": "ההפצצה מבנדר עباס מהווה הסלמה משמעותית במתחים האזוריים כשאיראן מגיבה ללחץ בינלאומי הולך וגדל וחיזוי פעולות צבאיות.",
+      "pickedAt": "2026-11-12T22:15:25.438Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-11-12T17:03:17.410Z",
+    "lastUpdated": "2026-11-12T22:42:17.303Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 3,
     "ceasefire": false
   },
   "summary": {
@@ -1513,142 +1519,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": 95,
       "cellular": null,
-      "lastUpdate": "2026-11-12T17:00:13.700Z",
+      "lastUpdate": "2026-11-12T22:30:14.854Z",
       "internetHistory": [
-        {
-          "t": "2026-11-11T17:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T17:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T17:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T17:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T17:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T17:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T18:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T18:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T18:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T18:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T18:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T18:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T19:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T19:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T19:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T19:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T19:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T19:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T20:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T20:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T20:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T20:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T20:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-11T20:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T21:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T21:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T21:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T21:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T21:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T21:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T22:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T22:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-11T22:20:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-11-11T22:30:00.000Z",
           "v": 96
@@ -2088,22 +1962,197 @@
         {
           "t": "2026-11-12T16:40:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-11-12T16:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T17:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T17:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T17:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T17:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T17:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T17:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T18:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T18:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-12T18:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T18:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T18:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T18:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T19:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T19:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T19:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T19:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T19:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T19:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T20:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T20:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T20:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T20:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T20:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T20:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T21:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T21:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T21:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T21:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T21:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T21:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T22:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-12T22:10:00.000Z",
+          "v": 95
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-12T17:00:13.700Z"
+    "lastUpdated": "2026-11-12T22:30:14.854Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7f3a8c2e",
+      "id": "iranstrike-c7f3a2e1",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-12T16:56:47Z",
+      "title": "IranStrike event",
+      "description": "Iran fires 10+ ballistic missiles from Bandar Abbas toward Strait of Hormuz",
+      "category": "other",
+      "severity": "critical",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran fires 10+ ballistic missiles from bandar abbas toward s",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c7f3a2e1",
+        "text": "Iran fires 10+ ballistic missiles from Bandar Abbas toward Strait of Hormuz",
+        "textHe": "איראן משגרת 10+ טילים בליסטיים מבנדר עבאס לעבר מצר הורמוז",
+        "severity": "critical",
+        "timestamp": "2026-11-12T16:56:47+00:00",
+        "entityIds": [
+          "IRN"
+        ],
+        "eventIds": [
+          "ztk31mz0a8w0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-b9e4d6c2",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-12T16:59:26Z",
       "title": "IranStrike event",
-      "description": "Houthis claim drone/missile strikes on Saudi oil infrastructure; targeting Yanbu facility and East-West Pipeline",
+      "description": "Houthis claim strikes on Saudi oil infrastructure: Pumping Station No. 7, Yanbu facility",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2124,9 +2173,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7f3a8c2e",
-        "text": "Houthis claim drone/missile strikes on Saudi oil infrastructure; targeting Yanbu facility and East-West Pipeline",
-        "textHe": "החותים טוענים להתקפות רחפנים וטילים על תשתיות נפט בסעודיה; מטרות בינן יתד יקנו ו-צינור מזרח-מערב",
+        "id": "b9e4d6c2",
+        "text": "Houthis claim strikes on Saudi oil infrastructure: Pumping Station No. 7, Yanbu facility",
+        "textHe": "חות'ים טוענים להתקפה על תשתיות נפט סעודיות: תחנת שאיבה מס' 7 ויניבו",
         "severity": "high",
         "timestamp": "2026-11-12T16:59:26+00:00",
         "entityIds": [
@@ -2141,21 +2190,113 @@
       }
     },
     {
-      "id": "iranstrike-6d2b4f1a",
+      "id": "iranstrike-a5c8f1b3",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-12T11:18:35Z",
+      "date": "2026-11-12T21:03:42Z",
       "title": "IranStrike event",
-      "description": "Israeli security cabinet accelerates Iran strike preparations; IDF Chief opposes without U.S. backing",
+      "description": "Trump says considering Iran attack; Netanyahu cabinet orders IDF acceleration of Iran prep",
       "category": "other",
       "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "trump says considering iran attack;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a5c8f1b3",
+        "text": "Trump says considering Iran attack; Netanyahu cabinet orders IDF acceleration of Iran prep",
+        "textHe": "טראמפ אומר בחשבון התקפה על איראן; ממשלת נתניהו הורתה להאיץ הכנות צה\"ל",
+        "severity": "high",
+        "timestamp": "2026-11-12T21:03:42+00:00",
+        "entityIds": [
+          "USA",
+          "ISR",
+          "IRN"
+        ],
+        "eventIds": [
+          "3p6ho0fev4i00",
+          "1us8gjxapxr40"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-d2e7a9f4",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-12T17:03:33Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim Yemeni territorial gains at Al Fassayah, kill Saudi-aligned commanders at three fronts",
+      "category": "other",
+      "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "d2e7a9f4",
+        "text": "Houthis claim Yemeni territorial gains at Al Fassayah, kill Saudi-aligned commanders at three fronts",
+        "textHe": "חות'ים טוענים על כיבוש טריטוריאלי באל פאסאיה, הרגו מפקדים בשלוש חזיתות",
+        "severity": "medium",
+        "timestamp": "2026-11-12T17:03:33+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "qbc7jfb6jm80",
+          "1lqr7xs79tpc0",
+          "1v9889qlwx7k0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-e6b2c4a7",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-12T22:00:45Z",
+      "title": "IranStrike event",
+      "description": "US establishes Task Force Iron Gate to block Iranian military shipments across land borders, Caspian",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
       "attacker_evidence": "",
       "location": "Iran",
       "country": "Iran",
@@ -2169,159 +2310,387 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "6d2b4f1a",
-        "text": "Israeli security cabinet accelerates Iran strike preparations; IDF Chief opposes without U.S. backing",
-        "textHe": "קבינט הביטחון הישראלי מאיץ הכנות לתקפול בעימות; ראש הצה\"ל מתנגד ללא גיבוי אמריקאי",
-        "severity": "high",
-        "timestamp": "2026-11-12T11:18:35+00:00",
-        "entityIds": [
-          "ISR",
-          "IRN",
-          "USA"
-        ],
-        "eventIds": [
-          "1us8gjxapxr40"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-5c9e7b3d",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-12T16:58:42Z",
-      "title": "IranStrike event",
-      "description": "Houthis report eliminating multiple PLC commanders at Jawf, Raghwan, Lahj fronts; capture general at Al Sharj",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "5c9e7b3d",
-        "text": "Houthis report eliminating multiple PLC commanders at Jawf, Raghwan, Lahj fronts; capture general at Al Sharj",
-        "textHe": "החותים דיווחו על ביטול מספר קומנדנטים של PLC בחזיתות שונות; לכידת גנרל בשרג'",
+        "id": "e6b2c4a7",
+        "text": "US establishes Task Force Iron Gate to block Iranian military shipments across land borders, Caspian",
+        "textHe": "ארה\"ב הקימה כוח משימה לחסימת משלוחים צבאיים איראניים בגבולות יבשה ים קספי",
         "severity": "medium",
-        "timestamp": "2026-11-12T16:58:42+00:00",
+        "timestamp": "2026-11-12T22:00:45+00:00",
         "entityIds": [
-          "YEM"
+          "USA",
+          "IRN"
         ],
         "eventIds": [
-          "1lqr7xs79tpc0",
-          "1v9889qlwx7k0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-4a6e1c9f",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-12T16:59:26Z",
-      "title": "IranStrike event",
-      "description": "IDF strikes southern Lebanon villages during Hezbollah leader's speech; Saudi intercepts 2 missiles over Mecca",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes southern lebanon villages during hezbollah leader",
-      "location": "Lebanon",
-      "country": "Lebanon",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "4a6e1c9f",
-        "text": "IDF strikes southern Lebanon villages during Hezbollah leader's speech; Saudi intercepts 2 missiles over Mecca",
-        "textHe": "צה\"ל תקף כפרים בדרום לבנון במהלך נאום מנהיג חיזבאללה; סעודיה יירטה 2 טילים מעל מכה",
-        "severity": "medium",
-        "timestamp": "2026-11-12T16:59:26+00:00",
-        "entityIds": [
-          "ISR",
-          "LBN",
-          "SAU",
-          "YEM"
-        ],
-        "eventIds": [
-          "346q4izd71600",
-          "1uff9o5l1s000"
-        ],
-        "sourceCount": 2
-      }
-    },
-    {
-      "id": "iranstrike-3b2d5e8c",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-11T21:52:00Z",
-      "title": "IranStrike event",
-      "description": "Yemen territorial shifts: Houthis claim 51.1 km² on R200 highway, Lahij breakthrough; NSF/SGB recapture 165 km²",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3b2d5e8c",
-        "text": "Yemen territorial shifts: Houthis claim 51.1 km² on R200 highway, Lahij breakthrough; NSF/SGB recapture 165 km²",
-        "textHe": "שינויים טריטוריאליים בתימן: החותים תובעים 51.1 קמ\"ר בכביש R200, פריצה בלחיג'; NSF/SGB החזירו 165 קמ\"ר",
-        "severity": "medium",
-        "timestamp": "2026-11-11T21:52:00+00:00",
-        "entityIds": [
-          "YEM"
-        ],
-        "eventIds": [
-          "19b0oeg9oz1c0",
-          "3fmlavctnpk00"
+          "4aiqjk4eavy0"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-4aiqjk4eavy0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87142",
+      "date": "2026-11-12T22:00:45Z",
+      "title": "IranStrike event",
+      "description": "US military announces Task Force Iron Gate under CENTCOM to block military and dual-use shipments across Iran's land borders and the Caspian Sea, amid an ongoing US naval blockade of Iranian ports",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "4aiqjk4eavy0",
+        "timestamp": "2026-11-12T22:00:45+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "US military announces Task Force Iron Gate under CENTCOM to block military and dual-use shipments across Iran's land borders and the Caspian Sea, amid an ongoing US naval blockade of Iranian ports",
+        "descriptionHe": "הצבא האמריקאי הודיע על כוח המשימה Iron Gate בפיקוד CENTCOM שייעודו למנוע העברת מערכות נשק מתקדמות וטכנולוגיות כפולות שימוש דרך הגבולות היבשתיים של איראן ובים הכספי, במסגרת מצור ימי אמריקאי על נמלי איראן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87142"
+      }
+    },
+    {
+      "id": "iranstrike-3p6ho0fev4i00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87138",
+      "date": "2026-11-12T21:03:42Z",
+      "title": "IranStrike event",
+      "description": "President Trump says he is considering launching an attack on Iran soon and wants to destroy Iran, per interview with Hugh Hewitt (statement of intent, no operation confirmed)",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "e is considering launching an attack on iran soon and wants to destroy iran, per interview wit",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3p6ho0fev4i00",
+        "timestamp": "2026-11-12T21:03:42+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "President Trump says he is considering launching an attack on Iran soon and wants to destroy Iran, per interview with Hugh Hewitt (statement of intent, no operation confirmed)",
+        "descriptionHe": "הנשיא טראמפ אומר שהוא שוקל לתקוף את איראן בקרוב ורוצה להשמיד אותה, לפי ראיון ל-Hugh Hewitt (הצהרת כוונה, אין אישור לפעולה)",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87138"
+      }
+    },
+    {
+      "id": "iranstrike-1isfw8jmemjk",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87128",
+      "date": "2026-11-12T19:53:51Z",
+      "title": "IranStrike event",
+      "description": "USAF C-5M strategic transport (reg 85-0001) from Spangdahlem, Germany, reportedly landing at Al-Dhafra Air Base, UAE; another C-5M (reg 87-0036) heading back to Europe from the same base",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1isfw8jmemjk",
+        "timestamp": "2026-11-12T19:53:51+00:00",
+        "location": "ARE",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "USAF C-5M strategic transport (reg 85-0001) from Spangdahlem, Germany, reportedly landing at Al-Dhafra Air Base, UAE; another C-5M (reg 87-0036) heading back to Europe from the same base",
+        "descriptionHe": "מטוס המטען האסטרטגי C-5M של חיל האוויר האמריקאי (מספר זנב 85-0001) מגרמניה, נוחת כנראה בבסיס אל-דפרה שבאיחוד האמירויות; מטוס C-5M נוסף (87-0036) חוזר לאירופה מאותו בסיס",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87128"
+      }
+    },
+    {
+      "id": "iranstrike-30y4sy1hgm000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133566",
+      "date": "2026-11-12T19:30:01Z",
+      "title": "IranStrike event",
+      "description": "Iranian official media report a \"hostile attack\" in the Sirik area of southern Iran; attacker and details not specified",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn iranian official media report a \"hostile attack\" in the sirik area of southern iran;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "30y4sy1hgm000",
+        "timestamp": "2026-11-12T19:30:01+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Iranian official media report a \"hostile attack\" in the Sirik area of southern Iran; attacker and details not specified",
+        "descriptionHe": "כלי תקשורת איראניים רשמיים מדווחים על \"תקיפה עוינת\" באזור סיריכ בדרום איראן, התוקף והפרטים לא צוינו",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133566"
+      }
+    },
+    {
+      "id": "iranstrike-rwf6n2e8u680",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87116",
+      "date": "2026-11-12T18:47:31Z",
+      "title": "IranStrike event",
+      "description": "Ansarallah (Houthis) claim to have shot down another Saudi-operated Wing Loong-2 UCAV over Ma'rib; unverified claim, with a cumulative tally of Saudi aerial losses in Yemen since September 6",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "rwf6n2e8u680",
+        "timestamp": "2026-11-12T18:47:31+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Ansarallah (Houthis) claim to have shot down another Saudi-operated Wing Loong-2 UCAV over Ma'rib; unverified claim, with a cumulative tally of Saudi aerial losses in Yemen since September 6",
+        "descriptionHe": "אנסאר אללה (החות'ים) טוענים כי הפילו מזל\"ט קרבי Wing Loong-2 נוסף שהופעל על ידי סעודיה מעל מאריב; טענה שלא אומתה, עם סיכום מצטבר של אובדני חיל האוויר הסעודי בתימן מאז 6 בספטמבר",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87116"
+      }
+    },
+    {
+      "id": "iranstrike-u5e54p837mo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87115",
+      "date": "2026-11-12T18:37:50Z",
+      "title": "IranStrike event",
+      "description": "Unverified IRGC claim that Iran is reverse-engineering large amounts of captured enemy weapons and wreckage",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "u5e54p837mo0",
+        "timestamp": "2026-11-12T18:37:50+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "Unverified IRGC claim that Iran is reverse-engineering large amounts of captured enemy weapons and wreckage",
+        "descriptionHe": "טענה שלא אומתה של משמרות המהפכה כי איראן מפענחת כמויות גדולות של נשק אויב שנתפס ושברים",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87115"
+      }
+    },
+    {
+      "id": "iranstrike-2y1j5ehttss00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87111",
+      "date": "2026-11-12T17:44:24Z",
+      "title": "IranStrike event",
+      "description": "5 USAF cargo aircraft (2 C-17 Globemaster III, 3 C-5M Super Galaxy) departing Middle East bases within CENTCOM area of responsibility",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2y1j5ehttss00",
+        "timestamp": "2026-11-12T17:44:24+00:00",
+        "location": "USA",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "5 USAF cargo aircraft (2 C-17 Globemaster III, 3 C-5M Super Galaxy) departing Middle East bases within CENTCOM area of responsibility",
+        "descriptionHe": "5 מטוסי מטען של חיל האוויר האמריקאי (2 C-17 Globemaster III ו-3 C-5M Super Galaxy) עוזבים בסיסים במזרח התיכון באזור האחריות של CENTCOM",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87111"
+      }
+    },
+    {
+      "id": "iranstrike-qbc7jfb6jm80",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87105",
+      "date": "2026-11-12T17:03:33Z",
+      "title": "IranStrike event",
+      "description": "Houthis claim control of Al Fassayah in Lahij governorate amid heavy clashes; Southern forces partially recovered Jabal Khaboub, but the situation further west reportedly favors the Houthis",
+      "category": "ground",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "qbc7jfb6jm80",
+        "timestamp": "2026-11-12T17:03:33+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Houthis claim control of Al Fassayah in Lahij governorate amid heavy clashes; Southern forces partially recovered Jabal Khaboub, but the situation further west reportedly favors the Houthis",
+        "descriptionHe": "החות'ים טוענים לשליטה באל-פסאיה שבמחוז לחג'; קרבות כבדים מתנהלים במקום. כוחות הדרום השיבו חלקית את ג'בל ח'בוב, אך המצב מערבה אינו לטובתם לפי הדיווח",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87105"
+      }
+    },
     {
       "id": "iranstrike-3dqg6msofvo00",
       "source": "IranStrike",
@@ -2557,6 +2926,57 @@
         "descriptionHe": "החות'ים הרגו את תת-אלוף הכוח הממשלתי חומיר נאסר וארדאן בחזית רגוואן, הרגו את מוסטפא אל-מרמי בחזית לחג' ושבו את תת-אלוף עלי נאסר אל-אוד'לי בחזית אל-שרג'",
         "source": "CIG_telegram",
         "sourceUrl": "https://t.me/CIG_telegram/87094"
+      }
+    },
+    {
+      "id": "iranstrike-ztk31mz0a8w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87109",
+      "date": "2026-11-12T16:56:47Z",
+      "title": "IranStrike event",
+      "description": "Large-scale Iranian missile attack launched from Bandar Abbas area toward the Strait of Hormuz, over 10 missiles fired (approx. 45 minutes before report)",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn large-scale iranian missile attack launched from bandar abbas area toward the strait",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "ztk31mz0a8w0",
+        "timestamp": "2026-11-12T16:56:47+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Large-scale Iranian missile attack launched from Bandar Abbas area toward the Strait of Hormuz, over 10 missiles fired (approx. 45 minutes before report)",
+        "descriptionHe": "תקיפת טילים בקנה מידה גדול משטח בנדר עבאס לעבר מצר הורמוז, יותר מ-10 טילים שוגרו (כ-45 דקות לפני הדיווח)",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 10
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87109"
       }
     },
     {
@@ -91832,6 +92252,57 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-ztk31mz0a8w0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87109",
+      "date": "2026-11-12T16:56:47Z",
+      "title": "IranStrike event",
+      "description": "Large-scale Iranian missile attack launched from Bandar Abbas area toward the Strait of Hormuz, over 10 missiles fired (approx. 45 minutes before report)",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "irn large-scale iranian missile attack launched from bandar abbas area toward the strait",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "ztk31mz0a8w0",
+        "timestamp": "2026-11-12T16:56:47+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Large-scale Iranian missile attack launched from Bandar Abbas area toward the Strait of Hormuz, over 10 missiles fired (approx. 45 minutes before report)",
+        "descriptionHe": "תקיפת טילים בקנה מידה גדול משטח בנדר עבאס לעבר מצר הורמוז, יותר מ-10 טילים שוגרו (כ-45 דקות לפני הדיווח)",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 10
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87109"
+      }
+    },
     {
       "id": "iranstrike-3dd2eyon78g00",
       "source": "IranStrike",
