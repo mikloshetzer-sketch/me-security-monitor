@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-11-12T09:52:20.554380+00:00
+**Generated:** 2026-11-12T18:21:23.828448+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Saudi Arabia (2.5), prev 24h: 2.5, share: 43%.
+Top current hotspot (by risk): Gaza Strip (4.2), prev 24h: 5.2, share: 27%.
 
 ## X POST VERSION
 

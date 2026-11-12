@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-12 09:52 UTC",
+    "updated": "2026-11-12 18:21 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-11-06",
     "period_end": "2026-11-12",
-    "total_events": 109,
-    "total_risk": 115.4,
-    "normalized_risk_score": 46.2,
+    "total_events": 108,
+    "total_risk": 114.75,
+    "normalized_risk_score": 45.9,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 34,
-    "security": 5,
-    "political": 9,
-    "other": 61
+    "military": 30,
+    "security": 7,
+    "political": 7,
+    "other": 64
   },
   "source_counts": {
-    "news": 109,
+    "news": 108,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 50.15
+      "risk": 46.05
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.85
+      "risk": 16.4
     },
     {
       "name": "Saudi Arabia",
       "risk": 10.65
     },
     {
-      "name": "Riyadh",
-      "risk": 9.3
+      "name": "Yemen",
+      "risk": 8.35
     },
     {
-      "name": "Yemen",
-      "risk": 9.05
+      "name": "Riyadh",
+      "risk": 7.2
     }
   ],
   "top_events": [
@@ -61,9 +61,36 @@
       "date": "2026-11-12",
       "category": "military",
       "source_type": "news",
+      "title": "UAE says 14 killed, 30 injured in Fujairah traffic accident - Reuters",
+      "location": "United Arab Emirates",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQR2R6ZmJGZHpIRGdEbWw3aDBtU0VaemhmSlljY0UzSmtKNjdaVlhHTHRGU2VYUWI5eWUtYmFUakgyX28taFlOR3RIRUFMNnNodHI1VU9NUjlNV09IM3ZPUXhxcUlNS0p6dFg5MnBJMEdEUnQxNXNHS1Yxa2pnVjdkbmhYM1MwS0NTbkp6S1B1bzRaeDMtaHU1TTVyYm9ZOU13WWRDYVdXLW14c1BocXc"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-12",
+      "category": "military",
+      "source_type": "news",
       "title": "Israeli strike on Gaza hospital kills six Palestinians, health ministry says",
       "location": "Gaza Strip",
       "url": "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-12",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israel strikes intensive care at Gaza’s Nasser Hospital - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZEZIb0c5clhXTHdvVXlfMzN3cFhLdERKdWR6NGlxZDhnOEJLRUx6VWh0TTVmQjdGcVVpN2FyZ3V3Q3Z1dEV0azVlU0RTQkg5dTZQX3lJc2FCbmFjZUVxTlEzalp4dl8xbzRHaXNPLUhxNzBVd0xIZkdwSVVZWU84Zl9lZWcwQTNmUG9jT0dWUHYwaHpDbUpmM0xaTUNVajVYZE9DWlpOeGhyd9IBrwFBVV95cUxPLVJVTnNNV09TdUFiUUYtYlJtQ2x4MmFwTEtBZXNXMXE1cVluS3ZtNlRYRHpkQlJBcFhkS1AxNWxicVJzbnZCcVp3dUExbDRmWW5oWVdSdFA2U3NSUXAzZl9kcS02TXBQdnZTTGdJWXAtbjRjQll5X1puaGpnM1RyTi1lakJ0NW85Ym91SFRfdGh0aFc3bktFRk96ZEVwUkNjb1diWkdzRE5yT0dnWC1r"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-11",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike on Gaza hospital kills six, including surgeon, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOekJqQTlDSnpyUHhBeEEwb0V2X2s4NzdhSzR3a0NvbDZoR0FWXzR0X2k5YV9zaHlhU0M3YlVMWk9RTDltZXZiajZGdlVMSmxrMnJkWEI4QXU4bUFGSWppTDJFcVh4amhHR1lkYkdKT3VvT1BicUZnWTRBb3JuU3lHYVBScHhIdkc2bC1DZWpOVWNlbkJiTTRIQXdxYlE2a1hndlV5R3pwOVY4WVhvVXYwNVJ0UXU3WGJuTFAxZlhNU3YyeVhB"
     },
     {
       "score": 2.7,
@@ -79,18 +106,18 @@
       "date": "2026-11-11",
       "category": "military",
       "source_type": "news",
-      "title": "COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYXNuaEJXU0pFb0oxRlkzenJYREJId21QY2pxclZ3bnBDWEFwZXFhZkJCLTJEUWJELTRKeExPZDdYWmZUY25UZnNJYXZ5NGNUYXpUSHkwZUJyYU9wWmp0aWVHTUQ1ZFVlQ3dOZnE3azBSNm9KZVRMWnJEWXExR3VrektGaXU2RlNySG5GX01LbHR2M2xxMF92RzcwZWV0REJ6T3ZIV0dvQkM0c1pQU1hzQlVB"
+      "title": "Israeli strikes kill three people including two brothers in Gaza, medics say - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeU5nVjhkZzFmTC1MU1M4RlhrSTQxUHBrWV9tdlhoLVRTZTdmYXAxbmgtd1RHQmNaQS02S0xFNlZBUGU0VEVqWm9nZmpNbVNvQXZWa3VUaG8xWTdsY0FCSlRzT0VteDEtRWdGMDN3dDdPX1dTQldUOWFxZGI0V1ltUmtETl9jYl9NanIyblppQWhNWTdpMXR0ZURUMFhUYXJ4bzExUXYzLW9yeVpJMGZjMVVsanNNYjZWeDlob2RIUVZ0b0VF"
     },
     {
       "score": 2.7,
       "date": "2026-11-11",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strikes kill three people including two brothers in Gaza, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeU5nVjhkZzFmTC1MU1M4RlhrSTQxUHBrWV9tdlhoLVRTZTdmYXAxbmgtd1RHQmNaQS02S0xFNlZBUGU0VEVqWm9nZmpNbVNvQXZWa3VUaG8xWTdsY0FCSlRzT0VteDEtRWdGMDN3dDdPX1dTQldUOWFxZGI0V1ltUmtETl9jYl9NanIyblppQWhNWTdpMXR0ZURUMFhUYXJ4bzExUXYzLW9yeVpJMGZjMVVsanNNYjZWeDlob2RIUVZ0b0VF"
+      "title": "COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQYXNuaEJXU0pFb0oxRlkzenJYREJId21QY2pxclZ3bnBDWEFwZXFhZkJCLTJEUWJELTRKeExPZDdYWmZUY25UZnNJYXZ5NGNUYXpUSHkwZUJyYU9wWmp0aWVHTUQ1ZFVlQ3dOZnE3azBSNm9KZVRMWnJEWXExR3VrektGaXU2RlNySG5GX01LbHR2M2xxMF92RzcwZWV0REJ6T3ZIV0dvQkM0c1pQU1hzQlVB"
     },
     {
       "score": 2.7,
@@ -106,36 +133,9 @@
       "date": "2026-11-11",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strike on southern Gaza hospital kills six, Gaza civil defence says - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOekJqQTlDSnpyUHhBeEEwb0V2X2s4NzdhSzR3a0NvbDZoR0FWXzR0X2k5YV9zaHlhU0M3YlVMWk9RTDltZXZiajZGdlVMSmxrMnJkWEI4QXU4bUFGSWppTDJFcVh4amhHR1lkYkdKT3VvT1BicUZnWTRBb3JuU3lHYVBScHhIdkc2bC1DZWpOVWNlbkJiTTRIQXdxYlE2a1hndlV5R3pwOVY4WVhvVXYwNVJ0UXU3WGJuTFAxZlhNU3YyeVhB"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-11",
-      "category": "military",
-      "source_type": "news",
       "title": "Three Iran-backed suspects plotted attacks including RAF Fairford incident, US says",
       "location": "Iran",
       "url": "https://www.bbc.co.uk/news/articles/c3rryrryk59zo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemeni forces, Houthis exchange attacks, claim to inflict heavy losses - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbnJlaDBPVHFnakdjcW9wclBST3dmUFdIX2lRY3F4eWwtX3pmNWtQbVZFOURieHdsUTdxLXJIY20zYVp2eFNXNk00NnhxZ21DMmRnWTJualhnWml6SUxKYWlza0NiZmVkdUF0Mjl3VGtRUHZ1WlVrMm1XMm90Wk11UDA4aDFNbDFpdUFNMll2Q3pVUWpYdEVBY1Jnc0FSR1BhcW13X1lZZEtCWmRYM1Fz0gG0AUFVX3lxTFBkLVo4clNIWUgxSlBVR1E0YjJEYU9KdWRCa1pTSENmNl96SEtRWFJKVmc3ZERyYkY2b084eWxibE5tcUhQdkNSOWk4Yk92WWJiZjRvZ2sxTU5wdTRmWDJCWkdFaEFmX0hqMURBZEVGTzFPaURCR3kxZ1h0T21fMkJodXF2RUZMektmdEVDaTJRNmMwbmg3MzE3UFZ1N1hHWkpDT3RPeDdySE1qZ19rVExRTk55VQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-10",
-      "category": "military",
-      "source_type": "news",
-      "title": "Oil prices ease to two-month lows as US downplays further Iran strikes - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQYWIxdHFYZXdDLUkyNjhxSklldE1kTVJUMXBHOENVUUF0YWVXRmhpbGhvSDdJSUtSUG9ZUk5FVGxZdExQa0c0WmJFZDd2QXFNUnJUV0ZuZ0x3eHZCTFBiVXY3b0lVMVA0RkVaVllFRHJHSjJaUmlpSjNOQThxOGhoN05LelBtdjE4Qk5PbnRoTThFVWc3NE91WlE2WHJKbG5kWEVkeF9SS20wSGs"
     }
   ]
 }
