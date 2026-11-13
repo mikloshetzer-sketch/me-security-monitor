@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-13 09:33 UTC",
+    "updated": "2026-11-13 17:46 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-11-07",
     "period_end": "2026-11-13",
-    "total_events": 110,
-    "total_risk": 109.0,
-    "normalized_risk_score": 43.6,
+    "total_events": 96,
+    "total_risk": 92.7,
+    "normalized_risk_score": 37.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 32,
+    "military": 24,
     "security": 4,
-    "political": 6,
-    "other": 68
+    "political": 4,
+    "other": 64
   },
   "source_counts": {
-    "news": 110,
+    "news": 96,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 39.3
-    },
-    {
-      "name": "Yemen",
-      "risk": 15.25
+      "risk": 30.45
     },
     {
       "name": "Gaza Strip",
-      "risk": 14.55
+      "risk": 14.4
+    },
+    {
+      "name": "Yemen",
+      "risk": 14.25
     },
     {
       "name": "Saudi Arabia",
-      "risk": 12.2
+      "risk": 8.25
     },
     {
       "name": "United Arab Emirates",
-      "risk": 6.3
+      "risk": 6.75
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "US denies Iran's claim that it attacked early-warning radar in Bahrain - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcjhnZVFHWnV4RHpscnFyUjFWOEl5VndNZ0Y4MFdEVlpueUNaeHRPMVdCbjA4Mmktc0tYWnFsZWdZSkd4dFNvTmszUHFWdC15S0pja2ozaTg0R0dOdEY3aDJtenZwREh5dmRvTGVTUkxVUDNjN3huQU1TRTU1bEVBampuYzdsTjJJZ2tBUXQwal85QnRsWDU4OWNvbDVzN0VUR1R0clNkZmpkaXZMaWh5dExSNHRCUQ"
+    },
     {
       "score": 3.0,
       "date": "2026-11-13",
@@ -127,15 +136,6 @@
       "title": "Israeli strike on Gaza hospital kills six, including surgeon, medics say - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOekJqQTlDSnpyUHhBeEEwb0V2X2s4NzdhSzR3a0NvbDZoR0FWXzR0X2k5YV9zaHlhU0M3YlVMWk9RTDltZXZiajZGdlVMSmxrMnJkWEI4QXU4bUFGSWppTDJFcVh4amhHR1lkYkdKT3VvT1BicUZnWTRBb3JuU3lHYVBScHhIdkc2bC1DZWpOVWNlbkJiTTRIQXdxYlE2a1hndlV5R3pwOVY4WVhvVXYwNVJ0UXU3WGJuTFAxZlhNU3YyeVhB"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran attacks shipping navigation systems on Oman's Didamar island, sources say - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMFB3XzM5cVFXcFdvTWhfdVJSY21DLVNHRE81YXh1Ykt3MlY0M29GY05FbFEwd2hMT3lTR1duaVV6UGdac003SWM2cTJpb1FqX2UzdnZqNW5YSEpEOGd2dmZ2VW5XOTZzcGlSNGl5dENGNFQ4c2JGYU9yaXV2RU84QXVRQVVtR3EtYmpaNXRKM3d2ZHJVdzlzOWxrMktEVVZYZzJVeVVzcmtMM0JLYmxsZVQ5YlRWN2tRd0UyM2dUXy04eW5PWlE"
     }
   ]
 }
