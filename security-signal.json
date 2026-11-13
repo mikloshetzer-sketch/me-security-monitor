@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-13 01:06 UTC",
+    "updated": "2026-11-13 09:33 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,30 @@
   "summary": {
     "period_start": "2026-11-07",
     "period_end": "2026-11-13",
-    "total_events": 111,
-    "total_risk": 107.7,
-    "normalized_risk_score": 43.1,
+    "total_events": 110,
+    "total_risk": 109.0,
+    "normalized_risk_score": 43.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
     "military": 32,
-    "security": 6,
-    "political": 7,
-    "other": 66
+    "security": 4,
+    "political": 6,
+    "other": 68
   },
   "source_counts": {
-    "news": 111,
+    "news": 110,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 40.4
+      "risk": 39.3
+    },
+    {
+      "name": "Yemen",
+      "risk": 15.25
     },
     {
       "name": "Gaza Strip",
@@ -35,11 +39,7 @@
     },
     {
       "name": "Saudi Arabia",
-      "risk": 11.75
-    },
-    {
-      "name": "Yemen",
-      "risk": 9.85
+      "risk": 12.2
     },
     {
       "name": "United Arab Emirates",
@@ -47,6 +47,15 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-13",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen’s Houthis renew strikes on Saudi Arabia as UNSC extends sanctions - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNczh4SThZNndlcnhvbjZxLWgzZ0x1Ym5zRUt0WHQ1V1k3dW54dDFGNFFGa015aE9NLVNBanFwNVB6S1JPLWp0ZEswUGpDc1pwRWtTbzJZOFdWQTlXVzA0QlhIZ0xTM1VNTUZzS3RGck80TU1tRmVxclhFLTlJbVBtWmdjVnNkUDB6RGJudDhabHktT1lkYzdlNzdBTUFDY0FjN3FXSTFuWGVxeWxvNkFlTUl30gG3AUFVX3lxTE1TT3FLV3RuLVdWMUR6TXc3UFhRODUxeVdpWDdoeUxnMUtpYTk1bVJJMy1jYnp4S0liVXJlTlB2WXM3M2ZwMktmTi1pbzBPbURfcl9LNDRaM0ZJZ21fOThTQzRtX3kzTUk3cWQ1TzlJb2I2OWFuWDk5ekVsd3JHck04SGpvUUhZU2lJaHhMRGhPNWR1eHJ1VFltYUU1ZzJjLTBLMmM3UVM5ZTFRbHZDSVRUZnlKdlFwbw"
+    },
     {
       "score": 2.7,
       "date": "2026-11-12",
@@ -97,18 +106,18 @@
       "date": "2026-11-12",
       "category": "military",
       "source_type": "news",
-      "title": "UAE says 14 killed, 30 injured in Fujairah traffic accident - Al Jazeera",
-      "location": "United Arab Emirates",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdE9XRDBfazRLY0FsRTA4cDl4M3AwQnl6eTBhWktFNm5wRXZpa3RDaWZhVUdVNUxHMEE1TmJzQjFxV25aYjYtOGhKZWptSWNTQmVWbVB5dkJNS2dGQjZpVmR5QnhqSklqUkVYeHhjSVROaE5QYXZTLTZQYklFd00xSlBMQ0RqSGZ6c0xMT3puZW5CYTJ0TDdhTVhMUFlEXzN6WGfSAacBQVVfeXFMT182RUd6dDVvd0JZU0N1Q2x2MzZKWGo1T1lRS2dOeWFiTFpyYTZTd1Z2QkFwTGtLbVd2YVJHcUZQWExsQVBwd0VsMlFOYzFmWnhPN0Y0QWltV2xiWjkxSHpEWE9yMTdrZDhFRy1HUGRhOGFUUzR5bDVTT3lUdjRtRnppM0lhMUtueG9fSkhOd1dpZGNnaTBWTW5xNTJZSGRaMk11bFBvY0U"
+      "title": "Jerusalem Daily: Gaza’s Nasser Hospital hit by Israeli air strike - Al Jazeera",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcnZSV2d1ZUEtWHBFbnJjVWxxZFBobHBYdllPdmZVak56YXdjM1lBOUk1enAzWWRVZjkyeS1JWVE3YmFaSFdldUJxcmNtUXBFQVJheWJGZFpaTnRzMDc4WEFYT3ZkdDBXLWhzSXF1QUpvZnFpNzFDaG5HLWZpSlU1bkNiM3NfanhBZ1JCMGlWVjF3blN1VXNtcGZnOFRiQlVMa1gtbmh4dml6TmIxSjBicW1KRVVzQdIBuwFBVV95cUxPd1VheHQ2RXNmMGQwalpkdGRpb3BGYnNmTk4tVDBEdmxGSDNTZWxIWG5vd2pUSHlYUURGZ3dsb1dTSEx1MWJBXzdqRFpRS2FEU2FDMFctU0p3bGNnY2wzMGhrU081aXY2U3ZNVm5qY1hlbWZwQTNUc0NsbWtpR3R2SWxNejlKUFBTcEhJVnNILVdhQWVDcmgzeEdRVDY3UEFXUnVWWWIzdWZqNFJWMVFrcUNOaWI0eEFhUUdF"
     },
     {
       "score": 2.7,
       "date": "2026-11-12",
       "category": "military",
       "source_type": "news",
-      "title": "Israel strikes intensive care at Gaza’s Nasser Hospital - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZEZIb0c5clhXTHdvVXlfMzN3cFhLdERKdWR6NGlxZDhnOEJLRUx6VWh0TTVmQjdGcVVpN2FyZ3V3Q3Z1dEV0azVlU0RTQkg5dTZQX3lJc2FCbmFjZUVxTlEzalp4dl8xbzRHaXNPLUhxNzBVd0xIZkdwSVVZWU84Zl9lZWcwQTNmUG9jT0dWUHYwaHpDbUpmM0xaTUNVajVYZE9DWlpOeGhyd9IBrwFBVV95cUxPLVJVTnNNV09TdUFiUUYtYlJtQ2x4MmFwTEtBZXNXMXE1cVluS3ZtNlRYRHpkQlJBcFhkS1AxNWxicVJzbnZCcVp3dUExbDRmWW5oWVdSdFA2U3NSUXAzZl9kcS02TXBQdnZTTGdJWXAtbjRjQll5X1puaGpnM1RyTi1lakJ0NW85Ym91SFRfdGh0aFc3bktFRk96ZEVwUkNjb1diWkdzRE5yT0dnWC1r"
+      "title": "UAE says 14 killed, 30 injured in Fujairah traffic accident - Al Jazeera",
+      "location": "United Arab Emirates",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdE9XRDBfazRLY0FsRTA4cDl4M3AwQnl6eTBhWktFNm5wRXZpa3RDaWZhVUdVNUxHMEE1TmJzQjFxV25aYjYtOGhKZWptSWNTQmVWbVB5dkJNS2dGQjZpVmR5QnhqSklqUkVYeHhjSVROaE5QYXZTLTZQYklFd00xSlBMQ0RqSGZ6c0xMT3puZW5CYTJ0TDdhTVhMUFlEXzN6WGfSAacBQVVfeXFMT182RUd6dDVvd0JZU0N1Q2x2MzZKWGo1T1lRS2dOeWFiTFpyYTZTd1Z2QkFwTGtLbVd2YVJHcUZQWExsQVBwd0VsMlFOYzFmWnhPN0Y0QWltV2xiWjkxSHpEWE9yMTdrZDhFRy1HUGRhOGFUUzR5bDVTT3lUdjRtRnppM0lhMUtueG9fSkhOd1dpZGNnaTBWTW5xNTJZSGRaMk11bFBvY0U"
     },
     {
       "score": 2.4,
@@ -127,15 +136,6 @@
       "title": "Iran attacks shipping navigation systems on Oman's Didamar island, sources say - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMFB3XzM5cVFXcFdvTWhfdVJSY21DLVNHRE81YXh1Ykt3MlY0M29GY05FbFEwd2hMT3lTR1duaVV6UGdac003SWM2cTJpb1FqX2UzdnZqNW5YSEpEOGd2dmZ2VW5XOTZzcGlSNGl5dENGNFQ4c2JGYU9yaXV2RU84QXVRQVVtR3EtYmpaNXRKM3d2ZHJVdzlzOWxrMktEVVZYZzJVeVVzcmtMM0JLYmxsZVQ5YlRWN2tRd0UyM2dUXy04eW5PWlE"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-11",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill three people including two brothers in Gaza, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeU5nVjhkZzFmTC1MU1M4RlhrSTQxUHBrWV9tdlhoLVRTZTdmYXAxbmgtd1RHQmNaQS02S0xFNlZBUGU0VEVqWm9nZmpNbVNvQXZWa3VUaG8xWTdsY0FCSlRzT0VteDEtRWdGMDN3dDdPX1dTQldUOWFxZGI0V1ltUmtETl9jYl9NanIyblppQWhNWTdpMXR0ZURUMFhUYXJ4bzExUXYzLW9yeVpJMGZjMVVsanNNYjZWeDlob2RIUVZ0b0VF"
     }
   ]
 }
