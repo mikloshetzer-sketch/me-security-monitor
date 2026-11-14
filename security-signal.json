@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-14 06:26 UTC",
+    "updated": "2026-11-14 15:07 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,72 @@
   "summary": {
     "period_start": "2026-11-08",
     "period_end": "2026-11-14",
-    "total_events": 93,
-    "total_risk": 79.8,
-    "normalized_risk_score": 31.9,
+    "total_events": 87,
+    "total_risk": 82.8,
+    "normalized_risk_score": 33.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 21,
-    "security": 4,
-    "political": 6,
-    "other": 62
+    "military": 22,
+    "security": 3,
+    "political": 5,
+    "other": 57
   },
   "source_counts": {
-    "news": 93,
+    "news": 87,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 23.95
+      "risk": 24.65
+    },
+    {
+      "name": "Yemen",
+      "risk": 12.75
     },
     {
       "name": "Gaza Strip",
       "risk": 12.6
     },
     {
-      "name": "Yemen",
-      "risk": 12.25
-    },
-    {
       "name": "Saudi Arabia",
       "risk": 7.3
     },
     {
-      "name": "Qatar",
-      "risk": 4.05
+      "name": "Israel",
+      "risk": 6.6
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump tells advisers he may hold off on Iran attacks barring new provocations, sources say - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPR2NiU2RGMHprbUFIMnNuTGJheHdpTzhuZFRCSWVGcl9HZF9raUd2VXQxNHE1WldRVzNaZWx6YnlRZFpueGZlb05DMElhZ3FEOVdLakpQWkNLaGktQWh6THRxT3V0aGVPaXI0dW9LVm9DeTJRekF1enJaamZ5bEd2SFZtSVNtTFd5VEp0WFl6U2VWX3BCRkYzbnB1c25QRnU2M3FBbDJBMHRTVWU5T0hyZG5sWFRPWUFIYVhuT1BMWTBkUVdNbDlF"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "UN says 25 seafarers killed in, around Hormuz since US-Israel war on Iran - Al Jazeera",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdjB0S19BOXR1ZW1EU3dLRnNLUmYzb3YwZmFiQ0s2U25IdHZlQ1hTX1FYSTB2TjU3Q0h0UzBpTkRkMHdOUm5yRGhQVHdzTWJEdXNfWlMzc2RwRzRQMVk3MVdFMG5nLXd4MS04TWFkZTJocW9rVGdXMXEtelN6M3lMRjhUYVhHT290VkdQVkxObnpSTnFWNXNjS1FPc29aR25BM0lz0gGoAUFVX3lxTFBuVVc1SlJVcngxX0pBcGcwMnR3T0hOREcxVkdDSWVjb3JRdzZ1LURoVlVZRW5zblpialpwSEx1MFBGaWQ2T09WVGRMY1cySWdDc0Q2MVNDX0tlM1JtLUppbEZmcm9LaEg1VDVTdFV6a0VTYXV4eGFmX09GeGVWbWJSZlREY09kUXN4VEJKaDM5NXhNamQ3eVQxdjREam9Fc0lVZWlUSDJ6Uw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "Ethiopia blames Egypt, Eritrea for Tigray attacks - Al Jazeera",
+      "location": "Egypt",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORVQtYmFnTHNGcUhhYjVCeDlqZExqSEVLcnNVcEdFak4xZDlDVklHb2FSdnRWcW5VMjZHamNVaW41djBtMG1va1dQZlY1X21NaE5YemRoSkkyTUN2dlNDQ3NKd05ZOG85S2kwQ29ZSnBOV20tNmxwaTZqVUl3U3JtVXFpYXlfSmtIcDBFTzRld3pJMG10bjEzTm5ObzZqSzF6RkHSAacBQVVfeXFMUFFkN3gwZEVLTEtXT09heUMtV1JYTzVoNElLOVQzWU9lRE5wQ0xBWGprQ1RpV3JiZ1pDR2txb3c4N1UyN3ViQ2V2Sl9uZDFWT01UaW5pQW9wUnZsZS1PQ1IwcnduTTJFQTBEX2Z6WDF2a3hJZEM0QWtGc3BOMVZYZFVyUGNwcllSeTIxaWNLX2FZTFhtNkRlb0pLbEx1SHdsRWtOSXhlSWs"
+    },
     {
       "score": 2.7,
       "date": "2026-11-13",
@@ -97,15 +124,6 @@
       "date": "2026-11-12",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia says debris from intercepted missiles falls in Mecca region - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQSEdmMVduSHJxWEd1UWVkOUtrcF91S3VfSnI0MzlnTjh6NFdHOFNpSTBXU1JpdFk3NHdORlNsck91bFEyNUNLMHdoT1hFZmlqTGdaUDU2c2ZkeXE0Zl82cURaQXZxTS1IMmxqS3FNUEVNU1FRU1NQU01EQkxzNkN0YUhWek1qRm9ZYkNUS1FrWUIyTmFaUFFkTERqZER3UUx6cEN3VVdWNG56R19zSFkzRWphVUl1Z3I1eHc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-12",
-      "category": "military",
-      "source_type": "news",
       "title": "UAE says 14 killed, 30 injured in Fujairah traffic accident - Reuters",
       "location": "United Arab Emirates",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQR2R6ZmJGZHpIRGdEbWw3aDBtU0VaemhmSlljY0UzSmtKNjdaVlhHTHRGU2VYUWI5eWUtYmFUakgyX28taFlOR3RIRUFMNnNodHI1VU9NUjlNV09IM3ZPUXhxcUlNS0p6dFg5MnBJMEdEUnQxNXNHS1Yxa2pnVjdkbmhYM1MwS0NTbkp6S1B1bzRaeDMtaHU1TTVyYm9ZOU13WWRDYVdXLW14c1BocXc"
@@ -115,27 +133,9 @@
       "date": "2026-11-12",
       "category": "military",
       "source_type": "news",
-      "title": "Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSVNfOWE4dnhlMzA3cExiOE1nR0FNQXFJejNsQTExRExKTlVKNjNjcFRGMWQxMGNmYnNOWFdLaUp0OUo2SHFlNVoxMUo0Y21WazFhVmhZU1VxYlRuWVRfZEtiQ0NGWENEejFpMFRzaUtNbVV3TEhKUHp2aUc0SHJ2VkNzM1BHNU5VeGNNbnRldWZaZUFkTWdDNm9ibk5kQXlOQlRRWHRhdGk5ZEtPZjVjMjE1Q1BJaTZ1NmplRWJVSDlvRFBUQnc"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike on Gaza hospital kills six Palestinians, health ministry says",
+      "title": "Israeli strike on Gaza hospital kills six, including surgeon, medics say - Reuters",
       "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/ckzd9p7e4eqeo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jerusalem Daily: Gaza’s Nasser Hospital hit by Israeli air strike - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcnZSV2d1ZUEtWHBFbnJjVWxxZFBobHBYdllPdmZVak56YXdjM1lBOUk1enAzWWRVZjkyeS1JWVE3YmFaSFdldUJxcmNtUXBFQVJheWJGZFpaTnRzMDc4WEFYT3ZkdDBXLWhzSXF1QUpvZnFpNzFDaG5HLWZpSlU1bkNiM3NfanhBZ1JCMGlWVjF3blN1VXNtcGZnOFRiQlVMa1gtbmh4dml6TmIxSjBicW1KRVVzQdIBuwFBVV95cUxPd1VheHQ2RXNmMGQwalpkdGRpb3BGYnNmTk4tVDBEdmxGSDNTZWxIWG5vd2pUSHlYUURGZ3dsb1dTSEx1MWJBXzdqRFpRS2FEU2FDMFctU0p3bGNnY2wzMGhrU081aXY2U3ZNVm5qY1hlbWZwQTNUc0NsbWtpR3R2SWxNejlKUFBTcEhJVnNILVdhQWVDcmgzeEdRVDY3UEFXUnVWWWIzdWZqNFJWMVFrcUNOaWI0eEFhUUdF"
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOekJqQTlDSnpyUHhBeEEwb0V2X2s4NzdhSzR3a0NvbDZoR0FWXzR0X2k5YV9zaHlhU0M3YlVMWk9RTDltZXZiajZGdlVMSmxrMnJkWEI4QXU4bUFGSWppTDJFcVh4amhHR1lkYkdKT3VvT1BicUZnWTRBb3JuU3lHYVBScHhIdkc2bC1DZWpOVWNlbkJiTTRIQXdxYlE2a1hndlV5R3pwOVY4WVhvVXYwNVJ0UXU3WGJuTFAxZlhNU3YyeVhB"
     }
   ]
 }
