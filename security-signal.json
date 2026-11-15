@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-15 01:57 UTC",
+    "updated": "2026-11-15 09:29 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,90 @@
   "summary": {
     "period_start": "2026-11-09",
     "period_end": "2026-11-15",
-    "total_events": 82,
-    "total_risk": 71.7,
-    "normalized_risk_score": 28.7,
+    "total_events": 92,
+    "total_risk": 90.25,
+    "normalized_risk_score": 36.1,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 22,
-    "security": 3,
-    "political": 3,
-    "other": 54
+    "military": 26,
+    "security": 4,
+    "political": 4,
+    "other": 58
   },
   "source_counts": {
-    "news": 82,
+    "news": 92,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 19.3
-    },
-    {
-      "name": "Yemen",
-      "risk": 11.6
+      "risk": 19.2
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.45
+      "risk": 13.05
     },
     {
-      "name": "Israel",
-      "risk": 8.0
+      "name": "Yemen",
+      "risk": 11.3
     },
     {
       "name": "Saudi Arabia",
-      "risk": 6.0
+      "risk": 7.25
+    },
+    {
+      "name": "Israel",
+      "risk": 6.7
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain intercepts Iranian aerial attacks as Tehran says it attacked US base - Reuters",
+      "location": "Tehran",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNS2FyaWZZTTd4ZWFoWFdoTnFNVmpjakdwQUVnZ0UtMEY5MFc1dEFBeGd4UmczdGh1ektRTHBjRGxBOVlVQy1XV3NOdV9MbWotQkNVa1NBdmJaUloya1VhR2FEUTN3QkgwZ1JRN00wME5tc243TmZHU20zdlpaUHR2Q2lyby0tUkJsR0w5N1lXclI4ZWI5RTdfbjB2d1hxMXVjOVp4MlJPOF9IcjIxSE1JWWx3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOemlqVE1TdmREQ0t3TjczWnBWVGZ3TkxTc0ZPVC1fZFlrUDJCZC1KV0liZGdUTHBXZEZpWG9SNkJJSlBYSjVPbE1aUnNtWHl2eE1FbzlURGRwckdIT3R2NG9rVm1oX1V0VEZoWmYxM1dSbmhNc1BidnFLX19YRVU3Q2tzR1F5Vk1QX3dDNXVCeXZ6bmVES0lZNTBlR3E0Z1hJcXFyYXpMam80TGRWbURod1NsUXBwZldjdHFVejFwaWtmVmo3ZWYzYW5QMzk"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts suspected Houthi missiles and drones - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWGo3OGMxN1ZNYy1FT1NCeF9OVHEyVjJjTlpJVzJHV2Ezamt3MFJkMDc0aUJlLUp3alBQZ200M2VRNWp3NXNkSllocERrOGxWUVBZNEp5VHkxVHJqcFVGeExLUWk5c2QxbHJsWVZIQnp1RFhULXktVHJQb3Nja3dWcFpkTWNZM1JhUGd3MUdSREpCYlJTSGw3TUl5UFFoR0tqWWxyTTdSZk96Z9IBrwFBVV95cUxOYlBrSExJX0JtT1R4MTlVUzVLVFFlZUllUFZmR29fNnNidkEwaFF3SEpkRDdKTDhsWUlTYURSdHBRd1E2V0pKZGRfbWpLS2hiZlEzUTc0SW1wT0JxMzRaMDlicVVQcXVJeGtRcGl1Y2hodkZ6cC15R095ckpuUU81RUJTd3FwSG5qNTRyN1piRlJPWF9rcjVKTnJwNldseVYyQ0VMYjdDcnZPRXljclo0"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Monkey attacks woman inside residential complex in India - Al Jazeera",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNERGbWtSZjcyOHgxazhHMEZvMHJFa05GdVZub2dNQ04tV3hneUxUcmlQYjdaT01NUUxsUl9FZnlfVTk0Y2MwVEdWWnFWeWhLcXZFRFZxTGdYSXYtazQteFVlTWttbVNldkFkcV9fekw3R3cyYko4bVVjYTBrMzZJU0hCVlVpQ21wU3AxdllEd2hjQ2o2ajN6OW9mT2lpZXl2SXZQRmJNNHVMdzdj0gGyAUFVX3lxTE1HZEpWM1pQNmFJYWtKQzNETHhNMmhpOS1FU3hUN2hqUUhkaDNsWlNLWjd0RWJaN093aXgyVmlLYWlBcEt3V0xUNXZERDlvcTBKWnFmcTJuSXFva1FiSk5OSUc1RUxQQXZncmFwQTJ1aHhtSXV6anMxM1dzQ3pJMG1JenhtRG5BMjVnZy1CaUJEdml6WGQ2OHJmbWRxNkRQOHo0VWxSbkhIcDkyRm84Y2R6U2c"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordan sentences three men to death by hanging after deadly church attack - Al Jazeera",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeFJHMTNsWTJJcF90RkJLS0JaRVp1ZlJ5VmZZUHQ2TEduc085b3c5ajlKNVVqZE5UOEx5SUZVQWVOUnRGU1RIUmtXSVZGQlV2eXVXTkZDaC1Beks3QWV6VGtmQVhsb2F5aGJ6dmJ2aGxSejZFaDd1NTd0QWt1ZGExYVBoa3BOLWlkTGlJcUQxM1hZVno0cUZVcngxTFI5TEhRLWZBQ3Z5dzY2bDNZa19wYUJFbWtZUdIBuwFBVV95cUxNVmVwUTNtUHdmS0hmSkdzejBSYVVTM3pPNkZmS2t3bjdPOGNkSmx1ajcwWkw1YVRSTGpSd3M4WXh1N0VyTFFTNnZpeXpKZVNGdkxaeWV4VVRPQWNZV2NqT2dNSTZIQlVySGhNb1hKVldsNVpIRHBmR3JPSHA1OEJ2Y3dTV1hlMlc3M3duWU5kMnZNWFNnaVdYTG9xY0h0cUxqRElJZUc3TzJ6dkJnTW1BQnZueDc1b1d3Tm00"
+    },
     {
       "score": 2.7,
       "date": "2026-11-14",
@@ -61,9 +106,18 @@
       "date": "2026-11-14",
       "category": "military",
       "source_type": "news",
-      "title": "Hamas says senior armed commander killed in Israeli strike - Reuters",
-      "location": "Israel",
+      "title": "Senior Hamas commander killed in Israeli strike in Gaza - Reuters",
+      "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYUhZd1pxN2d0N3pmR2RCbjhCQk9teURKLThfYzR0bC1rVWJpVGUwNkpJelBNeVNLY3hxS1B0c0p2bTk5VmhCeFVGUWpHSFVNdHFKZjcydUdYNDEyMThuQ3hTRmFNSTQ0Z05ZSWRSd1A3QnM3eTRjWkNJbkN2Z2E5M1FQaUdrdUtaYzVNcWtVMC1LOU1yUkpoUk82d0ZQejM5cDR3YXVqcE5xMlJkTVU2dGduMDdsUWp2UG5ERFZUZw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-14",
+      "category": "military",
+      "source_type": "news",
+      "title": "US denies Iran's claim that it attacked early-warning radar in Bahrain - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcjhnZVFHWnV4RHpscnFyUjFWOEl5VndNZ0Y4MFdEVlpueUNaeHRPMVdCbjA4Mmktc0tYWnFsZWdZSkd4dFNvTmszUHFWdC15S0pja2ozaTg0R0dOdEY3aDJtenZwREh5dmRvTGVTUkxVUDNjN3huQU1TRTU1bEVBampuYzdsTjJJZ2tBUXQwal85QnRsWDU4OWNvbDVzN0VUR1R0clNkZmpkaXZMaWh5dExSNHRCUQ"
     },
     {
       "score": 2.7,
@@ -79,63 +133,9 @@
       "date": "2026-11-14",
       "category": "military",
       "source_type": "news",
-      "title": "Ethiopia blames Egypt, Eritrea for Tigray attacks - Al Jazeera",
-      "location": "Egypt",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORVQtYmFnTHNGcUhhYjVCeDlqZExqSEVLcnNVcEdFak4xZDlDVklHb2FSdnRWcW5VMjZHamNVaW41djBtMG1va1dQZlY1X21NaE5YemRoSkkyTUN2dlNDQ3NKd05ZOG85S2kwQ29ZSnBOV20tNmxwaTZqVUl3U3JtVXFpYXlfSmtIcDBFTzRld3pJMG10bjEzTm5ObzZqSzF6RkHSAacBQVVfeXFMUFFkN3gwZEVLTEtXT09heUMtV1JYTzVoNElLOVQzWU9lRE5wQ0xBWGprQ1RpV3JiZ1pDR2txb3c4N1UyN3ViQ2V2Sl9uZDFWT01UaW5pQW9wUnZsZS1PQ1IwcnduTTJFQTBEX2Z6WDF2a3hJZEM0QWtGc3BOMVZYZFVyUGNwcllSeTIxaWNLX2FZTFhtNkRlb0pLbEx1SHdsRWtOSXhlSWs"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "US denies Iran's claim that it attacked early-warning radar in Bahrain - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcjhnZVFHWnV4RHpscnFyUjFWOEl5VndNZ0Y4MFdEVlpueUNaeHRPMVdCbjA4Mmktc0tYWnFsZWdZSkd4dFNvTmszUHFWdC15S0pja2ozaTg0R0dOdEY3aDJtenZwREh5dmRvTGVTUkxVUDNjN3huQU1TRTU1bEVBampuYzdsTjJJZ2tBUXQwal85QnRsWDU4OWNvbDVzN0VUR1R0clNkZmpkaXZMaWh5dExSNHRCUQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they fired missiles at Saudi forces in Jazan - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPM1hhZ2pySkp3SHdfNllHQ2VsLUFteHIxRlFGVVR3QXFIbXJZX01HQkZ5Ml96SjBMSkJkOHh6TjNIakZkR3k5ME1WY0RyYTNBQkxvaF9qYTVtNm5GVEFqckVEalRReVdXUFJKZVhlSXEzcnotRFMyVVBMZllhdmJxUFBwRjByVExHbGhnR3luTDVqTlRxOG5TTjFVbmdBRmM"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack - Reuters",
-      "location": "Qatar",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTGE3d2YwNy1ONlliXzNCVDNiZU01WlB3YUdPMEZwOHJpNS1UWEtvZ3hhM1hWOGN2REsxbEw1SzNERlk3eTVfUTdlOEFJYVAwNXVjT25jczJDRE9iTE5DYjlxNnQ3UlJRVDlRdU1UeHhNZ1NUWnBVU2w2TjZLWTg5emhUZ2RVVXowVWZuMnBiTlhtWlhxUDkxODkzNVlfeGlGbVlYV0todlRQc1JZSXIyVXpsVU1WRDFFU2QxTA"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-13",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen’s Houthis renew strikes on Saudi Arabia as UNSC extends sanctions - Al Jazeera",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNczh4SThZNndlcnhvbjZxLWgzZ0x1Ym5zRUt0WHQ1V1k3dW54dDFGNFFGa015aE9NLVNBanFwNVB6S1JPLWp0ZEswUGpDc1pwRWtTbzJZOFdWQTlXVzA0QlhIZ0xTM1VNTUZzS3RGck80TU1tRmVxclhFLTlJbVBtWmdjVnNkUDB6RGJudDhabHktT1lkYzdlNzdBTUFDY0FjN3FXSTFuWGVxeWxvNkFlTUl30gG3AUFVX3lxTE1TT3FLV3RuLVdWMUR6TXc3UFhRODUxeVdpWDdoeUxnMUtpYTk1bVJJMy1jYnp4S0liVXJlTlB2WXM3M2ZwMktmTi1pbzBPbURfcl9LNDRaM0ZJZ21fOThTQzRtX3kzTUk3cWQ1TzlJb2I2OWFuWDk5ekVsd3JHck04SGpvUUhZU2lJaHhMRGhPNWR1eHJ1VFltYUU1ZzJjLTBLMmM3UVM5ZTFRbHZDSVRUZnlKdlFwbw"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-11-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they attacked pumping station on Saudi Arabia's East-West oil pipeline - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOHNyWUhKaHR2QmJXUjJ6S0xNdDZnZmpKRzJQak9SWVc3cmttUGVfbk13NzBZclpqNnp5N1JFc0JYakw2Wl9hV3BYdm1mMnJQR3BKRFI2Zzh3cVRhTFFxejBSVWtTMkt2WTRGRUxFSkVocF83aFlIOU10Vk11d29TRERPcnFVWHRJYktFOUlGU0x4c0Q0UWVtT3JkUE91ZVNPQ09NTnhaMGxJajZxQnkwWTFvTzN4WnNpMTBYalNZOHFZdnUtX1VHeUVR"
-    },
-    {
-      "score": 2.1,
-      "date": "2026-11-12",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike on Gaza hospital kills six, including surgeon, medics say - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOekJqQTlDSnpyUHhBeEEwb0V2X2s4NzdhSzR3a0NvbDZoR0FWXzR0X2k5YV9zaHlhU0M3YlVMWk9RTDltZXZiajZGdlVMSmxrMnJkWEI4QXU4bUFGSWppTDJFcVh4amhHR1lkYkdKT3VvT1BicUZnWTRBb3JuU3lHYVBScHhIdkc2bC1DZWpOVWNlbkJiTTRIQXdxYlE2a1hndlV5R3pwOVY4WVhvVXYwNVJ0UXU3WGJuTFAxZlhNU3YyeVhB"
+      "title": "Deadly car bomb blast kills two near Syria’s capital - Al Jazeera",
+      "location": "Syria",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPczY4X3l0UG5wWU0wYklCa3hTbEdhSHlpZFFUN0RzOGtUVmhQcXZpOTc1eUlaZUlTdDV5QUUxejNlU05yZnllOXNzaHF1dDZCamxHX3RwV2RTVUI1NGsydzlCZGsxXzk2UUxPdlBhYW5JYlFjXy1NME1XamdrN09jUWpXX3lneHRlNl9sWUlZWFhCUm1YeWhfWjg5UmJIdDBBcEd4NDlB0gGrAUFVX3lxTE12bVRBQzRrektvWWpWcUtyZmpwWXJTbk9fQ2ZKVm5UYnlHUEFuZTdpRTlBMmQ1LVNHWnEyclgtSEg5NFNuTDlXbS1iUU1OM2VzQ2xqSU5FZi1MQm5ybktpN3BvZXFpZFhKX1pyWnQ4R0ttTkRjajNaS3RxQmwtbk0yM0lsZjVvVUI3VkUxTUxVd3l6Vkx0NWxERGxIV1k4TEQ5UWdDYWNGQ0VZVQ"
     }
   ]
 }
