@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T09:56:42Z",
+  "generated_at": "2026-11-15T17:12:54Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,19 +52,19 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 945,
+    "events_endpoint_records": 949,
     "feed_event_records": 250,
-    "normalized_events": 2001,
+    "normalized_events": 2005,
     "map_visualizable_events": 278,
-    "non_mappable_events": 1723,
+    "non_mappable_events": 1727,
     "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2001,
+      "total_events": 2005,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-15T04:52:26Z",
+      "latest_event_date": "2026-11-15T16:22:59Z",
       "geocoded_events": 278,
       "geocoded_share": 13.9,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 55,
-        "previous": 49,
-        "delta": 6,
-        "percent_change": 12.2,
+        "current": 56,
+        "previous": 51,
+        "delta": 5,
+        "percent_change": 9.8,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 277,
+        "current": 278,
         "previous": 308,
-        "delta": -31,
-        "percent_change": -10.1,
+        "delta": -30,
+        "percent_change": -9.7,
         "direction": "stable"
       }
     },
@@ -806,17 +806,17 @@
       },
       {
         "date": "2026-11-15",
-        "count": 1
+        "count": 5
       }
     ],
     "category_counts": {
-      "infrastructure": 588,
+      "infrastructure": 590,
       "missile": 441,
       "strike": 282,
-      "drone": 232,
+      "drone": 233,
       "airstrike": 149,
       "movement": 120,
-      "ground": 74,
+      "ground": 75,
       "explosion": 74,
       "alert": 22,
       "defense": 13,
@@ -824,29 +824,29 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1041,
+      "medium": 1045,
       "high": 614,
       "low": 333,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1338,
-      "iran": 415,
-      "israel": 208,
+      "unknown": 1340,
+      "iran": 416,
+      "israel": 209,
       "usa": 40
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 776
+        "count": 778
       },
       {
         "name": "Iran",
-        "count": 427
+        "count": 428
       },
       {
         "name": "Lebanon",
-        "count": 123
+        "count": 124
       },
       {
         "name": "Jordan",
@@ -900,15 +900,15 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 776
+        "count": 778
       },
       {
         "name": "Iran",
-        "count": 559
+        "count": 560
       },
       {
         "name": "Lebanon",
-        "count": 154
+        "count": 155
       },
       {
         "name": "Jordan",
@@ -945,40 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11319,
+    "totalCount": 11323,
     "spotlight": {
       "event": {
-        "id": "zny0o3gu04g0",
-        "timestamp": "2026-11-15T04:52:26+00:00",
-        "location": "BHR",
-        "origin": "IRN",
+        "id": "3id08hdu4m000",
+        "timestamp": "2026-11-15T16:22:59+00:00",
+        "location": "LBN",
+        "origin": "ISR",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
+        "type": "strike",
         "severity": "medium",
-        "description": "IRGC claims six one-way attack drones targeted a U.S. air defense site and radar at Riffa Air Base, Bahrain (claim unconfirmed)",
-        "descriptionHe": "משמרות המהפכה טוענת ששיגרה שישה מזל\"טים חד-כיווניים לעבר אתר הגנה אווירית ומכ\"م אמריקאי בבסיס ריפה שבבחרין (הטענה לא אומתה)",
-        "source": "CIG_telegram",
-        "weapons": [
-          {
-            "type": "drone",
-            "count": 6
-          }
-        ],
-        "sourceUrl": "https://t.me/CIG_telegram/87252"
+        "description": "IDF says it destroyed an underground tunnel about 35 meters long in southern Lebanon",
+        "descriptionHe": "צה\"ל: תוואי תת-קרקעי באורך כ-35 מטרים הושמד בדרום לבנון",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65578"
       },
-      "headline": "Iran claims drone strike on U.S. air base in Bahrain",
-      "headlineHe": "איראן טוענת להתקפת כטל על בסיס אמריקאי בבחריין",
-      "summary": "The IRGC's claim marks an escalation in direct attacks on U.S. military infrastructure in the Persian Gulf, following earlier Iranian assertions of hits on the same region.",
-      "summaryHe": "הטענה של הספה האיראנית מסמנת הסלמה בהתקפות ישירות על תשתיות צבאיות אמריקאיות במפרץ הפרסי, בעקבות טענות איראניות קודמות על פגיעות באותו אזור.",
-      "pickedAt": "2026-11-15T05:15:26.040Z",
-      "state": "TODAY"
+      "headline": "IDF Destroys Major Underground Tunnel Network in Southern Lebanon",
+      "headlineHe": "צה\"ל הרס רשת מנהרות תת-קרקעית בדרום לבנון",
+      "summary": "The operation marks continued Israeli military action against Hezbollah infrastructure in Lebanese territory amid ongoing regional tensions.",
+      "summaryHe": "הפעולה מסמנת המשך של פעילות צבאית ישראלית נגד תשתיות חזבאללה בשטח לבנוני בתוך מתחם של מתיחות אזוריות מתמשכות.",
+      "pickedAt": "2026-11-15T17:00:25.460Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-15T09:48:17.342Z",
+    "lastUpdated": "2026-11-15T17:03:17.347Z",
     "stale": false,
-    "viewerCount": 3,
+    "viewerCount": 1,
     "ceasefire": false
   },
   "summary": {
@@ -1519,190 +1513,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-11-15T09:30:13.775Z",
+      "lastUpdate": "2026-11-15T17:00:16.207Z",
       "internetHistory": [
-        {
-          "t": "2026-11-14T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T10:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T10:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T13:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-14T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T16:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T16:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T16:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-14T16:50:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-11-14T17:00:00.000Z",
           "v": 97
@@ -2094,22 +1908,202 @@
         {
           "t": "2026-11-15T09:10:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-11-15T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-15T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-15T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-15T09:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T10:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T10:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T10:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T10:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T10:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T10:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T11:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T11:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-15T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T12:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-15T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T13:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T13:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T15:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T15:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T15:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T15:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T16:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T16:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T16:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-15T16:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-15T16:40:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-15T09:30:13.775Z"
+    "lastUpdated": "2026-11-15T17:00:16.207Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e3",
+      "id": "iranstrike-6f2a1c8e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-15T04:52:26Z",
+      "date": "2026-11-15T13:59:39Z",
       "title": "IranStrike event",
-      "description": "Iran claims drone strikes on US bases in Bahrain; reports damage to radar and comms",
+      "description": "Iran launches 12 drones at US air defense in Bahrain; US says no damage",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2117,7 +2111,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran claims drone strikes on us bases in bahrain;",
+      "attacker_evidence": "iran launches 12 drones at us air defense in bahrain;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2130,31 +2124,31 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e3",
-        "text": "Iran claims drone strikes on US bases in Bahrain; reports damage to radar and comms",
-        "textHe": "איראן טוענת להכות בכלי טיס חמושים בבסיסים אמריקניים בבחריין; דיווחים על נזק לרדאר",
+        "id": "6f2a1c8e",
+        "text": "Iran launches 12 drones at US air defense in Bahrain; US says no damage",
+        "textHe": "איראן משגרת 12 מזל\"טים לעבר הגנת אוויר אמריקאית בבחריין; ארה\"ב טוענת לאין נזק",
         "severity": "high",
-        "timestamp": "2026-11-15T04:52:26+00:00",
+        "timestamp": "2026-11-15T13:59:39+00:00",
         "entityIds": [
           "IRN",
           "USA"
         ],
         "eventIds": [
-          "zny0o3gu04g0",
-          "17p0t718ludc0"
+          "37s1wv4d8es00",
+          "zny0o3gu04g0"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-b3e8d9f2",
+      "id": "iranstrike-7a4d3b2f",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-14T20:15:34Z",
+      "date": "2026-11-15T16:11:36Z",
       "title": "IranStrike event",
-      "description": "Khor Mor oil/gas field in Iraq targeted again; ongoing strikes on energy infrastructure",
+      "description": "Houthi forces retake Dhubab Airport, push south in Lahij amid PLC retreat",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2163,8 +2157,8 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Iraq",
-      "country": "Iraq",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2175,29 +2169,30 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b3e8d9f2",
-        "text": "Khor Mor oil/gas field in Iraq targeted again; ongoing strikes on energy infrastructure",
-        "textHe": "שדה נפט וגז כור מור בעיראק הופגע שוב; הכות מתמשכות על תשתיות אנרגיה",
+        "id": "7a4d3b2f",
+        "text": "Houthi forces retake Dhubab Airport, push south in Lahij amid PLC retreat",
+        "textHe": "כוחות חותי תופסים בחזרה שדה תעופה דובאב, דחף דרומה בלחיג בעת נסיגת PLC",
         "severity": "medium",
-        "timestamp": "2026-11-14T20:15:34+00:00",
+        "timestamp": "2026-11-15T16:11:36+00:00",
         "entityIds": [
-          "IRQ"
+          "YEM"
         ],
         "eventIds": [
-          "2185qzjldqn40"
+          "30vuk6cga2s00",
+          "2kj94eh870u00"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c6b4a1d5",
+      "id": "iranstrike-5c8e1a3d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-14T22:48:25Z",
+      "date": "2026-11-15T16:22:59Z",
       "title": "IranStrike event",
-      "description": "Mossad claims uncorroborated Iranian plot to assassinate Trump with explosive drones in US",
+      "description": "IDF destroys 35-meter underground tunnel in southern Lebanon",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2206,8 +2201,8 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2218,23 +2213,209 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c6b4a1d5",
-        "text": "Mossad claims uncorroborated Iranian plot to assassinate Trump with explosive drones in US",
-        "textHe": "מוסד טוען לתכנית לא מאומתת של איראן להתנקות בטראמפ בעזרת רחפנים",
+        "id": "5c8e1a3d",
+        "text": "IDF destroys 35-meter underground tunnel in southern Lebanon",
+        "textHe": "צה\"ל הרס מנהרה תת־קרקעית בן 35 מטר בדרום לבנון",
         "severity": "medium",
-        "timestamp": "2026-11-14T22:48:25+00:00",
+        "timestamp": "2026-11-15T16:22:59+00:00",
         "entityIds": [
-          "IRN",
-          "USA"
+          "ISR",
+          "LBN"
         ],
         "eventIds": [
-          "ct9vfeq2y0w0"
+          "3id08hdu4m000"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-3id08hdu4m000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65578",
+      "date": "2026-11-15T16:22:59Z",
+      "title": "IranStrike event",
+      "description": "IDF says it destroyed an underground tunnel about 35 meters long in southern Lebanon",
+      "category": "ground",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf says it destroyed an underground tunnel about 35 meters long in sou",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3id08hdu4m000",
+        "timestamp": "2026-11-15T16:22:59+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF says it destroyed an underground tunnel about 35 meters long in southern Lebanon",
+        "descriptionHe": "צה\"ל: תוואי תת-קרקעי באורך כ-35 מטרים הושמד בדרום לבנון",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65578"
+      }
+    },
+    {
+      "id": "iranstrike-30vuk6cga2s00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87260",
+      "date": "2026-11-15T16:11:36Z",
+      "title": "IranStrike event",
+      "description": "Visual confirmation that Houthi forces have regained control of Dhubab Airport after PLC elements fled the encirclement",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "30vuk6cga2s00",
+        "timestamp": "2026-11-15T16:11:36+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Visual confirmation that Houthi forces have regained control of Dhubab Airport after PLC elements fled the encirclement",
+        "descriptionHe": "אישור חזותי לכך שכוחות החות'ים שבו לשלוט בנמל התעופה דובאב לאחר שכוחות המועצה הנשיאותית ברחו מהמצור",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87260"
+      }
+    },
+    {
+      "id": "iranstrike-2kj94eh870u00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87256",
+      "date": "2026-11-15T15:47:46Z",
+      "title": "IranStrike event",
+      "description": "Houthi forces push south in Lahij Governorate, Yemen, aiming to encircle PLC units; Yemeni armed forces report crossing al-Sarih junction and retaking al-Fasayha area and Mount Kharaz",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2kj94eh870u00",
+        "timestamp": "2026-11-15T15:47:46+00:00",
+        "location": "YEM",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "medium",
+        "description": "Houthi forces push south in Lahij Governorate, Yemen, aiming to encircle PLC units; Yemeni armed forces report crossing al-Sarih junction and retaking al-Fasayha area and Mount Kharaz",
+        "descriptionHe": "כוחות החות'ים מתקדמים דרומה במחוז לחג' שבתימן במטרה להקיף יחידות של מועצת הנשיאות; כוחות החמושים התימניים מדווחים על חציית צומת אל-סריח ושליטה מחדש באזור אל-פסיחה ובהר חראז",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87256"
+      }
+    },
+    {
+      "id": "iranstrike-37s1wv4d8es00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133679",
+      "date": "2026-11-15T13:59:39Z",
+      "title": "IranStrike event",
+      "description": "IRGC claims six drones targeted radar at the US air defense compound at Al-Rafa helicopter base in Bahrain; alarm sounded, and a US official says the attack failed with no damage",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "bhr irgc claims six drones targeted radar at the us air defense compound at al-rafa h",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "37s1wv4d8es00",
+        "timestamp": "2026-11-15T13:59:39+00:00",
+        "location": "BHR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IRGC claims six drones targeted radar at the US air defense compound at Al-Rafa helicopter base in Bahrain; alarm sounded, and a US official says the attack failed with no damage",
+        "descriptionHe": "משמרות המהפכה טוענים ששישה כטב\"מים תקפו את המכ\"ם במתחם ההגנה האווירית האמריקאי בבסיס א-רפאע בבחריין; הופעלה אזעקה, ומקור אמריקאי מסר שהתקיפה נכשלה ולא נגרם נזק",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 6
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/133679"
+      }
+    },
     {
       "id": "iranstrike-zny0o3gu04g0",
       "source": "IranStrike",
