@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-16 06:33 UTC",
+    "updated": "2026-11-16 18:35 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-11-10",
     "period_end": "2026-11-16",
-    "total_events": 79,
-    "total_risk": 84.65,
-    "normalized_risk_score": 33.9,
+    "total_events": 83,
+    "total_risk": 99.0,
+    "normalized_risk_score": 39.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
-    "security": 3,
-    "political": 6,
-    "other": 43
+    "military": 26,
+    "security": 7,
+    "political": 5,
+    "other": 45
   },
   "source_counts": {
-    "news": 79,
+    "news": 83,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 14.0
+      "risk": 17.35
     },
     {
       "name": "Yemen",
-      "risk": 13.9
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 8.4
+      "risk": 15.9
     },
     {
       "name": "Jordan",
-      "risk": 6.8
+      "risk": 12.2
+    },
+    {
+      "name": "Gaza Strip",
+      "risk": 10.8
     },
     {
       "name": "Israel",
-      "risk": 6.5
+      "risk": 6.6
     }
   ],
   "top_events": [
+    {
+      "score": 2.7,
+      "date": "2026-11-15",
+      "category": "military",
+      "source_type": "news",
+      "title": "Anti-Houthi forces retreat in Yemen as Iran strikes Bahrain - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdTFBcWR1YzJhai1UdGgzMHpvdm40VExxeXFqM0NtbU9YVmNSNXpNeDlXTGllRXFtczhIUzVsaFFWdVV5TGxESWdneGlXbER1Qlg2b2VhQ2lqMmxVaEd4U01nZmNXcFY2bmNhSTdIN0VycE84MWJDRXdZOGxMRGo0U1k1UjhiamFNQ1JIQmp1MUdxNlZGRm1UanBvaENxR3V2N25NdFVOaWpXX1E"
+    },
     {
       "score": 2.7,
       "date": "2026-11-15",
@@ -70,18 +79,18 @@
       "date": "2026-11-15",
       "category": "military",
       "source_type": "news",
-      "title": "Anti-Houthi forces retreat in Yemen as Iran strikes Bahrain - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdTFBcWR1YzJhai1UdGgzMHpvdm40VExxeXFqM0NtbU9YVmNSNXpNeDlXTGllRXFtczhIUzVsaFFWdVV5TGxESWdneGlXbER1Qlg2b2VhQ2lqMmxVaEd4U01nZmNXcFY2bmNhSTdIN0VycE84MWJDRXdZOGxMRGo0U1k1UjhiamFNQ1JIQmp1MUdxNlZGRm1UanBvaENxR3V2N25NdFVOaWpXX1E"
+      "title": "Yemen's Houthis say they launched ballistic missiles towards Riyadh airport, financial centre - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ2NSdXVjeDlTU0lLeTAtMGs5RmdHaW0wTVhVbzUwempOYUdlNVB3NXprMGZqYksyVjhLUU1OV250QlczemJOT2tXcVFIZEJYb0dwblVCblExbnFmZkVyeGZnZ0NJY3Z3a3NTcmxUQ21tR0ZsQVdhTTNRNWJaZW5pOEk4RDNEMXN3aExOaEE0QVNzaXV3UTM3ZjlNa2hDenRtajR2aGVGT3RQR0NOSnY1VHQ3czdCSkJWSUgxaFFYNThEUlBBMVpn"
     },
     {
       "score": 2.7,
       "date": "2026-11-15",
       "category": "military",
       "source_type": "news",
-      "title": "Yemen's Houthis say they launched ballistic missiles towards Riyadh airport, financial centre - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ2NSdXVjeDlTU0lLeTAtMGs5RmdHaW0wTVhVbzUwempOYUdlNVB3NXprMGZqYksyVjhLUU1OV250QlczemJOT2tXcVFIZEJYb0dwblVCblExbnFmZkVyeGZnZ0NJY3Z3a3NTcmxUQ21tR0ZsQVdhTTNRNWJaZW5pOEk4RDNEMXN3aExOaEE0QVNzaXV3UTM3ZjlNa2hDenRtajR2aGVGT3RQR0NOSnY1VHQ3czdCSkJWSUgxaFFYNThEUlBBMVpn"
+      "title": "Senior Hamas commander killed in Israeli strike in Gaza - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYUhZd1pxN2d0N3pmR2RCbjhCQk9teURKLThfYzR0bC1rVWJpVGUwNkpJelBNeVNLY3hxS1B0c0p2bTk5VmhCeFVGUWpHSFVNdHFKZjcydUdYNDEyMThuQ3hTRmFNSTQ0Z05ZSWRSd1A3QnM3eTRjWkNJbkN2Z2E5M1FQaUdrdUtaYzVNcWtVMC1LOU1yUkpoUk82d0ZQejM5cDR3YXVqcE5xMlJkTVU2dGduMDdsUWp2UG5ERFZUZw"
     },
     {
       "score": 2.7,
@@ -115,27 +124,18 @@
       "date": "2026-11-15",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi-led coalition intercepts suspected Houthi missiles and drones - Al Jazeera",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWGo3OGMxN1ZNYy1FT1NCeF9OVHEyVjJjTlpJVzJHV2Ezamt3MFJkMDc0aUJlLUp3alBQZ200M2VRNWp3NXNkSllocERrOGxWUVBZNEp5VHkxVHJqcFVGeExLUWk5c2QxbHJsWVZIQnp1RFhULXktVHJQb3Nja3dWcFpkTWNZM1JhUGd3MUdSREpCYlJTSGw3TUl5UFFoR0tqWWxyTTdSZk96Z9IBrwFBVV95cUxOYlBrSExJX0JtT1R4MTlVUzVLVFFlZUllUFZmR29fNnNidkEwaFF3SEpkRDdKTDhsWUlTYURSdHBRd1E2V0pKZGRfbWpLS2hiZlEzUTc0SW1wT0JxMzRaMDlicVVQcXVJeGtRcGl1Y2hodkZ6cC15R095ckpuUU81RUJTd3FwSG5qNTRyN1piRlJPWF9rcjVKTnJwNldseVYyQ0VMYjdDcnZPRXljclo0"
+      "title": "Iran targets US military base in Bahrain with drone attack",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cqn4e2py48kwo?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.7,
       "date": "2026-11-15",
       "category": "military",
       "source_type": "news",
-      "title": "Jordan sentences three men to death by hanging after deadly church attack - Al Jazeera",
+      "title": "Three men sentenced to death in Jordan over fatal church mass shooting",
       "location": "Jordan",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeFJHMTNsWTJJcF90RkJLS0JaRVp1ZlJ5VmZZUHQ2TEduc085b3c5ajlKNVVqZE5UOEx5SUZVQWVOUnRGU1RIUmtXSVZGQlV2eXVXTkZDaC1Beks3QWV6VGtmQVhsb2F5aGJ6dmJ2aGxSejZFaDd1NTd0QWt1ZGExYVBoa3BOLWlkTGlJcUQxM1hZVno0cUZVcngxTFI5TEhRLWZBQ3Z5dzY2bDNZa19wYUJFbWtZUdIBuwFBVV95cUxNVmVwUTNtUHdmS0hmSkdzejBSYVVTM3pPNkZmS2t3bjdPOGNkSmx1ajcwWkw1YVRSTGpSd3M4WXh1N0VyTFFTNnZpeXpKZVNGdkxaeWV4VVRPQWNZV2NqT2dNSTZIQlVySGhNb1hKVldsNVpIRHBmR3JPSHA1OEJ2Y3dTV1hlMlc3M3duWU5kMnZNWFNnaVdYTG9xY0h0cUxqRElJZUc3TzJ6dkJnTW1BQnZueDc1b1d3Tm00"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Monkey attacks woman inside residential complex in India - Al Jazeera",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNERGbWtSZjcyOHgxazhHMEZvMHJFa05GdVZub2dNQ04tV3hneUxUcmlQYjdaT01NUUxsUl9FZnlfVTk0Y2MwVEdWWnFWeWhLcXZFRFZxTGdYSXYtazQteFVlTWttbVNldkFkcV9fekw3R3cyYko4bVVjYTBrMzZJU0hCVlVpQ21wU3AxdllEd2hjQ2o2ajN6OW9mT2lpZXl2SXZQRmJNNHVMdzdj0gGyAUFVX3lxTE1HZEpWM1pQNmFJYWtKQzNETHhNMmhpOS1FU3hUN2hqUUhkaDNsWlNLWjd0RWJaN093aXgyVmlLYWlBcEt3V0xUNXZERDlvcTBKWnFmcTJuSXFva1FiSk5OSUc1RUxQQXZncmFwQTJ1aHhtSXV6anMxM1dzQ3pJMG1JenhtRG5BMjVnZy1CaUJEdml6WGQ2OHJmbWRxNkRQOHo0VWxSbkhIcDkyRm84Y2R6U2c"
+      "url": "https://www.bbc.co.uk/news/articles/c3rrg9xgqlwpo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
