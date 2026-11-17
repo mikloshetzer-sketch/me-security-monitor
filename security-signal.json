@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-17 02:58 UTC",
+    "updated": "2026-11-17 13:30 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,30 +8,34 @@
   "summary": {
     "period_start": "2026-11-11",
     "period_end": "2026-11-17",
-    "total_events": 79,
-    "total_risk": 88.0,
-    "normalized_risk_score": 35.2,
+    "total_events": 82,
+    "total_risk": 107.0,
+    "normalized_risk_score": 42.8,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 25,
-    "security": 8,
-    "political": 5,
-    "other": 41
+    "military": 30,
+    "security": 7,
+    "political": 6,
+    "other": 39
   },
   "source_counts": {
-    "news": 79,
+    "news": 82,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 21.85
+      "risk": 31.9
     },
     {
       "name": "Yemen",
-      "risk": 15.05
+      "risk": 13.55
+    },
+    {
+      "name": "Iraq",
+      "risk": 10.2
     },
     {
       "name": "Jordan",
@@ -39,11 +43,7 @@
     },
     {
       "name": "Gaza Strip",
-      "risk": 9.0
-    },
-    {
-      "name": "Israel",
-      "risk": 5.8
+      "risk": 8.9
     }
   ],
   "top_events": [
@@ -52,9 +52,72 @@
       "date": "2026-11-17",
       "category": "military",
       "source_type": "news",
+      "title": "Iran attacks US military radar system in Bahrain despite talks with mediators - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPV29iM2xvSHBZbjBVTy1QTFd3aUVKb2ZnMjY3a2wzWWo5eGRGV2UxSTcwTUJCeVFUaDc5TFhoaE1HbC14UVg5NUtRLUE4bXB5M0o2UnhCOXoxVEFLd29QYmJYdWg2M2h5NG80Rkk4X1BaOE5fTUpJVUctOTBIZEltS2FfSXRXeEFFOVNqaFNBaGljVmxubGJnWERTUC05ek5vX0tubUt6cUd2Qi1SZ3NSMUFtVnlHLUtqSzRiUVl3"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain says it intercepts Iranian air attacks, IRGC says it targets US radar - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNVXAzM1RQRHF5amo0TVJ3VVV4d0d4cnNHVUhFSE41QnlpSGJ4UEhXc1ZIeUhKRzlzcVRRYWhxajZiNF84MWlPb29LazZhT2g5MnJUZlZZREF6N1FLTjZOYWFQZnZjLWdCMzN5OVZIcWVJWkc2RGVrZmRxT0l5LV83YUdlakdRaFd4SDI0MURvUFVQdXh6cUktbmJyeExSRmp1NVZlWWJ6ZHVCVUdUZEd2Z1NMLUNCcU9SSTIxMGRQMnNUX1Rtckp6ZVRn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Trump says US taking seriously report of possible Iranian dirty bomb plot in Washington - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQVVnUzJMMDJJUTh1NTl4Vy1VU2U0bjEzVkRGWFBtamliVkRZQkZud2VuZ25YSDc0VzM5aXhQWWN2YTBFSTRaV1BSNUE3aWp5bmpsV0ZSMDMyT2YxcW5LekhIVEt6Tm9Od1ItNUs1U0ZOd2tfeTJSdkJhVVEtbUFzV2d0Z1NGa0doNGljVlhVOUJNS1UwYXFjVVRxMEY2OTRGY1lHQzcxRTlXR2VnVkh3QjRENEd0VTFPMjRJdmk3bVpXUEVWS3RV"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Crew of tanker unaccounted for after second attack north of Oman's Khasab, UKMTO says - Reuters",
+      "location": "Oman",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQYW55RnRFY2o3QVQ5M0ZRRElNUGhWUlhPaDkyODFYbEprTWw5NHhyTUFKSDQ5RE1TOWZWaElmSkY0UnZZeGUyMnFRbXpaOHo2SkxyaTFDUEowd3ZVUS1VaG9TRF9aTmNldHJyUGZtNnFuc2E2NGd0c0NNeDB5ai1rUTVQXzhZNzA5QUlUcTFINUJBZEYzMVRtREg5TTdCWjA2aEFXdWoydENMbTJyTlo3MDJxSHJTTnhlSm53YjJaTmFrRHV3ZEE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Palestinian woman, 72, shot dead by Israeli settlers in West Bank, health ministry says",
+      "location": "West Bank",
+      "url": "https://www.bbc.co.uk/news/articles/cqrlg377638yo?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Tankers hit in Strait of Hormuz as drone raises alarm at Iraq gas field - Al Jazeera",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSWFGd3ktYlF2emZzeXI2bTVaemZMNW1WRl9meXBBVHJIWkgxVGh6Vml3RGkxS0lJeWtaNXhfQmQzN21IZnJVZ0FEcUZZb0dkenJOdk9tZjRoNkNUalJQdXpXaVhhZkp4MVF2Mkx5RE5LVlI4TmI2ZWpPM3ozTURQMVQ1ZjhocjZWUTh4YS16N1ItMmR5NmFJZm9ZZkZIOV9TdkdtdzhVRExMc0xkZGhRMnpDNNIBuAFBVV95cUxQNm5ZRWY1TnA3YjlNWkpRemlWX184cFFZdlBwMzROcFVpY2VFaVZIaTAzMERONmF5U1ZRT1hDeHNTWk94dk1qWXk5ZzM0c2dPdjhFRWxKc3pfTlUwcWtzZ3UzcnE0dktxSjBrX0JJSDdMV1h2cXJSc1hEYURDNDNBRVZ1dmtJNGpUVzlGQ0h3RlAya3hVSFVoanhZLWxZRS16eDYydW9uNXVWbWFnSHREZWJyMXlUazdP"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
       "title": "Yemeni army reports 661 attacks on Houthis as group advances towards Aden - Al Jazeera",
       "location": "Yemen",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVXNfN3VaY003UUdIMVV2NmhnUTdQUjFrbEQxTTBVSHdRWWhzUmp3VWc5M2ItdDV2WWd4RTJ5dzA3amZ0UHYzcHQ5OEUtUGJ6YzVZb09mb3RKd253dzh3akt5eW1SWFZmZlp5aVpqeEpPRG9MS1c1eWw4SS1RcTBxXzA5TlBLSjU4WlJCNnZTR2tRQ0NxaWhTSWVNcmR2TUQ2X3VsdktJUHFRaXB2UzhXcjlvWdIBuAFBVV95cUxNSnRUV2tPRUJvbi1yUVItM1drR1lzUm9tRkN4MjNoWFhsTmlOU2VUNHFPb2lURzlzWDdiV3NrajVaZU0yVFBTUkE3c0paT0NiVFUtNFVUM1BxX3dmNzRlc1JlRVFJdHloREJ6blhYX2s3d3loYzk3NjRnR3kwVm4xNThxb3FIb1pLZ2R5RHBhMUFYVm9oekdYTFVxd3JXaFZfaGZrWXVzQzdDNTdkSTAtd1NLOW1tUl80"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-17",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain thwarts drone attack; Iran claims targeting US radar - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbGZCQzBNWXlsNkJNTHdKVzdUSG5PdWR4eFkwZ0VGQ2pGN3BYUVE1Qm55YWg2ZTVMRTZvWjFqRUluUzB6NGUtTWZDX2R4bThna3RQTVN4OUJPSW93WHhlZDRVcVhnenJLd0s0clp2aEh6NEtkQmJ3bG9JcWVHT3picVZzN0dYaWZrSlZwUi1USmttQm5RTHp4MkZydzl6RU04NUl1bzdEd0p1X084eFpJ0gG0AUFVX3lxTFBtSmI2V1R4aXp4WUx2TTNSU3BsXzQ5VnI0M2NiZnVleUNQOEdidnFXOEJ1emxyZ0pGWDVmYS1mX3htRF9kRElQOWZZMTRqdEk5WHBhUkNRN3BGV2F2U3Frd3l5LVFqY19vbmFXNkExb2JPYnNQTjF6Ry00cE5MTjQxYkY1YXM1WUF5UGtHN1hLNVhYUjRkSlFuajlGcFNQelItbDdoV3dyOWptQ09XOGx6Mm9FUg"
     },
     {
       "score": 2.7,
@@ -66,76 +129,13 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPQUI4WnRjazloVU5KUTR5MndXU19SVjNiQzRib2JHSC1ZOTFFVE5kdUlweUZjNkJrZzNheVc0bUlJY3UzRGtoanF1NDV4eGdTUnZIOEh4QUZ1MEF1NWt5M2Y3UmtZdnVRN3QwZzg1NTlGQWxsMlFjNzE4c0t6VnVTaUNPTFRZUWxnMVRMUHRZV18tMWttdm80V21kSFgzVUhxdEpUYk9MZElPZXJyTVN3LWVBM2VJTXpmdzlINTFZcTVER1pXV0ZnMHFsWEI"
     },
     {
-      "score": 2.4,
-      "date": "2026-11-15",
+      "score": 2.7,
+      "date": "2026-11-16",
       "category": "military",
       "source_type": "news",
-      "title": "Anti-Houthi forces retreat in Yemen as Iran strikes Bahrain - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdTFBcWR1YzJhai1UdGgzMHpvdm40VExxeXFqM0NtbU9YVmNSNXpNeDlXTGllRXFtczhIUzVsaFFWdVV5TGxESWdneGlXbER1Qlg2b2VhQ2lqMmxVaEd4U01nZmNXcFY2bmNhSTdIN0VycE84MWJDRXdZOGxMRGo0U1k1UjhiamFNQ1JIQmp1MUdxNlZGRm1UanBvaENxR3V2N25NdFVOaWpXX1E"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bahrain intercepts Iranian aerial attacks as Tehran says it attacked US base - Reuters",
-      "location": "Tehran",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNS2FyaWZZTTd4ZWFoWFdoTnFNVmpjakdwQUVnZ0UtMEY5MFc1dEFBeGd4UmczdGh1ektRTHBjRGxBOVlVQy1XV3NOdV9MbWotQkNVa1NBdmJaUloya1VhR2FEUTN3QkgwZ1JRN00wME5tc243TmZHU20zdlpaUHR2Q2lyby0tUkJsR0w5N1lXclI4ZWI5RTdfbjB2d1hxMXVjOVp4MlJPOF9IcjIxSE1JWWx3"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOemlqVE1TdmREQ0t3TjczWnBWVGZ3TkxTc0ZPVC1fZFlrUDJCZC1KV0liZGdUTHBXZEZpWG9SNkJJSlBYSjVPbE1aUnNtWHl2eE1FbzlURGRwckdIT3R2NG9rVm1oX1V0VEZoWmYxM1dSbmhNc1BidnFLX19YRVU3Q2tzR1F5Vk1QX3dDNXVCeXZ6bmVES0lZNTBlR3E0Z1hJcXFyYXpMam80TGRWbURod1NsUXBwZldjdHFVejFwaWtmVmo3ZWYzYW5QMzk"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they launched ballistic missiles towards Riyadh airport, financial centre - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ2NSdXVjeDlTU0lLeTAtMGs5RmdHaW0wTVhVbzUwempOYUdlNVB3NXprMGZqYksyVjhLUU1OV250QlczemJOT2tXcVFIZEJYb0dwblVCblExbnFmZkVyeGZnZ0NJY3Z3a3NTcmxUQ21tR0ZsQVdhTTNRNWJaZW5pOEk4RDNEMXN3aExOaEE0QVNzaXV3UTM3ZjlNa2hDenRtajR2aGVGT3RQR0NOSnY1VHQ3czdCSkJWSUgxaFFYNThEUlBBMVpn"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jordan sentences three men to death over deadly church attack - Reuters",
-      "location": "Jordan",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSW5qZzl5QmYwRkpOaUNfQlVXU1FOdEhVX0RUWEtsYjU5a3ZfWEJGS3R4MjVRYlVha3ZrcWpnQVV1SHQ0c09qY0V2U2RscnZUNjlaVjUwYW1GN2pfMjNHNE1LemRjUEZTSGlQY3JhcUNFTjhOYlNDZkVQTzFVbHZ1elgzX01md3BoRG0tam4zVEFha2tnUjU5TlllRmtrb09PMHFQVFZmNXNWSm9wTVRPYUFn?oc=5"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three ships struck by drones in Black Sea near Romanian shipping canal, PM says - Reuters",
-      "location": "Oman",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWEpyZzYwM3Y0YzMtU0h3LXZXb1RBQ00yS3lLZklVczJEOUVtcFU0MWYzRlNIMWxKN1RlMkZrSXZ3eFJkdjV4cTJuQVJBbVZob3JfYjdEbFotQ21iQzFQSHJYUE5VNUJDRDA0aV9OYy1qQTRVQ0EtOXJlSWQzWDV2VnpCRXdkQUpWSEhzUHVFWGstd2t4anhiMnZ4RHdVOHl4UjkxYjdWVmI0LTF3b2x1UTZJdGotUGU5bXkwVUF6N2IwY3g4S2lxbVNvM0kyZVBoTmR5YQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran targets US military base in Bahrain with drone attack",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cqn4e2py48kwo?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-15",
-      "category": "military",
-      "source_type": "news",
-      "title": "Three men sentenced to death in Jordan over fatal church mass shooting",
-      "location": "Jordan",
-      "url": "https://www.bbc.co.uk/news/articles/c3rrg9xgqlwpo?at_medium=RSS&at_campaign=rss"
+      "title": "Sirens activated at Iraq's Khor Mor gas field after drone overflight, sources say - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPVUt5bmRUTlVDTnpuTldnMGxkYkhzTnh1eENFNHlIOGw4ZGhUTmYxdHQ1Y1B1Z20xODB0MDYzT3Vud2FnUEYzSXh0a3JYVXZva1VwelN0UzZIZzNfRXVhWnc0N3VnLXlmT1Z4Wk9hZVRKUUxEQWNQWEw0WFVnMmRkX3lDamdsbjY3Q00td2VhSWt3YmpvU25hY19XV2R3WFU4dFVuN2NKTk9JOW5CQWtqTmFCXzJ2ek4wRWZPb1YtcWtCRjQ3YTctVk9B"
     }
   ]
 }
