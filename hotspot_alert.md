@@ -1,10 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-11-18T07:32:34.060359+00:00
+**Generated:** 2026-11-18T17:17:32.630043+00:00
 
 No hotspot alert: no location met the spike thresholds in the last 24 hours.
 
-Top current hotspot (by risk): Iraq (0.9), prev 24h: 3.9, share: 100%.
+Top current hotspot (by risk): Israel (2.8), prev 24h: 2.5, share: 28%.
 
 ## X POST VERSION
 
