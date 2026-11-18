@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T11:45:46Z",
+  "generated_at": "2026-11-18T19:38:15Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,20 +52,20 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 980,
+    "events_endpoint_records": 983,
     "feed_event_records": 250,
-    "normalized_events": 2036,
-    "map_visualizable_events": 279,
-    "non_mappable_events": 1757,
-    "developments": 4
+    "normalized_events": 2039,
+    "map_visualizable_events": 280,
+    "non_mappable_events": 1759,
+    "developments": 3
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2036,
+      "total_events": 2039,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-18T11:41:34Z",
-      "geocoded_events": 279,
+      "latest_event_date": "2026-11-18T19:06:13Z",
+      "geocoded_events": 280,
       "geocoded_share": 13.7,
       "top_category": "infrastructure",
       "top_location": "Unknown",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 67,
-        "previous": 61,
-        "delta": 6,
-        "percent_change": 9.8,
+        "current": 59,
+        "previous": 62,
+        "delta": -3,
+        "percent_change": -4.8,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 283,
-        "previous": 288,
-        "delta": -5,
-        "percent_change": -1.7,
+        "current": 280,
+        "previous": 291,
+        "delta": -11,
+        "percent_change": -3.8,
         "direction": "stable"
       }
     },
@@ -806,7 +806,7 @@
       },
       {
         "date": "2026-11-18",
-        "count": 5
+        "count": 8
       }
     ],
     "category_counts": {
@@ -814,10 +814,10 @@
       "missile": 442,
       "strike": 284,
       "drone": 239,
-      "airstrike": 150,
-      "movement": 123,
+      "airstrike": 151,
+      "movement": 124,
       "ground": 78,
-      "explosion": 74,
+      "explosion": 75,
       "alert": 22,
       "defense": 13,
       "political": 5,
@@ -825,12 +825,12 @@
     },
     "severity_counts": {
       "medium": 1066,
-      "high": 619,
-      "low": 338,
+      "high": 621,
+      "low": 339,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1357,
+      "unknown": 1360,
       "iran": 426,
       "israel": 213,
       "usa": 40
@@ -838,7 +838,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 782
+        "count": 784
       },
       {
         "name": "Iran",
@@ -862,7 +862,7 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 50
+        "count": 51
       },
       {
         "name": "Israel",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 782
+        "count": 784
       },
       {
         "name": "Iran",
-        "count": 578
+        "count": 579
       },
       {
         "name": "Lebanon",
@@ -945,33 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11354,
+    "totalCount": 11357,
     "spotlight": {
       "event": {
-        "id": "yjbvfwgf5y80",
-        "timestamp": "2026-11-18T10:55:26+00:00",
-        "location": "IRN",
+        "id": "1snwfn106kzk0",
+        "timestamp": "2026-11-18T19:06:13+00:00",
+        "location": "YEM",
+        "origin": "SAU",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
-        "severity": "medium",
-        "description": "Iranian navy reports another commercial tanker on fire after striking a naval mine east of the Strait of Hormuz",
-        "descriptionHe": "הצי האיראני מדווח כי מכלית מסחרית נוספת בוערת לאחר שפגעה במוקש ימי מזרחית למצר הורמוז",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/87346"
+        "type": "report",
+        "severity": "high",
+        "description": "Houthi-run Saba reports Saudi airstrikes over 24 hours on Sana'a, Hudeida and Saada hit residential areas, utilities and factories, killing 17 and injuring 39; casualties unconfirmed",
+        "descriptionHe": "סבא, סוכנות החות'ים, מדווחת על תקיפות אוויר סעודיות ב-24 השעות האחרונות בסנעא, בחודיידה ובצעדה שפגעו באזורי מגורים, תשתיות ומפעלים, ומונות 17 הרוגים ו-39 פצועים; הנתונים לא אומתו",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20782"
       },
-      "headline": "Iranian Tanker Catches Fire After Naval Mine Strike Near Hormuz",
-      "headlineHe": "בנזין איראני עולה באש לאחר פגיעת מוקש ימי ליד הורמוז",
-      "summary": "The incident marks the latest maritime disruption in the strategically vital Strait of Hormuz amid escalating regional tensions between Iran and Western forces.",
-      "summaryHe": "התקادם מסמן את ההפרעה הימית האחרונה במיצר החשוב מבחינה אסטרטגית בין איראן וכוחות מערביים בתוך התגברות המתיחות האזורית.",
-      "pickedAt": "2026-11-18T11:15:26.078Z",
+      "headline": "Saudi airstrikes kill 17 in Yemen residential areas",
+      "headlineHe": "הפצצות סעודיות הורגות 17 בשכונות למגורים בתימן",
+      "summary": "Houthi-aligned sources report widespread damage across Sana'a, Hudaida and Saada provinces in a 24-hour bombing campaign targeting civilian infrastructure.",
+      "summaryHe": "מקורות הותיים מדווחים על נזק נרחב בחבל סנעא, חודיידה וצעדה במסע הפצצות של 24 שעות שמכוון לתשתיות אזרחיות.",
+      "pickedAt": "2026-11-18T19:15:25.567Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-18T11:45:17.327Z",
+    "lastUpdated": "2026-11-18T19:36:18.509Z",
     "stale": false,
-    "viewerCount": 4,
+    "viewerCount": 7,
     "ceasefire": false
   },
   "summary": {
@@ -1514,212 +1515,8 @@
     "vitals": {
       "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-11-18T11:00:14.412Z",
+      "lastUpdate": "2026-11-18T19:30:13.782Z",
       "internetHistory": [
-        {
-          "t": "2026-11-17T11:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T16:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T16:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T16:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T16:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T17:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T17:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T17:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T17:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T17:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T17:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T18:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T18:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-17T18:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T18:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T18:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T18:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T19:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T19:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-17T19:20:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-11-17T19:30:00.000Z",
           "v": 97
@@ -2087,22 +1884,226 @@
         {
           "t": "2026-11-18T10:40:00.000Z",
           "v": 97
+        },
+        {
+          "t": "2026-11-18T10:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T11:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T11:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T12:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T13:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T13:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T15:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T15:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T15:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T15:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T16:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T16:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T16:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T16:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T16:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T16:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T17:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T17:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T17:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T17:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T17:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T17:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T18:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T18:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T18:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T18:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T18:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T18:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-18T19:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-18T19:10:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-18T11:00:14.412Z"
+    "lastUpdated": "2026-11-18T19:30:13.782Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e9",
+      "id": "iranstrike-9f4c7e2a",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-18T10:55:26Z",
       "title": "IranStrike event",
-      "description": "Iran escalates regional strikes: drones hit Kuwait, Bahrain; US retaliates on Qeshm Island",
+      "description": "Iran strikes Gulf military targets; fires reported in Kuwait, tanker hit near Hormuz",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -2110,59 +2111,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran escalates regional strikes: drones hit kuwait, bahrain;",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "a7f2c1e9",
-        "text": "Iran escalates regional strikes: drones hit Kuwait, Bahrain; US retaliates on Qeshm Island",
-        "textHe": "איראן מגבירה התקפות אזוריות: רחפנים פגעו בכוויית ובחריין; ארה\"ב משיבה בתקפה על קשם",
-        "severity": "high",
-        "timestamp": "2026-11-18T10:55:26+00:00",
-        "entityIds": [
-          "IRN",
-          "USA",
-          "KWT",
-          "BHR"
-        ],
-        "eventIds": [
-          "23s739u835ds0",
-          "2rrr3bj7g9s00",
-          "1kq8z29gahk00",
-          "3tce8xl7spi00",
-          "2rxf24914pc00",
-          "1rap1txiuuow0",
-          "30p7jgvwkjg00"
-        ],
-        "sourceCount": 4
-      }
-    },
-    {
-      "id": "iranstrike-b8e3d2f5",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-18T11:41:34Z",
-      "title": "IranStrike event",
-      "description": "Tanker capacity in Strait of Hormuz halved; Iran-attributed mine strike inflames Gulf security",
-      "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran-attributed mine strike inflames gulf security קיבולת ספינות בתעלת הורמוז",
+      "attacker_evidence": "iran strikes gulf military targets;",
       "location": "Persian Gulf",
       "country": "Persian Gulf",
       "latitude": null,
@@ -2175,38 +2124,86 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b8e3d2f5",
-        "text": "Tanker capacity in Strait of Hormuz halved; Iran-attributed mine strike inflames Gulf security",
-        "textHe": "קיבולת ספינות בתעלת הורמוז התחצתה; פגיעה במכל בגלל מוקש מזוהה לאירן",
+        "id": "9f4c7e2a",
+        "text": "Iran strikes Gulf military targets; fires reported in Kuwait, tanker hit near Hormuz",
+        "textHe": "איראן תוקפת מטרות צבאיות בתוך המפרץ; דיווחים על שרפות בכווית וטנקר פגוע",
         "severity": "high",
-        "timestamp": "2026-11-18T11:41:34+00:00",
+        "timestamp": "2026-11-18T10:55:26+00:00",
         "entityIds": [
           "IRN",
-          "OMN"
+          "KWT",
+          "USA",
+          "BHR"
         ],
         "eventIds": [
-          "yjbvfwgf5y80",
-          "2u3wgws6gwm00"
+          "23s739u835ds0",
+          "2rrr3bj7g9s00",
+          "1kq8z29gahk00",
+          "yjbvfwgf5y80"
+        ],
+        "sourceCount": 3
+      }
+    },
+    {
+      "id": "iranstrike-b1a3d8f6",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-18T19:06:13Z",
+      "title": "IranStrike event",
+      "description": "Saudi airstrikes on Yemen kill 17, injure 39 in residential, industrial areas",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b1a3d8f6",
+        "text": "Saudi airstrikes on Yemen kill 17, injure 39 in residential, industrial areas",
+        "textHe": "התקפות סעודיות על תימן הרגו 17, פצעו 39 בשכונות וקטעים תעשייתיים",
+        "severity": "high",
+        "timestamp": "2026-11-18T19:06:13+00:00",
+        "entityIds": [
+          "SAU",
+          "YEM"
+        ],
+        "eventIds": [
+          "1snwfn106kzk0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c5a9b3g7",
+      "id": "iranstrike-c5e2b9d4",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-18T08:19:34Z",
+      "date": "2026-11-18T11:41:34Z",
       "title": "IranStrike event",
-      "description": "Iran recruits foreign nationals for Israeli embassy attack in Bangkok (unconfirmed)",
+      "description": "Iran's oil tanker capacity in Gulf falls 48%; attributed to mine/attack campaign",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
       "attacker_evidence": "",
       "location": "Iran",
       "country": "Iran",
@@ -2220,40 +2217,41 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c5a9b3g7",
-        "text": "Iran recruits foreign nationals for Israeli embassy attack in Bangkok (unconfirmed)",
-        "textHe": "איראן גייסה אזרחים תאילנדים להתקפה על השגרירות הישראלית בבנגקוק (לא מאושר)",
+        "id": "c5e2b9d4",
+        "text": "Iran's oil tanker capacity in Gulf falls 48%; attributed to mine/attack campaign",
+        "textHe": "קיבולת טנקרי הנפט של איראן במפרץ ירדה 48%; מיוחסת לקמפיין מכות וזריעת מוקשים",
         "severity": "medium",
-        "timestamp": "2026-11-18T08:19:34+00:00",
+        "timestamp": "2026-11-18T11:41:34+00:00",
         "entityIds": [
-          "IRN",
-          "ISR"
+          "IRN"
         ],
         "eventIds": [
-          "850epouadag0"
+          "2u3wgws6gwm00"
         ],
         "sourceCount": 1
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-d6b4e1h2",
+      "id": "iranstrike-1snwfn106kzk0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-17T18:29:00Z",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20782",
+      "date": "2026-11-18T19:06:13Z",
       "title": "IranStrike event",
-      "description": "Houthis claim control of 7,100 sq km in southwestern Yemen; Red Sea border secured",
-      "category": "other",
-      "severity": "medium",
+      "description": "Houthi-run Saba reports Saudi airstrikes over 24 hours on Sana'a, Hudeida and Saada hit residential areas, utilities and factories, killing 17 and injuring 39; casualties unconfirmed",
+      "category": "airstrike",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Red Sea",
-      "country": "Red Sea",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2264,22 +2262,111 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d6b4e1h2",
-        "text": "Houthis claim control of 7,100 sq km in southwestern Yemen; Red Sea border secured",
-        "textHe": "חות'ים טוענים שליטה על 7,100 קמ\"ר בדרום מערב תימן; גבול ים סוף מאובטח",
-        "severity": "medium",
-        "timestamp": "2026-11-17T18:29:00+00:00",
-        "entityIds": [
-          "YEM"
+        "id": "1snwfn106kzk0",
+        "timestamp": "2026-11-18T19:06:13+00:00",
+        "location": "YEM",
+        "origin": "SAU",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "9gcen32ujrw0"
-        ],
-        "sourceCount": 1
+        "type": "report",
+        "severity": "high",
+        "description": "Houthi-run Saba reports Saudi airstrikes over 24 hours on Sana'a, Hudeida and Saada hit residential areas, utilities and factories, killing 17 and injuring 39; casualties unconfirmed",
+        "descriptionHe": "סבא, סוכנות החות'ים, מדווחת על תקיפות אוויר סעודיות ב-24 השעות האחרונות בסנעא, בחודיידה ובצעדה שפגעו באזורי מגורים, תשתיות ומפעלים, ומונות 17 הרוגים ו-39 פצועים; הנתונים לא אומתו",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20782"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-3dyu88auzf200",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87366",
+      "date": "2026-11-18T15:27:51Z",
+      "title": "IranStrike event",
+      "description": "USS Theodore Roosevelt and USS George Washington carriers sail together in the Arabian Sea; Theodore Roosevelt's arrival brings U.S. carriers in CENTCOM area to three",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3dyu88auzf200",
+        "timestamp": "2026-11-18T15:27:51+00:00",
+        "location": "USA",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "USS Theodore Roosevelt and USS George Washington carriers sail together in the Arabian Sea; Theodore Roosevelt's arrival brings U.S. carriers in CENTCOM area to three",
+        "descriptionHe": "נושאות המטוסים USS Theodore Roosevelt ו-USS George Washington מפליגות יחד בים הערבי; הגעת ה-Theodore Roosevelt מעלה את מספר נושאות המטוסים האמריקאיות באזור CENTCOM לשלוש",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87366"
+      }
+    },
+    {
+      "id": "iranstrike-rvmqoakmvbk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133858",
+      "date": "2026-11-18T15:18:58Z",
+      "title": "IranStrike event",
+      "description": "Reports of explosion echoes at Iran's Bandar Abbas air base in southern Iran; circumstances under review, not officially confirmed",
+      "category": "explosion",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "rvmqoakmvbk0",
+        "timestamp": "2026-11-18T15:18:58+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Reports of explosion echoes at Iran's Bandar Abbas air base in southern Iran; circumstances under review, not officially confirmed",
+        "descriptionHe": "איראן: דיווחים על הדי התפוצצויות בבסיס האווירי האיראני בבנדר עבאס בדרום איראן. הנסיבות נבדקות",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133858"
+      }
+    },
     {
       "id": "iranstrike-2u3wgws6gwm00",
       "source": "IranStrike",
@@ -94613,6 +94700,50 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-rvmqoakmvbk0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133858",
+      "date": "2026-11-18T15:18:58Z",
+      "title": "IranStrike event",
+      "description": "Reports of explosion echoes at Iran's Bandar Abbas air base in southern Iran; circumstances under review, not officially confirmed",
+      "category": "explosion",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "rvmqoakmvbk0",
+        "timestamp": "2026-11-18T15:18:58+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Reports of explosion echoes at Iran's Bandar Abbas air base in southern Iran; circumstances under review, not officially confirmed",
+        "descriptionHe": "איראן: דיווחים על הדי התפוצצויות בבסיס האווירי האיראני בבנדר עבאס בדרום איראן. הנסיבות נבדקות",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133858"
+      }
+    },
     {
       "id": "iranstrike-458wwpdpsz80",
       "source": "IranStrike",
