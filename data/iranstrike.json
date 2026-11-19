@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T09:31:17Z",
+  "generated_at": "2026-11-19T18:40:55Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -52,20 +52,20 @@
     }
   },
   "statistics": {
-    "events_endpoint_records": 987,
+    "events_endpoint_records": 998,
     "feed_event_records": 250,
-    "normalized_events": 2043,
-    "map_visualizable_events": 280,
-    "non_mappable_events": 1763,
+    "normalized_events": 2054,
+    "map_visualizable_events": 281,
+    "non_mappable_events": 1773,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2043,
+      "total_events": 2054,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-19T07:43:16Z",
-      "geocoded_events": 280,
+      "latest_event_date": "2026-11-19T18:02:31Z",
+      "geocoded_events": 281,
       "geocoded_share": 13.7,
       "top_category": "infrastructure",
       "top_location": "Unknown",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 55,
-        "previous": 66,
-        "delta": -11,
-        "percent_change": -16.7,
+        "current": 60,
+        "previous": 73,
+        "delta": -13,
+        "percent_change": -17.8,
         "direction": "decrease"
       },
       "latest_30_days": {
-        "current": 280,
+        "current": 288,
         "previous": 294,
-        "delta": -14,
-        "percent_change": -4.8,
+        "delta": -6,
+        "percent_change": -2.0,
         "direction": "stable"
       }
     },
@@ -806,16 +806,16 @@
       },
       {
         "date": "2026-11-19",
-        "count": 2
+        "count": 13
       }
     ],
     "category_counts": {
-      "infrastructure": 606,
-      "missile": 443,
-      "strike": 284,
+      "infrastructure": 611,
+      "missile": 444,
+      "strike": 285,
       "drone": 239,
-      "airstrike": 151,
-      "movement": 126,
+      "airstrike": 152,
+      "movement": 129,
       "ground": 78,
       "explosion": 75,
       "alert": 22,
@@ -824,33 +824,33 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1066,
-      "high": 622,
-      "low": 342,
+      "medium": 1070,
+      "high": 626,
+      "low": 345,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1364,
-      "iran": 426,
-      "israel": 213,
+      "unknown": 1372,
+      "iran": 427,
+      "israel": 215,
       "usa": 40
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 787
+        "count": 790
       },
       {
         "name": "Iran",
-        "count": 446
+        "count": 448
       },
       {
         "name": "Lebanon",
-        "count": 127
+        "count": 129
       },
       {
         "name": "Jordan",
-        "count": 122
+        "count": 123
       },
       {
         "name": "Persian Gulf",
@@ -865,11 +865,11 @@
         "count": 51
       },
       {
-        "name": "Israel",
-        "count": 48
+        "name": "Iraq",
+        "count": 50
       },
       {
-        "name": "Iraq",
+        "name": "Israel",
         "count": 48
       },
       {
@@ -900,23 +900,23 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 787
+        "count": 790
       },
       {
         "name": "Iran",
-        "count": 580
+        "count": 582
       },
       {
         "name": "Lebanon",
-        "count": 158
+        "count": 160
       },
       {
         "name": "Jordan",
-        "count": 145
+        "count": 146
       },
       {
         "name": "Iraq",
-        "count": 96
+        "count": 98
       },
       {
         "name": "Persian Gulf",
@@ -924,7 +924,7 @@
       },
       {
         "name": "Israel",
-        "count": 62
+        "count": 63
       },
       {
         "name": "Red Sea",
@@ -945,34 +945,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11361,
+    "totalCount": 11372,
     "spotlight": {
       "event": {
-        "id": "28flwcojb15w0",
-        "timestamp": "2026-11-19T07:43:16+00:00",
-        "location": "SAU",
-        "origin": "YEM",
+        "id": "1w15j8op52o00",
+        "timestamp": "2026-11-19T17:28:36+00:00",
+        "location": "KWT",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
+        "type": "report",
         "severity": "high",
-        "description": "Houthi missiles fired at the Riyadh area, per OSINTdefender; no counts or impact details given",
-        "descriptionHe": "טילים של החות'ים שוגרו לעבר אזור ריאד, לפי OSINTdefender; לא צוינו מספרים או פרטי פגיעה",
-        "source": "OSINTdefender",
-        "sourceUrl": "https://t.me/OSINTdefender/20792"
+        "description": "Tally reports three U.S. F-15E Strike Eagles downed over Kuwait during the war with Iran",
+        "descriptionHe": "לפי הסיכום, שלושה מטוסי F-15E של ארה\"ב הופלו מעל כווית במהלך המלחמה עם איראן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87413"
       },
-      "headline": "Houthi missiles fired at Saudi Arabia's Riyadh in escalating regional strikes",
-      "headlineHe": "טילים של חות'ים נורו לעברי בירת סעודיה בהסלמה אזורית",
-      "summary": "The attack marks the latest in a series of Houthi projectile launches targeting Saudi infrastructure amid broader tensions across the Persian Gulf region.",
-      "summaryHe": "ההתקפה מהווה את העדכנית בסדרת שיגורי קליעים של חות'ים לעבר תשתיות סעודיות באמצע התגברות המתיחויות ברחבי אזור המפרץ הפרסי.",
-      "pickedAt": "2026-11-19T09:00:25.741Z",
+      "headline": "Three U.S. F-15E Strike Eagles Downed Over Kuwait in Iran War",
+      "headlineHe": "שלוש מטוסי F-15E אמריקאיים הופלו מעל קוווית במלחמה עם איראן",
+      "summary": "Reports indicate a significant loss of advanced U.S. combat aircraft in what appears to be escalating air warfare between American and Iranian forces in the Gulf region.",
+      "summaryHe": "דיווחים מצביעים על הפסד משמעותי של מטוסי קרב מתקדמים של ארה\"ב במה שנראה כמו מלחמת אויר מתגברת בין כוחות אמריקאיים לאיראנים באזור המפרץ.",
+      "pickedAt": "2026-11-19T17:45:25.765Z",
       "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-19T09:30:17.297Z",
+    "lastUpdated": "2026-11-19T18:39:17.441Z",
     "stale": false,
-    "viewerCount": 0,
+    "viewerCount": 8,
     "ceasefire": false
   },
   "summary": {
@@ -1515,224 +1514,8 @@
     "vitals": {
       "internet": 96,
       "cellular": null,
-      "lastUpdate": "2026-11-19T09:30:20.545Z",
+      "lastUpdate": "2026-11-19T18:30:14.085Z",
       "internetHistory": [
-        {
-          "t": "2026-11-18T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T10:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T10:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T10:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T16:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T16:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T16:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T16:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T17:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T17:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T17:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T17:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T17:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T17:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-18T18:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T18:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-18T18:20:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-11-18T18:30:00.000Z",
           "v": 97
@@ -2088,65 +1871,287 @@
         {
           "t": "2026-11-19T09:10:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-11-19T09:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T09:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T09:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T09:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T10:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T10:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T10:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T10:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T11:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T11:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T12:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T12:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T13:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T13:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T13:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T13:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T14:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T14:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T14:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T14:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T15:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T15:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T15:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T15:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T15:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T15:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T16:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T16:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T16:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T16:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T16:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-19T16:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T17:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T17:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T17:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T17:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T17:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T17:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T18:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-19T18:10:00.000Z",
+          "v": 96
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-19T09:30:20.545Z"
+    "lastUpdated": "2026-11-19T18:30:14.085Z"
   },
   "developments": [
     {
-      "id": "iranstrike-c7a2f1e9",
+      "id": "iranstrike-1f6qvhfhn1pc0",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-18T15:18:58Z",
+      "date": "2026-11-19T17:28:36Z",
       "title": "IranStrike event",
-      "description": "Unconfirmed explosion reported at Iran's Bandar Abbas air base; circumstances under review",
+      "description": "Iran strikes Saudi bases: KC-135, E-3 destroyed; 8 F-15Es damaged in Jordan",
       "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Bandar Abbas",
-      "country": "Iran",
-      "latitude": 27.1832,
-      "longitude": 56.2666,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "bandar abbas",
-      "geocode_confidence": "high",
+      "severity": "critical",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran strikes saudi bases: kc-135, e-3 destroyed;",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c7a2f1e9",
-        "text": "Unconfirmed explosion reported at Iran's Bandar Abbas air base; circumstances under review",
-        "textHe": "דיווח על פיצוץ בלתי מאומת בבסיס אוויר בندר עבאס באיראן; הנסיבות בבדיקה",
-        "severity": "high",
-        "timestamp": "2026-11-18T15:18:58+00:00",
+        "id": "1f6qvhfhn1pc0",
+        "text": "Iran strikes Saudi bases: KC-135, E-3 destroyed; 8 F-15Es damaged in Jordan",
+        "textHe": "איראן תוקפת בסיסים סעודיים: הרס KC-135 ו-E-3; 8 F-15E פגועים בירדן",
+        "severity": "critical",
+        "timestamp": "2026-11-19T17:28:36+00:00",
         "entityIds": [
-          "IRN"
+          "IRN",
+          "SAU",
+          "USA",
+          "JOR"
         ],
         "eventIds": [
-          "rvmqoakmvbk0"
+          "1f6qvhfhn1pc0",
+          "3mva18crzbi00",
+          "hsue376i7hs0",
+          "1w15j8op52o00"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-d4b8e2c3",
+      "id": "iranstrike-3abbv701wp000",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-18T19:06:13Z",
+      "date": "2026-11-19T16:50:43Z",
       "title": "IranStrike event",
-      "description": "Saudi airstrikes on Yemen kill 17, wound 39 in Sana'a, Hudeidah, Saada; Houthi-sourced report",
+      "description": "Houthi missile damages 80-story Riyadh tower; scorch marks on 5 floors",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2167,9 +2172,144 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d4b8e2c3",
-        "text": "Saudi airstrikes on Yemen kill 17, wound 39 in Sana'a, Hudeidah, Saada; Houthi-sourced report",
-        "textHe": "התקפות סעודיות על תימן הרגו 17, פצעו 39 בסנא, חודיידה וסעדה",
+        "id": "3abbv701wp000",
+        "text": "Houthi missile damages 80-story Riyadh tower; scorch marks on 5 floors",
+        "textHe": "טיל חוסי פוגע בגורד-ענן בריאד; סימני שריפה על 5 קומות",
+        "severity": "high",
+        "timestamp": "2026-11-19T16:50:43+00:00",
+        "entityIds": [
+          "YEM",
+          "SAU"
+        ],
+        "eventIds": [
+          "3abbv701wp000",
+          "28flwcojb15w0"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-1yq7n3uda41s0",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-19T18:02:31Z",
+      "title": "IranStrike event",
+      "description": "IDF strikes Hezbollah weapons shipment in Janta, Bekaa Valley near Syria border",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes hezbollah weapons shipment in janta, bekaa valley",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1yq7n3uda41s0",
+        "text": "IDF strikes Hezbollah weapons shipment in Janta, Bekaa Valley near Syria border",
+        "textHe": "צה\"ל תוקף משלוח נשקי חיזבאללה בג'אנתא, עמק הבקעה",
+        "severity": "medium",
+        "timestamp": "2026-11-19T18:02:31+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN",
+          "SYR"
+        ],
+        "eventIds": [
+          "1yq7n3uda41s0",
+          "14n6tgk8iwqk0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-28bm9e62thc00",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-19T14:13:17Z",
+      "title": "IranStrike event",
+      "description": "White House assesses Iranian retaliation risks to Gulf oil facilities for US strikes",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "white house assesses iranian retaliation risks to gulf oil facilities for us strikes הבית הלבן מעריך סכנות ההגנה האיראנית למתקני נפט ב",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "28bm9e62thc00",
+        "text": "White House assesses Iranian retaliation risks to Gulf oil facilities for US strikes",
+        "textHe": "הבית הלבן מעריך סכנות ההגנה האיראנית למתקני נפט בתוך הפרסי",
+        "severity": "high",
+        "timestamp": "2026-11-19T14:13:17+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "28bm9e62thc00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-1snwfn106kzk0",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-18T19:06:13Z",
+      "title": "IranStrike event",
+      "description": "Saudi airstrikes on Yemen kill 17, injure 39; residential areas, utilities hit",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1snwfn106kzk0",
+        "text": "Saudi airstrikes on Yemen kill 17, injure 39; residential areas, utilities hit",
+        "textHe": "תקיפות סעודיות בתימן: 17 הרוגים, 39 פצועים; שכונות מגורים במטרה",
         "severity": "high",
         "timestamp": "2026-11-18T19:06:13+00:00",
         "entityIds": [
@@ -2181,26 +2321,28 @@
         ],
         "sourceCount": 1
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-a9e5d6f1",
+      "id": "iranstrike-1yq7n3uda41s0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-18T11:41:34Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133922",
+      "date": "2026-11-19T18:02:31Z",
       "title": "IranStrike event",
-      "description": "Iran's repeated tanker attacks reduce Gulf of Oman VLCC/Suezmax capacity 48%; naval mine damages commercial vessel",
-      "category": "other",
+      "description": "IDF airstrike on former missile production and weapons storage site in Janta, Bekaa Valley, near the Syria-Lebanon border; Lebanese sources report six strikes near Janta and Ain al-Nabi Sheet",
+      "category": "airstrike",
       "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf airstrike on former missile production and weapons storage",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2211,33 +2353,122 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a9e5d6f1",
-        "text": "Iran's repeated tanker attacks reduce Gulf of Oman VLCC/Suezmax capacity 48%; naval mine damages commercial vessel",
-        "textHe": "התקפות איראן חוזרות על כלי טנקרים הפחיתו קיבולת של 48% במפרץ עמאן; מכרה ימי פגע בספינה",
+        "id": "1yq7n3uda41s0",
+        "timestamp": "2026-11-19T18:02:31+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-11-18T11:41:34+00:00",
-        "entityIds": [
-          "IRN",
-          "OMN"
-        ],
-        "eventIds": [
-          "2u3wgws6gwm00",
-          "yjbvfwgf5y80"
-        ],
-        "sourceCount": 2
+        "description": "IDF airstrike on former missile production and weapons storage site in Janta, Bekaa Valley, near the Syria-Lebanon border; Lebanese sources report six strikes near Janta and Ain al-Nabi Sheet",
+        "descriptionHe": "תקיפת חיל האוויר באתר לשעבר לייצור טילים ואחסון אמצעי לחימה של חיזבאללה בג'נתא שבבקעת הבקעה, סמוך לגבול סוריה-לבנון; מקורות לבנוניים מדווחים על שש תקיפות סמוך לג'נתא ולעין א-נבי שית",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133922"
       }
     },
     {
-      "id": "iranstrike-b2f7c4e8",
+      "id": "iranstrike-14n6tgk8iwqk0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-19T06:15:01Z",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133919",
+      "date": "2026-11-19T17:30:18Z",
       "title": "IranStrike event",
-      "description": "USS Theodore Roosevelt joins George Washington in Arabian Sea; CENTCOM carrier presence now three; Washington departing to Japan",
-      "category": "other",
-      "severity": "low",
+      "description": "IDF says Air Force struck overnight a shipment of weapons moved from Syria to Lebanon intended for Hezbollah, in the Janta area on the Syria-Lebanon border",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn idf says air force struck overnight a shipment of weapons moved from syria",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "14n6tgk8iwqk0",
+        "timestamp": "2026-11-19T17:30:18+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "IDF says Air Force struck overnight a shipment of weapons moved from Syria to Lebanon intended for Hezbollah, in the Janta area on the Syria-Lebanon border",
+        "descriptionHe": "דובר צה\"ל: חיל האוויר תקף הלילה משלוח אמצעי לחימה מסוריה ללבנון שיועד לחיזבאללה במרחב ג'נתא שבגבול סוריה-לבנון",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133919"
+      }
+    },
+    {
+      "id": "iranstrike-hsue376i7hs0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87413",
+      "date": "2026-11-19T17:28:36Z",
+      "title": "IranStrike event",
+      "description": "Tally reports a U.S. KC-135 tanker destroyed over Iraq",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iraq",
+      "country": "Iraq",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "hsue376i7hs0",
+        "timestamp": "2026-11-19T17:28:36+00:00",
+        "location": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Tally reports a U.S. KC-135 tanker destroyed over Iraq",
+        "descriptionHe": "לפי הסיכום, מטוס תדלוק KC-135 של ארה\"ב הושמד מעל עיראק",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87413"
+      }
+    },
+    {
+      "id": "iranstrike-3mva18crzbi00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87413",
+      "date": "2026-11-19T17:28:36Z",
+      "title": "IranStrike event",
+      "description": "Tally reports eight F-15E Strike Eagles damaged (later repaired) and an A-10 severely damaged at Muwaffaq al-Salti Air Base in September 2026, plus multiple Black Hawks damaged at Prince Hassan Air Base",
+      "category": "infrastructure",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
@@ -2256,38 +2487,38 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b2f7c4e8",
-        "text": "USS Theodore Roosevelt joins George Washington in Arabian Sea; CENTCOM carrier presence now three; Washington departing to Japan",
-        "textHe": "USS תיאודור רוזוולט הצטרף לג'ורג' וושינגטון בים ערביה; נוכחות נושאות CENTCOM כעת שלוש",
-        "severity": "low",
-        "timestamp": "2026-11-19T06:15:01+00:00",
-        "entityIds": [
-          "USA"
+        "id": "3mva18crzbi00",
+        "timestamp": "2026-11-19T17:28:36+00:00",
+        "location": "JOR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "2f0p0ntljq3o0",
-          "23rmf4ii0mm80",
-          "3dyu88auzf200"
-        ],
-        "sourceCount": 3
+        "type": "report",
+        "severity": "high",
+        "description": "Tally reports eight F-15E Strike Eagles damaged (later repaired) and an A-10 severely damaged at Muwaffaq al-Salti Air Base in September 2026, plus multiple Black Hawks damaged at Prince Hassan Air Base",
+        "descriptionHe": "לפי הסיכום, שמונה מטוסי F-15E נפגעו (לאחר מכן תוקנו) ומטוס A-10 נפגע קשות בבסיס מוואפק אל-סלטי בספטמבר 2026, וכן מספר מסוקי בלאק הוק נפגעו בבסיס הנסיך חסן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87413"
       }
     },
     {
-      "id": "iranstrike-e6c1a9d2",
+      "id": "iranstrike-1w15j8op52o00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-18T08:19:34Z",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87413",
+      "date": "2026-11-19T17:28:36Z",
       "title": "IranStrike event",
-      "description": "Iran reportedly recruits Shia Thai nationals for unconfirmed attack on Israeli embassy in Bangkok",
-      "category": "other",
-      "severity": "medium",
+      "description": "Tally reports three U.S. F-15E Strike Eagles downed over Kuwait during the war with Iran",
+      "category": "infrastructure",
+      "severity": "high",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
       "attacker_color": "#64748b",
-      "attacker_confidence": "low",
-      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
       "attacker_evidence": "",
       "location": "Iran",
       "country": "Iran",
@@ -2301,23 +2532,289 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "e6c1a9d2",
-        "text": "Iran reportedly recruits Shia Thai nationals for unconfirmed attack on Israeli embassy in Bangkok",
-        "textHe": "איראן דיווחה כי גייסה אזרחים תאילנדים שיעים לתקיפה בלתי מאומתת בשגרירות ישראלית בבנגקוק",
-        "severity": "medium",
-        "timestamp": "2026-11-18T08:19:34+00:00",
-        "entityIds": [
-          "IRN",
-          "ISR"
+        "id": "1w15j8op52o00",
+        "timestamp": "2026-11-19T17:28:36+00:00",
+        "location": "KWT",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "850epouadag0"
-        ],
-        "sourceCount": 1
+        "type": "report",
+        "severity": "high",
+        "description": "Tally reports three U.S. F-15E Strike Eagles downed over Kuwait during the war with Iran",
+        "descriptionHe": "לפי הסיכום, שלושה מטוסי F-15E של ארה\"ב הופלו מעל כווית במהלך המלחמה עם איראן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87413"
       }
-    }
-  ],
-  "events": [
+    },
+    {
+      "id": "iranstrike-1f6qvhfhn1pc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87413",
+      "date": "2026-11-19T17:28:36Z",
+      "title": "IranStrike event",
+      "description": "Tally reports a KC-135 tanker destroyed and an E-3 Sentry destroyed, with another E-3 and a KC-135 damaged, at Prince Sultan Air Base",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1f6qvhfhn1pc0",
+        "timestamp": "2026-11-19T17:28:36+00:00",
+        "location": "SAU",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Tally reports a KC-135 tanker destroyed and an E-3 Sentry destroyed, with another E-3 and a KC-135 damaged, at Prince Sultan Air Base",
+        "descriptionHe": "לפי הסיכום, מטוס תדלוק KC-135 ומטוס E-3 Sentry נהרסו ומטוס E-3 נוסף ו-KC-135 נוסף נפגעו בבסיס הוואג'ה-סולטן",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87413"
+      }
+    },
+    {
+      "id": "iranstrike-3abbv701wp000",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/133916",
+      "date": "2026-11-19T16:50:43Z",
+      "title": "IranStrike event",
+      "description": "Houthi missile attack on Riyadh apparently damaged a 80-story skyscraper housing the Saudi sovereign wealth fund; scorch marks and broken windows on five floors, no casualties reported",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3abbv701wp000",
+        "timestamp": "2026-11-19T16:50:43+00:00",
+        "location": "SAU",
+        "origin": "YEM",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Houthi missile attack on Riyadh apparently damaged a 80-story skyscraper housing the Saudi sovereign wealth fund; scorch marks and broken windows on five floors, no casualties reported",
+        "descriptionHe": "מתקפת טילים של החות'ים על ריאד ניזוק ככל הנראה גורד שחקים בן 80 קומות שבו שוכנת קרן העושר הריבונית של סעודיה; סימני חריכה וחלונות מנופצים בחמש קומות, לא דווח על נפגעים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/133916"
+      }
+    },
+    {
+      "id": "iranstrike-34jr16ppmlu00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87409",
+      "date": "2026-11-19T16:43:00Z",
+      "title": "IranStrike event",
+      "description": "Kata'ib Hezbollah agrees to withdraw from Jurf al-Sakhar and redeploy to other areas of Iraq under a deal brokered by Shi'ite political leaders to avert armed confrontation",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iraq",
+      "country": "Iraq",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "34jr16ppmlu00",
+        "timestamp": "2026-11-19T16:43:00+00:00",
+        "location": "IRQ",
+        "origin": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Kata'ib Hezbollah agrees to withdraw from Jurf al-Sakhar and redeploy to other areas of Iraq under a deal brokered by Shi'ite political leaders to avert armed confrontation",
+        "descriptionHe": "כתאיב חיזבאללה הסכימה להיערך מחדש ולצאת מג'רף אל-סח'ר לאזורים אחרים בעיראק במסגרת הסכם שתיווכו מנהיגים שיעים למניעת עימות מזוין",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87409"
+      }
+    },
+    {
+      "id": "iranstrike-1nodzfoqkkqo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87408",
+      "date": "2026-11-19T16:40:51Z",
+      "title": "IranStrike event",
+      "description": "U.S. Navy MQ-4C Triton (169660) relocates from Prince Hassan Air Base in Jordan to NAS Sigonella amid concerns over Iranian attacks on the region",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Jordan",
+      "country": "Jordan",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1nodzfoqkkqo0",
+        "timestamp": "2026-11-19T16:40:51+00:00",
+        "location": "JOR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "U.S. Navy MQ-4C Triton (169660) relocates from Prince Hassan Air Base in Jordan to NAS Sigonella amid concerns over Iranian attacks on the region",
+        "descriptionHe": "מזל\"ט MQ-4C Triton אמריקאי (169660) הועבר מבסיס הנסיך חסן בירדן לבסיס NAS סיגונלה, על רקע חששות מתקיפות איראניות באזור",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87408"
+      }
+    },
+    {
+      "id": "iranstrike-28bm9e62thc00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65708",
+      "date": "2026-11-19T14:13:17Z",
+      "title": "IranStrike event",
+      "description": "Per Barak Ravid, White House asked Pentagon and US intelligence to assess Iranian responses to each prepared US strike option, including whether any action could avoid destructive Iranian retaliation against Gulf oil and gas facilities",
+      "category": "infrastructure",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "and us intelligence to assess iranian responses to each prepared us strike option, including whether any action could avoid",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "28bm9e62thc00",
+        "timestamp": "2026-11-19T14:13:17+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Per Barak Ravid, White House asked Pentagon and US intelligence to assess Iranian responses to each prepared US strike option, including whether any action could avoid destructive Iranian retaliation against Gulf oil and gas facilities",
+        "descriptionHe": "לפי ברק רביד, הבית הלבן ביקש מהפנטגון ומהמודיעין האמריקני להעריך כיצד איראן תגיב לכל אחת מחלופות התקיפה שהכין הצבא האמריקני, כולל האם קיימת פעולה שניתן לבצע מבלי לעורר נקמה איראנית הרסנית נגד מתקני הנפט והגז של מדינות המפרץ",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65708"
+      }
+    },
+    {
+      "id": "iranstrike-v9qn7vzkfdc",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65707",
+      "date": "2026-11-19T12:59:38Z",
+      "title": "IranStrike event",
+      "description": "Israeli Navy reinforces Eilat Gulf with an additional Dvora patrol boat, transferred via the landing ship Komemiyut through the Suez Canal, amid concern over Red Sea escalation and Iranian proxy activity",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Eilat",
+      "country": "Israel",
+      "latitude": 29.5577,
+      "longitude": 34.9519,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "eilat",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "v9qn7vzkfdc",
+        "timestamp": "2026-11-19T12:59:38+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Israeli Navy reinforces Eilat Gulf with an additional Dvora patrol boat, transferred via the landing ship Komemiyut through the Suez Canal, amid concern over Red Sea escalation and Iranian proxy activity",
+        "descriptionHe": "חיל הים מתגבר כוחות במפרץ אילת עם ספינת דבורה נוספת בעקבות החשש מהסלמה בים סוף ומפעילות שלוחות איראניות",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65707"
+      }
+    },
     {
       "id": "iranstrike-28flwcojb15w0",
       "source": "IranStrike",
@@ -94971,6 +95468,50 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-v9qn7vzkfdc",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65707",
+      "date": "2026-11-19T12:59:38Z",
+      "title": "IranStrike event",
+      "description": "Israeli Navy reinforces Eilat Gulf with an additional Dvora patrol boat, transferred via the landing ship Komemiyut through the Suez Canal, amid concern over Red Sea escalation and Iranian proxy activity",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Eilat",
+      "country": "Israel",
+      "latitude": 29.5577,
+      "longitude": 34.9519,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "eilat",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "v9qn7vzkfdc",
+        "timestamp": "2026-11-19T12:59:38+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "Israeli Navy reinforces Eilat Gulf with an additional Dvora patrol boat, transferred via the landing ship Komemiyut through the Suez Canal, amid concern over Red Sea escalation and Iranian proxy activity",
+        "descriptionHe": "חיל הים מתגבר כוחות במפרץ אילת עם ספינת דבורה נוספת בעקבות החשש מהסלמה בים סוף ומפעילות שלוחות איראניות",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65707"
+      }
+    },
     {
       "id": "iranstrike-rvmqoakmvbk0",
       "source": "IranStrike",
