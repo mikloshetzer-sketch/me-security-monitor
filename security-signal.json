@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-19 00:24 UTC",
+    "updated": "2026-11-19 10:23 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,34 +8,30 @@
   "summary": {
     "period_start": "2026-11-13",
     "period_end": "2026-11-19",
-    "total_events": 97,
-    "total_risk": 100.8,
-    "normalized_risk_score": 40.3,
+    "total_events": 94,
+    "total_risk": 101.05,
+    "normalized_risk_score": 40.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 29,
-    "security": 5,
+    "military": 27,
+    "security": 6,
     "political": 10,
-    "other": 53
+    "other": 51
   },
   "source_counts": {
-    "news": 97,
+    "news": 94,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 31.8
+      "risk": 33.6
     },
     {
       "name": "Yemen",
-      "risk": 13.55
-    },
-    {
-      "name": "Iraq",
-      "risk": 9.1
+      "risk": 13.25
     },
     {
       "name": "Gaza Strip",
@@ -44,9 +40,31 @@
     {
       "name": "Israel",
       "risk": 7.25
+    },
+    {
+      "name": "Iraq",
+      "risk": 7.15
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil prices steady as Middle East shipping attacks counter supply surplus outlook - Reuters",
+      "location": "Middle East",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMnV0bXBXX1ZzNHpkcHFmanlPQ2FmczM3Z2xCcXRqRjYwTVB6SlFhZ29vbGcyM3V5a3lOMHZ3OXprMDM0ang4RVEwQmhFMTZ2QU1GT2lQN0ZPUXQyZWJ4MHR1S0JQTmE5Y0Z5dkZlemdFU0V6TWFId0pZZlFtbHVzaU1EeVl1S2RiSFdrcE95d1ZqQW9NRWlZUFNHWU9QVHNXRlZiTmEtckdWZEpScFREcVpPQ0x3MDNQeFhiZHJHMUlVQXFRNkE"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi missile threat towards Riyadh causes damage, Saudi-led coalition says - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUUVVMURmUjNxMHVQNThNQkRiUElQbkhnNVJNdkdVejBqLVVIRU1hUl9DWDhpYlFVWUtFZlo5dGNOSnFqTFU5VE93bXdGY3NaOEVmSERoWlJNOWhQN25NN3E1bGF1MEprczBsWFlkOHBDTUVLM21CSFJydjFzUFFaM2ozQU8wSTdnSENadVQ2UTNmSWhOMFBHNE1ZaDB5MURkMFM0cHZuU1BySDl0ZlQ2aDBEUEdmNUE5MnNzTnl2T2VBaV9sWUQ2Zg"
+    },
     {
       "score": 2.7,
       "date": "2026-11-18",
@@ -79,18 +97,18 @@
       "date": "2026-11-18",
       "category": "military",
       "source_type": "news",
-      "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o?at_medium=RSS&at_campaign=rss"
+      "title": "Israeli military launches rare ground operation in Gaza beyond Yellow Line",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.7,
       "date": "2026-11-18",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli military launches rare ground operation in Gaza beyond Yellow Line",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cw8r7510degno?at_medium=RSS&at_campaign=rss"
+      "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island",
+      "location": "Iran",
+      "url": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o?at_medium=RSS&at_campaign=rss"
     },
     {
       "score": 2.7,
@@ -106,24 +124,6 @@
       "date": "2026-11-17",
       "category": "military",
       "source_type": "news",
-      "title": "US strikes Iranian missile launch site on Qeshm Island, US official says - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWENzVXNRVjR0NU9lejlJWll3U01GOENvbnlKVWJuZG9ZSmwtdVRXSDRPZ3JGcGZnSGhfQmYzNnFRQ0p4d2ZaZk80Q0NKUEgtdTI3cmFwb2JxT1FOamJYVllwTFR3UV9ZN2xfMTNTTFZiS0gtSjU2Q3B6dkVLUmgyYzlpcHprNXdCMEdST0RqNkdkTEgycGFEQkVwY01yWENOcVNpYWpFYlRrRG1waGlwVHNKM3h5UHBidHpMcXlkcw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-17",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis say they launched drones towards Saudi East-West pipeline - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPa1JWbURTTkJ4Z29LYnJBSXgtalBTYm56SVUyU2l2a0tDdnRBQ2hjdHRqZHFiVnFIbG9xUHBzM2EwZ2NINFhJUncxazNCSUMwUlJkRDVDTFlvU1dLR0Z3NktuSWpMRXJkUWZuRFJQRnRRbmxTVEdyZzNQd2lyd2dWbjVhUnNUUGtKVExlMzlIY0dET0NrZ0xpUW1KTWk3YkR3S2loZEpTcWdaOUxfd1FnMzFWWFlsZmJoTFowOW9JZWxYZVVq"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-17",
-      "category": "military",
-      "source_type": "news",
       "title": "Iran fires at Kuwait after US strike on Iranian island - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMEJSYmJOTF9ISXdkYWVNd0Z3RnJvQnRjSlhEVWJ4bWo1UVVvblNOUnczc0FtOUlSODM5UzRNOUF5T3lIYTNrRVZKNEZTaVFQcnMwaG9JSWdnNkJmRVVtcTluWmFEU1k0dFVVVDJ4SWlEcUNpWEo1aktKYzFGblgxTldZSGVNRjV3N3VyMVNFelYxQ1d4Zlo3LXdQN2E4RUFuNjB4UWdYX1FxQ3pERUdCenJ3"
@@ -133,9 +133,9 @@
       "date": "2026-11-17",
       "category": "military",
       "source_type": "news",
-      "title": "Rubio says no imminent threat to Washington after report of possible Iranian dirty bomb plot - Reuters",
+      "title": "US strikes Iranian missile launch site on Qeshm Island, US official says - Reuters",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOQVVnUzJMMDJJUTh1NTl4Vy1VU2U0bjEzVkRGWFBtamliVkRZQkZud2VuZ25YSDc0VzM5aXhQWWN2YTBFSTRaV1BSNUE3aWp5bmpsV0ZSMDMyT2YxcW5LekhIVEt6Tm9Od1ItNUs1U0ZOd2tfeTJSdkJhVVEtbUFzV2d0Z1NGa0doNGljVlhVOUJNS1UwYXFjVVRxMEY2OTRGY1lHQzcxRTlXR2VnVkh3QjRENEd0VTFPMjRJdmk3bVpXUEVWS3RV"
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWENzVXNRVjR0NU9lejlJWll3U01GOENvbnlKVWJuZG9ZSmwtdVRXSDRPZ3JGcGZnSGhfQmYzNnFRQ0p4d2ZaZk80Q0NKUEgtdTI3cmFwb2JxT1FOamJYVllwTFR3UV9ZN2xfMTNTTFZiS0gtSjU2Q3B6dkVLUmgyYzlpcHprNXdCMEdST0RqNkdkTEgycGFEQkVwY01yWENOcVNpYWpFYlRrRG1waGlwVHNKM3h5UHBidHpMcXlkcw"
     }
   ]
 }
