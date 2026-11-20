@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-20 03:18 UTC",
+    "updated": "2026-11-20 12:56 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-11-14",
     "period_end": "2026-11-20",
-    "total_events": 89,
-    "total_risk": 87.25,
-    "normalized_risk_score": 34.9,
+    "total_events": 94,
+    "total_risk": 97.5,
+    "normalized_risk_score": 39.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 25,
-    "security": 6,
-    "political": 8,
-    "other": 50
+    "military": 28,
+    "security": 7,
+    "political": 5,
+    "other": 54
   },
   "source_counts": {
-    "news": 89,
+    "news": 94,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 25.55
+      "risk": 28.15
     },
     {
       "name": "Yemen",
-      "risk": 11.1
-    },
-    {
-      "name": "Gaza Strip",
-      "risk": 9.25
+      "risk": 11.45
     },
     {
       "name": "Iraq",
-      "risk": 8.25
+      "risk": 10.25
     },
     {
-      "name": "Israel",
-      "risk": 5.2
+      "name": "Gaza Strip",
+      "risk": 9.6
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 8.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-20",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition says it intercepted Houthi missile targeting southern region - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQVmhCWjF6eHlrWHRIcHA1Z2p0QlM5cEtnMnFFd0hsMDdyMk51RGx2SEJpc1NkM2Z3NENIc04zNnppdVRhQkotTVJJcGF5WGJpbDBQQXF0Y0g5SkpzVzhKNkpVemRTaFJmVjA4MVFaSHlKS25JM0h3UkstLWtQdTlnWEptSnktbzlDT1UycmhSNF9yRzFPMWhkby1ubHd6S1BTYk83aExGSGpnN05LRTNWcS1wU0MwMktVOFFfWldqTVhQQ3VISGEwMVkyb0d2MEU"
+    },
     {
       "score": 2.7,
       "date": "2026-11-19",
@@ -55,6 +64,15 @@
       "title": "Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVE54c3Eza3gxMTYwRmh4U0tZR0ZvWmctdm1OV1dkN1BzZXNXdFFiTjZkZlc5Mk01YVQzN2ZkZFZzUVVPdmMtc3ZzRjJZY28wdFE3ejFtcnlkbWZmUkZicXFKMU1ydEJZalZwZlFnQkhWSGVaMXFUUkt5T0pVaUp1WUxJMjdiVDhCWnlOLXRKaFh2UXhvQnNNQnNnZVBkWEdwMFBPOEEtc1ZzOTFIOHNfZklhZWJuQVVJaDBpU3hPNk4ycllOcTg4WmZoRG5zaDg"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-19",
+      "category": "military",
+      "source_type": "news",
+      "title": "Houthi attacks on Saudi Arabia - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTXVIQUMwVTA5TllQb203X3V6XzNUVlNqaHhXd3NlNjJ0VF9rVUp1OTdRRjBWaVFMREswSVlfNjVESFAwb2w0NGMyVk5LeWNjTU42RnBIOWRsR05kWFktNFhrNnJtMm84cGNmekdUYmlvREJLQkt6NjUxMEZ2Sy1wUjVQbnhMS2JG"
     },
     {
       "score": 2.7,
@@ -70,9 +88,9 @@
       "date": "2026-11-19",
       "category": "military",
       "source_type": "news",
-      "title": "Houthi attacks on Saudi Arabia - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTXVIQUMwVTA5TllQb203X3V6XzNUVlNqaHhXd3NlNjJ0VF9rVUp1OTdRRjBWaVFMREswSVlfNjVESFAwb2w0NGMyVk5LeWNjTU42RnBIOWRsR05kWFktNFhrNnJtMm84cGNmekdUYmlvREJLQkt6NjUxMEZ2Sy1wUjVQbnhMS2JG"
+      "title": "Houthi strike damages Riyadh’s tallest skyscraper - Reuters",
+      "location": "Riyadh",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBlellNcl9iOFk5YURTaUJXSTRKZkVTWk13NUhyS3ptX3VUOVMzVkV4VFdGQjZpQU9DMFdkNUNXMUZuNWl5SWxxdTZUcXIyNE1NM3VaOHBGWG41RThNQjJ3WjA1Tm0zU28"
     },
     {
       "score": 2.7,
@@ -118,24 +136,6 @@
       "title": "UAE's ADNOC L&S says one crew member missing after attack on its vessel in Hormuz - Reuters",
       "location": "United Arab Emirates",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOd0otMXozQUNrekhJLWlpdzg1WW8tcVJZVkhPVkNrTWNRNmY0MDBPLVZnWXNraWJ0X3drck5ST0RHMThaazY5Vmk2ZWVCZVY1UlltQjVOTU5MeEh1N2F4ck5TaVRQYk0yNjlYeERUNU1fQ2dOOEd6bjUzME44dGdiNkpUSEl5Tm5uT3JYZW5nMTdVZEZQVllVaVFScHRxM1BibUk2SXZiZWZoUjFnZEFjbWpoTFNHMk5kRElfWi1CQVhFTTFlT0E"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Bahrain's Bapco refinery to reach full capacity by year-end after attacks, CEO says - Reuters",
-      "location": "Bahrain",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUHF3WXpZbUFmN2FSLVpvVDRTTFRPVkVwZDRUR29oYTJONHdWLWd5WUxIRERKQUZldzRfYjFtSlYzZ1lkbnJqZ3R2RkdCcEpJN3hxWXRydW1oMEtvb3Rsdk93VkdMdzFtWHVyWllEdzJPSmVKYWFmWkNQX2NabWFpaXRzbEJZaGRJZDhwc1VGZXZwT2JDOTRKOGoxSk85RGJPN1cyS3BvdlJqQWFzZEhFSGJHQTRtODFaeF82U2ZhNV9wMk9kbFU5cjJB"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-18",
-      "category": "military",
-      "source_type": "news",
-      "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island",
-      "location": "Iran",
-      "url": "https://www.bbc.co.uk/news/articles/cw4gn9jeqjq7o?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
