@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T04:17:40Z",
+  "generated_at": "2026-11-21T13:03:13Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,17 +54,17 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 2066,
+    "normalized_events": 2068,
     "map_visualizable_events": 283,
-    "non_mappable_events": 1783,
-    "developments": 5
+    "non_mappable_events": 1785,
+    "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2066,
+      "total_events": 2068,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-20T20:34:39Z",
+      "latest_event_date": "2026-11-21T10:50:52Z",
       "geocoded_events": 283,
       "geocoded_share": 13.7,
       "top_category": "infrastructure",
@@ -73,25 +73,21 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 67,
-        "previous": 72,
-        "delta": -5,
-        "percent_change": -6.9,
+        "current": 66,
+        "previous": 70,
+        "delta": -4,
+        "percent_change": -5.7,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 274,
-        "previous": 308,
-        "delta": -34,
-        "percent_change": -11.0,
-        "direction": "stable"
+        "current": 268,
+        "previous": 319,
+        "delta": -51,
+        "percent_change": -16.0,
+        "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-05-25",
-        "count": 0
-      },
       {
         "date": "2026-05-26",
         "count": 0
@@ -807,13 +803,17 @@
       {
         "date": "2026-11-20",
         "count": 12
+      },
+      {
+        "date": "2026-11-21",
+        "count": 2
       }
     ],
     "category_counts": {
       "infrastructure": 615,
       "missile": 448,
       "strike": 286,
-      "drone": 239,
+      "drone": 241,
       "airstrike": 152,
       "movement": 132,
       "ground": 78,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1076,
+      "medium": 1078,
       "high": 628,
       "low": 349,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1381,
+      "unknown": 1383,
       "iran": 429,
       "israel": 216,
       "usa": 40
@@ -842,7 +842,7 @@
       },
       {
         "name": "Iran",
-        "count": 448
+        "count": 449
       },
       {
         "name": "Lebanon",
@@ -854,7 +854,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 91
+        "count": 92
       },
       {
         "name": "Red Sea",
@@ -904,7 +904,7 @@
       },
       {
         "name": "Iran",
-        "count": 583
+        "count": 584
       },
       {
         "name": "Lebanon",
@@ -920,7 +920,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 91
+        "count": 92
       },
       {
         "name": "Israel",
@@ -945,33 +945,41 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11384,
+    "totalCount": 11386,
     "spotlight": {
       "event": {
-        "id": "2njj9z8872i00",
-        "timestamp": "2026-11-20T16:57:31+00:00",
+        "id": "1qhj26ubffr40",
+        "timestamp": "2026-11-21T10:50:51+00:00",
         "location": "IRN",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "high",
-        "description": "CBS reports, citing sources, that Israel and the US are considering a new joint attack on Iran in the near term to target Iran's missile production and underground nuclear and military infrastructure; no decision confirmed",
-        "descriptionHe": "רשת CBS מדווחת, על פי מקורות, כי ישראל וארה\"ב שוקלות מתקפה משותפת חדשה נגד איראן בטווח הקרוב, שתכוון לייצור הטילים הבליסטיים ולתשתיות הצבאיות והגרעיניות התת-קרקעיות; טרם התקבלה החלטה",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/133969"
+        "type": "intercept",
+        "severity": "medium",
+        "description": "IRGC claims shootdown of USAF MQ-9 drone (its 58th such claim) over the Strait of Hormuz",
+        "descriptionHe": "משמרות המהפכה טוענות להפלת מזל\"ט MQ-9 של חיל האוויר האמריקאי (הטענה ה-58 מסוג זה) מעל מצר הורמוז",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87483"
       },
-      "headline": "US, Israel Reportedly Planning Fresh Joint Strike on Iran",
-      "headlineHe": "ארה\"ב וישראל בתכנון למתקפה משותפת חדשה על איראן",
-      "summary": "CBS sources indicate the operation would target Iranian missile production and nuclear infrastructure, though no official confirmation has been made by either government.",
-      "summaryHe": "מקורות ב-CBS מצביעים שהפעולה תכוונת לייצור טילים ותשתיות גרעיניות איראניות, אם כי לא התקבלה אישור רשמי מאף אחת מהממשלות.",
-      "pickedAt": "2026-11-21T00:00:25.036Z",
+      "headline": "Iran Claims 58th U.S. Drone Shootdown Over Hormuz Strait",
+      "headlineHe": "איראן טוענת להפילה של כ-58 מל\"ט אמריקני מעל מצר הורמוז",
+      "summary": "IRGC claimed interception of an MQ-9 Reaper drone near the strategic waterway, marking an escalation in direct confrontations between Iranian and U.S. forces in the region.",
+      "summaryHe": "הירג\"ק טען להשמדת מל\"ט MQ-9 Reaper ליד המעבר הימי הקריטי, מסמן התגברות בעימותים ישירים בין כוחות איראניים ואמריקניים באזור.",
+      "pickedAt": "2026-11-21T12:45:25.717Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-11-21T04:15:17.338Z",
+    "lastUpdated": "2026-11-21T13:00:17.663Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1512,226 +1520,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 95,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-11-21T04:00:14.115Z",
+      "lastUpdate": "2026-11-21T13:00:13.990Z",
       "internetHistory": [
-        {
-          "t": "2026-11-20T04:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T04:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T04:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T04:30:00.000Z",
-          "v": 94
-        },
-        {
-          "t": "2026-11-20T04:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T04:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T05:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T05:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T05:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T05:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T05:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T05:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T06:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T06:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T06:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T06:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T06:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T06:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T07:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T07:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T07:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T07:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T08:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T08:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T10:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T10:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T11:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T11:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T11:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T11:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T11:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T12:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T12:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T12:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T12:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T12:50:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-11-20T13:00:00.000Z",
           "v": 96
@@ -2087,22 +1879,328 @@
         {
           "t": "2026-11-21T03:40:00.000Z",
           "v": 95
+        },
+        {
+          "t": "2026-11-21T03:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T04:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T04:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T04:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T04:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T04:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T04:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T05:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T05:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T05:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T05:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T05:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T05:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T06:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T06:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T06:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T06:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T06:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-21T06:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T07:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T07:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T07:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T07:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T07:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T07:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T08:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T08:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T08:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T08:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T08:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T08:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T09:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T09:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T09:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T10:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T10:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T10:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T10:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T11:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T11:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T11:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T11:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T11:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T12:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T12:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T12:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T12:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T12:40:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-21T04:00:14.115Z"
+    "lastUpdated": "2026-11-21T13:00:13.990Z"
   },
   "developments": [
     {
-      "id": "iranstrike-2njj9z8872i00",
+      "id": "iranstrike-7a2f5e1c",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-21T10:50:52Z",
+      "title": "IranStrike event",
+      "description": "Iran reports 2 US drone interceptions in Hormuz Strait region; unconfirmed",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7a2f5e1c",
+        "text": "Iran reports 2 US drone interceptions in Hormuz Strait region; unconfirmed",
+        "textHe": "איראן דיווחה על 2 יירוטי מל\"טים אמריקנים באזור תעלת הורמוז",
+        "severity": "high",
+        "timestamp": "2026-11-21T10:50:52+00:00",
+        "entityIds": [
+          "IRN",
+          "USA"
+        ],
+        "eventIds": [
+          "11s4i4far6b40",
+          "1qhj26ubffr40"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-9c3d7b4a",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-20T15:00:00Z",
+      "title": "IranStrike event",
+      "description": "Iran strikes oil tanker off Oman; reports 6 tankers hit in Hormuz Strait",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran strikes oil tanker off oman;",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "9c3d7b4a",
+        "text": "Iran strikes oil tanker off Oman; reports 6 tankers hit in Hormuz Strait",
+        "textHe": "איראן תקפה אונייה בנמל עומאן; דיווחים על 6 אוניות בתעלת הורמוז",
+        "severity": "high",
+        "timestamp": "2026-11-20T15:00:00+00:00",
+        "entityIds": [
+          "IRN",
+          "OMN"
+        ],
+        "eventIds": [
+          "263ic4bes0rk0",
+          "36vkyymnmyq00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-5e8c2f9d",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-20T16:57:31Z",
       "title": "IranStrike event",
-      "description": "US-Israel consider joint strike on Iran's missile, nuclear infrastructure",
+      "description": "US, Israel reportedly considering joint strike on Iran's military infrastructure",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -2110,7 +2208,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "us-israel consider joint strike on iran's missile, nuclear infrastructure ארה\"ב ו",
+      "attacker_evidence": "us, israel reportedly considering joint strike on iran's military infrastructure ארה\"ב וישראל שו",
       "location": "Israel",
       "country": "Israel",
       "latitude": null,
@@ -2123,9 +2221,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2njj9z8872i00",
-        "text": "US-Israel consider joint strike on Iran's missile, nuclear infrastructure",
-        "textHe": "ארה\"ב וישראל שוקלות תקיפה משותפת על תשתיות טילים וגרעיניות בעיראן",
+        "id": "5e8c2f9d",
+        "text": "US, Israel reportedly considering joint strike on Iran's military infrastructure",
+        "textHe": "ארה\"ב וישראל שוקלות תקיפה משותפת על תשתיות צבאיות איראנים",
         "severity": "high",
         "timestamp": "2026-11-20T16:57:31+00:00",
         "entityIds": [
@@ -2140,22 +2238,121 @@
       }
     },
     {
-      "id": "iranstrike-36vkyymnmyq00",
+      "id": "iranstrike-4b1d6e3f",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-20T14:07:39Z",
+      "date": "2026-11-20T18:48:08Z",
       "title": "IranStrike event",
-      "description": "IRGC Navy strikes 6 oil tankers in Strait of Hormuz; exports plummet",
+      "description": "Kata'ib Hezbollah redeployment and PMF rotation near Baghdad completed",
       "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc navy strikes 6 oil tankers in strait of hormuz;",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Baghdad",
+      "country": "Iraq",
+      "latitude": 33.3152,
+      "longitude": 44.3661,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "baghdad",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "4b1d6e3f",
+        "text": "Kata'ib Hezbollah redeployment and PMF rotation near Baghdad completed",
+        "textHe": "ספוג כתאיב חזבאללה וסיבוב כוחות PMF ליד בגדד הסתיים",
+        "severity": "medium",
+        "timestamp": "2026-11-20T18:48:08+00:00",
+        "entityIds": [
+          "IRQ",
+          "LBN"
+        ],
+        "eventIds": [
+          "5p0ab0pu7300",
+          "3kwtapjesnc00"
+        ],
+        "sourceCount": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-11s4i4far6b40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87484",
+      "date": "2026-11-21T10:50:52Z",
+      "title": "IranStrike event",
+      "description": "IRGC claims shootdown of USAF MQ-1C drone over Qeshm Island, Iran",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "11s4i4far6b40",
+        "timestamp": "2026-11-21T10:50:52+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "intercept",
+        "severity": "medium",
+        "description": "IRGC claims shootdown of USAF MQ-1C drone over Qeshm Island, Iran",
+        "descriptionHe": "משמרות המהפכה טוענות להפלת מזל\"ט MQ-1C של חיל האוויר האמריקאי מעל אי קשם שבאיראן",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87484"
+      }
+    },
+    {
+      "id": "iranstrike-1qhj26ubffr40",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87483",
+      "date": "2026-11-21T10:50:51Z",
+      "title": "IranStrike event",
+      "description": "IRGC claims shootdown of USAF MQ-9 drone (its 58th such claim) over the Strait of Hormuz",
+      "category": "drone",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
       "location": "Persian Gulf",
       "country": "Persian Gulf",
       "latitude": null,
@@ -2168,157 +2365,29 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "36vkyymnmyq00",
-        "text": "IRGC Navy strikes 6 oil tankers in Strait of Hormuz; exports plummet",
-        "textHe": "חיל הים של ח\"י כן תקף 6 מכליות בנמל הורמוז; ייצוא נפט צנח",
-        "severity": "high",
-        "timestamp": "2026-11-20T14:07:39+00:00",
-        "entityIds": [
-          "IRN",
-          "OMN"
+        "id": "1qhj26ubffr40",
+        "timestamp": "2026-11-21T10:50:51+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
         ],
-        "eventIds": [
-          "36vkyymnmyq00"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-263ic4bes0rk0",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-20T15:00:00Z",
-      "title": "IranStrike event",
-      "description": "Unknown projectile strikes oil tanker north of Hasab; fire onboard",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "263ic4bes0rk0",
-        "text": "Unknown projectile strikes oil tanker north of Hasab; fire onboard",
-        "textHe": "קליע לא זוהה פגע בטנקר דלק צפונית להסב; שריפה על הסיפון",
+        "type": "intercept",
         "severity": "medium",
-        "timestamp": "2026-11-20T15:00:00+00:00",
-        "entityIds": [
-          "IRN",
-          "OMN"
+        "description": "IRGC claims shootdown of USAF MQ-9 drone (its 58th such claim) over the Strait of Hormuz",
+        "descriptionHe": "משמרות המהפכה טוענות להפלת מזל\"ט MQ-9 של חיל האוויר האמריקאי (הטענה ה-58 מסוג זה) מעל מצר הורמוז",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "drone",
+            "count": 1,
+            "intercepted": 1
+          }
         ],
-        "eventIds": [
-          "263ic4bes0rk0"
-        ],
-        "sourceCount": 1
+        "sourceUrl": "https://t.me/CIG_telegram/87483"
       }
     },
-    {
-      "id": "iranstrike-2f1yse46dfk00",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-20T15:20:00Z",
-      "title": "IranStrike event",
-      "description": "Missile impacts near Qeshm Island; Iran accuses US-Israel without evidence",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Israel",
-      "country": "Israel",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "2f1yse46dfk00",
-        "text": "Missile impacts near Qeshm Island; Iran accuses US-Israel without evidence",
-        "textHe": "טיל פגע ליד קשם; איראן מאשימה ארה\"ב וישראל ללא ראיות",
-        "severity": "medium",
-        "timestamp": "2026-11-20T15:20:00+00:00",
-        "entityIds": [
-          "IRN",
-          "USA",
-          "ISR"
-        ],
-        "eventIds": [
-          "2f1yse46dfk00"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-5p0ab0pu7300",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-20T18:48:08Z",
-      "title": "IranStrike event",
-      "description": "Kata'ib Hezbollah redeployed from Jurf al-Sakhr toward Syrian border",
-      "category": "other",
-      "severity": "low",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "",
-      "country": "",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "5p0ab0pu7300",
-        "text": "Kata'ib Hezbollah redeployed from Jurf al-Sakhr toward Syrian border",
-        "textHe": "כתאיב חזבאללה הוצאו מיורפ אל-סכר לכיוון הגבול הסורי",
-        "severity": "low",
-        "timestamp": "2026-11-20T18:48:08+00:00",
-        "entityIds": [
-          "IRQ",
-          "SYR"
-        ],
-        "eventIds": [
-          "5p0ab0pu7300",
-          "3kwtapjesnc00"
-        ],
-        "sourceCount": 1
-      }
-    }
-  ],
-  "events": [
     {
       "id": "iranstrike-2fd60vtydjk00",
       "source": "IranStrike",
