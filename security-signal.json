@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-21 12:42 UTC",
+    "updated": "2026-11-21 20:32 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,26 +8,26 @@
   "summary": {
     "period_start": "2026-11-15",
     "period_end": "2026-11-21",
-    "total_events": 93,
-    "total_risk": 92.0,
-    "normalized_risk_score": 36.8,
+    "total_events": 92,
+    "total_risk": 97.4,
+    "normalized_risk_score": 39.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 28,
+    "military": 29,
     "security": 5,
     "political": 7,
-    "other": 53
+    "other": 51
   },
   "source_counts": {
-    "news": 93,
+    "news": 92,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 26.25
+      "risk": 32.3
     },
     {
       "name": "Saudi Arabia",
@@ -35,18 +35,45 @@
     },
     {
       "name": "Iraq",
-      "risk": 10.75
-    },
-    {
-      "name": "Yemen",
-      "risk": 8.75
+      "risk": 11.25
     },
     {
       "name": "Gaza Strip",
-      "risk": 8.1
+      "risk": 11.1
+    },
+    {
+      "name": "Riyadh",
+      "risk": 7.5
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain says Iranian attack hits industrial facility, causes fire - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNER6Q2NPRk9TUmtuX1hhQ21MdEdsc05rT0FxZzE4RTczVDJqbjN1My04Zm4tUkd1aUJ4cDdXSTM3ZVl6UVg0S0hLTWs1d1pjLTRDcVgtM1dVeVNvWFZHd1g3NEZCdm5HMlR1U09Cd1JfWUg1cEQ0aUZSU19uSHowSWhEUERvNE5OM1NxTDR1T3VYV21rb25pX1NSOFdFcHlOd3VzYkpMT2VzMlYwRVVSMmFuc2J3SkZ5dUM3Z0M0YXEyZw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMEdyaGtabnZRdHhGLWIzeGx0MkhleGZEYlVpTmFySVFYdlUtd3JfamE1YjlXQmwzWW1xTE83UzJRZ2lra1pEWmFsTXZMbDRlUm9CNTllRHdXR0VWRExIaTlQanhkTDFaU2RjU2dCYkI3WDd2WElmSlFfY1pwVkdxVEw0cDBYNGEwTGFLUGFqUTZPMFIxU0Y4Z25pREJEai16RGNfX3JlWXZOZ05hT3liNUJnU2stVlQ5RV9NZmVBUmhlQQ"
+    },
     {
       "score": 3.0,
       "date": "2026-11-21",
@@ -109,33 +136,6 @@
       "title": "Saudi coalition and Houthis exchange threats to bomb key ports - Al Jazeera",
       "location": "Saudi Arabia",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPR0lyUzFUbGtKdUpJRmQ5eE1DT3c1QmE1RFdHOTdDNjRHNkVQSEIwSTN6eXVtUllIMFJWM3pWd0g0RTRRRUhhazlIVlY1Y29nelc5Sk93X3hyVng0b1BmV3ZOMWN3bnhNU0NNaGJoaV8wWnNRc01lakY2Zy1ZSWRILXdid2U1cW1Kby05ZkxDTW9XWWNJTG0zMVFEdjk1ZGdURktjODJkWdIBrAFBVV95cUxQUzJzcWRXOGZtQU81NmZYaFNzaklQYzhtdHNUZWVWMUFjVHlPa1dmb0RCN1AxSVZEV0plazBYS09oYmhGNXY4WFZvcVZKU05JT1JMekpfR2pFNWpnUVJ5bHpsbl8xZFRreGdtUkhkWkE2cWZnVEYtbmc0X2VpeldEc21LaXdwU0cteVYtaUlSeFk4bmNYekpXYVc5UUdxd01SMVhGXy1BMXhJcXNx"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Riyadh’s tallest skyscraper hit in Houthi strike on Saudi wealth fund HQ - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUUVVMURmUjNxMHVQNThNQkRiUElQbkhnNVJNdkdVejBqLVVIRU1hUl9DWDhpYlFVWUtFZlo5dGNOSnFqTFU5VE93bXdGY3NaOEVmSERoWlJNOWhQN25NN3E1bGF1MEprczBsWFlkOHBDTUVLM21CSFJydjFzUFFaM2ozQU8wSTdnSENadVQ2UTNmSWhOMFBHNE1ZaDB5MURkMFM0cHZuU1BySDl0ZlQ2aDBEUEdmNUE5MnNzTnl2T2VBaV9sWUQ2Zg"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks on Saudi Arabia - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTXVIQUMwVTA5TllQb203X3V6XzNUVlNqaHhXd3NlNjJ0VF9rVUp1OTdRRjBWaVFMREswSVlfNjVESFAwb2w0NGMyVk5LeWNjTU42RnBIOWRsR05kWFktNFhrNnJtMm84cGNmekdUYmlvREJLQkt6NjUxMEZ2Sy1wUjVQbnhMS2JG"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-19",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi strike damages Riyadh’s tallest skyscraper - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBlellNcl9iOFk5YURTaUJXSTRKZkVTWk13NUhyS3ptX3VUOVMzVkV4VFdGQjZpQU9DMFdkNUNXMUZuNWl5SWxxdTZUcXIyNE1NM3VaOHBGWG41RThNQjJ3WjA1Tm0zU28"
     }
   ]
 }
