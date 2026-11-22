@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T07:29:22Z",
+  "generated_at": "2026-11-22T15:41:44Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,18 +54,18 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 2081,
-    "map_visualizable_events": 283,
-    "non_mappable_events": 1798,
-    "developments": 3
+    "normalized_events": 2086,
+    "map_visualizable_events": 284,
+    "non_mappable_events": 1802,
+    "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2081,
+      "total_events": 2086,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-22T07:08:28Z",
-      "geocoded_events": 283,
+      "latest_event_date": "2026-11-22T14:51:42Z",
+      "geocoded_events": 284,
       "geocoded_share": 13.6,
       "top_category": "infrastructure",
       "top_location": "Unknown",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 67,
-        "previous": 55,
-        "delta": 12,
-        "percent_change": 21.8,
+        "current": 70,
+        "previous": 54,
+        "delta": 16,
+        "percent_change": 29.6,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 273,
-        "previous": 327,
+        "current": 275,
+        "previous": 329,
         "delta": -54,
-        "percent_change": -16.5,
+        "percent_change": -16.4,
         "direction": "decrease"
       }
     },
@@ -806,16 +806,16 @@
       },
       {
         "date": "2026-11-22",
-        "count": 2
+        "count": 7
       }
     ],
     "category_counts": {
-      "infrastructure": 618,
-      "missile": 453,
+      "infrastructure": 621,
+      "missile": 454,
       "strike": 286,
       "drone": 243,
       "airstrike": 152,
-      "movement": 133,
+      "movement": 134,
       "ground": 78,
       "explosion": 77,
       "alert": 22,
@@ -824,13 +824,13 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1087,
-      "high": 631,
-      "low": 350,
+      "medium": 1089,
+      "high": 632,
+      "low": 352,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1390,
+      "unknown": 1395,
       "iran": 434,
       "israel": 217,
       "usa": 40
@@ -842,11 +842,11 @@
       },
       {
         "name": "Iran",
-        "count": 458
+        "count": 460
       },
       {
         "name": "Lebanon",
-        "count": 130
+        "count": 131
       },
       {
         "name": "Jordan",
@@ -874,11 +874,11 @@
       },
       {
         "name": "Syria",
-        "count": 37
+        "count": 38
       },
       {
         "name": "Nabatieh",
-        "count": 30
+        "count": 31
       },
       {
         "name": "Erbil",
@@ -904,11 +904,11 @@
       },
       {
         "name": "Iran",
-        "count": 593
+        "count": 595
       },
       {
         "name": "Lebanon",
-        "count": 161
+        "count": 163
       },
       {
         "name": "Jordan",
@@ -932,7 +932,7 @@
       },
       {
         "name": "Syria",
-        "count": 51
+        "count": 52
       },
       {
         "name": "Palestinian territories",
@@ -945,34 +945,40 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11399,
+    "totalCount": 11404,
     "spotlight": {
       "event": {
-        "id": "jfm4zzurttk0",
-        "timestamp": "2026-11-22T07:08:28+00:00",
+        "id": "377ks2j3p4400",
+        "timestamp": "2026-11-22T11:44:53+00:00",
         "location": "BHR",
         "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "report",
-        "severity": "medium",
-        "description": "Bahrain calls on UN Security Council to act over Iranian attacks on a targeted industrial facility, demands compensation, cites Resolution 2817",
-        "descriptionHe": "בחריין קוראת למועצת הביטחון של האו\"ם לפעול נגד התקפות איראניות על מתקן תעשייתי, דורשת פיצוי ומצטטת את החלטה 2817",
-        "source": "OSINTdefender",
-        "sourceUrl": "https://t.me/OSINTdefender/20819"
+        "type": "strike",
+        "severity": "high",
+        "description": "IRGC attacks two US bases in Bahrain (Sheikh Isa and Al-Jafeer) with 3 ballistic missiles and drones per Fars; Bahrain Interior Ministry confirms civilians injured in Iranian attacks",
+        "descriptionHe": "משמרות המהפכה תקפו שני בסיסים אמריקאים בבחריין - שיח' עיסא ואלג'פיר, לפי פארס; משרד הפנים של בחריין מאשר פציעת אזרחים בתקיפות האיראניות",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/134044"
       },
-      "headline": "Bahrain demands UN action after Iranian attack on industrial facility",
-      "headlineHe": "בחריין דורשת פעולת האו\"ם לאחר התקפה איראנית על מתקן תעשייתי",
-      "summary": "This follows Iran's confirmed barrage of missiles and drones at US bases in Bahrain hours earlier, escalating regional tensions over the Strait of Hormuz.",
-      "summaryHe": "זה עוקב אחרי הגזר המאושר של טילים וכלים חסרי אדם איראנים על בסיסי צה\"ל בחריין שעות קודם לכן, מה שמעמיק את המתיחויות באזור.",
-      "pickedAt": "2026-11-22T07:15:26.007Z",
-      "state": "SPOTLIGHT"
+      "headline": "Iran Launches Ballistic Missiles, Drones at US Bases in Bahrain",
+      "headlineHe": "איראן שיגרה טילים בליסטיים וכלי טיס חמקניים לבסיסים אמריקניים בחריין",
+      "summary": "The IRGC attack on Sheikh Isa and Al-Jafeer bases marks a direct Iranian strike on US military installations in the Gulf, with Bahrain confirming civilian casualties from the barrage.",
+      "summaryHe": "התקיפה של הדף\"ל על הבסיסים מסמנת התקפה ישירה איראנית על מתקנים צבאיים אמריקניים בתוך המפרץ, וחריין אישרה הפגעות באזרחים מההמצע.",
+      "pickedAt": "2026-11-22T15:30:26.134Z",
+      "state": "TODAY"
     },
-    "lastUpdated": "2026-11-22T07:27:17.365Z",
+    "lastUpdated": "2026-11-22T15:39:17.600Z",
     "stale": false,
-    "viewerCount": 3,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1513,214 +1519,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": 97,
       "cellular": null,
-      "lastUpdate": "2026-11-22T07:00:16.099Z",
+      "lastUpdate": "2026-11-22T15:30:17.071Z",
       "internetHistory": [
-        {
-          "t": "2026-11-21T07:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T07:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T07:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T07:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T08:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T08:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T10:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T10:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T10:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-21T11:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T11:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T11:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T11:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T12:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T12:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T12:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T12:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T12:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T12:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T13:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T13:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T13:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T13:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T13:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T13:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T14:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T14:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T14:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T14:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T14:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T14:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T15:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-21T15:20:00.000Z",
-          "v": 97
-        },
         {
           "t": "2026-11-21T15:30:00.000Z",
           "v": 97
@@ -2088,22 +1890,226 @@
         {
           "t": "2026-11-22T06:40:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-11-22T06:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T07:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T07:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T07:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-22T07:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-22T07:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T07:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T08:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T08:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T08:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T08:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T08:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T08:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T09:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T09:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T09:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T10:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T10:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T10:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T10:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T10:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T10:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T11:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T11:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T11:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T11:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T11:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T11:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T12:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T12:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T12:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T12:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T12:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T12:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T13:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T13:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T13:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-22T13:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T13:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T13:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T14:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T14:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T14:20:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T14:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T14:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T14:50:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T15:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-22T15:10:00.000Z",
+          "v": 97
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-22T07:00:16.099Z"
+    "lastUpdated": "2026-11-22T15:30:17.071Z"
   },
   "developments": [
     {
-      "id": "iranstrike-irn_bhr01",
+      "id": "iranstrike-irn_bhr_01",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-22T07:08:28Z",
+      "date": "2026-11-22T11:44:53Z",
       "title": "IranStrike event",
-      "description": "Iran launches missiles and drones at US bases in Bahrain; US prepares retaliatory strikes",
+      "description": "Iran strikes US bases in Bahrain with 3 ballistic missiles, drones; civilians injured",
       "category": "other",
       "severity": "critical",
       "attacker": "iran",
@@ -2111,7 +2117,7 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches missiles and drones at us bases in bahrain;",
+      "attacker_evidence": "iran strikes us bases in bahrain with 3 ballistic missiles, dr",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2124,44 +2130,44 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "irn_bhr01",
-        "text": "Iran launches missiles and drones at US bases in Bahrain; US prepares retaliatory strikes",
-        "textHe": "איראן שיגרה טילים וכלים מרחוקים לבסיסים אמריקניים בבחריין; ארה״ב מתכננת תגובה",
+        "id": "irn_bhr_01",
+        "text": "Iran strikes US bases in Bahrain with 3 ballistic missiles, drones; civilians injured",
+        "textHe": "איראן תקפה בסיסים אמריקניים בבחריין עם 3 טילים בליסטיים וכלים כנושאי זיקוקים; אזרחים נפצעו",
         "severity": "critical",
-        "timestamp": "2026-11-22T07:08:28+00:00",
+        "timestamp": "2026-11-22T11:44:53+00:00",
         "entityIds": [
           "IRN",
           "USA",
           "BHR"
         ],
         "eventIds": [
+          "377ks2j3p4400",
           "210lk9amr76o0",
-          "2h28etzyxua00",
-          "jfm4zzurttk0",
           "2din0ecfde680",
+          "2wf290914p200",
           "2ub7z9f26w800",
-          "2wf290914p200"
+          "1x1s3pxfgvfk0"
         ],
-        "sourceCount": 4
+        "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-irn_usa02",
+      "id": "iranstrike-usa_irn_02",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-22T04:07:29Z",
+      "date": "2026-11-21T22:09:29Z",
       "title": "IranStrike event",
-      "description": "Iran air defense targets US F-16C and F-35; both aircraft declare emergency, land in UAE",
+      "description": "US preparing strikes on southern Iran in response to Bahrain attacks",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
+      "attacker_confidence": "medium",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran air defense targets us f-16c and f-35;",
+      "attacker_evidence": "us preparing strikes on southern iran in response to bahrain attacks ארה\"ב מכינה תקפות",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2174,32 +2180,76 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "irn_usa02",
-        "text": "Iran air defense targets US F-16C and F-35; both aircraft declare emergency, land in UAE",
-        "textHe": "הגנת אוויר איראנית תקפה F-16C ו-F-35 אמריקניים; שני מטוסים הצהירו חירום",
+        "id": "usa_irn_02",
+        "text": "US preparing strikes on southern Iran in response to Bahrain attacks",
+        "textHe": "ארה\"ב מכינה תקפות על דרום איראן בתגובה לתקפות בבחריין",
         "severity": "high",
-        "timestamp": "2026-11-22T04:07:29+00:00",
+        "timestamp": "2026-11-21T22:09:29+00:00",
         "entityIds": [
-          "IRN",
           "USA",
-          "ARE"
+          "IRN"
         ],
         "eventIds": [
+          "2h28etzyxua00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-usa_irn_03",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-21T18:37:33Z",
+      "title": "IranStrike event",
+      "description": "F-16C emergency landing after Iranian air defense engagement over Qeshm Island",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "usa_irn_03",
+        "text": "F-16C emergency landing after Iranian air defense engagement over Qeshm Island",
+        "textHe": "F-16C נחת חירום לאחר התערבות הגנת אויר איראנית מעל קיש",
+        "severity": "high",
+        "timestamp": "2026-11-21T18:37:33+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "m32qjbogl340",
           "1iozkmhtq6m80",
-          "12bwfn9kvnds0"
+          "3e31580ze5u00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-irn_usa03",
+      "id": "iranstrike-irn_domestic",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-21T10:50:52Z",
+      "date": "2026-11-22T10:30:13Z",
       "title": "IranStrike event",
-      "description": "IRGC claims shootdown of two USAF drones over Strait of Hormuz and Qeshm Island",
+      "description": "Iran implements nationwide power outages amid fuel shortage, war-related infrastructure damage",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2208,8 +2258,8 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2220,24 +2270,295 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "irn_usa03",
-        "text": "IRGC claims shootdown of two USAF drones over Strait of Hormuz and Qeshm Island",
-        "textHe": "הגדודים קודס טוענים להפלת שני כלים אמריקניים מעל תעלת הורמוז",
+        "id": "irn_domestic",
+        "text": "Iran implements nationwide power outages amid fuel shortage, war-related infrastructure damage",
+        "textHe": "איראן מטילה הפסקות חשמל ארציות בגלל מחסור דלק ונזק לתשתיות",
         "severity": "medium",
-        "timestamp": "2026-11-21T10:50:52+00:00",
+        "timestamp": "2026-11-22T10:30:13+00:00",
         "entityIds": [
-          "IRN",
-          "USA"
+          "IRN"
         ],
         "eventIds": [
-          "11s4i4far6b40",
-          "1qhj26ubffr40"
+          "2y1i7lor8ic00"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-isr_lbn_01",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-22T14:51:42Z",
+      "title": "IranStrike event",
+      "description": "IDF booby-traps buildings in southern Lebanon village ahead of demolition",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "isr_lbn_01",
+        "text": "IDF booby-traps buildings in southern Lebanon village ahead of demolition",
+        "textHe": "צה\"ל מתקין מלכודות בבניינים בכפר דרומי לבנון לפני הריסה",
+        "severity": "medium",
+        "timestamp": "2026-11-22T14:51:42+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "1z6mx3h9oc9s0"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-1z6mx3h9oc9s0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134053",
+      "date": "2026-11-22T14:51:42Z",
+      "title": "IranStrike event",
+      "description": "IDF forces booby-trap buildings in the village of Zawtar al-Sharqiya in southern Lebanon ahead of demolition, as documented by residents",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1z6mx3h9oc9s0",
+        "timestamp": "2026-11-22T14:51:42+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "IDF forces booby-trap buildings in the village of Zawtar al-Sharqiya in southern Lebanon ahead of demolition, as documented by residents",
+        "descriptionHe": "כוחות צה\"ל ממלכדים מבנים בכפר זוטר א-שרקיה בדרום לבנון לקראת פיצוצם, לפי תיעוד של תושבים",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/134053"
+      }
+    },
+    {
+      "id": "iranstrike-13v36y2vlhpc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134050",
+      "date": "2026-11-22T13:59:00Z",
+      "title": "IranStrike event",
+      "description": "Turkish FM alleges Israel supports one Druze tribe in Syria with weekly helicopter deliveries of weapons and ammunition, unverified claim",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Syria",
+      "country": "Syria",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "13v36y2vlhpc0",
+        "timestamp": "2026-11-22T13:59:00+00:00",
+        "location": "SYR",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Turkish FM alleges Israel supports one Druze tribe in Syria with weekly helicopter deliveries of weapons and ammunition, unverified claim",
+        "descriptionHe": "שר החוץ הטורקי טוען כי ישראל תומכת בשבט דרוזי אחד בסוריה ומעבירה אליו משלוחי נשק ותחמושת שבועיים במסוקים, טענה שלא אומתה",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/134050"
+      }
+    },
+    {
+      "id": "iranstrike-377ks2j3p4400",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134044",
+      "date": "2026-11-22T11:44:53Z",
+      "title": "IranStrike event",
+      "description": "IRGC attacks two US bases in Bahrain (Sheikh Isa and Al-Jafeer) with 3 ballistic missiles and drones per Fars; Bahrain Interior Ministry confirms civilians injured in Iranian attacks",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "377ks2j3p4400",
+        "timestamp": "2026-11-22T11:44:53+00:00",
+        "location": "BHR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "IRGC attacks two US bases in Bahrain (Sheikh Isa and Al-Jafeer) with 3 ballistic missiles and drones per Fars; Bahrain Interior Ministry confirms civilians injured in Iranian attacks",
+        "descriptionHe": "משמרות המהפכה תקפו שני בסיסים אמריקאים בבחריין - שיח' עיסא ואלג'פיר, לפי פארס; משרד הפנים של בחריין מאשר פציעת אזרחים בתקיפות האיראניות",
+        "source": "abualiexpress",
+        "weapons": [
+          {
+            "type": "ballistic_missile",
+            "count": 3
+          }
+        ],
+        "sourceUrl": "https://t.me/abualiexpress/134044"
+      }
+    },
+    {
+      "id": "iranstrike-2y1i7lor8ic00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65745",
+      "date": "2026-11-22T10:30:13Z",
+      "title": "IranStrike event",
+      "description": "Iran begins scheduled nationwide power outages of up to 2 hours every other day, attributed to fuel shortage and war-related damage to gas and energy infrastructure",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2y1i7lor8ic00",
+        "timestamp": "2026-11-22T10:30:13+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Iran begins scheduled nationwide power outages of up to 2 hours every other day, attributed to fuel shortage and war-related damage to gas and energy infrastructure",
+        "descriptionHe": "איראן החלה בהפסקות חשמל מתוזמנות ברחבי המדינה, עד שעתיים כל יומיים, עקב מחסור בדלק ונזק למלחמה לתשתיות גז ואנרגיה",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65745"
+      }
+    },
+    {
+      "id": "iranstrike-wdgiuibaz6o0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134038",
+      "date": "2026-11-22T09:27:33Z",
+      "title": "IranStrike event",
+      "description": "Lebanese sources report residents of Nabatieh al-Fawqa gathering near an IDF-held position, intending to march toward it on foot despite the Israeli ban",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "wdgiuibaz6o0",
+        "timestamp": "2026-11-22T09:27:33+00:00",
+        "location": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "Lebanese sources report residents of Nabatieh al-Fawqa gathering near an IDF-held position, intending to march toward it on foot despite the Israeli ban",
+        "descriptionHe": "דרום לבנון: מקורות לבנוניים מדווחים שתושבי הכפר נבטיה אלפוקא, בו מחזיק צה\"ל, מתקבצים בסמוך אליו מתוך מטרה לצעוד לעברו ולהיכנס אליו רגלית למרות האיסור הישראלי",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/134038"
+      }
+    },
     {
       "id": "iranstrike-jfm4zzurttk0",
       "source": "IranStrike",
@@ -96622,6 +96943,50 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-wdgiuibaz6o0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134038",
+      "date": "2026-11-22T09:27:33Z",
+      "title": "IranStrike event",
+      "description": "Lebanese sources report residents of Nabatieh al-Fawqa gathering near an IDF-held position, intending to march toward it on foot despite the Israeli ban",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Nabatieh",
+      "country": "Lebanon",
+      "latitude": 33.3772,
+      "longitude": 35.4838,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "nabatieh",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "wdgiuibaz6o0",
+        "timestamp": "2026-11-22T09:27:33+00:00",
+        "location": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "Lebanese sources report residents of Nabatieh al-Fawqa gathering near an IDF-held position, intending to march toward it on foot despite the Israeli ban",
+        "descriptionHe": "דרום לבנון: מקורות לבנוניים מדווחים שתושבי הכפר נבטיה אלפוקא, בו מחזיק צה\"ל, מתקבצים בסמוך אליו מתוך מטרה לצעוד לעברו ולהיכנס אליו רגלית למרות האיסור הישראלי",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/134038"
+      }
+    },
     {
       "id": "iranstrike-3kwtapjesnc00",
       "source": "IranStrike",
