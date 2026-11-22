@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-22 17:51 UTC",
+    "updated": "2026-11-22 23:38 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,45 +8,54 @@
   "summary": {
     "period_start": "2026-11-16",
     "period_end": "2026-11-22",
-    "total_events": 78,
-    "total_risk": 93.6,
-    "normalized_risk_score": 37.4,
+    "total_events": 75,
+    "total_risk": 92.55,
+    "normalized_risk_score": 37.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
+    "military": 30,
     "security": 5,
-    "political": 5,
-    "other": 37
+    "political": 4,
+    "other": 36
   },
   "source_counts": {
-    "news": 78,
+    "news": 75,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 29.35
+      "risk": 27.3
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.25
+      "risk": 11.55
     },
     {
       "name": "Saudi Arabia",
-      "risk": 10.9
+      "risk": 10.3
     },
     {
       "name": "Iraq",
       "risk": 9.25
     },
     {
-      "name": "West Bank",
-      "risk": 7.75
+      "name": "Yemen",
+      "risk": 8.2
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they attacked Saudi Rabigh oil refinery - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSjZLZW5ua05hQkRTLVhvZnNHZnpUM05mT3ZxNl9FUUoyMEhMN0gtTUVfT0Zhb0g2eUxaeHlvZWlIWXNTVGlSMlczMHdBUERvRjVsQVZVSW92MlFESWlmTGxVaWM2aXYwZ0NtUTlna3k4ZkV2S0k4YkhVOFRjaWRrcmhZeWg5NHpQaW9pRGIybUFpalV3U2lzdlZ5QzYteENUSWpWdm90SXNFWVU4OWxBaGx3"
+    },
     {
       "score": 3.0,
       "date": "2026-11-22",
@@ -70,18 +79,18 @@
       "date": "2026-11-22",
       "category": "military",
       "source_type": "news",
-      "title": "Bahrain says Iranian attack caused fire at industrial facility - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaVlibGxsbXZhME1WYWYtNmJmUHpzSTg5RHRBUVlEbmkxUUk1X183TE9xbV9raDRRTkxZcXZIa3VMX0d3RFU2OEh1YXRLMkNObnUtbEp3cC1WcTUzUXl2dlNBdk02cHdPdXBxeG41NVVHTWk3dEpabE14bGpVemx1aXFrX3pDMUZVZGVSWDhMb1JfcjhPa2FIdGkwMk1zSmVGSVJwMHFfMNIBrAFBVV95cUxOcmJjTXlwWFQ5ak4yeS1scHJoUVVGYVhqSkF1WS13TXR1RFFLdUwtSDZwYmJ2ajZWOGJtcGlLU1diU1NwTXNhaEs3MTlPUnNyUlNNSXVOMXp4ZmVIZVpuX1l4akQ2S09pMWN3eTdhVW81akVGYm50cUIwQ2duZ0ExdFNnN3B0OGwzMGlnc01oMjhyRjlTQjNMa1JrNlpRZlktNkZrUTZZV2xkR2kt"
+      "title": "Saudi Arabia intercepts drone, missile as Houthis report attack on Sanaa - Al Jazeera",
+      "location": "Sana'a",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcndOTTl3bzZwNVZ4ZWstZXBZdnVkbUhPanQ5VlhUVEJaSTRVdnc1YzVUdEhEd2M0QXdFVGxzRFVLeThYd0FfaGEzMnQzbWIzemFuZzRqSGJCQ2M5LVBzV0dadVlwUXpXR1hfMTllR2NsWmNuRnk4RmRSVVlraElfS3NjNFlJa0FWTGNRRS1XQTFxM3JoTVRYZEluNkVJUXZSdk1TSmFfWUfSAa4BQVVfeXFMTmplOTVHYzVsandyeWw3aS1QcWJiLWt5NXNnWHhYazFVV1pMZmdWdFdIdWxYSTRXNDJkWlYxdXJpOW1scUJTVUxJOWlqbDVST3VZcmR4U2RSdXVpc3NZczU2RVlZc0Jrd3BFcVQ3djE0TldnZk9KWi1ybXlwM0Ryb2NvWmJCRFZOX19xd0JDT2xPQy1VSDZBQ283ZUF1Z3JRaTRJd0VoYzF1SXVDdktn"
     },
     {
       "score": 3.0,
       "date": "2026-11-22",
       "category": "military",
       "source_type": "news",
-      "title": "Saudi Arabia intercepts drone, missile as Houthis report attack on Sanaa - Al Jazeera",
-      "location": "Sana'a",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcndOTTl3bzZwNVZ4ZWstZXBZdnVkbUhPanQ5VlhUVEJaSTRVdnc1YzVUdEhEd2M0QXdFVGxzRFVLeThYd0FfaGEzMnQzbWIzemFuZzRqSGJCQ2M5LVBzV0dadVlwUXpXR1hfMTllR2NsWmNuRnk4RmRSVVlraElfS3NjNFlJa0FWTGNRRS1XQTFxM3JoTVRYZEluNkVJUXZSdk1TSmFfWUfSAa4BQVVfeXFMTmplOTVHYzVsandyeWw3aS1QcWJiLWt5NXNnWHhYazFVV1pMZmdWdFdIdWxYSTRXNDJkWlYxdXJpOW1scUJTVUxJOWlqbDVST3VZcmR4U2RSdXVpc3NZczU2RVlZc0Jrd3BFcVQ3djE0TldnZk9KWi1ybXlwM0Ryb2NvWmJCRFZOX19xd0JDT2xPQy1VSDZBQ283ZUF1Z3JRaTRJd0VoYzF1SXVDdktn"
+      "title": "Bahrain says Iranian attack caused fire at industrial facility - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaVlibGxsbXZhME1WYWYtNmJmUHpzSTg5RHRBUVlEbmkxUUk1X183TE9xbV9raDRRTkxZcXZIa3VMX0d3RFU2OEh1YXRLMkNObnUtbEp3cC1WcTUzUXl2dlNBdk02cHdPdXBxeG41NVVHTWk3dEpabE14bGpVemx1aXFrX3pDMUZVZGVSWDhMb1JfcjhPa2FIdGkwMk1zSmVGSVJwMHFfMNIBrAFBVV95cUxOcmJjTXlwWFQ5ak4yeS1scHJoUVVGYVhqSkF1WS13TXR1RFFLdUwtSDZwYmJ2ajZWOGJtcGlLU1diU1NwTXNhaEs3MTlPUnNyUlNNSXVOMXp4ZmVIZVpuX1l4akQ2S09pMWN3eTdhVW81akVGYm50cUIwQ2duZ0ExdFNnN3B0OGwzMGlnc01oMjhyRjlTQjNMa1JrNlpRZlktNkZrUTZZV2xkR2kt"
     },
     {
       "score": 3.0,
@@ -97,18 +106,18 @@
       "date": "2026-11-21",
       "category": "military",
       "source_type": "news",
-      "title": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNER6Q2NPRk9TUmtuX1hhQ21MdEdsc05rT0FxZzE4RTczVDJqbjN1My04Zm4tUkd1aUJ4cDdXSTM3ZVl6UVg0S0hLTWs1d1pjLTRDcVgtM1dVeVNvWFZHd1g3NEZCdm5HMlR1U09Cd1JfWUg1cEQ0aUZSU19uSHowSWhEUERvNE5OM1NxTDR1T3VYV21rb25pX1NSOFdFcHlOd3VzYkpMT2VzMlYwRVVSMmFuc2J3SkZ5dUM3Z0M0YXEyZw"
+      "title": "Bahrain says Iran strikes industrial facility as air defences intercept attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp"
     },
     {
       "score": 2.7,
       "date": "2026-11-21",
       "category": "military",
       "source_type": "news",
-      "title": "Bahrain says Iran strikes industrial facility as air defences intercept attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp"
+      "title": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNER6Q2NPRk9TUmtuX1hhQ21MdEdsc05rT0FxZzE4RTczVDJqbjN1My04Zm4tUkd1aUJ4cDdXSTM3ZVl6UVg0S0hLTWs1d1pjLTRDcVgtM1dVeVNvWFZHd1g3NEZCdm5HMlR1U09Cd1JfWUg1cEQ0aUZSU19uSHowSWhEUERvNE5OM1NxTDR1T3VYV21rb25pX1NSOFdFcHlOd3VzYkpMT2VzMlYwRVVSMmFuc2J3SkZ5dUM3Z0M0YXEyZw"
     },
     {
       "score": 2.7,
@@ -127,15 +136,6 @@
       "title": "At least four killed, 35 injured in fire at power station in Iraq’s Basra - Al Jazeera",
       "location": "Iraq",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPY011RXdEMmpUeXhEN1Q0RFNpaVRPRTRjdnRxaUJIcHpYYUs5R2pKSXNpMW1DS0J5bEIyWEtDWl81ejhXOXBWVjVQM21ZQ0ExNkZILUNwUzlrODVyNEJ5S0NsWklrSkd6RGpyOUpzcGlPMkw0UGU1MXdrX3hMaEtMS2tGSFltMy1sbnFsUm94WDRvVmo4cWREUjJveWpBZS1GVmxDRWJLYm9Ddk5RWS1yQkR2YlpfUdIBuwFBVV95cUxNVUhKMEsxUG1aVnIyUmRobDZickRkT1NEN0Q3VzNWcXk5RndXT1RFRF8xT254Mm5MMEVZS3JucXVrUVNRQTNJNk5CMnpXWFpGa2NPcTJ1QXhNdWNKb3k0RGJDbU1VYXJ4VzdrTktHb0w3cU9Qd3Q2YVdvamQ0cWtDaGFVY3ktaE5HQjdmbHU1MnNFcXJ0WXJYdmZDaUR5ZVBicFhaZkM0RGF0U2VSODBGdGJjNC15ZDE1NUFJ"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Jerusalem Daily: Gaza faces deadly strikes and health crisis - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc2NjaGVqeVJxM3o0WmJzandfZUFtb2tyVk83SzlqeWRwMFVlSFMtZ3dzNEcxYklRWENITE9Ja0NORkVwVmtJQ3RWb3BVUmx5Q08wbU9La2xERmdGVDBPejdMV09XeTZBOWxQU2E4QUZtTno4UjRDYzNQMkdhYkdiMS04OXc5cHVNcjdjUzVWcldGal9jbnhtVGxFNXBTOXdWZXRTWDZxSlZrMGFFaHVUc9IBtgFBVV95cUxQNjhqSmk0RjU1c3RsTHVjQWJHc3JxYTR2cGY5ZUhlVXNkdmJmZEtxR1lpelh5YjY4cEMxd3RtSFQ4UlJid2F0dG4xVUNTNmx0MVRHbGdfSVQybUNYNXpkVGh1ZkIwXzhjU2FqTlpIMlNsQ3oza0Q5Q1Q4RVA1cW9DWUFNRHl3TVVfOEtuaGFOam0xc2o4UmVFdVBXNXduQ0YtUEV6NUJKZ2xnZXNibmp6dTBJOUlwdw"
     }
   ]
 }
