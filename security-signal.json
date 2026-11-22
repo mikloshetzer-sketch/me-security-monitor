@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-22 09:55 UTC",
+    "updated": "2026-11-22 17:51 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-11-16",
     "period_end": "2026-11-22",
-    "total_events": 85,
-    "total_risk": 85.05,
-    "normalized_risk_score": 34.0,
+    "total_events": 78,
+    "total_risk": 93.6,
+    "normalized_risk_score": 37.4,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 27,
+    "military": 31,
     "security": 5,
-    "political": 6,
-    "other": 47
+    "political": 5,
+    "other": 37
   },
   "source_counts": {
-    "news": 85,
+    "news": 78,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 27.95
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 11.2
+      "risk": 29.35
     },
     {
       "name": "Gaza Strip",
-      "risk": 11.05
+      "risk": 11.25
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 10.9
     },
     {
       "name": "Iraq",
-      "risk": 9.05
+      "risk": 9.25
     },
     {
-      "name": "Riyadh",
-      "risk": 6.6
+      "name": "West Bank",
+      "risk": 7.75
     }
   ],
   "top_events": [
@@ -52,18 +52,45 @@
       "date": "2026-11-22",
       "category": "military",
       "source_type": "news",
-      "title": "Bahrain says Iranian attack causes fire at industrial facility - Al Jazeera",
+      "title": "Israel's Eisenkot condemns arson attacks by Jewish settlers in West Bank - Reuters",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPV0NtOW83bnNaeXNoY0g0REh2Ym8yMU52U0FCaGVTRy1oeTRrM1dPclNpZTF4QWVtVE95eG9TUXJkT3JBZldRWDNjejBRcFpiWTVPV1ZqeEVZdS1qMVZ6QzVvNUtSRXY0RUxLX05pdlB3V0tvLXA1Nk0wQXhxT1dQYVNyMm1YYTZtX0pRZFI4VWNDTHctYVk2NnJMdDlWSmhxbWlzbVg5OWFacVhQUzdHSU5lNDdJTlBRZVhlVXZaUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "What’s behind Iran’s escalation of attacks in the Gulf? - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM1owT2pOYVc3bXd5Z0RTeGlaemVoVXVReXNLeHcza0U3aVo2RW5FWDJjUTFGdGtrNm9OVEY4VVZCYXh6aTZ3bzZaVG1NYzdwZGRYOHRlUXVyanBTVzNTQ0FPNnpLbFl5WDBSamUxQmkxRHVUMG1sMk5xMm9sbmZKOEpwMUxVSHJCamsxdFJEZ3dKUWRoSy1SaGJn0gGfAUFVX3lxTE1sMGtPREkyMU1XR0dvQ0pkM2hraWFPblNyWGtsNC1fY1REcjFELUU2Sk9hNFNpT2dxVmxoU3JZQU9QMmlVWlladjlCRW95bEx6MGItcFNjN1VuMHJQSTZwWm1SQ3pLN28zbE05ZHo4cnBGWFZwZXhUR0VYUC1DMGFkTnV2XzlnZTRubzJtSzJ6YzhwUzgwRk1HdnhpVlNNWQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain says Iranian attack caused fire at industrial facility - Al Jazeera",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaVlibGxsbXZhME1WYWYtNmJmUHpzSTg5RHRBUVlEbmkxUUk1X183TE9xbV9raDRRTkxZcXZIa3VMX0d3RFU2OEh1YXRLMkNObnUtbEp3cC1WcTUzUXl2dlNBdk02cHdPdXBxeG41NVVHTWk3dEpabE14bGpVemx1aXFrX3pDMUZVZGVSWDhMb1JfcjhPa2FIdGkwMk1zSmVGSVJwMHFfMNIBrAFBVV95cUxOcmJjTXlwWFQ5ak4yeS1scHJoUVVGYVhqSkF1WS13TXR1RFFLdUwtSDZwYmJ2ajZWOGJtcGlLU1diU1NwTXNhaEs3MTlPUnNyUlNNSXVOMXp4ZmVIZVpuX1l4akQ2S09pMWN3eTdhVW81akVGYm50cUIwQ2duZ0ExdFNnN3B0OGwzMGlnc01oMjhyRjlTQjNMa1JrNlpRZlktNkZrUTZZV2xkR2kt"
     },
     {
-      "score": 2.7,
-      "date": "2026-11-21",
+      "score": 3.0,
+      "date": "2026-11-22",
       "category": "military",
       "source_type": "news",
-      "title": "Bahrain says Iranian attack hits industrial facility as air defences intercept attacks - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp"
+      "title": "Saudi Arabia intercepts drone, missile as Houthis report attack on Sanaa - Al Jazeera",
+      "location": "Sana'a",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcndOTTl3bzZwNVZ4ZWstZXBZdnVkbUhPanQ5VlhUVEJaSTRVdnc1YzVUdEhEd2M0QXdFVGxzRFVLeThYd0FfaGEzMnQzbWIzemFuZzRqSGJCQ2M5LVBzV0dadVlwUXpXR1hfMTllR2NsWmNuRnk4RmRSVVlraElfS3NjNFlJa0FWTGNRRS1XQTFxM3JoTVRYZEluNkVJUXZSdk1TSmFfWUfSAa4BQVVfeXFMTmplOTVHYzVsandyeWw3aS1QcWJiLWt5NXNnWHhYazFVV1pMZmdWdFdIdWxYSTRXNDJkWlYxdXJpOW1scUJTVUxJOWlqbDVST3VZcmR4U2RSdXVpc3NZczU2RVlZc0Jrd3BFcVQ3djE0TldnZk9KWi1ybXlwM0Ryb2NvWmJCRFZOX19xd0JDT2xPQy1VSDZBQ283ZUF1Z3JRaTRJd0VoYzF1SXVDdktn"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-22",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli settlers attack several Palestinian villages in occupied West Bank - Al Jazeera",
+      "location": "West Bank",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNc2pIWUdPbDhyMDg4VWRUbEliRGNib2JLTmJOR211NDZ3bHV6VmtZRVUtY25rMERVS2IzZ05aQkdTSmJ2QWNRcFBjeXBMQ2hzMEdsOWlxUWMtMC1aOUJfdW4tWTlObC00VV8tV19XSmFTRXVQRmYxMjg3dERRR2trSWp2aTdiQXdLamxTS1dqOXJ3OWFPY1RYRUxOdzZ1RG4tbmJWc21GQ0tXX1IwVWEwN1lsODFVOU3SAbwBQVVfeXFMT3dsZUpFZXJrcU4yZTU1ZTZuOWlSZ2hsM3JUYzN2Q2VLS2hESEI3UnVrMm5OLWU3aEJFVkU1dGFrRVduUk9jNXJFVW1kWEk1akExQW5PNzBJWlRlenJldzdHdm9Wc3g3MTU4YjRhaHVoc1R6ZE51dW1UdUdISHpWWEt0ZVk3bWtiUWJfX0djMGtHeG9vM1lQZWplUFpqTnR0LXI0RFpjaHBxXzV0ZVVJQ3hySlpjMXhBcWFCWFk"
     },
     {
       "score": 2.7,
@@ -73,6 +100,15 @@
       "title": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNER6Q2NPRk9TUmtuX1hhQ21MdEdsc05rT0FxZzE4RTczVDJqbjN1My04Zm4tUkd1aUJ4cDdXSTM3ZVl6UVg0S0hLTWs1d1pjLTRDcVgtM1dVeVNvWFZHd1g3NEZCdm5HMlR1U09Cd1JfWUg1cEQ0aUZSU19uSHowSWhEUERvNE5OM1NxTDR1T3VYV21rb25pX1NSOFdFcHlOd3VzYkpMT2VzMlYwRVVSMmFuc2J3SkZ5dUM3Z0M0YXEyZw"
+    },
+    {
+      "score": 2.7,
+      "date": "2026-11-21",
+      "category": "military",
+      "source_type": "news",
+      "title": "Bahrain says Iran strikes industrial facility as air defences intercept attacks - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp"
     },
     {
       "score": 2.7,
@@ -100,42 +136,6 @@
       "title": "Jerusalem Daily: Gaza faces deadly strikes and health crisis - Al Jazeera",
       "location": "Gaza Strip",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc2NjaGVqeVJxM3o0WmJzandfZUFtb2tyVk83SzlqeWRwMFVlSFMtZ3dzNEcxYklRWENITE9Ja0NORkVwVmtJQ3RWb3BVUmx5Q08wbU9La2xERmdGVDBPejdMV09XeTZBOWxQU2E4QUZtTno4UjRDYzNQMkdhYkdiMS04OXc5cHVNcjdjUzVWcldGal9jbnhtVGxFNXBTOXdWZXRTWDZxSlZrMGFFaHVUc9IBtgFBVV95cUxQNjhqSmk0RjU1c3RsTHVjQWJHc3JxYTR2cGY5ZUhlVXNkdmJmZEtxR1lpelh5YjY4cEMxd3RtSFQ4UlJid2F0dG4xVUNTNmx0MVRHbGdfSVQybUNYNXpkVGh1ZkIwXzhjU2FqTlpIMlNsQ3oza0Q5Q1Q4RVA1cW9DWUFNRHl3TVVfOEtuaGFOam0xc2o4UmVFdVBXNXduQ0YtUEV6NUJKZ2xnZXNibmp6dTBJOUlwdw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNQUE1UEFGeklRZGtscWJhNkdxRWpyWHkwQ29IcVQ1Umc2VHlkWlJGZzZPTC00SFl2a3J0SXY3TGo0X0t2a3A5ckMzbmtZXy1mYzdoa0F5Vmo1TGFaU1RIbEZHak5iTi1oRXhWWF9CbWZ2QWFLRG1HSG5Rc1dSbHZlaGNNSDlvZ2RiekJzbnpqMC1aektLZU1MSHBWN25PYURzUGduTjhURQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
-      "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZEM0V09PMzNwMW5Eck5aSWVqWU02QzZsOHlJdHZrUHh1VDNOUFZIc1ZBbWJWOG9RX0ljdlpoMUhfX3o3QzQwNlJSUzRIbXhDbTBtZ0VEV0VtUWZCOUlwczJCQXVEN3hDN0x5TVVVZ1NaWm9LT3BPWTNsTHZicmpGOEM3bHhNa0VvQTJ0UzQ1NERFR1diOXdvYXlnUk9QeHMtaEw4MHFGR0VHTV9KZHpsT0hjZTQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Saudi-led coalition says it intercepted Houthi missile targeting southern region - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQVmhCWjF6eHlrWHRIcHA1Z2p0QlM5cEtnMnFFd0hsMDdyMk51RGx2SEJpc1NkM2Z3NENIc04zNnppdVRhQkotTVJJcGF5WGJpbDBQQXF0Y0g5SkpzVzhKNkpVemRTaFJmVjA4MVFaSHlKS25JM0h3UkstLWtQdTlnWEptSnktbzlDT1UycmhSNF9yRzFPMWhkby1ubHd6S1BTYk83aExGSGpnN05LRTNWcS1wU0MwMktVOFFfWldqTVhQQ3VISGEwMVkyb0d2MEU"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-20",
-      "category": "military",
-      "source_type": "news",
-      "title": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-      "location": "Saudi Arabia",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeERTd2VXX21mYUpEQUFyRjN2dk5Hdkl3RTZLTDUzbV9HRzE5cy1CcThnQkF3WVNsMDR0bWsxZDMxTlI1d0o2dFZwNjEtX0ZKSVBYQmFycVN2dGNYaXVTRnh3a2Y2M09uM0RkQU4wSDdGWEo3TF94ZlVySy1RNTNEaGhjZmlQZFJ4VjNzM094Rmp4Y0RJZHJZZG5MZVB1VHBkUjJxTmUwUlpBc1JFa2NhQkdGTVhOcGc"
     }
   ]
 }
