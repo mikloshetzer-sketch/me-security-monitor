@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:07:05Z",
+  "generated_at": "2026-11-22T00:21:08Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,17 +54,17 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 2076,
+    "normalized_events": 2079,
     "map_visualizable_events": 283,
-    "non_mappable_events": 1793,
-    "developments": 4
+    "non_mappable_events": 1796,
+    "developments": 2
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2076,
+      "total_events": 2079,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-21T19:46:37Z",
+      "latest_event_date": "2026-11-21T22:09:29Z",
       "geocoded_events": 283,
       "geocoded_share": 13.6,
       "top_category": "infrastructure",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 68,
-        "previous": 64,
-        "delta": 4,
-        "percent_change": 6.2,
-        "direction": "stable"
+        "current": 71,
+        "previous": 55,
+        "delta": 16,
+        "percent_change": 29.1,
+        "direction": "increase"
       },
       "latest_30_days": {
-        "current": 268,
-        "previous": 319,
-        "delta": -51,
-        "percent_change": -16.0,
+        "current": 271,
+        "previous": 324,
+        "delta": -53,
+        "percent_change": -16.4,
         "direction": "decrease"
       }
     },
@@ -806,43 +806,43 @@
       },
       {
         "date": "2026-11-21",
-        "count": 10
+        "count": 13
       }
     ],
     "category_counts": {
-      "infrastructure": 616,
-      "missile": 452,
+      "infrastructure": 617,
+      "missile": 453,
       "strike": 286,
       "drone": 243,
       "airstrike": 152,
       "movement": 132,
       "ground": 78,
-      "explosion": 76,
+      "explosion": 77,
       "alert": 22,
       "defense": 13,
       "political": 5,
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1085,
-      "high": 629,
+      "medium": 1086,
+      "high": 631,
       "low": 349,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1387,
-      "iran": 432,
+      "unknown": 1389,
+      "iran": 433,
       "israel": 217,
       "usa": 40
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 793
+        "count": 794
       },
       {
         "name": "Iran",
-        "count": 455
+        "count": 457
       },
       {
         "name": "Lebanon",
@@ -900,11 +900,11 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 793
+        "count": 794
       },
       {
         "name": "Iran",
-        "count": 590
+        "count": 592
       },
       {
         "name": "Lebanon",
@@ -945,33 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11394,
+    "totalCount": 11397,
     "spotlight": {
       "event": {
-        "id": "2wf290914p200",
-        "timestamp": "2026-11-21T19:46:37+00:00",
+        "id": "210lk9amr76o0",
+        "timestamp": "2026-11-21T21:54:30+00:00",
         "location": "BHR",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
-        "severity": "medium",
-        "description": "Explosions heard in Bahrain, alerts active; attacker not identified in the message",
-        "descriptionHe": "נשמעו פיצוצים בבחריין, אזעקות פעילות; התוקף אינו מזוהה בהודעה",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/87501"
+        "severity": "high",
+        "description": "Iran fired missiles and drones at US bases in Bahrain in recent hours; Bahrain closed parts of its airspace during the attacks",
+        "descriptionHe": "איראן שיגרה טילים וכטב\"מים לעבר בסיסים אמריקניים בבחריין; במהלך התקיפות בחריין סגרה את המרחב האווירי בחלקים משטחה",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65735"
       },
-      "headline": "Explosions Rock Bahrain as Alerts Remain Active",
-      "headlineHe": "התפוצצויות רועמות בבחריין כאזעקות ממשיכות",
-      "summary": "The incident follows multiple UAV launches from Iran toward Bahrain approximately an hour earlier, with ongoing regional tensions.",
-      "summaryHe": "התקادם בעקבות שיגורי כלי טיס ללא אדם מרובים מאיראן לכיוון בחריין לפני כשעה בערך, עם מתיחות אזורית מתמשכת.",
-      "pickedAt": "2026-11-21T20:00:25.122Z",
-      "state": "SPOTLIGHT"
+      "headline": "Iran Fires Missiles, Drones at US Bases in Bahrain",
+      "headlineHe": "איראן שוגרת טילים וכלי טיס בלתי מאויישים לעבר בסיסים אמריקניים בבחריין",
+      "summary": "The attack prompted Bahrain to close parts of its airspace and marks an escalation in direct Iranian strikes against US military infrastructure in the Gulf region.",
+      "summaryHe": "ההתקפה הכריחה את בחריין לסגור חלקים מאזור התעופה שלה והמהווה הסלמה בהתקפות איראניות ישירות על תשתיות צבאיות אמריקניות באזור המפרץ.",
+      "pickedAt": "2026-11-22T00:15:25.751Z",
+      "state": "TODAY"
     },
-    "lastUpdated": "2026-11-21T20:03:17.401Z",
+    "lastUpdated": "2026-11-22T00:18:17.365Z",
     "stale": false,
-    "viewerCount": 5,
+    "viewerCount": 4,
     "ceasefire": false
   },
   "summary": {
@@ -1512,106 +1513,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 97,
+      "internet": 96,
       "cellular": null,
-      "lastUpdate": "2026-11-21T20:00:15.099Z",
+      "lastUpdate": "2026-11-22T00:00:36.619Z",
       "internetHistory": [
-        {
-          "t": "2026-11-20T20:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T20:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T20:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T20:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T20:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T20:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T21:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T21:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-20T21:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T21:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T21:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T21:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T22:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T22:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T22:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T22:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T22:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T22:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T23:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T23:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T23:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T23:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T23:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-20T23:50:00.000Z",
-          "v": 95
-        },
         {
           "t": "2026-11-21T00:00:00.000Z",
           "v": 95
@@ -2087,32 +1992,128 @@
         {
           "t": "2026-11-21T19:40:00.000Z",
           "v": 97
+        },
+        {
+          "t": "2026-11-21T19:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T20:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T20:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T20:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T20:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T20:40:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T20:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T21:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T21:10:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T21:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T21:30:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T21:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T21:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T22:00:00.000Z",
+          "v": 97
+        },
+        {
+          "t": "2026-11-21T22:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T22:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T22:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T22:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T22:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T23:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T23:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T23:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T23:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-21T23:40:00.000Z",
+          "v": 96
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-21T20:00:15.099Z"
+    "lastUpdated": "2026-11-22T00:00:36.619Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e3",
+      "id": "iranstrike-a7f2c3e1",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-21T18:37:33Z",
+      "date": "2026-11-21T22:09:29Z",
       "title": "IranStrike event",
-      "description": "Iran air defense targets USAF F-16C over Persian Gulf; emergency landing at UAE base",
+      "description": "Iran launches missiles and drones at US bases in Bahrain; US prepares retaliatory strikes",
       "category": "other",
-      "severity": "high",
+      "severity": "critical",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran air defense targets usaf f-16c over persian gulf;",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
+      "attacker_evidence": "iran launches missiles and drones at us bases in bahrain;",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2123,9 +2124,60 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e3",
-        "text": "Iran air defense targets USAF F-16C over Persian Gulf; emergency landing at UAE base",
-        "textHe": "הגנת אוויר איראנית תקפה F-16C של חיל האוויר האמריקני מעל מפרץ פרסי; נחיתה חירום בבסיס בעUAE",
+        "id": "a7f2c3e1",
+        "text": "Iran launches missiles and drones at US bases in Bahrain; US prepares retaliatory strikes",
+        "textHe": "איראן שיגרה טילים וכלי טיס ללא הנמנע לבסיסים אמריקאים בבחריין; ארה\"ב מכינה תגובה",
+        "severity": "critical",
+        "timestamp": "2026-11-21T22:09:29+00:00",
+        "entityIds": [
+          "IRN",
+          "USA",
+          "BHR"
+        ],
+        "eventIds": [
+          "2h28etzyxua00",
+          "210lk9amr76o0",
+          "2ub7z9f26w800",
+          "2wf290914p200",
+          "1x1s3pxfgvfk0",
+          "2din0ecfde680",
+          "21b4sc2k9bj40"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-b4e9d2f7",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-21T18:37:33Z",
+      "title": "IranStrike event",
+      "description": "Iran claims F-16 strike and drone kills; US denies aircraft damage, IRGC claims 2 drone intercepts",
+      "category": "other",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "iran claims f-16 strike and drone kills;",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "b4e9d2f7",
+        "text": "Iran claims F-16 strike and drone kills; US denies aircraft damage, IRGC claims 2 drone intercepts",
+        "textHe": "איראן טוענת לפגיעה בF-16 והריגת כלים; ארה\"ב שוללת, IRGC טוען להשמדת 2 כלים",
         "severity": "high",
         "timestamp": "2026-11-21T18:37:33+00:00",
         "entityIds": [
@@ -2137,28 +2189,31 @@
           "m32qjbogl340",
           "1iozkmhtq6m80",
           "3e31580ze5u00",
-          "2fd60vtydjk00"
+          "11s4i4far6b40",
+          "1qhj26ubffr40"
         ],
         "sourceCount": 3
       }
-    },
+    }
+  ],
+  "events": [
     {
-      "id": "iranstrike-b4e9d2a1",
+      "id": "iranstrike-2h28etzyxua00",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-21T19:46:37Z",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65736",
+      "date": "2026-11-21T22:09:29Z",
       "title": "IranStrike event",
-      "description": "Multiple Iranian UAVs fired toward Bahrain; explosions reported amid active alerts",
-      "category": "other",
+      "description": "US military preparing to strike targets in southern Iran in coming days in response to fire on its bases in Bahrain",
+      "category": "infrastructure",
       "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "multiple iranian uavs fired toward bahrain;",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2171,33 +2226,77 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b4e9d2a1",
-        "text": "Multiple Iranian UAVs fired toward Bahrain; explosions reported amid active alerts",
-        "textHe": "משגרי זריקה מרובים מאיראן לעבר בחריין; דיווחי התפוצצויות וזינוקי עירעור פעילים",
+        "id": "2h28etzyxua00",
+        "timestamp": "2026-11-21T22:09:29+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
         "severity": "high",
-        "timestamp": "2026-11-21T19:46:37+00:00",
-        "entityIds": [
-          "IRN",
-          "BHR"
-        ],
-        "eventIds": [
-          "2din0ecfde680",
-          "1x1s3pxfgvfk0",
-          "2wf290914p200"
-        ],
-        "sourceCount": 1
+        "description": "US military preparing to strike targets in southern Iran in coming days in response to fire on its bases in Bahrain",
+        "descriptionHe": "צבא ארה״ב נערך לתקוף יעדים בדרום איראן בימים הקרובים, בתגובה לירי לעבר בסיסיו",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65736"
       }
     },
     {
-      "id": "iranstrike-c5f3b8d7",
+      "id": "iranstrike-210lk9amr76o0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-21T10:50:52Z",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65735",
+      "date": "2026-11-21T21:54:30Z",
       "title": "IranStrike event",
-      "description": "Iran claims IRGC shoots down 2 US drones over Strait of Hormuz and Qeshm Island",
-      "category": "other",
+      "description": "Iran fired missiles and drones at US bases in Bahrain in recent hours; Bahrain closed parts of its airspace during the attacks",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "bhr iran fired missiles and drones at us bases in bahrain in rec",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "210lk9amr76o0",
+        "timestamp": "2026-11-21T21:54:30+00:00",
+        "location": "BHR",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "high",
+        "description": "Iran fired missiles and drones at US bases in Bahrain in recent hours; Bahrain closed parts of its airspace during the attacks",
+        "descriptionHe": "איראן שיגרה טילים וכטב\"מים לעבר בסיסים אמריקניים בבחריין; במהלך התקיפות בחריין סגרה את המרחב האווירי בחלקים משטחה",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65735"
+      }
+    },
+    {
+      "id": "iranstrike-2ub7z9f26w800",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87503",
+      "date": "2026-11-21T21:03:21Z",
+      "title": "IranStrike event",
+      "description": "Unconfirmed reports of explosions heard in Bahrain with possible impacts",
+      "category": "explosion",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2205,8 +2304,8 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
+      "location": "",
+      "country": "",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2217,67 +2316,21 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c5f3b8d7",
-        "text": "Iran claims IRGC shoots down 2 US drones over Strait of Hormuz and Qeshm Island",
-        "textHe": "איראן טוענת כי IRGC הפיל 2 כלים חסרי אנוש אמריקאים מעל מיצר הורמוז ו-קיש",
+        "id": "2ub7z9f26w800",
+        "timestamp": "2026-11-21T21:03:21+00:00",
+        "location": "BHR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
         "severity": "medium",
-        "timestamp": "2026-11-21T10:50:52+00:00",
-        "entityIds": [
-          "IRN",
-          "USA"
-        ],
-        "eventIds": [
-          "11s4i4far6b40",
-          "1qhj26ubffr40"
-        ],
-        "sourceCount": 1
+        "description": "Unconfirmed reports of explosions heard in Bahrain with possible impacts",
+        "descriptionHe": "דיווחים לא מאומתים על שמיעת פיצוצים בבחריין עם אפשרות לפגיעות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87503"
       }
     },
-    {
-      "id": "iranstrike-d6a4c9f2",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-21T18:37:33Z",
-      "title": "IranStrike event",
-      "description": "Iran launches missile from Khuzestan; target unspecified amid escalating tensions",
-      "category": "other",
-      "severity": "medium",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran launches missile from khuzestan;",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "d6a4c9f2",
-        "text": "Iran launches missile from Khuzestan; target unspecified amid escalating tensions",
-        "textHe": "איראן שיגרה טיל מחוזסתן; יעד לא צוין וטונס מתגברת",
-        "severity": "medium",
-        "timestamp": "2026-11-21T18:37:33+00:00",
-        "entityIds": [
-          "IRN"
-        ],
-        "eventIds": [
-          "21b4sc2k9bj40"
-        ],
-        "sourceCount": 1
-      }
-    }
-  ],
-  "events": [
     {
       "id": "iranstrike-2wf290914p200",
       "source": "IranStrike",
