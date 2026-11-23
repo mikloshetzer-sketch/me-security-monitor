@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-23 07:42 UTC",
+    "updated": "2026-11-23 20:16 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,38 +8,38 @@
   "summary": {
     "period_start": "2026-11-17",
     "period_end": "2026-11-23",
-    "total_events": 62,
-    "total_risk": 69.6,
-    "normalized_risk_score": 27.8,
+    "total_events": 66,
+    "total_risk": 81.3,
+    "normalized_risk_score": 32.5,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 25,
-    "security": 2,
-    "political": 4,
+    "military": 28,
+    "security": 1,
+    "political": 6,
     "other": 31
   },
   "source_counts": {
-    "news": 62,
+    "news": 66,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Iran",
-      "risk": 19.35
-    },
-    {
-      "name": "Saudi Arabia",
-      "risk": 10.5
+      "risk": 21.3
     },
     {
       "name": "Gaza Strip",
-      "risk": 7.35
+      "risk": 13.05
     },
     {
-      "name": "Yemen",
-      "risk": 7.05
+      "name": "Saudi Arabia",
+      "risk": 11.2
+    },
+    {
+      "name": "Iraq",
+      "risk": 7.5
     },
     {
       "name": "West Bank",
@@ -47,6 +47,33 @@
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
+      "location": "Gaza Strip",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaFR0Y0tNMTl0MmFKSU02ZGd1MElscXdzQnlya2RHU3cyN3dFaUdOeVVPNTQzMjVobjk4WGxsdGtQcDYzbkpvcm42RXdlTVlUb1pvV3lJaW95OHBrSXU4bjdwWXRQMnhTZkVieER1ZVE5cVVWYVJQek1qeWRlOGstYlU5RnVoX0FXRXdfQ2ZQb1NLekZKXzF2X2hxQS1hRURFR1lRSG1mXy1iNTc1OWtULTVRZlpxRXg0M0l2VW13QUR0Zm8"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli attacks have turned Gaza into 'toxic wasteland', Oxfam says",
+      "location": "Gaza Strip",
+      "url": "https://www.bbc.co.uk/news/articles/c8r4gzzxvxl3o?at_medium=RSS&at_campaign=rss"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-23",
+      "category": "military",
+      "source_type": "news",
+      "title": "Iran threatens response to any attack amid naval blockade - Al Jazeera",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaW5ubVFhMHNDamNzUmNNY3pSWV9rM2hZUkpJZUlON1RwaFM0MDA5bzhVRjd1cFFPbmhiNnN2UE8yeW9vai1hSVZYdDFpX1paeFVnWG5wTjVoZm1nb1hhcnBjb1JCY2RMRUFzMzFxME5IWk5tNkI3eDQtQ0Y1MUtUOTVNQWM0WjZ5ZnA1Xzg4ZFRxVmp4MFc4T0lJT2toOEppUWVjaEllZWpIeXZQWkHSAbMBQVVfeXFMTmVEc3hFSXdzaDkwc2RSM2dReHpONUg3My1hcHlyMjgyUmVGdjBYT1FDZEc5c0lzam93M2RNQ0txem9NWTNnSmtkSTRHMDRTaTZBTU00VlFHQnhDV0pqLU1zci1ZUHB6Y2V6a2d5VWNsekhkNDJXRmIzbUJjbWxnQVE1bnpXazIyU3hjbXBBSzg0ZDJQcTJKVkRMVzh3d0s0aktYUW1EUlcyNURZcGJmUTg0NVk"
+    },
     {
       "score": 2.7,
       "date": "2026-11-22",
@@ -72,7 +99,7 @@
       "source_type": "news",
       "title": "What’s behind Iran’s escalation of attacks in the Gulf? - Al Jazeera",
       "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM1owT2pOYVc3bXd5Z0RTeGlaemVoVXVReXNLeHcza0U3aVo2RW5FWDJjUTFGdGtrNm9OVEY4VVZCYXh6aTZ3bzZaVG1NYzdwZGRYOHRlUXVyanBTVzNTQ0FPNnpLbFl5WDBSamUxQmkxRHVUMG1sMk5xMm9sbmZKOEpwMUxVSHJCamsxdFJEZ3dKUWRoSy1SaGJn0gGfAUFVX3lxTE1sMGtPREkyMU1XR0dvQ0pkM2hraWFPblNyWGtsNC1fY1REcjFELUU2Sk9hNFNpT2dxVmxoU3JZQU9QMmlVWlladjlCRW95bEx6MGItcFNjN1VuMHJQSTZwWm1SQ3pLN28zbE05ZHo4cnBGWFZwZXhUR0VYUC1DMGFkTnV2XzlnZTRubzJtSzJ6YzhwUzgwRk1HdnhpVlNNWQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM1owT2pOYVc3bXd5Z0RTeGlaemVoVXVReXNLeHcza0U3aVo2RW5FWDJjUTFGdGtrNm9OVEY4VVZCYXh6aTZ3bzZaVG1NYzdwZGRYOHRlUXVyanBTVzNTQ0FPNnpLbFl5WDBSamUxQmkxRHVUMG1sMk5xMm9sbmZKOEpwMUxVSHJCamsxdFJEZ3dKUWRoSy1SaGJn0gGfAUFVX3lxTE1sMGtPREkyMU1XR0dvQ0pkM2hraWFPblNyWGtsNC1fY1REcjFELUU2Sk9hNFNpT2dxVmxoU3JZQU9QMmlVWlladjlCRW95bEx6MGItcFNjN1VuMHJQSTZwWm1SQ3pLN28zbE05ZHo4cnBGWFZwZXhUR0VYUC1DMGFkTnV2XzlnZTRubzJtSzJ6YzhwUzgwRk1HdnhpVlNNWQ"
     },
     {
       "score": 2.7,
@@ -109,33 +136,6 @@
       "title": "Bahrain says Iran strikes industrial facility as air defences intercept attacks - Reuters",
       "location": "Iran",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNER6Q2NPRk9TUmtuX1hhQ21MdEdsc05rT0FxZzE4RTczVDJqbjN1My04Zm4tUkd1aUJ4cDdXSTM3ZVl6UVg0S0hLTWs1d1pjLTRDcVgtM1dVeVNvWFZHd1g3NEZCdm5HMlR1U09Cd1JfWUg1cEQ0aUZSU19uSHowSWhEUERvNE5OM1NxTDR1T3VYV21rb25pX1NSOFdFcHlOd3VzYkpMT2VzMlYwRVVSMmFuc2J3SkZ5dUM3Z0M0YXEyZw"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMEdyaGtabnZRdHhGLWIzeGx0MkhleGZEYlVpTmFySVFYdlUtd3JfamE1YjlXQmwzWW1xTE83UzJRZ2lra1pEWmFsTXZMbDRlUm9CNTllRHdXR0VWRExIaTlQanhkTDFaU2RjU2dCYkI3WDd2WElmSlFfY1pwVkdxVEw0cDBYNGEwTGFLUGFqUTZPMFIxU0Y4Z25pREJEai16RGNfX3JlWXZOZ05hT3liNUJnU2stVlQ5RV9NZmVBUmhlQQ"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-21",
-      "category": "military",
-      "source_type": "news",
-      "title": "At least four killed, 35 injured in fire at power station in Iraq’s Basra - Al Jazeera",
-      "location": "Iraq",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPY011RXdEMmpUeXhEN1Q0RFNpaVRPRTRjdnRxaUJIcHpYYUs5R2pKSXNpMW1DS0J5bEIyWEtDWl81ejhXOXBWVjVQM21ZQ0ExNkZILUNwUzlrODVyNEJ5S0NsWklrSkd6RGpyOUpzcGlPMkw0UGU1MXdrX3hMaEtMS2tGSFltMy1sbnFsUm94WDRvVmo4cWREUjJveWpBZS1GVmxDRWJLYm9Ddk5RWS1yQkR2YlpfUdIBuwFBVV95cUxNVUhKMEsxUG1aVnIyUmRobDZickRkT1NEN0Q3VzNWcXk5RndXT1RFRF8xT254Mm5MMEVZS3JucXVrUVNRQTNJNk5CMnpXWFpGa2NPcTJ1QXhNdWNKb3k0RGJDbU1VYXJ4VzdrTktHb0w3cU9Qd3Q2YVdvamQ0cWtDaGFVY3ktaE5HQjdmbHU1MnNFcXJ0WXJYdmZDaUR5ZVBicFhaZkM0RGF0U2VSODBGdGJjNC15ZDE1NUFJ"
     }
   ]
 }
