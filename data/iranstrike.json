@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T01:59:14Z",
+  "generated_at": "2026-11-23T10:48:28Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,17 +54,17 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 2090,
+    "normalized_events": 2093,
     "map_visualizable_events": 285,
-    "non_mappable_events": 1805,
+    "non_mappable_events": 1808,
     "developments": 4
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2090,
+      "total_events": 2093,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-22T21:24:36Z",
+      "latest_event_date": "2026-11-23T07:04:23Z",
       "geocoded_events": 285,
       "geocoded_share": 13.6,
       "top_category": "infrastructure",
@@ -73,25 +73,21 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 70,
-        "previous": 55,
-        "delta": 15,
-        "percent_change": 27.3,
+        "current": 72,
+        "previous": 60,
+        "delta": 12,
+        "percent_change": 20.0,
         "direction": "increase"
       },
       "latest_30_days": {
-        "current": 279,
+        "current": 281,
         "previous": 334,
-        "delta": -55,
-        "percent_change": -16.5,
+        "delta": -53,
+        "percent_change": -15.9,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-05-27",
-        "count": 0
-      },
       {
         "date": "2026-05-28",
         "count": 0
@@ -770,7 +766,7 @@
       },
       {
         "date": "2026-11-13",
-        "count": 13
+        "count": 14
       },
       {
         "date": "2026-11-14",
@@ -807,30 +803,34 @@
       {
         "date": "2026-11-22",
         "count": 11
+      },
+      {
+        "date": "2026-11-23",
+        "count": 2
       }
     ],
     "category_counts": {
       "infrastructure": 623,
-      "missile": 455,
+      "missile": 456,
       "strike": 286,
       "drone": 243,
       "airstrike": 152,
-      "movement": 135,
+      "movement": 136,
       "ground": 78,
       "explosion": 77,
-      "alert": 22,
+      "alert": 23,
       "defense": 13,
       "political": 5,
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1092,
+      "medium": 1094,
       "high": 632,
-      "low": 353,
+      "low": 354,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1398,
+      "unknown": 1401,
       "iran": 435,
       "israel": 217,
       "usa": 40
@@ -838,7 +838,7 @@
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 795
+        "count": 797
       },
       {
         "name": "Iran",
@@ -862,7 +862,7 @@
       },
       {
         "name": "Israel",
-        "count": 52
+        "count": 53
       },
       {
         "name": "Bandar Abbas",
@@ -900,7 +900,7 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 795
+        "count": 797
       },
       {
         "name": "Iran",
@@ -924,7 +924,7 @@
       },
       {
         "name": "Israel",
-        "count": 67
+        "count": 68
       },
       {
         "name": "Red Sea",
@@ -945,40 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11408,
+    "totalCount": 11411,
     "spotlight": {
       "event": {
-        "id": "377ks2j3p4400",
-        "timestamp": "2026-11-22T11:44:53+00:00",
-        "location": "BHR",
-        "origin": "IRN",
+        "id": "14skwntlyv7g0",
+        "timestamp": "2026-11-23T07:34:00+02:00",
+        "location": "ISR",
+        "origin": "LBN",
         "coordinates": [
           0,
           0
         ],
         "type": "strike",
-        "severity": "high",
-        "description": "IRGC attacks two US bases in Bahrain (Sheikh Isa and Al-Jafeer) with 3 ballistic missiles and drones per Fars; Bahrain Interior Ministry confirms civilians injured in Iranian attacks",
-        "descriptionHe": "משמרות המהפכה תקפו שני בסיסים אמריקאים בבחריין - שיח' עיסא ואלג'פיר, לפי פארס; משרד הפנים של בחריין מאשר פציעת אזרחים בתקיפות האיראניות",
-        "source": "abualiexpress",
-        "weapons": [
-          {
-            "type": "ballistic_missile",
-            "count": 3
-          }
-        ],
-        "sourceUrl": "https://t.me/abualiexpress/134044"
+        "severity": "medium",
+        "description": "Red alert on the Confrontation Line: launch toward Avnei Menahem and Shtula (15-second warning)",
+        "descriptionHe": "התרעת צבע אדום בקו העימות: שיגור לעבר אבן מנחם ושתולה (15 שניות)",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65768"
       },
-      "headline": "Iran launches ballistic missiles, drones at US bases in Bahrain",
-      "headlineHe": "איראן שיגרה טילים בליסטיים וכלים אל בסיסים אמריקניים בבחריין",
-      "summary": "The IRGC strike reportedly injured Bahraini civilians and marks an escalation in direct Iranian attacks on US regional installations amid ongoing tensions.",
-      "summaryHe": "התקיפה של כוחות קודס דווחה כגרמת פגיעות לאזרחים בחריינים וסימנת הסלמה בהתקפות איראניות ישירות על התקנות אמריקניות באזור כשהמתיחות מתמשכת.",
-      "pickedAt": "2026-11-23T00:00:26.380Z",
+      "headline": "Red alert issued as rockets fired toward northern Israel",
+      "headlineHe": "אזעקה אדומה: טילים שוגרו לעבר צפון הארץ",
+      "summary": "The alert marks a fresh escalation on the confrontation line, with just 15 seconds warning for residents in the targeted communities.",
+      "summaryHe": "האזעקה מסמנת התגברות של ההתנגשויות בקו ההתעמתות, עם זמן התרעה של 15 שניות בלבד לתושבים באזורים המכוונים.",
+      "pickedAt": "2026-11-23T10:30:25.671Z",
       "state": "TODAY"
     },
-    "lastUpdated": "2026-11-23T01:57:17.341Z",
+    "lastUpdated": "2026-11-23T10:48:17.322Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 0,
     "ceasefire": false
   },
   "summary": {
@@ -1519,226 +1513,10 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": 95,
       "cellular": null,
-      "lastUpdate": "2026-11-23T01:30:19.218Z",
+      "lastUpdate": "2026-11-23T10:30:23.560Z",
       "internetHistory": [
-        {
-          "t": "2026-11-22T01:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T01:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T01:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T02:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T02:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T02:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T02:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T02:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T02:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T03:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T03:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T03:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T03:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T03:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T03:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T04:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T04:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T04:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T04:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T04:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T04:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T05:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T05:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T05:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T05:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T05:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T05:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T06:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T06:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T06:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T06:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T06:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T06:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T07:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T07:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T07:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T07:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-22T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T08:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T08:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T09:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T09:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T09:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T09:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T09:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-22T10:20:00.000Z",
-          "v": 96
-        },
         {
           "t": "2026-11-22T10:30:00.000Z",
           "v": 96
@@ -2094,30 +1872,246 @@
         {
           "t": "2026-11-23T01:10:00.000Z",
           "v": 96
+        },
+        {
+          "t": "2026-11-23T01:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T01:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T01:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T01:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T02:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T02:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T02:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T02:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T02:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T02:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T03:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T03:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T03:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T03:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T03:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T03:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T04:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T04:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T04:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T04:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T04:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T04:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T05:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T05:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T05:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T05:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T05:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T05:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T06:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T06:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T06:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T06:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T06:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T06:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T07:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T07:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T07:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T07:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T07:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T07:50:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T08:00:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T08:10:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T08:20:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T08:30:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T08:40:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T08:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T09:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T09:10:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T09:20:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T09:30:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T09:40:00.000Z",
+          "v": 96
+        },
+        {
+          "t": "2026-11-23T09:50:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T10:00:00.000Z",
+          "v": 95
+        },
+        {
+          "t": "2026-11-23T10:10:00.000Z",
+          "v": 95
         }
       ],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-23T01:30:19.218Z"
+    "lastUpdated": "2026-11-23T10:30:23.560Z"
   },
   "developments": [
     {
-      "id": "iranstrike-a7f2c1e9",
+      "id": "iranstrike-7a3f2c1e",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-22T11:44:53Z",
       "title": "IranStrike event",
-      "description": "Iran strikes US bases in Bahrain with 3 ballistic missiles, drones; civilians injured",
+      "description": "IRGC strikes US bases in Bahrain with 3 ballistic missiles; civilians injured",
       "category": "other",
-      "severity": "critical",
+      "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran strikes us bases in bahrain with 3 ballistic missiles, dr",
+      "attacker_evidence": "irgc strikes us bases in bahrain with 3 ballistic missiles;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2130,10 +2124,10 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "a7f2c1e9",
-        "text": "Iran strikes US bases in Bahrain with 3 ballistic missiles, drones; civilians injured",
-        "textHe": "איראן תקפה בסיסים אמריקאים בבחריין ב-3 טילים בליסטיים וכלים; פצועים אזרחים",
-        "severity": "critical",
+        "id": "7a3f2c1e",
+        "text": "IRGC strikes US bases in Bahrain with 3 ballistic missiles; civilians injured",
+        "textHe": "תקיפת IRGC בבסיסי צה\"ל בבחריין עם 3 טילים בליסטיים; פציעות בקרב אזרחים",
+        "severity": "high",
         "timestamp": "2026-11-22T11:44:53+00:00",
         "entityIds": [
           "IRN",
@@ -2142,30 +2136,30 @@
         ],
         "eventIds": [
           "377ks2j3p4400",
-          "210lk9amr76o0"
+          "jfm4zzurttk0"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-b4e8d2f6",
+      "id": "iranstrike-9b1d4f6a",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-22T18:07:17Z",
+      "date": "2026-11-23T05:34:00Z",
       "title": "IranStrike event",
-      "description": "US preparing strikes on southern Iran in response to Bahrain base attacks",
+      "description": "Red alert in northern Israel: rocket fire from Lebanon toward Avnei Menahem",
       "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "medium",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "us preparing strikes on southern iran in response to bahrain base attacks ארה\"ב מכינה ת",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker_evidence": "red alert in northern israel: rocket fire from lebanon toward avnei menahem אזעקת אדום בצפו",
+      "location": "Lebanon",
+      "country": "Lebanon",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2176,31 +2170,75 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "b4e8d2f6",
-        "text": "US preparing strikes on southern Iran in response to Bahrain base attacks",
-        "textHe": "ארה\"ב מכינה תקיפות בדרום איראן בתגובה להתקפות על בסיסים בבחריין",
-        "severity": "high",
-        "timestamp": "2026-11-22T18:07:17+00:00",
+        "id": "9b1d4f6a",
+        "text": "Red alert in northern Israel: rocket fire from Lebanon toward Avnei Menahem",
+        "textHe": "אזעקת אדום בצפון ישראל: ירי רקטות מלבנון לעבר אבני מנחם",
+        "severity": "medium",
+        "timestamp": "2026-11-23T07:34:00+02:00",
         "entityIds": [
-          "USA",
-          "IRN"
+          "ISR",
+          "LBN"
         ],
         "eventIds": [
-          "2h28etzyxua00",
-          "3ety4e6ip4k00"
+          "14skwntlyv7g0"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-c8e5b2d3",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-23T07:04:23Z",
+      "title": "IranStrike event",
+      "description": "US F-35 squadron rotates at Uvda; assessment indicates long-term regional presence",
+      "category": "other",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "c8e5b2d3",
+        "text": "US F-35 squadron rotates at Uvda; assessment indicates long-term regional presence",
+        "textHe": "התחלופה של טייסת F-35 בבסיס אובדה; הערכה מצביעה על נוכחות אזורית ארוכת טווח",
+        "severity": "low",
+        "timestamp": "2026-11-23T07:04:23+00:00",
+        "entityIds": [
+          "USA",
+          "ISR"
+        ],
+        "eventIds": [
+          "18jqiw2b71hc0",
+          "3fhf1cvhrbi00"
         ],
         "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-c5a9e3b7",
+      "id": "iranstrike-d6f4a9c5",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-22T10:30:13Z",
       "title": "IranStrike event",
-      "description": "Iran reports nationwide power outages amid fuel shortage, war-related infrastructure damage",
+      "description": "Iran faces nationwide power outages; war damage cited to gas infrastructure",
       "category": "other",
       "severity": "medium",
       "attacker": "unknown",
@@ -2221,9 +2259,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c5a9e3b7",
-        "text": "Iran reports nationwide power outages amid fuel shortage, war-related infrastructure damage",
-        "textHe": "איראן מדווחת על הפסקות חשמל לאומיות בשל מחסור בדלק וכניסות מחלומות",
+        "id": "d6f4a9c5",
+        "text": "Iran faces nationwide power outages; war damage cited to gas infrastructure",
+        "textHe": "איראן סובלת מנתקי חשמל ארציים; נזקי מלחמה לתשתיות גז",
         "severity": "medium",
         "timestamp": "2026-11-22T10:30:13+00:00",
         "entityIds": [
@@ -2234,17 +2272,63 @@
         ],
         "sourceCount": 1
       }
+    }
+  ],
+  "events": [
+    {
+      "id": "iranstrike-18jqiw2b71hc0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20825",
+      "date": "2026-11-23T07:04:23Z",
+      "title": "IranStrike event",
+      "description": "US F-35 squadron rotation at Uvda Air Base in southern Israel: F-35s returning to the US, replaced by aircraft from an Arizona base",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Israel",
+      "country": "Israel",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "18jqiw2b71hc0",
+        "timestamp": "2026-11-23T07:04:23+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "US F-35 squadron rotation at Uvda Air Base in southern Israel: F-35s returning to the US, replaced by aircraft from an Arizona base",
+        "descriptionHe": "החלפת טייסת F-35 אמריקאית בבסיס עובדה שבדרום ישראל: מטוסי F-35 חוזרים לארה\"ב ומוחלפים במטוסים מבסיס באריזונה",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20825"
+      }
     },
     {
-      "id": "iranstrike-d6b1f4c8",
+      "id": "iranstrike-14skwntlyv7g0",
       "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-22T21:24:36Z",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65768",
+      "date": "2026-11-23T05:34:00Z",
       "title": "IranStrike event",
-      "description": "Houthis claim seizure of ammo, explosives, missile depots in Al-Khawjah operation",
-      "category": "other",
+      "description": "Red alert on the Confrontation Line: launch toward Avnei Menahem and Shtula (15-second warning)",
+      "category": "alert",
       "severity": "medium",
       "attacker": "unknown",
       "attacker_label": "Unknown actor",
@@ -2264,22 +2348,22 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d6b1f4c8",
-        "text": "Houthis claim seizure of ammo, explosives, missile depots in Al-Khawjah operation",
-        "textHe": "חות'ים טוענים על תפיסת תחמוצת, חומרי נפץ ומחסני טילים בתפעול בחווג'ה",
+        "id": "14skwntlyv7g0",
+        "timestamp": "2026-11-23T07:34:00+02:00",
+        "location": "ISR",
+        "origin": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
         "severity": "medium",
-        "timestamp": "2026-11-22T21:24:36+00:00",
-        "entityIds": [
-          "YEM"
-        ],
-        "eventIds": [
-          "2wlpdozad1400"
-        ],
-        "sourceCount": 1
+        "description": "Red alert on the Confrontation Line: launch toward Avnei Menahem and Shtula (15-second warning)",
+        "descriptionHe": "התרעת צבע אדום בקו העימות: שיגור לעבר אבן מנחם ושתולה (15 שניות)",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65768"
       }
-    }
-  ],
-  "events": [
+    },
     {
       "id": "iranstrike-2wlpdozad1400",
       "source": "IranStrike",
@@ -7058,6 +7142,50 @@
         "descriptionHe": "דיווחים כי פיקוד המרכז האמריקאי הזהיר נציגים צבאיים ישראלים להתכונן לאפשרות של חידוש הלחימה עם איראן בקרוב, ואזהרות דומות הועברו למדינות המפרץ",
         "source": "OSINTdefender",
         "sourceUrl": "https://t.me/OSINTdefender/20744"
+      }
+    },
+    {
+      "id": "iranstrike-fz8cu01yuk00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "RocketAlert",
+      "source_url": "https://t.me/RocketAlert/30771",
+      "date": "2026-11-13T02:56:10Z",
+      "title": "IranStrike event",
+      "description": "Rocket/missile alert: launches targeting Nachal Oz in the Gaza Envelope",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "fz8cu01yuk00",
+        "timestamp": "2026-11-13T02:56:10+00:00",
+        "location": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Rocket/missile alert: launches targeting Nachal Oz in the Gaza Envelope",
+        "descriptionHe": "התרעת רקטות/טילים: שיגורים לעבר נחל עוז בעוטף עזה",
+        "source": "RocketAlert",
+        "sourceUrl": "https://t.me/RocketAlert/30771"
       }
     },
     {
