@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-25 02:31 UTC",
+    "updated": "2026-11-25 14:25 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,9 +8,9 @@
   "summary": {
     "period_start": "2026-11-19",
     "period_end": "2026-11-25",
-    "total_events": 62,
-    "total_risk": 77.05,
-    "normalized_risk_score": 30.8,
+    "total_events": 69,
+    "total_risk": 87.6,
+    "normalized_risk_score": 35.0,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
@@ -18,35 +18,71 @@
     "military": 26,
     "security": 3,
     "political": 7,
-    "other": 26
+    "other": 33
   },
   "source_counts": {
-    "news": 62,
+    "news": 69,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Gaza Strip",
-      "risk": 23.15
+      "risk": 20.05
     },
     {
       "name": "Iran",
-      "risk": 17.05
+      "risk": 16.05
     },
     {
       "name": "Israel",
-      "risk": 7.15
-    },
-    {
-      "name": "Iraq",
-      "risk": 4.9
+      "risk": 10.95
     },
     {
       "name": "Yemen",
-      "risk": 4.6
+      "risk": 8.1
+    },
+    {
+      "name": "Saudi Arabia",
+      "risk": 7.5
     }
   ],
   "top_events": [
+    {
+      "score": 3.0,
+      "date": "2026-11-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Oil rises after alleged Houthi attack on Saudi refinery - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVGl4Nzdfc01ReTB5TnAxUkVLTXlaRVFvbGM5aTZDOEtVUXlrVDQtMHJwcWh2WldoMnVyb0QxU1pEQUoyN09sNU1SZXR3NVUzdTZXeWpkdGNTZW95MUtmdjV3dWFxTEZsRW5WUlF1djVTTWZxUGVxcHhPNEptMnBEcmZ0MURhX0JxTDFqc19HblpWd2hLSEs5SXRYTXB6bzFwNzZqOUFTc1ZOM3ItVDFZWmM2a0R5YkxsdnlsMTZWQ1ZEUQ"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Israeli strike kills Hamas official, his wife and children - Reuters",
+      "location": "Israel",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYjNlV0dRZTd0cDZJZVBnNFl6VUpTMDFlQlFIY0tJQzR5ZmNrYm9lNS1kMTRYbEpyM2FNMWp6Qms1NGh4VTU0YkxQN0NaY1FRV1diOENoQmdIQjJ0eU12VGZfamhNWHpsZUQ0MXczanBWZW1uWUZsVXpwcElhR2RXdG80RTBIcjZ1WjVHYW94MUhfUDI5dTA0ODZWRlBiVkFYNlhwR1RSaW1OZ2M"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Yemen's Houthis say they attacked Saudi Arabia's Ras Tanura refinery - Reuters",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOakM0aVEtei1RVzZkTUVZYlFabWlDYWpzTktyaGU2WHZqaGRkU0hJOHdsNDFUdU5GYzNOYzdZYnkwWnFYZ2daNlNvYkJ3ZWNjeDNTRm5HOUFtNW5nRjNYSVpaaGF0SF9xbjN6S1FpbVJ6MmFBYkdUeF9CMTZKRUdJT2RITmVSelAzWUJtTEIxQTN5Ry1YZEczX29iOHVuc0Q1bllidlBoN0VDNWVzYzZqU2RaNm5JRUctRDdsdGt2ZkEydWRVMV9wQUdHYw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-25",
+      "category": "military",
+      "source_type": "news",
+      "title": "Saudi-led coalition intercepts Houthi attacks after Hodeidah strike - Al Jazeera",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTEVITC1LZkREZDRPbDhBOFk4TFN0eFZWSEk0RnJwUnR4aDFpb042SEwwcTRYXzNGSGhjcXg5S0lYMUQwcHRZSW1IU2gzYVRtY3pTenRONUl6bW9UNFItSk5YTXZwLWo4MkJTckxPdUQxUTJ4Mzl2Y1VTam84dllIU3hXOGdUOGhFRGpyUzRrQUU3RTI0blpwX05jSGI2bnRrRk9EMXAtTDVRTlpTRnfSAbMBQVVfeXFMTnBiR1EteFNjS2JTSjVyaF90TThMS2xpT2Nvd2wxbGtQLXE0aE9uNWkwNzExNjM2RHVxOEJEOTdFYnUwb2xLaElxdDZnZDVrc00zTGpfUGRZWWdGdFlOMUNsLXVKMmtoOUc1UVdtYi1CUEFqZUFsMGtvOEdJZjFXbEVhLTVPS0ZnUWdNb3BOV2ZHR2hOZjZQY2drZ3Y0QmFidUNLLWxCYTI3bU1GM3hVN0NqeVU"
+    },
     {
       "score": 2.7,
       "date": "2026-11-24",
@@ -97,45 +133,9 @@
       "date": "2026-11-24",
       "category": "military",
       "source_type": "news",
-      "title": "11 injured in Houthi drone attack on Riyadh tower, Saudi civil defence says - Al Jazeera",
+      "title": "Saudi civil defence says 11 injured in Houthi drone attack on Riyadh tower - Al Jazeera",
       "location": "Riyadh",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQT3JsaU96a05ySk9rVHZIazNjQmt6Z2ZCZF9nRWFSVHVqa0s1LVhhRXhVc1VSMjNfWHhQTVZyZU9GZEtsZHRRVU5yVGVUYmVwZkRDNC1iSmYyWDc0UTdhV2pOenhuWDFkQ0ZWWkhwcTFoN2tsU3JjcllUWWJkcDBvUHU4MTAzSi0zX05oM0NLQVpua1VFNmJfcWE3cmh1al82V29SdDhCSkc4d9IBrwFBVV95cUxPQ1M5eHo1Rk9NaE5DM2hNbGF1akUxczVaekNKRWRUN3JxZ0ZJd05TYno2b2o2bVU0ZWJxWE5GWE5kT19lRHR6Z3k0TVpkaXFuY2dBMXNmaFE2YWpubno0VGZFUFlEbEJqY2NKODVWX09BVUpEUGZTXzRrY3RZWi1YUFdtaUN2amFOSm1sNXJRRzA3TW84Sk0wcUJYN1NCSEpKbV9ZZk8zNUtZSzJVdjFV"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-24",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli air strikes in Gaza kill 7 as doctors warn of meningitis outbreak - Al Jazeera",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQeTQ1NF9jeUk1SS00N2xBNUpqdjlVeHE3Uk9hbTFUNHVPZUZ3M3JNc2NtSTBERHUwSVl4eHR6UTN3ak1yVldULXpaazJiQk80Rnl3MllsaHRLSVJtUnFzcXh2WjBlMGNneFJOcnI3YWhJeHhJNzRsMmVFMmI4eG1ycHNhU2QwenNKZVZqRklNZjF0SG1wTVd3RWp0RmFGTFljTGNCa2drTFFMQk9pRmpJREx6T3lBQdIBuwFBVV95cUxQTFc1WlFSY2dET3dJOEhfUUZwSHhiZ1k2M2FULXhCRHM0NEFZY3dZRkdERS1TS3E1VlgxaGdNYnJ2aDMybFNTdUY4YUJMM3FmMGlKMjc2QWFuRXZCZGF1b3daSDB6dE9DWloyalJxazRYYW5TSDFUWWtrQmlHSzdqQXJmOWQzcWpaV2t1LXVKRUZjX2JTd1NjNnJLSFNzTmVyaE5wNXV3UkZ1M1o3WEtPOFZGTnRYRHpXd3RZ?oc=5"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-      "location": "Gaza Strip",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaFR0Y0tNMTl0MmFKSU02ZGd1MElscXdzQnlya2RHU3cyN3dFaUdOeVVPNTQzMjVobjk4WGxsdGtQcDYzbkpvcm42RXdlTVlUb1pvV3lJaW95OHBrSXU4bjdwWXRQMnhTZkVieER1ZVE5cVVWYVJQek1qeWRlOGstYlU5RnVoX0FXRXdfQ2ZQb1NLekZKXzF2X2hxQS1hRURFR1lRSG1mXy1iNTc1OWtULTVRZlpxRXg0M0l2VW13QUR0Zm8"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli attacks have turned Gaza into 'toxic wasteland', Oxfam says",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/c8r4gzzxvxl3o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.4,
-      "date": "2026-11-23",
-      "category": "military",
-      "source_type": "news",
-      "title": "Iran threatens response to any attack amid naval blockade - Al Jazeera",
-      "location": "Iran",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNaW5ubVFhMHNDamNzUmNNY3pSWV9rM2hZUkpJZUlON1RwaFM0MDA5bzhVRjd1cFFPbmhiNnN2UE8yeW9vai1hSVZYdDFpX1paeFVnWG5wTjVoZm1nb1hhcnBjb1JCY2RMRUFzMzFxME5IWk5tNkI3eDQtQ0Y1MUtUOTVNQWM0WjZ5ZnA1Xzg4ZFRxVmp4MFc4T0lJT2toOEppUWVjaEllZWpIeXZQWkHSAbMBQVVfeXFMTmVEc3hFSXdzaDkwc2RSM2dReHpONUg3My1hcHlyMjgyUmVGdjBYT1FDZEc5c0lzam93M2RNQ0txem9NWTNnSmtkSTRHMDRTaTZBTU00VlFHQnhDV0pqLU1zci1ZUHB6Y2V6a2d5VWNsekhkNDJXRmIzbUJjbWxnQVE1bnpXazIyU3hjbXBBSzg0ZDJQcTJKVkRMVzh3d0s0aktYUW1EUlcyNURZcGJmUTg0NVk"
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQT3JsaU96a05ySk9rVHZIazNjQmt6Z2ZCZF9nRWFSVHVqa0s1LVhhRXhVc1VSMjNfWHhQTVZyZU9GZEtsZHRRVU5yVGVUYmVwZkRDNC1iSmYyWDc0UTdhV2pOenhuWDFkQ0ZWWkhwcTFoN2tsU3JjcllUWWJkcDBvUHU4MTAzSi0zX05oM0NLQVpua1VFNmJfcWE3cmh1al82V29SdDhCSkc4d9IBrwFBVV95cUxPQ1M5eHo1Rk9NaE5DM2hNbGF1akUxczVaekNKRWRUN3JxZ0ZJd05TYno2b2o2bVU0ZWJxWE5GWE5kT19lRHR6Z3k0TVpkaXFuY2dBMXNmaFE2YWpubno0VGZFUFlEbEJqY2NKODVWX09BVUpEUGZTXzRrY3RZWi1YUFdtaUN2amFOSm1sNXJRRzA3TW84Sk0wcUJYN1NCSEpKbV9ZZk8zNUtZSzJVdjFV?oc=5"
     }
   ]
 }
