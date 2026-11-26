@@ -1,12 +1,10 @@
 # Hotspot Alert
 
-**Generated:** 2026-11-25T14:25:43.233259+00:00
+**Generated:** 2026-11-26T00:23:09.880355+00:00
 
-No hotspot alert: no location met the spike thresholds in the last 24 hours.
-
-Top current hotspot (by risk): Saudi Arabia (4.6), prev 24h: 0.0, share: 33%.
+No alert: no events detected in the last 24 hours.
 
 ## X POST VERSION
 
-No hotspot alert in the last 24 hours (no spike thresholds met).
+No hotspot alert in the last 24 hours.
 Map + sources: https://mikloshetzer-sketch.github.io/me-security-monitor
