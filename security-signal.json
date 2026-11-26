@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-11-26 10:56 UTC",
+    "updated": "2026-11-26 21:35 UTC",
     "window_days": 7,
     "method": "events-based osint signal v1",
     "source_file": "events.json"
@@ -8,42 +8,42 @@
   "summary": {
     "period_start": "2026-11-20",
     "period_end": "2026-11-26",
-    "total_events": 72,
-    "total_risk": 97.4,
-    "normalized_risk_score": 39.0,
+    "total_events": 74,
+    "total_risk": 103.95,
+    "normalized_risk_score": 41.6,
     "risk_level": "LOW",
     "confidence": "MEDIUM"
   },
   "category_counts": {
-    "military": 31,
+    "military": 30,
     "security": 4,
     "political": 6,
-    "other": 31
+    "other": 34
   },
   "source_counts": {
-    "news": 72,
+    "news": 74,
     "isw": 0
   },
   "top_locations": [
     {
       "name": "Gaza Strip",
-      "risk": 19.65
+      "risk": 18.05
     },
     {
       "name": "Israel",
-      "risk": 13.4
-    },
-    {
-      "name": "Iran",
-      "risk": 13.35
+      "risk": 13.7
     },
     {
       "name": "Yemen",
-      "risk": 10.3
+      "risk": 13.3
     },
     {
       "name": "Saudi Arabia",
-      "risk": 9.3
+      "risk": 12.3
+    },
+    {
+      "name": "Iran",
+      "risk": 9.75
     }
   ],
   "top_events": [
@@ -52,9 +52,36 @@
       "date": "2026-11-26",
       "category": "military",
       "source_type": "news",
-      "title": "Oil prices fall as supply concerns linger after Iran claims mine strikes on ships - Reuters",
-      "location": "Iran",
+      "title": "Brent settles higher as mine strikes, refinery attack stoke Middle East supply concerns - Reuters",
+      "location": "Middle East",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWHpfX3p2RFoxU2l0SGZVbVdSejdGYkc0NFpERWlxVEtab0pQbGd1NUtqQ3c0cXprdWItUF9fRmVVVElET3BNbklnbElwaC1UZ0xoNnd4dE9Wb2dFVDFGN2JyQ3YyUVhfTWxsNGFWNFNURG5kX1pMdVBtb2QyLXFMaXZPM0ZPdGdud1hWdHFuTEpNQXBtdUh6RmpWcW1jelhTU0JHdmp3dWphb0hB"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters",
+      "location": "Iran",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZ2hPQWhhdW9HTWxtRndjQkN3aFhQTzhyWV9sQ0NTbHNsRFpINkRjMHhKRGN4QTk1NTJYWU1yVHhmYVJSazJEVGtOdVIzZ2xsNFJFeHF0YXNEbXBqTF94bnBDOEFnMV9JdGRRbWVROFJGRmZISmZWUXhtYTlJTXFFMlBWa2IwdXBfUXY4OENRd2tVeWh0Q1M1OThsMl9kMkVEamJiTjMzdWxwZHRzdlVHYmtwTUI"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "German police arrest two Iraqis over alleged Cologne synagogue bomb plot - Reuters",
+      "location": "Iraq",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONnk2X1RfVHc3VF8ybnZCVzdIbjFrdTNMbzI2SXhxVW9VTGx4RV94OV8zdU9yRzJPS1daUUZzMXBKM0o5aW1HMklsR1Y5OUlxMEhWTVpNX0tXclphbWhDcE1kb050ekVqaWtrcEpyenZQdS1MWlE2ZVp3ZjNJUjg4ay1HM2VPa0l3emJ0MHpGNHFmdUhsWGIwRXdfMUFuRlBWNDZSNXNzcE9kTkFLd2VnREE1Vl8zOVU0REpaT3o5dkhtTElF"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
+      "location": "Saudi Arabia",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORnNINWJlUzU0bDVSQ1Z5TWhtZTl1dzVxa01lbWhiMTg0bjBKZzQtbld6RmpIQ3NOSkctT29wTmdmR3VCcHpMbzdBQUdQSU0wVWItQU1COHhCS1BzYnpoOTJsRzl2TWp0aVNNZWVpZVFhS2cwWXVtNnA0bzRfUXNTRTJRTEVHem5BY2V2SURxZG9Vb3VkT3FNa1RuR3RfZWJQUE15WTdGaVFudnJaeVJIdVhXdE9PcWFuY2c"
     },
     {
       "score": 3.0,
@@ -70,9 +97,27 @@
       "date": "2026-11-26",
       "category": "military",
       "source_type": "news",
+      "title": "‘Symbolic’: Why did UK sanction Yemen’s Houthis amid attacks on Saudi? - Al Jazeera",
+      "location": "Yemen",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMGFNV09TZ3MzTkR6VjMwbFFjN05mRlpYNG9kX3Y0RUt2RTRRYkxZU3I2S05pQ3FwWHZ1WHlZZlVrb2lScHdoQzNQTURyQ0pNT2xtUUIzNDViOFdFbGZPX1RZa3pYS2k4QXoxUk03Q0U2T1hGVEd5Nm54NnZrR3lWc0ZTbDN0QlZVR29VZ2doZjNqZlJ6SHdMVGNCQUFLaElCZERjNEJ4ZzdXRTjSAbABQVVfeXFMTmNOM0tubjJXdkpRZ1hvSEp0aHhQcm1pcklJQ3c1ZXh6Ml9ua21FMGtFd0RJb21SUm5tN3dmdHJLeHZvZUFQcWY5c0s3QVZpT2tkdGs5SmpoS056ckI3MzBfRlpqb3VDTXgzeVBINFJCWFJrejB3RURSYjZYMTBWdWxMQmtnb3dESzlLVXQ3YUwyM2EycVFmQVJCSl90eGhGdllyZ3hNU0RmZTAwVDJELVI"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-26",
+      "category": "military",
+      "source_type": "news",
       "title": "At least 31 killed in Egypt vehicle fire, Health Ministry says - Al Jazeera",
       "location": "Egypt",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTlU0RXBRWWJMUXd0Z01rcmhMeTI0V1hJLVdXUUY3eEhwb2w2R0pza2RxSnZyd044elUxX3UyemhQTG5wN1VadlphRjE2SGJvMmlRQ0N0TGRScDlwYUVWejFyX0FDMWpQZGJkZWZTSmxia2tTUkZQSFZ1XzBzNVU1ZVB5cFBGblBxWGtfb2ZXZGxTNGRzWlNBdkJaTm9tdWVlQTJfNnJB0gGrAUFVX3lxTFBxMmtCU1JWQ2xhSXBTMEczWEc0MGpvSExWY2xIcEl4VFZCOGdNRWg0ZFJxSzZZek52aV9pdUVFcFdUSEh1YmlVSmRQUU53RzE1dVhkZzc4RWZxSzEtNUZZbUNvbkFJU1hRdDljX21MY0xIZ2NmbGRKZXc3NkFkRTVhdTJZdExmYVJObVNNWk1Hd2EtdHJSb0lCRmplNC1XcXVfd3pnVS03MHkxaw"
+    },
+    {
+      "score": 3.0,
+      "date": "2026-11-26",
+      "category": "military",
+      "source_type": "news",
+      "title": "Jordan Parliament debates ‘antiterror’ law after deadly Karak church attack - Al Jazeera",
+      "location": "Jordan",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPd0gzZWVpTDhORy1jYnd1ZExiVEtROC1acEx0RFpxeGY3QlRVT3FjTHk4RXlPbW04NEJOdFpKTi1OeGxkQXZTbUpXd1BGVVM1aUpIYjI5SE9BRHhsYkFlSXBoTk9uR1JKTjNnZmJ3M2NtZ2tncGVCUldWLXVjVjZOZWNkbmZXZDVYVkxpX0h5QkpQdG94MktZRERDZnpFOGxqLUM3amdYdmtsU2RwNk82bWJqN2hIQdIBuwFBVV95cUxOdDRTaUVIYkdLUEhjOGt2eEluRzZDVEZZRlZfUUluNUVrMUhnYzBHNjVjeWVoX1VLUkZuY0dZQ05yNW5zUEFfM1hWT3M3V3haRHF1bmprQmdsVGkxakt6c0s1VmkxaWwxV1hqMjBKRE9TSEoyMThjcnJITGRpN1RjcDBaWHRvaDJ1QWtZc3FMMHg2a21FWmZudjRNdEh4cXdIYThkZUhieklQaTJ6X0lISnNKaFpadS12Ujhj"
     },
     {
       "score": 2.7,
@@ -91,51 +136,6 @@
       "title": "Israeli strike kills Hamas official, his wife and children - Reuters",
       "location": "Israel",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYjNlV0dRZTd0cDZJZVBnNFl6VUpTMDFlQlFIY0tJQzR5ZmNrYm9lNS1kMTRYbEpyM2FNMWp6Qms1NGh4VTU0YkxQN0NaY1FRV1diOENoQmdIQjJ0eU12VGZfamhNWHpsZUQ0MXczanBWZW1uWUZsVXpwcElhR2RXdG80RTBIcjZ1WjVHYW94MUhfUDI5dTA0ODZWRlBiVkFYNlhwR1RSaW1OZ2M"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli opposition advances October 7 attack probe opposed by Netanyahu - Reuters",
-      "location": "Israel",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNS3ZLT2liQ2xsLWEzM3YtbnJRaVNINFJXTXhVQ2J2cXJiSjhNX0tUTE9HckFYYzhxTG45d1lYSXRZYlVsVjA1Ym9nQVlwbThQWHFZZmU5akpONHlXYkJZR3RPUmY4bEsxWFBQMWNBbVVGTURYTG9zQ2cwYVY1WTJmQ1UyUzRvbVY5d1hEejM4c011SDV4dDBMdzdkSHhaak9SQXNIZHdzU01Sa0tDdHk3YmJHY213cmZqOXpvOHNkb0o0R3c"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Reuters",
-      "location": "Yemen",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOakM0aVEtei1RVzZkTUVZYlFabWlDYWpzTktyaGU2WHZqaGRkU0hJOHdsNDFUdU5GYzNOYzdZYnkwWnFYZ2daNlNvYkJ3ZWNjeDNTRm5HOUFtNW5nRjNYSVpaaGF0SF9xbjN6S1FpbVJ6MmFBYkdUeF9CMTZKRUdJT2RITmVSelAzWUJtTEIxQTN5Ry1YZEczX29iOHVuc0Q1bllidlBoN0VDNWVzYzZqU2RaNm5JRUctRDdsdGt2ZkEydWRVMV9wQUdHYw"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Islamic State attack kills two Syrian security personnel in Hasaka, state media says - Reuters",
-      "location": "Syria",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZVhLUk5WUGVKeUtibVZyUWd3VWYxd3duVHgzalJidk1iRTBvQnM4eFkyYjk1Y2xZNFYzWTBjUEROT25obXpHb19wbDNRdjBCTGczZERrZGcxZHREMzVJck8waWgtazluSkR6NThzX2M1ZUx3Y3VJWEl0Z3o3T3JNQnhoaDRjek5xTkhMdGhsaE94RXV2TUh0bDB1OW1oc1VnQmJlNFlfdlBKSEpHZzREd2lQU0dNY3ZSNWYtMTE3WGw2VjkwS19xMU42ZnE2NGs"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Thirty-one killed in massive fire as fuel tanker crashes on Cairo highway",
-      "location": "Cairo",
-      "url": "https://www.bbc.co.uk/news/articles/cqy7rn30v314o?at_medium=RSS&at_campaign=rss"
-    },
-    {
-      "score": 2.7,
-      "date": "2026-11-25",
-      "category": "military",
-      "source_type": "news",
-      "title": "Israeli strike kills senior Hamas security official and family in Gaza City",
-      "location": "Gaza Strip",
-      "url": "https://www.bbc.co.uk/news/articles/cmd718zydz9qo?at_medium=RSS&at_campaign=rss"
     }
   ]
 }
