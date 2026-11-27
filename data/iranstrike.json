@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T15:37:13Z",
+  "generated_at": "2026-11-27T23:44:56Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,18 +54,18 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 2131,
-    "map_visualizable_events": 289,
-    "non_mappable_events": 1842,
+    "normalized_events": 2134,
+    "map_visualizable_events": 290,
+    "non_mappable_events": 1844,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2131,
+      "total_events": 2134,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-27T15:28:14Z",
-      "geocoded_events": 289,
+      "latest_event_date": "2026-11-27T18:29:12Z",
+      "geocoded_events": 290,
       "geocoded_share": 13.6,
       "top_category": "infrastructure",
       "top_location": "Unknown",
@@ -73,17 +73,17 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 60,
-        "previous": 65,
-        "delta": -5,
-        "percent_change": -7.7,
+        "current": 61,
+        "previous": 67,
+        "delta": -6,
+        "percent_change": -9.0,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 282,
-        "previous": 346,
+        "current": 281,
+        "previous": 345,
         "delta": -64,
-        "percent_change": -18.5,
+        "percent_change": -18.6,
         "direction": "decrease"
       }
     },
@@ -806,13 +806,13 @@
       },
       {
         "date": "2026-11-27",
-        "count": 7
+        "count": 10
       }
     ],
     "category_counts": {
-      "infrastructure": 639,
+      "infrastructure": 641,
       "missile": 464,
-      "strike": 291,
+      "strike": 292,
       "drone": 246,
       "airstrike": 153,
       "movement": 138,
@@ -824,14 +824,14 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1113,
+      "medium": 1116,
       "high": 643,
       "low": 362,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1426,
-      "iran": 444,
+      "unknown": 1428,
+      "iran": 445,
       "israel": 221,
       "usa": 40
     },
@@ -842,7 +842,7 @@
       },
       {
         "name": "Iran",
-        "count": 475
+        "count": 476
       },
       {
         "name": "Lebanon",
@@ -854,7 +854,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 96
+        "count": 97
       },
       {
         "name": "Israel",
@@ -870,7 +870,7 @@
       },
       {
         "name": "Bandar Abbas",
-        "count": 51
+        "count": 52
       },
       {
         "name": "Syria",
@@ -904,7 +904,7 @@
       },
       {
         "name": "Iran",
-        "count": 613
+        "count": 615
       },
       {
         "name": "Lebanon",
@@ -920,7 +920,7 @@
       },
       {
         "name": "Persian Gulf",
-        "count": 96
+        "count": 97
       },
       {
         "name": "Israel",
@@ -945,33 +945,34 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11449,
+    "totalCount": 11452,
     "spotlight": {
       "event": {
-        "id": "1btz4w57edeo0",
-        "timestamp": "2026-11-27T14:42:03+00:00",
+        "id": "2i3v4bg7uwi00",
+        "timestamp": "2026-11-27T18:29:12+00:00",
         "location": "IRN",
+        "origin": "IRN",
         "coordinates": [
           0,
           0
         ],
         "type": "report",
-        "severity": "high",
-        "description": "Unverified OSINT report of unusually fast construction at the Behjatabad underground complex between Esfahan Nuclear Site and Pickaxe Mountain; purpose unknown, possibly ballistic missile or nuclear related",
-        "descriptionHe": "דיווח OSINT לא מאומת על בנייה מהירה בלתי רגילה במתחם התת-קרקעי בהג'תאבאד, בין אתר הגרעין באספהאן להר פיקאקס; מטרת המתחם אינה ידועה, ייתכן שקשור לטילים בליסטיים או לתוכנית הגרעין",
-        "source": "CIG_telegram",
-        "sourceUrl": "https://t.me/CIG_telegram/87754"
+        "severity": "medium",
+        "description": "Iran threatens to break the U.S. naval blockade by sending a convoy of more than 14 oil tankers through the Strait of Hormuz, risking confrontation if the U.S. Navy intervenes",
+        "descriptionHe": "איראן מאיימת לשבור את המצור הימי האמריקאי באמצעות שיירה של יותר מ-14 מכליות נפט דרך מצר הורמוז, ומסכנת עימות אם הצי האמריקאי יתערב",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20854"
       },
-      "headline": "Iran rushes mysterious underground construction near nuclear site",
-      "headlineHe": "איראן מאיצה בנייה תת-קרקעית מסתורית ליד אתר גרעיני",
-      "summary": "OSINT analysts report unusually rapid excavation work at Behjatabad complex between Esfahan Nuclear Site and Pickaxe Mountain, with purpose unclear but potentially weapons-related.",
-      "summaryHe": "אנליסטים של OSINT דיווחו על עבודות חפירה מהירות באופן חריג בקומפלקס בהג'אתאבאד בין אתר הגרעין אספהאן להר המקדח, כשהמטרה לא ברורה אך אפשרית הקשורה לנשקים.",
-      "pickedAt": "2026-11-27T14:45:26.359Z",
-      "state": "SPOTLIGHT"
+      "headline": "Iran threatens massive oil tanker convoy through strategic Hormuz Strait",
+      "headlineHe": "איראן איימת על שיירת טנקרים ענקית דרך מחוז הורמוז",
+      "summary": "The threatened Iranian convoy represents an escalatory move to challenge U.S. naval enforcement of the blockade, with direct risk of military confrontation in one of the world's most critical chokepoints.",
+      "summaryHe": "שיירת טנקרים איראנית המאוימת מייצגת צעד הסלמה לאתגר האכיפה הימית האמריקאית, עם סכנה ישירה של עימות צבאי בנקודת הצווארון הקריטית ביותר בעולם.",
+      "pickedAt": "2026-11-27T22:00:25.595Z",
+      "state": "TODAY"
     },
-    "lastUpdated": "2026-11-27T15:36:17.338Z",
+    "lastUpdated": "2026-11-27T23:42:17.365Z",
     "stale": false,
-    "viewerCount": 2,
+    "viewerCount": 0,
     "ceasefire": false
   },
   "summary": {
@@ -1514,22 +1515,67 @@
     "vitals": {
       "internet": null,
       "cellular": null,
-      "lastUpdate": "2026-11-27T15:00:14.519Z",
+      "lastUpdate": "2026-11-27T23:30:38.298Z",
       "internetHistory": [],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-27T15:00:14.519Z"
+    "lastUpdated": "2026-11-27T23:30:38.298Z"
   },
   "developments": [
     {
-      "id": "iranstrike-2f4k7n9p",
+      "id": "iranstrike-7f4c9a2e",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-27T18:29:12Z",
+      "title": "IranStrike event",
+      "description": "U.S. disables Iranian bulk carrier PACIFIC ARCHER in Gulf of Oman amid blockade enforcement",
+      "category": "other",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "7f4c9a2e",
+        "text": "U.S. disables Iranian bulk carrier PACIFIC ARCHER in Gulf of Oman amid blockade enforcement",
+        "textHe": "ארה\"ב משבתה את אוניית משא איראנית במפרץ עומאן במהלך אכיפת הסגר",
+        "severity": "high",
+        "timestamp": "2026-11-27T18:29:12+00:00",
+        "entityIds": [
+          "USA",
+          "IRN"
+        ],
+        "eventIds": [
+          "3cyb5ou9m2g00",
+          "3apgo38tng800"
+        ],
+        "sourceCount": 1
+      }
+    },
+    {
+      "id": "iranstrike-5b2d1c3f",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-27T08:06:49Z",
       "title": "IranStrike event",
-      "description": "IDF strikes Hezbollah launch sites in Bekaa Valley; dozens of rockets, launchers targeted",
+      "description": "IDF strikes Hezbollah Radwan training camp and launchers in Bekaa Valley Ein a-Tina",
       "category": "other",
       "severity": "high",
       "attacker": "israel",
@@ -1537,7 +1583,7 @@
       "attacker_color": "#dc2626",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes hezbollah launch sites in bekaa valley;",
+      "attacker_evidence": "idf strikes hezbollah radwan training camp and launchers in b",
       "location": "",
       "country": "",
       "latitude": null,
@@ -1550,9 +1596,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "2f4k7n9p",
-        "text": "IDF strikes Hezbollah launch sites in Bekaa Valley; dozens of rockets, launchers targeted",
-        "textHe": "צה\"ל תקף מקומות שיגור של חיזבאללה בעמק הבקעה; עשרות רקטות ומשגרים",
+        "id": "5b2d1c3f",
+        "text": "IDF strikes Hezbollah Radwan training camp and launchers in Bekaa Valley Ein a-Tina",
+        "textHe": "צה\"ל תקף מחנה הכשרה וזוקי שיגור של כוחות רדוואן בעמק בקעה",
         "severity": "high",
         "timestamp": "2026-11-27T08:06:49+00:00",
         "entityIds": [
@@ -1568,14 +1614,14 @@
       }
     },
     {
-      "id": "iranstrike-1a8m5q3r",
+      "id": "iranstrike-9e6b4a71",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-26T19:11:27Z",
+      "date": "2026-11-27T18:29:12Z",
       "title": "IranStrike event",
-      "description": "Iran denies Kuwait attack killing 2 Italians; likely Iraqi resistance faction assessed",
+      "description": "Iran threatens 14-tanker convoy through Strait of Hormuz; IRGC claims SAM fired at U.S. F-16C",
       "category": "other",
       "severity": "high",
       "attacker": "iran",
@@ -1583,9 +1629,9 @@
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iran denies kuwait attack killing 2 italians;",
-      "location": "Iran",
-      "country": "Iran",
+      "attacker_evidence": "irgc claims sam fired at u.s.",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -1596,121 +1642,31 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "1a8m5q3r",
-        "text": "Iran denies Kuwait attack killing 2 Italians; likely Iraqi resistance faction assessed",
-        "textHe": "איראן מכחישה התקפה על כווית שגרמה למוות 2 איטלקים; חלקי התנגדות עיראקיים חשודים",
+        "id": "9e6b4a71",
+        "text": "Iran threatens 14-tanker convoy through Strait of Hormuz; IRGC claims SAM fired at U.S. F-16C",
+        "textHe": "איראן מאיימת על קונווי 14 מכליות בנושא הורמוז; תקיפה טענה על F-16 אמריקאי",
         "severity": "high",
-        "timestamp": "2026-11-26T19:11:27+00:00",
-        "entityIds": [
-          "IRN",
-          "KWT",
-          "IRQ"
-        ],
-        "eventIds": [
-          "7skn7h4ur5g0",
-          "afzlgpz6geg0",
-          "1dsk0bxxylc00",
-          "3gz6gnfoy9k00"
-        ],
-        "sourceCount": 3
-      }
-    },
-    {
-      "id": "iranstrike-3c9x2j6l",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-27T10:54:09Z",
-      "title": "IranStrike event",
-      "description": "IRGC fires SAM at U.S. F-16C SE of Hengam Island; jet evaded with flares, no hit",
-      "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc fires sam at u.s.",
-      "location": "Iran",
-      "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "3c9x2j6l",
-        "text": "IRGC fires SAM at U.S. F-16C SE of Hengam Island; jet evaded with flares, no hit",
-        "textHe": "הפקד בתחום מטען של IRGC נוטל בירייה ל-F-16C אמריקאי; המטוס התחמק בעזרת עדשות",
-        "severity": "high",
-        "timestamp": "2026-11-27T10:54:09+00:00",
+        "timestamp": "2026-11-27T18:29:12+00:00",
         "entityIds": [
           "IRN",
           "USA"
         ],
         "eventIds": [
+          "2i3v4bg7uwi00",
           "2ur02v8osca00"
         ],
-        "sourceCount": 1
+        "sourceCount": 2
       }
     },
     {
-      "id": "iranstrike-4d7k1p8m",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-27T14:42:03Z",
-      "title": "IranStrike event",
-      "description": "Unconfirmed rapid construction at Iranian underground complex near Esfahan Nuclear Site",
-      "category": "other",
-      "severity": "high",
-      "attacker": "unknown",
-      "attacker_label": "Unknown actor",
-      "attacker_color": "#64748b",
-      "attacker_confidence": "none",
-      "attacker_method": "none",
-      "attacker_evidence": "",
-      "location": "Isfahan",
-      "country": "Iran",
-      "latitude": 32.6546,
-      "longitude": 51.668,
-      "map_visualizable": true,
-      "geocode_method": "whitelist_text_match",
-      "geocode_match": "esfahan",
-      "geocode_confidence": "high",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "4d7k1p8m",
-        "text": "Unconfirmed rapid construction at Iranian underground complex near Esfahan Nuclear Site",
-        "textHe": "בנייה מהירה לא מאומתת במתקן תת-קרקעי איראני ליד אתר הגרעין של ספהאן",
-        "severity": "high",
-        "timestamp": "2026-11-27T14:42:03+00:00",
-        "entityIds": [
-          "IRN"
-        ],
-        "eventIds": [
-          "1btz4w57edeo0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-5e2l3h9n",
+      "id": "iranstrike-c8a3e547",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
       "date": "2026-11-27T15:28:14Z",
       "title": "IranStrike event",
-      "description": "U.S. Air Force Cloud One platform breached; personnel, logistics, radar data compromised",
+      "description": "U.S. Air Force Cloud One platform breached; personnel, logistics, radar data at risk",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -1731,9 +1687,9 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5e2l3h9n",
-        "text": "U.S. Air Force Cloud One platform breached; personnel, logistics, radar data compromised",
-        "textHe": "פלטפורמת Cloud One של חיל האוויר האמריקאי הופרצה; נתונים של כח אדם, לוגיסטיקה, ראדאר",
+        "id": "c8a3e547",
+        "text": "U.S. Air Force Cloud One platform breached; personnel, logistics, radar data at risk",
+        "textHe": "פלטפורמת Cloud One של חיל האוויר האמריקאי הופצצה; נתונים של אנשונל ולוגיסטיקה בסכנה",
         "severity": "high",
         "timestamp": "2026-11-27T15:28:14+00:00",
         "entityIds": [
@@ -1744,9 +1700,187 @@
         ],
         "sourceCount": 1
       }
+    },
+    {
+      "id": "iranstrike-a1d6f8c2",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-27T14:42:03Z",
+      "title": "IranStrike event",
+      "description": "Unverified reports of rapid construction at Iranian Behjatabad complex near nuclear site",
+      "category": "other",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "a1d6f8c2",
+        "text": "Unverified reports of rapid construction at Iranian Behjatabad complex near nuclear site",
+        "textHe": "דיווחים לא מאומתים על בנייה מואצת בקומפלקס בהجתאباد ליד אתר גרעיני איראני",
+        "severity": "medium",
+        "timestamp": "2026-11-27T14:42:03+00:00",
+        "entityIds": [
+          "IRN"
+        ],
+        "eventIds": [
+          "1btz4w57edeo0"
+        ],
+        "sourceCount": 1
+      }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-2i3v4bg7uwi00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "OSINTdefender",
+      "source_url": "https://t.me/OSINTdefender/20854",
+      "date": "2026-11-27T18:29:12Z",
+      "title": "IranStrike event",
+      "description": "Iran threatens to break the U.S. naval blockade by sending a convoy of more than 14 oil tankers through the Strait of Hormuz, risking confrontation if the U.S. Navy intervenes",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Persian Gulf",
+      "country": "Persian Gulf",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2i3v4bg7uwi00",
+        "timestamp": "2026-11-27T18:29:12+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Iran threatens to break the U.S. naval blockade by sending a convoy of more than 14 oil tankers through the Strait of Hormuz, risking confrontation if the U.S. Navy intervenes",
+        "descriptionHe": "איראן מאיימת לשבור את המצור הימי האמריקאי באמצעות שיירה של יותר מ-14 מכליות נפט דרך מצר הורמוז, ומסכנת עימות אם הצי האמריקאי יתערב",
+        "source": "OSINTdefender",
+        "sourceUrl": "https://t.me/OSINTdefender/20854"
+      }
+    },
+    {
+      "id": "iranstrike-3cyb5ou9m2g00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87782",
+      "date": "2026-11-27T18:02:18Z",
+      "title": "IranStrike event",
+      "description": "CENTCOM disables Iranian bulk carrier PACIFIC ARCHER in Gulf of Oman after it attempted to violate the blockade of Iranian seaports; ship had departed Bandar Abbas",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3cyb5ou9m2g00",
+        "timestamp": "2026-11-27T18:02:18+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "CENTCOM disables Iranian bulk carrier PACIFIC ARCHER in Gulf of Oman after it attempted to violate the blockade of Iranian seaports; ship had departed Bandar Abbas",
+        "descriptionHe": "פיקוד המרכז האמריקאי השבית את ספינת המטען האיראנית PACIFIC ARCHER במפרץ עומאן לאחר שניסתה לפרוץ את המצור על נמלי איראן; הספינה יצאה מבנדר עבאס",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87782"
+      }
+    },
+    {
+      "id": "iranstrike-3apgo38tng800",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87763",
+      "date": "2026-11-27T17:03:32Z",
+      "title": "IranStrike event",
+      "description": "CENTCOM announces U.S. strike on Iranian vessel attempting to break the blockade",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
+      "attacker_confidence": "medium",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "strike on iranian vessel attempting to break the blockade הסנטקום ה",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3apgo38tng800",
+        "timestamp": "2026-11-27T17:03:32+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "CENTCOM announces U.S. strike on Iranian vessel attempting to break the blockade",
+        "descriptionHe": "הסנטקום הודיע על תקיפה אמריקאית בספינה איראנית שניסתה לפרוץ את המצור",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87763"
+      }
+    },
     {
       "id": "iranstrike-36qzgg76fmw00",
       "source": "IranStrike",
@@ -98383,6 +98517,51 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-3cyb5ou9m2g00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87782",
+      "date": "2026-11-27T18:02:18Z",
+      "title": "IranStrike event",
+      "description": "CENTCOM disables Iranian bulk carrier PACIFIC ARCHER in Gulf of Oman after it attempted to violate the blockade of Iranian seaports; ship had departed Bandar Abbas",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Bandar Abbas",
+      "country": "Iran",
+      "latitude": 27.1832,
+      "longitude": 56.2666,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "bandar abbas",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "3cyb5ou9m2g00",
+        "timestamp": "2026-11-27T18:02:18+00:00",
+        "location": "IRN",
+        "origin": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "CENTCOM disables Iranian bulk carrier PACIFIC ARCHER in Gulf of Oman after it attempted to violate the blockade of Iranian seaports; ship had departed Bandar Abbas",
+        "descriptionHe": "פיקוד המרכז האמריקאי השבית את ספינת המטען האיראנית PACIFIC ARCHER במפרץ עומאן לאחר שניסתה לפרוץ את המצור על נמלי איראן; הספינה יצאה מבנדר עבאס",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87782"
+      }
+    },
     {
       "id": "iranstrike-1btz4w57edeo0",
       "source": "IranStrike",
