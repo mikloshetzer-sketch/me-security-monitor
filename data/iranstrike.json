@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T05:23:10Z",
+  "generated_at": "2026-11-27T15:37:13Z",
   "status": "ok",
   "source": {
     "name": "IranStrike",
@@ -54,18 +54,18 @@
   "statistics": {
     "events_endpoint_records": 1000,
     "feed_event_records": 250,
-    "normalized_events": 2124,
-    "map_visualizable_events": 288,
-    "non_mappable_events": 1836,
+    "normalized_events": 2131,
+    "map_visualizable_events": 289,
+    "non_mappable_events": 1842,
     "developments": 5
   },
   "analytics": {
     "status": "ok",
     "overview": {
-      "total_events": 2124,
+      "total_events": 2131,
       "earliest_event_date": "2023-07-01T21:52:39Z",
-      "latest_event_date": "2026-11-26T21:55:19Z",
-      "geocoded_events": 288,
+      "latest_event_date": "2026-11-27T15:28:14Z",
+      "geocoded_events": 289,
       "geocoded_share": 13.6,
       "top_category": "infrastructure",
       "top_location": "Unknown",
@@ -73,25 +73,21 @@
     },
     "comparisons": {
       "latest_7_days": {
-        "current": 56,
-        "previous": 57,
-        "delta": -1,
-        "percent_change": -1.8,
+        "current": 60,
+        "previous": 65,
+        "delta": -5,
+        "percent_change": -7.7,
         "direction": "stable"
       },
       "latest_30_days": {
-        "current": 280,
-        "previous": 338,
-        "delta": -58,
-        "percent_change": -17.2,
+        "current": 282,
+        "previous": 346,
+        "delta": -64,
+        "percent_change": -18.5,
         "direction": "decrease"
       }
     },
     "daily_trend": [
-      {
-        "date": "2026-05-31",
-        "count": 0
-      },
       {
         "date": "2026-06-01",
         "count": 0
@@ -807,15 +803,19 @@
       {
         "date": "2026-11-26",
         "count": 13
+      },
+      {
+        "date": "2026-11-27",
+        "count": 7
       }
     ],
     "category_counts": {
-      "infrastructure": 636,
-      "missile": 462,
-      "strike": 290,
+      "infrastructure": 639,
+      "missile": 464,
+      "strike": 291,
       "drone": 246,
       "airstrike": 153,
-      "movement": 137,
+      "movement": 138,
       "ground": 80,
       "explosion": 78,
       "alert": 23,
@@ -824,29 +824,29 @@
       "intercept": 1
     },
     "severity_counts": {
-      "medium": 1110,
-      "high": 642,
-      "low": 359,
+      "medium": 1113,
+      "high": 643,
+      "low": 362,
       "critical": 13
     },
     "attacker_counts": {
-      "unknown": 1420,
+      "unknown": 1426,
       "iran": 444,
-      "israel": 220,
+      "israel": 221,
       "usa": 40
     },
     "top_locations": [
       {
         "name": "Unknown",
-        "count": 802
+        "count": 804
       },
       {
         "name": "Iran",
-        "count": 474
+        "count": 475
       },
       {
         "name": "Lebanon",
-        "count": 134
+        "count": 136
       },
       {
         "name": "Jordan",
@@ -857,12 +857,12 @@
         "count": 96
       },
       {
-        "name": "Red Sea",
+        "name": "Israel",
         "count": 56
       },
       {
-        "name": "Israel",
-        "count": 55
+        "name": "Red Sea",
+        "count": 56
       },
       {
         "name": "Iraq",
@@ -900,15 +900,15 @@
     "top_countries": [
       {
         "name": "Unknown",
-        "count": 802
+        "count": 804
       },
       {
         "name": "Iran",
-        "count": 611
+        "count": 613
       },
       {
         "name": "Lebanon",
-        "count": 167
+        "count": 169
       },
       {
         "name": "Jordan",
@@ -924,7 +924,7 @@
       },
       {
         "name": "Israel",
-        "count": 70
+        "count": 71
       },
       {
         "name": "Red Sea",
@@ -945,34 +945,33 @@
     ]
   },
   "feed_state": {
-    "totalCount": 11442,
+    "totalCount": 11449,
     "spotlight": {
       "event": {
-        "id": "1icxts0w4kqo0",
-        "timestamp": "2026-11-26T12:53:19+00:00",
-        "location": "SAU",
-        "origin": "YEM",
+        "id": "1btz4w57edeo0",
+        "timestamp": "2026-11-27T14:42:03+00:00",
+        "location": "IRN",
         "coordinates": [
           0,
           0
         ],
-        "type": "strike",
+        "type": "report",
         "severity": "high",
-        "description": "Houthi attack overnight on Saudi refineries at Ras Tanura on the Persian Gulf coast",
-        "descriptionHe": "מתקפה של החות'ים בשעות הלילה על מתקני הזיקוק הסעודים בראס תנורה, לחופי המפרץ הפרסי",
-        "source": "abualiexpress",
-        "sourceUrl": "https://t.me/abualiexpress/134273"
+        "description": "Unverified OSINT report of unusually fast construction at the Behjatabad underground complex between Esfahan Nuclear Site and Pickaxe Mountain; purpose unknown, possibly ballistic missile or nuclear related",
+        "descriptionHe": "דיווח OSINT לא מאומת על בנייה מהירה בלתי רגילה במתחם התת-קרקעי בהג'תאבאד, בין אתר הגרעין באספהאן להר פיקאקס; מטרת המתחם אינה ידועה, ייתכן שקשור לטילים בליסטיים או לתוכנית הגרעין",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87754"
       },
-      "headline": "Houthis strike Saudi refineries on Persian Gulf coast",
-      "headlineHe": "חוצים תוקפים חזרה: התקפה על בתי זיקוק סעודים בפרסי",
-      "summary": "The overnight strike on Ras Tanura represents a significant escalation in Houthi attacks on critical Saudi energy infrastructure amid regional tensions.",
-      "summaryHe": "התקפת הלילה על ראס תנורה מהווה הגברה משמעותית בהתקפות חוצים על תשתיות אנרגיה קריטיות בערב הסעודית בתוך מתיחות אזוריות.",
-      "pickedAt": "2026-11-27T00:00:25.838Z",
-      "state": "TODAY"
+      "headline": "Iran rushes mysterious underground construction near nuclear site",
+      "headlineHe": "איראן מאיצה בנייה תת-קרקעית מסתורית ליד אתר גרעיני",
+      "summary": "OSINT analysts report unusually rapid excavation work at Behjatabad complex between Esfahan Nuclear Site and Pickaxe Mountain, with purpose unclear but potentially weapons-related.",
+      "summaryHe": "אנליסטים של OSINT דיווחו על עבודות חפירה מהירות באופן חריג בקומפלקס בהג'אתאבאד בין אתר הגרעין אספהאן להר המקדח, כשהמטרה לא ברורה אך אפשרית הקשורה לנשקים.",
+      "pickedAt": "2026-11-27T14:45:26.359Z",
+      "state": "SPOTLIGHT"
     },
-    "lastUpdated": "2026-11-27T05:21:17.354Z",
+    "lastUpdated": "2026-11-27T15:36:17.338Z",
     "stale": false,
-    "viewerCount": 1,
+    "viewerCount": 2,
     "ceasefire": false
   },
   "summary": {
@@ -1513,605 +1512,78 @@
   },
   "vitals": {
     "vitals": {
-      "internet": 96,
+      "internet": null,
       "cellular": null,
-      "lastUpdate": "2026-11-27T05:00:38.599Z",
-      "internetHistory": [
-        {
-          "t": "2026-11-25T12:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T12:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-25T12:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-25T12:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-25T12:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T12:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T13:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T13:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T13:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T13:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-25T13:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T13:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T14:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T14:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T14:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T14:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T14:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T14:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T15:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T15:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T15:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T15:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T15:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T15:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T16:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T16:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T16:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T16:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T16:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T16:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T17:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T17:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T17:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T17:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T17:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T17:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T18:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T18:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T18:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T18:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T18:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T18:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T19:00:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T19:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T19:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T19:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T19:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T19:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-25T20:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T20:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T20:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T20:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T20:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T20:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T21:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T21:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T21:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T21:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T21:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T21:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T22:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T22:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T22:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T22:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T22:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T22:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T23:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T23:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T23:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T23:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T23:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-25T23:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T00:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T00:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T00:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T00:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T00:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T00:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T01:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T01:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T01:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T01:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T01:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T01:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T02:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T02:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T02:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T02:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T02:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T02:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T03:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T03:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T03:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T03:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T03:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T03:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T04:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T04:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T04:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T04:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T04:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T04:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T05:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T05:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T05:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T05:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T05:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T05:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T06:00:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T06:10:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T06:20:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T06:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T06:40:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T06:50:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T07:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T07:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T07:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T07:30:00.000Z",
-          "v": 95
-        },
-        {
-          "t": "2026-11-26T07:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T07:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T08:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T08:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T08:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T08:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T08:40:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T08:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T09:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T09:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T09:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T09:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T09:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T09:50:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T10:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T10:10:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T10:20:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T10:30:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T10:40:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T10:50:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T11:00:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T11:10:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T11:20:00.000Z",
-          "v": 96
-        },
-        {
-          "t": "2026-11-26T11:30:00.000Z",
-          "v": 97
-        },
-        {
-          "t": "2026-11-26T11:40:00.000Z",
-          "v": 96
-        }
-      ],
+      "lastUpdate": "2026-11-27T15:00:14.519Z",
+      "internetHistory": [],
       "cellularHistory": []
     },
-    "lastUpdated": "2026-11-27T05:00:38.599Z"
+    "lastUpdated": "2026-11-27T15:00:14.519Z"
   },
   "developments": [
     {
-      "id": "iranstrike-7a9c2f1b",
+      "id": "iranstrike-2f4k7n9p",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-26T15:59:26Z",
+      "date": "2026-11-27T08:06:49Z",
       "title": "IranStrike event",
-      "description": "Iranian drone strike kills 2 Italian technicians at Kuwait facility",
+      "description": "IDF strikes Hezbollah launch sites in Bekaa Valley; dozens of rockets, launchers targeted",
       "category": "other",
-      "severity": "critical",
+      "severity": "high",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "idf strikes hezbollah launch sites in bekaa valley;",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2f4k7n9p",
+        "text": "IDF strikes Hezbollah launch sites in Bekaa Valley; dozens of rockets, launchers targeted",
+        "textHe": "צה\"ל תקף מקומות שיגור של חיזבאללה בעמק הבקעה; עשרות רקטות ומשגרים",
+        "severity": "high",
+        "timestamp": "2026-11-27T08:06:49+00:00",
+        "entityIds": [
+          "ISR",
+          "LBN"
+        ],
+        "eventIds": [
+          "2lh2xlydkns00",
+          "2sg3xnt65uw00",
+          "2mtq1x3uhji00"
+        ],
+        "sourceCount": 2
+      }
+    },
+    {
+      "id": "iranstrike-1a8m5q3r",
+      "source": "IranStrike",
+      "source_collection": "developments",
+      "source_name": "IranStrike",
+      "source_url": "",
+      "date": "2026-11-26T19:11:27Z",
+      "title": "IranStrike event",
+      "description": "Iran denies Kuwait attack killing 2 Italians; likely Iraqi resistance faction assessed",
+      "category": "other",
+      "severity": "high",
       "attacker": "iran",
       "attacker_label": "Iran",
       "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "iranian drone strike kills 2 italian technicians at kuwait facility הת",
+      "attacker_evidence": "iran denies kuwait attack killing 2 italians;",
       "location": "Iran",
       "country": "Iran",
       "latitude": null,
@@ -2124,44 +1596,44 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "7a9c2f1b",
-        "text": "Iranian drone strike kills 2 Italian technicians at Kuwait facility",
-        "textHe": "התקפת רחפן איראנית הרגה 2 טכנאים איטלקים בمنשآה בכוויט",
-        "severity": "critical",
-        "timestamp": "2026-11-26T15:59:26+00:00",
+        "id": "1a8m5q3r",
+        "text": "Iran denies Kuwait attack killing 2 Italians; likely Iraqi resistance faction assessed",
+        "textHe": "איראן מכחישה התקפה על כווית שגרמה למוות 2 איטלקים; חלקי התנגדות עיראקיים חשודים",
+        "severity": "high",
+        "timestamp": "2026-11-26T19:11:27+00:00",
         "entityIds": [
           "IRN",
           "KWT",
-          "ITA"
+          "IRQ"
         ],
         "eventIds": [
           "7skn7h4ur5g0",
-          "16lel962de4g0",
-          "2gimp21qawro0",
-          "11etznxjd8u80"
+          "afzlgpz6geg0",
+          "1dsk0bxxylc00",
+          "3gz6gnfoy9k00"
         ],
         "sourceCount": 3
       }
     },
     {
-      "id": "iranstrike-5e3d4c8a",
+      "id": "iranstrike-3c9x2j6l",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-26T21:55:19Z",
+      "date": "2026-11-27T10:54:09Z",
       "title": "IranStrike event",
-      "description": "IDF strikes Hezbollah Radwan Force training camp in southern Lebanon",
+      "description": "IRGC fires SAM at U.S. F-16C SE of Hengam Island; jet evaded with flares, no hit",
       "category": "other",
       "severity": "high",
-      "attacker": "israel",
-      "attacker_label": "Israel",
-      "attacker_color": "#dc2626",
+      "attacker": "iran",
+      "attacker_label": "Iran",
+      "attacker_color": "#16a34a",
       "attacker_confidence": "high",
       "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "idf strikes hezbollah radwan force training camp in southern",
-      "location": "Lebanon",
-      "country": "Lebanon",
+      "attacker_evidence": "irgc fires sam at u.s.",
+      "location": "Iran",
+      "country": "Iran",
       "latitude": null,
       "longitude": null,
       "map_visualizable": false,
@@ -2172,31 +1644,30 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "5e3d4c8a",
-        "text": "IDF strikes Hezbollah Radwan Force training camp in southern Lebanon",
-        "textHe": "צה\"ל תקף מחנה הכשרה של כוח רדוואן בדרום לבנון",
+        "id": "3c9x2j6l",
+        "text": "IRGC fires SAM at U.S. F-16C SE of Hengam Island; jet evaded with flares, no hit",
+        "textHe": "הפקד בתחום מטען של IRGC נוטל בירייה ל-F-16C אמריקאי; המטוס התחמק בעזרת עדשות",
         "severity": "high",
-        "timestamp": "2026-11-26T21:55:19+00:00",
+        "timestamp": "2026-11-27T10:54:09+00:00",
         "entityIds": [
-          "ISR",
-          "LBN"
+          "IRN",
+          "USA"
         ],
         "eventIds": [
-          "2sg3xnt65uw00",
-          "2mtq1x3uhji00"
+          "2ur02v8osca00"
         ],
-        "sourceCount": 2
+        "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-b6c1f9e2",
+      "id": "iranstrike-4d7k1p8m",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-26T12:53:19Z",
+      "date": "2026-11-27T14:42:03Z",
       "title": "IranStrike event",
-      "description": "Houthi attack strikes Saudi Ras Tanura refineries on Persian Gulf",
+      "description": "Unconfirmed rapid construction at Iranian underground complex near Esfahan Nuclear Site",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2205,86 +1676,41 @@
       "attacker_confidence": "none",
       "attacker_method": "none",
       "attacker_evidence": "",
-      "location": "Persian Gulf",
-      "country": "Persian Gulf",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
-      "verified": "",
-      "confidence": "",
-      "status": "",
-      "raw_source": {
-        "id": "b6c1f9e2",
-        "text": "Houthi attack strikes Saudi Ras Tanura refineries on Persian Gulf",
-        "textHe": "התקפת חות׳י על בתי זיקוק של ערב הסעודית ברס תנורה",
-        "severity": "high",
-        "timestamp": "2026-11-26T12:53:19+00:00",
-        "entityIds": [
-          "YEM",
-          "SAU"
-        ],
-        "eventIds": [
-          "1icxts0w4kqo0"
-        ],
-        "sourceCount": 1
-      }
-    },
-    {
-      "id": "iranstrike-d8e5a7f3",
-      "source": "IranStrike",
-      "source_collection": "developments",
-      "source_name": "IranStrike",
-      "source_url": "",
-      "date": "2026-11-26T14:52:45Z",
-      "title": "IranStrike event",
-      "description": "IRGC Navy reports oil tankers struck by naval mines near Oman",
-      "category": "other",
-      "severity": "high",
-      "attacker": "iran",
-      "attacker_label": "Iran",
-      "attacker_color": "#16a34a",
-      "attacker_confidence": "high",
-      "attacker_method": "actor_action_proximity",
-      "attacker_evidence": "irgc navy reports oil tankers struck by naval mines near oman חיל הים של הגדוד קודס די",
-      "location": "Iran",
+      "location": "Isfahan",
       "country": "Iran",
-      "latitude": null,
-      "longitude": null,
-      "map_visualizable": false,
-      "geocode_method": "none",
-      "geocode_match": "",
-      "geocode_confidence": "none",
+      "latitude": 32.6546,
+      "longitude": 51.668,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "esfahan",
+      "geocode_confidence": "high",
       "verified": "",
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "d8e5a7f3",
-        "text": "IRGC Navy reports oil tankers struck by naval mines near Oman",
-        "textHe": "חיל הים של הגדוד קודס דיווח על כלי נפט שפגעו במוקשים ליד עומאן",
+        "id": "4d7k1p8m",
+        "text": "Unconfirmed rapid construction at Iranian underground complex near Esfahan Nuclear Site",
+        "textHe": "בנייה מהירה לא מאומתת במתקן תת-קרקעי איראני ליד אתר הגרעין של ספהאן",
         "severity": "high",
-        "timestamp": "2026-11-26T14:52:45+00:00",
+        "timestamp": "2026-11-27T14:42:03+00:00",
         "entityIds": [
-          "IRN",
-          "OMN"
+          "IRN"
         ],
         "eventIds": [
-          "26pj4umt3k2o0"
+          "1btz4w57edeo0"
         ],
         "sourceCount": 1
       }
     },
     {
-      "id": "iranstrike-c3f2a6d9",
+      "id": "iranstrike-5e2l3h9n",
       "source": "IranStrike",
       "source_collection": "developments",
       "source_name": "IranStrike",
       "source_url": "",
-      "date": "2026-11-26T12:04:25Z",
+      "date": "2026-11-27T15:28:14Z",
       "title": "IranStrike event",
-      "description": "German arrest Iraqi suspects linked to Kataib Hezbollah bomb plots",
+      "description": "U.S. Air Force Cloud One platform breached; personnel, logistics, radar data compromised",
       "category": "other",
       "severity": "high",
       "attacker": "unknown",
@@ -2305,23 +1731,340 @@
       "confidence": "",
       "status": "",
       "raw_source": {
-        "id": "c3f2a6d9",
-        "text": "German arrest Iraqi suspects linked to Kataib Hezbollah bomb plots",
-        "textHe": "המשטרה הגרמנית עצרה חשודים עיראקים הקשורים לתכניות פיצוצים",
+        "id": "5e2l3h9n",
+        "text": "U.S. Air Force Cloud One platform breached; personnel, logistics, radar data compromised",
+        "textHe": "פלטפורמת Cloud One של חיל האוויר האמריקאי הופרצה; נתונים של כח אדם, לוגיסטיקה, ראדאר",
         "severity": "high",
-        "timestamp": "2026-11-26T12:04:25+00:00",
+        "timestamp": "2026-11-27T15:28:14+00:00",
         "entityIds": [
-          "IRQ",
-          "IRN"
+          "USA"
         ],
         "eventIds": [
-          "tyiurufldqo0"
+          "36qzgg76fmw00"
         ],
         "sourceCount": 1
       }
     }
   ],
   "events": [
+    {
+      "id": "iranstrike-36qzgg76fmw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87758",
+      "date": "2026-11-27T15:28:14Z",
+      "title": "IranStrike event",
+      "description": "Reuters reports hackers breached the U.S. Air Force's Cloud One platform, which hosts personnel, logistics and air defense radar feed data; migration paused and some admin rights lost, attacker identity unknown",
+      "category": "infrastructure",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "36qzgg76fmw00",
+        "timestamp": "2026-11-27T15:28:14+00:00",
+        "location": "USA",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "Reuters reports hackers breached the U.S. Air Force's Cloud One platform, which hosts personnel, logistics and air defense radar feed data; migration paused and some admin rights lost, attacker identity unknown",
+        "descriptionHe": "דיווחי רויטרס: האקרים פרצו לפלטפורמת הענן Cloud One של חיל האוויר האמריקאי, שמארחת נתוני מערכות הגנה אווירית ומכ\"מ; העבודה הושהתה וחלק מהרשאות המנהל אבדו, זהות התוקף אינה ידועה",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87758"
+      }
+    },
+    {
+      "id": "iranstrike-1btz4w57edeo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87754",
+      "date": "2026-11-27T14:42:03Z",
+      "title": "IranStrike event",
+      "description": "Unverified OSINT report of unusually fast construction at the Behjatabad underground complex between Esfahan Nuclear Site and Pickaxe Mountain; purpose unknown, possibly ballistic missile or nuclear related",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Isfahan",
+      "country": "Iran",
+      "latitude": 32.6546,
+      "longitude": 51.668,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "esfahan",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1btz4w57edeo0",
+        "timestamp": "2026-11-27T14:42:03+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Unverified OSINT report of unusually fast construction at the Behjatabad underground complex between Esfahan Nuclear Site and Pickaxe Mountain; purpose unknown, possibly ballistic missile or nuclear related",
+        "descriptionHe": "דיווח OSINT לא מאומת על בנייה מהירה בלתי רגילה במתחם התת-קרקעי בהג'תאבאד, בין אתר הגרעין באספהאן להר פיקאקס; מטרת המתחם אינה ידועה, ייתכן שקשור לטילים בליסטיים או לתוכנית הגרעין",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87754"
+      }
+    },
+    {
+      "id": "iranstrike-94kwlx8q6uw0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134338",
+      "date": "2026-11-27T12:59:01Z",
+      "title": "IranStrike event",
+      "description": "IDF claims Hezbollah uses civilian fishing boats to send operatives to surveil IDF naval forces in the maritime zone off southern Lebanon",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "94kwlx8q6uw0",
+        "timestamp": "2026-11-27T12:59:01+00:00",
+        "location": "LBN",
+        "origin": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "IDF claims Hezbollah uses civilian fishing boats to send operatives to surveil IDF naval forces in the maritime zone off southern Lebanon",
+        "descriptionHe": "צה\"ל טוען כי חזבאללה משתמש בסירות דיג אזרחיות כדי לשלוח פעילים לצפות בכוחות חיל הים במרחב הימי בדרום לבנון",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/134338"
+      }
+    },
+    {
+      "id": "iranstrike-38wwnvhc7qa00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87753",
+      "date": "2026-11-27T12:25:07Z",
+      "title": "IranStrike event",
+      "description": "KDP Gulan Brigades special forces quietly withdraw from Sufaya oilfield and nearby fields in Nineveh province, near the Syrian border, following Iraqi PM directives; replacement forces unclear",
+      "category": "movement",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "",
+      "country": "",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "38wwnvhc7qa00",
+        "timestamp": "2026-11-27T12:25:07+00:00",
+        "location": "IRQ",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "movement",
+        "severity": "low",
+        "description": "KDP Gulan Brigades special forces quietly withdraw from Sufaya oilfield and nearby fields in Nineveh province, near the Syrian border, following Iraqi PM directives; replacement forces unclear",
+        "descriptionHe": "כוחות גולאן, יחידות הכוחות המיוחדים של ה-KDP, נסוגו בשקט משדה הנפט סופאיה ומשדות סמוכים בנינוה, סמוך לגבול סוריה, בעקבות הנחיות ראש הממשלה העיראקי; לא ברור מי השתלט על השדות",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87753"
+      }
+    },
+    {
+      "id": "iranstrike-38ov6ylhfcw00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "idkunim_il",
+      "source_url": "https://t.me/idkunim_il/65880",
+      "date": "2026-11-27T11:32:24Z",
+      "title": "IranStrike event",
+      "description": "IDF reveals Hezbollah uses civilian fishing boats as cover for intelligence collection on IDF forces in southern Israel",
+      "category": "infrastructure",
+      "severity": "low",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Israel",
+      "country": "Israel",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "38ov6ylhfcw00",
+        "timestamp": "2026-11-27T11:32:24+00:00",
+        "location": "ISR",
+        "origin": "LBN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "low",
+        "description": "IDF reveals Hezbollah uses civilian fishing boats as cover for intelligence collection on IDF forces in southern Israel",
+        "descriptionHe": "צה״ל חושף: חיזבאללה משתמש בסירות דייג אזרחיות ככיסוי לפעילותו המודיעינית לאיסוף מודיעין על צה״ל בדרום המדינה",
+        "source": "idkunim_il",
+        "sourceUrl": "https://t.me/idkunim_il/65880"
+      }
+    },
+    {
+      "id": "iranstrike-2ur02v8osca00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87746",
+      "date": "2026-11-27T10:54:09Z",
+      "title": "IranStrike event",
+      "description": "IRGC publishes footage claiming a surface-to-air missile was fired at a U.S. F-16C southeast of Hengam Island; jet deployed flares and changed course, no independent confirmation",
+      "category": "missile",
+      "severity": "medium",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "low",
+      "attacker_method": "conflicting_or_weak_signal",
+      "attacker_evidence": "",
+      "location": "Iran",
+      "country": "Iran",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2ur02v8osca00",
+        "timestamp": "2026-11-27T10:54:09+00:00",
+        "location": "IRN",
+        "origin": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "medium",
+        "description": "IRGC publishes footage claiming a surface-to-air missile was fired at a U.S. F-16C southeast of Hengam Island; jet deployed flares and changed course, no independent confirmation",
+        "descriptionHe": "משמרות המהפכה פרסמו צילומים הטוענים לשיגור טיל קרקע-אוויר לעבר מטוס F-16C אמריקאי דרומזרחית לאי הנגם; המטוס שיגר זיקוקים ושינה כיוון, ללא אישור עצמאי",
+        "source": "CIG_telegram",
+        "weapons": [
+          {
+            "type": "other",
+            "count": 1
+          }
+        ],
+        "sourceUrl": "https://t.me/CIG_telegram/87746"
+      }
+    },
+    {
+      "id": "iranstrike-2lh2xlydkns00",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "abualiexpress",
+      "source_url": "https://t.me/abualiexpress/134316",
+      "date": "2026-11-27T08:06:49Z",
+      "title": "IranStrike event",
+      "description": "Israeli Air Force struck dozens of Hezbollah launch tubes near Ain al-Tina in the Bekaa Valley the previous night, an unusually deep strike beyond the usual southern Lebanon zone",
+      "category": "strike",
+      "severity": "medium",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "attacker_color": "#dc2626",
+      "attacker_confidence": "high",
+      "attacker_method": "actor_action_proximity",
+      "attacker_evidence": "lbn israeli air force struck dozens of hezbollah launch tubes near ain al-tina",
+      "location": "Lebanon",
+      "country": "Lebanon",
+      "latitude": null,
+      "longitude": null,
+      "map_visualizable": false,
+      "geocode_method": "none",
+      "geocode_match": "",
+      "geocode_confidence": "none",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "2lh2xlydkns00",
+        "timestamp": "2026-11-27T08:06:49+00:00",
+        "location": "LBN",
+        "origin": "ISR",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "strike",
+        "severity": "medium",
+        "description": "Israeli Air Force struck dozens of Hezbollah launch tubes near Ain al-Tina in the Bekaa Valley the previous night, an unusually deep strike beyond the usual southern Lebanon zone",
+        "descriptionHe": "חיל האוויר תקף עשרות קני שיגור של חיזבאללה באזור עין א-תינה בבקעת הבקאע בלילה הקודם, תקיפה חריגה מעבר לתחום הרגיל בדרום לבנון",
+        "source": "abualiexpress",
+        "sourceUrl": "https://t.me/abualiexpress/134316"
+      }
+    },
     {
       "id": "iranstrike-2sg3xnt65uw00",
       "source": "IranStrike",
@@ -98640,6 +98383,50 @@
     }
   ],
   "map_events": [
+    {
+      "id": "iranstrike-1btz4w57edeo0",
+      "source": "IranStrike",
+      "source_collection": "events",
+      "source_name": "CIG_telegram",
+      "source_url": "https://t.me/CIG_telegram/87754",
+      "date": "2026-11-27T14:42:03Z",
+      "title": "IranStrike event",
+      "description": "Unverified OSINT report of unusually fast construction at the Behjatabad underground complex between Esfahan Nuclear Site and Pickaxe Mountain; purpose unknown, possibly ballistic missile or nuclear related",
+      "category": "missile",
+      "severity": "high",
+      "attacker": "unknown",
+      "attacker_label": "Unknown actor",
+      "attacker_color": "#64748b",
+      "attacker_confidence": "none",
+      "attacker_method": "none",
+      "attacker_evidence": "",
+      "location": "Isfahan",
+      "country": "Iran",
+      "latitude": 32.6546,
+      "longitude": 51.668,
+      "map_visualizable": true,
+      "geocode_method": "whitelist_text_match",
+      "geocode_match": "esfahan",
+      "geocode_confidence": "high",
+      "verified": "",
+      "confidence": "",
+      "status": "",
+      "raw_source": {
+        "id": "1btz4w57edeo0",
+        "timestamp": "2026-11-27T14:42:03+00:00",
+        "location": "IRN",
+        "coordinates": [
+          0,
+          0
+        ],
+        "type": "report",
+        "severity": "high",
+        "description": "Unverified OSINT report of unusually fast construction at the Behjatabad underground complex between Esfahan Nuclear Site and Pickaxe Mountain; purpose unknown, possibly ballistic missile or nuclear related",
+        "descriptionHe": "דיווח OSINT לא מאומת על בנייה מהירה בלתי רגילה במתחם התת-קרקעי בהג'תאבאד, בין אתר הגרעין באספהאן להר פיקאקס; מטרת המתחם אינה ידועה, ייתכן שקשור לטילים בליסטיים או לתוכנית הגרעין",
+        "source": "CIG_telegram",
+        "sourceUrl": "https://t.me/CIG_telegram/87754"
+      }
+    },
     {
       "id": "iranstrike-gqtj6wy5hw00",
       "source": "IranStrike",
