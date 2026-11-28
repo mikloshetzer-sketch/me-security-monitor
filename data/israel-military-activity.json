@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-27T22:41:25+00:00",
+  "generated_at": "2026-11-28T10:21:16+00:00",
   "source": {
     "name": "Israel Defense Forces official Telegram",
     "url": "https://t.me/s/idfofficial",
@@ -47,20 +47,20 @@
   },
   "analytics": {
     "overview": {
-      "total_events": 1457,
-      "map_visualizable_events": 348,
-      "total_map_points": 426,
+      "total_events": 1458,
+      "map_visualizable_events": 349,
+      "total_map_points": 427,
       "multi_location_events": 60,
       "earliest_event_date": "2024-12-08T13:03:03Z",
-      "latest_event_date": "2026-11-27T08:17:59Z"
+      "latest_event_date": "2026-11-27T23:11:23Z"
     },
     "region_counts": {
       "South Lebanon": 888,
-      "Gaza Strip": 547,
+      "Gaza Strip": 548,
       "Syria": 100
     },
     "activity_type_counts": {
-      "airstrike": 766,
+      "airstrike": 767,
       "ground_activity": 314,
       "drone_activity": 314,
       "cross_border_fire": 221,
@@ -71,13 +71,13 @@
     "target_organization_counts": {
       "Hezbollah": 643,
       "Not explicitly stated": 460,
-      "Hamas": 350,
+      "Hamas": 351,
       "Palestinian Islamic Jihad": 57
     },
     "target_type_counts": {
       "unspecified": 596,
       "military_structure": 377,
-      "commander": 284,
+      "commander": 285,
       "weapons_storage": 182,
       "armed_cell": 148,
       "individual_operative": 122,
@@ -91,8 +91,8 @@
       "targeted_vehicle": 5
     },
     "operation_result_counts": {
-      "struck": 881,
-      "eliminated": 556,
+      "struck": 882,
+      "eliminated": 557,
       "located": 498,
       "reported": 216,
       "dismantled": 196,
@@ -104,7 +104,7 @@
     "commander_type_counts": {
       "unspecified_commander": 196,
       "company_commander": 29,
-      "cell_commander": 21,
+      "cell_commander": 22,
       "nukhba_commander": 18,
       "senior_commander": 17,
       "battalion_commander": 14,
@@ -112,9 +112,9 @@
       "naval_commander": 3
     },
     "threat_domain_counts": {
-      "ground": 868,
+      "ground": 869,
       "rocket_missile": 430,
-      "command": 362,
+      "command": 363,
       "unspecified": 260,
       "air_defense": 220,
       "drone_uav": 199,
@@ -131,7 +131,7 @@
       "Security Zone – South Lebanon": 34
     },
     "top_locations": {
-      "Gaza City": 108,
+      "Gaza City": 109,
       "Khan Yunis": 87,
       "Rafah": 40,
       "Nabatieh": 28,
@@ -154,6 +154,75 @@
     }
   },
   "events": [
+    {
+      "id": "idf-idfofficial-19538",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19538",
+      "date": "2026-11-27T23:11:23Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: Hamas terrorists posing as humanitarian workers: The IDF struck and eliminated two terrorists in Gaza City who were also employed by the international organization MSF Earlier this evening (Friday), the IDF struck and eliminated the terrorist Ahmed Sufyan Muhammad Ali Abu Hasira and the terrorist Moaz Yousef Alitsbach, an artillery cell commander in the Hamas terrorist organization’s military wing, in Gaza City. While also serving as terrorists, the two worked as security guards at a clinic operated by Doctors Without Borders (MSF). This is another example of the Hamas terrorist organization embedding itself within international organizations. Contrary to reports, the strike was not directed at a hospital, and no damage was caused to medical infrastructure in the area. Throughout the war, and particularly recently, the terrorists advanced terrorist plots against IDF troops and Israeli civilians and worked to restore the capabilities of terrorist organizations in the Gaza Strip, in systematic violation of the ceasefire. The terrorists were eliminated from the air in order to remove the threat they posed. Prior to the strike, precautionary measures were taken to minimize, to the extent possible, the expected harm to civilians resulting from the strike, including the use of precision munitions and aerial surveillance. IDF troops are deployed in the area in accordance with the agreement and will continue to operate to eliminate any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "cell_commander"
+      ],
+      "commander_type": "cell_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        }
+      ],
+      "location_count": 1,
+      "location": "Gaza City",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19538"
+    },
     {
       "id": "idf-idfofficial-19531",
       "source": "IDF official Telegram",
@@ -90424,6 +90493,77 @@
     }
   ],
   "map_events": [
+    {
+      "id": "idf-idfofficial-19538-location-1",
+      "source": "IDF official Telegram",
+      "source_name": "IDF",
+      "source_type": "official_idf_statement",
+      "source_classification": "Official belligerent statement; not independently verified.",
+      "source_url": "https://t.me/idfofficial/19538",
+      "date": "2026-11-27T23:11:23Z",
+      "title": "IDF airstrike statement – Gaza City",
+      "description": "IDF: Hamas terrorists posing as humanitarian workers: The IDF struck and eliminated two terrorists in Gaza City who were also employed by the international organization MSF Earlier this evening (Friday), the IDF struck and eliminated the terrorist Ahmed Sufyan Muhammad Ali Abu Hasira and the terrorist Moaz Yousef Alitsbach, an artillery cell commander in the Hamas terrorist organization’s military wing, in Gaza City. While also serving as terrorists, the two worked as security guards at a clinic operated by Doctors Without Borders (MSF). This is another example of the Hamas terrorist organization embedding itself within international organizations. Contrary to reports, the strike was not directed at a hospital, and no damage was caused to medical infrastructure in the area. Throughout the war, and particularly recently, the terrorists advanced terrorist plots against IDF troops and Israeli civilians and worked to restore the capabilities of terrorist organizations in the Gaza Strip, in systematic violation of the ceasefire. The terrorists were eliminated from the air in order to remove the threat they posed. Prior to the strike, precautionary measures were taken to minimize, to the extent possible, the expected harm to civilians resulting from the strike, including the use of precision munitions and aerial surveillance. IDF troops are deployed in the area in accordance with the agreement and will continue to operate to eliminate any immediate threat.",
+      "actor": "Israel",
+      "attacker": "israel",
+      "attacker_label": "Israel",
+      "verified": false,
+      "verification_status": "official_claim_only",
+      "regions": [
+        "Gaza Strip"
+      ],
+      "region": "Gaza Strip",
+      "activity_types": [
+        "airstrike"
+      ],
+      "activity_type": "airstrike",
+      "target_organizations": [
+        "Hamas"
+      ],
+      "target_organization": "Hamas",
+      "target_types": [
+        "commander"
+      ],
+      "target_type": "commander",
+      "commander_types": [
+        "cell_commander"
+      ],
+      "commander_type": "cell_commander",
+      "threat_domains": [
+        "command",
+        "ground"
+      ],
+      "threat_domain": "command",
+      "area_mentions": [],
+      "operation_results": [
+        "eliminated",
+        "struck"
+      ],
+      "operation_result": "eliminated",
+      "locations": [
+        {
+          "name": "Gaza City",
+          "region": "Gaza Strip",
+          "country": "Palestinian Territories",
+          "latitude": 31.5017,
+          "longitude": 34.4668,
+          "matched_alias": "gaza city"
+        }
+      ],
+      "location_count": 1,
+      "location": "Gaza City",
+      "country": "Palestinian Territories",
+      "latitude": 31.5017,
+      "longitude": 34.4668,
+      "map_visualizable": true,
+      "geocode_method": "curated_exact_place_name",
+      "geocode_confidence": "high",
+      "geospatial_confidence": "high",
+      "classification_method": "deterministic_keyword_rules",
+      "classification_confidence": "high",
+      "raw_post_id": "idfofficial/19538",
+      "parent_event_id": "idf-idfofficial-19538",
+      "location_index": 1
+    },
     {
       "id": "idf-idfofficial-19526-location-1",
       "source": "IDF official Telegram",
